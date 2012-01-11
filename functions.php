@@ -81,7 +81,7 @@ add_action( 'after_setup_theme', '_s_setup' );
  */
 function _s_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Sidebar 1', '_s' ),
+		'name' => __( 'Sidebar', '_s' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
