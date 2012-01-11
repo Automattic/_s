@@ -12,7 +12,9 @@
  * @since _s 1.0
  */
 $themecolors = array(
-	'bg' => 'ffffff',
-	'border' => 'eeeeee',
-	'text' => '444444',
+	'bg' => '',
+	'border' => '',
+	'text' => '',
+	'link' => '',
+	'url' => '',
 );
