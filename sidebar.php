@@ -32,9 +32,3 @@
 
 			<?php endif; // end sidebar widget area ?>
 		</div><!-- #secondary .widget-area -->
-
-		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-		<div id="tertiary" class="widget-area" role="complementary">
-			<?php dynamic_sidebar( 'sidebar-2' ); ?>
-		</div><!-- #tertiary .widget-area -->
-		<?php endif; ?>
