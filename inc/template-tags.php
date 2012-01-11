@@ -19,7 +19,7 @@ function _s_content_nav( $nav_id ) {
 
 	?>
 	<nav id="<?php echo $nav_id; ?>">
-		<h1 class="assistive-text section-heading"><?php _e( 'Post navigation', '_s' ); ?></h1>
+		<h1 class="assistive-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
@@ -106,7 +106,7 @@ if ( ! function_exists( '_s_posted_on' ) ) :
  * @since _s 1.0
  */
 function _s_posted_on() {
-	printf( __( '<span class="sep">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', '_s' ),
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', '_s' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
