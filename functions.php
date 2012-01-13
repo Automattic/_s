@@ -37,6 +37,11 @@ function _s_setup() {
 	//require( get_template_directory() . '/inc/tweaks.php' );
 
 	/**
+	 * Custom Theme Options
+	 */
+	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+
+	/**
 	 * WordPress.com-specific functions and definitions
 	 */
 	//require( get_template_directory() . '/inc/wpcom.php' );
