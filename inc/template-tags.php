@@ -17,8 +17,12 @@ if ( ! function_exists( '_s_content_nav' ) ):
 function _s_content_nav( $nav_id ) {
 	global $wp_query;
 
+	$nav_class = 'site-navigation paging-navigation';
+	if ( is_single() )
+		$nav_class = 'site-navigation post-navigation';
+
 	?>
-	<nav id="<?php echo $nav_id; ?>">
+	<nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="assistive-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
