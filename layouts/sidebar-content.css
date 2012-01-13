@@ -1,0 +1,25 @@
+/*
+Theme Name: _s
+Layout: Sidebar-Content
+*/
+
+#primary {
+	float: right;
+	margin: 0 0 0 -25%;
+	width: 100%;
+}
+#content {
+	margin: 0 0 0 25%;
+}
+#secondary { /* Sidebar 1 */
+	float: left;
+	overflow: hidden;
+	width: 25%;
+}
+#tertiary { /* Sidebar 2 */
+	clear: left;
+}
+#colophon {
+	clear: both;
+	width: 100%;
+}
