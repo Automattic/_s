@@ -1,0 +1,22 @@
+/*
+Theme Name: _s
+Layout: Sidebar-Sidebar-Content
+*/
+
+#primary {
+	float: right;
+	margin: 0 0 0 -40%;
+	width: 100%;
+}
+#content {
+	margin: 0 0 0 40%;
+}
+#main .widget-area {
+	float: left;
+	overflow: hidden;
+	width: 20%;
+}
+#colophon {
+	clear: both;
+	width: 100%;
+}

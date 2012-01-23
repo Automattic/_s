@@ -1,0 +1,27 @@
+/*
+Theme Name: _s
+Layout: Content-Sidebar-Sidebar
+*/
+
+#primary {
+	float: left;
+	width: 100%;
+}
+#content {
+	margin: 0 40% 0 0;
+}
+#main .widget-area {
+	float: left;
+	overflow: hidden;
+	width: 20%;
+}
+#secondary { /* Sidebar 1 */
+	margin: 0 0 0 -40%;
+}
+#tertiary { /* Sidebar 2 */
+	margin: 0 0 0 -20%;
+}
+#colophon {
+	clear: both;
+	width: 100%;
+}
