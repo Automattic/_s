@@ -80,6 +80,11 @@ endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
+ * Implement the Custom Header feature
+ */
+//require( get_template_directory() . '/inc/custom-header.php' );
+
+/**
  * Register widgetized area and update sidebar with default widgets
  *
  * @since _s 1.0
