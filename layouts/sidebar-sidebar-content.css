@@ -3,7 +3,7 @@ Theme Name: _s
 Layout: Sidebar-Sidebar-Content
 */
 
-#primary {
+.site-content {
 	float: right;
 	margin: 0 0 0 -40%;
 	width: 100%;
@@ -16,7 +16,7 @@ Layout: Sidebar-Sidebar-Content
 	overflow: hidden;
 	width: 20%;
 }
-#colophon {
+.site-footer {
 	clear: both;
 	width: 100%;
 }

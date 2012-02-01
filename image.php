@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-		<div id="primary" class="image-attachment">
+		<div id="primary" class="site-content" class="image-attachment">
 			<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -34,8 +34,8 @@ get_header(); ?>
 						</div><!-- .entry-meta -->
 
 						<nav id="image-navigation">
-							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', '_s' ) ); ?></span>
-							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', '_s' ) ); ?></span>
+							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous' , '_s' ) ); ?></span>
+							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;' , '_s' ) ); ?></span>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
 
@@ -105,6 +105,6 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
-		</div><!-- #primary -->
+		</div><!-- #primary .site-content -->
 
 <?php get_footer(); ?>

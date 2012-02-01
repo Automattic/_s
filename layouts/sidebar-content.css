@@ -3,7 +3,7 @@ Theme Name: _s
 Layout: Sidebar-Content
 */
 
-#primary {
+.site-content {
 	float: right;
 	margin: 0 0 0 -25%;
 	width: 100%;
@@ -19,7 +19,7 @@ Layout: Sidebar-Content
 #tertiary { /* Sidebar 2 */
 	clear: left;
 }
-#colophon {
+.site-footer {
 	clear: both;
 	width: 100%;
 }
