@@ -351,19 +351,19 @@ a:active {
 /* =Media
 ----------------------------------------------- */
 
-#masthead img,
+.site-header img,
 .entry-content img,
 .comment-content img,
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
-#masthead img,
+.site-header img,
 .entry-content img,
 img[class*="align"],
 img[class*="wp-image-"] {
 	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
-#masthead img,
+.site-header img,
 .entry-content img,
 img.size-full {
 	max-width: 100%;
