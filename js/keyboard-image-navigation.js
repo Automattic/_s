@@ -5,7 +5,7 @@ jQuery( document ).ready( function( $ ) {
 			url = $( '.previous-image a' ).attr( 'href' );
 		}
 		else if ( e.which == 39 ) {  // Right arrow key code
-			url = $( '.next-image a' ).attr( 'href' );
+			url = $( '.entry-attachment a' ).attr( 'href' );
 		}
 		if ( url && ( !$( 'textarea, input' ).is( ':focus' ) ) ) {
 			window.location = url;

@@ -7,7 +7,7 @@
  */
 
 get_header();
-wp_enqueue_script( 'keyboard-navigation', get_template_directory_uri() . '/js/keyboard-navigation.js', array( 'jquery' ), '20120202' );
+wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 ?>
 
 		<div id="primary" class="site-content" class="image-attachment">
