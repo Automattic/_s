@@ -22,7 +22,7 @@ function _s_content_nav( $nav_id ) {
 		$nav_class = 'site-navigation post-navigation';
 
 	?>
-	<nav id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
+	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="assistive-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
