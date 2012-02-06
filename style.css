@@ -384,6 +384,14 @@ a:active {
 .main-navigation li.current-menu-item a {
 }
 
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+}
+.main-small-navigation .menu {
+	display: none;
+}
+
 
 /* =Content
 ----------------------------------------------- */

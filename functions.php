@@ -100,3 +100,12 @@ function _s_widgets_init() {
 	) );
 }
 add_action( 'init', '_s_widgets_init' );
+
+/**
+ * Enqueue scripts
+ */
+function _s_scripts() {
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', 'jquery', '20120206', true );
+}
+add_action( 'wp_enqueue_scripts', '_s_scripts' );
