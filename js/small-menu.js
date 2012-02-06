@@ -1,12 +1,13 @@
 jQuery( document ).ready( function( $ ) {
 	var $browserWidth = $( window ).width();
+	var $masthead = $( '#masthead' );
 
 	$.fn.smallMenu = function() {
-		$( '#masthead .site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
-		$( '#masthead .site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
+		$( $masthead ).find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
+		$( $masthead ).find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
 
 		$( '.menu-toggle' ).click( function () {
-			$( '#masthead .menu' ).toggle( 'fast' );
+			$( $masthead ).find( '.menu' ).toggle();
 		});
 	}
 
@@ -16,8 +17,9 @@ jQuery( document ).ready( function( $ ) {
 		if ( $browserWidth < 600 ) {
 			$.fn.smallMenu();
 		} else {
-			$( '#masthead .site-navigation' ).removeClass( 'main-small-navigation' ).addClass( 'main-navigation' );
-			$( '#masthead .site-navigation h1' ).removeClass( 'menu-toggle' ).addClass( 'assistive-text' );
+			$( $masthead ).find( '.site-navigation' ).removeClass( 'main-small-navigation' ).addClass( 'main-navigation' );
+			$( $masthead ).find( '.site-navigation h1' ).removeClass( 'menu-toggle' ).addClass( 'assistive-text' );
+			$( $masthead ).find( '.menu' ).removeAttr( 'style' );
 		}
 	});
 
