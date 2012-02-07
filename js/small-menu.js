@@ -8,6 +8,7 @@ jQuery( document ).ready( function( $ ) {
 
 		$( '.menu-toggle' ).click( function () {
 			$( $masthead ).find( '.menu' ).toggle();
+			$( this ).toggleClass( 'toggled-on' );
 		});
 	}
 
