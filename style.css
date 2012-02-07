@@ -470,6 +470,8 @@ img.size-full {
 #content .gallery {
 	margin-bottom: 1.5em;
 }
+.gallery-caption {
+}
 #content .gallery a img {
 	border: none;
 	height: auto;
@@ -508,6 +510,11 @@ object {
 	width: 50%;
 }
 
+/* =Comments
+----------------------------------------------- */
+
+.bypostauthor {
+}
 
 /* =Widgets
 ----------------------------------------------- */
