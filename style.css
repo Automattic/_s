@@ -402,6 +402,12 @@ a:active {
 .hentry {
 	margin: 0 0 1.5em;
 }
+.indexed .byline {
+	display: none;
+}
+.group-blog .byline {
+	display: inline;
+}
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
