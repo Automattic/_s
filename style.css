@@ -402,9 +402,10 @@ a:active {
 .hentry {
 	margin: 0 0 1.5em;
 }
-.indexed .byline {
+.byline {
 	display: none;
 }
+.single .byline,
 .group-blog .byline {
 	display: inline;
 }
