@@ -385,9 +385,6 @@ a:active {
 }
 
 /* Small menu */
-.main-small-navigation.expanded {
-	background: pink;
-}
 .menu-toggle {
 	cursor: pointer;
 }
