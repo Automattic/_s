@@ -396,6 +396,8 @@ a:active {
 /* =Content
 ----------------------------------------------- */
 
+.sticky {
+}
 .entry-meta {
 	clear: both;
 }
