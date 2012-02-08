@@ -22,9 +22,9 @@ The first thing you want to do is copy the _s directory and change the name to s
 
 1. Search for _s inside single quotations to capture the text domain.
 2. Search for _s_ for to capture all the function names
-3. Search for _s with a space before it to replace all the occurrences of it in comments. (You’d replace this with the capitalized version of your theme name.)
+3. Search for _s with a space before it to replace all the occurrences of it in comments. (You'd replace this with the capitalized version of your theme name.)
 
-or …
+or ...
 
 Search for:'_s'
 Replace with:'megatherium'
