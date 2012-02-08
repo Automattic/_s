@@ -10,7 +10,7 @@ get_header();
 wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 ?>
 
-		<div id="primary" class="site-content" class="image-attachment">
+		<div id="primary" class="site-content image-attachment">
 			<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
