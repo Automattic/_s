@@ -80,11 +80,6 @@ endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
- * Implement the Custom Header feature
- */
-//require( get_template_directory() . '/inc/custom-header.php' );
-
-/**
  * Register widgetized area and update sidebar with default widgets
  *
  * @since _s 1.0
@@ -109,3 +104,8 @@ function _s_scripts() {
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', 'jquery', '20120206', true );
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
+
+/**
+ * Implement the Custom Header feature
+ */
+//require( get_template_directory() . '/inc/custom-header.php' );
