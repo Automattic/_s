@@ -94,7 +94,7 @@ function _s_widgets_init() {
 		'after_title' => '</h1>',
 	) );
 }
-add_action( 'init', '_s_widgets_init' );
+add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
  * Enqueue scripts
