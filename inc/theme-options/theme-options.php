@@ -70,7 +70,7 @@ function _s_option_page_capability( $capability ) {
 add_filter( 'option_page_capability__s_options', '_s_option_page_capability' );
 
 /**
- * Add our theme options page to the admin menu, including some help documentation.
+ * Add our theme options page to the admin menu.
  *
  * This function is attached to the admin_menu action hook.
  *
@@ -84,9 +84,6 @@ function _s_theme_options_add_page() {
 		'theme_options',                         // Menu slug, used to uniquely identify the page
 		'_s_theme_options_render_page' // Function that renders the options page
 	);
-
-	if ( ! $theme_page )
-		return;
 }
 add_action( 'admin_menu', '_s_theme_options_add_page' );
 
