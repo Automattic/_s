@@ -97,10 +97,12 @@ function _s_widgets_init() {
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
- * Enqueue scripts
+ * Enqueue scripts and styles
  */
 function _s_scripts() {
 	global $post;
+
+	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
 
 	wp_enqueue_script( 'jquery' );
 
