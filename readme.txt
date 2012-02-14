@@ -10,8 +10,8 @@ My ultra-minimal CSS might make me look like theme tartare but that means less s
 * Custom template tags in inc/template-tags that keep your templates clean and neat and prevent code duplication.
 * Sample theme options in /inc/theme-options/ that can can be activated by uncommenting one line in functions.php.
 * Some small tweaks in /inc/tweaks.php that can improve your theming experience. They can be activated by uncommenting one line in functions.php.
-* Keyboard navigation for image attachment templates. The script can be found in js/keyboard-navigation.js and is enqueued from the image attachment template, image.php.
-* A script at js/small-menu.js that makes your menu a toggled dropdown on small screens, ready for CSS artistry. It’s enqueued in functions.php.
+* Keyboard navigation for image attachment templates. The script can be found in js/keyboard-navigation.js. It’s enqueued in functions.php.
+* A script at js/small-menu.js that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It’s enqueued in functions.php.
 * 5 sample CSS layouts in /layouts: Two sidebars on the left, two sidebars on the right, a sidebar on either side of your content, and two-column layouts with sidebars on either side.
 * Smartly organized starter CSS in style.css that will help you to quickly get your design off the ground.
 * The GPL license in license.txt. :) Use it to make something cool.
