@@ -25,7 +25,7 @@ add_filter( 'wp_page_menu_args', '_s_page_menu_args' );
  * @since _s 1.0
  */
 function _s_body_classes( $classes ) {
-	// Adds a class of single-author to blogs with only 1 published author
+	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
