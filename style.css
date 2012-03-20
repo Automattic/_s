@@ -239,7 +239,6 @@ input[type="submit"] {
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 12px;
 	font-size: 1.4rem;
-	line-height: 2;
 	padding: 1.12em 1.5em .88em;
 	text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
