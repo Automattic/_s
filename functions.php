@@ -65,6 +65,11 @@ function _s_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
+	 * Enable support for Post Thumbnails
+	 */
+	add_theme_support( 'post-thumbnails' );
+
+	/**
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
