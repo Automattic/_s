@@ -54,11 +54,6 @@ function _s_setup() {
 	 */
 	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
-
 	/**
 	 * Add default posts and comments RSS feed links to head
 	 */
