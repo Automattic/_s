@@ -19,7 +19,7 @@
  */
 function _s_theme_options_init() {
 	register_setting(
-		'_s_options',       // Options group, see settings_fields() call in _s_theme_options_render_page()
+		'_s_options', // Options group, see settings_fields() call in _s_theme_options_render_page()
 		'_s_theme_options', // Database option, see _s_get_theme_options()
 		'_s_theme_options_validate' // The sanitization callback, see _s_theme_options_validate()
 	);
@@ -73,8 +73,8 @@ function _s_theme_options_add_page() {
 	$theme_page = add_theme_page(
 		__( 'Theme Options', '_s' ),   // Name of page
 		__( 'Theme Options', '_s' ),   // Label in menu
-		'edit_theme_options',                    // Capability required
-		'theme_options',                         // Menu slug, used to uniquely identify the page
+		'edit_theme_options',          // Capability required
+		'theme_options',               // Menu slug, used to uniquely identify the page
 		'_s_theme_options_render_page' // Function that renders the options page
 	);
 }
@@ -171,7 +171,7 @@ function _s_settings_field_sample_checkbox() {
 	?>
 	<label for"sample-checkbox">
 		<input type="checkbox" name="_s_theme_options[sample_checkbox]" id="sample-checkbox" <?php checked( 'on', $options['sample_checkbox'] ); ?> />
-		<?php _e( 'A sample checkbox.', '_s' );  ?>
+		<?php _e( 'A sample checkbox.', '_s' ); ?>
 	</label>
 	<?php
 }
@@ -253,7 +253,8 @@ function _s_theme_options_render_page() {
 	?>
 	<div class="wrap">
 		<?php screen_icon(); ?>
-		<h2><?php printf( __( '%s Theme Options', '_s' ), get_current_theme() ); ?></h2>
+		<?php $theme_name = function_exists( 'wp_get_theme' ) ? wp_get_theme() : get_current_theme(); ?>
+		<h2><?php printf( __( '%s Theme Options', '_s' ), $theme_name ); ?></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
