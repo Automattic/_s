@@ -31,4 +31,4 @@
 
 		<?php } ?>
 	</div><!-- .entry-content -->
-</article><!-- #post-0 -->
+</article><!-- #post-0 .post .no-results .not-found -->
