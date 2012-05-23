@@ -78,7 +78,7 @@ get_header();
 							<?php if ( ! empty( $post->post_excerpt ) ) : ?>
 							<div class="entry-caption">
 								<?php the_excerpt(); ?>
-							</div>
+							</div><!-- .entry-caption -->
 							<?php endif; ?>
 						</div><!-- .entry-attachment -->
 
@@ -106,6 +106,6 @@ get_header();
 			<?php endwhile; // end of the loop. ?>
 
 			</div><!-- #content -->
-		</div><!-- #primary .site-content -->
+		</div><!-- #primary .site-content .image-attachment -->
 
 <?php get_footer(); ?>

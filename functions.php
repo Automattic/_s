@@ -120,3 +120,27 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
+
+/**
+* Print the <title> tag based on what is being viewed.
+*
+* @since TODO
+*/
+function _s_document_title( $title ) {
+	global $page, $paged;
+	
+	// Add the blog name.
+	$title .= get_bloginfo( 'name' );
+	
+	// Add the blog description for the home/front page.
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title .= " | $site_description";
+	
+	// Add a page number if necessary:
+	if ( $paged >= 2 || $page >= 2 )
+		$title .= ' | ' . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+	
+	return $title;
+}
+add_filter( 'wp_title', '_s_document_title' );

@@ -55,7 +55,6 @@
 		<span class="sep"> | </span>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) ); ?></span>
 		<?php endif; ?>
-
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
-	</footer><!-- #entry-meta -->
+	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
