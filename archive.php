@@ -65,7 +65,7 @@ get_header(); ?>
 								echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
 						}
 					?>
-				</header>
+				</header><!-- .page-header -->
 
 				<?php rewind_posts(); ?>
 

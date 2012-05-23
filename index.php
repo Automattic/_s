@@ -46,7 +46,7 @@ get_header(); ?>
 					<div class="entry-content">
 						<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s' ), admin_url( 'post-new.php' ) ); ?></p>
 					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+				</article><!-- #post-0 .post .no-results .not-found -->
 
 			<?php endif; ?>
 

@@ -15,7 +15,7 @@ get_header(); ?>
 
 				<header class="page-header">
 					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header>
+				</header><!-- .page-header -->
 
 				<?php _s_content_nav( 'nav-above' ); ?>
 
@@ -39,7 +39,7 @@ get_header(); ?>
 						<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', '_s' ); ?></p>
 						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+				</article><!-- #post-0 .post .no-results .not-found -->
 
 			<?php endif; ?>
 
