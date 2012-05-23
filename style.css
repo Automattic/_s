@@ -4,7 +4,7 @@ Theme URI: https://wpcom-themes.svn.automattic.com/_s/
 Author: Automattic
 Author URI: http://automattic.com/
 Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.0-wpcom
+Version: 1.1-wpcom
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -239,7 +239,6 @@ input[type="submit"] {
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 12px;
 	font-size: 1.4rem;
-	line-height: 2;
 	padding: 1.12em 1.5em .88em;
 	text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }

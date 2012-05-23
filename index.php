@@ -38,15 +38,7 @@ get_header(); ?>
 
 			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
 
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'No posts to display', '_s' ); ?></h1>
-					</header><!-- .entry-header -->
-
-					<div class="entry-content">
-						<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s' ), admin_url( 'post-new.php' ) ); ?></p>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 .post .no-results .not-found -->
+				<?php get_template_part( 'no-results', 'index' ); ?>
 
 			<?php endif; ?>
 

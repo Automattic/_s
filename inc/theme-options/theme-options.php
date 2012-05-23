@@ -12,19 +12,12 @@
  * This function is attached to the admin_init action hook.
  *
  * This call to register_setting() registers a validation callback, _s_theme_options_validate(),
- * which is used when the option is saved, to ensure that our option values are complete, properly
+ * which is used when the option is saved, to ensure that our option values are properly
  * formatted, and safe.
- *
- * We also use this function to add our theme option if it doesn't already exist.
  *
  * @since _s 1.0
  */
 function _s_theme_options_init() {
-
-	// If we have no options in the database, let's add them now.
-	if ( false === _s_get_theme_options() )
-		add_option( '_s_theme_options', _s_get_default_theme_options() );
-
 	register_setting(
 		'_s_options',       // Options group, see settings_fields() call in _s_theme_options_render_page()
 		'_s_theme_options', // Database option, see _s_get_theme_options()
@@ -148,29 +141,26 @@ function _s_sample_radio_buttons() {
 }
 
 /**
- * Returns the default options for _s.
- *
- * @since _s 1.0
- */
-function _s_get_default_theme_options() {
-	$default_theme_options = array(
-		'sample_checkbox' => 'off',
-		'sample_text_input' => '',
-		'sample_select_options' => '',
-		'sample_radio_buttons' => '',
-		'sample_textarea' => '',
-	);
-
-	return apply_filters( '_s_default_theme_options', $default_theme_options );
-}
-
-/**
  * Returns the options array for _s.
  *
  * @since _s 1.0
  */
 function _s_get_theme_options() {
-	return get_option( '_s_theme_options', _s_get_default_theme_options() );
+	$saved = (array) get_option( '_s_theme_options' );
+	$defaults = array(
+		'sample_checkbox'       => 'off',
+		'sample_text_input'     => '',
+		'sample_select_options' => '',
+		'sample_radio_buttons'  => '',
+		'sample_textarea'       => '',
+	);
+
+	$defaults = apply_filters( '_s_default_theme_options', $defaults );
+
+	$options = wp_parse_args( $saved, $defaults );
+	$options = array_intersect_key( $options, $defaults );
+
+	return $options;
 }
 
 /**
@@ -255,7 +245,7 @@ function _s_settings_field_sample_textarea() {
 }
 
 /**
- * Returns the options array for _s.
+ * Renders the Theme Options administration screen.
  *
  * @since _s 1.0
  */
@@ -283,22 +273,24 @@ function _s_theme_options_render_page() {
  * @see _s_theme_options_init()
  * @todo set up Reset Options action
  *
+ * @param array $input Unknown values.
+ * @return array Sanitized theme options ready to be stored in the database.
+ *
  * @since _s 1.0
  */
 function _s_theme_options_validate( $input ) {
-	$output = $defaults = _s_get_default_theme_options();
+	$output = array();
 
-	// The sample checkbox should either be on or off
-	if ( ! isset( $input['sample_checkbox'] ) )
-		$input['sample_checkbox'] = 'off';
-	$output['sample_checkbox'] = ( $input['sample_checkbox'] == 'on' ? 'on' : 'off' );
+	// Checkboxes will only be present if checked.
+	if ( isset( $input['sample_checkbox'] ) )
+		$output['sample_checkbox'] = 'on';
 
 	// The sample text input must be safe text with no HTML tags
-	if ( isset( $input['sample_text_input'] ) )
+	if ( isset( $input['sample_text_input'] ) && ! empty( $input['sample_text_input'] ) )
 		$output['sample_text_input'] = wp_filter_nohtml_kses( $input['sample_text_input'] );
 
 	// The sample select option must actually be in the array of select options
-	if ( array_key_exists( $input['sample_select_options'], _s_sample_select_options() ) )
+	if ( isset( $input['sample_select_options'] ) && array_key_exists( $input['sample_select_options'], _s_sample_select_options() ) )
 		$output['sample_select_options'] = $input['sample_select_options'];
 
 	// The sample radio button value must be in our array of radio button values
@@ -306,8 +298,8 @@ function _s_theme_options_validate( $input ) {
 		$output['sample_radio_buttons'] = $input['sample_radio_buttons'];
 
 	// The sample textarea must be safe text with the allowed tags for posts
-	if ( isset( $input['sample_textarea'] ) )
-		$output['sample_textarea'] = wp_filter_post_kses($input['sample_textarea'] );
+	if ( isset( $input['sample_textarea'] ) && ! empty( $input['sample_textarea'] ) )
+		$output['sample_textarea'] = wp_filter_post_kses( $input['sample_textarea'] );
 
-	return apply_filters( '_s_theme_options_validate', $output, $input, $defaults );
+	return apply_filters( '_s_theme_options_validate', $output, $input );
 }

@@ -9,7 +9,7 @@ jQuery( document ).ready( function( $ ) {
 		$masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
 		$masthead.find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
 
-		$( '.menu-toggle' ).click( function() {
+		$( '.menu-toggle' ).unbind( 'click' ).click( function() {
 			$masthead.find( '.menu' ).toggle();
 			$( this ).toggleClass( 'toggled-on' );
 		} );
