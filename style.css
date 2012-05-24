@@ -288,16 +288,19 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 	padding: 0;
 }
 input[type=text],
+input[type=email],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
 input[type=text]:focus,
+input[type=email]:focus,
 textarea:focus {
 	color: #111;
 }
-input[type=text] {
+input[type=text],
+input[type=email] {
 	padding: 3px;
 }
 textarea {
