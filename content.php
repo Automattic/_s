@@ -57,5 +57,5 @@
 		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
-	</footer><!-- #entry-meta -->
+	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
