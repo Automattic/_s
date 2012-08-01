@@ -169,7 +169,7 @@ function _s_get_theme_options() {
 function _s_settings_field_sample_checkbox() {
 	$options = _s_get_theme_options();
 	?>
-	<label for"sample-checkbox">
+	<label for="sample-checkbox">
 		<input type="checkbox" name="_s_theme_options[sample_checkbox]" id="sample-checkbox" <?php checked( 'on', $options['sample_checkbox'] ); ?> />
 		<?php _e( 'A sample checkbox.', '_s' ); ?>
 	</label>
