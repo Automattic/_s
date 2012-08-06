@@ -48,7 +48,7 @@
 				 * to use _s_comment() to format the comments.
 				 * If you want to overload this in a child theme then you can
 				 * define _s_comment() and that will be used instead.
-				 * See _s_comment() in functions.php for more.
+				 * See _s_comment() in inc/template-tags.php for more.
 				 */
 				wp_list_comments( array( 'callback' => '_s_comment' ) );
 			?>
