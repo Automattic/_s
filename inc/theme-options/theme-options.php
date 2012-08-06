@@ -108,7 +108,7 @@ function _s_sample_select_options() {
 			'label' => __( 'Four', '_s' )
 		),
 		'5' => array(
-			'value' => '3',
+			'value' => '5',
 			'label' => __( 'Five', '_s' )
 		)
 	);
