@@ -18,7 +18,7 @@
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
 		</div><!-- .site-info -->
-	</footer><!-- .site-footer .site-footer -->
+	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
 
 <?php wp_footer(); ?>
