@@ -15,7 +15,20 @@ if ( ! function_exists( '_s_content_nav' ) ):
  * @since _s 1.0
  */
 function _s_content_nav( $nav_id ) {
-	global $wp_query;
+	global $wp_query, $post;
+
+	// Don't print empty markup on single pages if there's nowhere to navigate.
+	if ( is_single() ) {
+		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+		$next = get_adjacent_post( false, '', false );
+
+		if ( ! $next && ! $previous )
+			return;
+	}
+
+	// Don't print empty markup in archives if there's only one page.
+	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
+		return;
 
 	$nav_class = 'site-navigation paging-navigation';
 	if ( is_single() )
