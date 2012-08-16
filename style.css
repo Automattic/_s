@@ -297,7 +297,9 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
+	border: 1px solid #888;
 	color: #111;
+	outline: 0;
 }
 input[type=text],
 input[type=email] {
