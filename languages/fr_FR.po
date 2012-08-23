@@ -1,0 +1,2613 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: _s\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-22 22:52+0100\n"
+"PO-Revision-Date: 2012-08-22 22:56+0100\n"
+"Last-Translator: FxB <fx@fxbenard.com>\n"
+"Language-Team: FxB <fx@fxbenard.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html__;esc_html_e;esc_attr__;esc_att_e;"
+"_n;_x;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=n>1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oups ! Cette page ne peut pas être trouvée."
+
+#: 404.php:20
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Il semble que rien n'a été trouvé à cet endroit. Essayer peut-être un des "
+"liens ci-dessous ou une recherche ?"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Catégories les plus utilisées"
+
+#: 404.php:35
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Essayez de voir du côté des archives mensuelles. %1$s"
+
+#: archive.php:22
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Archives pour la catégorie&nbsp;: %s"
+
+#: archive.php:25
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Archives du mot-clef&nbsp;: %s"
+
+#: archive.php:32
+#, php-format
+msgid "Author Archives: %s"
+msgstr "Archives de l&rsquo;auteur&nbsp;: %s"
+
+#: archive.php:40
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Archives quotidiennes&nbsp;: %s"
+
+#: archive.php:43
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Archives mensuelles&nbsp;: %s"
+
+#: archive.php:46
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Archives annuelles&nbsp;: %s"
+
+#: archive.php:49 sidebar.php:18
+msgid "Archives"
+msgstr "Archives"
+
+#: comments.php:32
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr "Une réflexion au sujet de &laquo;&nbsp;%2$s&nbsp;&raquo;"
+
+#: comments.php:39 comments.php:59
+msgid "Comment navigation"
+msgstr "Navigation des commentaires"
+
+#: comments.php:40 comments.php:60
+msgid "&larr; Older Comments"
+msgstr "&larr; Commentaire plus ancien"
+
+#: comments.php:41 comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr "Commentaires plus récents &rarr;"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: content-page.php:17 content-single.php:19 content.php:26 image.php:86
+msgid "Pages:"
+msgstr "Pages&nbsp;:"
+
+#: content-page.php:18 content-single.php:57 content.php:59 image.php:34
+#: image.php:100
+msgid "Edit"
+msgstr "Modifier"
+
+#: content-single.php:25 content.php:34 content.php:44
+msgid ", "
+msgstr ", "
+
+#: content-single.php:33
+#, php-format
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Ce contenu a été taggué %2$s. Mettre en favoris avec ce<a href=\"%3$s\" "
+"title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a>."
+
+#: content-single.php:35
+#, php-format
+msgid ""
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"Vous pouvez la mettre en favoris avec <a href=\"%3$s\" title=\"Permalien "
+"pour %4$s\" rel=\"bookmark\">ce permalien</a>."
+
+#: content-single.php:41
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Ce contenu a été publié dans %1$s, et marqué avec %2$s. Mettez-le en favori "
+"avec son <a href=\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark"
+"\">permalien</a>."
+
+#: content-single.php:43
+#, php-format
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Ce contenu a été publié dans %1$s. Mettez-le en favori avec son <a href="
+"\"%3$s\" title=\"Permalien vers %4$s\" rel=\"bookmark\">permalien</a>."
+
+#: content.php:10
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permalien vers %s"
+
+#: content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuer la lecture <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:38
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Publié dans %1$s"
+
+#: content.php:49
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Tagué avec %1$s"
+
+#: content.php:56
+msgid "Leave a comment"
+msgstr "Laisser un commentaire"
+
+#: content.php:56
+msgid "1 Comment"
+msgstr "1 commentaire"
+
+#: content.php:56
+msgid "% Comments"
+msgstr "% commentaires"
+
+#: footer.php:17
+#, php-format
+msgid "Proudly powered by %s"
+msgstr "Fièrement propulsé par %s"
+
+#: footer.php:19
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr "Thème : %1$s par %2$s."
+
+#: functions.php:71
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: functions.php:89
+msgid "Sidebar"
+msgstr "Colonne latérale"
+
+#: header.php:33
+#, php-format
+msgid "Page %s"
+msgstr "Page %s"
+
+#: header.php:55
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:56
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+#: image.php:24
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-"
+"size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
+"\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+"Publié <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s"
+"\" pubdate>%2$s</time></span> à <a href=\"%3$s\" title=\"Lien vers la grande "
+"image\">%4$s &times; %5$s</a> dans <a href=\"%6$s\" title=\"Retour vers %7$s"
+"\" rel=\"gallery\">%7$s</a>"
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr "&larr; Précédent"
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr "Suivant &rarr;"
+
+#: image.php:92
+#, php-format
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Publier un commentaire"
+"\">Publier un commentaire</a> or laisser un rétrolien <a class=\"trackback-"
+"link\" href=\"%s\" title=\"Ping URL vers votre article\" rel=\"trackback"
+"\">URL du rétrolien</a>."
+
+#: image.php:94
+#, php-format
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+"Les commentaires sont fermés, mais vous pouvez laisser un ping : <a class="
+"\"trackback-link\" href=\"%s\" title=\"Ping URL vers votre article\" rel="
+"\"trackback\"> URL du ping</a>."
+
+#: image.php:96
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+"Les rétroliens sont fermés, mais vous pouvez <a class=\"comment-link\" href="
+"\"#respond\" title=\"Publier un commentaire\"> publier un commentaire </ a>."
+
+#: image.php:98
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Les commentaires et les rétroliens sont actuellement fermés."
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr "Rien n&rsquo;a été trouvé"
+
+#: no-results.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Prêt à publier votre premier article ? <a href=\"%1$s\">Commencez ici</a>."
+
+#: no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, mais rien ne correspond à votre critères de recherche. Veuillez "
+"réessayer avec d&rsquo;autres mots-clefs."
+
+#: no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Il semble que vous ne trouvez ce que vous cherchez. Peut-être qu'une "
+"recherche pourra vous aider."
+
+#: search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour : %s"
+
+#: searchform.php:10
+msgid "Search"
+msgstr "Rechercher"
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr "Méta"
+
+#: inc/template-tags.php:26
+msgid "Post navigation"
+msgstr "Navigation des articles"
+
+#: inc/template-tags.php:30
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:31
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:36
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
+
+#: inc/template-tags.php:40
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:65
+msgid "Pingback:"
+msgstr "Ping&nbsp;:"
+
+#: inc/template-tags.php:65 inc/template-tags.php:88
+msgid "(Edit)"
+msgstr "(Modifier)"
+
+#: inc/template-tags.php:75
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
+
+#: inc/template-tags.php:78
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
+#: inc/template-tags.php:86
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s à %2$s"
+
+#: inc/template-tags.php:113
+#, php-format
+msgid ""
+"Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
+"\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+"Publié le <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
+"\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: inc/template-tags.php:119
+#, php-format
+msgid "View all posts by %s"
+msgstr "Afficher tous les articles de %s"
+
+#: inc/theme-options/theme-options.php:38
+msgid "Sample Checkbox"
+msgstr "Exemple de case à cocher"
+
+#: inc/theme-options/theme-options.php:44
+msgid "Sample Text Input"
+msgstr "Exemple de saisie de texte"
+
+#: inc/theme-options/theme-options.php:45
+msgid "Sample Select Options"
+msgstr "Exemple d'options de selection"
+
+#: inc/theme-options/theme-options.php:46
+msgid "Sample Radio Buttons"
+msgstr "Exemple de boutons radio"
+
+#: inc/theme-options/theme-options.php:47
+msgid "Sample Textarea"
+msgstr "Exemple de zone de texte"
+
+#: inc/theme-options/theme-options.php:74
+#: inc/theme-options/theme-options.php:75
+msgid "Theme Options"
+msgstr "Options du Thème"
+
+#: inc/theme-options/theme-options.php:92
+msgid "Zero"
+msgstr "Zéro"
+
+#: inc/theme-options/theme-options.php:96
+msgid "One"
+msgstr "Une"
+
+#: inc/theme-options/theme-options.php:100
+msgid "Two"
+msgstr "Deux"
+
+#: inc/theme-options/theme-options.php:104
+msgid "Three"
+msgstr "Trois"
+
+#: inc/theme-options/theme-options.php:108
+msgid "Four"
+msgstr "Quatre"
+
+#: inc/theme-options/theme-options.php:112
+msgid "Five"
+msgstr "Cinq"
+
+#: inc/theme-options/theme-options.php:128
+msgid "Yes"
+msgstr "Oui"
+
+#: inc/theme-options/theme-options.php:132
+msgid "No"
+msgstr "Non"
+
+#: inc/theme-options/theme-options.php:136
+msgid "Maybe"
+msgstr "Peut-être"
+
+#: inc/theme-options/theme-options.php:174
+msgid "A sample checkbox."
+msgstr "Un exemple de case à cocher."
+
+#: inc/theme-options/theme-options.php:186
+msgid "Sample text input"
+msgstr "Exemple d'entrée de texte"
+
+#: inc/theme-options/theme-options.php:212
+msgid "Sample select input"
+msgstr "Exemple de sélection d'entrée"
+
+#: inc/theme-options/theme-options.php:243
+msgid "Sample textarea"
+msgstr "Exemple de zone de texte"
+
+#: inc/theme-options/theme-options.php:257
+#, php-format
+msgid "%s Theme Options"
+msgstr "Options du thème %s"
+
+#~ msgid "Download \"%s\";"
+#~ msgstr "Télécharger \"%s\";"
+
+#~ msgid "Gallery"
+#~ msgstr "Galerie"
+
+#~ msgid ""
+#~ "[entry-published] [entry-comments-link zero=\"Respond\" one=\"%1$s\" more="
+#~ "\"%1$s\"] [entry-shortlink]"
+#~ msgstr ""
+#~ "[entry-author] [entry-published] [entry-comments-link zero=\"Répondre\" "
+#~ "one=\"%1$s\" more=\"%1$s\"] [entry-edit-link]"
+
+#~ msgid ""
+#~ "[entry-published] [entry-comments-link zero=\"Respond\" one=\"%1$s\" more="
+#~ "\"%1$s\"]"
+#~ msgstr ""
+#~ "[entry-published] [entry-comments-link zero=\"Répondre\" one=\"%1$s\" "
+#~ "more=\"%1$s\"]"
+
+#~ msgid "Copyright &#169; [the-year] [site-link]."
+#~ msgstr "Copyright &#169; [the-year] [site-link]."
+
+#~ msgid "Powered by [wp-link] and [theme-link]."
+#~ msgstr "Propulsé par [wp-link] et [theme-link]."
+
+#~ msgid "Apologies, but no entries were found."
+#~ msgstr "Désolé, mais aucune entrée n'a été trouvée."
+
+#~ msgid ""
+#~ "[entry-author] [entry-published] [entry-comments-link zero=\"Respond\" "
+#~ "one=\"%1$s\" more=\"%1$s\"] [entry-edit-link]"
+#~ msgstr ""
+#~ "[entry-author] [entry-published] [entry-comments-link zero=\"Répondre\" "
+#~ "one=\"%1$s\" more=\"%1$s\"] [entry-edit-link]"
+
+#~ msgid ""
+#~ "[entry-terms taxonomy=\"category\" after=\", \"] [entry-terms taxonomy="
+#~ "\"post_tag\"]"
+#~ msgstr ""
+#~ "[entry-terms taxonomy=\"category\" after=\", \"] [entry-terms taxonomy="
+#~ "\"post_tag\"]"
+
+#~ msgid "Please do not load this page directly. Thanks!"
+#~ msgstr "S'il vous plaît ne pas charger cette page directement. Merci !"
+
+#~ msgid "Your Comments"
+#~ msgstr "Vos commentaires"
+
+#~ msgid ""
+#~ "You tried going to %1$s, and it doesn't exist. All is not lost! You can "
+#~ "search for what you're looking for."
+#~ msgstr ""
+#~ "Vous essayez d'aller à %1$s, et ça n'existe pas. Tout n'est pas perdu ! "
+#~ "Vous pouvez lancer une recherche pour ce que vous recherchez."
+
+#~ msgid "favorites"
+#~ msgstr "favoris"
+
+#~ msgid "?"
+#~ msgstr "?"
+
+#~ msgid "This topic is one of your %favLinkYes% [%favDel%]"
+#~ msgstr "Ce sujet fait parti de vos %favLinkYes% [%favDel%]"
+
+#~ msgid "%favAdd% (%favLinkNo%)"
+#~ msgstr "%favAdd% (%favLinkNo%)"
+
+#~ msgid "&times;"
+#~ msgstr "&times;"
+
+#~ msgid "Add this topic to your favorites"
+#~ msgstr "Ajouter ce sujet à vos favoris"
+
+#~ msgid "Subscribe"
+#~ msgstr "Abonnez-vous"
+
+#~ msgid "Unsubscribe"
+#~ msgstr "Se désabonner"
+
+#~ msgid "You are browsing the search results for \"%s\""
+#~ msgstr "Vous parcourez les résultats de recherche pour \"% s\""
+
+#~ msgid "Archives by date"
+#~ msgstr "Archives par date"
+
+#~ msgid "You are browsing the site archives by date."
+#~ msgstr "Vous parcourez les archives du site par date."
+
+#~ msgid "You are browsing the site archives."
+#~ msgstr "Vous parcourez les archives du site."
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Return to entry"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Retour à l'entrée"
+
+#~ msgid "Topic Tag: %s"
+#~ msgstr "Mot-clef du sujet :%s"
+
+#~ msgid "Load More"
+#~ msgstr "Charger plus"
+
+#~ msgid "Sorry, there was no activity found. Please try a different filter."
+#~ msgstr ""
+#~ "Désolé, aucune activité trouvée. S'il vous plaît essayez un autre filtre."
+
+#~ msgid ""
+#~ "<a href=\"%1$s\">%2$s</a> replied <a href=\"%3$s\" class=\"activity-time-"
+#~ "since\"><span class=\"time-since\">%4$s</span></a>"
+#~ msgstr ""
+#~ "<a href=\"%1$s\">%2$s</a> a répondu <a href=\"%3$s\" class=\"activity-"
+#~ "time-since\"><span class=\"time-since\">%4$s</span></a>"
+
+#~ msgid "Reply"
+#~ msgstr "Répondre"
+
+#~ msgid "Delete"
+#~ msgstr "Supprimer"
+
+#~ msgid "Comment <span>%s</span>"
+#~ msgstr "Commentaire <span>%s</span>"
+
+#~ msgid "Favorite"
+#~ msgstr "Favoris"
+
+#~ msgid "Remove Favorite"
+#~ msgstr "Supprimer le favoris"
+
+#~ msgid "In reply to: "
+#~ msgstr "En réponse à :"
+
+#~ msgid "View Thread / Permalink"
+#~ msgstr "Afficher le fil / permalien"
+
+#~ msgid "View"
+#~ msgstr "Voir"
+
+#~ msgid "Post"
+#~ msgstr "Article"
+
+#~ msgid "or press esc to cancel."
+#~ msgstr "ou appuyez sur ESC pour annuler."
+
+#~ msgid "Activity"
+#~ msgstr "Activité"
+
+#~ msgid "The public activity for everyone on this site."
+#~ msgstr "L'activité public pour tout le monde sur ce site."
+
+#~ msgid "All Members <span>%s</span>"
+#~ msgstr "Tous les membres <span>%s</span>"
+
+#~ msgid "The activity of my friends only."
+#~ msgstr "Uniquement l'activité de mles amis."
+
+#~ msgid "My Friends <span>%s</span>"
+#~ msgstr "Mes amis <span>%s</span>"
+
+#~ msgid "The activity of groups I am a member of."
+#~ msgstr "L'activité des groupes dont je suis membre."
+
+#~ msgid "My Groups <span>%s</span>"
+#~ msgstr "Mes groupes <span>%s</span>"
+
+#~ msgid "The activity I've marked as a favorite."
+#~ msgstr "L'activité que j'ai marqué comme favorite."
+
+#~ msgid "My Favorites <span>%s</span>"
+#~ msgstr "Mes favoris <span>%s</span>"
+
+#~ msgid "Activity that I have been mentioned in."
+#~ msgstr "Activité dans laquelle je suis mentionné."
+
+#~ msgid "Mentions"
+#~ msgstr "Mentions"
+
+#~ msgid "<span>%s new</span>"
+#~ msgstr "<span>%s nouveau</span>"
+
+#~ msgid "RSS Feed"
+#~ msgstr "Flux RSS"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Show:"
+#~ msgstr "Afficher :"
+
+#~ msgid "Everything"
+#~ msgstr "Tout"
+
+#~ msgid "Updates"
+#~ msgstr "Mises à jour"
+
+#~ msgid "Posts"
+#~ msgstr "Articles"
+
+#~ msgid "Comments"
+#~ msgstr "Commentaires"
+
+#~ msgid "Forum Topics"
+#~ msgstr "Sujets du forums"
+
+#~ msgid "Forum Replies"
+#~ msgstr "Réponses du forum"
+
+#~ msgid "New Groups"
+#~ msgstr "Nouveaux groupes"
+
+#~ msgid "Group Memberships"
+#~ msgstr "Membres du groupe"
+
+#~ msgid "Friendships"
+#~ msgstr "Amitié"
+
+#~ msgid "New Members"
+#~ msgstr "Nouveaux membres"
+
+#~ msgid "What's new in %s, %s?"
+#~ msgstr "Quoi de neuf dans %s, %s?"
+
+#~ msgid "What's new, %s?"
+#~ msgstr "Quoi de neuf dans %s ?"
+
+#~ msgid "Post Update"
+#~ msgstr "Article mis à jour"
+
+#~ msgid "My Profile"
+#~ msgstr "Mon profil"
+
+#~ msgid "Started by:"
+#~ msgstr "Commencé par&nbsp;:"
+
+#~ msgid "Profile of User %s"
+#~ msgstr "Profil de l&#8217;utilisateur %s"
+
+#~ msgid "Back to Profile"
+#~ msgstr "Retour au profil"
+
+#~ msgid "You are already logged in."
+#~ msgstr "Vous êtes déjà connecté(e)."
+
+#~ msgid "Private"
+#~ msgstr "Privé"
+
+#~ msgid "You do not have permission to view this forum."
+#~ msgstr "Vous n&rsquo;avez pas l&rsquo;autorisation de voir ce forum."
+
+#~ msgid "Oh bother! No forums were found here!"
+#~ msgstr "Oups ! Pas de forums ont été trouvés ici !"
+
+#~ msgid "Oh bother! No topics were found here!"
+#~ msgstr "Oups ! Pas de sujets ont été trouvés ici !"
+
+#~ msgid "Author Information"
+#~ msgstr "Informations sur l'auteur"
+
+#~ msgid "Your information:"
+#~ msgstr "Vos informations&nbsp;:"
+
+#~ msgid "Name (required):"
+#~ msgstr "Nom (obligatoire) :"
+
+#~ msgid "Mail (will not be published) (required):"
+#~ msgstr "Email (ne sera pas publié) (obligatoire) :"
+
+#~ msgid "Website:"
+#~ msgstr "Site Web&nbsp;:"
+
+#~ msgid "Protected"
+#~ msgstr "Protégé"
+
+#~ msgid "Reply To: %s"
+#~ msgstr "Répondre à&nbsp;: %s"
+
+#~ msgid ""
+#~ "This topic is marked as closed to new replies, however your posting "
+#~ "capabilities still allow you to do so."
+#~ msgstr ""
+#~ "Ce sujet est marqué comme fermé aux nouvelles réponses, mais vos "
+#~ "capacités de publication vous permettent encore de le faire."
+
+#~ msgid "Your account has the ability to post unrestricted HTML content."
+#~ msgstr ""
+#~ "Votre compte a la possibilité de poster sans restriction de contenu HTML."
+
+#~ msgid "Reply:"
+#~ msgstr "Répondre&nbsp;:"
+
+#~ msgid ""
+#~ "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> "
+#~ "tags and attributes:"
+#~ msgstr ""
+#~ "Vous pouvez utiliser ces balises et attributs <abbr title=\"HyperText "
+#~ "Markup Language\">HTML</abbr>&nbsp;:"
+
+#~ msgid "Tags:"
+#~ msgstr "Mots-clefs&nbsp;:"
+
+#~ msgid "Notify the author of follow-up replies via email"
+#~ msgstr "Avertissez l'auteur du suivi des réponses par e-mail"
+
+#~ msgid "Notify me of follow-up replies via email"
+#~ msgstr "M'avertir du suivi des réponses par e-mail"
+
+#~ msgid "Revision"
+#~ msgstr "Révision"
+
+#~ msgid "Keep a log of this edit:"
+#~ msgstr "Gardez un log de cette édition :"
+
+#~ msgid "Optional reason for editing:"
+#~ msgstr "Raison optionnelle d'édition :"
+
+#~ msgid "Submit"
+#~ msgstr "Envoyer"
+
+#~ msgid "The topic &#8216;%s&#8217; is closed to new replies."
+#~ msgstr "Le sujet &#8216;%s&#8217; est fermé à de nouvelles réponses."
+
+#~ msgid "The forum &#8216;%s&#8217; is closed to new topics and replies."
+#~ msgstr ""
+#~ "Le forum &#8216;%s&#8217; est fermé à de nouveaux sujets et de nouvelles "
+#~ "réponses."
+
+#~ msgid "You cannot reply to this topic."
+#~ msgstr "Vous ne pouvez pas répondre à ce sujet."
+
+#~ msgid "You must be logged in to reply to this topic."
+#~ msgstr "Désolé, vous devez être connecté(e) pour répondre à cette article."
+
+#~ msgid "Merge topic \"%s\""
+#~ msgstr "Fusionner le sujet \"%s\""
+
+#~ msgid ""
+#~ "Select the topic to merge this one into. The destination topic will "
+#~ "remain the lead topic, and this one will change into a reply."
+#~ msgstr ""
+#~ "Sélectionnez le sujet à fusionner avec celui-ci. Le sujet de destination "
+#~ "restera le sujet principal des discussions, et celui-ci se transformera "
+#~ "en une réponse."
+
+#~ msgid ""
+#~ "To keep this topic as the lead, go to the other topic and use the merge "
+#~ "tool from there instead."
+#~ msgstr ""
+#~ "Pour garder ce sujet en tant que chef de file, allez à l'autre sujet et "
+#~ "utiliser l'outil de fusion plutôt."
+
+#~ msgid ""
+#~ "All replies within both topics will be merged chronologically. The order "
+#~ "of the merged replies is based on the time and date they were posted. If "
+#~ "the destination topic was created after this one, it's post date will be "
+#~ "updated to second earlier than this one."
+#~ msgstr ""
+#~ "Toutes les réponses des deux sujets seront chronologiquement fusionnées. "
+#~ "L'ordre des réponses fusionnées est basé sur la date et l'heure ou elles "
+#~ "ont été publiées. Si le sujet de destination a été créé après celui-ci, "
+#~ "c'est la date la plus récente qui sera utilisée."
+
+#~ msgid "Destination"
+#~ msgstr "Destination"
+
+#~ msgid "Merge with this topic:"
+#~ msgstr "Fusionner avec ce sujet :"
+
+#~ msgid "No topics were found to which the topic could be merged to!"
+#~ msgstr ""
+#~ "Aucun sujet n'a été trouvé avec lequel le sujet pourrait être fusionné !"
+
+#~ msgid "There are no other topics in this forum to merge with."
+#~ msgstr "Il n'y a pas d'autres sujets dans ce forum a fusionner."
+
+#~ msgid "Topic Extras"
+#~ msgstr "Sujet extras"
+
+#~ msgid "Merge topic subscribers"
+#~ msgstr "Fusionner les abonnés du sujet"
+
+#~ msgid "Merge topic favoriters"
+#~ msgstr "Fusionner les membres avec le sujet en favoris"
+
+#~ msgid "Merge topic tags"
+#~ msgstr "Fusionner les mots-clefs du sujet"
+
+#~ msgid "<strong>WARNING:</strong> This process cannot be undone."
+#~ msgstr ""
+#~ "<strong>AVERTISSEMENT :</strong> Ce processus ne peut pas être annulée."
+
+#~ msgid "You do not have the permissions to edit this topic!"
+#~ msgstr "Vous n&rsquo;avez pas l&rsquo;autorisation de modifier ce sujet !"
+
+#~ msgid "You cannot edit this topic."
+#~ msgstr "Vous ne pouvez pas modifier ce sujet."
+
+#~ msgid "Split topic \"%s\""
+#~ msgstr "Diviser le sujet \"%s\""
+
+#~ msgid ""
+#~ "When you split a topic, you are slicing it in half starting with the "
+#~ "reply you just selected. Choose to use that reply as a new topic with a "
+#~ "new title, or merge those replies into an existing topic."
+#~ msgstr ""
+#~ "Lorsque vous divisez un sujet, vous le tranchez en deux à partir de la "
+#~ "réponse que vous venez de sélectionner. Choisissez d'utiliser cette "
+#~ "réponse comme un nouveau sujet avec un nouveau titre, ou de fusionner ces "
+#~ "réponses dans un sujet existant."
+
+#~ msgid ""
+#~ "If you use the existing topic option, replies within both topics will be "
+#~ "merged chronologically. The order of the merged replies is based on the "
+#~ "time and date they were posted."
+#~ msgstr ""
+#~ "Si vous utilisez l'option sujet existant, les réponses des deux sujets "
+#~ "seront chronologiquement fusionnées. L'ordre des réponses fusionnées est "
+#~ "basé sur la date et l'heure ou elles ont été publiées."
+
+#~ msgid "Split Method"
+#~ msgstr "Méthode de séparation"
+
+#~ msgid "New topic in <strong>%s</strong> titled:"
+#~ msgstr "Nouveau sujet dans <strong>%s</strong> intitulé&nbsp;:"
+
+#~ msgid "Split: %s"
+#~ msgstr "Diviser&nbsp;: %s"
+
+#~ msgid "Use an existing topic in this forum:"
+#~ msgstr "Utilisez un sujet existant dans ce forum :"
+
+#~ msgid "No other topics found!"
+#~ msgstr "Aucun autre sujet trouvé&nbsp;!"
+
+#~ msgid "Copy subscribers to the new topic"
+#~ msgstr "Copier les abonnés dans le nouveau sujet"
+
+#~ msgid "Copy favoriters to the new topic"
+#~ msgstr "Copier les membres avec le sujet en favoris dans le nouveau sujet"
+
+#~ msgid "Copy topic tags to the new topic"
+#~ msgstr "Copier les mots-clefs dans le nouveau sujet"
+
+#~ msgid "Rename"
+#~ msgstr "Renommer"
+
+#~ msgid "Leave the slug empty to have one automatically generated."
+#~ msgstr "Laissez l'identifiant vide pour en avoir un généré automatiquement."
+
+#~ msgid ""
+#~ "Changing the slug affects its permalink. Any links to the old slug will "
+#~ "stop working."
+#~ msgstr ""
+#~ "Modifier l'identifiant affecte son permalien. Tous les liens vers "
+#~ "l'ancien identifiant s'arrêteront de fonctionner."
+
+#~ msgid "Name:"
+#~ msgstr "Nom&nbsp;:"
+
+#~ msgid "Slug:"
+#~ msgstr "Identifiant&nbsp;:"
+
+#~ msgid "Merge"
+#~ msgstr "Fusionner"
+
+#~ msgid "Merging tags together cannot be undone."
+#~ msgstr "La fusion des mots-clefs ne peut pas être annulée."
+
+#~ msgid "Existing tag:"
+#~ msgstr "Mot-clef existant&nbsp;:"
+
+#~ msgid ""
+#~ "Are you sure you want to merge the \"%s\" tag into the tag you specified?"
+#~ msgstr ""
+#~ "Etes-vous sûr de vouloir fusionner le mot-clef \"%s\" avec celui que vous "
+#~ "avez spécifié?"
+
+#~ msgid "This does not delete your topics. Only the tag itself is deleted."
+#~ msgstr "Cela ne supprime vos sujets. Seule le mot-clef sera supprimée."
+
+#~ msgid "Deleting a tag cannot be undone."
+#~ msgstr "La suppression d'un mot-clef ne peut pas être annulée."
+
+#~ msgid "Any links to this tag will no longer function."
+#~ msgstr "Tous les liens vers ce mot-clef ne fonctionneront plus."
+
+#~ msgid ""
+#~ "Are you sure you want to delete the \"%s\" tag? This is permanent and "
+#~ "cannot be undone."
+#~ msgstr ""
+#~ "Êtes-vous certain(e) de vouloir effacer le mot-clef \"%s\" ? Cette action "
+#~ "est irréversible&nbsp;!"
+
+#~ msgid "Create New Topic in &ldquo;%s&rdquo;"
+#~ msgstr "Créer un nouveau sujet dans &ldquo;%s&rdquo;"
+
+#~ msgid "Create New Topic"
+#~ msgstr "Créer un nouveau sujet"
+
+#~ msgid ""
+#~ "This forum is marked as closed to new topics, however your posting "
+#~ "capabilities still allow you to do so."
+#~ msgstr ""
+#~ "Ce forum est marqué comme fermé aux nouveaux sujets, mais vos capacités "
+#~ "de publication vous permettent encore de le faire."
+
+#~ msgid "Topic Title (Maximum Length: %d):"
+#~ msgstr "Titre du sujet (longueur maximale : %d) :"
+
+#~ msgid "Topic Description:"
+#~ msgstr "Description du sujet&nbsp;:"
+
+#~ msgid "Topic Tags:"
+#~ msgstr "Mots-clefs du sujet&nbsp;:"
+
+#~ msgid "Topic Type:"
+#~ msgstr "Type de sujet&nbsp;:"
+
+#~ msgid "You cannot create new topics at this time."
+#~ msgstr "Vous ne pouvez pas créer de nouveaux sujets pour le moment."
+
+#~ msgid "You must be logged in to create new topics."
+#~ msgstr "Vous devez être connecté pour créer des nouveaux sujets."
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "First Name"
+#~ msgstr "Prénom"
+
+#~ msgid "Last Name"
+#~ msgstr "Nom"
+
+#~ msgid "Nickname"
+#~ msgstr "Pseudonyme"
+
+#~ msgid "Display name publicly as"
+#~ msgstr "Nom à afficher publiquement"
+
+#~ msgid "Contact Info"
+#~ msgstr "Informations de contact"
+
+#~ msgid "Website"
+#~ msgstr "Site Web"
+
+#~ msgid "About Yourself"
+#~ msgstr "À propos de vous"
+
+#~ msgid "About the user"
+#~ msgstr "À propos de l&rsquo;utilisateur"
+
+#~ msgid "Biographical Info"
+#~ msgstr "Renseignements biographiques"
+
+#~ msgid ""
+#~ "Share a little biographical information to fill out your profile. This "
+#~ "may be shown publicly."
+#~ msgstr ""
+#~ "Donnez quelques informations biographiques pour remplir votre profil. "
+#~ "Ceci peut être affiché publiquement."
+
+#~ msgid "Account"
+#~ msgstr "Compte"
+
+#~ msgid "Username"
+#~ msgstr "Identifiant"
+
+#~ msgid "Usernames cannot be changed."
+#~ msgstr "Les identifiants ne peuvent être modifiés."
+
+#~ msgid "Email"
+#~ msgstr "É-mail "
+
+#~ msgid ""
+#~ "There is a pending email address change to <code>%1$s</code>. <a href="
+#~ "\"%2$s\">Cancel</a>"
+#~ msgstr ""
+#~ "Il y a une modification de l&rsquo;adresse de contact de l&rsquo;"
+#~ "administrateur en cours, en faveur de <code>%1$s</code>.  <a href=\"%2$s"
+#~ "\">Annuler</a>"
+
+#~ msgid "New Password"
+#~ msgstr "Nouveau mot de passe"
+
+#~ msgid ""
+#~ "If you would like to change the password, type a new one. Otherwise leave "
+#~ "this blank."
+#~ msgstr ""
+#~ "Si vous souhaitez changer le mot de passe de l&rsquo;utilisateur, tapez "
+#~ "en un nouveau deux fois de suite ci-dessous. Sinon, laissez les champs "
+#~ "vides."
+
+#~ msgid "Enter Password Again"
+#~ msgstr "Entrez à nouveau le mot de passe"
+
+#~ msgid ""
+#~ "Hint: The password should be at least seven characters long. To make it "
+#~ "stronger, use upper and lower case letters, numbers and symbols like ! "
+#~ "\" ? $ % ^ &amp; )."
+#~ msgstr ""
+#~ "Conseil&nbsp;: votre mot de passe devrait faire au moins 7 caractères de "
+#~ "long. Pour le rendre plus sûr, utilisez un mélange de majuscules, de "
+#~ "minuscules, de chiffres et de symboles comme ! \" ? $ %&nbsp;^&nbsp;&amp;"
+#~ "&nbsp;)."
+
+#~ msgid "Role:"
+#~ msgstr "Rôle&nbsp;:"
+
+#~ msgid "Super Admin"
+#~ msgstr "Super Admin"
+
+#~ msgid "Grant this user super admin privileges for the Network."
+#~ msgstr "Donner les droits de super admin à cet utilisateur pour le réseau."
+
+#~ msgid "Update Profile"
+#~ msgstr "Mettre à jour le profil"
+
+#~ msgid "Update User"
+#~ msgstr "Mettre à jour l&rsquo;utilisateur"
+
+#~ msgid "Log In"
+#~ msgstr "Se connecter"
+
+#~ msgid "Password"
+#~ msgstr "Mot de passe"
+
+#~ msgid "Keep me signed in"
+#~ msgstr "Me garder connecté"
+
+#~ msgid "Lost Password"
+#~ msgstr "Mot de passe oublié"
+
+#~ msgid "Username or Email"
+#~ msgstr "Identifiant ou adresse de messagerie&nbsp;:"
+
+#~ msgid "Reset my password"
+#~ msgstr "Changer mon mot de passe"
+
+#~ msgid "Create an Account"
+#~ msgstr "Créer un Compte"
+
+#~ msgid "Your username must be unique, and cannot be changed later."
+#~ msgstr ""
+#~ "Votre nom d'utilisateur doit être unique, et ne peut pas être modifié "
+#~ "ultérieurement."
+
+#~ msgid ""
+#~ "We use your email address to email you a secure password and verify your "
+#~ "account."
+#~ msgstr ""
+#~ "Nous utilisons votre adresse e-mail pour vous envoyer un mot de passe "
+#~ "sécurisé et vérifier votre compte."
+
+#~ msgid "Register"
+#~ msgstr "Inscription"
+
+#~ msgid "Topics:"
+#~ msgstr "Sujets :"
+
+#~ msgid "Replies:"
+#~ msgstr "Réponses :"
+
+#~ msgid "Freshness:"
+#~ msgstr "Il y a :"
+
+#~ msgid "Latest by:"
+#~ msgstr "Dernier par&nbsp;:"
+
+#~ msgid "<a href=\"%1$s\">%2$s</a>"
+#~ msgstr "<a href=\"%1$s\">%2$s</a>"
+
+#~ msgid "About %s"
+#~ msgstr "À propos de %s"
+
+#~ msgid "Edit Profile of %s"
+#~ msgstr "Modification du profil de %s"
+
+#~ msgid "Favorite Forum Topics"
+#~ msgstr "Les sujets des forums favoris"
+
+#~ msgid "You currently have no favorite topics."
+#~ msgstr "Vous n'avez actuellement aucun sujets préférés."
+
+#~ msgid "This user has no favorite topics."
+#~ msgstr "Cet utilisateur n'a actuellement aucun sujets préférés."
+
+#~ msgid "Subscribed Forum Topics"
+#~ msgstr "Les sujets des forums souscrits"
+
+#~ msgid "You are not currently subscribed to any topics."
+#~ msgstr "Vous n'êtes actuellement abonné à aucun sujets."
+
+#~ msgid "This user is not currently subscribed to any topics."
+#~ msgstr "Cet utilisateur n'est actuellement abonné à aucun sujets."
+
+#~ msgid "Forum Topics Created"
+#~ msgstr "Les sujets des forums crées"
+
+#~ msgid "You have not created any topics."
+#~ msgstr "Vous n'avez créé aucun sujets."
+
+#~ msgid "This user has not created any topics."
+#~ msgstr "Cet utilisateur n'a créé aucun sujets."
+
+#~ msgid "Sorry, there were no sites found."
+#~ msgstr "Désolé, aucun sites trouvés."
+
+#~ msgid "Create a Site"
+#~ msgstr "Créer un site"
+
+#~ msgid "Site Directory"
+#~ msgstr "Repertoire du site"
+
+#~ msgid "Site registration is currently disabled"
+#~ msgstr "Les inscriptions de sites sont actuellement désactivées."
+
+#~ msgid "Sites Directory"
+#~ msgstr "Repertoire des sites"
+
+#~ msgid "All Sites <span>%s</span>"
+#~ msgstr "Tous les sites<span>%s</span>"
+
+#~ msgid "My Sites <span>%s</span>"
+#~ msgstr "Mes sites <span>%s</span>"
+
+#~ msgid "Order By:"
+#~ msgstr "Trié par :"
+
+#~ msgid "Last Active"
+#~ msgstr "Dernier actif"
+
+#~ msgid "Newest"
+#~ msgstr "Les + récents"
+
+#~ msgid "Alphabetical"
+#~ msgstr "Ordre alphabétique"
+
+#~ msgid "Replies"
+#~ msgstr "Réponses"
+
+#~ msgid "Latest by: "
+#~ msgstr "Dernier par :"
+
+#~ msgid "%1$s"
+#~ msgstr "%1$s"
+
+#~ msgid "Sorry, there were no forum topics found."
+#~ msgstr "Désolé, aucun sujets du forum trouvés."
+
+#~ msgid "Forums Directory"
+#~ msgstr "Répertoire des forums"
+
+#~ msgid "New Topic"
+#~ msgstr "Nouveau sujet"
+
+#~ msgid "All Topics <span>%s</span>"
+#~ msgstr "Tous les sujets<span>%s</span>"
+
+#~ msgid "My Topics <span>%s</span>"
+#~ msgstr "Mes sujets <span>%s</span>"
+
+#~ msgid "Most Posts"
+#~ msgstr "Le plus d'articles"
+
+#~ msgid "Unreplied"
+#~ msgstr "Sans réponse"
+
+#~ msgid "Create New Topic:"
+#~ msgstr "Créer un nouveau sujet :"
+
+#~ msgid "Title:"
+#~ msgstr "Titre :"
+
+#~ msgid "Content:"
+#~ msgstr "Contenu :"
+
+#~ msgid "Tags (comma separated):"
+#~ msgstr "Mots-clefs (séparé par une virgule) :"
+
+#~ msgid "Post In Group Forum:"
+#~ msgstr "Les articles dans les forums de groupe :"
+
+#~ msgid "----"
+#~ msgstr "----"
+
+#~ msgid "Post Topic"
+#~ msgstr "Sujet d'article"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
+
+#~ msgid ""
+#~ "You are not a member of any groups so you don't have any group forums you "
+#~ "can post in. To start posting, first find a group that matches the topic "
+#~ "subject you'd like to start. If this group does not exist, why not <a "
+#~ "href='%s'>create a new group</a>? Once you have joined or created the "
+#~ "group you can post your topic in that group's forum."
+#~ msgstr ""
+#~ "Vous n'êtes membre d'aucun groupe donc vous n'avez pas de forums de "
+#~ "groupe où vous pouvez publier. Pour commencer à publier, tout d'abord "
+#~ "trouver un groupe qui correspond au sujet que vous souhaitez démarrer. Si "
+#~ "ce groupe n'existe pas, pourquoi ne pas<a href='%s'>créer un nouveau "
+#~ "groupe</a> ? Une fois que vous avez rejoint ou créé le groupe, vous "
+#~ "pouvez publier votre sujet dans le forum de ce groupe."
+
+#~ msgid "Create a Group"
+#~ msgstr "Créer un groupe"
+
+#~ msgid "Groups Directory"
+#~ msgstr "Répertoire des groupes"
+
+#~ msgid "Group Name (required)"
+#~ msgstr "Nom du groupe (obligatoire)"
+
+#~ msgid "Group Description (required)"
+#~ msgstr "Description du groupe (obligatoire)"
+
+#~ msgid "Enable discussion forum"
+#~ msgstr "Activer les discussions de forum"
+
+#~ msgid ""
+#~ "<strong>Attention Site Admin:</strong> Group forums require the <a href="
+#~ "\"%s\">correct setup and configuration</a> of a bbPress installation."
+#~ msgstr ""
+#~ "<strong>Attention Site Admin : </strong> Les forums de groupe "
+#~ "nécessitent<a href=\"%s\"> l'installation et la configuration correcte </"
+#~ "a> de bbPress."
+
+#~ msgid "Privacy Options"
+#~ msgstr "Options de confidentialité"
+
+#~ msgid "This is a public group"
+#~ msgstr "Il s'agit d'un groupe public"
+
+#~ msgid "Any site member can join this group."
+#~ msgstr "Tout membre du site peut rejoindre ce groupe."
+
+#~ msgid ""
+#~ "This group will be listed in the groups directory and in search results."
+#~ msgstr ""
+#~ "Ce groupe sera répertorié dans le répertoire des groupes et dans les "
+#~ "résultats de recherche."
+
+#~ msgid "Group content and activity will be visible to any site member."
+#~ msgstr ""
+#~ "Le contenu et de l'activité du groupe seront visibles à tous les membres "
+#~ "du site."
+
+#~ msgid "This is a private group"
+#~ msgstr "Il s'agit d'un groupe privé"
+
+#~ msgid ""
+#~ "Only users who request membership and are accepted can join the group."
+#~ msgstr ""
+#~ "Seuls les utilisateurs qui demandent à y adhérer et qui sont acceptées "
+#~ "peuvent rejoindre le groupe."
+
+#~ msgid ""
+#~ "Group content and activity will only be visible to members of the group."
+#~ msgstr ""
+#~ "Le contenu et de l'activité du groupe ne seront visibles que pour les "
+#~ "membres du groupe."
+
+#~ msgid "This is a hidden group"
+#~ msgstr "Il s'agit d'un groupe caché"
+
+#~ msgid "Only users who are invited can join the group."
+#~ msgstr ""
+#~ "Seuls les utilisateurs qui sont invités peuvent rejoindre au groupe."
+
+#~ msgid ""
+#~ "This group will not be listed in the groups directory or search results."
+#~ msgstr ""
+#~ "Ce groupe ne sera pas répertorié dans le répertoire des groupes et dans "
+#~ "les résultats de recherche."
+
+#~ msgid "Group Invitations"
+#~ msgstr "Invitations de groupe"
+
+#~ msgid "Which members of this group are allowed to invite others?"
+#~ msgstr ""
+#~ "Quels membres de ce groupe sont autorisés à inviter d'autres personnes ?"
+
+#~ msgid "All group members"
+#~ msgstr "Tous les membres du groupe"
+
+#~ msgid "Group admins and mods only"
+#~ msgstr "Admins de groupe et modos uniquement"
+
+#~ msgid "Group admins only"
+#~ msgstr "Uniquement les administrateurs du groupe"
+
+#~ msgid ""
+#~ "Upload an image to use as an avatar for this group. The image will be "
+#~ "shown on the main group page, and in search results."
+#~ msgstr ""
+#~ "Télécharger une image à utiliser comme un avatar de ce groupe. L'image "
+#~ "sera affichée sur la page principale du groupel, et dans les résultats de "
+#~ "recherche."
+
+#~ msgid "Upload Image"
+#~ msgstr "Télécharger une image"
+
+#~ msgid "To skip the avatar upload process, hit the \"Next Step\" button."
+#~ msgstr ""
+#~ "Pour sauter le processus de téléchargement d'avatar, cliquez sur le "
+#~ "bouton \"Etape suivante\"."
+
+#~ msgid "Crop Group Avatar"
+#~ msgstr "Recadrage de l'avatar du groupe"
+
+#~ msgid "Avatar to crop"
+#~ msgstr "Avatar à recadrer"
+
+#~ msgid "Avatar preview"
+#~ msgstr "Prévisualiser l'avatar"
+
+#~ msgid "Crop Image"
+#~ msgstr "Recadrage de l&rsquo;image"
+
+#~ msgid "Select people to invite from your friends list."
+#~ msgstr ""
+#~ "Sélectionnez les personnes à inviter à partir de votre liste d'amis."
+
+#~ msgid "Remove Invite"
+#~ msgstr "Supprimer l'invitation"
+
+#~ msgid ""
+#~ "Once you have built up friend connections you will be able to invite "
+#~ "others to your group. You can send invites any time in the future by "
+#~ "selecting the \"Send Invites\" option when viewing your new group."
+#~ msgstr ""
+#~ "Une fois que vous avez créé des connexions ami, vous serez en mesure d'en "
+#~ "inviter d'autres à votre groupe. Vous pouvez envoyer des invitations à "
+#~ "tout moment en sélectionnant l'option \"Envoyer des invitations\" lors de "
+#~ "la visualisation de votre nouveau groupe."
+
+#~ msgid "Back to Previous Step"
+#~ msgstr "Aller à l'étape précèdente"
+
+#~ msgid "Next Step"
+#~ msgstr "Etape suivante"
+
+#~ msgid "Create Group and Continue"
+#~ msgstr "Creer groupe et continuer"
+
+#~ msgid "Finish"
+#~ msgstr "Terminé"
+
+#~ msgid "active %s"
+#~ msgstr "Actif %s"
+
+#~ msgid "There were no groups found."
+#~ msgstr "Aucun groupe n'a été trouvé."
+
+#~ msgid "All Groups <span>%s</span>"
+#~ msgstr "Tous les groupes <span>%s</span>"
+
+#~ msgid "Most Members"
+#~ msgstr "Plus de membres"
+
+#~ msgid "Newly Created"
+#~ msgstr "Nouvellement créé"
+
+#~ msgid "Notify group members of changes via email"
+#~ msgstr "Avertissez les membres du groupe de changements par e-mail"
+
+#~ msgid "Save Changes"
+#~ msgstr "Enregistrer les modifications"
+
+#~ msgid ""
+#~ "If you'd like to remove the existing avatar but not upload a new one, "
+#~ "please use the delete avatar button."
+#~ msgstr ""
+#~ "Si vous souhaitez supprimer votre avatar actuel, mais ne pas en "
+#~ "télécharger un nouveau, s'il vous plaît utilisez le bouton supprimer "
+#~ "avatar."
+
+#~ msgid "Delete Avatar"
+#~ msgstr "Supprimer l'avatar"
+
+#~ msgid "Crop Avatar"
+#~ msgstr "Recadrage de l'avatar"
+
+#~ msgid "Administrators"
+#~ msgstr "Administrateurs"
+
+#~ msgid "Profile picture of %s"
+#~ msgstr "Image du profil de %s"
+
+#~ msgid "Demote to Member"
+#~ msgstr "Rétrograder à membre"
+
+#~ msgid "Moderators"
+#~ msgstr "Modérateurs"
+
+#~ msgid "Promote to Admin"
+#~ msgstr "Promouvoir admin"
+
+#~ msgid "Members"
+#~ msgstr "Membres"
+
+#~ msgid "(banned)"
+#~ msgstr "(bannis)"
+
+#~ msgid "Unban this member"
+#~ msgstr "Débannir ce membre"
+
+#~ msgid "Remove Ban"
+#~ msgstr "Retirer Ban"
+
+#~ msgid "Kick and ban this member"
+#~ msgstr "Bannir ce membre"
+
+#~ msgid "Kick &amp; Ban"
+#~ msgstr "Kick &amp; Ban"
+
+#~ msgid "Promote to Mod"
+#~ msgstr "Promouvoir mod"
+
+#~ msgid "Remove this member"
+#~ msgstr "Supprimer ce membre"
+
+#~ msgid "Remove from group"
+#~ msgstr "Supprimer du groupe"
+
+#~ msgid "This group has no members."
+#~ msgstr "Ce groupe n'a aucun membres."
+
+#~ msgid "Accept"
+#~ msgstr "Accepter"
+
+#~ msgid "Reject"
+#~ msgstr "Rejeter"
+
+#~ msgid "There are no pending membership requests."
+#~ msgstr "Il n'y a pas de demandes d'adhésion en cours."
+
+#~ msgid ""
+#~ "WARNING: Deleting this group will completely remove ALL content "
+#~ "associated with it. There is no way back, please be careful with this "
+#~ "option."
+#~ msgstr ""
+#~ "AVERTISSEMENT&nbsp;: La suppression de ce groupe supprimera complètement "
+#~ "TOUT le contenu qui lui est associée. Il n'y a pas moyen de revenir en "
+#~ "arrière, s'il vous plaît soyez prudent avec cette option."
+
+#~ msgid "I understand the consequences of deleting this group."
+#~ msgstr "Je comprends les conséquences de la suppression de ce compte."
+
+#~ msgid "Delete Group"
+#~ msgstr "Supprimer le groupe"
+
+#~ msgid "Forum Directory"
+#~ msgstr "Répertoire du forum"
+
+#~ msgid "You will auto join this group when you start a new topic."
+#~ msgstr ""
+#~ "Vous rejoindrez automatiquement ce groupe lorsque vous commencerez un "
+#~ "nouveau sujet."
+
+#~ msgid "Post a New Topic:"
+#~ msgstr "Ajouter un nouveau sujet :"
+
+#~ msgid "Group Admins"
+#~ msgstr "Admins du groupe"
+
+#~ msgid "Group Mods"
+#~ msgstr "Modos du groupe"
+
+#~ msgid "You are requesting to become a member of the group '%s'."
+#~ msgstr "Vous demandez à devenir un membre du groupe '%s'."
+
+#~ msgid "Send Request"
+#~ msgstr "Envoyez vos demandes"
+
+#~ msgid "Send Invites"
+#~ msgstr "Envoyer des invitations"
+
+#~ msgid "Edit:"
+#~ msgstr "Modifier&nbsp;:"
+
+#~ msgid "This topic does not exist."
+#~ msgstr "Ce sujet n'existe pas."
+
+#~ msgid "New Reply"
+#~ msgstr "Nouvelle réponse"
+
+#~ msgid "Topic tags:"
+#~ msgstr "Mots-clefs du sujet&nbsp;:"
+
+#~ msgid "%1$s said %2$s:"
+#~ msgstr "%1$s dit %2$s :"
+
+#~ msgid "Permanent link to this post"
+#~ msgstr "Permalien vers cette article"
+
+#~ msgid "You will auto join this group when you reply to this topic."
+#~ msgstr ""
+#~ "Vous rejoindrez automatiquement ce groupe lorsque vous répondez à ce "
+#~ "sujet."
+
+#~ msgid "Add a reply:"
+#~ msgstr "Ajouter une réponse&nbsp;:"
+
+#~ msgid "Post Reply"
+#~ msgstr "Répondre"
+
+#~ msgid "This topic is closed, replies are no longer accepted."
+#~ msgstr "Ce sujet est fermé, les réponses ne sont plus acceptés."
+
+#~ msgid "There are no posts for this topic."
+#~ msgstr "Il n&rsquo;y a pas d&rsquo;articles sur ce sujet."
+
+#~ msgid "All Products"
+#~ msgstr "Tous les produits"
+
+#~ msgid "No products found which match your selection."
+#~ msgstr "Aucun produit trouvé correspondant à votre sélection."
+
+#~ msgid "Rated %s out of 5"
+#~ msgstr "Note %s sur 5"
+
+#~ msgid "out of 5"
+#~ msgstr "sur 5"
+
+#~ msgid "Reviews"
+#~ msgstr "Avis"
+
+#~ msgid "Add Review"
+#~ msgstr "Ajouter Avis"
+
+#~ msgid "Add a review"
+#~ msgstr "Ajouter un avis"
+
+#~ msgid "Be the first to review "
+#~ msgstr "Soyez le premier à donner votre avis"
+
+#~ msgid ""
+#~ "There are no reviews yet, would you like to <a href=\"#review_form\" "
+#~ "class=\"inline show_review_form\">submit yours</a>?"
+#~ msgstr ""
+#~ "Il n'y a pas encore d'avis, voulez-vous <a href=\"#review_form\" class="
+#~ "\"inline show_review_form\">donner le votre</a> ?"
+
+#~ msgid "Submit Review"
+#~ msgstr "Envoyer l'avis"
+
+#~ msgid "Rating"
+#~ msgstr "Note"
+
+#~ msgid "Rate..."
+#~ msgstr "Note..."
+
+#~ msgid "Perfect"
+#~ msgstr "Parfait"
+
+#~ msgid "Good"
+#~ msgstr "Bon"
+
+#~ msgid "Average"
+#~ msgstr "Moyen"
+
+#~ msgid "Not that bad"
+#~ msgstr "Pas si mal"
+
+#~ msgid "Very Poor"
+#~ msgstr "Très mauvais"
+
+#~ msgctxt "noun"
+#~ msgid "Your Review"
+#~ msgstr "Votre Avis"
+
+#~ msgid "%s SEO"
+#~ msgstr "SEO %s"
+
+#~ msgid "Document Title:"
+#~ msgstr "Titre du document&nbsp;:"
+
+#~ msgid "Meta Description:"
+#~ msgstr "Méta Description&nbsp;:"
+
+#~ msgid "Meta Keywords:"
+#~ msgstr "Méta Keywords (mots-clés)&nbsp;:"
+
+#~ msgid "%s Template"
+#~ msgstr "Modèle %s"
+
+#~ msgid "No templates exist for this post type."
+#~ msgstr "Pas de modèles existent pour ce type d'aticle."
+
+#~ msgid "About %1$s"
+#~ msgstr "À propos de %1$s"
+
+#~ msgid "Version:"
+#~ msgstr "Version&nbsp;:"
+
+#~ msgid "Author:"
+#~ msgstr "Auteur&nbsp;:"
+
+#~ msgid "Description:"
+#~ msgstr "Description&nbsp;:"
+
+#~ msgid "Footer settings"
+#~ msgstr "Paramètres du pied de page"
+
+#~ msgid ""
+#~ "You can add custom <acronym title=\"Hypertext Markup Language\">HTML</"
+#~ "acronym> and/or shortcodes, which will be automatically inserted into "
+#~ "your theme."
+#~ msgstr ""
+#~ "Vous pouvez ajouter ces balises et attributs <acronym title=\"Hypertext "
+#~ "Markup Language\">HTML</acronym> et/ou des raccourcis,  qui seront "
+#~ "automatiquement insérés dans votre thème"
+
+#~ msgid "Settings saved."
+#~ msgstr "Paramètres enregistrées."
+
+#~ msgid "Update Settings"
+#~ msgstr "Mise à jour des paramètres "
+
+#~ msgid "Documentation"
+#~ msgstr "Documentation"
+
+#~ msgid "Support"
+#~ msgstr "Aide"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "archives."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de vos "
+#~ "archives."
+
+#~ msgid "Select Year"
+#~ msgstr "Choisir l'année"
+
+#~ msgid "Select Month"
+#~ msgstr "Choisir le mois"
+
+#~ msgid "Select Week"
+#~ msgstr "Choisir la semaine"
+
+#~ msgid "Select Day"
+#~ msgstr "Choisir le jour"
+
+#~ msgid "Select Post"
+#~ msgstr "Choisir l'article"
+
+#~ msgid "Daily"
+#~ msgstr "Quotidien"
+
+#~ msgid "Monthly"
+#~ msgstr "Mensuel"
+
+#~ msgid "Post By Post"
+#~ msgstr "Article par article"
+
+#~ msgid "Weekly"
+#~ msgstr "Hebdomadaire"
+
+#~ msgid "Yearly"
+#~ msgstr "Annuel"
+
+#~ msgid "Custom"
+#~ msgstr "Personnalisé"
+
+#~ msgid "HTML"
+#~ msgstr "HTML"
+
+#~ msgid "Option"
+#~ msgstr "option"
+
+#~ msgid "Show post count?"
+#~ msgstr "Afficher le nombre d&rsquo;articles ?"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "author lists."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de vos "
+#~ "listes d'auteurs ."
+
+#~ msgid "Authors"
+#~ msgstr "Auteurs"
+
+#~ msgid "Ascending"
+#~ msgstr "Croissant"
+
+#~ msgid "Descending"
+#~ msgstr "Décroissant"
+
+#~ msgid "Display Name"
+#~ msgstr "Nom affiché"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Nice Name"
+#~ msgstr "Joli nom"
+
+#~ msgid "Post Count"
+#~ msgstr "Décompte d'article"
+
+#~ msgid "Registered"
+#~ msgstr "Inscrit"
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Login"
+#~ msgstr "Connexion"
+
+#~ msgid "List"
+#~ msgstr "Liste"
+
+#~ msgid "None"
+#~ msgstr "Aucun"
+
+#~ msgid "<acronym title=\"Hypertext Markup Language\">HTML</acronym>?"
+#~ msgstr "<acronym title=\"Hypertext Markup Language\">HTML</acronym>?"
+
+#~ msgid "Exclude admin?"
+#~ msgstr "Exclure l&rsquo;administrateur ?"
+
+#~ msgid "Show full name?"
+#~ msgstr "Afficher le nom entier ?"
+
+#~ msgid "Hide empty?"
+#~ msgstr "Cacher les vides ?"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "bookmarks (links)."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de vos "
+#~ "signets (liens)."
+
+#~ msgid "Bookmarks"
+#~ msgstr "Favoris"
+
+#~ msgid "Count"
+#~ msgstr "Recompter"
+
+#~ msgid "Slug"
+#~ msgstr "Identifiant"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Length"
+#~ msgstr "Longueur"
+
+#~ msgid "Notes"
+#~ msgstr "Commentaires"
+
+#~ msgid "Random"
+#~ msgstr "Au hasard"
+
+#~ msgid "Rel"
+#~ msgstr "Rel"
+
+#~ msgid "Target"
+#~ msgstr "Cible"
+
+#~ msgid "Updated"
+#~ msgstr "Mis à jour"
+
+#~ msgid "Categorize?"
+#~ msgstr "Catégoriser ?"
+
+#~ msgid "Show description?"
+#~ msgstr "Afficher les descriptions ?"
+
+#~ msgid "Hide invisible?"
+#~ msgstr "Masquer invisible ?"
+
+#~ msgid "Show rating?"
+#~ msgstr "Afficher les notes ?"
+
+#~ msgid "Show updated?"
+#~ msgstr "Afficher les mises à jour ?"
+
+#~ msgid "Show images?"
+#~ msgstr "Afficher les images"
+
+#~ msgid "Show name?"
+#~ msgstr "Afficher le nom ?"
+
+#~ msgid "Show private?"
+#~ msgstr "Afficher les privés ?"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "calendar."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de "
+#~ "votre calendrier."
+
+#~ msgid "Calendar"
+#~ msgstr "Calendrier"
+
+#~ msgid "One-letter abbreviation?"
+#~ msgstr "Abréviation d'une lettre ?"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "category links."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de vos "
+#~ "liens de catégories."
+
+#, fuzzy
+#~ msgid "Term Group"
+#~ msgstr "Informations du Groupe"
+
+#~ msgid "Atom"
+#~ msgstr "Protocole de publication Atom"
+
+#~ msgid "RSS 2.0"
+#~ msgstr "Flux Rss 2.0"
+
+#~ msgid "Hierarchical?"
+#~ msgstr "Hiérarchique ?"
+
+#~ msgid "Use description?"
+#~ msgstr "Utiliser les descriptions ?"
+
+#~ msgid "Show last update?"
+#~ msgstr "Afficher la dernière mise à jour ?"
+
+#~ msgid "Show count?"
+#~ msgstr "Afficher le compte ?"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "menus."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de vos "
+#~ "menus."
+
+#~ msgid "Navigation Menu"
+#~ msgstr "Menu de navigation"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "page links."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de vos "
+#~ "liens de pages."
+
+#~ msgid "Author"
+#~ msgstr "Auteur"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Menu Order"
+#~ msgstr "Ordre du menu"
+
+#~ msgid "Modified"
+#~ msgstr "Modifié dernièrement"
+
+#~ msgid "Title"
+#~ msgstr "Titre"
+
+#~ msgid "Created"
+#~ msgstr "Créé"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "search form."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de "
+#~ "sortie de votre formulaire de recherche."
+
+#~ msgid "Search Label:"
+#~ msgstr "Etiquette de la recherche&nbsp;:"
+
+#~ msgid "Search Text:"
+#~ msgstr "Texte de la recherche&nbsp;:"
+
+#~ msgid "Search Submit:"
+#~ msgstr "Soumission de la recherche&nbsp;:"
+
+#~ msgid "Use theme's <code>searchform.php</code>?"
+#~ msgstr "Utiliser le thème <code>searchform.php</code> ?"
+
+#~ msgid ""
+#~ "An advanced widget that gives you total control over the output of your "
+#~ "tags."
+#~ msgstr ""
+#~ "Un widget avancé qui vous donne un contrôle total sur l'affichage de vos "
+#~ "mots-clefs."
+
+#~ msgid "Tags"
+#~ msgstr "Mots-clefs"
+
+#~ msgid "Flat"
+#~ msgstr "Plat"
+
+#~ msgid "Pad counts?"
+#~ msgstr "Compte Pad ?"
+
+#~ msgid "Browse:"
+#~ msgstr "Parcourir&nbsp;:"
+
+#~ msgid "Home"
+#~ msgstr "Accueil"
+
+#~ msgid "g:i a"
+#~ msgstr "G \\h i \\m\\i\\n"
+
+#~ msgid "Minute %1$s"
+#~ msgstr "Minute %1$s"
+
+#~ msgid "i"
+#~ msgstr "i"
+
+#~ msgid "g a"
+#~ msgstr "g a"
+
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "F"
+#~ msgstr "f"
+
+#~ msgid "d"
+#~ msgstr "d"
+
+#~ msgid "W"
+#~ msgstr "O"
+
+#~ msgid "Search results for &quot;%1$s&quot;"
+#~ msgstr "Résultats de la recherche pour &quot;%1$s&quot;"
+
+#~ msgid "404 Not Found"
+#~ msgstr "404 Non trouvé"
+
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+#~ msgid "F j, Y"
+#~ msgstr "j F Y"
+
+#~ msgid "Articles in this series"
+#~ msgstr "Articles dans cette séries"
+
+#~ msgid "Series"
+#~ msgstr "Séries"
+
+#~ msgid "%s Stylesheet"
+#~ msgstr "Feuille de style %s"
+
+#~ msgid "Default"
+#~ msgstr "Valeur par défaut"
+
+#~ msgid "One Column"
+#~ msgstr "Une colonne"
+
+#~ msgid "Two Columns, Left"
+#~ msgstr "Deux colonnes, à gauche"
+
+#~ msgid "Two Columns, Right"
+#~ msgstr "Deux colonnes, à droite"
+
+#~ msgid "Three Columns, Center"
+#~ msgstr "Trois colonnes, centrée"
+
+#~ msgid "Three Columns, Left"
+#~ msgstr "Trois colonnes, à gauche"
+
+#~ msgid "Three Columns, Right"
+#~ msgstr "Trois colonnes, à droite"
+
+#~ msgid "Header Left One Column"
+#~ msgstr "En-tête à gauche sur une colonne"
+
+#~ msgid "Header Left Two Columns, Left"
+#~ msgstr "En-tête à gauche sur deux colonnes à gauche"
+
+#~ msgid "Header Left Two Columns, Right"
+#~ msgstr "En-tête à gauche sur deux colonnes à droite"
+
+#~ msgid "Header Right One Column"
+#~ msgstr "En-tête à droite sur une colonne"
+
+#~ msgid "Header Right Two Columns, Left"
+#~ msgstr "En-tête à droite sur deux colonnes à gauche"
+
+#~ msgid "Header Right Two Columns, Right"
+#~ msgstr "En-tête à droite sur deux colonnes à droite"
+
+#~ msgid "Layout"
+#~ msgstr "Structure"
+
+#~ msgid ""
+#~ "Layout is a theme-specific structure for the single view of the post."
+#~ msgstr ""
+#~ "Layout est une structure thématique spécifique pour la vue de l'article "
+#~ "unique."
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid ""
+#~ "You must be <a href=\"%1$s\" title=\"Log in\">logged in</a> to post a "
+#~ "comment."
+#~ msgstr ""
+#~ "Vous devez être <a href=\"%1$s\"> title=\"connecté\"</ a> pour poster un "
+#~ "commentaire."
+
+#~ msgid "Logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+#~ msgstr "Connecté en tant que <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+
+#~ msgid "Log out of this account"
+#~ msgstr "Se déconnecter de ce compte"
+
+#~ msgid "Log out &raquo;"
+#~ msgstr "Déconnexion &raquo;"
+
+#~ msgid "Leave a Reply"
+#~ msgstr "Laisser une réponse"
+
+#~ msgid "Leave a Reply to %s"
+#~ msgstr "Répondre à %s"
+
+#~ msgid "Click here to cancel reply."
+#~ msgstr "Cliquez ici pour annuler la réponse."
+
+#~ msgid "Post Comment"
+#~ msgstr "Laisser un commentaire"
+
+#~ msgid "Archive for %1$s"
+#~ msgstr "Archive pour %s"
+
+#~ msgid "Archive for minute %1$s"
+#~ msgstr "Archive pour %1$s minute "
+
+#~ msgid "F jS, Y"
+#~ msgstr "l j F Y"
+
+#~ msgid "Archive for week %1$s of %2$s"
+#~ msgstr "Archive pour la semaine %1$s de %2$s"
+
+#~ msgid "%1$s Page %2$s"
+#~ msgstr "%1$s Page %2$s"
+
+#~ msgid "Copyright (c) %1$s"
+#~ msgstr "Copyright (c) %1$s"
+
+#~ msgid "l, F jS, Y, g:i a"
+#~ msgstr "l j F Y g:i a"
+
+#~ msgid ""
+#~ "<code>%1$s</code> &mdash; This function has been removed or replaced by "
+#~ "another function."
+#~ msgstr ""
+#~ "<code>%1$s</code> &mdash; Cette fonction a été enlevée ou remplacée par "
+#~ "une autre fonction."
+
+#~ msgctxt "nav menu location"
+#~ msgid "Secondary"
+#~ msgstr "Secondaire"
+
+#~ msgctxt "nav menu location"
+#~ msgid "Subsidiary"
+#~ msgstr "Subsidiaire"
+
+#~ msgctxt "nav menu location"
+#~ msgid "Footer"
+#~ msgstr "Pied de page"
+
+#~ msgctxt "nav menu location"
+#~ msgid "Header Primary"
+#~ msgstr "En-tête principal"
+
+#~ msgctxt "nav menu location"
+#~ msgid "Header Secondary"
+#~ msgstr "En-tête secondaire"
+
+#~ msgctxt "nav menu location"
+#~ msgid "Header Horizontal"
+#~ msgstr "En-tête horizontale"
+
+#~ msgid "Powered by [wp-link], [theme-link], and [child-link]."
+#~ msgstr "Propulsé par [wp-link], [theme-link], et [child-link]."
+
+#~ msgid ""
+#~ "Powered by WordPress, state-of-the-art semantic personal publishing "
+#~ "platform"
+#~ msgstr ""
+#~ "Propulsé par WordPress, plate-forme de publication personnelle sémantique "
+#~ "de pointe."
+
+#~ msgid "WordPress"
+#~ msgstr "WordPress"
+
+#~ msgid "Log out"
+#~ msgstr "Déconnexion"
+
+#~ msgid "Log into this account"
+#~ msgstr "Se déconnecter"
+
+#~ msgid "Log in"
+#~ msgstr "Connexion"
+
+#~ msgid "This page loaded in %1$s seconds with %2$s database queries."
+#~ msgstr ""
+#~ "Cette page se charge en %1$s secondes avec %2$s requêtes dans la base de "
+#~ "données."
+
+#~ msgid "Edit %1$s"
+#~ msgstr "Modifier %1$s"
+
+#~ msgid "%1$s Response"
+#~ msgstr "%1$s Réponse"
+
+#~ msgid "%1$s Responses"
+#~ msgstr "%1$s réponses"
+
+#~ msgid "Comment on %1$s"
+#~ msgstr "Commentaire sur %1$s"
+
+#~ msgid "(Untitled)"
+#~ msgstr "(Sans titre)"
+
+#~ msgid "Shortlink"
+#~ msgstr "Lien court"
+
+#~ msgid "Permalink to comment %1$s"
+#~ msgstr "Permalien de commentaire %1$s"
+
+#~ msgid "Log in to reply."
+#~ msgstr "Connectez-vous pour répondre."
+
+#~ msgctxt "sidebar"
+#~ msgid "Primary"
+#~ msgstr "Primaire"
+
+#~ msgid "The main (primary) widget area, most often used as a sidebar."
+#~ msgstr ""
+#~ "La zone de widget principale, la plus souvent utilisée comme barre "
+#~ "latérale."
+
+#~ msgctxt "sidebar"
+#~ msgid "Secondary"
+#~ msgstr "Secondaire"
+
+#~ msgid ""
+#~ "The second most important widget area, most often used as a secondary "
+#~ "sidebar."
+#~ msgstr ""
+#~ "La seconde plus importante zone de widgets, la plus souvent utilisée "
+#~ "comme une barre latérale secondaire."
+
+#~ msgctxt "sidebar"
+#~ msgid "Subsidiary"
+#~ msgstr "Subsidiaire"
+
+#~ msgid ""
+#~ "A 1-column, full-width widget area loaded before the footer of the site."
+#~ msgstr ""
+#~ "Une zone widget 1-colonne de pleine largeur chargée avant le pied de page "
+#~ "du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "Subsidiary 2 Columns"
+#~ msgstr "Subsidiaire 2 colonnes"
+
+#~ msgid "A 2-column widget area loaded before the footer of the site."
+#~ msgstr "Une zone widget 2-colonnes chargée avant le pied de page du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "Subsidiary 3 Columns"
+#~ msgstr "Subsidiaire 3 colonnes"
+
+#~ msgid "A 3-column widget area loaded before the footer of the site."
+#~ msgstr "Une zone widget 3-colonnes chargée avant le pied de page du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "Subsidiary 4 Columns"
+#~ msgstr "Subsidiaire 4 colonnes"
+
+#~ msgid "A 4-column widget area loaded before the footer of the site."
+#~ msgstr "Une zone widget 4-colonnes chargée avant le pied de page du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "Subsidiary 5 Columns"
+#~ msgstr "Subsidiaire 5 colonnes"
+
+#~ msgid "A 5-column widget area loaded before the footer of the site."
+#~ msgstr "Une zone widget 5-colonnes chargée avant le pied de page du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "Header"
+#~ msgstr "En-tête"
+
+#~ msgid "Displayed within the site's header area."
+#~ msgstr "Affiché dans la zone d'en-tête du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "After Header"
+#~ msgstr "Après l&rsquo;en-tête"
+
+#~ msgid "A 1-column widget area loaded after the header of the site."
+#~ msgstr "Une zone widget 1-colonne chargée après l'en-tête du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "After Header 2 Columns"
+#~ msgstr "Après l&rsquo;en-tête 2 colonnes"
+
+#~ msgid "A 2-column widget area loaded after the header of the site."
+#~ msgstr "Une zone widget 2-colonnes chargée après l'en-tête du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "After Header 3 Columns"
+#~ msgstr "Après l&rsquo;en-tête 3 colonnes"
+
+#~ msgid "A 3-column widget area loaded after the header of the site."
+#~ msgstr "Une zone widget 3-colonnes chargée après l'en-tête du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "After Header 4 Columns"
+#~ msgstr "Après l&rsquo;en-tête 4 colonnes"
+
+#~ msgid "A 4-column widget area loaded after the header of the site."
+#~ msgstr "Une zone widget 4-colonnes chargée après l'en-tête du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "After Header 5 Columns"
+#~ msgstr "Après l&rsquo;en-tête 5 colonnes"
+
+#~ msgid "A 5-column widget area loaded after the header of the site."
+#~ msgstr "Une zone widget 5-colonnes chargée après l'en-tête du site."
+
+#~ msgctxt "sidebar"
+#~ msgid "Before Content"
+#~ msgstr "Avant le contenu"
+
+#~ msgid "Loaded before the page's main content area."
+#~ msgstr "Chargé avant la zone de contenu de la page principale."
+
+#~ msgctxt "sidebar"
+#~ msgid "After Content"
+#~ msgstr "Après le contenu"
+
+#~ msgid "Loaded after the page's main content area."
+#~ msgstr "Chargé après la zone de contenu de la page principale."
+
+#~ msgctxt "sidebar"
+#~ msgid "After Singular"
+#~ msgstr "Après singulier"
+
+#~ msgid ""
+#~ "Loaded on singular post (page, attachment, etc.) views before the "
+#~ "comments area."
+#~ msgstr ""
+#~ "Chargé sur les articles uniques (page, attachement, etc..) avant la zone "
+#~ "de commentaires."
+
+#~ msgctxt "sidebar"
+#~ msgid "Entry"
+#~ msgstr "Entrée"
+
+#~ msgid "Loaded directly before the entry content texts."
+#~ msgstr "Chargé directement devant le texte du contenu."
+
+#~ msgctxt "sidebar"
+#~ msgid "Widgets Template"
+#~ msgstr "Modèle de widgets"
+
+#~ msgid "Used on widgets only page template."
+#~ msgstr "Utilisé uniquement sur la page modèle des widgets."
+
+#~ msgid "Members Directory"
+#~ msgstr "Répertoire des membres"
+
+#~ msgid "Newest Registered"
+#~ msgstr "Les derniers enregistré"
+
+#~ msgid "Sorry, no members were found."
+#~ msgstr "Désolé, aucun membre n'a été trouvé."
+
+#~ msgid "You have no pending friendship requests."
+#~ msgstr "Vous n'avez pas de demande d'amitié en attente."
+
+#~ msgid "%s members"
+#~ msgstr "%s membres"
+
+#~ msgid "You have no outstanding group invites."
+#~ msgstr "Vous n'avez pas d'invitation de groupe."
+
+#~ msgid "Send To (Username or Friend's Name)"
+#~ msgstr "Envoyer à (Nom d'utilisateur ou le nom de votre ami)"
+
+#~ msgid "This is a notice to all users."
+#~ msgstr "Ceci est un avis à tous les utilisateurs."
+
+#~ msgid "Subject"
+#~ msgstr "Sujet"
+
+#~ msgid "Message"
+#~ msgstr "Message"
+
+#~ msgid "Send Message"
+#~ msgstr "Envoyer un message"
+
+#~ msgid "From:"
+#~ msgstr "De&nbsp;:"
+
+#~ msgid "View Message"
+#~ msgstr "Voir le message"
+
+#~ msgid "Delete Message"
+#~ msgstr "Supprimer le message"
+
+#~ msgid "Sorry, no messages were found."
+#~ msgstr "Désolé, aucun message n'a été trouvé."
+
+#~ msgid "Sent:"
+#~ msgstr "Envoyé :"
+
+#~ msgid "Sorry, no notices were found."
+#~ msgstr "Désolé, aucun avis n'a été trouvé."
+
+#~ msgid "You are alone in this conversation."
+#~ msgstr "Vous êtes seul dans cette discussion."
+
+#~ msgid "Conversation between %s and you."
+#~ msgstr "Conversation entre %s et vous."
+
+#~ msgid "Send a Reply"
+#~ msgstr "Laisser un commentaire"
+
+#~ msgid "Send Reply"
+#~ msgstr "Laisser un commentaire"
+
+#~ msgid "Change Avatar"
+#~ msgstr "Changer l'avatar"
+
+#~ msgid ""
+#~ "Your avatar will be used on your profile and throughout the site. If "
+#~ "there is a <a href=\"http://gravatar.com\">Gravatar</a> associated with "
+#~ "your account email we will use that, or you can upload an image from your "
+#~ "computer."
+#~ msgstr ""
+#~ "Votre avatar sera utilisé sur votre profil et à travers le site. Si il y "
+#~ "a un <a href=\"http://gravatar.com\"> Gravatar </a> associée à votre "
+#~ "compte de messagerie nous l'utiliserons, ou vous pouvez télécharger une "
+#~ "image depuis votre ordinateur."
+
+#~ msgid ""
+#~ "Click below to select a JPG, GIF or PNG format photo from your computer "
+#~ "and then click 'Upload Image' to proceed."
+#~ msgstr ""
+#~ "Cliquez ci-dessous pour sélectionner un fichier au format JPG, GIF ou PNG "
+#~ "de votre ordinateur, puis cliquez sur \"Télécharger\" pour continuer."
+
+#~ msgid ""
+#~ "If you'd like to delete your current avatar but not upload a new one, "
+#~ "please use the delete avatar button."
+#~ msgstr ""
+#~ "Si vous souhaitez supprimer votre avatar actuel, mais ne pas en "
+#~ "télécharger un nouveau, s'il vous plaît utilisez le bouton supprimer "
+#~ "avatar."
+
+#~ msgid "Delete My Avatar"
+#~ msgstr "Supprimer mon avatar"
+
+#~ msgid "Crop Your New Avatar"
+#~ msgstr "Recadrer votre nouvel avatar"
+
+#~ msgid ""
+#~ "Your avatar will be used on your profile and throughout the site. To "
+#~ "change your avatar, please create an account with <a href=\"http://"
+#~ "gravatar.com\">Gravatar</a> using the same email address as you used to "
+#~ "register with this site."
+#~ msgstr ""
+#~ "Votre avatar sera utilisé sur votre profil et à travers le site. Pour "
+#~ "changer votre avatar, s'il vous plaît créer un compte sur <a href="
+#~ "\"http://gravatar.com\">Gravatar</a> en utilisant la même adresse email "
+#~ "que vous avez utilisée pour vous inscrire sur ce site."
+
+#~ msgid "Editing '%s' Profile Group"
+#~ msgstr "Edition du profil du groupe '%s'"
+
+#~ msgid "(required)"
+#~ msgstr "(obligatoire)"
+
+#~ msgid "Clear"
+#~ msgstr "Effacer"
+
+#~ msgid "%s's Profile"
+#~ msgstr "Profil %s"
+
+#~ msgid "About Me"
+#~ msgstr "À propos de moi"
+
+#~ msgid "Jabber"
+#~ msgstr "Jabber"
+
+#~ msgid "AOL Messenger"
+#~ msgstr "Messenger AOL"
+
+#~ msgid "Yahoo Messenger"
+#~ msgstr "Yahoo Messenger"
+
+#~ msgid "Delete Account"
+#~ msgstr "Supprimer le compte"
+
+#~ msgid ""
+#~ "WARNING: Deleting your account will completely remove ALL content "
+#~ "associated with it. There is no way back, please be careful with this "
+#~ "option."
+#~ msgstr ""
+#~ "AVERTISSEMENT: La suppression de votre compte supprimera complètement "
+#~ "TOUT le contenu qui lui est associée. Il n'y a pas moyen de revenir en "
+#~ "arrière, s'il vous plaît soyez prudent avec cette option."
+
+#~ msgid "I understand the consequences of deleting my account."
+#~ msgstr "Je comprends les conséquences de la suppression de mon compte."
+
+#~ msgid "Delete My Account"
+#~ msgstr "Supprimer mon compte"
+
+#~ msgid "General Settings"
+#~ msgstr "Paramètres généraux"
+
+#~ msgid ""
+#~ "Current Password <span>(required to update email or change current "
+#~ "password)</span>"
+#~ msgstr ""
+#~ "Mot de passe actuel <span> (nécessaire pour mettre à jour par email ou "
+#~ "changer le mot de passe actuel) </span>"
+
+#~ msgid "Password Lost and Found"
+#~ msgstr "Récupération de mot de passe"
+
+#~ msgid "Lost your password?"
+#~ msgstr "Mot de passe oublié&nbsp;?"
+
+#~ msgid "Account Email"
+#~ msgstr "Compte email"
+
+#~ msgid "Change Password <span>(leave blank for no change)</span>"
+#~ msgstr ""
+#~ "Changer de mot de passe <span> (laisser vide pour aucun changement) </"
+#~ "span>"
+
+#~ msgid "Repeat New Password"
+#~ msgstr "Répéter le nouveau mot de passe"
+
+#~ msgid "Email Notification"
+#~ msgstr "Notification par email"
+
+#~ msgid "Send a notification by email when:"
+#~ msgstr "Envoyer une notification par email lorsque :"
+
+#~ msgid "Account Activated"
+#~ msgstr "Compte activé"
+
+#~ msgid ""
+#~ "Your account was activated successfully! Your account details have been "
+#~ "sent to you in a separate email."
+#~ msgstr ""
+#~ "Votre compte a été activé avec succès ! Les détails de votre compte vous "
+#~ "ont été envoyé dans un email séparé."
+
+#~ msgid ""
+#~ "Your account was activated successfully! You can now log in with the "
+#~ "username and password you provided when you signed up."
+#~ msgstr ""
+#~ "Votre compte a été activé avec succès ! Vous pouvez maintenant vous "
+#~ "connecter avec le nom d'utilisateur et mot de passe que vous avez fournie "
+#~ "lors de votre inscription."
+
+#~ msgid "Activate Your Account"
+#~ msgstr "Activer votre compte"
+
+#~ msgid "Please provide a valid activation key."
+#~ msgstr "S'il vous plaît fournir une clé d'activation valide."
+
+#~ msgid "Activation Key:"
+#~ msgstr "Clef d&rsquo;activation&nbsp;:"
+
+#~ msgid "Activate"
+#~ msgstr "Activer"
+
+#~ msgid "Create An Account"
+#~ msgstr "Créer un compte"
+
+#~ msgid "User registration is currently not allowed."
+#~ msgstr ""
+#~ "Les nouvelles inscriptions ne sont pas autorisées pour l&rsquo;instant."
+
+#~ msgid ""
+#~ "Registering for this site is easy, just fill in the fields below and "
+#~ "we'll get a new account set up for you in no time."
+#~ msgstr ""
+#~ "L'enregistrement sur ce site est facile, il suffit de remplir les champs "
+#~ "ci-dessous et nous vous créerons votre nouveau compte en un rien de temps."
+
+#~ msgid "Account Details"
+#~ msgstr "Détails du compte"
+
+#~ msgid "Email Address"
+#~ msgstr "Adresse email"
+
+#~ msgid "Choose a Password"
+#~ msgstr "Choisir un mot de passe"
+
+#~ msgid "Confirm Password"
+#~ msgstr "Confirmer le mot de passe"
+
+#~ msgid "Profile Details"
+#~ msgstr "Détails du profil"
+
+#~ msgid "Blog Details"
+#~ msgstr "Détails du blog"
+
+#~ msgid "Yes, I'd like to create a new site"
+#~ msgstr "Oui, je voudrais créer un nouveau site"
+
+#~ msgid "Blog URL"
+#~ msgstr "URL du blog"
+
+#~ msgid "For example: http://your-blog-url-goes-here/"
+#~ msgstr "Par exemple: http://votre-blog-url-vient-ici/"
+
+#~ msgid "For example: "
+#~ msgstr "Par exemple&nbsp;:"
+
+#~ msgid "Site Title"
+#~ msgstr "Titre du site"
+
+#~ msgid ""
+#~ "I would like my site to appear in search engines, and in public listings "
+#~ "around this network."
+#~ msgstr ""
+#~ "Je voudrais que mon site apparaisse dans les moteurs de recherche, et "
+#~ "dans les listes publiques autour de ce réseau."
+
+#~ msgid "Sign Up Complete!"
+#~ msgstr "Inscription réussie !"
+
+#~ msgid ""
+#~ "You have successfully created your account! To begin using this site you "
+#~ "will need to activate your account via the email we have just sent to "
+#~ "your address."
+#~ msgstr ""
+#~ "Vous avez créé votre compte avec succès ! Pour commencer à l'utiliser sur "
+#~ "ce site vous devrez l'activer grace à l'email que nous venons d'envoyer à "
+#~ "votre adresse."
+
+#~ msgid ""
+#~ "You have successfully created your account! Please log in using the "
+#~ "username and password you have just created."
+#~ msgstr ""
+#~ "Vous avez créé votre compte avec succès ! S'il vous plaît connectez-vous "
+#~ "en utilisant le nom d'utilisateur et mot de passe que vous venez de créer."
+
+#~ msgid ""
+#~ "Use a text widget to insert your codes for a full-width slider here. Do "
+#~ "not use this widget area for anything else."
+#~ msgstr ""
+#~ "Utilisez un widget texte pour insérer vos codes pour un slider sur toute "
+#~ "la largeur ici. Ne pas utiliser cette zone de widget pour autre chose."
