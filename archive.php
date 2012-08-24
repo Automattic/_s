@@ -67,8 +67,6 @@ get_header(); ?>
 					?>
 				</header><!-- .page-header -->
 
-				<?php rewind_posts(); ?>
-
 				<?php _s_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
