@@ -59,4 +59,4 @@
 		</nav><!-- .site-navigation .main-navigation -->
 	</header><!-- #masthead .site-header -->
 
-	<div id="main">
+	<div id="main" class="site-main">
