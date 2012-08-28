@@ -19,7 +19,7 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 
-/* =Reset
+/* `Reset
 -------------------------------------------------------------- */
 
 html, body, div, span, applet, object, iframe,
@@ -91,7 +91,7 @@ a img {
 }
 
 
-/* =Global
+/* `Global
 ----------------------------------------------- */
 
 body,
@@ -348,7 +348,7 @@ a:active {
 }
 
 
-/* =Menu
+/* `Menu
 ----------------------------------------------- */
 
 .main-navigation {
@@ -412,7 +412,7 @@ a:active {
 }
 
 
-/* =Content
+/* `Content
 ----------------------------------------------- */
 
 .sticky {
@@ -440,7 +440,7 @@ a:active {
 }
 
 
-/* =Asides
+/* `Asides
 ----------------------------------------------- */
 
 .blog .format-aside .entry-title,
@@ -449,7 +449,7 @@ a:active {
 }
 
 
-/* =Media
+/* `Media
 ----------------------------------------------- */
 
 .site-header img,
@@ -523,7 +523,7 @@ object {
 }
 
 
-/* =Navigation
+/* `Navigation
 ----------------------------------------------- */
 
 .site-content .site-navigation {
@@ -540,13 +540,13 @@ object {
 	width: 50%;
 }
 
-/* =Comments
+/* `Comments
 ----------------------------------------------- */
 
 .bypostauthor {
 }
 
-/* =Widgets
+/* `Widgets
 ----------------------------------------------- */
 
 .widget {
