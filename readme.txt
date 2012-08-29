@@ -33,6 +33,8 @@ Replace with:megatherium_
 Search for: _s
 Replace with: Megatherium
 
+Note: when replacing _s with another name, ensure you use a 'PHP functions' friendly name (e.g. no hyphens).
+
 Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
 
 Now you're ready to go! The next step is easy to say but harder to do: make an awesome WordPress theme. :)
