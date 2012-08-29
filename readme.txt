@@ -18,7 +18,9 @@ My ultra-minimal CSS might make me look like theme tartare but that means less s
 
 === Getting Started ===
 
-The first thing you want to do is copy the _s directory and change the name to something else. Like, say, megatherium. Then you'll need to do a three-step find and replace on the name in all the templates.
+You can start with Underscores in one of two ways. Either clone the repository directly and then follow the instructions below or use the GUI based theme generator at http://underscores.me. Using the GUI method negates the need to do any find and replace commands and is recommended in most instances.
+
+If cloning this repository, after cloning/download, the first thing you want to do is copy the _s directory and change the name to something else. Like, say, megatherium. Then you'll need to do a three-step find and replace on the name in all the templates.
 
 1. Search for _s inside single quotations to capture the text domain.
 2. Search for _s_ for to capture all the function names
@@ -32,6 +34,8 @@ Search for:_s_
 Replace with:megatherium_
 Search for: _s
 Replace with: Megatherium
+
+Note: when replacing _s with another name, ensure you use a 'PHP functions' friendly name (e.g. no hyphens).
 
 Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
 
