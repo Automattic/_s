@@ -45,6 +45,8 @@ function _s_theme_options_init() {
 	add_settings_field( 'sample_select_options', __( 'Sample Select Options', '_s' ), '_s_settings_field_sample_select_options', 'theme_options', 'general' );
 	add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', '_s' ), '_s_settings_field_sample_radio_buttons', 'theme_options', 'general' );
 	add_settings_field( 'sample_textarea', __( 'Sample Textarea', '_s' ), '_s_settings_field_sample_textarea', 'theme_options', 'general' );
+	// example for colorpicker on textarea
+	add_settings_field( 'sample_colorpicker', __( 'Sample Colorpicker', '_s' ), '_s_settings_field_sample_colorpicker', 'theme_options', 'general' );
 }
 add_action( 'admin_init', '_s_theme_options_init' );
 
@@ -70,6 +72,7 @@ add_filter( 'option_page_capability__s_options', '_s_option_page_capability' );
  * @since _s 1.0
  */
 function _s_theme_options_add_page() {
+	
 	$theme_page = add_theme_page(
 		__( 'Theme Options', '_s' ),   // Name of page
 		__( 'Theme Options', '_s' ),   // Label in menu
@@ -77,8 +80,38 @@ function _s_theme_options_add_page() {
 		'theme_options',               // Menu slug, used to uniquely identify the page
 		'_s_theme_options_render_page' // Function that renders the options page
 	);
+	
+	add_action( 'admin_print_scripts-' . $theme_page, '_s_admin_enqueue_scripts' );
 }
 add_action( 'admin_menu', '_s_theme_options_add_page' );
+
+/**
+ * Properly enqueue styles and scripts for our theme options page.
+ * 
+ * @return   void
+ */
+function _s_admin_enqueue_scripts( $hook_suffix ) {
+	
+	// enqueue styles
+	wp_register_style(
+		'_s_theme_options',
+		get_template_directory_uri() . '/inc/theme-options/theme-options.css',
+		FALSE,
+		FALSE
+	);
+	wp_enqueue_style( '_s_theme_options' );
+	wp_enqueue_style( 'farbtastic' );
+	
+	// enqueue scripts
+	wp_register_script(
+		'_s_theme_options',
+		get_template_directory_uri() . '/inc/theme-options/theme-options.js',
+		array( 'farbtastic' ),
+		FALSE
+	);
+	wp_enqueue_script( '_s_theme_options' );
+}
+
 
 /**
  * Returns an array of sample select options registered for _s.
@@ -144,8 +177,9 @@ function _s_sample_radio_buttons() {
  * Returns the options array for _s.
  *
  * @since _s 1.0
+ * @param $value  String
  */
-function _s_get_theme_options() {
+function _s_get_theme_options( $value = NULL ) {
 	$saved = (array) get_option( '_s_theme_options' );
 	$defaults = array(
 		'sample_checkbox'       => 'off',
@@ -153,12 +187,16 @@ function _s_get_theme_options() {
 		'sample_select_options' => '',
 		'sample_radio_buttons'  => '',
 		'sample_textarea'       => '',
+		'sample_colorpicker'    => '#D54E21',
 	);
 
 	$defaults = apply_filters( '_s_default_theme_options', $defaults );
 
 	$options = wp_parse_args( $saved, $defaults );
 	$options = array_intersect_key( $options, $defaults );
+
+	if ( NULL !== $value )
+		return $options[$value];
 
 	return $options;
 }
@@ -245,6 +283,24 @@ function _s_settings_field_sample_textarea() {
 }
 
 /**
+ * Render the sample textarea with colorpicker settings field.
+ */
+function _s_settings_field_sample_colorpicker() {
+	$options = _s_get_theme_options();
+	?>
+	<input type="text" name="_s_theme_options[sample_colorpicker]" id="sample-colorpicker" value="<?php echo esc_textarea( $options['sample_colorpicker'] ); ?>" />
+	<a href="#" class="pickcolor hide-if-no-js" id="sample-colorpicker-example"></a>
+	<input type="button" class="pickcolor button hide-if-no-js" value="<?php esc_attr_e( 'Select a Color', '_s' ); ?>" />
+	<div id="colorPickerDiv"></div>
+	<br />
+	<label class="description" for="sample-colorpicker"><?php printf( 
+		__( 'Sample textarea with colorpicker. Default color: %s', '_s' ),
+		'<code id="default-color">' . _s_get_theme_options( 'sample_colorpicker' ) . '</code>'
+	); ?></label>
+	<?php
+}
+
+/**
  * Renders the Theme Options administration screen.
  *
  * @since _s 1.0
@@ -301,6 +357,10 @@ function _s_theme_options_validate( $input ) {
 	// The sample textarea must be safe text with the allowed tags for posts
 	if ( isset( $input['sample_textarea'] ) && ! empty( $input['sample_textarea'] ) )
 		$output['sample_textarea'] = wp_filter_post_kses( $input['sample_textarea'] );
-
+	
+	// The sample textarea with colorpicker must be safe text with the allowed tags for posts
+	if ( isset( $input['sample_colorpicker'] ) && ! empty( $input['sample_colorpicker'] ) )
+		$output['sample_colorpicker'] = wp_filter_post_kses( $input['sample_colorpicker'] );
+	
 	return apply_filters( '_s_theme_options_validate', $output, $input );
 }
