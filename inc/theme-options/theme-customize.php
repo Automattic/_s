@@ -21,8 +21,8 @@ function _s_customize_register( $wp_customize ) {
 	
 	// Create custom section for custom example options
 	$wp_customize->add_section( '_s_theme_options', array(
-		'title'    => __( 'Custom Options', 'documentation' ),
-		'priority' => 35,
+		'title'      => __( 'Theme Options', '_s' ),
+		'priority'   => 35,
 	) );
 	
 	// ===== Sample Checkbox Field =====
@@ -71,12 +71,12 @@ if ( ! function_exists( '_s_get_theme_options' ) ) {
 		
 		$saved = (array) get_option( '_s_theme_options' );
 		$defaults = array(
-			'sample_checkbox'	   => 'off',
-			'sample_text_input'	 => '',
+			'sample_checkbox'       => 'off',
+			'sample_text_input'     => '',
 			'sample_select_options' => '',
 			'sample_radio_buttons'  => '',
-			'sample_textarea'	   => '',
-			'sample_colorpicker'	=> '#D54E21',
+			'sample_textarea'       => '',
+			'sample_colorpicker'    => '#D54E21',
 		);
 	
 		$defaults = apply_filters( '_s_default_theme_options', $defaults );
