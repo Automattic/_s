@@ -57,6 +57,30 @@ function _s_customize_register( $wp_customize ) {
 		'type'       => 'text',
 	) );
 	
+	
+	// ===== Sample Select Input Field =====
+	// Add field for example select field in custom section
+	$wp_customize->add_setting( '_s_theme_options[sample_select_options]', array(
+		'default'    => $options['sample_select_options'],
+		'type'       => 'option',
+		'capability' => 'edit_theme_options',
+	) );
+	
+	// Add control and output for select field
+	$wp_customize->add_control( '_s_theme_options_sample_select_options', array(
+		'label'      => __( 'Sample Select Options', '_s' ),
+		'section'    => '_s_theme_options',
+		'settings'   => '_s_theme_options[sample_select_options]',
+		'type'    => 'select',
+		'choices'    => array(
+			'0' => __( 'Zero', '_s' ),
+			'1' => __( 'One', '_s' ),
+			'2' => __( 'Two', '_s' ),
+			'3' => __( 'Three', '_s' ),
+			'4' => __( 'Four', '_s' ),
+			'5' => __( 'Five', '_s' ),
+		),
+	) );
 }
 
 if ( ! function_exists( '_s_get_theme_options' ) ) {
