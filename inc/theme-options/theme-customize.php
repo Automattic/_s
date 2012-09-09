@@ -71,7 +71,7 @@ function _s_customize_register( $wp_customize ) {
 		'label'      => __( 'Sample Select Options', '_s' ),
 		'section'    => '_s_theme_options',
 		'settings'   => '_s_theme_options[sample_select_options]',
-		'type'    => 'select',
+		'type'       => 'select',
 		'choices'    => array(
 			'0' => __( 'Zero', '_s' ),
 			'1' => __( 'One', '_s' ),
