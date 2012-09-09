@@ -1,8 +1,9 @@
-=== _s ===
+_s
+===
 
-Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here ...
+My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
 
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A helpful 404 template.
@@ -16,24 +17,22 @@ My ultra-minimal CSS might make me look like theme tartare but that means less s
 * Smartly organized starter CSS in style.css that will help you to quickly get your design off the ground.
 * The GPL license in license.txt. :) Use it to make something cool.
 
-=== Getting Started ===
+Getting Started
+---------------
 
-If you want to keep it simple, head over to http://underscores.me and generate your _s based theme from there. You just input the name of the theme you want to create and click the "Generate" button and you get your ready-to-awesomize starter theme.
+If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create and click the "Generate" button and you get your ready-to-awesomize starter theme.
 
-If you wanna do set things up manually, download _s from github. The first thing you want to do is copy the _s directory and change the name to something else. Like, say, megatherium. Then you'll need to do a three-step find and replace on the name in all the templates.
+If you wanna do set things up manually, download `_s` from github. The first thing you want to do is copy the `_s` directory and change the name to something else. Like, say, `megatherium`. Then you'll need to do a three-step find and replace on the name in all the templates.
 
-1. Search for _s inside single quotations to capture the text domain.
-2. Search for _s_ for to capture all the function names
-3. Search for _s with a space before it to replace all the occurrences of it in comments. (You'd replace this with the capitalized version of your theme name.)
+1. Search for `_s` inside single quotations to capture the text domain.
+2. Search for `_s_` for to capture all the function names
+3. Search for `_s` with a space before it to replace all the occurrences of it in comments. (You'd replace this with the capitalized version of your theme name.)
 
-or ...
+OR
 
-Search for:'_s'
-Replace with:'megatherium'
-Search for:_s_
-Replace with:megatherium_
-Search for: _s
-Replace with: Megatherium
+* Search for: `_s` & replace with: `megatherium`
+* Search for: `_s_` & replace with: `megatherium_`
+* Search for: `_s` & replace with: `Megatherium`
 
 Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
 
