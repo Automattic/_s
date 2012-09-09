@@ -12,7 +12,8 @@ add_action( 'customize_register', '_s_customize_register' );
  * 
  * @since   1.1-wpcom
  * @author  Frank Bueltge <frank@bueltge.de>
- * @see	 examples for different input fields https://gist.github.com/2968549
+ * @see     class WP_Customize_Control::render_content() in wp-inlcudes
+ * @see     examples for different input fields https://gist.github.com/2968549
  * @return  void
  */
 function _s_customize_register( $wp_customize ) {
@@ -81,6 +82,43 @@ function _s_customize_register( $wp_customize ) {
 			'5' => __( 'Five', '_s' ),
 		),
 	) );
+	
+	// ===== Sample Radio Buttons Fields =====
+	// Add field for example radio buttons
+	$wp_customize->add_setting( '_s_theme_options[sample_radio_buttons]', array(
+		'default'    => $options['sample_radio_buttons'],
+		'type'       => 'option',
+		'capability' => 'edit_theme_options',
+	) );
+	
+	// Add control and output for select field
+	$wp_customize->add_control( '_s_theme_options_sample_radio_buttons', array(
+		'label'      => __( 'Sample Radio Buttons', '_s' ),
+		'section'    => '_s_theme_options',
+		'settings'   => '_s_theme_options[sample_radio_buttons]',
+		'type'       => 'radio',
+		'choices'    => array(
+			'yes'   => __( 'Yes', '_s' ),
+			'no'    => __( 'No', '_s' ),
+			'maybe' => __( 'Maybe', '_s' ),
+		),
+	) );
+	
+	// ===== Sample Color Picker Field =====
+	// Add settings for color niclude a color picker
+	$wp_customize->add_setting( '_s_theme_options[sample_colorpicker]', array(
+		'default'           => $options['sample_colorpicker'],
+		'type'              => 'option',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability'        => 'edit_theme_options',
+	) );
+	
+	// Add control include colorpicker
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, '_s_theme_options_ 	sample_colorpicker', array(
+		'label'    => __('Sample Color', '_s'),
+		'section'  => '_s_theme_options',
+		'settings' => '_s_theme_options[sample_colorpicker]',
+    ) ) );
 }
 
 if ( ! function_exists( '_s_get_theme_options' ) ) {
