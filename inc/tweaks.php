@@ -59,6 +59,9 @@ add_filter( 'attachment_link', '_s_enhanced_image_navigation', 10, 2 );
 function _s_wp_title( $title, $sep ) {
 	global $page, $paged;
 
+	if ( is_feed() )
+		return $title;
+
 	// Add the blog name
 	$title .= get_bloginfo( 'name' );
 
