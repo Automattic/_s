@@ -3,7 +3,7 @@ Theme Name: _s
 Layout: Sidebar-Content
 */
 
-.site-content {
+#primary {
 	float: right;
 	margin: 0 0 0 -25%;
 	width: 100%;
