@@ -89,7 +89,7 @@ function _s_widgets_init() {
 		'name' => __( 'Sidebar', '_s' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
+		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
@@ -100,8 +100,6 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles
  */
 function _s_scripts() {
-	global $post;
-
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
@@ -110,7 +108,7 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if ( is_singular() && wp_attachment_is_image( $post->ID ) ) {
+	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
