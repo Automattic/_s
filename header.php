@@ -8,7 +8,15 @@
  * @since _s 1.0
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
+
+<script>
+/* Replaces class "no-js" with "js" in the <html>-tag when JavaScript is being used. 
+*  Allows easy styling for browsers [not] supporting/running JavaScript.
+*/
+document.documentElement.className = document.documentElement.className.replace(/(\s|^)no-js(\s|$)/, '$1js$2');
+</script>
+
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
@@ -42,7 +50,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('no-js'); ?>>
+<body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
