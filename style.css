@@ -191,9 +191,6 @@ sub {
 small {
 	font-size: 75%;
 }
-big {
-	font-size: 125%;
-}
 figure {
 	margin: 0;
 }
