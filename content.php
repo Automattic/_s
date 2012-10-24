@@ -45,7 +45,7 @@
 				if ( $tags_list ) :
 			?>
 			<span class="sep"> | </span>
-			<span class="tag-links">
+			<span class="tags-links">
 				<?php printf( __( 'Tagged %1$s', '_s' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
