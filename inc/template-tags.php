@@ -8,7 +8,7 @@
  * @since _s 1.0
  */
 
-if ( ! function_exists( '_s_content_nav' ) ):
+if ( ! function_exists( '_s_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  *
