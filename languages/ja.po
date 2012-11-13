@@ -1,0 +1,453 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2012-11-12 01:30:16+00:00\n"
+"PO-Revision-Date: 2012-11-13 10:41+0900\n"
+"Language: JAPANESE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Naoko Takano <info@nao-net.com>\n"
+"Language-Team: \n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "お探しのページが見つかりません。"
+
+#: 404.php:20
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"ここには何も見つかりませんでした。以下のリンクまたは検索をお試しください。"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "よく使われているカテゴリー"
+
+#. translators: %1$s: smilie
+#: 404.php:35
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "月別アーカイブを見てみてください。%1$s"
+
+#: archive.php:22
+msgid "Category Archives: %s"
+msgstr "「%s」カテゴリーアーカイブ"
+
+#: archive.php:25
+msgid "Tag Archives: %s"
+msgstr "「%s」タグアーカイブ"
+
+#: archive.php:32
+msgid "Author Archives: %s"
+msgstr "投稿者「%s」のアーカイブ"
+
+#: archive.php:40
+msgid "Daily Archives: %s"
+msgstr "%sのアーカイブ"
+
+#: archive.php:43
+msgid "Monthly Archives: %s"
+msgstr "%sのアーカイブ"
+
+#: archive.php:46
+msgid "Yearly Archives: %s"
+msgstr "%s年のアーカイブ"
+
+#: archive.php:49 sidebar.php:18
+msgid "Archives"
+msgstr "アーカイブ"
+
+#: comments.php:32
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "「%2$s」への1件のフィードバック"
+msgstr[1] "「%2$s」への%1$s件のフィードバック"
+
+#: comments.php:39 comments.php:59
+msgid "Comment navigation"
+msgstr "コメントナビゲーション"
+
+#: comments.php:40 comments.php:60
+msgid "&larr; Older Comments"
+msgstr "&larr; 以前のコメント"
+
+#: comments.php:41 comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr "新しいコメント &rarr;"
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr "コメントは受け付けていません。"
+
+#: content-page.php:17 content-single.php:19 content.php:26 image.php:86
+msgid "Pages:"
+msgstr "固定ページ:"
+
+#: content-page.php:18 content-single.php:57 content.php:59 image.php:34
+#: image.php:100
+msgid "Edit"
+msgstr "編集"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:25 content-single.php:28 content.php:34 content.php:44
+msgid ", "
+msgstr "、"
+
+#: content-single.php:33
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"タグ: %2$s <a href=\"%3$s\" title=\"%4$s へのパーマリンク\" rel=\"bookmark\">"
+"パーマリンク</a>"
+
+#: content-single.php:35
+msgid ""
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"<a href=\"%3$s\" title=\"%4$s へのパーマリンク\" rel=\"bookmark\">パーマリン"
+"ク</a>"
+
+#: content-single.php:41
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"カテゴリー: %1$s タグ: %2$s <a href=\"%3$s\" title=\"%4$s へのパーマリンク\" "
+"rel=\"bookmark\">パーマリンク</a>"
+
+#: content-single.php:43
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"カテゴリー: %1$s <a href=\"%3$s\" title=\"%4$s へのパーマリンク\" rel="
+"\"bookmark\">パーマリンク</a>"
+
+#: content.php:10
+msgid "Permalink to %s"
+msgstr "「%s」へのパーマリンク"
+
+#: content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "続きを読む <span class=\"meta-nav\">&rarr;</span>"
+
+#: content.php:38
+msgid "Posted in %1$s"
+msgstr "カテゴリー: %1$s"
+
+#: content.php:49
+msgid "Tagged %1$s"
+msgstr "タグ:  %1$s"
+
+#: content.php:56
+msgid "Leave a comment"
+msgstr "コメントをどうぞ"
+
+#: content.php:56
+msgid "1 Comment"
+msgstr "1件のコメント"
+
+#: content.php:56
+msgid "% Comments"
+msgstr "%件のコメント"
+
+#: footer.php:17
+msgid "A Semantic Personal Publishing Platform"
+msgstr "セマンティックな個人パブリッシングプラットフォーム"
+
+#: footer.php:17
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:19
+msgid "Theme: %1$s by %2$s."
+msgstr "テーマ: %1$s by %2$s"
+
+#: functions.php:71
+msgid "Primary Menu"
+msgstr "メインメニュー"
+
+#: functions.php:89
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: header.php:33
+msgid "Page %s"
+msgstr "ページ %s"
+
+#: header.php:55
+msgid "Menu"
+msgstr "メニュー"
+
+#: header.php:56
+msgid "Skip to content"
+msgstr "コンテンツへスキップ"
+
+#: image.php:24
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-"
+"size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
+"\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+"投稿日時: <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\" pubdate>%2$s</time></span> (<a href=\"%3$s\" title=\"フルサイズ画像"
+"へのリンク\">%4$s &times; %5$s</a>) ギャラリー名: <a href=\"%6$s\" title="
+"\"%7$s へ戻る\" rel=\"gallery\">%7$s</a>"
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr "&larr; 前へ"
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr "次へ &rarr;"
+
+#: image.php:92
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"コメントを投稿\">コメント"
+"を投稿</a>するか、トラックバックを送信できます: <a class=\"trackback-link\" "
+"href=\"%s\" title=\"この投稿のトラックバック URL\" rel=\"trackback\">トラック"
+"バック URL</a>"
+
+#: image.php:94
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+"現在コメントは受け付けていませんが、トラックバックを送信できます: <a class="
+"\"trackback-link\" href=\"%s\" title=\"あなたの投稿用のトラックバック URL\" "
+"rel=\"trackback\">トラックバック URL</a>"
+
+#: image.php:96
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+"現在トラックバックは受け付けていませんが、<a class=\"comment-link\" href="
+"\"#respond\" title=\"コメントを投稿\">コメントを投稿</a>できます。"
+
+#: image.php:98
+msgid "Both comments and trackbacks are currently closed."
+msgstr "現在コメントとトラックバックは受け付けていません。"
+
+#: inc/template-tags.php:39
+msgid "Post navigation"
+msgstr "投稿ナビゲーション"
+
+#: inc/template-tags.php:43
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:44
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:49
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> 以前の投稿"
+
+#: inc/template-tags.php:53
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "新しい投稿 <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:78
+msgid "Pingback:"
+msgstr "ピンバック:"
+
+#: inc/template-tags.php:78 inc/template-tags.php:101
+msgid "(Edit)"
+msgstr "(編集)"
+
+#: inc/template-tags.php:88
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">のコメント:</span>"
+
+#: inc/template-tags.php:91
+msgid "Your comment is awaiting moderation."
+msgstr "コメントは現在承認待ちです。"
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:99
+msgid "%1$s at %2$s"
+msgstr "%1$s%2$s"
+
+#: inc/template-tags.php:126
+msgid ""
+"Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
+"\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+"投稿日時: <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
+"\"> 投稿者: <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: inc/template-tags.php:132
+msgid "View all posts by %s"
+msgstr "%s の投稿をすべて表示"
+
+#: inc/theme-options/theme-options.php:38
+msgid "Sample Checkbox"
+msgstr "チェックボックスの例"
+
+#: inc/theme-options/theme-options.php:44
+msgid "Sample Text Input"
+msgstr "テキスト入力の例"
+
+#: inc/theme-options/theme-options.php:45
+msgid "Sample Select Options"
+msgstr "選択肢入力の例"
+
+#: inc/theme-options/theme-options.php:46
+msgid "Sample Radio Buttons"
+msgstr "ラジオボタンの例"
+
+#: inc/theme-options/theme-options.php:47
+msgid "Sample Textarea"
+msgstr "テキストエリアの例"
+
+#: inc/theme-options/theme-options.php:74
+#: inc/theme-options/theme-options.php:75
+msgid "Theme Options"
+msgstr "テーマ設定"
+
+#: inc/theme-options/theme-options.php:92
+msgid "Zero"
+msgstr "0"
+
+#: inc/theme-options/theme-options.php:96
+msgid "One"
+msgstr "1"
+
+#: inc/theme-options/theme-options.php:100
+msgid "Two"
+msgstr "2"
+
+#: inc/theme-options/theme-options.php:104
+msgid "Three"
+msgstr "3"
+
+#: inc/theme-options/theme-options.php:108
+msgid "Four"
+msgstr "4"
+
+#: inc/theme-options/theme-options.php:112
+msgid "Five"
+msgstr "5"
+
+#: inc/theme-options/theme-options.php:128
+msgid "Yes"
+msgstr "はい"
+
+#: inc/theme-options/theme-options.php:132
+msgid "No"
+msgstr "いいえ"
+
+#: inc/theme-options/theme-options.php:136
+msgid "Maybe"
+msgstr "多分"
+
+#: inc/theme-options/theme-options.php:174
+msgid "A sample checkbox."
+msgstr "チェックボックスの例。"
+
+#: inc/theme-options/theme-options.php:186
+msgid "Sample text input"
+msgstr "テキスト入力欄の例"
+
+#: inc/theme-options/theme-options.php:212
+msgid "Sample select input"
+msgstr "選択肢入力の例"
+
+#: inc/theme-options/theme-options.php:243
+msgid "Sample textarea"
+msgstr "テキストエリアの例"
+
+#: inc/theme-options/theme-options.php:257
+msgid "%s Theme Options"
+msgstr "%s テーマ設定"
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr "何も見つかりませんでした"
+
+#: no-results.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"最初の投稿を公開する準備ができましたか ?<a href=\"%1$s\">こちらからスタートし"
+"ましょう</a>。"
+
+#: no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"検索キーワードに一致するコンテンツが見つかりませんでした。他のキーワードをお"
+"試しください。"
+
+#: no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "お探しのコンテンツが見つかりません。検索をお試しください。"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "「%s」の検索結果"
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr "検索"
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr "検索 &hellip;"
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr "メタ"
+
+#. Theme Name of the plugin/theme
+msgid "_s"
+msgstr "_s"
+
+#. Theme URI of the plugin/theme
+msgid "https://wpcom-themes.svn.automattic.com/_s/"
+msgstr "https://wpcom-themes.svn.automattic.com/_s/"
+
+#. Description of the plugin/theme
+msgid ""
+"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
+"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
+"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
+"theme out there. That's what I'm here for."
+msgstr ""
+"<code>_s</code>（アンダースコアーズ）というスターター・テーマです。親テーマ用"
+"ではなく、改変のベースとなるテーマとして作られています。これをもとに変更を加"
+"えて、次世代のすばらしい WordPress テーマを作るためのコードの参考にしてくださ"
+"い。"
+
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr "Automattic"
+
+#. Author URI of the plugin/theme
+msgid "http://automattic.com/"
+msgstr "http://automattic.com/"
