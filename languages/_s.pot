@@ -1,0 +1,417 @@
+# Copyright (C) 2012 Automattic
+# This file is distributed under the GNU General Public License.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.1-wpcom\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2012-11-12 01:30:16+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smilie
+#: 404.php:35
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:22
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:25
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: archive.php:32
+msgid "Author Archives: %s"
+msgstr ""
+
+#: archive.php:40
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:43
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:46
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:49 sidebar.php:18
+msgid "Archives"
+msgstr ""
+
+#: comments.php:32
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39 comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:40 comments.php:60
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:41 comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr ""
+
+#: content-page.php:17 content-single.php:19 content.php:26 image.php:86
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:18 content-single.php:57 content.php:59 image.php:34
+#: image.php:100
+msgid "Edit"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:25 content-single.php:28 content.php:34 content.php:44
+msgid ", "
+msgstr ""
+
+#: content-single.php:33
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:35
+msgid ""
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: content-single.php:41
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:43
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content.php:10
+msgid "Permalink to %s"
+msgstr ""
+
+#: content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:38
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content.php:49
+msgid "Tagged %1$s"
+msgstr ""
+
+#: content.php:56
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:56
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:56
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:17
+msgid "A Semantic Personal Publishing Platform"
+msgstr ""
+
+#: footer.php:17
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:19
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:71
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:89
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:33
+msgid "Page %s"
+msgstr ""
+
+#: header.php:55
+msgid "Menu"
+msgstr ""
+
+#: header.php:56
+msgid "Skip to content"
+msgstr ""
+
+#: image.php:24
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-"
+"size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
+"\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:38
+msgid "&larr; Previous"
+msgstr ""
+
+#: image.php:39
+msgid "Next &rarr;"
+msgstr ""
+
+#: image.php:92
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:94
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:96
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:98
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: inc/template-tags.php:39
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:43
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: inc/template-tags.php:44
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: inc/template-tags.php:49
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:53
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:78
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:78 inc/template-tags.php:101
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:88
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/template-tags.php:91
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: inc/template-tags.php:99
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:126
+msgid ""
+"Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"byline"
+"\"> by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+
+#: inc/template-tags.php:132
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:38
+msgid "Sample Checkbox"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:44
+msgid "Sample Text Input"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:45
+msgid "Sample Select Options"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:46
+msgid "Sample Radio Buttons"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:47
+msgid "Sample Textarea"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:74
+#: inc/theme-options/theme-options.php:75
+msgid "Theme Options"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:92
+msgid "Zero"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:96
+msgid "One"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:100
+msgid "Two"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:104
+msgid "Three"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:108
+msgid "Four"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:112
+msgid "Five"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:128
+msgid "Yes"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:132
+msgid "No"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:136
+msgid "Maybe"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:174
+msgid "A sample checkbox."
+msgstr ""
+
+#: inc/theme-options/theme-options.php:186
+msgid "Sample text input"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:212
+msgid "Sample select input"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:243
+msgid "Sample textarea"
+msgstr ""
+
+#: inc/theme-options/theme-options.php:257
+msgid "%s Theme Options"
+msgstr ""
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:20
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr ""
+
+#: sidebar.php:25
+msgid "Meta"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "_s"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://wpcom-themes.svn.automattic.com/_s/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
+"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
+"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
+"theme out there. That's what I'm here for."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://automattic.com/"
+msgstr ""
