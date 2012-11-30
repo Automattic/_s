@@ -25,6 +25,6 @@ add_action( 'customize_register', '_s_customize_register' );
  * @since _s 1.2
 */
 function _s_customize_preview_js() {
-	wp_enqueue_script( '_s-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20120827', true );
+	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20120827', true );
 }
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
