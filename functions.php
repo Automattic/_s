@@ -37,9 +37,9 @@ function _s_setup() {
 	require( get_template_directory() . '/inc/extras.php' );
 
 	/**
-	 * Theme Customizer additions
+	 * Customizer additions
 	 */
-	require( get_template_directory() . '/inc/theme-customizer.php' );
+	require( get_template_directory() . '/inc/customizer.php' );
 
 	/**
 	 * WordPress.com-specific functions and definitions
