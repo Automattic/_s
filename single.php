@@ -13,11 +13,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php _s_content_nav( 'nav-above' ); ?>
-
 				<?php get_template_part( 'content', 'single' ); ?>
-
-				<?php _s_content_nav( 'nav-below' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

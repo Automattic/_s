@@ -126,7 +126,7 @@ a:active {
 /* =Content
 ----------------------------------------------- */
 
-.site-title a {
+.site-title a, .site-title a:visited {
 	font-family: 'Luckiest Guy', sans-serif;
 	font-size: 88px;
 	font-weight: 400;
@@ -139,9 +139,12 @@ a:active {
 	color: #D30000;
 }
 
-h1 {
+h1, h1 a, h1 a:visited {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600; 
+	text-decoration: none;
+	color: #666;
+	font-size: 22px;
 }
 
 article {
@@ -156,6 +159,13 @@ article {
 }
 .entry-meta {
 	clear: both;
+	font-size: 12px;
+	color: #AAA;
+}
+.entry-meta a {
+	font-size: 12px;
+	color: #4A92C0;
+	text-decoration: none;
 }
 .byline {
 	display: none;
