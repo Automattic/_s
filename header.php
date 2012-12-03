@@ -18,8 +18,11 @@
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
+
+
+
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:700|Luckiest+Guy&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" id="style-css" href="/harrycast/wp-content/themes/Harrys-Theme/reset.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-css" href="<?php echo get_bloginfo('template_directory') . '/reset.css'; ?>" type="text/css" media="all">
 <?php wp_head(); ?>
 </head>
 
