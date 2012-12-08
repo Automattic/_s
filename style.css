@@ -460,7 +460,7 @@ img[class*="wp-image-"] {
 .entry-content img,
 img.size-full {
 	max-width: 100%;
-	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+	/*width: auto; */ /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
