@@ -19,7 +19,7 @@
 			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon .site-footer -->
-</div><!-- #page .hfeed .site -->
+</div><!-- #wrapper .hfeed .site -->
 
 <?php wp_footer(); ?>
 
