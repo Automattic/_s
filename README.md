@@ -32,7 +32,7 @@ OR
 
 * Search for: `'_s'` & replace with: `'megatherium'`
 * Search for: `_s_` & replace with: `megatherium_`
-* Search for: `&nbsp;_s` & replace with: `&nbsp;Megatherium`
+* Search for: <code>&nbsp;_s</code> & replace with: <code>&nbsp;Megatherium</code>
 
 Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
 
