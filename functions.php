@@ -14,7 +14,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
-if ( ! function_exists( '_s_setup' ) ):
+if ( ! function_exists( '_s_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -34,7 +34,7 @@ function _s_setup() {
 	/**
 	 * Custom functions that act independently of the theme templates
 	 */
-	//require( get_template_directory() . '/inc/tweaks.php' );
+	require( get_template_directory() . '/inc/extras.php' );
 
 	/**
 	 * Custom Theme Options
