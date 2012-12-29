@@ -49,7 +49,14 @@ get_header();
 									 * Grab the IDs of all the image attachments in a gallery so we can get the URL of the next adjacent image in a gallery,
 									 * or the first image (if we're looking at the last image in a gallery), or, in a gallery of one, just the link to that image file
 									 */
-									$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+									$attachments = array_values( get_children( array(
+										'post_parent'    => $post->post_parent,
+										'post_status'    => 'inherit',
+										'post_type'      => 'attachment',
+										'post_mime_type' => 'image',
+										'order'          => 'ASC',
+										'orderby'        => 'menu_order ID'
+									) ) );
 									foreach ( $attachments as $k => $attachment ) {
 										if ( $attachment->ID == $post->ID )
 											break;
