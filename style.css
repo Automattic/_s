@@ -474,7 +474,7 @@ img.size-full {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
-.wp-caption img {
+.wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 1.2% auto 0;
 	max-width: 98%;
