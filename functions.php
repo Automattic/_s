@@ -74,7 +74,7 @@ function _s_setup() {
 	/**
 	 * Add support for the Aside Post Formats
 	 */
-	add_theme_support( 'post-formats', array( 'aside', ) );
+	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
