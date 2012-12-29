@@ -471,12 +471,8 @@ img.size-full {
 }
 .wp-caption {
 	border: 1px solid #ccc;
-	max-width: 100%;
-}
-.wp-caption.aligncenter,
-.wp-caption.alignleft,
-.wp-caption.alignright {
 	margin-bottom: 1.5em;
+	max-width: 100%;
 }
 .wp-caption img {
 	display: block;
