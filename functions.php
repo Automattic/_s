@@ -72,7 +72,7 @@ function _s_setup() {
 	) );
 
 	/**
-	 * Add support for the Aside Post Formats
+	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 }
