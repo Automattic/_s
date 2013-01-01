@@ -7,8 +7,6 @@
  */
 
 get_header();
-
-remove_filter( 'the_title', 'wptexturize' );
 ?>
 
 		<div id="primary" class="content-area image-attachment">
