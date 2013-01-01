@@ -52,10 +52,11 @@ get_header(); ?>
 						?>
 					</h1>
 					<?php
-						// show an optional term description
-						$term_description = term_description();
-						if ( ! empty( $term_description ) )
-							echo ( '<div class="entry-content">' . $term_description . '</div>' );
+						// show optional term description
+						if ( is_category() || is_tag() || is_tax() )
+							$term_description = term_description();
+							if ( ! empty( $term_description ) )
+								echo '<div class="term-description">' . $term_description . '</div>';
 					?>
 				</header><!-- .page-header -->
 
