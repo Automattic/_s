@@ -1,0 +1,109 @@
+/*
+Theme Name: _strap
+Theme URI: https://github.com/ptbello/_strap
+Author: Piero Bellomo
+Author URI: https://github.com/ptbello
+Description: TODO
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags: bootstrap, _s
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+TODO add references to sources
+*/
+
+// Bootstrap
+@import '../_strap_assets/bootstrap/less/bootstrap.less';
+@import '../_strap_assets/bootstrap/less/responsive.less';
+
+// Variables for semantic elements
+@primaryColumns:             9;
+@secondaryColumns:           3;
+
+// Grid for semantic elements
+#semanticGrid {
+  .core (@gridColumnWidth, @gridGutterWidth) {
+    #main,
+    #masthead,
+    #colophon
+    {
+      margin-left: @gridGutterWidth * -1;
+    }
+    #main {
+      #primary,
+      #secondary
+      {
+        float: left;
+        min-height: 1px; // prevent collapsing columns
+        margin-left: @gridGutterWidth;
+      }
+      #primary
+      {
+        width: (@gridColumnWidth * @primaryColumns) + (@gridGutterWidth * (@primaryColumns - 1));
+      }
+      #secondary
+      {
+        width: (@gridColumnWidth * @secondaryColumns) + (@gridGutterWidth * (@secondaryColumns - 1));
+      }
+    }
+  }
+}
+/*
+Semantic rows and columns
+*/
+#masthead {
+  .makeRow();        // Mixin provided by Bootstrap
+}
+#main {
+  .makeRow();        // Mixin provided by Bootstrap
+  #primary {
+    .makeColumn(@primaryColumns); // Mixin provided by Bootstrap
+
+  }
+  #secondary {
+    .makeColumn(@secondaryColumns); // Mixin provided by Bootstrap
+  }
+}
+#colophon {
+  .makeRow();        // Mixin provided by Bootstrap
+}
+
+@media (max-width: 767px) {
+  #main,
+  #masthead,
+  #colophon
+  {
+    margin-left: 0;
+  }
+  #main {
+    #primary,
+    #secondary
+    {
+      float: none;
+      display: block;
+      width: 100%;
+      margin-left: 0;
+      .box-sizing(border-box);
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  #semanticGrid > .core(@gridColumnWidth768, @gridGutterWidth768);
+}
+@media (min-width: 1200px) {
+  #semanticGrid > .core(@gridColumnWidth1200, @gridGutterWidth1200);
+}
+/*
+From the original _s style.css
+*/
+
+/* Text meant only for screen readers */
+.assistive-text {
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
