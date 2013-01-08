@@ -1,5 +1,5 @@
 _strap
 ======
 
-_strap has the goal of integrating twitter bootstrap (https://github.com/twitter/bootstrap) into _s (https://github.com/Automattic/_s) with the smaller possible changeset.
+_strap has the goal of integrating Twitter's bootstrap (https://github.com/twitter/bootstrap) into Automattic's _s (https://github.com/Automattic/_s) with the smallest possible changeset (...more soon)
 

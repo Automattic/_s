@@ -1,9 +1,7 @@
 <?php
 
 /**
- * Menu compression for products
- *
- * @since Mattei Deseo 1.0
+ * Bootstrap class injection
  */
 function bootstrap_menu_objects($sorted_menu_items, $args)
 {
@@ -29,6 +27,9 @@ function bootstrap_menu_objects($sorted_menu_items, $args)
 add_filter( 'wp_nav_menu_objects', 'bootstrap_menu_objects', 10, 2 );
 
 
+/**
+ * Custom Bootstrap Walker
+ */
 class Bootstrap_Nav_Menu extends Walker_Nav_Menu {
     /**
      * @see Walker::start_lvl()
