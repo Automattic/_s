@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Bootstrap class injection
+ * Bootstrap menu class injection
  */
 function bootstrap_menu_objects($sorted_menu_items, $args)
 {
@@ -86,4 +86,31 @@ class Bootstrap_Nav_Menu extends Walker_Nav_Menu {
 
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
+}
+
+/**
+ * Bootstrap styled Caption shortcode.
+ * Hat tip: http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
+ */
+add_filter( 'img_caption_shortcode', 'bootstrap_img_caption_shortcode', 10, 3 );
+
+function bootstrap_img_caption_shortcode( $output, $attr, $content )  {
+
+    /* We're not worried abut captions in feeds, so just return the output here. */
+    if ( is_feed() )  return '';
+
+    extract(shortcode_atts(array(
+                'id'	=> '',
+                'align'	=> 'alignnone',
+                'width'	=> '',
+                'caption' => ''
+            ), $attr));
+
+    if ( 1 > (int) $width || empty($caption) )
+        return $content;
+
+    if ( $id ) $id = 'id="' . esc_attr($id) . '" ';
+
+    return '<div ' . $id . 'class="thumbnail ' . esc_attr($align) . '">'
+        . do_shortcode( $content ) . '<div class="caption">' . $caption . '</div></div>';
 }

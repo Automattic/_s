@@ -26,25 +26,38 @@
 <div id="page" class="hfeed site container">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
+		<hgroup class="span12">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
+	</header><!-- #masthead .site-header -->
 
-		<div role="navigation" class="site-navigation main-navigation navbar">
-			<h1 class="assistive-text"><?php _e( 'Menu', '_s' ); ?></h1>
-			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
+    <div role="navigation" class="site-navigation main-navigation navbar">
+        <h1 class="assistive-text"><?php _e( 'Menu', '_s' ); ?></h1>
+        <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
 
-			<?php wp_nav_menu( array(
+        <div class="navbar-inner">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <div class="nav-collapse collapse">
+                <?php
+                wp_nav_menu( array(
                         'theme_location'  => 'primary',
-                        'container'       => 'div',
-                        'container_class' => 'navbar-inner',
+                        'container'       => false,
                         'menu_class'      => 'nav',
                         'walker'          => new Bootstrap_Nav_Menu(),
                     )
                 );
-            ?>
-		</div><!-- .site-navigation .main-navigation .navbar -->
-	</header><!-- #masthead .site-header -->
+                get_search_form();
+                ?>
+
+            </div><!-- .nav-collapse .collapse -->
+        </div><!-- .navbar-inner -->
+    </div><!-- .site-navigation .main-navigation .navbar -->
 
 	<div id="main" class="site-main">
