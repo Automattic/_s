@@ -8,7 +8,10 @@
  * @since _s 1.0
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!--[if IE 7]>    <html class="ie7 oldie" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie" <?php language_attributes(); ?>> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 9]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
