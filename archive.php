@@ -19,17 +19,17 @@ get_header(); ?>
 					<h1 class="page-title">
 						<?php
 							if ( is_category() ) {
-								printf( __( 'Category Archives: %s', '_s' ), '<span>' . single_cat_title( '', false ) . '</span>' );
-
+								printf( __( '%sCategory Archives:%s %s', '_s' ), '<span>', '</span>', single_cat_title( '', false ) );
+							
 							} elseif ( is_tag() ) {
-								printf( __( 'Tag Archives: %s', '_s' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+								printf( __( '%sTag Archives:%s %s', 'blocco' ), '<span>', '</span>', single_tag_title( '', false ) );
 
 							} elseif ( is_author() ) {
 								/* Queue the first post, that way we know
 								 * what author we're dealing with (if that is the case).
 								*/
-								the_post();
-								printf( __( 'Author Archives: %s', '_s' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+								the_post();								
+								printf( __( '%sAuthor Archives:%s %s', '_s' ), '<span>', '</span>', '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a>' );
 								/* Since we called the_post() above, we need to
 								 * rewind the loop back to the beginning that way
 								 * we can run the loop properly, in full.
@@ -37,14 +37,14 @@ get_header(); ?>
 								rewind_posts();
 
 							} elseif ( is_day() ) {
-								printf( __( 'Daily Archives: %s', '_s' ), '<span>' . get_the_date() . '</span>' );
-
+								printf( __( '%sDaily Archives:%s %s', '_s' ), '<span>', '</span>', get_the_date() );
+							
 							} elseif ( is_month() ) {
-								printf( __( 'Monthly Archives: %s', '_s' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
-
+								printf( __( '%sMonthly Archives:%s %s', '_s' ), '<span>', '</span>', get_the_date( 'F Y' ) );
+							
 							} elseif ( is_year() ) {
-								printf( __( 'Yearly Archives: %s', '_s' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-
+								printf( __( '%sYearly Archives:%s %s', '_s' ), '<span>', '</span>', get_the_date( 'Y' ) );
+							
 							} else {
 								_e( 'Archives', '_s' );
 
