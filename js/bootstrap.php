@@ -1,6 +1,4 @@
 <?php
-ini_set('display_errors', 'On');
-error_reporting(E_ERROR | E_WARNING | E_PARSE );
 
 $compress_css = defined('COMPRESS_CSS') ? COMPRESS_CSS : true;
 $zip = $compress_css ? 1 : 0;
