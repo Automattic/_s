@@ -44,7 +44,11 @@ get_header(); ?>
 							
 							} elseif ( is_year() ) {
 								printf( __( '%sYearly Archives:%s %s', '_s' ), '<span>', '</span>', get_the_date( 'Y' ) );
-							
+						
+							} elseif ( is_tax( 'post_format' ) ) {
+								$format_labels = _s_post_format_labels();
+								printf( __( '%s', '_s' ), '<span>' . $format_labels[get_post_format()] . '</span>' );
+
 							} else {
 								_e( 'Archives', '_s' );
 
