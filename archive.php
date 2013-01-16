@@ -22,7 +22,7 @@ get_header(); ?>
 								printf( __( '%sCategory Archives:%s %s', '_s' ), '<span>', '</span>', single_cat_title( '', false ) );
 							
 							} elseif ( is_tag() ) {
-								printf( __( '%sTag Archives:%s %s', 'blocco' ), '<span>', '</span>', single_tag_title( '', false ) );
+								printf( __( '%sTag Archives:%s %s', '_s' ), '<span>', '</span>', single_tag_title( '', false ) );
 
 							} elseif ( is_author() ) {
 								/* Queue the first post, that way we know
@@ -47,7 +47,7 @@ get_header(); ?>
 						
 							} elseif ( is_tax( 'post_format' ) ) {
 								$format_labels = _s_post_format_labels();
-								printf( __( '%s', '_s' ), '<span>' . $format_labels[get_post_format()] . '</span>' );
+								printf( __( '%s', '_s' ), $format_labels[get_post_format()] );
 
 							} else {
 								_e( 'Archives', '_s' );
