@@ -7816,7 +7816,9 @@ From the original _s style.css
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
-/* Alignment (necessary for caption shortcode content), Thumnbails */
+/*
+  Alignment (necessary for caption shortcode content), Thumnbails
+*/
 .alignleft {
   display: inline;
   float: left;
@@ -8101,4 +8103,23 @@ Comment form
     padding-left: 10px;
     padding-right: 10px;
   }
+}
+/*
+Responsice embed media
+// http://www.tjkdesign.com/articles/how-to-resize-videos-on-the-fly.asp
+*/
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 20px;
+  margin: 20px auto;
+  height: 0;
+  overflow: hidden;
+}
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

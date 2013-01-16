@@ -151,3 +151,10 @@ function bootstrap_comment_form_defaults( $defaults )
 
     return $defaults;
 }
+
+add_filter( 'embed_oembed_html', 'bootstrap_oembed_html', 10, 1 );
+
+function bootstrap_oembed_html( $html )
+{
+    return '<div class="embed-container">' . $html . '</div>';
+}
