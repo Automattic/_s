@@ -12,7 +12,7 @@ $force_gzip = ( $compress && 'gzip' == $zip );
 $expires_offset = 31536000; // 1 year
 $out = '';
 
-$bootstrap_js_path = 'C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap_assets\bootstrap\js';
+$bootstrap_js_path = '../bootstrap/js';
 foreach( scandir($bootstrap_js_path) as $file) {
     $path = $bootstrap_js_path . '/' . $file;
     if(is_file($path) && pathinfo($path, PATHINFO_EXTENSION) == 'js')  //  print_r(file_get_contents($path));
