@@ -114,3 +114,40 @@ function bootstrap_img_caption_shortcode( $output, $attr, $content )  {
     return '<div ' . $id . 'class="thumbnail ' . esc_attr($align) . '">'
         . do_shortcode( $content ) . '<div class="caption">' . $caption . '</div></div>';
 }
+
+/**
+ * Bootstrap styled Comment form.
+ */
+add_filter( 'comment_form_defaults', 'bootstrap_comment_form_defaults', 10, 1 );
+
+function bootstrap_comment_form_defaults( $defaults )
+{
+    /*    */
+
+    $commenter = wp_get_current_commenter();
+    $req = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $defaults['fields'] =  array(
+        'author' => '<div class="control-group comment-form-author">' .
+            '<label for="author" class="control-label">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            '<div class="controls"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"  class="span3"' . $aria_req . ' /></div>' .
+            '</div>',
+        'email'  => '<div class="control-group comment-form-email">' .
+            '<label for="email" class="control-label">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            '<div class="controls"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '"  class="span3"' . $aria_req . ' /></div>' .
+            '</div>',
+        'url'    => '<div class="control-group comment-form-url">' .
+            '<label for="url" class="control-label">' . __( 'Website' ) . '</label>' .
+            '<div class="controls"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '"  class="span3" /></div>' .
+            '</div>',
+    );
+    $defaults['comment_field'] = '<div class="control-group comment-form-comment">' .
+        '<label for="comment" class="control-label">' . _x( 'Comment', 'noun' ) . '</label>' .
+        '<div class="controls"><textarea id="comment" name="comment" aria-required="true" class="span6" rows="8"></textarea>' .
+        '<span class="help-block form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</span></div>' .
+        '</div>';
+
+    $defaults['comment_notes_after'] = '';
+
+    return $defaults;
+}

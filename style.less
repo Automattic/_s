@@ -19,69 +19,59 @@ TODO add references to sources
 @import '../_strap_assets/bootstrap/less/bootstrap.less';
 @import '../_strap_assets/bootstrap/less/responsive.less';
 
-// Variables for semantic elements
-@primaryColumns:             9;
-@secondaryColumns:           3;
 
-// Grid for semantic elements
-#semanticGrid {
-  .core (@gridColumnWidth, @gridGutterWidth) {
-    #main,
-    #masthead,
-    #colophon
-    {
+/*
+Semantic Rows
+*/
+
+#makeSemanticRow(@rowId)
+{
+  .marginLeft(@gridGutterWidth)
+  {
+    (~"#@{rowId}") {
       margin-left: @gridGutterWidth * -1;
     }
-    #main {
-      #primary,
-      #secondary
-      {
-        float: left;
-        min-height: 1px; // prevent collapsing columns
-        margin-left: @gridGutterWidth;
-      }
-      #primary
-      {
-        width: (@gridColumnWidth * @primaryColumns) + (@gridGutterWidth * (@primaryColumns - 1));
-      }
-      #secondary
-      {
-        width: (@gridColumnWidth * @secondaryColumns) + (@gridGutterWidth * (@secondaryColumns - 1));
-      }
+  }
+  (~"#@{rowId}") {
+    margin-left: @gridGutterWidth * -1;
+    .clearfix();
+
+  }
+  @media (max-width: 767px) {
+    .marginLeft(-0);
+  }
+  @media (min-width: 768px) and (max-width: 979px) {
+    .marginLeft(@gridGutterWidth768);
+  }
+  @media (min-width: 1200px) {
+    .marginLeft(@gridGutterWidth1200);
+  }
+}
+
+#makeSemanticRow('masthead');
+#makeSemanticRow('main');
+#makeSemanticRow('colophon');
+
+/*
+Semantic Cols
+*/
+
+#makeSemanticCol(@colId, @colSpan)
+{
+  .core (@gridColumnWidth, @gridGutterWidth) {
+    (~"#@{colId}") {
+      float: left;
+      min-height: 1px; // prevent collapsing columns
+      margin-left: @gridGutterWidth;
+      width: (@gridColumnWidth * @colSpan) + (@gridGutterWidth * (@colSpan - 1));
     }
   }
-}
-/*
-Semantic rows and columns
-*/
-#masthead {
-  .makeRow();        // Mixin provided by Bootstrap
-}
-#main {
-  .makeRow();        // Mixin provided by Bootstrap
-  #primary {
-    .makeColumn(@primaryColumns); // Mixin provided by Bootstrap
 
+  (~"#@{colId}") {
+    .makeColumn(@colSpan);
   }
-  #secondary {
-    .makeColumn(@secondaryColumns); // Mixin provided by Bootstrap
-  }
-}
-#colophon {
-  .makeRow();        // Mixin provided by Bootstrap
-}
-
-@media (max-width: 767px) {
-  #main,
-  #masthead,
-  #colophon
-  {
-    margin-left: 0;
-  }
-  #main {
-    #primary,
-    #secondary
-    {
+  @media (max-width: 767px) {
+    (~"#@{colId}") {
       float: none;
       display: block;
       width: 100%;
@@ -89,14 +79,18 @@ Semantic rows and columns
       .box-sizing(border-box);
     }
   }
+  @media (min-width: 768px) and (max-width: 979px) {
+    .core(@gridColumnWidth768, @gridGutterWidth768);
+  }
+  @media (min-width: 1200px) {
+    .core(@gridColumnWidth1200, @gridGutterWidth1200);
+  }
 }
 
-@media (min-width: 768px) and (max-width: 979px) {
-  #semanticGrid > .core(@gridColumnWidth768, @gridGutterWidth768);
-}
-@media (min-width: 1200px) {
-  #semanticGrid > .core(@gridColumnWidth1200, @gridGutterWidth1200);
-}
+#makeSemanticCol('primary', 9);
+#makeSemanticCol('secondary', 3);
+
+
 /*
 From the original _s style.css
 */
@@ -107,3 +101,97 @@ From the original _s style.css
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
 }
+
+/* Alignment (necessary for caption shortcode content), Thumnbails */
+.alignleft {
+  display: inline;
+  float: left;
+  max-width: 100%;
+  margin: @baseLineHeight @gridGutterWidth @baseLineHeight 0;
+}
+.alignright {
+  display: inline;
+  float: right;
+  max-width: 100%;
+  margin: @baseLineHeight 0 @baseLineHeight @gridGutterWidth;
+}
+.aligncenter,
+.aligncenter .caption,
+.thumbnail > a > img {
+  clear: both;
+  display: block;
+  margin: @baseLineHeight auto;
+  text-align: center;
+}
+.aligncenter {
+  margin: @baseLineHeight auto;
+}
+.thumbnail > a > img,
+.aligncenter .caption {
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .alignleft,
+  .alignright {
+    float: none;
+    .aligncenter;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .alignleft { margin-right: @gridGutterWidth768;  }
+  .alignright { margin-left: @gridGutterWidth768;  }
+
+}
+@media (min-width: 1200px) {
+  .alignleft { margin-right: @gridGutterWidth1200;  }
+  .alignright { margin-left: @gridGutterWidth1200;  }
+}
+
+/*
+Comment form
+*/
+#commentform
+{
+  .form-horizontal;
+}
+#commentform code
+{
+  display: block;
+  white-space: normal;
+}
+#commentform #submit
+{
+  .btn;
+}
+#commentform .form-submit
+{
+  .form-actions;
+  padding-left: @horizontalComponentOffset;
+}
+@media (max-width: 480px) {
+
+// Remove the horizontal form styles
+  #commentform {
+    .control-label {
+      float: none;
+      width: auto;
+      padding-top: 0;
+      text-align: left;
+    }
+  // Move over all input controls and content
+    .controls {
+      margin-left: 0;
+    }
+  // Move the options list down to align with labels
+    .control-list {
+      padding-top: 0; // has to be padding because margin collaspes
+    }
+  // Move over buttons in .form-actions to align with .controls
+    .form-submit {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
