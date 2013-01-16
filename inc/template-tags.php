@@ -173,3 +173,26 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post', '_s_category_transient_flusher' );
+
+
+if ( ! function_exists( '_s_post_format_labels' ) ) :
+/**
+ * Post format labels
+ *
+ * Return a list of plurals labels for post formats. 
+ *
+ * @return array
+ * @since _s 1.0
+ */
+function _s_post_format_labels() {
+	$map = array(
+	    'aside'   => __( 'Asides', '_s' ),
+	    'link'    => __( 'Links', '_s' ),
+	    'image'   => __( 'Images', '_s' ),
+	    'quote'   => __( 'Quotes', '_s' ),
+	    'video'   => __( 'Videos', '_s' )
+	);
+	
+	return apply_filters( '_s_post_format_labels', $map );
+}
+endif;
