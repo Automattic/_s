@@ -19,17 +19,17 @@ get_header(); ?>
 					<h1 class="page-title">
 						<?php
 							if ( is_category() ) {
-								printf( __( '%sCategory Archives:%s %s', '_s' ), '<span>', '</span>', single_cat_title( '', false ) );
+								printf( '<span>' . __( 'Category Archives:%s %s', '_s' ) . '</span>', single_cat_title( '', false ) );
 							
 							} elseif ( is_tag() ) {
-								printf( __( '%sTag Archives:%s %s', '_s' ), '<span>', '</span>', single_tag_title( '', false ) );
+								printf( '<span>' . __( 'Tag Archives: %s', '_s' ) . '</span>', single_tag_title( '', false ) );
 
 							} elseif ( is_author() ) {
 								/* Queue the first post, that way we know
 								 * what author we're dealing with (if that is the case).
 								*/
 								the_post();								
-								printf( __( '%sAuthor Archives:%s %s', '_s' ), '<span>', '</span>', '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a>' );
+								printf( '<span>' . __( 'Author Archives: %s', '_s' ) . '</span>', '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a>' );
 								/* Since we called the_post() above, we need to
 								 * rewind the loop back to the beginning that way
 								 * we can run the loop properly, in full.
@@ -37,17 +37,17 @@ get_header(); ?>
 								rewind_posts();
 
 							} elseif ( is_day() ) {
-								printf( __( '%sDaily Archives:%s %s', '_s' ), '<span>', '</span>', get_the_date() );
+								printf( '<span>' . __( 'Daily Archives: %s', '_s' ) . '</span>', get_the_date() );
 							
 							} elseif ( is_month() ) {
-								printf( __( '%sMonthly Archives:%s %s', '_s' ), '<span>', '</span>', get_the_date( 'F Y' ) );
+								printf( '<span>' . __( 'Monthly Archives: %s', '_s' ) . '</span>', get_the_date( 'F Y' ) );
 							
 							} elseif ( is_year() ) {
-								printf( __( '%sYearly Archives:%s %s', '_s' ), '<span>', '</span>', get_the_date( 'Y' ) );
+								printf( '<span>' . __( '%sYearly Archives:%s %s', '_s' ) . '</span>', get_the_date( 'Y' ) );
 						
 							} elseif ( is_tax( 'post_format' ) ) {
 								$format_labels = _s_post_format_labels();
-								printf( __( '%s', '_s' ), $format_labels[get_post_format()] );
+								printf( _x( '%s', 'post format label', '_s' ), $format_labels[get_post_format()] );
 
 							} else {
 								_e( 'Archives', '_s' );
