@@ -186,11 +186,11 @@ if ( ! function_exists( '_s_post_format_labels' ) ) :
  */
 function _s_post_format_labels() {
 	$map = array(
-	    'aside'   => __( 'Asides', '_s' ),
-	    'link'    => __( 'Links', '_s' ),
-	    'image'   => __( 'Images', '_s' ),
-	    'quote'   => __( 'Quotes', '_s' ),
-	    'video'   => __( 'Videos', '_s' )
+	    'aside' => __( 'Asides', '_s' ),
+	    'link'  => __( 'Links', '_s' ),
+	    'image' => __( 'Images', '_s' ),
+	    'quote' => __( 'Quotes', '_s' ),
+	    'video' => __( 'Videos', '_s' ),
 	);
 	
 	return apply_filters( '_s_post_format_labels', $map );
