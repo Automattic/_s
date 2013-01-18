@@ -206,9 +206,9 @@ function _s_post_format_label( $format = null, $display = false ) {
 	// Check to see that we've provided a label for the format
 	if ( array_key_exists( $format, $labels ) )
 		$label = $labels[$format];
-	// Format label not defined? Use default format name and capitalize the first characater.
+	// Format label not defined? Use default format name.
 	else
-		$label = apply_filters( 'single_term_title', ucfirst( $format ) );
+		$label = get_post_format_string( $format );
 	
 	// Send it out
 	if ( $display )
