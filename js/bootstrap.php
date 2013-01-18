@@ -11,7 +11,24 @@ $expires_offset = 31536000; // 1 year
 $out = '';
 
 $bootstrap_js_path = '../bootstrap/js';
-foreach( scandir($bootstrap_js_path) as $file) {
+$bootstrap_js_files = array(
+    'bootstrap-transition.js',
+    'bootstrap-alert.js',
+    'bootstrap-button.js',
+    'bootstrap-carousel.js',
+    'bootstrap-collapse.js',
+    'bootstrap-dropdown.js',
+    'bootstrap-modal.js',
+    'bootstrap-tooltip.js',
+    'bootstrap-popover.js',
+    'bootstrap-scrollspy.js',
+    'bootstrap-tab.js',
+    'bootstrap-typeahead.js',
+    'bootstrap-affix.js',
+);
+// $bootstrap_js_files = scandir($bootstrap_js_path);
+// won't work because the files must be included in a particular order
+foreach( $bootstrap_js_files as $file) {
     $path = $bootstrap_js_path . '/' . $file;
     if(is_file($path) && pathinfo($path, PATHINFO_EXTENSION) == 'js')  //  print_r(file_get_contents($path));
         $out .= file_get_contents($path) . "\n";
