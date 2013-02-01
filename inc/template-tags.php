@@ -17,6 +17,9 @@ if ( ! function_exists( '_s_content_nav' ) ) :
 function _s_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
+	// $nav_id comes from outside, so this variable should be escaped.
+	$nav_id = esc_attr( $nav_id );
+
 	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
 		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
