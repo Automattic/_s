@@ -35,7 +35,7 @@ function _s_content_nav( $nav_id ) {
 		$nav_class = 'site-navigation post-navigation';
 
 	?>
-	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
+	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
 		<h1 class="assistive-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
@@ -55,7 +55,7 @@ function _s_content_nav( $nav_id ) {
 
 	<?php endif; ?>
 
-	</nav><!-- #<?php echo $nav_id; ?> -->
+	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
 endif; // _s_content_nav
