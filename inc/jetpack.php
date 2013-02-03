@@ -1,18 +1,19 @@
 <?php
 /**
- * Infinite Scroll Support
- * See: http://jetpack.me/support/infinite-scroll/
+ * Jetpack Compatibility File
+ * See: http://jetpack.me/
  *
- * Theme Name: _s
+ * @package: _s
  */
 
 /**
  * Add theme support for Infinite Scroll.
+ * See: http://jetpack.me/support/infinite-scroll/
  */
-function _s_infinite_scroll_init() {
+function _s_infinite_scroll_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'content',
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', '_s_infinite_scroll_init' );
+add_action( 'after_setup_theme', '_s_infinite_scroll_setup' );
