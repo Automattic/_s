@@ -554,3 +554,18 @@ object {
 #searchsubmit {
 	display: none;
 }
+
+/* =Infinite Scroll
+----------------------------------------------- */
+
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll #nav-above, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll #nav-below,
+.infinite-scroll.neverending #colophon { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending #colophon {
+	display: block;
+}

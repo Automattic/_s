@@ -14,6 +14,11 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
 
+/*
+ * Load Jetpack compatibility file.
+ */
+require( get_template_directory() . '/inc/jetpack.php' );
+
 if ( ! function_exists( '_s_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
