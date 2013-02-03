@@ -13,7 +13,7 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Oops! That page can&apos;t be found.', '_s' ); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
@@ -31,7 +31,7 @@ get_header(); ?>
 					</div><!-- .widget -->
 
 					<?php
-					/* translators: %1$s: smilie */
+					/* translators: %1$s: smiley */
 					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
