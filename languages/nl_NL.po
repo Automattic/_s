@@ -1,0 +1,419 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: _s\n"
+"POT-Creation-Date: 2013-01-31 20:00+0100\n"
+"PO-Revision-Date: 2013-01-31 20:29+0100\n"
+"Last-Translator: Edde Beket (Lauretum) <edde@lauretum.nl>\n"
+"Language-Team: Lauretum <edde@lauretum.nl>\n"
+"Language: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: C:\\Users\\Lauretum\\Google Drive\\Lauretum\\5. "
+"WordPress\\_Underscores\n"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oeps! Die pagina kan niet worden gevonden."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/404.php:20
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Er is hier niets te zien. Probeer eens een van de onderstaande links of "
+"gebruik het zoekformulier."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/404.php:27
+msgid "Most Used Categories"
+msgstr "Meestgebruikte categorie&euml;n"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/404.php:35
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Probeer het eens in de maandarchieven. %1$s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/archive.php:22
+#, php-format
+msgid "Category Archives: %s"
+msgstr "Categorie-archieven: %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/archive.php:25
+#, php-format
+msgid "Tag Archives: %s"
+msgstr "Tag archieven: %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/archive.php:32
+#, php-format
+msgid "Author Archives: %s"
+msgstr "Auteursarchieven: %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/archive.php:40
+#, php-format
+msgid "Daily Archives: %s"
+msgstr "Dagelijkse archieven: %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/archive.php:43
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr "Maandarchieven: %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/archive.php:46
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr "Jaararchieven: %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/archive.php:49
+#: WordPress\_Underscores/_s-master/sidebar.php:18
+msgid "Archives"
+msgstr "Archieven"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/comments.php:39
+#: WordPress\_Underscores/_s-master/comments.php:59
+msgid "Comment navigation"
+msgstr "Reactie-navigatie"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/comments.php:40
+#: WordPress\_Underscores/_s-master/comments.php:60
+msgid "&larr; Older Comments"
+msgstr "&larr; Oudere reacties"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/comments.php:41
+#: WordPress\_Underscores/_s-master/comments.php:61
+msgid "Newer Comments &rarr;"
+msgstr "Nieuwere reacties &rarr;"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/comments.php:71
+msgid "Comments are closed."
+msgstr "Reageren is niet mogelijk."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content-page.php:17
+#: WordPress\_Underscores/_s-master/content-single.php:19
+#: WordPress\_Underscores/_s-master/content.php:26
+#: WordPress\_Underscores/_s-master/image.php:94
+msgid "Pages:"
+msgstr "Pagina&rsquo;s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content-page.php:18
+#: WordPress\_Underscores/_s-master/content-single.php:57
+#: WordPress\_Underscores/_s-master/content.php:59
+#: WordPress\_Underscores/_s-master/image.php:35
+#: WordPress\_Underscores/_s-master/image.php:108
+msgid "Edit"
+msgstr "Bewerken"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content-single.php:25
+#: WordPress\_Underscores/_s-master/content-single.php:28
+#: WordPress\_Underscores/_s-master/content.php:34
+#: WordPress\_Underscores/_s-master/content.php:44
+msgid ", "
+msgstr ", "
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content-single.php:33
+#, php-format
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dit item is getagd als %2$s. Bookmark de <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permanente link</a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content-single.php:35
+#, php-format
+msgid ""
+"Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"Bookmark de <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark"
+"\">permanente link</a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content-single.php:41
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dit item is geplaatst in %1$s en getagd als %2$s. Bookmark de <a href=\"%3$s"
+"\" title=\"Permalink to %4$s\" rel=\"bookmark\">permanente link</a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content-single.php:43
+#, php-format
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Dit item is geplaatst in %1$s. Bookmark de <a href=\"%3$s\" title="
+"\"Permalink to %4$s\" rel=\"bookmark\">permanente link</a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content.php:10
+#, php-format
+msgid "Permalink to %s"
+msgstr "Permanente link naar %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content.php:25
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content.php:38
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Geplaatst in %1$s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content.php:49
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Getagd %1$s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content.php:56
+msgid "Leave a comment"
+msgstr "Laat een reactie achter"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content.php:56
+msgid "1 Comment"
+msgstr "1 Reactie"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/content.php:56
+msgid "% Comments"
+msgstr "% Reacties"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/footer.php:17
+#, php-format
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/footer.php:19
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr "Thema: %1$s door %2$s."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/functions.php:71
+msgid "Primary Menu"
+msgstr "Hoofdmenu"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/functions.php:89
+msgid "Sidebar"
+msgstr "Sidebar"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/header.php:35
+msgid "Menu"
+msgstr "Menu"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/header.php:36
+msgid "Skip to content"
+msgstr "Spring door naar de inhoud"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/image.php:24
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size "
+"image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
+"rel=\"gallery\">%8$s</a>"
+msgstr ""
+"Gepubliceerd <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span> in <a href=\"%3$s\" title=\"Link to full-size "
+"image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
+"rel=\"gallery\">%8$s</a>"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/image.php:39
+msgid "&larr; Previous"
+msgstr "&larr; Vorige"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/image.php:40
+msgid "Next &rarr;"
+msgstr "Volgende &rarr;"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/image.php:100
+#, php-format
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Plaats "
+"een reactie</a> of laat een trackback achter: <a class=\"trackback-link\" "
+"href=\"%s\" title=\"Trackback URL van je post\" rel=\"trackback\">Trackback "
+"URL</a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/image.php:102
+#, php-format
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+"Reageren is niet mogelijk, maar je kunt een trackback achterlaten: <a class="
+"\"trackback-link\" href=\"%s\" title=\"Trackback URL van je post\" rel="
+"\"trackback\">Trackback URL</a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/image.php:104
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+"Trackbacks achterlaten is niet mogelijk, maar je kunt <a class=\"comment-link"
+"\" href=\"#respond\" title=\"Plaats een reactie\">een reactie achterlaten</"
+"a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/image.php:106
+msgid "Both comments and trackbacks are currently closed."
+msgstr "Reacties en trackbacks achterlaten is niet mogelijk."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/no-results.php:14
+msgid "Nothing Found"
+msgstr "Niets gevonden"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/no-results.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Klaar om je eerste post te publiceren? <a href=\"%1$s\">Begin hier</a>."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Sorry, er is geen match gevonden voor je zoekopdracht. Probeer het opnieuw "
+"met andere zoektermen."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "We kunnen niet vinden wat je zocht. Misschien dat zoeken helpt."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/search.php:17
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/searchform.php:10
+msgid "Search"
+msgstr "Zoeken"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/sidebar.php:25
+msgid "Meta"
+msgstr "Meta"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/extras.php:75
+#, php-format
+msgid "Page %s"
+msgstr "Pagina  %s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:39
+msgid "Post navigation"
+msgstr "Post navigatie"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:49
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Oudere posts"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:53
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Recentere posts <span class=\"meta-nav\">&rarr;</span>"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:78
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:78
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:101
+msgid "(Edit)"
+msgstr "(Bewerken)"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:88
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr "%s <span class=\"says\">zegt:</span>"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:91
+msgid "Your comment is awaiting moderation."
+msgstr "Je reactie wacht op goedkeuring."
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:99
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s om %2$s"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:126
+#, php-format
+msgid ""
+"Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline\"> by "
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
+"\" rel=\"author\">%7$s</a></span></span>"
+msgstr ""
+"Geplaatst op <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+"\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline\"> by "
+"<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
+"\" rel=\"author\">%7$s</a></span></span>"
+
+#: C:\Users\Lauretum\Google Drive\Lauretum\5.
+#: WordPress\_Underscores/_s-master/inc/template-tags.php:132
+#, php-format
+msgid "View all posts by %s"
+msgstr "Bekijk alle posts per %s"
