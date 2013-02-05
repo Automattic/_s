@@ -173,3 +173,47 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post', '_s_category_transient_flusher' );
+
+
+if ( ! function_exists( '_s_post_format_label' ) ) :
+/**
+ * Post format label
+ *
+ * Display or retrieve plural post format label.
+ *
+ * @since _s 1.0
+ *
+ * @param string $format Optional, default is null. If null, use the current post format.
+ * @param bool $display Optional, default is false. Whether to display or retrieve title.
+ * @return string|null String on retrieve, null when displaying.
+ */
+function _s_post_format_label( $format = null, $display = false ) {
+	// Get current format if not provided
+	$format = ( null === $format ) ? get_post_format() : $format;
+	
+	// Map formats to their corresponsing plural label
+	$labels = array(
+	    'aside' => _x( 'Asides', 'post-format-archive-label', '_s' ),
+	    'link'  => _x( 'Links', 'post-format-archive-label', '_s' ),
+	    'image' => _x( 'Images', 'post-format-archive-label', '_s' ),
+	    'quote' => _x( 'Quotes', 'post-format-archive-label', '_s' ),
+	    'video' => _x( 'Videos', 'post-format-archive-label', '_s' ),
+	);
+	
+	// Allow child themes to add/customize labels
+	$labels = apply_filters( '_s_post_format_labels', $labels );
+	
+	// Check to see that we've provided a label for the format
+	if ( array_key_exists( $format, $labels ) )
+		$label = $labels[$format];
+	// Format label not defined? Use default format name.
+	else
+		$label = get_post_format_string( $format );
+	
+	// Send it out
+	if ( $display )
+		return $label;
+	else
+		print $label;
+}
+endif;

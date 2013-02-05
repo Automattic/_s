@@ -69,6 +69,10 @@ function _s_wp_title( $title, $sep ) {
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
 		$title .= " $sep $site_description";
+		
+	if ( is_tax( 'post_format' ) ) {
+		$title = _s_post_format_label() . " $sep " . get_bloginfo( 'name' );
+	}		
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
