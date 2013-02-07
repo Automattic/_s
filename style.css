@@ -281,6 +281,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 }
 input[type=text],
 input[type=email],
+input[type=password],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
@@ -288,11 +289,13 @@ textarea {
 }
 input[type=text]:focus,
 input[type=email]:focus,
+input[type=password]:focus,
 textarea:focus {
 	color: #111;
 }
 input[type=text],
-input[type=email] {
+input[type=email],
+input[type=password] {
 	padding: 3px;
 }
 textarea {
