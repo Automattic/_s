@@ -55,7 +55,7 @@ class Bootstrap_Nav_Menu extends Walker_Nav_Menu {
      */
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-//echo '<pre>'; print_r($item); echo '</pre>';
+        if(is_array($args)) $args = json_decode(json_encode($args)); // convert to object
         $class_names = $value = '';
 
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -157,4 +157,290 @@ add_filter( 'embed_oembed_html', 'bootstrap_oembed_html', 10, 1 );
 function bootstrap_oembed_html( $html )
 {
     return '<div class="embed-container">' . $html . '</div>';
+}
+
+/** Theme Builder
+ --------------------------------------------------------*/
+/**
+ * Register the form setting for the build.
+ *
+ * This function is attached to the admin_init action hook.
+ *
+ * This call to register_setting() registers a validation callback, _strap_build_validate(),
+ * which is used when the option is saved, to ensure that our option values are properly
+ * formatted, and safe.
+ */
+function _strap_build_init()
+{
+    register_setting(
+        '_strap_build',         // Options group, see settings_fields() call in _strap_build_render_page()
+        '_strap_build_options', // Database option, see _strap_build_get_options()
+        '_strap_build_validate' // The sanitization callback, see _strap_build_validate()
+    );
+    $options = _strap_build_get_options();
+
+    // Register our settings field group
+    add_settings_section(
+        'default', // Unique identifier for the settings section
+        __('Name your new _strapped theme', '_s'), // Section title
+        '__return_false', // Section callback (we don't want anything)
+        '_strap_build' // Menu slug, used to uniquely identify the page; see _strap_build_add_page()
+    );
+    add_settings_field( '_strap_build_name', __( 'Theme name', '_s' ), '_strap_build_field_name', '_strap_build', 'default');
+    add_settings_field( '_strap_build_slug', __( 'Theme slug', '_s' ), '_strap_build_field_slug', '_strap_build', 'default' );
+}
+add_action( 'admin_init', '_strap_build_init' );
+
+function _strap_build_field_name() {
+    $options = _strap_build_get_options();
+    $selected = array_key_exists('name', $options) ? $options['name'] : '';
+    ?><input  class="all-options" type="text" name="_strap_build_options[name]" id="_strap_build_options_name" value="<?php echo esc_attr( $selected ); ?>" />
+    <span class="description"><?php _e( 'Something like "My Awesome Theme" ', '_s' ); ?></span>
+<?php
+}
+
+function _strap_build_field_slug() {
+    $options = _strap_build_get_options();
+    $selected = array_key_exists('slug', $options) ? $options['slug'] : '';
+    ?><input class="all-options" type="text" name="_strap_build_options[slug]" id="_strap_build_options_slug" value="<?php echo esc_attr( $selected ); ?>" />
+    <span class="description"><?php _e( 'Something like "my-awesome-theme" or "mat" ', '_s' ); ?></span>
+<?php
+}
+
+/**
+ * Returns the options array for Mattei Deseo.
+ *
+ * @since Mattei Deseo 1.0
+ */
+function _strap_build_get_options() {
+    $saved = (array) get_option( '_strap_build_options' );
+    $defaults = _strap_build_default_options();
+    $defaults = apply_filters( '_strap_build_default_options', $defaults );
+
+    $options = wp_parse_args( $saved, $defaults );
+    $options = array_intersect_key( $options, $defaults );
+
+    return $options;
+}
+function _strap_build_default_options() {
+    $defaults = array(
+        'name'  => '',
+        'slug'   => '',
+    );
+
+    return $defaults;
+}
+
+
+/**
+ * Sanitize and validate form input. Accepts an array, return a sanitized array.
+ *
+ * @see _strap_build_init()
+ *
+ * @param array $input Unknown values.
+ * @return array Sanitized theme options ready to be stored in the database.
+ */
+function _strap_build_validate( $input ) {
+    $output = array();
+    $error = 0;
+    $default_keys = array_keys( _strap_build_default_options() );
+    foreach($default_keys as $key) {
+        $output[$key] = ( isset( $input[$key] ) && get_post( $input[$key] ) !== FALSE ) ? trim($input[$key]) : '';
+    }
+
+    // name
+    if( empty($output['name']) ) {
+        add_settings_error( '_strap_build_name', '_strap_build_name_req', __('Name is required', '_s'), 'error' );
+        $error++;
+    }
+
+    // slug
+    if( empty($output['slug']) ) {
+        $sane_slug = _strap_build_sanitize($output['name']);
+        $err_msg = sprintf(__('You must specify a valid Theme slug - try: %s', '_s'), $sane_slug);
+        add_settings_error( '_strap_build_slug', '_strap_build_slug_req', $err_msg, 'error' );
+        $error = true;
+    }
+    else {
+        $sane_slug = _strap_build_sanitize($output['slug']);
+        if($sane_slug != $output['slug']) {
+            $err_msg = sprintf(__('%s is not a valid Theme slug - try: %s instead', '_s'), $output['slug'], $sane_slug);
+            add_settings_error( '_strap_build_slug', '_strap_build_slug_regexp', $err_msg, 'error' );
+            $output['slug'] = '';
+            $error++;
+        }
+    }
+
+    if($error > 0) {
+        return apply_filters( '_strap_build_validate', $output, $input );
+    }
+    else {
+        $nodes = _strap_build_theme($output['name'], $output['slug']);//        echo '<pre>'; print_r( array_keys($nodes) ); exit;
+        $redirect_url = admin_url( '/themes.php?activated=true' );
+        switch_theme( $output['slug'] );
+        wp_safe_redirect($redirect_url);
+        exit;
+    }
+}
+
+/**
+ * Add our build theme page to the admin menu.
+ * This function is attached to the admin_menu action hook.
+ */
+function _strap_build_add_page()
+{
+    $theme_page = add_theme_page(
+        __( 'Build theme', '_s' ), // Name of page
+        __( 'Build theme', '_s' ), // Label in menu
+        'manage_options',          // Capability required
+        '_strap_build',           // Menu slug, used to uniquely identify the page
+        '_strap_build_render_page' // Function that renders the options page
+    );
+}
+add_action( 'admin_menu', '_strap_build_add_page' );
+
+/**
+ * Renders the build theme page screen.
+ *
+ */
+function _strap_build_render_page()
+{
+    ?>
+<div class="wrap">
+    <?php screen_icon(); ?>
+    <h2><?php _e( 'Build theme', '_s' ); ?></h2>
+    <?php settings_errors(); ?>
+
+    <form method="post" action="options.php">
+    <?php
+        settings_fields( '_strap_build' );
+        do_settings_sections( '_strap_build' );
+        submit_button(__( '_strap it!', '_s' ));
+    ?>
+    </form>
+</div>
+<?php
+}
+
+/**
+ * Builds your awesome _strap-powered theme
+ *
+ * @param string $name Theme name.
+ * @param string $slug Theme slug.
+ * @return: array
+ */
+function _strap_build_theme($name, $slug)
+{
+    $root = get_theme_root();
+    $src = get_stylesheet_directory();
+    $dst = $root . DIRECTORY_SEPARATOR . $slug;
+    $nodes = _strap_build_scan($name, $slug, $src);
+    if( is_dir($dst) || is_file($dst) ) {
+        // handle error, don't overwrite
+    }
+    elseif( !mkdir($dst)) {
+        // handle error, maybe set flag for dynamic zip instead of copying files
+    }
+    else {
+        foreach($nodes as $path => $content) {
+            $target = $dst . DIRECTORY_SEPARATOR . $path;
+            if( empty($content) ) { // it's a dir
+                mkdir($target); // don't check, after all you just created the parent dir
+            }
+            else
+            {
+                file_put_contents($target, $content); // don't check, after all you just created the parent dir
+            }
+        }
+
+    }
+    return $nodes;
+}
+
+/**
+ * Scans all files in theme
+ *
+ * @param string $name Theme name.
+ * @param string $slug Theme slug.
+ * @return: array $nodes all files in theme
+ */
+function _strap_build_scan($name, $slug, $dir = false)
+{
+    $base = get_stylesheet_directory();
+    $dir = $dir ? $dir : $base;
+    $nodes = array();
+    foreach( scandir($dir) as $item) {
+        if( substr($item, 0, 1) == '.') continue;
+        $content = null;
+        $path = $dir . DIRECTORY_SEPARATOR . $item;
+        $node = substr($path, strlen($base) + 1);
+        if( is_file($path)) $content = _strap_build_replace($name, $slug, $path);
+        $nodes[$node] = _strap_build_replace($name, $slug, $path);
+        if (is_dir($path)) $nodes = array_merge($nodes, _strap_build_scan($name, $slug, $path));
+    }
+    return $nodes;
+}
+
+/**
+ * Performs replacements on theme files
+ *
+ * @param string $name Theme name.
+ * @param string $slug Theme slug.
+ * @return: array
+ */
+function _strap_build_replace($name, $slug, $path)
+{
+    if (is_dir($path)) return null;
+    $search = array("'_s'", '_s_', ' _s');
+    $replace = array("'$slug'", $slug . '_', $name);
+
+    $content = file_get_contents($path); // binary-safe
+    $pathinfo = pathinfo($path);
+    if($pathinfo['extension'] == 'php') {
+        if($pathinfo['filename'] == 'functions-strap') {
+            $end = strpos($content, '/** Theme Builder');
+            $content = substr($content, 0, $end);
+        }
+        $content = str_replace($search, $replace, $content);
+    }
+    elseif($pathinfo['filename'] == 'style') {
+        $start = strpos($content, '*/');
+        $content = _strap_build_header($name) . substr($content, $start + 2);
+    }
+    return $content;
+}
+
+/**
+ * Performs replacements on theme files
+ *
+ * @param string $name Theme name.
+ * @param string $slug Theme slug.
+ * @return: array
+ */
+function _strap_build_sanitize($name)
+{
+    $sane_slug = sanitize_title($name);
+    $sane_slug = str_replace('-', '_', $sane_slug);
+    return $sane_slug;
+}
+/**
+ * Default theme header (for style.css)
+ */
+function _strap_build_header($name)
+{
+    return <<<END
+/*
+Theme Name: $name
+Theme URI:
+Author:
+Author URI:
+Description: TODO
+Version: 0.1
+License: GNU General Public License
+License URI: license.txt
+Tags: bootstrap, _s, _strap
+
+Based on _strap [https://github.com/ptbello/_strap], a mashup of _s [https://github.com/Automattic/_s] and Bootstrap [https://github.com/twitter/bootstrap]
+*/
+END;
 }
