@@ -16,208 +16,110 @@ TODO add references to sources
 */
 
 // Bootstrap
-@import 'bootstrap/less/bootstrap.less';
-@import 'bootstrap/less/responsive.less';
+/*!
+ * Bootstrap v2.2.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// CSS Reset
+@import "bootstrap/less/reset.less";
+
+// Core variables and mixins
+@import "bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/less/mixins.less";
+
+// Grid system and page structure
+@import "bootstrap/less/scaffolding.less";
+@import "bootstrap/less/grid.less";
+@import "bootstrap/less/layouts.less";
+
+// Base CSS
+@import "bootstrap/less/type.less";
+@import "bootstrap/less/code.less";
+@import "bootstrap/less/forms.less";
+@import "bootstrap/less/tables.less";
+
+// Components: common
+@import "bootstrap/less/sprites.less";
+@import "bootstrap/less/dropdowns.less";
+@import "bootstrap/less/wells.less";
+@import "bootstrap/less/component-animations.less";
+@import "bootstrap/less/close.less";
+
+// Components: Buttons & Alerts
+@import "bootstrap/less/buttons.less";
+@import "bootstrap/less/button-groups.less";
+@import "bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "bootstrap/less/navs.less";
+@import "bootstrap/less/navbar.less";
+@import "bootstrap/less/breadcrumbs.less";
+@import "bootstrap/less/pagination.less";
+@import "bootstrap/less/pager.less";
+
+// Components: Popovers
+@import "bootstrap/less/modals.less";
+@import "bootstrap/less/tooltip.less";
+@import "bootstrap/less/popovers.less";
+
+// Components: Misc
+@import "bootstrap/less/thumbnails.less";
+@import "bootstrap/less/media.less";
+@import "bootstrap/less/labels-badges.less";
+@import "bootstrap/less/progress-bars.less";
+@import "bootstrap/less/accordion.less";
+@import "bootstrap/less/carousel.less";
+@import "bootstrap/less/hero-unit.less";
+
+// Utility classes
+@import "bootstrap/less/utilities.less"; // Has to be last to override when necessary
+
+// Responsive.less
+// For phone and tablet devices
+// -------------------------------------------------------------
 
 
-/*
-Semantic Rows
-*/
+// IE10 Metro responsive
+// Required for Windows 8 Metro split-screen snapping with IE10
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
 
-#makeSemanticRow(@rowId)
-{
-  .marginLeft(@gridGutterWidth)
-  {
-    (~"#@{rowId}") {
-      margin-left: @gridGutterWidth * -1;
-    }
-  }
-  (~"#@{rowId}") {
-    margin-left: @gridGutterWidth * -1;
-    .clearfix();
-
-  }
-  @media (max-width: 767px) {
-    .marginLeft(-0);
-  }
-  @media (min-width: 768px) and (max-width: 979px) {
-    .marginLeft(@gridGutterWidth768);
-  }
-  @media (min-width: 1200px) {
-    .marginLeft(@gridGutterWidth1200);
-  }
+@-ms-viewport{
+  width: device-width;
 }
 
-#makeSemanticRow('masthead');
-#makeSemanticRow('main');
-#makeSemanticRow('colophon');
+// RESPONSIVE CLASSES
+// ------------------
 
-/*
-Semantic Cols
-*/
-
-#makeSemanticCol(@colId, @colSpan)
-{
-  .core (@gridColumnWidth, @gridGutterWidth) {
-    (~"#@{colId}") {
-      float: left;
-      min-height: 1px; // prevent collapsing columns
-      margin-left: @gridGutterWidth;
-      width: (@gridColumnWidth * @colSpan) + (@gridGutterWidth * (@colSpan - 1));
-    }
-  }
-
-  (~"#@{colId}") {
-    .makeColumn(@colSpan);
-  }
-  @media (max-width: 767px) {
-    (~"#@{colId}") {
-      float: none;
-      display: block;
-      width: 100%;
-      margin-left: 0;
-      .box-sizing(border-box);
-    }
-  }
-  @media (min-width: 768px) and (max-width: 979px) {
-    .core(@gridColumnWidth768, @gridGutterWidth768);
-  }
-  @media (min-width: 1200px) {
-    .core(@gridColumnWidth1200, @gridGutterWidth1200);
-  }
-}
-
-#makeSemanticCol('primary', 9);
-#makeSemanticCol('secondary', 3);
+@import "bootstrap/less/responsive-utilities.less";
 
 
-/*
-From the original _s style.css
-*/
+// MEDIA QUERIES
+// ------------------
 
-/* Text meant only for screen readers */
-.assistive-text {
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-}
+// Large desktops
+@import "bootstrap/less/responsive-1200px-min.less";
 
-/*
-  Alignment (necessary for caption shortcode content), Thumnbails
-*/
-.alignleft {
-  display: inline;
-  float: left;
-  max-width: 100%;
-  margin: @baseLineHeight @gridGutterWidth @baseLineHeight 0;
-}
-.alignright {
-  display: inline;
-  float: right;
-  max-width: 100%;
-  margin: @baseLineHeight 0 @baseLineHeight @gridGutterWidth;
-}
-.aligncenter,
-.aligncenter .caption,
-.thumbnail > a > img {
-  clear: both;
-  display: block;
-  margin: @baseLineHeight auto;
-  text-align: center;
-}
-.aligncenter {
-  margin: @baseLineHeight auto;
-}
-.thumbnail > a > img,
-.aligncenter .caption {
-  margin: 0 auto;
-}
+// Tablets to regular desktops
+@import "bootstrap/less/responsive-768px-979px.less";
 
-@media (max-width: 767px) {
-  .alignleft,
-  .alignright {
-    float: none;
-    .aligncenter;
-  }
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  .alignleft { margin-right: @gridGutterWidth768;  }
-  .alignright { margin-left: @gridGutterWidth768;  }
+// Phones to portrait tablets and narrow desktops
+@import "bootstrap/less/responsive-767px-max.less";
 
-}
-@media (min-width: 1200px) {
-  .alignleft { margin-right: @gridGutterWidth1200;  }
-  .alignright { margin-left: @gridGutterWidth1200;  }
-}
 
-/*
-Comment form
-*/
-#commentform
-{
-  .form-horizontal;
-}
-#commentform code
-{
-  display: block;
-  white-space: normal;
-}
-#commentform #submit
-{
-  .btn;
-}
-#commentform .form-submit
-{
-  .form-actions;
-  padding-left: @horizontalComponentOffset;
-}
-@media (max-width: 480px) {
+// RESPONSIVE NAVBAR
+// ------------------
 
-// Remove the horizontal form styles
-  #commentform {
-    .control-label {
-      float: none;
-      width: auto;
-      padding-top: 0;
-      text-align: left;
-    }
-  // Move over all input controls and content
-    .controls {
-      margin-left: 0;
-    }
-  // Move the options list down to align with labels
-    .control-list {
-      padding-top: 0; // has to be padding because margin collaspes
-    }
-  // Move over buttons in .form-actions to align with .controls
-    .form-submit {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-}
+// From 979px and below, show a button to toggle navbar contents
+@import "bootstrap/less/responsive-navbar.less";
 
-/*
-Responsive embed media
-// http://www.tjkdesign.com/articles/how-to-resize-videos-on-the-fly.asp
-*/
+//@import 'bootstrap/less/responsive.less';
 
-.embed-container
-{
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: @baseLineHeight;
-  margin: @baseLineHeight auto;
-  height: 0;
-  overflow: hidden;
-
-}
-
-.embed-container embed
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+// YOUR CUSTOM STYLES
+// ------------------
+@import "custom.less";

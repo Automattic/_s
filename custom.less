@@ -1,0 +1,202 @@
+
+/*
+Semantic Rows
+*/
+
+#makeSemanticRow(@rowId)
+{
+  .marginLeft(@gridGutterWidth)
+  {
+    (~"#@{rowId}") {
+      margin-left: @gridGutterWidth * -1;
+    }
+  }
+  (~"#@{rowId}") {
+    margin-left: @gridGutterWidth * -1;
+    .clearfix();
+  }
+
+  @media (max-width: 767px) {
+    .marginLeft(-0);
+  }
+  @media (min-width: 768px) and (max-width: 979px) {
+    .marginLeft(@gridGutterWidth768);
+  }
+  @media (min-width: 1200px) {
+    .marginLeft(@gridGutterWidth1200);
+  }
+}
+
+  #makeSemanticRow('masthead');
+  #makeSemanticRow('main');
+  #makeSemanticRow('colophon');
+
+/*
+Semantic Cols
+*/
+
+#makeSemanticCol(@colId, @colSpan)
+{
+  .core (@gridColumnWidth, @gridGutterWidth) {
+    (~"#@{colId}") {
+      float: left;
+      min-height: 1px; // prevent collapsing columns
+      margin-left: @gridGutterWidth;
+      width: (@gridColumnWidth * @colSpan) + (@gridGutterWidth * (@colSpan - 1));
+    }
+  }
+
+  (~"#@{colId}") {
+    .makeColumn(@colSpan);
+  }
+  @media (max-width: 767px) {
+    (~"#@{colId}") {
+      float: none;
+      display: block;
+      width: 100%;
+      margin-left: 0;
+      .box-sizing(border-box);
+    }
+  }
+@media (min-width: 768px) and (max-width: 979px) {
+  .core(@gridColumnWidth768, @gridGutterWidth768);
+  }
+@media (min-width: 1200px) {
+  .core(@gridColumnWidth1200, @gridGutterWidth1200);
+  }
+  }
+
+  #makeSemanticCol('primary', 9);
+  #makeSemanticCol('secondary', 3);
+
+
+/*
+From the original _s style.css
+*/
+
+/* Text meant only for screen readers */
+.assistive-text {
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+
+/*
+  Alignment (necessary for caption shortcode content), Thumnbails
+*/
+.alignleft {
+  display: inline;
+  float: left;
+  max-width: 100%;
+  margin: @baseLineHeight @gridGutterWidth @baseLineHeight 0;
+}
+.alignright {
+  display: inline;
+  float: right;
+  max-width: 100%;
+  margin: @baseLineHeight 0 @baseLineHeight @gridGutterWidth;
+}
+.aligncenter,
+.aligncenter .caption,
+.thumbnail > a > img {
+  clear: both;
+  display: block;
+  margin: @baseLineHeight auto;
+  text-align: center;
+}
+.aligncenter {
+  margin: @baseLineHeight auto;
+}
+.thumbnail > a > img,
+.aligncenter .caption {
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .alignleft,
+  .alignright {
+    float: none;
+    .aligncenter;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .alignleft { margin-right: @gridGutterWidth768;  }
+  .alignright { margin-left: @gridGutterWidth768;  }
+
+}
+@media (min-width: 1200px) {
+  .alignleft { margin-right: @gridGutterWidth1200;  }
+  .alignright { margin-left: @gridGutterWidth1200;  }
+}
+
+/*
+Comment form
+*/
+#commentform
+{
+  .form-horizontal;
+}
+#commentform code
+{
+  display: block;
+  white-space: normal;
+}
+#commentform #submit
+{
+  .btn;
+}
+#commentform .form-submit
+{
+  .form-actions;
+  padding-left: @horizontalComponentOffset;
+}
+@media (max-width: 480px) {
+
+// Remove the horizontal form styles
+  #commentform {
+    .control-label {
+      float: none;
+      width: auto;
+      padding-top: 0;
+      text-align: left;
+    }
+  // Move over all input controls and content
+    .controls {
+      margin-left: 0;
+    }
+  // Move the options list down to align with labels
+    .control-list {
+      padding-top: 0; // has to be padding because margin collaspes
+    }
+  // Move over buttons in .form-actions to align with .controls
+    .form-submit {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+/*
+Responsive embed media
+// http://www.tjkdesign.com/articles/how-to-resize-videos-on-the-fly.asp
+*/
+
+.embed-container
+{
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: @baseLineHeight;
+  margin: @baseLineHeight auto;
+  height: 0;
+  overflow: hidden;
+
+}
+
+.embed-container embed
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
