@@ -208,7 +208,9 @@ function _strap_build_field_slug() {
 }
 
 /**
- * Returns the options array for the build process
+ * Returns the options array for Mattei Deseo.
+ *
+ * @since Mattei Deseo 1.0
  */
 function _strap_build_get_options() {
     $saved = (array) get_option( '_strap_build_options' );
