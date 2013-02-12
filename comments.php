@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
  * handled by a callback to _s_comment() which is
- * located in the functions.php file.
+ * located in the inc/template-tags.php file.
  *
  * @package _s
  * @since _s 1.0
