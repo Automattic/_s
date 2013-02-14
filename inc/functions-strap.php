@@ -392,7 +392,7 @@ function _strap_build_replace($name, $slug, $path)
 {
     if (is_dir($path)) return null;
     $search = array("'_s'", '_s_', ' _s');
-    $replace = array("'$slug'", $slug . '_', $name);
+    $replace = array("'$slug'", $slug . '_', " $name");
 
     $content = file_get_contents($path); // binary-safe
     $pathinfo = pathinfo($path);
