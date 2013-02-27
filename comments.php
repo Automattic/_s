@@ -35,11 +35,11 @@
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
+		<nav id="comment-nav-above" role="navigation" class="navigation-comment">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', '_s' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', '_s' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', '_s' ) ); ?></div>
-		</nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
+			<div class="previous"><?php previous_comments_link( __( '&larr; Older Comments', '_s' ) ); ?></div>
+			<div class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', '_s' ) ); ?></div>
+		</nav><!-- #comment-nav-before -->
 		<?php endif; // check for comment navigation ?>
 
 		<ol class="comment-list">
@@ -55,11 +55,11 @@
 		</ol><!-- .commentlist -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
+		<nav id="comment-nav-below" role="navigation" class="navigation-comment">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', '_s' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', '_s' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', '_s' ) ); ?></div>
-		</nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
+			<div class="previous"><?php previous_comments_link( __( '&larr; Older Comments', '_s' ) ); ?></div>
+			<div class="next"><?php next_comments_link( __( 'Newer Comments &rarr;', '_s' ) ); ?></div>
+		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 
 	<?php endif; // have_comments() ?>

@@ -279,26 +279,26 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 	border: 0;
 	padding: 0;
 }
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=search],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=search]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
 textarea:focus {
 	color: #111;
 }
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=search] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"] {
 	padding: 3px;
 }
 textarea {
@@ -349,26 +349,26 @@ a:active {
 /* =Menu
 ----------------------------------------------- */
 
-.main-navigation {
+.navigation-main {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
 }
-.main-navigation ul {
+.navigation-main ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-.main-navigation li {
+.navigation-main li {
 	float: left;
 	position: relative;
 }
-.main-navigation a {
+.navigation-main a {
 	display: block;
 	text-decoration: none;
 }
-.main-navigation ul ul {
+.navigation-main ul ul {
 	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
@@ -379,26 +379,26 @@ a:active {
 		left: 0;
 	z-index: 99999;
 }
-.main-navigation ul ul ul {
+.navigation-main ul ul ul {
 	left: 100%;
 	top: 0;
 }
-.main-navigation ul ul a {
+.navigation-main ul ul a {
 	width: 200px;
 }
-.main-navigation ul ul li {
+.navigation-main ul ul li {
 }
-.main-navigation li:hover > a {
+.navigation-main li:hover > a {
 }
-.main-navigation ul ul :hover > a {
+.navigation-main ul ul :hover > a {
 }
-.main-navigation ul ul a:hover {
+.navigation-main ul ul a:hover {
 }
-.main-navigation ul li:hover > ul {
+.navigation-main ul li:hover > ul {
 	display: block;
 }
-.main-navigation li.current_page_item a,
-.main-navigation li.current-menu-item a {
+.navigation-main li.current_page_item a,
+.navigation-main li.current-menu-item a {
 }
 
 /* Small menu */
@@ -417,7 +417,7 @@ a:active {
 		display: block;
 	}
 
-	.main-navigation ul {
+	.navigation-main ul {
 		display: none;
 	}
 }
@@ -533,15 +533,15 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 
-.site-content .site-navigation {
+.site-content [class*="navigation"] {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
-.site-content .nav-previous {
+[class*="navigation"] .previous {
 	float: left;
 	width: 50%;
 }
-.site-content .nav-next {
+[class*="navigation"] .next {
 	float: right;
 	text-align: right;
 	width: 50%;
@@ -577,7 +577,7 @@ object {
 ----------------------------------------------- */
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll .navigation-paging, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
