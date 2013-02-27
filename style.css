@@ -403,12 +403,24 @@ a:active {
 
 /* Small menu */
 .menu-toggle {
+	display: none;
 	cursor: pointer;
 }
-.main-small-navigation .menu {
+
+.main-small-navigation ul {
 	display: none;
 }
 
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-small-navigation ul.nav-menu.toggled-on {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
 
 /* =Content
 ----------------------------------------------- */
