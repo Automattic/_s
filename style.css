@@ -235,7 +235,7 @@ input[type="submit"] {
 	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1;
-	padding: 1.12em 1.5em 1em;
+	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 button:hover,
