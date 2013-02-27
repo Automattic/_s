@@ -554,7 +554,7 @@ object {
 }
 
 /* Search widget */
-#searchsubmit {
+.widget_search .submit {
 	display: none;
 }
 
@@ -562,13 +562,12 @@ object {
 ----------------------------------------------- */
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll #nav-above, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll #nav-below,
-.infinite-scroll.neverending #colophon { /* Theme Footer (when set to scrolling) */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-.infinity-end.neverending #colophon {
+.infinity-end.neverending .site-footer {
 	display: block;
 }

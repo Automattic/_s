@@ -3,15 +3,15 @@ Theme Name: _s
 Layout: Sidebar-Sidebar-Content
 */
 
-#primary {
+.content-area {
 	float: right;
 	margin: 0 0 0 -40%;
 	width: 100%;
 }
-#content {
+.site-content {
 	margin: 0 0 0 40%;
 }
-#main .widget-area {
+.site-main .widget-area {
 	float: left;
 	overflow: hidden;
 	width: 20%;
