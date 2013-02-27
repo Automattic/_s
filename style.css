@@ -233,9 +233,9 @@ input[type="submit"] {
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 12px;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	line-height: 1;
-	padding: 1.12em 1.5em 1em;
+	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255,255,255,.8);
 }
 button:hover,
@@ -282,6 +282,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 input[type=text],
 input[type=email],
 input[type=password],
+input[type=search],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
@@ -290,12 +291,14 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=password]:focus,
+input[type=search]:focus,
 textarea:focus {
 	color: #111;
 }
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=search] {
 	padding: 3px;
 }
 textarea {
@@ -400,12 +403,24 @@ a:active {
 
 /* Small menu */
 .menu-toggle {
+	display: none;
 	cursor: pointer;
 }
-.main-small-navigation .menu {
+
+.main-small-navigation ul {
 	display: none;
 }
 
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-small-navigation ul.nav-menu.toggled-on {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
 
 /* =Content
 ----------------------------------------------- */
