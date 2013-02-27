@@ -38,7 +38,7 @@ get_header();
 						<nav id="image-navigation" class="site-navigation">
 							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', '_s' ) ); ?></span>
 							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', '_s' ) ); ?></span>
-						</nav><!-- #image-navigation -->
+						</nav><!-- #image-navigation .site-navigation -->
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
