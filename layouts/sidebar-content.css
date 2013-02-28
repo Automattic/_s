@@ -3,21 +3,18 @@ Theme Name: _s
 Layout: Sidebar-Content
 */
 
-#primary {
+.content-area {
 	float: right;
 	margin: 0 0 0 -25%;
 	width: 100%;
 }
-#content {
+.site-content {
 	margin: 0 0 0 25%;
 }
-#secondary { /* Sidebar 1 */
+.site-main .widget-area {
 	float: left;
 	overflow: hidden;
 	width: 25%;
-}
-#tertiary { /* Sidebar 2 */
-	clear: left;
 }
 .site-footer {
 	clear: both;

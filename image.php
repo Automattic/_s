@@ -21,22 +21,23 @@ get_header();
 						<div class="entry-meta">
 							<?php
 								$metadata = wp_get_attachment_metadata();
-								printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s" pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', '_s' ),
+								printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', '_s' ),
 									esc_attr( get_the_date( 'c' ) ),
 									esc_html( get_the_date() ),
 									wp_get_attachment_url(),
 									$metadata['width'],
 									$metadata['height'],
 									get_permalink( $post->post_parent ),
+									esc_attr( get_the_title( $post->post_parent ) ),
 									get_the_title( $post->post_parent )
 								);
 							?>
 							<?php edit_post_link( __( 'Edit', '_s' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
 
-						<nav id="image-navigation" class="site-navigation">
-							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous', '_s' ) ); ?></span>
-							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;', '_s' ) ); ?></span>
+						<nav id="image-navigation" class="navigation-image">
+							<span class="previous"><?php previous_image_link( false, __( '&larr; Previous', '_s' ) ); ?></span>
+							<span class="next"><?php next_image_link( false, __( 'Next &rarr;', '_s' ) ); ?></span>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
 
@@ -49,7 +50,14 @@ get_header();
 									 * Grab the IDs of all the image attachments in a gallery so we can get the URL of the next adjacent image in a gallery,
 									 * or the first image (if we're looking at the last image in a gallery), or, in a gallery of one, just the link to that image file
 									 */
-									$attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+									$attachments = array_values( get_children( array(
+										'post_parent'    => $post->post_parent,
+										'post_status'    => 'inherit',
+										'post_type'      => 'attachment',
+										'post_mime_type' => 'image',
+										'order'          => 'ASC',
+										'orderby'        => 'menu_order ID'
+									) ) );
 									foreach ( $attachments as $k => $attachment ) {
 										if ( $attachment->ID == $post->ID )
 											break;
