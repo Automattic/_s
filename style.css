@@ -433,8 +433,7 @@ a:active {
 .entry-meta {
 	clear: both;
 }
-.byline,
-time.updated {
+.byline {
 	display: none;
 }
 .single .byline,
