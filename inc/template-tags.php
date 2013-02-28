@@ -121,17 +121,24 @@ if ( ! function_exists( '_s_posted_on' ) ) :
  * @since _s 1.0
  */
 function _s_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', '_s' ),
+	$time_string = ( get_the_time( 'U' ) == get_the_modified_time( 'U' ) )
+	? '<time class="entry-date" datetime="%3$s">%4$s</time>'
+	: '<time class="entry-date" datetime="%3$s">%4$s</time><time class="updated" datetime="%8$s">%9$s</time>';
+
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark">' . $time_string . '</a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', '_s' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', '_s' ), get_the_author() ) ),
-		get_the_author()
+		get_the_author(),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
 	);
 }
 endif;
+
 /**
  * Returns true if a blog has more than 1 category
  *
