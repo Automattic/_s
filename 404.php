@@ -11,12 +11,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
-			<article id="post-0" class="post error404 not-found">
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
-				</header><!-- .entry-header -->
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
+				</header><!-- .page-header -->
 
-				<div class="entry-content">
+				<div class="page-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ); ?></p>
 
 					<?php get_search_form(); ?>
@@ -38,8 +38,8 @@ get_header(); ?>
 
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 .post .error404 .not-found -->
+				</div><!-- .page-content -->
+			</section><!-- .error404 .not-found -->
 
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
