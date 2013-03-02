@@ -7,14 +7,14 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
+<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<header class="page-header">
+		<h1 class="page-title"><?php the_title(); ?></h1>
+	</header><!-- .page-header -->
 
-	<div class="entry-content">
+	<div class="page-content">
 		<?php the_content(); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', '_s' ), 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
+	</div><!-- .page-content -->
 	<?php edit_post_link( __( 'Edit', '_s' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</section><!-- #post-<?php the_ID(); ?> -->
