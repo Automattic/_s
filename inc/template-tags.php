@@ -73,7 +73,7 @@ function _s_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', '_s' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', '_s' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', '_s' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', '_s' ), '<span class="edit-link">', '<span>' ); ?></p>
 	<?php
 			break;
 		default :
@@ -92,12 +92,9 @@ function _s_comment( $comment, $args, $depth ) {
 
 				<div class="comment-meta commentmetadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
-					<?php
-						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', '_s' ), get_comment_date(), get_comment_time() ); ?>
+					<?php printf( _x( '%1$s at %2$s', '1: date, 2: time', '_s' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( '(Edit)', '_s' ), ' ' );
-					?>
+					<?php edit_comment_link( __( 'Edit', '_s' ), '<span class="edit-link">', '<span>' ); ?>
 				</div><!-- .comment-meta .commentmetadata -->
 			</footer>
 
