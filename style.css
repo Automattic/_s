@@ -346,6 +346,23 @@ a:active {
 	position: absolute !important;
 }
 
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+	clear: both;
+}
+
 
 /* =Menu
 ----------------------------------------------- */
@@ -430,9 +447,6 @@ a:active {
 }
 .hentry {
 	margin: 0 0 1.5em;
-}
-.entry-meta {
-	clear: both;
 }
 .byline {
 	display: none;
