@@ -41,7 +41,7 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 .post .error404 .not-found -->
 
-		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area -->
+		</div><!-- #content -->
+	</div><!-- #primary -->
 
 <?php get_footer(); ?>

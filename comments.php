@@ -52,7 +52,7 @@
 				 */
 				wp_list_comments( array( 'callback' => '_s_comment' ) );
 			?>
-		</ol><!-- .commentlist -->
+		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="navigation-comment" role="navigation">
@@ -73,4 +73,4 @@
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments .comments-area -->
+</div><!-- #comments -->
