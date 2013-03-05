@@ -119,7 +119,7 @@ function _s_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo get_header_textcolor(); ?> !important;
+			color: #<?php echo get_header_textcolor(); ?>;
 		}
 	<?php endif; ?>
 	</style>
