@@ -15,9 +15,9 @@ global $themecolors;
  * @since _s 1.0
  */
 $themecolors = array(
-	'bg' => '',
+	'bg'     => '',
 	'border' => '',
-	'text' => '',
-	'link' => '',
-	'url' => '',
+	'text'   => '',
+	'link'   => '',
+	'url'    => '',
 );
