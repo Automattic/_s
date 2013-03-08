@@ -36,7 +36,7 @@
 			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- .site-navigation -->
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="main" class="site-main">
