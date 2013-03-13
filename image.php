@@ -15,10 +15,10 @@ get_header();
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="page-header">
-						<h1 class="page-title"><?php the_title(); ?></h1>
+					<header class="entry-header">
+						<h1 class="entry-title"><?php the_title(); ?></h1>
 
-						<div class="page-meta">
+						<div class="entry-meta">
 							<?php
 								$metadata = wp_get_attachment_metadata();
 								printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', '_s' ),
@@ -33,17 +33,17 @@ get_header();
 								);
 							?>
 							<?php edit_post_link( __( 'Edit', '_s' ), '<span class="sep"> | </span> <span class="edit-link">', '</span>' ); ?>
-						</div><!-- .page-meta -->
+						</div><!-- .entry-meta -->
 
 						<nav id="image-navigation" class="navigation-image">
 							<span class="previous"><?php previous_image_link( false, __( '&larr; Previous', '_s' ) ); ?></span>
 							<span class="next"><?php next_image_link( false, __( 'Next &rarr;', '_s' ) ); ?></span>
 						</nav><!-- #image-navigation -->
-					</header><!-- .page-header -->
+					</header><!-- .entry-header -->
 
-					<div class="page-content">
+					<div class="entry-content">
 
-						<div class="page-attachment">
+						<div class="entry-attachment">
 							<div class="attachment">
 								<?php
 									/**
@@ -84,18 +84,18 @@ get_header();
 							</div><!-- .attachment -->
 
 							<?php if ( ! empty( $post->post_excerpt ) ) : ?>
-							<div class="page-caption">
+							<div class="entry-caption">
 								<?php the_excerpt(); ?>
-							</div><!-- .page-caption -->
+							</div><!-- .entry-caption -->
 							<?php endif; ?>
-						</div><!-- .page-attachment -->
+						</div><!-- .entry-attachment -->
 
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', '_s' ), 'after' => '</div>' ) ); ?>
 
-					</div><!-- .page-content -->
+					</div><!-- .entry-content -->
 
-					<footer class="page-meta">
+					<footer class="entry-meta">
 						<?php if ( comments_open() && pings_open() ) : // Comments and trackbacks open ?>
 							<?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', '_s' ), get_trackback_url() ); ?>
 						<?php elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open ?>
@@ -106,7 +106,7 @@ get_header();
 							<?php _e( 'Both comments and trackbacks are currently closed.', '_s' ); ?>
 						<?php endif; ?>
 						<?php edit_post_link( __( 'Edit', '_s' ), ' <span class="edit-link">', '</span>' ); ?>
-					</footer><!-- .page-meta -->
+					</footer><!-- .entry-meta -->
 				</section><!-- #post-<?php the_ID(); ?> -->
 
 				<?php
