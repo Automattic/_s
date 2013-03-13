@@ -218,7 +218,6 @@ textarea {
 button,
 input {
 	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
-	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
 }
 button,
 html input[type="button"],
@@ -336,7 +335,6 @@ a:active {
 
 /* Text meant only for screen readers */
 .assistive-text {
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
 }
