@@ -123,7 +123,7 @@ if ( ! function_exists( '_s_posted_on' ) ) :
  * @since _s 1.0
  */
 function _s_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>', 'mcl' ),
+	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a>', '_s' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -132,9 +132,9 @@ function _s_posted_on() {
 
 	// Print the byline span only on a single post page and on multi author blogs
 	if ( is_single() || is_multi_author() ) {
-		printf( __( '<span class="byline"> by <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', 'mcl' ),
+		printf( __( '<span class="byline"> by <span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span></span>', '_s' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'mcl' ), get_the_author() ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', '_s' ), get_the_author() ) ),
 			get_the_author()
 		);
 	} 
