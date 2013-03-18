@@ -3,7 +3,6 @@
  * The template for displaying image attachments.
  *
  * @package _s
- * @since _s 1.0
  */
 
 get_header();

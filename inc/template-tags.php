@@ -5,14 +5,11 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package _s
- * @since _s 1.0
  */
 
 if ( ! function_exists( '_s_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
- *
- * @since _s 1.0
  */
 function _s_content_nav( $nav_id ) {
 	global $wp_query, $post;
@@ -63,8 +60,6 @@ if ( ! function_exists( '_s_comment' ) ) :
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
- *
- * @since _s 1.0
  */
 function _s_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
@@ -114,8 +109,6 @@ endif; // ends check for _s_comment()
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
- *
- * @since _s 1.0
  */
 function _s_posted_on() {
 	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', '_s' ),
@@ -131,8 +124,6 @@ function _s_posted_on() {
 endif;
 /**
  * Returns true if a blog has more than 1 category
- *
- * @since _s 1.0
  */
 function _s_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
@@ -158,8 +149,6 @@ function _s_categorized_blog() {
 
 /**
  * Flush out the transients used in _s_categorized_blog
- *
- * @since _s 1.0
  */
 function _s_category_transient_flusher() {
 	// Like, beat it. Dig?

@@ -8,7 +8,6 @@
  * located in the inc/template-tags.php file.
  *
  * @package _s
- * @since _s 1.0
  */
 ?>
 
