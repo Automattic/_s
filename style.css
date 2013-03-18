@@ -341,6 +341,13 @@ a:active {
 }
 
 /* Text meant only for screen readers */
+.assistive-text {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
