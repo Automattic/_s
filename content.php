@@ -1,7 +1,6 @@
 <?php
 /**
  * @package _s
- * @since _s 1.0
  */
 ?>
 

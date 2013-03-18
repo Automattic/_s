@@ -8,7 +8,6 @@
  * different template.
  *
  * @package _s
- * @since _s 1.0
  */
 
 get_header(); ?>
