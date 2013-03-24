@@ -23,15 +23,17 @@ If you want to keep it simple, head over to http://underscores.me and generate y
 
 If you want to set things up manually, download `_s` from github. The first thing you want to do is copy the `_s` directory and change the name to something else — Like, say, `megatherium` — then you'll need to do a three-step find and replace on the name in all the templates.
 
-1. Search for `_s` inside single quotations to capture the text domain.
-2. Search for `_s_` to capture all the function names
-3. Search for `_s` with a space before it to replace all the occurrences of it in comments. (You'd replace this with the capitalized version of your theme name.)
+1. Search for `'_s'` (inside single quotations) to capture the text domain.
+2. Search for `_s_` to capture all the function names.
+3. Search for ` _s` (with a space before it) to capture DocBlocks.
+4. Search for `_s-` to capture prefixed handles.
 
 OR
 
-* Search for: `'_s'` & replace with: `'megatherium'`
-* Search for: `_s_` & replace with: `megatherium_`
-* Search for: <code>&nbsp;_s</code> & replace with: <code>&nbsp;Megatherium</code>
+* Search for: `'_s'` and replace with: `'megatherium'`
+* Search for: `_s_` and replace with: `megatherium_`
+* Search for: `&nbsp;_s` and replace with: `&nbsp;Megatherium`
+* Search for: `_s-` and replace with: `megatherium-`
 
 Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
 
