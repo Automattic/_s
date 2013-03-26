@@ -76,7 +76,7 @@ get_header();
 								}
 							?>
 
-							<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( strip_tags( get_the_title() ) ); ?>" rel="attachment"><?php
+							<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
 								$attachment_size = apply_filters( '_s_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 								echo wp_get_attachment_image( $post->ID, $attachment_size );
 							?></a>
