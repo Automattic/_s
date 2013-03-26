@@ -24,7 +24,7 @@ get_header(); ?>
 
 					<?php if ( _s_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
-						<h1 class="widgettitle"><?php _e( 'Most Used Categories', '_s' ); ?></h2>
+						<h2 class="widgettitle"><?php _e( 'Most Used Categories', '_s' ); ?></h2>
 						<ul>
 							<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
 						</ul>
