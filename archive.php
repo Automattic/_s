@@ -17,13 +17,13 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
-						if ( is_category() ) {
+						if ( is_category() ) :
 							printf( __( 'Category Archives: %s', '_s' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
-						} elseif ( is_tag() ) {
+						elseif ( is_tag() ) :
 							printf( __( 'Tag Archives: %s', '_s' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
-						} elseif ( is_author() ) {
+						elseif ( is_author() ) :
 							/* Queue the first post, that way we know
 							 * what author we're dealing with (if that is the case).
 							*/
@@ -35,34 +35,52 @@ get_header(); ?>
 							 */
 							rewind_posts();
 
-						} elseif ( is_day() ) {
+						elseif ( is_day() ) :
 							printf( __( 'Daily Archives: %s', '_s' ), '<span>' . get_the_date() . '</span>' );
 
-						} elseif ( is_month() ) {
+						elseif ( is_month() ) :
 							printf( __( 'Monthly Archives: %s', '_s' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
-						} elseif ( is_year() ) {
+						elseif ( is_year() ) :
 							printf( __( 'Yearly Archives: %s', '_s' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
-						} else {
+						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+							_e( 'Asides', '_s' );
+
+						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+							_e( 'Images', '_s');
+
+						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+							_e( 'Videos', '_s' );
+
+						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+							_e( 'Quotes', '_s' );
+
+						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+							_e( 'Links', '_s' );
+
+						else :
 							_e( 'Archives', '_s' );
 
-						}
+						endif;
 					?>
 				</h1>
 				<?php
-					if ( is_category() ) {
+					if ( is_category() ) :
 						// show an optional category description
 						$category_description = category_description();
-						if ( ! empty( $category_description ) )
+						if ( ! empty( $category_description ) ) :
 							echo apply_filters( 'category_archive_meta', '<div class="taxonomy-description">' . $category_description . '</div>' );
+						endif;
 
-					} elseif ( is_tag() ) {
+					elseif ( is_tag() ) :
 						// show an optional tag description
 						$tag_description = tag_description();
-						if ( ! empty( $tag_description ) )
+						if ( ! empty( $tag_description ) ) :
 							echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
-					}
+						endif;
+
+					endif;
 				?>
 			</header><!-- .page-header -->
 
