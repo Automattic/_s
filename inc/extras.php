@@ -68,3 +68,14 @@ function _s_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', '_s_wp_title', 10, 2 );
+
+//Use Google CDN jQuery Library
+function use_google_cdn_jquery() {
+	if (!is_admin()) {
+		wp_deregister_script('jquery');
+		//https://developers.google.com/speed/libraries/devguide#jquery to get the latest version
+		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', false, '1.9.1');
+		wp_enqueue_script('jquery');
+	}
+}
+add_action('init', 'use_google_cdn_jquery');
