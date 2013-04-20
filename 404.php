@@ -32,7 +32,7 @@ get_header(); ?>
 								'order'      => 'DESC',
 								'show_count' => 1,
 								'title_li'   => '',
-								'number'     => 10
+								'number'     => 10,
 							) );
 						?>
 						</ul>
