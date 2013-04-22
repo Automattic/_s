@@ -105,7 +105,7 @@ function _s_header_style() {
 	?>
 		.site-title,
 		.site-description {
-			position: absolute !important;
+			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
@@ -159,12 +159,7 @@ if ( ! function_exists( '_s_admin_header_image' ) ) :
  */
 function _s_admin_header_image() { ?>
 	<div id="headimg">
-		<?php
-		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
-			$style = ' style="display:none;"';
-		else
-			$style = ' style="color:#' . get_header_textcolor() . ';"';
-		?>
+		<?php $style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
 		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
 		<?php $header_image = get_header_image();
