@@ -12,21 +12,18 @@
 		return false;
 
 	button.onclick = function() {
-		if ( -1 == menu.className.indexOf( 'nav-menu' ) )
-			menu.className = 'nav-menu';
-
-		if ( -1 != button.className.indexOf( 'toggled-on' ) ) {
-			button.className = button.className.replace( ' toggled-on', '' );
-			menu.className = menu.className.replace( ' toggled-on', '' );
-			container.className = container.className.replace( 'main-small-navigation', 'navigation-main' );
+		if ( -1 != button.className.indexOf( 'toggled-off' ) ) {
+			button.className = button.className.replace( ' toggled-off', '' );
+			menu.className = menu.className.replace( ' toggled-off', '' );
 		} else {
-			button.className += ' toggled-on';
-			menu.className += ' toggled-on';
-			container.className = container.className.replace( 'navigation-main', 'main-small-navigation' );
+			button.className += ' toggled-off';
+			menu.className += ' toggled-off';
 		}
 	};
 
-	// Hide menu toggle button if menu is empty.
-	if ( ! menu.childNodes.length )
-		button.style.display = 'none';
+	// Display menu toggle button and hide menu if not empty.
+	if ( menu.childNodes.length ) {
+		button.className = button.className += ' show-toggle toggled-off';
+		menu.className += ' toggled-off';
+        }
 } )();
