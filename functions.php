@@ -149,3 +149,4 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
  * Implement the Custom Header feature
  */
 //require_once( get_template_directory() . '/inc/custom-header.php' );
+?>
