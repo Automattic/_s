@@ -25,7 +25,9 @@ if ( ! function_exists( '_s_setup' ) ) :
  * support post thumbnails.
  */
 function _s_setup() {
-
+		
+// Grab Maquina's Ephemera widget.
+	require( get_template_directory() . '/inc/theme-widgets.php' );
 	/**
 	 * Custom template tags for this theme.
 	 */
@@ -105,31 +107,22 @@ function _s_register_custom_background() {
 		define( 'BACKGROUND_COLOR', $args['default-color'] );
 		if ( ! empty( $args['default-image'] ) )
 			define( 'BACKGROUND_IMAGE', $args['default-image'] );
-		add_custom_background();
+//add_custom_background deprecated since version 3.4. Using add_theme_support( 'custom-background', $args ) instead.		 
+		 add_theme_support( 'custom-background' );
 	}
 }
 add_action( 'after_setup_theme', '_s_register_custom_background' );
 
-/**
- * Register widgetized area and update sidebar with default widgets
- */
-function _s_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', '_s' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
  * Enqueue scripts and styles
  */
 function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	
+	wp_enqueue_script( 'Maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
+	
+//	wp_enqueue_script( ‘modernizr’, get_template_directory_uri() . ‘/js/modernizr.js’, array( ‘jquery’ ), ’2.6.1′, true );
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -148,4 +141,47 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
 /**
  * Implement the Custom Header feature
  */
-//require_once( get_template_directory() . '/inc/custom-header.php' );
+require_once( get_template_directory() . '/inc/custom-header.php' );
+
+//Maquina functions
+// Add stuff to the head
+
+function maquina_head() { ?>
+
+<?php }
+add_action( 'wp_head', 'maquina_head' );
+
+	// Change admin welcome message
+add_filter('gettext', 'change_howdy', 10, 3);
+function change_howdy($translated, $text, $domain) {
+
+    if (!is_admin() || 'default' != $domain)
+        return $translated;
+
+    if (false !== strpos($translated, 'Howdy'))
+        return str_replace('Howdy', 'Welcome To '.get_bloginfo().' Back End', $translated);
+
+    return $translated;
+}
+// adding extra menus
+function register_maquina_menus() {
+  register_nav_menus(
+    array(
+      'maquina-header-menu' => __( 'Maquina Header Menu', 'maquina'),
+      'maquina-main-menu' => __( 'Maquina Main Menu', 'maquina')
+    )
+  );
+}
+add_action( 'init', 'register_maquina_menus' );
+
+// personalize footer
+ 
+// Admin footer modification
+ 
+function remove_footer_admin () 
+{
+    echo '<span id="footer-thankyou">Developed by <a href="http://vnlweb.com" 
+    target="_blank">Vitor Lopes - vnlweb.com</a></span>';
+}
+add_filter('admin_footer_text', 'remove_footer_admin'); 
+
