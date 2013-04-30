@@ -1,18 +1,18 @@
 /*
-Theme Name: _s
-Theme URI: http://underscores.me
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.3-wpcom
+Theme Name: Maquina
+Theme URI: http://vnlweb.com/maquina
+Author: Vito Lopes
+Author URI: http://vnlweb.com/
+Description: Hi. I'm a starter theme called <code>Maquina</code>
+Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags:
+Tags: boilerplate html5 widgets
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- _s is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+ Maquina is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -597,4 +597,26 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+/* Site skeleton positioning item in the layout */
+h2.site-description h1.site-title{float: left;
+}
+.site-main .left-widget-area {
+	float: left;
+	overflow: hidden;
+	width: 20%;
+}	
+.content-area {
+	float: left;
+	margin: 0 0 0 25%;
+	width: 40%;
+}
+.site-main .right-widget-area {
+	float: left;
+	overflow: hidden;
+	width: 20%;
+}
+.footer-widget-container {
+	clear: both;
+	width: 100%;
 }
