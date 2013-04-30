@@ -4,12 +4,12 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package _s
+ * @Maquina
  */
-get_sidebar('footer');
 ?>
 
 </div><!-- #main -->
+<?php get_sidebar('footer');?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( '_s_credits' ); ?>

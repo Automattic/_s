@@ -2,7 +2,7 @@
 /**
  * The template for displaying search forms in _s
  *
- * @package _s
+ * @Maquina
  */
 ?>
 	<form method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

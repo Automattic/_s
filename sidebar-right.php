@@ -2,7 +2,7 @@
 /**
  * The Sidebar containing the main widget areas.
  *
- * @package _s
+ * @Maquina
  */
 ?>
 	<div id="right-sidebar-secondary" class="right-widget-area" role="complementary">

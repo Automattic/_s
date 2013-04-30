@@ -2,7 +2,7 @@
 /**
  * The template for displaying image attachments.
  *
- * @package _s
+ * @Maquina
  */
 
 get_header();

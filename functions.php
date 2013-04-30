@@ -2,7 +2,7 @@
 /**
  * _s functions and definitions
  *
- * @package _s
+ * @Maquina
  */
 
 /**
@@ -27,7 +27,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 function _s_setup() {
 		
 // Grab Maquina's Ephemera widget.
-	require( get_template_directory() . '/inc/theme-widgets.php' );
+	require_once( get_template_directory() . '/inc/theme-widgets.php' );
 	/**
 	 * Custom template tags for this theme.
 	 */
@@ -121,8 +121,8 @@ function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 	
 	wp_enqueue_script( 'Maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
-	
-//	wp_enqueue_script( ‘modernizr’, get_template_directory_uri() . ‘/js/modernizr.js’, array( ‘jquery’ ), ’2.6.1′, true );
+// stop page from loading needs atention
+//wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.99977.js', array( 'jquery' ), '2.6.1', true );
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -151,25 +151,23 @@ function maquina_head() { ?>
 <?php }
 add_action( 'wp_head', 'maquina_head' );
 
-	// Change admin welcome message
-add_filter('gettext', 'change_howdy', 10, 3);
-function change_howdy($translated, $text, $domain) {
-
-    if (!is_admin() || 'default' != $domain)
-        return $translated;
-
-    if (false !== strpos($translated, 'Howdy'))
-        return str_replace('Howdy', 'Welcome To '.get_bloginfo().' Back End', $translated);
-
-    return $translated;
+	// Change admin welcome message Wordpress 3.5.1
+function replace_howdy( $wp_admin_bar ) {
+$my_account=$wp_admin_bar->get_node('my-account');
+$newtitle = str_replace( 'Howdy,', 'Welcome to your sexy website,', $my_account->title );
+$wp_admin_bar->add_node( array(
+'id' => 'my-account',
+'title' => $newtitle,
+) );
 }
+add_filter( 'admin_bar_menu', 'replace_howdy',25 );
+
 // adding extra menus
 function register_maquina_menus() {
   register_nav_menus(
     array(
       'maquina-header-menu' => __( 'Maquina Header Menu', 'maquina'),
-      'maquina-main-menu' => __( 'Maquina Main Menu', 'maquina')
-    )
+      )
   );
 }
 add_action( 'init', 'register_maquina_menus' );
