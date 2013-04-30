@@ -1,13 +1,13 @@
 /*
 Theme Name: Maquina
 Theme URI: http://vnlweb.com/maquina
-Author: Vito Lopes
+Author: Vitor Lopes
 Author URI: http://vnlweb.com/
 Description: Hi. I'm a starter theme called <code>Maquina</code>
 Version: 0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: boilerplate html5 widgets
+Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -399,6 +399,7 @@ a:active {
 .navigation-main li {
 	float: left;
 	position: relative;
+	margin: 0.8em;
 }
 .navigation-main a {
 	display: block;
@@ -598,25 +599,30 @@ object {
 .infinity-end.neverending .site-footer {
 	display: block;
 }
-/* Site skeleton positioning item in the layout */
-h2.site-description h1.site-title{float: left;
-}
-.site-main .left-widget-area {
+
+/* Site skeleton layout */
+.site-main .right-widget-area, .site-main .left-widget-area {
 	float: left;
 	overflow: hidden;
-	width: 20%;
-}	
-.content-area {
-	float: left;
-	margin: 0 0 0 25%;
-	width: 40%;
+	width: 22%;
 }
-.site-main .right-widget-area {
-	float: left;
-	overflow: hidden;
-	width: 20%;
-}
-.footer-widget-container {
+
+.footer-widgets-container, .site-footer  {
 	clear: both;
 	width: 100%;
 }
+
+.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4 {
+	float: left;
+	width: 31%;
+	overflow: hidden;
+	dislpay: none;
+} 
+
+.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4, .right-widget-area, .left-widget-area, .content-area {
+	margin: 1%;
+}
+
+.content-area {
+	float: left;
+	width: 50%;
