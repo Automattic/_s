@@ -6,7 +6,6 @@
  * @based on Twenty Eleven 1.0
  */
 ?>
-
 <div id="footer-widgets-container" <?php maquina_footer_sidebar_class(); ?>>
 	<?php if ( is_active_sidebar( 'footer-sidebar-1' ) ) : ?>
 	<div id="footer-widget-1" class="footer-widget-1" role="complementary">
