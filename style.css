@@ -406,7 +406,6 @@ a:active {
 	text-decoration: none;
 }
 .navigation-main ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	display: none;
 	float: left;
 	position: absolute;
