@@ -61,9 +61,8 @@ function _s_setup() {
 
 	/**
 	 * Enable support for Post Thumbnails on posts and pages
-	 * For post-only support, use add_theme_support( 'post-thumbnails', array( 'post' ) );
-	 * For page-only support, use add_theme_support( 'post-thumbnails', array( 'page' ) );
-	 * See http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	//add_theme_support( 'post-thumbnails' );
 
