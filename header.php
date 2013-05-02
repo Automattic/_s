@@ -30,10 +30,12 @@
 		<div class="site-branding">
 			<?php if (get_header_image() != '') {?>
 				<h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>
-				" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>
-					" height="<?php echo get_custom_header()->height; ?>" alt="<?php bloginfo( 'name' ); ?> Logo Image" />
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php 
+					echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<img src="<?php header_image(); ?>" width="<?php 
+						echo get_custom_header()->width; ?>" height="<?php 
+						echo get_custom_header()->height; ?>" alt="<?php bloginfo( 'name' ); ?> Logo Image">
+						</img>
 					</a>
 				</h1>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
