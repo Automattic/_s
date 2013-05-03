@@ -4,7 +4,7 @@ Theme URI: http://vnlweb.com/maquina
 Author: Vitor Lopes
 Author URI: http://vnlweb.com/
 Description: Hi. I'm a starter theme called <code>Maquina</code>
-Version: 1.3.0.19-wpcom
+Version: _s v1.30 Maquina v0.19
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:
@@ -19,7 +19,6 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 */
-
 
 /* =Reset
 -------------------------------------------------------------- */
@@ -614,13 +613,14 @@ object {
 	float: left;
 	width: 31%;
 	overflow: hidden;
-	dislpay: none;
-} 
+}
 
-.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4, .right-widget-area, .left-widget-area, .content-area {
+.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4,
+.right-widget-area, .left-widget-area, .content-area {
 	margin: 1%;
 }
 
 .content-area {
 	float: left;
 	width: 50%;
+}
