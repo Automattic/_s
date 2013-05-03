@@ -143,32 +143,25 @@ add_action( 'wp_enqueue_scripts', 'Maquina_scripts' );
  */
 require_once( get_template_directory() . '/inc/custom-header.php' );
 
-//Maquina functions
-// Add stuff to the head
-
-function maquina_head() { ?>
-
-<?php }
 add_action( 'wp_head', 'maquina_head' );
 
 	// Change admin welcome message Wordpress 3.5.1
 function replace_howdy( $wp_admin_bar ) {
-$my_account=$wp_admin_bar->get_node('my-account');
-$newtitle = str_replace( 'Howdy,', 'Welcome to your sexy website,', $my_account->title );
-$wp_admin_bar->add_node( array(
-'id' => 'my-account',
-'title' => $newtitle,
-) );
-}
+	$my_account=$wp_admin_bar->get_node('my-account');
+	$newtitle = str_replace( 'Howdy,', 'Welcome to your sexy website,', $my_account->title );
+	$wp_admin_bar->add_node( array(
+	'id' => 'my-account',
+	'title' => $newtitle,
+	) );
+	}
 add_filter( 'admin_bar_menu', 'replace_howdy',25 );
 
 // personalize footer
  
 // Admin footer modification
  
-function remove_footer_admin () 
-{
+function remove_footer_admin () {
     echo '<span id="footer-thankyou">Developed by <a href="http://vnlweb.com" 
     target="_blank">Vitor Lopes - vnlweb.com</a></span>';
-}
+	}
 add_filter('admin_footer_text', 'remove_footer_admin');
