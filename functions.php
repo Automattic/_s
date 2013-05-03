@@ -1,6 +1,6 @@
 <?php
 /**
- * _s functions and definitions
+ * Maquina functions and definitions
  *
  * @Maquina
  */
@@ -16,7 +16,7 @@ if ( ! isset( $content_width ) )
  */
 require_once( get_template_directory() . '/inc/jetpack.php' );
 
-if ( ! function_exists( '_s_setup' ) ) :
+if ( ! function_exists( 'maquina_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -24,7 +24,7 @@ if ( ! function_exists( '_s_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function _s_setup() {
+function maquina_setup() {
 		
 // Grab Maquina's Ephemera widget.
 	require_once( get_template_directory() . '/inc/theme-widgets.php' );
@@ -51,10 +51,10 @@ function _s_setup() {
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files
+	 * If you're building a theme based on Maquina, use a find and replace
+	 * to change 'Maquina' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'maquina', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
@@ -70,16 +70,16 @@ function _s_setup() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_s' ),
-	) );
+		'primary' => __( 'Primary After Header Menu', 'maquina' ),
+		) );
 
 	/**
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 }
-endif; // _s_setup
-add_action( 'after_setup_theme', '_s_setup' );
+endif; // Maquina_setup
+add_action( 'after_setup_theme', 'maquina_setup' );
 
 /**
  * Setup the WordPress core custom background feature.
@@ -93,7 +93,7 @@ add_action( 'after_setup_theme', '_s_setup' );
  *
  * Hooks into the after_setup_theme action.
  */
-function _s_register_custom_background() {
+function maquina_register_custom_background() {
 	$args = array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
@@ -111,32 +111,32 @@ function _s_register_custom_background() {
 		 add_theme_support( 'custom-background' );
 	}
 }
-add_action( 'after_setup_theme', '_s_register_custom_background' );
+add_action( 'after_setup_theme', 'maquina_register_custom_background' );
 
 
 /**
  * Enqueue scripts and styles
  */
-function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+function maquina_scripts() {
+	wp_enqueue_style( 'Maquina-style', get_stylesheet_uri() );
 	
 	wp_enqueue_script( 'Maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
 // stop page from loading needs atention
 //wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.99977.js', array(), '2.6.1', true );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'Maquina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'Maquina-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( '_s-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'Maquina-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
-add_action( 'wp_enqueue_scripts', '_s_scripts' );
+add_action( 'wp_enqueue_scripts', 'Maquina_scripts' );
 
 /**
  * Implement the Custom Header feature
@@ -161,16 +161,6 @@ $wp_admin_bar->add_node( array(
 ) );
 }
 add_filter( 'admin_bar_menu', 'replace_howdy',25 );
-
-// adding extra menus
-function register_maquina_menus() {
-  register_nav_menus(
-    array(
-      'maquina-header-menu' => __( 'Maquina Header Menu', 'maquina'),
-      )
-  );
-}
-add_action( 'init', 'register_maquina_menus' );
 
 // personalize footer
  
