@@ -10,8 +10,8 @@
  *
  * @Maquina
  */
-get_header(); ?>
-<?php get_sidebar('left'); ?>
+get_header();
+get_sidebar('left'); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
