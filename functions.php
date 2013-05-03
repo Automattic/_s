@@ -122,7 +122,7 @@ function _s_scripts() {
 	
 	wp_enqueue_script( 'Maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
 // stop page from loading needs atention
-//wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.99977.js', array( 'jquery' ), '2.6.1', true );
+//wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.99977.js', array(), '2.6.1', true );
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -181,5 +181,4 @@ function remove_footer_admin ()
     echo '<span id="footer-thankyou">Developed by <a href="http://vnlweb.com" 
     target="_blank">Vitor Lopes - vnlweb.com</a></span>';
 }
-add_filter('admin_footer_text', 'remove_footer_admin'); 
-
+add_filter('admin_footer_text', 'remove_footer_admin');
