@@ -11,18 +11,17 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/css3-mediaqueries.js" type="text/javascript"></script>
 <!--[endif]-->
-
 <?php wp_head(); ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/layouts/vnlweb.css" type="text/css" />
-
 </head>
-
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
@@ -49,13 +48,11 @@
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<?php } ?>
 		</div><!-- site-branding -->
-
-		<nav id="site-navigation" class="navigation-main" role="navigation">
+	</header><!-- #masthead -->
+			<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
-
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+	</nav><!-- #site-navigation -->
 
 	<div id="main" class="site-main">
