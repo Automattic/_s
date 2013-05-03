@@ -409,12 +409,11 @@ a:active {
 	display: none;
 	float: left;
 	position: absolute;
-		top: 1.5em;
-		left: 0;
+		left: 0.5em;
 	z-index: 99999;
 }
 .navigation-main ul ul ul {
-	left: 100%;
+	left: 97%;
 	top: 0;
 }
 .navigation-main ul ul a {
