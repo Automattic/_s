@@ -20,10 +20,12 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/css3-mediaqueries.js" type="text/javascript"></script>
 <!--[endif]-->
 <?php wp_head(); ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/layouts/vnlweb.css" type="text/css" />
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
+	</nav><!-- #site-navigation -->
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<?php if (get_header_image() != '') {?>
@@ -48,8 +50,8 @@
 			<?php } ?>
 		</div><!-- site-branding -->
 	</header><!-- #masthead -->
-			<nav id="site-navigation" class="navigation-main" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
+			<nav id="site-navigation navigation-primary" class="navigation-main navigation-primary" role="navigation">
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'maquina' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav><!-- #site-navigation -->
