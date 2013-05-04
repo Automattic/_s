@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package _s
+ * @Maquina
  */
 
 if ( ! function_exists( '_s_content_nav' ) ) :
