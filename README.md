@@ -1,7 +1,7 @@
-    `Maquina` Wordpress Theme Based on underscores
+    `Maquina` (machine) Wordpress Theme Based on underscores
 ===
 
-Starter blank theme called Maquina (machine) based on underscores. 
+Starter blank theme based on underscores. 
 
 * Unstyled Layout (blank).
 * Fluid Layout.
