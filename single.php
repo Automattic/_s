@@ -5,8 +5,8 @@
  * @Maquina
  */
 
-get_header(); ?>
-
+get_header(); 
+get_sidebar('left'); ?>
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
@@ -27,5 +27,5 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('right'); ?>
 <?php get_footer(); ?>
