@@ -16,7 +16,7 @@ class Maquina_Widget extends WP_Widget {
 	 **/
 	function Maquina_Widget() {
 		$widget_ops = array( 'classname' => 'widget_maquina', 'description' => __( 'Use this widget to list your recent Aside, Status, Quote, and Link posts', 'maquina' ) );
-		$this->WP_Widget( 'widget_maquina', __( 'Maquina Ephemera', 'maquina' ), $widget_ops );
+		$this->WP_Widget( 'widget_maquina', __( 'Maquina Widget Paradise', 'maquina' ), $widget_ops );
 		$this->alt_option_name = 'widget_maquina';
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache' ) );
@@ -48,7 +48,7 @@ class Maquina_Widget extends WP_Widget {
 		ob_start();
 		extract( $args, EXTR_SKIP );
 
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Ephemera', 'maquina' ) : $instance['title'], $instance, $this->id_base);
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Widget Paradise', 'maquina' ) : $instance['title'], $instance, $this->id_base);
 
 		if ( ! isset( $instance['number'] ) )
 			$instance['number'] = '10';
@@ -56,7 +56,7 @@ class Maquina_Widget extends WP_Widget {
 		if ( ! $number = absint( $instance['number'] ) )
  			$number = 10;
 
-		$ephemera_args = array(
+		$widget_paradise_args = array(
 			'order' => 'DESC',
 			'posts_per_page' => $number,
 			'no_found_rows' => true,
@@ -71,16 +71,16 @@ class Maquina_Widget extends WP_Widget {
 				),
 			),
 		);
-		$ephemera = new WP_Query( $ephemera_args );
+		$widget_paradise = new WP_Query( $widget_paradise_args );
 
-		if ( $ephemera->have_posts() ) :
+		if ( $widget_paradise->have_posts() ) :
 			echo $before_widget;
 			echo $before_title;
 			echo $title; // Can set this with a widget option, or omit altogether
 			echo $after_title;
 			?>
 			<ol>
-			<?php while ( $ephemera->have_posts() ) : $ephemera->the_post(); ?>
+			<?php while ( $widget_paradise->have_posts() ) : $widget_paradise->the_post(); ?>
 
 				<?php if ( 'link' != get_post_format() ) : ?>
 
@@ -167,23 +167,64 @@ class Maquina_Widget extends WP_Widget {
 function maquina_widgets_init() {
 
 	register_widget( 'Maquina_Widget' );
+	
+	register_sidebar( array(
+		'name' => __( 'Header Widget 1', 'maquina' ),
+		'id' => 'header-sidebar-1',
+		'description' => __( 'An optional widget area for your site header', 'maquina' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="header-widget-1">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Header widget 2', 'maquina' ),
+		'id' => 'header-sidebar-2',
+		'description' => __( 'An optional widget area for your site header', 'maquina' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="header-widget-2">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Header Widget 3', 'maquina' ),
+		'id' => 'header-sidebar-3',
+		'description' => __( 'An optional widget area for your site header', 'maquina' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="header-widget-3">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Header Widget 4', 'maquina' ),
+		'id' => 'header-sidebar-4',
+		'description' => __( 'An optional widget area for your site header', 'maquina' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="header-widget-4">',
+		'after_title' => '</h3>',
+	) );
 
 	register_sidebar( array(
 		'name' => __( 'Right Widget', 'maquina' ),
 		'id' => 'right-sidebar',
+		'description' => __( 'An optional widget area for your site right hand side', 'maquina' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<h3 class="right-widget">',
 		'after_title' => '</h3>',
 	) );
 
 	register_sidebar( array(
 		'name' => __( 'Left Widget', 'maquina' ),
 		'id' => 'left-sidebar',
-		'description' => __( 'The sidebar for the optional Showcase Template', 'maquina' ),
+		'description' => __( 'An optional widget area for your site left hand side', 'maquina' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<h3 class="left-widget">',
 		'after_title' => '</h3>',
 	) );
 
@@ -193,7 +234,7 @@ function maquina_widgets_init() {
 		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<h3 class="footer-widget-1">',
 		'after_title' => '</h3>',
 	) );
 
@@ -203,7 +244,7 @@ function maquina_widgets_init() {
 		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<h3 class="footer-widget-2">',
 		'after_title' => '</h3>',
 	) );
 
@@ -213,38 +254,90 @@ function maquina_widgets_init() {
 		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="widget-title">',
+		'before_title' => '<h3 class="footer-widget-3">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Footer Widget 4', 'maquina' ),
+		'id' => 'footer-sidebar-4',
+		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => "</aside>",
+		'before_title' => '<h3 class="footer-widget-4">',
 		'after_title' => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'maquina_widgets_init' );
 
-function maquina_footer_sidebar_class() {
-	$count = 0;
+function maquina_header_sidebar_class() {
+	$count_header = 0;
 
-	if ( is_active_sidebar( 'footer-sidebar-1' ) )
-		$count++;
+	if ( is_active_sidebar( 'header-sidebar-1' ) )
+		$count_header++;
 
-	if ( is_active_sidebar( 'footer-sidebar-2' ) )
-		$count++;
+	if ( is_active_sidebar( 'header-sidebar-2' ) )
+		$count_header++;
 
-	if ( is_active_sidebar( 'footer-sidebar-3' ) )
-		$count++;
+	if ( is_active_sidebar( 'header-sidebar-3' ) )
+		$count_header++;
+	
+	if ( is_active_sidebar( 'header-sidebar-4' ) )
+		$count_header++;
 
-	$class = '';
+	$class_header = '';
 
-	switch ( $count ) {
+	switch ( $count_header ) {
 		case '1':
-			$class = '1';
+			$class_header = 'widget-header-one';
 			break;
 		case '2':
-			$class = '2';
+			$class_header = 'widget-header-two';
 			break;
 		case '3':
-			$class = '3';
+			$class_header = 'widget-header-three';
+			break;
+		case '4':
+			$class_header = 'widget-header-four';
 			break;
 	}
 
-	if ( $class )
-		echo 'class="' . $class . '"';
+	if ( $class_header )
+		echo 'class="' . $class_header . '"';
+}
+
+function maquina_footer_sidebar_class() {
+	$count_footer = 0;
+
+	if ( is_active_sidebar( 'footer-sidebar-1' ) )
+		$count_footer++;
+
+	if ( is_active_sidebar( 'footer-sidebar-2' ) )
+		$count_footer++;
+
+	if ( is_active_sidebar( 'footer-sidebar-3' ) )
+		$count_footer++;
+	
+	if ( is_active_sidebar( 'footer-sidebar-4' ) )
+		$count_footer++;
+
+	$class_footer = '';
+
+	switch ( $count_footer ) {
+		case '1':
+			$class_footer = 'widget-footer-one';
+			break;
+		case '2':
+			$class_footer = 'widget-footer-two';
+			break;
+		case '3':
+			$class_footer = 'widget-footer-three';
+			break;
+		case '4':
+			$class_footer = 'widget-footer-four';
+			break;
+	}
+
+	if ( $class_footer )
+		echo 'class="' . $class_footer . '"';
 }
