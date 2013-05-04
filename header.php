@@ -26,32 +26,10 @@
 		</nav><!-- #site-navigation -->
 			<header id="masthead" class="site-header" role="banner">
 				<div class="site-branding">
-				<?php if (get_header_image() != '') {?>
-					<h1 class="site-title">
-						<a href="<?php
-							echo esc_url( home_url( '/' ) ); ?>" title="<?php 
-							echo esc_attr( get_bloginfo( 'name', 'display' ) ); 
-							?>" rel="home">
-							
-								<img src="<?php header_image(); ?>" width="<?php 
-								echo get_custom_header()->width; ?>" height="<?php 
-								echo get_custom_header()->height; ?>" alt="<?php
-						 		bloginfo( 'name' ); ?> Logo Image">
-								</img>
-						</a>
-					</h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				<?php } else { ?>
-					<h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>
-					" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>
-					" rel="home"><?php bloginfo( 'name' ); ?>
-					</a>
-			    </h1>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<?php } ?>
-		</div><!-- site-branding -->
-	</header><!-- #masthead -->
+				</div><!-- site-branding -->
+			</header><!-- #masthead -->
 	<?php get_sidebar('header'); ?>
 			<nav id="site-navigation navigation-primary" class="navigation-main navigation-primary" role="navigation">
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'maquina' ); ?></h1>
