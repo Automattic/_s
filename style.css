@@ -3,7 +3,7 @@ Theme Name: Maquina
 Theme URI: http://vnlweb.com/maquina
 Author: Vitor Lopes
 Author URI: http://vnlweb.com/
-Description: Hi. I'm a starter theme called <code>Maquina</code>
+Description: Hi. I'm a starter blank theme called <code>Maquina</code> based on underscores with 10 widget possitions, 4 in the header, 4 in the footer, one on the left side and one on the right side.
 Version: _s v1.30 Maquina v0.19
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -604,18 +604,20 @@ object {
 	width: 22%;
 }
 
-.footer-widgets-container, .site-footer  {
+.footer-widgets-container, .site-footer {
 	clear: both;
 	width: 100%;
 }
 
-.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4 {
+.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4,
+.header-widget-1, .header-widget-2, .header-widget-3, .header-widget-4 {
 	float: left;
-	width: 31%;
+	width: 23%;
 	overflow: hidden;
 }
 
 .footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4,
+.header-widget-1, .header-widget-2, .header-widget-3, .header-widget-4
 .right-widget-area, .left-widget-area, .content-area {
 	margin: 1%;
 }
@@ -623,4 +625,8 @@ object {
 .content-area {
 	float: left;
 	width: 50%;
+}
+
+.site-title {
+		
 }
