@@ -24,4 +24,10 @@
 		<?php dynamic_sidebar( 'footer-sidebar-3' ); ?>
 	</div><!-- #third .widget-area -->
 	<?php endif; ?>
-</div><!-- #supplementary -->
+	
+	<?php if ( is_active_sidebar( 'footer-sidebar-4' ) ) : ?>
+	<div id="footer-widget-4" class="footer-widget-4" role="complementary">
+		<?php dynamic_sidebar( 'footer-sidebar-4' ); ?>
+	</div><!-- #fourth .widget-area -->	
+	<?php endif; ?>
+</div><!-- #footer-widgets-container -->
