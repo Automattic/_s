@@ -6,7 +6,7 @@
  *
  * @Maquina
  */
-?><!DOCTYPE html>
+?><!DOCTYPE html><!-- Tanks for reading my code you are awesome this template his on https://github.com/vmnlopes/Maquina.git -->
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
