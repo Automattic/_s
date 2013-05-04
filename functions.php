@@ -25,8 +25,9 @@ if ( ! function_exists( 'maquina_setup' ) ) :
  * support post thumbnails.
  */
 function maquina_setup() {
-		
-// Grab Maquina's Ephemera widget.
+	/*
+	 * Grab Maquina widgets.
+	 */
 	require_once( get_template_directory() . '/inc/theme-widgets.php' );
 	/**
 	 * Custom template tags for this theme.
@@ -113,16 +114,13 @@ function maquina_register_custom_background() {
 }
 add_action( 'after_setup_theme', 'maquina_register_custom_background' );
 
-
 /**
  * Enqueue scripts and styles
  */
+ 
 function maquina_scripts() {
-	wp_enqueue_style( 'Maquina-style', get_stylesheet_uri() );
-	
+	    
 	wp_enqueue_script( 'Maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
-// stop page from loading needs atention
-//wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.99977.js', array(), '2.6.1', true );
 
 	wp_enqueue_script( 'Maquina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -136,32 +134,57 @@ function maquina_scripts() {
 		wp_enqueue_script( 'Maquina-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'Maquina_scripts' );
+add_action( 'wp_enqueue_scripts', 'maquina_scripts' );
 
 /**
  * Implement the Custom Header feature
  */
 require_once( get_template_directory() . '/inc/custom-header.php' );
 
-add_action( 'wp_head', 'maquina_head' );
-
 	// Change admin welcome message Wordpress 3.5.1
+	
 function replace_howdy( $wp_admin_bar ) {
+	
 	$my_account=$wp_admin_bar->get_node('my-account');
-	$newtitle = str_replace( 'Howdy,', 'Welcome to your sexy website,', $my_account->title );
+	$newtitle = str_replace( 'Howdy,', __( 'Welcome to your website back end', 'maquina' ),
+	$my_account->title );
 	$wp_admin_bar->add_node( array(
 	'id' => 'my-account',
 	'title' => $newtitle,
 	) );
 	}
+
 add_filter( 'admin_bar_menu', 'replace_howdy',25 );
 
-// personalize footer
- 
-// Admin footer modification
+/**
+ * Admin footer modification
+ */
  
 function remove_footer_admin () {
-    echo '<span id="footer-thankyou">Developed by <a href="http://vnlweb.com" 
-    target="_blank">Vitor Lopes - vnlweb.com</a></span>';
+	echo '<span id="footer-thankyou"> ' . __( 'Developed by', 'maquina' ) . '<a href="http://vnlweb.com" 
+    target="_blank"> Vitor Lopes - vnlweb.com</a></span>';
 	}
+
 add_filter('admin_footer_text', 'remove_footer_admin');
+
+/**
+ * Loading stylesheets without inline styles and accommodate prefixfree syntax  "info - prefixfree does not validate in wc3!"
+ */
+
+function maquina_load_stylesheets () {
+	echo '<link rel="data-noprefix stylesheet" href="' . get_template_directory_uri() . '/style.css' . '" type="text/css" media="all" />';
+	}
+
+add_action('wp_head', 'maquina_load_stylesheets');
+
+add_action('wp_footer', 'add_googleanalytics');
+
+function add_googleanalytics() { ?>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+<?php } ?>
