@@ -100,7 +100,7 @@ function maquina_register_custom_background() {
 		'default-image' => '',
 	);
 
-	$args = apply_filters( '_s_custom_background_args', $args );
+	$args = apply_filters( 'maquina_custom_background_args', $args );
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-background', $args );
@@ -139,7 +139,7 @@ add_action( 'wp_enqueue_scripts', 'maquina_scripts' );
 /**
  * Implement the Custom Header feature
  */
-require_once( get_template_directory() . '/inc/custom-header.php' );
+//require_once( get_template_directory() . '/inc/custom-header.php' );
 
 	// Change admin welcome message Wordpress 3.5.1
 	
@@ -178,7 +178,9 @@ function maquina_load_stylesheets () {
 add_action('wp_head', 'maquina_load_stylesheets');
 
 add_action('wp_footer', 'add_googleanalytics');
-
+/*
+ * uncomment to activate
+ *
 function add_googleanalytics() { ?>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -187,4 +189,6 @@ function add_googleanalytics() { ?>
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-<?php } ?>
+<?php } ?> 
+ *  uncomment to activate
+ */
