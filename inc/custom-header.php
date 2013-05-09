@@ -14,7 +14,6 @@
 
  *
  * @package _s
- * @since _s 1.0
  */
 
 /**
@@ -72,7 +71,6 @@ add_action( 'after_setup_theme', '_s_custom_header_setup' );
  * @return stdClass All properties represent attributes of the curent header image.
  *
  * @package _s
- * @since _s 1.1
  */
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -91,8 +89,6 @@ if ( ! function_exists( '_s_header_style' ) ) :
  * Styles the header image and text displayed on the blog
  *
  * @see _s_custom_header_setup().
- *
- * @since _s 1.0
  */
 function _s_header_style() {
 
@@ -119,7 +115,7 @@ function _s_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo get_header_textcolor(); ?> !important;
+			color: #<?php echo get_header_textcolor(); ?>;
 		}
 	<?php endif; ?>
 	</style>
@@ -132,8 +128,6 @@ if ( ! function_exists( '_s_admin_header_style' ) ) :
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
  * @see _s_custom_header_setup().
- *
- * @since _s 1.0
  */
 function _s_admin_header_style() {
 ?>
@@ -162,8 +156,6 @@ if ( ! function_exists( '_s_admin_header_image' ) ) :
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
  * @see _s_custom_header_setup().
- *
- * @since _s 1.0
  */
 function _s_admin_header_image() { ?>
 	<div id="headimg">
@@ -173,8 +165,8 @@ function _s_admin_header_image() { ?>
 		else
 			$style = ' style="color:#' . get_header_textcolor() . ';"';
 		?>
-		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
+		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
 		<?php $header_image = get_header_image();
 		if ( ! empty( $header_image ) ) : ?>
 			<img src="<?php echo esc_url( $header_image ); ?>" alt="" />

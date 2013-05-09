@@ -5,7 +5,6 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package _s
- * @since _s 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

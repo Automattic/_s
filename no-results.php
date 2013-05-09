@@ -5,7 +5,6 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
- * @since _s 1.0
  */
 ?>
 
@@ -17,7 +16,7 @@
 	<div class="entry-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s' ), admin_url( 'post-new.php' ) ); ?></p>
+			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
 		<?php elseif ( is_search() ) : ?>
 
