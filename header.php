@@ -32,8 +32,8 @@
 	</header><!-- #masthead .site-header -->
 
     <div role="navigation" class="site-navigation main-navigation navbar">
-        <h1 class="assistive-text"><?php _e( 'Menu', '_s' ); ?></h1>
-        <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
+        <h1 class="screen-reader-text"><?php _e( 'Menu', '_s' ); ?></h1>
+        <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>"><?php _e( 'Skip to content', '_s' ); ?></a></div>
 
         <div class="navbar-inner">
             <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
