@@ -46,7 +46,12 @@ function _s_setup() {
 	 */
 	//require( get_template_directory() . '/inc/wpcom.php' );
 
-	/**
+    /**
+     * Bootstrap integration
+     */
+    require( get_template_directory() . '/inc/functions-strap.php' );
+
+    /**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 * If you're building a theme based on _s, use a find and replace
@@ -144,6 +149,8 @@ function _s_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( '_s-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
+
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.php', array( 'jquery' ), '20120206', true );
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
