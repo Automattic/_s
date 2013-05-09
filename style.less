@@ -15,9 +15,8 @@ Respect to _s https://github.com/Automattic/_s
 and Bootstrap http://twitter.github.com/bootstrap/
 */
 
-// Bootstrap
 /*!
- * Bootstrap v2.2.2
+ * Bootstrap v2.3.1
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -26,12 +25,12 @@ and Bootstrap http://twitter.github.com/bootstrap/
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
-// CSS Reset
-@import "bootstrap/less/reset.less";
-
 // Core variables and mixins
 @import "bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "bootstrap/less/mixins.less";
+
+// CSS Reset
+@import "bootstrap/less/reset.less";
 
 // Grid system and page structure
 @import "bootstrap/less/scaffolding.less";
@@ -80,19 +79,6 @@ and Bootstrap http://twitter.github.com/bootstrap/
 // Utility classes
 @import "bootstrap/less/utilities.less"; // Has to be last to override when necessary
 
-// Responsive.less
-// For phone and tablet devices
-// -------------------------------------------------------------
-
-
-// IE10 Metro responsive
-// Required for Windows 8 Metro split-screen snapping with IE10
-// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
-
-@-ms-viewport{
-  width: device-width;
-}
-
 // RESPONSIVE CLASSES
 // ------------------
 
@@ -117,6 +103,7 @@ and Bootstrap http://twitter.github.com/bootstrap/
 
 // From 979px and below, show a button to toggle navbar contents
 @import "bootstrap/less/responsive-navbar.less";
+
 
 // WORDPRESS COMPATIBILITY STYLES
 // ------------------
