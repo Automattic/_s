@@ -120,6 +120,8 @@ add_action( 'after_setup_theme', 'maquina_register_custom_background' );
  
 function maquina_scripts() {
 	    
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.custom.20146.js', array(), '2.6.1', true );
+		
 	wp_enqueue_script( 'Maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
 
 	wp_enqueue_script( 'Maquina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -139,14 +141,14 @@ add_action( 'wp_enqueue_scripts', 'maquina_scripts' );
 /**
  * Implement the Custom Header feature
  */
-//require_once( get_template_directory() . '/inc/custom-header.php' );
+require_once( get_template_directory() . '/inc/custom-header.php' );
 
 	// Change admin welcome message Wordpress 3.5.1
 	
 function replace_howdy( $wp_admin_bar ) {
 	
 	$my_account=$wp_admin_bar->get_node('my-account');
-	$newtitle = str_replace( 'Howdy,', __( 'Welcome to your website back end', 'maquina' ),
+	$newtitle = str_replace( 'Howdy,', __( 'Welcome to your website', 'maquina' ),
 	$my_account->title );
 	$wp_admin_bar->add_node( array(
 	'id' => 'my-account',
@@ -177,8 +179,8 @@ function maquina_load_stylesheets () {
 
 add_action('wp_head', 'maquina_load_stylesheets');
 
-add_action('wp_footer', 'add_googleanalytics');
-/*
+/*  add_action('wp_footer', 'add_googleanalytics');
+ *
  * uncomment to activate
  *
 function add_googleanalytics() { ?>
@@ -192,3 +194,29 @@ function add_googleanalytics() { ?>
 <?php } ?> 
  *  uncomment to activate
  */
+ function add_logo_to_customizer( $wp_customize ) {
+   
+    $wp_customize->add_section( 'maquina_logo_section' , array(
+    'title'       => __( 'Logo', 'maquina' ),
+    'priority'    => 30,
+    'description' => __( 'Upload a logo to replace the default site name and description in the header' ),
+) );
+	$wp_customize->add_setting( 'maquina_logo' );
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'maquina_logo', array(
+    'label'    => __( 'Logo', 'maquina' ),
+    'section'  => 'maquina_logo_section',
+    'settings' => 'maquina_logo',
+) ) );
+
+}
+add_action('customize_register', 'add_logo_to_customizer');
+
+/*
+ * Add customize under apearance
+ */ 
+add_filter('admin_menu', 'add_maquina_customize_to_appearance');
+function add_maquina_customize_to_appearance() 
+{
+  add_submenu_page('themes.php', 'Customizer', 'Customize Maquina', 'edit_theme_options', 'customize.php', '', '', 6);
+}
