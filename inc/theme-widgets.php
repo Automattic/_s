@@ -169,42 +169,12 @@ function maquina_widgets_init() {
 	register_widget( 'Maquina_Widget' );
 	
 	register_sidebar( array(
-		'name' => __( 'Header Widget 1', 'maquina' ),
-		'id' => 'header-sidebar-1',
+		'name' => __( 'Header Widget', 'maquina' ),
+		'id' => 'header-sidebar',
 		'description' => __( 'An optional widget area for your site header', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget widgetleft %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="header-widget-1">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Header widget 2', 'maquina' ),
-		'id' => 'header-sidebar-2',
-		'description' => __( 'An optional widget area for your site header', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="header-widget-2">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Header Widget 3', 'maquina' ),
-		'id' => 'header-sidebar-3',
-		'description' => __( 'An optional widget area for your site header', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="header-widget-3">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Header Widget 4', 'maquina' ),
-		'id' => 'header-sidebar-4',
-		'description' => __( 'An optional widget area for your site header', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="header-widget-4">',
+		'before_title' => '<h3 class="header-widget">',
 		'after_title' => '</h3>',
 	) );
 
@@ -229,115 +199,14 @@ function maquina_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Footer Widget 1', 'maquina' ),
-		'id' => 'footer-sidebar-1',
+		'name' => __( 'Footer Widget', 'maquina' ),
+		'id' => 'footer-sidebar',
 		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget widgetleft %2$s">',
 		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="footer-widget-1">',
+		'before_title' => '<h3 class="footer-widget">',
 		'after_title' => '</h3>',
 	) );
 
-	register_sidebar( array(
-		'name' => __( 'Footer widget 2', 'maquina' ),
-		'id' => 'footer-sidebar-2',
-		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="footer-widget-2">',
-		'after_title' => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name' => __( 'Footer Widget 3', 'maquina' ),
-		'id' => 'footer-sidebar-3',
-		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="footer-widget-3">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Footer Widget 4', 'maquina' ),
-		'id' => 'footer-sidebar-4',
-		'description' => __( 'An optional widget area for your site footer', 'maquina' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => "</aside>",
-		'before_title' => '<h3 class="footer-widget-4">',
-		'after_title' => '</h3>',
-	) );
 }
 add_action( 'widgets_init', 'maquina_widgets_init' );
-
-function maquina_header_sidebar_class() {
-	$count_header = 0;
-
-	if ( is_active_sidebar( 'header-sidebar-1' ) )
-		$count_header++;
-
-	if ( is_active_sidebar( 'header-sidebar-2' ) )
-		$count_header++;
-
-	if ( is_active_sidebar( 'header-sidebar-3' ) )
-		$count_header++;
-	
-	if ( is_active_sidebar( 'header-sidebar-4' ) )
-		$count_header++;
-
-	$class_header = '';
-
-	switch ( $count_header ) {
-		case '1':
-			$class_header = 'widget-header-one';
-			break;
-		case '2':
-			$class_header = 'widget-header-two';
-			break;
-		case '3':
-			$class_header = 'widget-header-three';
-			break;
-		case '4':
-			$class_header = 'widget-header-four';
-			break;
-	}
-
-	if ( $class_header )
-		echo 'class="' . $class_header . '"';
-}
-
-function maquina_footer_sidebar_class() {
-	$count_footer = 0;
-
-	if ( is_active_sidebar( 'footer-sidebar-1' ) )
-		$count_footer++;
-
-	if ( is_active_sidebar( 'footer-sidebar-2' ) )
-		$count_footer++;
-
-	if ( is_active_sidebar( 'footer-sidebar-3' ) )
-		$count_footer++;
-	
-	if ( is_active_sidebar( 'footer-sidebar-4' ) )
-		$count_footer++;
-
-	$class_footer = '';
-
-	switch ( $count_footer ) {
-		case '1':
-			$class_footer = 'widget-footer-one';
-			break;
-		case '2':
-			$class_footer = 'widget-footer-two';
-			break;
-		case '3':
-			$class_footer = 'widget-footer-three';
-			break;
-		case '4':
-			$class_footer = 'widget-footer-four';
-			break;
-	}
-
-	if ( $class_footer )
-		echo 'class="' . $class_footer . '"';
-}
