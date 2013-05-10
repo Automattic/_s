@@ -568,9 +568,12 @@ object {
 
 /* =Widgets
 ----------------------------------------------- */
-
+.widgetleft {
+	display: inline;
+	float: left;
+}
 .widget {
-	margin: 0 0 1.5em;
+	margin: 1.5em;
 }
 
 /* Make sure select elements fit in widgets */
@@ -601,7 +604,7 @@ object {
 .site-main .right-widget-area, .site-main .left-widget-area {
 	float: left;
 	overflow: hidden;
-	width: 22%;
+	width: 20%;
 }
 
 .header-widgets-container .footer-widgets-container, .site-footer {
@@ -609,28 +612,28 @@ object {
 	width: 100%;
 }
 
-.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4,
-.header-widget-1, .header-widget-2, .header-widget-3, .header-widget-4 {
-	float: left;
-	width: 23%;
+.footer-widget, .header-widget {
 	overflow: hidden;
-}
+	}
 
-.footer-widget-1, .footer-widget-2, .footer-widget-3, .footer-widget-4,
-.header-widget-1, .header-widget-2, .header-widget-3, .header-widget-4,
 .right-widget-area, .left-widget-area, .content-area {
 	margin: 1%;
 }
-
 .content-area {
 	float: left;
 	width: 50%;
 }
-
 .site-info {
-	display:inline-block;		
+	text-align:center;
+	margin-top: 2%;
 }
-
-.site-footer {
-	text-align: center;
+.right-widget-area, .left-widget-area, .content-area, .header-widgets-container .footer-widgets-container {
+	text-align: justify;
+}
+.menu {
+    text-align:center;margin-right: auto;
+    margin-left: auto;
+    }
+.menu li {
+	display: inline;
 }
