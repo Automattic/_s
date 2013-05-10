@@ -9,14 +9,14 @@
 ?>
 
 </div><!-- #main -->
-<?php get_sidebar('footer');?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+		<?php get_sidebar('footer');?>
+	</footer><!-- #colophon -->
+	<div class="site-info aligncenter">
 			<?php do_action( 'Maquina_credits' ); ?>
 			<?php printf( __( 'Maquina Theme by %2$s.', 'Maquina' ), 'Maquina',
-			 '<a href="http://vnlweb.com/my-projects/maquina/" rel="designer">vnlweb</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+			 '<a href="http://vnlweb.com/" rel="designer">vnlweb</a>' ); ?>
+	</div><!-- .site-info -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
