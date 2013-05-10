@@ -26,7 +26,6 @@ get_sidebar('left');
 			 
 				the_post_thumbnail(); 
 			} 
-				the_content();
 			?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
