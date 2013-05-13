@@ -318,6 +318,9 @@ a:focus,
 a:active {
 	color: midnightblue;
 }
+a[href="http://#"] {  
+  cursor: default; 
+}
 
 /* Alignment */
 .alignleft {
@@ -629,11 +632,4 @@ object {
 }
 .right-widget-area, .left-widget-area, .content-area, .header-widgets-container .footer-widgets-container {
 	text-align: justify;
-}
-.menu {
-    text-align:center;margin-right: auto;
-    margin-left: auto;
-    }
-.menu li {
-	display: inline;
 }
