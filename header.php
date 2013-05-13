@@ -28,15 +28,15 @@
 			<header id="masthead" class="site-header" role="banner">
 				<div class="site-branding">
 					<?php if ( get_theme_mod( 'maquina_logo' ) ) : ?>
-    				<div class="site-logo alignleft">
-        				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'themeslug_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+			<div class="site-logo">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'maquina_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
     				</div>
-    				<?php get_sidebar('header'); ?>
-	<?php else : ?>
+    <?php else : ?>
      				<h1 class="site-title alignleft"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
        				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
     <?php endif; ?>
 				</div><!-- site-branding -->
+	<?php get_sidebar('header'); ?>
 			</header><!-- #masthead -->
 	
 			<nav id="site-navigation navigation-primary" class="navigation-main navigation-primary" role="navigation">
