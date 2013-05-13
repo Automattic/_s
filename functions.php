@@ -146,7 +146,7 @@ require_once( get_template_directory() . '/inc/custom-header.php' );
 function replace_howdy( $wp_admin_bar ) {
 	
 	$my_account=$wp_admin_bar->get_node('my-account');
-	$newtitle = str_replace( 'Howdy,', __( 'Welcome to your website', 'maquina' ),
+	$newtitle = str_replace( 'Howdy,', __( 'Welcome to your website back end', 'maquina' ),
 	$my_account->title );
 	$wp_admin_bar->add_node( array(
 	'id' => 'my-account',
@@ -177,8 +177,6 @@ function maquina_load_stylesheets () {
 
 add_action('wp_head', 'maquina_load_stylesheets');
 
-// Include the Google Analytics Tracking Code (ga.js)
-// @ http://code.google.com/apis/analytics/docs/tracking/asyncUsageGuide.html
 function google_analytics_tracking_code(){
 
 	$maquina_ga_code = 'UA-XXXXX-X'; // GA Property ID
@@ -237,11 +235,12 @@ function add_googleanalytics() { ?>
 }
 add_action('customize_register', 'add_logo_to_customizer');
 
-/*
- * Add customize under apearance
- */ 
-add_filter('admin_menu', 'add_maquina_customize_to_appearance');
-function add_maquina_customize_to_appearance() 
-{
-  add_submenu_page('themes.php', 'Customizer', 'Customize Maquina', 'edit_theme_options', 'customize.php', '', '', 6);
+/**
+ * Add a menu item for the theme customizer
+ *
+ * 
+ */
+function maquina_add_customizer_menu_item() {
+    add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
 }
+add_action ('admin_menu', 'maquina_add_customizer_menu_item');
