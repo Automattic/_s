@@ -1,36 +1,41 @@
-
-                            
 /* TEAM */
 
                             
-Your title: Your name.
+Your title: Vitor Lopes.
 
                             
-Site: email, link to a contact form, etc.
+Site: http://vnlweb.com
+	  https://github.com/vmnlopes
+                            
+Twitter: @vmnlopes
 
                             
-Twitter: your Twitter username.
+Location: Dover/Kent, England.
 
-                            
-Location: City, Country.
-
-                         
-                 
-                        [...]
-						
-
-							
 /* THANKS */
-
 							
-Name: name or url
-
-						
-                 
-                        [...]
-                        
-
-                            
+ to everyone involved in the open source software
+ 	  i use in a daily base and alows me to complete 
+ 	  my job.
+ 	  
+ 	  The list his so extensive i will leave some links
+ 	  here instead, cant list everyone so i will put
+ 	  down most used.
+ 
+http://www.debian.org
+http://www.linuxmint.com
+http://php.net
+http://www.apache.org
+http://www.mysql.com
+http://www.wordpress.org
+http://jquery.com
+http://www.aptana.com
+http://inkscape.org
+http://gimp.org
+http://krita.org
+http://github.com
+http://www.poedit.net
+             
 /* SITE */
 
                             
@@ -40,8 +45,7 @@ Last update: YYYY/MM/DD
 Standards: HTML5, CSS3,..
 
                             
-Components: Modernizr, jQuery, etc.
+Components: Wordpress, Maquina Wordpress Theme, And my magic hands on top.
 
                             
-Software: Software used for the development
-   
+Used Software: Linux Mint LDME Edition, Aptana Studio 3, Inkscape, Poedit.
