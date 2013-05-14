@@ -607,7 +607,7 @@ object {
 .site-main .right-widget-area, .site-main .left-widget-area {
 	float: left;
 	overflow: hidden;
-	width: 20%;
+	width: 21%;
 }
 
 .header-widgets-container .footer-widgets-container, .site-footer {
@@ -617,14 +617,15 @@ object {
 
 .footer-widget, .header-widget {
 	overflow: hidden;
+	width: 100%;
 	}
 
 .right-widget-area, .left-widget-area, .content-area {
-	margin: 1%;
+	margin-left: 1%;
 }
 .content-area {
 	float: left;
-	width: 50%;
+	width: 53%;
 }
 .site-info {
 	text-align:center;
