@@ -68,10 +68,11 @@ function maquina_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	/**
-	 * This theme uses wp_nav_menu() in one location.
+	 * This theme uses wp_nav_menu() in two locations.
 	 */
 	register_nav_menus( array(
-		'primary' => __( 'Primary After Header Menu', 'maquina' ),
+		'top_menu' => __( 'Top Menu', 'maquina' ),
+		'after_header_menu' => __( 'After Header Menu', 'maquina' ),
 		) );
 
 	/**
@@ -179,7 +180,7 @@ add_action('wp_head', 'maquina_load_stylesheets');
 
 function google_analytics_tracking_code(){
 
-	$maquina_ga_code = 'UA-XXXXX-X'; // GA Property ID
+	$maquina_ga_code = ''; // GA ID
 
 	if ($options['ga_enable']) { ?>
 

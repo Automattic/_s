@@ -23,8 +23,16 @@
 </head>
 	<body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
+		<nav id="site-navigation navigation-primary" class="navigation-main navigation-primary" role="navigation">
+				<h1 class="menu-toggle"><?php _e( 'Menu', 'maquina' ); ?></h1>
+					<div class="screen-reader-text skip-link">
+						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'maquina' ); ?>">
+							<?php _e( 'Skip to content', 'maquina' ); ?>
+						</a>
+					</div>
+		<?php wp_nav_menu( array( 'theme_location' => 'top_menu', 'container_id' => 'navigation-main navigation-primary', 'container_class' => 'navigation-main navigation-primary top-menu', 'fallback_cb' => '' ) ); ?>
+		</nav><!-- #site-navigation top -->
 		<?php do_action( 'before' ); ?>
-		</nav><!-- #site-navigation -->
 			<header id="masthead" class="site-header" role="banner">
 				<div class="site-branding">
 					<?php if ( get_theme_mod( 'maquina_logo' ) ) : ?>
@@ -42,11 +50,11 @@
 			<nav id="site-navigation navigation-primary" class="navigation-main navigation-primary" role="navigation">
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'maquina' ); ?></h1>
 					<div class="screen-reader-text skip-link">
-						<a href="#content" title="<?php esc_attr_e( 'Skip to content', '_s' ); ?>">
-							<?php _e( 'Skip to content', '_s' ); ?>
+						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'maquina' ); ?>">
+							<?php _e( 'Skip to content', 'maquina' ); ?>
 						</a>
 					</div>
-	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #site-navigation -->
+	<?php wp_nav_menu( array( 'theme_location' => 'after_header_menu', 'container_class' => 'after-header-menu', 'fallback_cb' => '' ) ); ?>
+			</nav><!-- #site-navigation after header-->
 
 <div id="main" class="site-main">
