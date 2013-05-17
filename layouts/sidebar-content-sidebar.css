@@ -10,7 +10,7 @@ Layout: Sidebar-Content-Sidebar
 .site-content {
 	margin: 0 20%;
 }
-.site-main .widget-area {
+.site-body .widget-area {
 	float: left;
 	margin: 0 0 0 -100%;
 	overflow: hidden;

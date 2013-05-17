@@ -2,7 +2,7 @@
 /**
  * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="main">
+ * Displays all of the <head> section and everything up till <div id="page-body">
  *
  * @package _s
  */
@@ -38,4 +38,4 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="main" class="site-main">
+	<div id="page-body" class="site-body">
