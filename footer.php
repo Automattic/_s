@@ -4,7 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 ?>
 

@@ -1,6 +1,7 @@
 <?php
 /**
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 ?>
 

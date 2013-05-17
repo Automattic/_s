@@ -7,7 +7,8 @@
  * handled by a callback to _s_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 
 /*

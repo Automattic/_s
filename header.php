@@ -4,7 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @Maquina
+ * @package Maquina
+ * @file
  */
 ?><!DOCTYPE html><!-- Tanks for reading my code you are awesome this theme his on https://github.com/vmnlopes/Maquina.git -->
 <html <?php language_attributes(); ?>>
@@ -23,7 +24,7 @@
 </head>
 	<body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
-		<nav id="site-navigation navigation-primary" class="navigation-main navigation-primary" role="navigation">
+		<nav id="site-navigation" class="navigation-main" role="navigation">
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'maquina' ); ?></h1>
 					<div class="screen-reader-text skip-link">
 						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'maquina' ); ?>">
@@ -47,7 +48,7 @@
 	<?php get_sidebar('header'); ?>
 			</header><!-- #masthead -->
 	
-			<nav id="site-navigation navigation-primary" class="navigation-main navigation-primary" role="navigation">
+			<nav id="site-navigation" class="navigation-main" role="navigation">
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'maquina' ); ?></h1>
 					<div class="screen-reader-text skip-link">
 						<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'maquina' ); ?>">

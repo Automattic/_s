@@ -1,8 +1,9 @@
 <?php
 /**
- * _s Theme Customizer
+ * Maquina Theme Customizer
  *
- * @package _s
+ * @package Maquina
+ * @file 
  */
 
 /**

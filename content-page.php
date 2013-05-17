@@ -2,7 +2,8 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 ?>
 

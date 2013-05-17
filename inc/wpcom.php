@@ -2,7 +2,8 @@
 /**
  * WordPress.com-specific functions and definitions
  *
- * @package _s
+ * @package Maquina
+ * @file 
  */
 
 global $themecolors;

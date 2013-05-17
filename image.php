@@ -2,7 +2,8 @@
 /**
  * The template for displaying image attachments.
  *
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 
 get_header();

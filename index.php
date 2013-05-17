@@ -8,46 +8,9 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @Maquina
+ * @package Maquina
+ * @file
  */
-get_header();
-get_sidebar('left'); 
-?>
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
-			
-			<?php if ( has_post_thumbnail() ) {
-				
-			 /* check if the post has a Post Thumbnail assigned to it. */
-			 
-				the_post_thumbnail(); 
-			} 
-			?>
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php
-				/* Include the Post-Format-specific template for the content.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'content', get_post_format() );
-			?>
-
-		<?php endwhile; ?>
-
-			<?php _s_content_nav( 'nav-below' ); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'index' ); ?>
-
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-<?php get_sidebar('right'); ?>
-<?php get_footer(); ?>
+get_header(); //@see header.php
+get_sidebar(); // OMG the loop his gone @see sidebar.php
+get_footer(); // @see footer.php ?> 

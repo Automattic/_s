@@ -1,15 +1,13 @@
 <?php
 /**
- * The Header widget areas.
+ * The Header widget area.
  *
  * @package Maquina
- * @based on Twenty Eleven 1.0
+ * @file
  */
 ?>
-<div id="header-widgets-container" class="header-widgets-container">
 	<?php if ( is_active_sidebar( 'header-sidebar' ) ) : ?>
-	<div id="header-widget" class="header-widget widgetleft" role="complementary">
+	<div id="header-widget" class="header-widget" role="complementary">
 		<?php dynamic_sidebar( 'header-sidebar' ); ?>
-	</div><!-- #first .widget-area -->
+	</div><!-- header-widget -->
 	<?php endif; ?>
-</div><!-- #header-widgets-container -->

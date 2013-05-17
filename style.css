@@ -1,13 +1,13 @@
 /*
 Theme Name: Maquina
-Theme URI: http://vnlweb.com/maquina
+Theme URI: http://vnlweb.com/maquina.html
 Author: Vitor Lopes
 Author URI: http://vnlweb.com/
-Description: Hi. I'm a starter blank theme called <code>Maquina</code> based on underscores with 10 widget possitions, 4 in the header, 4 in the footer, one on the left side and one on the right side.
-Version: _s v1.30 Maquina v1.0
+Description: Theme called <code>Maquina</code> based on underscores mainly made of widget areas.
+Version: _s v1.30 Maquina v1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: three-columns left-sidebar right-sidebar flexible-width translation-ready
+Tags: left-sidebar right-sidebar flexible-width translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -18,8 +18,12 @@ Resetting and rebuilding styles have been helped along thanks to the fine work o
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
-*/
 
+CSS Print based in http://github.com/mikecrittenden/priss
+ *
+ * @package Maquina
+ * @file
+ * 
 /* =Reset
 -------------------------------------------------------------- */
 
@@ -109,6 +113,43 @@ textarea {
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
+	font-weight : bold;
+}
+h1 { /* @todo ajust headings sizes */
+	margin : 0.8909em 0;
+	font-size : 1.5714em;
+	line-height : 0.8909em;
+	word-spacing : -2px;
+}
+h2 {
+	margin : 0.9333em 0;
+	font-size : 1.5em;
+	line-height : 0.9333em;
+	word-spacing : -1px;
+}
+h3 {
+	margin : 0.98em 0;
+	font-size : 1.4286em;
+	line-height : 0.98em;
+	word-spacing : 0;
+}
+h4 {
+	margin : 1.0316em 0;
+	font-size : 1.3571em;
+	line-height : 1.0316em;
+	word-spacing : 1px;
+}
+h5 {
+	margin : 1.0889em 0;
+	font-size : 1.2857em;
+	line-height : 1.0889em;
+	word-spacing : 2px;
+}
+h6, p {
+	margin : 1.4286em 0;
+	font-size : 1em;
+	line-height : 1.4286em;
+	word-spacing : 3px;
 }
 hr {
 	background-color: #ccc;
@@ -118,6 +159,13 @@ hr {
 }
 
 /* Text elements */
+
+p::first-letter, h1::first-letter, /* time saver uppercase everything */
+h2::first-letter, h3::first-letter, h4::first-letter, h5::first-letter, 
+h6::first-letter, li::first-letter, a::first-letter, label::first-letter, 
+dt::first-letter, dd::first-letter {
+	text-transform : uppercase;
+}
 p {
 	margin-bottom: 1.5em;
 }
@@ -301,7 +349,7 @@ input[type="search"] {
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
+	padding-left: 3px; 
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
 }
@@ -387,7 +435,7 @@ a[href="http://#"] {
 /* =Menu
 ----------------------------------------------- */
 
-.navigation-main {
+.navigation-main { /* @TODO add horinzontal menu and ajust vertical menu */
 	clear: both;
 	display: block;
 	float: left;
@@ -411,7 +459,7 @@ a[href="http://#"] {
 	display: none;
 	float: left;
 	position: absolute;
-		left: 0.5em;
+	left: 0.5em;
 	z-index: 99999;
 }
 .navigation-main ul ul ul {
@@ -419,7 +467,8 @@ a[href="http://#"] {
 	top: 0;
 }
 .navigation-main ul ul a {
-	width: 200px;
+	width: 240px;
+	padding: 2px;
 }
 .navigation-main ul ul li {
 }
@@ -576,7 +625,7 @@ object {
 	float: left;
 }
 .widget {
-	margin: 1.5em;
+	margin: 1% 0% 1% 0%;
 }
 
 /* Make sure select elements fit in widgets */
@@ -602,14 +651,151 @@ object {
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+/* CSS Print style */
+@media print { /* @todo still not happy with print style needs more ajustments */
 
-/* Site skeleton layout */
-.site-main .right-widget-area, .site-main .left-widget-area {
-	float: left;
-	overflow: hidden;
-	width: 21%;
+/* BODY */
+	body, .type-page, .type-post, .content-area {
+		width:100% !important;
+		margin:0 !important;
+		padding:0 !important;
+		border: 0px;
+		line-height: 150%;;
+		word-spacing:1.1pt;
+		letter-spacing:0.2pt;
+		font-family: Garamond,"Times New Roman", serif;
+		color: #000;
+		background: none;
+		font-size: 12pt;
+		background-color:#fff !important;
+		text-shadow: #fff 0 0px !important;
+		box-shadow: 0px 0px 0px 0px #fff !important;
+		box-shadow: 0px 0px 0px 0px #fff !important;
+	}
+/* Page margins */
+	@page {
+      margin: 2cm;
+	}
+
+/* HEADINGS */
+		h1,h2,h3,h4,h5,h6 {
+			font-family: Helvetica, Arial, sans-serif;
+		}
+		h1 {
+			font-size:19pt;
+		}
+		h2, h3 { /* prevent headings from being printed at the bottom of the page */
+  			page-break-after: avoid;
+		}
+		h2 {
+			font-size:17pt;
+		}
+		h3 {
+			font-size:15pt;
+		}
+		h4,h5,h6 {
+			font-size:12pt;
+		}
+
+/* ELEMENTS */
+		code, pre {
+			font: 10pt Courier, monospace;
+			background-color: transparent;
+		}
+		blockquote {
+			margin: 1.3em;
+			padding: 1em;
+			font-size: 10pt;
+			background-image: none;
+		}
+		hr {
+			background-color: #ccc;
+		}
+
+/* IMAGES */
+		img {
+			float: left;
+			margin: 1em 1.5em 1.5em 0;
+			max-width: 100% !important; /* prevent images from bleeding over the edge */
+		}
+		a img {
+			border: none;
+		}
+		ul, img { /* prevent large elements, from being split across multiple pages */
+  			page-break-inside: avoid;
+		}
+
+/* LINKS */
+		a:link, a:visited {
+			background: transparent;
+			font-weight: bold;
+			text-decoration: underline;
+			color: #06c;
+		}
+		a[href^="http://"] {
+			color:#000;
+		}
+		a[href^="#"]:after { /* stop anchor links and links around images to expand on the printed page */
+   			content: "";
+		}
+		/* removing the link target improves readability */
+		a[href^="tel"]:after, a[href^="mailto"]:after {
+			content: "";
+		}
+		.site-logo a[href^="http://"] {
+			content: "";
+		}
+		.site-logo {
+			position: fixed;
+			margin-top: 0pt;
+			margin-left: 78%;
+		}.site-logo:before{float:left;}
+/* TABLES */
+		table {
+			margin: 1px; text-align:left;
+		}
+		th {
+			border-bottom: 1px solid #333; font-weight: bold;
+		}
+		td {
+			border-bottom: 1px solid #333;
+		}
+		th,td {
+			padding: 4px 10px 4px 0;
+		}
+		tfoot {
+			font-style: italic;
+		}
+		caption {
+			background: #fff;
+			margin-bottom:2em;
+			text-align:left;
+		}
+		thead {
+			display: table-header-group;
+		}
+		tr {
+			page-break-inside: avoid;
+		}
+
+/* HIDE UNNECESSARY ELEMENTS */
+		#site-navigation, #left-sidebar-secondary, #left-sidebar-secondary, #colophon, 
+		#header-widget, #footer-widget, nav, .top-menu, .after-header-menu {
+			display:none;
+		}
+
+/* Moving comments, articles to their own page */
+		#comments {
+			 page-break-before: always;
+		}
+}  /* PRINT STYLE ENDS HERE */
+/* @media print and (color) { /*  WebKit force the printer to render the colors as seen on screen. 
+   * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+   } 
 }
-
+/* Site skeleton layout */
 .header-widgets-container .footer-widgets-container, .site-footer {
 	clear: both;
 	width: 100%;

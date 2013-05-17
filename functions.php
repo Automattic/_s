@@ -1,11 +1,10 @@
 <?php
-/**
- * Maquina functions and definitions
- *
- * @Maquina
- */
-
-/**
+/*
+ * Maquina functions and definitions 
+ * 
+ * @package Maquina
+ * @file 
+ *    
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
@@ -24,7 +23,7 @@ if ( ! function_exists( 'maquina_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function maquina_setup() {
+function maquina_setup() { 
 	/*
 	 * Grab Maquina widgets.
 	 */
@@ -84,7 +83,7 @@ endif; // Maquina_setup
 add_action( 'after_setup_theme', 'maquina_setup' );
 
 /**
- * Setup the WordPress core custom background feature.
+ * //Setup the WordPress core custom background feature.
  *
  * Use add_theme_support to register support for WordPress 3.4+
  * as well as provide backward compatibility for WordPress 3.3
@@ -147,7 +146,7 @@ require_once( get_template_directory() . '/inc/custom-header.php' );
 function replace_howdy( $wp_admin_bar ) {
 	
 	$my_account=$wp_admin_bar->get_node('my-account');
-	$newtitle = str_replace( 'Howdy,', __( 'Welcome to your website back end', 'maquina' ),
+	$newtitle = str_replace( 'Howdy,', __( 'Welcome', 'maquina' ),
 	$my_account->title );
 	$wp_admin_bar->add_node( array(
 	'id' => 'my-account',
@@ -178,7 +177,7 @@ function maquina_load_stylesheets () {
 
 add_action('wp_head', 'maquina_load_stylesheets');
 
-function google_analytics_tracking_code(){
+function google_analytics_tracking_code(){ // @todo tracking code needs to be finish and implemented in theme options
 
 	$maquina_ga_code = ''; // GA ID
 
@@ -201,24 +200,8 @@ function google_analytics_tracking_code(){
 
 //  tracking code before the closing body tag
 add_action('wp_footer', 'google_analytics_tracking_code');
- 
-  
- /*
- *
- * uncomment to activate
- *
-function add_googleanalytics() { ?>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-<?php } ?> 
- *  uncomment to activate
- */
- function add_logo_to_customizer( $wp_customize ) {
+
+function add_logo_to_customizer( $wp_customize ) {
    
     $wp_customize->add_section( 'maquina_logo_section' , array(
     'title'       => __( 'Logo', 'maquina' ),
@@ -236,11 +219,6 @@ function add_googleanalytics() { ?>
 }
 add_action('customize_register', 'add_logo_to_customizer');
 
-/**
- * Add a menu item for the theme customizer
- *
- * 
- */
 function maquina_add_customizer_menu_item() {
     add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
 }

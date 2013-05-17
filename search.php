@@ -2,7 +2,8 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 
 get_header(); ?>

@@ -2,7 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 
 get_header(); ?>

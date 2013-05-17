@@ -3,7 +3,8 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package _s
+ * @package Maquina
+ * @file 
  */
 
 /**

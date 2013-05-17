@@ -4,7 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @Maquina
+ * @package Maquina
+ * @file 
  */
 
 get_header(); ?>

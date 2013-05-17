@@ -13,7 +13,7 @@
 	<?php } // if ( ! empty( $header_image ) ) ?>
 
  *
- * @package _s
+ * @package Maquina
  */
 
 /**
@@ -26,25 +26,25 @@
  *
  * @todo Rework this function to remove WordPress 3.4 support when WordPress 3.6 is released.
  *
- * @uses _s_header_style()
- * @uses _s_admin_header_style()
- * @uses _s_admin_header_image()
+ * @uses maquina_header_style()
+ * @uses maquina_admin_header_style()
+ * @uses maquina_admin_header_image()
  *
- * @package _s
+ * @package Maquina
  */
-function _s_custom_header_setup() {
+function maquina_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => '000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => '_s_header_style',
-		'admin-head-callback'    => '_s_admin_header_style',
-		'admin-preview-callback' => '_s_admin_header_image',
+		'wp-head-callback'       => 'maquina_header_style',
+		'admin-head-callback'    => 'maquina_admin_header_style',
+		'admin-preview-callback' => 'maquina_admin_header_image',
 	);
 
-	$args = apply_filters( '_s_custom_header_args', $args );
+	$args = apply_filters( 'maquina_custom_header_args', $args );
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-header', $args );
@@ -58,7 +58,7 @@ function _s_custom_header_setup() {
 		add_theme_support( 'custom-header', $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
 	}
 }
-add_action( 'after_setup_theme', '_s_custom_header_setup' );
+add_action( 'after_setup_theme', 'maquina_custom_header_setup' );
 
 /**
  * Shiv for get_custom_header().
@@ -71,7 +71,7 @@ add_action( 'after_setup_theme', '_s_custom_header_setup' );
  * @todo Remove this function when WordPress 3.6 is released.
  * @return stdClass All properties represent attributes of the curent header image.
  *
- * @package _s
+ * @package Maquina
  */
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -85,13 +85,13 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 	}
 }
 
-if ( ! function_exists( '_s_header_style' ) ) :
+if ( ! function_exists( 'maquina_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see _s_custom_header_setup().
+ * @see Maquina_custom_header_setup().
  */
-function _s_header_style() {
+function maquina_header_style() {
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -122,15 +122,15 @@ function _s_header_style() {
 	</style>
 	<?php
 }
-endif; // _s_header_style
+endif; // maquina_header_style
 
-if ( ! function_exists( '_s_admin_header_style' ) ) :
+if ( ! function_exists( 'maquina_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see _s_custom_header_setup().
+ * @see maquina_custom_header_setup().
  */
-function _s_admin_header_style() {
+function maquina_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -150,15 +150,15 @@ function _s_admin_header_style() {
 	</style>
 <?php
 }
-endif; // _s_admin_header_style
+endif; // maquina_admin_header_style
 
-if ( ! function_exists( '_s_admin_header_image' ) ) :
+if ( ! function_exists( 'maquina_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see _s_custom_header_setup().
+ * @see maquina_custom_header_setup().
  */
-function _s_admin_header_image() { ?>
+function maquina_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
@@ -174,4 +174,4 @@ function _s_admin_header_image() { ?>
 		<?php endif; ?>
 	</div>
 <?php }
-endif; // _s_admin_header_image
+endif; // maquina_admin_header_image
