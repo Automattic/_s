@@ -52,6 +52,11 @@ function _s_setup() {
 	 * Enable support for Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+
+	/**
+	 * Add editor style
+	 */
+	add_editor_style( 'editor-style.css' );
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
