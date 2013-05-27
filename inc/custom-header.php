@@ -91,18 +91,22 @@ if ( ! function_exists( 'maquina_header_style' ) ) :
  *
  * @see Maquina_custom_header_setup().
  */
-function maquina_header_style() {
+
+function maquina_header_style()  {
+	
+	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	if ( HEADER_TEXTCOLOR == $header_text_color )
 		return;
+
 	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( 'blank' == get_header_textcolor() ) :
+		if ( 'blank' == $header_text_color ) :
 	?>
 		.site-title,
 		.site-description {
@@ -116,7 +120,7 @@ function maquina_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo get_header_textcolor(); ?>;
+			color: #<?php echo $header_text_color; ?>;
 		}
 	<?php endif; ?>
 	</style>
@@ -153,18 +157,22 @@ function maquina_admin_header_style() {
 endif; // maquina_admin_header_style
 
 if ( ! function_exists( 'maquina_admin_header_image' ) ) :
+	
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
  * @see maquina_custom_header_setup().
  */
-function maquina_admin_header_image() { ?>
+ 
+function maquina_admin_header_image() {
+	$header_text_color = get_header_textcolor();
+?>
 	<div id="headimg">
 		<?php
-		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
+		if ( 'blank' == $header_text_color || '' == $header_text_color )
 			$style = ' style="display:none;"';
 		else
-			$style = ' style="color:#' . get_header_textcolor() . ';"';
+			$style = ' style="color:#' . $header_text_color . ';"';
 		?>
 		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>

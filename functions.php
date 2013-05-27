@@ -9,11 +9,10 @@
  */
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
-
 /*
  * Load Jetpack compatibility file.
  */
-require_once( get_template_directory() . '/inc/jetpack.php' );
+require_once get_template_directory() . '/inc/jetpack.php';
 
 if ( ! function_exists( 'maquina_setup' ) ) :
 /**
@@ -27,21 +26,21 @@ function maquina_setup() {
 	/*
 	 * Grab Maquina widgets.
 	 */
-	require_once( get_template_directory() . '/inc/theme-widgets.php' );
+	require_once get_template_directory() . '/inc/theme-widgets.php';
 	/**
 	 * Custom template tags for this theme.
 	 */
-	require_once( get_template_directory() . '/inc/template-tags.php' );
+	require_once get_template_directory() . '/inc/template-tags.php';
 
 	/**
 	 * Custom functions that act independently of the theme templates
 	 */
-	require_once( get_template_directory() . '/inc/extras.php' );
+	require_once get_template_directory() . '/inc/extras.php';
 
 	/**
 	 * Customizer additions
 	 */
-	require_once( get_template_directory() . '/inc/customizer.php' );
+	require_once get_template_directory() . '/inc/customizer.php';
 
 	/**
 	 * WordPress.com-specific functions and definitions
@@ -62,9 +61,11 @@ function maquina_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
-	 * Enable support for Post Thumbnails
+	 * Enable support for Post Thumbnails on posts and pages
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	add_theme_support( 'post-thumbnails' );
+	//add_theme_support( 'post-thumbnails' );
 
 	/**
 	 * This theme uses wp_nav_menu() in two locations.
@@ -135,11 +136,6 @@ function maquina_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'maquina_scripts' );
-
-/**
- * Implement the Custom Header feature
- */
-require_once( get_template_directory() . '/inc/custom-header.php' );
 
 	// Change admin welcome message Wordpress 3.5.1
 	
