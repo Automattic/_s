@@ -9,10 +9,6 @@
  */
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
-/*
- * Load Jetpack compatibility file.
- */
-require_once get_template_directory() . '/inc/jetpack.php';
 
 if ( ! function_exists( 'maquina_setup' ) ) :
 /**
@@ -23,35 +19,12 @@ if ( ! function_exists( 'maquina_setup' ) ) :
  * support post thumbnails.
  */
 function maquina_setup() { 
-	/*
-	 * Grab Maquina widgets.
-	 */
-	require_once get_template_directory() . '/inc/theme-widgets.php';
-	/**
-	 * Custom template tags for this theme.
-	 */
-	require_once get_template_directory() . '/inc/template-tags.php';
-
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	require_once get_template_directory() . '/inc/extras.php';
-
-	/**
-	 * Customizer additions
-	 */
-	require_once get_template_directory() . '/inc/customizer.php';
-
-	/**
-	 * WordPress.com-specific functions and definitions
-	 */
-	//require_once( get_template_directory() . '/inc/wpcom.php' );
 
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on Maquina, use a find and replace
-	 * to change 'Maquina' to the name of your theme in all the template files
+	 * If you're building a theme based on _s, use a find and replace
+	 * to change '_s' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'maquina', get_template_directory() . '/languages' );
 
@@ -109,33 +82,67 @@ function maquina_register_custom_background() {
 		define( 'BACKGROUND_COLOR', $args['default-color'] );
 		if ( ! empty( $args['default-image'] ) )
 			define( 'BACKGROUND_IMAGE', $args['default-image'] );
-//add_custom_background deprecated since version 3.4. Using add_theme_support( 'custom-background', $args ) instead.		 
-		 add_theme_support( 'custom-background' );
+		add_custom_background();
 	}
 }
 add_action( 'after_setup_theme', 'maquina_register_custom_background' );
 
+	/*
+	 * Grab Maquina widgets.
+	 */
+require_once get_template_directory() . '/inc/theme-widgets.php';
+	
 /**
  * Enqueue scripts and styles
  */
  
 function maquina_scripts() {
 	    
-	wp_enqueue_script( 'Maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
+	wp_enqueue_script( 'maquina-prefixfree', get_template_directory_uri() . '/js/prefixfree.min.js' );
 
-	wp_enqueue_script( 'Maquina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'maquina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'Maquina-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'maquina-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'Maquina-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'maquina-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'maquina_scripts' );
+
+/**
+ * Implement the Custom Header feature.
+ */
+//require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * WordPress.com-specific functions and definitions.
+ */
+//require get_template_directory() . '/inc/wpcom.php';
 
 	// Change admin welcome message Wordpress 3.5.1
 	
