@@ -435,7 +435,7 @@ a[href="http://#"] {
 /* =Menu
 ----------------------------------------------- */
 
-.navigation-main { /* @TODO add horinzontal menu and ajust vertical menu */
+.navigation-main { /* @todo add horinzontal menu and ajust vertical menu */
 	clear: both;
 	display: block;
 	float: left;
@@ -470,19 +470,8 @@ a[href="http://#"] {
 	width: 240px;
 	padding: 2px;
 }
-.navigation-main ul ul li {
-}
-.navigation-main li:hover > a {
-}
-.navigation-main ul ul :hover > a {
-}
-.navigation-main ul ul a:hover {
-}
 .navigation-main ul li:hover > ul {
 	display: block;
-}
-.navigation-main li.current_page_item a,
-.navigation-main li.current-menu-item a {
 }
 
 /* Small menu */
@@ -495,7 +484,7 @@ a[href="http://#"] {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {
 	.menu-toggle,
 	.main-small-navigation ul.nav-menu.toggled-on {
 		display: block;
@@ -620,12 +609,9 @@ object {
 
 /* =Widgets
 ----------------------------------------------- */
-.widgetleft {
-	display: inline;
-	float: left;
-}
+
 .widget {
-	margin: 1% 0% 1% 0%;
+	margin: 1%;
 }
 
 /* Make sure select elements fit in widgets */
@@ -660,7 +646,7 @@ object {
 		margin:0 !important;
 		padding:0 !important;
 		border: 0px;
-		line-height: 150%;;
+		line-height: 150%;
 		word-spacing:1.1pt;
 		letter-spacing:0.2pt;
 		font-family: Garamond,"Times New Roman", serif;
@@ -670,11 +656,10 @@ object {
 		background-color:#fff !important;
 		text-shadow: #fff 0 0px !important;
 		box-shadow: 0px 0px 0px 0px #fff !important;
-		box-shadow: 0px 0px 0px 0px #fff !important;
 	}
 /* Page margins */
 	@page {
-      margin: 2cm;
+      margin: 2.5cm;
 	}
 
 /* HEADINGS */
@@ -742,14 +727,15 @@ object {
 		a[href^="tel"]:after, a[href^="mailto"]:after {
 			content: "";
 		}
-		.site-logo a[href^="http://"] {
-			content: "";
-		}
 		.site-logo {
+			width: 16%;
 			position: fixed;
-			margin-top: 0pt;
-			margin-left: 78%;
-		}.site-logo:before{float:left;}
+		}
+		.site-branding {
+			position: relative;
+			float: right;
+			margin-right: 4cm;
+		}
 /* TABLES */
 		table {
 			margin: 1px; text-align:left;
@@ -779,8 +765,7 @@ object {
 		}
 
 /* HIDE UNNECESSARY ELEMENTS */
-		#site-navigation, #left-sidebar-secondary, #left-sidebar-secondary, #colophon, 
-		#header-widget, #footer-widget, nav, .top-menu, .after-header-menu {
+		nav, header, footer, .widget {
 			display:none;
 		}
 
@@ -795,28 +780,128 @@ object {
       print-color-adjust: exact;
    } 
 }
+/**
+ * generic icons. http://genericons.com/
+ */
+@font-face {
+    font-family: 'Genericons';
+    src: url('./layouts/fonts/genericons/font/genericons-regular-webfont.eot');
+    src: url('./layouts/fonts/genericons/font/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./layouts/fonts/genericons/font/genericons-regular-webfont.woff') format('woff'),
+         url('./layouts/fonts/genericons/font/genericons-regular-webfont.ttf') format('truetype'),
+         url('./layouts/fonts/genericons/font/genericons-regular-webfont.svg#genericonsregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/**
+ * All Genericons
+ */
+
+.genericon {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	-webkit-font-smoothing: antialiased;
+	font-size: 16px;
+	line-height: 1;
+	font-family: 'Genericons';
+	text-decoration: inherit;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: top;
+}
+
+/**
+ * IE7 and IE6 hacks
+ */
+
+.genericon {
+	*overflow: auto;
+	*zoom: 1;
+	*display: inline;
+}
+
+
+/**
+ * Individual icons
+ */
+
+/* Post formats */
+.genericon-standard:before { content: '\f100'; }
+.genericon-aside:before { content: '\f101'; }
+.genericon-image:before { content: '\f102'; }
+.genericon-gallery:before { content: '\f103'; }
+.genericon-video:before { content: '\f104'; }
+.genericon-status:before { content: '\f105'; }
+.genericon-quote:before { content: '\f106'; }
+.genericon-link:before { content: '\f107'; }
+.genericon-chat:before { content: '\f108'; }
+.genericon-audio:before { content: '\f109'; }
+
+/* Social icons */
+.genericon-github:before { content: '\f200'; }
+.genericon-dribbble:before { content: '\f201'; }
+.genericon-twitter:before { content: '\f202'; }
+.genericon-facebook:before { content: '\f203'; }
+.genericon-facebook-alt:before { content: '\f204'; }
+.genericon-wordpress:before { content: '\f205'; }
+.genericon-googleplus:before { content: '\f206'; }
+.genericon-linkedin:before { content: '\f207'; }
+.genericon-linkedin-alt:before { content: '\f208'; }
+.genericon-pinterest:before { content: '\f209'; }
+.genericon-pinterest-alt:before { content: '\f210'; }
+.genericon-flickr:before { content: '\f211'; }
+.genericon-vimeo:before { content: '\f212'; }
+.genericon-youtube:before { content: '\f213'; }
+.genericon-tumblr:before { content: '\f214'; }
+
+/* Meta icons */
+.genericon-comment:before { content: '\f300'; }
+.genericon-category:before { content: '\f301'; }
+.genericon-tag:before { content: '\f302'; }
+.genericon-time:before { content: '\f303'; }
+.genericon-user:before { content: '\f304'; }
+.genericon-day:before { content: '\f305'; }
+.genericon-week:before { content: '\f306'; }
+.genericon-month:before { content: '\f307'; }
+.genericon-pinned:before { content: '\f308'; }
+
+/* Other icons */
+.genericon-search:before { content: '\f400'; }
+.genericon-unzoom:before { content: '\f401'; }
+.genericon-zoom:before { content: '\f402'; }
+.genericon-show:before { content: '\f403'; }
+.genericon-hide:before { content: '\f404'; }
+.genericon-close:before { content: '\f405'; }
+.genericon-close-alt:before { content: '\f406'; }
+.genericon-trash:before { content: '\f407'; }
+.genericon-star:before { content: '\f408'; }
+.genericon-home:before { content: '\f409'; }
+.genericon-mail:before { content: '\f410'; }
+.genericon-edit:before { content: '\f411'; }
+.genericon-reply:before { content: '\f412'; }
+.genericon-feed:before { content: '\f413'; }
+.genericon-warning:before { content: '\f414'; }
+.genericon-share:before { content: '\f415'; }
+.genericon-attachment:before { content: '\f416'; }
+.genericon-location:before { content: '\f417'; }
+.genericon-checkmark:before { content: '\f418'; }
+.genericon-menu:before { content: '\f419'; }
+.genericon-top:before { content: '\f420'; }
+.genericon-minimize:before { content: '\f421'; }
+.genericon-maximize:before { content: '\f422'; }
+.genericon-404:before { content: '\f423'; }
+
+/* Generic shapes */
+.genericon-uparrow:before { content: '\f500'; }
+.genericon-rightarrow:before { content: '\f501'; }
+.genericon-downarrow:before { content: '\f502'; }
+.genericon-leftarrow:before { content: '\f503'; }
+
 /* Site skeleton layout */
-.header-widgets-container .footer-widgets-container, .site-footer {
-	clear: both;
-	width: 100%;
-}
-
-.footer-widget, .header-widget {
-	overflow: hidden;
-	width: 100%;
-	}
-
-.right-widget-area, .left-widget-area, .content-area {
-	margin-left: 1%;
-}
-.content-area {
-	float: left;
-	width: 53%;
-}
-.site-info {
-	text-align:center;
-	margin-top: 2%;
-}
-.right-widget-area, .left-widget-area, .content-area, .header-widgets-container .footer-widgets-container {
-	text-align: justify;
+.site-branding {
+    /* fix avoids .logo from breaking if you set as absolute */
+    position: relative; 
 }
