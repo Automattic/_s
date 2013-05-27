@@ -9,6 +9,48 @@
  */
 if ( ! isset( $content_width ) )
 	$content_width = 640; /* pixels */
+	
+	// disabling stuff we dont need from head output. if you needs any of them just comment
+	
+remove_action('wp_head', 'rsd_link'); // xml-rpc disabled by default
+remove_action('wp_head', 'wp_generator'); // wordpress version output disabled by default (everyone should use last version anyway)
+remove_action('wp_head', 'feed_links', 2); //feed links disabled by default
+remove_action('wp_head', 'wlwmanifest_link'); // windows live writer disabled by default
+
+	// adding stuff we need to the head
+
+function maquina_head_output () { ?>
+
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<base href="<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
+	<?php if ( is_search() || is_404() ) : ?>
+  		<meta name="robots" content="noindex, nofollow">
+  	<?php else: ?>
+  		<meta name="robots" content="all">
+  	<?php endif; ?>
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="<?php if ( is_single() ) {
+        single_post_title('', true); 
+    } 
+    else {
+        bloginfo('name'); echo " - "; bloginfo('description');
+    }
+    ?>" />
+<meta name="keywords" content="<?php if ( is_single() ) {
+        single_post_title('', true); 
+    } 
+    else {
+    	bloginfo('name'); echo " - "; bloginfo('keywords');
+    }
+    ?>" />
+	<link rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="data-noprefix stylesheet" href="<?php echo get_template_directory_uri() ?>/style.css" type="text/css" media="all" />
+<?php }
+add_action('wp_head', 'maquina_head_output', 1);
 
 if ( ! function_exists( 'maquina_setup' ) ) :
 /**
