@@ -107,7 +107,7 @@ function _s_header_style() {
 	?>
 		.site-title,
 		.site-description {
-			position: absolute !important;
+			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
@@ -160,19 +160,13 @@ if ( ! function_exists( '_s_admin_header_image' ) ) :
  * @see _s_custom_header_setup().
  */
 function _s_admin_header_image() {
-	$header_text_color = get_header_textcolor();
+	$style        = sprintf( ' style="color:#%s;"', get_header_textcolor() );
+	$header_image = get_header_image();
 ?>
 	<div id="headimg">
-		<?php
-		if ( 'blank' == $header_text_color || '' == $header_text_color )
-			$style = ' style="display:none;"';
-		else
-			$style = ' style="color:#' . $header_text_color . ';"';
-		?>
 		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
+		<?php if ( ! empty( $header_image ) ) : ?>
 			<img src="<?php echo esc_url( $header_image ); ?>" alt="" />
 		<?php endif; ?>
 	</div>
