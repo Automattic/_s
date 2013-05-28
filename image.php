@@ -37,7 +37,7 @@ get_header();
 
 					<nav role="navigation" id="image-navigation" class="navigation-image">
 						<div class="nav-previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'maquina' ) ); ?></div>
-						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', '_s' ) ); ?></div>
+						<div class="nav-next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'maquina' ) ); ?></div>
 					</nav><!-- #image-navigation -->
 				</header><!-- .entry-header -->
 
@@ -78,7 +78,7 @@ get_header();
 							?>
 
 							<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
-								$attachment_size = apply_filters( '_s_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
+								$attachment_size = apply_filters( 'maquina_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 								echo wp_get_attachment_image( get_the_ID(), $attachment_size );
 							?></a>
 						</div><!-- .attachment -->

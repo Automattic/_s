@@ -4,13 +4,13 @@
 Your title: Vitor Lopes.
 
                             
-Site: http://vnlweb.com
-	  https://github.com/vmnlopes
+Site: 		http://vnlweb.com
+	  		https://github.com/vmnlopes
                             
-Twitter: @vmnlopes
+Twitter: 	@vmnlopes
 
                             
-Location: Dover/Kent, England.
+Location: Kent, England.
 
 /* THANKS */
 							
@@ -18,8 +18,7 @@ Location: Dover/Kent, England.
  	  i use in a daily base and alows me to complete 
  	  my job.
  	  
- 	  The list his so extensive i will leave some links
- 	  here instead, cant list everyone so i will put
+ 	  cant list everyone so i will put
  	  down most used.
  
 http://www.debian.org
@@ -45,7 +44,7 @@ Last update: YYYY/MM/DD
 Standards: HTML5, CSS3,..
 
                             
-Components: Wordpress, Maquina Wordpress Theme, And my magic hands on top.
+Components: php, mysql, Wordpress, Maquina Wordpress Theme, And my magic hands on top.
 
                             
-Used Software: Linux Mint LDME Edition, Aptana Studio 3, Inkscape, Poedit.
+Used Software: Linux, Aptana Studio 3, Poedit.

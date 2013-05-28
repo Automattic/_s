@@ -19,17 +19,17 @@ get_header(); ?>
 				<h1 class="page-title">
 					<?php
 						if ( is_category() ) :
-							printf( __( 'Category Archives: %s', '_s' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+							printf( __( 'Category Archives: %s', 'maquina' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 						elseif ( is_tag() ) :
-							printf( __( 'Tag Archives: %s', '_s' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+							printf( __( 'Tag Archives: %s', 'maquina' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 						elseif ( is_author() ) :
 							/* Queue the first post, that way we know
 							 * what author we're dealing with (if that is the case).
 							*/
 							the_post();
-							printf( __( 'Author Archives: %s', '_s' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+							printf( __( 'Author Archives: %s', 'maquina' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 							/* Since we called the_post() above, we need to
 							 * rewind the loop back to the beginning that way
 							 * we can run the loop properly, in full.
@@ -37,31 +37,31 @@ get_header(); ?>
 							rewind_posts();
 
 						elseif ( is_day() ) :
-							printf( __( 'Daily Archives: %s', '_s' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Daily Archives: %s', 'maquina' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Monthly Archives: %s', '_s' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+							printf( __( 'Monthly Archives: %s', 'maquina' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Yearly Archives: %s', '_s' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+							printf( __( 'Yearly Archives: %s', 'maquina' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', '_s' );
+							_e( 'Asides', 'maquina' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', '_s');
+							_e( 'Images', 'maquina');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', '_s' );
+							_e( 'Videos', 'maquina' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', '_s' );
+							_e( 'Quotes', 'maquina' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', '_s' );
+							_e( 'Links', 'maquina' );
 
 						else :
-							_e( 'Archives', '_s' );
+							_e( 'Archives', 'maquina' );
 
 						endif;
 					?>
@@ -98,7 +98,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php _s_content_nav( 'nav-below' ); ?>
+			<?php maquina_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 
