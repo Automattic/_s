@@ -15,22 +15,41 @@ Use it to make something cool, have fun, and share what you've learned with othe
  _s is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
 */
 
 
 /* =Reset
 -------------------------------------------------------------- */
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
 html {
-	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units. http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height. */
-	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom. */
-	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
 	background: #fff;
-	margin: 0;
 }
 article,
 aside,
@@ -43,29 +62,10 @@ nav,
 section {
 	display: block;
 }
-audio,
-canvas,
-video {
-	display: inline-block;
-}
-audio:not([controls]) {
-	display: none;
-	height: 0;
-}
-[hidden] {
-	display: none;
-}
-svg:not(:root) {
-	overflow: hidden;
-}
-legend {
-	border: 0;
-	padding: 0;
-}
 ol, ul {
 	list-style: none;
 }
-table { /* Tables still need 'cellspacing="0"' in the markup. */
+table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
@@ -78,7 +78,7 @@ q:before, q:after {
 	content: "";
 }
 blockquote, q {
-	quotes: "\201C" "\201D" "\2018" "\2019";
+	quotes: "" "";
 }
 a:focus {
 	outline: thin dotted;
@@ -111,15 +111,9 @@ textarea {
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
 }
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
 hr {
 	background-color: #ccc;
 	border: 0;
-	-moz-box-sizing: content-box;
-	box-sizing:      content-box;
 	height: 1px;
 	margin-bottom: 1.5em;
 }
@@ -158,12 +152,12 @@ blockquote {
 	margin: 0 1.5em;
 }
 address {
-	font-style: italic;
 	margin: 0 0 1.5em;
 }
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -174,7 +168,7 @@ pre {
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
-abbr[title], acronym {
+abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
@@ -216,31 +210,18 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
-fieldset {
-	border: 1px solid #c0c0c0;
-	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
-}
-legend {
-	border: 0;
-	padding: 0;
-}
 button,
 input,
 select,
 textarea {
-	font-family: inherit;
-	font-size: 100%; /* Corrects font size not being inherited in all browsers. */
-	margin: 0; /* Addresses margins set differently in F3/4, S5, Chrome. */
-	vertical-align: baseline; /* Improves appearance and consistency in all browsers. */
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
 }
 button,
 input {
-	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet. */
-}
-button,
-select {
-	text-transform: none;
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
 button,
 html input[type="button"],
@@ -252,8 +233,9 @@ input[type="submit"] {
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others. */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS. */
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
 	font-size: 1.2rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
@@ -277,26 +259,22 @@ input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb #bbb;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
-button[disabled],
-html input[disabled] {
-	cursor: default;
-}
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box; /* Addresses box sizing set to content-box in IE9. */
-	padding: 0; /* Addresses excess padding in IE9. */
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
 }
 input[type="search"] {
-	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome. */
-	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof). */
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
 	box-sizing:         content-box;
 }
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX. */
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
 }
 button::-moz-focus-inner,
-input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4. www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 	border: 0;
 	padding: 0;
 }
@@ -323,9 +301,9 @@ input[type="search"] {
 	padding: 3px;
 }
 textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE9. */
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding-left: 3px;
-	vertical-align: top; /* Improves readability and alignment in all browsers. */
+	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
 }
 
@@ -359,7 +337,7 @@ a:active {
 	margin: 0 auto;
 }
 
-/* Text meant only for screen readers. */
+/* Text meant only for screen readers */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -556,7 +534,7 @@ a:active {
 .site-content .gallery-columns-4 .gallery-item img {
 }
 
-/* Make sure embeds and iframes fit their containers. */
+/* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
@@ -597,7 +575,7 @@ object {
 	margin: 0 0 1.5em;
 }
 
-/* Make sure select elements fit in widgets. */
+/* Make sure select elements fit in widgets */
 .widget select {
 	max-width: 100%;
 }
@@ -611,12 +589,12 @@ object {
 ----------------------------------------------- */
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .navigation-paging, /* Older / Newer Posts Navigation (always hidden). */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling). */
+.infinite-scroll .navigation-paging, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
