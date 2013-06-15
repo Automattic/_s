@@ -172,6 +172,14 @@ abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
+@media screen and (max-width: 600px) {
+	abbr {
+		border-bottom: none;
+	}
+	abbr:after {
+		content: " (" attr(title) ")";
+	}
+}
 mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
