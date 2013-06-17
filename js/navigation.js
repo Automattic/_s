@@ -26,6 +26,18 @@
 		}
 	};
 
+	// fix for disappearing menu after resize (needs a polyfill (modernizr or other) for older browsers)
+	var resizeFix = function ( mediaQueryList ) {
+		if( mediaQueryList.matches ) {
+			button.className = button.className.replace( ' toggled-on', '' );
+			menu.className = menu.className.replace( ' toggled-on', '' );
+			container.className = container.className.replace( 'main-small-navigation', 'navigation-main' );      
+		}
+	}
+	var mql = window.matchMedia("(min-width: 600px)"); //this needs to match media query in styles.css
+	mql.addListener(resizeFix);
+	resizeFix(mql);
+
 	// Hide menu toggle button if menu is empty.
 	if ( ! menu.childNodes.length )
 		button.style.display = 'none';
