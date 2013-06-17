@@ -447,7 +447,8 @@ a:active {
 
 @media screen and (max-width: 600px) {
 	.menu-toggle,
-	.main-small-navigation ul.nav-menu.toggled-on {
+	.navigation-main.toggled ul.menu,
+	.navigation-main.toggled div.menu > ul {
 		display: block;
 	}
 
@@ -455,6 +456,7 @@ a:active {
 		display: none;
 	}
 }
+
 
 /* =Content
 ----------------------------------------------- */
