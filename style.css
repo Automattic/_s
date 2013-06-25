@@ -441,14 +441,9 @@ a:active {
 	cursor: pointer;
 }
 
-.main-small-navigation ul {
-	display: none;
-}
-
 @media screen and (max-width: 600px) {
 	.menu-toggle,
-	.navigation-main.toggled ul.menu,
-	.navigation-main.toggled div.menu > ul {
+	.navigation-main.toggled-on .nav-menu {
 		display: block;
 	}
 
