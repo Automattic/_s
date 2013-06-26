@@ -382,7 +382,7 @@ a:active {
 }
 
 
-/* =Menu
+/* =Menu - vertical on small device
 ----------------------------------------------- */
 
 .navigation-main {
@@ -396,64 +396,81 @@ a:active {
 	margin: 0;
 	padding-left: 0;
 }
+.navigation-main ul ul {
+    margin-left:2em;
+}
 .navigation-main li {
-	float: left;
 	position: relative;
 }
 .navigation-main a {
 	display: block;
 	text-decoration: none;
 }
-.navigation-main ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	display: none;
-	float: left;
-	position: absolute;
-		top: 1.5em;
-		left: 0;
-	z-index: 99999;
-}
-.navigation-main ul ul ul {
-	left: 100%;
-	top: 0;
-}
-.navigation-main ul ul a {
-	width: 200px;
-}
-.navigation-main ul ul li {
-}
-.navigation-main li:hover > a {
-}
-.navigation-main ul ul :hover > a {
-}
-.navigation-main ul ul a:hover {
-}
-.navigation-main ul li:hover > ul {
-	display: block;
-}
 .navigation-main li.current_page_item a,
 .navigation-main li.current-menu-item a {
 }
 
-/* Small menu */
 .menu-toggle {
 	display: none;
 	cursor: pointer;
 }
 
-.main-small-navigation ul {
-	display: none;
+.menu-toggle.show-toggle {
+    display:block;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-small-navigation ul.nav-menu.toggled-on {
-		display: block;
-	}
+.navigation-main ul {
+	display: block;
+}
 
-	.navigation-main ul {
-		display: none;
-	}
+.navigation-main ul.toggled-off {
+    display: none;
+}
+
+
+/* =Menu - horizontal with hover on large devices
+----------------------------------------------- */
+
+@media screen and (min-width:600px) {
+    .menu-toggle.show-toggle {
+	display: none;
+    }
+
+    .navigation-main ul#menu-main {
+        display:block;
+    }
+    
+    
+    .navigation-main li {
+	float: left;
+    }
+    
+    .navigation-main ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	display: none;
+	float: left;
+	position: absolute;
+		top: 1em;
+		left: 0;
+	z-index: 99999;
+        margin-left:1em;
+        background-color: rgba(255, 255, 255, .7);
+    }
+
+    .navigation-main ul ul a {
+	width: 200px;
+    }
+    .navigation-main ul ul li {
+    }
+    .navigation-main li:hover > a {
+    }
+    .navigation-main ul ul :hover > a {
+    }
+    .navigation-main ul ul a:hover {
+    }
+    .navigation-main ul li:hover > ul {
+	display: block;
+    }
 }
 
 /* =Content
