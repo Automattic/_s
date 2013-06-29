@@ -579,7 +579,7 @@ object {
 }
 
 /* Search widget */
-.widget_search .submit {
+.widget_search .search-submit {
 	display: none;
 }
 
