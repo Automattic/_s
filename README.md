@@ -25,7 +25,7 @@ If you want to set things up manually, download `_s` from github. The first thin
 
 1. Search for `'_s'` (inside single quotations) to capture the text domain.
 2. Search for `_s_` to capture all the function names.
-3. Search for ` _s` (with a space before it) to capture DocBlocks.
+3. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
 4. Search for `_s-` to capture prefixed handles.
 
 OR
