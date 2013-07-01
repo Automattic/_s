@@ -10,5 +10,5 @@
 		<span class="screen-reader-text"><?php _ex( 'Search for:', 'label', '_s' ); ?></span>
 		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', '_s' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search for:', 'label', '_s' ); ?>" />
 	</label>
-	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', '_s' ); ?>'" />
+	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', '_s' ); ?>" />
 </form>
