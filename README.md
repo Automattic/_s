@@ -23,11 +23,11 @@ No bloat, just the bare minimum to make \_s work with Bootstrap; most of it you'
 * a filter and a custom walker to turn a wp_nav_menu() into a Bootstrap navbar
 * shortcode filters for captioned images and oembeds
 * Bootstrap styled comment and search forms
-* LESS mixins to create semantic responsive grid [rows](https://github.com/ptbello/_strap/blob/master/custom.less#L6) and [columns](https://github.com/ptbello/_strap/blob/master/custom.less#L38) 
+* LESS mixins to create semantic responsive grid [rows](https://github.com/ptbello/_strap/blob/master/_strap.less#L6) and [columns](https://github.com/ptbello/_strap/blob/master/_strap.less#L38)
 
 What you put
 ------------
 * You can customize the original Bootstrap LESS files \- in particular [/bootstrap/less/variables.less](https://github.com/ptbello/_strap/blob/master/bootstrap/less/variables.less)
-* You should extend the css in [/custom.less](https://github.com/ptbello/_strap/blob/master/custom.less) and/or in extra .less files you  should then `@import` in [/style.less](https://github.com/ptbello/_strap/blob/master/style.less)
+* You should add your custom styles at the end of [/style.less](https://github.com/ptbello/_strap/blob/master/style.less) and/or in extra .less files you should then `@import` in [/style.less](https://github.com/ptbello/_strap/blob/master/style.less)
 * After changes you should compile [/style.less](https://github.com/ptbello/_strap/blob/master/style.less) to [/style.css](https://github.com/ptbello/_strap/blob/master/style.css)
-* Of course you should edit any of the actual theme .php files as you see fit, exactly like you would do with ant other starter theme; if you alter the markup structure of the theme, i.e. create a different grid, you should use either the orginal Bootsrap classes or the provided mixins that attach the same behaviour to an element `id` attribute.
+* Of course you should edit any of the actual theme .php files as you see fit, exactly like you would do with ant other starter theme; if you alter the markup structure of the theme, i.e. create a different grid, you should use either use the orginal Bootsrap classes or the provided mixins that attach the same behaviour to an element `id` attribute.
