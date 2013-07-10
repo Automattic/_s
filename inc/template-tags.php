@@ -66,15 +66,15 @@ function _s_comment( $comment, $args, $depth ) {
 
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+	<li id="comment-<?php echo absint( get_comment_ID() ); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
 			<?php _e( 'Pingback:', '_s' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
 
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+	<li id="comment-<?php echo absint( get_comment_ID() ); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
+		<article id="div-comment-<?php echo absint( get_comment_ID() ); ?>" class="comment-body">
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
