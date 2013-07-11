@@ -385,26 +385,26 @@ a:active {
 /* =Menu
 ----------------------------------------------- */
 
-.navigation-main {
+.main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
 }
-.navigation-main ul {
+.main-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
-.navigation-main li {
+.main-navigation li {
 	float: left;
 	position: relative;
 }
-.navigation-main a {
+.main-navigation a {
 	display: block;
 	text-decoration: none;
 }
-.navigation-main ul ul {
+.main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	display: none;
 	float: left;
@@ -413,26 +413,26 @@ a:active {
 		left: 0;
 	z-index: 99999;
 }
-.navigation-main ul ul ul {
+.main-navigation ul ul ul {
 	left: 100%;
 	top: 0;
 }
-.navigation-main ul ul a {
+.main-navigation ul ul a {
 	width: 200px;
 }
-.navigation-main ul ul li {
+.main-navigation ul ul li {
 }
-.navigation-main li:hover > a {
+.main-navigation li:hover > a {
 }
-.navigation-main ul ul :hover > a {
+.main-navigation ul ul :hover > a {
 }
-.navigation-main ul ul a:hover {
+.main-navigation ul ul a:hover {
 }
-.navigation-main ul li:hover > ul {
+.main-navigation ul li:hover > ul {
 	display: block;
 }
-.navigation-main li.current_page_item a,
-.navigation-main li.current-menu-item a {
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a {
 }
 
 /* Small menu */
@@ -443,11 +443,11 @@ a:active {
 
 @media screen and (max-width: 600px) {
 	.menu-toggle,
-	.navigation-main.toggled-on .nav-menu {
+	.main-navigation.toggled-on .nav-menu {
 		display: block;
 	}
 
-	.navigation-main ul {
+	.main-navigation ul {
 		display: none;
 	}
 }
