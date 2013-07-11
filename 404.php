@@ -48,7 +48,7 @@ get_header(); ?>
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
 				</div><!-- .page-content -->
-			</section><!-- .error404 .not-found -->
+			</section><!-- .error-404 -->
 
 		</div><!-- #content -->
 	</div><!-- #primary -->

@@ -469,6 +469,7 @@ a:active {
 .group-blog .byline {
 	display: inline;
 }
+.page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
@@ -491,6 +492,7 @@ a:active {
 /* =Media
 ----------------------------------------------- */
 
+.page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
 	border: none;
