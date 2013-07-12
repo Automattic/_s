@@ -15,7 +15,7 @@
 			<?php do_action( '_s_credits' ); ?>
 			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', '_s' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', '_s' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+			<?php printf( wp_kses( __( 'Theme: %1$s by %2$s.', '_s' ), array( 'a' => array( 'href', 'rel' ) ) ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
