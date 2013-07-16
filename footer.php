@@ -2,13 +2,13 @@
 /**
  * The template for displaying the footer.
  *
- * Contains the closing of the id=main div and all content after
+ * Contains the closing of the id=page-body div and all content after
  *
  * @package _s
  */
 ?>
 
-	</div><!-- #main -->
+	</div><!-- #page-body -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
