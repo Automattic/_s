@@ -443,7 +443,7 @@ a:active {
 
 @media screen and (max-width: 600px) {
 	.menu-toggle,
-	.main-navigation.toggled-on .nav-menu {
+	.main-navigation.toggled .nav-menu {
 		display: block;
 	}
 
