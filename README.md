@@ -7,14 +7,14 @@ My ultra-minimal CSS might make me look like theme tartare but that means less s
 
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A helpful 404 template.
-* A sample custom header implementation in inc/custom-header.php that can be activated by uncommenting one line in functions.php and adding the code snippet found the comments of inc/custom-header.php to your header.php template.
-* Custom template tags in inc/template-tags that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in inc/extras.php that can improve your theming experience.
-* Keyboard navigation for image attachment templates. The script can be found in js/keyboard-navigation.js. It’s enqueued in functions.php.
-* A script at js/small-menu.js that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It’s enqueued in functions.php.
-* 5 sample CSS layouts in layouts/: Two sidebars on the left, two sidebars on the right, a sidebar on either side of your content, and two-column layouts with sidebars on either side.
-* Smartly organized starter CSS in style.css that will help you to quickly get your design off the ground.
-* The GPL license in license.txt. :) Use it to make something cool.
+* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in functions.php and adding the code snippet found the comments of `inc/custom-header.php` to your `header.php` template.
+* Custom template tags in `inc/template-tags` that keep your templates clean and neat and prevent code duplication.
+* Some small tweaks in `inc/extras.php` that can improve your theming experience.
+* Keyboard navigation for image attachment templates. The script can be found in `js/keyboard-navigation.js`. It’s enqueued in `functions.php`.
+* A script at `js/small-menu.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It’s enqueued in `functions.php`.
+* 5 sample CSS layouts in `layouts/`: Two sidebars on the left, two sidebars on the right, a sidebar on either side of your content, and two-column layouts with sidebars on either side.
+* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
+* The GPL license in `license.txt`. :) Use it to make something cool.
 
 Getting Started
 ---------------
@@ -35,7 +35,7 @@ OR
 * Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
 * Search for: `_s-` and replace with: `megatherium-`
 
-Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
+Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
 
 Now you're ready to go! The next step is easy to say but harder to do: make an awesome WordPress theme. :)
 
