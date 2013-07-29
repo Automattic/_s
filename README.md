@@ -8,7 +8,7 @@ My ultra-minimal CSS might make me look like theme tartare but that means less s
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A helpful 404 template.
 * A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in functions.php and adding the code snippet found the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags` that keep your templates clean and neat and prevent code duplication.
+* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
 * Some small tweaks in `inc/extras.php` that can improve your theming experience.
 * Keyboard navigation for image attachment templates. The script can be found in `js/keyboard-navigation.js`. It’s enqueued in `functions.php`.
 * A script at `js/small-menu.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It’s enqueued in `functions.php`.
