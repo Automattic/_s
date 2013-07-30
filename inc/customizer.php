@@ -18,9 +18,16 @@ function _s_customize_register( $wp_customize ) {
 add_action( 'customize_register', '_s_customize_register' );
 
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * Add the action to enqueue the customizer script at the proper time
  */
 function _s_customize_preview_js() {
-	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	add_action( 'wp_enqueue_scripts', '_s_enqueue_customize_preview_js' );
 }
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function _s_enqueue_customize_preview_js() {
+	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+}
