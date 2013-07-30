@@ -6411,7 +6411,7 @@ Semantic Rows
 /*
 Semantic Cols
 */
-##primary {
+#primary {
   float: left;
   margin-left: 20px;
   width: 700px;
@@ -6443,7 +6443,7 @@ Semantic Cols
     width: 870px;
   }
 }
-##secondary {
+#secondary {
   float: left;
   margin-left: 20px;
   width: 220px;
@@ -6475,7 +6475,7 @@ Semantic Cols
     width: 270px;
   }
 }
-#.site-info {
+.site-info {
   float: left;
   margin-left: 20px;
   width: 940px;
