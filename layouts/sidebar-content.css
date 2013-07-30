@@ -8,10 +8,10 @@ Layout: Sidebar-Content
 	margin: 0 0 0 -25%;
 	width: 100%;
 }
-.site-content {
+.site-main {
 	margin: 0 0 0 25%;
 }
-.site-main .widget-area {
+.site-content .widget-area {
 	float: left;
 	overflow: hidden;
 	width: 25%;

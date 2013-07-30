@@ -35,4 +35,4 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="main" class="site-main">
+	<div id="content" class="site-content">
