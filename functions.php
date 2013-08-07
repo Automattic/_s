@@ -35,6 +35,12 @@ function _s_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
+	 * Switches to default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+
+	/**
 	 * Enable support for Post Thumbnails on posts and pages
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
