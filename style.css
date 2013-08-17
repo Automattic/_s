@@ -26,14 +26,63 @@ and Blueprint http://www.blueprintcss.org/
 /* =Reset
 -------------------------------------------------------------- */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html, 
+body, 
+div, 
+span, 
+applet, 
+object, 
+iframe, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+blockquote, 
+pre, 
+a, 
+abbr, 
+acronym, 
+address, 
+big, 
+cite, 
+code, 
+del, 
+dfn, 
+em, 
+font, 
+ins, 
+kbd, 
+q, 
+s, 
+samp, 
+small, 
+strike, 
+strong, 
+sub, 
+sup, 
+tt, 
+var,
+dl, 
+dt, 
+dd, 
+ol, 
+ul, 
+li, 
+fieldset, 
+form, 
+label, 
+legend, 
+table, 
+caption, 
+tbody, 
+tfoot, 
+thead, 
+tr, 
+th, 
+td {
 	border: 0;
 	font-family: inherit;
 	font-size: 100%;
@@ -72,12 +121,16 @@ table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
-caption, th, td {
+caption, 
+th, 
+td {
 	font-weight: normal;
 	text-align: left;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
 	content: "";
 }
 blockquote, q {
@@ -111,7 +164,12 @@ textarea {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
 	clear: both;
 }
 hr {
@@ -125,7 +183,8 @@ hr {
 p {
 	margin-bottom: 1.5em;
 }
-ul, ol {
+ul, 
+ol {
 	margin: 0 0 1.5em 3em;
 }
 ul {
@@ -145,10 +204,14 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
-b, strong {
+b, 
+strong {
 	font-weight: bold;
 }
-dfn, cite, em, i {
+dfn, 
+cite, 
+em, 
+i {
 	font-style: italic;
 }
 blockquote {
@@ -168,14 +231,19 @@ pre {
 	overflow: auto;
 	max-width: 100%;
 }
-code, kbd, tt, var {
+code, 
+kbd, 
+tt, 
+var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
-abbr, acronym {
+abbr, 
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-mark, ins {
+mark, 
+ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
