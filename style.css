@@ -26,14 +26,63 @@ and Blueprint http://www.blueprintcss.org/
 /* =Reset
 -------------------------------------------------------------- */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+html, 
+body, 
+div, 
+span, 
+applet, 
+object, 
+iframe, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p, 
+blockquote, 
+pre, 
+a, 
+abbr, 
+acronym, 
+address, 
+big, 
+cite, 
+code, 
+del, 
+dfn, 
+em, 
+font, 
+ins, 
+kbd, 
+q, 
+s, 
+samp, 
+small, 
+strike, 
+strong, 
+sub, 
+sup, 
+tt, 
+var,
+dl, 
+dt, 
+dd, 
+ol, 
+ul, 
+li, 
+fieldset, 
+form, 
+label, 
+legend, 
+table, 
+caption, 
+tbody, 
+tfoot, 
+thead, 
+tr, 
+th, 
+td {
 	border: 0;
 	font-family: inherit;
 	font-size: 100%;
@@ -44,15 +93,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
+
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
+
 body {
 	background: #fff;
 }
+
 article,
 aside,
 details,
@@ -65,31 +117,43 @@ nav,
 section {
 	display: block;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
-caption, th, td {
+
+caption, 
+th, 
+td {
 	font-weight: normal;
 	text-align: left;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
 	content: "";
 }
+
 blockquote, q {
 	quotes: "" "";
 }
+
 a:focus {
 	outline: thin dotted;
 }
+
 a:hover,
 a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
 	outline: 0;
 }
+
 a img {
 	border: 0;
 }
@@ -111,9 +175,15 @@ textarea {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
 	clear: both;
 }
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -125,38 +195,54 @@ hr {
 p {
 	margin-bottom: 1.5em;
 }
-ul, ol {
+
+ul, 
+ol {
 	margin: 0 0 1.5em 3em;
 }
+
 ul {
 	list-style: disc;
 }
+
 ol {
 	list-style: decimal;
 }
+
 li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
+
 dt {
 	font-weight: bold;
 }
+
 dd {
 	margin: 0 1.5em 1.5em;
 }
-b, strong {
+
+b, 
+strong {
 	font-weight: bold;
 }
-dfn, cite, em, i {
+
+dfn, 
+cite, 
+em, 
+i {
 	font-style: italic;
 }
+
 blockquote {
 	margin: 0 1.5em;
 }
+
 address {
 	margin: 0 0 1.5em;
 }
+
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -168,17 +254,26 @@ pre {
 	overflow: auto;
 	max-width: 100%;
 }
-code, kbd, tt, var {
+
+code, 
+kbd, 
+tt, 
+var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
-abbr, acronym {
+
+abbr, 
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-mark, ins {
+
+mark, 
+ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
+
 sup,
 sub {
 	font-size: 75%;
@@ -187,32 +282,41 @@ sub {
 	position: relative;
 	vertical-align: baseline;
 }
+
 sup {
 	bottom: 1ex;
 }
+
 sub {
 	top: .5ex;
 }
+
 small {
 	font-size: 75%;
 }
+
 big {
 	font-size: 125%;
 }
+
 figure {
 	margin: 0;
 }
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
 th {
 	font-weight: bold;
 }
+
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
+
 button,
 input,
 select,
@@ -222,10 +326,12 @@ textarea {
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
 }
+
 button,
 input {
 	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
+
 button,
 html input[type="button"],
 input[type="reset"],
@@ -244,6 +350,7 @@ input[type="submit"] {
 	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
+
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -251,6 +358,7 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa #bbb;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
+
 button:focus,
 html input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -262,25 +370,30 @@ input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb #bbb;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
+
 input[type="checkbox"],
 input[type="radio"] {
 	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
 	padding: 0; /* Addresses excess padding in IE8/9 */
 }
+
 input[type="search"] {
 	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
 	box-sizing:         content-box;
 }
+
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
 }
+
 button::-moz-focus-inner,
 input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 	border: 0;
 	padding: 0;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -291,6 +404,7 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -299,6 +413,7 @@ input[type="search"]:focus,
 textarea:focus {
 	color: #111;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -306,6 +421,7 @@ input[type="password"],
 input[type="search"] {
 	padding: 3px;
 }
+
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding-left: 3px;
@@ -317,9 +433,11 @@ textarea {
 a {
 	color: royalblue;
 }
+
 a:visited {
 	color: purple;
 }
+
 a:hover,
 a:focus,
 a:active {
@@ -332,11 +450,13 @@ a:active {
 	float: left;
 	margin-right: 1.5em;
 }
+
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
+
 .aligncenter {
 	clear: both;
 	display: block;
@@ -397,19 +517,23 @@ a:active {
 	float: left;
 	width: 100%;
 }
+
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
+
 .main-navigation li {
 	float: left;
 	position: relative;
 }
+
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
+
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	display: none;
@@ -419,24 +543,32 @@ a:active {
 		left: 0;
 	z-index: 99999;
 }
+
 .main-navigation ul ul ul {
 	left: 100%;
 	top: 0;
 }
+
 .main-navigation ul ul a {
 	width: 200px;
 }
+
 .main-navigation ul ul li {
 }
+
 .main-navigation li:hover > a {
 }
+
 .main-navigation ul ul :hover > a {
 }
+
 .main-navigation ul ul a:hover {
 }
+
 .main-navigation ul li:hover > ul {
 	display: block;
 }
+
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a {
 }
@@ -464,22 +596,27 @@ a:active {
 
 .sticky {
 }
+
 .hentry {
 	margin: 0 0 1.5em;
 }
+
 .byline,
 .updated {
 	display: none;
 }
+
 .single .byline,
 .group-blog .byline {
 	display: inline;
 }
+
 .page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
 }
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -506,37 +643,47 @@ a:active {
 	margin-top: 0;
 	padding: 0;
 }
+
 .wp-caption {
 	border: 1px solid #ccc;
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
+
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 1.2% auto 0;
 	max-width: 98%;
 }
+
 .wp-caption-text {
 	text-align: center;
 }
+
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
+
 .site-content .gallery {
 	margin-bottom: 1.5em;
 }
+
 .gallery-caption {
 }
+
 .site-content .gallery a img {
 	border: none;
 	height: auto;
 	max-width: 90%;
 }
+
 .site-content .gallery dd {
 	margin: 0;
 }
+
 .site-content .gallery-columns-4 .gallery-item {
 }
+
 .site-content .gallery-columns-4 .gallery-item img {
 }
 
@@ -555,10 +702,12 @@ object {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
+
 [class*="navigation"] .nav-previous {
 	float: left;
 	width: 50%;
 }
+
 [class*="navigation"] .nav-next {
 	float: right;
 	text-align: right;
@@ -571,6 +720,7 @@ object {
 .comment-content a {
 	word-wrap: break-word;
 }
+
 .bypostauthor {
 }
 
