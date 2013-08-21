@@ -522,22 +522,22 @@ a:active {
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
-.site-content .gallery {
+.site-main .gallery {
 	margin-bottom: 1.5em;
 }
 .gallery-caption {
 }
-.site-content .gallery a img {
+.site-main .gallery a img {
 	border: none;
 	height: auto;
 	max-width: 90%;
 }
-.site-content .gallery dd {
+.site-main .gallery dd {
 	margin: 0;
 }
-.site-content .gallery-columns-4 .gallery-item {
+.site-main .gallery-columns-4 .gallery-item {
 }
-.site-content .gallery-columns-4 .gallery-item img {
+.site-main .gallery-columns-4 .gallery-item img {
 }
 
 /* Make sure embeds and iframes fit their containers */
@@ -551,7 +551,7 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 
-.site-content [class*="navigation"] {
+.site-main [class*="navigation"] {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
