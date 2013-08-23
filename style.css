@@ -167,6 +167,9 @@ pre {
 	padding: 1.6em;
 	overflow: auto;
 	max-width: 100%;
+	white-space: pre-wrap; 
+	word-break: break-all;
+	word-wrap: break-word; 
 }
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
