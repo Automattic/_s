@@ -12,7 +12,7 @@
  */
 function _s_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'content',
+		'container' => 'main',
 		'footer'    => 'page',
 	) );
 }

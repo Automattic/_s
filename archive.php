@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<section id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -28,7 +28,7 @@ get_header(); ?>
 							 * what author we're dealing with (if that is the case).
 							*/
 							the_post();
-							printf( __( 'Author: %s', '_s' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="me">' . get_the_author() . '</a></span>' );
+							printf( __( 'Author: %s', '_s' ), '<span class="vcard">' . get_the_author() . '</span>' );
 							/* Since we called the_post() above, we need to
 							 * rewind the loop back to the beginning that way
 							 * we can run the loop properly, in full.
@@ -79,7 +79,7 @@ get_header(); ?>
 
 				<?php
 					/* Include the Post-Format-specific template for the content.
-					 * If you want to overload this in a child theme then include a file
+					 * If you want to override this in a child theme then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					get_template_part( 'content', get_post_format() );
@@ -95,7 +95,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</div><!-- #content -->
+		</main><!-- #main -->
 	</section><!-- #primary -->
 
 <?php get_sidebar(); ?>

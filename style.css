@@ -7,6 +7,8 @@ Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores<
 Version: 1.3-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: _s
+Domain Path: /languages/
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -58,6 +60,7 @@ figcaption,
 figure,
 footer,
 header,
+main,
 nav,
 section {
 	display: block;
@@ -108,7 +111,7 @@ textarea {
 }
 
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 hr {
@@ -280,6 +283,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 }
 input[type="text"],
 input[type="email"],
+input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
@@ -289,6 +293,7 @@ textarea {
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
@@ -296,6 +301,7 @@ textarea:focus {
 }
 input[type="text"],
 input[type="email"],
+input[type="url"],
 input[type="password"],
 input[type="search"] {
 	padding: 3px;
@@ -516,22 +522,22 @@ a:active {
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
-.site-content .gallery {
+.site-main .gallery {
 	margin-bottom: 1.5em;
 }
 .gallery-caption {
 }
-.site-content .gallery a img {
+.site-main .gallery a img {
 	border: none;
 	height: auto;
 	max-width: 90%;
 }
-.site-content .gallery dd {
+.site-main .gallery dd {
 	margin: 0;
 }
-.site-content .gallery-columns-4 .gallery-item {
+.site-main .gallery-columns-4 .gallery-item {
 }
-.site-content .gallery-columns-4 .gallery-item img {
+.site-main .gallery-columns-4 .gallery-item img {
 }
 
 /* Make sure embeds and iframes fit their containers */
@@ -545,7 +551,7 @@ object {
 /* =Navigation
 ----------------------------------------------- */
 
-.site-content [class*="navigation"] {
+.site-main [class*="navigation"] {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
