@@ -65,16 +65,6 @@ get_header();
 
 				<footer class="entry-meta">
 					<?php
-						if ( comments_open() && pings_open() ) : // Comments and trackbacks open
-							printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', '_s' ), esc_url( get_trackback_url() ) );
-						elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open
-							printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', '_s' ), esc_url( get_trackback_url() ) );
-						elseif ( comments_open() && ! pings_open() ) : // Only comments open
-							 _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', '_s' );
-						elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed
-							_e( 'Both comments and trackbacks are currently closed.', '_s' );
-						endif;
-
 						edit_post_link( __( 'Edit', '_s' ), ' <span class="edit-link">', '</span>' );
 					?>
 				</footer><!-- .entry-meta -->
