@@ -7,11 +7,11 @@ Semantic Rows
 {
   .marginLeft(@gridGutterWidth)
   {
-    (~"@{selector}") {
+    @{selector} {
       margin-left: @gridGutterWidth * -1;
     }
   }
-  (~"@{selector}") {
+  @{selector} {
     margin-left: @gridGutterWidth * -1;
     .clearfix();
   }
@@ -27,9 +27,9 @@ Semantic Rows
   }
 }
 
-  #makeSemanticRow('#masthead');
-  #makeSemanticRow('#main');
-  #makeSemanticRow('#colophon');
+#makeSemanticRow(~'#masthead');
+#makeSemanticRow(~'#main');
+#makeSemanticRow(~'#colophon');
 
 /*
 Semantic Cols
@@ -38,7 +38,7 @@ Semantic Cols
 #makeSemanticCol(@selector, @colSpan)
 {
   .core (@gridColumnWidth, @gridGutterWidth) {
-    (~"@{selector}") {
+    @{selector} {
       float: left;
       min-height: 1px; // prevent collapsing columns
       margin-left: @gridGutterWidth;
@@ -46,11 +46,11 @@ Semantic Cols
     }
   }
 
-  (~"@{selector}") {
+  @{selector} {
     .makeColumn(@colSpan);
   }
   @media (max-width: 767px) {
-    (~"@{selector}") {
+    @{selector} {
       float: none;
       display: block;
       width: 100%;
@@ -66,9 +66,9 @@ Semantic Cols
   }
   }
 
-  #makeSemanticCol('#primary', 9);
-  #makeSemanticCol('#secondary', 3);
-  #makeSemanticCol('.site-info', 12);
+#makeSemanticCol(~'#primary', 9);
+#makeSemanticCol(~'#secondary', 3);
+#makeSemanticCol(~'.site-info', 12);
 
 /*
 From the original _s style.css
