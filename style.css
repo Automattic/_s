@@ -371,20 +371,17 @@ a:active {
 }
 
 /* Clearing */
-.clear:before,
 .clear:after,
-[class*="content"]:before,
-[class*="content"]:after,
-[class*="site"]:before,
-[class*="site"]:after {
-	content: '';
-	display: table;
+#content:after,
+.clear:before,
+#content:before {
+    content: ' '; 
+    display: table;
 }
 
 .clear:after,
-[class*="content"]:after,
-[class*="site"]:after {
-	clear: both;
+#content:after {
+    clear: both;
 }
 
 
