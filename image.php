@@ -63,11 +63,7 @@ get_header();
 					?>
 				</div><!-- .entry-content -->
 
-				<footer class="entry-meta">
-					<?php
-						edit_post_link( __( 'Edit', '_s' ), ' <span class="edit-link">', '</span>' );
-					?>
-				</footer><!-- .entry-meta -->
+				<?php edit_post_link( __( 'Edit', '_s' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 			</article><!-- #post-## -->
 
 			<?php
