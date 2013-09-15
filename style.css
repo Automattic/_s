@@ -164,9 +164,9 @@ pre {
 	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
-	padding: 1.6em;
-	overflow: auto;
 	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
 }
 code, kbd, tt, var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -423,9 +423,9 @@ a:active {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	display: none;
 	float: left;
+	left: 0;
 	position: absolute;
-		top: 1.5em;
-		left: 0;
+	top: 1.5em;
 	z-index: 99999;
 }
 .main-navigation ul ul ul {
@@ -452,8 +452,8 @@ a:active {
 
 /* Small menu */
 .menu-toggle {
-	display: none;
 	cursor: pointer;
+	display: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -574,6 +574,7 @@ object {
 	width: 50%;
 }
 
+
 /* =Comments
 ----------------------------------------------- */
 
@@ -582,6 +583,7 @@ object {
 }
 .bypostauthor {
 }
+
 
 /* =Widgets
 ----------------------------------------------- */
@@ -599,6 +601,7 @@ object {
 .widget_search .search-submit {
 	display: none;
 }
+
 
 /* =Infinite Scroll
 ----------------------------------------------- */
