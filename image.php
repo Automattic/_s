@@ -5,8 +5,7 @@
  * @package _s
  */
 
-get_header();
-?>
+get_header(); ?>
 
 	<div id="primary" class="content-area image-attachment">
 		<main id="main" class="site-main" role="main">
