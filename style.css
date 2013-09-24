@@ -396,6 +396,19 @@ a:active {
 	clear: both;
 }
 
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.clear,
+.entry-content,
+.comment-content,
+.site-header,
+.site-content,
+.site-footer {
+	*zoom: 1;
+}
+
 
 /* =Menu
 ----------------------------------------------- */
