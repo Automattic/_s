@@ -113,14 +113,13 @@ if ( ! function_exists( '_s_admin_header_image' ) ) :
  * @see _s_custom_header_setup().
  */
 function _s_admin_header_image() {
-	$style        = sprintf( ' style="color:#%s;"', get_header_textcolor() );
-	$header_image = get_header_image();
+	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
 		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( ! empty( $header_image ) ) : ?>
-			<img src="<?php echo esc_url( $header_image ); ?>" alt="">
+		<?php if ( get_header_image() ) : ?>
+		<img src="<?php header_image(); ?>" alt="">
 		<?php endif; ?>
 	</div>
 <?php
