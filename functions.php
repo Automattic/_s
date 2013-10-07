@@ -51,7 +51,7 @@ function _s_setup() {
 	/**
 	 *  register_nav_menu used by _s won't show "CSS Classes (Optional)" inserted from Dashboard > Appreance > Menu
 	 * the following would solve the problem
-	 * /
+	 */
 	
 	register_nav_menu( 'primary', __( 'Primary Navigation Menu', '_s' ) );
 
