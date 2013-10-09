@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package _s
+ * @package lcarzs
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -28,8 +28,8 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
-			<div class="skip-link"><a class="screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a></div>
+			<h1 class="menu-toggle"><?php _e( 'Menu', 'lcarzs' ); ?></h1>
+			<div class="skip-link"><a class="screen-reader-text" href="#content"><?php _e( 'Skip to content', 'lcarzs' ); ?></a></div>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->

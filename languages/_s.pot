@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.3-wpcom\n"
+"Project-Id-Version: lcarzs 1.3-wpcom\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2013-09-25 22:06:45+00:00\n"
 "MIME-Version: 1.0\n"

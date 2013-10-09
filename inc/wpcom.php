@@ -2,7 +2,7 @@
 /**
  * WordPress.com-specific functions and definitions
  *
- * @package _s
+ * @package lcarzs
  */
 
 global $themecolors;
