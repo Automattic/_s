@@ -1,3 +1,8 @@
+/*
+ * Skip-link Focus Fix
+ *
+ * Fixes the focus problem in Internet Explorer, Opera, and Webkit browsers when using skip-links.
+ */
 ( function() {
 	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
