@@ -7,6 +7,10 @@
  * @package _s
  */
 
+/* ==========================================================================
+   Navigation - Next/Previous
+   ========================================================================== */
+
 if ( ! function_exists( '_s_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
@@ -54,6 +58,14 @@ function _s_content_nav( $nav_id ) {
 	<?php
 }
 endif; // _s_content_nav
+
+
+
+
+
+/* ==========================================================================
+   Comments
+   ========================================================================== */
 
 if ( ! function_exists( '_s_comment' ) ) :
 /**
@@ -115,56 +127,12 @@ function _s_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for _s_comment()
 
-if ( ! function_exists( '_s_the_attached_image' ) ) :
-/**
- * Prints the attached image with a link to the next attached image.
- */
-function _s_the_attached_image() {
-	$post                = get_post();
-	$attachment_size     = apply_filters( '_s_attachment_size', array( 1200, 1200 ) );
-	$next_attachment_url = wp_get_attachment_url();
 
-	/**
-	 * Grab the IDs of all the image attachments in a gallery so we can get the
-	 * URL of the next adjacent image in a gallery, or the first image (if
-	 * we're looking at the last image in a gallery), or, in a gallery of one,
-	 * just the link to that image file.
-	 */
-	$attachment_ids = get_posts( array(
-		'post_parent'    => $post->post_parent,
-		'fields'         => 'ids',
-		'numberposts'    => -1,
-		'post_status'    => 'inherit',
-		'post_type'      => 'attachment',
-		'post_mime_type' => 'image',
-		'order'          => 'ASC',
-		'orderby'        => 'menu_order ID'
-	) );
 
-	// If there is more than 1 attachment in a gallery...
-	if ( count( $attachment_ids ) > 1 ) {
-		foreach ( $attachment_ids as $attachment_id ) {
-			if ( $attachment_id == $post->ID ) {
-				$next_id = current( $attachment_ids );
-				break;
-			}
-		}
 
-		// get the URL of the next image attachment...
-		if ( $next_id )
-			$next_attachment_url = get_attachment_link( $next_id );
-
-		// or get the URL of the first image attachment.
-		else
-			$next_attachment_url = get_attachment_link( array_shift( $attachment_ids ) );
-	}
-
-	printf( '<a href="%1$s" rel="attachment">%2$s</a>',
-		esc_url( $next_attachment_url ),
-		wp_get_attachment_image( $post->ID, $attachment_size )
-	);
-}
-endif;
+/* ==========================================================================
+   Meta - Posted On
+   ========================================================================== */
 
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
@@ -195,37 +163,139 @@ function _s_posted_on() {
 }
 endif;
 
+
+
+
+
+/* ==========================================================================
+   Excerpt / Content
+   ========================================================================== */
+
+// Append read more link to excerpt
+function _s_excerpt_more( $more ) {
+
+	global $post;
+	return '... <a class="more-link" href="' . get_permalink( $post->ID ) . '">Read More &raquo;</a>';
+}
+add_filter('excerpt_more', '_s_excerpt_more');
+
+
+
+
+
+if ( ! function_exists( '_s_excerpt' ) ) :
 /**
- * Returns true if a blog has more than 1 category
+ * Limit the Excerpt by 'x' amount of words
+ *
+ * @param int $limit, str $copy
+ * @return str $content
+ * @since _s_ 1.0
  */
-function _s_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-		// Create an array of all the categories that are attached to posts
-		$all_the_cool_cats = get_categories( array(
-			'hide_empty' => 1,
-		) );
+function _s_excerpt( $limit, $copy = NULL ) {
 
-		// Count the number of categories that are attached to the posts
-		$all_the_cool_cats = count( $all_the_cool_cats );
+	global $post;
 
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
-	}
-
-	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so _s_categorized_blog should return true
-		return true;
+	if( $copy ) {
+		$excerpt = explode( ' ', $copy, $limit );
 	} else {
-		// This blog has only 1 category so _s_categorized_blog should return false
-		return false;
+		$excerpt = explode( ' ', get_the_excerpt(), $limit );
+	}
+
+	if ( count( $excerpt ) >= $limit ) {
+		array_pop( $excerpt );
+		$excerpt = implode( " ",$excerpt ).'...';
+	} else {
+		$excerpt = implode( " ",$excerpt );
+	}
+	$excerpt = preg_replace( '`[[^]]*]`','',$excerpt );
+
+	return $excerpt;
+}
+endif;
+
+if ( ! function_exists( '_s_content' ) ) :
+/**
+ * Limit the Content by 'x' amount of words
+ *
+ * @param int $limit, str $copy
+ * @return str $content
+ * @since _s_ 1.0
+ */
+function _s_content( $limit, $copy = NULL ) {
+
+	if( $copy ) {
+		$content = explode( ' ', $copy, $limit );
+	} else {
+		$content = explode( ' ', get_the_content(), $limit );
+	}
+
+	if ( count( $content ) >= $limit ) {
+		array_pop( $content );
+		$content = implode( " ",$content ).'...';
+	} else {
+		$content = implode( " ",$content );
+	}
+	$content = preg_replace( '/[+]/','', $content );
+	$content = apply_filters( 'the_content', $content );
+	$content = str_replace( ']]>', ']]>', $content );
+
+	return $content;
+}
+endif;
+
+
+
+
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+if ( ! function_exists( '_s_pagination' ) ) :
+/**
+ * Display custom pagination
+ *
+ * @param str $echo
+ * @return str $r
+ * @since _s_ 1.0
+ */
+function _s_pagination( $echo = true ) {
+
+	global $wp_query;
+
+	$total_pages	= $wp_query->max_num_pages;
+	$curr_page		= max( 1, get_query_var('paged') );
+
+	$big = 999999999; // need an unlikely integer
+
+	$pages = paginate_links( array(
+		'base'		=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format'	=> '?paged=%#%',
+		'total'		=> $total_pages,
+		'current'	=> $curr_page,
+		'prev_text' => '&laquo; Prev',
+		'type'		=> 'array'
+	) );
+
+	// only show pagination if needed
+	if( !$pages ) // returns null if only 1 page of results
+		return;
+
+	$r = '<div class="pagination-wrap pagination-centered">' . "\n";
+	$r .= '	<ul class="pagination">' . "\n";
+
+	foreach( $pages as $page ) {
+		$r .= '<li>' . $page . '</li>' . "\n";
+	}
+
+	$r .= '	</ul>' . "\n";
+	$r .= '<div class="page-count">Page ' . $curr_page . ' of ' . $total_pages . '</div>' . "\n";
+	$r .= '</div>' . "\n";
+
+	if( $echo ) {
+		echo $r;
+	} else {
+		return $r;
 	}
 }
-
-/**
- * Flush out the transients used in _s_categorized_blog
- */
-function _s_category_transient_flusher() {
-	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
-}
-add_action( 'edit_category', '_s_category_transient_flusher' );
-add_action( 'save_post',     '_s_category_transient_flusher' );
+endif;
