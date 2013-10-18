@@ -1,0 +1,102 @@
+@mixin output-isolation($span, $location, $columns, $gutter, $options: false) {
+
+  $gutter: find-gutter($gutter);
+  $end-row: end-row($span, $location, $columns);
+  $start-row: start-row($location);
+
+  // @debug $options;
+
+
+  @if $direction == 'ltr' or $direction == 'both' {
+    // Set the CSS direction to ltr
+    $cssdir: 'ltr';
+    // Find the CSS named direction and opposite direction
+    $dir: named-direction($cssdir);
+    $opp: opposite-direction($dir);
+
+    width: column-span($span, $location, $columns);
+
+
+
+    // If we are at the last item in the row, we float it the opposite direction
+    @if ($end-row) {
+      float: $opp;
+      margin-#{$dir}: 0;
+      margin-#{$opp}: 0;
+    }
+    @else {
+      float: $dir;
+      margin-#{$opp}: -100%;
+
+      @if $start-row {
+        margin-#{$dir}: 0%;
+      }
+      @else {
+        margin-#{$dir}: column-span(($location - 1), 1, $columns) + gutter-span($gutter, $columns);
+      }
+
+    }
+
+    // If options are set, we clear to that option, otherwise no clear!
+    @if ($options) {
+      clear: unquote($options);
+    }
+    @else {
+      clear: none;
+    }
+  }
+
+  @if $direction == 'rtl' or $direction == 'both' {
+    // Set the CSS direction to ltr
+    $cssdir: 'rtl';
+    // Find the CSS named direction and opposite direction
+    $dir: named-direction($cssdir);
+    $opp: opposite-direction($dir);
+
+    [dir="#{$cssdir}"] & {
+      // If we are at the last item in the row, we float it the opposite direction
+      @if ($end-row) {
+        float: $opp;
+      }
+      @else {
+        float: $dir;
+        margin-#{$opp}: -100%;
+
+        @if $start-row {
+          margin-#{$dir}: 0%;
+        }
+        @else {
+          margin-#{$dir}: column-span(($location - 1), 1, $columns) + gutter-span($gutter, $columns);
+        }
+      }
+
+      // If options are set, we clear to that option, otherwise no clear!
+      @if ($options) {
+        clear: unquote($options);
+      }
+      @else {
+        clear: none;
+      }
+    }
+  }
+
+  @include span-shared;
+
+}
+
+@mixin push-isolation($span, $location, $columns: false, $gutter: false) {
+  @include push-float($span, $location, $columns, $gutter);
+}
+
+@mixin pull-isolation($span, $location, $columns: false, $gutter: false) {
+  @include pull-float($span, $location, $columns, $gutter);
+}
+
+//////////////////////////////
+// Happy Syntax for Isolation
+//
+// Makes working with Isolation easier, as it moves Clear to a 1st class citizen of the mixin, and automatically builds the verbose grid-span mixin call
+//////////////////////////////
+@mixin isolation-span($span, $location, $clear: false, $grid: false, $gutter: false) {
+  @include grid-span($span, $location, $grid, $gutter, 'isolation', $clear);
+}

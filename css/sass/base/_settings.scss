@@ -1,0 +1,65 @@
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Media Queries
+   -------------------------------------------------------------------------- */
+
+	$mobile					: 320px;
+	$mobile-landscape		: 480px;
+
+	$tablet					: 768px;
+	$tablet-landscape		: 1024px;
+
+	$site-constraint		: 960px;
+
+	$desktop				: 1280px;
+
+	$mobile-query 			: "only screen and (min-width: #{$mobile})";
+	$tablet-query 			: "only screen and (min-width: #{$tablet})";
+	$desktop-query 			: "only screen and (min-width: #{$desktop})";
+
+	$mobile-query-max		: "max-width #{$tablet}";
+
+
+/* Grid
+   -------------------------------------------------------------------------- */
+
+	$grids					: 9;
+	$grids					: add-grid( 12 at $tablet );
+
+	$gutters				: 1/3;
+
+/* Colors
+   -------------------------------------------------------------------------- */
+
+	$off-white 				: #f6f6f6;
+
+	$grey-ltr				: #f2f2f2;
+	$grey-lt				: #e6e6e6;
+	$grey					: #dbdbdb;
+	$grey-dk				: #b8b8b8;
+	$grey-dkr				: #8d8c8c;
+	$grey-dkst				: #4d4c4c;
+
+	$charcoal				: #333332;
+
+	$pink					: #eb275d;
+	$red					: #ee3228;
+	$blue 					: #0065b2;
+
+	$success				: #659f13;
+	$success-lt				: #f2fae3;
+	$error					: #d85030;
+	$error-lt				: #fff1f0;
+	$warning				: #e28327;
+	$warning-lt				: #fffceb;
+
+/* General
+   -------------------------------------------------------------------------- */
+
+	$font-family	: sans-serif;
+	$font-size 		: 16px;
+	$font-color 	: $grey-dkr;
+	$link-color 	: $pink;

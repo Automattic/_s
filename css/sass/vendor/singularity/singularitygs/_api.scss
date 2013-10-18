@@ -1,0 +1,39 @@
+@mixin grid-span($span, $location: 1, $grid: false, $gutter: false, $output-style: $output, $options: false) {
+
+  @if $output-style == 'float' {
+    @include output-float($span, $location, $grid, $gutter, $options);
+  }
+  @else if $output-style == 'isolation' {
+    @include output-isolation($span, $location, $grid, $gutter, $options);
+  }
+}
+
+@mixin push($span, $location, $grid: false, $gutter: false, $output-style: $output) {
+
+  @if $output-style == 'float' {
+    @include push-float($span, $location, $grid, $gutter);
+  }
+  @else if $output-style == 'isolation' {
+    @include push-isolation($span, $location, $grid, $gutter);
+  }
+}
+
+@mixin pull($span, $location, $grid: false, $gutter: false, $output-style: $output) {
+
+  @if $output-style == 'float' {
+    @include pull-float($span, $location, $grid, $gutter);
+  }
+  @else if $output-style == 'isolation' {
+    @include pull-isolation($span, $location, $grid, $gutter);
+  }
+}
+
+@mixin isolate($span, $location, $grid: false, $gutter: false, $output-style: $output) {
+
+  @if $output-style == 'float' {
+    @include isolate-float($span, $location, $grid, $gutter);
+  }
+}
+
+@import "api/float";
+@import "api/isolation";

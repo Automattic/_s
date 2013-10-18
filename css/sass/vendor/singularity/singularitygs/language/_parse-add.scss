@@ -1,0 +1,19 @@
+@function parse-add($definition) {
+  $grid: ();
+  $mq: false;
+  $mq-find: false;
+
+  @each $item in $definition {
+    @if $item != 'at' and $mq-find != true {
+      $grid: append($grid, $item, 'space');
+    }
+    @else if $item == 'at' {
+      $mq-find: true;
+    }
+    @else {
+      $mq: $item;
+    }
+  }
+
+  @return ($grid $mq);
+}

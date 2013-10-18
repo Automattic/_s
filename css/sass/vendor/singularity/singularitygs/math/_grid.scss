@@ -1,0 +1,3 @@
+@function grid-span($span, $location, $grid: false, $gutter: false) {
+  @return column-span($span, $location, $grid, $gutter) + gutter-span($gutter, $grid);
+}

@@ -1,0 +1,169 @@
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+	background: white;
+}
+*,
+*:after,
+*:before {
+	@include box-sizing( border-box );
+	*behavior: url(/wp-content/themes/_s_/js/boxsizing.htc);
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	text-transform: uppercase;
+	color: $charcoal;
+}
+h1, .h1 {
+	margin: 0.6em 0;
+	@include rem( 'font-size', 34px );
+	@include breakpoint( $tablet ) {
+		@include rem( 'font-size', 37px );
+	}
+}
+h2, .h2 {
+	margin: 0.7em 0;
+	@include rem( 'font-size', 30px );
+	@include breakpoint( $tablet ) {
+		@include rem( 'font-size', 33px );
+	}
+}
+h3, .h3 {
+	margin: 0.8em 0;
+	@include rem( 'font-size', 25px );
+	@include breakpoint( $tablet ) {
+		@include rem( 'font-size', 28px );
+	}
+}
+h4, .h4 {
+	margin: 0.9em 0;
+	@include rem( 'font-size', 21px );
+	@include breakpoint( $tablet ) {
+		@include rem('font-size', 24px);
+	}
+}
+h5, .h5 {
+	margin: 1em 0;
+	@include rem( 'font-size', 18px );
+	@include breakpoint( $tablet ) {
+		@include rem('font-size', 21px);
+	}
+}
+h6, .h6 {
+	margin: 1.2em 0;
+	@include rem( 'font-size', 16px );
+	@include breakpoint( $tablet ) {
+		@include rem('font-size', 18px);
+	}
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	font-family: $font-family;
+	color: $font-color;
+}
+
+embed,
+iframe,
+object {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+	@include transition-property( color, background, border );
+	@include transition-duration( .25s );
+	&:hover {
+		color: $charcoal;
+	}
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+::-webkit-input-placeholder {
+	color: $grey;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: $grey;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: $grey;
+}
+:-ms-input-placeholder {
+	color: $grey;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+	margin: 0 0 1em 0;
+	padding: 0.5em;
+	width: 100%;
+	height: 2.3125em;
+	display: inline-block;
+	background: white;
+	border: 1px solid $grey;
+}
+input[type="submit"] {
+	@extend %btn;
+	margin: 0 0 1em 0;
+	border: none;
+	&:hover {
+		background: $charcoal;
+	}
+}
+textarea {
+	height: auto;
+	min-height: 50px;
+}
+blockquote {
+	margin: 0;
+	padding: 0 0 0 30px;
+	border-left: 3px solid #ddd;
+	font-style: italic;
+}
+dt {
+	margin-bottom: 0.3em;
+	font-weight: bold;
+}
+dd {
+	margin: 0 0 0.75em 0;
+}
+.entry-content {
+	table {
+		margin-bottom: 1em;
+		width: 100%;
+		border: 1px solid #efefef;
+		& thead, & tfoot, th {
+			background: #f3f3f3;
+			font-weight: bold;
+		}
+		& th, & td {
+			padding: 0.5em 0.625em 0.625em;
+			text-align: left;
+		}
+		& tr:nth-of-type( even ) {
+			background: #f9f9f9;
+		}
+	}
+}

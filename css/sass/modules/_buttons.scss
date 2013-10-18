@@ -1,0 +1,54 @@
+%btn {
+	padding: 1em 2em;
+	position: relative;
+	display: inline-block;
+	background: $pink;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	@include rem( 'font-size', 13px );
+}
+.btn {
+	@extend %btn;
+	&:hover {
+		background: $charcoal;
+		color: white;
+	}
+	> small {
+		display: block;
+		color: $grey;
+	}
+}
+.btn.small {
+	padding: 1em 2em;
+	@include rem( 'font-size', 10px );
+}
+.btn.large {
+	padding: 0.9em 1.5em;
+	@include rem( 'font-size', 17px );
+}
+.btn.x-large {
+	padding: 0.75em 1.25em;
+	@include rem( 'font-size', 20px );
+}
+.btn.grey-lt {
+	@extend %btn;
+	background: $grey-dk;
+	&:hover {
+		background: darken( $grey-dk, 15% );
+	}
+}
+.btn.grey {
+	@extend %btn;
+	background: $grey-dkr;
+	&:hover {
+		background: darken( $grey-dkr, 15% );
+	}
+}
+.btn.charcoal {
+	@extend %btn;
+	background: $charcoal;
+	&:hover {
+		background: darken( $charcoal, 15% );
+	}
+}

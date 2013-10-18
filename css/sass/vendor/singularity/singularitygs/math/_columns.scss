@@ -1,0 +1,80 @@
+//////////////////////////////
+// Find width, in percentages, of the column span
+//////////////////////////////
+@function column-span($span, $location, $grid: false, $gutter: false) {
+
+  // Find the grid and gutters
+  $grid: find-grid($grid);
+  $gutter: find-gutter($gutter);
+
+  // @debug $grid;
+  // @debug $gutter;
+
+  // Combine the grid and gutters
+  $grid-and-gutters: column-sum($grid, $gutter);
+
+  // @debug $grid-and-gutters;
+
+  // Equal width grid are easy! Deal with them!
+  @if type-of($grid) == 'number' or length($grid) == 1 {
+    $span-and-gutters: $span + $gutter * ($span - 1);
+    @return $span-and-gutters / $grid-and-gutters * 100%;
+  }
+  // Asymmetric lists are harder, so we're going to treat them as their own grid
+  @else if type-of($grid) == 'list' or length($grid) > 1 {
+    $span-and-gutters: 0;
+
+    @if $location == 1 and $span >= 1 {
+      @for $i from 1 through $span {
+        $span-and-gutters: $span-and-gutters + nth($grid, $i) + $gutter;
+      }
+    }
+    @else {
+      $total: $location + $span - 1;
+      @for $i from $location through $total {
+        $span-and-gutters: $span-and-gutters + nth($grid, $i) + $gutter;
+      }
+    }
+    $span-and-gutters: $span-and-gutters - $gutter;
+
+    @return $span-and-gutters / $grid-and-gutters * 100%;
+  }
+  @else {
+    @warn "Can't find a working set of grid! That's terrible!";
+    @return false;
+  }
+}
+
+//////////////////////////////
+// Find the total sum of the grid
+//////////////////////////////
+@function column-sum($grid, $gutter) {
+  @if type-of($grid) == 'number' or length($grid) == 1 {
+    @return nth($grid, 1) + ((column-count(nth($grid, 1)) - 1) * nth($gutter, 1));
+  }
+  @else if type-of($grid) == 'list' {
+    $sum: 0;
+    @each $column in $grid {
+      $sum: $sum + nth($column, 1);
+    }
+    $sum: $sum + (column-count($grid) - 1) * nth($gutter, 1);
+    @return $sum;
+  }
+}
+
+//////////////////////////////
+// Find the number of grid
+//////////////////////////////
+@function column-count($grid) {
+  @if type-of($grid) == 'number' {
+    @return $grid;
+  }
+  @if type-of($grid) == 'list' {
+    @if length($grid) == 1 {
+      @return nth($grid, 1);
+    }
+    @else {
+      @return length($grid);
+    }
+  }
+}

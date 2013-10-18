@@ -1,0 +1,81 @@
+.container-alert {
+	display: none;
+	background: $grey-dkr;
+	@include transition-property( background );
+	@include transition-duration( .25s );
+	.no-js & {
+		display: block;
+	}
+}
+.alert-message {
+	padding: 0 27px 0 25px;
+	position: relative;
+	color: $grey;
+	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+		padding: 0 0 0 25px;
+	}
+	a {
+		text-decoration: underline;
+		color: $charcoal;
+		&:hover {
+			color: $pink;
+		}
+	}
+	&:before {
+		margin-top: -10px;
+		content: "\25b2";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		font-family: 'icomoon';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		color: $pink;
+		@include rem( 'font-size', 18px );
+		@include transition-property( color );
+		@include transition-duration( .25s );
+		@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+			margin-top: 0;
+			top: 0;
+		}
+	}
+	> * { // remove any styling from editor added tags
+		margin: 0;
+		padding: 0;
+	}
+}
+.alert {
+	position: relative;
+	text-transform: uppercase;
+	@include rem( 'font-size', 13px );
+}
+.js-close {
+	margin: -11px 0 0 0;
+	padding: 6px;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	z-index: 1;
+	cursor: pointer;
+	background: $grey-dkst;
+	color: $grey;
+	@include rem( 'font-size', 10px );
+	@include border-radius( 50% );
+	@include transition-property( color, transform );
+	@include transition-duration( .25s );
+	@include transform( rotate( 0deg ) );
+	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+		margin: -11px 0 0 0;
+		top: 50%;
+		right: 0;
+	}
+	&:hover {
+		color: $error;
+		@include transform( rotate( 90deg ) );
+	}
+}

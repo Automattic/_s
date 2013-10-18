@@ -1,0 +1,89 @@
+//////////////////////////////
+// Find Object
+//
+// Finds relevant object
+// Must be using Breakpoint to work properly
+//////////////////////////////
+@function find-object($haystack, $user-object: false) {
+  $length: length($haystack);
+
+  @if $user-object != false {
+    @return $user-object;
+  }
+  @else if $length > 1 {
+    //////////////////////////////
+    // @TODO! REplace with Native Sass Fucntion when vailable!
+    // https://github.com/nex3/sass/pull/689
+    //////////////////////////////
+    @if (is-breakpoint-list($haystack) != false) {
+      $query-min: breakpoint-get-context('min-width');
+      $query-max: breakpoint-get-context('max-width');
+
+      // If we've got a min-width or max-width
+      @if $query-min or $query-max {
+        // Reverse the grid so we can step through it
+        $reverse-haystack: ();
+        @for $i from 2 through $length {
+          $reverse-haystack: append($reverse-haystack, nth($haystack, $i), comma);
+        }
+        $reverse-haystack: reverse($reverse-haystack);
+        $rg-length: $length - 1;
+
+        // Grab the largest and smallest MQs
+        $smallest: nth(nth($haystack, 2), 2);
+        $largest: nth(nth($reverse-haystack, 1), 2);
+        $context: $query-min;
+
+        @if not ($mobile-first) {
+          $context: $query-max;
+        }
+
+	// Loop over each item in Context to find if any of the items pass.
+	@each $query-context in $context {
+	  @if $query-context != false {
+	    // If it's smallest than the smallest MQ, use the 1st grid
+	    @if $query-context < $smallest {
+	      @return nth($haystack, 1);
+	    }
+	    // If it's larger than or equal to the largest MQ, use the last grid
+	    @else if $query-context >= $largest {
+	      @return nth(nth($reverse-haystack, 1), 1);
+            }
+	    // If it's in between the smallest and largest, go run a check.
+            @else {
+	      // Loop through each MQ.
+	      @for $j from 1 through $rg-length {
+		$query: nth(nth($reverse-haystack, $j), 2);
+
+		// If the MQ is greather than or equal to the the MQ in question, use it! (mobile first)
+		@if ($mobile-first) {
+		  @if $query-context >= $query {
+		    @return nth(nth($reverse-haystack, $j), 1);
+		  }
+		}
+		// If the MQ is less than or equal to the the MQ in question, use it! (not mobile first)
+		@else {
+		  @if $query-context <= $query {
+		    @return nth(nth($reverse-haystack, $j), 1);
+		  }
+		}
+              }
+            }
+          }
+        }
+	@return nth($haystack, 1);
+      }
+      // All else fails, return the first grid
+      @else {
+        @return nth($haystack, 1);
+      }
+    }
+    @else {
+      @return $haystack;
+    }
+  }
+  // All else fails, return the first grid
+  @else {
+    @return nth($haystack, 1);
+  }
+}

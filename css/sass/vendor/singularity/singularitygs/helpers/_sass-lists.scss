@@ -1,0 +1,71 @@
+// ---------------------------------------------------------------------------
+// Sass List Helpers
+//
+// - list-sum()
+// - query-list()
+
+// ---------------------------------------------------------------------------
+// Functions
+
+// Return the sum of all items in a list.
+//
+// list-sum($list)
+// - $list  : <list>
+@function list-sum($list) {
+  $sum: 0;
+  @each $item in $list {
+    $sum: $sum + $item;
+  }
+  @return $sum;
+}
+
+// Return list of index locations where a query appears in a list,
+// including unit queries.
+//
+// query-list($list, $query [, $mode])
+// - $list    : <list>
+// - $query   : <anything>
+// - $mode    : none | unit
+//            - "none" (default) runs a standard query.
+//            - "unit" finds all items with the same unit.
+@function query-list(
+  $list,
+  $query,
+  $mode: none
+) {
+  $return: ();
+
+  // loop through $list
+  @for $i from 1 through length($list) {
+    @if $mode == unit {
+      // if the list item matches the query, write where it is to the list.
+      @if unit(nth($list, $i)) == $query {
+        $return: append($return, $i);
+      }
+    }
+    @else {
+      // if the list item matches the query, write where it is to the list.
+      @if nth(nth($list, $i), 1) == $query {
+        $return: append($return, $i);
+      }
+    }
+  }
+
+  // if nothing matches then return false.
+  @if $return == () {
+    $return: false;
+  }
+
+  // return list.
+  @return $return;
+}
+
+// Reverses direction of a list
+@function reverse($list) {
+  $length: length($list);
+  $return: ();
+  @for $i from 0 to $length {
+    $return: append($return, nth($list, $length - $i), comma);
+  }
+  @return $return;
+}

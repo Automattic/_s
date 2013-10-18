@@ -1,0 +1,6 @@
+.is-visible {
+	display: block;
+}
+.is-hidden {
+	@extend %hidden;
+}

@@ -1,0 +1,35 @@
+// Accepts a grid definition in the human-readable format. Converts it to the internal format,
+// appends it to a list of grids and returns the resulting list.
+//
+// Note that this function only returns a new list, it does not modify the source list.
+//
+// add-grid($grid-definition, $append-to-list)
+// - $grid-definition : <definition>  See documentation for syntax:
+//                                    https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
+// - $append-to-list  : [list]        A list to append to.
+//                                    Defaults to $grids if none is specified.
+@function add-grid($grid-definition, $append-to-list: $grids) {
+  $parsed:      parse-add($grid-definition); // Converts the definiton to a temporary format:
+                                             // either `((<grid>))` or `((<grid>) (<breakpoint>))`
+  $grid:        nth($parsed, 1); // E. g. `(<grid>)`.
+  $breakpoint:  nth($parsed, 2); // Either `(<breakpoint>)` or false.
+  $list-length: length($append-to-list);
+  
+  // Check whether the definition will be the first one in the list
+  // and whether it has no breakpoint specified.
+  @if $breakpoint == false and $list-length == 0 {
+    // Returns the first item of the list, e. g. `(<grid>)`
+    @return $grid;
+  }
+  // IF the list is initiated with a list of grid columns need to start off
+  // a comma seprated list.
+  @elseif $list-length > 1 and length(nth($append-to-list, 2)) == 1 {
+    // Seed the first value and grid + breakpoint seperated by a comma.
+    @return $append-to-list, ($grid $breakpoint);
+  }
+  @else {
+    // Appends to a comma-separated list of definitions in the internal format
+    // and returns it, e. g. `(<grid>), (<grid> <breakpoint>), (<grid> <breakpoint>)`
+    @return append($append-to-list, ($grid $breakpoint), 'comma');
+  }
+}

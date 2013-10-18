@@ -1,0 +1,24 @@
+@function end-row($span, $location, $columns) {
+  $columns: find-grid($columns);
+
+  @if $location == 'last' or $location == 'omega' {
+    @return true;
+  }
+  @else {
+    @if $location + ($span - 1) == column-count($columns) {
+      @return true;
+    }
+    @else {
+      @return false;
+    }
+  }
+}
+
+@function start-row($location) {
+  @if $location == 1 {
+    @return true;
+  }
+  @else {
+    @return false;
+  }
+}

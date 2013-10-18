@@ -1,0 +1,53 @@
+//////////////////////////////
+// Parse natural language string
+//
+// Retrieve values from the natural language string.
+// parse-string($var, $list)
+//  $var  : <string>
+//        - at/span/of or any other keywords.
+//        - 'span' queries the unprefixed span declaration.
+//        - 'at' can also query first, last, alpha, and omega.
+//  $list : <list>
+//        - A list like this: last 2 of (1 1 2) push 1
+//
+//////////////////////////////
+@function parse-span-list($var, $list) {
+
+  $found: false;
+
+  $grid: ();
+
+  // Loop through list.
+  @each $item in $list {
+
+    // if 'span' - return the first numeric.
+    // if keyword was found - return the following item.
+    @if (type-of($item) == number and $var == span and $found != 'grid') or $found == true {
+
+      // @if $found == true
+      @return $item;
+    }
+
+    // Special handling for Grids
+    @else if $item == $var and $var == 'of' {
+      $found: 'grid';
+    }
+
+    @else if $found == 'grid' {
+      @if type-of($item) == number {
+        $grid: append($grid, $item, 'space');
+      }
+      @else {
+        @return $grid;
+      }
+    }
+
+    // Any keyword - return the following value.
+    @else if $item == $var {
+      $found: true;
+    }
+  }
+
+  // Wasn't found.
+  @return false;
+}

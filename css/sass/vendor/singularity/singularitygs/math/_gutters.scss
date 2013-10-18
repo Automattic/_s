@@ -1,0 +1,11 @@
+@function gutter-span($gutter: false, $grid: false) {
+
+  // Find the columns and gutters
+  $grid: find-grid($grid);
+  $gutter: find-gutter($gutter);
+
+  // Combine the columns and gutters
+  $grid-and-gutters: column-sum($grid, $gutter);
+
+  @return (nth($gutter, 1) / $grid-and-gutters) * 100%
+}

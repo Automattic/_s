@@ -1,0 +1,9 @@
+@mixin span-shared {
+  @if $include-border-box {
+    @include box-sizing('border-box');
+  }
+
+  @if $include-clearfix {
+    @include clearfix;
+  }
+}
