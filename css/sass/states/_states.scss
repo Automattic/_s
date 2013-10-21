@@ -1,6 +1,51 @@
-.is-visible {
-	display: block;
+/* ==========================================================================
+   States
+   ========================================================================== */
+
+/**
+ * Indicate that interaction will result in an (in)action.
+ */
+
+.is-actionable {
+    cursor: pointer;
 }
+
+.is-disabled {
+    cursor: default;
+}
+
+.is-draggable {
+    cursor: move;
+}
+
+/**
+ * Completely remove from the flow and screen readers.
+ */
+
 .is-hidden {
-	@extend %hidden;
+    @extend %hidden;
+}
+
+.is-displayed {
+    display: block;
+}
+
+/**
+ * Completely remove from the flow but leave available to screen readers.
+ */
+
+.is-visually-hidden {
+    @extend %visuallyhidden;
+}
+
+/**
+ * Control visibility without affecting flow.
+ */
+
+.is-invisible {
+    %invisible;
+}
+
+.is-visible {
+    visibility: visible;
 }
