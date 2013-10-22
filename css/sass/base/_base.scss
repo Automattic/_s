@@ -10,7 +10,7 @@ html {
 *:after,
 *:before {
 	@include box-sizing( border-box );
-	*behavior: url(/wp-content/themes/_s_/js/boxsizing.htc);
+	*behavior: url(/wp-content/themes/_s/js/boxsizing.htc);
 }
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
