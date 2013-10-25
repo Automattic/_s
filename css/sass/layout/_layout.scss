@@ -5,20 +5,17 @@
 	max-width: 960px;
 }
 .l-constrained {
-	margin: 0 auto 0 auto;
-	padding: 10px;
 	@extend %l-constrained;
+	padding: 0.5em;
 }
 .l-constrained--lean {
-	margin: 0 auto 0 auto;
 	@extend %l-constrained;
 }
 .l-constrained--plump {
-	margin: 0 auto 0 auto;
-	padding: 10px;
 	@extend %l-constrained;
+	padding: 0.5em;
 	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		padding: 20px;
+		padding: 1.5em;
 	}
 }
 .l-container {
