@@ -2,14 +2,14 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, some of the functionality here could be replaced by core features
+ * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package _s
  */
 
 if ( ! function_exists( '_s_content_nav' ) ) :
 /**
- * Display navigation to next/previous pages when applicable
+ * Display navigation to next/previous pages when applicable.
  */
 function _s_content_nav( $nav_id ) {
 	global $wp_query, $post;
@@ -124,7 +124,7 @@ function _s_the_attached_image() {
 	$attachment_size     = apply_filters( '_s_attachment_size', array( 1200, 1200 ) );
 	$next_attachment_url = wp_get_attachment_url();
 
-	/**
+	/*
 	 * Grab the IDs of all the image attachments in a gallery so we can get the
 	 * URL of the next adjacent image in a gallery, or the first image (if
 	 * we're looking at the last image in a gallery), or, in a gallery of one,
@@ -196,32 +196,32 @@ function _s_posted_on() {
 endif;
 
 /**
- * Returns true if a blog has more than 1 category
+ * Returns true if a blog has more than 1 category.
  */
 function _s_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
-		// Create an array of all the categories that are attached to posts
+		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
 		) );
 
-		// Count the number of categories that are attached to the posts
+		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
 		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so _s_categorized_blog should return true
+		// This blog has more than 1 category so _s_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so _s_categorized_blog should return false
+		// This blog has only 1 category so _s_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in _s_categorized_blog
+ * Flush out the transients used in _s_categorized_blog.
  */
 function _s_category_transient_flusher() {
 	// Like, beat it. Dig?

@@ -1,6 +1,6 @@
 <?php
 /**
- * WordPress.com-specific functions and definitions
+ * WordPress.com-specific functions and definitions.
  *
  * @package _s
  */
