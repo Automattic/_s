@@ -83,9 +83,6 @@ function _s_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
-
-	if ( is_singular() && wp_attachment_is_image() )
-		wp_enqueue_script( '_s-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
