@@ -27,8 +27,9 @@ add_filter( 'wp_page_menu_args', '_s_page_menu_args' );
  */
 function _s_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() )
+	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
+	}
 
 	return $classes;
 }
@@ -44,20 +45,23 @@ add_filter( 'body_class', '_s_body_classes' );
 function _s_wp_title( $title, $sep ) {
 	global $page, $paged;
 
-	if ( is_feed() )
+	if ( is_feed() ) {
 		return $title;
+	}
 
 	// Add the blog name
 	$title .= get_bloginfo( 'name' );
 
 	// Add the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		$title .= " $sep $site_description";
+	}
 
 	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
+	if ( $paged >= 2 || $page >= 2 ) {
 		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+	}
 
 	return $title;
 }
