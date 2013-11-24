@@ -8,8 +8,9 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) )
+if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
+}
 
 if ( ! function_exists( '_s_setup' ) ) :
 /**
@@ -81,8 +82,9 @@ function _s_scripts() {
 
 	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
