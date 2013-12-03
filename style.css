@@ -446,8 +446,8 @@ a:active {
 .main-navigation ul li:hover > ul {
 	display: block;
 }
-.main-navigation li.current_page_item a,
-.main-navigation li.current-menu-item a {
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
 }
 
 /* Small menu */
