@@ -87,7 +87,7 @@ a:focus {
 	outline: thin dotted;
 }
 a:hover,
-a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+a:active {
 	outline: 0;
 }
 a img {
