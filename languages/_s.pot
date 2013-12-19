@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.3-wpcom\n"
+"Project-Id-Version: _s 1.0-wpcom\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2013-09-25 22:06:45+00:00\n"
+"POT-Creation-Date: 2013-12-19 02:31:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,8 +43,18 @@ msgstr ""
 msgid "Month: %s"
 msgstr ""
 
+#: archive.php:42
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
 #: archive.php:45
 msgid "Year: %s"
+msgstr ""
+
+#: archive.php:45
+msgctxt "yearly archives date format"
+msgid "Y"
 msgstr ""
 
 #: archive.php:48
@@ -52,45 +62,61 @@ msgid "Asides"
 msgstr ""
 
 #: archive.php:51
-msgid "Images"
+msgid "Galleries"
 msgstr ""
 
 #: archive.php:54
-msgid "Videos"
+msgid "Images"
 msgstr ""
 
 #: archive.php:57
-msgid "Quotes"
+msgid "Videos"
 msgstr ""
 
 #: archive.php:60
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:63
 msgid "Links"
 msgstr ""
 
-#: archive.php:63 sidebar.php:17
+#: archive.php:66
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:69
+msgid "Audios"
+msgstr ""
+
+#: archive.php:72
+msgid "Chats"
+msgstr ""
+
+#: archive.php:75 sidebar.php:17
 msgid "Archives"
 msgstr ""
 
-#: comments.php:29
+#: comments.php:30
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:36 comments.php:56
+#: comments.php:37 comments.php:57
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:37 comments.php:57
+#: comments.php:38 comments.php:58
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:38 comments.php:58
+#: comments.php:39 comments.php:59
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:68
+#: comments.php:69
 msgid "Comments are closed."
 msgstr ""
 
@@ -115,12 +141,12 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: content-page.php:18 content-single.php:20 content.php:27 image.php:58
+#: content-page.php:18 content-single.php:20 content.php:27
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:23 content-single.php:60 content.php:61 image.php:32
-#: image.php:64 inc/template-tags.php:71 inc/template-tags.php:90
+#: content-page.php:23 content-single.php:60 content.php:61
+#: inc/template-tags.php:81 inc/template-tags.php:100
 msgid "Edit"
 msgstr ""
 
@@ -183,11 +209,11 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:48
+#: functions.php:45
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:65
 msgid "Sidebar"
 msgstr ""
 
@@ -199,65 +225,54 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: image.php:22
-msgid ""
-"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
-"\"%1$s\">%2$s</time></span> at <a href=\"%3$s\">%4$s &times; %5$s</a> in <a "
-"href=\"%6$s\" rel=\"gallery\">%7$s</a>"
-msgstr ""
-
-#: image.php:37
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr ""
-
-#: image.php:38
-msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/extras.php:66
+#: inc/extras.php:63
 msgid "Page %s"
 msgstr ""
 
-#: inc/template-tags.php:34
-msgid "Post navigation"
+#: inc/template-tags.php:23
+msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:38
-msgctxt "Previous post link"
-msgid "&larr;"
-msgstr ""
-
-#: inc/template-tags.php:39
-msgctxt "Next post link"
-msgid "&rarr;"
-msgstr ""
-
-#: inc/template-tags.php:44
+#: inc/template-tags.php:27
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/template-tags.php:48
+#: inc/template-tags.php:31
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:71
-msgid "Pingback:"
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr ""
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: inc/template-tags.php:81
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:91
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
-#: inc/template-tags.php:87
+#: inc/template-tags.php:97
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:94
+#: inc/template-tags.php:104
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:185
+#: inc/template-tags.php:145
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
@@ -291,7 +306,7 @@ msgid "_s"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://underscores.me"
+msgid "http://underscores.me/"
 msgstr ""
 
 #. Description of the plugin/theme
