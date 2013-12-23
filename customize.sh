@@ -19,21 +19,21 @@ rmbu() {
 }
 
 # 1) Search for '_s' (inside single quotations) to capture the text domain:
-find . -path "./.git*" -or -iname "*.png" -or -name "$0" -prune -o -type f -exec sed -i.bu 's/'"'"'_s'"'"'/'"'""$1""'"'/g' {} \;
+find . -path "./.git*" -or -iname "*.png" -or -name "customize.sh" -prune -o -type f -exec sed -i.bu 's/'"'"'_s'"'"'/'"'""$1""'"'/g' {} \;
 rmbu
 
 # 2) Search for _s_ to capture all the function names.  
-find . -path "./.git*" -or -iname "*.png" -or -name "$0" -prune -o -type f -exec sed -i.bu 's/_s_/'"$1"'_/g' {} \;
+find . -path "./.git*" -or -iname "*.png" -or -name "customize.sh" -prune -o -type f -exec sed -i.bu 's/_s_/'"$1"'_/g' {} \;
 rmbu
 
 
 # 3) Search for  _s (with a space before it) to capture DocBlocks.
-find . -path "./.git*" -or -iname "*.png" -or -name "$0" -prune -o -type f -exec sed -i.bu 's/ _s/ '"$1"'/g' {} \;
+find . -path "./.git*" -or -iname "*.png" -or -name "customize.sh" -prune -o -type f -exec sed -i.bu 's/ _s/ '"$1"'/g' {} \;
 rmbu
 
 
 # 4) Search for _s- to capture prefixed handles.
-find . -path "./.git*" -or -iname "*.png" -or -name "$0" -prune -o -type f -exec sed -i.bu 's/_s-/'"$1"'-/g' {} \;
+find . -path "./.git*" -or -iname "*.png" -or -name "customize.sh" -prune -o -type f -exec sed -i.bu 's/_s-/'"$1"'-/g' {} \;
 rmbu
 
 
