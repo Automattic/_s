@@ -56,8 +56,8 @@ function _s_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
 		<div class="nav-links">
 
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', '_s' ) ); ?>
-			<?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     '_s' ) ); ?>
+			<div class="nav-previous"><?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', '_s' ) ); ?></div>
+			<div class="nav-next"><?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     '_s' ) ); ?></div>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
