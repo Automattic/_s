@@ -59,6 +59,8 @@ html {
 }
 body {
 	background: #fff;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 article,
 aside,
