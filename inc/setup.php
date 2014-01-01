@@ -82,7 +82,7 @@ function _s_scripts() {
     if ( !is_admin() ) {
 
         // Styles
-        wp_enqueue_style( 'googlefonts', add_query_arg( 'family', urlencode( 'Open+Sans:400,300,700|Roboto:400,100,900italic' ), "//fonts.googleapis.com/css" ), array(), null );
+        wp_enqueue_style( 'googlefonts', add_query_arg( 'family', urlencode( 'Open+Sans:400,300,700|Roboto:400,100,900italic' ), '//fonts.googleapis.com/css' ), array(), null );
         wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css', array(), null );
         wp_enqueue_style( '_s-style', get_stylesheet_uri(), array( 'main' ) );
 
