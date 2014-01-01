@@ -85,7 +85,7 @@ function _s_scripts() {
         // Styles
         // wp_enqueue_style( 'googlefonts', $protocol . '//fonts.googleapis.com/css?family=Montserrat:400,700', array(), null );
         wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css', array(), null );
-        wp_enqueue_style( 'sama-style', get_stylesheet_uri(), array( 'main' ) );
+        wp_enqueue_style( '_s-style', get_stylesheet_uri(), array( 'main' ) );
 
         // IE Conditional
         wp_register_style( 'no-mq', get_template_directory_uri() . '/css/no-mq.css', array(), null );
