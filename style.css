@@ -458,7 +458,7 @@ a:active {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5em) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
