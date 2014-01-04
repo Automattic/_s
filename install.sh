@@ -6,7 +6,9 @@
 # Usage:
 #     install.sh 'theme_name'
 # or:
-#     curl -L https://raw.github.com/Automattic/_s/master/install.sh | sh 'theme_name'
+#     wget https://raw.github.com/Automattic/_s/master/install.sh
+#     chmod 755 ./install.sh
+#    ./install.sh 'theme_name'
 #
 # If no `theme_name` is provided, then the script will prompt the
 # user for the name of the theme.
