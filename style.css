@@ -52,6 +52,7 @@ html {
 }
 body {
 	background: #fff;
+    -webkit-font-smoothing: antialiased; /* Improve text rendering on Mac http://maxvoltar.com/archive/-webkit-font-smoothing/ */
 }
 article,
 aside,
