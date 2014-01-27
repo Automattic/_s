@@ -6352,31 +6352,31 @@ Semantic Rows
     margin-left: -30px;
   }
 }
-#main {
+#content {
   margin-left: -20px;
   *zoom: 1;
 }
-#main:before,
-#main:after {
+#content:before,
+#content:after {
   display: table;
   content: "";
   line-height: 0;
 }
-#main:after {
+#content:after {
   clear: both;
 }
 @media (max-width: 767px) {
-  #main {
+  #content {
     margin-left: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  #main {
+  #content {
     margin-left: -20px;
   }
 }
 @media (min-width: 1200px) {
-  #main {
+  #content {
     margin-left: -30px;
   }
 }
