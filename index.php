@@ -16,7 +16,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<?php 
+		  $args = array(
+			'post__not_in' => lcarzs_active_slides(),
+			'posts_per_page' => get_option( 'posts_per_page' ),
+			'paged' => get_query_var('paged')
+			);
+		  
+			query_posts($args);			
+			if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
