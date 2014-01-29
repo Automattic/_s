@@ -1,0 +1,47 @@
+/**
+	Mixins
+*/
+
+/*********
+COLORS
+*********/
+$bgcolor:		#fce9c9;
+$dark-red:		#c64526;
+$red: 			#f36e4d;
+$light-red: 	#dc7860;
+$yellow:		#eeaf14;
+$orange:		#ffffdb;
+$dark-green:	#46601f;
+$green:			#3e8b6b;
+$light-green: 	#acbf7f;
+$orange:		#dfa963;
+$pink:			#ecb9a6;
+$navy:			#dc7860;
+$light-blue:	#2791d0;
+$dark-purple:	#2f1650;
+
+$light-gray: 	#e3e4dc;
+$black:			#090a02;
+
+$link-color:	$navy;
+$link-hover: 	$light-blue;
+
+/*********
+TYPOGRAPHY
+*********/
+%serif{
+	font-family: Georgia, serif;
+}
+%sans-serif{
+	font-family: Arial, sans-serif;
+}
+
+/*********
+UTILITIES
+*********/
+// Contain floats: nicolasgallagher.com/micro-clearfix-hack/
+%clearfix {
+  zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
+}

@@ -1,0 +1,31 @@
+/*!
+Theme Name: Left Corners And RightS
+Theme URI: http://underscores.me
+Author: Aram Zucker-Scharff
+Author URI: http://aramzs.me
+Description: Aram is making something nifty.
+Version: 1.3-wpcom
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lcarzs
+Domain Path: /languages/
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ Left Corners And RightS is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
+
+"starter",
+*/
+@import "susy",
+		"mixins",
+		"typography",
+		"base",
+		"lcarsstrap",
+		"navigation",
+		"modules",
+		"archives",
+		"single",
+		"print";
+		

@@ -1,0 +1,7 @@
+body{
+	background: $bgcolor;
+	a{ text-decoration: none; }
+	#page{
+		@include container($total-columns, $tablet, $computer);
+	}
+}
