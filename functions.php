@@ -99,6 +99,19 @@ function lcarzs_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'lcarzs_scripts' );
 
+function lcarzs_activate_slides($slide){
+	global $firstslide;
+	$firstslide[] = $slide;
+	return $firstslide;
+}
+
+function lcarzs_active_slides(){
+	global $firstslide;
+	return $firstslide;
+}
+
+
+
 /**
  * Implement the Custom Header feature.
  */
