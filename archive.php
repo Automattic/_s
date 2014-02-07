@@ -61,6 +61,10 @@ get_header(); ?>
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
 							_e( 'Chats', '_s' );
+							
+						elseif (is_tax() ) : 
+							$single_tax_term = get_queried_object(); 
+							echo $single_tax_term->name;
 
 						else :
 							_e( 'Archives', '_s' );
