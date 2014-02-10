@@ -420,15 +420,21 @@ a:active {
 		display: none;
 	}
 }
-.site-main [class*="navigation"] {
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
-[class*="navigation"] .nav-previous {
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
 	float: left;
 	width: 50%;
 }
-[class*="navigation"] .nav-next {
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
 	float: right;
 	text-align: right;
 	width: 50%;
