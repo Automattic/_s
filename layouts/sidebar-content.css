@@ -3,20 +3,22 @@ Theme Name: _s
 Layout: Sidebar-Content
 */
 
-.content-area {
-	float: right;
-	margin: 0 0 0 -25%;
-	width: 100%;
-}
-.site-main {
-	margin: 0 0 0 25%;
-}
-.site-content .widget-area {
-	float: left;
-	overflow: hidden;
-	width: 25%;
-}
-.site-footer {
-	clear: both;
-	width: 100%;
+@media screen and (min-width: 600px) {
+	.content-area {
+		float: right;
+		margin: 0 0 0 -25%;
+		width: 100%;
+	}
+	.site-main {
+		margin: 0 0 0 25%;
+	}
+	.site-content .widget-area {
+		float: left;
+		overflow: hidden;
+		width: 25%;
+	}
+	.site-footer {
+		clear: both;
+		width: 100%;
+	}
 }
