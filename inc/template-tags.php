@@ -237,7 +237,6 @@ if ( ! function_exists( '_s_excerpt' ) ) :
  *
  * @param int $limit, str $copy
  * @return str $content
- * @since _s_ 1.0
  */
 function _s_excerpt( $limit, $copy = NULL ) {
 
@@ -267,7 +266,6 @@ if ( ! function_exists( '_s_content' ) ) :
  *
  * @param int $limit, str $copy
  * @return str $content
- * @since _s_ 1.0
  */
 function _s_content( $limit, $copy = NULL ) {
 
@@ -305,7 +303,6 @@ if ( ! function_exists( '_s_pagination' ) ) :
  *
  * @param str $echo
  * @return str $r
- * @since _s_ 1.0
  */
 function _s_pagination( $echo = true ) {
 
