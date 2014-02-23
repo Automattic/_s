@@ -4,7 +4,7 @@ Theme URI: https://github.com/ptbello/_strap
 Author: Piero Bellomo
 Author URI: https://github.com/ptbello
 Description: _strap is a WordPress theme with the goal of integrating Twitter's bootstrap into Automattic's _s with the smallest possible changeset
-Version: 1.0
+Version: 3.0
 License: GNU General Public License
 License URI: license.txt
 Tags: bootstrap, _s
@@ -12,102 +12,70 @@ Tags: bootstrap, _s
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 Respect to _s https://github.com/Automattic/_s
-and Bootstrap http://twitter.github.com/bootstrap/
+and Bootstrap https://github.com/twbs/bootstrap
 */
 
 /*!
- * Bootstrap v2.3.2
- *
- * Copyright 2013 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world by @mdo and @fat.
+ * Bootstrap v3.1.1 (http://getbootstrap.com)
+ * Copyright 2011-2014 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 // Core variables and mixins
-@import "bootstrap/less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "bootstrap/less/variables.less";
 @import "bootstrap/less/mixins.less";
 
-// CSS Reset
-@import "bootstrap/less/reset.less";
+// Reset
+@import "bootstrap/less/normalize.less";
+@import "bootstrap/less/print.less";
 
-// Grid system and page structure
+// Core CSS
 @import "bootstrap/less/scaffolding.less";
-@import "bootstrap/less/grid.less";
-@import "bootstrap/less/layouts.less";
-
-// Base CSS
 @import "bootstrap/less/type.less";
 @import "bootstrap/less/code.less";
-@import "bootstrap/less/forms.less";
+@import "bootstrap/less/grid.less";
 @import "bootstrap/less/tables.less";
-
-// Components: common
-@import "bootstrap/less/sprites.less";
-@import "bootstrap/less/dropdowns.less";
-@import "bootstrap/less/wells.less";
-@import "bootstrap/less/component-animations.less";
-@import "bootstrap/less/close.less";
-
-// Components: Buttons & Alerts
+@import "bootstrap/less/forms.less";
 @import "bootstrap/less/buttons.less";
-@import "bootstrap/less/button-groups.less";
-@import "bootstrap/less/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
 
-// Components: Nav
+// Components
+@import "bootstrap/less/component-animations.less";
+@import "bootstrap/less/glyphicons.less";
+@import "bootstrap/less/dropdowns.less";
+@import "bootstrap/less/button-groups.less";
+@import "bootstrap/less/input-groups.less";
 @import "bootstrap/less/navs.less";
 @import "bootstrap/less/navbar.less";
 @import "bootstrap/less/breadcrumbs.less";
 @import "bootstrap/less/pagination.less";
 @import "bootstrap/less/pager.less";
+@import "bootstrap/less/labels.less";
+@import "bootstrap/less/badges.less";
+@import "bootstrap/less/jumbotron.less";
+@import "bootstrap/less/thumbnails.less";
+@import "bootstrap/less/alerts.less";
+@import "bootstrap/less/progress-bars.less";
+@import "bootstrap/less/media.less";
+@import "bootstrap/less/list-group.less";
+@import "bootstrap/less/panels.less";
+@import "bootstrap/less/wells.less";
+@import "bootstrap/less/close.less";
 
-// Components: Popovers
+// Components w/ JavaScript
 @import "bootstrap/less/modals.less";
 @import "bootstrap/less/tooltip.less";
 @import "bootstrap/less/popovers.less";
-
-// Components: Misc
-@import "bootstrap/less/thumbnails.less";
-@import "bootstrap/less/media.less";
-@import "bootstrap/less/labels-badges.less";
-@import "bootstrap/less/progress-bars.less";
-@import "bootstrap/less/accordion.less";
 @import "bootstrap/less/carousel.less";
-@import "bootstrap/less/hero-unit.less";
 
 // Utility classes
-@import "bootstrap/less/utilities.less"; // Has to be last to override when necessary
-
-// RESPONSIVE CLASSES
-// ------------------
-
+@import "bootstrap/less/utilities.less";
 @import "bootstrap/less/responsive-utilities.less";
 
-
-// MEDIA QUERIES
-// ------------------
-
-// Large desktops
-@import "bootstrap/less/responsive-1200px-min.less";
-
-// Tablets to regular desktops
-@import "bootstrap/less/responsive-768px-979px.less";
-
-// Phones to portrait tablets and narrow desktops
-@import "bootstrap/less/responsive-767px-max.less";
-
-
-// RESPONSIVE NAVBAR
-// ------------------
-
-// From 979px and below, show a button to toggle navbar contents
-@import "bootstrap/less/responsive-navbar.less";
 
 
 // WORDPRESS COMPATIBILITY STYLES
 // ------------------
-@import "_strap.less";
+@import "bootstrap/_strap.less";
 
 // YOUR CUSTOM STYLES
 // ------------------
