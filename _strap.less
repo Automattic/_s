@@ -175,22 +175,18 @@ Comment form
 
 /*
 Responsive embed media
-// http://www.tjkdesign.com/articles/how-to-resize-videos-on-the-fly.asp
 */
 
-.embed-container
-{
+.embed-container {
   position: relative;
   padding-bottom: 56.25%;
-  padding-top: @baseLineHeight;
-  margin: @baseLineHeight auto;
+  padding-top: 0;
   height: 0;
-  overflow: hidden;
-
 }
 
-.embed-container embed
-{
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
