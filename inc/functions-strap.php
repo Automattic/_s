@@ -181,7 +181,7 @@ function bootstrap_searchform_class( $bt = array() )
 
 add_filter( 'embed_oembed_html', 'bootstrap_oembed_html', 10, 4 );
 
-function bootstrap_oembed_html( $html )
+function bootstrap_oembed_html( $html, $url, $attr, $post_ID )
 {
     return '<div class="embed-container">' . $html . '</div>';
 }
