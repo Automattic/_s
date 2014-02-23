@@ -1,74 +1,26 @@
 
 /*
-Semantic Rows
+Semantic grid
 */
 
-#makeSemanticRow(@selector)
-{
-  .marginLeft(@gridGutterWidth)
-  {
-    @{selector} {
-      margin-left: @gridGutterWidth * -1;
-    }
-  }
-  @{selector} {
-    margin-left: @gridGutterWidth * -1;
-    .clearfix();
-  }
-
-  @media (max-width: 767px) {
-    .marginLeft(-0);
-  }
-  @media (min-width: 768px) and (max-width: 979px) {
-    .marginLeft(@gridGutterWidth768);
-  }
-  @media (min-width: 1200px) {
-    .marginLeft(@gridGutterWidth1200);
-  }
+#masthead, #content, #colophon {
+  .make-row();
 }
 
-#makeSemanticRow(~'#masthead');
-#makeSemanticRow(~'#content');
-#makeSemanticRow(~'#colophon');
-
-/*
-Semantic Cols
-*/
-
-#makeSemanticCol(@selector, @colSpan)
-{
-  .core (@gridColumnWidth, @gridGutterWidth) {
-    @{selector} {
-      float: left;
-      min-height: 1px; // prevent collapsing columns
-      margin-left: @gridGutterWidth;
-      width: (@gridColumnWidth * @colSpan) + (@gridGutterWidth * (@colSpan - 1));
-    }
-  }
-
-  @{selector} {
-    .makeColumn(@colSpan);
-  }
-  @media (max-width: 767px) {
-    @{selector} {
-      float: none;
-      display: block;
-      width: 100%;
-      margin-left: 0;
-      .box-sizing(border-box);
-    }
-  }
-@media (min-width: 768px) and (max-width: 979px) {
-  .core(@gridColumnWidth768, @gridGutterWidth768);
-  }
-@media (min-width: 1200px) {
-  .core(@gridColumnWidth1200, @gridGutterWidth1200);
-  }
-  }
-
-#makeSemanticCol(~'#primary', 9);
-#makeSemanticCol(~'#secondary', 3);
-#makeSemanticCol(~'.site-info', 12);
+#primary {
+  .make-sm-column(12);
+  .make-md-column(9);
+  .make-lg-column(8);
+}
+#secondary {
+  .make-sm-column(12);
+  .make-md-column(3);
+  .make-lg-column(3);
+  .make-lg-column-push(1);
+}
+footer .site-info {
+  .make-lg-column(12);
+}
 
 /*
 From the original _s style.css
