@@ -29,31 +29,31 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation navbar" role="navigation">
+		<nav id="site-navigation" class="main-navigation navbar navbar-default" role="navigation">
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+                    <span class="sr-only"><?php _e('Toggle navigation', '_s'); ?></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#">Brand</a>-->
+            </div>
 
-        <div class="navbar-inner">
-            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-
-            <div class="nav-collapse collapse">
+            <div class="collapse navbar-collapse" id="navbar-collapse-main">
                 <?php
                 wp_nav_menu( array(
                         'theme_location'  => 'primary',
                         'container'       => false,
-                        'menu_class'      => 'nav',
+                        'menu_class'      => 'nav navbar-nav',//  navbar-right
                         'walker'          => new Bootstrap_Nav_Menu(),
                     )
                 );
                 get_search_form();
                 ?>
+            </div><!-- /.navbar-collapse -->
 
-            </div><!-- .nav-collapse .collapse -->
-        </div><!-- .navbar-inner -->
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
