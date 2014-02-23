@@ -4,7 +4,7 @@ _strap
 **\_strap** is a starter theme for WordPress.
 It has the goal of integrating Twitter's **bootstrap** (https://github.com/twitter/bootstrap) into Automattic's **\_s** (https://github.com/Automattic/_s) with the smallest possible changeset.
 
-> \_strap works with Bootstrap :three:
+> \_strap works with Bootstrap :three:<br />
 > the [Bootstrap :two:](https://github.com/ptbello/_strap/tree/Bootstrap_2.3.2) version is still available and has its own branch: (https://github.com/ptbello/_strap/tree/Bootstrap_2.3.2)
 
 Like its big brother \_s, \_strap is not intended as Parent theme, rather as starting point to build a custom theme from scratch.
