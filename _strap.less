@@ -60,24 +60,25 @@ From the original _s style.css
   display: inline;
   float: left;
   max-width: 100%;
-  margin: @baseLineHeight @gridGutterWidth @baseLineHeight 0;
+  margin: @line-height-computed @grid-gutter-width @line-height-computed 0;
 }
 .alignright {
   display: inline;
   float: right;
   max-width: 100%;
-  margin: @baseLineHeight 0 @baseLineHeight @gridGutterWidth;
+  margin: @line-height-computed 0 @line-height-computed @grid-gutter-width;
 }
 .aligncenter,
 .aligncenter .caption,
 .thumbnail > a > img {
   clear: both;
   display: block;
-  margin: @baseLineHeight auto;
+  margin: @line-height-computed auto;
+  max-width: 100%;
   text-align: center;
 }
 .aligncenter {
-  margin: @baseLineHeight auto;
+  margin: @line-height-computed auto;
 }
 .thumbnail > a > img,
 .aligncenter .caption {
