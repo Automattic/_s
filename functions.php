@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 1170; /* pixels */
 }
 
 if ( ! function_exists( '_s_setup' ) ) :
@@ -93,7 +93,7 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '20120206', true );
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '20120206', true );
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
