@@ -162,40 +162,16 @@ Comment form
   display: block;
   white-space: normal;
 }
+#commentform p.form-submit
+{
+  .make-sm-column(9);
+  .make-sm-column-offset(3);
+}
 #commentform #submit
 {
   .btn;
 }
-#commentform .form-submit
-{
-  .form-actions;
-  padding-left: @horizontalComponentOffset;
-}
-@media (max-width: 480px) {
 
-// Remove the horizontal form styles
-  #commentform {
-    .control-label {
-      float: none;
-      width: auto;
-      padding-top: 0;
-      text-align: left;
-    }
-  // Move over all input controls and content
-    .controls {
-      margin-left: 0;
-    }
-  // Move the options list down to align with labels
-    .control-list {
-      padding-top: 0; // has to be padding because margin collaspes
-    }
-  // Move over buttons in .form-actions to align with .controls
-    .form-submit {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-}
 
 /*
 Responsive embed media
