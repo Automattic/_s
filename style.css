@@ -6108,9 +6108,10 @@ Responsive embed media
 */
 .embed-container {
   position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 0;
   height: 0;
+  padding-bottom: 56.25%;
+  padding-top: 20px;
+  margin: 20px auto;
 }
 .embed-container iframe,
 .embed-container object,
