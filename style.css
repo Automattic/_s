@@ -28,7 +28,7 @@ and Blueprint http://www.blueprintcss.org/
 1.0 - Reset
 2.0 - Typography
 3.0 - Elements
-4.0 - Inputs and buttons
+4.0 - Forms
 5.0 - Navigation
 	5.1 - Links
 	5.2 - Menus
@@ -238,7 +238,7 @@ th {
 }
 
 /*--------------------------------------------------------------
-4.0 Inputs and buttons
+4.0 Forms
 --------------------------------------------------------------*/
 button,
 input,
