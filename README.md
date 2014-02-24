@@ -35,6 +35,12 @@ What you put
 * After changes you should [compile](http://lesscss.org/usage) [/style.less](https://github.com/ptbello/_strap/blob/master/style.less) to [/style.css](https://github.com/ptbello/_strap/blob/master/style.css)
 * Of course you should edit any of the actual theme .php files as you see fit, exactly like you would do with ant other starter theme; if you alter the markup structure of the theme, i.e. create a different grid, you should use either use the orginal Bootsrap classes or the [mixins Bootstrap provides](http://getbootstrap.com/css/#grid-less) to attach the same behaviour to any element.
 
+Translations
+------------
+* Italian, by [@FrancescoGavello](https://github.com/FrancescoGavello)
+
+Have you translated \_strap into another language? Submit a pull request now!
+
 Made with \_strap
 ------------
 Here are some live websites using themes made with \_strap<br />

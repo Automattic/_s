@@ -1,0 +1,729 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: _strap\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2014-02-24 03:01+0100\n"
+"PO-Revision-Date: 2014-02-24 03:01+0100\n"
+"Last-Translator: Piero Bellomo <piero.bellomo@viewlab.net>\n"
+"Language-Team: \n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: __;_e;_esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: C:\\apache\\xampp\\htdocs\\www._strap.co\\wp-content"
+"\\themes\\_strap\n"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Sembra che la pagina non esista."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Sembra che non sia stato trovato nulla in questa posizione. Forse puoi "
+"provare uno dei link poco sotto, o una ricerca?"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:27
+msgid "Most Used Categories"
+msgstr "Categorie più usate"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:44
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Prova a cercare negli archivi per mese. %1$s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:27
+#, php-format
+msgid "Author: %s"
+msgstr "Autore: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:30
+#, php-format
+msgid "Day: %s"
+msgstr "Giorno: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:33
+#, php-format
+msgid "Month: %s"
+msgstr "Mese: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:36
+#, php-format
+msgid "Year: %s"
+msgstr "Anno: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:39
+msgid "Asides"
+msgstr "Digressioni"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:42
+msgid "Galleries"
+msgstr "Gallerie"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:45
+msgid "Images"
+msgstr "Immagini"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:48
+msgid "Videos"
+msgstr "Video"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:51
+msgid "Quotes"
+msgstr "Citazioni"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:54
+msgid "Links"
+msgstr "Link"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:57
+msgid "Statuses"
+msgstr "Status"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:60
+msgid "Audios"
+msgstr "Audio"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:63
+msgid "Chats"
+msgstr "Chat"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:66
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/sidebar.php:17
+msgid "Archives"
+msgstr "Archivi"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:37
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:54
+msgid "Comment navigation"
+msgstr "Navigazione commenti"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:38
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:55
+msgid "&larr; Older Comments"
+msgstr "&larr; Commenti precedenti"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:39
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:56
+msgid "Newer Comments &rarr;"
+msgstr "Commenti successivi &rarr;"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:66
+msgid "Comments are closed."
+msgstr "I commenti sono chiusi per questo articolo."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:13
+msgid "Nothing Found"
+msgstr "Nessun contenuto trovato"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto per pubblicare il tuo primo post? <a href=\"%1$s\">Inizia da qui</a>."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Spiacente, ma non ci sono risultati per il tuo termine di ricerca. Per "
+"favore riprova usando un termine diverso."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Sembra che non sia possibile trovare ciò che stai cercando. Forse una "
+"ricerca ti potrà aiutare."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-page.php:18
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:20
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:27
+msgid "Pages:"
+msgstr "Pagine"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-page.php:23
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:60
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:61
+msgid "Edit"
+msgstr "Modifica"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:29
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:32
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:38
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:48
+msgid ", "
+msgstr ", "
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:37
+#, php-format
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"Questo articolo è stato etichettato %2$s. Aggiungi il <a href=\"%3$s\" rel="
+"\"bookmark\">permalink</a> ai preferiti."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:39
+#, php-format
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Aggiungi il <a href=\"%3$s\" rel=\"bookmark\">permalink</a> ai preferiti."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:45
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"rel=\"bookmark\">permalink</a>."
+msgstr ""
+"Questo articolo è stato pubblicato in %1$s ed etichettato %2$s. Aggiungi il "
+"<a href=\"%3$s\" rel=\"bookmark\">permalink</a> ai preferiti."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:47
+#, php-format
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"Questo articolo è stato pubblicato in %1$s. Aggiungi il <a href=\"%3$s\" rel="
+"\"bookmark\">permalink</a> ai preferiti."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:24
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:42
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Pubblicato in %1$s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:52
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Etichette %1$s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:58
+msgid "Leave a comment"
+msgstr "Lascia un commento"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:58
+msgid "1 Comment"
+msgstr "1 Commento"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:58
+msgid "% Comments"
+msgstr "% Commenti"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:16
+#, php-format
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:18
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr "Theme: %1$s di %2$s."
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:51
+msgid "Primary Menu"
+msgstr "Menù principale"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:74
+msgid "Sidebar"
+msgstr "Barra laterale"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:33
+msgid "Skip to content"
+msgstr "Salta al contenuto"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:36
+msgid "Toggle navigation"
+msgstr "Inverti navigazione"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca per: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/sidebar.php:24
+msgid "Meta"
+msgstr "Meta"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/extras.php:63
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:132
+msgid "Name"
+msgstr "Nome"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:138
+msgid "Email"
+msgstr "Email"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:144
+msgid "Website"
+msgstr "Sito web"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:154
+#, php-format
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr ""
+"Puoi usare questi <abbr title=\"HyperText Markup Language\">HTML</abbr> tag "
+"e attributi: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:212
+msgid "Name your new _strapped theme"
+msgstr "Dai un nome al tuo nuovo tema _strap"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:216
+msgid "Theme name"
+msgstr "Nome del tema"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:217
+msgid "Theme slug"
+msgstr "Slug del tema"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:225
+msgid "Something like \"My Awesome Theme\" "
+msgstr "Qualcosa come \"Un Tema Straordinario\" "
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:233
+msgid "Something like \"my-awesome-theme\" or \"mat\" "
+msgstr "Qualcosa come \"\"un-tema-straordinario\" o \"uts\" "
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:280
+msgid "Name is required"
+msgstr "Nome è un campo obbligatorio"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:287
+#, php-format
+msgid "You must specify a valid Theme slug - try: %s"
+msgstr "Occorre specificare uno slug valido - prova con: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:294
+#, php-format
+msgid "%s is not a valid Theme slug - try: %s instead"
+msgstr "%s non è uno slug valido - prova con: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:320
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:321
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:338
+msgid "Build theme"
+msgstr "Crea tema"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:345
+msgid "_strap it!"
+msgstr "crea il tuo _strap!"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Navigazione articoli"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articoli precedenti"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:31
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articoli successivi <span class=\"meta-nav\">&rarr;</span>"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Navigazione per articolo"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:85
+#, php-format
+msgid ""
+"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
+"%2$s</span>"
+msgstr ""
+"<span class=\"posted-on\">Pubblicato il %1$s</span><span class=\"byline\"> "
+"da %2$s</span>"
+
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgctxt "comments title"
+#~ msgid "One thought on &ldquo;%2$s&rdquo;"
+#~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#~ msgstr[0] "Un pensiero su &ldquo;%2$s&rdquo;"
+#~ msgstr[1] "%1$s pensieri su &ldquo;%2$s&rdquo;"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgctxt "Previous post link"
+#~ msgid "<span class=\"meta-nav\">&larr;</span> %title"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#~ msgctxt "Next post link"
+#~ msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Pingback:"
+#~ msgstr "Pingback:"
+
+#~ msgid "%s <span class=\"says\">says:</span>"
+#~ msgstr "%s <span class=\"says\">ha detto:</span>"
+
+#~ msgctxt "1: date, 2: time"
+#~ msgid "%1$s at %2$s"
+#~ msgstr "%1$s alle %2$s"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Il tuo commento è in attesa di moderazione."
+
+#~ msgctxt "label"
+#~ msgid "Search for:"
+#~ msgstr "Cerca:"
+
+#~ msgctxt "placeholder"
+#~ msgid "Search &hellip;"
+#~ msgstr "Cerca &hellip;"
+
+#~ msgctxt "submit button"
+#~ msgid "Search"
+#~ msgstr "Cerca"
+
+#~ msgid "_s"
+#~ msgstr "_s"
+
+#~ msgid "http://underscores.me/"
+#~ msgstr "http://underscores.me/"
+
+#~ msgid ""
+#~ "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, "
+#~ "if you like. I'm a theme meant for hacking so don't use me as a "
+#~ "<em>Parent Theme</em>. Instead try turning me into the next, most "
+#~ "awesome, WordPress theme out there. That's what I'm here for."
+#~ msgstr ""
+#~ "Ciao. Sono uno starter theme di nome <code>_s</code>, o <em>underscores</"
+#~ "em>, se preferisci. Sono un tema fatto per l'hacking, non uarmi come "
+#~ "<em>Parent Theme</em>. Piuttosto prova a trasformarmi nel prossimo, più "
+#~ "straordinario tema di WordPress in circolazione. Sono qui pre questo."
+
+#~ msgid "Automattic"
+#~ msgstr "Automattic"
+
+#~ msgid "http://automattic.com/"
+#~ msgstr "http://automattic.com/"
+
+#~ msgid "Category Archives: %s"
+#~ msgstr "Archivio di categoria per: %s"
+
+#~ msgid "Tag Archives: %s"
+#~ msgstr "Archivi per il tag: %s"
+
+#~ msgid "Daily Archives: %s"
+#~ msgstr "Archivi per il giorno: %s"
+
+#~ msgid "Yearly Archives: %s"
+#~ msgstr "Archivio per l'anno: %s"
+
+#~ msgid "//italygreentravel.com/"
+#~ msgstr "//viaggiverdi.it"
+
+#~ msgid "Secondary Menu"
+#~ msgstr "Menù secondario"
+
+#~ msgid "Default Sidebar"
+#~ msgstr "Barra laterale di default"
+
+#~ msgid "en_GB"
+#~ msgstr "it_IT"
+
+#~ msgid "en-GB"
+#~ msgstr "it"
+
+#~ msgid "English"
+#~ msgstr "Italiano"
+
+#~ msgid ""
+#~ "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+#~ "\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size "
+#~ "image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s"
+#~ "\" rel=\"gallery\">%8$s</a>"
+#~ msgstr ""
+#~ "Pubblicato <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+#~ "\"%1$s\">%2$s</time></span> alle <a href=\"%3$s\" title=\"Link to full-"
+#~ "size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to "
+#~ "%7$s\" rel=\"gallery\">%8$s</a>"
+
+#~ msgid ""
+#~ "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post "
+#~ "a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s"
+#~ "\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</"
+#~ "a>."
+#~ msgstr ""
+#~ "<a class=\"comment-link\" href=\"#respond\" title=\"Pubblica il commento"
+#~ "\">Pubblica il tuo commento</a> o lascia un trackback: <a class="
+#~ "\"trackback-link\" href=\"%s\" title=\"URL Trackback per questo articolo"
+#~ "\" rel=\"trackback\">URL Trackback</a>."
+
+#~ msgid ""
+#~ "Comments are closed, but you can leave a trackback: <a class=\"trackback-"
+#~ "link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+#~ "\">Trackback URL</a>."
+#~ msgstr ""
+#~ "I commenti sono chiusi, ma puoi lasciare un trackback: <a class="
+#~ "\"trackback-link\" href=\"%s\" title=\"URL Trackback per il tuo post\" "
+#~ "rel=\"trackback\">URL Trackback</a>."
+
+#~ msgid ""
+#~ "Trackbacks are closed, but you can <a class=\"comment-link\" href="
+#~ "\"#respond\" title=\"Post a comment\">post a comment</a>."
+#~ msgstr ""
+#~ "I trackback sono chiusi, ma puoi <a class=\"comment-link\" href=\"#respond"
+#~ "\" title=\"Invia un commento\">inviare un commento</a>."
+
+#~ msgid "Both comments and trackbacks are currently closed."
+#~ msgstr "Sia i commenti che i trackback sono chiusi."
+
+#~ msgid "https://www.facebook.com/italygreentravel"
+#~ msgstr "https://www.facebook.com/viaggiverdi"
+
+#~ msgid "https://twitter.com/itagreentravel"
+#~ msgstr "https://twitter.com/viaggiverdi"
+
+#~ msgid "Follow @itagreentravel"
+#~ msgstr "Segui @viaggiverdi"
+
+#~ msgid ""
+#~ "http://viaggiverdi.us7.list-manage.com/subscribe/post?"
+#~ "u=c07c4359b125184388d5853a1&amp;id=7026e704f2"
+#~ msgstr ""
+#~ "http://viaggiverdi.us7.list-manage2.com/subscribe/post?"
+#~ "u=c07c4359b125184388d5853a1&amp;id=9a1a35e0f0"
+
+#~ msgid "Subscribe to our newsletter!"
+#~ msgstr "Iscriviti alla newsletter!"
+
+#~ msgid "My Email"
+#~ msgstr "La mia email"
+
+#~ msgid "Check availability"
+#~ msgstr "Verifica Disponibilità"
+
+#~ msgid "Offer"
+#~ msgstr "Offerta"
+
+#~ msgid "Parent Offer:"
+#~ msgstr "Genitore offerta "
+
+#~ msgid "All Offers"
+#~ msgstr "Tutte le Offerte"
+
+#~ msgid "View Offer"
+#~ msgstr "Vedi Offerta"
+
+#~ msgid "Add New Offer"
+#~ msgstr "Aggiungi Offerta"
+
+#~ msgid "New Offer"
+#~ msgstr "Nuova Offerta"
+
+#~ msgid "Edit Offer"
+#~ msgstr "Modifica Offerta"
+
+#~ msgid "Update Offer"
+#~ msgstr "Aggiorna Offerta"
+
+#~ msgid "No offers found"
+#~ msgstr "Nessuna offerta trovata"
+
+#~ msgid "No offers found in Trash"
+#~ msgstr "Nessuna offerta trovata nel cestino"
+
+#~ msgid "offer"
+#~ msgstr "offerta"
+
+#~ msgid "Special Offers from our Partners"
+#~ msgstr "Offerte Speciali dai nostri Partner"
+
+#~ msgid "<i class=\"icon-arrow-left\"></i> Older posts"
+#~ msgstr "<i class=\"icon-arrow-left\"></i> Articoli precedenti"
+
+#~ msgid "Newer posts <i class=\"icon-arrow-right\"></i>"
+#~ msgstr "Articoli successivi <i class=\"icon-arrow-right\"></i>"
+
+#~ msgid ""
+#~ "Posted on <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class="
+#~ "\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline\"> "
+#~ "by <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
+#~ "\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+#~ msgstr ""
+#~ "Pubblicato il <a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time "
+#~ "class=\"entry-date\" datetime=\"%3$s\">%4$s</time></a><span class=\"byline"
+#~ "\"> da <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" "
+#~ "title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#~ msgid "View all posts by %s"
+#~ msgstr "Sfoglia tutti i post di %s"
+
+#~ msgid "Continue reading"
+#~ msgstr "Continua"
+
+#~ msgid "Find Sustainable Accommodation"
+#~ msgstr "Trova il tuo Alloggio Ecosostenibile"
+
+#~ msgid "Older posts"
+#~ msgstr "Articoli meno recenti"
+
+#~ msgid "Newer posts"
+#~ msgstr "Articoli più recenti"
+
+#~ msgid "Events: "
+#~ msgstr "Eventi: "
+
+#~ msgid "Events"
+#~ msgstr "Eventi"
+
+#~ msgid "In the programme of"
+#~ msgstr "In the programme of"
+
+#~ msgid "Thank you for subscribing!"
+#~ msgstr "Grazie, ti abbiamo iscritto!"
+
+#~ msgid "Oops! Sorry, we encountered and error. Please email us on"
+#~ msgstr ""
+#~ "Spiacenti, si è verificato un errore. Per piacere, mandaci una email su "
+
+#~ msgid "Please provide a valid email"
+#~ msgstr "Inserisci un indirizzo emai valido"
+
+#~ msgid "Ita"
+#~ msgstr "Eng"
+
+#~ msgid "Italiano"
+#~ msgstr "Italiano"
+
+#~ msgid "Event Category Archives: %s"
+#~ msgstr "Archivio di Categoria Eventi: %s"
+
+#~ msgid "Ticket  + Hotel"
+#~ msgstr "Ticket  + Hotel"
+
+#~ msgid "Ticket + Bus"
+#~ msgstr "Ticket + Bus"
+
+#~ msgid "Buy Now"
+#~ msgstr "Compra Ora"
+
+#~ msgid "Soon Available"
+#~ msgstr "Presto Disponibile"
+
+#~ msgid "First name"
+#~ msgstr "Nome"
+
+#~ msgid "Last name"
+#~ msgstr "Cognome"
+
+#~ msgid "Current job"
+#~ msgstr "Professione"
+
+#~ msgid "Media Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Print"
+#~ msgstr "Stampa"
+
+#~ msgid "Online"
+#~ msgstr "Online"
+
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
+
+#~ msgid "Phone"
+#~ msgstr "Cell."
+
+#~ msgid "Pass Type"
+#~ msgstr "Tipo pass"
+
+#~ msgid "Press"
+#~ msgstr "Stampa"
+
+#~ msgid "Photo"
+#~ msgstr "Fotografia"
+
+#~ msgid "How do you intend to promote club to club?"
+#~ msgstr "Come promuoverai club to club?"
+
+#~ msgid "Press pass request"
+#~ msgstr "Richiesta accredito stampa"
+
+#~ msgid ""
+#~ "Thank you for your request, you will receive your accreditation "
+#~ "confirmation by mail."
+#~ msgstr ""
+#~ "Grazie per la tua richiesta, riceverai conferma del tuo accredito via e-"
+#~ "mail"
+
+#~ msgid "Form Errors"
+#~ msgstr "Attenzione: errori"
+
+#~ msgid "Extra pass (optional)"
+#~ msgstr "Extra pass (opzionale)"
+
+#~ msgid "Submit"
+#~ msgstr "Invia"
+
+#~ msgid "Tickets"
+#~ msgstr "Tickets"
+
+#~ msgid "Other Tickets"
+#~ msgstr "Altri Biglietti"
+
+#~ msgid "Please provide a valid e-mail address"
+#~ msgstr "Inserisci un indirizzo emai valido"
+
+#~ msgid "Events at: %s"
+#~ msgstr "Eventi a: %s"
+
+#~ msgid "Previews"
+#~ msgstr "Preview"
+
+#~ msgid "Regolamento club to club alfa romeo mito #C2C13"
+#~ msgstr "Regolamento club to club alfa romeo mito #C2C13"
+
+#~ msgid "Permalink to %s"
+#~ msgstr "Link permanente a %s"
+
+#~ msgid "More"
+#~ msgstr "Continua a leggere"
+
+#~ msgid "Highlights"
+#~ msgstr "Evidenziati"
+
+#~ msgid "Latest News"
+#~ msgstr "Ultimi articoli"
+
+#~ msgid "&larr; Previous"
+#~ msgstr "&larr; Precedente"
+
+#~ msgid "Next &rarr;"
+#~ msgstr "Successivo &rarr;"
+
+#~ msgid "Radar"
+#~ msgstr "Radar"
+
+#~ msgid "(Edit)"
+#~ msgstr "(Modifica)"
