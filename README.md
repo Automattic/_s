@@ -5,7 +5,7 @@ _strap
 It has the goal of integrating Twitter's **bootstrap** (https://github.com/twitter/bootstrap) into Automattic's **\_s** (https://github.com/Automattic/_s) with the smallest possible changeset.
 
 > \_strap works with Bootstrap :three:<br />
-> the [Bootstrap :two:](https://github.com/ptbello/_strap/tree/Bootstrap_2.3.2) version is still available and has its own branch: (https://github.com/ptbello/_strap/tree/Bootstrap_2.3.2)
+> the Bootstrap :two: version is [still available at its own branch](https://github.com/ptbello/_strap/tree/Bootstrap_2.3.2)
 
 Like its big brother \_s, \_strap is not intended as Parent theme, rather as starting point to build a custom theme from scratch.
 This means you will have to [replace](https://github.com/Automattic/_s#getting-started) all internal references to \_s with your new theme's name. No worries, you don't have to do it by hand: \_strap includes an automatic process \- just follow the instructions below.
@@ -34,3 +34,17 @@ What you put
 * You should add your custom styles at the end of [/style.less](https://github.com/ptbello/_strap/blob/master/style.less) and/or in extra .less files you should then `@import` in [/style.less](https://github.com/ptbello/_strap/blob/master/style.less)
 * After changes you should [compile](http://lesscss.org/usage) [/style.less](https://github.com/ptbello/_strap/blob/master/style.less) to [/style.css](https://github.com/ptbello/_strap/blob/master/style.css)
 * Of course you should edit any of the actual theme .php files as you see fit, exactly like you would do with ant other starter theme; if you alter the markup structure of the theme, i.e. create a different grid, you should use either use the orginal Bootsrap classes or the [mixins Bootstrap provides](http://getbootstrap.com/css/#grid-less) to attach the same behaviour to any element.
+
+Made with \_strap
+------------
+[http://clubtoclub.it](http://clubtoclub.it)<br />
+Design by [Boumaka](http://www.boumaka.it/). Code by @ptbello, @alevals<br />
+![clucbtoclub.it](https://raw.github.com/ptbello/_strap/_strap_made/clubtoclub.jpg)
+---
+[http://arenadiverona100x100.com](http://arenadiverona100x100.com)<br />
+Design by [Boumaka](http://www.boumaka.it/). Code by @ptbello, @alevals<br />
+![arenadiverona100x100.com](https://raw.github.com/ptbello/_strap/_strap_made/arenadiverona100x100.jpg)
+---
+[http://www.spaziocar.it/](http://www.spaziocar.it/)<br />
+Design by [Boumaka](http://www.boumaka.it/). Code by @ptbello<br />
+![spaziocar.it](https://raw.github.com/ptbello/_strap/_strap_made/spaziocar.jpg)
