@@ -38,13 +38,13 @@ What you put
 Made with \_strap
 ------------
 [http://clubtoclub.it](http://clubtoclub.it)<br />
-Design by [Boumaka](http://www.boumaka.it/). Code by @ptbello, @alevals<br />
-![clucbtoclub.it](https://raw.github.com/ptbello/_strap/_strap_made/clubtoclub.jpg)
+Design by [Boumaka](http://www.boumaka.it/). Code by (@ptbello)[https://github.com/ptbello], (@alevals)[https://github.com/alevals]<br />
+[![clucbtoclub.it](https://raw.github.com/ptbello/_strap/_strap_made/clubtoclub.jpg)](http://clubtoclub.it)
 ---
 [http://arenadiverona100x100.com](http://arenadiverona100x100.com)<br />
-Design by [Boumaka](http://www.boumaka.it/). Code by @ptbello, @alevals<br />
-![arenadiverona100x100.com](https://raw.github.com/ptbello/_strap/_strap_made/arenadiverona100x100.jpg)
+Design by [Boumaka](http://www.boumaka.it/). Code by (@ptbello)[https://github.com/ptbello], (@alevals)[https://github.com/alevals]<br />
+[![arenadiverona100x100.com](https://raw.github.com/ptbello/_strap/_strap_made/arenadiverona100x100.jpg)](http://arenadiverona100x100.com)
 ---
 [http://www.spaziocar.it/](http://www.spaziocar.it/)<br />
-Design by [Boumaka](http://www.boumaka.it/). Code by @ptbello<br />
-![spaziocar.it](https://raw.github.com/ptbello/_strap/_strap_made/spaziocar.jpg)
+Design by [Boumaka](http://www.boumaka.it/). Code by (@ptbello)[https://github.com/ptbello]<br />
+[![spaziocar.it](https://raw.github.com/ptbello/_strap/_strap_made/spaziocar.jpg)](http://www.spaziocar.it/)
