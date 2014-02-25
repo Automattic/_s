@@ -43,17 +43,17 @@ and Blueprint http://www.blueprintcss.org/
 11.0 - Infinite scroll
 12.0 - Media
 --------------------------------------------------------------*/
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "typography";
-@import "elements";
-@import "inputs-buttons";
-@import "navigation";
-@import "accessibility";
-@import "alignments";
-@import "clearings";
-@import "widgets";
-@import "content";
-@import "infinite-scroll";
-@import "media";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/reset";
+@import "partials/typography";
+@import "partials/elements";
+@import "partials/inputs-buttons";
+@import "partials/navigation";
+@import "partials/accessibility";
+@import "partials/alignments";
+@import "partials/clearings";
+@import "partials/widgets";
+@import "partials/content";
+@import "partials/infinite-scroll";
+@import "partials/media";
