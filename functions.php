@@ -55,7 +55,12 @@ function _s_setup() {
 	) ) );
 
 	// Enable support for HTML5 markup.
-	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+	add_theme_support( 'html5', array(
+		'comment-list',
+		'search-form',
+		'comment-form',
+		'gallery',
+	) );
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );

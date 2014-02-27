@@ -630,7 +630,7 @@ a:active {
 	height: auto;
 	max-width: 90%;
 }
-.site-main .gallery dd {
+.site-main .gallery figcaption {
 	margin: 0;
 }
 .site-main .gallery-columns-4 .gallery-item {
