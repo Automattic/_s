@@ -23,7 +23,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta entry-footer">
+	<footer class="entry-footer">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', '_s' ) );
@@ -58,5 +58,5 @@
 		?>
 
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta.entry-footer -->
+	</footer><!-- entry-footer -->
 </article><!-- #post-## -->
