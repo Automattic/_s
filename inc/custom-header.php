@@ -21,8 +21,6 @@
  * @uses _s_header_style()
  * @uses _s_admin_header_style()
  * @uses _s_admin_header_image()
- *
- * @package _s
  */
 function _s_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_s_custom_header_args', array(
