@@ -1,0 +1,155 @@
+#outer-wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#inner-wrap {
+    width: 100%;
+    position: relative;
+    .js-ready & {
+        @media screen and ( max-width: $tablet - 1 ) {
+            right: 0;
+        }
+    }
+    .js-nav & {
+        @media screen and ( max-width: $tablet - 1 ) {
+            right: 70%;
+        }
+    }
+    .csstransforms3d.csstransitions.js-ready & {
+        @media screen and ( max-width: $tablet - 1 ) {
+            right: 0 !important;
+            @include translate3d( 0, 0, 0);
+            @include transition-duration( 500ms );
+            @include transition-timing-function( ease );
+            @include backface-visibility( hidden );
+        }
+    }
+    .csstransforms3d.csstransitions.js-nav & {
+        @media screen and ( max-width: $tablet - 1 ) {
+            @include transform( translate3d( -70%, 0, 0 ) scale3d(1, 1, 1) );
+        }
+
+    }
+}
+.menu-btn {
+    margin: 0.5em;
+    text-align: right;
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        display: none;
+    }
+}
+.menu-btn__icon {
+    padding: 10px 14px;
+    display: inline-block;
+    background: $charcoal;
+    color: white;
+    @include rem( 'font-size', 22px );
+    @include border-radius( 2px );
+    &:hover {
+        color: white;
+        background: $aqua;
+    }
+    & > span {
+        width: 18px;
+        height: 2px;
+        display: block;
+        background: #fff;
+        & + span {
+            margin-top: 3px;
+        }
+    }
+}
+.nav-primary { // #nav
+    @media screen and ( max-width: $tablet - 1 ) {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 200;
+        overflow: hidden;
+        color: white;
+    }
+    &:not(:target) {
+        @media screen and ( max-width: $tablet - 1 ) {
+            z-index: 1;
+            height: 0;
+        }
+    }
+    .js-ready & {
+        @media screen and ( max-width: $tablet - 1 ) {
+            height: 100%;
+            width: 70%;
+            right: -70%;
+            background: $off-black;
+            @include box-shadow( rgba(0, 0, 0, 0.25) 1.5em 0 1.5em -0.75em inset );
+        }
+        .block {
+            background: transparent;
+        }
+    }
+    .csstransforms3d.csstransitions.js-ready & {
+        @media screen and ( max-width: $tablet - 1 ) {
+            right: 0;
+            @include translate3d( 100%, 0, 0 );
+            @include backface-visibility( hidden );
+        }
+    }
+    .csstransforms3d.csstransitions.js-ready & {
+        .block {
+            @media screen and ( max-width: $tablet - 1 ) {
+                @include opacity( 0.7 );
+                @include transition( opacity 300ms 100ms, transform 500ms ease );
+                @include transform( translate3d( -70%, 0, 0 ) scale3d( 0.9, 0.9, 0.9 ) );
+                @include transform-origin( 50%, 0);
+            }
+        }
+    }
+    .csstransforms3d.csstransitions.js-nav & {
+        .block {
+            @media screen and ( max-width: $tablet - 1 ) {
+                @include opacity( 1 );
+                @include translate3d( 0, 0, 0 );
+            }
+        }
+    }
+    .block {
+        @media screen and ( max-width: $tablet - 1 ) {
+            margin: 0 auto;
+            z-index: 2;
+            position: relative;
+        }
+    }
+    .menu-main {
+        @media screen and ( max-width: $tablet - 1 ) {
+            border-top: 1px solid lighten( $off-black, 6% );
+        }
+        > li {
+            @media screen and ( max-width: $tablet - 1 ) {
+                display: block;
+                border-bottom: 1px solid lighten( $off-black, 6% );
+            }
+            a {
+                @media screen and ( max-width: $tablet - 1 ) {
+                    padding: 1em 2em;
+                    display: block;
+                    color: $grey;
+                }
+                &:focus, &:hover {
+                    @media screen and ( max-width: $tablet - 1 ) {
+                        color: white;
+                        background: $aqua;
+                    }
+                }
+            }
+        }
+    }
+}
+.head { // #top
+    > .head-row {
+        > .menu-btn {
+            @media screen and ( max-width: $tablet - 1 ) {
+                float: right;
+            }
+        }
+    }
+}
