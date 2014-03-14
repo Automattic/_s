@@ -35,6 +35,7 @@ $breakpoint-no-query-fallbacks: true;
 @import "modules/pagination";
 @import "modules/comments";
 @import "modules/social-profiles";
+@import "modules/mq-check";
 
 // /* States */
 @import "states/states";
