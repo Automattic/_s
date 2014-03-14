@@ -30,6 +30,11 @@ function _s_setup() {
     add_theme_support( 'automatic-feed-links' );
 
     /**
+     * Add html5 elements
+     */
+    add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );)
+
+    /**
      * Enable support for Post Thumbnails on posts and pages
      *
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
