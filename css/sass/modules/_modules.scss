@@ -10,3 +10,25 @@
 
 
 
+
+/* Main Menu
+   ========================================================================== */
+
+.entry-content {
+    table {
+        margin-bottom: 1em;
+        width: 100%;
+        border: 1px solid #efefef;
+        & thead, & tfoot, th {
+            background: #f3f3f3;
+            font-weight: bold;
+        }
+        & th, & td {
+            padding: 0.5em 0.625em 0.625em;
+            text-align: left;
+        }
+        & tr:nth-of-type( even ) {
+            background: #f9f9f9;
+        }
+    }
+}
