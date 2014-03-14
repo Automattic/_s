@@ -1,3 +1,7 @@
+
+/* Containers
+   ========================================================================== */
+
 %l-constrained {
 	@extend %clearfix;
 	margin: 0 auto;
@@ -9,4 +13,44 @@
 }
 .l-container {
 	@extend %clearfix;
+}
+
+
+
+
+/* Spacing
+   ========================================================================== */
+
+.l-padding {
+	padding: 0.5em;
+}
+.l-padding-h {
+	padding: 0 0.5em;
+}
+.l-padding-v {
+	padding: 0.5em 0;
+}
+.l-padding-m {
+	padding: 0.5em;
+	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+		padding: 0;
+	}
+}
+.l-padding-mh {
+	padding: 0 0.5em;
+	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+		padding: 0;
+	}
+}
+.l-padding-mv {
+	padding: 0.5em 0;
+	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+		padding: 0;
+	}
+}
+.l-padding-ml {
+	padding: 0.5em;
+	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+		padding: 1.5em;
+	}
 }
