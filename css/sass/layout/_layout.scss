@@ -10,23 +10,3 @@
 .l-container {
 	@extend %clearfix;
 }
-.l-breather {
-	margin: 1em 0;
-	img {
-		width: 100%;
-	}
-}
-.l-primary {
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		@include layout( $gutter: 0 ) {
-			@include grid-span( 16, 1 );
-		}
-	}
-}
-.l-secondary {
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		@include layout( $gutter: 0 ) {
-			@include grid-span( 8, 17 );
-		}
-	}
-}
