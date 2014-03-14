@@ -121,6 +121,24 @@ textarea {
 	display: inline-block;
 	background: white;
 	border: 1px solid $grey;
+	@include transition( border .25s, box-shadow .25s );
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+	border: 1px solid $blue;
+	@include box-shadow( $blue 0 0 5px );
 }
 input[type="submit"] {
 	@extend %btn;
