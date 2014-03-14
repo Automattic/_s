@@ -32,7 +32,7 @@ function _s_setup() {
     /**
      * Add html5 elements
      */
-    add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );)
+    add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
 
     /**
      * Enable support for Post Thumbnails on posts and pages
@@ -40,10 +40,7 @@ function _s_setup() {
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
      */
     // add_theme_support( 'post-thumbnails' );
-    // add_image_size( 's', 290 ); // Sidebar images
-    // add_image_size( 'ms', 480, 78, true ); // Home cat images
-    // add_image_size( 'm', 500, 300 ); // Homepage featured Event
-    // add_image_size( 'l', 624); // Content width (w/ sidebar)
+    // add_image_size( 's', 290 );
 
     /**
      * This theme uses wp_nav_menu() in one location.
