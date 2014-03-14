@@ -1,0 +1,39 @@
+/* Media Query Check
+   ========================================================================== */
+
+.mq-state {
+    content: "mobile";
+    position: relative; // needed for getting z-index value in js
+    z-index: 1; // denotes mobile
+    display: none;
+}
+@include breakpoint( $mobile-landscape ) {
+    .mq-state {
+        content: "mobile-landscape";
+        z-index: 1;
+    }
+}
+@include breakpoint( $tablet ) {
+    .mq-state {
+        content: "tablet";
+        z-index: 2;
+    }
+}
+@include breakpoint( $tablet-landscape ) {
+    .mq-state {
+        content: "tablet-landscape";
+        z-index: 2;
+    }
+}
+@include breakpoint( $site-constraint ) {
+    .mq-state {
+        content: "site-constraint";
+        z-index: 2;
+    }
+}
+@include breakpoint( $desktop ) {
+    .mq-state {
+        content: "desktop";
+        z-index: 2;
+    }
+}
