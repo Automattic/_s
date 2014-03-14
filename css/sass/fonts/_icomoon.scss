@@ -1,33 +1,15 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon/icomoon.eot');
-	src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/icomoon/icomoon.woff') format('woff'),
-		url('../fonts/icomoon/icomoon.ttf') format('truetype'),
-		url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+	src:url('../fonts/icomoon/icomoon.eot?nmwsid');
+	src:url('../fonts/icomoon/icomoon.eot?#iefixnmwsid') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff?nmwsid') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf?nmwsid') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg?nmwsid#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
-	font-family: 'icomoon';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-.icon-twitter, .icon-facebook, .icon-linkedin, .icon-rss, .icon-envelope-alt, .icon-instagram, .icon-youtube, .icon-vimeo, .icon-tumblr, .icon-pinterest, .icon-googleplus, .icon-flickr, .icon-close, .icon-search, .icon-arrow-left, .icon-arrow-right, .icon-arrow-down, .icon-arrow-up, .icon-warning, .icon-menu, .icon-location, .icon-calendar, .icon-pencil, .icon-podcast, .icon-newspaper-alt, .icon-tools, .icon-star, .icon-user, .icon-plus-sign {
+[class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -35,93 +17,33 @@ you can use the generic selector below, but it's slower:
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+
+	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-.icon-twitter:before {
-	content: "\74";
-}
-.icon-facebook:before {
-	content: "\66";
-}
-.icon-linkedin:before {
-	content: "\69";
-}
-.icon-rss:before {
-	content: "\72";
-}
-.icon-envelope-alt:before {
-	content: "\6d";
-}
-.icon-instagram:before {
-	content: "\6e";
-}
-.icon-youtube:before {
-	content: "\79";
-}
-.icon-vimeo:before {
-	content: "\76";
-}
-.icon-tumblr:before {
-	content: "\21";
-}
-.icon-pinterest:before {
-	content: "\70";
-}
-.icon-googleplus:before {
-	content: "\22";
-}
-.icon-flickr:before {
-	content: "\23";
-}
-.icon-close:before {
-	content: "\2715";
-}
-.icon-search:before {
-	content: "\260c";
+
+.icon-arrow-right:before {
+	content: "\3e";
 }
 .icon-arrow-left:before {
-	content: "\2190";
-}
-.icon-arrow-right:before {
-	content: "\2192";
+	content: "\3c";
 }
 .icon-arrow-down:before {
-	content: "\2193";
+	content: "\7c";
 }
 .icon-arrow-up:before {
-	content: "\2191";
+	content: "\5e";
 }
-.icon-warning:before {
-	content: "\25b2";
+.icon-search:before {
+	content: "\3f";
 }
 .icon-menu:before {
-	content: "\2630";
+	content: "\3d";
 }
-.icon-location:before {
-	content: "\25bc";
+.icon-close:before {
+	content: "\78";
 }
-.icon-calendar:before {
-	content: "\25a9";
+.icon-play:before {
+	content: "\e600";
 }
-.icon-pencil:before {
-	content: "\270e";
-}
-.icon-podcast:before {
-	content: "\2669";
-}
-.icon-newspaper-alt:before {
-	content: "\274f";
-}
-.icon-tools:before {
-	content: "\2692";
-}
-.icon-star:before {
-	content: "\2605";
-}
-.icon-user:before {
-	content: "\260d";
-}
-.icon-plus-sign:before {
-	content: "\271a";
-}
-

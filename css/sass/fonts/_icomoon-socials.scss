@@ -1,46 +1,39 @@
 @font-face {
 	font-family: 'socials';
-	src:url('../fonts/icomoon-socials/socials.eot');
-	src:url('../fonts/icomoon-socials/socials.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/icomoon-socials/socials.woff') format('woff'),
-		url('../fonts/icomoon-socials/socials.ttf') format('truetype'),
-		url('../fonts/icomoon-socials/socials.svg#socials') format('svg');
+	src:url('../fonts/socials/socials.eot?5unk66');
+	src:url('../fonts/socials/socials.eot?#iefix5unk66') format('embedded-opentype'),
+		url('../fonts/socials/socials.woff?5unk66') format('woff'),
+		url('../fonts/socials/socials.ttf?5unk66') format('truetype'),
+		url('../fonts/socials/socials.svg?5unk66#socials') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
+.icon-facebook,
+.icon-linkedin,
+.icon-rss,
+.icon-email,
+.icon-instagram,
+.icon-youtube,
+.icon-vimeo,
+.icon-tumblr,
+.icon-pinterest,
+.icon-googleplus,
+.icon-flickr,
+.icon-twitter, {
 	font-family: 'socials';
-	content: attr(data-icon);
 	speak: none;
+	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+
+	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-.icon-twitter, .icon-facebook, .icon-linkedin, .icon-rss, .icon-envelope-alt, .icon-instagram, .icon-youtube, .icon-vimeo, .icon-tumblr, .icon-pinterest, .icon-googleplus, .icon-flickr {
-	font-family: 'socials';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-.icon-twitter:before {
-	content: "\74";
-}
 .icon-facebook:before {
 	content: "\66";
 }
@@ -50,7 +43,7 @@ you can use the generic selector below, but it's slower:
 .icon-rss:before {
 	content: "\72";
 }
-.icon-envelope-alt:before {
+.icon-email:before {
 	content: "\6d";
 }
 .icon-instagram:before {
@@ -73,4 +66,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-flickr:before {
 	content: "\6b";
+}
+.icon-twitter:before {
+	content: "\74";
 }
