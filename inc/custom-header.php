@@ -87,6 +87,9 @@ function _s_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing:    border-box;
+			box-sizing:         border-box;
 			border: none;
 		}
 		#headimg h1,
