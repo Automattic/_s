@@ -102,9 +102,11 @@ function _s_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
+			'fields'     => 'ids',
 			'hide_empty' => 1,
-			'fields' => 'ids',
-			'number' => 2, // we only need to know if there is more than one category 
+			
+			// We only need to know if there is more than one category.
+			'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.
@@ -113,7 +115,7 @@ function _s_categorized_blog() {
 		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( $all_the_cool_cats > 1 ) {
 		// This blog has more than 1 category so _s_categorized_blog should return true.
 		return true;
 	} else {
