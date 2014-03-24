@@ -104,6 +104,7 @@ function _s_categorized_blog() {
 		$all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
 			'fields' => 'ids',
+			'number' => 2, // we only need to know if there is more than one category 
 		) );
 
 		// Count the number of categories that are attached to the posts.
