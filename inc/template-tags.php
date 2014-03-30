@@ -10,8 +10,6 @@
 if ( ! function_exists( '_s_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
- *
- * @return void
  */
 function _s_paging_nav() {
 	// Don't print empty markup if there's only one page.
@@ -40,8 +38,6 @@ endif;
 if ( ! function_exists( '_s_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
- *
- * @return void
  */
 function _s_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
@@ -97,6 +93,8 @@ endif;
 
 /**
  * Returns true if a blog has more than 1 category.
+ *
+ * @return bool
  */
 function _s_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
