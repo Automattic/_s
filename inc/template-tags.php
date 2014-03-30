@@ -99,19 +99,23 @@ endif;
  * Returns true if a blog has more than 1 category.
  */
 function _s_categorized_blog() {
-	if ( false === ( $categories = get_transient( '_s_categories' ) ) ) {
+	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$categories = get_categories( array(
+		$all_the_cool_cats = get_categories( array(
+			'fields'     => 'ids',
 			'hide_empty' => 1,
+
+			// We only need to know if there is more than one category.
+			'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.
-		$categories = count( $categories );
+		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( '_s_categories', $categories );
+		set_transient( '_s_categories', $all_the_cool_cats );
 	}
 
-	if ( '1' != $categories ) {
+	if ( $all_the_cool_cats > 1 ) {
 		// This blog has more than 1 category so _s_categorized_blog should return true.
 		return true;
 	} else {
