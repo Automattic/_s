@@ -3,8 +3,10 @@ article {
     background-color: white;
   }
   .hfeed &.hentry {
-  		border:1px solid light-gray;
-        @include rounded(10px);
+	   background:#fff;
+	   margin-bottom:30px;  		
+       border:1px solid $light-gray;
+       @include rounded(10px);
   }
 }
 

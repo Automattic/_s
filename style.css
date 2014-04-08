@@ -48,7 +48,7 @@ body #page {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 38, ../../../../../../Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 body #page:after {
   content: "";
   display: table;
@@ -73,7 +73,9 @@ body.home article.post.hentry {
 }
 /* line 5, library/sass/_modules.scss */
 .hfeed article.hentry {
-  border: 1px solid light-gray;
+  background: #fff;
+  margin-bottom: 30px;
+  border: 1px solid #e3e4dc;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
