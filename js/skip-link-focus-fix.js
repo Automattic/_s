@@ -4,8 +4,9 @@
 	    is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
 
 	if ( ( is_webkit || is_opera || is_ie ) && 'undefined' !== typeof( document.getElementById ) ) {
-		var eventMethod = ( window.addEventListener ) ? 'addEventListener' : 'attachEvent';
-		window[ eventMethod ]( 'hashchange', function() {
+		var eventMethod = ( window.addEventListener ) ? 'addEventListener' : 'attachEvent',
+		    eventPrefix = ( window.addEventListener ) ? '' : 'on';
+		window[ eventMethod ]( eventPrefix + 'hashchange', function() {
 			var element = document.getElementById( location.hash.substring( 1 ) );
 
 			if ( element ) {
