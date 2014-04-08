@@ -71,3 +71,11 @@ body #page:after {
 body.home article.post.hentry {
   background-color: white;
 }
+/* line 5, library/sass/_modules.scss */
+.hfeed article.hentry {
+  border: 1px solid light-gray;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
