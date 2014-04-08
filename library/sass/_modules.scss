@@ -3,7 +3,7 @@ article {
     background-color: white;
   }
   .hfeed &.hentry {
-        
+        @include rounded(10px);
   }
 }
 

@@ -45,3 +45,10 @@ UTILITIES
 	&:before, &:after { content: ""; display: table; }
 	&:after { clear: both; }
 }
+
+@mixin rounded($radius) {
+    -moz-border-radius:  $radius;
+    -webkit-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
