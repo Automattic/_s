@@ -42,6 +42,7 @@ and Blueprint http://www.blueprintcss.org/
 	10.3 - Comments
 11.0 - Infinite scroll
 12.0 - Media
+	12.1 - Galleries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -627,21 +628,49 @@ a:active {
 .site-main .gallery {
 	margin-bottom: 1.5em;
 }
-.gallery-caption {
+/*--------------------------------------------------------------
+12.1 Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin: auto auto 1.5em;
 }
-.site-main .gallery a img {
+.gallery-item {
+	float: left;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 14%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+.gallery a img {
 	border: none;
 	height: auto;
 	max-width: 90%;
 }
-.site-main .gallery dd,
-.site-main .gallery figcaption {
-	margin: 0;
-}
-.site-main .gallery-columns-4 .gallery-item {
-}
-.site-main .gallery-columns-4 .gallery-item img {
-}
+.gallery-caption {}
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
