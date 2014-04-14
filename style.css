@@ -42,6 +42,8 @@ and Blueprint http://www.blueprintcss.org/
 	10.3 - Comments
 11.0 - Infinite scroll
 12.0 - Media
+	12.1 - Captions
+	12.2 - Galleries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -608,6 +610,16 @@ a:active {
 	margin-top: 0;
 	padding: 0;
 }
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
 .wp-caption {
 	border: 1px solid #ccc;
 	margin-bottom: 1.5em;
@@ -624,27 +636,41 @@ a:active {
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
-.site-main .gallery {
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
 	margin-bottom: 1.5em;
 }
-.gallery-caption {
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
 }
-.site-main .gallery a img {
-	border: none;
-	height: auto;
-	max-width: 90%;
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
 }
-.site-main .gallery dd,
-.site-main .gallery figcaption {
-	margin: 0;
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
 }
-.site-main .gallery-columns-4 .gallery-item {
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
 }
-.site-main .gallery-columns-4 .gallery-item img {
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
 }
-/* Make sure embeds and iframes fit their containers */
-embed,
-iframe,
-object {
-	max-width: 100%;
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
 }
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+.gallery-caption {}
