@@ -30,7 +30,7 @@ TYPOGRAPHY
 /*********
 UTILITIES
 *********/
-/* line 8, library/sass/_base.scss */
+/* line 8, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_base.scss */
 #primary {
   width: 74.57627%;
   float: left;
@@ -38,7 +38,7 @@ UTILITIES
   display: inline;
 }
 
-/* line 12, library/sass/_base.scss */
+/* line 12, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_base.scss */
 #secondary {
   width: 23.72881%;
   float: left;
@@ -50,15 +50,15 @@ UTILITIES
   display: inline;
 }
 
-/* line 1, library/sass/_lcarsstrap.scss */
+/* line 1, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_lcarsstrap.scss */
 body {
   background: #fce9c9;
 }
-/* line 3, library/sass/_lcarsstrap.scss */
+/* line 3, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_lcarsstrap.scss */
 body a {
   text-decoration: none;
 }
-/* line 4, library/sass/_lcarsstrap.scss */
+/* line 4, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_lcarsstrap.scss */
 body #page {
   *zoom: 1;
   max-width: 59em;
@@ -68,30 +68,30 @@ body #page {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 38, C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, /Applications/Scout.app/Contents/Resources/vendor/gems/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 body #page:after {
   content: "";
   display: table;
   clear: both;
 }
 @media (min-width: 39em) {
-  /* line 4, library/sass/_lcarsstrap.scss */
+  /* line 4, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_lcarsstrap.scss */
   body #page {
     max-width: 39em;
   }
 }
 @media (min-width: 59em) {
-  /* line 4, library/sass/_lcarsstrap.scss */
+  /* line 4, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_lcarsstrap.scss */
   body #page {
     max-width: 59em;
   }
 }
 
-/* line 2, library/sass/_modules.scss */
+/* line 2, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_modules.scss */
 body.home article.post.hentry {
   background-color: white;
 }
-/* line 5, library/sass/_modules.scss */
+/* line 5, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_modules.scss */
 .hfeed article.hentry {
   background: #fff;
   margin-bottom: 30px;
@@ -100,4 +100,19 @@ body.home article.post.hentry {
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
   border-radius: 10px;
+}
+
+/* line 13, /Users/yossarian/Sites/vagrantpress/wordpress/wp-content/themes/Left-Corners-And-RightS/library/sass/_modules.scss */
+.widget {
+  background: #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #2f1650;
+  padding: 8px 21px;
+  margin: 12px auto;
+  padding-top: 0;
+  border-top: 0;
+  overflow: hidden;
 }

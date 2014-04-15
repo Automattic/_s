@@ -10,3 +10,13 @@ article {
   }
 }
 
+.widget {
+	background: #fff;
+	@include rounded(10px);
+	border:1px solid $dark-purple;
+	padding: 8px 21px;
+	margin: 12px auto;
+	padding-top: 0;
+	border-top: 0;
+	overflow: hidden;
+}
