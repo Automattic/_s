@@ -30,6 +30,26 @@ TYPOGRAPHY
 /*********
 UTILITIES
 *********/
+/* line 8, library/sass/_base.scss */
+#primary {
+  width: 74.57627%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+}
+
+/* line 12, library/sass/_base.scss */
+#secondary {
+  width: 23.72881%;
+  float: left;
+  margin-right: 1.69492%;
+  display: inline;
+  float: right;
+  margin-right: 0;
+  *margin-left: -1em;
+  display: inline;
+}
+
 /* line 1, library/sass/_lcarsstrap.scss */
 body {
   background: #fce9c9;
@@ -41,8 +61,8 @@ body a {
 /* line 4, library/sass/_lcarsstrap.scss */
 body #page {
   *zoom: 1;
-  max-width: 9em;
-  _width: 9em;
+  max-width: 59em;
+  _width: 59em;
   padding-left: 1em;
   padding-right: 1em;
   margin-left: auto;

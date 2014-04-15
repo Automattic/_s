@@ -1,6 +1,15 @@
-$total-columns: 2;
+$total-columns: 12;
 $column-width: 4em;
 $gutter-width: 1em;
 $grid-padding: $gutter-width;
 $tablet: 8;
 $computer: 12;
+
+#primary {
+    @include span-columns(9,12);
+}
+
+#secondary {
+    @include span-columns(3,12);
+    @include omega;
+}
