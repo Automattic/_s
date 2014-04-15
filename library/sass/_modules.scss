@@ -14,9 +14,16 @@ article {
 	background: #fff;
 	@include rounded(10px);
 	border:1px solid $dark-purple;
-	padding: 8px 21px;
+	padding: 8px $widget-side-padding;
 	margin: 12px auto;
 	padding-top: 0;
 	border-top: 0;
 	overflow: hidden;
+    .widget-title {
+        background: $light-blue;
+        margin-top: 0;
+        margin-right: -$widget-side-padding;
+        margin-left: -$widget-side-padding;
+        @include rounded-header(10px);    
+    }
 }

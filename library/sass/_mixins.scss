@@ -27,6 +27,12 @@ $link-color:	$navy;
 $link-hover: 	$light-blue;
 
 /*********
+Sizings
+*********/
+
+$widget-side-padding: 21px;
+
+/*********
 TYPOGRAPHY
 *********/
 %serif{
@@ -51,4 +57,15 @@ UTILITIES
     -webkit-border-radius: $radius;
     -o-border-radius: $radius;
     border-radius: $radius;
+}
+
+@mixin rounded-header($radius) {
+    -moz-border-top-right-radius: $radius;
+	-moz-border-top-left-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	-o-border-top-right-radius: $radius;
+	-o-border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
 }
