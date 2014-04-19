@@ -9,9 +9,106 @@ http://codex.wordpress.org/Right_to_Left_Language_Support
 
 */
 
-/*
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Typography
+3.0 - Elements
+4.0 - Forms
+5.0 - Navigation
+  5.2 - Menus
+6.0 - Accessibility
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
 body {
 	direction: rtl;
 	unicode-bidi: embed;
 }
-*/
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  font-family: tahoma;
+}
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+ul, ol {
+  margin: 0 3em 1.5em 0;
+}
+li > ul,
+li > ol {
+  margin-left: 0;
+  margin-right: 1.5em;
+}
+dd {
+  margin: 0 0 1.5em 1.5em;
+}
+
+/*--------------------------------------------------------------
+4.0 Forms
+--------------------------------------------------------------*/
+textarea {
+  padding-right: 3px;
+}
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  float: right;
+}
+.main-navigation ul {
+  padding-right: 0;
+}
+.main-navigation li {
+  float: right;
+}
+.main-navigation ul ul {
+  float: right;
+  right: 0;
+}
+.main-navigation ul ul ul {
+  right: 100%;
+}
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: right;
+}
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+  float: left;
+  text-align: left;
+  width: 50%;
+}
+
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  left: 0;
+  right: 5px;
+  padding: 15px 0 14px 23px;
+}
