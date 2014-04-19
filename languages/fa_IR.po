@@ -1,0 +1,315 @@
+# Copyright (C) 2014 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0-wpcom\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2014-03-30 17:37:52+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-04-19 13:08+0330\n"
+"Last-Translator: Mohammad Hossein Mojtahedi <admin@mhm5000.ir>\n"
+"Language-Team: Blue Tree <info@bluetree.i>\n"
+"X-Generator: Poedit 1.6.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: fa_IR\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "صفحه مورد نظر پیدا نشد!"
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"تو این قسمت چیزی پیدا نشد. شاید بهتر باشه به یکی از این لینک‌ها سر بزنید یا "
+"یک جست‌جو انجام بدید؟"
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "موضوعات پر استفاده"
+
+#. translators: %1$s: smiley
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "بایگانی‌های ماهانه رو امتحان کنید. %1$s"
+
+#: archive.php:27
+msgid "Author: %s"
+msgstr "نویسنده: %s"
+
+#: archive.php:30
+msgid "Day: %s"
+msgstr "روز: %s"
+
+#: archive.php:33
+msgid "Month: %s"
+msgstr "ماه: %s"
+
+#: archive.php:33
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:36
+msgid "Year: %s"
+msgstr "سال: %s"
+
+#: archive.php:36
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:39
+msgid "Asides"
+msgstr "کلمات قصار"
+
+#: archive.php:42
+msgid "Galleries"
+msgstr "گالری‌ها"
+
+#: archive.php:45
+msgid "Images"
+msgstr "تصاویر"
+
+#: archive.php:48
+msgid "Videos"
+msgstr "ویدیو"
+
+#: archive.php:51
+msgid "Quotes"
+msgstr "نقل قول"
+
+#: archive.php:54
+msgid "Links"
+msgstr "لینک"
+
+#: archive.php:57
+msgid "Statuses"
+msgstr "وضعیت"
+
+#: archive.php:60
+msgid "Audios"
+msgstr "فایل صوتی"
+
+#: archive.php:63
+msgid "Chats"
+msgstr "گپ"
+
+#: archive.php:66 sidebar.php:16
+msgid "Archives"
+msgstr "آرشیو‌ها"
+
+#: comments.php:28
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "یک نظر درباره‌ی &rdquo;%2$s&ldquo;"
+
+#: comments.php:35 comments.php:52
+msgid "Comment navigation"
+msgstr "پیمایش نظرات"
+
+#: comments.php:36 comments.php:53
+msgid "&larr; Older Comments"
+msgstr "&rarr; نظرات قدیمی‌تر"
+
+#: comments.php:37 comments.php:54
+msgid "Newer Comments &rarr;"
+msgstr "نظرات جدید‌تر&larr;"
+
+#: comments.php:64
+msgid "Comments are closed."
+msgstr "امکان نظر‌دهی وجود ندارد"
+
+#: content-none.php:13
+msgid "Nothing Found"
+msgstr "چیزی پیدا نشد"
+
+#: content-none.php:19
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"آماده ارسال اولین مطلب خود هستید؟ <a href=\"%1$s\">از اینجا شروع کنید</a>."
+
+#: content-none.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"متأسفانه جست‌جوی مورد نظر بی‌نتیجه بود. لطفا با لغاتی دیگر، دوباره آزمایش کنید."
+
+#: content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"مثل اینکه نمی‌تونیم صفحه‌ی مورد نظرتون رو پیدا کنیم. شاید جست‌جو بتونه کمکتون "
+"کنه."
+
+#: content-page.php:18 content-single.php:20 content.php:27
+msgid "Pages:"
+msgstr "صفحات:"
+
+#: content-page.php:23 content-single.php:60 content.php:61
+msgid "Edit"
+msgstr "ویرایش"
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:29 content-single.php:32 content.php:38 content.php:48
+msgid ", "
+msgstr ", "
+
+#: content-single.php:37
+msgid ""
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"این مطلب برچسب %2$s دارد. <a href=\"%3$s\" rel=\"bookmark\">لینک ثابتش</a> "
+"را بوک‌مارک کنید."
+
+#: content-single.php:39
+msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+msgstr "این <a href=\"%3$s\" rel=\"bookmark\">لینک ثابت</a> را بوک‌مارک کنید."
+
+#: content-single.php:45
+msgid ""
+"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
+"rel=\"bookmark\">permalink</a>."
+msgstr ""
+"این مطلب در  %1$s ارسال شده و برچسب  %2$s دارد. <a href=\"%3$s\" rel="
+"\"bookmark\">لینک ثابتش</a> را بوک‌مارک کنید."
+
+#: content-single.php:47
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+"این مطلب در %1$s ارسال شده است. <a href=\"%3$s\" rel=\"bookmark\">لینک "
+"ثابتش</a> را بوک‌مارک کنید."
+
+#: content.php:24
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "ادامه مطلب <span class=\"meta-nav\">&larr;</span>"
+
+#: content.php:42
+msgid "Posted in %1$s"
+msgstr "در %1$s ارسال شده"
+
+#: content.php:52
+msgid "Tagged %1$s"
+msgstr "برچسب %1$s"
+
+#: content.php:58
+msgid "Leave a comment"
+msgstr "نظر دهید"
+
+#: content.php:58
+msgid "1 Comment"
+msgstr "۱ نظر"
+
+#: content.php:58
+msgid "% Comments"
+msgstr "% نظر"
+
+#: footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: footer.php:15
+msgid "Proudly powered by %s"
+msgstr "با افتخار نیرو گرفته از %s"
+
+#: footer.php:17
+msgid "Theme: %1$s by %2$s."
+msgstr "قالب : %1$s توسط %2$s"
+
+#: functions.php:45
+msgid "Primary Menu"
+msgstr "منوی اولیه"
+
+#: functions.php:73
+msgid "Sidebar"
+msgstr "نوار کناری"
+
+#: header.php:31
+msgid "Menu"
+msgstr "منو"
+
+#: header.php:32
+msgid "Skip to content"
+msgstr "پرش به محتوا"
+
+#: inc/extras.php:63
+msgid "Page %s"
+msgstr "صفحه‌ی %s"
+
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "پیمایش مطالب"
+
+#: inc/template-tags.php:27
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&rarr;</span> مطالب قدیمی"
+
+#: inc/template-tags.php:31
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "مطالب جدید‌تر <span class=\"meta-nav\">&larr;</span>"
+
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "پیمایش مطلب"
+
+#: inc/template-tags.php:59
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&rarr;</span> %title"
+
+#: inc/template-tags.php:60
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&larr;</span>"
+
+#: inc/template-tags.php:85
+msgid ""
+"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
+"%2$s</span>"
+msgstr ""
+"<span class=\"posted-on\">در تاریخ %1$s</span><span class=\"byline\"> توسط "
+"%2$s</span> ارسال شده است."
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "نتایج جستجو برای %s"
+
+#: sidebar.php:23
+msgid "Meta"
+msgstr "متا"
+
+#. Theme Name of the plugin/theme
+msgid "_s"
+msgstr "_s"
+
+#. Theme URI of the plugin/theme
+msgid "http://underscores.me/"
+msgstr "http://underscores.me/"
+
+#. Description of the plugin/theme
+msgid ""
+"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
+"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
+"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
+"theme out there. That's what I'm here for."
+msgstr ""
+"سلام. من یک قالب خامم؛ اسمم <code>_s</code> یا <em>underscores</"
+"em>(آندراسکوز)‌ه. من درست شدم تا من رو تزئین کنید. پس دست به کار بشید."
+
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr "Automattic"
+
+#. Author URI of the plugin/theme
+msgid "http://automattic.com/"
+msgstr "http://automattic.com/"
