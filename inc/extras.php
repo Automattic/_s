@@ -68,3 +68,17 @@ function lcarzs_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'lcarzs_wp_title', 10, 2 );
+
+function lcarzs_favicon() {
+	echo '<link rel="shortcut icon" href="' . get_bloginfo('stylesheet_directory') . '/library/images/favicon.ico" />';
+}
+
+add_action('wp_head', 'lcarzs_favicon');
+
+//Adding custom font for headlines.
+function lcarzs_fonts() {
+	echo "<link href='http://fonts.googleapis.com/css?family=Nobile:400,700' rel='stylesheet' type='text/css'>";
+
+}
+
+add_action('wp_head', 'lcarzs_fonts');
