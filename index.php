@@ -15,6 +15,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
+        <meta name="robots" content="noindex" />
     </head>
 </html>
