@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
@@ -11,24 +12,40 @@ textarea {
 	@include rem(font-size, 16px);
 	line-height: 1.5;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	clear: both;
 }
+
 p {
 	margin-bottom: 1.5em;
 }
-b, strong {
+
+b,
+strong {
 	font-weight: bold;
 }
-dfn, cite, em, i {
+
+dfn,
+cite,
+em,
+i {
 	font-style: italic;
 }
+
 blockquote {
 	margin: 0 1.5em;
 }
+
 address {
 	margin: 0 0 1.5em;
 }
+
 pre {
 	background: #eee;
 	font-family: $font-mono;
@@ -39,17 +56,26 @@ pre {
 	overflow: auto;
 	padding: 1.6em;
 }
-code, kbd, tt, var {
+
+code,
+kbd,
+tt,
+var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
-abbr, acronym {
+
+abbr,
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-mark, ins {
+
+mark,
+ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
+
 sup,
 sub {
 	font-size: 75%;
@@ -58,15 +84,19 @@ sub {
 	position: relative;
 	vertical-align: baseline;
 }
+
 sup {
 	bottom: 1ex;
 }
+
 sub {
 	top: .5ex;
 }
+
 small {
 	font-size: 75%;
 }
+
 big {
 	font-size: 125%;
 }

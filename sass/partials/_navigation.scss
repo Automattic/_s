@@ -1,78 +1,105 @@
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
+
 a {
 	color: $color-link;
-}
-a:visited {
-	color: $color-link-visited;
-}
-a:hover,
-a:focus,
-a:active {
-	color: $color-link-hover;
+
+	&:visited {
+		color: $color-link-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-link-hover;
+	}
 }
 
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
+
 .main-navigation {
 	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		li {
+
+			&:hover > ul {
+				display: block;
+			}
+		}
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			display: none;
+			float: left;
+			left: 0;
+			position: absolute;
+			top: 1.5em;
+			z-index: 99999;
+
+			& :hover > a {
+			}
+
+			li {
+			}
+
+			a {
+				width: 200px;
+
+				&:hover {
+				}
+			}	
+
+			ul {
+				left: 100%;
+				top: 0;
+			}
+		}
+	}
+
+	li {
+		float: left;
+		position: relative;
+			
+		&:hover > a {
+		}
+
+		&:hover > ul {
+			display: block;
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item a,
+	.current-menu-item a {
+	}
 }
-.main-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	display: none;
-	float: left;
-	left: 0;
-	position: absolute;
-	top: 1.5em;
-	z-index: 99999;
-}
-.main-navigation ul ul ul {
-	left: 100%;
-	top: 0;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
-.main-navigation ul li:hover > ul {
-	display: block;
-}
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
-}
+
 /* Small menu */
+
 .menu-toggle {
 	cursor: pointer;
 	display: none;
 }
+
 @media screen and (max-width: 600px) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
@@ -83,22 +110,24 @@ a:active {
 		display: none;
 	}
 }
-.site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+
+.comment-navigation,
+.paging-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
 }
