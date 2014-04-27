@@ -28,7 +28,7 @@ and Blueprint http://www.blueprintcss.org/
 1.0 - Reset
 2.0 - Typography
 3.0 - Elements
-4.0 - Inputs and buttons
+4.0 - Forms
 5.0 - Navigation
 	5.1 - Links
 	5.2 - Menus
@@ -42,13 +42,17 @@ and Blueprint http://www.blueprintcss.org/
 	10.3 - Comments
 11.0 - Infinite scroll
 12.0 - Media
+	12.1 - Captions
+	12.2 - Galleries
+
 --------------------------------------------------------------*/
 @import "partials/variables";
 @import "partials/mixins";
+
 @import "partials/reset";
 @import "partials/typography";
 @import "partials/elements";
-@import "partials/inputs-buttons";
+@import "partials/forms";
 @import "partials/navigation";
 @import "partials/accessibility";
 @import "partials/alignments";
