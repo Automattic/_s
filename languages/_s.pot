@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0-wpcom\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-03-30 17:37:52+00:00\n"
+"POT-Creation-Date: 2014-04-28 01:32:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -212,16 +212,12 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:45
+#: functions.php:45 header.php:31
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:76
 msgid "Sidebar"
-msgstr ""
-
-#: header.php:31
-msgid "Menu"
 msgstr ""
 
 #: header.php:32
@@ -232,33 +228,33 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/template-tags.php:23
+#: inc/template-tags.php:21
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:27
+#: inc/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/template-tags.php:31
+#: inc/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:56
+#: inc/template-tags.php:52
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:55
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span> %title"
 msgstr ""
 
-#: inc/template-tags.php:60
+#: inc/template-tags.php:56
 msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:85
+#: inc/template-tags.php:81
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
