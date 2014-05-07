@@ -9,7 +9,7 @@ $breakpoint-no-query-fallbacks: true;
 /* Dependencies */
 @import "compass";
 
-// /* Vendor */
+/* Vendor */
 
 /* Base */
 @import "base/settings";
@@ -36,7 +36,7 @@ $breakpoint-no-query-fallbacks: true;
 @import "modules/mq-check";
 @import "modules/offcanvas";
 
-// /* States */
+/* States */
 @import "states/states";
 
 /* Plugins */
