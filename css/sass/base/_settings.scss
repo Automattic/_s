@@ -26,10 +26,13 @@
 /* Grid
    -------------------------------------------------------------------------- */
 
-	$grids					: 9;
-	$grids					: add-grid( 12 at $tablet );
-
-	$gutters				: 1/3;
+	// Susy
+	$susy : (
+		columns             : 12,
+		gutters             : 1/3,
+		global-box-sizing   : border-box,
+		gutter-position     : inside
+	);
 
 /* Colors
    -------------------------------------------------------------------------- */

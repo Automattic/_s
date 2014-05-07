@@ -8,6 +8,8 @@ $breakpoint-no-query-fallbacks: true;
 
 /* Dependencies */
 @import "compass";
+@import "breakpoint";
+@import "susy";
 
 /* Vendor */
 
