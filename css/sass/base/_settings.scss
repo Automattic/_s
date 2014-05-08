@@ -6,15 +6,15 @@
 /* Media Queries
    -------------------------------------------------------------------------- */
 
-	$mobile					: 320px;
+	$mobile				: 320px;
 	$mobile-landscape		: 480px;
 
-	$tablet					: 768px;
+	$tablet				: 768px;
 	$tablet-landscape		: 1024px;
 
 	$site-constraint		: 960px;
 
-	$desktop				: 1280px;
+	$desktop			: 1280px;
 
 	$mobile-query 			: "only screen and (min-width: #{$mobile})";
 	$tablet-query 			: "only screen and (min-width: #{$tablet})";
@@ -79,7 +79,8 @@
 /* General
    -------------------------------------------------------------------------- */
 
-	$font-family	: sans-serif;
+	$font-family		: 'Open Sans', sans-serif;
+	$font-family-secondary 	: sans-serif;
 	$font-size 		: 16px;
-	$font-color 	: $grey-dkr;
-	$link-color 	: $pink;
+	$font-color 		: $grey-dkr;
+	$link-color 		: $pink;
