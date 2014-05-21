@@ -23,12 +23,12 @@
 	}
 
 	if ( -1 === menu.className.indexOf( 'nav-menu' ) )
-		menu.className += ' nav-menu';
+		menu.className += 'nav-menu';
 
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) )
-			container.className = container.className.replace( ' toggled', '' );
+			container.className = container.className.replace( 'toggled', '' );
 		else
-			container.className += ' toggled';
+			container.className += 'toggled';
 	};
 } )();
