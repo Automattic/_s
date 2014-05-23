@@ -16,11 +16,6 @@
             zoom: 1;
         }
     }
-    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-        margin: 0.5em 0;
-        text-align: left;
-        @include grid-span( 4, 1 );
-    }
     .profile {
         width: 1.75em;
         height: 1.75em;
