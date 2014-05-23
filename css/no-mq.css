@@ -1021,6 +1021,345 @@ dd {
   padding: 1.5em;
 }
 
+/* ==========================================================================
+   Spacing-specific utilities
+   ========================================================================== */
+/**
+ * u-<type><direction><size>
+ *
+ * a = all
+ * t = top
+ * r = right
+ * b = bottom
+ * l = left
+ * h = horizontal
+ * v = vertical
+ *
+ * n = none
+ * s = small
+ * m = medium
+ * l = large
+ * x = xlarge
+ */
+/* General
+   ========================================================================== */
+/* All */
+.l-padding-an {
+  padding: 0;
+}
+
+.l-padding-as {
+  padding: 0.5em;
+}
+
+.l-padding-am {
+  padding: 2em;
+}
+
+.l-padding-al {
+  padding: 4em;
+}
+
+.l-padding-ax {
+  padding: 6em;
+}
+
+.l-margin-an {
+  margin: 0;
+}
+
+.l-margin-as {
+  margin: 0.5em;
+}
+
+.l-margin-am {
+  margin: 2em;
+}
+
+.l-margin-al {
+  margin: 4em;
+}
+
+.l-margin-ax {
+  margin: 6em;
+}
+
+/* Vertical */
+.l-padding-vn {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.l-padding-vs {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.l-padding-vm {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.l-padding-vl {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+.l-padding-vx {
+  padding-top: 6em;
+  padding-bottom: 6em;
+}
+
+.l-margin-vn {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.l-margin-vs {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.l-margin-vm {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.l-margin-vl {
+  margin-top: 4em;
+  margin-bottom: 4em;
+}
+
+.l-margin-vx {
+  margin-top: 6em;
+  margin-bottom: 6em;
+}
+
+/* Horizontal */
+.l-padding-hn {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.l-padding-hs {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.l-padding-hm {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.l-padding-hl {
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+.l-padding-hx {
+  padding-left: 6em;
+  padding-right: 6em;
+}
+
+.l-margin-hn {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.l-margin-hs {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.l-margin-hm {
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.l-margin-hl {
+  margin-left: 4em;
+  margin-right: 4em;
+}
+
+.l-margin-hx {
+  margin-left: 6em;
+  margin-right: 6em;
+}
+
+/* Top */
+.l-padding-tn {
+  padding-top: 0;
+}
+
+.l-padding-ts {
+  padding-top: 0.5em;
+}
+
+.l-padding-tm {
+  padding-top: 2em;
+}
+
+.l-padding-tl {
+  padding-top: 4em;
+}
+
+.l-padding-tx {
+  padding-top: 6em;
+}
+
+.l-margin-tn {
+  margin-top: 0;
+}
+
+.l-margin-ts {
+  margin-top: 0.5em;
+}
+
+.l-margin-tm {
+  margin-top: 2em;
+}
+
+.l-margin-tl {
+  margin-top: 4em;
+}
+
+.l-margin-tx {
+  margin-top: 6em;
+}
+
+/* Bottom */
+.l-padding-bn {
+  padding-bottom: 0;
+}
+
+.l-padding-bs {
+  padding-bottom: 0.5em;
+}
+
+.l-padding-bm {
+  padding-bottom: 2em;
+}
+
+.l-padding-bl {
+  padding-bottom: 4em;
+}
+
+.l-padding-bx {
+  padding-bottom: 6em;
+}
+
+.l-margin-bn {
+  margin-bottom: 0;
+}
+
+.l-margin-bs {
+  margin-bottom: 0.5em;
+}
+
+.l-margin-bm {
+  margin-bottom: 2em;
+}
+
+.l-margin-bl {
+  margin-bottom: 4em;
+}
+
+.l-margin-bx {
+  margin-bottom: 6em;
+}
+
+/* Left */
+.l-padding-ln {
+  padding-left: 0;
+}
+
+.l-padding-ls {
+  padding-left: 0.5em;
+}
+
+.l-padding-lm {
+  padding-left: 2em;
+}
+
+.l-padding-ll {
+  padding-left: 4em;
+}
+
+.l-padding-lx {
+  padding-left: 6em;
+}
+
+.l-margin-ln {
+  margin-left: 0;
+}
+
+.l-margin-ls {
+  margin-left: 0.5em;
+}
+
+.l-margin-lm {
+  margin-left: 2em;
+}
+
+.l-margin-ll {
+  margin-left: 4em;
+}
+
+.l-margin-lx {
+  margin-left: 6em;
+}
+
+/* Right */
+.l-padding-rn {
+  padding-right: 0;
+}
+
+.l-padding-rs {
+  padding-right: 0.5em;
+}
+
+.l-padding-rm {
+  padding-right: 2em;
+}
+
+.l-padding-rl {
+  padding-right: 4em;
+}
+
+.l-padding-rx {
+  padding-right: 6em;
+}
+
+.l-margin-rn {
+  margin-right: 0;
+}
+
+.l-margin-rs {
+  margin-right: 0.5em;
+}
+
+.l-margin-rm {
+  margin-right: 2em;
+}
+
+.l-margin-rl {
+  margin-right: 4em;
+}
+
+.l-margin-rx {
+  margin-right: 6em;
+}
+
+/* Mobile
+   ========================================================================== */
+/* All */
+/* Vertical */
+/* Horizontal */
+/* Desktop
+   ========================================================================== */
+/* All */
+/* Vertical */
+/* Horizontal */
 /* Fonts */
 @font-face {
   font-family: 'icomoon';

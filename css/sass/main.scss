@@ -20,7 +20,8 @@ $breakpoint-to-ems: true; /* pixels to ems */
         "base/base";
 
 /* Layout */
-@import "layout/layout";
+@import "layout/layout",
+        "layout/spacing";
 
 /* Fonts */
 @import "fonts/icomoon",
