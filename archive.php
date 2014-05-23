@@ -72,7 +72,7 @@ get_header(); ?>
 					// Show an optional term description.
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+						printf( '<div class="taxonomy-description">%s</div>', esc_html( $term_description ) ;
 					endif;
 				?>
 			</header><!-- .page-header -->
