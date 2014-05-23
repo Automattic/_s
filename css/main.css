@@ -1021,56 +1021,6 @@ dd {
   max-width: 1200px;
 }
 
-/* Spacing
-   ========================================================================== */
-.l-padding {
-  padding: 0.5em;
-}
-
-.l-padding-h {
-  padding: 0 0.5em;
-}
-
-.l-padding-v {
-  padding: 0.5em 0;
-}
-
-.l-padding-m {
-  padding: 0.5em;
-}
-@media (min-width: 48em) {
-  .l-padding-m {
-    padding: 0;
-  }
-}
-
-.l-padding-mh {
-  padding: 0 0.5em;
-}
-@media (min-width: 48em) {
-  .l-padding-mh {
-    padding: 0;
-  }
-}
-
-.l-padding-mv {
-  padding: 0.5em 0;
-}
-@media (min-width: 48em) {
-  .l-padding-mv {
-    padding: 0;
-  }
-}
-
-.l-padding-ml {
-  padding: 0.5em;
-}
-@media (min-width: 48em) {
-  .l-padding-ml {
-    padding: 1.5em;
-  }
-}
-
 /* ==========================================================================
    Spacing-specific utilities
    ========================================================================== */

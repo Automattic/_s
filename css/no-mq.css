@@ -978,48 +978,6 @@ dd {
   max-width: 1200px;
 }
 
-/* Spacing
-   ========================================================================== */
-.l-padding {
-  padding: 0.5em;
-}
-
-.l-padding-h {
-  padding: 0 0.5em;
-}
-
-.l-padding-v {
-  padding: 0.5em 0;
-}
-
-.l-padding-m {
-  padding: 0.5em;
-}
-.lt-ie9 .l-padding-m {
-  padding: 0;
-}
-
-.l-padding-mh {
-  padding: 0 0.5em;
-}
-.lt-ie9 .l-padding-mh {
-  padding: 0;
-}
-
-.l-padding-mv {
-  padding: 0.5em 0;
-}
-.lt-ie9 .l-padding-mv {
-  padding: 0;
-}
-
-.l-padding-ml {
-  padding: 0.5em;
-}
-.lt-ie9 .l-padding-ml {
-  padding: 1.5em;
-}
-
 /* ==========================================================================
    Spacing-specific utilities
    ========================================================================== */
