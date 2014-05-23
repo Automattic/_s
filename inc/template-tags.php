@@ -344,3 +344,65 @@ function _s_pagination( $echo = true ) {
     }
 }
 endif;
+
+
+
+
+
+/* ==========================================================================
+   Social Icons
+   ========================================================================== */
+
+if ( ! function_exists( '_s_social_icons' ) ) :
+/**
+ * Output social icons
+ *
+ * @param boolean $echo echo or return result
+ * @return str $r
+ */
+function _s_social_icons( $args = array() ) {
+
+    $defaults = array (
+        'container_class' => '',
+        'echo'            => true
+    );
+
+    // Parse incoming $args into an array and merge it with $defaults
+    $args = wp_parse_args( $args, $defaults );
+
+    // OPTIONAL: Declare each item in $args as its own variable i.e. $type, $before.
+    extract( $args, EXTR_SKIP );
+
+    $r = false;
+
+    if( $profiles = get_field( 'social_profiles', 'option' ) ) :
+
+        $c = 1;
+        $total = count( $profiles );
+
+        $container_class = ( $container_class ) ? ' ' . $container_class : '';
+
+        $r .= '<ul class="social-profiles' . $container_class . '">' . "\n";
+
+        while( has_sub_field( 'social_profiles', 'option' ) ) :
+
+            $open_comment = ( $c < $total ) ? '<!--': '';
+            $close_comment = ( $c !== 1 ) ? '-->': '';
+
+            $r .= $close_comment . '<li><a class="profile icon-' . get_sub_field( 'profile' ) . '" href="' . esc_attr( get_sub_field( 'link' ) ) . '"><span class="visuallyhidden">' . get_sub_field( 'profile' ) . '</span></a></li>' . $open_comment . "\n";
+
+            $c++;
+
+        endwhile;
+
+        $r .= '</ul>' . "\n";
+
+    endif;
+
+    if( $echo ) :
+        echo $r;
+    else :
+        return $r;
+    endif;
+}
+endif;
