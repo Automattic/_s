@@ -29,9 +29,9 @@
         @include transition-property( color background box-shadow );
         @include transition-duration( .25s );
         &:hover {
-            background: rgba( $grey, 1 );
-            color: $red;
-            @include box-shadow( rgba( $grey, 0.3 ) 0 0 0 6px );
+            background: rgba( $alto, 1 );
+            color: $pomegranate;
+            @include box-shadow( rgba( $alto, 0.3 ) 0 0 0 6px );
         }
     }
 }

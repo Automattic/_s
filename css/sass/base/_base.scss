@@ -90,16 +90,16 @@ img {
 	max-width: 100%; /* Adhere to container width. */
 }
 ::-webkit-input-placeholder {
-	color: $grey;
+	color: $alto;
 }
 :-moz-placeholder { /* Firefox 18- */
-	color: $grey;
+	color: $alto;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-	color: $grey;
+	color: $alto;
 }
 :-ms-input-placeholder {
-	color: $grey;
+	color: $alto;
 }
 input[type="text"],
 input[type="password"],
@@ -121,7 +121,7 @@ textarea {
 	height: 2.3125em;
 	display: inline-block;
 	background: white;
-	border: 1px solid $grey;
+	border: 1px solid $alto;
 	@include transition( border .25s, box-shadow .25s );
 }
 input[type="text"]:focus,
@@ -138,8 +138,8 @@ input[type="tel"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
 textarea:focus {
-	border: 1px solid $blue;
-	@include box-shadow( $blue 0 0 5px );
+	border: 1px solid $endeavour;
+	@include box-shadow( $endeavour 0 0 5px );
 }
 input[type="submit"] {
 	@extend %btn;

@@ -43,7 +43,7 @@
 	z-index: 1;
 	cursor: pointer;
 	background: white;
-	color: $grey;
+	color: $alto;
 	@include rem( 'font-size', 10px );
 	@include border-radius( 50% );
 	@include transition-property( color, transform );

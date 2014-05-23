@@ -23,8 +23,8 @@
 	& a {
 		padding: 0.4em 0.9em;
 		display: block;
-		background: $grey-lt;
-		color: $grey-dkr;
+		background: $mercury;
+		color: darken( $alto, 10% );
 		@include transition-property( background, color );
 		@include transition-duration( .25s );
 		&:hover {

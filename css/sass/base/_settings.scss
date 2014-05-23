@@ -48,20 +48,15 @@
 /* Colors
    -------------------------------------------------------------------------- */
 
+    // Color Names: http://chir.ag/projects/name-that-color/
+
 	$off-white 				             : #f6f6f6;
 	$off-black				             : #222222;
-
-	$grey-ltr				             : #f2f2f2;
-	$grey-lt				             : #e6e6e6;
-	$grey					             : #dbdbdb;
-	$grey-dk				             : #b8b8b8;
-	$grey-dkr				             : #8d8c8c;
-	$grey-dkst				             : #4d4c4c;
-
-	$charcoal				             : #333332;
-
-	$red					             : #ee3228;
-	$blue 					             : #0065b2;
+    $mercury                             : #e6e6e6; // grey-lt
+    $alto                                : #dbdbdb; // grey
+    $charcoal                            : #333332;
+	$pomegranate					     : #ee3228; // red
+	$endeavour 					         : #0065b2; // blue
 
 	// Social Networks
 	$facebook				             : #3b5998;
@@ -93,4 +88,4 @@
 	$font-size 		                     : 16px;
 	$font-color 		                 : $charcoal;
 	$link-color 		                 : $success;
-	$selection-highlight                 : $error-lt;
+	$selection-highlight                 : $error;

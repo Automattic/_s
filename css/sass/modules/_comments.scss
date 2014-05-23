@@ -11,7 +11,7 @@
 		margin: 1em 0;
 		padding: 0.5em;
 		position: relative;
-		background: $grey-lt;
+		background: $mercury;
 		footer {
 			@extend %clearfix;
 			margin-bottom: 0.5em;
@@ -29,7 +29,7 @@
 		float: right;
 		> a {
 			@include rem( 'font-size', 12px );
-			color: darken( $grey-lt, 20% );
+			color: darken( $mercury, 20% );
 		}
 		time {
 			text-transform: uppercase;
@@ -48,7 +48,7 @@
 			padding: 4px;
 			display: inline-block;
 			background: white;
-			border: 1px solid $grey-lt;
+			border: 1px solid $mercury;
 			@include rem( 'font-size', 12px );
 			&:hover {
 				background: $success;
@@ -69,7 +69,7 @@
 			@include rem( 'font-size', 12px );
 			&:hover {
 				background: white;
-				border: 1px solid $grey-lt;
+				border: 1px solid $mercury;
 				color: $success;
 			}
 		}
