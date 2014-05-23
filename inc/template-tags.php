@@ -260,6 +260,10 @@ function _s_excerpt( $limit, $copy = NULL ) {
 }
 endif;
 
+
+
+
+
 if ( ! function_exists( '_s_content' ) ) :
 /**
  * Limit the Content by 'x' amount of words
