@@ -1019,7 +1019,7 @@ dd {
 .l-constrained {
   margin: 0 auto;
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px;
 }
 
 /* Spacing
@@ -1577,7 +1577,7 @@ input[type="submit"], .btn, .btn.success {
     z-index: 2;
   }
 }
-@media (min-width: 60em) {
+@media (min-width: 75em) {
   .mq-state {
     content: "site-constraint";
     z-index: 2;

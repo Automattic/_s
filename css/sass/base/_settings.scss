@@ -6,21 +6,32 @@
 /* Media Queries
    -------------------------------------------------------------------------- */
 
-	$mobile				: 320px;
-	$mobile-landscape		: 480px;
+   // Breakpoints
+   $mobile                     : 320px;
+   $mobile-landscape           : 480px;
+   $tablet                     : 768px;
+   $tablet-landscape           : 1024px;
+   $site-mid                   : 960px;
+   $site-constraint            : 1200px;
+   $desktop                    : 1280px;
 
-	$tablet				: 768px;
-	$tablet-landscape		: 1024px;
+   // Max Width
+   $mobile-max                 : max-width ( $mobile - 1 );
+   $mobile-landscape-max       : max-width ( $mobile-landscape - 1 );
+   $tablet-max                 : max-width ( $tablet - 1 );
+   $tablet-landscape-max       : max-width ( $tablet-landscape - 1 );
+   $site-mid-max               : max-width ( $site-mid - 1 );
+   $site-constraint-max        : max-width ( $site-constraint - 1 );
+   $desktop-max                : max-width ( $desktop - 1 );
 
-	$site-constraint		: 960px;
-
-	$desktop			: 1280px;
-
-	$mobile-query 			: "only screen and (min-width: #{$mobile})";
-	$tablet-query 			: "only screen and (min-width: #{$tablet})";
-	$desktop-query 			: "only screen and (min-width: #{$desktop})";
-
-	$mobile-query-max		: "max-width #{$tablet}";
+   // Min-Max Width
+   $mobile-to-tablet           : $mobile ( $tablet - 1 );
+   $mobile-landscape-to-tablet : $mobile-landscape ( $tablet - 1 );
+   $tablet-to-mid              : $tablet ( $site-mid - 1 );
+   $tablet-to-constraint       : $tablet ( $site-constraint - 1 );
+   $tablet-to-desktop          : $tablet ( $desktop - 1 );
+   $mid-to-constraint          : $site-mid ( $site-constraint - 1 );
+   $mid-to-desktop             : $site-mid ( $desktop - 1 );
 
 
 /* Grid
