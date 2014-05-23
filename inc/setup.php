@@ -39,8 +39,25 @@ function _s_setup() {
      *
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
      */
-    // add_theme_support( 'post-thumbnails' );
-    // add_image_size( 's', 290 );
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( '640x', 640 );
+
+    /**
+     * Add custom image sizes to display settings in Media Library
+     * @param  array $sizes list of sizes
+     * @return array
+     */
+    function _s_media_library_image_options( $sizes ) {
+
+        $new_sizes = array_merge( $sizes, array(
+            // name must be string, not integer
+            '640x' => __( 'Main Content' ),
+        ) );
+
+        return $new_sizes;
+
+    }
+    add_filter( 'image_size_names_choose', '_s_media_library_image_options' );
 
     /**
      * This theme uses wp_nav_menu() in one location.
