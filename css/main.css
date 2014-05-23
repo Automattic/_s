@@ -1,7 +1,6 @@
 /* ==========================================================================
    Project Imports
    ========================================================================== */
-/* Breakpoint ie conditional fallback */
 /* Dependencies */
 /* Vendor */
 /* Base */
@@ -765,12 +764,6 @@ textarea {
     float: left;
   }
 }
-.lt-ie9 .alignleft {
-  margin-right: 1.5em;
-  margin-bottom: 1.5em;
-  display: inline;
-  float: left;
-}
 
 @media (min-width: 768px) {
   .alignright {
@@ -780,12 +773,6 @@ textarea {
     float: right;
   }
 }
-.lt-ie9 .alignright {
-  margin-left: 1.5em;
-  margin-bottom: 1.5em;
-  display: inline;
-  float: right;
-}
 
 @media (min-width: 768px) {
   .aligncenter {
@@ -793,11 +780,6 @@ textarea {
     display: block;
     margin: 0 auto;
   }
-}
-.lt-ie9 .aligncenter {
-  clear: both;
-  display: block;
-  margin: 0 auto;
 }
 
 /* ==========================================================================
@@ -1061,9 +1043,6 @@ dd {
     padding: 0;
   }
 }
-.lt-ie9 .l-padding-m {
-  padding: 0;
-}
 
 .l-padding-mh {
   padding: 0 0.5em;
@@ -1072,9 +1051,6 @@ dd {
   .l-padding-mh {
     padding: 0;
   }
-}
-.lt-ie9 .l-padding-mh {
-  padding: 0;
 }
 
 .l-padding-mv {
@@ -1085,9 +1061,6 @@ dd {
     padding: 0;
   }
 }
-.lt-ie9 .l-padding-mv {
-  padding: 0;
-}
 
 .l-padding-ml {
   padding: 0.5em;
@@ -1096,9 +1069,6 @@ dd {
   .l-padding-ml {
     padding: 1.5em;
   }
-}
-.lt-ie9 .l-padding-ml {
-  padding: 1.5em;
 }
 
 /* Fonts */
@@ -1531,9 +1501,6 @@ input[type="submit"], .btn, .btn.success {
     margin: 0 0 0 1em;
   }
 }
-.lt-ie9 .comment-list .children {
-  margin: 0 0 0 1em;
-}
 
 /* ==========================================================================
    Social Profiles
@@ -1680,9 +1647,6 @@ input[type="submit"], .btn, .btn.success {
   .menu-btn {
     display: none;
   }
-}
-.lt-ie9 .menu-btn {
-  display: none;
 }
 
 .menu-btn__icon {
@@ -2453,10 +2417,6 @@ img.mfp-img {
   .entry-content .gform_wrapper .top_label select.medium {
     width: 47%;
   }
-}
-.lt-ie9 .entry-content .gform_wrapper .top_label input.medium, .lt-ie9
-.entry-content .gform_wrapper .top_label select.medium {
-  width: 47%;
 }
 .entry-content .gform_wrapper input[type=text],
 .entry-content .gform_wrapper input[type=url],

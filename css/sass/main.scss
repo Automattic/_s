@@ -3,9 +3,6 @@
    Project Imports
    ========================================================================== */
 
-/* Breakpoint ie conditional fallback */
-$breakpoint-no-query-fallbacks: true;
-
 /* Dependencies */
 @import "compass";
 @import "breakpoint";
