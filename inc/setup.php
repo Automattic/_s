@@ -134,22 +134,6 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 
 /**
- * Dump scripts into head
- */
-function _s_load_scripts() {
-    // load script conditionally
-    echo '<!--[if lte IE 7]><script type="text/javascript" src="' . get_template_directory_uri() . '/js/min/icomoon-lte-ie7.min.js"></script><![endif]-->';
-    // Sharethis social buttons
-    echo '<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>' .
-         '<script type="text/javascript">stLight.options({publisher: "ab0860c1-8d46-4c47-917e-49c39b19dc7f", doNotHash: true, doNotCopy: true, hashAddressBar: false});</script>';
-}
-add_action( 'wp_head', '_s_load_scripts' );
-
-
-
-
-
-/**
  * Add Admin Options menu item
  *
  * Managed by Advanced Custom Fields Plugin
