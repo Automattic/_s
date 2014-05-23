@@ -11,17 +11,17 @@
     width: 100%;
     position: relative;
     .js-ready & {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             right: 0;
         }
     }
     .js-nav & {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             right: 70%;
         }
     }
     .csstransforms3d.csstransitions.js-ready & {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             right: 0 !important;
             @include translate3d( 0, 0, 0);
             @include transition-duration( 500ms );
@@ -30,7 +30,7 @@
         }
     }
     .csstransforms3d.csstransitions.js-nav & {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             @include transform( translate3d( -70%, 0, 0 ) scale3d(1, 1, 1) );
         }
 
@@ -65,7 +65,7 @@
     }
 }
 .nav-primary { // #nav
-    @media screen and ( max-width: $tablet - 1 ) {
+    @include breakpoint( $tablet-max ) {
         position: absolute;
         top: 0;
         width: 100%;
@@ -74,13 +74,13 @@
         color: white;
     }
     &:not(:target) {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             z-index: 1;
             height: 0;
         }
     }
     .js-ready & {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             height: 100%;
             width: 70%;
             right: -70%;
@@ -92,7 +92,7 @@
         }
     }
     .csstransforms3d.csstransitions.js-ready & {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             right: 0;
             @include translate3d( 100%, 0, 0 );
             @include backface-visibility( hidden );
@@ -100,7 +100,7 @@
     }
     .csstransforms3d.csstransitions.js-ready & {
         .block {
-            @media screen and ( max-width: $tablet - 1 ) {
+            @include breakpoint( $tablet-max ) {
                 @include opacity( 0.7 );
                 @include transition( opacity 300ms 100ms, transform 500ms ease );
                 @include transform( translate3d( -70%, 0, 0 ) scale3d( 0.9, 0.9, 0.9 ) );
@@ -110,36 +110,36 @@
     }
     .csstransforms3d.csstransitions.js-nav & {
         .block {
-            @media screen and ( max-width: $tablet - 1 ) {
+            @include breakpoint( $tablet-max ) {
                 @include opacity( 1 );
                 @include translate3d( 0, 0, 0 );
             }
         }
     }
     .block {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             margin: 0 auto;
             z-index: 2;
             position: relative;
         }
     }
     .menu-main {
-        @media screen and ( max-width: $tablet - 1 ) {
+        @include breakpoint( $tablet-max ) {
             border-top: 1px solid lighten( $off-black, 6% );
         }
         > li {
-            @media screen and ( max-width: $tablet - 1 ) {
+            @include breakpoint( $tablet-max ) {
                 display: block;
                 border-bottom: 1px solid lighten( $off-black, 6% );
             }
             a {
-                @media screen and ( max-width: $tablet - 1 ) {
+                @include breakpoint( $tablet-max ) {
                     padding: 1em 2em;
                     display: block;
                     color: $alto;
                 }
                 &:focus, &:hover {
-                    @media screen and ( max-width: $tablet - 1 ) {
+                    @include breakpoint( $tablet-max ) {
                         color: white;
                         background: $success;
                     }
@@ -151,7 +151,7 @@
 .head { // #top
     > .head-row {
         > .menu-btn {
-            @media screen and ( max-width: $tablet - 1 ) {
+            @include breakpoint( $tablet-max ) {
                 float: right;
             }
         }

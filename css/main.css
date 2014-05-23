@@ -2285,17 +2285,17 @@ input[type="submit"], .btn, .btn.success {
   width: 100%;
   position: relative;
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .js-ready #inner-wrap {
     right: 0;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .js-nav #inner-wrap {
     right: 70%;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .csstransforms3d.csstransitions.js-ready #inner-wrap {
     right: 0 !important;
     -moz-transform: translate3d(0, 0, 0);
@@ -2314,7 +2314,7 @@ input[type="submit"], .btn, .btn.success {
     backface-visibility: hidden;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .csstransforms3d.csstransitions.js-nav #inner-wrap {
     -moz-transform: translate3d(-70%, 0, 0) scale3d(1, 1, 1);
     -ms-transform: translate3d(-70%, 0, 0) scale3d(1, 1, 1);
@@ -2358,7 +2358,7 @@ input[type="submit"], .btn, .btn.success {
   margin-top: 3px;
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .nav-primary {
     position: absolute;
     top: 0;
@@ -2368,13 +2368,13 @@ input[type="submit"], .btn, .btn.success {
     color: white;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .nav-primary:not(:target) {
     z-index: 1;
     height: 0;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .js-ready .nav-primary {
     height: 100%;
     width: 70%;
@@ -2388,7 +2388,7 @@ input[type="submit"], .btn, .btn.success {
 .js-ready .nav-primary .block {
   background: transparent;
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .csstransforms3d.csstransitions.js-ready .nav-primary {
     right: 0;
     -moz-transform: translate3d(100%, 0, 0);
@@ -2399,7 +2399,7 @@ input[type="submit"], .btn, .btn.success {
     backface-visibility: hidden;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .csstransforms3d.csstransitions.js-ready .nav-primary .block {
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
     opacity: 0.7;
@@ -2418,7 +2418,7 @@ input[type="submit"], .btn, .btn.success {
     transform-origin: 50% 0;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .csstransforms3d.csstransitions.js-nav .nav-primary .block {
     filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
@@ -2427,39 +2427,39 @@ input[type="submit"], .btn, .btn.success {
     transform: translate3d(0, 0, 0);
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .nav-primary .block {
     margin: 0 auto;
     z-index: 2;
     position: relative;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .nav-primary .menu-main {
     border-top: 1px solid #313131;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .nav-primary .menu-main > li {
     display: block;
     border-bottom: 1px solid #313131;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .nav-primary .menu-main > li a {
     padding: 1em 2em;
     display: block;
     color: #dbdbdb;
   }
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .nav-primary .menu-main > li a:focus, .nav-primary .menu-main > li a:hover {
     color: white;
     background: #659f13;
   }
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 47.9375em) {
   .head > .head-row > .menu-btn {
     float: right;
   }

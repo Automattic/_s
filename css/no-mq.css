@@ -1848,43 +1848,6 @@ input[type="submit"], .btn, .btn.success {
   width: 100%;
   position: relative;
 }
-@media screen and (max-width: 767px) {
-  .js-ready #inner-wrap {
-    right: 0;
-  }
-}
-@media screen and (max-width: 767px) {
-  .js-nav #inner-wrap {
-    right: 70%;
-  }
-}
-@media screen and (max-width: 767px) {
-  .csstransforms3d.csstransitions.js-ready #inner-wrap {
-    right: 0 !important;
-    -moz-transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -moz-transition-duration: 500ms;
-    -o-transition-duration: 500ms;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    -moz-transition-timing-function: ease;
-    -o-transition-timing-function: ease;
-    -webkit-transition-timing-function: ease;
-    transition-timing-function: ease;
-    -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-}
-@media screen and (max-width: 767px) {
-  .csstransforms3d.csstransitions.js-nav #inner-wrap {
-    -moz-transform: translate3d(-70%, 0, 0) scale3d(1, 1, 1);
-    -ms-transform: translate3d(-70%, 0, 0) scale3d(1, 1, 1);
-    -webkit-transform: translate3d(-70%, 0, 0) scale3d(1, 1, 1);
-    transform: translate3d(-70%, 0, 0) scale3d(1, 1, 1);
-  }
-}
 
 .menu-btn {
   margin: 0.5em;
@@ -1919,111 +1882,8 @@ input[type="submit"], .btn, .btn.success {
   margin-top: 3px;
 }
 
-@media screen and (max-width: 767px) {
-  .nav-primary {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 200;
-    overflow: hidden;
-    color: white;
-  }
-}
-@media screen and (max-width: 767px) {
-  .nav-primary:not(:target) {
-    z-index: 1;
-    height: 0;
-  }
-}
-@media screen and (max-width: 767px) {
-  .js-ready .nav-primary {
-    height: 100%;
-    width: 70%;
-    right: -70%;
-    background: #222222;
-    -moz-box-shadow: rgba(0, 0, 0, 0.25) 1.5em 0 1.5em -0.75em inset;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 1.5em 0 1.5em -0.75em inset;
-    box-shadow: rgba(0, 0, 0, 0.25) 1.5em 0 1.5em -0.75em inset;
-  }
-}
 .js-ready .nav-primary .block {
   background: transparent;
-}
-@media screen and (max-width: 767px) {
-  .csstransforms3d.csstransitions.js-ready .nav-primary {
-    right: 0;
-    -moz-transform: translate3d(100%, 0, 0);
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-    -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-}
-@media screen and (max-width: 767px) {
-  .csstransforms3d.csstransitions.js-ready .nav-primary .block {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
-    opacity: 0.7;
-    -moz-transition: opacity 300ms 100ms, -moz-transform 500ms ease;
-    -o-transition: opacity 300ms 100ms, -o-transform 500ms ease;
-    -webkit-transition: opacity 300ms, -webkit-transform 500ms ease;
-    -webkit-transition-delay: 100ms, 0s;
-    transition: opacity 300ms 100ms, transform 500ms ease;
-    -moz-transform: translate3d(-70%, 0, 0) scale3d(0.9, 0.9, 0.9);
-    -ms-transform: translate3d(-70%, 0, 0) scale3d(0.9, 0.9, 0.9);
-    -webkit-transform: translate3d(-70%, 0, 0) scale3d(0.9, 0.9, 0.9);
-    transform: translate3d(-70%, 0, 0) scale3d(0.9, 0.9, 0.9);
-    -moz-transform-origin: 50% 0;
-    -ms-transform-origin: 50% 0;
-    -webkit-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-  }
-}
-@media screen and (max-width: 767px) {
-  .csstransforms3d.csstransitions.js-nav .nav-primary .block {
-    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-    opacity: 1;
-    -moz-transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-@media screen and (max-width: 767px) {
-  .nav-primary .block {
-    margin: 0 auto;
-    z-index: 2;
-    position: relative;
-  }
-}
-@media screen and (max-width: 767px) {
-  .nav-primary .menu-main {
-    border-top: 1px solid #313131;
-  }
-}
-@media screen and (max-width: 767px) {
-  .nav-primary .menu-main > li {
-    display: block;
-    border-bottom: 1px solid #313131;
-  }
-}
-@media screen and (max-width: 767px) {
-  .nav-primary .menu-main > li a {
-    padding: 1em 2em;
-    display: block;
-    color: #dbdbdb;
-  }
-}
-@media screen and (max-width: 767px) {
-  .nav-primary .menu-main > li a:focus, .nav-primary .menu-main > li a:hover {
-    color: white;
-    background: #659f13;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .head > .head-row > .menu-btn {
-    float: right;
-  }
 }
 
 /* States */
