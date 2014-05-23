@@ -3,6 +3,9 @@
    Project Imports
    ========================================================================== */
 
+/* Breakpoint */
+$breakpoint-to-ems: true; /* pixels to ems */
+
 /* Dependencies */
 @import "compass";
 @import "breakpoint";
