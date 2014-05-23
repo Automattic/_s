@@ -7,31 +7,31 @@
    -------------------------------------------------------------------------- */
 
    // Breakpoints
-   $mobile                     : 320px;
-   $mobile-landscape           : 480px;
-   $tablet                     : 768px;
-   $tablet-landscape           : 1024px;
-   $site-mid                   : 960px;
-   $site-constraint            : 1200px;
-   $desktop                    : 1280px;
+   $mobile                               : 320px;
+   $mobile-landscape                     : 480px;
+   $tablet                               : 768px;
+   $tablet-landscape                     : 1024px;
+   $site-mid                             : 960px;
+   $site-constraint                      : 1200px;
+   $desktop                              : 1280px;
 
    // Max Width
-   $mobile-max                 : max-width ( $mobile - 1 );
-   $mobile-landscape-max       : max-width ( $mobile-landscape - 1 );
-   $tablet-max                 : max-width ( $tablet - 1 );
-   $tablet-landscape-max       : max-width ( $tablet-landscape - 1 );
-   $site-mid-max               : max-width ( $site-mid - 1 );
-   $site-constraint-max        : max-width ( $site-constraint - 1 );
-   $desktop-max                : max-width ( $desktop - 1 );
+   $mobile-max                           : max-width ( $mobile - 1 );
+   $mobile-landscape-max                 : max-width ( $mobile-landscape - 1 );
+   $tablet-max                           : max-width ( $tablet - 1 );
+   $tablet-landscape-max                 : max-width ( $tablet-landscape - 1 );
+   $site-mid-max                         : max-width ( $site-mid - 1 );
+   $site-constraint-max                  : max-width ( $site-constraint - 1 );
+   $desktop-max                          : max-width ( $desktop - 1 );
 
    // Min-Max Width
-   $mobile-to-tablet           : $mobile ( $tablet - 1 );
-   $mobile-landscape-to-tablet : $mobile-landscape ( $tablet - 1 );
-   $tablet-to-mid              : $tablet ( $site-mid - 1 );
-   $tablet-to-constraint       : $tablet ( $site-constraint - 1 );
-   $tablet-to-desktop          : $tablet ( $desktop - 1 );
-   $mid-to-constraint          : $site-mid ( $site-constraint - 1 );
-   $mid-to-desktop             : $site-mid ( $desktop - 1 );
+   $mobile-to-tablet                     : $mobile ( $tablet - 1 );
+   $mobile-landscape-to-tablet           : $mobile-landscape ( $tablet - 1 );
+   $tablet-to-mid                        : $tablet ( $site-mid - 1 );
+   $tablet-to-constraint                 : $tablet ( $site-constraint - 1 );
+   $tablet-to-desktop                    : $tablet ( $desktop - 1 );
+   $mid-to-constraint                    : $site-mid ( $site-constraint - 1 );
+   $mid-to-desktop                       : $site-mid ( $desktop - 1 );
 
 
 /* Grid
@@ -39,58 +39,58 @@
 
 	// Susy
 	$susy : (
-		columns             : 12,
-		gutters             : 1/3,
-		global-box-sizing   : border-box,
-		gutter-position     : inside
+		columns                          : 12,
+		gutters                          : 1/3,
+		global-box-sizing                : border-box,
+		gutter-position                  : inside
 	);
 
 /* Colors
    -------------------------------------------------------------------------- */
 
-	$off-white 				: #f6f6f6;
-	$off-black				: #222222;
+	$off-white 				             : #f6f6f6;
+	$off-black				             : #222222;
 
-	$grey-ltr				: #f2f2f2;
-	$grey-lt				: #e6e6e6;
-	$grey					: #dbdbdb;
-	$grey-dk				: #b8b8b8;
-	$grey-dkr				: #8d8c8c;
-	$grey-dkst				: #4d4c4c;
+	$grey-ltr				             : #f2f2f2;
+	$grey-lt				             : #e6e6e6;
+	$grey					             : #dbdbdb;
+	$grey-dk				             : #b8b8b8;
+	$grey-dkr				             : #8d8c8c;
+	$grey-dkst				             : #4d4c4c;
 
-	$charcoal				: #333332;
+	$charcoal				             : #333332;
 
-	$red					: #ee3228;
-	$blue 					: #0065b2;
+	$red					             : #ee3228;
+	$blue 					             : #0065b2;
 
 	// Social Networks
-	$facebook				: #3b5998;
-	$linkedin				: #007fb1;
-	$rss					: #ff6600;
-	$email					: #ffdd68;
-	$instagram				: #3f729b;
-	$youtube				: #cd332d;
-	$vimeo					: #44bbff;
-	$tumblr					: #2c4762;
-	$pinterest				: #e41f11;
-	$googleplus				: #d14836;
-	$flickr					: #0063db;
-	$twitter				: #39a9e0;
+	$facebook				             : #3b5998;
+	$linkedin				             : #007fb1;
+	$rss					             : #ff6600;
+	$email					             : #ffdd68;
+	$instagram				             : #3f729b;
+	$youtube				             : #cd332d;
+	$vimeo					             : #44bbff;
+	$tumblr					             : #2c4762;
+	$pinterest				             : #e41f11;
+	$googleplus				             : #d14836;
+	$flickr					             : #0063db;
+	$twitter				             : #39a9e0;
 
 	// alerts
-	$success				: #659f13;
-	$success-lt				: #f2fae3;
-	$error					: #d85030;
-	$error-lt				: #fff1f0;
-	$warning				: #e28327;
-	$warning-lt				: #fffceb;
+	$success				             : #659f13;
+	$success-lt				             : #f2fae3;
+	$error					             : #d85030;
+	$error-lt				             : #fff1f0;
+	$warning				             : #e28327;
+	$warning-lt				             : #fffceb;
 
 /* General
    -------------------------------------------------------------------------- */
 
-	$font-family		    : 'Open Sans', sans-serif;
-	$font-family-secondary 	: sans-serif;
-	$font-size 		        : 16px;
-	$font-color 		    : $charcoal;
-	$link-color 		    : $success;
-	$selection-highlight    : $error-lt;
+	$font-family		                 : 'Open Sans', sans-serif;
+	$font-family-secondary 	             : sans-serif;
+	$font-size 		                     : 16px;
+	$font-color 		                 : $charcoal;
+	$link-color 		                 : $success;
+	$selection-highlight                 : $error-lt;
