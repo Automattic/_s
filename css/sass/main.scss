@@ -7,40 +7,38 @@
 $breakpoint-to-ems: true; /* pixels to ems */
 
 /* Dependencies */
-@import "compass";
-@import "breakpoint";
-@import "susy";
-
-/* Vendor */
+@import "compass",
+        "breakpoint",
+        "susy";
 
 /* Base */
-@import "base/settings";
-@import "base/mixins";
-@import "base/normalize";
-@import "base/hbp5";
-@import "base/helpers";
-@import "base/base";
+@import "base/settings",
+        "base/mixins",
+        "base/normalize",
+        "base/hbp5",
+        "base/helpers",
+        "base/base";
 
 /* Layout */
 @import "layout/layout";
 
 /* Fonts */
-@import "fonts/icomoon";
-@import "fonts/icomoon-socials";
+@import "fonts/icomoon",
+        "fonts/icomoon-socials";
 
 /* Modules */
-@import "modules/modules";
-@import "modules/buttons";
-@import "modules/notifications";
-@import "modules/pagination";
-@import "modules/comments";
-@import "modules/social-profiles";
-@import "modules/mq-check";
-@import "modules/offcanvas";
+@import "modules/modules",
+        "modules/buttons",
+        "modules/notifications",
+        "modules/pagination",
+        "modules/comments",
+        "modules/social-profiles",
+        "modules/mq-check",
+        "modules/offcanvas";
 
 /* States */
 @import "states/states";
 
 /* Plugins */
-@import "plugins/magnific-popup";
-@import "plugins/gravityforms";
+@import "plugins/magnific-popup",
+        "plugins/gravityforms";
