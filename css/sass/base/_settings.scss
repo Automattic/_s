@@ -38,6 +38,7 @@
    -------------------------------------------------------------------------- */
 
 	$off-white 				: #f6f6f6;
+	$off-black				: #222222;
 
 	$grey-ltr				: #f2f2f2;
 	$grey-lt				: #e6e6e6;
@@ -48,10 +49,9 @@
 
 	$charcoal				: #333332;
 
-	$pink					: #eb275d;
 	$red					: #ee3228;
 	$blue 					: #0065b2;
-	
+
 	// Social Networks
 	$facebook				: #3b5998;
 	$linkedin				: #007fb1;
@@ -66,8 +66,6 @@
 	$flickr					: #0063db;
 	$twitter				: #39a9e0;
 
-	$pink					: #eb275d;
-
 	// alerts
 	$success				: #659f13;
 	$success-lt				: #f2fae3;
@@ -79,8 +77,9 @@
 /* General
    -------------------------------------------------------------------------- */
 
-	$font-family		: 'Open Sans', sans-serif;
+	$font-family		    : 'Open Sans', sans-serif;
 	$font-family-secondary 	: sans-serif;
-	$font-size 		: 16px;
-	$font-color 		: $grey-dkr;
-	$link-color 		: $pink;
+	$font-size 		        : 16px;
+	$font-color 		    : $charcoal;
+	$link-color 		    : $success;
+	$selection-highlight    : $error-lt;

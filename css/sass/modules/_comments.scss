@@ -51,7 +51,7 @@
 			border: 1px solid $grey-lt;
 			@include rem( 'font-size', 12px );
 			&:hover {
-				background: $pink;
+				background: $success;
 				color: white;
 			}
 		}
@@ -63,20 +63,20 @@
 		> a {
 			padding: 4px;
 			display: inline-block;
-			background: $pink;
+			background: $success;
 			border: 1px solid white;
 			color: white;
 			@include rem( 'font-size', 12px );
 			&:hover {
 				background: white;
 				border: 1px solid $grey-lt;
-				color: $pink;
+				color: $success;
 			}
 		}
 	}
 	.comment-awaiting-moderation {
 		margin-top: 0;
-		background: $pink;
+		background: $success;
 		text-align: center;
 		color: white;
 	}

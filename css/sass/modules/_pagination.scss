@@ -28,12 +28,12 @@
 		@include transition-property( background, color );
 		@include transition-duration( .25s );
 		&:hover {
-			background: $pink;
+			background: $success;
 			color: #fff;
 		}
 	}
 	& .current {
-		color: $pink;
+		color: $success;
 	}
 	& .dots {
 		color: #b3b3b3;

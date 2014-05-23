@@ -52,7 +52,7 @@
     @include border-radius( 2px );
     &:hover {
         color: white;
-        background: $aqua;
+        background: $success;
     }
     & > span {
         width: 18px;
@@ -141,7 +141,7 @@
                 &:focus, &:hover {
                     @media screen and ( max-width: $tablet - 1 ) {
                         color: white;
-                        background: $aqua;
+                        background: $success;
                     }
                 }
             }

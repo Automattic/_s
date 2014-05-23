@@ -22,13 +22,13 @@ body {
  */
 
 ::-moz-selection {
-	background: lighten( $pink, 20% );
+	background: $selection-highlight;
 	text-shadow: none;
 	color: white;
 }
 
 ::selection {
-	background: lighten( $pink, 20% );
+	background: $selection-highlight;
 	text-shadow: none;
 	color: white;
 }
