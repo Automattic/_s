@@ -7,16 +7,16 @@
    ========================================================================== */
 
 %l-constrained {
-	@extend %clearfix;
-	margin: 0 auto;
-	width: 100%;
-	max-width: $site-constraint;
+    @extend %clearfix;
+    margin: 0 auto;
+    width: 100%;
+    max-width: $site-constraint;
 }
 .l-constrained {
-	@extend %l-constrained;
+    @extend %l-constrained;
 }
 .l-container {
-	@extend %clearfix;
+    @extend %clearfix;
 }
 
 
@@ -26,35 +26,35 @@
    ========================================================================== */
 
 .l-padding {
-	padding: 0.5em;
+    padding: 0.5em;
 }
 .l-padding-h {
-	padding: 0 0.5em;
+    padding: 0 0.5em;
 }
 .l-padding-v {
-	padding: 0.5em 0;
+    padding: 0.5em 0;
 }
 .l-padding-m {
-	padding: 0.5em;
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		padding: 0;
-	}
+    padding: 0.5em;
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        padding: 0;
+    }
 }
 .l-padding-mh {
-	padding: 0 0.5em;
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		padding: 0;
-	}
+    padding: 0 0.5em;
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        padding: 0;
+    }
 }
 .l-padding-mv {
-	padding: 0.5em 0;
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		padding: 0;
-	}
+    padding: 0.5em 0;
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        padding: 0;
+    }
 }
 .l-padding-ml {
-	padding: 0.5em;
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		padding: 1.5em;
-	}
+    padding: 0.5em;
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        padding: 1.5em;
+    }
 }

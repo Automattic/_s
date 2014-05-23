@@ -1,10 +1,10 @@
 ;(function ($, window, document, undefined) {
     'use strict';
-	$(document).ready( function() {
-		var Elevator = {
-			init : function() {
+    $(document).ready( function() {
+        var Elevator = {
+            init : function() {
                 this.utils.init();
-			},
+            },
             vals : {
                 $window : $(window)
             },
@@ -59,7 +59,7 @@
                     }, 50);
                 }
             },
-		};
-		Elevator.init();
-	});
+        };
+        Elevator.init();
+    });
 })(jQuery, window, document);

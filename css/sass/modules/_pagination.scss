@@ -4,42 +4,42 @@
    ========================================================================== */
 
 .pagination-centered {
-	margin: 1em 0;
-	text-align: center;
+    margin: 1em 0;
+    text-align: center;
 }
 .pagination {
-	margin: 0 0 1em 0;
-	padding: 0;
-	list-style-type: none;
-	text-transform: uppercase;
-	@include rem( 'font-size', 13px );
-	& li {
-		margin-bottom: 5px;
-		display: inline-block;
-	}
-	& span {
-		padding: 0 0.7em;
-	}
-	& a {
-		padding: 0.4em 0.9em;
-		display: block;
-		background: $mercury;
-		color: darken( $alto, 10% );
-		@include transition-property( background, color );
-		@include transition-duration( .25s );
-		&:hover {
-			background: $success;
-			color: #fff;
-		}
-	}
-	& .current {
-		color: $success;
-	}
-	& .dots {
-		color: #b3b3b3;
-	}
+    margin: 0 0 1em 0;
+    padding: 0;
+    list-style-type: none;
+    text-transform: uppercase;
+    @include rem( 'font-size', 13px );
+    & li {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+    & span {
+        padding: 0 0.7em;
+    }
+    & a {
+        padding: 0.4em 0.9em;
+        display: block;
+        background: $mercury;
+        color: darken( $alto, 10% );
+        @include transition-property( background, color );
+        @include transition-duration( .25s );
+        &:hover {
+            background: $success;
+            color: #fff;
+        }
+    }
+    & .current {
+        color: $success;
+    }
+    & .dots {
+        color: #b3b3b3;
+    }
 }
 .page-count {
-	font-size: 0.625em;
-	color: #ccc;
+    font-size: 0.625em;
+    color: #ccc;
 }

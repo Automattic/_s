@@ -1,56 +1,56 @@
 .notification {
-	padding: 1em;
-	position: relative;
-	background: $off-white;
-	@include transition-property( background );
-	@include transition-duration( .25s );
+    padding: 1em;
+    position: relative;
+    background: $off-white;
+    @include transition-property( background );
+    @include transition-duration( .25s );
 }
 .notification--error {
-	background: $error-lt;
-	color: $error;
+    background: $error-lt;
+    color: $error;
 }
 .notification--warning {
-	background: $warning-lt;
-	color: $warning;
+    background: $warning-lt;
+    color: $warning;
 }
 .notification--success {
-	background: $success-lt;
-	color: $success;
+    background: $success-lt;
+    color: $success;
 }
 .notification__message {
-	a {
-		text-decoration: underline;
-		.notification--error & {
-			color: $error;
-		}
-		.notification--warning & {
-			color: $warning;
-		}
-		.notification--success & {
-			color: $success;
-		}
-	}
-	> * { // remove any styling from editor added tags
-		margin: 0;
-		padding: 0;
-	}
+    a {
+        text-decoration: underline;
+        .notification--error & {
+            color: $error;
+        }
+        .notification--warning & {
+            color: $warning;
+        }
+        .notification--success & {
+            color: $success;
+        }
+    }
+    > * { // remove any styling from editor added tags
+        margin: 0;
+        padding: 0;
+    }
 }
 .notification__close {
-	padding: 0.5em;
-	position: absolute;
-	top: 0.5em;
-	right: 0.5em;
-	z-index: 1;
-	cursor: pointer;
-	background: white;
-	color: $alto;
-	@include rem( 'font-size', 10px );
-	@include border-radius( 50% );
-	@include transition-property( color, transform );
-	@include transition-duration( .25s );
-	@include transform( rotate( 0deg ) );
-	&:hover {
-		color: $error;
-		@include transform( rotate( 90deg ) );
-	}
+    padding: 0.5em;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 1;
+    cursor: pointer;
+    background: white;
+    color: $alto;
+    @include rem( 'font-size', 10px );
+    @include border-radius( 50% );
+    @include transition-property( color, transform );
+    @include transition-duration( .25s );
+    @include transform( rotate( 0deg ) );
+    &:hover {
+        color: $error;
+        @include transform( rotate( 90deg ) );
+    }
 }

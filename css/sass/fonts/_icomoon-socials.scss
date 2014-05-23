@@ -1,12 +1,12 @@
 @font-face {
-	font-family: 'socials';
-	src:url('../fonts/socials/socials.eot?5unk66');
-	src:url('../fonts/socials/socials.eot?#iefix5unk66') format('embedded-opentype'),
-		url('../fonts/socials/socials.woff?5unk66') format('woff'),
-		url('../fonts/socials/socials.ttf?5unk66') format('truetype'),
-		url('../fonts/socials/socials.svg?5unk66#socials') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'socials';
+    src:url('../fonts/socials/socials.eot?5unk66');
+    src:url('../fonts/socials/socials.eot?#iefix5unk66') format('embedded-opentype'),
+        url('../fonts/socials/socials.woff?5unk66') format('woff'),
+        url('../fonts/socials/socials.ttf?5unk66') format('truetype'),
+        url('../fonts/socials/socials.svg?5unk66#socials') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .icon-facebook,
@@ -21,52 +21,52 @@
 .icon-googleplus,
 .icon-flickr,
 .icon-twitter, {
-	font-family: 'socials';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+    font-family: 'socials';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-facebook:before {
-	content: "\66";
+    content: "\66";
 }
 .icon-linkedin:before {
-	content: "\69";
+    content: "\69";
 }
 .icon-rss:before {
-	content: "\72";
+    content: "\72";
 }
 .icon-email:before {
-	content: "\6d";
+    content: "\6d";
 }
 .icon-instagram:before {
-	content: "\6e";
+    content: "\6e";
 }
 .icon-youtube:before {
-	content: "\79";
+    content: "\79";
 }
 .icon-vimeo:before {
-	content: "\76";
+    content: "\76";
 }
 .icon-tumblr:before {
-	content: "\75";
+    content: "\75";
 }
 .icon-pinterest:before {
-	content: "\70";
+    content: "\70";
 }
 .icon-googleplus:before {
-	content: "\67";
+    content: "\67";
 }
 .icon-flickr:before {
-	content: "\6b";
+    content: "\6b";
 }
 .icon-twitter:before {
-	content: "\74";
+    content: "\74";
 }

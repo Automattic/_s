@@ -7,8 +7,8 @@
    ========================================================================== */
 
 .class {
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-	}
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+    }
 }
 
 

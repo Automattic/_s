@@ -11,8 +11,8 @@
    ========================================================================== */
 
 body {
-	font-size: 1em;
-	line-height: 1.4;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
 /*
@@ -22,15 +22,15 @@ body {
  */
 
 ::-moz-selection {
-	background: $selection-highlight;
-	text-shadow: none;
-	color: white;
+    background: $selection-highlight;
+    text-shadow: none;
+    color: white;
 }
 
 ::selection {
-	background: $selection-highlight;
-	text-shadow: none;
-	color: white;
+    background: $selection-highlight;
+    text-shadow: none;
+    color: white;
 }
 
 /*
@@ -38,12 +38,12 @@ body {
  */
 
 hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 1px solid #ccc;
-	margin: 1em 0;
-	padding: 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
 /*
@@ -51,7 +51,7 @@ hr {
  */
 
 img {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 /*
@@ -59,9 +59,9 @@ img {
  */
 
 fieldset {
-	border: 0;
-	margin: 0;
-	padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 /*
@@ -69,7 +69,7 @@ fieldset {
  */
 
 textarea {
-	resize: vertical;
+    resize: vertical;
 }
 
 /* ==========================================================================
@@ -77,10 +77,10 @@ textarea {
    ========================================================================== */
 
 .chromeframe {
-	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
-	padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 
@@ -90,75 +90,75 @@ textarea {
    ========================================================================== */
 
 @media print,
-	   (-o-min-device-pixel-ratio: 5/4),
-	   (-webkit-min-device-pixel-ratio: 1.25),
-	   (min-resolution: 120dpi) {
-	/* Style adjustments for high resolution devices */
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
 }
 
 @media print {
-	* {
-		background: transparent !important;
-		color: #000 !important; /* Black prints faster: h5bp.com/s */
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
 
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
 
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
 
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
 
-	/*
-	 * Don't show links for images, or javascript/internal links
-	 */
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
 
-	.ir a:after,
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after {
-		content: "";
-	}
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
 
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
 
-	thead {
-		display: table-header-group; /* h5bp.com/t */
-	}
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
 
-	tr,
-	img {
-		page-break-inside: avoid;
-	}
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
 
-	img {
-		max-width: 100% !important;
-	}
+    img {
+        max-width: 100% !important;
+    }
 
-	@page {
-		margin: 0.5cm;
-	}
+    @page {
+        margin: 0.5cm;
+    }
 
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }

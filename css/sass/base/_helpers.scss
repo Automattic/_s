@@ -4,67 +4,67 @@
    ========================================================================== */
 
 %ir {
-	/*
-	 * Image replacement
-	 */
-	background-color: transparent;
-	border: 0;
-	overflow: hidden;
-	/* IE 6/7 fallback */
-	*text-indent: -9999px;
-	&:before {
-		content: "";
-		display: block;
-		width: 0;
-		height: 150%;
-	}
+    /*
+     * Image replacement
+     */
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
 }
 
 %hidden {
-	/*
-	 * Hide from both screenreaders and browsers: h5bp.com/u
-	 */
-	display: none !important;
-	visibility: hidden;
+    /*
+     * Hide from both screenreaders and browsers: h5bp.com/u
+     */
+    display: none !important;
+    visibility: hidden;
 }
 
 %visuallyhidden {
-	/*
-	 * Hide only visually, but have it available for screenreaders: h5bp.com/v
-	 */
+    /*
+     * Hide only visually, but have it available for screenreaders: h5bp.com/v
+     */
 
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 
-	/*
-	 * Extends the .visuallyhidden class to allow the element to be focusable
-	 * when navigated to via the keyboard: h5bp.com/p
-	 */
+    /*
+     * Extends the .visuallyhidden class to allow the element to be focusable
+     * when navigated to via the keyboard: h5bp.com/p
+     */
 
-	&.focusable:active,
-	&.focusable:focus {
-	    clip: auto;
-	    height: auto;
-	    margin: 0;
-	    overflow: visible;
-	    position: static;
-	    width: auto;
-	}
+    &.focusable:active,
+    &.focusable:focus {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        position: static;
+        width: auto;
+    }
 }
 .visuallyhidden {
-	@extend %visuallyhidden;
+    @extend %visuallyhidden;
 }
 
 %invisible {
-	/*
-	* Hide visually and from screenreaders, but maintain layout
-	*/
+    /*
+    * Hide visually and from screenreaders, but maintain layout
+    */
     visibility: hidden;
 }
 
@@ -80,51 +80,51 @@
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-	&:before, &:after {
-		content: " "; /* 1 */
-		display: table; /* 2 */
-	}
-	&:after {
-		clear: both;
-	}
-	/*
-	 * For IE 6/7 only
-	 * Include this rule to trigger hasLayout and contain floats.
-	 */
-	*zoom: 1;
+    &:before, &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    &:after {
+        clear: both;
+    }
+    /*
+     * For IE 6/7 only
+     * Include this rule to trigger hasLayout and contain floats.
+     */
+    *zoom: 1;
 }
 .pull-left {
-	float: left;
+    float: left;
 }
 .pull-right {
-	float: right;
+    float: right;
 }
 .fine-print {
-	@include rem( 'font-size', 12px );
+    @include rem( 'font-size', 12px );
 }
 .text-center {
-	text-align: center;
+    text-align: center;
 }
 .alignleft {
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		margin-right: 1.5em;
-		margin-bottom: 1.5em;
-		display: inline;
-		float: left;
-	}
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        margin-right: 1.5em;
+        margin-bottom: 1.5em;
+        display: inline;
+        float: left;
+    }
 }
 .alignright {
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		margin-left: 1.5em;
-		margin-bottom: 1.5em;
-		display: inline;
-		float: right;
-	}
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        margin-left: 1.5em;
+        margin-bottom: 1.5em;
+        display: inline;
+        float: right;
+    }
 }
 .aligncenter {
-	@include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
-		clear: both;
-		display: block;
-		margin: 0 auto;
-	}
+    @include breakpoint( $tablet, $no-query: '.lt-ie9' ) {
+        clear: both;
+        display: block;
+        margin: 0 auto;
+    }
 }
