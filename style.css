@@ -382,15 +382,14 @@ a:active {
 }
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	display: none;
 	float: left;
-	left: 0;
 	position: absolute;
 	top: 1.5em;
+	left: -999em;
 	z-index: 99999;
 }
 .main-navigation ul ul ul {
-	left: 100%;
+	left: -999em;
 	top: 0;
 }
 .main-navigation ul ul a {
@@ -405,7 +404,10 @@ a:active {
 .main-navigation ul ul a:hover {
 }
 .main-navigation ul li:hover > ul {
-	display: block;
+	left: auto;
+}
+.main-navigation ul ul li:hover > ul {
+	left: 100%;
 }
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
