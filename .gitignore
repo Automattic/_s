@@ -8,9 +8,18 @@
 ehthumbs.db
 Thumbs.db
 
+# Grunt #
+######################
+node_modules
+.npm-debug.log
+
 # SASS #
 ######################
 *.sass-cache
+
+# Source Maps #
+######################
+*.map
 
 # SublimeText #
 ######################
