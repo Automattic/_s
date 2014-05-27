@@ -11,4 +11,4 @@ images_dir      = 'img'
 javascripts_dir = 'js'
 fonts_dir       = 'fonts'
 line_comments   = false
-output_style    = :expanded
+output_style    = :compressed #:expanded, :nested, :compact, :compressed
