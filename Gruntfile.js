@@ -125,7 +125,7 @@ module.exports = function ( grunt ) {
             scriptsMain: {
                 options: {
                     title: 'JS Successfully Compiled',
-                    message: 'Concat and Uglify were processed.'
+                    message: 'Uglify was processed.'
                 }
             },
             scriptsPlugins: {
