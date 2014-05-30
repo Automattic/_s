@@ -44,9 +44,8 @@ a {
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			display: none;
 			float: left;
-			left: 0;
+			left: -999em;
 			position: absolute;
 			top: 1.5em;
 			z-index: 99999;
@@ -57,15 +56,19 @@ a {
 			li {
 			}
 
+			li:hover > ul {
+				left: 100%;
+			}
+
 			a {
 				width: 200px;
 
 				&:hover {
 				}
-			}	
+			}
 
 			ul {
-				left: 100%;
+				left: -999em;
 				top: 0;
 			}
 		}
@@ -74,12 +77,12 @@ a {
 	li {
 		float: left;
 		position: relative;
-			
+
 		&:hover > a {
 		}
 
 		&:hover > ul {
-			display: block;
+			left: auto;
 		}
 	}
 
