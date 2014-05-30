@@ -29,13 +29,11 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-<<<<<<< HEAD
+
 			<h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
-
-=======
 			<button class="menu-toggle"><?php _e( 'Primary Menu', '_s' ); ?></button>
->>>>>>> master
+
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

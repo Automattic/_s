@@ -66,23 +66,20 @@ function _s_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
-<<<<<<< HEAD
-
-	// Enable support for HTML5 markup.
-	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
-=======
->>>>>>> master
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**
- * Register widgetized area and update sidebar with default widgets.
+ * Register widget area.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function _s_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', '_s' ),
 		'id'            => 'sidebar-1',
+		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
