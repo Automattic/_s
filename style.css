@@ -81,7 +81,7 @@ html {
 	box-sizing:         border-box;
 }
 body {
-	background: #fff;
+	background: #fff; /* Fallback for when there is no custom background color defined. */
 }
 article,
 aside,
