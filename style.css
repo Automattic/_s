@@ -399,7 +399,7 @@ a:active {
 }
 .main-navigation li:hover > a {
 }
-.main-navigation ul ul :hover > a {
+.main-navigation ul ul:hover > a {
 }
 .main-navigation ul ul a:hover {
 }
