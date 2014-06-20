@@ -317,6 +317,7 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	padding: 3px;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -326,16 +327,8 @@ input[type="search"]:focus,
 textarea:focus {
 	color: #111;
 }
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: 3px;
-}
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
 }
