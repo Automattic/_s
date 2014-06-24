@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages.
  *
  * @package _s
  */
