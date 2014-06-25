@@ -1,6 +1,6 @@
 <?php
 /**
- * The Sidebar containing the main widget areas.
+ * The sidebar containing the main widget areas.
  *
  * @package _s
  */
