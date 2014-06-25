@@ -103,7 +103,8 @@ module.exports = function ( grunt ) {
                 files: [
                     'css/*.css',
                     'js/min/plugins.min.js',
-                    'js/min/main.min.js'
+                    'js/min/main.min.js',
+                    '**/*.php'
                 ],
                 tasks: [ 'notify:livereload' ]
             }
