@@ -20,13 +20,15 @@ function _s_page_menu_args( $args ) {
 add_filter( 'wp_page_menu_args', '_s_page_menu_args' );
 
 /**
- * Adds custom classes to the array of body classes.
+ * Extend the default WordPress body classes.
  *
- * @param array $classes Classes for the body element.
- * @return array
+ * Adds body classes to denote:
+ * 1. Single or multiple authors.
+ *
+ * @param array $classes A list of existing body class values.
+ * @return array The filtered body class list.
  */
 function _s_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
@@ -49,16 +51,16 @@ function _s_wp_title( $title, $sep ) {
 
 	global $page, $paged;
 
-	// Add the blog name
+	// Adds the blog name
 	$title .= get_bloginfo( 'name', 'display' );
 
-	// Add the blog description for the home/front page.
+	// Adds the blog description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		$title .= " $sep $site_description";
 	}
 
-	// Add a page number if necessary:
+	// Adds a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
 		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
 	}
