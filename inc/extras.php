@@ -31,6 +31,11 @@ function _s_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Adds a class of no-sidebar when sidebar-1 has no widgets.
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'no-sidebar-1';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
