@@ -23,7 +23,8 @@
 			}
 
 			li {
-				&:hover > ul {
+				&:hover > ul,
+				&.focus > ul {
 					left: 100%;
 				}
 			}
@@ -32,14 +33,17 @@
 				width: 200px;
 			}
 
-			:hover > a {
+			:hover > a ,
+			.focus > a {
 			}
 
-			a:hover {
+			a:hover,
+			a.focus {
 			}
 		}
 
-		li:hover > ul {
+		li:hover > ul,
+		li.focus > ul {
 			left: auto;
 		}
 	}
@@ -47,7 +51,8 @@
 		float: left;
 		position: relative;
 
-		&:hover > a {
+		&:hover > a,
+		&.focus > a {
 		}
 	}
 	a {
