@@ -33,7 +33,7 @@ function _s_paging_nav() {
 	</nav><!-- .navigation -->
 	<?php
 }
-endif;
+endif; // _s_paging_nav
 
 if ( ! function_exists( '_s_post_nav' ) ) :
 /**
@@ -59,7 +59,7 @@ function _s_post_nav() {
 	</nav><!-- .navigation -->
 	<?php
 }
-endif;
+endif; // _s_post_nav
 
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
@@ -91,7 +91,7 @@ function _s_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 
 }
-endif;
+endif; // _s_posted_on
 
 /**
  * Returns true if a blog has more than 1 category.
