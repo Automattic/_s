@@ -133,3 +133,33 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
+
+if ( ! function_exists( '_s_entry_meta' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags, comments and edit link.
+ */
+function _s_entry_meta() {
+	/* Hide category and tag text for pages */
+	if ( 'post' == get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( __( ', ', '_s' ) );
+		if ( $categories_list && _s_categorized_blog() ) {
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', '_s' ) . '</span>', $categories_list );
+		}
+
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', __( ', ', '_s' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', '_s' ) . '</span>', $tags_list );
+		}
+	}
+
+	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) );
+		echo '</span>';
+	}
+
+	edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
+}
+endif;

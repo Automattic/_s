@@ -20,7 +20,8 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php _s_entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
