@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                     sourcemap: 'none',
                 },
                 files: {
-                    'style.css': 'sass/style.scss',
+                    'style.css': 'assets/sass/style.scss',
                 }
             },
             Editor: {
@@ -40,19 +40,20 @@ module.exports = function(grunt) {
                     sourcemap: 'none',
                 },
                 files: {
-                    'css/editor-style.css': 'sass/editor-style.scss',
-                    'css/ie8-style.css': 'sass/ie8-style.scss'
+                    'css/editor-style.css': 'assets/sass/editor-style.scss',
+                    'css/ie8-style.css': 'assets/sass/ie8-style.scss'
                 }
             }
         },
 
         // autoprefixer
         autoprefixer: {
-            options: {
-                browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
-                map: false
-            },
+            
             multiple_files: {
+                options: {
+                    browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
+                    map: false
+                },
                 expand: true,
                 flatten: true,
                 src: 'css/*.css',
@@ -60,12 +61,12 @@ module.exports = function(grunt) {
             },
             // prefix main file
             single_file: {
-              options: {
-                browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
-                map: false
-              },
-              src: 'style.css',
-              dest: 'style.css'
+                options: {
+                    browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
+                    map: false
+                },
+                src: 'style.css',
+                dest: 'style.css'
             },
         },
         
@@ -88,15 +89,15 @@ module.exports = function(grunt) {
             },
             main: {
                 files: {
-                    'js/main.js': [
+                    'assets/js/main.js': [
                         'bower_components/fastclick/index.js',
                         'bower_components/drop/dist/js/classList.js',
                         'bower_components/astro/dist/js/astro.js',
                         'bower_components/drop/dist/js/drop.js',
-                        'js/components/skip-link-focus-fix.js',
-                        'js/components/init.js',
+                        'assets/js/components/skip-link-focus-fix.js',
+                        'assets/js/components/init.js',
                     ],
-                    'js/html5.js' : [
+                    'assets/js/html5.js' : [
                         'bower_components/html5shiv-dist/html5shiv.js'
                     ]
                 }
@@ -123,11 +124,11 @@ module.exports = function(grunt) {
         // watch for changes and trigger sass, jshint, uglify and livereload
         watch: {
             sass: {
-                files: ['sass/**/*.{scss,sass}'],
+                files: ['assets/sass/**/*.{scss,sass}'],
                 tasks: ['sass', 'autoprefixer']
             },
             js: {
-                files: 'js/components/init.js',
+                files: 'assets/js/components/init.js',
                 tasks: ['jshint', 'uglify']
             },
             images: {
@@ -136,7 +137,7 @@ module.exports = function(grunt) {
             },
             livereload: {
                 options: { livereload: true },
-                files: ['style.css', 'js/*.js', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}']
+                files: ['style.css', 'assets/js/*.js', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
 
