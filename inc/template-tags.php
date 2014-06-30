@@ -33,7 +33,7 @@ function _s_paging_nav() {
 	</nav><!-- .navigation -->
 	<?php
 }
-endif;
+endif; // _s_paging_nav
 
 if ( ! function_exists( '_s_post_nav' ) ) :
 /**
@@ -59,7 +59,7 @@ function _s_post_nav() {
 	</nav><!-- .navigation -->
 	<?php
 }
-endif;
+endif; // _s_post_nav
 
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
@@ -91,8 +91,9 @@ function _s_posted_on() {
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 
 }
-endif;
+endif; // _s_posted_on
 
+if ( ! function_exists( '_s_categorized_blog' ) ) :
 /**
  * Returns true if a blog has more than 1 category.
  *
@@ -123,7 +124,9 @@ function _s_categorized_blog() {
 		return false;
 	}
 }
+endif; // _s_categorized_blog
 
+if ( ! function_exists( '_s_category_transient_flusher' ) ) :
 /**
  * Flush out the transients used in _s_categorized_blog.
  */
@@ -131,5 +134,6 @@ function _s_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( '_s_categories' );
 }
+endif; // _s_category_transient_flusher
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
