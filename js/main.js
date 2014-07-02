@@ -26,7 +26,6 @@
                     },
                     checkStateView : function() {
 
-                        Elevator.vals.state = $('.mq-state').css('content');
                         Elevator.vals.view  = parseInt( $('.mq-state').css('z-index') );
 
                     },
