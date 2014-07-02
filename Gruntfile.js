@@ -26,8 +26,8 @@ module.exports = function ( grunt ) {
         concat : {
             scripts : {
                 files : {
-                    'js/min/plugins.min.js': [
-                        'js/plugins.js',
+                    'js/plugins.js': [
+                        'js/plugins/boilerplate.js',
                         'js/plugins/jquery.magnific-popup.js',
                         'js/plugins/jquery.cycle2.js',
                         'js/plugins/jquery.cycle2.swipe.js'
@@ -48,7 +48,7 @@ module.exports = function ( grunt ) {
             },
             plugins: {
                 files: {
-                    'js/min/plugins.min.js': [ 'js/min/plugins.min.js' ]
+                    'js/min/plugins.min.js': [ 'js/plugins.js' ]
                 }
             }
         },
