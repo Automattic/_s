@@ -3,39 +3,58 @@
    Media Query Check
    ========================================================================== */
 
+/**
+ * Content property must be applied to pseudo elements - http://stackoverflow.com/a/18470807
+ * Cannot get value of pseudo element property with jQuery since it's not part of the DOM
+ * This is possible with JavaScript using this method (http://davidwalsh.name/pseudo-element). However, it
+ * isn't compatbile with LTE IE8
+ */
+
 .mq-state {
-    content: "mobile";
     position: relative; // needed for getting z-index value in js
-    z-index: 1; // denotes mobile
+    z-index: 5; // denotes mobile
     display: none;
+    &:before {
+        content: "mobile";
+    }
 }
 @include breakpoint( $mobile-landscape ) {
     .mq-state {
-        content: "mobile-landscape";
-        z-index: 1;
+        z-index: 10;
+        &:before {
+            content: "mobile-landscape";
+        }
     }
 }
 @include breakpoint( $tablet ) {
     .mq-state {
-        content: "tablet";
-        z-index: 2;
+        z-index: 15;
+        &:before {
+            content: "tablet";
+        }
     }
 }
 @include breakpoint( $tablet-landscape ) {
     .mq-state {
-        content: "tablet-landscape";
-        z-index: 2;
+        z-index: 20;
+        &:before {
+            content: "tablet-landscape";
+        }
     }
 }
 @include breakpoint( $site-constraint ) {
     .mq-state {
-        content: "site-constraint";
-        z-index: 2;
+        z-index: 25;
+        &:before {
+            content: "site-constraint";
+        }
     }
 }
 @include breakpoint( $desktop ) {
     .mq-state {
-        content: "desktop";
-        z-index: 2;
+        z-index: 30;
+        &:before {
+            content: "desktop";
+        }
     }
 }
