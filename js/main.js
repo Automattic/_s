@@ -28,6 +28,9 @@
 
                         Elevator.vals.view  = parseInt( $('.mq-state').css('z-index') );
 
+                        // fallback to desktop if browser doesn't support media queries
+                        if( ! Modernizr.mq( 'only all' ) ) Elevator.vals.view = 30;
+
                     },
 
                 },
