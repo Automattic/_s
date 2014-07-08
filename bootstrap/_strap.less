@@ -59,25 +59,22 @@ From the original _s style.css
   display: inline;
   float: left;
   max-width: 100%;
-  margin: @line-height-computed @grid-gutter-width @line-height-computed 0;
+  margin: 0 @grid-gutter-width @line-height-computed 0;
 }
 .alignright {
   display: inline;
   float: right;
   max-width: 100%;
-  margin: @line-height-computed 0 @line-height-computed @grid-gutter-width;
+  margin: 0 0 @line-height-computed @grid-gutter-width;
 }
 .aligncenter,
 .aligncenter .caption,
 .thumbnail > a > img {
   clear: both;
   display: block;
-  margin: @line-height-computed auto;
+  margin: 0 auto @line-height-computed;
   max-width: 100%;
   text-align: center;
-}
-.aligncenter {
-  margin: @line-height-computed auto;
 }
 .thumbnail > a > img,
 .aligncenter .caption {
@@ -170,27 +167,4 @@ Comment form
 #commentform #submit
 {
   .btn;
-}
-
-
-/*
-Responsive embed media
-*/
-
-.embed-container {
-  position: relative;
-  height: 0;
-  padding-bottom: 56.25%;
-  padding-top: @line-height-computed;
-  margin: @line-height-computed auto;
-}
-
-.embed-container iframe,
-.embed-container object,
-.embed-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
