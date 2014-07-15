@@ -63,3 +63,27 @@
 
 	@return $return;
 }
+
+// Transitions
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+// Media Queries
+@mixin breakpoint($point) {
+	@if $point == desktop {
+		@media screen and (min-width: 1140px) { @content; }
+	}
+
+	@else if $point == tablet {
+		@media screen and (min-width: 800px) { @content; }
+	}
+
+	@else if $point == phone {
+		@media screen and (min-width: 480px)  { @content; }
+	}
+}
