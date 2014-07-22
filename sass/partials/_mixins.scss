@@ -74,16 +74,20 @@
 }
 
 // Media Queries
-@mixin breakpoint($point) {
-	@if $point == desktop {
+@mixin wider-than($point) {
+	@if $point == large-desktop {
 		@media screen and (min-width: 1140px) { @content; }
 	}
 
-	@else if $point == tablet {
-		@media screen and (min-width: 800px) { @content; }
+	@else if $point == desktop {
+		@media screen and (min-width: 769px) { @content; }
 	}
 
-	@else if $point == phone {
-		@media screen and (min-width: 480px)  { @content; }
+	@else if $point == tablet {
+		@media screen and (min-width: 480px) { @content; }
+	}
+
+	@else {
+		@media screen and (min-width: $point) { @content; }
 	}
 }
