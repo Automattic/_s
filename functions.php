@@ -114,6 +114,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Load WDS Scripts.
+ * Load styles & scripts.
  */
 require get_template_directory() . '/inc/scripts.php';
