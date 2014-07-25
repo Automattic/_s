@@ -19,7 +19,7 @@ function _s_scripts() {
 
 	}
 
-	wp_register_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css', array(), null );
+	wp_register_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css', array(), $version );
 	wp_enqueue_style( 'font-awesome' );
 	wp_register_style( 'google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,400,700', array(), $version );
 	wp_enqueue_style( 'google-fonts' );
