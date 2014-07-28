@@ -1,0 +1,36 @@
+// Rem output with px fallback
+.font-size(@sizeValue: 1.6) {
+  	font-size: (@sizeValue * 10) + px;
+  	font-size: @sizeValue + rem;
+}
+
+// Box model
+.box-sizing(@box-model) {
+  	box-sizing: @box-model;
+  	-moz-box-sizing: @box-model; // Firefox <= 19
+	-webkit-box-sizing: @box-model; // Safari <= 5
+}
+
+// Border radius
+.border-radius(@radius) {
+  	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+  	border-radius: @radius;
+  	-webkit-border-radius: @radius;
+}
+
+// Center block
+.center-block() {
+  	display: block;
+  	margin: 0 auto;
+}
+
+// Clearfix
+.clearfix() {
+    content: "";
+    display: table;
+}
+
+// Center after (not all clearfix need this also)
+.clearfix-after() {
+    clear: both;
+}
