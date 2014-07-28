@@ -8,7 +8,6 @@ Version: 1.0-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: _s
-Domain Path: /languages/
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -790,4 +789,3 @@ object {
 
 .gallery-caption {
 	display: block;
-}
