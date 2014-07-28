@@ -21,8 +21,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php edit_post_link( __( 'Edit', '_s' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
