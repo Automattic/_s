@@ -4,7 +4,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0-wpcom\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2013-12-19 02:31:31+00:00\n"
+=======
+"POT-Creation-Date: 2014-06-03 14:02:16+00:00\n"
+>>>>>>> _s-master
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -145,8 +149,12 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+<<<<<<< HEAD
 #: content-page.php:23 content-single.php:60 content.php:61
 #: inc/template-tags.php:81 inc/template-tags.php:100
+=======
+#: content-page.php:24 content-single.php:60 content.php:61
+>>>>>>> _s-master
 msgid "Edit"
 msgstr ""
 
@@ -209,6 +217,7 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
+<<<<<<< HEAD
 #: functions.php:45
 msgid "Primary Menu"
 msgstr ""
@@ -222,6 +231,17 @@ msgid "Menu"
 msgstr ""
 
 #: header.php:32
+=======
+#: functions.php:45 header.php:32
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:80
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+>>>>>>> _s-master
 msgid "Skip to content"
 msgstr ""
 
@@ -255,6 +275,7 @@ msgctxt "Next post link"
 msgid "%title <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+<<<<<<< HEAD
 #: inc/template-tags.php:81
 msgid "Pingback:"
 msgstr ""
@@ -276,6 +297,16 @@ msgstr ""
 msgid ""
 "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
 "%2$s</span>"
+=======
+#: inc/template-tags.php:82
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:87
+msgctxt "post author"
+msgid "by %s"
+>>>>>>> _s-master
 msgstr ""
 
 #: search.php:16
