@@ -29,28 +29,16 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	@include border-radius(3px);
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: $color__text-input-focus;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
 	padding: 3px;
+
+	&:focus {
+		color: $color__text-input-focus;
+	}
 }
 
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
+	padding: 0 0 0 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
 }
