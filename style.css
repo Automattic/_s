@@ -99,7 +99,8 @@ nav,
 section {
   display: block; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
 table {
@@ -107,15 +108,20 @@ table {
   border-collapse: separate;
   border-spacing: 0; }
 
-caption, th, td {
+caption,
+th,
+td {
   font-weight: normal;
   text-align: left; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: ""; }
 
-blockquote, q {
+blockquote,
+q {
   quotes: "" ""; }
 
 a:focus {
@@ -227,7 +233,8 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
-ul, ol {
+ul,
+ol {
   margin: 0 0 1.5em 3em; }
 
 ul {
@@ -534,6 +541,9 @@ a {
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
+.sticky {
+  display: block; }
+
 .hentry {
   margin: 0 0 1.5em; }
 
@@ -566,6 +576,9 @@ a {
 --------------------------------------------------------------*/
 .comment-content a {
   word-wrap: break-word; }
+
+.bypostauthor {
+  display: block; }
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -625,25 +638,28 @@ object {
   width: 100%; }
 
 .gallery-columns-2 {
-  max-width: 50; }
+  max-width: 50%; }
 
 .gallery-columns-3 {
-  max-width: 33.33333; }
+  max-width: 33.33333%; }
 
 .gallery-columns-4 {
-  max-width: 25; }
+  max-width: 25%; }
 
 .gallery-columns-5 {
-  max-width: 20; }
+  max-width: 20%; }
 
 .gallery-columns-6 {
-  max-width: 16.66667; }
+  max-width: 16.66667%; }
 
 .gallery-columns-7 {
-  max-width: 14.28571; }
+  max-width: 14.28571%; }
 
 .gallery-columns-8 {
-  max-width: 12.5; }
+  max-width: 12.5%; }
 
 .gallery-columns-9 {
-  max-width: 11.11111; }
+  max-width: 11.11111%; }
+
+.gallery-caption {
+  display: block; }

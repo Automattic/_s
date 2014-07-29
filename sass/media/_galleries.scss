@@ -11,7 +11,7 @@
 
 @for $i from 2 through 9 {
 	.#{$gallery-slug}-#{$i} {
-		max-width: 100 / $i;
+		max-width: 100% / $i;
 	}
 }
 
