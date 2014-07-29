@@ -62,7 +62,7 @@ a {
 
 				&:hover {
 				}
-			}	
+			}
 
 			ul {
 				left: 100%;
@@ -74,7 +74,7 @@ a {
 	li {
 		float: left;
 		position: relative;
-			
+
 		&:hover > a {
 		}
 
@@ -96,7 +96,6 @@ a {
 /* Small menu */
 
 .menu-toggle {
-	cursor: pointer;
 	display: none;
 }
 
