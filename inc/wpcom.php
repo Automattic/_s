@@ -11,6 +11,7 @@
  * Adds support for wp.com-specific theme functions.
  *
  * @global array $themecolors
+ * @return void
  */
 function _s_wpcom_setup() {
 	global $themecolors;

@@ -25,7 +25,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
@@ -53,5 +53,10 @@
 		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
+<<<<<<< HEAD
+	</footer><!-- .entry-meta -->
+</article><!-- #post-## -->
+=======
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+>>>>>>> _s-master
