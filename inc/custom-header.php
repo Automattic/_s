@@ -16,7 +16,7 @@
  */
 
 /**
- * Setup the WordPress core custom header feature.
+ * Set up the WordPress core custom header feature.
  *
  * @uses _s_header_style()
  * @uses _s_admin_header_style()
