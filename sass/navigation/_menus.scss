@@ -31,17 +31,19 @@
 			:hover > a {
 			}
 
+			a {
+				width: 200px;
+			}
+
 			a:hover {
 			}
 		}
 
-		a {
-			width: 200px;
-		}
 		li:hover > ul {
 			left: auto;
 		}
 	}
+
 	li {
 		float: left;
 		position: relative;
@@ -49,6 +51,7 @@
 		&:hover > a {
 		}
 	}
+
 	a {
 		display: block;
 		text-decoration: none;
