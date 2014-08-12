@@ -37,7 +37,12 @@
 
 // RTL
 @mixin rtl() {
-    [dir="rtl"] & {
+    html[dir="rtl"] & {
         @content;
     }
 }
+
+
+
+
+
