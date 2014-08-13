@@ -34,3 +34,10 @@
 @mixin clearfix-after() {
     clear: both;
 }
+
+// RTL
+@mixin rtl() {
+    html[dir="rtl"] & {
+        @content;
+    }
+}
