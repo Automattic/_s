@@ -7,7 +7,7 @@
 }
 
 .byline,
-.updated {
+.updated:not(.published){
 	display: none;
 }
 
