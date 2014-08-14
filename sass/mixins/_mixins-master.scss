@@ -1,7 +1,7 @@
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1.6) {
-  	font-size: ($sizeValue * 10) + px;
-  	font-size: $sizeValue + rem;
+	font-size: ($sizeValue * 10) + px;
+	font-size: $sizeValue + rem;
 }
 
 // Box model
@@ -13,24 +13,24 @@
 
 // Border radius
 @mixin border-radius($radius) {
-  	background-clip: padding-box;  /* stops bg color from leaking outside the border: */
-  	-webkit-border-radius: $radius;
-  	border-radius: $radius;
+	background-clip: padding-box; /* stops bg color from leaking outside the border: */
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
 }
 
 // Center block
 @mixin center-block {
-  	display: block;
-  	margin: 0 auto;
+	display: block;
+	margin: 0 auto;
 }
 
 // Clearfix
 @mixin clearfix() {
-    content: "";
-    display: table;
+	content: "";
+	display: table;
 }
 
 // Center after (not all clearfix need this also)
 @mixin clearfix-after() {
-    clear: both;
+	clear: both;
 }
