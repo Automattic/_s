@@ -1,5 +1,5 @@
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: $size__site-spacing;
 }
 
 b, strong {
@@ -11,11 +11,11 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 $size__site-spacing;
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 $size__site-spacing;
 }
 
 pre {

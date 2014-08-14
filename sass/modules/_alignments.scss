@@ -1,13 +1,11 @@
 .alignleft {
-	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: $size__site-spacing;
 }
 
 .alignright {
-	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: $size__site-spacing;
 }
 
 .aligncenter {
