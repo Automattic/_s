@@ -4,7 +4,7 @@ input[type="radio"] {
 }
 
 input[type="search"] {
-	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	@include appearance(textfield); /* Addresses appearance set to searchfield in S5, Chrome */
 	@include box-sizing(content-box); /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 }
 

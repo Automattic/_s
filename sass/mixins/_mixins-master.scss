@@ -34,3 +34,10 @@
 @mixin clearfix-after() {
     clear: both;
 }
+
+// Appearance
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+}
