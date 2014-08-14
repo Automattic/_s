@@ -13,7 +13,7 @@
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
-			top: 1.5em;
+			top: $size__site-spacing;
 			left: -999em;
 			z-index: 99999;
 
@@ -79,7 +79,7 @@
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 $size__site-spacing;
 	overflow: hidden;
 }
 
