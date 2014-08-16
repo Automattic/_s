@@ -1,11 +1,22 @@
 @bodybackground: #fff;
 
-@textcolor: #000;
 @linkcolor: royalblue;
 @linkhover: purple;
+
+@headerbackground: #fff;
+@headerTextColor: #000;
+@headerLinkColor: @linkcolor;
+@headerLinkHover: @linkhover;
+
+@siteContentBackground: #fff;
+
+@textcolor: #000;
 @navbackground: #eee;
 @navlink: #000;
 @navlinkhover: #fff;
+@navLinkActive: @linkcolor;
+@navLinkActiveHover: @linkhover;
+
 @bordercolor : #eee;
 @buttonbackground: @linkcolor;
 @buttonHover: @navlinkhover;
@@ -13,6 +24,10 @@
 @sitewidth: 1180px;
 @sidebarWidth: 25%;
 @contentWidth:75%;
+
+@footerBackground: #fff;
+@footerLinkColor: @linkcolor;
+@footerLinkHover: @linkhover;
 
 .transition(@property, @sec, @type, @delay) {
     transition: @property @sec @type @delay;
@@ -38,6 +53,16 @@
     box-sizing: border-box;
 }
 
+// default body background
 body {
    background: #fff; 
+}
+
+// Default link color and hover effect with transition support
+a {
+    color: @linkcolor; .transition(color, 1s, ease, 0s);
+
+    &:hover {
+        color: @linkhover; .transition(color, 0.5s, ease, 0s);
+    }
 }

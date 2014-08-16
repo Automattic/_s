@@ -1,0 +1,45 @@
+.main-navigation {
+    background: @navbackground;
+
+    .menu-toogle {
+        display: none;
+    }
+
+    .menu {
+        .nav-menu {
+            li {
+                /*General menu links */
+                a {
+                    color: @navlink;
+
+                    &:hover {
+                        color: @navlinkhover;
+                    }
+                }
+                /*Active menu link specific */
+                &.current_page_item {
+                    a {
+                        color: @navLinkActive;
+
+                        &:hover {
+                            color: @navLinkActiveHover;
+                        }
+                    }
+                }
+                /*Sub menu specific */
+                .sub-menu {
+                    li {
+                         a {
+                            color: @navlink;
+
+                            &:hover {
+                                color: @navlinkhover;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

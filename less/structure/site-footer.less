@@ -1,0 +1,16 @@
+.site-footer {
+     /* max-width: @sitewidth; */
+    width: 100%;
+    color: @textcolor;
+    background: @footerBackground;
+    /* site-footer link hover incase you need it */
+    a {
+        color: @footerLinkColor;
+        .transition(color, 0.5s, ease, 0s);
+
+        &:hover {
+            color: @footerLinkColor;
+            .transition(color, 1s, ease, 0s);
+        }
+    }
+}
