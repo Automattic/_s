@@ -1,0 +1,43 @@
+@bodybackground: #fff;
+
+@textcolor: #000;
+@linkcolor: royalblue;
+@linkhover: purple;
+@navbackground: #eee;
+@navlink: #000;
+@navlinkhover: #fff;
+@bordercolor : #eee;
+@buttonbackground: @linkcolor;
+@buttonHover: @navlinkhover;
+
+@sitewidth: 1180px;
+@sidebarWidth: 25%;
+@contentWidth:75%;
+
+.transition(@property, @sec, @type, @delay) {
+    transition: @property @sec @type @delay;
+    -webkit-transition: @property @sec @type @delay;
+    -moz-transition: @property @sec @type @delay;
+}
+
+.transform(@property){
+    -moz-transform: @property;
+    -webkit-transform: @property;
+    -ms-transform: @property;
+    transform: @property;
+}
+
+// Border radius
+.border-radius(@radius) {
+	background-clip: padding-box; /* stops bg color from leaking outside the border: */
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+   background: #fff; 
+}
