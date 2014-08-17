@@ -30,7 +30,7 @@
 	display: table;
 }
 
-// Center after (not all clearfix need this also)
+// Clearfix after (not all clearfix need this also)
 @mixin clearfix-after() {
 	clear: both;
 }
