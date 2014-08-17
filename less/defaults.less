@@ -25,16 +25,27 @@
 @sidebarWidth: 25%;
 @contentWidth:75%;
 
+@entryTitleColor: @linkcolor;
+@entryTitleHover: @linkhover;
+@widgetTitlecolor: royalblue;
+@widgettitlehover: purple;
+
 @footerBackground: #fff;
 @footerLinkColor: @linkcolor;
 @footerLinkHover: @linkhover;
 
+@hrbackground-color: #000;
+@screen-reader-background: #000;
+@screen-reader-text-color: #fff;
+
+// css transitions
 .transition(@property, @sec, @type, @delay) {
     transition: @property @sec @type @delay;
     -webkit-transition: @property @sec @type @delay;
     -moz-transition: @property @sec @type @delay;
 }
 
+// css transform 
 .transform(@property){
     -moz-transform: @property;
     -webkit-transform: @property;
@@ -47,6 +58,28 @@
 	background-clip: padding-box; /* stops bg color from leaking outside the border: */
 	-webkit-border-radius: @radius;
 	border-radius: @radius;
+}
+
+
+.center-block {
+	display: block;
+	margin: 0 auto;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+    .center-block;
 }
 
 * {
@@ -66,3 +99,176 @@ a {
         color: @linkhover; .transition(color, 0.5s, ease, 0s);
     }
 }
+
+/* Element classes - Add your theme specific standard effects here */
+hr {
+	background-color: @hrbackground-color;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+img {
+	height: auto; 
+	max-width: 100%; 
+}
+
+figure {
+	margin: 0;
+}
+
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+
+    thead {
+    }
+
+    tbody {
+    }
+
+    tr {
+    }
+    
+    td{
+        
+    }
+}
+
+/* Form elements - add your theme specific standard effects here  */
+button {
+    &:hover {
+    }
+
+    &:focus {
+    }
+}
+
+input {
+    &[type='text'] {
+    }
+
+    &[type='email'] {
+    }
+
+    &[type='phone'] {
+    }
+
+    &[type='submit'] {
+        &:hover {
+        }
+    }
+
+    &[type='reset'] {
+    }
+
+    &[type='search'] {
+    }
+
+    &[type='url'] {
+    }
+
+    &[type='password'] {
+    }
+}
+
+select {
+    option {
+    }
+}
+
+textarea {
+}
+
+/* Gallery */
+.gallery {
+    .gallery-item {
+    }
+}
+
+/* site wide - Add your theme specific standard effects here */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+.wp-caption {
+}
+
+.wp-caption-text {
+}
+
+/* Text meant only for screen readers - same as Saas class*/
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: @screen-reader-background;
+		.border-radius(3px);
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: @screen-reader-text-color;
+		display: block;
+		/*.font-size(1.4); */
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar */
+	}
+}
+
+
+blockquote {
+}
+
+sub {
+}
+
+sup {
+}
+
+address {
+}
+
+
+
+
+
