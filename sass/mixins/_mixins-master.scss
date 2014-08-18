@@ -58,6 +58,12 @@
 	white-space: nowrap;
 }
 
+// Linear Gradient
+@mixin linear-gradient($from, $to) {
+	background-color: $to; /* Fallback for non-supporting browsers */
+	background-image: linear-gradient($from, $to);
+}
+
 // Flexible videos
 @mixin flex-video {
 	height: 0;
