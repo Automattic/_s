@@ -34,3 +34,10 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+// Word wrapping
+@mixin word-wrap {
+	word-break: break-all;
+	word-break: break-word; /* Non standard for webkit */
+	hyphens: auto;
+}
