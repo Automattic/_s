@@ -1,0 +1,55 @@
+// Rem output with px fallback
+.font-size(@sizeValue: 1.6) {
+	font-size: (@sizeValue * 10) + px;
+	font-size: @sizeValue + rem;
+}
+
+// Box model
+.box-sizing(@box-model) {
+	-webkit-box-sizing: @box-model; // Safari <= 7
+	-moz-box-sizing: @box-model; // Firefox <= 19
+	box-sizing: @box-model;
+}
+
+// Border radius
+.border-radius(@radius) {
+	background-clip: padding-box; /* stops bg color from leaking outside the border: */
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// css transitions
+.transition(@property, @sec, @type, @delay) {
+    transition: @property @sec @type @delay;
+    -webkit-transition: @property @sec @type @delay;
+    -moz-transition: @property @sec @type @delay;
+}
+
+// css transform 
+.transform(@property){
+    -moz-transform: @property;
+    -webkit-transform: @property;
+    -ms-transform: @property;
+    transform: @property;
+}
+
+// Center block
+.center-block {
+	display: block;
+	margin: 0 auto;
+}
+
+// Clearfix
+.clearfix {
+	content: "";
+	display: table;
+}
+
+// Center after (not all clearfix need this also)
+.clearfix-after {
+	clear: both;
+}
+
+* {
+    box-sizing: border-box;
+}
