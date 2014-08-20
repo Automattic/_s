@@ -60,11 +60,11 @@ before_script:
     - mkdir -p $WP_DEVELOP_DIR
     # Use the Git mirror of WordPress.
     - git clone --depth=1 --branch="$WP_VERSION" git://develop.git.wordpress.org/ $WP_DEVELOP_DIR
-    # Set up plugin information.
-    - plugin_slug=$(basename $(pwd))
-    - plugin_dir=$WP_DEVELOP_DIR/src/wp-content/plugins/$plugin_slug
+    # Set up theme information.
+    - theme_slug=$(basename $(pwd))
+    - theme_dir=$WP_DEVELOP_DIR/src/wp-content/themes/$theme_slug
     - cd ..
-    - mv $plugin_slug $plugin_dir
+    - mv $theme_slug $theme_dir
     # Set up WordPress configuration.
     - cd $WP_DEVELOP_DIR
     - echo $WP_DEVELOP_DIR
@@ -83,8 +83,8 @@ before_script:
     # Set install path for WordPress Coding Standards
     # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
     - scripts/phpcs --config-set installed_paths ../wordpress-coding-standards
-    # Hop into plugins directory.
-    - cd $plugin_dir
+    # Hop into themes directory.
+    - cd $theme_dir
     # After CodeSniffer install you should refresh your path.
     - phpenv rehash
 
