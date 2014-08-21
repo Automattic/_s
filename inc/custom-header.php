@@ -12,37 +12,37 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package _s2
+ * @package _s
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses _s2_header_s2tyle()
- * @uses _s2_admin_header_s2tyle()
+ * @uses _s2_header_style()
+ * @uses _s2_admin_header_style()
  * @uses _s2_admin_header_image()
  */
-function _s2_custom_header_s2etup() {
-	add_theme_s2upport( 'custom-header', apply_filters( '_s2_custom_header_args', array(
+function _s2_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( '_s2_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => '_s2_header_s2tyle',
-		'admin-head-callback'    => '_s2_admin_header_s2tyle',
+		'wp-head-callback'       => '_s2_header_style',
+		'admin-head-callback'    => '_s2_admin_header_style',
 		'admin-preview-callback' => '_s2_admin_header_image',
 	) ) );
 }
-add_action( 'after_s2etup_theme', '_s2_custom_header_s2etup' );
+add_action( 'after_setup_theme', '_s2_custom_header_setup' );
 
-if ( ! function_exists( '_s2_header_s2tyle' ) ) :
+if ( ! function_exists( '_s2_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see _s2_custom_header_s2etup().
+ * @see _s2_custom_header_setup().
  */
-function _s2_header_s2tyle() {
+function _s2_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -75,15 +75,15 @@ function _s2_header_s2tyle() {
 	</style>
 	<?php
 }
-endif; // _s2_header_s2tyle
+endif; // _s2_header_style
 
-if ( ! function_exists( '_s2_admin_header_s2tyle' ) ) :
+if ( ! function_exists( '_s2_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see _s2_custom_header_s2etup().
+ * @see _s2_custom_header_setup().
  */
-function _s2_admin_header_s2tyle() {
+function _s2_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -103,13 +103,13 @@ function _s2_admin_header_s2tyle() {
 	</style>
 <?php
 }
-endif; // _s2_admin_header_s2tyle
+endif; // _s2_admin_header_style
 
 if ( ! function_exists( '_s2_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see _s2_custom_header_s2etup().
+ * @see _s2_custom_header_setup().
  */
 function _s2_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );

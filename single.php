@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package _s2
+ * @package _s
  */
 
 get_header(); ?>
@@ -28,5 +28,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_s2idebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

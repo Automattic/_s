@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s2
+ * @package _s
  */
 
 get_header(); ?>
@@ -42,5 +42,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_s2idebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

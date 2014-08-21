@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package _s2
+ * @package _s
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function _s2_wpcom_s2etup() {
+function _s2_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -26,4 +26,4 @@ function _s2_wpcom_s2etup() {
 		);
 	}
 }
-add_action( 'after_s2etup_theme', '_s2_wpcom_s2etup' );
+add_action( 'after_setup_theme', '_s2_wpcom_setup' );

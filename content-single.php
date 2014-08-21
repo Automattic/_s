@@ -1,6 +1,6 @@
 <?php
 /**
- * @package _s2
+ * @package _s
  */
 ?>
 

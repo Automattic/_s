@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s2
+ * @package _s
  */
 ?>
 
@@ -18,15 +18,15 @@
 
 			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s2' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-		<?php elseif ( is_s2earch() ) : ?>
+		<?php elseif ( is_search() ) : ?>
 
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', '_s2' ); ?></p>
-			<?php get_s2earch_form(); ?>
+			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
 			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', '_s2' ); ?></p>
-			<?php get_s2earch_form(); ?>
+			<?php get_search_form(); ?>
 
 		<?php endif; ?>
 	</div><!-- .page-content -->

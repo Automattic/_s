@@ -1,9 +1,6 @@
+![S2 Logo](https://raw.githubusercontent.com/S2web/_s/master/img/s2-logo.png "S2 Logo")
 
-
-_s2
-===
-
-Hi. I'm a starter theme called `_s2`, a forked version of the `underscores` starter theme by Automattic.
+A forked version of the `underscores` starter theme by Automattic. Meant to be used for custom WordPress themes.
 
 Couple things:
 
@@ -20,21 +17,13 @@ Couple things:
 Getting Started
 ---------------
 
-To set things up manually, download `_s2` from GitHub. The first thing you want to do is copy the `_s2` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+To set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
 
 1. Search for `'_s2'` (inside single quotations) to capture the text domain.
 2. Search for `_s2_` to capture all the function names.
 3. Search for `Text Domain: _s2` in style.css.
-4. Search for <code>&nbsp;_s2</code> (with a space before it) to capture DocBlocks.
+4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
 5. Search for `_s2-` to capture prefixed handles.
-
-OR
-
-* Search for: `'_s2'` and replace with: `'megatherium'`
-* Search for: `_s2_` and replace with: `megatherium_`
-* Search for: `Text Domain: _s2` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s2</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s2-` and replace with: `megatherium-`
 
 Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
 

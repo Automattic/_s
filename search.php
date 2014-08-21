@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package _s2
+ * @package _s
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', '_s2' ), '<span>' . get_s2earch_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', '_s2' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
@@ -41,5 +41,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_s2idebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s2
+ * @package _s
  */
 
 get_header(); ?>
@@ -101,5 +101,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_s2idebar(); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

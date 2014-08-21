@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package _s2
+ * @package _s
  */
 
 /*
@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_s2upports( get_post_type(), 'comments' ) ) :
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', '_s2' ); ?></p>
 	<?php endif; ?>

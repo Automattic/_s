@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package _s2
+ * @package _s
  */
 
 /**
@@ -79,11 +79,11 @@ add_filter( 'wp_title', '_s2_wp_title', 10, 2 );
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function _s2_s2etup_author() {
+function _s2_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', '_s2_s2etup_author' );
+add_action( 'wp', '_s2_setup_author' );

@@ -1,9 +1,9 @@
 /*
 Theme Name: _s2
-Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s2</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Theme URI: https://github.com/S2web/_s2
+Author: S2 Web
+Author URI: http://s2webpress.com
+Description: A starter theme based on <em>underscores</em> by Automattic
 Version: 1.0-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- _s2 is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+ _s is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -71,7 +71,7 @@ html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_s2ize_in_s2afari_for_ios_without_disabling_user_zoom/ */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 
 *,
@@ -629,7 +629,7 @@ a:active {
 }
 
 /* Search widget */
-.widget_s2earch .search-submit {
+.widget_search .search-submit {
 	display: none;
 }
 
