@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package _s
+ * @package _s2
  */
 
 get_header(); ?>
@@ -31,5 +31,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_s2idebar(); ?>
 <?php get_footer(); ?>
