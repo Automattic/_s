@@ -73,10 +73,10 @@ add_action( 'after_s2etup_theme', '_s2_s2etup' );
 /**
  * Register widget area.
  *
- * @link http://codex.wordpress.org/Function_Reference/register_s2idebar
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function _s2_widgets_init() {
-	register_s2idebar( array(
+	register_sidebar( array(
 		'name'          => __( 'Sidebar', '_s2' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
@@ -94,9 +94,9 @@ add_action( 'widgets_init', '_s2_widgets_init' );
 function _s2_s2cripts() {
 	wp_enqueue_s2tyle( '_s2-style', get_s2tylesheet_uri() );
 
-	wp_enqueue_s2cript( '_s2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_s2cript( '_s2-navigation', get_template_directory_uri() . '/js/plugins/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_s2cript( '_s2-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_s2cript( '_s2-skip-link-focus-fix', get_template_directory_uri() . '/js/plugins/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_s2ingular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_s2cript( 'comment-reply' );

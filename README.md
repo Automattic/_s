@@ -1,9 +1,9 @@
-
+![S2 Logo](https://raw.githubusercontent.com/S2web/_s2/master/img/s2-logo.png "S2 Logo")
 
 _s2
 ===
 
-Hi. I'm a starter theme called `_s2`, a forked version of the `underscores` starter theme by Automattic.
+A forked version of the `underscores` starter theme by Automattic. Meant to be used for custom WordPress themes.
 
 Couple things:
 
