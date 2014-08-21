@@ -1,4 +1,4 @@
-![Travis CI Build Status](https://travis-ci.org/Automattic/_s2.svg?branch=master)
+
 
 _s2
 ===
