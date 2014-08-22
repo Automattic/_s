@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                     banner: '/*\n' +
                             'Theme Name: _s2\n' +
                             'Theme URI: https://github.com/S2web/_s2\n' +
-                            'Author: S2 Web\n' +
+                            'Author: Steven Slack\n' +
                             'Author URI: http://s2webpress.com\n' +
                             'Description: A starter theme based on <em>underscores</em> by Automattic\n' +
                             'Version: 1.0-wpcom\n' +
