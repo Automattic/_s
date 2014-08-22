@@ -17,6 +17,6 @@ xcuserdata
 
 .sass-cache
 .idea
-.map
+*.map
 .codekit-cache
 codekit-config.json
