@@ -9,7 +9,6 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    sourcemap: true,
                     style: 'compressed',
                     banner: '/*\n' +
                             'Theme Name: _s2\n' +
@@ -33,7 +32,6 @@ module.exports = function(grunt) {
             },
             Editor: {
                  options: {
-                    sourcemap: true,
                     style: 'expanded',
                     banner: '/*\n' +
                             'Theme Name: _s2\n' +
@@ -74,11 +72,6 @@ module.exports = function(grunt) {
         // uglify to concat, minify, and make source maps
         uglify: {
             main: {
-                options: {
-                    sourceMap: 'js/main.js.map',
-                    sourceMappingURL: 'main.js.map',
-                    sourceMapPrefix: 2
-                },
                 files: {
                     'js/main.js': [
                         'bower_components/drop/dist/js/classList.js',
