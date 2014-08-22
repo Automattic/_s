@@ -1,4 +1,4 @@
-'use strict';
+
 module.exports = function(grunt) {
 
     grunt.initConfig({
@@ -28,7 +28,18 @@ module.exports = function(grunt) {
                             ' */\n',
                 },
                 files: {
-                    'css/style.css': 'sass/style.scss',
+                    'style.css': 'sass/style.scss',
+                }
+            },
+            Editor: {
+                 options: {
+                    sourcemap: true,
+                    style: 'expanded',
+                    banner: '/*\n' +
+                            'Theme Name: _s2\n' +
+                            ' */\n',
+                },
+                files: {
                     'css/editor-style.css': 'sass/editor-style.scss'
                 }
             }
@@ -47,24 +58,11 @@ module.exports = function(grunt) {
                 dest: 'css/'
             },
         },
-
-        // Concatenation
-        concat: {
-            options: {
-            separator: ';',
-            dist: {
-                src: ['js/customizer.js', 'js/navigation.js', 'js/skip-link-focus-fix.js'],
-                    dest: 'js/scripts.js',
-                },
-            },
-        },
         
-
 
         // javascript linting with jshint
         jshint: {
             options: {
-                jshintrc: '.jshintrc',
                 "force": true
             },
             all: [
@@ -82,10 +80,14 @@ module.exports = function(grunt) {
                     sourceMapPrefix: 2
                 },
                 files: {
-                    'js/main.min.js': [
-                        'js/plugins/navigation.js',
-                        'js/plugins/skip-link-focus-fix.js',
-                        'js/main.js',
+                    'js/main.js': [
+                        'bower_components/classList/index.js',
+                        'bower_components/astro/dist/js/astro-plus.js',
+                        'js/components/skip-link-focus-fix.js',
+                        'js/components/init.js',
+                    ],
+                    'js/html5.js' : [
+                        'bower_components/html5shiv/dist/html5shiv.js'
                     ]
                 }
             }

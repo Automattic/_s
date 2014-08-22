@@ -25,25 +25,35 @@ and Blueprint http://www.blueprintcss.org/
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1.0 - Reset
-2.0 - Typography
-3.0 - Elements
-4.0 - Forms
-5.0 - Navigation
-	5.1 - Links
-	5.2 - Menus
-6.0 - Accessibility
-7.0 - Alignments
-8.0 - Clearings
-9.0 - Widgets
-10.0 - Content
-	10.1 - Posts and pages
-	10.2 - Asides
-	10.3 - Comments
-11.0 - Infinite scroll
-12.0 - Media
-	12.1 - Captions
-	12.2 - Galleries
+2.0 - Fonts
+3.0 - Typography
+4.0 - Elements
+5.0 - Forms
+6.0 - Navigation
+	6.1 - Links
+	6.2 - Menus
+7.0 - Accessibility
+8.0 - Alignments
+9.0 - Clearings
+10.0 - Widgets
+11.0 - Content
+	11.1 - Posts and pages
+	11.2 - Asides
+	11.3 - Comments
+12.0 - Infinite scroll
+13.0 - Media
+	13.1 - Captions
+	13.2 - Galleries
+14.0 - Media Queries
+	14.1 - Breakpoint 1
 --------------------------------------------------------------*/
+
+// import bower
+@import "./bower_components/bourbon/dist/bourbon";
+
+// Neat 
+@import "./bower_components/neat/app/assets/stylesheets/neat";
+
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
@@ -53,56 +63,66 @@ and Blueprint http://www.blueprintcss.org/
 @import "reset";
 
 /*--------------------------------------------------------------
-2.0 Typography
+2.0 Fonts
+--------------------------------------------------------------*/
+@import "fonts/fonts";
+
+/*--------------------------------------------------------------
+3.0 Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
 
 /*--------------------------------------------------------------
-3.0 Elements
+4.0 Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
 
 /*--------------------------------------------------------------
-4.0 Forms
+5.0 Forms
 --------------------------------------------------------------*/
 @import "forms/forms";
 
 /*--------------------------------------------------------------
-5.0 Navigation
+6.0 Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
 
 /*--------------------------------------------------------------
-6.0 Accessibility
+7.0 Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
 
 /*--------------------------------------------------------------
-7.0 Alignments
+8.0 Alignments
 --------------------------------------------------------------*/
 @import "modules/alignments";
 
 /*--------------------------------------------------------------
-8.0 Clearings
+9.0 Clearings
 --------------------------------------------------------------*/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-9.0 Widgets
+10.0 Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
-10.0 Content
+11.0 Content
 --------------------------------------------------------------*/
 @import "site/site";
 
 /*--------------------------------------------------------------
-11.0 Infinite scroll
+12.0 Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
-12.0 Media
+13.0 Media
 --------------------------------------------------------------*/
 @import "media/media";
+
+/*--------------------------------------------------------------
+14.0 Media Queries
+--------------------------------------------------------------*/
+@import "breakpoints/breakpoints";

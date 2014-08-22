@@ -31,4 +31,5 @@
 		else
 			container.className += ' toggled';
 	};
+
 } )();

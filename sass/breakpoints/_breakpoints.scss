@@ -1,0 +1,10 @@
+@media screen and ( max-width: 47.938em ) {
+	@import "max-47.938em/max-47.938em";
+}
+
+/**
+ * Larger Screens Media Query
+ */
+@media screen and ( min-width: 48em ) {
+	@import "min-48em/min-48em";
+}

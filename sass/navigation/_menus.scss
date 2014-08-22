@@ -1,100 +1,66 @@
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+
+
+.nav {
+	clear:both;
+	position: relative;
+	width:100%;
+	background: #4d4d4d;
 
 	ul {
-		list-style: none;
 		margin: 0;
 		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a {
-			}
-
-			a:hover {
-			}
-		}
-
-		li:hover > ul {
-			left: auto;
-		}
+		list-style: none;
 	}
+
 	li {
-		float: left;
-		position: relative;
-
-		&:hover > a {
+		
+		a {
+			display: block;
+			padding: 1em 1.2em;
+			text-decoration: none;
+			&:hover {
+				background: lighten(#4d4d4d,10);
+				opacity:1;
+			}
 		}
 	}
-	a {
-		display: block;
-		text-decoration: none;
-		background-color:blue;
-	}
 
-	.current_page_item a,
-	.current-menu-item a {
-	}
-}
-
-/* Small menu */
-.menu-toggle {
-	display: none;
-}
-
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
+	.sub-menu, .children {
+		position: absolute;
+		top: 100%;
 		display: none;
+		
+		float: left;
+		min-width: 12.5em;
+		//margin-top: 0.5em;
+		margin-left: 0;
+		text-align: left;
+		
+		background: lighten(#4d4d4d,10);
+		z-index: 1000;
+		
+		ul, ol {
+			margin-left: 0;
+			list-style: none;
+		}
+
+		&.active {
+			display: block;
+			visibility: visible;
+		}
 	}
 }
+/*  Sets dropdown link to relative positioning */
 
-.site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
+.menu-item-has-children {
+	position: relative;
 }
 
-.comment-navigation .nav-previous,
-.paging-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
+/*  Display a caret after each dropdown link when JavaScript is supported.
+ *  You can remove this or change it to a different symbol.
+ *  (For example, a "+" symbol.) */
 
-.comment-navigation .nav-next,
-.paging-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
+
+
+
+

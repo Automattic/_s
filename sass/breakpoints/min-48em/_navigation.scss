@@ -1,0 +1,91 @@
+
+a.navicon {
+    display: none;
+}
+
+/* =Menu
+----------------------------------------------- */
+.nav {
+	width:auto;
+	clear: none;
+	max-height: 55em;
+	background:none;
+
+	ul {
+		//background: white;
+	}
+
+	li {
+		position: relative;
+		float: left;
+		zoom: 1;
+		*display: inline;
+
+		a {
+			@include font-size(16);
+			padding: 1em;
+			// color: lighten( $body,5 );
+			&:hover, &:focus {
+		      background: none;
+		      color: #333;
+		    }
+		}
+
+		&:last-child {
+			.sub-menu, .children {
+				right:0;
+				ul {
+					right:100%;
+				}
+			}
+		}
+
+		// &:hover {
+		// 	.sub-menu, .children {
+		// 		display: block;
+		// 		visibility: visible;
+				
+		// 		> li {
+		// 			ul {
+		// 				display: none;
+		// 				visibility: hidden;
+		// 			}
+
+		// 			&:hover {
+		// 				ul {
+		// 					display: block;
+		// 					visibility: visible;
+		// 				}
+		// 			}
+		// 		}
+
+
+		// 	}
+		// }
+	}
+
+	.sub-menu, .children {
+		// makes the sub menu ul stay when mouse leaves active area
+		visibility: hidden;
+
+		li {
+			width:100%;
+			a {
+				padding: 0.5em 1em;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+				&:hover, &:focus {
+					background:rgba(0, 0, 0, 0.02);
+				}
+			}
+
+			&:before {
+				display:none;
+			}
+		}
+
+		ul {
+			right:100%;
+			top:0;
+		}
+	}
+}

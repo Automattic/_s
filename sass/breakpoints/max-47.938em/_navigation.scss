@@ -1,0 +1,111 @@
+
+
+/* =Menu
+----------------------------------------------- */
+
+.navicon {
+  float: right;
+  display: block;
+  padding: 1.8em 1em;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+.nav {
+	width: 100%;
+
+	li {
+		width: 100%;
+		display: block;
+		float:left;
+
+		> a {
+			padding: 1em;
+			font-weight: 300;
+			border-bottom: 1px solid #686868;
+		}
+	}
+
+	.sub-menu, .children {
+		position: relative;
+		width: 100%;
+		background:lighten(#4d4d4d,10);
+		display:block;
+		overflow: hidden;
+		max-height: 0px;
+		min-width: 100%;
+
+		@include transition (max-height 350ms ease-in-out);
+
+		&.active {
+			max-height: 99em;
+			@include transition (max-height 350ms ease-in-out);
+		}
+
+		li {
+			&:before {
+				content: '-';
+				position: absolute;
+				left: 1em;
+				top: 1em;
+			}
+			a {
+				padding-left:2em;
+				width: 100%;
+				&:hover {
+					background: #686868;
+				}
+			}
+			ul {
+				background:lighten(#4d4d4d,15);
+				a:hover {
+					background: #d1d1d1;
+				}
+			} // grandchild 
+		} // end list element
+	}
+}
+
+/*  When a dropdown is active, display a caret pointing up instead.
+ *  You can remove this or change it to a different symbol.
+ *  (For example, a "-" symbol.) */
+
+/*  Styling for the dropdown content.
+ *  Hides the content by default. */
+
+.js-astro {
+	.nav-toggle {
+		display: block;
+		visibility: visible;
+	}
+	.nav-collapse {
+		max-height: 0;
+		overflow: hidden;
+		width: 100%;
+		text-align: left;
+		/*  CSS3 animation for when menu content expands */
+		@include transition (max-height 350ms ease-in-out);
+		
+		&.active {
+			max-height: 99em;
+			@include transition (max-height 350ms ease-in-out);
+		}	
+	}
+	.menu-item-has-children > a {
+		padding-right:3em;
+		&:after {
+			@include genericon-rules;
+			content: '\f431';
+			font-size: 1.5em;
+			right: 0.5em;
+			top: 0.66em;
+			position: absolute;
+		}
+		&.active:after {
+			content: '\f432';
+		}
+	}
+}

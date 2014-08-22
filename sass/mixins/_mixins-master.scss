@@ -1,9 +1,3 @@
-// Rem output with px fallback
-@mixin font-size($sizeValue: 1.6) {
-	font-size: ($sizeValue * 10) + px;
-	font-size: $sizeValue + rem;
-}
-
 // Box model
 @mixin box-sizing($box-model) {
 	-webkit-box-sizing: $box-model; // Safari <= 7
@@ -33,4 +27,37 @@
 // Clear after (not all clearfix need this also)
 @mixin clearfix-after() {
 	clear: both;
+}
+
+/**
+ * Genericon Mixin
+ */
+@mixin genericon-rules {
+	vertical-align: top;
+	text-align: center;
+	-moz-transition: color .1s ease-in 0;
+	-webkit-transition: color .1s ease-in 0;
+	display: inline-block;
+	font-family: "Genericons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-decoration: inherit;
+	text-transform: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	speak: none;
+}
+
+/* 
+ * 
+ * This mixin sets the font size in rem's with a px fallback.
+ * http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+ *
+ * usage: @include font-size(16);
+ */
+@mixin font-size( $sizeValue: 16 ){
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.1 * $sizeValue) + rem;
 }

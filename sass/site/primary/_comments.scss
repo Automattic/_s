@@ -1,6 +1,200 @@
-.comment-content a {
-	word-wrap: break-word;
+/* =Comments
+----------------------------------------------- */
+
+/**
+ * Color Variables
+ */
+$border-color: #e3e3e3;
+$comment-bg-color: #f3f3f3;
+$post-author-border: rgba(153,55,0,0.75);
+
+.comment-list {
+	margin-left:0;
+	margin-top: 2em;
 }
+
+.comment-body {
+	margin-bottom: 3em;
+}
+
+.comments-area {
+	padding-top:1em;
+	margin-top:1em;
+	border-top: 1px solid #efefef;
+	ol, li {
+		list-style:none;
+	}
+
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.comment-list {
+	@include media(max-width 48em) {
+		margin:1em;
+	}
+}
+
 .bypostauthor {
+
+	.comment-meta img {
+		border:3px solid $post-author-border;
+	}
+
+	.comment-content {
+		border: 1px solid $post-author-border;
+
+		&:before {
+			@include triangle(28px, $post-author-border, up);
+		}
+	}
+}
+
+.comment-meta {
+	height: auto;
+	
+	img {
+		float:left;
+		position: relative;
+		top: -9px;
+		border-radius:50%;
+		margin-right:1em;
+	}
+	time {
+		@include font-size(14);
+		&:before {
+			content: '\f303';
+			@include font-size(20);
+			@include genericon-rules;
+		}
+	}
+
+	@include media(min-width 26.875em) {
+		height: 60px;
+	}
+}
+
+.comment-link {
+	display:inline-block;
+}
+
+.comment-edit-link {
+	margin-left: 1em;
+	@include font-size(14);
+	&:before {
+		content: '\f411';
+		
+		@include genericon-rules;
+	}
+}
+
+.comment-author {
 	display: block;
+	font-weight: 700;
+	font-style: normal;
+
+	a {
+
+	}
+
+	&:before {
+		content: '\f304';
+		@include font-size(20);
+		@include genericon-rules;
+	}
+}
+
+
+.comment-content {
+	position:relative;
+	background: $comment-bg-color;
+	border: 1px solid $border-color;
+	border-radius: 0 10px 0;
+	padding:1em;
+	margin: 0.8em 0 1em;
+
+	a {
+		word-wrap: break-word;
+	}
+
+	&:after {
+		position:absolute;
+		top:-13px;
+		left:18px;
+		@include triangle(26px, $comment-bg-color, up);
+	}
+	&:before {
+		position:absolute;
+		top:-15px;
+		left:17px;
+		@include triangle(28px, $border-color, up);
+	}
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.comment-reply-link {
+	//background:$comment-bg-color;
+	float: right;
+	display: inline-block;
+	margin-top: -1.5rem;
+	padding: .5rem 1rem;
+	font-weight: 400;
+	&:before {
+		content: '\f412';
+		@include genericon-rules;
+	}
+}
+
+/**
+ * Comment Reply Form
+ */
+
+.comment-form-author {
+	label {
+		&:before {
+			content: '\f304';
+			margin-right: 0.3em;
+			@include genericon-rules;
+		}
+	}
+}
+
+.comment-form-email {
+	label {
+		&:before {
+			content: '\f410';
+			margin-right: 0.3em;
+			@include genericon-rules;
+		}
+	}
+}
+
+.comment-form-url {
+	label {
+		&:before {
+			content: '\f409';
+			margin-right: 0.3em;
+			@include genericon-rules;
+		}
+	}
+}
+
+.comment-form-comment {
+	label {
+		&:before {
+			content: '\f300';
+			margin-right: 0.3em;
+			@include genericon-rules;
+		}
+	}	
+}
+
+span.required {
+	color: rgb(168, 65, 24);
 }

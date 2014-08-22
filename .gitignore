@@ -1,6 +1,7 @@
 .DS_Store
 profile
 node_modules
+bower_components
 
 # xcode noise
 build/*
@@ -16,5 +17,6 @@ xcuserdata
 
 .sass-cache
 .idea
+.map
 .codekit-cache
 codekit-config.json
