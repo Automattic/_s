@@ -66,6 +66,9 @@ function _s2_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// WordPress TinyMCE editor Stylesheet
+	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
 }
 endif; // _s2_setup
 add_action( 'after_setup_theme', '_s2_setup' );
@@ -101,6 +104,23 @@ function _s2_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s2_scripts' );
+
+add_action( 'wp_enqueue_scripts', 'prefix_add_ie8_style_sheet', 200 );
+
+
+/**
+ * Enqueue a IE-specific style sheet.
+ *
+ * Add a style sheet for everyone, then mark it as conditional to IE8 or below.
+ *
+ * @author Gary Jones
+ * @link   http://code.garyjones.co.uk/enqueued-style-sheet-extras/
+ */
+function prefix_add_ie8_style_sheet() {
+	global $wp_styles;	
+	wp_enqueue_style( 'ie8-styles', get_stylesheet_directory_uri() . '/ie8-style.css', array(), '1.0.0' );
+	$wp_styles->add_data( 'ie8-styles', 'conditional', 'lte IE 8' );
+}
 
 /**
  * Implement the Custom Header feature.

@@ -1,0 +1,128 @@
+/*
+Theme Name: _s2
+Theme URI: https://github.com/S2web/_s2
+Author: S2 Web
+Author URI: http://s2webpress.com
+Description: A starter theme based on <em>underscores</em> by Automattic
+Version: 1.0-wpcom
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: _s2
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+ _s is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Fonts
+3.0 - Typography
+4.0 - Elements
+5.0 - Forms
+6.0 - Navigation
+	6.1 - Links
+	6.2 - Menus
+7.0 - Accessibility
+8.0 - Alignments
+9.0 - Clearings
+10.0 - Widgets
+11.0 - Content
+	11.1 - Posts and pages
+	11.2 - Asides
+	11.3 - Comments
+12.0 - Infinite scroll
+13.0 - Media
+	13.1 - Captions
+	13.2 - Galleries
+14.0 - Media Queries
+	14.1 - Breakpoint 1
+--------------------------------------------------------------*/
+
+// import bower
+@import "./bower_components/bourbon/dist/bourbon";
+
+// Neat 
+@import "./bower_components/neat/app/assets/stylesheets/neat";
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
+@import "reset";
+
+/*--------------------------------------------------------------
+2.0 Fonts
+--------------------------------------------------------------*/
+@import "fonts/fonts";
+
+/*--------------------------------------------------------------
+3.0 Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+4.0 Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+5.0 Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+6.0 Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+7.0 Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+8.0 Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+9.0 Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+10.0 Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+11.0 Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+12.0 Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+13.0 Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+/*--------------------------------------------------------------
+14.0 Media Queries
+--------------------------------------------------------------*/
+@import "breakpoints/breakpoints";

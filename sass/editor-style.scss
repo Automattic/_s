@@ -1,0 +1,61 @@
+// import bower
+@import "./bower_components/bourbon/dist/bourbon";
+
+// Neat 
+@import "./bower_components/neat/app/assets/stylesheets/neat";
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+1.0 - Reset
+--------------------------------------------------------------*/
+@import "reset";
+
+/*--------------------------------------------------------------
+2.0 Fonts
+--------------------------------------------------------------*/
+@import "fonts/fonts";
+
+/*--------------------------------------------------------------
+3.0 Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+4.0 Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+5.0 Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+6.0 Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+8.0 Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+13.0 Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+// fixed alignment issue and adds some padding to the editor
+body#tinymce.wp-editor {
+	padding:2%;
+	.alignleft,.alignright, .alignnone {
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+	.alignleft { margin-right: 1.5em; }
+	.alignright { margin-left: 1.5em; }
+
+}

@@ -32,13 +32,14 @@ module.exports = function(grunt) {
             },
             Editor: {
                  options: {
-                    style: 'expanded',
+                    style: 'compressed',
                     banner: '/*\n' +
                             'Theme Name: _s2\n' +
                             ' */\n',
                 },
                 files: {
-                    'css/editor-style.css': 'sass/editor-style.scss'
+                    'css/editor-style.css': 'sass/editor-style.scss',
+                    'css/ie8-style.css': 'sass/ie8-style.scss'
                 }
             }
         },

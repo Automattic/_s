@@ -11,5 +11,5 @@ Here are some tips to consider and to help you write a great report:
 
 By contributing code to `_s2`, you grant its use under the [GNU General Public License v2 (or later)](http://www.gnu.org/licenses/gpl-2.0.html).
 
-## _s2
+## Underscores
 If your issue is specific to the [Underscores.me](http://underscores.me) website, the [Underscores.me GitHub repo](https://github.com/Automattic/underscores.me) is the right place for you.
