@@ -82,7 +82,7 @@ module.exports = function(grunt) {
                         'js/components/init.js',
                     ],
                     'js/html5.js' : [
-                        'bower_components/html5shiv/dist/html5shiv.js'
+                        'bower_components/html5shiv-dist/html5shiv.js'
                     ]
                 }
             }

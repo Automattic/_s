@@ -6,10 +6,6 @@
     "Steven Slack <steven@s2webpress.com>"
   ],
   "description": "Packages for _s2",
-  "keywords": [
-    "js",
-    "sass"
-  ],
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -20,7 +16,9 @@
     "tests"
   ],
   "devDependencies": {
-    "html5shiv": "latest",
-    "bourbon": "latest"
+    "bourbon": "latest",
+    "neat": "latest",
+    "drop": "https://github.com/cferdinandi/drop.git",
+    "html5shiv-dist": "~3.6.2"
   }
 }
