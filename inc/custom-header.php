@@ -118,7 +118,7 @@ function _s_admin_header_image() {
 		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
 		<?php if ( get_header_image() ) : ?>
-		<img src="<?php echo esc_url( get_header_image() ); ?>" alt="">
+		<img src="<?php header_image(); ?>" alt="">
 		<?php endif; ?>
 	</div>
 <?php
