@@ -1,6 +1,6 @@
 .content-area {
 	float: right;
-	margin: 0 0 0 -$size__site-sidebar;
+	margin: 0 0 0 (-$size__site-sidebar);
 	width: $size__site-main;
 }
 
