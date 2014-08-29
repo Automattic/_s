@@ -20,8 +20,14 @@ function setup(){
 	add_theme_support( 'post-formats', array( 'image', 'quote', 'link', 'chat', 'audio', 'video' ) );
 }
 
+function register_media_taxonomies(){
+	// Enable category/tag taxonomies for media attachments
+    register_taxonomy_for_object_type( 'category', 'attachment' );
+    register_taxonomy_for_object_type( 'post_tag', 'attachment' );
+}
+
 function api_url(){
-    wp_redirect( 'https://www.storyteller.io/apis/wordpress-rest-api' );
+    wp_redirect( 'http://wp-api.org' );
 }
 
 function redirect_to_posts($url) {
@@ -41,6 +47,7 @@ function customize_menu(){
     add_menu_page( 'API', 'API', 'activate_plugins', 'api', 'api_url', 'dashicons-admin-links', '20.1' );
 }
 
+add_action( 'init', 'register_media_taxonomies' );
 add_action( 'after_setup_theme', 'setup' );
 add_filter( 'login_redirect', 'redirect_to_posts' );
 add_action( 'admin_menu', 'customize_menu', 999 );
