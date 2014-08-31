@@ -8,9 +8,16 @@
 		window.addEventListener( 'hashchange', function() {
 			var element = document.getElementById( location.hash.substring( 1 ) );
 
+			function cleanup() {
+				element.removeAttribute( 'tabindex' );
+				element.removeEventListener( 'blur', cleanup, false );
+			}
+
 			if ( element ) {
-				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) || element.hasAttribute( 'tabindex' ) ) )
+				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) || element.hasAttribute( 'tabindex' ) ) ) {
 					element.tabIndex = -1;
+					element.addEventListener( 'blur', cleanup, false );
+				}
 
 				element.focus();
 			}
