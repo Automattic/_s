@@ -4,22 +4,34 @@ OPTIONAL BASE STYLES
 
 /* Structure */
 
-.site-header,
-.site-content,
-.site-footer {
-	margin: 0 auto;
-	padding: 40px;
-	max-width: 1140px;
+.site {
+	@include outer-container;
 }
 
-.content-area {
-	float: left;
-	width: 70%;
+.site-content {
+	@include outer-container;
+	margin: 20px auto 20px;
+
+	@include wider-than(desktop) {
+		margin: 40px auto 60px;
+	}
 }
 
-.widget-area {
-	float: right;
-	width: 30%;
+#primary {
+	@include span-columns(12);
+
+	@include wider-than(desktop) {
+		@include span-columns(8);
+	}
+}
+
+#secondary {
+	@include span-columns(12);
+
+	@include wider-than(desktop) {
+		@include span-columns(4);
+		@include omega();
+	}
 }
 
 /* Branding */

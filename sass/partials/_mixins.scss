@@ -91,3 +91,9 @@
 		@media screen and (min-width: $point) { @content; }
 	}
 }
+
+// Omega Reset
+@mixin omega-reset($nth) {
+	&:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
+	&:nth-child(#{$nth}+1) { clear: none }
+}
