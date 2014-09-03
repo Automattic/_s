@@ -9,7 +9,6 @@ OPTIONAL BASE STYLES
 }
 
 .site-content {
-	@include outer-container;
 	margin: 20px auto 20px;
 
 	@include wider-than(desktop) {
