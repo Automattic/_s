@@ -76,15 +76,15 @@
 // Media Queries
 @mixin wider-than($point) {
 	@if $point == large-desktop {
-		@media screen and (min-width: 1140px) { @content; }
+		@media screen and (min-width: 71.25em) { @content; } // 1140px
 	}
 
 	@else if $point == desktop {
-		@media screen and (min-width: 769px) { @content; }
+		@media screen and (min-width: 48em) { @content; } // 768px
 	}
 
 	@else if $point == tablet {
-		@media screen and (min-width: 480px) { @content; }
+		@media screen and (min-width: 30em) { @content; } // 480px
 	}
 
 	@else {
