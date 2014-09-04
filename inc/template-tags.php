@@ -134,11 +134,11 @@ function _s_category_transient_flusher() {
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
 
-if ( ! function_exists( '_s_entry_meta' ) ) :
+if ( ! function_exists( '_s_entry_footer' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags, comments and edit link.
+ * Prints HTML with meta information for the categories, tags and comments.
  */
-function _s_entry_meta() {
+function _s_entry_footer() {
 	/* Hide category and tag text for pages */
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -154,12 +154,10 @@ function _s_entry_meta() {
 		}
 	}
 
-	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) );
 		echo '</span>';
 	}
-
-	edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
 }
 endif;
