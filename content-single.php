@@ -17,7 +17,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -26,10 +26,10 @@
 	<footer class="entry-footer">
 		<?php
 			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', '_s' ) );
+			$category_list = get_the_category_list( esc_html__( ', ', '_s' ) );
 
 			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', '_s' ) );
+			$tag_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
 
 			if ( ! _s_categorized_blog() ) {
 				// This blog only has 1 category so we just need to worry about tags in the meta text

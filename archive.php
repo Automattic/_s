@@ -36,34 +36,34 @@ get_header(); ?>
 							printf( __( 'Year: %s', '_s' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', '_s' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-							_e( 'Asides', '_s' );
+							esc_html_e( 'Asides', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', '_s' );
+							esc_html_e( 'Galleries', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', '_s' );
+							esc_html_e( 'Images', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', '_s' );
+							esc_html_e( 'Videos', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', '_s' );
+							esc_html_e( 'Quotes', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', '_s' );
+							esc_html_e( 'Links', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', '_s' );
+							esc_html_e( 'Statuses', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', '_s' );
+							esc_html_e( 'Audios', '_s' );
 
 						elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-							_e( 'Chats', '_s' );
+							esc_html_e( 'Chats', '_s' );
 
 						else :
-							_e( 'Archives', '_s' );
+							esc_html_e( 'Archives', '_s' );
 
 						endif;
 					?>
@@ -73,6 +73,11 @@ get_header(); ?>
 					$term_description = term_description();
 					if ( ! empty( $term_description ) ) :
 						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+					endif;
+
+					// IDENTICAL FUNCTIONALITY BETTER ESCAPING 100x MORE READABLE
+					if ( ! empty( $term_description ) ) :
+					?><div class="taxonomy-description"><?php esc_html_e($term_description); ?></div><?php
 					endif;
 				?>
 			</header><!-- .page-header -->
