@@ -603,7 +603,7 @@ a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-	content: '';
+	content: "";
 	display: table;
 }
 
