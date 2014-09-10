@@ -162,7 +162,7 @@ function _s_custom_menu_order( $menu_ord ) {
         'index.php', // Dashboard
         'edit.php?post_type=page', // Pages
         'edit.php', // Posts
-        'admin.php?page=gf_edit_forms', // Forms
+        'gf_edit_forms', // Forms
         'upload.php' // Media
     );
 }
