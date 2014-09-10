@@ -352,7 +352,7 @@ input[type="submit"]:active {
 
 input[type="checkbox"],
 input[type="radio"] {
-	padding: 0; /* Addresses excess padding in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE9/10 */
 }
 
 input[type="search"] {
@@ -401,7 +401,7 @@ input[type="search"] {
 }
 
 textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	overflow: auto; /* Removes default vertical scrollbar in IE9/10/11 */
 	padding-left: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
