@@ -22,6 +22,7 @@ input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly i
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
@@ -32,6 +33,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="tel"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
@@ -42,6 +44,7 @@ textarea:focus {
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
