@@ -78,7 +78,6 @@ function _s_comment_nav( $nav_id = 'comment-nav-above' ) {
 }
 endif;
 
-
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
