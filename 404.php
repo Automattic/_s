@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found).
+ * The template for displaying 404 pages (not found).
  *
  * @package _s
  */
@@ -24,7 +24,7 @@ get_header(); ?>
 
 					<?php if ( _s_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', '_s' ); ?></h2>
+						<h2 class="widget-title"><?php _e( 'Most Used Categories', '_s' ); ?></h2>
 						<ul>
 						<?php
 							wp_list_categories( array(
@@ -40,9 +40,9 @@ get_header(); ?>
 					<?php endif; ?>
 
 					<?php
-					/* translators: %1$s: smiley */
-					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+						/* translators: %1$s: smiley */
+						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>

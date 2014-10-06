@@ -1,6 +1,6 @@
 <?php
 /**
- * The Header for our theme.
+ * The header for our theme.
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
@@ -29,7 +29,7 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', '_s' ); ?></h1>
+			<button class="menu-toggle"><?php _e( 'Primary Menu', '_s' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
