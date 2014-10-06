@@ -53,7 +53,8 @@ section {
 	display: block;
 }
 
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
 
@@ -62,17 +63,22 @@ table { /* tables still need 'cellspacing="0"' in the markup */
 	border-spacing: 0;
 }
 
-caption, th, td {
+caption,
+th,
+td {
 	font-weight: normal;
 	text-align: left;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: "";
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 }
 

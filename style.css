@@ -8,7 +8,6 @@ Version: 1.0-wpcom
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: _s
-Domain Path: /languages/
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -25,29 +24,29 @@ and Blueprint http://www.blueprintcss.org/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.0 - Reset
-2.0 - Typography
-3.0 - Elements
-4.0 - Forms
-5.0 - Navigation
-	5.1 - Links
-	5.2 - Menus
-6.0 - Accessibility
-7.0 - Alignments
-8.0 - Clearings
-9.0 - Widgets
-10.0 - Content
-	10.1 - Posts and pages
-	10.2 - Asides
-	10.3 - Comments
-11.0 - Infinite scroll
-12.0 - Media
-	12.1 - Captions
-	12.2 - Galleries
+1.0 Reset
+2.0 Typography
+3.0 Elements
+4.0 Forms
+5.0 Navigation
+	5.1 Links
+	5.2 Menus
+6.0 Accessibility
+7.0 Alignments
+8.0 Clearings
+9.0 Widgets
+10.0 Content
+	10.1 Posts and pages
+	10.2 Asides
+	10.3 Comments
+11.0 Infinite scroll
+12.0 Media
+	12.1 Captions
+	12.2 Galleries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-1.0 - Reset
+1.0 Reset
 --------------------------------------------------------------*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,12 +66,14 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	vertical-align: baseline;
 }
+
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
+
 *,
 *:before,
 *:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
@@ -80,9 +81,11 @@ html {
 	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
 	box-sizing:         border-box;
 }
+
 body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
 }
+
 article,
 aside,
 details,
@@ -95,31 +98,44 @@ nav,
 section {
 	display: block;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
+
 table { /* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
-caption, th, td {
+
+caption,
+th,
+td {
 	font-weight: normal;
 	text-align: left;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: "";
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: "" "";
 }
+
 a:focus {
 	outline: thin dotted;
 }
+
 a:hover,
 a:active {
 	outline: 0;
 }
+
 a img {
 	border: 0;
 }
@@ -138,24 +154,40 @@ textarea {
 	font-size: 1.6rem;
 	line-height: 1.5;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	clear: both;
 }
+
 p {
 	margin-bottom: 1.5em;
 }
-b, strong {
+
+b,
+strong {
 	font-weight: bold;
 }
-dfn, cite, em, i {
+
+dfn,
+cite,
+em,
+i {
 	font-style: italic;
 }
+
 blockquote {
 	margin: 0 1.5em;
 }
+
 address {
 	margin: 0 0 1.5em;
 }
+
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
@@ -167,17 +199,26 @@ pre {
 	overflow: auto;
 	padding: 1.6em;
 }
-code, kbd, tt, var {
+
+code,
+kbd,
+tt,
+var {
 	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
-abbr, acronym {
+
+abbr,
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
-mark, ins {
+
+mark,
+ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
+
 sup,
 sub {
 	font-size: 75%;
@@ -186,15 +227,19 @@ sub {
 	position: relative;
 	vertical-align: baseline;
 }
+
 sup {
 	bottom: 1ex;
 }
+
 sub {
 	top: .5ex;
 }
+
 small {
 	font-size: 75%;
 }
+
 big {
 	font-size: 125%;
 }
@@ -208,37 +253,48 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-ul, ol {
+
+ul,
+ol {
 	margin: 0 0 1.5em 3em;
 }
+
 ul {
 	list-style: disc;
 }
+
 ol {
 	list-style: decimal;
 }
+
 li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
 }
+
 dt {
 	font-weight: bold;
 }
+
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
+
 figure {
 	margin: 0;
 }
+
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
 th {
 	font-weight: bold;
 }
@@ -254,12 +310,13 @@ textarea {
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
 }
+
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #ccc #ccc #bbb; 
+	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
@@ -272,6 +329,7 @@ input[type="submit"] {
 	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -279,6 +337,7 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
+
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -290,24 +349,29 @@ input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
+
 input[type="checkbox"],
 input[type="radio"] {
 	padding: 0; /* Addresses excess padding in IE8/9 */
 }
+
 input[type="search"] {
 	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
 	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
 	-moz-box-sizing:    content-box;
 	box-sizing:         content-box;
 }
+
 input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 	-webkit-appearance: none;
 }
+
 button::-moz-focus-inner,
 input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 	border: 0;
 	padding: 0;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -318,6 +382,7 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -326,6 +391,7 @@ input[type="search"]:focus,
 textarea:focus {
 	color: #111;
 }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -333,6 +399,7 @@ input[type="password"],
 input[type="search"] {
 	padding: 3px;
 }
+
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
 	padding-left: 3px;
@@ -349,9 +416,11 @@ textarea {
 a {
 	color: royalblue;
 }
+
 a:visited {
 	color: purple;
 }
+
 a:hover,
 a:focus,
 a:active {
@@ -367,19 +436,23 @@ a:active {
 	float: left;
 	width: 100%;
 }
+
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
+
 .main-navigation li {
 	float: left;
 	position: relative;
 }
+
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
+
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -388,34 +461,47 @@ a:active {
 	left: -999em;
 	z-index: 99999;
 }
+
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
+
 .main-navigation ul ul a {
 	width: 200px;
 }
+
 .main-navigation ul ul li {
+
 }
+
 .main-navigation li:hover > a {
 }
+
 .main-navigation ul ul :hover > a {
 }
+
 .main-navigation ul ul a:hover {
 }
+
 .main-navigation ul li:hover > ul {
 	left: auto;
 }
+
 .main-navigation ul ul li:hover > ul {
 	left: 100%;
 }
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a {
 }
+
 /* Small menu */
 .menu-toggle {
 	display: none;
 }
+
 @media screen and (max-width: 600px) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
@@ -426,18 +512,21 @@ a:active {
 		display: none;
 	}
 }
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
+
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
 }
+
 .comment-navigation .nav-next,
 .paging-navigation .nav-next,
 .post-navigation .nav-next {
@@ -487,11 +576,13 @@ a:active {
 	float: left;
 	margin-right: 1.5em;
 }
+
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
 }
+
 .aligncenter {
 	clear: both;
 	display: block;
@@ -513,7 +604,7 @@ a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-	content: '';
+	content: "";
 	display: table;
 }
 
@@ -550,23 +641,29 @@ a:active {
 10.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
+	display: block;
 }
+
 .hentry {
 	margin: 0 0 1.5em;
 }
+
 .byline,
-.updated {
+.updated:not(.published) {
 	display: none;
 }
+
 .single .byline,
 .group-blog .byline {
 	display: inline;
 }
+
 .page-content,
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
 }
+
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -586,7 +683,9 @@ a:active {
 .comment-content a {
 	word-wrap: break-word;
 }
+
 .bypostauthor {
+	display: block;
 }
 
 /*--------------------------------------------------------------
@@ -597,6 +696,7 @@ a:active {
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
+
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
@@ -613,6 +713,7 @@ a:active {
 	margin-top: 0;
 	padding: 0;
 }
+
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
@@ -627,13 +728,16 @@ object {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
+
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 0 auto;
 }
+
 .wp-caption-text {
 	text-align: center;
 }
+
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 }
@@ -644,34 +748,46 @@ object {
 .gallery {
 	margin-bottom: 1.5em;
 }
+
 .gallery-item {
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
 }
+
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
+
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
 }
+
 .gallery-columns-4 .gallery-item {
 	max-width: 25%;
 }
+
 .gallery-columns-5 .gallery-item {
 	max-width: 20%;
 }
+
 .gallery-columns-6 .gallery-item {
 	max-width: 16.66%;
 }
+
 .gallery-columns-7 .gallery-item {
 	max-width: 14.28%;
 }
+
 .gallery-columns-8 .gallery-item {
 	max-width: 12.5%;
 }
+
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
-.gallery-caption {}
+
+.gallery-caption {
+	display: block;
+}
