@@ -28,6 +28,7 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s2' ); ?></a>
 
+	<!-- Site Header -->
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -37,4 +38,5 @@
 		<?php get_template_part( 'templates/main', 'navigation' ); ?>
 	</header><!-- #masthead -->
 
+	<!-- Site Content -->
 	<div id="content" class="site-content">

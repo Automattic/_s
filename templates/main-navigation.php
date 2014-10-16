@@ -5,7 +5,7 @@
 				array( 
 					'theme_location'	=> 'primary',
 					'container'			=> false,
-					'menu_class'		=> 'navi nav-collapse',
+					'menu_class'		=> 'navi nav-collapse'
 				)
 			); ?>
         </nav>

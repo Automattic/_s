@@ -16,6 +16,7 @@
     "tests"
   ],
   "devDependencies": {
+    "fastclick": "fastclick",
     "bourbon": "latest",
     "neat": "latest",
     "drop": "https://github.com/cferdinandi/drop.git",

@@ -50,11 +50,11 @@ module.exports = function(grunt) {
                 browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
                 map: true
             },
-            files: {
+            multiple_files: {
                 expand: true,
                 flatten: true,
                 src: 'css/*.css',
-                dest: 'css/'
+                dest: 'css/',
             },
         },
         
@@ -113,7 +113,7 @@ module.exports = function(grunt) {
                 tasks: ['sass', 'autoprefixer']
             },
             js: {
-                files: '<%= jshint.all %>',
+                files: 'js/components/init.js',
                 tasks: ['jshint', 'uglify']
             },
             images: {

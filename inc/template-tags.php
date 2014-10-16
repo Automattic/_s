@@ -61,6 +61,36 @@ function _s2_post_nav() {
 }
 endif;
 
+
+/*
+ * Numeric Page Navigation
+ * Adapted from Thembles Bones - https://github.com/eddiemachado/bones/blob/master/library/bones.php
+ */ 
+function _s2_pagination() {
+    global $wp_query;
+    $bignum = 999999999;
+    if ( $wp_query->max_num_pages <= 1 )
+    return;
+
+    echo '<nav class="pagination">';
+
+        echo paginate_links( array(
+            'base'          => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
+            'format'        => '',
+            'current'       => max( 1, get_query_var('paged') ),
+            'total'         => $wp_query->max_num_pages,
+            'prev_text'     => '&larr;',
+            'next_text'     => '&rarr;',
+            'type'          => 'list',
+            'end_size'      => 3,
+            'mid_size'      => 3
+        ) );
+
+    echo '</nav>';
+    
+} /* end page navigation */
+
+
 if ( ! function_exists( '_s2_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.

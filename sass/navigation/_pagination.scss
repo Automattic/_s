@@ -1,0 +1,40 @@
+.pagination {
+  margin:1.7em 0 3em 0;
+  ul {
+    list-style: none;
+    text-align:center;
+    li {
+      display: inline-block;
+      &:first-child {
+        margin-right: 1em;
+      }
+      &:last-child {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  a {
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+
+    &.prev {
+     
+    }
+  }
+
+  a, .current {
+    padding: 0.3em 0.7em;
+    border-radius: 3px;
+  }
+
+  a:hover, .current {
+      background: lighten(#ccc,10);
+      color: #333;
+  }
+}
+
+.post-navigation {
+  margin-bottom: 2em;
+}
