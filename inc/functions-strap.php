@@ -129,26 +129,26 @@ function bootstrap_comment_form_defaults( $defaults )
     $aria_req = ( $req ? " aria-required='true'" : '' );
     $defaults['fields'] =  array(
         'author' => '<div class="form-group comment-form-author">' .
-                '<label for="author" class="col-sm-3 control-label">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+                '<label for="author" class="col-sm-3 control-label">' . __( 'Name', '_s' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                 '<div class="col-sm-9">' .
                     '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"  class="form-control"' . $aria_req . ' />' .
                 '</div>' .
             '</div>',
         'email'  => '<div class="form-group comment-form-email">' .
-                '<label for="email" class="col-sm-3 control-label">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+                '<label for="email" class="col-sm-3 control-label">' . __( 'Email', '_s' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
                 '<div class="col-sm-9">' .
                     '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '"  class="form-control"' . $aria_req . ' />' .
                 '</div>' .
             '</div>',
         'url'    => '<div class="form-group comment-form-url">' .
-            '<label for="url" class="col-sm-3 control-label"">' . __( 'Website' ) . '</label>' .
+            '<label for="url" class="col-sm-3 control-label"">' . __( 'Website', '_s' ) . '</label>' .
                 '<div class="col-sm-9">' .
                     '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '"  class="form-control" />' .
                 '</div>' .
             '</div>',
     );
     $defaults['comment_field'] = '<div class="form-group comment-form-comment">' .
-        '<label for="comment" class="col-sm-3 control-label">' . _x( 'Comment', 'noun' ) . '</label>' .
+        '<label for="comment" class="col-sm-3 control-label">' . __( 'Comment', '_s' ) . '</label>' .
             '<div class="col-sm-9">' .
                 '<textarea id="comment" name="comment" aria-required="true" class="form-control" rows="8"></textarea>' .
                 '<span class="help-block form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</span>' .
