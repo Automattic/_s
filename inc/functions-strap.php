@@ -148,7 +148,7 @@ function bootstrap_comment_form_defaults( $defaults )
             '</div>',
     );
     $defaults['comment_field'] = '<div class="form-group comment-form-comment">' .
-        '<label for="comment" class="col-sm-3 control-label">' . __( 'Comment', '_s' ) . '</label>' .
+        '<label for="comment" class="col-sm-3 control-label">' . _x( 'Comment', 'noun', '_s' ) . '</label>' .
             '<div class="col-sm-9">' .
                 '<textarea id="comment" name="comment" aria-required="true" class="form-control" rows="8"></textarea>' .
                 '<span class="help-block form-allowed-tags">' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), ' <code>' . allowed_tags() . '</code>' ) . '</span>' .

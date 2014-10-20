@@ -2,16 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _strap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-02-24 03:01+0100\n"
-"PO-Revision-Date: 2014-02-24 03:01+0100\n"
+"POT-Creation-Date: 2014-10-20 14:43+0100\n"
+"PO-Revision-Date: 2014-10-20 14:44+0100\n"
 "Last-Translator: Piero Bellomo <piero.bellomo@viewlab.net>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.3\n"
-"X-Poedit-KeywordsList: __;_e;_esc_attr_e\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_esc_attr__;_esc_attr_e;_esc_attr_n;"
+"_esc_attr_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -54,10 +55,18 @@ msgstr "Giorno: %s"
 msgid "Month: %s"
 msgstr "Mese: %s"
 
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:33
+msgid "F Y"
+msgstr "F Y"
+
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:36
 #, php-format
 msgid "Year: %s"
 msgstr "Anno: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:36
+msgid "Y"
+msgstr "Y"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:39
 msgid "Asides"
@@ -250,15 +259,6 @@ msgstr "Salta al contenuto"
 msgid "Toggle navigation"
 msgstr "Inverti navigazione"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/search.php:16
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Risultati della ricerca per: %s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/sidebar.php:24
-msgid "Meta"
-msgstr "Meta"
-
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/extras.php:63
 #, php-format
 msgid "Page %s"
@@ -275,6 +275,10 @@ msgstr "Email"
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:144
 msgid "Website"
 msgstr "Sito web"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:151
+msgid "Comment"
+msgstr "Commento"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:154
 #, php-format
@@ -345,6 +349,14 @@ msgstr "Articoli successivi <span class=\"meta-nav\">&rarr;</span>"
 msgid "Post navigation"
 msgstr "Navigazione per articolo"
 
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:59
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:60
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:85
 #, php-format
 msgid ""
@@ -354,13 +366,14 @@ msgstr ""
 "<span class=\"posted-on\">Pubblicato il %1$s</span><span class=\"byline\"> "
 "da %2$s</span>"
 
-#~ msgctxt "monthly archives date format"
-#~ msgid "F Y"
-#~ msgstr "F Y"
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Risultati della ricerca per: %s"
 
-#~ msgctxt "yearly archives date format"
-#~ msgid "Y"
-#~ msgstr "Y"
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/sidebar.php:24
+msgid "Meta"
+msgstr "Meta"
 
 #~ msgctxt "comments title"
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -370,14 +383,6 @@ msgstr ""
 
 #~ msgid "Menu"
 #~ msgstr "Menu"
-
-#~ msgctxt "Previous post link"
-#~ msgid "<span class=\"meta-nav\">&larr;</span> %title"
-#~ msgstr "<span class=\"meta-nav\">&larr;</span> %title"
-
-#~ msgctxt "Next post link"
-#~ msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-#~ msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
 
 #~ msgid "Pingback:"
 #~ msgstr "Pingback:"
