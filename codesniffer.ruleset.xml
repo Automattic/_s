@@ -11,5 +11,6 @@
 
 		<exclude name="WordPress.XSS.EscapeOutput" />
 		<exclude name="WordPress.WhiteSpace.ScopeIndent.Incorrect" />
+		<exclude name="WordPress.Variables.GlobalVariables" />
 	</rule>
 </ruleset>
