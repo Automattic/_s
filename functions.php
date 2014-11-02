@@ -92,6 +92,10 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
+	if ( is_child_theme() ) {
+		wp_enqueue_style( '_s-parent-style', get_template_directory_uri() . '/style.css' );
+	}
+
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
