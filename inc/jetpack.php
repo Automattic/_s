@@ -23,5 +23,5 @@ function _s_jetpack_setup() {
  */
 add_action( 'after_setup_theme', '_s_jetpack_setup' );
 function _s_infinite_scroll_render() {
-    get_template_part( 'template-parts/content', get_post_format() );
+	get_template_part( 'template-parts/content', get_post_format() );
 }
