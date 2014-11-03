@@ -61,6 +61,23 @@ function _s_post_nav() {
 }
 endif;
 
+if ( ! function_exists( '_s_comment_nav' ) ) :
+/**
+ * Display navigation to next/previous set of comments when applicable.
+ */
+function _s_comment_nav( $nav_id = 'comment-nav-above' ) {
+	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through
+	?>
+	<nav id="<?php echo sanitize_html_class( $nav_id ); ?>" class="comment-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', '_s' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', '_s' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', '_s' ) ); ?></div>
+	</nav><!-- #<?php echo sanitize_html_class( $nav_id ); ?> -->
+	<?php
+	endif; // check for comment navigation
+}
+endif;
+
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
