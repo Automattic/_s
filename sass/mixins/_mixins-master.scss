@@ -4,13 +4,6 @@
 	font-size: $sizeValue + rem;
 }
 
-// Border radius
-@mixin border-radius($radius) {
-	background-clip: padding-box; /* stops bg color from leaking outside the border: */
-	-webkit-border-radius: $radius;
-	border-radius: $radius;
-}
-
 // Center block
 @mixin center-block {
 	display: block;

@@ -26,7 +26,7 @@ input[type="search"],
 textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	@include border-radius(3px);
+	border-radius: 3px;
 }
 
 input[type="text"]:focus,
