@@ -4,13 +4,6 @@
 	font-size: $sizeValue + rem;
 }
 
-// Box model
-@mixin box-sizing($box-model) {
-	-webkit-box-sizing: $box-model; // Safari <= 7
-	-moz-box-sizing: $box-model; // Firefox <= 19
-	box-sizing: $box-model;
-}
-
 // Border radius
 @mixin border-radius($radius) {
 	background-clip: padding-box; /* stops bg color from leaking outside the border: */
