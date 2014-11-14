@@ -63,7 +63,7 @@ function _s_wp_title( $title, $sep ) {
 		$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
 	}
 
-	return $title;
+	return esc_html( $title );
 }
 add_filter( 'wp_title', '_s_wp_title', 10, 2 );
 
