@@ -79,12 +79,12 @@ function _s_posted_on() {
 	);
 
 	$posted_on_html = sprintf(
-		_x( 'Posted on %s', 'post date', '_s' ),
+		esc_html_x( 'Posted on %s', 'post date', '_s' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string_html . '</a>'
 	);
 
 	$byline_html = sprintf(
-		_x( 'by %s', 'post author', '_s' ),
+		esc_html_x( 'by %s', 'post author', '_s' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -101,13 +101,13 @@ function _s_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', '_s' ) );
+		$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
 		if ( $categories_list && _s_categorized_blog() ) {
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', '_s' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', '_s' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list );
 		}
@@ -148,23 +148,23 @@ function the_archive_title( $before = '', $after = '' ) {
 	} elseif ( is_day() ) {
 		$title = sprintf( esc_html__( 'Day: %s', '_s' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', '_s' ) ) ) );
 	} elseif ( is_tax( 'post_format', 'post-format-aside' ) ) {
-		$title = _x( 'Asides', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Asides', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-		$title = _x( 'Galleries', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Galleries', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-		$title = _x( 'Images', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Images', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-		$title = _x( 'Videos', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Videos', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-		$title = _x( 'Quotes', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Quotes', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-		$title = _x( 'Links', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Links', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-		$title = _x( 'Statuses', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Statuses', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-		$title = _x( 'Audio', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Audio', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-		$title = _x( 'Chats', 'post format archive title', '_s' );
+		$title = esc_html_x( 'Chats', 'post format archive title', '_s' );
 	} elseif ( is_post_type_archive() ) {
 		$title = sprintf( esc_html__( 'Archives: %s', '_s' ), esc_html( post_type_archive_title( '', false ) ) );
 	} elseif ( is_tax() ) {
@@ -172,7 +172,7 @@ function the_archive_title( $before = '', $after = '' ) {
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
 		$title = sprintf( esc_html__( '%1$s: %2$s', '_s' ), esc_html( $tax->labels->singular_name ), esc_html( single_term_title( '', false ) ) );
 	} else {
-		$title = __( 'Archives', '_s' );
+		$title = esc_html__( 'Archives', '_s' );
 	}
 
 	/**
