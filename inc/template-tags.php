@@ -250,6 +250,9 @@ function _s_categorized_blog() {
  * Flush out the transients used in _s_categorized_blog.
  */
 function _s_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
 	delete_transient( '_s_categories' );
 }
