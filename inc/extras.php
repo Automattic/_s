@@ -35,14 +35,14 @@ function _s_body_classes( $classes ) {
 }
 add_filter( 'body_class', '_s_body_classes' );
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
 if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	/**
+	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
+	 *
+	 * @param string $title Default title text for current view.
+	 * @param string $sep Optional separator.
+	 * @return string The filtered title.
+	 */
 	function _s_wp_title( $title, $sep ) {
 		if ( is_feed() ) {
 			return $title;
@@ -69,10 +69,13 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 	add_filter( 'wp_title', '_s_wp_title', 10, 2 );
 endif;
 
-/**
- * Title shiv for blogs older than WordPress 4.1
- */
 if ( ! function_exists( '_wp_render_title_tag' ) ) :
+	/**
+	 * Title shim for sites older than WordPress 4.1.
+	 *
+	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	 * @todo Remove this function when WordPress 4.4 is released.
+	 */
 	function _s_render_title() {
 		echo '<title>' . wp_title( '|', false, 'right' ) . "</title>\n";
 	}
