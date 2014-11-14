@@ -18,7 +18,7 @@ function _s_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', '_s' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', '_s' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -49,7 +49,7 @@ function _s_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', '_s' ); ?></h1>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', '_s' ) );
@@ -103,23 +103,23 @@ function _s_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( __( ', ', '_s' ) );
 		if ( $categories_list && _s_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', '_s' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', '_s' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', '_s' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_s' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', '_s' ), esc_html__( '1 Comment', '_s' ), esc_html__( '% Comments', '_s' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( esc_html__( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -136,17 +136,17 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', '_s' ), single_cat_title( '', false ) );
+		$title = sprintf( esc_html__( 'Category: %s', '_s' ), esc_html( single_cat_title( '', false ) ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', '_s' ), single_tag_title( '', false ) );
+		$title = sprintf( esc_html__( 'Tag: %s', '_s' ), esc_html( single_tag_title( '', false ) ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', '_s' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( esc_html__( 'Author: %s', '_s' ), '<span class="vcard">' . esc_html( get_the_author() ) . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', '_s' ), get_the_date( _x( 'Y', 'yearly archives date format', '_s' ) ) );
+		$title = sprintf( esc_html__( 'Year: %s', '_s' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format', '_s' ) ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', '_s' ), get_the_date( _x( 'F Y', 'monthly archives date format', '_s' ) ) );
+		$title = sprintf( esc_html__( 'Month: %s', '_s' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', '_s' ) ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', '_s' ), get_the_date( _x( 'F j, Y', 'daily archives date format', '_s' ) ) );
+		$title = sprintf( esc_html__( 'Day: %s', '_s' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', '_s' ) ) ) );
 	} elseif ( is_tax( 'post_format', 'post-format-aside' ) ) {
 		$title = _x( 'Asides', 'post format archive title', '_s' );
 	} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
@@ -166,11 +166,11 @@ function the_archive_title( $before = '', $after = '' ) {
 	} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
 		$title = _x( 'Chats', 'post format archive title', '_s' );
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', '_s' ), post_type_archive_title( '', false ) );
+		$title = sprintf( esc_html__( 'Archives: %s', '_s' ), esc_html( post_type_archive_title( '', false ) ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', '_s' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( esc_html__( '%1$s: %2$s', '_s' ), esc_html( $tax->labels->singular_name ), esc_html( single_term_title( '', false ) ) );
 	} else {
 		$title = __( 'Archives', '_s' );
 	}
@@ -183,7 +183,7 @@ function the_archive_title( $before = '', $after = '' ) {
 	$title = apply_filters( 'get_the_archive_title', $title );
 
 	if ( ! empty( $title ) ) {
-		echo $before . $title . $after;
+		echo $before . esc_html( $title ) . $after;
 	}
 }
 endif;
@@ -210,7 +210,7 @@ function the_archive_description( $before = '', $after = '' ) {
 		 *
 		 * @param string $description Archive description to be displayed.
 		 */
-		echo $before . $description . $after;
+		echo $before . esc_html( $description ) . $after;
 	}
 }
 endif;
