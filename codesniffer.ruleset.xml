@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="Underscores WordPress Theme Coding Standards Configuration">
+	<!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
+
+	<!-- Set a description for this ruleset. -->
+	<description>A custom set of code standard rules to check for Underscores.</description>
+
+	<!-- Include the WordPress ruleset, with exclusions. -->
+	<rule ref="WordPress">
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+
+		<exclude name="WordPress.XSS.EscapeOutput" />
+		<exclude name="WordPress.WhiteSpace.ScopeIndent.Incorrect" />
+		<exclude name="WordPress.Variables.GlobalVariables" />
+	</rule>
+</ruleset>
