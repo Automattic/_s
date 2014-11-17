@@ -84,7 +84,6 @@
 			}
 
 			function toggleFocus() {
-				console.log( 'toggle focus' );
 				var current = this;
 
 				// Move up through the ancestors of the current link until we hit .nav-menu
