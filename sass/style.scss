@@ -23,7 +23,7 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
+  TABLE OF CONTENTS:
 ----------------------------------------------------------------
 - Reset
 - Typography
@@ -36,7 +36,7 @@ and Blueprint http://www.blueprintcss.org/
 - Alignments
 - Clearings
 - Widgets
-- Content
+- Site
 	- Posts and pages
 	- Asides
 	- Comments
@@ -67,6 +67,7 @@ and Blueprint http://www.blueprintcss.org/
 @import "partials/media";
 
 /*
- * OPTIONAL BASE STYLES
+ * Optional Base Styles
  */
+
 @import "partials/base";

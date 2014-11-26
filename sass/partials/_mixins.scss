@@ -1,10 +1,14 @@
-//--------------------------------------------------------------
-// Mixins
-//--------------------------------------------------------------
+/*--------------------------------------------------------------
+  Mixins
+---------------------------------------------------------------*/
 
-// REM with PX fallback
-// @include rem(font-size, 16px);
-// @include rem(margin, 10px 5px 5px 10px);
+/**
+ * REM with PX fallback
+ *
+ * Sample Usage: @include rem(font-size, 16px);
+ * 				 @include rem(margin, 10px 5px 5px 10px);
+ */
+
 @function parseInt($n) {
 	@return $n / ($n * 0 + 1);
 }
@@ -64,7 +68,32 @@
 	@return $return;
 }
 
-// Transitions
+
+/* Center block */
+
+@mixin center-block {
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* Clearfix */
+
+@mixin clearfix() {
+	content: "";
+	display: table;
+}
+
+
+/* Clear after (not all clearfix need this also) */
+
+@mixin clearfix-after() {
+	clear: both;
+}
+
+
+/* Transitions */
+
 @mixin transition($transition-property, $transition-time, $method) {
 	-webkit-transition: $transition-property $transition-time $method;
 	-moz-transition: $transition-property $transition-time $method;
@@ -73,26 +102,39 @@
 	transition: $transition-property $transition-time $method;
 }
 
-// Media Queries
-@mixin wider-than($point) {
-	@if $point == large-desktop {
-		@media screen and (min-width: 71.25em) { @content; } // 1140px
-	}
 
-	@else if $point == desktop {
-		@media screen and (min-width: 48em) { @content; } // 768px
-	}
+/**
+ * Media Queries using Sass List Maps
+ *
+ */
 
-	@else if $point == tablet {
-		@media screen and (min-width: 30em) { @content; } // 480px
-	}
+/* Define our breakpoints in $breakpoints variable and assign key value pairs in ems.
+ * If default font-size is 16px, then:
+ * large-desktop (71.25em) = 1140px
+ * desktop (48em)= 768px
+ * tablet (30em) = 480px
+ */
 
-	@else {
-		@media screen and (min-width: $point) { @content; }
-	}
+$breakpoints: (
+	large-desktop: 71.25em,
+	desktop: 48em,
+	tablet: 30em,
+);
+
+@mixin wider-than($screen-size) {
+	@if map-has-key($breakpoints, $screen-size) {
+		@media (min-width: map-get($breakpoints, $screen-size)) {
+			@content;
+		}
+	} @else {
+		// Debugging - can be used thanks to map-has-key() instead of loop
+		@warn "Breakpoint '#{$screen-size}' does not exist!"
+ 	}
 }
 
-// Omega Reset
+
+/* Omega Reset */
+
 @mixin omega-reset($nth) {
 	&:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
 	&:nth-child(#{$nth}+1) { clear: none }

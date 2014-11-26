@@ -14,8 +14,7 @@ Clearings
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-	content: "";
-	display: table;
+	@include clearfix;
 }
 
 .clear:after,
@@ -24,5 +23,5 @@ Clearings
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	clear: both;
+	@include clearfix-after;
 }

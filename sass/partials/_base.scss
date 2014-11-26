@@ -1,8 +1,10 @@
 /*--------------------------------------------------------------
-OPTIONAL BASE STYLES
+Optional Base Styles
 --------------------------------------------------------------*/
 
-/* Structure */
+/**
+ * Structure
+ */
 
 .site {
 	@include outer-container;
@@ -33,7 +35,9 @@ OPTIONAL BASE STYLES
 	}
 }
 
-/* Branding */
+/**
+ * Branding
+ */
 
 .site-title {
 	@include rem(font-size, 48px);
@@ -44,7 +48,9 @@ OPTIONAL BASE STYLES
 	margin-bottom: 24px;
 }
 
-/* Navigation */
+/**
+ * Navigation
+ */
 
 .menu {
 
@@ -58,13 +64,17 @@ OPTIONAL BASE STYLES
 
 }
 
-/* Content */
+/**
+ * Content
+ */
 
 .entry-title {
 	@include rem(font-size, 36px);
 }
 
-/* Comments */
+/**
+ * Comments
+ */
 
 .comments-title {
 	@include rem(font-size, 24px);

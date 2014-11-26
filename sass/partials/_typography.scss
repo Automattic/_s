@@ -7,11 +7,13 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: $color-text-main;
 	font-family: $font-sans;
 	@include rem(font-size, 16px);
-	line-height: 1.5;
+	line-height: $line-height-body;
 }
+
+/* Headers */
 
 h1,
 h2,
@@ -21,6 +23,10 @@ h5,
 h6 {
 	clear: both;
 }
+
+/**
+ * Copy
+ */
 
 p {
 	margin-bottom: 1.5em;
@@ -47,10 +53,10 @@ address {
 }
 
 pre {
-	background: #eee;
-	font-family: $font-mono;
+	background: $color-background-pre;
+	font-family: $font-pre;
 	@include rem(font-size, 15px);
-	line-height: 1.6;
+	line-height: $line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
@@ -61,18 +67,19 @@ code,
 kbd,
 tt,
 var {
-	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	@include rem(font-size, 15px);
+	font-family: $font-code;
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted $color-border-abbr;
 	cursor: help;
 }
 
 mark,
 ins {
-	background: #fff9c0;
+	background: $color-background-ins;
 	text-decoration: none;
 }
 

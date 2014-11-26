@@ -2,9 +2,9 @@
 Navigation
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-Links
---------------------------------------------------------------*/
+/**
+ * Links
+ */
 
 a {
 	color: $color-link;
@@ -20,9 +20,9 @@ a {
 	}
 }
 
-/*--------------------------------------------------------------
-Menus
---------------------------------------------------------------*/
+/**
+ * Menus
+ */
 
 .main-navigation {
 	clear: both;
@@ -35,13 +35,6 @@ Menus
 		margin: 0;
 		padding-left: 0;
 
-		li {
-
-			&:hover > ul {
-				display: block;
-			}
-		}
-
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -50,27 +43,29 @@ Menus
 			top: 1.5em;
 			z-index: 99999;
 
-			& :hover > a {
-			}
-
-			li {
-			}
-
-			li:hover > ul {
-				left: 100%;
-			}
-
-			a {
-				width: 200px;
-
-				&:hover {
-				}
-			}
-
 			ul {
 				left: -999em;
 				top: 0;
 			}
+
+			li {
+				&:hover > ul {
+					left: 100%;
+				}
+			}
+
+			:hover > a {
+			}
+
+			a:hover {
+			}
+
+		a {
+			width: 200px;
+		}
+
+		li:hover > ul {
+			left: auto;
 		}
 	}
 
@@ -80,10 +75,6 @@ Menus
 
 		&:hover > a {
 		}
-
-		&:hover > ul {
-			left: auto;
-		}
 	}
 
 	a {
@@ -91,16 +82,16 @@ Menus
 		text-decoration: none;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a {
+	.current_page_item a,
+	.current-menu-item a {
 	}
 }
 
-/* Small menu */
+/**
+ * Small menu
+ */
 
 .menu-toggle {
-	cursor: pointer;
 	display: none;
 }
 

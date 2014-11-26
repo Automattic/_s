@@ -1,14 +1,40 @@
-//--------------------------------------------------------------
-// Variables
-//--------------------------------------------------------------
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
 
-// Colors
-$color-site-bg:      #fff;
-$color-link:         royalblue;
+/**
+ * Colors
+ */
+
+$color-background-body: #fff;
+$color-background-screen: #f1f1f1;
+$color-background-hr: #ccc;
+$color-background-button: #e6e6e6;
+$color-background-pre: #eee;
+$color-background-ins: #fff9c0;
+
+$color-text-screen: #21759b;
+$color-text-input: #666;
+$color-text-input-focus: #111;
+$color-link: royalblue;
 $color-link-visited: purple;
-$color-link-hover:   blue;
+$color-link-hover: midnightblue;
+$color-text-main: #404040;
 
-// Fonts
+$color-border-button: #ccc #ccc #bbb;
+$color-border-button-hover: #ccc #bbb #aaa;
+$color-border-button-focus: #aaa #bbb #bbb;
+$color-border-input: #ccc;
+$color-border-abbr: #666;
+
+/**
+ * Typography
+ */
+
 $font-sans:  sans-serif;
 $font-serif: Georgia, Times, "Times New Roman", serif;
-$font-mono:  "Courier 10 Pitch", Courier, monospace;
+$font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font-pre: "Courier 10 Pitch", Courier, monospace;
+
+$line-height-primary: 1.5;
+$line-height-pre: 1.6;
