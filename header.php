@@ -25,12 +25,12 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<?php
-                if ( is_front_page() && is_home() ) : ?>
+				if ( is_front_page() && is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-				<?php endif; 
-                            
+				<?php endif;
+
 				$description = get_bloginfo( 'description' );
 				if ( ! empty( $description ) ) : ?>
 					<div class="site-description"><?php echo esc_html( $description ); ?></div>
