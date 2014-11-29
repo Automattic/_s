@@ -647,6 +647,7 @@ a:active {
 }
 
 .single .byline,
+.archive .byline,
 .group-blog .byline {
 	display: inline;
 }
