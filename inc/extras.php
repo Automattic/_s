@@ -74,7 +74,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 	 * Title shim for sites older than WordPress 4.1.
 	 *
 	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.4 is released.
+	 * @todo Remove this function when WordPress 4.3 is released.
 	 */
 	function _s_render_title() {
 		echo '<title>' . wp_title( '|', false, 'right' ) . "</title>\n";
