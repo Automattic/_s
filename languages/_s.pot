@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0-wpcom\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-09-11 00:43:48+00:00\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
+"POT-Creation-Date: 2014-12-03 09:43:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,72 +28,6 @@ msgstr ""
 
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: archive.php:27
-msgid "Author: %s"
-msgstr ""
-
-#: archive.php:30
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:33
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:33
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:36
-msgid "Year: %s"
-msgstr ""
-
-#: archive.php:36
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: archive.php:39
-msgid "Asides"
-msgstr ""
-
-#: archive.php:42
-msgid "Galleries"
-msgstr ""
-
-#: archive.php:45
-msgid "Images"
-msgstr ""
-
-#: archive.php:48
-msgid "Videos"
-msgstr ""
-
-#: archive.php:51
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:54
-msgid "Links"
-msgstr ""
-
-#: archive.php:57
-msgid "Statuses"
-msgstr ""
-
-#: archive.php:60
-msgid "Audios"
-msgstr ""
-
-#: archive.php:63
-msgid "Chats"
-msgstr ""
-
-#: archive.php:66
-msgid "Archives"
 msgstr ""
 
 #: comments.php:28
@@ -135,7 +69,7 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: content-page.php:18 content-single.php:20 content.php:22
+#: content-page.php:18 content-single.php:20 content.php:29
 msgid "Pages:"
 msgstr ""
 
@@ -143,8 +77,10 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: content.php:19
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#. translators: %s: Name of current post
+
+#: content.php:22
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: footer.php:15
@@ -159,19 +95,19 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:45 header.php:32
+#: functions.php:53 header.php:31
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:80
+#: functions.php:88
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:23
+#: header.php:22
 msgid "Skip to content"
 msgstr ""
 
-#: inc/extras.php:63
+#: inc/extras.php:64
 msgid "Page %s"
 msgstr ""
 
@@ -235,6 +171,104 @@ msgstr ""
 
 #: inc/template-tags.php:118
 msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:139
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:141
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:143
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:145
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:145
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:147
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:147
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:157
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:159
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:163
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:165
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:167
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:169
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+
+#: inc/template-tags.php:173
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:175
+msgid "Archives"
 msgstr ""
 
 #: search.php:16
