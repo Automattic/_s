@@ -34,7 +34,7 @@ function _s_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// Add styles to the post editor
-	add_editor_style( array( 'editor-style.css', _s_fonts_url() ) );
+	add_editor_style( array( 'editor-style.css', _s_font_url() ) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
