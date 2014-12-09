@@ -5,23 +5,36 @@
  */
 function _s_font_url() {
 
-	$font_url = '';
+	$fonts_url = '';
 
 	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Open Sans, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', '_s' ) ) {
+	* Translators: If there are characters in your language that are not
+	* supported by the following, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$lora = _x( 'on', 'Lora font: on or off', 'wiregrass' );
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'wiregrass' );
+
+	if ( 'off' !== $roboto || 'off' !== $open_sans ) {
+		$font_families = array();
+
+		if ( 'off' !== $roboto ) {
+			$font_families[] = 'Roboto:400,700';
+		}
+
+		if ( 'off' !== $open_sans ) {
+			$font_families[] = 'Open Sans:400,300,700';
+		}
 
 		$query_args = array(
-			'family' => urlencode( 'Open+Sans:300italic,400italic,700italic,400,300,700' ),
+			'family' => urlencode( implode( '|', $font_families ) ),
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
 
-		$font_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
 	}
 
-	return $font_url;
+	return $fonts_url;
 }
 
 
