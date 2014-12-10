@@ -6,6 +6,11 @@
 	margin: 0 0 1.5em;
 }
 
+.entry-title {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
 .byline,
 .updated:not(.published){
 	display: none;
