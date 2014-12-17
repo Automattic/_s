@@ -476,13 +476,11 @@ a:active {
 .main-navigation ul ul a:hover {
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul { {
+.main-navigation ul li:hover > ul {
 	left: auto;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li:hover > ul {
 	left: 100%;
 }
 
