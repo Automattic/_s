@@ -67,6 +67,9 @@ function _s2_setup() {
 		'default-image' => '',
 	) ) );
 
+	// adds theme support for title tag
+	add_theme_support( 'title-tag' );
+
 	// WordPress TinyMCE editor Stylesheet
 	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
 }
