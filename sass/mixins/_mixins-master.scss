@@ -29,6 +29,16 @@
 	clear: both;
 }
 
+// creates rgba from a solid color
+@mixin rgba-color( $color, $alpha ) {
+	color: rgba( red( $color ), green( $color ), blue( $color ), $alpha );
+}
+
+// creates rgba background-color from solid color
+@mixin rgba-background( $color, $alpha ) {
+	background-color: rgba( red( $color ), green( $color ), blue( $color ), $alpha );
+}
+
 /**
  * Genericon Mixin
  */

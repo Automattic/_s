@@ -1,8 +1,8 @@
 <?php
 /**
- * _s functions and definitions
+ * _s2 functions and definitions
  *
- * @package _s
+ * @package _s2
  */
 
 /**

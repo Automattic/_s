@@ -1,3 +1,33 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
+
+h1{
+	@include font-size(32);
+    line-height: 40px; /* 40px */
+}
+ 
+h2{
+	@include font-size(26);
+    line-height: 40px; /* 40px */
+}
+ 
+h3{
+	@include font-size(22);
+    line-height: 40px; /* 40px */
+}
+ 
+h4{
+	@include font-size(18);
+    line-height: 40px; /* 40px */
+}
+ 
+h5{
+	@include font-size(16);
+    line-height: 20px; /* 20px */
+}
+ 
+h6{
+	@include font-size(14);
+    line-height: 20px; /* 20px */
+}
