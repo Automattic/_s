@@ -35,7 +35,7 @@ function _s_body_classes( $classes ) {
 }
 add_filter( 'body_class', '_s_body_classes' );
 
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
 	 *
@@ -67,9 +67,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 		return $title;
 	}
 	add_filter( 'wp_title', '_s_wp_title', 10, 2 );
-endif;
 
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
 	/**
 	 * Title shim for sites older than WordPress 4.1.
 	 *
