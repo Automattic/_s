@@ -77,7 +77,9 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) :
 	 * @todo Remove this function when WordPress 4.3 is released.
 	 */
 	function _s_render_title() {
-		echo '<title>' . wp_title( '|', false, 'right' ) . "</title>\n";
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
 	}
 	add_action( 'wp_head', '_s_render_title' );
 endif;
