@@ -8,12 +8,14 @@
  */
 
 get_header(); ?>
-
+    
+    
 	<div id="primary" class="content-area">
+    <?php tha_content_top; ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-
+        <?php tha_entry_top(); ?>
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -40,10 +42,13 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
 
+        <?php tha_entry_after(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+    <?php tha_content_bottom(); ?>
 	</div><!-- #primary -->
+    <?php tha_content_after(); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

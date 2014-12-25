@@ -8,10 +8,11 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+    <?php tha_content_top(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
+        <?php tha_entry_before(); ?>
 			<?php get_template_part( 'content', 'single' ); ?>
 
 			<?php _s_post_nav(); ?>
@@ -22,11 +23,13 @@ get_header(); ?>
 					comments_template();
 				endif;
 			?>
-
+        <?php tha_entry_after(); ?>
 		<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
+    <?php tha_content_bottom(); ?>
 	</div><!-- #primary -->
+    <?php tha_content_after() ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
