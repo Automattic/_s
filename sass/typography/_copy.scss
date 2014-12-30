@@ -21,7 +21,7 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(1.5);
+	@include font-size(0.9375);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -30,8 +30,8 @@ pre {
 }
 
 code, kbd, tt, var {
-	@include font-size(1.5);
 	font-family: $font__code;
+	@include font-size(0.9375);
 }
 
 abbr, acronym {
@@ -42,23 +42,6 @@ abbr, acronym {
 mark, ins {
 	background: $color__background-ins;
 	text-decoration: none;
-}
-
-sup,
-sub {
-	font-size: 75%;
-	height: 0;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	bottom: 1ex;
-}
-
-sub {
-	top: .5ex;
 }
 
 small {

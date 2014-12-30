@@ -1,4 +1,4 @@
-/* Text meant only for screen readers */
+/* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -15,7 +15,7 @@
 		clip: auto !important;
 		color: $color__text-screen;
 		display: block;
-		@include font-size(1.4);
+		@include font-size(0.875);
 		font-weight: bold;
 		height: auto;
 		left: 5px;
@@ -24,6 +24,6 @@
 		text-decoration: none;
 		top: 5px;
 		width: auto;
-		z-index: 100000; /* Above WP toolbar */
+		z-index: 100000; /* Above WP toolbar. */
 	}
 }
