@@ -8,8 +8,10 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+    <?php tha_content_top(); ?>
 		<main id="main" class="site-main" role="main">
-
+            <?php tha_entry_before(); ?>
+            <?php tha_entry_top(); ?>
 			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
@@ -49,8 +51,12 @@ get_header(); ?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
+            <?php tha_entry_bottom(); ?>
+            <?php tha_entry_after(); ?>
 
 		</main><!-- #main -->
+    <?php tha_content_bottom(); ?>
 	</div><!-- #primary -->
+    <?php tha_content_after(); ?>
 
 <?php get_footer(); ?>

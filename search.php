@@ -8,6 +8,7 @@
 get_header(); ?>
 
 	<section id="primary" class="content-area">
+    <?php tha_content_top();
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -18,7 +19,7 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-
+            <?php tha_entry_before(); ?>
 				<?php
 				/**
 				 * Run the loop for the search to output the results.
@@ -35,11 +36,13 @@ get_header(); ?>
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
-
+        <?php tha_entry_after(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+    <?php tha_content_bottom(); ?>
 	</section><!-- #primary -->
+    <?php tha_content_after(); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

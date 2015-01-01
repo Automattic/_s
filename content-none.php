@@ -8,6 +8,7 @@
  */
 ?>
 
+<?php tha_entry_top(); ?>
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', '_s' ); ?></h1>
@@ -31,3 +32,4 @@
 		<?php endif; ?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->
+<?php tha_entry_bottom(); ?>
