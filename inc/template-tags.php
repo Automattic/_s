@@ -61,7 +61,7 @@ function the_post_navigation() {
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
-<?php
+	<?php
 }
 endif;
 
