@@ -1,14 +1,14 @@
-# Copyright (C) 2014 Automattic
+# Copyright (C) 2015 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
-"POT-Creation-Date: 2014-12-19 01:28:13+00:00\n"
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2015-01-05 18:17:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -28,6 +28,14 @@ msgstr ""
 
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:39 inc/template-tags.php:27 index.php:36 search.php:35
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: archive.php:40 inc/template-tags.php:31 index.php:37 search.php:36
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: comments.php:28
@@ -73,7 +81,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:25 inc/template-tags.php:140
+#: content-page.php:25 inc/template-tags.php:126
 msgid "Edit"
 msgstr ""
 
@@ -111,163 +119,154 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/template-tags.php:19 inc/template-tags.php:33
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
-
-#: inc/template-tags.php:20 inc/template-tags.php:37
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/template-tags.php:29
+#: inc/template-tags.php:23
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:56 inc/template-tags.php:72
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:59 single.php:19
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
 msgstr ""
 
-#: inc/template-tags.php:57 inc/template-tags.php:73
+#: inc/template-tags.php:60 single.php:20
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:69
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:100
+#: inc/template-tags.php:86
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:105
+#: inc/template-tags.php:91
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-
-#: inc/template-tags.php:122 inc/template-tags.php:128
+#: inc/template-tags.php:108 inc/template-tags.php:114
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:124
+#: inc/template-tags.php:110
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:130
+#: inc/template-tags.php:116
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:136
+#: inc/template-tags.php:122
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:136
+#: inc/template-tags.php:122
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:136
+#: inc/template-tags.php:122
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:157
+#: inc/template-tags.php:143
 msgid "Category: %s"
 msgstr ""
 
-#: inc/template-tags.php:159
+#: inc/template-tags.php:145
 msgid "Tag: %s"
 msgstr ""
 
-#: inc/template-tags.php:161
+#: inc/template-tags.php:147
 msgid "Author: %s"
 msgstr ""
 
-#: inc/template-tags.php:163
+#: inc/template-tags.php:149
 msgid "Year: %s"
 msgstr ""
 
-#: inc/template-tags.php:163
+#: inc/template-tags.php:149
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/template-tags.php:165
+#: inc/template-tags.php:151
 msgid "Month: %s"
 msgstr ""
 
-#: inc/template-tags.php:165
+#: inc/template-tags.php:151
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:153
 msgid "Day: %s"
 msgstr ""
 
-#: inc/template-tags.php:167
+#: inc/template-tags.php:153
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/template-tags.php:169
+#: inc/template-tags.php:155
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/template-tags.php:171
+#: inc/template-tags.php:157
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/template-tags.php:173
+#: inc/template-tags.php:159
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/template-tags.php:175
+#: inc/template-tags.php:161
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/template-tags.php:177
+#: inc/template-tags.php:163
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/template-tags.php:179
+#: inc/template-tags.php:165
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/template-tags.php:181
+#: inc/template-tags.php:167
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/template-tags.php:183
+#: inc/template-tags.php:169
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/template-tags.php:185
+#: inc/template-tags.php:171
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/template-tags.php:187
+#: inc/template-tags.php:173
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 
-#: inc/template-tags.php:191
+#: inc/template-tags.php:177
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:179
 msgid "Archives"
 msgstr ""
 

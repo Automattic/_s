@@ -33,7 +33,7 @@ function the_posts_navigation() {
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
-<?php
+	<?php
 }
 endif;
 
@@ -51,7 +51,7 @@ function the_post_navigation() {
 	if ( ! $next && ! $previous ) {
 		return;
 	}
-?>
+	?>
 	<nav class="navigation post-navigation" role="navigation">
 		<h2 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h2>
 		<div class="nav-links">
