@@ -12,7 +12,7 @@ function _s_font_url() {
 	* supported by the following, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$lora = _x( 'on', 'Lora font: on or off', 'wiregrass' );
+	$roboto = _x( 'on', 'Roboto font: on or off', 'wiregrass' );
 	$open_sans = _x( 'on', 'Open Sans font: on or off', 'wiregrass' );
 
 	if ( 'off' !== $roboto || 'off' !== $open_sans ) {
@@ -43,8 +43,6 @@ function _s_font_url() {
  */
 function _s_scripts() {
 
-	global $is_IE;
-
 	$version = '1.0.0';
 
 	/**
@@ -58,6 +56,7 @@ function _s_scripts() {
 
 	}
 
+	wp_deregister_style( 'font-awesome' );
 	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), $version );
 
 	wp_enqueue_style( 'font-awesome' );
