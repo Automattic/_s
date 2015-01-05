@@ -34,7 +34,12 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php _s_paging_nav(); ?>
+			<?php
+				the_posts_navigation( array(
+					'prev_text' => __( '<span class="meta-nav">&larr;</span> Older posts', '_s' ),
+					'next_text' => __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_s' ),
+				) );
+			?>
 
 		<?php else : ?>
 
