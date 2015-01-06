@@ -14,12 +14,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php
-				the_post_navigation( array(
-					'prev_text' => _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', '_s' ),
-					'next_text' => _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     '_s' ),
-				) );
-			?>
+			<?php the_post_navigation(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

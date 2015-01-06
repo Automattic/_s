@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-01-05 18:17:28+00:00\n"
+"POT-Creation-Date: 2015-01-06 02:24:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,14 +28,6 @@ msgstr ""
 
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: archive.php:39 inc/template-tags.php:27 index.php:36 search.php:35
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
-
-#: archive.php:40 inc/template-tags.php:31 index.php:37 search.php:36
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: comments.php:28
@@ -123,18 +115,16 @@ msgstr ""
 msgid "Posts navigation"
 msgstr ""
 
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr ""
+
 #: inc/template-tags.php:56
 msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:59 single.php:19
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
-msgstr ""
-
-#: inc/template-tags.php:60 single.php:20
-msgctxt "Next post link"
-msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: inc/template-tags.php:86
