@@ -3,9 +3,9 @@ Grid Settings -- overrides default Bourbon - Neat
 http://neat.bourbon.io/examples/
 -------------------------------------------------------------*/
 
-$column               : 82px;    	/* default width of your colums */
-$gutter               : 12px;       /* default width of the gutters */
-$max-width            : em(1140);   /* max-width of the grid/theme in pixels */
+$column : 82px;         /* default width of your colums */
+$gutter : 12px;         /* default width of the gutters */
+$max-width : em(1140);  /* max-width of the grid/theme in pixels */
 
 /* To calculate grids see:
  * http://www.gridsystemgenerator.com/gs02.php?GridWidth=1140&GridColumns=12&GridMarginLeft=12 */
@@ -16,15 +16,15 @@ Set Bourbon's flex-grid variables to match what Neat is doing
 http://bourbon.io/docs/#flex-grid
 ---------------------------------------------------------------*/
 
-$fg-column            : $column;
-$fg-gutter            : $gutter;
+$fg-column : $column;
+$fg-gutter : $gutter;
 
 
 /*--------------------------------------------------------------
 Optional - A handy visual grid overlay
 ---------------------------------------------------------------*/
 
-$visual-grid          : false;     /* true/false */
-$visual-grid-color    : pink;      /* color of visual grid */
-$visual-grid-index    : front;     /* front/back */
-$visual-grid-opacity  : 0.2;       /* opacity of visual grid */
+$visual-grid : false;        /* true/false */
+$visual-grid-color : pink;   /* color of visual grid */
+$visual-grid-index : front;  /* front/back */
+$visual-grid-opacity : 0.2;  /* opacity of visual grid */

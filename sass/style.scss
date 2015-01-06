@@ -22,9 +22,9 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 @import "bourbon";
+@import "partials/grid-settings";
 @import "neat";
 
-@import "partials/grid-settings";
 @import "partials/variables";
 @import "partials/mixins";
 @import "partials/sprites";
