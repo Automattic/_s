@@ -26,14 +26,14 @@ env:
     # @link https://github.com/WordPress/WordPress
     - WP_VERSION=master WP_MULTISITE=0
     - WP_VERSION=master WP_MULTISITE=1
+    # WordPress 4.1
+    # @link https://github.com/WordPress/WordPress/tree/4.1-branch
+    - WP_VERSION=4.1 WP_MULTISITE=0
+    - WP_VERSION=4.1 WP_MULTISITE=1
     # WordPress 4.0
     # @link https://github.com/WordPress/WordPress/tree/4.0-branch
     - WP_VERSION=4.0 WP_MULTISITE=0
     - WP_VERSION=4.0 WP_MULTISITE=1
-    # WordPress 3.9
-    # @link https://github.com/WordPress/WordPress/tree/3.9-branch
-    - WP_VERSION=3.9 WP_MULTISITE=0
-    - WP_VERSION=3.9 WP_MULTISITE=1
 
 # Declare 5.6 beta in test matrix.
 # @link https://buddypress.trac.wordpress.org/ticket/5620
