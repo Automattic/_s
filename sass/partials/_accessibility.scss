@@ -6,10 +6,10 @@ Accessibility
 
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
 	height: 1px;
-	width: 1px;
 	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
 
 	&:hover,
 	&:active,
@@ -21,7 +21,7 @@ Accessibility
 		color: $color-text-screen;
 		display: block;
 		@include rem(font-size, 14px);
-		font-weight: bold;
+		font-weight: 700;
 		height: auto;
 		left: 5px;
 		line-height: normal;
