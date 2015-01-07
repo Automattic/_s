@@ -77,24 +77,6 @@
 }
 
 
-/* Clear after (not all clearfix need this also) */
-
-@mixin clearfix-after() {
-	clear: both;
-}
-
-
-/* Transitions */
-
-@mixin transition($transition-property, $transition-time, $method) {
-	-webkit-transition: $transition-property $transition-time $method;
-	-moz-transition: $transition-property $transition-time $method;
-	-ms-transition: $transition-property $transition-time $method;
-	-o-transition: $transition-property $transition-time $method;
-	transition: $transition-property $transition-time $method;
-}
-
-
 /**
  * Media Queries using Sass List Maps
  *
@@ -122,12 +104,4 @@ $breakpoints: (
 		// Debugging - can be used thanks to map-has-key() instead of loop
 		@warn "Breakpoint '#{$screen-size}' does not exist!"
  	}
-}
-
-
-/* Omega Reset */
-
-@mixin omega-reset($nth) {
-	&:nth-child(#{$nth}) { margin-right: flex-gutter($grid-columns, $gutter); }
-	&:nth-child(#{$nth}+1) { clear: none }
 }
