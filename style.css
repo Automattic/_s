@@ -506,21 +506,21 @@ a:active {
 }
 
 .site-main .comment-navigation,
-.site-main .posts-navigation,
+.site-main .paging-navigation,
 .site-main .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
 
 .comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
+.paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
 }
 
 .comment-navigation .nav-next,
-.posts-navigation .nav-next,
+.paging-navigation .nav-next,
 .post-navigation .nav-next {
 	float: right;
 	text-align: right;
@@ -685,7 +685,7 @@ a:active {
 11.0 Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
