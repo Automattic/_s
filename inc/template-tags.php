@@ -2,70 +2,33 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, some of the functionality here could be replaced by core features
+ * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package _s
  */
 
-
-
-
-
-/* ==========================================================================
-   Post Author Data
-   ========================================================================== */
-
-/**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
- */
-function _s_setup_author() {
-    global $wp_query;
-
-    if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-        $GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-    }
-}
-add_action( 'wp', '_s_setup_author' );
-
-
-
-
-
-/* ==========================================================================
-   Posts Navigation - Next/Previous
-   ========================================================================== */
-
-if ( ! function_exists( '_s_paging_nav' ) ) :
+if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
- * @return void
+ * @todo Remove this function when WordPress 4.3 is released.
  */
-function _s_paging_nav() {
+function the_posts_navigation() {
     // Don't print empty markup if there's only one page.
     if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
         return;
     }
     ?>
-    <nav class="navigation paging-navigation" role="navigation">
-        <h1 class="screen-reader-text"><?php _e( 'Posts navigation', '_s' ); ?></h1>
+    <nav class="navigation posts-navigation" role="navigation">
+        <h2 class="screen-reader-text"><?php _e( 'Posts navigation', '_s' ); ?></h2>
         <div class="nav-links">
 
             <?php if ( get_next_posts_link() ) : ?>
-            <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', '_s' ) ); ?></div>
+            <div class="nav-previous"><?php next_posts_link( __( 'Older posts', '_s' ) ); ?></div>
             <?php endif; ?>
 
             <?php if ( get_previous_posts_link() ) : ?>
-            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_s' ) ); ?></div>
+            <div class="nav-next"><?php previous_posts_link( __( 'Newer posts', '_s' ) ); ?></div>
             <?php endif; ?>
 
         </div><!-- .nav-links -->
@@ -74,17 +37,13 @@ function _s_paging_nav() {
 }
 endif;
 
-
-
-
-
-if ( ! function_exists( '_s_post_nav' ) ) :
+if ( ! function_exists( 'the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  *
- * @return void
+ * @todo Remove this function when WordPress 4.3 is released.
  */
-function _s_post_nav() {
+function the_post_navigation() {
     // Don't print empty markup if there's nowhere to navigate.
     $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
     $next     = get_adjacent_post( false, '', false );
@@ -94,101 +53,26 @@ function _s_post_nav() {
     }
     ?>
     <nav class="navigation post-navigation" role="navigation">
-        <h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
+        <h2 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h2>
         <div class="nav-links">
-
-            <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', '_s' ) ); ?>
-            <?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     '_s' ) ); ?>
-
+            <?php
+                previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
+                next_post_link( '<div class="nav-next">%link</div>', '%title' );
+            ?>
         </div><!-- .nav-links -->
     </nav><!-- .navigation -->
     <?php
 }
 endif;
 
-
-
-
-
-/* ==========================================================================
-   Comments
-   ========================================================================== */
-
-if ( ! function_exists( '_s_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- */
-function _s_comment( $comment, $args, $depth ) {
-    $GLOBALS['comment'] = $comment;
-
-    if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
-
-    <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-        <div class="comment-body">
-            <?php _e( 'Pingback:', '_s' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
-        </div>
-
-    <?php else : ?>
-
-    <li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-        <article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-            <footer class="comment-meta">
-                <div class="comment-author vcard">
-                    <?php if ( 0 != $args['avatar_size'] ) { echo get_avatar( $comment, $args['avatar_size'] ); } ?>
-                    <?php printf( __( '%s <span class="says">says:</span>', '_s' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-                </div><!-- .comment-author -->
-
-                <div class="comment-metadata">
-                    <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-                        <time datetime="<?php comment_time( 'c' ); ?>">
-                            <?php printf( _x( '%1$s at %2$s', '1: date, 2: time', '_s' ), get_comment_date(), get_comment_time() ); ?>
-                        </time>
-                    </a>
-                    <?php edit_comment_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' ); ?>
-                </div><!-- .comment-metadata -->
-
-                <?php if ( '0' == $comment->comment_approved ) : ?>
-                <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', '_s' ); ?></p>
-                <?php endif; ?>
-            </footer><!-- .comment-meta -->
-
-            <div class="comment-content">
-                <?php comment_text(); ?>
-            </div><!-- .comment-content -->
-
-            <?php
-                comment_reply_link( array_merge( $args, array(
-                    'add_below' => 'div-comment',
-                    'depth'     => $depth,
-                    'max_depth' => $args['max_depth'],
-                    'before'    => '<div class="reply">',
-                    'after'     => '</div>',
-                ) ) );
-            ?>
-        </article><!-- .comment-body -->
-
-    <?php
-    endif;
-}
-endif; // ends check for _s_comment()
-
-
-
-
-/* ==========================================================================
-   Meta - Posted On
-   ========================================================================== */
-
 if ( ! function_exists( '_s_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function _s_posted_on() {
-    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
     if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-        $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+        $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
     }
 
     $time_string = sprintf( $time_string,
@@ -198,215 +82,185 @@ function _s_posted_on() {
         esc_html( get_the_modified_date() )
     );
 
-    printf( __( '<span class="posted-on">Posted on %1$s</span><span class="byline"> by %2$s</span>', '_s' ),
-        sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-            esc_url( get_permalink() ),
-            $time_string
-        ),
-        sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-            esc_html( get_the_author() )
-        )
+    $posted_on = sprintf(
+        _x( 'Posted on %s', 'post date', '_s' ),
+        '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
     );
+
+    $byline = sprintf(
+        _x( 'by %s', 'post author', '_s' ),
+        '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+    );
+
+    echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+
 }
 endif;
 
-
-
-
-
-/* ==========================================================================
-   Excerpt / Content
-   ========================================================================== */
-
-// Append read more link to excerpt
-function _s_excerpt_more( $more ) {
-
-    global $post;
-    return '... <a class="more-link" href="' . get_permalink( $post->ID ) . '">Read More &raquo;</a>';
-}
-add_filter('excerpt_more', '_s_excerpt_more');
-
-
-
-
-
-if ( ! function_exists( '_s_excerpt' ) ) :
+if ( ! function_exists( '_s_entry_footer' ) ) :
 /**
- * Limit the Excerpt by 'x' amount of words
- *
- * @param int $limit, str $copy
- * @return str $content
+ * Prints HTML with meta information for the categories, tags and comments.
  */
-function _s_excerpt( $limit, $copy = NULL ) {
+function _s_entry_footer() {
+    // Hide category and tag text for pages.
+    if ( 'post' == get_post_type() ) {
+        /* translators: used between list items, there is a space after the comma */
+        $categories_list = get_the_category_list( __( ', ', '_s' ) );
+        if ( $categories_list && _s_categorized_blog() ) {
+            printf( '<span class="cat-links">' . __( 'Posted in %1$s', '_s' ) . '</span>', $categories_list );
+        }
 
-    global $post;
-
-    if( $copy ) {
-        $excerpt = explode( ' ', $copy, $limit );
-    } else {
-        $excerpt = explode( ' ', get_the_excerpt(), $limit );
+        /* translators: used between list items, there is a space after the comma */
+        $tags_list = get_the_tag_list( '', __( ', ', '_s' ) );
+        if ( $tags_list ) {
+            printf( '<span class="tags-links">' . __( 'Tagged %1$s', '_s' ) . '</span>', $tags_list );
+        }
     }
 
-    if ( count( $excerpt ) >= $limit ) {
-        array_pop( $excerpt );
-        $excerpt = implode( " ",$excerpt ).'...';
-    } else {
-        $excerpt = implode( " ",$excerpt );
+    if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+        echo '<span class="comments-link">';
+        comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) );
+        echo '</span>';
     }
-    $excerpt = preg_replace( '`[[^]]*]`','',$excerpt );
 
-    return $excerpt;
+    edit_post_link( __( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
-
-
-
-
-if ( ! function_exists( '_s_content' ) ) :
+if ( ! function_exists( 'the_archive_title' ) ) :
 /**
- * Limit the Content by 'x' amount of words
+ * Shim for `the_archive_title()`.
  *
- * @param int $limit, str $copy
- * @return str $content
+ * Display the archive title based on the queried object.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
+ *
+ * @param string $before Optional. Content to prepend to the title. Default empty.
+ * @param string $after  Optional. Content to append to the title. Default empty.
  */
-function _s_content( $limit, $copy = NULL ) {
-
-    if( $copy ) {
-        $content = explode( ' ', $copy, $limit );
+function the_archive_title( $before = '', $after = '' ) {
+    if ( is_category() ) {
+        $title = sprintf( __( 'Category: %s', '_s' ), single_cat_title( '', false ) );
+    } elseif ( is_tag() ) {
+        $title = sprintf( __( 'Tag: %s', '_s' ), single_tag_title( '', false ) );
+    } elseif ( is_author() ) {
+        $title = sprintf( __( 'Author: %s', '_s' ), '<span class="vcard">' . get_the_author() . '</span>' );
+    } elseif ( is_year() ) {
+        $title = sprintf( __( 'Year: %s', '_s' ), get_the_date( _x( 'Y', 'yearly archives date format', '_s' ) ) );
+    } elseif ( is_month() ) {
+        $title = sprintf( __( 'Month: %s', '_s' ), get_the_date( _x( 'F Y', 'monthly archives date format', '_s' ) ) );
+    } elseif ( is_day() ) {
+        $title = sprintf( __( 'Day: %s', '_s' ), get_the_date( _x( 'F j, Y', 'daily archives date format', '_s' ) ) );
+    } elseif ( is_tax( 'post_format' ) ) {
+        if ( is_tax( 'post_format', 'post-format-aside' ) ) {
+            $title = _x( 'Asides', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+            $title = _x( 'Galleries', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+            $title = _x( 'Images', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+            $title = _x( 'Videos', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+            $title = _x( 'Quotes', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+            $title = _x( 'Links', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+            $title = _x( 'Statuses', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+            $title = _x( 'Audio', 'post format archive title', '_s' );
+        } elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+            $title = _x( 'Chats', 'post format archive title', '_s' );
+        }
+    } elseif ( is_post_type_archive() ) {
+        $title = sprintf( __( 'Archives: %s', '_s' ), post_type_archive_title( '', false ) );
+    } elseif ( is_tax() ) {
+        $tax = get_taxonomy( get_queried_object()->taxonomy );
+        /* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
+        $title = sprintf( __( '%1$s: %2$s', '_s' ), $tax->labels->singular_name, single_term_title( '', false ) );
     } else {
-        $content = explode( ' ', get_the_content(), $limit );
+        $title = __( 'Archives', '_s' );
     }
 
-    if ( count( $content ) >= $limit ) {
-        array_pop( $content );
-        $content = implode( " ",$content ).'...';
-    } else {
-        $content = implode( " ",$content );
-    }
-    $content = preg_replace( '/[+]/','', $content );
-    $content = apply_filters( 'the_content', $content );
-    $content = str_replace( ']]>', ']]>', $content );
+    /**
+     * Filter the archive title.
+     *
+     * @param string $title Archive title to be displayed.
+     */
+    $title = apply_filters( 'get_the_archive_title', $title );
 
-    return $content;
+    if ( ! empty( $title ) ) {
+        echo $before . $title . $after;
+    }
 }
 endif;
 
-
-
-
-
-/* ==========================================================================
-   Pagination
-   ========================================================================== */
-
-if ( ! function_exists( '_s_pagination' ) ) :
+if ( ! function_exists( 'the_archive_description' ) ) :
 /**
- * Display custom pagination
+ * Shim for `the_archive_description()`.
  *
- * @param str $echo
- * @return str $r
+ * Display category, tag, or term description.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
+ *
+ * @param string $before Optional. Content to prepend to the description. Default empty.
+ * @param string $after  Optional. Content to append to the description. Default empty.
  */
-function _s_pagination( $echo = true ) {
+function the_archive_description( $before = '', $after = '' ) {
+    $description = apply_filters( 'get_the_archive_description', term_description() );
 
-    global $wp_query;
+    if ( ! empty( $description ) ) {
+        /**
+         * Filter the archive description.
+         *
+         * @see term_description()
+         *
+         * @param string $description Archive description to be displayed.
+         */
+        echo $before . $description . $after;
+    }
+}
+endif;
 
-    $total_pages    = $wp_query->max_num_pages;
-    $curr_page      = max( 1, get_query_var('paged') );
+/**
+ * Returns true if a blog has more than 1 category.
+ *
+ * @return bool
+ */
+function _s_categorized_blog() {
+    if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
+        // Create an array of all the categories that are attached to posts.
+        $all_the_cool_cats = get_categories( array(
+            'fields'     => 'ids',
+            'hide_empty' => 1,
 
-    $big = 999999999; // need an unlikely integer
+            // We only need to know if there is more than one category.
+            'number'     => 2,
+        ) );
 
-    $pages = paginate_links( array(
-        'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'format'    => '?paged=%#%',
-        'total'     => $total_pages,
-        'current'   => $curr_page,
-        'prev_text' => '&laquo; Prev',
-        'type'      => 'array'
-    ) );
+        // Count the number of categories that are attached to the posts.
+        $all_the_cool_cats = count( $all_the_cool_cats );
 
-    // only show pagination if needed
-    if( !$pages ) // returns null if only 1 page of results
+        set_transient( '_s_categories', $all_the_cool_cats );
+    }
+
+    if ( $all_the_cool_cats > 1 ) {
+        // This blog has more than 1 category so _s_categorized_blog should return true.
+        return true;
+    } else {
+        // This blog has only 1 category so _s_categorized_blog should return false.
+        return false;
+    }
+}
+
+/**
+ * Flush out the transients used in _s_categorized_blog.
+ */
+function _s_category_transient_flusher() {
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
         return;
-
-    $r = '<div class="pagination-wrap pagination-centered">' . "\n";
-    $r .= ' <ul class="pagination">' . "\n";
-
-    foreach( $pages as $page ) {
-        $r .= '<li>' . $page . '</li>' . "\n";
     }
-
-    $r .= ' </ul>' . "\n";
-    $r .= '<div class="page-count">Page ' . $curr_page . ' of ' . $total_pages . '</div>' . "\n";
-    $r .= '</div>' . "\n";
-
-    if( $echo ) {
-        echo $r;
-    } else {
-        return $r;
-    }
+    // Like, beat it. Dig?
+    delete_transient( '_s_categories' );
 }
-endif;
-
-
-
-
-
-/* ==========================================================================
-   Social Icons
-   ========================================================================== */
-
-if ( ! function_exists( '_s_social_icons' ) ) :
-/**
- * Output social icons
- *
- * @param boolean $echo echo or return result
- * @return str $r
- */
-function _s_social_icons( $args = array() ) {
-
-    $defaults = array (
-        'container_class' => '',
-        'echo'            => true
-    );
-
-    // Parse incoming $args into an array and merge it with $defaults
-    $args = wp_parse_args( $args, $defaults );
-
-    // OPTIONAL: Declare each item in $args as its own variable i.e. $type, $before.
-    extract( $args, EXTR_SKIP );
-
-    $r = false;
-
-    if( $profiles = get_field( 'social_profiles', 'option' ) ) :
-
-        $c = 1;
-        $total = count( $profiles );
-
-        $container_class = ( $container_class ) ? ' ' . $container_class : '';
-
-        $r .= '<ul class="social-profiles' . $container_class . '">' . "\n";
-
-        while( has_sub_field( 'social_profiles', 'option' ) ) :
-
-            $open_comment = ( $c < $total ) ? '<!--': '';
-            $close_comment = ( $c !== 1 ) ? '-->': '';
-
-            $r .= $close_comment . '<li><a class="profile icon-' . get_sub_field( 'profile' ) . '" href="' . esc_attr( get_sub_field( 'link' ) ) . '"><span class="visuallyhidden">' . get_sub_field( 'profile' ) . '</span></a></li>' . $open_comment . "\n";
-
-            $c++;
-
-        endwhile;
-
-        $r .= '</ul>' . "\n";
-
-    endif;
-
-    if( $echo ) :
-        echo $r;
-    else :
-        return $r;
-    endif;
-}
-endif;
+add_action( 'edit_category', '_s_category_transient_flusher' );
+add_action( 'save_post',     '_s_category_transient_flusher' );
