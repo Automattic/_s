@@ -20,8 +20,6 @@ require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Customizer additions
  * Custom functions
  */
-require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/functions.php';
