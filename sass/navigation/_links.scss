@@ -9,4 +9,11 @@ a {
 	&:active {
 		color: $color__link-hover;
 	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
 }
