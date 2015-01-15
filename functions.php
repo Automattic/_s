@@ -102,7 +102,8 @@ function _s2_scripts() {
 
 	wp_enqueue_script( '_s2-scripts', get_template_directory_uri() . '/js/main.js', array(), '20120206', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	// Load comments script for single pages only
+	if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
