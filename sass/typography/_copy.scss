@@ -21,7 +21,7 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(1.5);
+	@include font-size(0.9375);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -30,7 +30,7 @@ pre {
 }
 
 code, kbd, tt, var {
-	@include font-size(1.5);
+	@include font-size(0.9375);
 	font-family: $font__code;
 }
 

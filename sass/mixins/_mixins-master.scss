@@ -1,21 +1,9 @@
-// Box model
-@mixin box-sizing($box-model) {
-	-webkit-box-sizing: $box-model; // Safari <= 7
-	-moz-box-sizing: $box-model; // Firefox <= 19
-	box-sizing: $box-model;
-}
-
-// Border radius
-@mixin border-radius($radius) {
-	background-clip: padding-box; /* stops bg color from leaking outside the border: */
-	-webkit-border-radius: $radius;
-	border-radius: $radius;
-}
 
 // Center block
 @mixin center-block {
 	display: block;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // Clearfix
@@ -60,6 +48,12 @@
 	speak: none;
 }
 
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) + px;
+	font-size: $sizeValue + rem;
+}
+
 /* 
  * 
  * This mixin sets the font size in rem's with a px fallback.
@@ -67,7 +61,7 @@
  *
  * usage: @include font-size(16);
  */
-@mixin font-size( $sizeValue: 16 ){
-  font-size: $sizeValue + px; //fallback for old browsers
-  font-size: (0.1 * $sizeValue) + rem;
-}
+// @mixin font-size( $sizeValue: 16 ){
+//   font-size: $sizeValue + px; //fallback for old browsers
+//   font-size: (0.1 * $sizeValue) + rem;
+// }

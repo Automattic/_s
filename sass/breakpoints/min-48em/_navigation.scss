@@ -22,7 +22,6 @@ button.nav-toggle {
 		*display: inline;
 
 		a {
-			@include font-size(16);
 			padding: 1em;
 			// color: lighten( $body,5 );
 			&:hover, &:focus {

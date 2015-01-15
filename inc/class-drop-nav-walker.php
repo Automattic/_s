@@ -15,11 +15,12 @@ class Drop_Menu_Walker extends Walker_Nav_Menu {
         $output .= "\n$indent<ul class=\"sub-menu\" data-dropdown-menu>\n";
     }
 
-    function display_element ( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
+    function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 
-        // check, whether there are children for the given ID and append it to the element with a (new) ID
-        $element->hasChildren = isset( $children_elements[$element->ID] ) && ! empty( $children_elements[$element->ID] );
-
+        $id_field = $this->db_fields['id'];
+        if ( is_object( $args[0] ) ) {
+            $args[0]->has_children = ! empty( $children_elements[$element->$id_field] );
+        }
         return parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
     }
 
@@ -63,7 +64,7 @@ class Drop_Menu_Walker extends Walker_Nav_Menu {
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-        if ( $item->hasChildren ) {
+        if ( $args->has_children ) {
             $output .= $indent . '<li' . $id . $class_names .' data-dropdown>';
         } else {
             $output .= $indent . '<li' . $id . $class_names .'>';

@@ -18,6 +18,7 @@
 			display: block;
 			padding: 1em 1.2em;
 			text-decoration: none;
+			outline:none;
 			&:hover {
 				background: lighten(#4d4d4d,10);
 				opacity:1;
