@@ -60,10 +60,10 @@ $post-author-border: rgba(153,55,0,0.75);
 		margin-right:1em;
 	}
 	time {
-		@include font-size(14);
+		@include font-size(0.9);
 		&:before {
 			content: '\f303';
-			@include font-size(20);
+			@include font-size(1.2);
 			@include genericon-rules;
 		}
 	}
@@ -75,7 +75,7 @@ $post-author-border: rgba(153,55,0,0.75);
 
 .comment-edit-link {
 	margin-left: 1em;
-	@include font-size(14);
+	@include font-size(0.9);
 	&:before {
 		content: '\f411';
 		
@@ -94,7 +94,7 @@ $post-author-border: rgba(153,55,0,0.75);
 
 	&:before {
 		content: '\f304';
-		@include font-size(20);
+		@include font-size(1.2);
 		@include genericon-rules;
 	}
 }
