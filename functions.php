@@ -149,3 +149,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Get the custom nav walker for the primary menu
+ */
+require get_template_directory() . '/inc/class-drop-nav-walker.php';

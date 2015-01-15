@@ -56,6 +56,15 @@ module.exports = function(grunt) {
                 src: 'css/*.css',
                 dest: 'css/',
             },
+            // prefix main file
+            single_file: {
+              options: {
+                browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
+                map: true
+              },
+              src: 'style.css',
+              dest: 'style.css'
+            },
         },
         
 
@@ -75,8 +84,9 @@ module.exports = function(grunt) {
             main: {
                 files: {
                     'js/main.js': [
+                        'bower_components/fastclick/index.js',
                         'bower_components/drop/dist/js/classList.js',
-                        'bower_components/drop/astro/astro-plus.js',
+                        'bower_components/astro/dist/js/astro.js',
                         'bower_components/drop/dist/js/drop.js',
                         'js/components/skip-link-focus-fix.js',
                         'js/components/init.js',

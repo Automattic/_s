@@ -1,11 +1,9 @@
 ( function() {
 
-	// put some tasty javascript here
-	
-	/**
-	 * Initialize Astro Menu Drop for Mobile Navigation
-	 * https://github.com/cferdinandi/astro
-	 */
+	window.addEventListener('load', function() {
+		FastClick.attach(document.body);
+	}, false);
+
 	astro.init();
 
 	/**

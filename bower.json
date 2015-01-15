@@ -16,10 +16,11 @@
     "tests"
   ],
   "devDependencies": {
-    "fastclick": "fastclick",
+    "fastclick": "https://raw.githubusercontent.com/ftlabs/fastclick/master/lib/fastclick.js",
     "bourbon": "latest",
     "neat": "latest",
     "drop": "https://github.com/cferdinandi/drop.git",
+    "astro": "https://github.com/cferdinandi/astro.git",
     "html5shiv-dist": "~3.6.2"
   }
 }
