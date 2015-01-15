@@ -15,6 +15,7 @@ class Drop_Menu_Walker extends Walker_Nav_Menu {
         $output .= "\n$indent<ul class=\"sub-menu\" data-dropdown-menu>\n";
     }
 
+    // adds a has_children conditional to $args
     function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
 
         $id_field = $this->db_fields['id'];
@@ -49,7 +50,6 @@ class Drop_Menu_Walker extends Walker_Nav_Menu {
         $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
 
-
         /**
          * Filter the ID applied to a menu item's list item element.
          *
@@ -64,12 +64,10 @@ class Drop_Menu_Walker extends Walker_Nav_Menu {
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-        if ( $args->has_children ) {
-            $output .= $indent . '<li' . $id . $class_names .' data-dropdown>';
-        } else {
-            $output .= $indent . '<li' . $id . $class_names .'>';
-        }
-        
+        // if the list item has children add a data attribute
+        $li_attributes = $args->has_children ? ' data-dropdown' : '';
+
+        $output .= $indent . '<li' . $id . $class_names . $li_attributes . '>';
 
         $atts = array();
         $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
