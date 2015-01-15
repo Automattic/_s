@@ -2,7 +2,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
+	border: none;
 	border-color: $color__border-button;
 	border-radius: 3px;
 	background: $color__background-button;
@@ -11,25 +11,20 @@ input[type="submit"] {
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	@include font-size(0.75);
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: 0.75em 1em;
+	text-decoration: none;
+	user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
 
-}
+	&:focus,
+	&:active {
+		outline:none;
+	}
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	
-	
-}
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
 
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-	outline:none;
 }
