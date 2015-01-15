@@ -29,6 +29,14 @@ pre {
 	padding: 1.6em;
 }
 
+code {
+  display: inline-block;
+  background: #D7D7D7;
+  padding: 0.1em 0.2em;
+  border-radius: 3px;
+  border: 1px solid #CBCBCB;
+}
+
 code, kbd, tt, var {
 	@include font-size(0.9375);
 	font-family: $font__code;
