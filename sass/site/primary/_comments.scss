@@ -33,11 +33,6 @@ $post-author-border: rgba(153,55,0,0.75);
 	}
 }
 
-.comment-list {
-	@include media(max-width 48em) {
-		margin:1em;
-	}
-}
 
 .bypostauthor {
 
@@ -55,7 +50,7 @@ $post-author-border: rgba(153,55,0,0.75);
 }
 
 .comment-meta {
-	height: auto;
+	height: 60px;
 	
 	img {
 		float:left;
@@ -71,10 +66,6 @@ $post-author-border: rgba(153,55,0,0.75);
 			@include font-size(20);
 			@include genericon-rules;
 		}
-	}
-
-	@include media(min-width 26.875em) {
-		height: 60px;
 	}
 }
 

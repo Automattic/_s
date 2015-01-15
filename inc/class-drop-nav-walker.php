@@ -3,12 +3,14 @@
  * Extends WordPress nav menu by adding data attributes and 
  * markup for Drop by Chris Ferdinandi
  * 
- * source: https://github.com/cferdinandi/drop
+ * Version 6.1.1
+ * 
+ * drop source: https://github.com/cferdinandi/drop
  */
 
 class Drop_Menu_Walker extends Walker_Nav_Menu {
 
-    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"sub-menu\" data-dropdown-menu>\n";
     }
