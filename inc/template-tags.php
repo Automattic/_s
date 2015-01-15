@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package _s
+ * @package _s2
  */
 
 if ( ! function_exists( '_s2_paging_nav' ) ) :
@@ -62,33 +62,32 @@ function _s2_post_nav() {
 endif;
 
 
-/*
- * Numeric Page Navigation
- * Adapted from Thembles Bones - https://github.com/eddiemachado/bones/blob/master/library/bones.php
- */ 
-function _s2_pagination() {
-    global $wp_query;
-    $bignum = 999999999;
-    if ( $wp_query->max_num_pages <= 1 )
-    return;
-
-    echo '<nav class="pagination">';
-
-        echo paginate_links( array(
-            'base'          => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
-            'format'        => '',
-            'current'       => max( 1, get_query_var('paged') ),
-            'total'         => $wp_query->max_num_pages,
-            'prev_text'     => '&larr;',
-            'next_text'     => '&rarr;',
-            'type'          => 'list',
-            'end_size'      => 3,
-            'mid_size'      => 3
-        ) );
-
-    echo '</nav>';
-    
-} /* end page navigation */
+if ( ! function_exists( '_s2_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function _s2_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' == get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( __( ', ', '_s2' ) );
+		if ( $categories_list && _s2_categorized_blog() ) {
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', '_s2' ) . '</span>', $categories_list );
+		}
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', __( ', ', '_s2' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', '_s2' ) . '</span>', $tags_list );
+		}
+	}
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( 'Leave a comment', '_s2' ), __( '1 Comment', '_s2' ), __( '% Comments', '_s2' ) );
+		echo '</span>';
+	}
+	edit_post_link( __( 'Edit', '_s2' ), '<span class="edit-link">', '</span>' );
+}
+endif;
 
 
 if ( ! function_exists( '_s2_posted_on' ) ) :

@@ -2,7 +2,7 @@
 /**
  * _s Theme Customizer
  *
- * @package _s
+ * @package _s2
  */
 
 /**
