@@ -2,31 +2,31 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, some of the functionality here could be replaced by core features.
- *
  * @package _s2
  */
 
-if ( ! function_exists( '_s2_paging_nav' ) ) :
+if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
  */
-function _s2_paging_nav() {
+function the_posts_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', '_s2' ); ?></h1>
+	<nav class="navigation posts-navigation" role="navigation">
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', '_s' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', '_s2' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', '_s' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', '_s2' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', '_s' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -35,57 +35,31 @@ function _s2_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( '_s2_post_nav' ) ) :
+
+if ( ! function_exists( 'the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
+ *
+ * @todo Remove this function when WordPress 4.3 is released.
  */
-function _s2_post_nav() {
+function the_post_navigation() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
-
 	if ( ! $next && ! $previous ) {
 		return;
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s2' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', '_s2' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     '_s2' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
+				next_post_link( '<div class="nav-next">%link</div>', '%title' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
-}
-endif;
-
-
-if ( ! function_exists( '_s2_entry_footer' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-function _s2_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', '_s2' ) );
-		if ( $categories_list && _s2_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', '_s2' ) . '</span>', $categories_list );
-		}
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', '_s2' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', '_s2' ) . '</span>', $tags_list );
-		}
-	}
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', '_s2' ), __( '1 Comment', '_s2' ), __( '% Comments', '_s2' ) );
-		echo '</span>';
-	}
-	edit_post_link( __( 'Edit', '_s2' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -119,6 +93,34 @@ function _s2_posted_on() {
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 
+}
+endif;
+
+
+if ( ! function_exists( '_s2_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function _s2_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' == get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( __( ', ', '_s2' ) );
+		if ( $categories_list && _s2_categorized_blog() ) {
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', '_s2' ) . '</span>', $categories_list );
+		}
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', __( ', ', '_s2' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', '_s2' ) . '</span>', $tags_list );
+		}
+	}
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( 'Leave a comment', '_s2' ), __( '1 Comment', '_s2' ), __( '% Comments', '_s2' ) );
+		echo '</span>';
+	}
+	edit_post_link( __( 'Edit', '_s2' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 

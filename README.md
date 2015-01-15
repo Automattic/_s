@@ -1,6 +1,6 @@
 ![S2 Logo](http://s2webpress.com/s2-images/S2-WordPress-Starter-theme.png "S2 WordPress Starter Theme")
 
-Version: 1.0
+Version: 1.1
 
 ## Author:
 
