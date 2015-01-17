@@ -4,15 +4,16 @@ Layout: Content-Sidebar
 */
 
 .content-area {
-	float: left;
-	margin: 0 -25% 0 0;
+	display: inline-block;
+	margin: 0 -25% 0 -6px;
+	padding-left: 6px;
 	width: 100%;
 }
 .site-main {
 	margin: 0 25% 0 0;
 }
 .site-content .widget-area {
-	float: right;
+	display: inline-block;
 	overflow: hidden;
 	width: 25%;
 }

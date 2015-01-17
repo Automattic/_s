@@ -3,18 +3,26 @@ Theme Name: _s
 Layout: Sidebar-Content
 */
 
+.site-content {
+	direction: rtl; /* Swap the positioning of .content-area and .widget-area without affecting the source order */
+}
+
 .content-area {
-	float: right;
+	display: inline-block;
 	margin: 0 0 0 -25%;
 	width: 100%;
+	direction: ltr;
 }
 .site-main {
 	margin: 0 0 0 25%;
 }
 .site-content .widget-area {
-	float: left;
+	display: inline-block;
+	margin-left: -6px;
+	padding-left: 6px;
 	overflow: hidden;
 	width: 25%;
+	direction: ltr;
 }
 .site-footer {
 	clear: both;
