@@ -1,41 +1,79 @@
 module.exports = function ( grunt ) {
     'use strict';
 
-    /**
-     * @todo run tasks concurrently
-     * https://github.com/sindresorhus/grunt-concurrent
-     */
-
     // Load all grunt tasks matching the 'grunt-*' pattern
     require( 'load-grunt-tasks' )( grunt );
 
-    // Project configuration
+    // Time how long tasks take.
+    require('time-grunt')(grunt);
+
+    // Get this party started
     grunt.initConfig({
 
         pkg: grunt.file.readJSON( 'package.json' ),
 
-        compass: {
-            dev: {
+        // Global variables
+        config: {
+            src: 'assets/src',
+            dist: 'assets/dist',
+        },
+
+        // Libsass
+        sass: {
+            minified: {
                 options: {
-                    config: 'config.rb',
-                    sourcemap: true
+                    sourceMap: true,
+                    outputStyle: 'compressed', // expanded, nested, compressed
+                },
+                files: {
+                    '<%= config.dist %>/css/main.min.css': '<%= config.src %>/sass/main.scss',
+                    '<%= config.dist %>/css/no-mq.min.css': '<%= config.src %>/sass/no-mq.scss'
+                }
+            },
+            expanded: {
+                options: {
+                    outputStyle: 'expanded'
+                },
+                files: {
+                    '<%= config.dist %>/css/main.css': '<%= config.src %>/sass/main.scss',
+                    '<%= config.dist %>/css/no-mq.css': '<%= config.src %>/sass/no-mq.scss'
                 }
             }
         },
 
-        concat : {
-            scripts : {
-                files : {
-                    'js/plugins.js': [
-                        'js/plugins/boilerplate.js',
-                        'js/plugins/jquery.magnific-popup.js',
-                        'js/plugins/jquery.cycle2.js',
-                        'js/plugins/jquery.cycle2.swipe.js'
+        // Clean CSS Output
+        csscomb: {
+            dist: {
+                options: {
+                    config: '<%= config.src %>/sass/csscomb.json'
+                },
+                files: {
+                    '<%= config.dist %>/css/main.css': ['<%= config.dist %>/css/main.css'],
+                    '<%= config.dist %>/css/no-mq.css': ['<%= config.dist %>/css/no-mq.css']
+                }
+            }
+        },
+
+        // Concatenate JS Files
+        concat: {
+            main: {
+                files: {
+                    '<%= config.dist %>/js/main.js': '<%= config.src %>/js/main.js'
+                }
+            },
+            plugins: {
+                files: {
+                    '<%= config.dist %>/js/plugins.js': [
+                        '<%= config.src %>/js/plugins/boilerplate.js',
+                        '<%= config.src %>/js/plugins/jquery.magnific-popup.js',
+                        '<%= config.src %>/js/plugins/jquery.cycle2.js',
+                        '<%= config.src %>/js/plugins/jquery.cycle2.swipe.js'
                     ]
                 }
             }
         },
 
+        // Minify JS
         uglify: {
             options: {
                 sourceMap: true,
@@ -43,93 +81,63 @@ module.exports = function ( grunt ) {
             },
             main: {
                 files: {
-                    'js/min/main.min.js': [ 'js/main.js' ]
+                    '<%= config.dist %>/js/main.min.js': [ '<%= config.src %>/js/main.js' ]
                 }
             },
             plugins: {
                 files: {
-                    'js/min/plugins.min.js': [ 'js/plugins.js' ]
+                    '<%= config.dist %>/js/plugins.min.js': [ '<%= config.src %>/js/plugins.js' ]
                 }
             }
         },
 
-        /**
-         * @todo
-         * 1. Use grunt-newer (already installed) to run
-         * imagemin when files are changed/added
-         *
-         * 2. Add as concurrent task
-         *
-         * Note - optimization stats only show when dest is
-         * different than src
-         */
+        // Optimize Media
         imagemin: {
             images: {
                 options: {
                     optimizationLevel: 3, // default
-                    progressive: true
+                    progressive: true // default
                 },
                 files: [{
                     expand: true,
-                    cwd: 'img/',
+                    cwd: '<%= config.src %>/img/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'img/'
+                    dest: '<%= config.dist %>/img/'
                 }]
             }
         },
 
-        watch: {
-            css: {
-                files: 'css/sass/**/*.{scss,sass}',
-                tasks: [ 'compass', 'notify:css' ]
-            },
-            scriptsMain: {
-                files: [
-                    'js/main.js'
-                ],
-                tasks: [ 'uglify:main', 'notify:scriptsMain' ]
-            },
-            scriptsPlugins: {
-                files: [
-                    'js/plugins.js',
-                    'js/plugins/**/*.js'
-                ],
-                tasks: [ 'concat', 'uglify:plugins', 'notify:scriptsPlugins' ]
-            },
-            livereload: {
-                options: {
-                    livereload: true
-                },
-                files: [
-                    'css/*.css',
-                    'js/min/plugins.min.js',
-                    'js/min/main.min.js',
-                    '**/*.php'
-                ],
-                tasks: [ 'notify:livereload' ]
+        // Copy Files/Folders
+        copy: {
+            js: {
+                expand: true,
+                cwd: '<%= config.src %>/js/plugins/',
+                src: 'modernizr-2.8.3.min.js',
+                dest: '<%= config.dist %>/js/plugins/',
             }
         },
 
+        // Growl Notifications
         notify: {
-            all: {
+            default: {
                 options: {
                     title: 'Compiled Successfully',
-                    message: 'Compass, Concat, Uglify, and Imagemin were processed.'
+                    message: 'Sass, Concat and Uglify were processed.'
                 }
             },
             css: {
                 options: {
                     title: 'CSS Successfully Compiled',
-                    message: 'Compass processed.'
+                    message: 'Sass processed.'
                 }
             },
-            scriptsMain: {
+            jsMain: {
                 options: {
                     title: 'JS Successfully Compiled',
                     message: 'Uglify was processed.'
                 }
             },
-            scriptsPlugins: {
+            jsPlugins: {
                 options: {
                     title: 'JS Successfully Compiled',
                     message: 'Uglify was processed.'
@@ -137,7 +145,7 @@ module.exports = function ( grunt ) {
             },
             images: {
                 options: {
-                    title: 'Images Optimized',
+                    title: 'Media Optimized',
                     message: 'Imagemin was processed.'
                 }
             },
@@ -147,12 +155,52 @@ module.exports = function ( grunt ) {
                     message: 'Livereload completed.'
                 }
             }
-        }
+        },
+
+        // Run Tasks When Files Are Modified
+        watch: {
+            css: {
+                files: '<%= config.src %>/sass/**/*.{scss,sass}',
+                tasks: [ 'sass:minified', 'notify:css' ]
+            },
+            jsMain: {
+                files: [
+                    '<%= config.src %>/js/main.js'
+                ],
+                tasks: [ 'uglify:main', 'notify:jsMain' ]
+            },
+            jsPlugins: {
+                files: [
+                    '<%= config.src %>/js/plugins.js',
+                    '<%= config.src %>/js/plugins/**/*.js'
+                ],
+                tasks: [ 'concat', 'uglify:plugins', 'newer:copy:js', 'notify:jsPlugins' ]
+            },
+            images: {
+                files: [
+                    '<%= config.src %>/img/**/*.{png,jpg,gif}'
+                ],
+                tasks: [ 'newer:imagemin', 'notify:images' ]
+            },
+            livereload: {
+                options: {
+                    livereload: true,
+                    spawn: false
+                },
+                files: [
+                    '<%= config.dist %>/css/*.css',
+                    '<%= config.dist %>/js/**/*.js',
+                    '<%= config.dist %>/img/',
+                    // '**/*.php'
+                ],
+                tasks: [ 'notify:livereload' ]
+            }
+        },
 
     });
 
-    // Default tasks
-    grunt.registerTask( 'default', [ 'compass', 'concat', 'uglify', 'imagemin', 'notify:all' ] );
-    grunt.registerTask( 'images', [ 'imagemin', 'notify:images' ] );
+    // Tasks
+    grunt.registerTask( 'default', [ 'sass', 'csscomb', 'concat', 'uglify', 'newer:copy:js', 'newer:imagemin', 'notify:default' ] );
+    grunt.registerTask( 'media', ['newer:imagemin'] );
 
 };

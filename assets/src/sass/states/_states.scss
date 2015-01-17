@@ -1,0 +1,58 @@
+// ==========================================================================
+// States
+// ==========================================================================
+
+//
+// Indicates interaction will result in an (in)action.
+//
+.is-actionable {
+    cursor: pointer;
+}
+
+.is-disabled {
+    cursor: default;
+}
+
+.is-draggable {
+    cursor: move;
+}
+
+//
+// Completely remove from the flow and screen readers.
+//
+.is-hidden {
+    @extend %hidden;
+}
+
+.is-displayed {
+    display: block;
+}
+
+//
+// Completely remove from the flow but leave available to screen readers.
+//
+.is-visually-hidden {
+    @extend %visuallyhidden;
+}
+
+//
+// Control visibility without affecting flow.
+//
+.is-invisible {
+    @extend %invisible;
+}
+
+.is-visible {
+    visibility: visible;
+}
+
+//
+// Set fixed states
+//
+.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 101;
+}

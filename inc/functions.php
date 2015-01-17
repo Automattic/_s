@@ -161,49 +161,61 @@ endif;
 
 if ( ! function_exists( '_s_pagination' ) ) :
 /**
- * Display custom pagination
- *
- * @param str $echo
- * @return str $r
- */
+* Display custom pagination
+*
+* @param str $echo
+* @return str $r
+*/
 function _s_pagination( $echo = true ) {
 
-    global $wp_query;
+   global $wp_query;
 
-    $total_pages    = $wp_query->max_num_pages;
-    $curr_page      = max( 1, get_query_var('paged') );
+   $total_pages  = $wp_query->max_num_pages;
+   $current_page = max( 1, get_query_var('paged') );
 
-    $big = 999999999; // need an unlikely integer
+   $big = 999999999; // need an unlikely integer
 
-    $pages = paginate_links( array(
-        'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'format'    => '?paged=%#%',
-        'total'     => $total_pages,
-        'current'   => $curr_page,
-        'prev_text' => '&laquo; Prev',
-        'type'      => 'array'
-    ) );
+   $pages = paginate_links( array(
+       'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+       'format'             => '?paged=%#%',
+       'total'              => $total_pages,
+       'current'            => $current_page,
+       'prev_next'          => true,
+       'prev_text'          => '&laquo; Prev',
+       'next_text'          => '&raquo; Prev',
+       'type'               => 'array',
+       'show_all'           => false,
+       'end_size'           => 1,
+       'mid_size'           => 2,
+       'add_args'           => false,
+       'add_fragment'       => '',
+       'before_page_number' => '',
+       'after_page_number'  => ''
+   ) );
 
-    // only show pagination if needed
-    if( !$pages ) // returns null if only 1 page of results
-        return;
+   // only show pagination if needed
+   if( !$pages ) // returns null if only 1 page of results
+       return;
 
-    $r = '<div class="pagination-wrap pagination-centered">' . "\n";
-    $r .= ' <ul class="pagination">' . "\n";
+   $r = '<div class="pagination-wrap pagination-centered">' . "\n";
+   $r .= '    <ul class="pagination">' . "\n";
 
-    foreach( $pages as $page ) {
-        $r .= '<li>' . $page . '</li>' . "\n";
-    }
+   foreach( $pages as $page ) {
+       $r .= '        <li class="pagination__item">' . $page . '</li>' . "\n";
+   }
 
-    $r .= ' </ul>' . "\n";
-    $r .= '<div class="page-count">Page ' . $curr_page . ' of ' . $total_pages . '</div>' . "\n";
-    $r .= '</div>' . "\n";
+   $r .= '    </ul>' . "\n";
 
-    if( $echo ) {
-        echo $r;
-    } else {
-        return $r;
-    }
+   $page_count = bws_result_count_output( array( 'echo' => false ) );
+
+   $r .= '    ' . $page_count . "\n";
+   $r .= '</div>' . "\n";
+
+   if( $echo ) {
+       echo $r;
+   } else {
+       return $r;
+   }
 }
 endif;
 
@@ -226,6 +238,7 @@ function _s_social_icons( $args = array() ) {
 
     $defaults = array (
         'container_class' => '',
+        'field_id'        => false,
         'echo'            => true
     );
 
@@ -237,7 +250,7 @@ function _s_social_icons( $args = array() ) {
 
     $r = false;
 
-    if( $profiles = get_field( 'social_profiles', 'option' ) ) :
+    if( $profiles = get_field( 'social_profiles', $field_id ) ) :
 
         $c = 1;
         $total = count( $profiles );
@@ -246,12 +259,16 @@ function _s_social_icons( $args = array() ) {
 
         $r .= '<ul class="social-profiles' . $container_class . '">' . "\n";
 
-        while( has_sub_field( 'social_profiles', 'option' ) ) :
+        while( has_sub_field( 'social_profiles', $field_id ) ) :
+
+            // Account for email addresses
+            $link = get_sub_field( 'link' );
+            $link = ( get_sub_field( 'profile' ) === 'email' && ! stristr( $link, 'mailto:' ) ) ? 'mailto:' . $link : $link;
 
             $open_comment = ( $c < $total ) ? '<!--': '';
             $close_comment = ( $c !== 1 ) ? '-->': '';
 
-            $r .= $close_comment . '<li><a class="profile icon-' . get_sub_field( 'profile' ) . '" href="' . esc_attr( get_sub_field( 'link' ) ) . '"><span class="visuallyhidden">' . get_sub_field( 'profile' ) . '</span></a></li>' . $open_comment . "\n";
+            $r .= $close_comment . '<li class="social-profiles__item"><a class="social-profiles__link icon-' . get_sub_field( 'profile' ) . '" href="' . esc_attr( $link ) . '" target="_blank"><span class="visuallyhidden">' . get_sub_field( 'profile' ) . '</span></a></li>' . $open_comment . "\n";
 
             $c++;
 

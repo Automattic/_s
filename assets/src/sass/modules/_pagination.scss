@@ -1,0 +1,53 @@
+
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
+.pagination-centered {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.pagination {
+    margin: 0 0 1em 0;
+    padding: 0;
+    list-style-type: none;
+    text-transform: uppercase;
+    @include rem( 'font-size', 13px );
+}
+
+.pagination__item {
+    margin-bottom: 5px;
+    display: inline-block;
+
+    & span {
+        padding: 0 .7em;
+    }
+
+    & a {
+        padding: .4em .9em;
+        display: block;
+        background-color: $mercury;
+        color: darken( $alto, 10% );
+        @include transition-property( background, color );
+        @include transition-duration( .15s );
+
+        &:hover {
+            background-color: $success;
+            color: #fff;
+        }
+    }
+
+    & .current {
+            color: $success;
+    }
+
+    & .dots {
+        color: #b3b3b3;
+    }
+}
+
+.page-count {
+    font-size: .625em;
+    color: #ccc;
+}

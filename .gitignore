@@ -8,10 +8,14 @@
 ehthumbs.db
 Thumbs.db
 
-# Grunt #
+# Node #
 ######################
 node_modules
 .npm-debug.log
+
+# Bower #
+######################
+bower_components
 
 # SASS #
 ######################

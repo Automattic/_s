@@ -1,0 +1,107 @@
+
+// ==========================================================================
+// Comments
+// ==========================================================================
+
+.comment-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    article.comment-body {
+        margin: 1em 0;
+        padding: .5em;
+        position: relative;
+        background-color: $mercury;
+
+        footer {
+            @extend %clearfix;
+            margin-bottom: .5em;
+        }
+    }
+
+    .comment-author {
+        float: left;
+        @include rem( 'font-size', 14px );
+
+        > .says {
+            display: none;
+        }
+    }
+
+    .comment-metadata {
+        margin-top: .5em;
+        float: right;
+
+        > a {
+            @include rem( 'font-size', 12px );
+            color: darken( $mercury, 20% );
+        }
+
+        time {
+            text-transform: uppercase;
+        }
+    }
+
+    .comment-content {
+        padding: .5em;
+        clear: both;
+        background-color: white;
+    }
+
+    .reply {
+        position: absolute;
+        bottom: -3px;
+        right: -3px;
+
+        > a {
+            padding: 4px;
+            display: inline-block;
+            background-color: white;
+            border: 1px solid $mercury;
+            @include rem( 'font-size', 12px );
+
+            &:hover {
+                background-color: $success;
+                color: white;
+            }
+        }
+    }
+
+    .edit-link {
+        position: absolute;
+        bottom: -3px;
+        left: -3px;
+
+        > a {
+            padding: 4px;
+            display: inline-block;
+            background-color: $success;
+            border: 1px solid white;
+            color: white;
+            @include rem( 'font-size', 12px );
+
+            &:hover {
+                background-color: white;
+                border: 1px solid $mercury;
+                color: $success;
+            }
+        }
+    }
+
+    .comment-awaiting-moderation {
+        margin-top: 0;
+        background-color: $success;
+        text-align: center;
+        color: white;
+    }
+
+    .children {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @include mq( $from: tablet ) {
+            margin: 0 0 0 1em;
+        }
+    }
+}

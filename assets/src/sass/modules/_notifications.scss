@@ -1,0 +1,71 @@
+
+// ==========================================================================
+// Notifications
+// ==========================================================================
+
+.notification {
+    padding: 1em;
+    position: relative;
+    background-color: $off-white;
+    @include transition( background .15s );
+}
+
+.notification--error {
+    background-color: $error-lt;
+    color: $error;
+}
+
+.notification--warning {
+    background-color: $warning-lt;
+    color: $warning;
+}
+
+.notification--success {
+    background-color: $success-lt;
+    color: $success;
+}
+
+.notification__message {
+
+    a {
+        text-decoration: underline;
+
+        .notification--error & {
+            color: $error;
+        }
+
+        .notification--warning & {
+            color: $warning;
+        }
+
+        .notification--success & {
+            color: $success;
+        }
+    }
+
+    > * { // remove any styling from editor added tags
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.notification__close {
+    padding: .5em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    z-index: 1;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    color: $alto;
+    @include rem( 'font-size', 10px );
+    @include transition-property( color, transform );
+    @include transition-duration( .15s );
+    @include transform( rotate( 0deg ) );
+
+    &:hover {
+        color: $error;
+        @include transform( rotate( 90deg ) );
+    }
+}

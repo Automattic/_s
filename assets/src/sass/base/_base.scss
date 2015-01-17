@@ -1,0 +1,167 @@
+
+// ==========================================================================
+// Base
+// ==========================================================================
+
+html {
+    background: white;
+}
+
+*,
+*:after,
+*:before {
+    @include box-sizing( border-box );
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: $charcoal;
+}
+
+h1, .h1 {
+    margin: 0.6em 0;
+    @include rem( 'font-size', 34px );
+    @include mq( $from: tablet ) {
+        @include rem( 'font-size', 37px );
+    }
+}
+
+h2, .h2 {
+    margin: 0.7em 0;
+    @include rem( 'font-size', 30px );
+    @include mq( $from: tablet ) {
+        @include rem( 'font-size', 33px );
+    }
+}
+
+h3, .h3 {
+    margin: 0.8em 0;
+    @include rem( 'font-size', 25px );
+    @include mq( $from: tablet ) {
+        @include rem( 'font-size', 28px );
+    }
+}
+
+h4, .h4 {
+    margin: 0.9em 0;
+    @include rem( 'font-size', 21px );
+    @include mq( $from: tablet ) {
+        @include rem('font-size', 24px);
+    }
+}
+
+h5, .h5 {
+    margin: 1em 0;
+    @include rem( 'font-size', 18px );
+    @include mq( $from: tablet ) {
+        @include rem('font-size', 21px);
+    }
+}
+
+h6, .h6 {
+    margin: 1.2em 0;
+    @include rem( 'font-size', 16px );
+    @include mq( $from: tablet ) {
+        @include rem('font-size', 18px);
+    }
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: $font-family;
+    color: $font-color;
+}
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+    @include transition-property( color, background, border );
+    @include transition-duration( .15s );
+    &:hover {
+        color: $charcoal;
+    }
+}
+
+img {
+    height: auto; /* Make sure images are scaled correctly. */
+    max-width: 100%; /* Adhere to container width. */
+}
+
+::-webkit-input-placeholder {
+    color: $alto;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: $alto;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: $alto;
+}
+
+:-ms-input-placeholder {
+    color: $alto;
+}
+
+input,
+textarea {
+    margin: 0 0 1em 0;
+    padding: 0.5em;
+    width: 100%;
+    height: 2.3125em;
+    display: inline-block;
+    background: white;
+    border: 1px solid $alto;
+    @include transition( border .15s, box-shadow .15s );
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid $endeavour;
+    box-shadow: 0 0 5px $endeavour;
+}
+
+input[type="submit"] {
+    @extend %btn;
+    margin: 0 0 1em 0;
+    height: auto;
+    width: auto;
+    border: none;
+    @include transition( background .15s );
+
+    &:hover {
+        background: $charcoal;
+    }
+}
+
+textarea {
+    height: auto;
+    min-height: 50px;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0 0 0 30px;
+    border-left: 3px solid #ddd;
+    font-style: italic;
+}
+
+dt {
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 0.75em 0;
+}

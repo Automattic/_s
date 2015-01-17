@@ -1,0 +1,31 @@
+
+// ==========================================================================
+// Modules
+// ==========================================================================
+
+/* Entry
+   ========================================================================== */
+
+.entry__content,
+.entry-content {
+
+    table {
+        margin-bottom: 1em;
+        width: 100%;
+        border: 1px solid $mercury;
+
+        & thead, & tfoot, th {
+            background-color: darken( $off-white, 1% );
+            font-weight: bold;
+        }
+
+        & th, & td {
+            padding: .5em .625em .625em;
+            text-align: left;
+        }
+
+        & tr:nth-of-type( even ) {
+            background-color: lighten( $off-white, 1% );
+        }
+    }
+}

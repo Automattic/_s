@@ -1,0 +1,111 @@
+
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+
+    $mobile                                   : 320px;
+    $mobile-landscape                         : 480px;
+    $mobile-wide                              : 600px;
+    $tablet                                   : 768px;
+    $tablet-landscape                         : 1024px;
+    $site                                     : 960px;
+    $site-constraint                          : 1200px;
+    $desktop                                  : 1280px;
+    $desktop-wide                             : 1500px;
+
+// ==========================================================================
+// Media Queries
+// ==========================================================================
+
+    // Sass-mq Configuration
+    //
+    // Reference: https://github.com/sass-mq/sass-mq#adding-custom-breakpoints
+    //
+    // Name your breakpoints in a way that creates a ubiquitous language
+    // across team members. It will improve communication between
+    // stakeholders, designers, developers, and testers.
+    $mq-breakpoints: (
+        mobile                               : $mobile,
+        mobile-landscape                     : $mobile-landscape,
+        mobile-wide                          : $mobile-wide,
+        tablet                               : $tablet,
+        tablet-landscape                     : $tablet-landscape,
+        site                                 : $site,
+        site-constraint                      : $site-constraint,
+        desktop                              : $desktop,
+        desktop-wide                         : $desktop-wide,
+
+        // Project Specific
+    );
+
+    // Define the breakpoint from the $mq-breakpoints list that should
+    // be used as the target width when outputting a static stylesheet
+    // (i.e. when $mq-responsive is set to 'false').
+    $mq-static-breakpoint: tablet;
+
+    // Customize the media type (e.g. `@media screen` or `@media print`)
+    // By default sass-mq uses an "all" media type (`@media all and …`)
+    $mq-media-type: screen;
+
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+    // Susy
+    $susy : (
+        columns                              : 12,
+        gutters                              : .33333, // [libsass] 2.0 doesn't handle decimals (e.g. 1/3)
+        global-box-sizing                    : border-box,
+        gutter-position                      : inside
+    );
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+    // Color Names: http://chir.ag/projects/name-that-color/
+
+    // Project Specific
+
+
+    // Global
+    $off-white                               : #f6f6f6;
+    $off-black                               : #222222;
+    $mercury                                 : #e6e6e6; // grey-lt
+    $alto                                    : #dbdbdb; // grey
+    $charcoal                                : #333332;
+    $pomegranate                             : #ee3228; // red
+    $endeavour                               : #0065b2; // blue
+
+    // Social Networks
+    $facebook                                : #3b5998;
+    $linkedin                                : #007fb1;
+    $rss                                     : #ff6600;
+    $email                                   : #ffdd68;
+    $instagram                               : #3f729b;
+    $youtube                                 : #cd332d;
+    $vimeo                                   : #44bbff;
+    $tumblr                                  : #2c4762;
+    $pinterest                               : #e41f11;
+    $googleplus                              : #d14836;
+    $flickr                                  : #0063db;
+    $twitter                                 : #39a9e0;
+
+    // Alerts
+    $success                                 : #659f13;
+    $success-lt                              : #f2fae3;
+    $error                                   : #d85030;
+    $error-lt                                : #fff1f0;
+    $warning                                 : #e28327;
+    $warning-lt                              : #fffceb;
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+    $font-family                             : 'Open Sans', sans-serif;
+    $font-family-secondary                   : sans-serif;
+    $font-size                               : 16px;
+    $font-color                              : $charcoal;
+    $link-color                              : $success;
+    $selection-highlight                     : $error;

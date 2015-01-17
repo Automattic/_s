@@ -1,0 +1,17 @@
+
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+// Output Map value
+//
+// The idea is to use bp( tablet ) instead of $tablet. The added benefit
+// [libsass] treats 'not' as a function, or constant if not parenthesized - 1/16/15
+// reference: https://github.com/sass/libsass/pull/680
+// reference: https://github.com/sass/libsass/pull/355
+@function bp( $bp: 'tablet' ) {
+    @if not( map-has-key( $mq-breakpoints, $bp ) ) {
+        @warn "Key `#{$bp}` not found.";
+    }
+    @return map-get( $mq-breakpoints, $bp );
+}
