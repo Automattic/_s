@@ -10,9 +10,10 @@
    ========================================================================== */
 
 /**
- * Setup
+ * Hooks
  */
 require get_template_directory() . '/inc/setup.php';
+require get_template_directory() . '/inc/plugins.php';
 
 /**
  * Custom template tags
