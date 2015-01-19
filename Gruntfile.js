@@ -164,7 +164,7 @@ module.exports = function ( grunt ) {
                     '<%= config.dist %>/css/*.css',
                     '<%= config.dist %>/js/**/*.js',
                     '<%= config.dist %>/img/',
-                    // '**/*.php'
+                    '**/*.php'
                 ],
             },
             options: {
@@ -179,7 +179,8 @@ module.exports = function ( grunt ) {
         watch: {
             css: {
                 files: '<%= config.src %>/sass/**/*.{scss,sass}',
-                tasks: [ 'sass:minified', 'notify:css' ]
+                tasks: [ 'sass:minified', 'notify:css' ],
+                // tasks: [ 'sass', 'csscomb', 'notify:css' ] // slower, but will process all CSS files
             },
             jsMain: {
                 files: [
