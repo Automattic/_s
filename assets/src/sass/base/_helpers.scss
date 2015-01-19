@@ -78,6 +78,8 @@
      */
     *zoom: 1;
 }
+.subheading {
+    color: lighten( $font-color, 30% );
 }
 .fine-print {
     @include rem( 'font-size', 12px );
