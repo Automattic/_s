@@ -16,6 +16,7 @@ module.exports = function ( grunt ) {
         config: {
             src: 'assets/src',
             dist: 'assets/dist',
+            devUrl: 'starter.dev'
         },
 
         // Libsass
@@ -157,6 +158,23 @@ module.exports = function ( grunt ) {
             }
         },
 
+        browserSync: {
+            bsFiles: {
+                src: [
+                    '<%= config.dist %>/css/*.css',
+                    '<%= config.dist %>/js/**/*.js',
+                    '<%= config.dist %>/img/',
+                    // '**/*.php'
+                ],
+            },
+            options: {
+                // notify: false,
+                // open: false,
+                watchTask: true,
+                proxy: '<%= config.devUrl %>'
+            }
+        },
+
         // Run Tasks When Files Are Modified
         watch: {
             css: {
@@ -182,25 +200,38 @@ module.exports = function ( grunt ) {
                 ],
                 tasks: [ 'newer:imagemin', 'notify:images' ]
             },
-            livereload: {
-                options: {
-                    livereload: true,
-                    spawn: false
-                },
-                files: [
-                    '<%= config.dist %>/css/*.css',
-                    '<%= config.dist %>/js/**/*.js',
-                    '<%= config.dist %>/img/',
-                    // '**/*.php'
-                ],
-                tasks: [ 'notify:livereload' ]
-            }
+            // This can be used in place of BrowserSync
+            // livereload: {
+            //     options: {
+            //         livereload: true,
+            //         spawn: false
+            //     },
+            //     files: [
+            //         '<%= config.dist %>/css/*.css',
+            //         '<%= config.dist %>/js/**/*.js',
+            //         '<%= config.dist %>/img/',
+            //         // '**/*.php'
+            //     ],
+            //     tasks: [ 'notify:livereload' ]
+            // }
         },
 
     });
 
-    // Tasks
-    grunt.registerTask( 'default', [ 'sass', 'csscomb', 'concat', 'uglify', 'newer:copy:js', 'newer:imagemin', 'notify:default' ] );
+    // Default Build
+    grunt.registerTask( 'default', [
+        'sass',
+        'csscomb',
+        'concat',
+        'uglify',
+        'newer:copy:js',
+        'newer:imagemin',
+        'browserSync',
+        'watch', // add after 'browserSync'. Not needed for Livereload
+        'notify:default'
+    ]);
+
+    // Images
     grunt.registerTask( 'media', ['newer:imagemin'] );
 
 };
