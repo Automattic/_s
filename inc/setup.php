@@ -230,3 +230,96 @@ function _s_remove_recent_comments_style() {
 
     }
 add_action( 'widgets_init', '_s_remove_recent_comments_style' );
+
+
+
+
+
+/* ==========================================================================
+   Project Specific
+   ========================================================================== */
+
+/**
+* Add style dropdown to MCE editor
+*/
+function coop022901_mce_editor_buttons( $buttons ) {
+
+   array_unshift( $buttons, 'styleselect' );
+   return $buttons;
+}
+add_filter( 'mce_buttons_2', 'coop022901_mce_editor_buttons' );
+
+
+
+
+
+/**
+* Add styles/classes to the "Styles" drop-down
+*/
+function coop022901_mce_before_init( $settings ) {
+
+   $style_formats = array(
+        array(
+            'title'    => 'Subheading',
+            'selector' => 'h1,h2,h3,h4,h5,h6',
+            'classes'  => 'subheading'
+        ),
+        array(
+           'title'    => 'Button: Black',
+           'selector' => 'a',
+           'classes'  => 'btn'
+        ),
+        array(
+           'title'    => 'Button: Primary',
+           'selector' => 'a',
+           'classes'  => 'btn primary'
+        ),
+        array(
+           'title'    => 'Button: Secondary',
+           'selector' => 'a',
+           'classes'  => 'btn secondary'
+        ),
+        array(
+           'title'    => 'Button: Small',
+           'selector' => 'a',
+           'classes'  => 'small'
+        ),
+        array(
+           'title'    => 'Button: Large',
+           'selector' => 'a',
+           'classes'  => 'large'
+        ),
+        // Primary Text Colors
+        // array(
+        //    'title'   => 'Text: Green',
+        //    'inline'  => 'span',
+        //    'classes' => 'text-conifer'
+        // ),
+        // array(
+        //    'title'   => 'Text: Gray',
+        //    'inline'  => 'span',
+        //    'classes' => 'text-corduroy'
+        // ),
+        array(
+           'title'   => 'Text: Fine Print',
+           'inline'  => 'span',
+           'classes' => 'fine-print'
+        ),
+        array(
+           'title'    => 'Text: Capitalize',
+           'selector' => 'h1,h2,h3,h4,h5,h6,p,div,dt,dd,li,address',
+           'classes'  => 'text-capitalize'
+        ),
+        array(
+           'title'    => 'Text: Uppercase',
+           'selector' => 'h1,h2,h3,h4,h5,h6,p,div,dt,dd,li,address',
+           'classes'  => 'text-upper'
+        )
+   );
+
+   $settings['style_formats'] = json_encode( $style_formats );
+
+   return $settings;
+
+}
+add_filter( 'tiny_mce_before_init', 'coop022901_mce_before_init' );
