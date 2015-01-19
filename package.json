@@ -15,5 +15,9 @@
     "grunt-sass": "^0.17.0",
     "load-grunt-tasks": "^2.0.0",
     "time-grunt": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blainerobison/_s.git"
   }
 }
