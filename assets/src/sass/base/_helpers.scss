@@ -87,6 +87,15 @@
 .text-center {
     text-align: center;
 }
+.text-right {
+    text-align: right;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+.text-upper {
+    text-transform: uppercase;
+}
 .alignleft {
     @include mq( $from: tablet ) {
         margin-right: 1.5em;
