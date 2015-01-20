@@ -133,16 +133,10 @@ textarea:focus {
 }
 
 input[type="submit"] {
-    @extend %btn;
     margin: 0 0 1em 0;
     height: auto;
     width: auto;
     border: none;
-    @include transition( background .15s );
-
-    &:hover {
-        background: $charcoal;
-    }
 }
 
 textarea {
