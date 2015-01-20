@@ -20,11 +20,11 @@
     margin-bottom: 5px;
     display: inline-block;
 
-    & span {
+    span {
         padding: 0 .7em;
     }
 
-    & a {
+    a {
         padding: .4em .9em;
         display: block;
         background-color: $mercury;
@@ -38,11 +38,11 @@
         }
     }
 
-    & .current {
+    .current {
             color: $success;
     }
 
-    & .dots {
+    .dots {
         color: #b3b3b3;
     }
 }
