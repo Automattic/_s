@@ -17,7 +17,6 @@
      * Hide only visually, but have it available for screen readers:
      * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
      */
-
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -31,7 +30,6 @@
      * Extends the .visuallyhidden class to allow the element to be focusable
      * when navigated to via the keyboard: h5bp.com/p
      */
-
     &.focusable:active,
     &.focusable:focus {
         clip: auto;
@@ -40,6 +38,7 @@
         overflow: visible;
         position: static;
         width: auto;
+
     }
 }
 .visuallyhidden {
@@ -54,48 +53,71 @@
 }
 
 %clearfix {
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
+    /*
+     * Clearfix: contain floats
+     *
+     * For modern browsers
+     * 1. The space content is one way to avoid an Opera bug when the
+     *    `contenteditable` attribute is included anywhere else in the document.
+     *    Otherwise it causes space to appear at the top and bottom of elements
+     *    that receive the `clearfix` class.
+     * 2. The use of `table` rather than `block` is only necessary if using
+     *    `:before` to contain the top-margins of child elements.
+     */
     &:before, &:after {
         content: " "; /* 1 */
         display: table; /* 2 */
     }
+
     &:after {
         clear: both;
     }
+
     /*
      * For IE 6/7 only
      * Include this rule to trigger hasLayout and contain floats.
      */
     *zoom: 1;
 }
+
 .subheading {
     color: lighten( $font-color, 30% );
 }
+
 .fine-print {
     @include rem( 'font-size', 12px );
 }
+
+
+
+
+
+/* Text
+   ========================================================================== */
+
 .text-center {
     text-align: center;
 }
+
 .text-right {
     text-align: right;
 }
+
 .text-capitalize {
     text-transform: capitalize;
 }
+
 .text-upper {
     text-transform: uppercase;
 }
+
+
+
+
+
+/* Alignment
+   ========================================================================== */
+
 .alignleft {
     @include mq( $from: tablet ) {
         margin-right: 1.5em;
@@ -104,6 +126,7 @@
         float: left;
     }
 }
+
 .alignright {
     @include mq( $from: tablet ) {
         margin-left: 1.5em;
@@ -112,6 +135,7 @@
         float: right;
     }
 }
+
 .aligncenter {
     @include mq( $from: tablet ) {
         clear: both;
