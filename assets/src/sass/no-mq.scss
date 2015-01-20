@@ -60,10 +60,11 @@ $mq-static-breakpoint: site;
 @import "modules/modules",
         "modules/buttons",
         "modules/notifications",
+        "modules/offcanvas",
         "modules/pagination",
         "modules/comments",
         "modules/social-profiles",
-        "modules/offcanvas";
+        "modules/widgets";
 
 // ==========================================================================
 // States
