@@ -1,6 +1,8 @@
 ;(function ($, window, document, undefined) {
     'use strict';
+
     $(document).ready( function() {
+
         var Elevator = {
             init : function() {
                 this.utils.init();
@@ -29,7 +31,7 @@
                         Elevator.vals.view  = parseInt( $('.mq-state').css('z-index') );
 
                         // fallback to desktop if browser doesn't support media queries
-                        if( ! Modernizr.mq( 'only all' ) ) Elevator.vals.view = 30;
+                        if ( ! Modernizr.mq( 'only all' ) ) Elevator.vals.view = 30;
 
                     },
 
@@ -62,6 +64,9 @@
                 }
             },
         };
+
         Elevator.init();
+
     });
+
 })(jQuery, window, document);
