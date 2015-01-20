@@ -120,36 +120,6 @@ module.exports = function ( grunt ) {
 
         // Growl Notifications
         notify: {
-            default: {
-                options: {
-                    title: 'Compiled Successfully',
-                    message: 'Sass, Concat and Uglify were processed.'
-                }
-            },
-            css: {
-                options: {
-                    title: 'CSS Successfully Compiled',
-                    message: 'Sass processed.'
-                }
-            },
-            jsMain: {
-                options: {
-                    title: 'JS Successfully Compiled',
-                    message: 'Uglify was processed.'
-                }
-            },
-            jsPlugins: {
-                options: {
-                    title: 'JS Successfully Compiled',
-                    message: 'Uglify was processed.'
-                }
-            },
-            images: {
-                options: {
-                    title: 'Media Optimized',
-                    message: 'Imagemin was processed.'
-                }
-            },
             livereload: {
                 options: {
                     title: 'Browser Updated',
@@ -179,27 +149,27 @@ module.exports = function ( grunt ) {
         watch: {
             css: {
                 files: '<%= config.src %>/sass/**/*.{scss,sass}',
-                tasks: [ 'sass:minified', 'notify:css' ],
-                // tasks: [ 'sass', 'csscomb', 'notify:css' ] // slower, but will process all CSS files
+                tasks: [ 'sass:minified' ],
+                // tasks: [ 'sass', 'csscomb' ] // slower, but will process all CSS files
             },
             jsMain: {
                 files: [
                     '<%= config.src %>/js/main.js'
                 ],
-                tasks: [ 'uglify:main', 'notify:jsMain' ]
+                tasks: [ 'uglify:main' ]
             },
             jsPlugins: {
                 files: [
                     '<%= config.src %>/js/plugins.js',
                     '<%= config.src %>/js/plugins/**/*.js'
                 ],
-                tasks: [ 'concat', 'uglify:plugins', 'newer:copy:js', 'notify:jsPlugins' ]
+                tasks: [ 'concat', 'uglify:plugins', 'newer:copy:js' ]
             },
             images: {
                 files: [
                     '<%= config.src %>/img/**/*.{png,jpg,gif}'
                 ],
-                tasks: [ 'newer:imagemin', 'notify:images' ]
+                tasks: [ 'newer:imagemin' ]
             },
             // This can be used in place of BrowserSync
             // livereload: {
@@ -229,7 +199,6 @@ module.exports = function ( grunt ) {
         'newer:imagemin',
         'browserSync',
         'watch', // add after 'browserSync'. Not needed for Livereload
-        'notify:default'
     ]);
 
     // Images
