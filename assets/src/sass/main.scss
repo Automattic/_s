@@ -51,13 +51,13 @@
 // ==========================================================================
 
 @import "modules/modules",
+        "modules/comments",
         "modules/buttons",
+        "modules/mq-check",
         "modules/notifications",
         "modules/offcanvas",
         "modules/pagination",
-        "modules/comments",
         "modules/social-profiles",
-        "modules/mq-check",
         "modules/widgets";
 
 // ==========================================================================
@@ -70,5 +70,5 @@
 // Plugins
 // ==========================================================================
 
-@import "plugins/magnific-popup",
-        "plugins/gravityforms";
+@import "plugins/gravityforms",
+        "plugins/magnific-popup";
