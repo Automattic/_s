@@ -4,45 +4,234 @@
 // ==========================================================================
 
 %btn {
-    padding: 1em 2em;
+    padding: .5em 1em;
     position: relative;
+    line-height: normal;
     display: inline-block;
-    background-color: $off-black;
+    background-color: $font-color;
+    border: 0;
     text-align: center;
     text-transform: uppercase;
+    cursor: pointer;
     color: white;
-    @include rem( 'font-size', 13px );
+    @include rem( 'font-size', 16px );
+    @include transition-property( color, background, border );
+    @include transition-duration( .15s );
 }
+
+
+
+
+
+/* Main
+   ========================================================================== */
 
 .btn {
     @extend %btn;
 
     &:hover {
-        background-color: $charcoal;
+        background-color: $off-black;
         color: white;
     }
 }
 
-.btn.small {
-    padding: 1em 2em;
-    @include rem( 'font-size', 10px );
-}
-
-.btn.large {
-    padding: .9em 1.5em;
-    @include rem( 'font-size', 17px );
-}
-
-.btn.x-large {
-    padding: .75em 1.25em;
-    @include rem( 'font-size', 20px );
-}
-
-.btn.success {
-    @extend %btn;
-    background-color: $success;
+.btn--primary {
+    background-color: $pomegranate;
+    color: white;
 
     &:hover {
-        background-color: darken( $success, 5% );
+        background-color: darken( $pomegranate, 10% );
     }
+}
+
+.btn--secondary {
+    background-color: $endeavour;
+    color: white;
+
+    &:hover {
+        background-color: darken( $endeavour, 10% );
+    }
+}
+
+.btn--tertiary {
+    background-color: $font-color;
+    border: 3px solid $font-color;
+
+    &:hover {
+        background-color: transparent;
+        border: 3px solid $font-color;
+        color: $font-color;
+    }
+}
+
+.btn--outline {
+    background-color: transparent;
+    border: 3px solid $font-color;
+    color: $font-color;
+
+    &:hover {
+        background-color: $font-color;
+        color: white;
+    }
+}
+
+
+
+
+
+/* Sizes
+   ========================================================================== */
+
+.btn--xs {
+    font-size: 55%;
+}
+
+.btn--sm {
+    font-size: 70%
+}
+
+.btn--md {
+    font-size: 85%;
+}
+
+.btn--lg {
+    font-size: 115%;
+}
+
+.btn--xl {
+    font-size: 130%;
+}
+
+
+
+
+
+/* Shapes
+   ========================================================================== */
+
+.btn--round {
+    border-radius: 3px;
+}
+
+.btn--oval {
+    border-radius: 500px;
+}
+
+.btn--pill-right {
+    border-radius: 500px 0 0 500px
+}
+
+.btn--pill-left {
+    border-radius: 0 500px 500px 0;
+}
+
+
+
+
+
+/* Width
+   ========================================================================== */
+
+.btn--wide {
+    width: 100%;
+}
+
+.btn--half {
+    width: 50%;
+}
+
+.btn--third {
+    width: 33.33333%;
+}
+
+
+
+
+
+/* Icons
+   ========================================================================== */
+
+.btn--icon-left,
+.btn--icon-right {
+    position: relative;
+
+    [class^="icon-"], [class*=" icon-"] {
+        position: absolute;
+        top: 50%;
+        @include transform( translateY( -50% ) );
+    }
+}
+
+.btn--icon-left {
+    padding-left: 2.5em;
+
+    [class^="icon-"], [class*=" icon-"] {
+        left: .75em;
+    }
+}
+
+.btn--icon-right {
+    padding-right: 2.5em;
+
+    [class^="icon-"], [class*=" icon-"] {
+        right: 0.75em;
+    }
+}
+
+
+
+
+
+/* Colors
+   ========================================================================== */
+
+.btn--success {
+    background-color: $success;
+    color: white;
+
+    &:hover {
+        background-color: darken( $success, 10% );
+        color: white;
+    }
+}
+
+.btn--warning {
+    background-color: $warning;
+    color: white;
+
+    &:hover {
+        background-color: darken( $warning, 10% );
+        color: white;
+    }
+}
+
+.btn--error {
+    background-color: $error;
+    color: white;
+
+    &:hover {
+        background-color: darken( $error, 10% );
+        color: white;
+    }
+}
+
+
+
+
+
+/* Disabled
+   ========================================================================== */
+
+.btn[disabled],
+.btn--disabled,
+.btn--disabled:hover,
+.btn--disabled:focus,
+.btn--disabled:active {
+    background-color: $alto;
+    background-image: none;
+    box-shadow: none;
+    border: 0;
+    opacity: .4;
+    cursor: not-allowed;
+    color: $gray;
 }
