@@ -189,7 +189,7 @@ module.exports = function ( grunt ) {
 
     });
 
-    // Default Build
+    // Default
     grunt.registerTask( 'default', [
         'sass',
         'csscomb',
@@ -200,6 +200,18 @@ module.exports = function ( grunt ) {
         'browserSync',
         'watch', // add after 'browserSync'. Not needed for Livereload
     ]);
+
+    // Build
+    // Run all tasks, including sass:expanded
+    grunt.registerTask( 'build', [
+        'sass',
+        'csscomb',
+        'concat',
+        'uglify',
+        'newer:copy:js',
+        'newer:imagemin',
+    ]);
+
 
     // Images
     grunt.registerTask( 'media', ['newer:imagemin'] );
