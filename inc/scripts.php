@@ -57,7 +57,7 @@ function _s_scripts() {
 	}
 
 	wp_deregister_style( 'font-awesome' );
-	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), $version );
+	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), $version );
 
 	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( '_s-google-font', _s_font_url(), array(), null );
