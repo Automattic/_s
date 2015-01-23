@@ -127,14 +127,9 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:86
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
-#: inc/template-tags.php:91
-msgctxt "post author"
-msgid "by %s"
+#: inc/template-tags.php:95
+msgctxt "author date"
+msgid "Posted on %1$s by %2$s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
