@@ -87,7 +87,7 @@ module.exports = function ( grunt ) {
             },
             plugins: {
                 files: {
-                    '<%= config.dist %>/js/plugins.min.js': [ '<%= config.src %>/js/plugins.js' ]
+                    '<%= config.dist %>/js/plugins.min.js': [ '<%= config.dist %>/js/plugins.js' ]
                 }
             }
         },
