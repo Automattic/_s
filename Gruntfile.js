@@ -212,7 +212,6 @@ module.exports = function ( grunt ) {
         'newer:imagemin',
     ]);
 
-
     // Images
     grunt.registerTask( 'media', ['newer:imagemin'] );
 
