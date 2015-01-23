@@ -83,16 +83,16 @@ function _s_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', '_s' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<span class="posted-on"><a href="%1$s" rel="bookmark">%2$s</a></span>',
+		esc_url( get_permalink() ), $time_string
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', '_s' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="byline"><a class="url fn n" href="%1$s">%2$s</a></span>',
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() )
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	printf( _x( 'Posted on %1$s by %2$s', 'author date', '_s' ), $posted_on, $byline );
 
 }
 endif;
