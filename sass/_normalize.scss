@@ -43,11 +43,11 @@ template {
 
 a {
 	background-color: transparent;
-}
 
-a:active,
-a:hover {
-	outline: 0;
+	&:active,
+	&:hover {
+		outline: 0;
+	}
 }
 
 abbr[title] {
@@ -178,11 +178,11 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
 	-webkit-appearance: textfield;
 	box-sizing: content-box;
-}
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
 }
 
 fieldset {
