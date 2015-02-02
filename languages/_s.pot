@@ -1,14 +1,29 @@
-# Copyright (C) 2014 Automattic
+Skip to content
+ This repository
+Explore
+Gist
+Blog
+Help
+Greg Rickaby gregrickaby
+
+615  Watch
+  Unstar 4,449
+ Fork 1,544Automattic/_s
+ tree: 894bd6b5d3  _s/languages/_s.pot
+Kazue Igarashigatespace 26 days ago Use core navigation template tags.
+4 contributors Konstantin ObenlandKazue IgarashiPhilip Arthur MooreAahan Krish
+285 lines (220 sloc)  5.608 kb RawBlameHistory
+# Copyright (C) 2015 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0-wpcom\n"
+"Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-06-03 14:02:16+00:00\n"
+"POT-Creation-Date: 2015-01-06 02:24:02+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -17,9 +32,7 @@ msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:19
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
 #: 404.php:27
@@ -27,74 +40,9 @@ msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smiley
+
 #: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
-msgstr ""
-
-#: archive.php:27
-msgid "Author: %s"
-msgstr ""
-
-#: archive.php:30
-msgid "Day: %s"
-msgstr ""
-
-#: archive.php:33
-msgid "Month: %s"
-msgstr ""
-
-#: archive.php:33
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:36
-msgid "Year: %s"
-msgstr ""
-
-#: archive.php:36
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: archive.php:39
-msgid "Asides"
-msgstr ""
-
-#: archive.php:42
-msgid "Galleries"
-msgstr ""
-
-#: archive.php:45
-msgid "Images"
-msgstr ""
-
-#: archive.php:48
-msgid "Videos"
-msgstr ""
-
-#: archive.php:51
-msgid "Quotes"
-msgstr ""
-
-#: archive.php:54
-msgid "Links"
-msgstr ""
-
-#: archive.php:57
-msgid "Statuses"
-msgstr ""
-
-#: archive.php:60
-msgid "Audios"
-msgstr ""
-
-#: archive.php:63
-msgid "Chats"
-msgstr ""
-
-#: archive.php:66 sidebar.php:16
-msgid "Archives"
 msgstr ""
 
 #: comments.php:28
@@ -125,79 +73,29 @@ msgid "Nothing Found"
 msgstr ""
 
 #: content-none.php:19
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: content-none.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: content-none.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: content-page.php:18 content-single.php:20 content.php:27
+#: content-page.php:18 content-single.php:20 content.php:29
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:24 content-single.php:60 content.php:61
+#: content-page.php:25 inc/template-tags.php:126
 msgid "Edit"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: content-single.php:29 content-single.php:32 content.php:38 content.php:48
-msgid ", "
-msgstr ""
+#. translators: %s: Name of current post
 
-#: content-single.php:37
-msgid ""
-"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-
-#: content-single.php:39
-msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
-
-#: content-single.php:45
-msgid ""
-"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
-msgstr ""
-
-#: content-single.php:47
-msgid ""
-"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-
-#: content.php:24
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: content.php:42
-msgid "Posted in %1$s"
-msgstr ""
-
-#: content.php:52
-msgid "Tagged %1$s"
-msgstr ""
-
-#: content.php:58
-msgid "Leave a comment"
-msgstr ""
-
-#: content.php:58
-msgid "1 Comment"
-msgstr ""
-
-#: content.php:58
-msgid "% Comments"
+#: content.php:22
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: footer.php:15
@@ -212,66 +110,174 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:45 header.php:32
+#: functions.php:53 header.php:31
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:80
+#: functions.php:88
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:23
+#: header.php:22
 msgid "Skip to content"
 msgstr ""
 
-#: inc/extras.php:63
+#: inc/extras.php:64
 msgid "Page %s"
 msgstr ""
 
-#: inc/template-tags.php:21
+#: inc/template-tags.php:23
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:25
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#: inc/template-tags.php:27
+msgid "Older posts"
 msgstr ""
 
-#: inc/template-tags.php:29
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: inc/template-tags.php:52
-msgid "Post navigation"
-msgstr ""
-
-#: inc/template-tags.php:55
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
+#: inc/template-tags.php:31
+msgid "Newer posts"
 msgstr ""
 
 #: inc/template-tags.php:56
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:82
+#: inc/template-tags.php:86
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:87
+#: inc/template-tags.php:91
 msgctxt "post author"
 msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:108 inc/template-tags.php:114
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:110
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:116
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:143
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:145
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:147
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:151
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:153
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:155
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:157
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:159
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:161
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:163
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:165
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:167
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:169
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:171
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:173
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+
+#: inc/template-tags.php:177
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:179
+msgid "Archives"
 msgstr ""
 
 #: search.php:16
 msgid "Search Results for: %s"
 msgstr ""
-
-#: sidebar.php:23
-msgid "Meta"
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "_s"
 msgstr ""
@@ -281,11 +287,7 @@ msgid "http://underscores.me/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
-"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
-"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
-"theme out there. That's what I'm here for."
+msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -295,3 +297,7 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://automattic.com/"
 msgstr ""
+Status API Training Shop Blog About
+© 2015 GitHub, Inc. Terms Privacy Security Contact
+
+Google Analytics
