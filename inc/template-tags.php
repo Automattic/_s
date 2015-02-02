@@ -36,6 +36,7 @@ function the_posts_navigation() {
 	<?php
 }
 endif;
+
 if ( ! function_exists( 'the_post_navigation' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
