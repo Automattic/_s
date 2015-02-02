@@ -6,7 +6,7 @@ hr {
 	background-color: $color-background-hr;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-bottom: em(24px);
 }
 
 img {
@@ -24,7 +24,7 @@ figure {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 em(24px) em(48px);
 }
 
 ul {
@@ -38,15 +38,15 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: em(24px);
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 em(24px) em(24px);
 }
 
 /**
@@ -54,10 +54,10 @@ dd {
  */
 
 table {
-	margin: 0 0 1.5em;
+	margin: 0 0 em(24px);
 	width: 100%;
 }
 
 th {
-	font-weight: bold;
+	font-weight: 700;
 }

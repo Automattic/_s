@@ -27,7 +27,7 @@ Captions
 --------------------------------------------------------------*/
 
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: em(24px);
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -36,7 +36,7 @@ Captions
 	}
 
 	.wp-caption-text {
-		margin: 0.8075em 0;
+		margin: em(12px) 0;
 	}
 }
 
@@ -49,7 +49,7 @@ Galleries
 --------------------------------------------------------------*/
 
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: em(24px);
 }
 
 .gallery-item {

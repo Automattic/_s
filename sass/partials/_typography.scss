@@ -29,12 +29,12 @@ h6 {
  */
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: em(24px);
 }
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dfn,
@@ -45,11 +45,11 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 em(24px);
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 em(24px);
 }
 
 pre {
@@ -57,10 +57,10 @@ pre {
 	font-family: $font-pre;
 	@include rem(font-size, 15px);
 	line-height: $line-height-pre;
-	margin-bottom: 1.6em;
+	margin-bottom: em(25px);
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: em(25px);
 }
 
 code,

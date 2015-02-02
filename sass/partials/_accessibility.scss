@@ -23,11 +23,11 @@ Accessibility
 		@include rem(font-size, 14px);
 		font-weight: 700;
 		height: auto;
-		left: 5px;
+		left: em(5px);
 		line-height: normal;
-		padding: 15px 23px 14px;
+		padding: em(15px) em(23px) em(14px);
 		text-decoration: none;
-		top: 5px;
+		top: em(5px);
 		width: auto;
 		z-index: 100000; /* Above WP toolbar */
 	}

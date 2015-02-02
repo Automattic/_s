@@ -11,10 +11,10 @@ Optional Base Styles
 }
 
 .site-content {
-	margin: 20px auto 20px;
+	margin: em(20px) auto em(20px);
 
 	@include wider-than(desktop) {
-		margin: 40px auto 60px;
+		margin: em(40px) auto em(60px);
 	}
 }
 
@@ -45,7 +45,7 @@ Optional Base Styles
 
 .site-description {
 	@include rem(font-size, 24px);
-	margin-bottom: 24px;
+	margin-bottom: em(24px);
 }
 
 /**
@@ -57,7 +57,7 @@ Optional Base Styles
 	ul {
 
 		li {
-			margin-right: 10px;
+			margin-right: em(10px);
 		}
 
 	}
@@ -86,10 +86,10 @@ Optional Base Styles
 }
 
 .comment-meta {
-	margin-bottom: 14px;
+	margin-bottom: em(14px);
 }
 
 .avatar {
 	float: left;
-	margin-right: 10px;
+	margin-right: em(10px);
 }

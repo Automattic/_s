@@ -100,8 +100,12 @@ $breakpoints: (
 		@media (min-width: map-get($breakpoints, $screen-size)) {
 			@content;
 		}
+	} @else if ($screen-size) {
+		@media (min-width: $screen-size) {
+			@content;
+		}
 	} @else {
 		// Debugging - can be used thanks to map-has-key() instead of loop
 		@warn "Breakpoint '#{$screen-size}' does not exist!"
- 	}
+	}
 }

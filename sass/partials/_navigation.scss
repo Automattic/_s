@@ -40,7 +40,7 @@ a {
 			float: left;
 			left: -999em;
 			position: absolute;
-			top: 1.5em;
+			top: em(24px);
 			z-index: 99999;
 
 			ul {
@@ -108,11 +108,11 @@ a {
 }
 
 .comment-navigation,
-.paging-navigation,
+.posts-navigation,
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 0 em(24px);
 		overflow: hidden;
 	}
 
