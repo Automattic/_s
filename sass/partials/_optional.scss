@@ -2,9 +2,7 @@
 Optional Base Styles
 --------------------------------------------------------------*/
 
-/**
- * Structure
- */
+// Structure
 
 .site {
 	@include outer-container;
@@ -35,9 +33,7 @@ Optional Base Styles
 	}
 }
 
-/**
- * Branding
- */
+// Branding
 
 .site-title {
 	@include rem(font-size, 48px);
@@ -48,9 +44,7 @@ Optional Base Styles
 	margin-bottom: em(24px);
 }
 
-/**
- * Navigation
- */
+// Navigation
 
 .menu {
 
@@ -64,17 +58,13 @@ Optional Base Styles
 
 }
 
-/**
- * Content
- */
+// Content
 
 .entry-title {
 	@include rem(font-size, 36px);
 }
 
-/**
- * Comments
- */
+// Comments
 
 .comments-title {
 	@include rem(font-size, 24px);

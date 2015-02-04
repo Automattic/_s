@@ -2,12 +2,9 @@
   Mixins
 ---------------------------------------------------------------*/
 
-/**
- * REM with PX fallback
- *
- * Sample Usage: @include rem(font-size, 16px);
- * 				 @include rem(margin, 10px 5px 5px 10px);
- */
+
+// REM with PX fallback
+// Usage: @include rem(font-size, 16px);
 
 @function parseInt($n) {
 	@return $n / ($n * 0 + 1);
@@ -69,7 +66,8 @@
 }
 
 
-/* Center block */
+// Center Block
+// Usage @include center-block;
 
 @mixin center-block {
 	display: block;
@@ -77,23 +75,18 @@
 }
 
 
-/**
- * Media Queries using Sass List Maps
- *
- */
-
-/* Define our breakpoints in $breakpoints variable and assign key value pairs in ems.
- * If default font-size is 16px, then:
- * large-desktop (71.25em) = 1140px
- * desktop (48em)= 768px
- * tablet (30em) = 480px
- */
+// Define our breakpoints in $breakpoints variable
+// and assign key value pairs in ems.
 
 $breakpoints: (
 	large-desktop: 71.25em,
 	desktop: 48em,
 	tablet: 30em,
 );
+
+
+// Media Queries using Sass List Maps
+// Usage: @include wider-than(desktop);
 
 @mixin wider-than($screen-size) {
 	@if map-has-key($breakpoints, $screen-size) {

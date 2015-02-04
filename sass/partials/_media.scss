@@ -14,7 +14,7 @@ Media
 	}
 }
 
-/* Make sure embeds and iframes fit their containers */
+// Make sure embeds and iframes fit their containers.
 
 embed,
 iframe,
@@ -22,9 +22,7 @@ object {
 	max-width: 100%;
 }
 
-/*--------------------------------------------------------------
-Captions
---------------------------------------------------------------*/
+// Captions
 
 .wp-caption {
 	margin-bottom: em(24px);
@@ -44,9 +42,7 @@ Captions
 	text-align: center;
 }
 
-/*--------------------------------------------------------------
-Galleries
---------------------------------------------------------------*/
+// Galleries
 
 .gallery {
 	margin-bottom: em(24px);
