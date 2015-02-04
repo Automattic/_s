@@ -102,3 +102,45 @@ $breakpoints: (
 		@warn "Breakpoint '#{$screen-size}' does not exist!"
 	}
 }
+
+
+// For adding font icons to elements using CSS pseudo-elements
+// http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+//
+// Example usage:
+//    .my-cool-title {
+//        @include icon(before, '\f04b') {
+//            padding-left: 3px;
+//        }
+//    }
+//
+// 	BE SURE TO ADD YOUR ICON TO _variables.scss, and then you can do this
+//    .menu-toggle {
+//        @include icon(before, favicon) {
+//            padding-left: 3px;
+//        }
+//    }
+//
+//  Be sure to declare your $font-icon font-family in variables.scss
+
+@mixin icon($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            // A particular icon has been specified
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            // Supportive icon styles required
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: $font-icon;
+        }
+        // Include any extra rules supplied for the pseudo-element
+        @content;
+    }
+}

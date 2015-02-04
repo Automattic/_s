@@ -31,6 +31,27 @@ $font-sans:  "Open Sans", sans-serif;
 $font-serif: Roboto, Georgia, Times, "Times New Roman", serif;
 $font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font-pre: "Courier 10 Pitch", Courier, monospace;
+$font-icon: "FontAwesome";
 
 $line-height-body: 1.5;
 $line-height-pre: 1.6;
+
+
+/**
+ * Map icon names to font unicode characters
+ * see @mixin icon in mixins.scss
+ *
+ * Example usage: 
+ *
+ *    .menu-toggle {
+ *        @include icon(before, favicon) {
+ *            padding-left: 3px;
+ *        }
+ *    }
+ */
+
+$icons: (
+
+	favicon: "\f0c9", // Example to get you started
+	
+);
