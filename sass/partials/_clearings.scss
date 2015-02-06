@@ -3,16 +3,10 @@ Clearings
 --------------------------------------------------------------*/
 
 .clear,
-.clear,
-.entry-content,
 .entry-content,
 .comment-content,
-.comment-content,
-.site-header,
 .site-header,
 .site-content,
-.site-content,
-.site-footer,
 .site-footer {
 	@include clearfix;
 }
