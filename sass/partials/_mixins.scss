@@ -80,10 +80,11 @@
 // and assign key value pairs in ems.
 
 $breakpoints: (
-	large-desktop: 71.25em,
-	desktop: 48em,
-	tablet: 30em,
+	large-desktop: 71.25em, // 1140px
+	desktop: 48em, // 768px
+	tablet: 30em, // 480px
 );
+
 
 
 // Media Queries using Sass List Maps
