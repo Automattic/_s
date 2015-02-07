@@ -55,7 +55,7 @@ input[type="search"] {
 }
 
 button::-moz-focus-inner,
-input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+input::-moz-focus-inner { // Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 	border: 0;
 	padding: 0;
 }
@@ -84,8 +84,8 @@ input[type="search"] {
 }
 
 textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
 	padding-left: em(3px);
-	vertical-align: top; /* Improves readability and alignment in all browsers */
+	vertical-align: top; // Improves readability and alignment in all browsers
 	width: 100%;
 }
