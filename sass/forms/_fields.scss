@@ -7,15 +7,10 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	border-radius: 3px;
-}
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus {
-	color: $color__text-input-focus;
+	&:focus {
+		color: $color__text-input-focus;
+	}
 }
 
 input[type="text"],
