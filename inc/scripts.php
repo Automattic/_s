@@ -42,28 +42,37 @@ function _s_font_url() {
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
+	/**
+	 * If WP is in script debug, or we pass ?script_debug in a URL - set debug to true.
+	 */
+	$debug = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG == true ) || ( isset( $_GET['script_debug'] ) ) ? true : false;
 
+	/**
+	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues
+	 */
 	$version = '1.0.0';
+	$fa_version = '4.3.0';
 
 	/**
 	 * Should we load minified scripts? Also enqueue live reload to allow for extensionless reloading.
 	 */
-	$minnified = '.min';
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG == true ) {
+	$suffix = '.min';
+	if( true === $debug ) {
 
-		$minnified = '';
+		$suffix = '';
+		$version = time();
 		wp_enqueue_script( 'live-reload', '//localhost:35729/livereload.js', array(), $version, true );
 
 	}
 
 	wp_deregister_style( 'font-awesome' );
-	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), $version );
+	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/' . $fa_version . '/css/font-awesome.min.css', array(), $fa_version );
 
 	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( '_s-google-font', _s_font_url(), array(), null );
-	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $minnified . '.css' );
+	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
 
-	wp_enqueue_script( '_s-project', get_template_directory_uri() . '/js/project' . $minnified . '.js', array( 'jquery' ), $version, true );
+	wp_enqueue_script( '_s-project', get_template_directory_uri() . '/js/project' . $suffix . '.js', array( 'jquery' ), $version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
