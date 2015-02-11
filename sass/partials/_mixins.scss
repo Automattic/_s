@@ -80,9 +80,12 @@
 // and assign key value pairs in ems.
 
 $breakpoints: (
-	large-desktop: 71.25em, // 1140px
-	desktop: 48em, // 768px
-	tablet: 30em, // 480px
+	large-desktop: 105em, // 1680px
+	desktop: 85.375em, // 1366px
+	tablet-landscape: 64em, // 1024px
+	tablet-portrait: 48em, // 768px
+	phone-landscape: 40em, // 640px
+	phone-portrait: 22.5em, // 360px
 );
 
 
