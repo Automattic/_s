@@ -18,7 +18,7 @@ Layout: Sidebar-Content
 }
 .site-content .widget-area {
 	display: inline-block;
-	margin-left: -6px;
+	margin-left: -6px;	/* offset the inline-block spacing, see http://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
 	padding-left: 6px;
 	overflow: hidden;
 	width: 25%;

@@ -5,7 +5,7 @@ Layout: Content-Sidebar
 
 .content-area {
 	display: inline-block;
-	margin: 0 -25% 0 -6px;
+	margin: 0 -25% 0 -6px;	/* left margin offsets the inline-block spacing, see http://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
 	padding-left: 6px;
 	width: 100%;
 }
