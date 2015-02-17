@@ -12,37 +12,37 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package _s
+ * @package YuMag
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses _s_header_style()
- * @uses _s_admin_header_style()
- * @uses _s_admin_header_image()
+ * @uses yumag_header_style()
+ * @uses yumag_admin_header_style()
+ * @uses yumag_admin_header_image()
  */
-function _s_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( '_s_custom_header_args', array(
+function yumag_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'yumag_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => '_s_header_style',
-		'admin-head-callback'    => '_s_admin_header_style',
-		'admin-preview-callback' => '_s_admin_header_image',
+		'wp-head-callback'       => 'yumag_header_style',
+		'admin-head-callback'    => 'yumag_admin_header_style',
+		'admin-preview-callback' => 'yumag_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', '_s_custom_header_setup' );
+add_action( 'after_setup_theme', 'yumag_custom_header_setup' );
 
-if ( ! function_exists( '_s_header_style' ) ) :
+if ( ! function_exists( 'yumag_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see _s_custom_header_setup().
+ * @see yumag_custom_header_setup().
  */
-function _s_header_style() {
+function yumag_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -75,15 +75,15 @@ function _s_header_style() {
 	</style>
 	<?php
 }
-endif; // _s_header_style
+endif; // yumag_header_style
 
-if ( ! function_exists( '_s_admin_header_style' ) ) :
+if ( ! function_exists( 'yumag_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see _s_custom_header_setup().
+ * @see yumag_custom_header_setup().
  */
-function _s_admin_header_style() {
+function yumag_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -103,15 +103,15 @@ function _s_admin_header_style() {
 	</style>
 <?php
 }
-endif; // _s_admin_header_style
+endif; // yumag_admin_header_style
 
-if ( ! function_exists( '_s_admin_header_image' ) ) :
+if ( ! function_exists( 'yumag_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see _s_custom_header_setup().
+ * @see yumag_custom_header_setup().
  */
-function _s_admin_header_image() {
+function yumag_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -123,4 +123,4 @@ function _s_admin_header_image() {
 	</div>
 <?php
 }
-endif; // _s_admin_header_image
+endif; // yumag_admin_header_image
