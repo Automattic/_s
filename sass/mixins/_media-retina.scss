@@ -1,0 +1,12 @@
+/// Mixin to wrap the contents in a retina/Hi-DPI media query.
+///
+/// @author cJ barnes http://www.cjbarnes.co.uk/
+///
+/// @content Selectors/rules aimed at devices with hi-res screens.
+/// @output The content, wrapped in a hi-res-targetting media query.
+@mixin media-retina {
+  // Output.
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
+    @content;
+  }
+}

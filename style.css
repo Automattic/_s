@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: YuMag
 Theme URI: http://www.yumagazine.co.uk/
@@ -18,25 +19,26 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-1.0 Normalize
-2.0 Typography
-3.0 Elements
-4.0 Forms
-5.0 Navigation
-	5.1 Links
-	5.2 Menus
-6.0 Accessibility
-7.0 Alignments
-8.0 Clearings
-9.0 Widgets
+ 1.0 Normalize
+ 2.0 Typography
+ 3.0 Elements
+ 4.0 Forms
+ 5.0 Navigation
+	 5.1 Links
+	 5.2 Menus
+ 6.0 Accessibility
+ 7.0 Alignments
+ 8.0 Clearings
+ 9.0 Widgets
 10.0 Content
 	10.1 Posts and pages
 	10.2 Asides
 	10.3 Comments
-11.0 Infinite scroll
-12.0 Media
-	12.1 Captions
-	12.2 Galleries
+11.0 Media
+	11.1 Captions
+	11.2 Galleries
+12.0 Layouts
+99.0 Shame
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -266,7 +268,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "adelle", Constantia, Georgia, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -274,6 +276,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 }
 
 p {
@@ -305,7 +308,7 @@ pre {
 }
 
 code, kbd, tt, var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
   font-size: 0.9375rem;
 }
@@ -357,6 +360,13 @@ hr {
   margin-bottom: 1.5em;
 }
 
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
 ul, ol {
   margin: 0 0 1.5em 3em;
 }
@@ -381,13 +391,6 @@ dt {
 
 dd {
   margin: 0 1.5em 1.5em;
-}
-
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
 }
 
 table {
@@ -621,8 +624,29 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after,
+.clear,
+.entry-content,
+.comment-content,
+.site-header,
+.site-content,
+.site-footer {
+  /*
+   * Make this element self-clearing.
+   *
+   * For modern browsers.
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    contenteditable attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that are clearfixed.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   *
+   * Dropped `*zoom: 1` used for IE 6–7 support, since I only support IE8+.
+   *
+   * See http://nicolasgallagher.com/micro-clearfix-hack/
+   */
+}
+.clear:before, .clear:after,
 .entry-content:before,
 .entry-content:after,
 .comment-content:before,
@@ -633,10 +657,11 @@ a:hover, a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-  content: "";
+  content: " ";
+  /* 1 */
   display: table;
+  /* 2 */
 }
-
 .clear:after,
 .entry-content:after,
 .comment-content:after,
@@ -717,22 +742,7 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-11.0 Infinite scroll
---------------------------------------------------------------*/
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
-  display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer {
-  display: block;
-}
-
-/*--------------------------------------------------------------
-12.0 Media
+11.0 Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -751,7 +761,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-12.1 Captions
+11.1 Captions
 --------------------------------------------------------------*/
 .wp-caption {
   margin-bottom: 1.5em;
@@ -771,7 +781,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-12.2 Galleries
+11.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
   margin-bottom: 1.5em;
@@ -811,5 +821,12 @@ object {
 .gallery-caption {
   display: block;
 }
+
+/*--------------------------------------------------------------
+12.0 Layouts
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+99.0 Temporary hacks
+--------------------------------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */

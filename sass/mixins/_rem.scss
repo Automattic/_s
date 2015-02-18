@@ -1,0 +1,58 @@
+/// Output any length property in rem, with px fallback for IE.old.
+///
+/// The length argument can be in either rem or px. Multiple values (e.g. for
+/// shorthand properties such as margin) are supported, including with mixing of
+/// units. For units other than px/rem, the unit is ignored.
+///
+/// @author cJ barnes http://www.cjbarnes.co.uk/
+///
+/// @require {function} cj-calculate-rem
+/// @require {function} cj-calculate-rem-fallback
+///
+/// @param {String} $property The CSS property name to output rem and px for.
+/// @param {Number} $vals     The values to calculate from (either in rem or
+///                           px).
+/// @output The property and values, first in px (as a fallback for IE.old),
+///         which is then overridden by the same property but using rem.
+@mixin rem($property, $vals) {
+  @if not function-exists(cj-calculate-rem) {
+    @error "Mixin rem requires function cj-calculate-rem(), which does not exist";
+  }
+  @if not function-exists(cj-calculate-rem-fallback) {
+    @error "Mixin rem requires function cj-calculate-rem-fallback(), which does not exist";
+  }
+  @if not ("string" == type-of($property)) {
+    @error "$property must be a valid CSS property, was #{$property}";
+  }
+
+  // Define output lists in this scope so they exist outside the @if block.
+  $px: ();
+  $rem: ();
+
+  // Check for unit type on a per-item basis.
+  @each $val in $vals {
+     @if ("px" == unit($val)) {
+
+      $px: append($px, $val, space);
+      $rem: append($rem, cj-calculate-rem($val), space);
+
+    } @else if ("rem" == unit($val)) {
+
+      $px: append($px, cj-calculate-rem-fallback($val), space);
+      $rem: append($rem, $val, space);
+
+    } @else {
+
+      $px: append($px, $val, space);
+      $rem: append($rem, $val, space);
+
+    }
+  }
+
+  // Output.
+  #{$property}: $px;
+  @if ($px != $rem) {
+    // Only output the rem line if it's different to the px line.
+    #{$property}: $rem;
+  }
+}

@@ -1,0 +1,18 @@
+/// Convert a rem size into a pixel size.
+///
+/// @author cJ barnes http://www.cjbarnes.co.uk/
+///
+/// @require $font-size-px - Text size applied to the body element in pixels.
+///
+/// @param {Number} $rem Size in rem.
+/// @return {Number} Size in px.
+@function cj-calculate-rem-fallback($rem) {
+  @if ("px" != unit($font-size-px)) {
+    @error "$font-size-px must be in px, was #{$font-size-px}";
+  }
+  @if ("rem" != unit($rem)) {
+    @error "$rem must be in rem, was #{$rem}";
+  }
+
+  @return round($font-size-px * ($rem / 1rem));
+}

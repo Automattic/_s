@@ -1,5 +1,11 @@
-$font__main: sans-serif;
-$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__serif: "adelle", Constantia, Georgia, sans-serif;
+$font__sans-serif: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+$font__display: "adobe-caslon-pro", Baskerville, Georgia, serif;
+
+$font__main: $font__serif;
+$font__title: $font__display;
+$font__heading: $font__sans-serif;
+$font__code: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
