@@ -1,83 +1,81 @@
 // Colour palette
 // -------------------------------------------------------------
 
-$color__white: #fff;
-$color__black: #171717;
+$white: #fff;
+$black: #171717;
 
 // DARO colour palette
 //// YorkSpace
-$color__yorkspace:          #7181a5;
-$color__yorkspace-lightest: #dbe2f2;
-$color__yorkspace-light:    #bcc4d8;
-$color__yorkspace-dark:     #3f4e6f;
+$yorkspace-blue:           #7181a5;
+$yorkspace-blue__lightest: #dbe2f2;
+$yorkspace-blue__light:    #bcc4d8;
+$yorkspace-blue__dark:     #3f4e6f;
 //// YAA
-$color__yaa:          #78a146;
-$color__yaa-lightest: #bfcd97;
-$color__yaa-light:    #a8bc77;
-$color__yaa-dark:     #53604f;
+$yaa-green:           #78a146;
+$yaa-green__lightest: #bfcd97;
+$yaa-green__light:    #a8bc77;
+$yaa-green__dark:     #53604f;
 //// Giving
-$color__giving:          #a23579;
-$color__giving-lightest: #f0dde9;
-$color__giving-light:    #e2bad1;
-$color__giving-dark:     #711950;
+$giving-pink:           #a23579;
+$giving-pink__lightest: #f0dde9;
+$giving-pink__light:    #e2bad1;
+$giving-pink__dark:     #711950;
 //// Misc
-$color__aqua:       #89c7ad;
-$color__aqua-light: #b3e0d2;
-$color__aqua-dark:  $color__yaa-dark;
-$color__utilities:  $color__aqua;
-$color__highlight:  #00b3eb;
+$yorkspace-aqua:        #89c7ad;
+$yorkspace-aqua__light: #b3e0d2;
+$yorkspace-aqua__dark:  $yaa-green__dark;
 //// Yucycle
-$color__yucycle-green:       #2fac66;
-$color__yucycle-green-light: #b1ddc3;
-$color__yucycle-grey:        #f5f5f7;
-$color__yucycle-blue:        #139ceb;
-$color__yucycle-blue-light:  #d3eef9;
+$yucycle-green:        #2fac66;
+$yucycle-green__light: #b1ddc3;
+$yucycle-grey:         #f5f5f7;
+$yucycle-blue:         #139ceb;
+$yucycle-blue__light:  #d3eef9;
 
 // Magazine colour palette
 //// row 1
-$color__jambalaya:       #4d2b10; // dark brown
-$color__mountain-meadow: #149b71; // turquoise
-$color__yellow-green:    #b0d46b; // light green
-$color__downy:           #69bcc9; // light blue
-$color__plum:            #803c7d; // purple
+$jambalaya:       #4d2b10; // dark brown
+$mountain-meadow: #149b71; // turquoise
+$yellow-green:    #b0d46b; // light green
+$downy:           #69bcc9; // light blue
+$plum:            #803c7d; // purple
 //// row 2
-$color__muddy-waters:    #b68859; // mid brown
-$color__spring-rain:     #9acd9c; // mint
-$color__sahara-sand:     #f0ef84; // pale yellow-green
-$color__jungle-mist:     #b6ced3; // sky blue
-$color__tapestry:        #b967a7; // dull magenta
+$muddy-waters:    #b68859; // mid brown
+$spring-rain:     #9acd9c; // mint
+$sahara-sand:     #f0ef84; // pale yellow-green
+$jungle-mist:     #b6ced3; // sky blue
+$tapestry:        #b967a7; // dull magenta
 //// row 3
-$color__sisal:           #dcd4c6; // warm grey
-$color__tango:           #f38118; // orange
-$color__ripe-lemon:      #f7ed27; // yellow
-$color__curious-blue:    #139ceb; // bright blue
-$color__monza:           #e5001c; // bright red
+$sisal:           #dcd4c6; // warm grey
+$tango:           #f38118; // orange
+$ripe-lemon:      #f7ed27; // yellow
+$curious-blue:    #139ceb; // bright blue
+$monza:           #e5001c; // bright red
 //// row 4
-$color__dove-grey:       #686767; // dark grey
-$color__oslo-grey:       #818386; // aluminium
-$color__fun-blue:        #1960ae; // flag blue
-$color__shiraz:          #ae0922; // dark red
+$dove-grey:       #686767; // dark grey
+$oslo-grey:       #818386; // aluminium
+$fun-blue:        #1960ae; // flag blue
+$shiraz:          #ae0922; // dark red
 
 // Functional colours
 // -------------------------------------------------------------
 
-$color__background-body: $color__white;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$border-color__button:       #ccc #ccc #bbb;
+$border-color__button-hover: #ccc #bbb #aaa;
+$border-color__button-focus: #aaa #bbb #bbb;
+$border-color__input:        #ccc;
+$border-color__abbr:         #666;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
+$background-color__body:   $white;
+$background-color__screen: #f1f1f1;
+$background-color__hr:     #ccc;
+$background-color__button: #e6e6e6;
+$background-color__pre:    #eee;
+$background-color__ins:    #fff9c0;
+
+$color__screen:       #21759b;
+$color__input:        #666;
+$color__input-focus:  #111;
+$color__link:         royalblue;
 $color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: $color__black;
-
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color__link-hover:   midnightblue;
+$color__main:         $black;

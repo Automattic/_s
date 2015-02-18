@@ -20,7 +20,7 @@ pre {
 	max-width: 100%;
 	margin-bottom: 1.6em;
 	padding: 1.6em;
-	background: $color__background-pre;
+	background: $background-color__pre;
 	font-family: $font-family__pre;
 }
 
@@ -30,12 +30,12 @@ code, kbd, tt, var {
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted $color__border-abbr;
+	border-bottom: 1px dotted $border-color__abbr;
 	cursor: help;
 }
 
 mark, ins {
-	background: $color__background-ins;
+	background: $background-color__ins;
 	text-decoration: none;
 }
 

@@ -4,9 +4,9 @@ input[type="reset"],
 input[type="submit"] {
 	@include font-size( "smaller" );
 	border: 1px solid;
-	border-color: $color__border-button;
+	border-color: $border-color__button;
 	border-radius: 3px;
-	background: $color__background-button;
+	background: $background-color__button;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
 	line-height: 1;
@@ -14,13 +14,13 @@ input[type="submit"] {
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		border-color: $border-color__button-hover;
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		border-color: $border-color__button-focus;
 		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 	}
 }

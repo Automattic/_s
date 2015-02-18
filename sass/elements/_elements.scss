@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $background-color__body; /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote, q {
@@ -26,7 +26,7 @@ blockquote, q {
 }
 
 hr {
-	background-color: $color__background-hr;
+	background-color: $background-color__hr;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
