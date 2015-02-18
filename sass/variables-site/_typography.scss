@@ -1,11 +1,64 @@
-$font__serif: "adelle", Constantia, Georgia, sans-serif;
-$font__sans-serif: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
-$font__display: "adobe-caslon-pro", Baskerville, Georgia, serif;
+// Fonts
+// -------------------------------------------------------------
 
-$font__main: $font__serif;
-$font__title: $font__display;
-$font__heading: $font__sans-serif;
-$font__code: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font__pre: "Courier 10 Pitch", Courier, monospace;
-$font__line-height-body: 1.5;
-$font__line-height-pre: 1.6;
+// Font stacks
+$font-family__serif: "adelle", Constantia, Georgia, sans-serif;
+$font-family__sans-serif: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+$font-family__display: "adobe-caslon-pro", Baskerville, Georgia, serif;
+$font-family__monospace: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+// Font assignments
+$font-family__main:    $font-family__serif;
+$font-family__title:   $font-family__display;
+$font-family__heading: $font-family__sans-serif;
+$font-family__code:    $font-family__monospace;
+$font-family__pre:     $font-family__monospace;
+
+// Sizes
+// -------------------------------------------------------------
+
+// Base text sizes. To change text sizes across the site, edit these numbers.
+$text-size__html: 18;
+$text-sizes: (
+	smaller:    14,
+	small:      16,
+	normal:     18,
+	large:      21,
+	larger:     24,
+	huge:       28,
+	huger:      32,
+	enormous:   40,
+	gigantic:   54,
+	leviathan: 144
+);
+
+// Base line height for maths and margins/positioning
+$vertical-rhythm: 30;
+$line: ( 1rem * ( $vertical-rhythm / $text-size__html ) );
+
+// Pixel versions of the base sizes, for maths
+$text-size__html__px: ( 1px * $text-size__html );
+$line__px: ( 1px * $vertical-rhythm );
+
+// Assemble font size and line height maps:
+// - $font-sizes   - Font size in `em`s relative to the default `$text-size`.
+// - $line-heights - Unitless line height that works out to one line/unit of
+//                   vertical rhythm when the `font-size` is set to the
+//                   corresponding value in the `$font-sizes` map.
+$font-sizes:   ();
+$line-heights: ();
+@each $size, $val in $text-sizes {
+	// Prepare map values for this size.
+	$font-size: ( 1rem * ( $val / $text-size__html ) );
+	$line-height: ( $line / ( 1rem * ( $val / $text-size__html ) ) );
+
+	// Add new key-value pairs to maps.
+	$font-sizes:   map-merge( $font-sizes,   ( $size: $font-size ) );
+	$line-heights: map-merge( $line-heights, ( $size: $line-height ) );
+}
+
+// Element font sizes
+$font-size__html: $text-size__html__px;
+
+// Elements: number of lines
+$lines__pre: 1.5;

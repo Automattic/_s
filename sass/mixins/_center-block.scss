@@ -1,0 +1,8 @@
+/// Center a block element using the auto-margins technique.
+///
+/// @output Display-block and auto horizontal margins.
+@mixin center-block {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}

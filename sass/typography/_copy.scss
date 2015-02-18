@@ -15,19 +15,18 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
-	font-family: $font__pre;
-	@include font-size(0.9375);
-	line-height: $font__line-height-pre;
-	margin-bottom: 1.6em;
-	max-width: 100%;
+	@include font-size-line( "small", $lines__pre );
 	overflow: auto;
+	max-width: 100%;
+	margin-bottom: 1.6em;
 	padding: 1.6em;
+	background: $color__background-pre;
+	font-family: $font-family__pre;
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
-	@include font-size(0.9375);
+	@include font-size( "small" );
+	font-family: $font-family__code;
 }
 
 abbr, acronym {

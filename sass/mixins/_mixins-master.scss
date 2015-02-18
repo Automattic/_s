@@ -1,16 +1,6 @@
+@import "center-block";
 @import "clearfix";
+@import "font-size";
+@import "font-size-line";
 @import "media-retina";
 @import "rem";
-
-// Rem output with px fallback
-@mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) + px;
-	font-size: $sizeValue + rem;
-}
-
-// Center block
-@mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}

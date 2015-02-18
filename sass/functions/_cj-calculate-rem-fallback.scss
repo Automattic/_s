@@ -2,17 +2,18 @@
 ///
 /// @author cJ barnes http://www.cjbarnes.co.uk/
 ///
-/// @require $font-size-px - Text size applied to the body element in pixels.
+/// @require $text-size__html__px Text size applied to the body element in
+///                               pixels.
 ///
 /// @param {Number} $rem Size in rem.
 /// @return {Number} Size in px.
 @function cj-calculate-rem-fallback($rem) {
-  @if ("px" != unit($font-size-px)) {
-    @error "$font-size-px must be in px, was #{$font-size-px}";
+  @if ("px" != unit($text-size__html__px)) {
+    @error "$text-size__html__px must be in px, was #{$text-size__html__px}";
   }
   @if ("rem" != unit($rem)) {
     @error "$rem must be in rem, was #{$rem}";
   }
 
-  @return round($font-size-px * ($rem / 1rem));
+  @return round($text-size__html__px * ($rem / 1rem));
 }

@@ -1,0 +1,16 @@
+/// Output a rem font size.
+///
+/// @require {mixin}    rem           Output property-value pair in rems with px
+///                                   fallback.
+/// @require {variable} $font-sizes   Standard font-size values (in rem).
+///
+/// @param {String} $size The font-size keyword.
+/// @output font-size property in both px and rem.
+@mixin font-size($size) {
+  @if not map-has-key($font-sizes, $size) {
+    @error "$size must be a predefined size name in map $font-sizes, was #{$size}";
+  }
+
+  // Output
+  @include rem("font-size", map-get($font-sizes, $size));
+}

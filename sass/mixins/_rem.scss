@@ -15,44 +15,40 @@
 /// @output The property and values, first in px (as a fallback for IE.old),
 ///         which is then overridden by the same property but using rem.
 @mixin rem($property, $vals) {
-  @if not function-exists(cj-calculate-rem) {
-    @error "Mixin rem requires function cj-calculate-rem(), which does not exist";
-  }
-  @if not function-exists(cj-calculate-rem-fallback) {
-    @error "Mixin rem requires function cj-calculate-rem-fallback(), which does not exist";
-  }
-  @if not ("string" == type-of($property)) {
-    @error "$property must be a valid CSS property, was #{$property}";
-  }
+	@if not function-exists(cj-calculate-rem) {
+	@error "Mixin rem requires function cj-calculate-rem(), which does not exist";
+	}
+	@if not function-exists(cj-calculate-rem-fallback) {
+	@error "Mixin rem requires function cj-calculate-rem-fallback(), which does not exist";
+	}
+	@if not ("string" == type-of($property)) {
+	@error "$property must be a valid CSS property, was #{$property}";
+	}
 
-  // Define output lists in this scope so they exist outside the @if block.
-  $px: ();
-  $rem: ();
+	// Define output lists in this scope so they exist outside the @if block.
+	$px: ();
+	$rem: ();
 
-  // Check for unit type on a per-item basis.
-  @each $val in $vals {
-     @if ("px" == unit($val)) {
+	// Check for unit type on a per-item basis.
+	@each $val in $vals {
+		$numeric: ("number" == type-of($val));
 
-      $px: append($px, $val, space);
-      $rem: append($rem, cj-calculate-rem($val), space);
+		@if ($numeric and "px" == unit($val)) {
+			$px: append($px, $val, space);
+			$rem: append($rem, cj-calculate-rem($val), space);
+		} @else if ($numeric and "rem" == unit($val)) {
+			$px: append($px, cj-calculate-rem-fallback($val), space);
+			$rem: append($rem, $val, space);
+		} @else {
+			$px: append($px, $val, space);
+			$rem: append($rem, $val, space);
+		}
+	}
 
-    } @else if ("rem" == unit($val)) {
-
-      $px: append($px, cj-calculate-rem-fallback($val), space);
-      $rem: append($rem, $val, space);
-
-    } @else {
-
-      $px: append($px, $val, space);
-      $rem: append($rem, $val, space);
-
-    }
-  }
-
-  // Output.
-  #{$property}: $px;
-  @if ($px != $rem) {
-    // Only output the rem line if it's different to the px line.
-    #{$property}: $rem;
-  }
+		// Output.
+		#{$property}: $px;
+		@if ($px != $rem) {
+		// Only output the rem line if it's different to the px line.
+		#{$property}: $rem;
+	}
 }

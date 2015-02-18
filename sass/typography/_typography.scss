@@ -1,10 +1,15 @@
+html {
+	@include rem( "line-height", map_get( $line-heights, "normal" ) );
+	font-size: $font-size__html;
+}
+
 body,
 button,
 input,
 select,
 textarea {
+	@include font-size-line( "normal" );
+	font-weight: 300;
+	font-family: $font-family__main;
 	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size(1);
-	line-height: $font__line-height-body;
 }

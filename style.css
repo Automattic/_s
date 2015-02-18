@@ -262,16 +262,22 @@ th {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
+html {
+  line-height: 1.666667;
+  font-size: 18px;
+}
+
 body,
 button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: "adelle", Constantia, Georgia, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.666667;
+  font-weight: 300;
+  font-family: "adelle", Constantia, Georgia, sans-serif;
+  color: #404040;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -296,21 +302,21 @@ address {
 }
 
 pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  margin-bottom: 1.6em;
-  max-width: 100%;
+  font-size: 16px;
+  font-size: 0.888889rem;
+  line-height: 2.8125;
   overflow: auto;
+  max-width: 100%;
+  margin-bottom: 1.6em;
   padding: 1.6em;
+  background: #eee;
+  font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
 code, kbd, tt, var {
+  font-size: 16px;
+  font-size: 0.888889rem;
   font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
 }
 
 abbr, acronym {
@@ -334,10 +340,13 @@ html {
   box-sizing: border-box;
 }
 
+/*
+ * Inherit box-sizing to make it easier to change the property for components
+ * that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
 *,
 *:before,
 *:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
 }
 
@@ -405,14 +414,14 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  font-size: 14px;
+  font-size: 0.777778rem;
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
   background: #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
   line-height: 1;
   padding: .6em 1em .4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -578,14 +587,14 @@ a:hover, a:active {
   overflow: hidden;
 }
 .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+  font-size: 16px;
+  font-size: 0.888889rem;
   background-color: #f1f1f1;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
   display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
   font-weight: bold;
   height: auto;
   left: 5px;
@@ -615,8 +624,8 @@ a:hover, a:active {
 
 .aligncenter {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 
 /*--------------------------------------------------------------
@@ -763,8 +772,8 @@ object {
 }
 .wp-caption img[class*="wp-image-"] {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 .wp-caption .wp-caption-text {
   margin: 0.8075em 0;
