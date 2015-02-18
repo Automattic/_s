@@ -1,2 +1,15 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+// Grid
+// -------------------------------------------------------------
+
+// Standard columns
+$columns: 12;
+$gutter-width: (1px * $vertical-rhythm);
+$gutter: ($gutter-width / 2);
+$body-width-maximum: 1400px;
+
+// Variables used by grid mixins
+$gutter_width: $gutter-width;
+$max_width: $body-width-maximum;
