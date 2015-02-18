@@ -4,6 +4,60 @@
 $color__white: #fff;
 $color__black: #171717;
 
+// DARO colour palette
+//// YorkSpace
+$color__yorkspace:          #7181a5;
+$color__yorkspace-lightest: #dbe2f2;
+$color__yorkspace-light:    #bcc4d8;
+$color__yorkspace-dark:     #3f4e6f;
+//// YAA
+$color__yaa:          #78a146;
+$color__yaa-lightest: #bfcd97;
+$color__yaa-light:    #a8bc77;
+$color__yaa-dark:     #53604f;
+//// Giving
+$color__giving:          #a23579;
+$color__giving-lightest: #f0dde9;
+$color__giving-light:    #e2bad1;
+$color__giving-dark:     #711950;
+//// Misc
+$color__aqua:       #89c7ad;
+$color__aqua-light: #b3e0d2;
+$color__aqua-dark:  $color__yaa-dark;
+$color__utilities:  $color__aqua;
+$color__highlight:  #00b3eb;
+//// Yucycle
+$color__yucycle-green:       #2fac66;
+$color__yucycle-green-light: #b1ddc3;
+$color__yucycle-grey:        #f5f5f7;
+$color__yucycle-blue:        #139ceb;
+$color__yucycle-blue-light:  #d3eef9;
+
+// Magazine colour palette
+//// row 1
+$color__jambalaya:       #4d2b10; // dark brown
+$color__mountain-meadow: #149b71; // turquoise
+$color__yellow-green:    #b0d46b; // light green
+$color__downy:           #69bcc9; // light blue
+$color__plum:            #803c7d; // purple
+//// row 2
+$color__muddy-waters:    #b68859; // mid brown
+$color__spring-rain:     #9acd9c; // mint
+$color__sahara-sand:     #f0ef84; // pale yellow-green
+$color__jungle-mist:     #b6ced3; // sky blue
+$color__tapestry:        #b967a7; // dull magenta
+//// row 3
+$color__sisal:           #dcd4c6; // warm grey
+$color__tango:           #f38118; // orange
+$color__ripe-lemon:      #f7ed27; // yellow
+$color__curious-blue:    #139ceb; // bright blue
+$color__monza:           #e5001c; // bright red
+//// row 4
+$color__dove-grey:       #686767; // dark grey
+$color__oslo-grey:       #818386; // aluminium
+$color__fun-blue:        #1960ae; // flag blue
+$color__shiraz:          #ae0922; // dark red
+
 // Functional colours
 // -------------------------------------------------------------
 
