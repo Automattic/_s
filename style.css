@@ -277,7 +277,7 @@ textarea {
   line-height: 1.666667;
   font-weight: 300;
   font-family: "adelle", Constantia, Georgia, sans-serif;
-  color: #404040;
+  color: #171717;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -705,6 +705,11 @@ a:hover, a:active {
 
 .hentry {
   margin: 0 0 1.5em;
+}
+
+.entry-title {
+  font-weight: bold;
+  font-family: "adobe-caslon-pro", Baskerville, Georgia, serif;
 }
 
 .byline,

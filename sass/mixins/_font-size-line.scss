@@ -3,11 +3,9 @@
 /// The $lines argument passed in is the number of standard lines, as defined by
 /// the site-wide vertical rhythm, which the line-height should equal.
 ///
-/// @require {mixin}    rem           Output property-value pair in rems with px
-///                                   fallback.
-/// @require {variable} $font-sizes   Standard font-size values (in rem).
-/// @require {variable} $line-heights Matching line heights for each
-///                                   $font-sizes key.
+/// @require {mixin} rem   Output property-value pair in rems with px fallback.
+/// @require $font-sizes   Standard font-size values (in rem).
+/// @require $line-heights Matching line heights for each $font-sizes key.
 ///
 /// @param {String} $size  The font-size/line-height keyword.
 /// @param {Number} $lines Number of standard lines to use for the line-height.

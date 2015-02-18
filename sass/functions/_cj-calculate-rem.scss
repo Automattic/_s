@@ -2,18 +2,17 @@
 ///
 /// @author cJ barnes http://www.cjbarnes.co.uk/
 ///
-/// @require $text-size__html__px Text size applied to the body element in
-///                               pixels.
+/// @require $text-size__px Text size applied to the html element in pixels.
 ///
 /// @param {Number} $px Size in pixels.
 /// @return {Number} Size in rems.
 @function cj-calculate-rem($px) {
-  @if ("px" != unit($text-size__html__px)) {
-    @error "$text-size__html__px must be in px, was #{$text-size__html__px}";
+  @if ("px" != unit($text-size__px)) {
+    @error "$text-size__px must be in px, was #{$text-size__px}";
   }
   @if ("px" != unit($px)) {
     @error "$px must be in px, was #{$px}";
   }
 
-  @return 1rem * ($px / $text-size__html__px);
+  @return 1rem * ($px / $text-size__px);
 }

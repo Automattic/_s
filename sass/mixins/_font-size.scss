@@ -1,8 +1,7 @@
 /// Output a rem font size.
 ///
-/// @require {mixin}    rem           Output property-value pair in rems with px
-///                                   fallback.
-/// @require {variable} $font-sizes   Standard font-size values (in rem).
+/// @require {mixin} rem Output property-value pair in rems with px fallback.
+/// @require $font-sizes Standard font-size values (in rem).
 ///
 /// @param {String} $size The font-size keyword.
 /// @output font-size property in both px and rem.

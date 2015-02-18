@@ -6,6 +6,11 @@
 	margin: 0 0 1.5em;
 }
 
+.entry-title {
+	font-weight: bold;
+	font-family: $font-family__title;
+}
+
 .byline,
 .updated:not(.published){
 	display: none;

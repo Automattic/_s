@@ -9,7 +9,7 @@ input,
 select,
 textarea {
 	@include font-size-line( "normal" );
-	font-weight: 300;
+	font-weight: $font-weight__main;
 	font-family: $font-family__main;
 	color: $color__text-main;
 }

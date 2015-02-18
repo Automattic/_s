@@ -7,6 +7,10 @@ $font-family__sans-serif: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "G
 $font-family__display: "adobe-caslon-pro", Baskerville, Georgia, serif;
 $font-family__monospace: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
+// Accompanying font weights
+$font-weight__serif:       300;
+$font-weight__serif__bold: 600;
+
 // Font assignments
 $font-family__main:    $font-family__serif;
 $font-family__title:   $font-family__display;
@@ -14,11 +18,15 @@ $font-family__heading: $font-family__sans-serif;
 $font-family__code:    $font-family__monospace;
 $font-family__pre:     $font-family__monospace;
 
+// Font weight assignments
+$font-weight__main:       $font-weight__serif;
+$font-weight__main__bold: $font-weight__serif__bold;
+
 // Sizes
 // -------------------------------------------------------------
 
-// Base text sizes. To change text sizes across the site, edit these numbers.
-$text-size__html: 18;
+// Base text sizes
+$text-size: 18;
 $text-sizes: (
 	smaller:    14,
 	small:      16,
@@ -34,10 +42,10 @@ $text-sizes: (
 
 // Base line height for maths and margins/positioning
 $vertical-rhythm: 30;
-$line: ( 1rem * ( $vertical-rhythm / $text-size__html ) );
+$line: ( 1rem * ( $vertical-rhythm / $text-size ) );
 
 // Pixel versions of the base sizes, for maths
-$text-size__html__px: ( 1px * $text-size__html );
+$text-size__px: ( 1px * $text-size );
 $line__px: ( 1px * $vertical-rhythm );
 
 // Assemble font size and line height maps:
@@ -48,17 +56,17 @@ $line__px: ( 1px * $vertical-rhythm );
 $font-sizes:   ();
 $line-heights: ();
 @each $size, $val in $text-sizes {
-	// Prepare map values for this size.
-	$font-size: ( 1rem * ( $val / $text-size__html ) );
-	$line-height: ( $line / ( 1rem * ( $val / $text-size__html ) ) );
+	// Prepare map values for this size
+	$font-size: ( 1rem * ( $val / $text-size ) );
+	$line-height: ( $line / ( 1rem * ( $val / $text-size ) ) );
 
-	// Add new key-value pairs to maps.
+	// Add new key-value pairs to maps
 	$font-sizes:   map-merge( $font-sizes,   ( $size: $font-size ) );
 	$line-heights: map-merge( $line-heights, ( $size: $line-height ) );
 }
 
 // Element font sizes
-$font-size__html: $text-size__html__px;
+$font-size__html: $text-size__px;
 
 // Elements: number of lines
 $lines__pre: 1.5;
