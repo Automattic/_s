@@ -1,40 +1,48 @@
 p {
-	margin-bottom: 1.5em;
+	@include rem( "margin-bottom", $spacing );
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
 	font-style: italic;
 }
 
 blockquote {
-	margin: 0 1.5em;
+	@include rem( "margin", 0 $spacing );
 }
 
 address {
-	margin: 0 0 1.5em;
+	@include rem( "margin", 0 0 $spacing );
 }
 
 pre {
+	@include rem( "margin-bottom", $spacing );
+	@include rem( "padding", $spacing );
 	@include font-size-line( "small", $lines__pre );
 	overflow: auto;
 	max-width: 100%;
-	margin-bottom: 1.6em;
-	padding: 1.6em;
 	background: $background-color__pre;
 	font-family: $font-family__pre;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
 	@include font-size( "small" );
 	font-family: $font-family__code;
 }
 
-abbr, acronym {
+abbr,
+acronym {
 	border-bottom: 1px dotted $border-color__abbr;
 	cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
 	background: $background-color__ins;
 	text-decoration: none;
 }

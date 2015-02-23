@@ -3,7 +3,7 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	@include rem("margin", 0 0 $spacing);
 }
 
 .entry-title {
@@ -24,10 +24,10 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	@include rem("margin", $spacing 0 0);
 }
 
 .page-links {
+	@include rem("margin", 0 0 $spacing);
 	clear: both;
-	margin: 0 0 1.5em;
 }

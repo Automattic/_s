@@ -1,13 +1,13 @@
 .alignleft {
+	@include rem( "margin-right", $spacing );
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
 }
 
 .alignright {
+	@include rem( "margin-left", $spacing );
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
 }
 
 .aligncenter {

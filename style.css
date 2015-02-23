@@ -293,7 +293,8 @@ h6 {
 }
 
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 30px;
+	margin-bottom: 1.66667rem;
 }
 
 dfn,
@@ -304,18 +305,22 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 30px;
+	margin: 0 1.66667rem;
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 30px;
+	margin: 0 0 1.66667rem;
 }
 
 pre {
 	overflow: auto;
 	max-width: 100%;
-	margin-bottom: 1.6em;
-	padding: 1.6em;
+	margin-bottom: 30px;
+	margin-bottom: 1.66667rem;
+	padding: 30px;
+	padding: 1.66667rem;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 2.8125;
@@ -397,7 +402,10 @@ img {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 30px 30px;
+	margin: 0 0 1.66667rem 1.66667rem;
+	padding-left: 30px;
+	padding-left: 1.66667rem;
 }
 
 ul {
@@ -410,8 +418,9 @@ ol {
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-bottom: 0; 
+	margin-left: 30px;
+	margin-left: 1.66667rem;
 }
 
 dt {
@@ -419,12 +428,14 @@ dt {
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 30px 30px;
+	margin: 0 1.66667rem 1.66667rem;
 }
 
 table {
 	width: 100%; 
-	margin: 0 0 1.5em;
+	margin: 0 0 30px;
+	margin: 0 0 1.66667rem;
 }
 
 /*--------------------------------------------------------------
@@ -537,7 +548,8 @@ a:active {
 .main-navigation ul ul {
 	position: absolute;
 	z-index: 99999; 
-	top: 1.5em;
+	top: 30px;
+	top: 1.66667rem;
 	left: -999em;
 	float: left;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -583,7 +595,8 @@ a:active {
 .site-main .posts-navigation,
 .site-main .post-navigation {
 	overflow: hidden; 
-	margin: 0 0 1.5em;
+	margin: 0 0 30px;
+	margin: 0 0 1.66667rem;
 }
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -637,15 +650,17 @@ a:active {
 7.0 Alignments
 --------------------------------------------------------------*/
 .alignleft {
-	float: left;
+	float: left; 
 	display: inline;
-	margin-right: 1.5em;
+	margin-right: 30px;
+	margin-right: 1.66667rem;
 }
 
 .alignright {
-	float: right;
+	float: right; 
 	display: inline;
-	margin-left: 1.5em;
+	margin-left: 30px;
+	margin-left: 1.66667rem;
 }
 
 .aligncenter {
@@ -693,7 +708,8 @@ a:active {
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 30px;
+	margin: 0 0 1.66667rem;
 	/* Make sure select elements fit in widgets. */
 }
 .widget select {
@@ -715,7 +731,8 @@ a:active {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 30px;
+	margin: 0 0 1.66667rem;
 }
 
 .entry-title {
@@ -736,12 +753,14 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 30px 0 0;
+	margin: 1.66667rem 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+	clear: both; 
+	margin: 0 0 30px;
+	margin: 0 0 1.66667rem;
 }
 
 /* 10.2 Asides
@@ -784,7 +803,8 @@ object {
 --------------------------------------------------------------*/
 .wp-caption {
 	max-width: 100%; 
-	margin-bottom: 1.5em;
+	margin-bottom: 30px;
+	margin-bottom: 1.66667rem;
 }
 .wp-caption img[class*="wp-image-"] {
 	display: block;
@@ -802,7 +822,8 @@ object {
 /* 11.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: 30px;
+	margin-bottom: 1.66667rem;
 }
 
 .gallery-item {

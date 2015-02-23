@@ -16,13 +16,15 @@ body {
 	background: $background-color__body; /* Fallback for when there is no custom background color defined. */
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 
 	&:before,
 	&:after {
 		content: "";
 	}
+
 }
 
 hr {

@@ -1,4 +1,4 @@
 table {
-	margin: 0 0 1.5em;
+	@include rem( "margin", 0 0 $spacing );
 	width: 100%;
 }

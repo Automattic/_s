@@ -1,5 +1,7 @@
-ul, ol {
-	margin: 0 0 1.5em 3em;
+ul,
+ol {
+	@include rem( "margin", 0 0 $spacing $spacing );
+	@include rem( "padding-left", $spacing );
 }
 
 ul {
@@ -12,8 +14,8 @@ ol {
 
 li > ul,
 li > ol {
+	@include rem( "margin-left", $spacing );
 	margin-bottom: 0;
-	margin-left: 1.5em;
 }
 
 dt {
@@ -21,5 +23,5 @@ dt {
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	@include rem( "margin", 0 $spacing $spacing );
 }

@@ -13,3 +13,14 @@ $body-width-maximum: 1400px;
 // Variables used by grid mixins
 $gutter_width: $gutter-width;
 $max_width: $body-width-maximum;
+
+// Margins
+// -------------------------------------------------------------
+
+$spacing: (1px * $vertical-rhythm);
+
+
+// Misc
+// -------------------------------------------------------------
+
+$border-radius: 3px;
