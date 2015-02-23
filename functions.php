@@ -102,6 +102,12 @@ add_action( 'widgets_init', 'yumag_widgets_init' );
 function yumag_scripts() {
 	wp_enqueue_style( 'yumag-style', get_stylesheet_uri() );
 
+	// Load non-essential webfonts.
+	wp_enqueue_script( 'yumag-webfont-loader', get_template_directory_uri() . '/js/webfont-loader.js', array(), '20150223', true );
+	wp_localize_script( 'yumag-webfont-loader', 'l10n', array(
+		'templateDirectory' => get_template_directory_uri()
+	) );
+
 	wp_enqueue_script( 'yumag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'yumag-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

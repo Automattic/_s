@@ -278,7 +278,7 @@ textarea {
 	font-size: 18px;
 	font-size: 1rem;
 	line-height: 1.66667;
-	font-family: "adelle", Constantia, Georgia, sans-serif;
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	color: #171717;
 }
 
@@ -737,7 +737,7 @@ a:active {
 
 .entry-title {
 	font-weight: bold;
-	font-family: "adobe-caslon-pro", Baskerville, Georgia, serif;
+	font-family: "Caslon CP", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 }
 
 .byline,
@@ -866,11 +866,7 @@ object {
 --------------------------------------------------------------*/
 .site-title {
 	font-weight: bold;
-	font-family: "adobe-caslon-pro", Baskerville, Georgia, serif;
+	font-family: "Caslon CP", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 }
-
-/*--------------------------------------------------------------
-99.0 Temporary hacks
---------------------------------------------------------------*/
 
 /*# sourceMappingURL=style.css.map */
