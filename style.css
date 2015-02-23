@@ -663,21 +663,7 @@ a:active {
 .site-header,
 .site-content,
 .site-footer {
-	/*
-     * Make this element self-clearing.
-     *
-     * For modern browsers.
-     * 1. The space content is one way to avoid an Opera bug when the
-     *    contenteditable attribute is included anywhere else in the document.
-     *    Otherwise it causes space to appear at the top and bottom of elements
-     *    that are clearfixed.
-     * 2. The use of `table` rather than `block` is only necessary if using
-     *    `:before` to contain the top-margins of child elements.
-     *
-     * Dropped `*zoom: 1` used for IE 6-7 support, since I only support IE8+.
-     *
-     * See http://nicolasgallagher.com/micro-clearfix-hack/
-     */
+	*zoom: 1;
 }
 .clear:before,
 .clear:after,
@@ -692,9 +678,7 @@ a:active {
 .site-footer:before,
 .site-footer:after {
 	content: " ";
-	/* 1 */
 	display: table;
-	/* 2 */
 }
 .clear:after,
 .entry-content:after,
