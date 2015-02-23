@@ -1,0 +1,33 @@
+{
+  "browser": true,
+  "camelcase": true,
+  // Require {} use for all blocks
+  "curly": true,
+  // Require strict comparison operators
+  "eqeqeq": true,
+  // Require IE8/9 support
+  "es3": true,
+  // Disallow overwrite of language prototypes
+  "freeze": true,
+  "globals": {},
+  "globalstrict": false,
+  "indent": 4,
+  "jquery": true,
+  // Don't allow variable to be used before it was defined,
+  // except for functions
+  "latedef": "nofunc",
+  // Ignore warnings for multi-line ternary statements
+  "laxbreak": true,
+  "maxlen": 100,
+  // Ignore multi-line string warnings
+  "multistr": true,
+  "newcap": true,
+  // Prohibit arguments.caller and arguments.callee
+  "noarg": true,
+  "quotmark": "single",
+  "strict": true,
+  // Allow new function() (used for singletons)
+  "supernew": true,
+  "undef": true,
+  "unused": true
+}

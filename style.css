@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: YuMag
 Theme URI: http://www.yumagazine.co.uk/
@@ -44,13 +43,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 1.0 Normalize
 --------------------------------------------------------------*/
 html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+	font-family: sans-serif;
+
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
+	margin: 0;
 }
 
 article,
@@ -65,106 +65,106 @@ menu,
 nav,
 section,
 summary {
-  display: block;
+	display: block;
 }
 
 audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-  vertical-align: baseline;
+	display: inline-block;
+	vertical-align: baseline;
 }
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
+	display: none;
+	height: 0;
 }
 
 [hidden],
 template {
-  display: none;
+	display: none;
 }
 
 a {
-  background-color: transparent;
+	background-color: transparent;
 }
 
 a:active,
 a:hover {
-  outline: 0;
+	outline: 0;
 }
 
 abbr[title] {
-  border-bottom: 1px dotted;
+	border-bottom: 1px dotted;
 }
 
 b,
 strong {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 dfn {
-  font-style: italic;
+	font-style: italic;
 }
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+	margin: 0.67em 0; 
+	font-size: 2em;
 }
 
 mark {
-  background: #ff0;
-  color: #000;
+	background: #ff0;
+	color: #000;
 }
 
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 img {
-  border: 0;
+	border: 0;
 }
 
 svg:not(:root) {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 figure {
-  margin: 1em 40px;
+	margin: 1em 40px;
 }
 
 hr {
-  box-sizing: content-box;
-  height: 0;
+	box-sizing: content-box;
+	height: 0;
 }
 
 pre {
-  overflow: auto;
+	overflow: auto;
 }
 
 code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
+	font-size: 1em; 
+	font-family: monospace, monospace;
 }
 
 button,
@@ -172,99 +172,101 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0;
+	margin: 0; 
+	font: inherit;
+	color: inherit;
 }
 
 button {
-  overflow: visible;
+	overflow: visible;
 }
 
 button,
 select {
-  text-transform: none;
+	text-transform: none;
 }
 
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
+	cursor: pointer; 
+
+	-webkit-appearance: button;
 }
 
 button[disabled],
 html input[disabled] {
-  cursor: default;
+	cursor: default;
 }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+	padding: 0; 
+	border: 0;
 }
 
 input {
-  line-height: normal;
+	line-height: normal;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
+	box-sizing: border-box;
+	padding: 0;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
+	height: auto;
 }
 
 input[type="search"] {
-  -webkit-appearance: textfield;
-  box-sizing: content-box;
+	box-sizing: content-box; 
+
+	-webkit-appearance: textfield;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em; 
+	border: 1px solid #c0c0c0;
 }
 
 legend {
-  border: 0;
-  padding: 0;
+	padding: 0; 
+	border: 0;
 }
 
 textarea {
-  overflow: auto;
+	overflow: auto;
 }
 
 optgroup {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-spacing: 0; 
+	border-collapse: collapse;
 }
 
 td,
 th {
-  padding: 0;
+	padding: 0;
 }
 
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
 html {
-  line-height: 1.666667;
-  font-size: 18px;
+	font-size: 18px; 
+	line-height: 1.66667;
 }
 
 body,
@@ -272,72 +274,85 @@ button,
 input,
 select,
 textarea {
-  font-size: 18px;
-  font-size: 1rem;
-  line-height: 1.666667;
-  font-weight: 300;
-  font-family: "adelle", Constantia, Georgia, sans-serif;
-  color: #171717;
+	font-weight: 300;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.66667;
+	font-family: "adelle", Constantia, Georgia, sans-serif;
+	color: #171717;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  clear: both;
-  font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 }
 
 p {
-  margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
-  font-style: italic;
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
 }
 
 blockquote {
-  margin: 0 1.5em;
+	margin: 0 1.5em;
 }
 
 address {
-  margin: 0 0 1.5em;
+	margin: 0 0 1.5em;
 }
 
 pre {
-  font-size: 16px;
-  font-size: 0.888889rem;
-  line-height: 2.8125;
-  overflow: auto;
-  max-width: 100%;
-  margin-bottom: 1.6em;
-  padding: 1.6em;
-  background: #eee;
-  font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	overflow: auto;
+	max-width: 100%;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 2.8125;
+	font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; 
+	background: #eee;
 }
 
-code, kbd, tt, var {
-  font-size: 16px;
-  font-size: 0.888889rem;
-  font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+code,
+kbd,
+tt,
+var {
+	font-size: 16px;
+	font-size: 0.88889rem;
+	font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-abbr, acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help;
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
 }
 
-mark, ins {
-  background: #fff9c0;
-  text-decoration: none;
+mark,
+ins {
+	text-decoration: none; 
+	background: #fff9c0;
 }
 
 big {
-  font-size: 125%;
+	font-size: 125%;
 }
 
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 /*
@@ -347,64 +362,69 @@ html {
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  background: #fff;
-  /* Fallback for when there is no custom background color defined. */
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
 }
 
-blockquote, q {
-  quotes: "" "";
+blockquote,
+q {
+	quotes: "" "";
 }
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
 }
 
 hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
+	height: 1px;
+	margin-bottom: 1.5em; 
+	border: 0;
+	background-color: #ccc;
 }
 
 img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	height: auto;
+	/* Adhere to container width. */
 }
 
-ul, ol {
-  margin: 0 0 1.5em 3em;
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
 }
 
 ul {
-  list-style: disc;
+	list-style: disc;
 }
 
 ol {
-  list-style: decimal;
+	list-style: decimal;
 }
 
 li > ul,
 li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em;
+	margin-bottom: 0;
+	margin-left: 1.5em;
 }
 
 dt {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 dd {
-  margin: 0 1.5em 1.5em;
+	margin: 0 1.5em 1.5em;
 }
 
 table {
-  margin: 0 0 1.5em;
-  width: 100%;
+	width: 100%; 
+	margin: 0 0 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -414,34 +434,35 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  font-size: 14px;
-  font-size: 0.777778rem;
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
-  line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: 0.6em 1em 0.4em;
+	font-size: 14px;
+	font-size: 0.77778rem;
+	line-height: 1;
+	border-radius: 3px;
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #ccc #bbb #aaa;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	border-color: #ccc #bbb #aaa;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
-button:active, button:focus,
+button:active,
+button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: #aaa #bbb #bbb;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	border-color: #aaa #bbb #bbb;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 input[type="text"],
@@ -450,9 +471,9 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+	border-radius: 3px; 
+	border: 1px solid #ccc;
+	color: #666;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -460,7 +481,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #111;
+	color: #111;
 }
 
 input[type="text"],
@@ -468,12 +489,12 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-  padding: 3px;
+	padding: 3px;
 }
 
 textarea {
-  padding-left: 3px;
-  width: 100%;
+	width: 100%; 
+	padding-left: 3px;
 }
 
 /*--------------------------------------------------------------
@@ -482,97 +503,100 @@ textarea {
 /* 5.1 Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue;
+	color: royalblue;
 }
 a:visited {
-  color: purple;
+	color: purple;
 }
-a:hover, a:focus, a:active {
-  color: midnightblue;
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
 }
 a:focus {
-  outline: thin dotted;
+	outline: thin dotted;
 }
-a:hover, a:active {
-  outline: 0;
+a:hover,
+a:active {
+	outline: 0;
 }
 
 /* 5.2 Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
+	clear: both;
+	float: left;
+	display: block;
+	width: 100%;
 }
 .main-navigation ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
+	margin: 0;
+	padding-left: 0; 
+	list-style: none;
 }
 .main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 1.5em;
-  left: -999em;
-  z-index: 99999;
+	position: absolute;
+	z-index: 99999; 
+	top: 1.5em;
+	left: -999em;
+	float: left;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 .main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
+	top: 0; 
+	left: -999em;
 }
 .main-navigation ul ul li:hover > ul {
-  left: 100%;
+	left: 100%;
 }
 .main-navigation ul ul a {
-  width: 200px;
+	width: 200px;
 }
 .main-navigation ul li:hover > ul {
-  left: auto;
+	left: auto;
 }
 .main-navigation li {
-  float: left;
-  position: relative;
+	position: relative; 
+	float: left;
 }
 .main-navigation a {
-  display: block;
-  text-decoration: none;
+	display: block;
+	text-decoration: none;
 }
 
 /* Small menu. */
 .menu-toggle {
-  display: none;
+	display: none;
 }
 
 @media screen and (max-width: 600px) {
-  .menu-toggle,
-  .main-navigation.toggled .nav-menu {
-    display: block;
-  }
-
-  .main-navigation ul {
-    display: none;
-  }
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+	.main-navigation ul {
+		display: none;
+	}
 }
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden;
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	overflow: hidden; 
+	margin: 0 0 1.5em;
 }
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-  float: left;
-  width: 50%;
+	float: left;
+	width: 50%;
 }
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
+	float: right;
+	width: 50%; 
+	text-align: right;
 }
 
 /*--------------------------------------------------------------
@@ -580,52 +604,54 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+	position: absolute !important;
+	overflow: hidden; 
+	clip: rect(1px, 1px, 1px, 1px);
+	width: 1px;
+	height: 1px;
 }
-.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
-  font-size: 16px;
-  font-size: 0.888889rem;
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-  clip: auto !important;
-  color: #21759b;
-  display: block;
-  font-weight: bold;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	z-index: 100000;
+	top: 5px;
+	left: 5px;
+	display: block;
+	clip: auto !important;
+	width: auto;
+	height: auto;
+	padding: 15px 23px 14px;
+	font-weight: bold;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: normal;
+	text-decoration: none;
+	border-radius: 3px;
+	background-color: #f1f1f1;
+	color: #21759b;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	/* Above WP toolbar. */
 }
 
 /*--------------------------------------------------------------
 7.0 Alignments
 --------------------------------------------------------------*/
 .alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
+	float: left;
+	display: inline;
+	margin-right: 1.5em;
 }
 
 .alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
+	float: right;
+	display: inline;
+	margin-left: 1.5em;
 }
 
 .aligncenter {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /*--------------------------------------------------------------
@@ -637,23 +663,24 @@ a:hover, a:active {
 .site-header,
 .site-content,
 .site-footer {
-  /*
-   * Make this element self-clearing.
-   *
-   * For modern browsers.
-   * 1. The space content is one way to avoid an Opera bug when the
-   *    contenteditable attribute is included anywhere else in the document.
-   *    Otherwise it causes space to appear at the top and bottom of elements
-   *    that are clearfixed.
-   * 2. The use of `table` rather than `block` is only necessary if using
-   *    `:before` to contain the top-margins of child elements.
-   *
-   * Dropped `*zoom: 1` used for IE 6–7 support, since I only support IE8+.
-   *
-   * See http://nicolasgallagher.com/micro-clearfix-hack/
-   */
+	/*
+     * Make this element self-clearing.
+     *
+     * For modern browsers.
+     * 1. The space content is one way to avoid an Opera bug when the
+     *    contenteditable attribute is included anywhere else in the document.
+     *    Otherwise it causes space to appear at the top and bottom of elements
+     *    that are clearfixed.
+     * 2. The use of `table` rather than `block` is only necessary if using
+     *    `:before` to contain the top-margins of child elements.
+     *
+     * Dropped `*zoom: 1` used for IE 6-7 support, since I only support IE8+.
+     *
+     * See http://nicolasgallagher.com/micro-clearfix-hack/
+     */
 }
-.clear:before, .clear:after,
+.clear:before,
+.clear:after,
 .entry-content:before,
 .entry-content:after,
 .comment-content:before,
@@ -664,10 +691,10 @@ a:hover, a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
+	content: " ";
+	/* 1 */
+	display: table;
+	/* 2 */
 }
 .clear:after,
 .entry-content:after,
@@ -675,23 +702,23 @@ a:hover, a:active {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-  clear: both;
+	clear: both;
 }
 
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
-  /* Make sure select elements fit in widgets. */
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
 }
 .widget select {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 /* Search widget. */
 .widget_search .search-submit {
-  display: none;
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -700,54 +727,54 @@ a:hover, a:active {
 /* 10.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
-  display: block;
+	display: block;
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+	margin: 0 0 1.5em;
 }
 
 .entry-title {
-  font-weight: bold;
-  font-family: "adobe-caslon-pro", Baskerville, Georgia, serif;
+	font-weight: bold;
+	font-family: "adobe-caslon-pro", Baskerville, Georgia, serif;
 }
 
 .byline,
 .updated:not(.published) {
-  display: none;
+	display: none;
 }
 
 .single .byline,
 .group-blog .byline {
-  display: inline;
+	display: inline;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0;
+	margin: 1.5em 0 0;
 }
 
 .page-links {
-  clear: both;
-  margin: 0 0 1.5em;
+	clear: both;
+	margin: 0 0 1.5em;
 }
 
 /* 10.2 Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
-  display: none;
+	display: none;
 }
 
 /* 10.3 Comments
 --------------------------------------------------------------*/
 .comment-content a {
-  word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .bypostauthor {
-  display: block;
+	display: block;
 }
 
 /*--------------------------------------------------------------
@@ -756,85 +783,85 @@ a:hover, a:active {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0; 
+	border: none;
 }
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 /* 11.1 Captions
 --------------------------------------------------------------*/
 .wp-caption {
-  margin-bottom: 1.5em;
-  max-width: 100%;
+	max-width: 100%; 
+	margin-bottom: 1.5em;
 }
 .wp-caption img[class*="wp-image-"] {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 .wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
+	margin: 0.8075em 0;
 }
 
 .wp-caption-text {
-  text-align: center;
+	text-align: center;
 }
 
 /* 11.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-  margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .gallery-item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
+	display: inline-block;
+	width: 100%; 
+	text-align: center;
+	vertical-align: top;
 }
 .gallery-columns-2 .gallery-item {
-  max-width: 50%;
+	max-width: 50%;
 }
 .gallery-columns-3 .gallery-item {
-  max-width: 33.33%;
+	max-width: 33.33%;
 }
 .gallery-columns-4 .gallery-item {
-  max-width: 25%;
+	max-width: 25%;
 }
 .gallery-columns-5 .gallery-item {
-  max-width: 20%;
+	max-width: 20%;
 }
 .gallery-columns-6 .gallery-item {
-  max-width: 16.66%;
+	max-width: 16.66%;
 }
 .gallery-columns-7 .gallery-item {
-  max-width: 14.28%;
+	max-width: 14.28%;
 }
 .gallery-columns-8 .gallery-item {
-  max-width: 12.5%;
+	max-width: 12.5%;
 }
 .gallery-columns-9 .gallery-item {
-  max-width: 11.11%;
+	max-width: 11.11%;
 }
 
 .gallery-caption {
-  display: block;
+	display: block;
 }
 
 /*--------------------------------------------------------------
 12.0 Layouts
 --------------------------------------------------------------*/
 .site-title {
-  font-weight: bold;
-  font-family: "adobe-caslon-pro", Baskerville, Georgia, serif;
+	font-weight: bold;
+	font-family: "adobe-caslon-pro", Baskerville, Georgia, serif;
 }
 
 /*--------------------------------------------------------------
