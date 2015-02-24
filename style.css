@@ -151,6 +151,8 @@ figure {
 }
 
 hr {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	height: 0;
 }
@@ -212,6 +214,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 0;
 }
@@ -222,6 +226,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 input[type="search"] {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	box-sizing: content-box; 
 
 	-webkit-appearance: textfield;
@@ -357,6 +363,8 @@ big {
 3.0 Elements
 --------------------------------------------------------------*/
 html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -367,6 +375,8 @@ html {
 *,
 *:before,
 *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
 	box-sizing: inherit;
 }
 
@@ -449,11 +459,13 @@ input[type="submit"] {
 	font-size: 14px;
 	font-size: 0.77778rem;
 	line-height: 1;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
@@ -462,6 +474,7 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 button:active,
@@ -473,6 +486,7 @@ input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
 	border-color: #aaa #bbb #bbb;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -482,6 +496,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
+	-webkit-border-radius: 3px;
 	border-radius: 3px; 
 	border: 1px solid #ccc;
 	color: #666;
@@ -552,6 +567,7 @@ a:active {
 	top: 1.66667rem;
 	left: -999em;
 	float: left;
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 .main-navigation ul ul ul {
@@ -639,9 +655,11 @@ a:active {
 	font-size: 0.88889rem;
 	line-height: normal;
 	text-decoration: none;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	background-color: #f1f1f1;
 	color: #21759b;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	/* Above WP toolbar. */
 }
