@@ -27,6 +27,22 @@ q {
 
 }
 
+blockquote {
+	@include font-size-line( "large" );
+	font-style: italic;
+	font-weight: bold;
+	font-family: $font-family__blockquote;
+}
+
+cite {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 0.9em;
+	font-family: $font-family__cite;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
 hr {
 	background-color: $background-color__hr;
 	border: 0;

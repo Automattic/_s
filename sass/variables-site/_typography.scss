@@ -12,11 +12,13 @@ $font-weight__serif:       300;
 $font-weight__serif__bold: 600;
 
 // Font assignments
-$font-family__main:    $font-family__serif;
-$font-family__title:   $font-family__display;
-$font-family__heading: $font-family__sans-serif;
-$font-family__code:    $font-family__monospace;
-$font-family__pre:     $font-family__monospace;
+$font-family__main:       $font-family__serif;
+$font-family__title:      $font-family__display;
+$font-family__heading:    $font-family__sans-serif;
+$font-family__code:       $font-family__monospace;
+$font-family__pre:        $font-family__monospace;
+$font-family__blockquote: $font-family__serif;
+$font-family__cite:       $font-family__sans-serif;
 $font-family__dropcap:    $font-family__sans-serif;
 
 // Font weight assignments
@@ -42,7 +44,7 @@ $text-sizes: (
 );
 
 // Base line height for maths and margins/positioning
-$vertical-rhythm: 30;
+$vertical-rhythm: 25;
 $line: ( 1rem * ( $vertical-rhythm / $text-size ) );
 
 // Pixel versions of the base sizes, for maths

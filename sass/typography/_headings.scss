@@ -15,14 +15,12 @@
 
 }
 
+/* Post- or widget-title level of heading. */
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2 {
 	@extend %title-font;
 	clear: both;
+	text-align: center;
 }
 
 h1 {
@@ -35,22 +33,33 @@ h2 {
 	@include font-size-line( "enormous", 1.5 );
 }
 
+
+/* Subheadings within content. */
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-family__heading;
+	text-transform: uppercase;
+	//letter-spacing: 0.1em;
+}
+
 h3 {
 	@include rem( "margin", $line 0 );
-	@include font-size-line( "huge" );
+	@include font-size-line( "larger" );
 }
 
 h4 {
 	@include rem( "margin", $line 0 ( $line * 0.5 ) );
-	@include font-size-line( "larger" );
+	@include font-size-line( "large" );
 }
 
 h5 {
 	@include rem( "margin", $line 0 ( $line * 0.5 ) );
-	@include font-size-line( "large" );
+	@include font-size-line( "normal" );
 }
 
 h6 {
 	@include rem( "margin", $line 0 ( $line * 0.5 ) );
-	@include font-size-line( "normal" );
+	@include font-size-line( "small" );
 }
