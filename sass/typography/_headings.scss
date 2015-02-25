@@ -1,9 +1,56 @@
+/*
+ * Only use one font variant (bold, no italics) when text is set in Adobe
+ * Caslon Pro, since we don't load the other variants for page weight reasons.
+ */
+%font-family__title {
+	font-weight: bold;
+	font-family: $font-family__title;
+
+	&,
+	em,
+	i,
+	dfn {
+		font-style: normal;
+	}
+
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+	@extend %font-family__title;
 	clear: both;
-	font-family: $font-family__heading;
+}
+
+h1 {
+	@include rem( "margin", ( $line * 2 ) 0 );
+	@include font-size-line( "gigantic", 2 );
+}
+
+h2 {
+	@include rem( "margin", ( $line * 2 ) 0 $line );
+	@include font-size-line( "enormous", 1.5 );
+}
+
+h3 {
+	@include rem( "margin", $line 0 );
+	@include font-size-line( "huge" );
+}
+
+h4 {
+	@include rem( "margin", $line 0 ( $line * 0.5 ) );
+	@include font-size-line( "larger" );
+}
+
+h5 {
+	@include rem( "margin", $line 0 ( $line * 0.5 ) );
+	@include font-size-line( "large" );
+}
+
+h6 {
+	@include rem( "margin", $line 0 ( $line * 0.5 ) );
+	@include font-size-line( "normal" );
 }

@@ -288,6 +288,46 @@ textarea {
 	color: #171717;
 }
 
+/*
+ * Only use one font variant (bold, no italics) when text is set in Adobe
+ * Caslon Pro, since we don't load the other variants for page weight reasons.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em,
+h6 em,
+h1 i,
+h2 i,
+h3 i,
+h4 i,
+h5 i,
+h6 i,
+h1 dfn,
+h2 dfn,
+h3 dfn,
+h4 dfn,
+h5 dfn,
+h6 dfn {
+	font-style: normal;
+}
+
 h1,
 h2,
 h3,
@@ -295,7 +335,54 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+}
+
+h1 {
+	margin: 60px 0;
+	margin: 3.33333rem 0;
+	font-size: 54px;
+	font-size: 3rem;
+	line-height: 1.11111;
+}
+
+h2 {
+	margin: 60px 0 30px;
+	margin: 3.33333rem 0 1.66667rem;
+	font-size: 40px;
+	font-size: 2.22222rem;
+	line-height: 1.125;
+}
+
+h3 {
+	margin: 30px 0;
+	margin: 1.66667rem 0;
+	font-size: 28px;
+	font-size: 1.55556rem;
+	line-height: 1.07143;
+}
+
+h4 {
+	margin: 30px 0 15px;
+	margin: 1.66667rem 0 0.83333rem;
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.25;
+}
+
+h5 {
+	margin: 30px 0 15px;
+	margin: 1.66667rem 0 0.83333rem;
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.42857;
+}
+
+h6 {
+	margin: 30px 0 15px;
+	margin: 1.66667rem 0 0.83333rem;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.66667;
 }
 
 p {
