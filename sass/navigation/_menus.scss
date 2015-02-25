@@ -9,18 +9,27 @@
 		margin: 0;
 		padding-left: 0;
 
-		/* Submenus */
+		/*
+		 * Submenus.
+		 * 1. Override the default sub-list styling.
+		 * 2. Delay moving the menu off-screen until it's faded out.
+		 */
 		ul {
 			@include rem( "top", $spacing );
+			@include font-size( "normal" ); /* 1 */
 			box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.2 );
 			float: left;
 			position: absolute;
 			left: -999em;
 			z-index: 99999;
-			width: 100%;
+			min-width: 100%;
+			opacity: 0;
+			line-height: 1.25; /* 1 */
+			transition: $transition-time__navigation opacity $transition-type,
+				0s left linear $transition-time__navigation; /* 2 */
 
 			li {
-				@include rem( "padding", 0 ( $spacing * 0.5) );
+				@include rem( "padding", ( $spacing * 0.25 ) ( $spacing * 0.5) );
 				text-align: left;
 			}
 
@@ -36,9 +45,16 @@
 
 		}
 
-		/* Show submenu on parent:hover */
+		/*
+		 * Show submenu on parent:hover.
+		 * 1. For fade in effect.
+		 * 2. Overwrite the delay in moving the submenu into view, so we can see
+		 *    the fade in effect.
+		 */
 		li:hover > ul {
 			left: 0;
+			opacity: 1; /* 1 */
+			transition: $transition-time__navigation opacity $transition-type; /* 2 */
 		}
 
 	}
@@ -87,7 +103,9 @@
 		> li {
 			display: table-cell;
 			text-align: center;
-			background: #eeeeee;
+			border-right: 1px solid #fff;
+			border-left:  1px solid #fff;
+			background: #eee;
 		}
 
 	}

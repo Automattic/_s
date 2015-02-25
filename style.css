@@ -650,6 +650,11 @@ textarea {
 a {
 	color: royalblue;
 }
+a,
+a:hover {
+	-webkit-transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
+	transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
+}
 a:visited {
 	color: purple;
 }
@@ -678,8 +683,17 @@ a:active {
 	margin: 0;
 	padding-left: 0;
 	list-style: none;
-	/* Submenus */
-	/* Show submenu on parent:hover */
+	/*
+		 * Submenus.
+		 * 1. Override the default sub-list styling.
+		 * 2. Delay moving the menu off-screen until it's faded out.
+		 */
+	/*
+		 * Show submenu on parent:hover.
+		 * 1. For fade in effect.
+		 * 2. Overwrite the delay in moving the submenu into view, so we can see
+		 *    the fade in effect.
+		 */
 }
 .main-navigation ul ul {
 	position: absolute;
@@ -688,13 +702,22 @@ a:active {
 	top: 1.66667rem;
 	left: -999em;
 	float: left;
-	width: 100%; 
+	min-width: 100%;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.25;
+	/* 1 */
 	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	/* 1 */
+	-webkit-transition: 0.2s opacity ease-in, 0s left linear 0.2s;
+	transition: 0.2s opacity ease-in, 0s left linear 0.2s;
+	/* 2 */
 }
 .main-navigation ul ul li {
-	padding: 0 15px;
-	padding: 0 0.83333rem;
+	padding: 7.5px 15px;
+	padding: 0.41667rem 0.83333rem;
 	text-align: left;
 }
 .main-navigation ul ul a {
@@ -702,6 +725,11 @@ a:active {
 }
 .main-navigation ul li:hover > ul {
 	left: 0;
+	opacity: 1;
+	/* 1 */
+	-webkit-transition: 0.2s opacity ease-in;
+	transition: 0.2s opacity ease-in;
+	/* 2 */
 }
 .main-navigation li {
 	position: relative;
@@ -733,6 +761,8 @@ a:active {
 	.main-navigation .nav-menu > li {
 		display: table-cell;
 		text-align: center;
+		border-right: 1px solid #fff;
+		border-left: 1px solid #fff;
 		background: #eee;
 	}
 }

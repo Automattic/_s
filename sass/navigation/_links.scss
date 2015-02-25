@@ -1,6 +1,14 @@
 a {
 	color: $color__link;
 
+	// Don't delay style changes for click/keyboard events, just for hover.
+	&,
+	&:hover {
+		transition: $transition-time__link color $transition-type,
+			$transition-time__link background-color $transition-type,
+			$transition-time__link border-color $transition-type;
+	}
+
 	&:visited {
 		color: $color__link-visited;
 	}
