@@ -29,16 +29,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  6.0 Accessibility
  7.0 Alignments
  8.0 Clearings
- 9.0 Widgets
-10.0 Content
-	10.1 Posts and pages
-	10.2 Asides
-	10.3 Comments
-11.0 Media
-	11.1 Captions
-	11.2 Galleries
-12.0 Layouts
-99.0 Shame
+ 9.0 Header
+10.0 Widgets
+11.0 Content
+	11.1 Posts and pages
+	11.2 Post fomrats
+	11.3 Comments
+12.0 Footer
+13.0 Media
+	13.1 Captions
+	13.2 Galleries
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "functions/functions-master";
@@ -99,40 +99,45 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------
-9.0 Widgets
+9.0 Header
+--------------------------------------------------------------*/
+@import "site/header";
+
+/*--------------------------------------------------------------
+10.0 Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
 
 /*--------------------------------------------------------------
-10.0 Content
+11.0 Content
 --------------------------------------------------------------*/
 
-/* 10.1 Posts and pages
+/* 11.1 Posts and pages
 --------------------------------------------------------------*/
 @import "site/primary/posts-and-pages";
 
-/* 10.2 Asides
+/* 11.2 Post formats
 --------------------------------------------------------------*/
-@import "site/primary/asides";
+@import "site/primary/formats";
 
-/* 10.3 Comments
+/* 11.3 Comments
 --------------------------------------------------------------*/
 @import "site/primary/comments";
 
 /*--------------------------------------------------------------
-11.0 Media
+12.0 Footer
+--------------------------------------------------------------*/
+@import "site/footer";
+
+/*--------------------------------------------------------------
+13.0 Media
 --------------------------------------------------------------*/
 @import "media/media";
 
-/* 11.1 Captions
+/* 13.1 Captions
 --------------------------------------------------------------*/
 @import "media/captions";
 
-/* 11.2 Galleries
+/* 13.2 Galleries
 --------------------------------------------------------------*/
 @import "media/galleries";
-
-/*--------------------------------------------------------------
-12.0 Layouts
---------------------------------------------------------------*/
-@import "layouts/layouts";

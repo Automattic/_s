@@ -28,16 +28,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  6.0 Accessibility
  7.0 Alignments
  8.0 Clearings
- 9.0 Widgets
-10.0 Content
-	10.1 Posts and pages
-	10.2 Asides
-	10.3 Comments
-11.0 Media
-	11.1 Captions
-	11.2 Galleries
-12.0 Layouts
-99.0 Shame
+ 9.0 Header
+10.0 Widgets
+11.0 Content
+	11.1 Posts and pages
+	11.2 Post fomrats
+	11.3 Comments
+12.0 Footer
+13.0 Media
+	13.1 Captions
+	13.2 Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -297,7 +297,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.site-title {
 	font-weight: bold;
 	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 }
@@ -307,24 +308,28 @@ h3,
 h4,
 h5,
 h6,
+.site-title,
 h1 em,
 h2 em,
 h3 em,
 h4 em,
 h5 em,
 h6 em,
+.site-title em,
 h1 i,
 h2 i,
 h3 i,
 h4 i,
 h5 i,
 h6 i,
+.site-title i,
 h1 dfn,
 h2 dfn,
 h3 dfn,
 h4 dfn,
 h5 dfn,
-h6 dfn {
+h6 dfn,
+.site-title dfn {
 	font-style: normal;
 }
 
@@ -836,7 +841,10 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-9.0 Widgets
+9.0 Header
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+10.0 Widgets
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 30px;
@@ -853,9 +861,9 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.0 Content
+11.0 Content
 --------------------------------------------------------------*/
-/* 10.1 Posts and pages
+/* 11.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
 	display: block;
@@ -894,14 +902,14 @@ a:active {
 	margin: 0 0 1.66667rem;
 }
 
-/* 10.2 Asides
+/* 11.2 Post formats
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
 
-/* 10.3 Comments
+/* 11.3 Comments
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
@@ -912,7 +920,10 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-11.0 Media
+12.0 Footer
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+13.0 Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -930,7 +941,7 @@ object {
 	max-width: 100%;
 }
 
-/* 11.1 Captions
+/* 13.1 Captions
 --------------------------------------------------------------*/
 .wp-caption {
 	max-width: 100%; 
@@ -950,7 +961,7 @@ object {
 	text-align: center;
 }
 
-/* 11.2 Galleries
+/* 13.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 30px;
@@ -990,14 +1001,6 @@ object {
 
 .gallery-caption {
 	display: block;
-}
-
-/*--------------------------------------------------------------
-12.0 Layouts
---------------------------------------------------------------*/
-.site-title {
-	font-weight: bold;
-	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 }
 
 /*# sourceMappingURL=style.css.map */
