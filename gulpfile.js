@@ -16,7 +16,7 @@ gulp.task('styles', function() {
 		// Error handling: notify on error.
 		.pipe(plumber(notify.onError({
 			title: 'Error compiling yumag styles',
-			message: 'Styles Error: <%= error.message %>',
+			message: 'Styles Error: <%= error.message %> in <%=error.fileName %> (line <%=error.lineNumber %>)',
 			sound: 'Pop'
 		})))
 		.pipe(sourcemaps.init())
