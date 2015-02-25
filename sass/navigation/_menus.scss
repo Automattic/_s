@@ -9,21 +9,19 @@
 		margin: 0;
 		padding-left: 0;
 
+		/* Submenus */
 		ul {
 			@include rem( "top", $spacing );
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.2 );
 			float: left;
 			position: absolute;
 			left: -999em;
 			z-index: 99999;
+			width: 100%;
 
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li:hover > ul {
-				left: 100%;
+			li {
+				@include rem( "padding", 0 ( $spacing * 0.5) );
+				text-align: left;
 			}
 
 			a {
@@ -35,16 +33,17 @@
 
 			a:hover {
 			}
+
 		}
 
+		/* Show submenu on parent:hover */
 		li:hover > ul {
-			left: auto;
+			left: 0;
 		}
 
 	}
 
 	li {
-		float: left;
 		position: relative;
 
 		&:hover > a {
@@ -70,17 +69,27 @@
 	display: block;
 }
 
-.main-navigation ul {
+.main-navigation .nav-menu {
 	display: none;
 }
 
+/* Responsive menu */
 @media screen and (min-width: 45em) {
 
 	.menu-toggle {
 		display: none;
 	}
-	.main-navigation ul {
-		display: block;
+
+	.main-navigation .nav-menu {
+		display: table;
+		width: 100%;
+
+		> li {
+			display: table-cell;
+			text-align: center;
+			background: #eeeeee;
+		}
+
 	}
 
 }
