@@ -755,7 +755,7 @@ a:active {
 
 .entry-title {
 	font-weight: bold;
-	font-family: "Caslon CP", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
+	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 }
 
 .byline,
@@ -884,7 +884,7 @@ object {
 --------------------------------------------------------------*/
 .site-title {
 	font-weight: bold;
-	font-family: "Caslon CP", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
+	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 }
 
 /*# sourceMappingURL=style.css.map */
