@@ -1,9 +1,8 @@
 p {
-	@include rem( "margin-bottom", $spacing );
+	@include rem( "margin", 0 0 $spacing );
 }
 
 dfn,
-cite,
 em,
 i {
 	font-style: italic;
@@ -35,10 +34,11 @@ var {
 	font-family: $font-family__code;
 }
 
+/* No special styling for abbreviation elements. */
 abbr,
 acronym {
-	border-bottom: 1px dotted $border-color__abbr;
-	cursor: help;
+	border-bottom: 0;
+	cursor: inherit;
 }
 
 mark,

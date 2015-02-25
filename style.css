@@ -379,12 +379,11 @@ h6 {
 }
 
 p {
-	margin-bottom: 25px;
-	margin-bottom: 1.38889rem;
+	margin: 0 0 25px;
+	margin: 0 0 1.38889rem;
 }
 
 dfn,
-cite,
 em,
 i {
 	font-style: italic;
@@ -423,10 +422,11 @@ var {
 	font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
+/* No special styling for abbreviation elements. */
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
-	cursor: help;
+	border-bottom: 0;
+	cursor: inherit;
 }
 
 mark,
@@ -495,7 +495,7 @@ cite {
 }
 
 hr {
-	height: 1px;
+	height: 3px;
 	margin-bottom: 1.5em; 
 	border: 0;
 	background-color: #ccc;
@@ -655,7 +655,7 @@ textarea {
 a {
 	font-weight: bold;
 	text-decoration: none;
-	color: royalblue;
+	color: #1960ae;
 }
 a,
 a:hover {
@@ -663,7 +663,7 @@ a:hover {
 	transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
 }
 a:visited {
-	color: purple;
+	color: #803c7d;
 }
 a:hover,
 a:focus,
