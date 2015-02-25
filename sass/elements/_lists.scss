@@ -2,20 +2,55 @@ ul,
 ol {
 	@include rem( "margin", 0 0 $spacing $spacing );
 	@include rem( "padding-left", $spacing );
+
+	ul,
+	ol {
+		@include font-size-line( "small" );
+	}
+
 }
 
 ul {
 	list-style: disc;
+
+	ul {
+		list-style: circle;
+
+		ul {
+			list-style: square;
+		}
+
+	}
+
 }
 
 ol {
 	list-style: decimal;
+
+	ol {
+		list-style: lower-latin;
+
+		ol {
+			list-style: lower-roman;
+		}
+
+	}
+
 }
 
-li > ul,
-li > ol {
-	@include rem( "margin-left", $spacing );
-	margin-bottom: 0;
+li {
+	@include rem( "margin-bottom", ( $line * 0.5 ) );
+
+	li {
+		margin-bottom: 0;
+	}
+
+	> ul,
+	> ol {
+		margin-bottom: 0;
+		margin-left: 0;
+	}
+
 }
 
 dt {

@@ -504,20 +504,46 @@ ol {
 	padding-left: 30px;
 	padding-left: 1.66667rem;
 }
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.875;
+}
 
 ul {
 	list-style: disc;
+}
+ul ul {
+	list-style: circle;
+}
+ul ul ul {
+	list-style: square;
 }
 
 ol {
 	list-style: decimal;
 }
+ol ol {
+	list-style: lower-latin;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
 
+li {
+	margin-bottom: 15px;
+	margin-bottom: 0.83333rem;
+}
+li li {
+	margin-bottom: 0;
+}
 li > ul,
 li > ol {
-	margin-bottom: 0; 
-	margin-left: 30px;
-	margin-left: 1.66667rem;
+	margin-bottom: 0;
+	margin-left: 0;
 }
 
 dt {
