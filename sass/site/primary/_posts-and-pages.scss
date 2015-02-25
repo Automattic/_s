@@ -32,3 +32,10 @@
 	@include rem("margin", 0 0 $spacing);
 	clear: both;
 }
+
+/* Dropcaps. */
+.dropcap {
+	margin-right: 3px;
+	font-weight: bold;
+	font-family: $font-family__dropcap;
+}

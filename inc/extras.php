@@ -69,3 +69,52 @@ function yumag_render_title() {
 }
 add_action( 'wp_head', 'yumag_render_title' );
 endif;
+
+if ( ! function_exists( 'yumag_single_post_dropcap' ) ) :
+
+function yumag_single_post_dropcap( $content ) {
+	if ( is_single() ) {
+		$content = yumag_create_dropcap( $content );
+	}
+	return $content;
+}
+add_action( 'the_content', 'yumag_single_post_dropcap' );
+endif;
+
+if ( ! function_exists( 'yumag_create_dropcap' ) ) :
+/**
+ * Add a span to the first letter of the first paragraph of the passed-in
+ * content for dropcap styling.
+ *
+ * @since 1.0.0
+ *
+ * @param string $content HTML content to be drop-capped.
+ *
+ * @return string Amended content.
+ */
+function yumag_create_dropcap( $content ) {
+	$result = stripos( $content, '<p' );
+
+	if ( false !== $result ) {
+		// Find the drop cap and wrap it in a placeholder.
+		$pattern = '/(<p[^>]*\>(?:<\[A-Za-z][^>]*>)*)((?:[\W_-]|&[\w-]+;)?[A-Za-z0-9])/i';
+		$matches = array();
+		$result = preg_match( $pattern, $content, $matches );
+
+		// Prepare the dropcap classes.
+		if ( $result ) {
+			$dropcap = $matches[2];
+			$classes = 'dropcap dropcap-' . strtolower( substr( $dropcap, -1 ) );
+
+			if ( 1 !== strlen( $dropcap ) ) {
+				$classes .= ' dropcap-punctuation';
+			}
+
+			// Modify the output.
+			$content = preg_replace( $pattern, '$1<span class="' . $classes . '">$2</span>', $content, 1 );
+		}
+	}
+
+	return $content;
+}
+endif;
