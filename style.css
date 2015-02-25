@@ -653,6 +653,8 @@ textarea {
 /* 5.1 Links
 --------------------------------------------------------------*/
 a {
+	font-weight: bold;
+	text-decoration: none;
 	color: royalblue;
 }
 a,

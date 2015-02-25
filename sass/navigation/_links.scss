@@ -1,4 +1,6 @@
 a {
+	font-weight: bold;
+	text-decoration: none;
 	color: $color__link;
 
 	// Don't delay style changes for click/keyboard events, just for hover.
