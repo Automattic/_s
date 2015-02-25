@@ -273,7 +273,7 @@ th {
 --------------------------------------------------------------*/
 html {
 	font-size: 18px; 
-	line-height: 1.66667;
+	line-height: 1.38889;
 }
 
 body,
@@ -284,7 +284,7 @@ textarea {
 	font-weight: 300;
 	font-size: 18px;
 	font-size: 1rem;
-	line-height: 1.66667;
+	line-height: 1.38889;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	color: #171717;
 }
@@ -295,105 +295,92 @@ textarea {
  */
 h1,
 h2,
-h3,
-h4,
-h5,
-h6,
 .site-title {
 	font-weight: bold;
 	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 }
 h1,
 h2,
-h3,
-h4,
-h5,
-h6,
 .site-title,
 h1 em,
 h2 em,
-h3 em,
-h4 em,
-h5 em,
-h6 em,
 .site-title em,
 h1 i,
 h2 i,
-h3 i,
-h4 i,
-h5 i,
-h6 i,
 .site-title i,
 h1 dfn,
 h2 dfn,
-h3 dfn,
-h4 dfn,
-h5 dfn,
-h6 dfn,
 .site-title dfn {
 	font-style: normal;
 }
 
+/* Post- or widget-title level of heading. */
 h1,
-h2,
+h2 {
+	clear: both;
+	text-align: center;
+}
+
+h1 {
+	margin: 50px 0;
+	margin: 2.77778rem 0;
+	font-size: 54px;
+	font-size: 3rem;
+	line-height: 0.92593;
+}
+
+h2 {
+	margin: 50px 0 25px;
+	margin: 2.77778rem 0 1.38889rem;
+	font-size: 40px;
+	font-size: 2.22222rem;
+	line-height: 0.9375;
+}
+
+/* Subheadings within content. */
 h3,
 h4,
 h5,
 h6 {
-	clear: both;
-}
-
-h1 {
-	margin: 60px 0;
-	margin: 3.33333rem 0;
-	font-size: 54px;
-	font-size: 3rem;
-	line-height: 1.11111;
-}
-
-h2 {
-	margin: 60px 0 30px;
-	margin: 3.33333rem 0 1.66667rem;
-	font-size: 40px;
-	font-size: 2.22222rem;
-	line-height: 1.125;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	text-transform: uppercase;
 }
 
 h3 {
-	margin: 30px 0;
-	margin: 1.66667rem 0;
-	font-size: 28px;
-	font-size: 1.55556rem;
-	line-height: 1.07143;
+	margin: 25px 0;
+	margin: 1.38889rem 0;
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.04167;
 }
 
 h4 {
-	margin: 30px 0 15px;
-	margin: 1.66667rem 0 0.83333rem;
-	font-size: 24px;
-	font-size: 1.33333rem;
-	line-height: 1.25;
+	margin: 25px 0 13px;
+	margin: 1.38889rem 0 0.69444rem;
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.19048;
 }
 
 h5 {
-	margin: 30px 0 15px;
-	margin: 1.66667rem 0 0.83333rem;
-	font-size: 21px;
-	font-size: 1.16667rem;
-	line-height: 1.42857;
+	margin: 25px 0 13px;
+	margin: 1.38889rem 0 0.69444rem;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.38889;
 }
 
 h6 {
-	margin: 30px 0 15px;
-	margin: 1.66667rem 0 0.83333rem;
-	font-size: 18px;
-	font-size: 1rem;
-	line-height: 1.66667;
+	margin: 25px 0 13px;
+	margin: 1.38889rem 0 0.69444rem;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.5625;
 }
 
 p {
-	margin-bottom: 30px;
-	margin-bottom: 1.66667rem;
+	margin-bottom: 25px;
+	margin-bottom: 1.38889rem;
 }
 
 dfn,
@@ -404,25 +391,25 @@ i {
 }
 
 blockquote {
-	margin: 0 30px;
-	margin: 0 1.66667rem;
+	margin: 0 25px;
+	margin: 0 1.38889rem;
 }
 
 address {
-	margin: 0 0 30px;
-	margin: 0 0 1.66667rem;
+	margin: 0 0 25px;
+	margin: 0 0 1.38889rem;
 }
 
 pre {
 	overflow: auto;
 	max-width: 100%;
-	margin-bottom: 30px;
-	margin-bottom: 1.66667rem;
-	padding: 30px;
-	padding: 1.66667rem;
+	margin-bottom: 25px;
+	margin-bottom: 1.38889rem;
+	padding: 25px;
+	padding: 1.38889rem;
 	font-size: 16px;
 	font-size: 0.88889rem;
-	line-height: 2.8125;
+	line-height: 2.34375;
 	font-family: "Source Code Pro", Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; 
 	background: #eee;
 }
@@ -489,6 +476,24 @@ q:after {
 	content: "";
 }
 
+blockquote {
+	font-style: italic;
+	font-weight: bold;
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.19048;
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+}
+
+cite {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 0.9em;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	letter-spacing: 0.05em; 
+	text-transform: uppercase;
+}
+
 hr {
 	height: 1px;
 	margin-bottom: 1.5em; 
@@ -505,10 +510,10 @@ img {
 
 ul,
 ol {
-	margin: 0 0 30px 30px;
-	margin: 0 0 1.66667rem 1.66667rem;
-	padding-left: 30px;
-	padding-left: 1.66667rem;
+	margin: 0 0 25px 25px;
+	margin: 0 0 1.38889rem 1.38889rem;
+	padding-left: 25px;
+	padding-left: 1.38889rem;
 }
 ul ul,
 ul ol,
@@ -516,14 +521,14 @@ ol ul,
 ol ol {
 	font-size: 16px;
 	font-size: 0.88889rem;
-	line-height: 1.875;
+	line-height: 1.5625;
 }
 
 ul {
-	list-style: disc;
+	list-style: circle;
 }
 ul ul {
-	list-style: circle;
+	list-style: disc;
 }
 ul ul ul {
 	list-style: square;
@@ -540,8 +545,8 @@ ol ol ol {
 }
 
 li {
-	margin-bottom: 15px;
-	margin-bottom: 0.83333rem;
+	margin-bottom: 13px;
+	margin-bottom: 0.69444rem;
 }
 li li {
 	margin-bottom: 0;
@@ -557,14 +562,14 @@ dt {
 }
 
 dd {
-	margin: 0 30px 30px;
-	margin: 0 1.66667rem 1.66667rem;
+	margin: 0 25px 25px;
+	margin: 0 1.38889rem 1.38889rem;
 }
 
 table {
 	width: 100%; 
-	margin: 0 0 30px;
-	margin: 0 0 1.66667rem;
+	margin: 0 0 25px;
+	margin: 0 0 1.38889rem;
 }
 
 /*--------------------------------------------------------------
@@ -698,8 +703,8 @@ a:active {
 .main-navigation ul ul {
 	position: absolute;
 	z-index: 99999;
-	top: 30px;
-	top: 1.66667rem;
+	top: 25px;
+	top: 1.38889rem;
 	left: -999em;
 	float: left;
 	min-width: 100%;
@@ -716,8 +721,8 @@ a:active {
 	/* 2 */
 }
 .main-navigation ul ul li {
-	padding: 7.5px 15px;
-	padding: 0.41667rem 0.83333rem;
+	padding: 6.25px 12.5px;
+	padding: 0.34722rem 0.69444rem;
 	text-align: left;
 }
 .main-navigation ul ul a {
@@ -771,8 +776,8 @@ a:active {
 .site-main .posts-navigation,
 .site-main .post-navigation {
 	overflow: hidden; 
-	margin: 0 0 30px;
-	margin: 0 0 1.66667rem;
+	margin: 0 0 25px;
+	margin: 0 0 1.38889rem;
 }
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -830,15 +835,15 @@ a:active {
 .alignleft {
 	float: left; 
 	display: inline;
-	margin-right: 30px;
-	margin-right: 1.66667rem;
+	margin-right: 25px;
+	margin-right: 1.38889rem;
 }
 
 .alignright {
 	float: right; 
 	display: inline;
-	margin-left: 30px;
-	margin-left: 1.66667rem;
+	margin-left: 25px;
+	margin-left: 1.38889rem;
 }
 
 .aligncenter {
@@ -885,14 +890,14 @@ a:active {
 	float: left;
 	display: inline;
 	width: 100%;
-	padding: 0 15px;
+	padding: 0 12.5px;
 }
 
 .widget {
 	float: left;
 	display: inline;
 	width: 33.33333%;
-	padding: 0 15px;
+	padding: 0 12.5px;
 }
 
 /*--------------------------------------------------------------
@@ -945,8 +950,8 @@ a:active {
 10.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 30px;
-	margin: 0 0 1.66667rem;
+	margin: 0 0 25px;
+	margin: 0 0 1.38889rem;
 	/* Make sure select elements fit in widgets. */
 }
 .widget select {
@@ -968,8 +973,8 @@ a:active {
 }
 
 .hentry {
-	margin: 0 0 30px;
-	margin: 0 0 1.66667rem;
+	margin: 0 0 25px;
+	margin: 0 0 1.38889rem;
 }
 
 .entry-title {
@@ -991,14 +996,21 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 30px 0 0;
-	margin: 1.66667rem 0 0;
+	margin: 25px 0 0;
+	margin: 1.38889rem 0 0;
 }
 
 .page-links {
 	clear: both; 
-	margin: 0 0 30px;
-	margin: 0 0 1.66667rem;
+	margin: 0 0 25px;
+	margin: 0 0 1.38889rem;
+}
+
+/* Dropcaps. */
+.dropcap {
+	margin-right: 3px;
+	font-weight: bold;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 }
 
 /* 11.2 Post formats
@@ -1049,8 +1061,8 @@ object {
 --------------------------------------------------------------*/
 .wp-caption {
 	max-width: 100%; 
-	margin-bottom: 30px;
-	margin-bottom: 1.66667rem;
+	margin-bottom: 25px;
+	margin-bottom: 1.38889rem;
 }
 .wp-caption img[class*="wp-image-"] {
 	display: block;
@@ -1068,8 +1080,8 @@ object {
 /* 13.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin-bottom: 30px;
-	margin-bottom: 1.66667rem;
+	margin-bottom: 25px;
+	margin-bottom: 1.38889rem;
 }
 
 .gallery-item {
