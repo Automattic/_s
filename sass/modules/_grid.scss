@@ -1,0 +1,17 @@
+.site-header,
+.content-area,
+.widget-area,
+.site-footer {
+	@include row;
+}
+
+.site-branding,
+.main-navigation,
+.site-main,
+.site-info {
+	@include column(12);
+}
+
+.widget {
+	@include column(4);
+}

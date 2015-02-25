@@ -28,12 +28,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	 5.2 Menus
  6.0 Accessibility
  7.0 Alignments
+ 	7.1 Grid
  8.0 Clearings
  9.0 Header
 10.0 Widgets
 11.0 Content
 	11.1 Posts and pages
-	11.2 Post fomrats
+	11.2 Post formats
 	11.3 Comments
 12.0 Footer
 13.0 Media
@@ -92,6 +93,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 7.0 Alignments
 --------------------------------------------------------------*/
 @import "modules/alignments";
+
+/* 7.1 Grid
+--------------------------------------------------------------*/
+@import "modules/grid";
 
 /*--------------------------------------------------------------
 8.0 Clearings

@@ -27,12 +27,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	 5.2 Menus
  6.0 Accessibility
  7.0 Alignments
+ 	7.1 Grid
  8.0 Clearings
  9.0 Header
 10.0 Widgets
 11.0 Content
 	11.1 Posts and pages
-	11.2 Post fomrats
+	11.2 Post formats
 	11.3 Comments
 12.0 Footer
 13.0 Media
@@ -711,17 +712,21 @@ a:active {
 }
 
 /* Small menu. */
-.menu-toggle {
+.menu-toggle,
+.main-navigation.toggled .nav-menu {
+	display: block;
+}
+
+.main-navigation ul {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
+@media screen and (min-width: 45em) {
+	.menu-toggle {
+		display: none;
 	}
 	.main-navigation ul {
-		display: none;
+		display: block;
 	}
 }
 
@@ -805,6 +810,54 @@ a:active {
 	margin-left: auto;
 }
 
+/* 7.1 Grid
+--------------------------------------------------------------*/
+.site-header,
+.content-area,
+.widget-area,
+.site-footer {
+	display: block;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 0; 
+
+	*zoom: 1;
+}
+.site-header:before,
+.site-header:after,
+.content-area:before,
+.content-area:after,
+.widget-area:before,
+.widget-area:after,
+.site-footer:before,
+.site-footer:after {
+	content: " ";
+	display: table;
+}
+.site-header:after,
+.content-area:after,
+.widget-area:after,
+.site-footer:after {
+	clear: both;
+}
+
+.site-branding,
+.main-navigation,
+.site-main,
+.site-info {
+	float: left;
+	display: inline;
+	width: 100%;
+	padding: 0 15px;
+}
+
+.widget {
+	float: left;
+	display: inline;
+	width: 33.33333%;
+	padding: 0 15px;
+}
+
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/
@@ -843,6 +896,14 @@ a:active {
 /*--------------------------------------------------------------
 9.0 Header
 --------------------------------------------------------------*/
+.site-title {
+	text-align: center;
+}
+
+.site-description {
+	display: none;
+}
+
 /*--------------------------------------------------------------
 10.0 Widgets
 --------------------------------------------------------------*/
@@ -877,6 +938,7 @@ a:active {
 .entry-title {
 	font-weight: bold;
 	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
+	word-wrap: break-word;
 }
 
 .byline,
@@ -922,6 +984,11 @@ a:active {
 /*--------------------------------------------------------------
 12.0 Footer
 --------------------------------------------------------------*/
+/* Copyright, terms, and colophon */
+.site-info {
+	text-align: center;
+}
+
 /*--------------------------------------------------------------
 13.0 Media
 --------------------------------------------------------------*/
