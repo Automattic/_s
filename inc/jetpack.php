@@ -17,3 +17,9 @@ function _s_jetpack_setup() {
 	) );
 }
 add_action( 'after_setup_theme', '_s_jetpack_setup' );
+
+
+/**
+ * Prevent Jetpack from enabling modules by default.
+ */
+add_filter( 'jetpack_get_default_modules', '__return_empty_array', 99 );
