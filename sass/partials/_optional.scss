@@ -17,7 +17,7 @@ Optional Base Styles
 }
 
 #primary {
-	@include span-columns(12);
+	@include fill-parent;
 
 	@include wider-than(desktop) {
 		@include span-columns(8);
@@ -25,7 +25,7 @@ Optional Base Styles
 }
 
 #secondary {
-	@include span-columns(12);
+	@include fill-parent;
 
 	@include wider-than(desktop) {
 		@include span-columns(4);
@@ -62,6 +62,7 @@ Optional Base Styles
 
 .entry-title {
 	@include rem(font-size, 36px);
+	word-wrap: break-word;
 }
 
 // Comments
