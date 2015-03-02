@@ -5,7 +5,14 @@
 
 	if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
 		window.addEventListener( 'hashchange', function() {
-			var element = document.getElementById( location.hash.substring( 1 ) );
+			var id = location.hash.substring( 1 ),
+				element;
+
+			if ( ! /^[A-z0-9_-]+$/.test( id ) ) {
+				return;
+			}
+
+			element = document.getElementById( id );
 
 			if ( element ) {
 				if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) {

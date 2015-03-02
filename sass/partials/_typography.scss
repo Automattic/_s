@@ -42,8 +42,14 @@ i {
 	font-style: italic;
 }
 
-blockquote {
+blockquote, q {
+	quotes: "" "";
 	margin: 0 em(24px);
+
+	&:before,
+	&:after {
+		content: "";
+	}
 }
 
 address {

@@ -21,11 +21,9 @@ input[type="submit"] {
 	background: $color-background-button;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
-	cursor: pointer; // Improves usability and consistency of cursor style between image-type 'input' and others
-	-webkit-appearance: button; // Corrects inability to style clickable 'input' types in iOS
-	@include rem(font-size, 12px);
+	@include rem(12px);
 	line-height: 1;
-	padding: em(9px) em(16px) em(6px);
+	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 
 	&:hover {
@@ -33,8 +31,8 @@ input[type="submit"] {
 		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 	}
 
-	&:focus,
-	&:active {
+	&:active,
+	&:focus {
 		border-color: $color-border-button-focus;
 		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 	}
