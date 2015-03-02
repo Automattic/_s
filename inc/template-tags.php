@@ -7,13 +7,13 @@
  * @package _s
  */
 
-if ( ! function_exists( '_s_posts_navigation' ) ) :
+if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @todo Remove this function when WordPress 4.3 is released.
  */
-function _s_posts_navigation() {
+function the_posts_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
@@ -99,9 +99,9 @@ function _s_entry_footer() {
 }
 endif;
 
-if ( ! function_exists( '_s_archive_title' ) ) :
+if ( ! function_exists( 'the_archive_title' ) ) :
 /**
- * Shim for `_s_archive_title()`.
+ * Shim for `the_archive_title()`.
  *
  * Display the archive title based on the queried object.
  *
@@ -110,7 +110,7 @@ if ( ! function_exists( '_s_archive_title' ) ) :
  * @param string $before Optional. Content to prepend to the title. Default empty.
  * @param string $after  Optional. Content to append to the title. Default empty.
  */
-function _s_archive_title( $before = '', $after = '' ) {
+function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
 		$title = sprintf( __( 'Category: %s', '_s' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
@@ -166,9 +166,9 @@ function _s_archive_title( $before = '', $after = '' ) {
 }
 endif;
 
-if ( ! function_exists( '_s_archive_description' ) ) :
+if ( ! function_exists( 'the_archive_description' ) ) :
 /**
- * Shim for `_s_the_archive_description()`.
+ * Shim for `the_archive_description()`.
  *
  * Display category, tag, or term description.
  *
@@ -177,7 +177,7 @@ if ( ! function_exists( '_s_archive_description' ) ) :
  * @param string $before Optional. Content to prepend to the description. Default empty.
  * @param string $after  Optional. Content to append to the description. Default empty.
  */
-function _s_archive_description( $before = '', $after = '' ) {
+function the_archive_description( $before = '', $after = '' ) {
 	$description = apply_filters( 'get_the_archive_description', term_description() );
 
 	if ( ! empty( $description ) ) {
