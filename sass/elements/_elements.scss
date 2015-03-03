@@ -61,8 +61,10 @@ figure {
 	margin-left: 0;
 }
 
-figcaption {
+figcaption,
+.wp-caption-dd {
 	@include font-size-line("small");
 	font-weight: bold;
 	font-family: $font-family__caption;
+	text-align: center;
 }

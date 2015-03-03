@@ -513,12 +513,14 @@ figure {
 	margin-left: 0;
 }
 
-figcaption {
+figcaption,
+.wp-caption-dd {
 	font-weight: bold;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	text-align: center;
 }
 
 ul,
@@ -1041,6 +1043,12 @@ a:active {
 	clear: both; 
 	margin: 0 0 28px;
 	margin: 0 0 1.55556rem;
+}
+
+/* Author photos. */
+.avatar {
+	-webkit-border-radius: 50% 50%;
+	border-radius: 50% 50%;
 }
 
 /* Dropcaps. */
