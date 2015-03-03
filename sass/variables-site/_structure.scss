@@ -19,8 +19,20 @@ $max_width: $body-width-maximum;
 
 $spacing: (1px * $vertical-rhythm);
 
-
 // Misc
 // -------------------------------------------------------------
 
 $border-radius: 3px;
+
+// Media queries
+// -------------------------------------------------------------
+
+/*
+ * Map of min-width-based breakpoints. Always use semantic keys that describe
+ * how the site adapts at that breakpoint, to make code reading easier.
+ */
+$breakpoints: (
+    "main-spacing-1"  : 740px,
+    "main-spacing-2"  : 980px,
+    "beyond-max-width": $body-width-maximum
+);

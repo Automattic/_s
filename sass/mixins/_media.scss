@@ -1,0 +1,32 @@
+/// Wrap the contents in a min-width media query.
+/// - For a previously defined breakpoint, pass in a key from the map
+///   $breakpoint.
+/// - For a custom breakpoint, pass in a value with a unit, to be used as the
+///   min-width.
+///
+/// @global Map $breakpoints The standard breakpoint min-widths.
+/// @param String|Number $width      Either the breakpoint name or custom
+///                                  min-width value to use.
+/// @param Map           $widths-map Map of breakpoint min-widths to select
+///                                  from. Default $breakpoints.
+@mixin media($width, $widths-map: $breakpoints) {
+
+	// Declare the result variable outside of if block's scope.
+	$min-width: "";
+
+	@if "number" == type-of($width) {
+		@if unitless($width) {
+			@error "$width must not be a unitless value, was #{$width}"
+		}
+		$min-width: $width;
+	} @else if map-has-key($widths-map, $width) {
+		$min-width: map-get($widths-map, $width);
+	} @else {
+		@error "$width must be either a key in $widths-map or a length value, was #{$width}";
+	}
+
+	// Output.
+	@media (min-width: $min-width) {
+		@content;
+	}
+}
