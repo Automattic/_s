@@ -33,6 +33,13 @@
 	clear: both;
 }
 
+/* Byline and other metadata. */
+.entry-meta,
+.entry-footer {
+	font-weight: bold;
+	font-family: $font-family__meta;
+}
+
 /* Author photos. */
 .avatar {
 	border-radius: 50% 50%;

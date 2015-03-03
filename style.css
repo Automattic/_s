@@ -705,6 +705,10 @@ a:active {
 	margin: 0;
 	padding-left: 0;
 	list-style: none;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	text-transform: uppercase;
 	/*
 		 * Submenus.
 		 * 1. Override the default sub-list styling.
@@ -725,8 +729,8 @@ a:active {
 	left: -999em;
 	float: left;
 	min-width: 100%;
-	font-size: 18px;
-	font-size: 1rem;
+	font-size: 16px;
+	font-size: 0.88889rem;
 	line-height: 1.25;
 	/* 1 */
 	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -754,7 +758,9 @@ a:active {
 	/* 2 */
 }
 .main-navigation li {
-	position: relative;
+	position: relative; 
+	padding: 14px 28px;
+	padding: 0.77778rem 1.55556rem;
 }
 .main-navigation a {
 	display: block;
@@ -1043,6 +1049,13 @@ a:active {
 	clear: both; 
 	margin: 0 0 28px;
 	margin: 0 0 1.55556rem;
+}
+
+/* Byline and other metadata. */
+.entry-meta,
+.entry-footer {
+	font-weight: bold;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 }
 
 /* Author photos. */
