@@ -54,3 +54,15 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
+
+// Remove normalize left/right padding that alters proper content alignment.
+figure {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+figcaption {
+	@include font-size-line("small");
+	font-weight: bold;
+	font-family: $font-family__caption;
+}
