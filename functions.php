@@ -90,6 +90,13 @@ function yumag_setup() {
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
 
+	/*
+	 * Enable support for Featured Images.
+	 */
+	add_theme_support( 'post_thumbnails', array(
+		'post', 'page'
+	) );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'yumag_custom_background_args', array(
 		'default-color' => 'ffffff',
