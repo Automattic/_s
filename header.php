@@ -23,7 +23,15 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h1 class="site-title">
+				<?php if ( ! is_front_page() ) : ?>
+				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
+				<?php endif; ?>
+				<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="150" height="103">
+				<?php if ( ! is_front_page() ) : ?>
+				</a>
+				<?php endif; ?>
+			</h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div><!-- .site-branding -->
 
