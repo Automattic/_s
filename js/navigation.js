@@ -13,7 +13,10 @@
 
 	/**
 	 * Handle clicks of the menu toggle buttons.
-	 * @param {Event} e Event object.
+	 * @param {Element} container The wrapper for both button and content.
+	 * @param {Element} button    The toggle button.
+	 * @param {Element} menu      The toggled content.
+	 * @param {String}  side      Which menu is being toggled ('left' | 'right')
 	 */
 	function menuToggleClick( container, button, menu, side ) {
 		var bodyClass = 'menu-' + side + '-toggled';
@@ -21,17 +24,26 @@
 			? 'menu-right-toggled'
 			: 'menu-left-toggled';
 
-		if ( -1 !== document.body.className.indexOf( bodyClass ) ) {
-			document.body.className = document.body.className.replace( ' ' + bodyClass, '' );
+		if ( document.body.classList.contains( bodyClass ) ) {
+			document.body.classList.remove( bodyClass );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
-			document.body.className += ' ' + bodyClass;
-			document.body.className = document.body.className.replace( ' ' + notBodyClass, '' );
+			document.body.classList.add( bodyClass );
+			document.body.classList.remove( notBodyClass );
 
-			// TODO change attribute to false for the other button and menu
+			// TODO change attribute to false for the other button and menu too.
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
+		}
+	}
+
+
+	function flagScrollBelowMasthead() {
+		if ( ( ( 28 * 8 ) / 2 ) < window.pageYOffset ) {
+			document.body.classList.add( 'mini-masthead' );
+		} else {
+			document.body.classList.remove( 'mini-masthead' );
 		}
 	}
 
@@ -66,5 +78,14 @@
 		} )( container, button, menu ) );
 
 	}
+
+	window.requestAnimationFrame = window.requestAnimationFrame
+    || window.mozRequestAnimationFrame
+    || window.webkitRequestAnimationFrame
+    || window.msRequestAnimationFrame;
+
+    window.addEventListener( 'scroll' , function () {
+    	return requestAnimationFrame(flagScrollBelowMasthead);
+    } );
 
 } )();

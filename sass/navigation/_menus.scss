@@ -1,3 +1,7 @@
+body {
+	transition: $transition-time__menu transform $transition-type;
+}
+
 
 .main-navigation {
 	clear: both;
@@ -37,37 +41,15 @@
 }
 
 .menu-left-toggled {
-	@include rem( "left", $width__menu );
 	position: relative;
-
-	.menu-toggle {
-		@include rem( "left", ( $width__menu + $width__menu-toggle ) );
-	}
-
-	.search-toggle {
-		@include rem( "right", ( $width__menu-toggle - $width__menu ) );
-	}
-
-	.main-navigation-wrapper {
-		left: 0
-	}
+	transform: translate3d( cj-calculate-rem-fallback( $width__menu ), 0, 0 );
+	transform: translate3d( $width__menu, 0, 0 );
 
 }
 .menu-right-toggled {
-	@include rem( "right", $width__menu );
 	position: relative;
-
-	.menu-toggle {
-		@include rem( "left", ( $width__menu-toggle - $width__menu ) );
-	}
-
-	.search-toggle {
-		@include rem( "right", ( $width__menu + $width__menu-toggle ) );
-	}
-
-	.main-search-wrapper {
-		right: 0;
-	}
+	transform: translate3d( cj-calculate-rem-fallback( ( -1 * $width__menu ) ), 0, 0 );
+	transform: translate3d( ( -1 * $width__menu ), 0, 0 );
 
 }
 
@@ -86,12 +68,10 @@
 
 .main-navigation-wrapper {
 	@include rem( "left", ( $width__menu * -1 ) );
-    transition: $transition-time__menu left $transition-type;
 }
 
 .main-search-wrapper {
 	@include rem( "right", ( $width__menu * -1 ) );
-    transition: $transition-time__menu right $transition-type;
 }
 
 .menu-toggle,
@@ -115,13 +95,9 @@
 	text-align: center;
 	text-transform: uppercase;
 
-	&:hover,
-	&:focus {
-
-	}
-
 	&:active {
 		box-shadow: none;
+		text-shadow: none;
 	}
 
 }

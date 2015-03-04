@@ -695,6 +695,11 @@ a:active {
 
 /* 5.2 Menus
 --------------------------------------------------------------*/
+body {
+	-webkit-transition: 0.1s -webkit-transform ease-in;
+	transition: 0.1s transform ease-in;
+}
+
 .main-navigation {
 	clear: both;
 	float: left;
@@ -721,37 +726,19 @@ a:active {
 }
 
 .menu-left-toggled {
-	position: relative; 
-	left: 280px;
-	left: 15.55556rem;
-}
-.menu-left-toggled .menu-toggle {
-	left: 364px;
-	left: 20.22222rem;
-}
-.menu-left-toggled .search-toggle {
-	right: -196px;
-	right: -10.88889rem;
-}
-.menu-left-toggled .main-navigation-wrapper {
-	left: 0;
+	position: relative;
+	-webkit-transform: translate3d(280px, 0, 0);
+	-webkit-transform: translate3d(15.55556rem, 0, 0);
+	transform: translate3d(280px, 0, 0);
+	transform: translate3d(15.55556rem, 0, 0);
 }
 
 .menu-right-toggled {
-	position: relative; 
-	right: 280px;
-	right: 15.55556rem;
-}
-.menu-right-toggled .menu-toggle {
-	left: -196px;
-	left: -10.88889rem;
-}
-.menu-right-toggled .search-toggle {
-	right: 364px;
-	right: 20.22222rem;
-}
-.menu-right-toggled .main-search-wrapper {
-	right: 0;
+	position: relative;
+	-webkit-transform: translate3d(-280px, 0, 0);
+	-webkit-transform: translate3d(-15.55556rem, 0, 0);
+	transform: translate3d(-280px, 0, 0);
+	transform: translate3d(-15.55556rem, 0, 0);
 }
 
 .main-navigation-wrapper,
@@ -768,15 +755,11 @@ a:active {
 .main-navigation-wrapper {
 	left: -280px;
 	left: -15.55556rem;
-	-webkit-transition: 0.4s left ease-in;
-	transition: 0.4s left ease-in;
 }
 
 .main-search-wrapper {
 	right: -280px;
 	right: -15.55556rem;
-	-webkit-transition: 0.4s right ease-in;
-	transition: 0.4s right ease-in;
 }
 
 .menu-toggle,
@@ -810,13 +793,14 @@ a:active {
 .search-toggle:active {
 	-webkit-box-shadow: none;
 	box-shadow: none;
+	text-shadow: none;
 }
 
 .menu-toggle {
 	left: 84px;
 	left: 4.66667rem;
-	-webkit-transition: 0.4s left ease-in;
-	transition: 0.4s left ease-in; 
+	-webkit-transition: 0.1s left ease-in;
+	transition: 0.1s left ease-in; 
 	-webkit-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
@@ -828,8 +812,8 @@ a:active {
 .search-toggle {
 	right: 84px;
 	right: 4.66667rem;
-	-webkit-transition: 0.4s right ease-in;
-	transition: 0.4s right ease-in; 
+	-webkit-transition: 0.1s right ease-in;
+	transition: 0.1s right ease-in; 
 	-webkit-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
