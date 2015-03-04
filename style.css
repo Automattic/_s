@@ -709,53 +709,6 @@ a:active {
 	font-size: 0.88889rem;
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 	text-transform: uppercase;
-	/*
-		 * Submenus.
-		 * 1. Override the default sub-list styling.
-		 * 2. Delay moving the menu off-screen until it's faded out.
-		 */
-	/*
-		 * Show submenu on parent:hover.
-		 * 1. For fade in effect.
-		 * 2. Overwrite the delay in moving the submenu into view, so we can see
-		 *    the fade in effect.
-		 */
-}
-.main-navigation ul ul {
-	position: absolute;
-	z-index: 99999;
-	top: 28px;
-	top: 1.55556rem;
-	left: -999em;
-	float: left;
-	min-width: 100%;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.25;
-	/* 1 */
-	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	opacity: 0;
-	/* 1 */
-	-webkit-transition: 0.2s opacity ease-in, 0s left linear 0.2s;
-	transition: 0.2s opacity ease-in, 0s left linear 0.2s;
-	/* 2 */
-}
-.main-navigation ul ul li {
-	padding: 7px 14px;
-	padding: 0.38889rem 0.77778rem;
-	text-align: left;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul li:hover > ul {
-	left: 0;
-	opacity: 1;
-	/* 1 */
-	-webkit-transition: 0.2s opacity ease-in;
-	transition: 0.2s opacity ease-in;
-	/* 2 */
 }
 .main-navigation li {
 	position: relative; 
@@ -767,53 +720,122 @@ a:active {
 	text-decoration: none;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled .nav-menu {
+.menu-left-toggled {
+	position: relative; 
+	left: 280px;
+	left: 15.55556rem;
+}
+.menu-left-toggled .menu-toggle {
+	left: 364px;
+	left: 20.22222rem;
+}
+.menu-left-toggled .search-toggle {
+	right: -196px;
+	right: -10.88889rem;
+}
+.menu-left-toggled .main-navigation-wrapper {
+	left: 0;
+}
+
+.menu-right-toggled {
+	position: relative; 
+	right: 280px;
+	right: 15.55556rem;
+}
+.menu-right-toggled .menu-toggle {
+	left: -196px;
+	left: -10.88889rem;
+}
+.menu-right-toggled .search-toggle {
+	right: 364px;
+	right: 20.22222rem;
+}
+.menu-right-toggled .main-search-wrapper {
+	right: 0;
+}
+
+.main-navigation-wrapper,
+.main-search-wrapper {
+	position: fixed;
+	top: 0;
 	display: block;
+	overflow-y: scroll;
+	width: 15.55556rem;
+	height: 100%;
+	background: #171717;
 }
 
-.main-navigation .nav-menu {
-	display: none;
+.main-navigation-wrapper {
+	left: -280px;
+	left: -15.55556rem;
+	-webkit-transition: 0.4s left ease-in;
+	transition: 0.4s left ease-in;
 }
 
-/* Responsive menu */
-@media screen and (min-width: 45em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation .nav-menu {
-		display: table;
-		width: 100%;
-	}
-	.main-navigation .nav-menu > li {
-		display: table-cell;
-		text-align: center;
-		border-right: 1px solid #fff;
-		border-left: 1px solid #fff;
-		background: #eee;
-	}
+.main-search-wrapper {
+	right: -280px;
+	right: -15.55556rem;
+	-webkit-transition: 0.4s right ease-in;
+	transition: 0.4s right ease-in;
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	overflow: hidden; 
-	margin: 0 0 28px;
-	margin: 0 0 1.55556rem;
+.menu-toggle,
+.search-toggle {
+	position: fixed;
+	top: 0;
+	display: block;
+	width: 224px;
+	width: 12.44444rem;
+	height: 84px;
+	height: 4.66667rem;
+	padding-top: 1.55556rem;
+	font-weight: bold;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 84px;
+	line-height: 4.66667rem;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase; 
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	border: 0;
+	background: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	text-shadow: none;
 }
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.menu-toggle:active,
+.search-toggle:active {
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	width: 50%; 
-	text-align: right;
+
+.menu-toggle {
+	left: 84px;
+	left: 4.66667rem;
+	-webkit-transition: 0.4s left ease-in;
+	transition: 0.4s left ease-in; 
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transform-origin: left top 0;
+	-ms-transform-origin: left top 0;
+	transform-origin: left top 0;
+}
+
+.search-toggle {
+	right: 84px;
+	right: 4.66667rem;
+	-webkit-transition: 0.4s right ease-in;
+	transition: 0.4s right ease-in; 
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	-webkit-transform-origin: right top 0;
+	-ms-transform-origin: right top 0;
+	transform-origin: right top 0;
 }
 
 /*--------------------------------------------------------------
@@ -927,9 +949,9 @@ a:active {
 	.site-main {
 		float: left;
 		display: inline;
-		width: 83.33333%;
-		margin-right: 8.33333%; 
-		margin-left: 8.33333%;
+		width: 66.66667%;
+		margin-right: 16.66667%; 
+		margin-left: 16.66667%;
 		padding: 0 14px;
 	}
 }
@@ -938,9 +960,9 @@ a:active {
 	.site-main {
 		float: left;
 		display: inline;
-		width: 66.66667%;
-		margin-right: 16.66667%; 
-		margin-left: 16.66667%;
+		width: 50%;
+		margin-right: 25%; 
+		margin-left: 25%;
 		padding: 0 14px;
 	}
 }
@@ -983,8 +1005,22 @@ a:active {
 /*--------------------------------------------------------------
 9.0 Header
 --------------------------------------------------------------*/
+.site-header {
+	height: 224px;
+	height: 12.44444rem;
+}
+
 .site-title {
+	margin: 0;
+	line-height: 224px;
+	line-height: 12.44444rem;
 	text-align: center;
+}
+.site-title img {
+	position: relative;
+	top: 0.35em;
+	/* The bottom part of the logo is a 'Y' descender, so we shift the image so its 'baseline' looks right. */
+	vertical-align: middle;
 }
 
 .site-description {

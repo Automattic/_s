@@ -19,9 +19,9 @@
 @include media("main-spacing-1") {
 
 	.site-main {
-		@include column(10);
-		@include push;
-		@include pull;
+		@include column(8);
+		@include push(2);
+		@include pull(2);
 	}
 
 }
@@ -29,9 +29,9 @@
 @include media("main-spacing-2") {
 
 	.site-main {
-		@include column(8);
-		@include push(2);
-		@include pull(2);
+		@include column(6);
+		@include push(3);
+		@include pull(3);
 	}
 
 }

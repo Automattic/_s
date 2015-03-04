@@ -6,8 +6,8 @@ $size__site-sidebar: 25%;
 
 // Standard columns
 $columns: 12;
-$gutter-width: (1px * $vertical-rhythm);
-$gutter: ($gutter-width / 2);
+$gutter-width: ( 1px * $vertical-rhythm );
+$gutter: ( $gutter-width / 2 );
 $body-width-maximum: 1400px;
 
 // Variables used by grid mixins
@@ -23,6 +23,10 @@ $spacing: (1px * $vertical-rhythm);
 // -------------------------------------------------------------
 
 $border-radius: 3px;
+
+$height__masthead: ( $line * 8 );
+$width__menu: ( $line * 10 );
+$width__menu-toggle: ( $line * 3 );
 
 // Media queries
 // -------------------------------------------------------------

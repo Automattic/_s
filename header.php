@@ -22,12 +22,31 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'yumag' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+
+		<nav id="site-navigation" class="main-navigation js-menu-area" role="navigation" data-menu-side="left">
+			<button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'yumag' ); ?></button>
+			<div class="main-navigation-wrapper js-menu-contents">
+				<?php wp_nav_menu( array(
+					'container' => false,
+					'theme_location' => 'primary',
+					'depth' => 1
+				) ); ?>
+			</div>
+		</nav><!-- #site-navigation -->
+
+		<div id="site-search" class="main-search js-menu-area" role="search" data-menu-side="right">
+			<button class="search-toggle js-menu-toggle" aria-controls="search" aria-expanded="false"><?php _e( 'Search', 'yumag' ); ?></button>
+			<div class="main-search-wrapper js-menu-contents">
+				<?php get_search_form(); ?>
+			</div>
+		</div><!-- #site-search -->
+
 		<div class="site-branding">
 			<h1 class="site-title">
 				<?php if ( ! is_front_page() ) : ?>
 				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
 				<?php endif; ?>
-				<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="150" height="103">
+				<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="125" height="89">
 				<?php if ( ! is_front_page() ) : ?>
 				</a>
 				<?php endif; ?>
@@ -35,14 +54,6 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'yumag' ); ?></button>
-			<?php wp_nav_menu( array(
-				'container' => false,
-				'theme_location' => 'primary',
-				'depth' => 2
-			) ); ?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -1,6 +1,19 @@
+.site-header {
+	@include rem( "height", $height__masthead );
+}
+
 .site-title {
 	@extend %title-font;
+	@include rem( "line-height", $height__masthead );
+	margin: 0;
 	text-align: center;
+
+	img {
+		position: relative;
+		top: 0.35em; /* The bottom part of the logo is a 'Y' descender, so we shift the image so its 'baseline' looks right. */
+		vertical-align: middle;
+	}
+
 }
 
 .site-description {

@@ -1,3 +1,4 @@
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -11,54 +12,6 @@
 		padding-left: 0;
 		font-family: $font-family__nav;
 		text-transform: uppercase;
-
-		/*
-		 * Submenus.
-		 * 1. Override the default sub-list styling.
-		 * 2. Delay moving the menu off-screen until it's faded out.
-		 */
-		ul {
-			@include rem( "top", $spacing );
-			@include font-size( "small" ); /* 1 */
-			box-shadow: 0 3px 3px rgba( 0, 0, 0, 0.2 );
-			float: left;
-			position: absolute;
-			left: -999em;
-			z-index: 99999;
-			min-width: 100%;
-			opacity: 0;
-			line-height: 1.25; /* 1 */
-			transition: $transition-time__navigation opacity $transition-type,
-				0s left linear $transition-time__navigation; /* 2 */
-
-			li {
-				@include rem( "padding", ( $spacing * 0.25 ) ( $spacing * 0.5) );
-				text-align: left;
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a {
-			}
-
-			a:hover {
-			}
-
-		}
-
-		/*
-		 * Show submenu on parent:hover.
-		 * 1. For fade in effect.
-		 * 2. Overwrite the delay in moving the submenu into view, so we can see
-		 *    the fade in effect.
-		 */
-		li:hover > ul {
-			left: 0;
-			opacity: 1; /* 1 */
-			transition: $transition-time__navigation opacity $transition-type; /* 2 */
-		}
 
 	}
 
@@ -83,56 +36,106 @@
 
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled .nav-menu {
-	display: block;
-}
-
-.main-navigation .nav-menu {
-	display: none;
-}
-
-/* Responsive menu */
-@media screen and (min-width: 45em) {
+.menu-left-toggled {
+	@include rem( "left", $width__menu );
+	position: relative;
 
 	.menu-toggle {
-		display: none;
+		@include rem( "left", ( $width__menu + $width__menu-toggle ) );
 	}
 
-	.main-navigation .nav-menu {
-		display: table;
-		width: 100%;
+	.search-toggle {
+		@include rem( "right", ( $width__menu-toggle - $width__menu ) );
+	}
 
-		> li {
-			display: table-cell;
-			text-align: center;
-			border-right: 1px solid #fff;
-			border-left:  1px solid #fff;
-			background: #eee;
-		}
+	.main-navigation-wrapper {
+		left: 0
+	}
 
+}
+.menu-right-toggled {
+	@include rem( "right", $width__menu );
+	position: relative;
+
+	.menu-toggle {
+		@include rem( "left", ( $width__menu-toggle - $width__menu ) );
+	}
+
+	.search-toggle {
+		@include rem( "right", ( $width__menu + $width__menu-toggle ) );
+	}
+
+	.main-search-wrapper {
+		right: 0;
 	}
 
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
 
-	.site-main & {
-		@include rem( "margin", 0 0 $spacing );
-		overflow: hidden;
+.main-navigation-wrapper,
+.main-search-wrapper {
+	display: block;
+	width: $width__menu;
+    height: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    background: $background-color__menu;
+}
+
+
+.main-navigation-wrapper {
+	@include rem( "left", ( $width__menu * -1 ) );
+    transition: $transition-time__menu left $transition-type;
+}
+
+.main-search-wrapper {
+	@include rem( "right", ( $width__menu * -1 ) );
+    transition: $transition-time__menu right $transition-type;
+}
+
+.menu-toggle,
+.search-toggle {
+	@include font-size( "normal" );
+	@include rem( "width", $height__masthead );
+	@include rem( "height", $width__menu-toggle );
+	@include rem( "line-height", $width__menu-toggle );
+	position: fixed;
+	top: 0;
+	display: block;
+	padding-top: $line;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	text-shadow: none;
+	background: transparent;
+	font-weight: bold;
+	font-family: $font-family__button;
+	letter-spacing: 0.05em;
+	text-align: center;
+	text-transform: uppercase;
+
+	&:hover,
+	&:focus {
+
 	}
 
-	& .nav-previous {
-		float: left;
-		width: 50%;
+	&:active {
+		box-shadow: none;
 	}
 
-	& .nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
+}
+
+.menu-toggle {
+	@include rem( "left", $width__menu-toggle );
+	transform: rotate(90deg);
+	transform-origin: left top 0;
+    transition: $transition-time__menu left $transition-type;
+}
+
+.search-toggle {
+	@include rem( "right", $width__menu-toggle );
+	transform: rotate(-90deg);
+	transform-origin: right top 0;
+    transition: $transition-time__menu right $transition-type;
 }
