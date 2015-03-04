@@ -6,6 +6,7 @@
 					'theme_location'	=> 'primary',
 					'container'			=> false,
 					'menu_id'			=> 'nav-primary',
+					'fallback_cb'		=> '',
 					"walker"			=> new Drop_Menu_Walker(),
 				)
 			); ?>
