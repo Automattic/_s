@@ -1,6 +1,6 @@
-
 # OS generated files #
 ######################
+
 .DS_Store
 .DS_Store?
 ._*
@@ -9,22 +9,31 @@
 ehthumbs.db
 Thumbs.db
 
+
 # Node #
 ######################
+
 node_modules
 .npm-debug.log
 
+
 # Bower #
 ######################
+
 bower_components
+
 
 # SASS #
 ######################
+
 *.sass-cache
+
 
 # Source Maps #
 ######################
+
 *.map
+
 
 # SublimeText #
 ######################
