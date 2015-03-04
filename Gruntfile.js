@@ -25,6 +25,7 @@ module.exports = function(grunt) {
                             'Use it to make something cool, have fun, and share what you\'ve learned with others.\n\n' +
                              '_s2 is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.\n' +
                             ' */\n',
+                    sourcemap: 'none',
                 },
                 files: {
                     'style.css': 'sass/style.scss',
@@ -36,6 +37,7 @@ module.exports = function(grunt) {
                     banner: '/*\n' +
                             'Theme Name: _s2\n' +
                             ' */\n',
+                    sourcemap: 'none',
                 },
                 files: {
                     'css/editor-style.css': 'sass/editor-style.scss',
@@ -48,7 +50,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             options: {
                 browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
-                map: true
+                map: false
             },
             multiple_files: {
                 expand: true,
@@ -60,7 +62,7 @@ module.exports = function(grunt) {
             single_file: {
               options: {
                 browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ios 6', 'android 4'],
-                map: true
+                map: false
               },
               src: 'style.css',
               dest: 'style.css'
@@ -81,6 +83,9 @@ module.exports = function(grunt) {
 
         // uglify to concat, minify, and make source maps
         uglify: {
+            options: {
+                sourceMap: false
+            },
             main: {
                 files: {
                     'js/main.js': [
