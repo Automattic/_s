@@ -1,3 +1,4 @@
+
 # OS generated files #
 ######################
 .DS_Store
@@ -27,4 +28,15 @@ bower_components
 
 # SublimeText #
 ######################
+
+# Cache Files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Workspace
 *.sublime-workspace
+
+# Projects
+# Recommended to keep under version control
+*.sublime-project
