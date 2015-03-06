@@ -118,3 +118,25 @@ function yumag_create_dropcap( $content ) {
 	return $content;
 }
 endif;
+
+if ( ! function_exists( 'yumag_entry_classes' ) ) :
+/**
+ * Filter to add generic class for both posts and pages to the article element.
+ *
+ * Adds the class 'entry' in all cases. If this is a page or a single post,
+ * also adds a 'single-entry' class.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Array of classes to be added to this post/page.
+ * @return array The classes array.
+ */
+function yumag_entry_classes( $classes ) {
+	$classes[] = 'entry';
+	if ( is_single() || is_page() ) {
+		$classes[] = 'single-entry';
+	}
+	return $classes;
+}
+add_filter( 'post_class', 'yumag_entry_classes' );
+endif;
