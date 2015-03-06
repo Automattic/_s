@@ -885,6 +885,7 @@ body {
 --------------------------------------------------------------*/
 .site-header,
 .content-area,
+.single-entry,
 .widget-area,
 .site-footer {
 	display: block;
@@ -898,6 +899,8 @@ body {
 .site-header:after,
 .content-area:before,
 .content-area:after,
+.single-entry:before,
+.single-entry:after,
 .widget-area:before,
 .widget-area:after,
 .site-footer:before,
@@ -907,14 +910,19 @@ body {
 }
 .site-header:after,
 .content-area:after,
+.single-entry:after,
 .widget-area:after,
 .site-footer:after {
 	clear: both;
 }
 
+/* Every column is full-width for mobiles. */
 .site-branding,
-.main-navigation,
 .site-main,
+.single-entry .entry-header,
+.single-entry .entry-content,
+.single-entry .entry-footer,
+.widget,
 .site-info {
 	float: left;
 	display: inline;
@@ -922,15 +930,23 @@ body {
 	padding: 0 14px;
 }
 
-.widget {
-	float: left;
-	display: inline;
-	width: 33.33333%;
-	padding: 0 14px;
-}
-
 @media (min-width: 740px) {
-	.site-main {
+	/*
+	 * Leave a column free on either side of most content, for the Menu and
+	 * Search toggles.
+	 */
+	.single-entry .entry-header,
+	.single-entry .entry-footer,
+	.site-info {
+		float: left;
+		display: inline;
+		width: 83.33333%;
+		margin-right: 8.33333%; 
+		margin-left: 8.33333%;
+		padding: 0 14px;
+	}
+	/* Narrower content column than everything else, for better line length. */
+	.single-entry .entry-content {
 		float: left;
 		display: inline;
 		width: 66.66667%;
@@ -938,15 +954,30 @@ body {
 		margin-left: 16.66667%;
 		padding: 0 14px;
 	}
+	/* Side-by-side widgets. */
+	.widget {
+		float: left;
+		display: inline;
+		width: 50%;
+		padding: 0 14px;
+	}
 }
 
 @media (min-width: 980px) {
-	.site-main {
+	/* Even narrower content column, to maintain sensible line length. */
+	.single-entry .entry-content {
 		float: left;
 		display: inline;
 		width: 50%;
 		margin-right: 25%; 
 		margin-left: 25%;
+		padding: 0 14px;
+	}
+	/* 3 widgets per row. */
+	.widget {
+		float: left;
+		display: inline;
+		width: 33.33333%;
 		padding: 0 14px;
 	}
 }
