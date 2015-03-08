@@ -26,11 +26,32 @@ function write_log( $log )  {
 }
 endif;
 
+if ( !function_exists( 'write_filters' ) ) :
 /**
- * Set the content width based on the theme's design and stylesheet.
+ * Debug function to log all filters on a named hook.
+ *
+ * @since 1.0.0
+ *
+ * @param string $hook The name of the hook.
+ */
+function write_filters( $hook ) {
+	global $wp_filter;
+	if ( ! empty( $hook ) && isset( $wp_filter[ $hook ] ) ) {
+		write_log( $wp_filter[ $hook ] );
+	}
+}
+endif;
+
+function init_debug() {
+	//write_filters( 'image_size_names_choose' );
+}
+add_action( 'admin_init', 'init_debug', 1000 );
+
+/**
+ * Set the max content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 658; /* pixels */
 }
 
 if ( ! function_exists( 'yumag_setup' ) ) :
@@ -67,11 +88,17 @@ function yumag_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 150, 150, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'yumag' ),
+	) );
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus( array(
+		'utilities' => __( 'Utilities Menu', 'yumag' ),
 	) );
 
 	/*
@@ -91,36 +118,62 @@ function yumag_setup() {
 	// ) );
 
 	/*
-	 * Enable support for Featured Images.
+	 * Setup image dimensions.
+	 * - yumag-photo-large = full width of content area (max. 658x658)
+	 * - yumag-photo-small = sized to go in content margins (max. 233 wide)
 	 */
-	add_theme_support( 'post_thumbnails', array(
-		'post', 'page'
-	) );
+	add_image_size( 'yumag-photo-large', 658, 658, false );
+	add_image_size( 'yumag-photo-small', 233, 9999, false );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'yumag_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	/*
+	 * Register stylesheet for TinyMCE content (editor-style.css).
+	 */
+	add_editor_style();
+
 }
 endif; // yumag_setup
 add_action( 'after_setup_theme', 'yumag_setup' );
 
 /**
- * Register widget area.
+ * Register widget areas.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function yumag_widgets_init() {
+
+	// Left menu area.
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'yumag' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'name'          => __( 'Menu Widgets', 'yumag' ),
+		'id'            => 'menu-widgets',
+		'description'   => 'Widgets underneath the menus in the left sidebar of each page.',
+		'before_widget' => '<aside id="%1$s" class="widget menu-widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	// Right menu area.
+	register_sidebar( array(
+		'name'          => __( 'Search Widgets', 'yumag' ),
+		'id'            => 'search-widgets',
+		'description'   => 'Widgets in the right sidebar of each page.',
+		'before_widget' => '<aside id="%1$s" class="widget search-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	// Footer area.
+	register_sidebar( array(
+		'name'          => __( 'Footer Widgets', 'yumag' ),
+		'id'            => 'footer-widgets',
+		'description'   => 'Widgets below the content area of each page.',
+		'before_widget' => '<aside id="%1$s" class="widget footer-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
 }
 add_action( 'widgets_init', 'yumag_widgets_init' );
 
