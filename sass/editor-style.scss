@@ -1,0 +1,92 @@
+/**
+ * Styles for text within the WordPress TinyMCE editor.
+ *
+ * Compiled from a subset of the full theme styles, leaving out styles that
+ * are targeted at non-content elements of the page.
+ *
+ * Table of contents numbering matches that in style.css (which is why there
+ * are gaps in the numbering).
+ */
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+ 1.0 Normalize
+ 2.0 Typography
+ 3.0 Elements
+ 5.0 Navigation
+	 5.1 Links
+ 7.0 Alignments
+ 8.0 Clearings
+11.0 Content
+	11.1 Posts and pages
+13.0 Media
+	13.1 Captions
+	13.2 Galleries
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "functions/functions-master";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+1.0 Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+@import "typography/headings";
+@import "typography/copy";
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+@import "elements/lists";
+@import "elements/tables";
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+
+/* 5.1 Links
+--------------------------------------------------------------*/
+@import "navigation/links";
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+11.0 Content
+--------------------------------------------------------------*/
+
+/* 11.1 Posts and pages
+--------------------------------------------------------------*/
+@import "site/primary/posts-and-pages";
+
+/*--------------------------------------------------------------
+13.0 Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+/* 13.1 Captions
+--------------------------------------------------------------*/
+@import "media/captions";
+
+/* 13.2 Galleries
+--------------------------------------------------------------*/
+@import "media/galleries";
+
+/*--------------------------------------------------------------
+        Webfonts
+--------------------------------------------------------------*/
+@import "fonts";
