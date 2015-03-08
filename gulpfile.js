@@ -41,7 +41,7 @@ gulp.task( 'styles', function() {
 		.pipe( gulp.dest( './' ) )
 		.pipe( notify( {
 			title: 'Compiled yumag styles successfully',
-			message: '',
+			message: 'Styles compiled',
 			sound: false,
 			onLast: true
 		} ) );
