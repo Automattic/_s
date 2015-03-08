@@ -17,7 +17,7 @@ $max_width: $body-width-maximum;
 // Margins
 // -------------------------------------------------------------
 
-$spacing: (1px * $vertical-rhythm);
+$spacing: ( 1px * $vertical-rhythm );
 
 // Misc
 // -------------------------------------------------------------
@@ -35,7 +35,9 @@ $width__menu-toggle: ( $line * 3 );
 // Map of min-width-based breakpoints. Always use semantic keys that describe
 // how the site adapts at that breakpoint, to make code reading easier.
 $breakpoints: (
-    "main-spacing-1"  : 740px,
-    "main-spacing-2"  : 980px,
+	"main-spacing"    : 720px,
+    "main-spacing-1"  : 800px,
+    "main-spacing-2"  : 1020px,
+    "images-in-margin": 1120px,
     "beyond-max-width": $body-width-maximum
 );
