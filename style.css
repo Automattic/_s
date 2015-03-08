@@ -33,8 +33,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 10.0 Widgets
 11.0 Content
 	11.1 Posts and pages
-	11.2 Post formats
-	11.3 Comments
+	11.2 Comments
 12.0 Footer
 13.0 Media
 	13.1 Captions
@@ -460,9 +459,24 @@ html {
 	box-sizing: inherit;
 }
 
-body {
+/* The background for the menu and search sidebars. */
+html {
+	position: relative;
+	background: #171717;
+	/* Leave room for the toolbar. */
+}
+
+/*
+ * The 'real' background form the user's perspective.
+ * 1. To establish a new stacking context, for overlapping the sidebars.
+ * 2. Don't leave any room underneath this container on short pages.
+ */
+.site {
+	position: relative;
+	/* 1 */
+	min-height: 100vh;
+	/* 2 */
 	background: #fff;
-	/* Fallback for when there is no custom background color defined. */
 }
 
 blockquote,
@@ -695,11 +709,13 @@ a:active {
 
 /* 5.2 Menus
 --------------------------------------------------------------*/
-body {
+/* Animation for moving the page 'out of the way' of the sidebars. */
+.site {
 	-webkit-transition: 0.1s -webkit-transform ease-in;
 	transition: 0.1s transform ease-in;
 }
 
+/* Menu sidebar. */
 .main-navigation {
 	clear: both;
 	float: left;
@@ -725,47 +741,40 @@ body {
 	text-decoration: none;
 }
 
-.menu-left-toggled {
-	position: relative;
-	-webkit-transform: translate3d(280px, 0, 0);
-	-webkit-transform: translate3d(15.55556rem, 0, 0);
-	transform: translate3d(280px, 0, 0);
-	transform: translate3d(15.55556rem, 0, 0);
-}
-
-.menu-right-toggled {
-	position: relative;
-	-webkit-transform: translate3d(-280px, 0, 0);
-	-webkit-transform: translate3d(-15.55556rem, 0, 0);
-	transform: translate3d(-280px, 0, 0);
-	transform: translate3d(-15.55556rem, 0, 0);
-}
-
+/*
+ * 1. Even though these are overlapped by the main content area, we still have
+ *    to hide them until they're displayed so they don't peek out above or
+ *    below the main content when the scrolling is rubber-banding.
+ */
 .main-navigation-wrapper,
 .main-search-wrapper {
 	position: fixed;
-	top: 0;
-	display: block;
+	top: 0; 
+	display: none;
 	overflow-y: scroll;
+	/* 1 */
 	width: 15.55556rem;
 	height: 100%;
-	background: #171717;
 }
 
 .main-navigation-wrapper {
-	left: -280px;
-	left: -15.55556rem;
+	left: 0;
 }
 
 .main-search-wrapper {
-	right: -280px;
-	right: -15.55556rem;
+	right: 0;
 }
 
+/*
+ * Sidebar toggle buttons.
+ * 1. Overlay the main .site container.
+ */
 .menu-toggle,
 .search-toggle {
 	position: fixed;
+	z-index: 10;
 	top: 0;
+	/* 1 */
 	display: block;
 	width: 224px;
 	width: 12.44444rem;
@@ -780,7 +789,7 @@ body {
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 	text-align: center;
 	letter-spacing: 0.05em;
-	text-transform: uppercase; 
+	text-transform: uppercase;
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	border: 0;
@@ -788,8 +797,26 @@ body {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	text-shadow: none;
+	/* Same transition duration as links. */
 }
+.menu-toggle,
+.menu-toggle:hover,
+.search-toggle,
+.search-toggle:hover {
+	-webkit-transition: 0.2s color ease-in;
+	transition: 0.2s color ease-in;
+}
+.menu-toggle:hover,
+.menu-toggle:focus,
+.search-toggle:hover,
+.search-toggle:focus {
+	color: midnightblue;
+}
+.menu-toggle:hover,
+.menu-toggle:focus,
 .menu-toggle:active,
+.search-toggle:hover,
+.search-toggle:focus,
 .search-toggle:active {
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -799,27 +826,97 @@ body {
 .menu-toggle {
 	left: 84px;
 	left: 4.66667rem;
-	-webkit-transition: 0.1s left ease-in;
-	transition: 0.1s left ease-in; 
+	-webkit-transition: 0.1s left ease-in, 0 opacity linear 0.1s;
+	transition: 0.1s left ease-in, 0 opacity linear 0.1s;
 	-webkit-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 	-webkit-transform-origin: left top 0;
 	-ms-transform-origin: left top 0;
 	transform-origin: left top 0;
+	/* Delay on show, to wait for main page to slide back over. */
 }
 
 .search-toggle {
 	right: 84px;
 	right: 4.66667rem;
-	-webkit-transition: 0.1s right ease-in;
-	transition: 0.1s right ease-in; 
+	-webkit-transition: 0.1s right ease-in, 0 opacity linear 0.1s;
+	transition: 0.1s right ease-in, 0 opacity linear 0.1s;
 	-webkit-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
 	-webkit-transform-origin: right top 0;
 	-ms-transform-origin: right top 0;
 	transform-origin: right top 0;
+	/* Delay on show, to wait for main page to slide back over. */
+}
+
+/* Menu area is open. */
+.menu-left-toggled {
+	/* Shift the page over. */
+	/* Show the navigation elements. */
+	/* Hide the Search toggle button, it's unusable until we close this menu. */
+}
+.menu-left-toggled .site {
+	position: relative;
+	-webkit-transform: translate3d(280px, 0, 0);
+	-webkit-transform: translate3d(15.55556rem, 0, 0);
+	transform: translate3d(280px, 0, 0);
+	transform: translate3d(15.55556rem, 0, 0);
+}
+.menu-left-toggled .menu-toggle {
+	left: 364px;
+	left: 20.22222rem;
+}
+.menu-left-toggled .main-navigation-wrapper {
+	display: block;
+}
+.menu-left-toggled .search-toggle {
+	opacity: 0;
+	-webkit-transition: none;
+	transition: none;
+}
+
+/* Search area is open. */
+.menu-right-toggled {
+	/* Shift the page over. */
+	/* Show the search elements. */
+	/* Hide the Menu toggle button, it's unusable until we close this menu. */
+}
+.menu-right-toggled .site {
+	position: relative;
+	-webkit-transform: translate3d(-280px, 0, 0);
+	-webkit-transform: translate3d(-15.55556rem, 0, 0);
+	transform: translate3d(-280px, 0, 0);
+	transform: translate3d(-15.55556rem, 0, 0);
+}
+.menu-right-toggled .search-toggle {
+	right: 364px;
+	right: 20.22222rem;
+}
+.menu-right-toggled .main-search-wrapper {
+	display: block;
+}
+.menu-right-toggled .menu-toggle {
+	opacity: 0;
+	-webkit-transition: none;
+	transition: none;
+}
+
+/* Admin bar is being displayed, so move position-fixed elements down. */
+.admin-bar .main-navigation-wrapper,
+.admin-bar .main-search-wrapper,
+.admin-bar .menu-toggle,
+.admin-bar .search-toggle {
+	top: 32px;
+}
+@media screen and (max-width: 782px) {
+	.admin-bar .main-navigation-wrapper,
+	.admin-bar .main-search-wrapper,
+	.admin-bar .menu-toggle,
+	.admin-bar .search-toggle {
+		top: 46px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -881,12 +978,27 @@ body {
 	margin-left: auto;
 }
 
+/* Overhang margins on non-mobile layouts */
+@media (min-width: 720px) {
+	.alignleft {
+		margin-left: -28px;
+		margin-left: -1.55556rem;
+		padding: 0;
+	}
+	.alignright {
+		margin-right: -28px;
+		margin-right: -1.55556rem;
+		padding: 0;
+	}
+}
+
+/* Fully in margins on widest layout */
 /* 7.1 Grid
 --------------------------------------------------------------*/
 .site-header,
 .content-area,
 .single-entry,
-.widget-area,
+.footer-widget-area,
 .site-footer {
 	display: block;
 	max-width: 1400px;
@@ -901,8 +1013,8 @@ body {
 .content-area:after,
 .single-entry:before,
 .single-entry:after,
-.widget-area:before,
-.widget-area:after,
+.footer-widget-area:before,
+.footer-widget-area:after,
 .site-footer:before,
 .site-footer:after {
 	content: " ";
@@ -911,7 +1023,7 @@ body {
 .site-header:after,
 .content-area:after,
 .single-entry:after,
-.widget-area:after,
+.footer-widget-area:after,
 .site-footer:after {
 	clear: both;
 }
@@ -922,7 +1034,7 @@ body {
 .single-entry .entry-header,
 .single-entry .entry-content,
 .single-entry .entry-footer,
-.widget,
+.footer-widget,
 .site-info {
 	float: left;
 	display: inline;
@@ -930,12 +1042,13 @@ body {
 	padding: 0 14px;
 }
 
-@media (min-width: 740px) {
+@media (min-width: 720px) {
 	/*
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
 	.single-entry .entry-header,
+	.single-entry .entry-content,
 	.single-entry .entry-footer,
 	.site-info {
 		float: left;
@@ -945,6 +1058,9 @@ body {
 		margin-left: 8.33333%;
 		padding: 0 14px;
 	}
+}
+
+@media (min-width: 800px) {
 	/* Narrower content column than everything else, for better line length. */
 	.single-entry .entry-content {
 		float: left;
@@ -955,7 +1071,7 @@ body {
 		padding: 0 14px;
 	}
 	/* Side-by-side widgets. */
-	.widget {
+	.footer-widget {
 		float: left;
 		display: inline;
 		width: 50%;
@@ -963,7 +1079,7 @@ body {
 	}
 }
 
-@media (min-width: 980px) {
+@media (min-width: 1020px) {
 	/* Even narrower content column, to maintain sensible line length. */
 	.single-entry .entry-content {
 		float: left;
@@ -974,7 +1090,7 @@ body {
 		padding: 0 14px;
 	}
 	/* 3 widgets per row. */
-	.widget {
+	.footer-widget {
 		float: left;
 		display: inline;
 		width: 33.33333%;
@@ -1068,7 +1184,7 @@ body {
 	display: block;
 }
 
-.hentry {
+.entry {
 	margin: 0 0 28px;
 	margin: 0 0 1.55556rem;
 }
@@ -1107,6 +1223,7 @@ body {
 .entry-footer {
 	font-weight: bold;
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	text-align: center;
 }
 
 /* Author photos. */
@@ -1122,14 +1239,7 @@ body {
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 }
 
-/* 11.2 Post formats
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
-/* 11.3 Comments
+/* 11.2 Comments
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
