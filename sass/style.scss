@@ -34,8 +34,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 10.0 Widgets
 11.0 Content
 	11.1 Posts and pages
-	11.2 Post formats
-	11.3 Comments
+	11.2 Comments
 12.0 Footer
 13.0 Media
 	13.1 Captions
@@ -121,11 +120,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "site/primary/posts-and-pages";
 
-/* 11.2 Post formats
---------------------------------------------------------------*/
-@import "site/primary/formats";
-
-/* 11.3 Comments
+/* 11.2 Comments
 --------------------------------------------------------------*/
 @import "site/primary/comments";
 

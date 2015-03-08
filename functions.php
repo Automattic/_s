@@ -86,9 +86,9 @@ function yumag_setup() {
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );
+	// add_theme_support( 'post-formats', array(
+	// 	'aside', 'image', 'video', 'quote', 'link',
+	// ) );
 
 	/*
 	 * Enable support for Featured Images.
