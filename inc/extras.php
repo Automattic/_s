@@ -140,3 +140,30 @@ function yumag_entry_classes( $classes ) {
 }
 add_filter( 'post_class', 'yumag_entry_classes' );
 endif;
+
+if ( ! function_exists( 'yumag_image_size_choices' ) ) :
+/**
+ * Filter for image size options presented to content authors/editors.
+ *
+ * @since 1.0.0
+ *
+ * @param array $sizes Image sizes array (id => label).
+ * @return array The image sizes array.
+ */
+function yumag_image_size_choices( $sizes ) {
+
+	// Remove the 'Medium' size.
+	unset( $sizes['medium'] );
+	unset( $sizes['large'] );
+
+	// Rename 'Full Size' to 'Original'.
+	$sizes['full'] = _x( 'Original', 'Image size name', 'yumag' );
+
+	// Add the theme-specific sizes in.
+	return array_merge( $sizes, array(
+		'yumag-photo-large' => _x( 'Large', 'Image size name', 'yumag' ),
+		'yumag-photo-small' => _x( 'Small', 'Image size name', 'yumag' )
+	) );
+}
+add_filter( 'image_size_names_choose', 'yumag_image_size_choices', 9999 );
+endif;
