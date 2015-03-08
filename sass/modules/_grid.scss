@@ -28,7 +28,7 @@
 //                       h2.comments-title
 //                       ol.comment-list
 //                       #respond.comment-respond
-//           [ROW] #secondary.widget-area
+//           [ROW] #secondary.widget-area.footer-widget-area
 //               [COLUMN 12/6/4] [WIDGETS]
 //       [ROW] #colophon.site-footer
 //           [COLUMN 12/10] .site-info
@@ -37,7 +37,7 @@
 .site-header,
 .content-area,
 .single-entry,
-.widget-area,
+.footer-widget-area,
 .site-footer {
 	@include row;
 }
@@ -48,24 +48,29 @@
 .single-entry .entry-header,
 .single-entry .entry-content,
 .single-entry .entry-footer,
-.widget,
+.footer-widget,
 .site-info {
 	@include column(12);
 }
 
-@include media( "main-spacing-1" ) {
+@include media( "main-spacing" ) {
 
 	/*
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
 	.single-entry .entry-header,
+	.single-entry .entry-content,
 	.single-entry .entry-footer,
 	.site-info {
 		@include column(10);
 		@include push;
 		@include pull;
 	}
+
+}
+
+@include media( "main-spacing-1" ) {
 
 	/* Narrower content column than everything else, for better line length. */
 	.single-entry .entry-content {
@@ -75,7 +80,7 @@
 	}
 
 	/* Side-by-side widgets. */
-	.widget {
+	.footer-widget {
 		@include column(6);
 	}
 
@@ -91,7 +96,7 @@
 	}
 
 	/* 3 widgets per row. */
-	.widget {
+	.footer-widget {
 		@include column(4);
 	}
 

@@ -12,8 +12,27 @@ html {
 	box-sizing: inherit;
 }
 
-body {
-	background: $background-color__body; /* Fallback for when there is no custom background color defined. */
+/* The background for the menu and search sidebars. */
+html {
+	position: relative;
+	background: $background-color__menu;
+
+	/* Leave room for the toolbar. */
+	&.admin-bar {
+		//height: ;
+	}
+
+}
+
+/*
+ * The 'real' background form the user's perspective.
+ * 1. To establish a new stacking context, for overlapping the sidebars.
+ * 2. Don't leave any room underneath this container on short pages.
+ */
+.site {
+	position: relative; /* 1 */
+	min-height: 100vh; /* 2 */
+	background: $background-color;
 }
 
 blockquote,

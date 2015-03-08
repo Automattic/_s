@@ -18,28 +18,41 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'yumag' ); ?></a>
+
+<nav id="site-navigation" class="main-navigation js-menu-area" role="navigation" data-menu-side="left">
+	<button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'yumag' ); ?></button>
+	<div class="main-navigation-wrapper js-menu-contents">
+		<?php wp_nav_menu( array(
+			'container' => false,
+			'theme_location' => 'primary',
+			'depth' => 1
+		) ); ?>
+		<?php wp_nav_menu( array(
+			'container' => false,
+			'theme_location' => 'utilities',
+			'depth' => 1
+		) ); ?>
+		<div class="widget-area menu-widget-area" role="complementary">
+			<?php dynamic_sidebar( 'menu-widgets' ); ?>
+		</div>
+	</div>
+</nav><!-- #site-navigation -->
+
+<div id="site-search" class="main-search js-menu-area" role="search" data-menu-side="right">
+	<button class="search-toggle js-menu-toggle" aria-controls="search" aria-expanded="false"><?php _e( 'Search', 'yumag' ); ?></button>
+	<div class="main-search-wrapper js-menu-contents">
+		<div class="widget-area search-widget-area" role="complementary">
+			<?php dynamic_sidebar( 'search-widgets' ); ?>
+		</div>
+	</div>
+</div><!-- #site-search -->
+
+<!-- Wrapper for whole page except off-canvas menus and skiplinks. -->
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'yumag' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-
-		<nav id="site-navigation" class="main-navigation js-menu-area" role="navigation" data-menu-side="left">
-			<button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'yumag' ); ?></button>
-			<div class="main-navigation-wrapper js-menu-contents">
-				<?php wp_nav_menu( array(
-					'container' => false,
-					'theme_location' => 'primary',
-					'depth' => 1
-				) ); ?>
-			</div>
-		</nav><!-- #site-navigation -->
-
-		<div id="site-search" class="main-search js-menu-area" role="search" data-menu-side="right">
-			<button class="search-toggle js-menu-toggle" aria-controls="search" aria-expanded="false"><?php _e( 'Search', 'yumag' ); ?></button>
-			<div class="main-search-wrapper js-menu-contents">
-				<?php get_search_form(); ?>
-			</div>
-		</div><!-- #site-search -->
 
 		<div class="site-branding">
 			<h1 class="site-title">

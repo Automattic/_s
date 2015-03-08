@@ -2,7 +2,7 @@
 	display: block;
 }
 
-.hentry {
+.entry {
 	@include rem("margin", 0 0 $spacing);
 }
 
@@ -38,6 +38,7 @@
 .entry-footer {
 	font-weight: bold;
 	font-family: $font-family__meta;
+	text-align: center;
 }
 
 /* Author photos. */

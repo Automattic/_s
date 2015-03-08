@@ -1,8 +1,9 @@
-body {
+/* Animation for moving the page 'out of the way' of the sidebars. */
+.site {
 	transition: $transition-time__menu transform $transition-type;
 }
 
-
+/* Menu sidebar. */
 .main-navigation {
 	clear: both;
 	display: block;
@@ -40,40 +41,34 @@ body {
 
 }
 
-.menu-left-toggled {
-	position: relative;
-	transform: translate3d( cj-calculate-rem-fallback( $width__menu ), 0, 0 );
-	transform: translate3d( $width__menu, 0, 0 );
-
-}
-.menu-right-toggled {
-	position: relative;
-	transform: translate3d( cj-calculate-rem-fallback( ( -1 * $width__menu ) ), 0, 0 );
-	transform: translate3d( ( -1 * $width__menu ), 0, 0 );
-
-}
-
-
+/*
+ * 1. Even though these are overlapped by the main content area, we still have
+ *    to hide them until they're displayed so they don't peek out above or
+ *    below the main content when the scrolling is rubber-banding.
+ */
 .main-navigation-wrapper,
 .main-search-wrapper {
-	display: block;
+	display: none; /* 1 */
 	width: $width__menu;
     height: 100%;
     position: fixed;
     overflow-y: scroll;
     top: 0;
-    background: $background-color__menu;
 }
 
 
 .main-navigation-wrapper {
-	@include rem( "left", ( $width__menu * -1 ) );
+	left: 0;
 }
 
 .main-search-wrapper {
-	@include rem( "right", ( $width__menu * -1 ) );
+	right: 0;
 }
 
+/*
+ * Sidebar toggle buttons.
+ * 1. Overlay the main .site container.
+ */
 .menu-toggle,
 .search-toggle {
 	@include font-size( "normal" );
@@ -82,6 +77,7 @@ body {
 	@include rem( "line-height", $width__menu-toggle );
 	position: fixed;
 	top: 0;
+	z-index: 10; /* 1 */
 	display: block;
 	padding-top: $line;
 	border: 0;
@@ -95,6 +91,19 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 
+	/* Same transition duration as links. */
+	&,
+	&:hover {
+		transition: $transition-time__link color $transition-type;
+	}
+
+	&:hover,
+	&:focus {
+		color: $color__link-hover;
+	}
+
+	&:hover,
+	&:focus,
 	&:active {
 		box-shadow: none;
 		text-shadow: none;
@@ -106,12 +115,86 @@ body {
 	@include rem( "left", $width__menu-toggle );
 	transform: rotate(90deg);
 	transform-origin: left top 0;
-    transition: $transition-time__menu left $transition-type;
+    transition: $transition-time__menu left $transition-type,
+    	0 opacity linear $transition-time__menu; /* Delay on show, to wait for main page to slide back over. */
 }
 
 .search-toggle {
 	@include rem( "right", $width__menu-toggle );
 	transform: rotate(-90deg);
 	transform-origin: right top 0;
-    transition: $transition-time__menu right $transition-type;
+    transition: $transition-time__menu right $transition-type,
+    	0 opacity linear $transition-time__menu; /* Delay on show, to wait for main page to slide back over. */
+}
+
+
+/* Menu area is open. */
+.menu-left-toggled {
+
+	/* Shift the page over. */
+	.site {
+		position: relative;
+		transform: translate3d( cj-calculate-rem-fallback( $width__menu ), 0, 0 );
+		transform: translate3d( $width__menu, 0, 0 );
+	}
+
+	.menu-toggle {
+		@include rem( "left", ( $width__menu + $width__menu-toggle ) );
+	}
+
+	/* Show the navigation elements. */
+	.main-navigation-wrapper {
+		display: block;
+	}
+
+	/* Hide the Search toggle button, it's unusable until we close this menu. */
+	.search-toggle {
+		opacity: 0;
+		transition: none;
+	}
+
+}
+
+/* Search area is open. */
+.menu-right-toggled {
+
+	/* Shift the page over. */
+	.site {
+		position: relative;
+		transform: translate3d( cj-calculate-rem-fallback( ( -1 * $width__menu ) ), 0, 0 );
+		transform: translate3d( ( -1 * $width__menu ), 0, 0 );
+	}
+
+	.search-toggle {
+		@include rem( "right", ( $width__menu + $width__menu-toggle ) );
+	}
+
+	/* Show the search elements. */
+	.main-search-wrapper {
+		display: block;
+	}
+
+	/* Hide the Menu toggle button, it's unusable until we close this menu. */
+	.menu-toggle {
+		opacity: 0;
+		transition: none;
+	}
+
+}
+
+/* Admin bar is being displayed, so move position-fixed elements down. */
+.admin-bar {
+
+	.main-navigation-wrapper,
+	.main-search-wrapper,
+	.menu-toggle,
+	.search-toggle {
+		top: 32px;
+
+		@media screen and ( max-width: 782px ) {
+			top: 46px;
+		}
+
+	}
+
 }
