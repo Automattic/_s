@@ -235,9 +235,7 @@ function _strap_build_field_slug() {
 }
 
 /**
- * Returns the options array for Mattei Deseo.
- *
- * @since Mattei Deseo 1.0
+ * Returns the options array
  */
 function _strap_build_get_options() {
     $saved = (array) get_option( '_strap_build_options' );
@@ -358,30 +356,83 @@ function _strap_build_render_page()
  */
 function _strap_build_theme($name, $slug)
 {
-    $root = get_theme_root();
-    $src = get_stylesheet_directory();
-    $dst = $root . DIRECTORY_SEPARATOR . $slug;
-    $nodes = _strap_build_scan($name, $slug, $src);
-    if( is_dir($dst) || is_file($dst) ) {
-        // handle error, don't overwrite
-    }
-    elseif( !mkdir($dst)) {
-        // handle error, maybe set flag for dynamic zip instead of copying files
-    }
-    else {
-        foreach($nodes as $path => $content) {
-            $target = $dst . DIRECTORY_SEPARATOR . $path;
-            if( empty($content) ) { // it's a dir
-                mkdir($target); // don't check, after all you just created the parent dir
-            }
-            else
-            {
-                file_put_contents($target, $content); // don't check, after all you just created the parent dir
-            }
-        }
+	$root = get_theme_root();
+	$src = get_stylesheet_directory();
+	$dst = $root . DIRECTORY_SEPARATOR . $slug;
+	$nodes = _strap_build_scan($name, $slug, $src);
+	if( is_dir($dst) || is_file($dst) ) {
+		// handle error, don't overwrite
+	}
+	elseif( !mkdir($dst)) {
+		// handle error, maybe set flag for dynamic zip instead of copying files
+	}
+	else {
+		$ignored = _strap_gitignore($src . DIRECTORY_SEPARATOR . '.gitignore');
+		foreach($nodes as $path => $content) {
+			$from = realpath(get_stylesheet_directory() . DIRECTORY_SEPARATOR . $path);
+			if( in_array($from, $ignored ) ) continue;
 
-    }
-    return $nodes;
+			$target = $dst . DIRECTORY_SEPARATOR . $path;
+			if( empty($content) ) { // it's a dir
+				mkdir($target); // don't check, after all you just created the parent dir
+			} else {
+				file_put_contents($target, $content); // don't check, after all you just created the parent dir
+			}
+		}
+
+	}
+	// this will make a few more arrangments towards my personal project structure - uncomment if you wish
+	// _strap_build_production($slug);
+	return $nodes;
+}
+
+/**
+ * This is my personal project structure - use at will
+ *
+ * @param string $slug Theme slug.
+ */
+function _strap_build_production($slug)
+{
+	$root = get_theme_root();
+	$src = get_stylesheet_directory();
+	$dst = $root . DIRECTORY_SEPARATOR . $slug;
+
+	// create ./assets structure and move bootsrap around
+	$assets_path = $dst . DIRECTORY_SEPARATOR . 'assets';
+	mkdir($assets_path);
+	mkdir($assets_path . DIRECTORY_SEPARATOR . 'styles');
+	mkdir($assets_path . DIRECTORY_SEPARATOR . 'fonts');
+	mkdir($assets_path . DIRECTORY_SEPARATOR . 'media');
+
+	rename( $dst . DIRECTORY_SEPARATOR . 'js', $assets_path . DIRECTORY_SEPARATOR . 'js' );
+
+	$comp_path = $assets_path . DIRECTORY_SEPARATOR . 'components';
+	mkdir($comp_path);
+	$boot_src = $dst . DIRECTORY_SEPARATOR . 'bootstrap';
+	$boot_dst = $comp_path . DIRECTORY_SEPARATOR . 'bootstrap';
+	rename( $boot_src, $boot_dst );
+	touch( $boot_dst . DIRECTORY_SEPARATOR . '_vars.less' );
+
+	$s_style = $dst . DIRECTORY_SEPARATOR . 'style.less';
+	$content = file_get_contents($s_style);
+	$content = str_replace('@import "bootstrap/less/variables.less"', '@import "bootstrap/less/variables.less"' . "\n" . '@import "bootstrap/_vars.less"', $content);
+	$content = str_replace('bootstrap/', 'assets/components/bootstrap/', $content);
+	file_put_contents($s_style, $content);
+
+	// cleanup
+	$expendables = array(
+		$boot_dst . DIRECTORY_SEPARATOR . 'boostrap.less',
+		$boot_dst . DIRECTORY_SEPARATOR . 'theme.less',
+		$dst . DIRECTORY_SEPARATOR . 'layouts',
+		$dst . DIRECTORY_SEPARATOR . 'sass',
+		$dst . DIRECTORY_SEPARATOR . 'CONTRIBUTING.md',
+		$dst . DIRECTORY_SEPARATOR . 'codesniffer.ruleset.xml',
+		$assets_path . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'navigation.js',
+	);
+	foreach($expendables as $expendable) {
+		if( is_dir($expendable) ) _strap_rmdir_tree($expendable);
+		elseif(is_file($expendable)) unlink($expendable);
+	}
 }
 
 /**
@@ -470,4 +521,38 @@ Tags: bootstrap, _s, _strap
 Based on _strap [https://github.com/ptbello/_strap], a mashup of _s [https://github.com/Automattic/_s] and Bootstrap [https://github.com/twitter/bootstrap]
 */
 END;
+}
+
+/**
+ * Recursively delete directory
+ */
+function _strap_rmdir_tree($dir) {
+	$files = array_diff(scandir($dir), array('.','..'));
+	foreach ($files as $file) {
+		(is_dir("$dir/$file") && !is_link($dir)) ? _strap_rmdir_tree("$dir/$file") : unlink("$dir/$file");
+	}
+	return rmdir($dir);
+}
+
+/**
+ * Find .gitignored files
+ */
+function _strap_gitignore($file) { # $file = '/absolute/path/to/.gitignore'
+	$dir = dirname($file);
+	$matches = array();
+	$lines = file($file);
+	foreach ($lines as $line) {
+		$line = trim($line);
+		if ($line === '') continue;                 # empty line
+		if (substr($line, 0, 1) == '#') continue;   # a comment
+		if (substr($line, 0, 1) == '!') {           # negated glob
+			$line = substr($line, 1);
+			$files = array_diff(glob($dir . DIRECTORY_SEPARATOR .  '*'), glob($dir . DIRECTORY_SEPARATOR .  $line));
+		} else {                                    # normal glob
+			$files = glob($dir . DIRECTORY_SEPARATOR .  $line);
+		}
+		$matches = array_merge($matches, $files);
+	}
+	foreach($matches as $i => $match) $matches[$i] = realpath($match);
+	return $matches;
 }
