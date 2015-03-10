@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _strap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2014-10-20 14:43+0100\n"
-"PO-Revision-Date: 2014-10-20 14:44+0100\n"
+"POT-Creation-Date: 2015-03-10 12:21+0100\n"
+"PO-Revision-Date: 2015-03-10 12:22+0100\n"
 "Last-Translator: Piero Bellomo <piero.bellomo@viewlab.net>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-KeywordsList: __;_e;_n;_x;_esc_attr__;_esc_attr_e;_esc_attr_n;"
 "_esc_attr_x\n"
 "X-Poedit-Basepath: .\n"
@@ -40,91 +40,22 @@ msgstr "Categorie più usate"
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Prova a cercare negli archivi per mese. %1$s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:27
-#, php-format
-msgid "Author: %s"
-msgstr "Autore: %s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:30
-#, php-format
-msgid "Day: %s"
-msgstr "Giorno: %s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:33
-#, php-format
-msgid "Month: %s"
-msgstr "Mese: %s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:33
-msgid "F Y"
-msgstr "F Y"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:36
-#, php-format
-msgid "Year: %s"
-msgstr "Anno: %s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:36
-msgid "Y"
-msgstr "Y"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:39
-msgid "Asides"
-msgstr "Digressioni"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:42
-msgid "Galleries"
-msgstr "Gallerie"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:45
-msgid "Images"
-msgstr "Immagini"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:48
-msgid "Videos"
-msgstr "Video"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:51
-msgid "Quotes"
-msgstr "Citazioni"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:54
-msgid "Links"
-msgstr "Link"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:57
-msgid "Statuses"
-msgstr "Status"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:60
-msgid "Audios"
-msgstr "Audio"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:63
-msgid "Chats"
-msgstr "Chat"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/archive.php:66
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/sidebar.php:17
-msgid "Archives"
-msgstr "Archivi"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:37
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:54
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:35
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:56
 msgid "Comment navigation"
 msgstr "Navigazione commenti"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:38
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:55
-msgid "&larr; Older Comments"
-msgstr "&larr; Commenti precedenti"
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:59
+msgid "Older Comments"
+msgstr "Commenti meno recenti"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:39
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:56
-msgid "Newer Comments &rarr;"
-msgstr "Commenti successivi &rarr;"
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:60
+msgid "Newer Comments"
+msgstr "Commenti più recenti"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:66
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:72
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi per questo articolo."
 
@@ -157,109 +88,51 @@ msgstr ""
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-page.php:18
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:20
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:27
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:29
 msgid "Pages:"
 msgstr "Pagine"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-page.php:23
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:60
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:61
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-page.php:25
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:126
 msgid "Edit"
 msgstr "Modifica"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:29
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:32
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:38
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:48
-msgid ", "
-msgstr ", "
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:37
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:22
 #, php-format
-msgid ""
-"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-"Questo articolo è stato etichettato %2$s. Aggiungi il <a href=\"%3$s\" rel="
-"\"bookmark\">permalink</a> ai preferiti."
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continua a leggere %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:39
-#, php-format
-msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
-msgstr ""
-"Aggiungi il <a href=\"%3$s\" rel=\"bookmark\">permalink</a> ai preferiti."
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:15
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:45
-#, php-format
-msgid ""
-"This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
-msgstr ""
-"Questo articolo è stato pubblicato in %1$s ed etichettato %2$s. Aggiungi il "
-"<a href=\"%3$s\" rel=\"bookmark\">permalink</a> ai preferiti."
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:47
-#, php-format
-msgid ""
-"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
-"\">permalink</a>."
-msgstr ""
-"Questo articolo è stato pubblicato in %1$s. Aggiungi il <a href=\"%3$s\" rel="
-"\"bookmark\">permalink</a> ai preferiti."
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:24
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Continua a leggere <span class=\"meta-nav\">&rarr;</span>"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:42
-#, php-format
-msgid "Posted in %1$s"
-msgstr "Pubblicato in %1$s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:52
-#, php-format
-msgid "Tagged %1$s"
-msgstr "Etichette %1$s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:58
-msgid "Leave a comment"
-msgstr "Lascia un commento"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:58
-msgid "1 Comment"
-msgstr "1 Commento"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:58
-msgid "% Comments"
-msgstr "% Commenti"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:16
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:15
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Proudly powered by %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:18
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:17
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr "Theme: %1$s di %2$s."
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:51
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:53
 msgid "Primary Menu"
 msgstr "Menù principale"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:74
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:88
 msgid "Sidebar"
 msgstr "Barra laterale"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:33
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:30
 msgid "Skip to content"
 msgstr "Salta al contenuto"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:36
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:33
 msgid "Toggle navigation"
 msgstr "Inverti navigazione"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/extras.php:63
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/extras.php:52
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
@@ -338,42 +211,150 @@ msgid "Posts navigation"
 msgstr "Navigazione articoli"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:27
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Articoli precedenti"
+msgid "Older posts"
+msgstr "Articoli meno recenti"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:31
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Articoli successivi <span class=\"meta-nav\">&rarr;</span>"
+msgid "Newer posts"
+msgstr "Articoli più recenti"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:56
 msgid "Post navigation"
 msgstr "Navigazione per articolo"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:59
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr "<span class=\"meta-nav\">&larr;</span> %title"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:60
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:85
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:86
 #, php-format
-msgid ""
-"<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
-"%2$s</span>"
-msgstr ""
-"<span class=\"posted-on\">Pubblicato il %1$s</span><span class=\"byline\"> "
-"da %2$s</span>"
+msgid "Posted on %s"
+msgstr "Pubblicato il %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:91
+#, php-format
+msgid "by %s"
+msgstr "di %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:108
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:114
+msgid ", "
+msgstr ", "
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:110
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Pubblicato in %1$s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:116
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Etichette %1$s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:122
+msgid "Leave a comment"
+msgstr "Lascia un commento"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:122
+msgid "1 Comment"
+msgstr "1 Commento"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:122
+msgid "% Comments"
+msgstr "% Commenti"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:143
+#, php-format
+msgid "Category: %s"
+msgstr "Categoria: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:145
+#, php-format
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:147
+#, php-format
+msgid "Author: %s"
+msgstr "Autore: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:149
+#, php-format
+msgid "Year: %s"
+msgstr "Anno: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:149
+msgid "Y"
+msgstr "Y"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:151
+#, php-format
+msgid "Month: %s"
+msgstr "Mese: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:151
+msgid "F Y"
+msgstr "F Y"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:153
+#, php-format
+msgid "Day: %s"
+msgstr "Giorno: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:153
+msgid "F j, Y"
+msgstr "j F Y"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:156
+msgid "Asides"
+msgstr "Digressioni"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:158
+msgid "Galleries"
+msgstr "Gallerie"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:160
+msgid "Images"
+msgstr "Immagini"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:162
+msgid "Videos"
+msgstr "Video"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:164
+msgid "Quotes"
+msgstr "Citazioni"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:166
+msgid "Links"
+msgstr "Link"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:168
+msgid "Statuses"
+msgstr "Status"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:170
+msgid "Audio"
+msgstr "Audio"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:172
+msgid "Chats"
+msgstr "Chat"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:175
+#, php-format
+msgid "Archives: %s"
+msgstr "Archivi: %s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:179
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:181
+msgid "Archives"
+msgstr "Archivi"
 
 #: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/search.php:16
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati della ricerca per: %s"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/sidebar.php:24
-msgid "Meta"
-msgstr "Meta"
 
 #~ msgctxt "comments title"
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -381,37 +362,10 @@ msgstr "Meta"
 #~ msgstr[0] "Un pensiero su &ldquo;%2$s&rdquo;"
 #~ msgstr[1] "%1$s pensieri su &ldquo;%2$s&rdquo;"
 
-#~ msgid "Menu"
-#~ msgstr "Menu"
-
-#~ msgid "Pingback:"
-#~ msgstr "Pingback:"
-
-#~ msgid "%s <span class=\"says\">says:</span>"
-#~ msgstr "%s <span class=\"says\">ha detto:</span>"
-
-#~ msgctxt "1: date, 2: time"
-#~ msgid "%1$s at %2$s"
-#~ msgstr "%1$s alle %2$s"
-
-#~ msgid "Your comment is awaiting moderation."
-#~ msgstr "Il tuo commento è in attesa di moderazione."
-
-#~ msgctxt "label"
-#~ msgid "Search for:"
-#~ msgstr "Cerca:"
-
-#~ msgctxt "placeholder"
-#~ msgid "Search &hellip;"
-#~ msgstr "Cerca &hellip;"
-
-#~ msgctxt "submit button"
-#~ msgid "Search"
-#~ msgstr "Cerca"
-
 #~ msgid "_s"
 #~ msgstr "_s"
 
+#, fuzzy
 #~ msgid "http://underscores.me/"
 #~ msgstr "http://underscores.me/"
 
@@ -432,11 +386,76 @@ msgstr "Meta"
 #~ msgid "http://automattic.com/"
 #~ msgstr "http://automattic.com/"
 
-#~ msgid "Category Archives: %s"
-#~ msgstr "Archivio di categoria per: %s"
+#~ msgid ""
+#~ "This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+#~ "\">permalink</a>."
+#~ msgstr ""
+#~ "Questo articolo è stato etichettato %2$s. Aggiungi il <a href=\"%3$s\" "
+#~ "rel=\"bookmark\">permalink</a> ai preferiti."
 
-#~ msgid "Tag Archives: %s"
-#~ msgstr "Archivi per il tag: %s"
+#~ msgid "Bookmark the <a href=\"%3$s\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Aggiungi il <a href=\"%3$s\" rel=\"bookmark\">permalink</a> ai preferiti."
+
+#~ msgid ""
+#~ "This entry was posted in %1$s and tagged %2$s. Bookmark the <a href=\"%3$s"
+#~ "\" rel=\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Questo articolo è stato pubblicato in %1$s ed etichettato %2$s. Aggiungi "
+#~ "il <a href=\"%3$s\" rel=\"bookmark\">permalink</a> ai preferiti."
+
+#~ msgid ""
+#~ "This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel="
+#~ "\"bookmark\">permalink</a>."
+#~ msgstr ""
+#~ "Questo articolo è stato pubblicato in %1$s. Aggiungi il <a href=\"%3$s\" "
+#~ "rel=\"bookmark\">permalink</a> ai preferiti."
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Articoli precedenti"
+
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Articoli successivi <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> %title"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#~ msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid ""
+#~ "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by "
+#~ "%2$s</span>"
+#~ msgstr ""
+#~ "<span class=\"posted-on\">Pubblicato il %1$s</span><span class=\"byline"
+#~ "\"> da %2$s</span>"
+
+#~ msgid "Meta"
+#~ msgstr "Meta"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgid "Pingback:"
+#~ msgstr "Pingback:"
+
+#~ msgid "%s <span class=\"says\">says:</span>"
+#~ msgstr "%s <span class=\"says\">ha detto:</span>"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Il tuo commento è in attesa di moderazione."
+
+#~ msgctxt "label"
+#~ msgid "Search for:"
+#~ msgstr "Cerca:"
+
+#~ msgctxt "placeholder"
+#~ msgid "Search &hellip;"
+#~ msgstr "Cerca &hellip;"
+
+#~ msgctxt "submit button"
+#~ msgid "Search"
+#~ msgstr "Cerca"
 
 #~ msgid "Daily Archives: %s"
 #~ msgstr "Archivi per il giorno: %s"
@@ -589,12 +608,6 @@ msgstr "Meta"
 
 #~ msgid "Find Sustainable Accommodation"
 #~ msgstr "Trova il tuo Alloggio Ecosostenibile"
-
-#~ msgid "Older posts"
-#~ msgstr "Articoli meno recenti"
-
-#~ msgid "Newer posts"
-#~ msgstr "Articoli più recenti"
 
 #~ msgid "Events: "
 #~ msgstr "Eventi: "
