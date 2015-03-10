@@ -24,17 +24,7 @@
 <nav id="site-navigation" class="main-navigation js-menu-area" role="navigation" data-menu-side="left">
 	<button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'yumag' ); ?></button>
 	<div class="main-navigation-wrapper js-menu-contents">
-		<?php wp_nav_menu( array(
-			'container' => false,
-			'theme_location' => 'primary',
-			'depth' => 1
-		) ); ?>
-		<?php wp_nav_menu( array(
-			'container' => false,
-			'theme_location' => 'utilities',
-			'depth' => 1
-		) ); ?>
-		<div class="widget-area menu-widget-area" role="complementary">
+		<div class="widget-area menu-widget-area">
 			<?php dynamic_sidebar( 'menu-widgets' ); ?>
 		</div>
 	</div>
