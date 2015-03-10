@@ -22,7 +22,9 @@
 <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'yumag' ); ?></a>
 
 <nav id="site-navigation" class="main-navigation js-menu-area" role="navigation" data-menu-side="left">
-	<button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Menu', 'yumag' ); ?></button>
+	<button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false">
+		<span class="menu-toggle-inner"><?php _e( 'Menu', 'yumag' ); ?></span>
+	</button>
 	<div class="main-navigation-wrapper js-menu-contents">
 		<div class="widget-area menu-widget-area">
 			<?php dynamic_sidebar( 'menu-widgets' ); ?>
@@ -31,7 +33,9 @@
 </nav><!-- #site-navigation -->
 
 <div id="site-search" class="main-search js-menu-area" role="search" data-menu-side="right">
-	<button class="search-toggle js-menu-toggle" aria-controls="search" aria-expanded="false"><?php _e( 'Search', 'yumag' ); ?></button>
+	<button class="search-toggle js-menu-toggle" aria-controls="search" aria-expanded="false">
+		<span class="search-toggle-inner"><?php _e( 'Search', 'yumag' ); ?></span>
+	</button>
 	<div class="main-search-wrapper js-menu-contents">
 		<div class="widget-area search-widget-area" role="complementary">
 			<?php dynamic_sidebar( 'search-widgets' ); ?>
