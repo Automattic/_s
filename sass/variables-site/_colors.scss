@@ -4,6 +4,9 @@
 $white: #fff;
 $black: #171717;
 
+$grey:        #626272;
+$grey__light: #9696a6;
+
 // DARO colour palette
 //// YorkSpace
 $yorkspace-blue:           #7181a5;
@@ -73,10 +76,14 @@ $background-color__pre:    #eee;
 $background-color__ins:    #fff9c0;
 $background-color__menu:   $black;
 
-$color__screen:       #21759b;
-$color__input:        #666;
-$color__input-focus:  #111;
-$color__link:         $fun-blue;
-$color__link-visited: $plum;
-$color__link-hover:   midnightblue;
-$color__main:         $black;
+$color__main:                 $black;
+$color__screen:               #21759b;
+$color__input:                $grey;
+$color__input-focus:          $color__main;
+$color__link:                 $fun-blue;
+$color__link-visited:         $plum;
+$color__link-hover:           darken( $color__link, 15% );
+$color__link__reversed:       $downy;
+$color__link-hover__reversed: lighten( $color__link__reversed, 15% );
+$color__menu-toggle:          $grey__light;
+$color__menu-toggle-hover:    $color__main;

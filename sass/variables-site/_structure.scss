@@ -22,6 +22,9 @@ $spacing: ( 1px * $vertical-rhythm );
 // Misc
 // -------------------------------------------------------------
 
+$border-width__widget: ($line / 2);
+$padding__widget: $border-width__widget;
+
 $border-radius: 3px;
 
 $height__masthead: ( $line * 8 );
