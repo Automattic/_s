@@ -1,0 +1,30 @@
+.issue-title {
+	@include font-size-line( "normal" );
+	margin-top: 0;
+	font-family: $font-family__main;
+
+	a {
+		color: $black;
+		font-weight: normal;
+
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+		}
+
+	}
+
+}
+
+/* eg 'ISSUE ONE' */
+.issue-number {
+	font-weight: bold;
+	letter-spacing: $letter-spacing__caps;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $font-family__button;
+}
+
+/* eg 'April 2015' */
+.issue-date {
+}
