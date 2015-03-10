@@ -3,13 +3,18 @@
 }
 
 .entry {
-	@include rem("margin", 0 0 $spacing);
+	@include rem( "margin", 0 0 $spacing );
 }
 
 .entry-title {
 	font-weight: bold;
 	font-family: $font-family__title;
 	word-wrap: break-word;
+
+	.single-entry & {
+		@include rem( "margin-bottom", $spacing );
+	}
+
 }
 
 .updated:not(.published){
@@ -19,11 +24,11 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	@include rem("margin", $spacing 0 0);
+	@include rem( "margin", $spacing 0 0 );
 }
 
 .page-links {
-	@include rem("margin", 0 0 $spacing);
+	@include rem( "margin", 0 0 $spacing );
 	clear: both;
 }
 
