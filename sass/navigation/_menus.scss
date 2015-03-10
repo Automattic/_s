@@ -17,26 +17,7 @@
 		padding-left: 0;
 		font-family: $font-family__nav;
 		text-transform: uppercase;
-
-	}
-
-	li {
-		@include rem( "padding", ( $line / 2 ) $line );
-		position: relative;
-
-		&:hover > a {
-		}
-
-	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a {
+		letter-spacing: $letter-spacing__caps;
 	}
 
 }
@@ -54,11 +35,37 @@
     position: fixed;
     overflow-y: scroll;
     top: 0;
+    color: $white;
+
+    /* Make sure links are visible. */
+    a {
+    	color: $color__link__reversed;
+
+    	&:hover,
+    	&:focus,
+    	&:active {
+    		color: $color__link-hover__reversed;
+    	}
+
+    }
+
 }
 
 
 .main-navigation-wrapper {
 	left: 0;
+
+	a {
+		display: block;
+		text-decoration: none;
+		color: $white;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a {
+	}
+
 }
 
 .main-search-wrapper {
@@ -74,12 +81,12 @@
 	@include font-size( "normal" );
 	@include rem( "width", $height__masthead );
 	@include rem( "height", $width__menu-toggle );
+	@include rem( "padding-top", $line );
 	@include rem( "line-height", $width__menu-toggle );
 	position: fixed;
 	top: 0;
 	z-index: 10; /* 1 */
 	display: block;
-	padding-top: $line;
 	border: 0;
 	border-radius: 0;
 	box-shadow: none;
@@ -87,7 +94,7 @@
 	background: transparent;
 	font-weight: bold;
 	font-family: $font-family__button;
-	letter-spacing: 0.05em;
+	letter-spacing: $letter-spacing__caps;
 	text-align: center;
 	text-transform: uppercase;
 	color: $color__menu-toggle;
