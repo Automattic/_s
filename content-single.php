@@ -9,7 +9,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php yumag_posted_on(); ?>
+			<?php yumag_byline(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

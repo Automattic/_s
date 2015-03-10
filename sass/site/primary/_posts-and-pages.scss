@@ -12,14 +12,8 @@
 	word-wrap: break-word;
 }
 
-.byline,
 .updated:not(.published){
 	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
 }
 
 .page-content,
@@ -33,10 +27,8 @@
 	clear: both;
 }
 
-/* Byline and other metadata. */
-.entry-meta,
-.entry-footer {
-	font-weight: bold;
+/* Byline. */
+.entry-meta {
 	font-family: $font-family__meta;
 	text-align: center;
 }
@@ -51,4 +43,15 @@
 	margin-right: 3px;
 	font-weight: bold;
 	font-family: $font-family__dropcap;
+}
+
+/* Metadata */
+.entry-footer {
+	font-family: $font-family__meta;
+}
+
+/* Post footer meta lines. */
+.posted-on,
+.tag-links {
+	display: block;
 }

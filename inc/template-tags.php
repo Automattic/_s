@@ -7,34 +7,52 @@
  * @package YuMag
  */
 
-if ( ! function_exists( 'yumag_posted_on' ) ) :
+if ( ! function_exists( 'yumag_byline' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for the current author.
  */
-function yumag_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'yumag' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+function yumag_byline() {
 
 	$byline = sprintf(
 		_x( 'by %s', 'post author', 'yumag' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	echo '<span class="byline"> ' . $byline . '</span>';
+
+}
+endif;
+
+if ( ! function_exists( 'yumag_author_box' ) ) :
+/**
+ * Prints HTML with author avatar, name, intro, and link to page.
+ */
+function yumag_author_box() {
+
+	$author_id = get_the_author_meta( 'ID' );
+	if ( $author_id ) {
+		echo '<div class="entry-author">';
+
+		if ( function_exists( 'get_wp_user_avatar' ) ) {
+			printf( '<a class="entry-author-avatar" href="%1$s" title="%2$s">%3$s</a>',
+				get_author_posts_url( $author_id ),
+				get_the_author(),
+				get_wp_user_avatar( "thumbnail" )
+			);
+
+		}
+
+		echo '<h3 class="entry-author-name">' . get_the_author() . '</h3>';
+
+		$about = get_the_author_meta( 'description' );
+		if ( $about ) {
+			echo '<p class="entry-author-description">' . $about . '</p>';
+		}
+
+		// TODO: 'See all N posts by X' link.
+
+		echo '</div>';
+	}
 
 }
 endif;
@@ -46,26 +64,46 @@ if ( ! function_exists( 'yumag_entry_footer' ) ) :
 function yumag_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'yumag' ) );
-		if ( $categories_list && yumag_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'yumag' ) . '</span>', $categories_list );
+
+		yumag_author_box();
+
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'yumag' ) );
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		/* translators: used between list items, there is a space on each side of the slash */
+		$categories_list = get_the_category_list( __( ' / ', 'yumag' ) );
+
+		/* Prepare categories and datestamp output. */
+		if ( $categories_list && yumag_categorized_blog() ) {
+			$posted_on = sprintf( __( 'Posted in %1$s on %2$s', 'yumag' ),
+				sprintf( '<span class="cat-links">%s</span>', $categories_list ),
+				$time_string
+			);
+		} else {
+			$posted_on = sprintf( __( 'Posted on %s', 'yumag' ),
+				$time_string
+			);
+		}
+
+		echo '<span class="posted-on">' . $posted_on . '</span>';
+
+		/* translators: used between list items, there is a space on each side of the slash */
+		$tags_list = get_the_tag_list( '', __( ' / ', 'yumag' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'yumag' ) . '</span>', $tags_list );
 		}
+
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'yumag' ), __( '1 Comment', 'yumag' ), __( '% Comments', 'yumag' ) );
-		echo '</span>';
-	}
-
-	edit_post_link( __( 'Edit', 'yumag' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
