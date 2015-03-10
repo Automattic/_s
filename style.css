@@ -423,7 +423,9 @@ var {
 
 /* No special styling for abbreviation elements. */
 abbr,
-acronym {
+abbr[title],
+acronym,
+acronym[title] {
 	border-bottom: 0;
 	cursor: inherit;
 }
@@ -652,7 +654,7 @@ textarea {
 	-webkit-border-radius: 3px;
 	border-radius: 3px; 
 	border: 1px solid #ccc;
-	color: #666;
+	color: #626272;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -660,7 +662,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-	color: #111;
+	color: #171717;
 }
 
 input[type="text"],
@@ -679,6 +681,11 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+/* Next-post/-page links. */
+.nav-next {
+	text-align: right;
+}
+
 /* 5.1 Links
 --------------------------------------------------------------*/
 a {
@@ -697,7 +704,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #0f3b6b;
 }
 a:focus {
 	outline: thin dotted;
@@ -729,16 +736,8 @@ a:active {
 	font-size: 16px;
 	font-size: 0.88889rem;
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	letter-spacing: 0.05em; 
 	text-transform: uppercase;
-}
-.main-navigation li {
-	position: relative; 
-	padding: 14px 28px;
-	padding: 0.77778rem 1.55556rem;
-}
-.main-navigation a {
-	display: block;
-	text-decoration: none;
 }
 
 /*
@@ -749,20 +748,45 @@ a:active {
 .main-navigation-wrapper,
 .main-search-wrapper {
 	position: fixed;
-	top: 0; 
+	top: 0;
 	display: none;
 	overflow-y: scroll;
 	/* 1 */
 	width: 15.55556rem;
 	height: 100%;
+	color: #fff;
+	/* Make sure links are visible. */
+}
+.main-navigation-wrapper a,
+.main-search-wrapper a {
+	color: #69bcc9;
+}
+.main-navigation-wrapper a:hover,
+.main-navigation-wrapper a:focus,
+.main-navigation-wrapper a:active,
+.main-search-wrapper a:hover,
+.main-search-wrapper a:focus,
+.main-search-wrapper a:active {
+	color: #a1d5dd;
 }
 
 .main-navigation-wrapper {
 	left: 0;
 }
+.main-navigation-wrapper a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+}
 
 .main-search-wrapper {
 	right: 0;
+	/* Right-aligned elements. */
+}
+.main-search-wrapper .widget {
+	border-left: 0;
+	border-right-width: 0.77778rem;
+	border-right-style: solid;
 }
 
 /*
@@ -780,6 +804,7 @@ a:active {
 	width: 12.44444rem;
 	height: 84px;
 	height: 4.66667rem;
+	padding-top: 28px;
 	padding-top: 1.55556rem;
 	font-weight: bold;
 	font-size: 18px;
@@ -794,6 +819,7 @@ a:active {
 	border-radius: 0;
 	border: 0;
 	background: transparent;
+	color: #9696a6;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	text-shadow: none;
@@ -808,9 +834,11 @@ a:active {
 }
 .menu-toggle:hover,
 .menu-toggle:focus,
+.menu-toggle:active,
 .search-toggle:hover,
-.search-toggle:focus {
-	color: midnightblue;
+.search-toggle:focus,
+.search-toggle:active {
+	color: #171717;
 }
 .menu-toggle:hover,
 .menu-toggle:focus,
@@ -867,6 +895,7 @@ a:active {
 .menu-left-toggled .menu-toggle {
 	left: 364px;
 	left: 20.22222rem;
+	color: #171717;
 }
 .menu-left-toggled .main-navigation-wrapper {
 	display: block;
@@ -893,6 +922,7 @@ a:active {
 .menu-right-toggled .search-toggle {
 	right: 364px;
 	right: 20.22222rem;
+	color: #171717;
 }
 .menu-right-toggled .main-search-wrapper {
 	display: block;
@@ -901,6 +931,26 @@ a:active {
 	opacity: 0;
 	-webkit-transition: none;
 	transition: none;
+}
+
+.menu-item-yorklife a {
+	color: #dcd4c6;
+}
+
+.menu-item-up-close a {
+	color: #69bcc9;
+}
+
+.menu-item-centre-stage a {
+	color: #f0ef84;
+}
+
+.menu-item-all-about-yu a {
+	color: #9acd9c;
+}
+
+.menu-item-back-page a {
+	color: #e8cfeb;
 }
 
 /* Admin bar is being displayed, so move position-fixed elements down. */
@@ -916,6 +966,22 @@ a:active {
 	.admin-bar .menu-toggle,
 	.admin-bar .search-toggle {
 		top: 46px;
+	}
+}
+
+/* Space out the toggle buttons more for wider screens */
+@media (min-width: 720px) {
+	.menu-toggle,
+	.search-toggle {
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+	}
+	.menu-toggle-inner,
+	.search-toggle-inner {
+		padding-bottom: 7px;
+		padding-bottom: 0.38889rem;
+		border-bottom: 14px solid;
+		border-bottom: 0.77778rem solid;
 	}
 }
 
@@ -997,7 +1063,6 @@ a:active {
 --------------------------------------------------------------*/
 .site-header,
 .content-area,
-.single-entry,
 .footer-widget-area,
 .site-footer {
 	display: block;
@@ -1011,8 +1076,6 @@ a:active {
 .site-header:after,
 .content-area:before,
 .content-area:after,
-.single-entry:before,
-.single-entry:after,
 .footer-widget-area:before,
 .footer-widget-area:after,
 .site-footer:before,
@@ -1022,9 +1085,37 @@ a:active {
 }
 .site-header:after,
 .content-area:after,
-.single-entry:after,
 .footer-widget-area:after,
 .site-footer:after {
+	clear: both;
+}
+
+.single-entry,
+.post-navigation .nav-links,
+.comment-navigation,
+.comment-list {
+	display: block;
+	max-width: 1400px;
+	margin: 0 -14px;
+	padding: 0 0; 
+
+	*zoom: 1;
+}
+.single-entry:before,
+.single-entry:after,
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after,
+.comment-navigation:before,
+.comment-navigation:after,
+.comment-list:before,
+.comment-list:after {
+	content: " ";
+	display: table;
+}
+.single-entry:after,
+.post-navigation .nav-links:after,
+.comment-navigation:after,
+.comment-list:after {
 	clear: both;
 }
 
@@ -1034,7 +1125,9 @@ a:active {
 .single-entry .entry-header,
 .single-entry .entry-content,
 .single-entry .entry-footer,
-.footer-widget,
+.nav-previous,
+.nav-next,
+.comment,
 .site-info {
 	float: left;
 	display: inline;
@@ -1047,10 +1140,7 @@ a:active {
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
-	.single-entry .entry-header,
-	.single-entry .entry-content,
-	.single-entry .entry-footer,
-	.site-info {
+	.site-main {
 		float: left;
 		display: inline;
 		width: 83.33333%;
@@ -1058,42 +1148,70 @@ a:active {
 		margin-left: 8.33333%;
 		padding: 0 14px;
 	}
-}
-
-@media (min-width: 800px) {
-	/* Narrower content column than everything else, for better line length. */
-	.single-entry .entry-content {
+	/* Adjust main area column widths for reduced container size. */
+	.single-entry .entry-header,
+	.single-entry .entry-content,
+	.single-entry .entry-footer,
+	.comment,
+	.site-info {
 		float: left;
 		display: inline;
-		width: 66.66667%;
-		margin-right: 16.66667%; 
-		margin-left: 16.66667%;
+		width: 100%;
 		padding: 0 14px;
 	}
-	/* Side-by-side widgets. */
-	.footer-widget {
+	/* Side-by-side columns. */
+	.nav-previous,
+	.nav-next {
 		float: left;
 		display: inline;
 		width: 50%;
 		padding: 0 14px;
+	}
+}
+
+@media (min-width: 800px) {
+	/* Narrower content column than everything else, for better line length. */
+	.single-entry .entry-content,
+	.single-entry .entry-footer {
+		float: left;
+		display: inline;
+		width: 80%;
+		margin-right: 10%; 
+		margin-left: 10%;
+		padding: 0 14px;
+	}
+	/* More spacing between side-by-side columns. */
+	.nav-previous,
+	.nav-next {
+		float: left;
+		display: inline;
+		width: 40%;
+		padding: 0 14px;
+	}
+	.nav-previous {
+		margin-right: 10%;
+	}
+	.nav-next {
+		margin-left: 10%;
 	}
 }
 
 @media (min-width: 1020px) {
 	/* Even narrower content column, to maintain sensible line length. */
-	.single-entry .entry-content {
+	.single-entry .entry-content,
+	.single-entry .entry-footer {
+		float: left;
+		display: inline;
+		width: 60%;
+		margin-right: 20%; 
+		margin-left: 20%;
+		padding: 0 14px;
+	}
+	/* Side-by-side comments. */
+	.comment {
 		float: left;
 		display: inline;
 		width: 50%;
-		margin-right: 25%; 
-		margin-left: 25%;
-		padding: 0 14px;
-	}
-	/* 3 widgets per row. */
-	.footer-widget {
-		float: left;
-		display: inline;
-		width: 33.33333%;
 		padding: 0 14px;
 	}
 }
@@ -1162,15 +1280,57 @@ a:active {
 10.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 28px;
-	margin: 0 0 1.55556rem;
+	margin: 56px 0;
+	margin: 3.11111rem 0;
+	padding: 0 14px;
+	padding: 0 0.77778rem;
+	border-left: 14px solid;
+	border-left: 0.77778rem solid;
+	border-color: #dcd4c6;
+	/* Different colours for different categories. */
+	/* Links. */
 	/* Make sure select elements fit in widgets. */
+}
+.category-yorklife .widget {
+	border-color: #dcd4c6;
+}
+.category-up-close-and-personal .widget {
+	border-color: #69bcc9;
+}
+.category-centre-stage .widget {
+	border-color: #f0ef84;
+}
+.category-all-about-yu .widget {
+	border-color: #9acd9c;
+}
+.category-back-page .widget {
+	border-color: #e8cfeb;
+}
+.widget,
+.widget a {
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 }
 .widget select {
 	max-width: 100%;
 }
 
+/* Widget titles. */
+.widget-title {
+	margin-top: 0;
+	font-weight: normal;
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.16667;
+	font-family: "Aleo", Constantia, Georgia, sans-serif; 
+	text-align: left;
+}
+
 /* Search widget. */
+.widget_search .search-field {
+	width: 100%;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
 .widget_search .search-submit {
 	display: none;
 }
@@ -1194,15 +1354,13 @@ a:active {
 	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 	word-wrap: break-word;
 }
-
-.byline,
-.updated:not(.published) {
-	display: none;
+.single-entry .entry-title {
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
 }
 
-.single .byline,
-.group-blog .byline {
-	display: inline;
+.updated:not(.published) {
+	display: none;
 }
 
 .page-content,
@@ -1218,10 +1376,8 @@ a:active {
 	margin: 0 0 1.55556rem;
 }
 
-/* Byline and other metadata. */
-.entry-meta,
-.entry-footer {
-	font-weight: bold;
+/* Byline. */
+.entry-meta {
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 	text-align: center;
 }
@@ -1239,8 +1395,24 @@ a:active {
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 }
 
+/* Metadata */
+.entry-footer {
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+}
+
+/* Post footer meta lines. */
+.posted-on,
+.tag-links {
+	display: block;
+}
+
 /* 11.2 Comments
 --------------------------------------------------------------*/
+.comment-content {
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+}
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1249,6 +1421,42 @@ a:active {
 	display: block;
 }
 
+/* Comment form help. */
+.form-allowed-tags {
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+}
+
+/* 11.3 Issues
+--------------------------------------------------------------*/
+.issue-title {
+	margin-top: 0;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.55556;
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+}
+.issue-title a {
+	font-weight: normal; 
+	color: #171717;
+}
+.issue-title a:hover,
+.issue-title a:focus {
+	color: #0f3b6b;
+}
+
+/* eg 'ISSUE ONE' */
+.issue-number {
+	font-weight: bold;
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif; 
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+/* eg 'April 2015' */
 /*--------------------------------------------------------------
 12.0 Footer
 --------------------------------------------------------------*/

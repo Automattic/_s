@@ -402,7 +402,9 @@ var {
 
 /* No special styling for abbreviation elements. */
 abbr,
-acronym {
+abbr[title],
+acronym,
+acronym[title] {
 	border-bottom: 0;
 	cursor: inherit;
 }
@@ -601,7 +603,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #0f3b6b;
 }
 a:focus {
 	outline: thin dotted;
@@ -703,15 +705,13 @@ a:active {
 	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
 	word-wrap: break-word;
 }
-
-.byline,
-.updated:not(.published) {
-	display: none;
+.single-entry .entry-title {
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
 }
 
-.single .byline,
-.group-blog .byline {
-	display: inline;
+.updated:not(.published) {
+	display: none;
 }
 
 .page-content,
@@ -727,10 +727,8 @@ a:active {
 	margin: 0 0 1.55556rem;
 }
 
-/* Byline and other metadata. */
-.entry-meta,
-.entry-footer {
-	font-weight: bold;
+/* Byline. */
+.entry-meta {
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
 	text-align: center;
 }
@@ -746,6 +744,17 @@ a:active {
 	margin-right: 3px;
 	font-weight: bold;
 	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+}
+
+/* Metadata */
+.entry-footer {
+	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+}
+
+/* Post footer meta lines. */
+.posted-on,
+.tag-links {
+	display: block;
 }
 
 /*--------------------------------------------------------------
