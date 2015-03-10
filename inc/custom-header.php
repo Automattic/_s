@@ -7,7 +7,7 @@
 
 	<?php if ( get_header_image() ) : ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-		<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 	</a>
 	<?php endif; // End header image check. ?>
 
@@ -16,13 +16,11 @@
  */
 
 /**
- * Setup the WordPress core custom header feature.
+ * Set up the WordPress core custom header feature.
  *
  * @uses _s_header_style()
  * @uses _s_admin_header_style()
  * @uses _s_admin_header_image()
- *
- * @package _s
  */
 function _s_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_s_custom_header_args', array(
@@ -71,7 +69,7 @@ function _s_header_style() {
 	?>
 		.site-title a,
 		.site-description {
-			color: #<?php echo $header_text_color; ?>;
+			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>
