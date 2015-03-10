@@ -39,6 +39,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 13.0 Media
 	13.1 Captions
 	13.2 Galleries
+14.0 Themes
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "functions/functions-master";
@@ -145,3 +146,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /* 13.2 Galleries
 --------------------------------------------------------------*/
 @import "media/galleries";
+
+/*--------------------------------------------------------------
+14.0 Themes
+--------------------------------------------------------------*/
+@import "themes/yorklife";
+@import "themes/up-close";
+@import "themes/centre-stage";
+@import "themes/all-about-yu";
+@import "themes/back-page";
