@@ -16,6 +16,11 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<?php // TODO MAKE THIS REAL CODE! ?>
+		<header class="issue-header">
+			<h1 class="issue-title"><a href="#"><span class="issue-number">Issue One</span> / <span class="issue-date">April 2015</span></a></h1>
+		</header>
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
