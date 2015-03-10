@@ -30,6 +30,29 @@ $padding: ($gutter_width * 0.5);
 	padding: 0 $padding;
 }
 
+/// Make this element a row within a column.
+///
+/// Separate mixin, so that negative margins can be applied to line the columns
+/// up properly.
+///
+/// @global $max_width
+/// @global $gutter_width
+///
+/// @param {Number} $padding [0] Horizontal padding to apply to the row (i.e.
+///                              half the gutter width).
+@mixin nested-row($padding: 0) {
+	@if (0 != $padding) and unitless($padding) {
+		@error "$padding must not be unitless, was #{$padding}";
+	}
+
+	// Output
+	@include clearfix;
+	display: block;
+	max-width: $max_width;
+	margin: 0 (-0.5 * $gutter_width);
+	padding: 0 $padding;
+}
+
 /// Make this element a specified number of columns wide.
 ///
 /// @param {Number} $x       Number of columns this element should span.
@@ -87,60 +110,4 @@ $padding: ($gutter_width * 0.5);
 
 	// Output
 	margin-right: (100% * ($offset / $columns));
-}
-
-
-/// Add left padding to push the left edge of this element's contents a
-/// specified number of columns to the right.
-///
-/// Uses CSS `calc()` to combine percentage column widths with the absolute
-/// `padding` gutter width. Falls back in IE.old to the column width without the
-/// gutter applied.
-///
-/// @param {Number} $offset [1] Number of empty columns to the left of the
-///                             contents.
-/// @param {Number} $columns    Total number of columns the container row spans.
-/// @param {Bool}   $add_gutter Whether to add an extra half-gutter to the left.
-@mixin push-interior($offset: 1, $columns: $columns, $add_gutter: false) {
-	@if not unitless($offset) or (abs($offset) != $offset) {
-		@error "$offset must be a unitless whole number, was #{$offset}";
-	}
-	@if not unitless($columns) or (abs($columns) != $columns) {
-		@error "$columns must be a unitless whole number, was #{$columns}";
-	}
-
-	// Output
-	$base-width: (100% * ($offset / $columns));
-	padding-left: $base-width;
-	@if $add_gutter {
-		padding-left: calc(#{$base-width} + #{$padding});
-	}
-}
-
-/// Add right padding to push the right edge of this element's contents a
-/// specified number of columns to the left.
-///
-/// Uses CSS `calc()` to combine percentage column widths with the absolute
-/// `padding` gutter width. Falls back in IE.old to the column width without the
-/// gutter applied.
-///
-/// @param {Number} $offset [1] Number of empty columns to the right of the
-///                           contents.
-/// @param {Number} $columns    Total number of columns the container row spans.
-/// @param {Bool}   $add_gutter Whether to add an extra half-gutter to the
-/// right.
-@mixin pull-interior($offset: 1, $columns: $columns, $add_gutter: false) {
-	@if not unitless($offset) or (abs($offset) != $offset) {
-		@error "$offset must be a unitless whole number, was #{$offset}";
-	}
-	@if not unitless($columns) or (abs($columns) != $columns) {
-		@error "$columns must be a unitless whole number, was #{$columns}";
-	}
-
-	// Output
-	$base-width: (100% * ($offset / $columns));
-	padding-right: $base-width;
-	@if $add_gutter {
-			padding-right: calc(#{$base-width} + #{$padding});
-	}
 }
