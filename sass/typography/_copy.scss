@@ -37,8 +37,11 @@ var {
 /* No special styling for abbreviation elements. */
 abbr,
 acronym {
-	border-bottom: 0;
-	cursor: inherit;
+	&,
+	&[title] {
+		border-bottom: 0;
+		cursor: inherit;
+	}
 }
 
 mark,
