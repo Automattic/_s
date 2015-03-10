@@ -1,6 +1,18 @@
-.comment-content a {
-	word-wrap: break-word;
+.comment-content  {
+	@include font-size-line( "small" );
+
+	a {
+		word-wrap: break-word;
+	}
+
 }
+
 .bypostauthor {
 	display: block;
+}
+
+/* Comment form help. */
+.form-allowed-tags {
+	@include font-size-line( "small" );
+	font-family: $font-family__meta;
 }
