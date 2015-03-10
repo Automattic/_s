@@ -90,6 +90,7 @@
 	letter-spacing: 0.05em;
 	text-align: center;
 	text-transform: uppercase;
+	color: $color__menu-toggle;
 
 	/* Same transition duration as links. */
 	&,
@@ -98,8 +99,9 @@
 	}
 
 	&:hover,
-	&:focus {
-		color: $color__link-hover;
+	&:focus,
+	&:active {
+		color: $color__menu-toggle-hover;
 	}
 
 	&:hover,
@@ -117,6 +119,7 @@
 	transform-origin: left top 0;
     transition: $transition-time__menu left $transition-type,
     	0 opacity linear $transition-time__menu; /* Delay on show, to wait for main page to slide back over. */
+
 }
 
 .search-toggle {
@@ -140,6 +143,7 @@
 
 	.menu-toggle {
 		@include rem( "left", ( $width__menu + $width__menu-toggle ) );
+		color: $color__menu-toggle-hover;
 	}
 
 	/* Show the navigation elements. */
@@ -167,6 +171,7 @@
 
 	.search-toggle {
 		@include rem( "right", ( $width__menu + $width__menu-toggle ) );
+		color: $color__menu-toggle-hover;
 	}
 
 	/* Show the search elements. */
