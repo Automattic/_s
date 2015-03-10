@@ -70,6 +70,14 @@
 
 .main-search-wrapper {
 	right: 0;
+
+	/* Right-aligned elements. */
+	.widget {
+		border-left: 0;
+		border-right-width: $border-width__widget;
+		border-right-style: solid;
+	}
+
 }
 
 /*
@@ -194,6 +202,27 @@
 
 }
 
+.menu-item-yorklife a {
+	color: $color__yorklife;
+}
+
+.menu-item-up-close a {
+	color: $color__upclose;
+}
+
+.menu-item-centre-stage a {
+	color: $color__centrestage;
+}
+
+.menu-item-all-about-yu a {
+	color: $color__allaboutyu;
+}
+
+.menu-item-back-page a {
+	color: $color__backpage;
+}
+
+
 /* Admin bar is being displayed, so move position-fixed elements down. */
 .admin-bar {
 
@@ -207,6 +236,22 @@
 			top: 46px;
 		}
 
+	}
+
+}
+
+/* Space out the toggle buttons more for wider screens */
+@include media( "main-spacing" ) {
+
+	.menu-toggle,
+	.search-toggle {
+		@include rem( "padding-top", ( $line / 2 ) );
+	}
+
+	.menu-toggle-inner,
+	.search-toggle-inner {
+		@include rem( "padding-bottom", ( $line / 4 ) );
+		@include rem( "border-bottom", $border-width__widget solid );
 	}
 
 }
