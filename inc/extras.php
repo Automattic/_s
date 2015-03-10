@@ -10,13 +10,23 @@
 /**
  * Adds custom classes to the array of body classes.
  *
+ * @global $post WP_Post object
+ *
  * @param array $classes Classes for the body element.
  * @return array
  */
 function yumag_body_classes( $classes ) {
+	global $post;
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
+	}
+
+	// Add category-based classes.
+	$categories = get_the_category( $post->ID );
+	foreach( $categories as $cat ) {
+		$classes[] = 'category-' . $cat->slug;
 	}
 
 	return $classes;
