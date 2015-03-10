@@ -412,12 +412,19 @@ function _strap_build_production($slug)
 	$boot_dst = $comp_path . DIRECTORY_SEPARATOR . 'bootstrap';
 	rename( $boot_src, $boot_dst );
 	touch( $boot_dst . DIRECTORY_SEPARATOR . '_vars.less' );
+	file_put_contents( $boot_dst . DIRECTORY_SEPARATOR . '_vars.less', '@icon-font-path:          "./assets/components/bootstrap/fonts/";' );
 
 	$s_style = $dst . DIRECTORY_SEPARATOR . 'style.less';
 	$content = file_get_contents($s_style);
 	$content = str_replace('@import "bootstrap/less/variables.less"', '@import "bootstrap/less/variables.less"' . "\n" . '@import "bootstrap/_vars.less"', $content);
 	$content = str_replace('bootstrap/', 'assets/components/bootstrap/', $content);
 	file_put_contents($s_style, $content);
+
+	$s_funcs = $dst . DIRECTORY_SEPARATOR . 'functions.php';
+	$content = file_get_contents($s_funcs);
+	$content = str_replace("'/bootstrap/js", "'/assets/components/bootstrap/js", $content);
+	$content = str_replace("'/js/", "'/assets/js/", $content);
+	file_put_contents($s_funcs, $content);
 
 	// cleanup
 	$expendables = array(

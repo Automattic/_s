@@ -108,7 +108,7 @@ function _s_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '20120206', true );
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ), 'v3.3.2', true );
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
