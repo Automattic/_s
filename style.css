@@ -342,7 +342,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-transform: uppercase;
 }
 
@@ -506,7 +506,7 @@ cite {
 	font-style: normal;
 	font-weight: bold;
 	font-size: 0.9em;
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -536,7 +536,7 @@ figcaption,
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
 }
 
@@ -700,7 +700,7 @@ a:hover {
 	transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
 }
 a:visited {
-	color: #803c7d;
+	color: #1960ae;
 }
 a:hover,
 a:focus,
@@ -736,7 +736,7 @@ a:active {
 	list-style: none;
 	font-size: 16px;
 	font-size: 0.88889rem;
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -812,7 +812,7 @@ a:active {
 	font-size: 1rem;
 	line-height: 84px;
 	line-height: 4.66667rem;
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
@@ -1121,6 +1121,9 @@ a:active {
 .issue-header,
 .single-entry .entry-header,
 .single-entry .entry-content,
+.entry-author,
+.posted-on,
+.tags-links,
 .post-navigation,
 .nav-previous,
 .nav-next,
@@ -1140,6 +1143,9 @@ a:active {
 	 */
 	.single-entry .entry-header,
 	.single-entry .entry-content,
+	.entry-author,
+	.posted-on,
+	.tags-links,
 	.post-navigation,
 	.comments-area,
 	.site-info {
@@ -1169,7 +1175,10 @@ a:active {
 
 @media (min-width: 800px) {
 	/* Narrower content column than everything else, for better line length. */
-	.single-entry .entry-content {
+	.single-entry .entry-content,
+	.entry-author,
+	.posted-on,
+	.tags-links {
 		float: left;
 		display: inline;
 		width: 66.66667%;
@@ -1195,7 +1204,10 @@ a:active {
 
 @media (min-width: 1020px) {
 	/* Even narrower content column, to maintain sensible line length. */
-	.single-entry .entry-content {
+	.single-entry .entry-content,
+	.entry-author,
+	.posted-on,
+	.tags-links {
 		float: left;
 		display: inline;
 		width: 50%;
@@ -1217,6 +1229,7 @@ a:active {
 --------------------------------------------------------------*/
 .clear,
 .entry-content,
+.single-entry .entry-footer,
 .comment-content,
 .site-header,
 .site-content,
@@ -1227,6 +1240,8 @@ a:active {
 .clear:after,
 .entry-content:before,
 .entry-content:after,
+.single-entry .entry-footer:before,
+.single-entry .entry-footer:after,
 .comment-content:before,
 .comment-content:after,
 .site-header:before,
@@ -1240,6 +1255,7 @@ a:active {
 }
 .clear:after,
 .entry-content:after,
+.single-entry .entry-footer:after,
 .comment-content:after,
 .site-header:after,
 .site-content:after,
@@ -1304,7 +1320,7 @@ a:active {
 }
 .widget,
 .widget a {
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 .widget select {
 	max-width: 100%;
@@ -1362,8 +1378,8 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 28px 0 0;
-	margin: 1.55556rem 0 0;
+	margin: 28px 0 112px;
+	margin: 1.55556rem 0 6.22222rem;
 }
 
 .page-links {
@@ -1373,12 +1389,15 @@ a:active {
 }
 
 /* Byline. */
-.entry-meta {
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+.entry-meta,
+.entry-author {
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
 	/* The author's name */
 }
-.entry-meta a {
+.entry-meta a,
+.entry-author a {
+	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
 
@@ -1388,22 +1407,34 @@ a:active {
 	border-radius: 50% 50%;
 }
 
+/* Categories in entry footer. */
+.entry-issue,
+.cat-links {
+	letter-spacing: 0.05em; 
+	text-transform: uppercase;
+}
+
 /* Dropcaps. */
 .dropcap {
 	margin-right: 3px;
 	font-weight: bold;
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* Metadata */
 .entry-footer {
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* Post footer meta lines. */
 .posted-on,
-.tag-links {
-	display: block;
+.tags-links {
+	display: block; 
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
 }
 
 /* 11.2 Comments
@@ -1426,7 +1457,7 @@ a:active {
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* 11.3 Issues
@@ -1450,7 +1481,7 @@ a:active {
 /* eg 'ISSUE ONE' */
 .issue-number {
 	font-weight: bold;
-	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif; 
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
@@ -1460,6 +1491,37 @@ a:active {
 /*--------------------------------------------------------------
 12.0 Footer
 --------------------------------------------------------------*/
+/* Footer area backgrounds. */
+.single-entry .entry-footer {
+	clear: both;
+	text-align: center;
+	background: #e0e0e8;
+}
+
+/*
+ * 1. For the avatar positioning.
+ * 2. Leave room for the avatar.
+ */
+.entry-author {
+	position: relative;
+	/* 1 */
+	padding-top: 48px;
+}
+
+/* Position at top-center of footer area. */
+.entry-author-avatar {
+	position: absolute;
+	top: -48px;
+	left: 50%;
+	margin-left: -48px;
+}
+
+/* Leave some more space under the avatar. */
+.entry-author-byline {
+	margin-top: 14px;
+	margin-top: 0.77778rem;
+}
+
 /* Copyright, terms, and colophon */
 .site-info {
 	text-align: center;

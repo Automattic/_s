@@ -23,9 +23,9 @@
 //                       [COLUMN 12/10/8/6] .entry-content
 //                           [CONTENT]
 //                       .entry-footer
-//                           .posted-on
-//                               .cat-links
-//                               .tag-links
+//                           [COLUMN 12/10/8/6] .entry-author
+//                           [COLUMN 12/10/8/6] .posted-on
+//                           [COLUMN 12/10/8/6] .tags-links
 //                   [COLUMN 12/10] .navigation.post-navigation
 //                   	[NESTED-ROW] .nav-links
 //                   		[COLUMN 12/5] .nav-previous
@@ -72,6 +72,9 @@
 .issue-header,
 .single-entry .entry-header,
 .single-entry .entry-content,
+.entry-author,
+.posted-on,
+.tags-links,
 .post-navigation,
 .nav-previous,
 .nav-next,
@@ -90,6 +93,9 @@
 	 */
 	.single-entry .entry-header,
 	.single-entry .entry-content,
+	.entry-author,
+	.posted-on,
+	.tags-links,
 	.post-navigation,
 	.comments-area,
 	.site-info {
@@ -114,7 +120,10 @@
 @include media( "main-spacing-1" ) {
 
 	/* Narrower content column than everything else, for better line length. */
-	.single-entry .entry-content {
+	.single-entry .entry-content,
+	.entry-author,
+	.posted-on,
+	.tags-links {
 		@include column(8);
 		@include push(2);
 		@include pull(2);
@@ -138,7 +147,10 @@
 @include media( "main-spacing-2" ) {
 
 	/* Even narrower content column, to maintain sensible line length. */
-	.single-entry .entry-content {
+	.single-entry .entry-content,
+	.entry-author,
+	.posted-on,
+	.tags-links {
 		@include column(6);
 		@include push(3);
 		@include pull(3);

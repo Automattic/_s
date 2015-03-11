@@ -24,7 +24,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	@include rem( "margin", $spacing 0 0 );
+	@include rem( "margin", $spacing 0 ( $spacing * 4 ) );
 }
 
 .page-links {
@@ -33,13 +33,15 @@
 }
 
 /* Byline. */
-.entry-meta {
+.entry-meta,
+.entry-author {
 	font-family: $font-family__meta;
 	text-align: center;
 
 	/* The author's name */
 	a {
 		text-transform: uppercase;
+		letter-spacing: $letter-spacing__caps;
 	}
 
 }
@@ -47,6 +49,13 @@
 /* Author photos. */
 .avatar {
 	border-radius: 50% 50%;
+}
+
+/* Categories in entry footer. */
+.entry-issue,
+.cat-links {
+	text-transform: uppercase;
+	letter-spacing: $letter-spacing__caps;
 }
 
 /* Dropcaps. */
@@ -58,11 +67,13 @@
 
 /* Metadata */
 .entry-footer {
+	@include font-size-line( "small" );
 	font-family: $font-family__meta;
 }
 
 /* Post footer meta lines. */
 .posted-on,
-.tag-links {
+.tags-links {
+	@include rem( "margin-bottom", $spacing );
 	display: block;
 }

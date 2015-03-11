@@ -1,3 +1,33 @@
+/* Footer area backgrounds. */
+.single-entry .entry-footer {
+	clear: both;
+	text-align: center;
+	background: $background-color__footer;
+}
+
+/*
+ * 1. For the avatar positioning.
+ * 2. Leave room for the avatar.
+ */
+.entry-author {
+	position: relative; /* 1 */
+	padding-top: ( $avatar-diameter / 2 );
+}
+
+/* Position at top-center of footer area. */
+.entry-author-avatar {
+	position: absolute;
+	top: ( -1 * ( $avatar-diameter / 2 ) );
+	left: 50%;
+	margin-left: ( -1 * ( $avatar-diameter / 2 ) );
+}
+
+/* Leave some more space under the avatar. */
+.entry-author-byline {
+	@include rem( "margin-top", ( $spacing / 2 ) );
+}
+
+
 /* Copyright, terms, and colophon */
 .site-info {
 	text-align: center;

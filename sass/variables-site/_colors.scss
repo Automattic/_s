@@ -76,13 +76,14 @@ $background-color__button: #e6e6e6;
 $background-color__pre:    #eee;
 $background-color__ins:    #fff9c0;
 $background-color__menu:   $black;
+$background-color__footer: $grey__lightest;
 
 $color__main:                 $black;
 $color__screen:               #21759b;
 $color__input:                $grey;
 $color__input-focus:          $color__main;
 $color__link:                 $fun-blue;
-$color__link-visited:         $plum;
+$color__link-visited:         $color__link;
 $color__link-hover:           darken( $color__link, 15% );
 $color__link__reversed:       $downy;
 $color__link-hover__reversed: lighten( $color__link__reversed, 15% );

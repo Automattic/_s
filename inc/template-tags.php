@@ -42,7 +42,11 @@ function yumag_author_box() {
 
 		}
 
-		echo '<h3 class="entry-author-name">' . get_the_author() . '</h3>';
+		echo '<div class="entry-author-byline">';
+		printf( _x( 'by %s', 'post author', 'yumag' ),
+			'<a class="entry-author-name" href="' . get_author_posts_url( $author_id ) . '">' . get_the_author() . '</a>'
+		);
+		echo '</div>';
 
 		$about = get_the_author_meta( 'description' );
 		if ( $about ) {
@@ -67,6 +71,12 @@ function yumag_entry_footer() {
 
 		yumag_author_box();
 
+		/* translators: used between list items, there is a space on each side of the slash */
+		$tags_list = get_the_tag_list( '', __( ' / ', 'yumag' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'yumag' ) . '</span>', $tags_list );
+		}
+
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -84,7 +94,8 @@ function yumag_entry_footer() {
 
 		/* Prepare categories and datestamp output. */
 		if ( $categories_list && yumag_categorized_blog() ) {
-			$posted_on = sprintf( __( 'Posted in %1$s on %2$s', 'yumag' ),
+			$posted_on = sprintf( _x( '%1$s / %2$s / %3$s', 'Post footer metadata order', 'yumag' ),
+				'<a class="entry-issue" href="#">Issue One</a>',
 				sprintf( '<span class="cat-links">%s</span>', $categories_list ),
 				$time_string
 			);
@@ -95,12 +106,6 @@ function yumag_entry_footer() {
 		}
 
 		echo '<span class="posted-on">' . $posted_on . '</span>';
-
-		/* translators: used between list items, there is a space on each side of the slash */
-		$tags_list = get_the_tag_list( '', __( ' / ', 'yumag' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'yumag' ) . '</span>', $tags_list );
-		}
 
 	}
 
