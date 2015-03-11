@@ -1091,7 +1091,6 @@ a:active {
 	clear: both;
 }
 
-.single-entry,
 .post-navigation .nav-links,
 .comment-navigation,
 .comment-list {
@@ -1102,8 +1101,6 @@ a:active {
 
 	*zoom: 1;
 }
-.single-entry:before,
-.single-entry:after,
 .post-navigation .nav-links:before,
 .post-navigation .nav-links:after,
 .comment-navigation:before,
@@ -1113,7 +1110,6 @@ a:active {
 	content: " ";
 	display: table;
 }
-.single-entry:after,
 .post-navigation .nav-links:after,
 .comment-navigation:after,
 .comment-list:after {
@@ -1122,12 +1118,13 @@ a:active {
 
 /* Every column is full-width for mobiles. */
 .site-branding,
-.site-main,
+.issue-header,
 .single-entry .entry-header,
 .single-entry .entry-content,
-.single-entry .entry-footer,
+.post-navigation,
 .nav-previous,
 .nav-next,
+.comments-area,
 .comment,
 .site-info {
 	float: left;
@@ -1141,7 +1138,11 @@ a:active {
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
-	.site-main {
+	.single-entry .entry-header,
+	.single-entry .entry-content,
+	.post-navigation,
+	.comments-area,
+	.site-info {
 		float: left;
 		display: inline;
 		width: 83.33333%;
@@ -1149,18 +1150,14 @@ a:active {
 		margin-left: 8.33333%;
 		padding: 0 14px;
 	}
-	/* Adjust main area column widths for reduced container size. */
-	.single-entry .entry-header,
-	.single-entry .entry-content,
-	.single-entry .entry-footer,
-	.comment,
-	.site-info {
+	/* Nested single column. */
+	.comment {
 		float: left;
 		display: inline;
 		width: 100%;
 		padding: 0 14px;
 	}
-	/* Side-by-side columns. */
+	/* Nested side-by-side columns. */
 	.nav-previous,
 	.nav-next {
 		float: left;
@@ -1172,13 +1169,12 @@ a:active {
 
 @media (min-width: 800px) {
 	/* Narrower content column than everything else, for better line length. */
-	.single-entry .entry-content,
-	.single-entry .entry-footer {
+	.single-entry .entry-content {
 		float: left;
 		display: inline;
-		width: 80%;
-		margin-right: 10%; 
-		margin-left: 10%;
+		width: 66.66667%;
+		margin-right: 16.66667%; 
+		margin-left: 16.66667%;
 		padding: 0 14px;
 	}
 	/* More spacing between side-by-side columns. */
@@ -1199,13 +1195,12 @@ a:active {
 
 @media (min-width: 1020px) {
 	/* Even narrower content column, to maintain sensible line length. */
-	.single-entry .entry-content,
-	.single-entry .entry-footer {
+	.single-entry .entry-content {
 		float: left;
 		display: inline;
-		width: 60%;
-		margin-right: 20%; 
-		margin-left: 20%;
+		width: 50%;
+		margin-right: 25%; 
+		margin-left: 25%;
 		padding: 0 14px;
 	}
 	/* Side-by-side comments. */

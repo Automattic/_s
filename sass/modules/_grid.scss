@@ -12,9 +12,9 @@
 //               h2.site-description
 //       #content.site-content
 //           [ROW] #primary.content-area
-//               [COLUMN 12/10] main#main.site-main
-//                   header.issue-header
-//                   [NESTED-ROW] article.entry[POST CLASSES]
+//               main#main.site-main
+//               [COLUMN 12] header.issue-header
+//                    article.entry[POST CLASSES]
 //                       [COLUMN 12/10] .entry-header
 //                           h1.entry-title
 //                           .entry-meta
@@ -22,15 +22,15 @@
 //                           	.byline
 //                       [COLUMN 12/10/8/6] .entry-content
 //                           [CONTENT]
-//                       [COLUMN 12/10/8/6] .entry-footer
+//                       .entry-footer
 //                           .posted-on
 //                               .cat-links
 //                               .tag-links
-//                   .navigation.post-navigation
+//                   [COLUMN 12/10] .navigation.post-navigation
 //                   	[NESTED-ROW] .nav-links
 //                   		[COLUMN 12/5] .nav-previous
 //                   		[COLUMN 12/5] .nav-next
-//                   #comments.comments-area
+//                   [COLUMN 12/10] #comments.comments-area
 //                       h2.comments-title
 //                       [NESTED-ROW] nav#comment-nav-above.comment-navigation
 //                       	[COLUMN 12/5] .nav-previous
@@ -60,7 +60,6 @@
 	@include row;
 }
 
-.single-entry,
 .post-navigation .nav-links,
 .comment-navigation,
 .comment-list {
@@ -70,12 +69,13 @@
 
 /* Every column is full-width for mobiles. */
 .site-branding,
-.site-main,
+.issue-header,
 .single-entry .entry-header,
 .single-entry .entry-content,
-.single-entry .entry-footer,
+.post-navigation,
 .nav-previous,
 .nav-next,
+.comments-area,
 .comment,
 // .footer-widget,
 .site-info {
@@ -88,22 +88,23 @@
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
-	.site-main {
+	.single-entry .entry-header,
+	.single-entry .entry-content,
+	.post-navigation,
+	.comments-area,
+	.site-info {
 		@include column(10);
 		@include push;
 		@include pull;
 	}
 
-	/* Adjust main area column widths for reduced container size. */
-	.single-entry .entry-header,
-	.single-entry .entry-content,
-	.single-entry .entry-footer,
-	.comment,
-	.site-info {
+	/* Nested single column. */
+	.comment {
 		@include column(10, $padding, 10);
 	}
 
-	/* Side-by-side columns. */
+
+	/* Nested side-by-side columns. */
 	.nav-previous,
 	.nav-next {
 		@include column(5, $padding, 10);
@@ -113,11 +114,10 @@
 @include media( "main-spacing-1" ) {
 
 	/* Narrower content column than everything else, for better line length. */
-	.single-entry .entry-content,
-	.single-entry .entry-footer {
-		@include column(8, $padding, 10);
-		@include push(1, 10);
-		@include pull(1, 10);
+	.single-entry .entry-content {
+		@include column(8);
+		@include push(2);
+		@include pull(2);
 	}
 
 	/* More spacing between side-by-side columns. */
@@ -138,11 +138,10 @@
 @include media( "main-spacing-2" ) {
 
 	/* Even narrower content column, to maintain sensible line length. */
-	.single-entry .entry-content,
-	.single-entry .entry-footer {
-		@include column(6, $padding, 10);
-		@include push(2, 10);
-		@include pull(2, 10);
+	.single-entry .entry-content {
+		@include column(6);
+		@include push(3);
+		@include pull(3);
 	}
 
 	/* Side-by-side comments. */
