@@ -5,13 +5,13 @@ Variables
 // Colors
 
 $color-background-body: #fff;
-$color-background-screen: #f1f1f1;
+$color-background-screen-reader: #f1f1f1;
 $color-background-hr: #ccc;
 $color-background-button: #e6e6e6;
 $color-background-pre: #eee;
 $color-background-ins: #fff9c0;
 
-$color-text-screen: #21759b;
+$color-text-screen-reader: #21759b;
 $color-text-input: #666;
 $color-text-input-focus: #111;
 $color-link: royalblue;
@@ -41,7 +41,7 @@ $line-height-pre: 1.6;
  * Map icon names to font unicode characters
  * see @mixin icon in mixins.scss
  *
- * Example usage: 
+ * Example usage:
  *
  *    .menu-toggle {
  *        @include icon(before, favicon) {
@@ -53,5 +53,5 @@ $line-height-pre: 1.6;
 $icons: (
 
 	favicon: "\f0c9", // Example to get you started
-	
+
 );
