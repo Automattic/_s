@@ -155,22 +155,3 @@ function yumag_category_transient_flusher() {
 }
 add_action( 'edit_category', 'yumag_category_transient_flusher' );
 add_action( 'save_post',     'yumag_category_transient_flusher' );
-
-if ( ! function_exists( 'yumag_typekit_script' ) ) :
-/**
- * Output the Typekit font loading script.
- *
- * Uses the tweaked version of the Typekit async loader from
- * {@link https://blog.5apps.com/2014/02/21/using-typekit-the-right-way-with-an-improved-loading-script.html}
- *
- * @since 1.0.0
- */
-function yumag_typekit_script() {
-	$kit_id = 'olg2vgf';
-	$script_timeout = 3000;
-	?>
-	<script>(function(d) {var tkTimeout=<?php echo $script_timeout; ?>;if(window.sessionStorage){if(sessionStorage.getItem('useTypekit')==='false'){tkTimeout=0;}}var config = {kitId: '<?php echo $kit_id; ?>',scriptTimeout: tkTimeout},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);</script>
-	<?
-}
-add_action( 'wp_head', 'yumag_typekit_script' );
-endif;

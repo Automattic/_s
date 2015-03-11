@@ -36,6 +36,12 @@
 .entry-meta {
 	font-family: $font-family__meta;
 	text-align: center;
+
+	/* The author's name */
+	a {
+		text-transform: uppercase;
+	}
+
 }
 
 /* Author photos. */

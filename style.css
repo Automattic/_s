@@ -297,7 +297,7 @@ h1,
 h2,
 .site-title {
 	font-weight: bold;
-	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
+	font-family: Times, "Times New Roman", serif;
 }
 h1,
 h2,
@@ -342,7 +342,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-transform: uppercase;
 }
 
@@ -506,7 +506,7 @@ cite {
 	font-style: normal;
 	font-weight: bold;
 	font-size: 0.9em;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -536,7 +536,7 @@ figcaption,
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
 }
 
@@ -736,7 +736,7 @@ a:active {
 	list-style: none;
 	font-size: 16px;
 	font-size: 0.88889rem;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -812,7 +812,7 @@ a:active {
 	font-size: 1rem;
 	line-height: 84px;
 	line-height: 4.66667rem;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
@@ -1309,7 +1309,7 @@ a:active {
 }
 .widget,
 .widget a {
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 .widget select {
 	max-width: 100%;
@@ -1352,7 +1352,7 @@ a:active {
 
 .entry-title {
 	font-weight: bold;
-	font-family: "adobe-caslon-pro", "Adobe Caslon Pro", Trocchi, Baskerville, Georgia, serif;
+	font-family: Times, "Times New Roman", serif;
 	word-wrap: break-word;
 }
 .single-entry .entry-title {
@@ -1379,8 +1379,12 @@ a:active {
 
 /* Byline. */
 .entry-meta {
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
+	/* The author's name */
+}
+.entry-meta a {
+	text-transform: uppercase;
 }
 
 /* Author photos. */
@@ -1393,12 +1397,12 @@ a:active {
 .dropcap {
 	margin-right: 3px;
 	font-weight: bold;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* Metadata */
 .entry-footer {
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* Post footer meta lines. */
@@ -1427,7 +1431,7 @@ a:active {
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif;
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* 11.3 Issues
@@ -1451,7 +1455,7 @@ a:active {
 /* eg 'ISSUE ONE' */
 .issue-number {
 	font-weight: bold;
-	font-family: Gotham, "Proxima Nova", "Museo Sans", Lato, Corbel, "Gill Sans", sans-serif; 
+	font-family: Lato, "Proxima Nova", Corbel, Helvetica, sans-serif; 
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
