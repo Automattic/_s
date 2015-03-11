@@ -2,10 +2,6 @@
 	display: block;
 }
 
-.entry {
-	@include rem( "margin", 0 0 $spacing );
-}
-
 .entry-title {
 	font-weight: bold;
 	font-family: $font-family__title;

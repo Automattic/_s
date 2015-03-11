@@ -1,5 +1,6 @@
 /* Footer area backgrounds. */
 .single-entry .entry-footer {
+	@include rem( "padding-bottom", ( $spacing * 2 ) );
 	clear: both;
 	text-align: center;
 	background: $background-color__footer;
@@ -25,10 +26,4 @@
 /* Leave some more space under the avatar. */
 .entry-author-byline {
 	@include rem( "margin-top", ( $spacing / 2 ) );
-}
-
-
-/* Copyright, terms, and colophon */
-.site-info {
-	text-align: center;
 }

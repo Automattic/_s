@@ -699,11 +699,6 @@ a:active {
 	display: block;
 }
 
-.entry {
-	margin: 0 0 28px;
-	margin: 0 0 1.55556rem;
-}
-
 .entry-title {
 	font-weight: bold;
 	font-family: Times, "Times New Roman", serif;

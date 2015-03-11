@@ -26,10 +26,6 @@
 //                           [COLUMN 12/10/8/6] .entry-author
 //                           [COLUMN 12/10/8/6] .posted-on
 //                           [COLUMN 12/10/8/6] .tags-links
-//                   [COLUMN 12/10] .navigation.post-navigation
-//                   	[NESTED-ROW] .nav-links
-//                   		[COLUMN 12/5] .nav-previous
-//                   		[COLUMN 12/5] .nav-next
 //                   [COLUMN 12/10] #comments.comments-area
 //                       h2.comments-title
 //                       [NESTED-ROW] nav#comment-nav-above.comment-navigation
@@ -49,9 +45,6 @@
 //                       #respond.comment-respond
 //           [ROW] #secondary.widget-area.footer-widget-area
 //               [COLUMN 12/6/4] [WIDGETS]
-//       [ROW] #colophon.site-footer
-//           [COLUMN 12/10] .site-info
-//
 
 .site-header,
 .content-area,
@@ -60,7 +53,6 @@
 	@include row;
 }
 
-.post-navigation .nav-links,
 .comment-navigation,
 .comment-list {
 	@include nested-row;
@@ -75,13 +67,10 @@
 .entry-author,
 .posted-on,
 .tags-links,
-.post-navigation,
 .nav-previous,
 .nav-next,
 .comments-area,
-.comment,
-// .footer-widget,
-.site-info {
+.comment {
 	@include column(12);
 }
 
@@ -96,9 +85,7 @@
 	.entry-author,
 	.posted-on,
 	.tags-links,
-	.post-navigation,
-	.comments-area,
-	.site-info {
+	.comments-area {
 		@include column(10);
 		@include push;
 		@include pull;

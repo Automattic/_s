@@ -1091,7 +1091,6 @@ a:active {
 	clear: both;
 }
 
-.post-navigation .nav-links,
 .comment-navigation,
 .comment-list {
 	display: block;
@@ -1101,8 +1100,6 @@ a:active {
 
 	*zoom: 1;
 }
-.post-navigation .nav-links:before,
-.post-navigation .nav-links:after,
 .comment-navigation:before,
 .comment-navigation:after,
 .comment-list:before,
@@ -1110,7 +1107,6 @@ a:active {
 	content: " ";
 	display: table;
 }
-.post-navigation .nav-links:after,
 .comment-navigation:after,
 .comment-list:after {
 	clear: both;
@@ -1124,12 +1120,10 @@ a:active {
 .entry-author,
 .posted-on,
 .tags-links,
-.post-navigation,
 .nav-previous,
 .nav-next,
 .comments-area,
-.comment,
-.site-info {
+.comment {
 	float: left;
 	display: inline;
 	width: 100%;
@@ -1146,9 +1140,7 @@ a:active {
 	.entry-author,
 	.posted-on,
 	.tags-links,
-	.post-navigation,
-	.comments-area,
-	.site-info {
+	.comments-area {
 		float: left;
 		display: inline;
 		width: 83.33333%;
@@ -1356,11 +1348,6 @@ a:active {
 	display: block;
 }
 
-.entry {
-	margin: 0 0 28px;
-	margin: 0 0 1.55556rem;
-}
-
 .entry-title {
 	font-weight: bold;
 	font-family: Times, "Times New Roman", serif;
@@ -1494,6 +1481,8 @@ a:active {
 /* Footer area backgrounds. */
 .single-entry .entry-footer {
 	clear: both;
+	padding-bottom: 56px;
+	padding-bottom: 3.11111rem;
 	text-align: center;
 	background: #e0e0e8;
 }
@@ -1520,11 +1509,6 @@ a:active {
 .entry-author-byline {
 	margin-top: 14px;
 	margin-top: 0.77778rem;
-}
-
-/* Copyright, terms, and colophon */
-.site-info {
-	text-align: center;
 }
 
 /*--------------------------------------------------------------
