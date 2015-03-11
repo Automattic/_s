@@ -7,6 +7,7 @@
  * @package YuMag
  */
 
+if ( ! function_exists( 'yumag_body_classes' ) ) :
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -32,8 +33,9 @@ function yumag_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'yumag_body_classes' );
+endif;
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+if ( ! function_exists( 'yumag_wp_title' ) ) :
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  *
@@ -49,13 +51,7 @@ function yumag_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	// Add the blog name
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
-	}
+	$title .= strtolower( get_bloginfo( 'name', 'display' ) );
 
 	// Add a page number if necessary:
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
@@ -65,30 +61,6 @@ function yumag_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'yumag_wp_title', 10, 2 );
-
-/**
- * Title shim for sites older than WordPress 4.1.
- *
- * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
- * @todo Remove this function when WordPress 4.3 is released.
- */
-function yumag_render_title() {
-	?>
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-}
-add_action( 'wp_head', 'yumag_render_title' );
-endif;
-
-if ( ! function_exists( 'yumag_single_post_dropcap' ) ) :
-
-function yumag_single_post_dropcap( $content ) {
-	if ( is_single() ) {
-		$content = yumag_create_dropcap( $content );
-	}
-	return $content;
-}
-add_action( 'the_content', 'yumag_single_post_dropcap' );
 endif;
 
 if ( ! function_exists( 'yumag_create_dropcap' ) ) :
