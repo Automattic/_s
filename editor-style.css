@@ -771,6 +771,7 @@ a:active {
 /* Dropcaps. */
 .dropcap {
 	margin-right: 3px;
+	margin-left: -5px;
 	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }

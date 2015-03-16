@@ -822,7 +822,7 @@ a:active {
 	border-radius: 0;
 	border: 0;
 	background: transparent;
-	color: #9696a6;
+	color: #9696a0;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	text-shadow: none;
@@ -1425,6 +1425,7 @@ a:active {
 /* Dropcaps. */
 .dropcap {
 	margin-right: 3px;
+	margin-left: -5px;
 	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
@@ -1506,7 +1507,7 @@ a:active {
 	padding-bottom: 56px;
 	padding-bottom: 3.11111rem;
 	text-align: center;
-	background: #e0e0e8;
+	background: #e0e0e4;
 }
 
 /*

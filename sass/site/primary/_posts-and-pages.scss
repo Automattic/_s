@@ -70,7 +70,9 @@
 }
 
 /* Dropcaps. */
+// @todo: fix when the first paragraph is bolded/a standfirst.
 .dropcap {
+	margin-left: -5px;
 	margin-right: 3px;
 	font-weight: bold;
 	font-family: $font-family__dropcap;
