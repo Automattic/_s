@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-Media
---------------------------------------------------------------*/
+// --------------------------------------------------------------
+// Media
+// --------------------------------------------------------------
 
 .page-content,
 .entry-content,
@@ -14,11 +14,10 @@ Media
 	}
 }
 
-// Make sure embeds and iframes fit their containers.
+// Images
 
-embed,
-iframe,
-object {
+img {
+	height: auto;
 	max-width: 100%;
 }
 
@@ -49,10 +48,11 @@ object {
 }
 
 .gallery-item {
+	@include size(100% auto);
+
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
-	width: 100%;
 
 	.gallery-columns-2 & {
 		max-width: 50%;

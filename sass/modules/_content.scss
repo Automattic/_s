@@ -1,8 +1,13 @@
-/*--------------------------------------------------------------
-Site Content
---------------------------------------------------------------*/
+//--------------------------------------------------------------
+// Site Content
+//--------------------------------------------------------------
 
 // Posts and pages
+
+.entry-title {
+	@include rem(font-size, 36px);
+	word-wrap: break-word;
+}
 
 .sticky {
 	display: block;
@@ -33,19 +38,13 @@ Site Content
 	margin: 0 0 em(24px);
 }
 
+.edit-link {
+	margin: 0 em(24px);
+}
+
 // Asides
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
-}
-
-// Comments
-
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
 }

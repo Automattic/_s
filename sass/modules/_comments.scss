@@ -1,0 +1,29 @@
+//--------------------------------------------------------------
+// Comments
+//--------------------------------------------------------------
+
+.comments-title {
+	@include rem(font-size, 24px);
+}
+
+.comment-list {
+	list-style: none;
+	margin: 0;
+}
+
+.comment-meta {
+	margin-bottom: em(14px);
+}
+
+.avatar {
+	float: left;
+	margin-right: em(10px);
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}

@@ -1,17 +1,20 @@
-/*--------------------------------------------------------------
-  Elements
---------------------------------------------------------------*/
+//--------------------------------------------------------------
+// HTML Elements
+//--------------------------------------------------------------
+
+// Iframes
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
 
 hr {
 	background-color: $color-background-hr;
 	border: 0;
 	height: 1px;
 	margin-bottom: em(24px);
-}
-
-img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
 }
 
 figure {
@@ -50,8 +53,9 @@ dd {
 // Tables
 
 table {
+	@include size(100% auto);
+
 	margin: 0 0 em(24px);
-	width: 100%;
 }
 
 th {

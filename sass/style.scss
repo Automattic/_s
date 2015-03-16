@@ -8,41 +8,24 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: _s
-Tags:
+Tags: custom
 
 This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 
 Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 @import "bourbon";
-@import "partials/grid-settings";
+@import "base/variables";
 @import "neat";
+@import "base/mixins";
 
-@import "partials/variables";
-@import "partials/mixins";
-@import "partials/image-sprites";
-
-@import "partials/reset";
-@import "partials/typography";
-@import "partials/elements";
-@import "partials/forms";
-@import "partials/navigation";
-@import "partials/accessibility";
-@import "partials/alignments";
-@import "partials/clearings";
-@import "partials/widgets";
-@import "partials/content";
-@import "partials/infinite-scroll";
-@import "partials/media";
-
-
-// Optional styles for demonstration and example usage purposes. Please delete.
-
-@import "partials/optional";
+@import "base/index";
+@import "modules/index";
+@import "plugins/index";
+@import "structure/index";
+@import "views/index";
+@import "widgets/index";

@@ -1,0 +1,20 @@
+//--------------------------------------------------------------
+// Font Awesome Icon Map
+// -------------------------------------------------------------
+
+// Map icon names to font unicode characters
+// see @mixin in _icon-font-awesome.scss
+//
+// Example usage:
+//
+//    .menu-toggle {
+//        @include icon(before, favicon) {
+//            padding-left: 3px;
+//        }
+//    }
+
+$icons: (
+
+	navicon: "\f0c9", // Example to get you started
+
+);

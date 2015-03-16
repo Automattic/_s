@@ -1,19 +1,22 @@
-/*--------------------------------------------------------------
-Accessibility
---------------------------------------------------------------*/
+//--------------------------------------------------------------
+// Accessibility
+//--------------------------------------------------------------
 
-// Text meant only for screen readers
+// Hide text meant only for screen readers
 
 .screen-reader-text {
+	@include size(1px auto);
+
 	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
 	overflow: hidden;
 	position: absolute !important;
-	width: 1px;
 
 	&:hover,
 	&:active,
 	&:focus {
+		@include size(auto);
+
 		background-color: $color-background-screen-reader;
 		border-radius: 3px;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -22,13 +25,11 @@ Accessibility
 		display: block;
 		@include rem(font-size, 14px);
 		font-weight: 700;
-		height: auto;
 		left: em(5px);
 		line-height: normal;
 		padding: em(15px) em(23px) em(14px);
 		text-decoration: none;
 		top: em(5px);
-		width: auto;
 		z-index: 100000; /* Above WP toolbar */
 	}
 }

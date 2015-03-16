@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-Navigation
---------------------------------------------------------------*/
+//--------------------------------------------------------------
+// Navigation
+//--------------------------------------------------------------
 
 // Links
 
@@ -18,19 +18,36 @@ a {
 	}
 }
 
-// Menus
+// Default menu (active after a fresh WordPress install)
+
+.menu {
+
+	ul {
+
+		li {
+			margin-right: em(10px);
+		}
+
+	}
+
+}
+
+// Main navigation (after creating a menu in the dashboard)
 
 .main-navigation {
+	@include size(100% auto);
+
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
 
+	// Menu area
 	ul {
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 
+		// Sub-menu
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -39,12 +56,15 @@ a {
 			top: em(24px);
 			z-index: 99999;
 
+			// Sub-sub menu
 			ul {
 				left: -999em;
 				top: 0;
 			}
 
+			// Sub-menu items
 			li {
+
 				&:hover > ul {
 					left: 100%;
 				}
@@ -57,15 +77,18 @@ a {
 			}
 		}
 
+		// Sub-menu links
 		a {
-			width: 200px;
+			@include size(200px auto);
 		}
 
+		// Display sub-menu on hover
 		li:hover > ul {
 			left: auto;
 		}
 	}
 
+	// Menu items
 	li {
 		float: left;
 		position: relative;
@@ -74,11 +97,13 @@ a {
 		}
 	}
 
+	// Menu hyperlinks
 	a {
 		display: block;
 		text-decoration: none;
 	}
 
+	// Current items
 	.current_page_item a,
 	.current-menu-item a {
 	}
@@ -111,13 +136,15 @@ a {
 	}
 
 	& .nav-previous {
+		@include size(50% auto);
+
 		float: left;
-		width: 50%;
 	}
 
 	& .nav-next {
+		@include size(50% auto);
+
 		float: right;
 		text-align: right;
-		width: 50%;
 	}
 }

@@ -1,0 +1,34 @@
+//--------------------------------------------------------------
+// Base Layout
+//--------------------------------------------------------------*/
+
+// Structure
+
+.site {
+	@include outer-container;
+}
+
+.site-content {
+	margin: em(20px) auto em(20px);
+
+	@include wider-than(desktop) {
+		margin: em(40px) auto em(60px);
+	}
+}
+
+#primary {
+	@include fill-parent;
+
+	@include wider-than(desktop) {
+		@include span-columns(8);
+	}
+}
+
+#secondary {
+	@include fill-parent;
+
+	@include wider-than(desktop) {
+		@include span-columns(4);
+		@include omega();
+	}
+}

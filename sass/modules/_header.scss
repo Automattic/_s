@@ -1,0 +1,12 @@
+//--------------------------------------------------------------
+// Header
+//--------------------------------------------------------------
+
+.site-title {
+	@include rem(font-size, 48px);
+}
+
+.site-description {
+	@include rem(font-size, 24px);
+	margin-bottom: em(24px);
+}
