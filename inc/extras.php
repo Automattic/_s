@@ -63,6 +63,24 @@ function yumag_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'yumag_wp_title', 10, 2 );
 endif;
 
+if ( ! function_exists( 'yumag_single_post_dropcap' ) ) :
+/**
+ * Filter single-entry post content to add dropcap.
+ *
+ * @since 1.0.0
+ *
+ * @param string $content Entry content as HTML.
+ * @return string Revised content.
+ */
+function yumag_single_post_dropcap( $content ) {
+	if ( is_single() ) {
+		$content = yumag_create_dropcap( $content );
+	}
+	return $content;
+}
+add_filter( 'the_content', 'yumag_single_post_dropcap' );
+endif;
+
 if ( ! function_exists( 'yumag_create_dropcap' ) ) :
 /**
  * Add a span to the first letter of the first paragraph of the passed-in
