@@ -25,9 +25,11 @@ function yumag_body_classes( $classes ) {
 	}
 
 	// Add category-based classes.
-	$categories = get_the_category( $post->ID );
-	foreach( $categories as $cat ) {
-		$classes[] = 'category-' . $cat->slug;
+	if ( is_a( $post, 'WP_Post' ) ) {
+		$categories = get_the_category( $post->ID );
+		foreach( $categories as $cat ) {
+			$classes[] = 'category-' . $cat->slug;
+		}
 	}
 
 	return $classes;
