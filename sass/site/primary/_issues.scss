@@ -4,8 +4,9 @@
 	font-family: $font-family__main;
 
 	a {
-		color: $black;
+		border-bottom: 0;
 		font-weight: normal;
+		color: $black;
 
 		&:hover,
 		&:focus {

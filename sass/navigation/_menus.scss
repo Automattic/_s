@@ -39,7 +39,9 @@
 
     /* Make sure links are visible. */
     a {
+    	font-weight: bold;
     	color: $color__link__reversed;
+    	border-bottom: 0;
 
     	&:hover,
     	&:focus,

@@ -690,8 +690,8 @@ textarea {
 /* 5.1 Links
 --------------------------------------------------------------*/
 a {
-	font-weight: bold;
 	text-decoration: none;
+	border-bottom: 1px solid;
 	color: #1960ae;
 }
 a,
@@ -760,6 +760,8 @@ a:active {
 }
 .main-navigation-wrapper a,
 .main-search-wrapper a {
+	font-weight: bold;
+	border-bottom: 0; 
 	color: #69bcc9;
 }
 .main-navigation-wrapper a:hover,
@@ -1269,6 +1271,9 @@ a:active {
 	line-height: 12.44444rem;
 	text-align: center;
 }
+.site-title a {
+	border: 0;
+}
 .site-title img {
 	position: relative;
 	top: 0.35em;
@@ -1350,8 +1355,15 @@ a:active {
 
 .entry-title {
 	font-weight: bold;
+	font-size: 54px;
+	font-size: 3rem;
+	line-height: 1.2963;
 	font-family: Times, "Times New Roman", serif;
 	word-wrap: break-word;
+}
+.entry-title a {
+	border-bottom: 0;
+	color: inherit;
 }
 .single-entry .entry-title {
 	margin-bottom: 28px;
@@ -1384,8 +1396,10 @@ a:active {
 }
 .entry-meta a,
 .entry-author a {
-	letter-spacing: 0.05em; 
+	font-weight: bold;
+	letter-spacing: 0.05em;
 	text-transform: uppercase;
+	border-bottom: 0;
 }
 
 /* Author photos. */
@@ -1396,9 +1410,16 @@ a:active {
 
 /* Categories in entry footer. */
 .entry-issue,
-.cat-links {
-	letter-spacing: 0.05em; 
+.cat-links a {
+	font-weight: bold;
+	letter-spacing: 0.05em;
 	text-transform: uppercase;
+	border-bottom: 0;
+}
+
+.tags-links a {
+	font-weight: bold;
+	border-bottom: 0;
 }
 
 /* Dropcaps. */
@@ -1457,7 +1478,8 @@ a:active {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 }
 .issue-title a {
-	font-weight: normal; 
+	font-weight: normal;
+	border-bottom: 0;
 	color: #171717;
 }
 .issue-title a:hover,
@@ -1595,5 +1617,14 @@ object {
 /*--------------------------------------------------------------
 14.0 Themes
 --------------------------------------------------------------*/
+body.category-centre-stage .entry-title a {
+	font-weight: normal;
+	font-size: 54px;
+	font-size: 3rem;
+	line-height: 1.2963;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	letter-spacing: 0.05em; 
+	text-transform: uppercase;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,20 @@
 body.category-centre-stage {
 
 
+	a {
 
+	}
+
+	.dropcap {
+
+	}
+
+	.entry-title a {
+		@include font-size-line( "gigantic", 2.5 );
+		font-weight: normal;
+		font-family: $font-family__display__sans;
+		text-transform: uppercase;
+		letter-spacing: $letter-spacing__caps;
+	}
 
 }

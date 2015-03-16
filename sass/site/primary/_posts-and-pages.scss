@@ -3,9 +3,15 @@
 }
 
 .entry-title {
+	@include font-size-line( "gigantic", 2.5 );
 	font-weight: bold;
 	font-family: $font-family__title;
 	word-wrap: break-word;
+
+	a {
+		border-bottom: 0;
+		color: inherit;
+	}
 
 	.single-entry & {
 		@include rem( "margin-bottom", $spacing );
@@ -36,8 +42,10 @@
 
 	/* The author's name */
 	a {
+		font-weight: bold;
 		text-transform: uppercase;
 		letter-spacing: $letter-spacing__caps;
+		border-bottom: 0;
 	}
 
 }
@@ -49,9 +57,16 @@
 
 /* Categories in entry footer. */
 .entry-issue,
-.cat-links {
+.cat-links a {
+	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: $letter-spacing__caps;
+	border-bottom: 0;
+}
+
+.tags-links a {
+	font-weight: bold;
+	border-bottom: 0;
 }
 
 /* Dropcaps. */
@@ -73,3 +88,4 @@
 	@include rem( "margin-bottom", $spacing );
 	display: block;
 }
+
