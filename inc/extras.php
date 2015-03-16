@@ -99,7 +99,7 @@ function yumag_create_dropcap( $content ) {
 
 	if ( false !== $result ) {
 		// Find the drop cap and wrap it in a placeholder.
-		$pattern = '/(<p[^>]*\>(?:<\[A-Za-z][^>]*>)*)((?:[\W_-]|&[\w-]+;)?[A-Za-z0-9])/i';
+		$pattern = '/(<p[^>]*\>(?:<[A-Za-z][^>]*>)*)((?:[\W_-]|&[\w-]+;)?[A-Za-z0-9])/i';
 		$matches = array();
 		$result = preg_match( $pattern, $content, $matches );
 
