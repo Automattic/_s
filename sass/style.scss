@@ -19,9 +19,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 @import "bourbon";
-@import "base/variables";
+@import "utilities/variables/index";
 @import "neat";
-@import "base/mixins";
+@import "utilities/mixins/index";
 
 @import "base/index";
 @import "modules/index";
