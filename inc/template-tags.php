@@ -61,6 +61,24 @@ function yumag_author_box() {
 }
 endif;
 
+if ( ! function_exists( 'yumag_entry_title' ) ) :
+/**
+ * Output the current post's/page's permalinked title within an H1 element.
+ *
+ * @since 1.0.0
+ */
+function yumag_entry_title() {
+
+	$the_link = sprintf( '<a href="%2$s" rel="bookmark">%1$s</a>',
+		get_the_title(),
+		get_permalink()
+	);
+
+	echo '<h1 class="entry-title">' . $the_link . '</h1>';
+
+}
+endif;
+
 if ( ! function_exists( 'yumag_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
