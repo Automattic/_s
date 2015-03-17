@@ -347,8 +347,8 @@ h6 {
 }
 
 h3 {
-	margin: 28px 0;
-	margin: 1.55556rem 0;
+	margin: 56px 0 28px;
+	margin: 3.11111rem 0 1.55556rem;
 	font-size: 24px;
 	font-size: 1.33333rem;
 	line-height: 1.16667;

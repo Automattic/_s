@@ -45,7 +45,7 @@ h6 {
 }
 
 h3 {
-	@include rem( "margin", $line 0 );
+	@include rem( "margin", ( $line * 2 ) 0 $line );
 	@include font-size-line( "larger" );
 }
 

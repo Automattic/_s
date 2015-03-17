@@ -76,7 +76,10 @@ function yumag_entry_title() {
 
 	echo '<h1 class="entry-title">' . $the_link . '</h1>';
 
-	// @todo the excerpt
+	// Output subtitle
+	if ( function_exists( 'the_subtitle' ) ) {
+		echo the_subtitle( '<h2 class="entry-subtitle">', '</h2>', false );
+	}
 
 }
 endif;
