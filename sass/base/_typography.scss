@@ -2,10 +2,6 @@
 // Typography
 //--------------------------------------------------------------
 
-html {
-	font-size: 62.5%;
-}
-
 body,
 button,
 input,
@@ -13,7 +9,6 @@ select,
 textarea {
 	color: $color-text-main;
 	font-family: $font-sans;
-	@include rem(font-size, 16px);
 	line-height: $line-height-body;
 }
 
@@ -31,7 +26,7 @@ h6 {
 // Copy
 
 p {
-	margin-bottom: em(24px);
+	@include margin(0 0 24px 0);
 }
 
 b,
@@ -48,8 +43,9 @@ i {
 
 blockquote,
 q {
+	@include margin(0 24px);
+
 	quotes: "" "";
-	margin: 0 em(24px);
 
 	&:before,
 	&:after {
@@ -58,26 +54,27 @@ q {
 }
 
 address {
-	margin: 0 0 em(24px);
+	@include margin(0 0 24px 0);
 }
 
 pre {
+	@include margin(0 0 24px);
+	@include padding(24px);
+
 	background: $color-background-pre;
 	font-family: $font-pre;
-	@include rem(font-size, 15px);
+	font-size: rem(15);
 	line-height: $line-height-pre;
-	margin-bottom: em(25px);
 	max-width: 100%;
 	overflow: auto;
-	padding: em(25px);
 }
 
 code,
 kbd,
 tt,
 var {
-	@include rem(font-size, 15px);
 	font-family: $font-code;
+	font-size: rem(15);
 }
 
 abbr,

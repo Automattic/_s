@@ -9,10 +9,10 @@
 }
 
 .site-content {
-	margin: em(20px) auto em(20px);
+	@include margin(20px auto);
 
 	@include wider-than(desktop) {
-		margin: em(40px) auto em(60px);
+		@include margin(40px auto 60px);
 	}
 }
 

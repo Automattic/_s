@@ -5,7 +5,7 @@
 // Posts and pages
 
 .entry-title {
-	@include rem(font-size, 36px);
+	font-size: rem(36);
 	word-wrap: break-word;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .hentry {
-	margin: 0 0 em(24px);
+	@include margin(0 0 24px 0);
 }
 
 .byline,
@@ -30,16 +30,17 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: em(24px) 0 0;
+	@include margin(24px 0 0);
 }
 
 .page-links {
+	@include margin(0 0 24px 0);
+
 	clear: both;
-	margin: 0 0 em(24px);
 }
 
 .edit-link {
-	margin: 0 em(24px);
+	@include margin(0 24px);
 }
 
 // Asides

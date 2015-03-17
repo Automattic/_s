@@ -3,10 +3,12 @@
 //--------------------------------------------------------------
 
 .site-title {
-	@include rem(font-size, 48px);
+	font-size: rem(48);
 }
 
 .site-description {
-	@include rem(font-size, 24px);
+	@include margin(0 0 24px 0);
+
+	font-size: rem(24);
 	margin-bottom: em(24px);
 }

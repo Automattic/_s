@@ -3,15 +3,17 @@
 //--------------------------------------------------------------
 
 .alignleft {
+	@include margin(0 24px 0 0);
+
 	display: inline;
 	float: left;
-	margin-right: em(24px);
 }
 
 .alignright {
+	@include margin(0 0 0 24px);
+
 	display: inline;
 	float: right;
-	margin-left: em(24px);
 }
 
 .aligncenter {

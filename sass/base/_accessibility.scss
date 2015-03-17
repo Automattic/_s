@@ -15,6 +15,7 @@
 	&:hover,
 	&:active,
 	&:focus {
+		@include padding(15px 23px 14px);
 		@include size(auto);
 
 		background-color: $color-background-screen-reader;
@@ -23,11 +24,10 @@
 		clip: auto !important;
 		color: $color-text-screen-reader;
 		display: block;
-		@include rem(font-size, 14px);
+		font-size: rem(14);
 		font-weight: 700;
 		left: em(5px);
 		line-height: normal;
-		padding: em(15px) em(23px) em(14px);
 		text-decoration: none;
 		top: em(5px);
 		z-index: 100000; /* Above WP toolbar */

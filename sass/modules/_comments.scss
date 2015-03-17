@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 .comments-title {
-	@include rem(font-size, 24px);
+	font-size: rem(24);
 }
 
 .comment-list {
@@ -12,12 +12,13 @@
 }
 
 .comment-meta {
-	margin-bottom: em(14px);
+	@include margin(0 0 14px 0);
 }
 
 .avatar {
+	@include margin(0 10px 0 0);
+
 	float: left;
-	margin-right: em(10px);
 }
 
 .comment-content a {
