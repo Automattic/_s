@@ -768,6 +768,11 @@ a:active {
 	border-bottom: 0;
 }
 
+/* Standfirsts. */
+.standfirst {
+	font-weight: bold;
+}
+
 /* Dropcaps. */
 .dropcap {
 	margin-right: 3px;

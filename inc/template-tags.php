@@ -76,6 +76,8 @@ function yumag_entry_title() {
 
 	echo '<h1 class="entry-title">' . $the_link . '</h1>';
 
+	// @todo the excerpt
+
 }
 endif;
 
