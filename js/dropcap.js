@@ -11,7 +11,21 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 ( function() {
 	'use strict';
 
-	var dropcaps = document.querySelectorAll( '.dropcap' );
-	window.Dropcap.layout( dropcaps, 3 );
+	// Find the first content paragraph that isn't a standfirst.
+	var paragraphs = document.querySelectorAll( '.single-entry .entry-content > p' );
+	var i = 0,
+		l = paragraphs.length;
+	while ( ( i < l ) && ( paragraphs[i].classList.contains( 'standfirst' ) ) ) {
+		i++;
+	}
+	var p = paragraphs[i];
+
+	// Wrap the first letter (and preceding punctuation) in a span.
+	var pattern = /^(?:(?:<[A-Za-z][^>]*>)*)((?:[\W_-]|&[\w-]+;)?[A-Za-z0-9])/;
+	p.innerHTML = p.innerHTML.replace( pattern, '<span class="dropcap">$1</span>' );
+	var dropcap = p.querySelector( '.dropcap' );
+
+	// Call the dropcaps script.
+	window.Dropcap.layout( dropcap, 3 );
 
 } )();
