@@ -16,6 +16,8 @@
 			<span class="sep"> | </span>
 			<?php printf( __( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
 		</div><!-- .site-info -->
+
+		<?php wp_nav_menu( array( 'theme_location' => 'social', 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>' ) ); ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
