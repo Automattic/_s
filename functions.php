@@ -199,6 +199,11 @@ add_action( 'wp_enqueue_scripts', 'yumag_scripts' );
 //require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Helper function to convert numbers to textual versions.
+ */
+require get_template_directory() . '/inc/numbers-to-words.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';

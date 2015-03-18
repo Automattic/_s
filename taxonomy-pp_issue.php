@@ -1,12 +1,8 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying an Issue page (using the taxonomy created by
+ * PeriodicalPress plugin:
+ * {@link http://www.github.com/cjbarnes/periodicalpress/}).
  *
  * @package YuMag
  */
@@ -17,6 +13,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
+
+			<header class="issue-header">
+				<h1 class="issue-title"><?php yumag_issue_title(); ?></h1>
+			</header><!-- .issue-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>

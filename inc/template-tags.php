@@ -7,6 +7,38 @@
  * @package YuMag
  */
 
+if ( ! function_exists( 'yumag_issue_title' ) ) :
+/**
+ * Output the official Issue title (i.e. number then date).
+ *
+ * @since 1.0.0
+ *
+ * @param bool $linked Optional. Whether the Issue title should be wrapped in
+ *                     a link. Default False.
+ */
+function yumag_issue_title( $linked = false ) {
+
+	$pp = new PeriodicalPress_Template_Tags();
+
+	// Prepare the issue number format.
+	$number = $pp->get_the_issue_number();
+	$number = sprintf( __( 'ISSUE %s', 'yumag' ),
+		strtoupper( yumag_convert_number_to_words( $number ) )
+	);
+
+	// Output.
+	if ( $linked ) {
+		echo '<a href="' . $pp->get_the_issue_link() . '">';
+	}
+	echo '<span class="issue-number">' . $number . '</span>';
+	$pp->the_issue_date( null, ' / <span class="issue-date">', '</span>' );
+	if ( $linked ) {
+		echo '</a>';
+	}
+
+}
+endif;
+
 if ( ! function_exists( 'yumag_byline' ) ) :
 /**
  * Prints HTML with meta information for the current author.

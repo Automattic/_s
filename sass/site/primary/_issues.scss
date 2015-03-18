@@ -1,11 +1,12 @@
 .issue-title {
 	@include font-size-line( "normal" );
 	margin-top: 0;
+	font-weight: normal;
 	font-family: $font-family__main;
 
 	a {
 		border-bottom: 0;
-		font-weight: normal;
+		font-weight: inherit;
 		color: $black;
 
 		&:hover,

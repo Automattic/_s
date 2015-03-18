@@ -1478,13 +1478,14 @@ a:active {
 --------------------------------------------------------------*/
 .issue-title {
 	margin-top: 0;
+	font-weight: normal;
 	font-size: 18px;
 	font-size: 1rem;
 	line-height: 1.55556;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 }
 .issue-title a {
-	font-weight: normal;
+	font-weight: inherit;
 	border-bottom: 0;
 	color: #171717;
 }
