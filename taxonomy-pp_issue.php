@@ -7,6 +7,15 @@
  * @package YuMag
  */
 
+// Start with a list of sections (specifically their slugs), in order.
+$sections = array(
+	'yorklife',
+	'open-minds',
+	'centre-stage',
+	'all-about-yu',
+	'back-page'
+);
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -18,20 +27,23 @@ get_header(); ?>
 				<h1 class="issue-title"><?php yumag_issue_title(); ?></h1>
 			</header><!-- .issue-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php the_posts_navigation(); ?>
+			<?php // Run through the loop, once for each section. ?>
+			<?php foreach( $sections as $section ) : ?>
+				<?php $cat = get_category_by_slug( $section ) ?>
+				<section class="issue-section category-<?php echo $section; ?>">
+					<h2 class="taxonomy-title category-title"><?php echo esc_html( $cat->cat_name ) ?></h2>
+					<div class="issue-section-posts">
+					<?php /* Start the Loop */
+					while ( have_posts() ) : the_post();
+						if ( in_category( $section ) ) {
+							get_template_part( 'content', get_post_format() );
+						}
+					endwhile;
+					rewind_posts();
+					?>
+					</div><!-- .issue-section-posts -->
+				</section><!-- .issue-section -->
+			<?php endforeach; ?>
 
 		<?php else : ?>
 
