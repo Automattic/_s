@@ -32,8 +32,11 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 	 * Don't dropcap when the article begins with a subheading. Fails on IE8
 	 * (no `Node.previousElementSibling` support) but degrades gracefully - i.e.
 	 * no dropcaps.
+	 *
+	 * Also prevent typeof errors by checking we have chosen a paragraph to
+	 * dropcap in the first place.
 	 */
-	if ( p.previousElementSibling && /^H[1-6]$/.test( p.previousElementSibling.tagName ) ) {
+	if ( ! p || ( p.previousElementSibling && /^H[1-6]$/.test( p.previousElementSibling.tagName ) ) ) {
 		return;
 	}
 
