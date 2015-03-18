@@ -14,9 +14,9 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="category-header">
-				<h1 class="category-title"><?php single_term_title(); ?></h1>
-				<?php the_archive_description( '<div class="category-description">', '</div>' ); ?>
+			<header class="page-header category-header">
+				<h1 class="taxonomy-title category-title"><?php single_term_title(); ?></h1>
+				<?php the_archive_description( '<div class="taxonomy-description category-description">', '</div>' ); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>

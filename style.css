@@ -34,6 +34,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 11.0 Content
 	11.1 Posts and pages
 	11.2 Comments
+	11.3 Issues
+	11.4 Sections
 12.0 Footer
 13.0 Media
 	13.1 Captions
@@ -1504,6 +1506,27 @@ a:active {
 }
 
 /* eg 'April 2015' */
+/* 11.4 Sections
+--------------------------------------------------------------*/
+.category-title {
+	margin: 0 0 28px;
+	margin: 0 0 1.55556rem;
+	font-weight: bold;
+	font-size: 32px;
+	font-size: 1.77778rem;
+	line-height: 1.3125;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.category-description {
+	font-weight: bold;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
+	text-align: center;
+}
+
 /*--------------------------------------------------------------
 12.0 Footer
 --------------------------------------------------------------*/
@@ -1624,6 +1647,23 @@ object {
 /*--------------------------------------------------------------
 14.0 Themes
 --------------------------------------------------------------*/
+body.category-yorklife .category-title,
+body.category-yorklife .category-description,
+body.category-yorklife .dropcap,
+body.category-yorklife .entry-content a {
+	color: #bfb097;
+}
+body.category-yorklife .entry-footer {
+	background: #dcd4c6;
+}
+
+body.category-open-minds .category-title,
+body.category-open-minds .category-description,
+body.category-open-minds .dropcap,
+body.category-open-minds .site-content a {
+	color: #3d9aa9;
+}
+
 body.category-centre-stage .entry-title a {
 	font-weight: normal;
 	font-size: 54px;

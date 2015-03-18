@@ -1,7 +1,17 @@
 body.category-open-minds {
 
-	a {
+	.category-title,
+	.category-description,
+	.dropcap,
+	.site-content a {
+		color: $color__openminds__dark;
+	}
 
+	.site-content a {
+		&:hover,
+		&:focus {
+
+		}
 	}
 
 	.standfirst {

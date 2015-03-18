@@ -1,5 +1,37 @@
 body.category-yorklife {
 
+	.category-title,
+	.category-description,
+	.dropcap,
+	.entry-content a {
+		color: $color__yorklife__dark;
+	}
 
+	.entry-footer {
+		background: $color__yorklife;
+	}
+
+	.entry-content a {
+		&:hover,
+		&:focus {
+
+		}
+	}
+
+	.standfirst {
+
+	}
+
+	.dropcap {
+
+	}
+
+	.entry-title a {
+
+	}
+
+	.entry-subtitle {
+
+	}
 
 }

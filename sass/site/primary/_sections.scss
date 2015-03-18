@@ -1,0 +1,15 @@
+.category-title {
+	@include rem( "margin", 0 0 $line );
+	@include font-size-line( "huger", 1.5 );
+	font-weight: bold;
+	letter-spacing: $letter-spacing__caps;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $font-family__category;
+}
+
+.category-description {
+	text-align: center;
+	font-weight: bold;
+	font-family: $font-family__category;
+}
