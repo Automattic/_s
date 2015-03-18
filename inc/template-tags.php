@@ -33,11 +33,13 @@ function yumag_author_box() {
 	if ( $author_id ) {
 		echo '<div class="entry-author">';
 
+		$default_avatar = get_stylesheet_directory_uri() . '/assets/default-avatar-192.png';
+
 		if ( function_exists( 'get_wp_user_avatar' ) ) {
 			printf( '<a class="entry-author-avatar" href="%1$s" title="%2$s">%3$s</a>',
 				get_author_posts_url( $author_id ),
 				get_the_author(),
-				get_wp_user_avatar( "thumbnail" )
+				get_avatar( $author_id, 96, $default_avatar )
 			);
 
 		}
