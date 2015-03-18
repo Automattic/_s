@@ -2,7 +2,8 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Eventually, some of the functionality here could be replaced by core
+ * features.
  *
  * @package YuMag
  */
@@ -42,6 +43,8 @@ endif;
 if ( ! function_exists( 'yumag_byline' ) ) :
 /**
  * Prints HTML with meta information for the current author.
+ *
+ * @since 1.0.0
  */
 function yumag_byline() {
 
@@ -58,6 +61,8 @@ endif;
 if ( ! function_exists( 'yumag_author_box' ) ) :
 /**
  * Prints HTML with author avatar, name, intro, and link to page.
+ *
+ * @since 1.0.0
  */
 function yumag_author_box() {
 
@@ -121,6 +126,8 @@ endif;
 if ( ! function_exists( 'yumag_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
+ *
+ * @since 1.0.0
  */
 function yumag_entry_footer() {
 	// Hide category and tag text for pages.
@@ -172,6 +179,8 @@ endif;
 /**
  * Returns true if a blog has more than 1 category.
  *
+ * @since 1.0.0
+ *
  * @return bool
  */
 function yumag_categorized_blog() {
@@ -208,6 +217,8 @@ function yumag_categorized_blog() {
 
 /**
  * Flush out the transients used in yumag_categorized_blog.
+ *
+ * @since 1.0.0
  */
 function yumag_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
