@@ -11,19 +11,35 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 ( function() {
 	'use strict';
 
+	var i,
+		l,
+		p,
+		paragraphs,
+		dropcap,
+		pattern = /^(?:(?:<[A-Za-z][^>]*>)*)((?:[\W_-]|&[\w-]+;)?[A-Za-z0-9])/;
+
+	paragraphs = document.querySelectorAll( '.single-entry .entry-content > p' );
+
 	// Find the first content paragraph that isn't a standfirst.
-	var paragraphs = document.querySelectorAll( '.single-entry .entry-content > p' );
-	var i = 0,
-		l = paragraphs.length;
+	i = 0;
+	l = paragraphs.length;
 	while ( ( i < l ) && ( paragraphs[i].classList.contains( 'standfirst' ) ) ) {
 		i++;
 	}
-	var p = paragraphs[i];
+	p = paragraphs[i];
+
+	/**
+	 * Don't dropcap when the article begins with a subheading. Fails on IE8
+	 * (no `Node.previousElementSibling` support) but degrades gracefully - i.e.
+	 * no dropcaps.
+	 */
+	if ( p.previousElementSibling && /^H[3-6]$/.test( p.previousElementSibling.tagName ) ) {
+		return;
+	}
 
 	// Wrap the first letter (and preceding punctuation) in a span.
-	var pattern = /^(?:(?:<[A-Za-z][^>]*>)*)((?:[\W_-]|&[\w-]+;)?[A-Za-z0-9])/;
 	p.innerHTML = p.innerHTML.replace( pattern, '<span class="dropcap">$1</span>' );
-	var dropcap = p.querySelector( '.dropcap' );
+	dropcap = p.querySelector( '.dropcap' );
 
 	// Call the dropcaps script.
 	window.Dropcap.layout( dropcap, 3 );
