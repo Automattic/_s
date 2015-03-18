@@ -33,7 +33,7 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 	 * (no `Node.previousElementSibling` support) but degrades gracefully - i.e.
 	 * no dropcaps.
 	 */
-	if ( p.previousElementSibling && /^H[3-6]$/.test( p.previousElementSibling.tagName ) ) {
+	if ( p.previousElementSibling && /^H[1-6]$/.test( p.previousElementSibling.tagName ) ) {
 		return;
 	}
 
