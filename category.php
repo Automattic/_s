@@ -12,12 +12,12 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
-
 			<header class="page-header category-header">
 				<h1 class="taxonomy-title category-title"><?php single_term_title(); ?></h1>
 				<?php the_archive_description( '<div class="taxonomy-description category-description">', '</div>' ); ?>
 			</header><!-- .page-header -->
+
+		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
