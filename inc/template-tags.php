@@ -133,6 +133,9 @@ if ( ! function_exists( 'yumag_entry_footer' ) ) :
  * @since 1.0.0
  */
 function yumag_entry_footer() {
+
+	$pp = new PeriodicalPress_Template_Tags();
+
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 
@@ -159,15 +162,23 @@ function yumag_entry_footer() {
 		/* translators: used between list items, there is a space on each side of the slash */
 		$categories_list = get_the_category_list( __( ' / ', 'yumag' ) );
 
+		// Prepare the issue number format.
+		$number = $pp->get_the_issue_number();
+		$number = sprintf( __( 'ISSUE %s', 'yumag' ),
+			strtoupper( yumag_convert_number_to_words( $number ) )
+		);
+		$number = '<a class="entry-issue" href="' . $pp->get_the_issue_link() . '">' . $number . '</a>';
+
 		/* Prepare categories and datestamp output. */
 		if ( $categories_list && yumag_categorized_blog() ) {
 			$posted_on = sprintf( _x( '%1$s / %2$s / %3$s', 'Post footer metadata order', 'yumag' ),
-				'<a class="entry-issue" href="#">Issue One</a>',
+				$number,
 				sprintf( '<span class="cat-links">%s</span>', $categories_list ),
 				$time_string
 			);
 		} else {
-			$posted_on = sprintf( __( 'Posted on %s', 'yumag' ),
+			$posted_on = sprintf( _x( '%1$s / %2$s', 'Post footer metadata order (no category)', 'yumag' ),
+				$number,
 				$time_string
 			);
 		}
