@@ -25,26 +25,52 @@
 			: 'menu-left-toggled';
 
 		if ( document.body.classList.contains( bodyClass ) ) {
-			document.body.classList.remove( bodyClass );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
+			closeMenus();
 		} else {
+			var menus = document.querySelectorAll( '.js-menu-contents' );
+			var buttons = document.querySelectorAll( '.js-menu-toggle' );
+
 			document.body.classList.add( bodyClass );
 			document.body.classList.remove( notBodyClass );
 
-			// TODO change attribute to false for the other button and menu too.
+			// Set all aria-expanded settings to false as initial state.
+			Array.prototype.forEach.call( menus, function ( menu ) {
+				menu.setAttribute( 'aria-expanded', 'false' );
+			} );
+			Array.prototype.forEach.call( buttons, function ( button ) {
+				button.setAttribute( 'aria-expanded', 'false' );
+			} );
+
+			// Now set the correct aria-expanded setting to true.
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
+
+			// Listen for clicks to the main page.
+			document.getElementById( 'page' ).addEventListener( 'click', closeMenus );
 		}
 	}
 
+	/**
+	 * Handle clicks of the main page when it's slid over to reveal a menu.
+	 */
+	function closeMenus() {
+		var menus = document.querySelectorAll( '.js-menu-contents' );
+		var buttons = document.querySelectorAll( '.js-menu-toggle' );
 
-	function flagScrollBelowMasthead() {
-		if ( ( ( 28 * 8 ) / 2 ) < window.pageYOffset ) {
-			document.body.classList.add( 'mini-masthead' );
-		} else {
-			document.body.classList.remove( 'mini-masthead' );
-		}
+		// Visible changes.
+		document.body.classList.remove( 'menu-left-toggled', 'menu-right-toggled' );
+
+		// Invisible (accessibility) changes.
+		Array.prototype.forEach.call( menus, function ( menu ) {
+			menu.setAttribute( 'aria-expanded', 'false' );
+		} );
+		Array.prototype.forEach.call( buttons, function ( button ) {
+			button.setAttribute( 'aria-expanded', 'false' );
+		} );
+
+
+		// Don't trigger this event again until a menu is re-opened.
+		document.getElementById( 'page' ).removeEventListener( 'click', closeMenus );
 	}
 
 	// Loop through the menu areas, initializing the logic for each one.
@@ -78,14 +104,5 @@
 		} )( container, button, menu ) );
 
 	}
-
-	window.requestAnimationFrame = window.requestAnimationFrame
-    || window.mozRequestAnimationFrame
-    || window.webkitRequestAnimationFrame
-    || window.msRequestAnimationFrame;
-
-    window.addEventListener( 'scroll' , function () {
-    	return requestAnimationFrame(flagScrollBelowMasthead);
-    } );
 
 } )();
