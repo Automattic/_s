@@ -276,22 +276,6 @@ textarea {
  * Only use one font variant (bold, no italics) when text is set in Adobe
  * Caslon Pro, since we don't load the other variants for page weight reasons.
  */
-h1,
-h2 {
-	font-weight: bold;
-	font-family: Times, "Times New Roman", serif;
-}
-h1,
-h2,
-h1 em,
-h2 em,
-h1 i,
-h2 i,
-h1 dfn,
-h2 dfn {
-	font-style: normal;
-}
-
 /* Post- or widget-title level of heading. */
 h1,
 h2 {
@@ -316,6 +300,8 @@ h2 {
 }
 
 /* Subheadings within content. */
+h1,
+h2,
 h3,
 h4,
 h5,
@@ -451,13 +437,16 @@ html {
  * The 'real' background form the user's perspective.
  * 1. To establish a new stacking context, for overlapping the sidebars.
  * 2. Don't leave any room underneath this container on short pages.
+ * 3. Prevent centred Issue section posts areas from overflowing-right.
  */
 .site {
 	position: relative;
+	overflow-x: hidden;
 	/* 1 */
 	min-height: 100vh;
 	/* 2 */
 	background: #fff;
+	/* 3 */
 }
 
 blockquote,
@@ -490,8 +479,10 @@ cite {
 }
 
 hr {
-	height: 3px;
-	margin-bottom: 1.5em; 
+	width: 25%;
+	height: 0.77778rem; 
+	margin: 42px 37.5%;
+	margin: 2.33333rem 37.5%;
 	border: 0;
 	background-color: #ccc;
 }
@@ -582,6 +573,11 @@ table {
 	margin: 0 0 1.55556rem;
 }
 
+/* Fix TinyMCE background colour. */
+html {
+	background: #fff;
+}
+
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
@@ -597,12 +593,10 @@ a:hover {
 	-webkit-transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
 	transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
 }
-a:visited {
-	color: #1960ae;
-}
 a:hover,
 a:focus,
 a:active {
+	border-bottom: 1px solid #0f3b6b; 
 	color: #0f3b6b;
 }
 a:focus {
@@ -611,6 +605,36 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+}
+
+.entry-title-link,
+.entry-meta a,
+.entry-author a,
+.entry-issue,
+.cat-links a,
+.tags-links a {
+	border-bottom-color: transparent;
+}
+.entry-title-link:hover,
+.entry-meta a:hover,
+.entry-author a:hover,
+.entry-issue:hover,
+.cat-links a:hover,
+.tags-links a:hover,
+.entry-title-link:focus,
+.entry-meta a:focus,
+.entry-author a:focus,
+.entry-issue:focus,
+.cat-links a:focus,
+.tags-links a:focus,
+.entry-title-link:active,
+.entry-meta a:active,
+.entry-author a:active,
+.entry-issue:active,
+.cat-links a:active,
+.tags-links a:active {
+	border-bottom: 1px solid #0f3b6b; 
+	color: #0f3b6b;
 }
 
 /*--------------------------------------------------------------
@@ -657,10 +681,13 @@ a:active {
 .clear,
 .entry-content,
 .single-entry .entry-footer,
+.comments-footer,
 .comment-content,
 .site-header,
 .site-content,
-.site-footer {
+.site-footer,
+.issue-section,
+.category-posts {
 	*zoom: 1;
 }
 .clear:before,
@@ -669,6 +696,8 @@ a:active {
 .entry-content:after,
 .single-entry .entry-footer:before,
 .single-entry .entry-footer:after,
+.comments-footer:before,
+.comments-footer:after,
 .comment-content:before,
 .comment-content:after,
 .site-header:before,
@@ -676,17 +705,24 @@ a:active {
 .site-content:before,
 .site-content:after,
 .site-footer:before,
-.site-footer:after {
+.site-footer:after,
+.issue-section:before,
+.issue-section:after,
+.category-posts:before,
+.category-posts:after {
 	content: " ";
 	display: table;
 }
 .clear:after,
 .entry-content:after,
 .single-entry .entry-footer:after,
+.comments-footer:after,
 .comment-content:after,
 .site-header:after,
 .site-content:after,
-.site-footer:after {
+.site-footer:after,
+.issue-section:after,
+.category-posts:after {
 	clear: both;
 }
 
@@ -699,21 +735,81 @@ a:active {
 	display: block;
 }
 
+.single-entry .entry-image {
+	margin-top: 42px;
+	margin-top: 2.33333rem;
+	text-align: center;
+}
+.single-entry .entry-image img {
+	width: 100%;
+	max-width: 1167px;
+}
+.single-entry .entry-image.no-image {
+	display: none;
+}
+.single-entry .entry-image + .entry-header {
+	margin-top: 0;
+}
+.single-entry .entry-header,
+.single-entry .no-image + .entry-header {
+	margin-top: 56px;
+	margin-top: 3.11111rem;
+}
+.single-entry .entry-meta {
+	padding-bottom: 28px;
+	padding-bottom: 1.55556rem;
+	/* leave space for line below headings */
+}
+.single-entry .entry-content:before {
+	content: "";
+	top: 0;
+	width: 25%;
+	height: 14px;
+	height: 0.77778rem;
+	margin: 14px 0 42px;
+	margin: 0.77778rem 0 2.33333rem;
+	margin-left: 37.5%;
+	background: #ccc;
+}
+.single-entry .entry-content p:not(.standfirst) + p {
+	text-indent: 4%;
+}
+.single-entry .entry-content a:hover,
+.single-entry .entry-content a:focus,
+.single-entry .entry-content a:active {
+	color: #0f3b6b;
+}
+
+.entry-image-link,
+.entry-image-link:hover,
+.entry-image-link:focus,
+.entry-image-link:active {
+	border: 0;
+}
+
+.entry-title-link {
+	color: #171717;
+}
+
 .entry-title {
-	font-weight: bold;
+	margin-top: 28px;
+	margin-top: 1.55556rem;
 	font-size: 54px;
 	font-size: 3rem;
 	line-height: 1.2963;
-	font-family: Times, "Times New Roman", serif;
 	word-wrap: break-word;
-}
-.entry-title a {
-	border-bottom: 0;
-	color: inherit;
 }
 .single-entry .entry-title {
 	margin-bottom: 28px;
 	margin-bottom: 1.55556rem;
+}
+
+.entry-subtitle {
+	margin-top: 28px;
+	margin-top: 1.55556rem;
+	font-weight: normal;
+	font-family: "Aleo", Constantia, Georgia, sans-serif; 
+	text-transform: none;
 }
 
 .updated:not(.published) {
@@ -723,8 +819,8 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 28px 0 112px;
-	margin: 1.55556rem 0 6.22222rem;
+	margin: 0 0 112px;
+	margin: 0 0 6.22222rem;
 }
 
 .page-links {
@@ -734,18 +830,24 @@ a:active {
 }
 
 /* Byline. */
-.entry-meta,
+.entry-meta {
+	text-align: center;
+}
+.entry-meta a {
+	font-weight: bold; 
+	color: inherit;
+}
+
+/* Footer author. */
 .entry-author {
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
 	/* The author's name */
 }
-.entry-meta a,
 .entry-author a {
 	font-weight: bold;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.05em; 
 	text-transform: uppercase;
-	border-bottom: 0;
 }
 
 /* Author photos. */
@@ -758,19 +860,23 @@ a:active {
 .entry-issue,
 .cat-links a {
 	font-weight: bold;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.05em; 
 	text-transform: uppercase;
-	border-bottom: 0;
 }
 
+.tags-links {
+	display: block;
+}
 .tags-links a {
 	font-weight: bold;
-	border-bottom: 0;
 }
 
 /* Standfirsts. */
 .standfirst {
-	font-weight: bold;
+	font-weight: normal; 
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.16667;
 }
 
 /* Dropcaps. */
@@ -781,20 +887,26 @@ a:active {
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
-/* Metadata */
-.entry-footer {
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
+/* Calls to action. */
+.call-to-action {
+	margin-top: 42px;
+	margin-top: 2.33333rem;
+	padding-top: 14px;
+	padding-top: 0.77778rem;
+	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	border-top: 0.77778rem solid #ccc;
 }
 
 /* Post footer meta lines. */
-.posted-on,
-.tags-links {
-	display: block; 
-	margin-bottom: 28px;
-	margin-bottom: 1.55556rem;
+.posted-on {
+	display: block;
+}
+
+/* Make paragraph indents work outside the `.single-entry` wrapper. */
+p:not(.standfirst) + p {
+	text-indent: 28px;
+	text-indent: 1.55556rem;
 }
 
 /*--------------------------------------------------------------

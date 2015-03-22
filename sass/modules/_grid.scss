@@ -13,38 +13,54 @@
 //       #content.site-content
 //           [ROW] #primary.content-area
 //               main#main.site-main
-//               [COLUMN 12] header.issue-header
+//                   header.above-single-header
+//                       [COLUMN 12] .issue-header
+//                       [COLUMN 12] .category-header
+//  ############################################################################
+//  #                section.issue-section
+//  #                    [COLUMN 12/10] .category-header.issue-section-header
+//  #                        h2.category-title.issue-section-title
+//  #                    [COLUMN 12/10] .category-content.issue-section-content
+//  #                        .category-posts.issue-section-posts
+//  #                            article.entry[POST CLASSES]
+//  #                                [...]
+//  ############################################################################
 //                    article.entry[POST CLASSES]
-//                       [COLUMN 12/10] .entry-header
-//                           h1.entry-title
+//                       [COLUMN x/10/8] .entry-image
+//                       [COLUMN 12/10/8] .entry-header
+//                           a.entry-title-link
+//                               h1.entry-title
+//                               h2.entry-subtitle
 //                           .entry-meta
-//                           	.byline-avatar
 //                           	.byline
 //                       [COLUMN 12/10/8/6] .entry-content
 //                           [CONTENT]
-//                       .entry-footer
+//                       .footer.entry-footer
 //                           [COLUMN 12/10/8/6] .entry-author
 //                           [COLUMN 12/10/8/6] .posted-on
 //                           [COLUMN 12/10/8/6] .tags-links
-//                   [COLUMN 12/10] #comments.comments-area
-//                       h2.comments-title
-//                       [NESTED-ROW] nav#comment-nav-above.comment-navigation
-//                       	[COLUMN 12/5] .nav-previous
-//                       	[COLUMN 12/5] .nav-next
-//                       [NESTED-ROW] ol.comment-list
-//                       	[COLUMN 12/10/5] li.comment.even.thread-even.depth-1
-//                       		article.comment-body
-//                       			footer.comment-meta
-//                       				.comment-author.vcard
-//                       			.comment-content
-//                       			.reply
-//                       				.comment-reply-link
-//                       [NESTED-ROW] nav#comment-nav-below.comment-navigation
-//                       	[COLUMN 12/5] .nav-previous
-//                       	[COLUMN 12/5] .nav-next
-//                       #respond.comment-respond
+//                   #comments.comments-footer
+//                       [COLUMN 12/10] .comments-area
+//                           h2.comments-title
+//                           [NESTED-ROW] #comment-nav-above.comment-navigation
+//                           	[COLUMN 12/5] .nav-previous
+//                           	[COLUMN 12/5] .nav-next
+//                           [NESTED-ROW] ol.comment-list
+//                           	[COLUMN 12/10/5] li.comment
+//                           		article.comment-body
+//                           			footer.comment-meta
+//                           				.comment-author.vcard
+//                           			.comment-content
+//                           			.reply
+//                           				.comment-reply-link
+//                           [NESTED-ROW] #comment-nav-below.comment-navigation
+//                           	[COLUMN 12/5] .nav-previous
+//                           	[COLUMN 12/5] .nav-next
+//                           #respond.comment-respond
 //           [ROW] #secondary.widget-area.footer-widget-area
 //               [COLUMN 12/6/4] [WIDGETS]
+//           [ROW] #tertiary.footer.site-footer
+//               [COLUMN 12] .site-footer-content
 
 .site-header,
 .content-area,
@@ -62,6 +78,9 @@
 /* Every column is full-width for mobiles. */
 .site-branding,
 .issue-header,
+.single .category-header,
+.issue-section-header,
+.issue-section-content,
 .single-entry .entry-header,
 .single-entry .entry-content,
 .entry-author,
@@ -70,7 +89,8 @@
 .nav-previous,
 .nav-next,
 .comments-area,
-.comment {
+.comment,
+.site-footer-content {
 	@include column(12);
 }
 
@@ -80,6 +100,8 @@
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
+	.issue-section-header,
+	.issue-section-content,
 	.single-entry .entry-header,
 	.single-entry .entry-content,
 	.entry-author,
@@ -105,6 +127,13 @@
 }
 
 @include media( "main-spacing-1" ) {
+
+	/* Start limiting featured image size. */
+	.single-entry .entry-image {
+		@include column(10);
+		@include push;
+		@include pull;
+	}
 
 	/* Narrower content column than everything else, for better line length. */
 	.single-entry .entry-content,
@@ -133,6 +162,14 @@
 
 @include media( "main-spacing-2" ) {
 
+	/* Narrower heading area. */
+	.single-entry .entry-image,
+	.single-entry .entry-header {
+		@include column(8);
+		@include push(2);
+		@include pull(2);
+	}
+
 	/* Even narrower content column, to maintain sensible line length. */
 	.single-entry .entry-content,
 	.entry-author,
@@ -146,6 +183,72 @@
 	/* Side-by-side comments. */
 	.comment {
 		@include column(5, $padding, 10);
+	}
+
+	/* Left-aligned single post layout. */
+	.template-fixed-left,
+	.template-scrolling-left {
+
+		.entry-image {
+			@include column(4);
+			@include push;
+			margin-right: 0;
+		}
+
+		.entry-header,
+		.entry-content {
+			@include column(6);
+			@include pull(1);
+			@include push(5);
+		}
+
+	}
+
+	/* Right-aligned single post layout. */
+	.template-fixed-right,
+	.template-scrolling-right {
+
+		.entry-image {
+			@include column(4);
+			@include pull;
+			margin-left: 0;
+		}
+
+		.entry-header,
+		.entry-content {
+			@include column(6);
+			@include pull(5);
+			@include push(1);
+		}
+
+	}
+
+}
+
+@include media( "main-spacing-3" ) {
+
+	.template-fixed-left,
+	.template-scrolling-left {
+
+		.entry-header,
+		.entry-content {
+			@include column(5);
+			@include pull(1);
+			@include push(6);
+		}
+
+	}
+
+	.template-fixed-right,
+	.template-scrolling-right {
+
+		.entry-header,
+		.entry-content {
+			@include column(5);
+			@include pull(6);
+			@include push(1);
+		}
+
 	}
 
 }

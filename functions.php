@@ -81,7 +81,7 @@ function yumag_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 150, 150, true );
+	set_post_thumbnail_size( 666, 444, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -114,8 +114,10 @@ function yumag_setup() {
 	 * - yumag-photo-large = full width of content area (max. 658x658)
 	 * - yumag-photo-small = sized to go in content margins (max. 233 wide)
 	 */
-	add_image_size( 'yumag-photo-large', 658, 658, false );
-	add_image_size( 'yumag-photo-small', 233, 9999, false );
+	add_image_size( 'yumag-featured-photo', 905, 509, true );
+	add_image_size( 'yumag-featured-photo-portrait', 474, 474, true );
+	// add_image_size( 'yumag-photo-small', 233, 9999, false );
+	// add_image_size( 'yumag-post-thumbnail-square', 444, 444, false );
 
 	/*
 	 * Register stylesheet for TinyMCE content (editor-style.css).

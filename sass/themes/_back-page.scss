@@ -1,6 +1,36 @@
-body.category-back-page {
+.category-back-page {
 
+	.category-title,
+	.category-title a,
+	.category-description,
+	.dropcap,
+	.entry-subtitle,
+	.entry-content a {
+		color: $color__backpage__dark;
+	}
 
+	.entry-title {
+		text-transform: none;
+	}
 
+	.dropcap {
+		font-style: italic;
+		font-family: $font-family__main;
+	}
+
+	hr,
+	&.single-entry .entry-content:before,
+	.issue-section-header:before {
+		background: $color__backpage;
+	}
+
+	&.single-entry .call-to-action {
+		border-top-color: $color__backpage;
+	}
+
+	.footer a {
+		@extend %hide-underline;
+		color: $color__backpage__darker;
+	}
 
 }

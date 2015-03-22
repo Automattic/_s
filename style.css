@@ -40,7 +40,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 13.0 Media
 	13.1 Captions
 	13.2 Galleries
-14.0 Themes
+14.0 Layouts
+15.0 Themes
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -295,23 +296,13 @@ textarea {
  * Only use one font variant (bold, no italics) when text is set in Adobe
  * Caslon Pro, since we don't load the other variants for page weight reasons.
  */
-h1,
-h2,
 .site-title {
 	font-weight: bold;
 	font-family: Times, "Times New Roman", serif;
 }
-h1,
-h2,
 .site-title,
-h1 em,
-h2 em,
 .site-title em,
-h1 i,
-h2 i,
 .site-title i,
-h1 dfn,
-h2 dfn,
 .site-title dfn {
 	font-style: normal;
 }
@@ -340,6 +331,8 @@ h2 {
 }
 
 /* Subheadings within content. */
+h1,
+h2,
 h3,
 h4,
 h5,
@@ -475,13 +468,16 @@ html {
  * The 'real' background form the user's perspective.
  * 1. To establish a new stacking context, for overlapping the sidebars.
  * 2. Don't leave any room underneath this container on short pages.
+ * 3. Prevent centred Issue section posts areas from overflowing-right.
  */
 .site {
 	position: relative;
+	overflow-x: hidden;
 	/* 1 */
 	min-height: 100vh;
 	/* 2 */
 	background: #fff;
+	/* 3 */
 }
 
 blockquote,
@@ -514,8 +510,10 @@ cite {
 }
 
 hr {
-	height: 3px;
-	margin-bottom: 1.5em; 
+	width: 25%;
+	height: 0.77778rem; 
+	margin: 42px 37.5%;
+	margin: 2.33333rem 37.5%;
 	border: 0;
 	background-color: #ccc;
 }
@@ -701,12 +699,10 @@ a:hover {
 	-webkit-transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
 	transition: 0.2s color ease-in, 0.2s background-color ease-in, 0.2s border-color ease-in;
 }
-a:visited {
-	color: #1960ae;
-}
 a:hover,
 a:focus,
 a:active {
+	border-bottom: 1px solid #0f3b6b; 
 	color: #0f3b6b;
 }
 a:focus {
@@ -715,6 +711,69 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+}
+
+.entry-title-link,
+.entry-meta a,
+.entry-author a,
+.entry-issue,
+.cat-links a,
+.tags-links a,
+.issue-title a,
+.category-title a,
+.issue-section-posts .entry-meta a,
+.category-yorklife .entry-title a,
+.category-yorklife .footer a,
+.category-open-minds .footer a,
+.category-centre-stage .footer a,
+.category-all-about-yu .footer a,
+.category-back-page .footer a {
+	border-bottom-color: transparent;
+}
+.entry-title-link:hover,
+.entry-meta a:hover,
+.entry-author a:hover,
+.entry-issue:hover,
+.cat-links a:hover,
+.tags-links a:hover,
+.issue-title a:hover,
+.category-title a:hover,
+.category-yorklife .entry-title a:hover,
+.category-yorklife .footer a:hover,
+.category-open-minds .footer a:hover,
+.category-centre-stage .footer a:hover,
+.category-all-about-yu .footer a:hover,
+.category-back-page .footer a:hover,
+.entry-title-link:focus,
+.entry-meta a:focus,
+.entry-author a:focus,
+.entry-issue:focus,
+.cat-links a:focus,
+.tags-links a:focus,
+.issue-title a:focus,
+.category-title a:focus,
+.category-yorklife .entry-title a:focus,
+.category-yorklife .footer a:focus,
+.category-open-minds .footer a:focus,
+.category-centre-stage .footer a:focus,
+.category-all-about-yu .footer a:focus,
+.category-back-page .footer a:focus,
+.entry-title-link:active,
+.entry-meta a:active,
+.entry-author a:active,
+.entry-issue:active,
+.cat-links a:active,
+.tags-links a:active,
+.issue-title a:active,
+.category-title a:active,
+.category-yorklife .entry-title a:active,
+.category-yorklife .footer a:active,
+.category-open-minds .footer a:active,
+.category-centre-stage .footer a:active,
+.category-all-about-yu .footer a:active,
+.category-back-page .footer a:active {
+	border-bottom: 1px solid #0f3b6b; 
+	color: #0f3b6b;
 }
 
 /* 5.2 Menus
@@ -856,6 +915,15 @@ a:active {
 	text-shadow: none;
 }
 
+.menu-toggle-outer,
+.search-toggle-outer {
+	display: inline-block;
+	padding: 0 0.5em;
+	line-height: 56px;
+	line-height: 3.11111rem;
+	background: #fff;
+}
+
 .menu-toggle {
 	left: 84px;
 	left: 4.66667rem;
@@ -936,6 +1004,11 @@ a:active {
 	opacity: 0;
 	-webkit-transition: none;
 	transition: none;
+}
+
+.site-logo-link {
+	margin-top: 28px;
+	margin-top: 1.55556rem;
 }
 
 .menu-item-yorklife a {
@@ -1119,6 +1192,9 @@ a:active {
 /* Every column is full-width for mobiles. */
 .site-branding,
 .issue-header,
+.single .category-header,
+.issue-section-header,
+.issue-section-content,
 .single-entry .entry-header,
 .single-entry .entry-content,
 .entry-author,
@@ -1127,7 +1203,8 @@ a:active {
 .nav-previous,
 .nav-next,
 .comments-area,
-.comment {
+.comment,
+.site-footer-content {
 	float: left;
 	display: inline;
 	width: 100%;
@@ -1139,6 +1216,8 @@ a:active {
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
+	.issue-section-header,
+	.issue-section-content,
 	.single-entry .entry-header,
 	.single-entry .entry-content,
 	.entry-author,
@@ -1170,6 +1249,15 @@ a:active {
 }
 
 @media (min-width: 800px) {
+	/* Start limiting featured image size. */
+	.single-entry .entry-image {
+		float: left;
+		display: inline;
+		width: 83.33333%;
+		margin-right: 8.33333%; 
+		margin-left: 8.33333%;
+		padding: 0 14px;
+	}
 	/* Narrower content column than everything else, for better line length. */
 	.single-entry .entry-content,
 	.entry-author,
@@ -1199,6 +1287,16 @@ a:active {
 }
 
 @media (min-width: 1020px) {
+	/* Narrower heading area. */
+	.single-entry .entry-image,
+	.single-entry .entry-header {
+		float: left;
+		display: inline;
+		width: 66.66667%;
+		margin-right: 16.66667%; 
+		margin-left: 16.66667%;
+		padding: 0 14px;
+	}
 	/* Even narrower content column, to maintain sensible line length. */
 	.single-entry .entry-content,
 	.entry-author,
@@ -1218,6 +1316,73 @@ a:active {
 		width: 50%;
 		padding: 0 14px;
 	}
+	/* Left-aligned single post layout. */
+	.template-fixed-left .entry-image,
+	.template-scrolling-left .entry-image {
+		float: left;
+		display: inline;
+		width: 33.33333%;
+		margin-right: 0; 
+		margin-left: 8.33333%;
+		padding: 0 14px;
+	}
+	.template-fixed-left .entry-header,
+	.template-fixed-left .entry-content,
+	.template-scrolling-left .entry-header,
+	.template-scrolling-left .entry-content {
+		float: left;
+		display: inline;
+		width: 50%;
+		margin-right: 8.33333%;
+		margin-left: 41.66667%; 
+		padding: 0 14px;
+	}
+	/* Right-aligned single post layout. */
+	.template-fixed-right .entry-image,
+	.template-scrolling-right .entry-image {
+		float: left;
+		display: inline;
+		width: 33.33333%;
+		margin-right: 8.33333%;
+		margin-left: 0; 
+		padding: 0 14px;
+	}
+	.template-fixed-right .entry-header,
+	.template-fixed-right .entry-content,
+	.template-scrolling-right .entry-header,
+	.template-scrolling-right .entry-content {
+		float: left;
+		display: inline;
+		width: 50%;
+		margin-right: 41.66667%;
+		margin-left: 8.33333%; 
+		padding: 0 14px;
+	}
+}
+
+@media (min-width: 1160px) {
+	.template-fixed-left .entry-header,
+	.template-fixed-left .entry-content,
+	.template-scrolling-left .entry-header,
+	.template-scrolling-left .entry-content {
+		float: left;
+		display: inline;
+		width: 41.66667%;
+		margin-right: 8.33333%;
+		margin-left: 50%; 
+		padding: 0 14px;
+	}
+	.template-fixed-right .entry-header,
+	.template-fixed-right .entry-content,
+	.template-scrolling-right .entry-header,
+	.template-scrolling-right .entry-content {
+		float: left;
+		display: inline;
+		width: 41.66667%;
+		margin-right: 50%;
+		margin-left: 8.33333%; 
+		padding: 0 14px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1226,10 +1391,13 @@ a:active {
 .clear,
 .entry-content,
 .single-entry .entry-footer,
+.comments-footer,
 .comment-content,
 .site-header,
 .site-content,
-.site-footer {
+.site-footer,
+.issue-section,
+.category-posts {
 	*zoom: 1;
 }
 .clear:before,
@@ -1238,6 +1406,8 @@ a:active {
 .entry-content:after,
 .single-entry .entry-footer:before,
 .single-entry .entry-footer:after,
+.comments-footer:before,
+.comments-footer:after,
 .comment-content:before,
 .comment-content:after,
 .site-header:before,
@@ -1245,17 +1415,24 @@ a:active {
 .site-content:before,
 .site-content:after,
 .site-footer:before,
-.site-footer:after {
+.site-footer:after,
+.issue-section:before,
+.issue-section:after,
+.category-posts:before,
+.category-posts:after {
 	content: " ";
 	display: table;
 }
 .clear:after,
 .entry-content:after,
 .single-entry .entry-footer:after,
+.comments-footer:after,
 .comment-content:after,
 .site-header:after,
 .site-content:after,
-.site-footer:after {
+.site-footer:after,
+.issue-section:after,
+.category-posts:after {
 	clear: both;
 }
 
@@ -1273,12 +1450,20 @@ a:active {
 	line-height: 12.44444rem;
 	text-align: center;
 }
-.site-title a {
+
+.site-logo-link {
+	text-align: center;
+}
+.site-logo-link,
+.site-logo-link:hover,
+.site-logo-link:focus,
+.site-logo-link:active {
 	border: 0;
 }
-.site-title img {
+
+.site-logo {
 	position: relative;
-	top: 0.35em;
+	top: 0.1em;
 	/* The bottom part of the logo is a 'Y' descender, so we shift the image so its 'baseline' looks right. */
 	vertical-align: middle;
 }
@@ -1297,7 +1482,7 @@ a:active {
 	padding: 0 0.77778rem;
 	border-left: 14px solid;
 	border-left: 0.77778rem solid;
-	border-color: #dcd4c6;
+	border-color: #ccc;
 	/* Different colours for different categories. */
 	/* Links. */
 	/* Make sure select elements fit in widgets. */
@@ -1332,8 +1517,9 @@ a:active {
 	font-size: 24px;
 	font-size: 1.33333rem;
 	line-height: 1.16667;
-	font-family: "Aleo", Constantia, Georgia, sans-serif; 
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	text-align: left;
+	text-transform: none;
 }
 
 /* Search widget. */
@@ -1355,21 +1541,81 @@ a:active {
 	display: block;
 }
 
+.single-entry .entry-image {
+	margin-top: 42px;
+	margin-top: 2.33333rem;
+	text-align: center;
+}
+.single-entry .entry-image img {
+	width: 100%;
+	max-width: 1167px;
+}
+.single-entry .entry-image.no-image {
+	display: none;
+}
+.single-entry .entry-image + .entry-header {
+	margin-top: 0;
+}
+.single-entry .entry-header,
+.single-entry .no-image + .entry-header {
+	margin-top: 56px;
+	margin-top: 3.11111rem;
+}
+.single-entry .entry-meta {
+	padding-bottom: 28px;
+	padding-bottom: 1.55556rem;
+	/* leave space for line below headings */
+}
+.single-entry .entry-content:before {
+	content: "";
+	top: 0;
+	width: 25%;
+	height: 14px;
+	height: 0.77778rem;
+	margin: 14px 0 42px;
+	margin: 0.77778rem 0 2.33333rem;
+	margin-left: 37.5%;
+	background: #ccc;
+}
+.single-entry .entry-content p:not(.standfirst) + p {
+	text-indent: 4%;
+}
+.single-entry .entry-content a:hover,
+.single-entry .entry-content a:focus,
+.single-entry .entry-content a:active {
+	color: #0f3b6b;
+}
+
+.entry-image-link,
+.entry-image-link:hover,
+.entry-image-link:focus,
+.entry-image-link:active {
+	border: 0;
+}
+
+.entry-title-link {
+	color: #171717;
+}
+
 .entry-title {
-	font-weight: bold;
+	margin-top: 28px;
+	margin-top: 1.55556rem;
 	font-size: 54px;
 	font-size: 3rem;
 	line-height: 1.2963;
-	font-family: Times, "Times New Roman", serif;
 	word-wrap: break-word;
-}
-.entry-title a {
-	border-bottom: 0;
-	color: inherit;
 }
 .single-entry .entry-title {
 	margin-bottom: 28px;
 	margin-bottom: 1.55556rem;
+}
+
+.entry-subtitle {
+	margin-top: 28px;
+	margin-top: 1.55556rem;
+	font-weight: normal;
+	font-family: "Aleo", Constantia, Georgia, sans-serif; 
+	text-transform: none;
 }
 
 .updated:not(.published) {
@@ -1379,8 +1625,8 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 28px 0 112px;
-	margin: 1.55556rem 0 6.22222rem;
+	margin: 0 0 112px;
+	margin: 0 0 6.22222rem;
 }
 
 .page-links {
@@ -1390,18 +1636,24 @@ a:active {
 }
 
 /* Byline. */
-.entry-meta,
+.entry-meta {
+	text-align: center;
+}
+.entry-meta a {
+	font-weight: bold; 
+	color: inherit;
+}
+
+/* Footer author. */
 .entry-author {
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
 	/* The author's name */
 }
-.entry-meta a,
 .entry-author a {
 	font-weight: bold;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.05em; 
 	text-transform: uppercase;
-	border-bottom: 0;
 }
 
 /* Author photos. */
@@ -1414,19 +1666,23 @@ a:active {
 .entry-issue,
 .cat-links a {
 	font-weight: bold;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.05em; 
 	text-transform: uppercase;
-	border-bottom: 0;
 }
 
+.tags-links {
+	display: block;
+}
 .tags-links a {
 	font-weight: bold;
-	border-bottom: 0;
 }
 
 /* Standfirsts. */
 .standfirst {
-	font-weight: bold;
+	font-weight: normal; 
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.16667;
 }
 
 /* Dropcaps. */
@@ -1437,24 +1693,30 @@ a:active {
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
-/* Metadata */
-.entry-footer {
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
+/* Calls to action. */
+.call-to-action {
+	margin-top: 42px;
+	margin-top: 2.33333rem;
+	padding-top: 14px;
+	padding-top: 0.77778rem;
+	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	border-top: 0.77778rem solid #ccc;
 }
 
 /* Post footer meta lines. */
-.posted-on,
-.tags-links {
-	display: block; 
-	margin-bottom: 28px;
-	margin-bottom: 1.55556rem;
+.posted-on {
+	display: block;
 }
 
 /* 11.2 Comments
 --------------------------------------------------------------*/
+.comments-footer {
+	position: relative;
+	/* to overlap fixed-position content images */
+	background: #e0e0e4;
+}
+
 .comment-content {
 	font-size: 16px;
 	font-size: 0.88889rem;
@@ -1478,22 +1740,23 @@ a:active {
 
 /* 11.3 Issues
 --------------------------------------------------------------*/
+.issue-header {
+	margin-bottom: 70px;
+	margin-bottom: 3.88889rem;
+}
+
 .issue-title {
-	margin-top: 0;
+	margin: 0;
 	font-weight: normal;
 	font-size: 18px;
 	font-size: 1rem;
 	line-height: 1.55556;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
+	text-transform: none;
 }
 .issue-title a {
 	font-weight: inherit;
-	border-bottom: 0;
 	color: #171717;
-}
-.issue-title a:hover,
-.issue-title a:focus {
-	color: #0f3b6b;
 }
 
 /* eg 'ISSUE ONE' */
@@ -1508,9 +1771,13 @@ a:active {
 /* eg 'April 2015' */
 /* 11.4 Sections
 --------------------------------------------------------------*/
+.single .category-header {
+	margin-top: 28px;
+	margin-top: 1.55556rem;
+}
+
 .category-title {
-	margin: 0 0 28px;
-	margin: 0 0 1.55556rem;
+	margin: 0;
 	font-weight: bold;
 	font-size: 32px;
 	font-size: 1.77778rem;
@@ -1527,14 +1794,135 @@ a:active {
 	text-align: center;
 }
 
+.issue-section {
+	margin-top: 56px;
+	margin-top: 3.11111rem;
+}
+
+.issue-section-header {
+	/* leave room for the description */
+	position: relative;
+	margin-bottom: 56px;
+	margin-bottom: 3.11111rem;
+	text-align: center;
+}
+.issue-section-header:before {
+	content: "";
+	position: absolute;
+	z-index: 0; 
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 14px;
+	height: 0.77778rem;
+	margin-top: -7px;
+	margin-top: -0.38889rem;
+	background: #dcd4c6;
+}
+
+.issue-section-title {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 0;
+	padding: 14px;
+	padding: 0.77778rem;
+	background: #fff;
+}
+
+.issue-section-description {
+	position: absolute;
+	z-index: 1; 
+	top: 100%;
+	right: 0;
+	left: 0;
+	margin-top: -14px;
+	margin-top: -0.77778rem;
+	font-weight: normal;
+	text-align: center;
+	text-transform: lowercase;
+}
+
+/* Posts list for this section. */
+.issue-section-posts {
+	position: relative;
+	left: 50%; 
+	float: left;
+}
+.issue-section-posts > div {
+	position: relative;
+	left: -50%; 
+	float: left;
+}
+.issue-section-posts .entry {
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
+}
+.issue-section-posts .entry-image {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
+}
+.issue-section-posts .entry-title,
+.issue-section-posts .entry-subtitle {
+	margin: 0;
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
+	text-align: left;
+}
+.issue-section-posts .entry-meta,
+.issue-section-posts .entry-content {
+	display: none;
+}
+.issue-section-posts .entry-meta a {
+	color: #171717;
+}
+.issue-section-posts .entry-meta a:hover,
+.issue-section-posts .entry-meta a:focus,
+.issue-section-posts .entry-meta a:active {
+	color: #0f3b6b;
+}
+@media (min-width: 500px) {
+	.issue-section-posts .entry {
+		float: left;
+		width: 50%;
+		max-width: 347px;
+		max-width: 19.27778rem;
+		margin-bottom: 0; 
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+	}
+	.issue-section-posts .entry:nth-child(2n+1) {
+		clear: left;
+	}
+	.issue-section-posts .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
+}
+
 /*--------------------------------------------------------------
 12.0 Footer
 --------------------------------------------------------------*/
-/* Footer area backgrounds. */
-.single-entry .entry-footer {
+/*
+ * Footer areas with grey backgrounds.
+ * 1. To overlap fixed-position content images.
+ */
+.footer {
+	position: relative;
+	z-index: 2;
+	/* 1 */
 	clear: both;
-	padding-bottom: 56px;
-	padding-bottom: 3.11111rem;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
+	/* 1 */
 	text-align: center;
 	background: #e0e0e4;
 }
@@ -1561,6 +1949,26 @@ a:active {
 .entry-author-byline {
 	margin-top: 14px;
 	margin-top: 0.77778rem;
+}
+
+/* Equal spacing above and below author bio. */
+.entry-author-description {
+	margin: 14px 0;
+	margin: 0.77778rem 0;
+}
+
+/* Full footer (site logo and terms). */
+.site-footer {
+	padding: 56px 84px 28px;
+	padding: 3.11111rem 4.66667rem 1.55556rem;
+}
+.site-footer .site-description {
+	display: block; 
+	margin-bottom: 56px;
+	margin-bottom: 3.11111rem;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
 }
 
 /*--------------------------------------------------------------
@@ -1645,33 +2053,495 @@ object {
 }
 
 /*--------------------------------------------------------------
-14.0 Themes
+14.0 Layouts
 --------------------------------------------------------------*/
-body.category-yorklife .category-title,
-body.category-yorklife .category-description,
-body.category-yorklife .dropcap,
-body.category-yorklife .entry-content a {
+.template-two-columns .entry-image {
+	text-align: center;
+	/* Prevent featured image from being larger than its natural size. */
+}
+.template-two-columns .entry-image img {
+	max-width: 474px;
+}
+
+@media (min-width: 1020px) {
+	.site-main {
+		position: relative;
+		/* for relative scaling of fixed-position images */
+	}
+	.template-two-columns {
+		top: 42px;
+		top: 2.33333rem;
+	}
+	.template-two-columns .entry-title,
+	.template-two-columns .entry-subtitle,
+	.template-two-columns .entry-meta {
+		text-align: left;
+	}
+	.template-two-columns hr,
+	.template-two-columns .entry-content:before {
+		margin-left: 0;
+	}
+	.template-fixed-left .entry-image,
+	.template-scrolling-left .entry-image {
+		position: absolute; 
+		left: 0;
+	}
+	.template-fixed-right .entry-image,
+	.template-scrolling-right .entry-image {
+		position: absolute; 
+		right: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+15.0 Themes
+--------------------------------------------------------------*/
+.category-yorklife .category-title,
+.category-yorklife .category-title a,
+.category-yorklife .category-description,
+.category-yorklife .dropcap,
+.category-yorklife .entry-content a {
 	color: #bfb097;
 }
-body.category-yorklife .entry-footer {
+.category-yorklife .dropcap {
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+}
+.category-yorklife .entry-title {
+	letter-spacing: -0.025em;
+}
+.category-yorklife hr,
+.category-yorklife.single-entry .entry-content:before,
+.category-yorklife .issue-section-header:before {
 	background: #dcd4c6;
 }
-
-body.category-open-minds .category-title,
-body.category-open-minds .category-description,
-body.category-open-minds .dropcap,
-body.category-open-minds .site-content a {
-	color: #3d9aa9;
+.category-yorklife.single-entry .call-to-action {
+	border-top-color: #dcd4c6;
+}
+.category-yorklife .footer a {
+	color: #94805b;
+}
+.category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
+	display: none;
+}
+@media (min-width: 500px) {
+	.category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
+		display: block;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media (min-width: 900px) {
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
+		clear: none; 
+		width: 33%;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child .entry-image,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * .entry-image {
+		display: block;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
+		clear: right; 
+		float: right;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media (min-width: 1100px) {
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
+		width: 25%;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
+		clear: none; 
+		float: left;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
+		display: block;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4),
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) {
+		clear: right; 
+		float: right;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-image,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-image {
+		display: none;
+	}
 }
 
-body.category-centre-stage .entry-title a {
-	font-weight: normal;
-	font-size: 54px;
-	font-size: 3rem;
-	line-height: 1.2963;
-	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-	letter-spacing: 0.05em; 
-	text-transform: uppercase;
+.category-open-minds .category-title,
+.category-open-minds .category-title a,
+.category-open-minds .category-description,
+.category-open-minds .dropcap,
+.category-open-minds .entry-subtitle,
+.category-open-minds .entry-content a {
+	color: #3d9aa9;
+}
+.category-open-minds .entry-title,
+.category-open-minds .entry-subtitle,
+.category-open-minds h3,
+.category-open-minds h4,
+.category-open-minds h5,
+.category-open-minds h6 {
+	font-family: "Aleo", Constantia, Georgia, sans-serif; 
+	letter-spacing: normal;
+}
+.category-open-minds .standfirst {
+	font-weight: bold;
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
+	color: #3d9aa9;
+}
+.category-open-minds .entry-title,
+.category-open-minds .entry-subtitle {
+	text-transform: none;
+}
+.category-open-minds hr,
+.category-open-minds.single-entry .entry-content:before,
+.category-open-minds .issue-section-header:before {
+	background: #69bcc9;
+}
+.category-open-minds.single-entry .call-to-action {
+	border-top-color: #69bcc9;
+}
+.category-open-minds .footer a {
+	color: #296770;
+}
+
+.category-open-minds .issue-section-posts .entry {
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
+}
+.category-open-minds .issue-section-posts .entry-title {
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.16667;
+}
+.category-open-minds .issue-section-posts .entry-meta {
+	display: block;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	text-align: left;
+}
+.category-open-minds .issue-section-posts .entry-content {
+	display: none;
+}
+@media (min-width: 1100px) {
+	.category-open-minds .issue-section-posts .entry {
+		clear: right;
+		float: right;
+		max-width: 50%;
+	}
+	.category-open-minds .issue-section-posts .entry .entry-image {
+		float: left;
+		width: 37.5%;
+		margin-bottom: 0;
+	}
+	.category-open-minds .issue-section-posts .entry .entry-image img {
+		width: 100%;
+	}
+	.category-open-minds .issue-section-posts .entry .entry-title,
+	.category-open-minds .issue-section-posts .entry .entry-subtitle,
+	.category-open-minds .issue-section-posts .entry .entry-meta {
+		clear: none;
+		margin-left: 41.66667%;
+	}
+	.category-open-minds .issue-section-posts .entry .entry-title {
+		font-size: 21px;
+		font-size: 1.16667rem;
+		line-height: 1.33333;
+	}
+	.category-open-minds .issue-section-posts .entry .entry-subtitle {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.16667;
+	}
+	.category-open-minds .issue-section-posts .entry .entry-meta {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.3125;
+	}
+	.category-open-minds .issue-section-posts .entry:first-child {
+		float: left;
+		max-width: 100%; 
+		margin-bottom: 0;
+	}
+	.category-open-minds .issue-section-posts .entry:first-child .entry-header {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
+		background: #69bcc9;
+	}
+	.category-open-minds .issue-section-posts .entry:first-child .entry-image {
+		width: 100%;
+		margin-right: 0;
+	}
+	.category-open-minds .issue-section-posts .entry:first-child .entry-title,
+	.category-open-minds .issue-section-posts .entry:first-child .entry-subtitle,
+	.category-open-minds .issue-section-posts .entry:first-child .entry-meta {
+		margin-left: 0; 
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+	}
+	.category-open-minds .issue-section-posts .entry:first-child .entry-title {
+		clear: left;
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+		font-size: 28px;
+		font-size: 1.55556rem;
+		line-height: 1;
+		color: #fff;
+	}
+	.category-open-minds .issue-section-posts .entry:first-child .entry-subtitle {
+		font-size: 24px;
+		font-size: 1.33333rem;
+		line-height: 1.16667;
+		color: #171717;
+	}
+	.category-open-minds .issue-section-posts .entry:first-child .entry-meta {
+		margin-top: 14px;
+		margin-top: 0.77778rem;
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+		color: #171717;
+	}
+}
+
+.category-centre-stage .dropcap,
+.category-centre-stage .entry-content a {
+	color: #e8e640;
+}
+.category-centre-stage .entry-title,
+.category-centre-stage .entry-subtitle,
+.category-centre-stage h3,
+.category-centre-stage h4,
+.category-centre-stage h5,
+.category-centre-stage h6 {
+	font-family: "Aleo", Constantia, Georgia, sans-serif; 
+	letter-spacing: normal;
+}
+.category-centre-stage .category-title,
+.category-centre-stage .category-title a,
+.category-centre-stage .category-description {
+	color: #171717;
+}
+.category-centre-stage .dropcap {
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+	border: 14px solid #171717;
+	border: 0.77778rem solid #171717;
+	background: #171717;
+	color: #f0ef84;
+}
+.category-centre-stage .entry-title,
+.category-centre-stage .entry-subtitle {
+	font-style: italic;
+	text-transform: none;
+}
+.category-centre-stage hr,
+.category-centre-stage.single-entry .entry-content:before,
+.category-centre-stage .issue-section-header:before {
+	background: #f0ef84;
+}
+.category-centre-stage.single-entry .call-to-action {
+	border-top-color: #f0ef84;
+}
+.category-centre-stage .footer a {
+	color: #acab15;
+}
+
+.category-centre-stage .issue-section-posts .entry-title {
+	font-size: 28px;
+	font-size: 1.55556rem;
+	line-height: 1;
+}
+.category-centre-stage .issue-section-posts .entry-meta {
+	display: block;
+	text-align: left;
+}
+@media (min-width: 1100px) {
+	.category-centre-stage .issue-section-posts .entry {
+		max-width: 25%;
+		background: #f0ef84;
+	}
+	.category-centre-stage .issue-section-posts .entry .entry-image {
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+	}
+	.category-centre-stage .issue-section-posts .entry:nth-child(2n) {
+		clear: left;
+		float: left;
+	}
+	.category-centre-stage .issue-section-posts .entry:nth-child(2n+1) {
+		clear: none;
+		float: right;
+	}
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2),
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
+	}
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2) .entry-title,
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) .entry-title {
+		font-size: 21px;
+		font-size: 1.16667rem;
+		line-height: 1.33333;
+	}
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2) .entry-meta,
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) .entry-meta {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2) .entry-content,
+	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) .entry-content {
+		display: none;
+	}
+	.category-centre-stage .issue-section-posts .entry:first-child {
+		clear: none;
+		float: right;
+		width: 50%;
+		max-width: 100%;
+		margin-right: 25%;
+		margin-bottom: 0;
+		background: transparent;
+	}
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-image {
+		width: 100%;
+		padding-top: 0;
+	}
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-title,
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-subtitle,
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-meta,
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-content {
+		text-align: center;
+	}
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-title {
+		margin-bottom: 14px;
+		margin-bottom: 0.77778rem;
+		font-size: 40px;
+		font-size: 2.22222rem;
+		line-height: 1.05;
+		text-align: center;
+	}
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-subtitle {
+		font-size: 24px;
+		font-size: 1.33333rem;
+		line-height: 1.16667;
+	}
+	.category-centre-stage .issue-section-posts .entry:first-child .entry-content {
+		display: block;
+	}
+}
+
+.category-all-about-yu .category-title,
+.category-all-about-yu .category-title a,
+.category-all-about-yu .category-description,
+.category-all-about-yu .dropcap,
+.category-all-about-yu .entry-subtitle,
+.category-all-about-yu .entry-content a {
+	color: #67b46a;
+}
+.category-all-about-yu hr,
+.category-all-about-yu.single-entry .entry-content:before,
+.category-all-about-yu .issue-section-header:before {
+	background: #9acd9c;
+}
+.category-all-about-yu.single-entry .call-to-action {
+	border-top-color: #9acd9c;
+}
+.category-all-about-yu .footer a {
+	color: #448a47;
+}
+.category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
+	display: none;
+}
+@media (min-width: 500px) {
+	.category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
+		display: block;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media (min-width: 900px) {
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
+		clear: none; 
+		width: 33%;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child .entry-image,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * .entry-image {
+		display: block;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
+		clear: right; 
+		float: right;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media (min-width: 1100px) {
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
+		width: 25%;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
+		clear: none; 
+		float: left;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
+		display: block;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4),
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) {
+		clear: right; 
+		float: right;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-image,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-image {
+		display: none;
+	}
+}
+
+.category-back-page .category-title,
+.category-back-page .category-title a,
+.category-back-page .category-description,
+.category-back-page .dropcap,
+.category-back-page .entry-subtitle,
+.category-back-page .entry-content a {
+	color: #ce99d5;
+}
+.category-back-page .entry-title {
+	text-transform: none;
+}
+.category-back-page .dropcap {
+	font-style: italic;
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+}
+.category-back-page hr,
+.category-back-page.single-entry .entry-content:before,
+.category-back-page .issue-section-header:before {
+	background: #e8cfeb;
+}
+.category-back-page.single-entry .call-to-action {
+	border-top-color: #e8cfeb;
+}
+.category-back-page .footer a {
+	color: #b463be;
 }
 
 /*# sourceMappingURL=style.css.map */

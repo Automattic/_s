@@ -5,12 +5,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php yumag_entry_image( "yumag-featured-photo", false ) ?>
 	<header class="entry-header">
 		<?php yumag_entry_title() ?>
-
-		<div class="entry-meta">
-			<?php yumag_byline(); ?>
-		</div><!-- .entry-meta -->
+		<?php yumag_byline(); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -23,7 +21,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="footer entry-footer">
 		<?php yumag_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

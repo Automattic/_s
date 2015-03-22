@@ -1,0 +1,108 @@
+@mixin issue-section-multicolumn-layout {
+
+	.issue-section-posts {
+
+		.entry:nth-child(n+2) {
+
+			.entry-image {
+				display: none;
+			}
+
+		}
+
+		@include media( "issue-2-columns" ) {
+
+			.entry {
+
+				&:nth-child(n+2) {
+
+					.entry-image {
+						display: block;
+					}
+
+				}
+
+				&:nth-child(n+3) {
+
+					.entry-image {
+						display: none;
+					}
+
+				}
+
+			}
+
+		}
+
+		@include media( "issue-3-columns" ) {
+
+			.entry {
+
+				@include quantity-query( 3, "greater" ) {
+					width: 33%;
+					clear: none;
+
+					.entry-image {
+						display: block;
+					}
+
+				}
+
+				@include quantity-query( 4, "greater" ) {
+
+					&:nth-child(n+3) {
+						float: right;
+						clear: right;
+
+						.entry-image {
+							display: none;
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+		@include media( "issue-4-columns" ) {
+
+			.entry {
+
+				@include quantity-query( 4, "greater" ) {
+					width: 25%;
+
+					&:nth-child(n+3) {
+						float: left;
+						clear: none;
+
+						.entry-image {
+							display: block;
+						}
+
+					}
+
+				}
+
+				@include quantity-query( 5, "greater" ) {
+
+					&:nth-child(n+4) {
+						float: right;
+						clear: right;
+
+						.entry-image {
+							display: none;
+						}
+
+					}
+
+				}
+
+			}
+
+		};
+
+	}
+
+}

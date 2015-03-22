@@ -2,21 +2,95 @@
 	display: block;
 }
 
+.single-entry {
+
+	.entry-image {
+		@include rem( "margin-top", ( $spacing * 1.5 ) );
+		text-align: center;
+
+		img {
+			width: 100%;
+			max-width: 1167px;
+		}
+
+
+		&.no-image {
+			display: none;
+		}
+
+		+ .entry-header {
+			margin-top: 0;
+		}
+
+	}
+
+	.entry-header,
+	.no-image + .entry-header {
+		@include rem( "margin-top", ( $spacing * 2 ) );
+	}
+
+	.entry-meta {
+		@include rem( "padding-bottom", $line ); /* leave space for line below headings */
+	}
+
+	.entry-content {
+
+		&:before {
+			@include rem( "height", ( $height__rule ) );
+			@include rem( "margin", ( $line * 0.5 ) 0 ( $line * 1.5 ) );
+			content: '';
+			top: 0;
+			width: $width__rule;
+			margin-left: ( ( 100% - $width__rule ) / 2 );
+			background: $background-color__rule;
+		}
+
+		p:not(.standfirst) + p {
+			text-indent: 4%;
+		}
+
+		a:hover,
+		a:focus,
+		a:active {
+			color: $color__link-hover;
+		}
+
+	}
+
+}
+
+.entry-image-link {
+
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		border: 0;
+	}
+
+}
+
+.entry-title-link {
+	@extend %hide-underline;
+	color: $color__main;
+}
+
 .entry-title {
+	@include rem( "margin-top", $line );
 	@include font-size-line( "gigantic", 2.5 );
-	font-weight: bold;
-	font-family: $font-family__title;
 	word-wrap: break-word;
 
-	a {
-		border-bottom: 0;
-		color: inherit;
-	}
-
 	.single-entry & {
-		@include rem( "margin-bottom", $spacing );
+		@include rem( "margin-bottom", $line );
 	}
 
+}
+
+.entry-subtitle {
+	@include rem( "margin-top", $line );
+	font-weight: normal;
+	text-transform: none;
+	font-family: $font-family__main;
 }
 
 .updated:not(.published){
@@ -26,26 +100,37 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	@include rem( "margin", $spacing 0 ( $spacing * 4 ) );
+	@include rem( "margin", 0 0 ( $line * 4 ) );
 }
 
 .page-links {
-	@include rem( "margin", 0 0 $spacing );
+	@include rem( "margin", 0 0 $line );
 	clear: both;
 }
 
 /* Byline. */
-.entry-meta,
+.entry-meta {
+	text-align: center;
+
+	a {
+		@extend %hide-underline;
+		color: inherit;
+		font-weight: bold;
+	}
+
+}
+
+/* Footer author. */
 .entry-author {
 	font-family: $font-family__meta;
 	text-align: center;
 
 	/* The author's name */
 	a {
+		@extend %hide-underline;
 		font-weight: bold;
 		text-transform: uppercase;
 		letter-spacing: $letter-spacing__caps;
-		border-bottom: 0;
 	}
 
 }
@@ -58,20 +143,26 @@
 /* Categories in entry footer. */
 .entry-issue,
 .cat-links a {
+	@extend %hide-underline;
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: $letter-spacing__caps;
-	border-bottom: 0;
 }
 
-.tags-links a {
-	font-weight: bold;
-	border-bottom: 0;
+.tags-links {
+	display: block;
+
+	a {
+		@extend %hide-underline;
+		font-weight: bold;
+	}
+
 }
 
 /* Standfirsts. */
 .standfirst {
-	font-weight: bold;
+	@include font-size-line( "larger" );
+	font-weight: normal;
 }
 
 /* Dropcaps. */
@@ -83,16 +174,17 @@
 	font-family: $font-family__dropcap;
 }
 
-/* Metadata */
-.entry-footer {
-	@include font-size-line( "small" );
+/* Calls to action. */
+.call-to-action {
+	@include rem( "margin-top", ( $line * 1.5 ) );
+	@include rem( "padding-top", ( $line * 0.5 ) );
+	font-weight: bold;
 	font-family: $font-family__meta;
+	border-top: $height__rule solid $background-color__rule;
 }
 
 /* Post footer meta lines. */
-.posted-on,
-.tags-links {
-	@include rem( "margin-bottom", $spacing );
+.posted-on {
 	display: block;
 }
 

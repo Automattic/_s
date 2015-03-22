@@ -1,9 +1,12 @@
 .clear,
 .entry-content,
 .single-entry .entry-footer,
+.comments-footer,
 .comment-content,
 .site-header,
 .site-content,
-.site-footer {
+.site-footer,
+.issue-section,
+.category-posts {
 	@include clearfix;
 }

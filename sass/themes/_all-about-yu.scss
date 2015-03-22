@@ -1,6 +1,30 @@
-body.category-all-about-yu {
+.category-all-about-yu {
 
+	.category-title,
+	.category-title a,
+	.category-description,
+	.dropcap,
+	.entry-subtitle,
+	.entry-content a {
+		color: $color__allaboutyu__dark;
+	}
 
+	hr,
+	&.single-entry .entry-content:before,
+	.issue-section-header:before {
+		background: $color__allaboutyu;
+	}
 
+	&.single-entry .call-to-action {
+		border-top-color: $color__allaboutyu;
+	}
+
+	.footer a {
+		@extend %hide-underline;
+		color: $color__allaboutyu__darker;
+	}
+
+	@include issue-section-multicolumn-layout;
 
 }
+

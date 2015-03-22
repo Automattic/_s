@@ -47,6 +47,11 @@
 @import "elements/lists";
 @import "elements/tables";
 
+/* Fix TinyMCE background colour. */
+html {
+	background: $background-color;
+}
+
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
@@ -72,6 +77,11 @@
 /* 11.1 Posts and pages
 --------------------------------------------------------------*/
 @import "site/primary/posts-and-pages";
+
+/* Make paragraph indents work outside the `.single-entry` wrapper. */
+p:not(.standfirst) + p {
+	@include rem( "text-indent", $spacing );
+}
 
 /*--------------------------------------------------------------
 13.0 Media

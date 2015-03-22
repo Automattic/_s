@@ -2,7 +2,7 @@
 	@include rem( "margin", ( $spacing * 2) 0 );
 	@include rem( "padding", 0 $padding__widget );
 	@include rem( "border-left", $border-width__widget solid );
-	border-color: $color__yorklife;
+	border-color: $background-color__rule;
 
 	/* Different colours for different categories. */
 	.category-yorklife & {
@@ -41,6 +41,7 @@
 	text-align: left;
 	font-weight: normal;
 	font-family: $font-family__main;
+	text-transform: none;
 }
 
 /* Search widget. */

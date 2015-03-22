@@ -1,0 +1,29 @@
+/// 'Quantity queries' mixin for targeting specific numbers of sibling elements.
+///
+/// @author James Steinbach http://jamessteinbach.com/
+///
+/// @param {Number} $number     The number of siblings to target.
+/// @param {String} $comparison Whether to target the exact amount of elements,
+///                             less than that amount, or greater than.
+/// @content Selectors/rules to wrap in a quantity query.
+/// @output The content, wrapped in the specified quantity query.
+@mixin quantity-query( $number, $comparison: 'equal' ) {
+	$nth: '';
+
+	@if index( ('greater' 'more' '>'), $comparison ) {
+		$nth: 'n + #{$number}';
+	} @else if index( ('less' 'fewer' '<'), $comparison ) {
+		$nth: '-n + #{$number}';
+	} @else if index( ('equal' 'same' '='), $comparison ) {
+		$nth: $number;
+	} @else {
+		@warn "Sorry, that's an invalid $comparison value."
+	}
+
+	&:nth-last-child(#{$nth}):first-child {
+		&,
+		& ~ * {
+			@content;
+		}
+	}
+}

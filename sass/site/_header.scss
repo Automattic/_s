@@ -7,17 +7,24 @@
 	@include rem( "line-height", $height__masthead );
 	margin: 0;
 	text-align: center;
+}
 
-	a {
+.site-logo-link {
+	text-align: center;
+
+	&,
+	&:hover,
+	&:focus,
+	&:active {
 		border: 0;
 	}
 
-	img {
-		position: relative;
-		top: 0.35em; /* The bottom part of the logo is a 'Y' descender, so we shift the image so its 'baseline' looks right. */
-		vertical-align: middle;
-	}
+}
 
+.site-logo {
+	position: relative;
+	top: 0.1em; /* The bottom part of the logo is a 'Y' descender, so we shift the image so its 'baseline' looks right. */
+	vertical-align: middle;
 }
 
 .site-description {

@@ -19,29 +19,41 @@ $sections = array(
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+
+		<header class="issue-header">
+			<h1 class="issue-title"><?php yumag_issue_title(); ?></h1>
+		</header><!-- .issue-header -->
+
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
-
-			<header class="issue-header">
-				<h1 class="issue-title"><?php yumag_issue_title(); ?></h1>
-			</header><!-- .issue-header -->
 
 			<?php // Run through the loop, once for each section. ?>
 			<?php foreach( $sections as $section ) : ?>
 				<?php $cat = get_category_by_slug( $section ) ?>
 				<section class="issue-section category-<?php echo $section; ?>">
-					<h2 class="taxonomy-title category-title"><?php echo esc_html( $cat->cat_name ) ?></h2>
-					<div class="issue-section-posts">
-					<?php /* Start the Loop */
-					while ( have_posts() ) : the_post();
-						if ( in_category( $section ) ) {
-							get_template_part( 'content', get_post_format() );
-						}
-					endwhile;
-					rewind_posts();
-					?>
-					</div><!-- .issue-section-posts -->
+					<header class="issue-section-header category-header">
+						<h2 class="taxonomy-title issue-section-title category-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $cat->slug; ?>-42.png" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>"></h2>
+						<p class="taxonomy-description issue-section-description category-description"><?php echo esc_html( $cat->description ); ?></p>
+					</header>
+					<div class="category-content issue-section-content">
+						<div class="issue-section-posts category-posts category-<?php echo $section; ?>-posts">
+							<div>
+
+							<?php /* The Loop */
+							while ( have_posts() ) :
+								yumag_section_the_post();
+								if ( in_category( $section, $post->ID ) ) {
+									yumag_section_setup_postdata();
+									get_template_part( 'content', get_post_format() );
+								}
+							endwhile;
+							rewind_posts();
+							?>
+
+							</div>
+						</div><!-- .issue-section-posts -->
+					</div><!-- .issue-section-content -->
 				</section><!-- .issue-section -->
 			<?php endforeach; ?>
 

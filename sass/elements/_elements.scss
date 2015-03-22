@@ -28,11 +28,13 @@ html {
  * The 'real' background form the user's perspective.
  * 1. To establish a new stacking context, for overlapping the sidebars.
  * 2. Don't leave any room underneath this container on short pages.
+ * 3. Prevent centred Issue section posts areas from overflowing-right.
  */
 .site {
 	position: relative; /* 1 */
 	min-height: 100vh; /* 2 */
 	background: $background-color;
+	overflow-x: hidden; /* 3 */
 }
 
 blockquote,
@@ -63,10 +65,11 @@ cite {
 }
 
 hr {
-	background-color: $background-color__hr;
+	@include rem( "margin", ( $line * 1.5 ) ( ( 100% - $width__rule ) / 2 ) );
+	background-color: $background-color__rule;
 	border: 0;
-	height: 3px;
-	margin-bottom: 1.5em;
+	width: $width__rule;
+	height: $height__rule;
 }
 
 img {

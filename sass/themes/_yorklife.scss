@@ -1,37 +1,44 @@
-body.category-yorklife {
+.category-yorklife {
 
 	.category-title,
+	.category-title a,
 	.category-description,
 	.dropcap,
 	.entry-content a {
 		color: $color__yorklife__dark;
 	}
 
-	.entry-footer {
-		background: $color__yorklife;
-	}
-
-	.entry-content a {
-		&:hover,
-		&:focus {
-
-		}
-	}
-
 	.standfirst {
-
 	}
 
 	.dropcap {
+		font-family: $font-family__main;
+	}
+
+	.entry-title {
+		letter-spacing: -0.025em;
+
+		a {
+			@extend %hide-underline;
+		}
 
 	}
 
-	.entry-title a {
-
+	hr,
+	&.single-entry .entry-content:before,
+	.issue-section-header:before {
+		background: $color__yorklife;
 	}
 
-	.entry-subtitle {
-
+	&.single-entry .call-to-action {
+		border-top-color: $color__yorklife;
 	}
+
+	.footer a {
+		@extend %hide-underline;
+		color: $color__yorklife__darker;
+	}
+
+	@include issue-section-multicolumn-layout;
 
 }

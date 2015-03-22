@@ -1,0 +1,53 @@
+.template-two-columns .entry-image {
+	text-align: center;
+
+	/* Prevent featured image from being larger than its natural size. */
+	img {
+		max-width: 474px;
+	}
+
+}
+
+@include media( "main-spacing-2" ) {
+
+	.site-main {
+		position: relative; /* for relative scaling of fixed-position images */
+	}
+
+	.template-two-columns {
+		@include rem( "top", ( $spacing * 1.5 ) );
+
+		.entry-title,
+		.entry-subtitle,
+		.entry-meta {
+			text-align: left;
+		}
+
+		hr,
+		.entry-content:before {
+			margin-left: 0;
+		}
+
+	}
+
+	.template-fixed-left,
+	.template-scrolling-left {
+
+		.entry-image {
+			@include rem( "left", 0 );
+			position: absolute;
+		}
+
+	}
+
+	.template-fixed-right,
+	.template-scrolling-right {
+
+		.entry-image {
+			@include rem( "right", 0 );
+			position: absolute;
+		}
+
+	}
+
+}

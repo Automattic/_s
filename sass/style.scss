@@ -41,7 +41,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 13.0 Media
 	13.1 Captions
 	13.2 Galleries
-14.0 Themes
+14.0 Layouts
+15.0 Themes
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "functions/functions-master";
@@ -154,7 +155,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "media/galleries";
 
 /*--------------------------------------------------------------
-14.0 Themes
+14.0 Layouts
+--------------------------------------------------------------*/
+@import "layouts/layouts";
+
+/*--------------------------------------------------------------
+15.0 Themes
 --------------------------------------------------------------*/
 @import "themes/yorklife";
 @import "themes/open-minds";

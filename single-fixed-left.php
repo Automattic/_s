@@ -1,9 +1,17 @@
 <?php
+/*
+Single Post Template: Featured image left, content right
+*/
+
 /**
- * The template for displaying all single posts.
+ * Single post template for displaying content next to a left-aligned fixed-
+ * position featured image.
  *
  * @package YuMag
  */
+
+/* Additional body classes. */
+add_filter( 'body_class', 'yumag_template_classes_single_fixed_left' );
 
 get_header(); ?>
 
@@ -11,7 +19,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', 'single' ); ?>
+			<?php get_template_part( 'content', 'single-two-column' ); ?>
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || get_comments_number() ) :

@@ -19,13 +19,15 @@ if ( ! function_exists( 'yumag_body_classes' ) ) :
 function yumag_body_classes( $classes ) {
 	global $post;
 
+	$pp = new PeriodicalPress_Template_Tags();
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 
 	// Add category-based classes.
-	if ( is_a( $post, 'WP_Post' ) ) {
+	if ( is_a( $post, 'WP_Post' ) && ! $pp->is_issue() ) {
 		$categories = get_the_category( $post->ID );
 		foreach( $categories as $cat ) {
 			$classes[] = 'category-' . $cat->slug;
@@ -35,6 +37,38 @@ function yumag_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'yumag_body_classes' );
+endif;
+
+if ( ! function_exists( 'yumag_template_classes_single_fixed_left' ) ) :
+/**
+ * Add template-targetting body classes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function yumag_template_classes_single_fixed_left( $classes ) {
+	$classes[] = 'template-two-columns';
+	$classes[] = 'template-fixed-left';
+	return $classes;
+}
+endif;
+
+if ( ! function_exists( 'yumag_template_classes_single_fixed_right' ) ) :
+/**
+ * Add template-targetting body classes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function yumag_template_classes_single_fixed_right( $classes ) {
+	$classes[] = 'template-two-columns';
+	$classes[] = 'template-fixed-right';
+	return $classes;
+}
 endif;
 
 if ( ! function_exists( 'yumag_wp_title' ) ) :
@@ -112,4 +146,19 @@ function yumag_image_size_choices( $sizes ) {
 	) );
 }
 add_filter( 'image_size_names_choose', 'yumag_image_size_choices', 9999 );
+endif;
+
+if ( ! function_exists( 'yumag_excerpt_length' ) ) :
+/**
+ * Filter to set the number of words in auto-generated excerpts.
+ *
+ * @since 1.0.0
+ *
+ * @param int $length Default number of words to truncate the content at.
+ * @return int New number of words.
+ */
+function yumag_excerpt_length( $length ) {
+	return 25;
+}
+add_filter( 'excerpt_length', 'yumag_excerpt_length', 11 );
 endif;

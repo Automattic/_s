@@ -18,7 +18,6 @@
 /* Post- or widget-title level of heading. */
 h1,
 h2 {
-	@extend %title-font;
 	clear: both;
 	text-align: center;
 }
@@ -35,6 +34,8 @@ h2 {
 
 
 /* Subheadings within content. */
+h1,
+h2,
 h3,
 h4,
 h5,

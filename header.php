@@ -24,9 +24,14 @@
 
 <nav id="site-navigation" class="main-navigation js-menu-area" role="navigation" data-menu-side="left">
 	<button class="menu-toggle js-menu-toggle" aria-controls="menu" aria-expanded="false">
-		<span class="menu-toggle-inner"><?php _e( 'Menu', 'yumag' ); ?></span>
+		<span class="menu-toggle-outer"><span class="menu-toggle-inner"><?php _e( 'Menu', 'yumag' ); ?></span></span>
 	</button>
 	<div class="main-navigation-wrapper js-menu-contents">
+		<div class="main-navigation-site-logo">
+			<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
+				<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo-white.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo-white.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="69">
+			</a>
+		</div>
 		<div class="widget-area menu-widget-area">
 			<?php dynamic_sidebar( 'menu-widgets' ); ?>
 		</div>
@@ -35,7 +40,7 @@
 
 <div id="site-search" class="main-search js-menu-area" role="search" data-menu-side="right">
 	<button class="search-toggle js-menu-toggle" aria-controls="search" aria-expanded="false">
-		<span class="search-toggle-inner"><?php _e( 'Search', 'yumag' ); ?></span>
+		<span class="menu-toggle-outer"><span class="search-toggle-inner"><?php _e( 'Search', 'yumag' ); ?></span></span>
 	</button>
 	<div class="main-search-wrapper js-menu-contents">
 		<div class="widget-area search-widget-area" role="complementary">
@@ -47,21 +52,19 @@
 <!-- Wrapper for whole page except off-canvas menus and skiplinks. -->
 <div id="page" class="hfeed site">
 
+	<?php if ( ! is_single() ) : ?>
 	<header id="masthead" class="site-header" role="banner">
 
 		<div class="site-branding">
 			<h1 class="site-title">
-				<?php if ( ! is_front_page() ) : ?>
 				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
-				<?php endif; ?>
-				<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="125" height="89">
-				<?php if ( ! is_front_page() ) : ?>
+					<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="71">
 				</a>
-				<?php endif; ?>
 			</h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div><!-- .site-branding -->
 
 	</header><!-- #masthead -->
+	<?php endif; ?>
 
 	<div id="content" class="site-content">

@@ -71,7 +71,7 @@ $border-color__abbr:         #666;
 
 $background-color:         $white;
 $background-color__screen: #f1f1f1;
-$background-color__hr:     #ccc;
+$background-color__rule:   #ccc;
 $background-color__button: #e6e6e6;
 $background-color__pre:    #eee;
 $background-color__ins:    #fff9c0;
@@ -101,3 +101,9 @@ $color__openminds__dark:   darken( $downy, 15% );
 $color__centrestage__dark: darken( $sahara-sand, 15% );
 $color__allaboutyu__dark:  darken( $spring-rain, 15% );
 $color__backpage__dark:    darken( #e8cfeb, 15% );
+
+$color__yorklife__darker:    darken( $sisal, 35% );
+$color__openminds__darker:   darken( $downy, 30% );
+$color__centrestage__darker: darken( $sahara-sand, 35% );
+$color__allaboutyu__darker:  darken( $spring-rain, 30% );
+$color__backpage__darker:    darken( #e8cfeb, 30% );

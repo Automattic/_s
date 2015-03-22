@@ -130,6 +130,14 @@
 
 }
 
+.menu-toggle-outer,
+.search-toggle-outer {
+	@include rem( "line-height", ( $width__menu-toggle - $line ) );
+	display: inline-block;
+	padding: 0 0.5em;
+	background: $background-color;
+}
+
 .menu-toggle {
 	@include rem( "left", $width__menu-toggle );
 	transform: rotate(90deg);
@@ -202,6 +210,10 @@
 		transition: none;
 	}
 
+}
+
+.site-logo-link {
+	@include rem( "margin-top", $line );
 }
 
 .menu-item-yorklife a {

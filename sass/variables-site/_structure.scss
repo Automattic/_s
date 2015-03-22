@@ -34,15 +34,22 @@ $height__masthead__mini: ( $line * 4 );
 $width__menu: ( $line * 10 );
 $width__menu-toggle: ( $line * 3 );
 
+$width__rule: 25%;
+$height__rule: ( $line / 2 );
+
 // Media queries
 // -------------------------------------------------------------
 
 // Map of min-width-based breakpoints. Always use semantic keys that describe
 // how the site adapts at that breakpoint, to make code reading easier.
 $breakpoints: (
-	"main-spacing"    : 720px,
-    "main-spacing-1"  : 800px,
-    "main-spacing-2"  : 1020px,
-    "images-in-margin": 1120px,
-    "beyond-max-width": $body-width-maximum
+	"issue-2-columns"      :  500px,
+	"main-spacing"         :  720px,
+    "main-spacing-1"       :  800px,
+    "issue-3-columns"      :  900px,
+    "main-spacing-2"       : 1020px,
+    "issue-4-columns"      : 1100px,
+    "images-in-margin"     : 1120px,
+    "main-spacing-3"       : 1160px,
+    "beyond-max-width"     : $body-width-maximum
 );

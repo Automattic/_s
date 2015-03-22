@@ -1,32 +1,157 @@
-body.category-open-minds {
+.category-open-minds {
 
 	.category-title,
+	.category-title a,
 	.category-description,
 	.dropcap,
-	.site-content a {
+	.entry-subtitle,
+	.entry-content a {
 		color: $color__openminds__dark;
 	}
 
-	.site-content a {
-		&:hover,
-		&:focus {
-
-		}
+	.entry-title,
+	.entry-subtitle,
+	h3,
+	h4,
+	h5,
+	h6 {
+		letter-spacing: normal;
+		font-family: $font-family__main;
 	}
 
 	.standfirst {
-
+		@include font-size-line( "large" );
+		font-weight: bold;
+		color: $color__openminds__dark;
 	}
 
 	.dropcap {
 
 	}
 
-	.entry-title a {
+	.entry-title,
+	.entry-subtitle {
+		text-transform: none;
+	}
+
+	hr,
+	&.single-entry .entry-content:before,
+	.issue-section-header:before {
+		background: $color__openminds;
+	}
+
+	&.single-entry .call-to-action {
+		border-top-color: $color__openminds;
+	}
+
+	.footer a {
+		@extend %hide-underline;
+		color: $color__openminds__darker;
+	}
+
+}
+
+.category-open-minds .issue-section-posts {
+
+	.entry {
+		@include rem( "margin-bottom", $line );
+	}
+
+	.entry-title {
+		@include font-size-line( "larger" );
 
 	}
 
-	.entry-subtitle {
+	.entry-meta {
+		@include font-size-line( "small" );
+		display: block;
+		text-align: left;
+	}
+
+	.entry-content {
+		display: none;
+	}
+
+	@include media( "issue-4-columns" ) {
+
+		.entry {
+			clear: right;
+			float: right;
+			max-width: 50%;
+
+			.entry-image {
+				float: left;
+				width: 37.5%;
+				margin-bottom: 0;
+
+				img {
+					width: 100%;
+				}
+
+			}
+
+			.entry-title,
+			.entry-subtitle,
+			.entry-meta {
+				clear: none;
+				margin-left: 41.66667%;
+			}
+
+			.entry-title {
+				@include font-size-line( "large" );
+			}
+
+			.entry-subtitle {
+				@include font-size-line( "normal", 0.75 );
+			}
+
+			.entry-meta {
+				@include font-size-line( "small", 0.75 );
+			}
+
+			&:first-child {
+				float: left;
+				margin-bottom: 0;
+				max-width: 100%;
+
+				.entry-header {
+					@include rem( "padding-bottom", ( $line * 0.5 ) );
+					background: $color__openminds;
+				}
+
+				.entry-image {
+					width: 100%;
+					margin-right: 0;
+				}
+
+				.entry-title,
+				.entry-subtitle,
+				.entry-meta {
+					@include rem( "padding", 0 ( $spacing * 0.5 ) );
+					margin-left: 0;
+				}
+
+				.entry-title {
+					@include rem( "padding-top", ( $line * 0.5 ) );
+					@include font-size-line( "huge" );
+					clear: left;
+					color: $white;
+				}
+
+				.entry-subtitle {
+					@include font-size-line( "larger" );
+					color: $color__main;
+				}
+
+				.entry-meta {
+					@include rem( "margin-top", ( $line * 0.5 ) );
+					@include font-size-line( "normal" );
+					color: $color__main;
+				}
+
+			}
+
+		}
 
 	}
 

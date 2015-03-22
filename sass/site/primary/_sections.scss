@@ -1,15 +1,142 @@
+.single .category-header {
+	@include rem( "margin-top", $spacing );
+}
+
 .category-title {
-	@include rem( "margin", 0 0 $line );
 	@include font-size-line( "huger", 1.5 );
+	margin: 0;
 	font-weight: bold;
 	letter-spacing: $letter-spacing__caps;
 	text-align: center;
 	text-transform: uppercase;
 	font-family: $font-family__category;
+
+	a {
+		@extend %hide-underline;
+	}
+
 }
 
 .category-description {
 	text-align: center;
 	font-weight: bold;
 	font-family: $font-family__category;
+}
+
+.issue-section {
+	@include rem( "margin-top", ( $line * 2 ) );
+}
+
+.issue-section-header {
+	@include rem( "margin-bottom", ( $line * 2 ) ); /* leave room for the description */
+	position: relative;
+	text-align: center;
+
+	&:before {
+		@include rem( "height", $height__rule );
+		@include rem( "margin-top", ( $height__rule * -0.5 ) );
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		background: $color__yorklife;
+		z-index: 0;
+	}
+
+}
+
+.issue-section-title {
+	@include rem( "padding", ( $line * 0.5 ) );
+	position: relative;
+	display: inline-block;
+	z-index: 1;
+	margin: 0;
+	background: $background-color;
+}
+
+.issue-section-description {
+	@include rem( "margin-top", ( $line * -0.5 ) );
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	font-weight: normal;
+	text-align: center;
+	text-transform: lowercase;
+	z-index: 1;
+}
+
+/* Posts list for this section. */
+.issue-section-posts {
+	position: relative;
+	float: left;
+	left: 50%;
+
+	& > div {
+		position: relative;
+		float: left;
+		left: -50%;
+	}
+
+	.entry {
+		@include rem( "margin-bottom", $line )
+	}
+
+	.entry-image {
+		@include rem( "margin-bottom", ( $spacing / 2 ) );
+	}
+
+	.entry-title,
+	.entry-subtitle {
+		@include font-size-line( "large" );
+		margin: 0;
+		text-align: left;
+	}
+
+	.entry-meta,
+	.entry-content {
+		display: none;
+	}
+
+	.entry-meta {
+
+		a {
+			@extend %hide-underline;
+			color: $color__main;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $color__link-hover;
+			}
+
+		}
+
+	}
+
+	@include media( "issue-2-columns" ) {
+
+		.entry {
+			@include rem( "max-width", ( 333px + ( $spacing * 0.5 ) ) );
+			@include rem( "padding", 0 ( $spacing * 0.5 ) );
+			float: left;
+			width: 50%;
+			margin-bottom: 0;
+
+			&:nth-child(2n+1) {
+				clear: left;
+			}
+
+		}
+
+		.entry-content {
+			@include rem( "margin", ( $line * 0.5 ) 0 0 );
+			@include font-size-line( "small" );
+			display: block;
+			text-align: left;
+		}
+
+	}
+
 }

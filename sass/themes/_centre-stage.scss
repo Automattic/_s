@@ -1,4 +1,25 @@
-body.category-centre-stage {
+.category-centre-stage {
+
+	.dropcap,
+	.entry-content a {
+		color: $color__centrestage__dark;
+	}
+
+	.entry-title,
+	.entry-subtitle,
+	h3,
+	h4,
+	h5,
+	h6 {
+		letter-spacing: normal;
+		font-family: $font-family__main;
+	}
+
+	.category-title,
+	.category-title a,
+	.category-description {
+		color: $black;
+	}
 
 	a {
 
@@ -9,18 +30,135 @@ body.category-centre-stage {
 	}
 
 	.dropcap {
-
+		@include rem( "border", ( $line / 2 ) solid $black );
+		font-family: $font-family__main;
+		background: $black;
+		color: $color__centrestage;
 	}
 
-	.entry-title a {
-		@include font-size-line( "gigantic", 2.5 );
-		font-weight: normal;
-		font-family: $font-family__display__sans;
-		text-transform: uppercase;
-		letter-spacing: $letter-spacing__caps;
-	}
+	// .entry-title,
+	// .entry-subtitle {
+	// 	@extend %title-font;
+	// }
 
+	.entry-title,
 	.entry-subtitle {
+		font-style: italic;
+		text-transform: none;
+	}
+
+	hr,
+	&.single-entry .entry-content:before,
+	.issue-section-header:before {
+		background: $color__centrestage;
+	}
+
+	&.single-entry .call-to-action {
+		border-top-color: $color__centrestage;
+	}
+
+	.footer a {
+		@extend %hide-underline;
+		color: $color__centrestage__darker;
+	}
+
+}
+
+.category-centre-stage .issue-section-posts {
+
+	.entry-title {
+		@include font-size-line( "huge" );
+	}
+
+	.entry-meta {
+		display: block;
+		text-align: left;
+	}
+
+	@include media( "issue-4-columns" ) {
+
+		.entry {
+			max-width: 25%;
+			background: $color__centrestage;
+
+			.entry-image {
+				@include rem( "padding-top", ( $line * 0.5 ) );
+			}
+
+			&:nth-child(2n) {
+				clear: left;
+				float: left;
+			}
+
+			&:nth-child(2n+1) {
+				clear: none;
+				float: right;
+			}
+
+			@include quantity-query( 3, "greater" ) {
+
+				&:nth-child(n+2) {
+					@include rem( "padding-bottom", ( $line * 0.5 ) );
+
+					.entry-title {
+						@include font-size-line( "large" );
+					}
+
+					.entry-meta {
+						@include font-size-line( "small" );
+					}
+
+					.entry-content {
+						display: none;
+					}
+
+				}
+
+			}
+
+			&:first-child {
+				clear: none;
+				float: right;
+				margin-right: 25%;
+				width: 50%;
+				max-width: 100%;
+				margin-bottom: 0;
+				background: transparent;
+
+				.entry-image {
+					width: 100%;
+					padding-top: 0;
+				}
+
+				.entry-title,
+				.entry-subtitle,
+				.entry-meta,
+				.entry-content {
+					text-align: center;
+				}
+
+				.entry-title {
+					@include rem( "margin-bottom", ( $line * 0.5 ) );
+					@include font-size-line( "enormous", 1.5 );
+					text-align: center;
+				}
+
+				.entry-subtitle {
+					@include font-size-line( "larger" );
+				}
+
+				.entry-content {
+					display: block;
+				}
+
+			}
+
+		}
+
+		// .entry-content {
+		// 	display: none;
+		// }
+
 
 	}
 

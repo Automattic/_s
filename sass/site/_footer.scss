@@ -1,9 +1,15 @@
-/* Footer area backgrounds. */
-.single-entry .entry-footer {
-	@include rem( "padding-bottom", ( $spacing * 2 ) );
+/*
+ * Footer areas with grey backgrounds.
+ * 1. To overlap fixed-position content images.
+ */
+.footer {
+	@include font-size-line( "small" );
+	position: relative; /* 1 */
 	clear: both;
+	z-index: 2; /* 1 */
 	text-align: center;
 	background: $background-color__footer;
+	font-family: $font-family__meta;
 }
 
 /*
@@ -26,4 +32,28 @@
 /* Leave some more space under the avatar. */
 .entry-author-byline {
 	@include rem( "margin-top", ( $spacing / 2 ) );
+}
+
+/* Equal spacing above and below author bio. */
+.entry-author-description {
+	@include rem( "margin", ( $line * 0.5 ) 0 );
+}
+
+/* Full footer (site logo and terms). */
+.site-footer {
+	@include rem( "padding", ( $line * 2 ) $width__menu-toggle $line );
+
+	.site-description {
+		@include rem( "margin-bottom", ( $spacing * 2 ) );
+		@include font-size-line( "small" );
+		display: block;
+	}
+
+	.site-editor {
+
+	}
+
+}
+
+.footer-site-logo {
 }

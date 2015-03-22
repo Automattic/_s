@@ -11,14 +11,11 @@ a {
 			$transition-time__link border-color $transition-type;
 	}
 
-	&:visited {
-		color: $color__link-visited;
-	}
-
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color__link-hover;
+		border-bottom: 1px solid $color__link-hover;
 	}
 
 	&:focus {
@@ -28,6 +25,18 @@ a {
 	&:hover,
 	&:active {
 		outline: 0;
+	}
+
+}
+
+%hide-underline {
+	border-bottom-color: transparent;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+		border-bottom: 1px solid $color__link-hover;
 	}
 
 }
