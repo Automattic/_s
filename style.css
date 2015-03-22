@@ -1323,7 +1323,7 @@ a:active {
 		display: inline;
 		width: 33.33333%;
 		margin-right: 0; 
-		margin-left: 8.33333%;
+		margin-left: 0;
 		padding: 0 14px;
 	}
 	.template-fixed-left .entry-header,
@@ -1343,7 +1343,7 @@ a:active {
 		float: left;
 		display: inline;
 		width: 33.33333%;
-		margin-right: 8.33333%;
+		margin-right: 0;
 		margin-left: 0; 
 		padding: 0 14px;
 	}
@@ -1577,7 +1577,7 @@ a:active {
 	margin-left: 37.5%;
 	background: #ccc;
 }
-.single-entry .entry-content p:not(.standfirst) + p {
+.single-entry .entry-content p:not(.lead) + p {
 	text-indent: 4%;
 }
 .single-entry .entry-content a:hover,
@@ -1677,8 +1677,8 @@ a:active {
 	font-weight: bold;
 }
 
-/* Standfirsts. */
-.standfirst {
+/* Lead/lede. */
+.lead {
 	font-weight: normal; 
 	font-size: 24px;
 	font-size: 1.33333rem;
@@ -1693,7 +1693,7 @@ a:active {
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
-/* Calls to action. */
+/* Calls-to-action. */
 .call-to-action {
 	margin-top: 42px;
 	margin-top: 2.33333rem;
@@ -1702,6 +1702,25 @@ a:active {
 	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	border-top: 0.77778rem solid #ccc;
+}
+
+/* Mini calls-to-action within the content (e.g. for contact details). */
+.content-details {
+	padding: 14px 0;
+	padding: 0.77778rem 0;
+	font-weight: bold;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	border-top: 2px dotted #ccc;
+	border-bottom: 2px solid #ccc;
+}
+.content-details p,
+.content-details li,
+.content-details > *:last-child {
+	margin-bottom: 0;
+}
+.content-details ul,
+.content-details ol {
+	margin-left: 0;
 }
 
 /* Post footer meta lines. */
@@ -2083,13 +2102,29 @@ object {
 	}
 	.template-fixed-left .entry-image,
 	.template-scrolling-left .entry-image {
-		position: absolute; 
-		left: 0;
+		left: 8.33333%;
 	}
 	.template-fixed-right .entry-image,
 	.template-scrolling-right .entry-image {
-		position: absolute; 
-		right: 0;
+		right: 8.33333%;
+	}
+	.template-fixed-left .entry-image,
+	.template-fixed-right .entry-image {
+		position: fixed;
+		z-index: 0; 
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+	.template-fixed-left.menu-left-toggled .entry-image,
+	.template-fixed-left.menu-right-toggled .entry-image,
+	.template-fixed-right.menu-left-toggled .entry-image,
+	.template-fixed-right.menu-right-toggled .entry-image {
+		display: none;
+	}
+	.template-scrolling-left .entry-image,
+	.template-scrolling-right .entry-image {
+		position: absolute;
 	}
 }
 
@@ -2114,8 +2149,9 @@ object {
 .category-yorklife .issue-section-header:before {
 	background: #dcd4c6;
 }
-.category-yorklife.single-entry .call-to-action {
-	border-top-color: #dcd4c6;
+.category-yorklife .call-to-action,
+.category-yorklife .content-details {
+	border-color: #dcd4c6;
 }
 .category-yorklife .footer a {
 	color: #94805b;
@@ -2193,7 +2229,7 @@ object {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
 }
-.category-open-minds .standfirst {
+.category-open-minds .lead {
 	font-weight: bold;
 	font-size: 21px;
 	font-size: 1.16667rem;
@@ -2209,7 +2245,8 @@ object {
 .category-open-minds .issue-section-header:before {
 	background: #69bcc9;
 }
-.category-open-minds.single-entry .call-to-action {
+.category-open-minds .call-to-action,
+.category-open-minds .contact-details {
 	border-top-color: #69bcc9;
 }
 .category-open-minds .footer a {
@@ -2316,9 +2353,11 @@ object {
 	}
 }
 
-.category-centre-stage .dropcap,
-.category-centre-stage .entry-content a {
+.category-centre-stage .dropcap {
 	color: #e8e640;
+}
+.category-centre-stage .entry-content a {
+	color: #acab15;
 }
 .category-centre-stage .entry-title,
 .category-centre-stage .entry-subtitle,
@@ -2351,8 +2390,12 @@ object {
 .category-centre-stage .issue-section-header:before {
 	background: #f0ef84;
 }
-.category-centre-stage.single-entry .call-to-action {
-	border-top-color: #f0ef84;
+.category-centre-stage .call-to-action {
+	border-color: #f0ef84;
+}
+.category-centre-stage .call-to-action,
+.category-centre-stage .content-details {
+	border-color: #e8e640;
 }
 .category-centre-stage .footer a {
 	color: #acab15;
@@ -2455,7 +2498,8 @@ object {
 .category-all-about-yu .issue-section-header:before {
 	background: #9acd9c;
 }
-.category-all-about-yu.single-entry .call-to-action {
+.category-all-about-yu .call-to-action,
+.category-all-about-yu .content-details {
 	border-top-color: #9acd9c;
 }
 .category-all-about-yu .footer a {
@@ -2537,7 +2581,8 @@ object {
 .category-back-page .issue-section-header:before {
 	background: #e8cfeb;
 }
-.category-back-page.single-entry .call-to-action {
+.category-back-page .call-to-action,
+.category-back-page .content-details {
 	border-top-color: #e8cfeb;
 }
 .category-back-page .footer a {

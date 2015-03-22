@@ -1,8 +1,11 @@
 .category-centre-stage {
 
-	.dropcap,
-	.entry-content a {
+	.dropcap {
 		color: $color__centrestage__dark;
+	}
+
+	.entry-content a {
+		color: $color__centrestage__darker;
 	}
 
 	.entry-title,
@@ -19,14 +22,6 @@
 	.category-title a,
 	.category-description {
 		color: $black;
-	}
-
-	a {
-
-	}
-
-	.standfirst {
-
 	}
 
 	.dropcap {
@@ -53,8 +48,13 @@
 		background: $color__centrestage;
 	}
 
-	&.single-entry .call-to-action {
-		border-top-color: $color__centrestage;
+	.call-to-action {
+		border-color: $color__centrestage;
+	}
+
+	.call-to-action,
+	.content-details {
+		border-color: $color__centrestage__dark;
 	}
 
 	.footer a {

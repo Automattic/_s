@@ -71,6 +71,38 @@ function yumag_template_classes_single_fixed_right( $classes ) {
 }
 endif;
 
+if ( ! function_exists( 'yumag_template_classes_single_scrolling_left' ) ) :
+/**
+ * Add template-targetting body classes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function yumag_template_classes_single_scrolling_left( $classes ) {
+	$classes[] = 'template-two-columns';
+	$classes[] = 'template-scrolling-left';
+	return $classes;
+}
+endif;
+
+if ( ! function_exists( 'yumag_template_classes_single_scrolling_right' ) ) :
+/**
+ * Add template-targetting body classes.
+ *
+ * @since 1.0.0
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function yumag_template_classes_single_scrolling_right( $classes ) {
+	$classes[] = 'template-two-columns';
+	$classes[] = 'template-scrolling-right';
+	return $classes;
+}
+endif;
+
 if ( ! function_exists( 'yumag_wp_title' ) ) :
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.

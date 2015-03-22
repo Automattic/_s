@@ -15,7 +15,8 @@
 		background: $color__allaboutyu;
 	}
 
-	&.single-entry .call-to-action {
+	.call-to-action,
+	.content-details {
 		border-top-color: $color__allaboutyu;
 	}
 

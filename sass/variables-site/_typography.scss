@@ -79,6 +79,8 @@ $line-heights: ();
 	$line-heights: map-merge( $line-heights, ( $size: $line-height ) );
 }
 
+$text-indent: 4%;
+
 // Element font sizes
 $font-size__html: $text-size__px;
 

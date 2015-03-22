@@ -34,8 +34,7 @@
 	.template-scrolling-left {
 
 		.entry-image {
-			@include rem( "left", 0 );
-			position: absolute;
+			@include rem( "left", 8.33333% );
 		}
 
 	}
@@ -44,7 +43,35 @@
 	.template-scrolling-right {
 
 		.entry-image {
-			@include rem( "right", 0 );
+			@include rem( "right", 8.33333% );
+		}
+
+	}
+
+	.template-fixed-left,
+	.template-fixed-right {
+
+		.entry-image {
+			position: fixed;
+			transform: none;
+			z-index: 0;
+		}
+
+		&.menu-left-toggled,
+		&.menu-right-toggled {
+
+			.entry-image {
+				display: none;
+			}
+
+		}
+
+	}
+
+	.template-scrolling-left,
+	.template-scrolling-right {
+
+		.entry-image {
 			position: absolute;
 		}
 

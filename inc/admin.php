@@ -22,16 +22,25 @@ function yumag_tinymce_setup( $settings ) {
 		$block_formats = explode( ';', $settings['block_formats'] );
 		/*
 		 * Don't allow user to select these default formats:
+		 * - Pre
 		 * - Heading 1
+		 * - Heading 2
 		 * - Heading 6
 		 */
 		$block_formats = array_diff( $block_formats, array(
+			'Pre=pre',
 			'Heading 1=h1',
+			'Heading 2=h2',
 			'Heading 6=h6'
 		) );
 	} else {
 		$block_formats = array();
 	}
+
+	// Re-add some block formats with different names.
+	$block_formats[] = 'Title=h2';
+	$block_formats[] = 'Verse=pre';
+
 	$settings['block_formats'] = implode( ';', $block_formats );
 
 	// Tell TinyMCE how to style the new formats.
@@ -43,14 +52,20 @@ function yumag_tinymce_setup( $settings ) {
 
 	$new_styles = array(
 		array(
-			'title' => _x( 'Standfirst', 'TinyMCE styles dropdown', 'yumag' ),
+			'title' => _x( 'Lead', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'p',
-			'classes' => 'standfirst'
+			'classes' => 'lead'
 		),
 		array(
-			'title' => _x( 'Call to action', 'TinyMCE styles dropdown', 'yumag' ),
+			'title' => _x( 'Call-to-action', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'aside',
 			'classes' => 'call-to-action',
+			'wrapper' => true
+		),
+		array(
+			'title' => _x( 'Details block', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'div',
+			'classes' => 'content-details',
 			'wrapper' => true
 		)
 	);

@@ -405,6 +405,12 @@ big {
 	font-size: 125%;
 }
 
+/* Add a little spacing at the edges of the editing area. */
+#tinymce {
+	margin: 14px;
+	margin: 0.77778rem;
+}
+
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
@@ -771,7 +777,7 @@ a:active {
 	margin-left: 37.5%;
 	background: #ccc;
 }
-.single-entry .entry-content p:not(.standfirst) + p {
+.single-entry .entry-content p:not(.lead) + p {
 	text-indent: 4%;
 }
 .single-entry .entry-content a:hover,
@@ -871,8 +877,8 @@ a:active {
 	font-weight: bold;
 }
 
-/* Standfirsts. */
-.standfirst {
+/* Lead/lede. */
+.lead {
 	font-weight: normal; 
 	font-size: 24px;
 	font-size: 1.33333rem;
@@ -887,7 +893,7 @@ a:active {
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
-/* Calls to action. */
+/* Calls-to-action. */
 .call-to-action {
 	margin-top: 42px;
 	margin-top: 2.33333rem;
@@ -898,15 +904,33 @@ a:active {
 	border-top: 0.77778rem solid #ccc;
 }
 
+/* Mini calls-to-action within the content (e.g. for contact details). */
+.content-details {
+	padding: 14px 0;
+	padding: 0.77778rem 0;
+	font-weight: bold;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	border-top: 2px dotted #ccc;
+	border-bottom: 2px solid #ccc;
+}
+.content-details p,
+.content-details li,
+.content-details > *:last-child {
+	margin-bottom: 0;
+}
+.content-details ul,
+.content-details ol {
+	margin-left: 0;
+}
+
 /* Post footer meta lines. */
 .posted-on {
 	display: block;
 }
 
 /* Make paragraph indents work outside the `.single-entry` wrapper. */
-p:not(.standfirst) + p {
-	text-indent: 28px;
-	text-indent: 1.55556rem;
+p:not(.lead) + p {
+	text-indent: 4%;
 }
 
 /*--------------------------------------------------------------

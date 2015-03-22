@@ -24,7 +24,8 @@
 		background: $color__backpage;
 	}
 
-	&.single-entry .call-to-action {
+	.call-to-action,
+	.content-details {
 		border-top-color: $color__backpage;
 	}
 

@@ -45,8 +45,8 @@
 			background: $background-color__rule;
 		}
 
-		p:not(.standfirst) + p {
-			text-indent: 4%;
+		p:not(.lead) + p {
+			text-indent: $text-indent;
 		}
 
 		a:hover,
@@ -159,14 +159,13 @@
 
 }
 
-/* Standfirsts. */
-.standfirst {
+/* Lead/lede. */
+.lead {
 	@include font-size-line( "larger" );
 	font-weight: normal;
 }
 
 /* Dropcaps. */
-// @todo: fix when the first paragraph is bolded/a standfirst.
 .dropcap {
 	margin-left: -5px;
 	margin-right: 3px;
@@ -174,13 +173,34 @@
 	font-family: $font-family__dropcap;
 }
 
-/* Calls to action. */
+/* Calls-to-action. */
 .call-to-action {
 	@include rem( "margin-top", ( $line * 1.5 ) );
 	@include rem( "padding-top", ( $line * 0.5 ) );
 	font-weight: bold;
 	font-family: $font-family__meta;
 	border-top: $height__rule solid $background-color__rule;
+}
+
+/* Mini calls-to-action within the content (e.g. for contact details). */
+.content-details {
+	@include rem( "padding", ( $line * 0.5 ) 0 );
+	font-weight: bold;
+	font-family: $font-family__meta;
+	border-top: 2px dotted $background-color__rule;
+	border-bottom: 2px solid $background-color__rule;
+
+	p,
+	li,
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	ul,
+	ol {
+		margin-left: 0;
+	}
+
 }
 
 /* Post footer meta lines. */

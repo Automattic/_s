@@ -40,6 +40,11 @@
 @import "typography/headings";
 @import "typography/copy";
 
+/* Add a little spacing at the edges of the editing area. */
+#tinymce {
+	@include rem( "margin", ( $spacing / 2 ) );
+}
+
 /*--------------------------------------------------------------
 3.0 Elements
 --------------------------------------------------------------*/
@@ -79,8 +84,8 @@ html {
 @import "site/primary/posts-and-pages";
 
 /* Make paragraph indents work outside the `.single-entry` wrapper. */
-p:not(.standfirst) + p {
-	@include rem( "text-indent", $spacing );
+p:not(.lead) + p {
+	text-indent: $text-indent;
 }
 
 /*--------------------------------------------------------------

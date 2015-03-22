@@ -19,7 +19,7 @@
 		font-family: $font-family__main;
 	}
 
-	.standfirst {
+	.lead {
 		@include font-size-line( "large" );
 		font-weight: bold;
 		color: $color__openminds__dark;
@@ -40,7 +40,8 @@
 		background: $color__openminds;
 	}
 
-	&.single-entry .call-to-action {
+	.call-to-action,
+	.contact-details {
 		border-top-color: $color__openminds;
 	}
 

@@ -8,9 +8,6 @@
 		color: $color__yorklife__dark;
 	}
 
-	.standfirst {
-	}
-
 	.dropcap {
 		font-family: $font-family__main;
 	}
@@ -30,8 +27,9 @@
 		background: $color__yorklife;
 	}
 
-	&.single-entry .call-to-action {
-		border-top-color: $color__yorklife;
+	.call-to-action,
+	.content-details {
+		border-color: $color__yorklife;
 	}
 
 	.footer a {

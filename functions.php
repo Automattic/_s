@@ -26,7 +26,7 @@ function write_log( $log )  {
 }
 endif;
 
-if ( !function_exists( 'write_filters' ) ) :
+if ( ! function_exists( 'write_filters' ) ) :
 /**
  * Debug function to log all filters on a named hook.
  *
@@ -123,6 +123,12 @@ function yumag_setup() {
 	 * Register stylesheet for TinyMCE content (editor-style.css).
 	 */
 	add_editor_style();
+
+	/*
+	 * If using subtitles, properly format them on output (change dumb quotes
+	 * to smart quotes, create real ellipsis, etc).
+	 */
+	add_filter( 'wps_subtitle', 'wptexturize' );
 
 }
 endif; // yumag_setup

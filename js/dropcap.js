@@ -20,10 +20,10 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 
 	paragraphs = document.querySelectorAll( '.single-entry .entry-content > p' );
 
-	// Find the first content paragraph that isn't a standfirst.
+	// Find the first content paragraph that isn't a lead/lede.
 	i = 0;
 	l = paragraphs.length;
-	while ( ( i < l ) && ( paragraphs[i].classList.contains( 'standfirst' ) ) ) {
+	while ( ( i < l ) && ( paragraphs[i].classList.contains( 'lead' ) ) ) {
 		i++;
 	}
 	p = paragraphs[i];
