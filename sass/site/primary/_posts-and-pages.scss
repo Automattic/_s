@@ -159,50 +159,6 @@
 
 }
 
-/* Lead/lede. */
-.lead {
-	@include font-size-line( "larger" );
-	font-weight: normal;
-}
-
-/* Dropcaps. */
-.dropcap {
-	margin-left: -5px;
-	margin-right: 3px;
-	font-weight: bold;
-	font-family: $font-family__dropcap;
-}
-
-/* Calls-to-action. */
-.call-to-action {
-	@include rem( "margin-top", ( $line * 1.5 ) );
-	@include rem( "padding-top", ( $line * 0.5 ) );
-	font-weight: bold;
-	font-family: $font-family__meta;
-	border-top: $height__rule solid $background-color__rule;
-}
-
-/* Mini calls-to-action within the content (e.g. for contact details). */
-.content-details {
-	@include rem( "padding", ( $line * 0.5 ) 0 );
-	font-weight: bold;
-	font-family: $font-family__meta;
-	border-top: 2px dotted $background-color__rule;
-	border-bottom: 2px solid $background-color__rule;
-
-	p,
-	li,
-	> *:last-child {
-		margin-bottom: 0;
-	}
-
-	ul,
-	ol {
-		margin-left: 0;
-	}
-
-}
-
 /* Post footer meta lines. */
 .posted-on {
 	display: block;

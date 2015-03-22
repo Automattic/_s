@@ -399,8 +399,8 @@ pre {
 	max-width: 100%;
 	margin-bottom: 28px;
 	margin-bottom: 1.55556rem;
-	padding: 28px;
-	padding: 1.55556rem;
+	padding: 28px 28px;
+	padding: 1.55556rem 1.55556rem;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 2.625;
@@ -434,6 +434,54 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+/* Lead/lede. */
+.lead {
+	font-weight: normal; 
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.16667;
+}
+
+/* Dropcaps. */
+.dropcap {
+	margin-right: 3px;
+	margin-left: -5px;
+	font-weight: bold;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+}
+
+/* Calls-to-action. */
+.call-to-action {
+	margin-top: 42px;
+	margin-top: 2.33333rem;
+	padding-top: 14px;
+	padding-top: 0.77778rem;
+	font-weight: bold;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	border-top: 0.77778rem solid #ccc;
+}
+
+/* Mini calls-to-action within the content (e.g. for contact details). */
+.content-details {
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
+	padding: 14px 0;
+	padding: 0.77778rem 0;
+	font-weight: bold;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	border-top: 2px dotted #ccc;
+	border-bottom: 2px solid #ccc;
+}
+.content-details p,
+.content-details li,
+.content-details > *:last-child {
+	margin-bottom: 0;
+}
+.content-details ul,
+.content-details ol {
+	margin-left: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1706,6 +1754,8 @@ a:active {
 
 /* Mini calls-to-action within the content (e.g. for contact details). */
 .content-details {
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
 	padding: 14px 0;
 	padding: 0.77778rem 0;
 	font-weight: bold;
