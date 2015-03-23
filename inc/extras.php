@@ -194,3 +194,33 @@ function yumag_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'yumag_excerpt_length', 11 );
 endif;
+
+if ( ! function_exists( 'yumag_posts_per_page' ) ) :
+/**
+ * Ensure that archive pages load a number of posts divisible by 3 (so that
+ * balanced rows of posts are shown on normal-size screens).
+ *
+ * @since 1.0.0
+ *
+ * @param WP_Query $query The query object being assembled.
+ */
+function yumag_posts_per_page( $query ) {
+	if ( is_admin() || is_singular() || ! $query->is_main_query() || $query->is_tax( 'pp_issue' ) ) {
+		return;
+	}
+
+	$posts_per_page = $query->get( 'posts_per_page' );
+	if ( empty( $posts_per_page ) ) {
+		$posts_per_page = get_option( 'posts_per_page' );
+	}
+
+	if ( -1 !== $posts_per_page ) {
+		if ( $posts_per_page % 3 ) {
+			$posts_per_page += ( 3 - ( $posts_per_page % 3 ) );
+		}
+		$query->set( 'posts_per_page', $posts_per_page );
+	}
+
+}
+add_action( 'pre_get_posts', 'yumag_posts_per_page', 11 );
+endif;
