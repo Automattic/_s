@@ -741,7 +741,8 @@ a:active {
 .site-content,
 .site-footer,
 .issue-section,
-.category-posts {
+.category-posts,
+.author-bio-section {
 	*zoom: 1;
 }
 .clear:before,
@@ -763,7 +764,9 @@ a:active {
 .issue-section:before,
 .issue-section:after,
 .category-posts:before,
-.category-posts:after {
+.category-posts:after,
+.author-bio-section:before,
+.author-bio-section:after {
 	content: " ";
 	display: table;
 }
@@ -776,7 +779,8 @@ a:active {
 .site-content:after,
 .site-footer:after,
 .issue-section:after,
-.category-posts:after {
+.category-posts:after,
+.author-bio-section:after {
 	clear: both;
 }
 

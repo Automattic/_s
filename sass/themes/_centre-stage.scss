@@ -86,22 +86,6 @@
 	@include media( "issue-4-columns" ) {
 
 		.entry {
-			max-width: 25%;
-			background: $color__centrestage;
-
-			.entry-image {
-				@include rem( "padding-top", ( $line * 0.5 ) );
-			}
-
-			&:nth-child(2n) {
-				clear: left;
-				float: left;
-			}
-
-			&:nth-child(2n+1) {
-				clear: none;
-				float: right;
-			}
 
 			@include quantity-query( 3, "greater" ) {
 
@@ -116,22 +100,82 @@
 						@include font-size-line( "small" );
 					}
 
+				}
+
+			}
+
+		}
+
+		.entry-image {
+			@include rem( "padding-top", ( $line * 0.5 ) );
+		}
+
+		// Styles localized to non-flexbox layout.
+		.issue-section-noflex {
+
+			.entry {
+				float: left;
+				max-width: 25%;
+				background: $color__centrestage;
+
+				// Largest (featured) article.
+				&:first-child {
+					max-width: 50%;
+					margin-bottom: 0;
+					background: transparent;
+
+					.entry-image {
+						width: 100%;
+						padding-top: 0;
+					}
+
+					.entry-title,
+					.entry-subtitle,
+					.entry-meta,
 					.entry-content {
-						display: none;
+						text-align: center;
+					}
+
+					.entry-title {
+						@include rem( "margin-bottom", ( $line * 0.5 ) );
+						@include font-size-line( "enormous", 1.5 );
+						text-align: center;
+					}
+
+					.entry-subtitle {
+						@include font-size-line( "larger" );
+					}
+
+					.entry-content {
+						display: block;
 					}
 
 				}
 
 			}
 
-			&:first-child {
+			.entry-content {
+				display: none;
+			}
+
+		}
+
+		// Flexbox version, using wrapper elements added in javascript.
+		.issue-section-flex {
+			display: flex;
+
+			.entry {
 				clear: none;
-				float: right;
-				margin-right: 25%;
-				width: 50%;
-				max-width: 100%;
+				float: none;
+				width: auto;
+			}
+
+			// Largest (featured) article.
+			> .entry:first-child {
+				flex: 2 2 50%;
+				order: 2;
+				max-width: 50%;
 				margin-bottom: 0;
-				background: transparent;
 
 				.entry-image {
 					width: 100%;
@@ -155,17 +199,48 @@
 					@include font-size-line( "larger" );
 				}
 
-				.entry-content {
-					display: block;
+			}
+
+			// Both sidebars.
+			> :nth-child(n+2) {
+				flex: 1 1 25%;
+				background: $color__centrestage;
+
+				.entry {
+
+					@include quantity-query( 2, "greater" ) {
+						// If there's 2 articles in the column, save space by
+						// hiding the excerpt.
+						.entry-content {
+							display: none;
+						}
+
+					}
+
+					@include quantity-query( 3, "greater" ) {
+						// If there's 3 articles, save more space by hiding the
+						// image.
+						.entry-image {
+							display: none;
+						}
+					}
+
 				}
+
 
 			}
 
-		}
+			// Left sidebar.
+			> :nth-child(2) {
+				order: 1;
+			}
 
-		// .entry-content {
-		// 	display: none;
-		// }
+			// Right sidebar.
+			> :nth-child(3) {
+				order: 3;
+			}
+
+		}
 
 
 	}

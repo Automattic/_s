@@ -45,7 +45,7 @@ get_header(); ?>
 					</header>
 					<div class="category-content index-content issue-section-content">
 						<div class="issue-section-posts index-posts category-posts category-<?php echo $section; ?>-posts">
-							<div>
+							<div<?php if ( 'centre-stage' === $section ) echo ' class="js-convert-to-flexbox issue-section-noflex"'; ?>>
 
 							<?php /* The Loop */
 							while ( have_posts() ) :
