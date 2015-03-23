@@ -146,7 +146,7 @@
 
 }
 
-.archive.category .category-posts,
+.archive:not(.tax-pp_issue) .index-posts,
 .search-results .index-posts {
 
 	.entry-footer {

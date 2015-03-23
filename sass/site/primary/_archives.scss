@@ -19,7 +19,8 @@
 
 /* eg 'ISSUE ONE' */
 .issue-number,
-.search-term {
+.search-term,
+.archive-term {
 	font-weight: bold;
 	letter-spacing: $letter-spacing__caps;
 	text-align: center;

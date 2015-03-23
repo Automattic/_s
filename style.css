@@ -1803,7 +1803,8 @@ a:active {
 
 /* eg 'ISSUE ONE' */
 .issue-number,
-.search-term {
+.search-term,
+.archive-term {
 	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
 	text-align: center;
@@ -1978,7 +1979,7 @@ a:active {
 	display: none;
 }
 
-.archive.category .category-posts .entry-footer,
+.archive:not(.tax-pp_issue) .index-posts .entry-footer,
 .search-results .index-posts .entry-footer {
 	display: block;
 	margin: -14px 0 28px;
@@ -1988,20 +1989,20 @@ a:active {
 	line-height: 2;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
-.archive.category .category-posts .read-more,
+.archive:not(.tax-pp_issue) .index-posts .read-more,
 .search-results .index-posts .read-more {
 	display: block;
 }
 @media (min-width: 900px) {
-	.archive.category .category-posts .entry:nth-last-child(n+3):first-child,
-	.archive.category .category-posts .entry:nth-last-child(n+3):first-child ~ *,
+	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child,
+	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child ~ *,
 	.search-results .index-posts .entry:nth-last-child(n+3):first-child,
 	.search-results .index-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
 		width: 33%;
 	}
-	.archive.category .category-posts .entry:nth-last-child(n+3):first-child:nth-child(3n+1),
-	.archive.category .category-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(3n+1),
+	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child:nth-child(3n+1),
+	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(3n+1),
 	.search-results .index-posts .entry:nth-last-child(n+3):first-child:nth-child(3n+1),
 	.search-results .index-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(3n+1) {
 		clear: left;

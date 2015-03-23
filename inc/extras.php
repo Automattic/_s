@@ -27,7 +27,7 @@ function yumag_body_classes( $classes ) {
 	}
 
 	// Add category-based classes.
-	if ( is_a( $post, 'WP_Post' ) && ! $pp->is_issue() && ! is_search() ) {
+	if ( is_single() || is_category() ) {
 		$categories = get_the_category( $post->ID );
 		foreach( $categories as $cat ) {
 			$classes[] = 'category-' . $cat->slug;
@@ -223,4 +223,28 @@ function yumag_posts_per_page( $query ) {
 
 }
 add_action( 'pre_get_posts', 'yumag_posts_per_page', 11 );
+endif;
+
+if ( ! function_exists( 'yumag_split_archive_title' ) ) :
+
+function yumag_split_archive_title( $title ) {
+
+	$replacement = '<span class="archive-term">%s</span>';
+
+	if ( false !== strpos( $title, ': ' ) ) {
+		$title = preg_replace(
+			'/([^:]+: )(.*)/',
+			// Convert sprintf-format placeholder to regex-format placeholder.
+			sprintf( '$1' . $replacement, '$2' ),
+			$title,
+			1
+		);
+	} else {
+		// If we can't find the 'term' part, treat the whole thing as the term.
+		$title = sprintf( $replacement, $title );
+	}
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'yumag_split_archive_title', 60 );
 endif;
