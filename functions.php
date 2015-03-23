@@ -102,22 +102,11 @@ function yumag_setup() {
 	) );
 
 	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	// add_theme_support( 'post-formats', array(
-	// 	'aside', 'image', 'video', 'quote', 'link',
-	// ) );
-
-	/*
 	 * Setup image dimensions.
-	 * - yumag-photo-large = full width of content area (max. 658x658)
-	 * - yumag-photo-small = sized to go in content margins (max. 233 wide)
 	 */
+	add_image_size( 'yumag-author-photo', 150, 150, true );
 	add_image_size( 'yumag-featured-photo', 905, 509, true );
 	add_image_size( 'yumag-featured-photo-portrait', 474, 474, true );
-	// add_image_size( 'yumag-photo-small', 233, 9999, false );
-	// add_image_size( 'yumag-post-thumbnail-square', 444, 444, false );
 
 	/*
 	 * Register stylesheet for TinyMCE content (editor-style.css).
@@ -190,6 +179,8 @@ function yumag_scripts() {
 	) );
 
 	wp_enqueue_script( 'yumag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+
+	wp_enqueue_script( 'yumag-layout', get_template_directory_uri() . '/js/layout.js', array(), '20150323', true );
 
 	wp_enqueue_script( 'yumag-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

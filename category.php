@@ -26,7 +26,7 @@ get_header(); ?>
 							<img src="<?php echo $src . $cat->slug; ?>-42.png" srcset="<?php echo $src . $cat->slug; ?>-84.png 2x, <?php echo $src . $cat->slug; ?>-42.png 1x" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
 						</h1>
 						<p class="taxonomy-description category-description"><?php echo esc_html( $cat->description ); ?></p>
-					</header><!-- .page-header -->
+					</header><!-- .category-header -->
 					<div class="category-content index-content">
 						<div class="category-posts index-posts category-<?php echo $cat->slug; ?>-posts">
 							<div>
@@ -47,7 +47,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; ?>
+			<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

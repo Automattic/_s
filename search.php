@@ -22,7 +22,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<section class="search-section">
-				<div class="index-content search-contents">
+				<div class="index-content search-content">
 					<div class="index-posts search-posts">
 						<div>
 

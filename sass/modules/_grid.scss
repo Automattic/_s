@@ -78,6 +78,8 @@
 .site-branding,
 .search-results-search,
 .category-header,
+.author-header,
+.author-bio-content,
 .index-content,
 .single-entry .entry-header,
 .single-entry .entry-content,
@@ -99,6 +101,8 @@
 	 * Search toggles.
 	 */
 	.search-results-search,
+	.author-header,
+	.author-bio-content,
 	.category-header,
 	.index-content,
 	.single-entry .entry-header,
@@ -135,6 +139,7 @@
 	}
 
 	/* Narrower content column than everything else, for better line length. */
+	.author-bio-content,
 	.single-entry .entry-content,
 	.single-entry .entry-author,
 	.single-entry .posted-on,
@@ -170,6 +175,7 @@
 	}
 
 	/* Even narrower content column, to maintain sensible line length. */
+	.author-bio-content,
 	.single-entry .entry-content,
 	.single-entry .entry-author,
 	.single-entry .posted-on,

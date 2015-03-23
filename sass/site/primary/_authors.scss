@@ -1,0 +1,52 @@
+.author-bio-section {
+	@include rem( "margin-bottom", ( $spacing * 2 ) );
+	text-align: center;
+}
+
+.author-image {
+	@include rem( "margin-top", ( $spacing * -1 ) );
+	position: relative;
+
+	&:before {
+		@include rem( "height", $height__rule );
+		@include rem( "margin-top", ( $height__rule * -0.5 ) );
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		background: $color__neutral;
+		z-index: 0;
+	}
+
+	/* Image stacks over horizontal line (with fake gaps either side). */
+	img {
+		@include rem( "border-width", ( $spacing * 0.5 ) );
+		position: relative;
+		z-index: 1;
+		border-color: $background-color;
+		border-style: solid;
+	}
+
+}
+
+.author-title {
+	@include rem( "margin", ( $spacing * 0.5 ) 0 );
+	@include font-size-line( "larger" );
+	font-weight: normal;
+	font-family: $font-family__main;
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.author-website {
+	@include rem( "margin-top", ( $line * 0.5 ) );
+}
+
+.author-index-posts {
+
+	.entry-meta {
+		display: none;
+	}
+
+}

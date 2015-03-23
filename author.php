@@ -19,33 +19,45 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-				if ( function_exists( 'get_wp_user_avatar' ) ) {
-					echo get_wp_user_avatar( $curauth->ID, 'thumbnail' );
-				}
-				?>
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				printf( '<div class="taxonomy-description">%s</div>',
-					esc_html( $curauth->description ) );
-				?>
-				<p><a class="author-link" href="<?php $curauth->user_url ?>">
-					<?php
-					printf( _x( '%s&rsquo;s website', 'Author link', 'yumag' ),
-						$curauth->display_name );
-					?>
-				</a></p>
-			</header><!-- .page-header -->
+			<section class="author-bio-section">
+				<header class="author-header">
+					<div class="author-image">
+						<?php echo get_avatar( $curauth->ID, 150 ); ?>
+					</div>
+					<?php the_archive_title( '<h1 class="author-title">', '</h1>' ); ?>
+				</header><!-- .author-header -->
+				<div class="author-bio-content">
+					<?php printf( '<div class="author-description">%s</div>',
+						esc_html( $curauth->description ) ); ?>
+					<?php if ( ! empty( $curauth->user_url ) ) : ?>
+						<p class="author-website">
+							<a class="author-link" href="<?php echo $curauth->user_url ?>">
+							<?php
+							printf( _x( '%s&rsquo;s website', 'Author link', 'yumag' ),
+								$curauth->display_name );
+							?>
+							</a>
+						</p>
+					<?php endif; ?>
+				</div>
+			</section><!-- .author-bio-section -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<section class="author-index-section">
+				<div class="index-content author-index-content">
+					<div class="index-posts author-index-posts">
+						<div>
 
-				<?php get_template_part( 'content', get_post_format() ); ?>
+						<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'content', get_post_format() ); ?>
+						<?php endwhile; ?>
 
-			<?php endwhile; ?>
+						<?php the_posts_navigation(); ?>
 
-			<?php the_posts_navigation(); ?>
+						</div>
+					</div><!-- .index-posts -->
+				</div><!-- .index-content -->
+			</section><!-- .author-index-section -->
 
 		<?php else : ?>
 
