@@ -34,8 +34,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 11.0 Content
 	11.1 Posts and pages
 	11.2 Comments
-	11.3 Issues
-	11.4 Sections
+	11.3 Taxonomies
 12.0 Footer
 13.0 Media
 	13.1 Captions
@@ -767,7 +766,7 @@ a:active {
 .entry-issue,
 .cat-links a,
 .tags-links a,
-.issue-title a,
+.archive-title a,
 .category-title a,
 .index-posts .entry-meta a,
 .category-yorklife .entry-title a,
@@ -784,7 +783,7 @@ a:active {
 .entry-issue:hover,
 .cat-links a:hover,
 .tags-links a:hover,
-.issue-title a:hover,
+.archive-title a:hover,
 .category-title a:hover,
 .category-yorklife .entry-title a:hover,
 .category-yorklife .footer a:hover,
@@ -798,7 +797,7 @@ a:active {
 .entry-issue:focus,
 .cat-links a:focus,
 .tags-links a:focus,
-.issue-title a:focus,
+.archive-title a:focus,
 .category-title a:focus,
 .category-yorklife .entry-title a:focus,
 .category-yorklife .footer a:focus,
@@ -812,7 +811,7 @@ a:active {
 .entry-issue:active,
 .cat-links a:active,
 .tags-links a:active,
-.issue-title a:active,
+.archive-title a:active,
 .category-title a:active,
 .category-yorklife .entry-title a:active,
 .category-yorklife .footer a:active,
@@ -1239,6 +1238,7 @@ a:active {
 
 /* Every column is full-width for mobiles. */
 .site-branding,
+.search-results-search,
 .category-header,
 .index-content,
 .single-entry .entry-header,
@@ -1262,6 +1262,7 @@ a:active {
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
+	.search-results-search,
 	.category-header,
 	.index-content,
 	.single-entry .entry-header,
@@ -1518,6 +1519,31 @@ a:active {
 	display: none;
 }
 
+.site-header-single {
+	height: auto;
+	margin: 28px 0;
+	margin: 1.55556rem 0;
+	text-align: center;
+}
+.site-header-single a {
+	border: 0;
+}
+.site-header-single img {
+	position: static;
+	/* Override pos:relative for Yu logo. */
+	vertical-align: top;
+}
+.site-header-single .slash {
+	position: relative;
+	top: -0.3em;
+	display: inline-block;
+	margin-right: 0.1em;
+	font-size: 3em;
+	line-height: 1;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	color: #e0e0e4;
+}
+
 /*--------------------------------------------------------------
 10.0 Widgets
 --------------------------------------------------------------*/
@@ -1588,8 +1614,6 @@ a:active {
 }
 
 .single-entry .entry-image {
-	margin-top: 42px;
-	margin-top: 2.33333rem;
 	text-align: center;
 }
 .single-entry .entry-image img {
@@ -1598,14 +1622,6 @@ a:active {
 }
 .single-entry .entry-image.no-image {
 	display: none;
-}
-.single-entry .entry-image + .entry-header {
-	margin-top: 0;
-}
-.single-entry .entry-header,
-.single-entry .no-image + .entry-header {
-	margin-top: 56px;
-	margin-top: 3.11111rem;
 }
 .single-entry .entry-meta {
 	padding-bottom: 28px;
@@ -1764,14 +1780,14 @@ a:active {
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
-/* 11.3 Issues
+/* 11.3 Taxonomies
 --------------------------------------------------------------*/
-.issue-header {
+.archive-header {
 	margin-bottom: 70px;
 	margin-bottom: 3.88889rem;
 }
 
-.issue-title {
+.archive-title {
 	margin: 0;
 	font-weight: normal;
 	font-size: 18px;
@@ -1780,13 +1796,14 @@ a:active {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	text-transform: none;
 }
-.issue-title a {
+.archive-title a {
 	font-weight: inherit;
 	color: #171717;
 }
 
 /* eg 'ISSUE ONE' */
-.issue-number {
+.issue-number,
+.search-term {
 	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
 	text-align: center;
@@ -1794,9 +1811,34 @@ a:active {
 	text-transform: uppercase;
 }
 
-/* eg 'April 2015' */
-/* 11.4 Sections
---------------------------------------------------------------*/
+/* Big central search form */
+.search-results-search {
+	margin-bottom: 56px;
+	margin-bottom: 3.11111rem;
+	text-align: center;
+	/* Both the text field and the button */
+}
+.search-results-search input {
+	width: 40%;
+	font-size: 24px;
+	font-size: 1.33333rem;
+	line-height: 1.16667;
+	vertical-align: middle; 
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+.search-results-search .search-submit {
+	width: auto;
+	padding: 3px 1em;
+	font-weight: bold;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	letter-spacing: 0.05em; 
+	text-transform: uppercase;
+}
+
 .category-header {
 	/* leave room for the description */
 	position: relative;
@@ -2132,10 +2174,20 @@ object {
 		top: 42px;
 		top: 2.33333rem;
 	}
+	.template-two-columns .site-header {
+		margin-bottom: 56px;
+		margin-bottom: 3.11111rem;
+	}
 	.template-two-columns .entry-title,
 	.template-two-columns .entry-subtitle,
 	.template-two-columns .entry-meta {
 		text-align: left;
+	}
+	.template-two-columns .entry-header {
+		margin-top: -0.8em;
+	}
+	.template-two-columns .entry-title {
+		margin-top: 0;
 	}
 	.template-two-columns hr,
 	.template-two-columns .entry-content:before {
@@ -2669,6 +2721,8 @@ object {
 	line-height: 1.33333;
 }
 .category-back-page .dropcap {
+	margin-right: 7px;
+	/* More margin-right than usual, for the italics. */
 	font-style: italic;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	text-transform: lowercase;

@@ -30,3 +30,30 @@
 .site-description {
 	display: none;
 }
+
+.site-header-single {
+	@include rem( "margin", $line 0 );
+	height: auto;
+	text-align: center;
+
+	a {
+		border: 0;
+	}
+
+	img {
+		position: static; /* Override pos:relative for Yu logo. */
+		vertical-align: top;
+	}
+
+	.slash {
+		position: relative;
+		top: -0.3em;
+		display: inline-block;
+		margin-right: 0.1em;
+		font-size: 3em;
+		line-height: 1;
+		font-family: $font-family__sans-serif;
+		color: $grey__lightest;
+	}
+
+}

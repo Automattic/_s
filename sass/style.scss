@@ -35,8 +35,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 11.0 Content
 	11.1 Posts and pages
 	11.2 Comments
-	11.3 Issues
-	11.4 Sections
+	11.3 Taxonomies
 12.0 Footer
 13.0 Media
 	13.1 Captions
@@ -128,12 +127,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "site/primary/comments";
 
-/* 11.3 Issues
+/* 11.3 Taxonomies
 --------------------------------------------------------------*/
-@import "site/primary/issues";
-
-/* 11.4 Sections
---------------------------------------------------------------*/
+@import "site/primary/archives";
 @import "site/primary/sections";
 
 /*--------------------------------------------------------------

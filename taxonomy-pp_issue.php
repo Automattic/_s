@@ -16,13 +16,16 @@ $sections = array(
 	'back-page'
 );
 
+// URL-path to images.
+$src = get_template_directory_uri() . '/assets/';
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 
-		<header class="issue-header">
-			<h1 class="issue-title"><?php yumag_issue_title(); ?></h1>
-		</header><!-- .issue-header -->
+		<header class="archive-header issue-header">
+			<h1 class="archive-title issue-title"><?php yumag_issue_title(); ?></h1>
+		</header><!-- .archive-header -->
 
 		<main id="main" class="site-main" role="main">
 
@@ -33,7 +36,11 @@ get_header(); ?>
 				<?php $cat = get_category_by_slug( $section ) ?>
 				<section class="issue-section category-section category-<?php echo $section; ?>">
 					<header class="issue-section-header category-header">
-						<h2 class="taxonomy-title issue-section-title category-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $cat->slug; ?>-42.png" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>"></h2>
+						<h2 class="taxonomy-title issue-section-title category-title">
+							<a href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php printf( _x( '%s archives', 'Category archives link', 'yumag' ), esc_attr( $cat->name ) ); ?>">
+							<img src="<?php echo $src . $cat->slug; ?>-42.png" srcset="<?php echo $src . $cat->slug; ?>-84.png 2x, <?php echo $src . $cat->slug; ?>-42.png 1x" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
+							</a>
+						</h2>
 						<p class="taxonomy-description issue-section-description category-description"><?php echo esc_html( $cat->description ); ?></p>
 					</header>
 					<div class="category-content index-content issue-section-content">

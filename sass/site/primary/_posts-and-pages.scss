@@ -5,7 +5,6 @@
 .single-entry {
 
 	.entry-image {
-		@include rem( "margin-top", ( $spacing * 1.5 ) );
 		text-align: center;
 
 		img {
@@ -18,15 +17,6 @@
 			display: none;
 		}
 
-		+ .entry-header {
-			margin-top: 0;
-		}
-
-	}
-
-	.entry-header,
-	.no-image + .entry-header {
-		@include rem( "margin-top", ( $spacing * 2 ) );
 	}
 
 	.entry-meta {

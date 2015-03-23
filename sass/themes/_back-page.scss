@@ -31,6 +31,7 @@
 	}
 
 	.dropcap {
+		margin-right: 7px; /* More margin-right than usual, for the italics. */
 		font-style: italic;
 		font-family: $font-family__main;
 		text-transform: lowercase;

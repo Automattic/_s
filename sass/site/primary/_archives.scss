@@ -1,0 +1,53 @@
+.archive-header {
+	@include rem( "margin-bottom", ( $line * 2.5 ) );
+}
+
+.archive-title {
+	@include font-size-line( "normal" );
+	margin: 0;
+	font-weight: normal;
+	font-family: $font-family__main;
+	text-transform: none;
+
+	a {
+		@extend %hide-underline;
+		font-weight: inherit;
+		color: $black;
+	}
+
+}
+
+/* eg 'ISSUE ONE' */
+.issue-number,
+.search-term {
+	font-weight: bold;
+	letter-spacing: $letter-spacing__caps;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $font-family__button;
+}
+
+/* Big central search form */
+.search-results-search {
+	@include rem( "margin-bottom", ( $line * 2 ) );
+	text-align: center;
+
+	/* Both the text field and the button */
+	input {
+		@include font-size-line( "larger" );
+		width: 40%;
+		border-radius: 0;
+		vertical-align: middle;
+	}
+
+	.search-submit {
+		@include font-size-line( "small" );
+		width: auto;
+		padding: 3px 1em;
+		font-weight: bold;
+		font-family: $font-family__button;
+		text-transform: uppercase;
+		letter-spacing: $letter-spacing__caps;
+	}
+
+}

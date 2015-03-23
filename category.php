@@ -10,6 +10,9 @@
 $section_id = get_queried_object_id();
 $cat = get_category( intval( $section_id ) );
 
+// URL-path to images.
+$src = get_template_directory_uri() . '/assets/';
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -19,7 +22,9 @@ get_header(); ?>
 
 				<section class="category-section">
 					<header class="page-header category-header">
-						<h1 class="taxonomy-title category-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $cat->slug; ?>-42.png" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>"></h1>
+						<h1 class="taxonomy-title category-title">
+							<img src="<?php echo $src . $cat->slug; ?>-42.png" srcset="<?php echo $src . $cat->slug; ?>-84.png 2x, <?php echo $src . $cat->slug; ?>-42.png 1x" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
+						</h1>
 						<p class="taxonomy-description category-description"><?php echo esc_html( $cat->description ); ?></p>
 					</header><!-- .page-header -->
 					<div class="category-content index-content">

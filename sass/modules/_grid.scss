@@ -14,8 +14,7 @@
 //           [ROW] #primary.content-area
 //               main#main.site-main
 //                   header.above-single-header
-//                       [COLUMN 12] .issue-header
-//                       [COLUMN 12] .category-header
+//                       .archive-header.issue-header
 //  ############################################################################
 //  #                section.issue-section.category-section
 //  #                    [COLUMN 12/10] .category-header.issue-section-header
@@ -77,6 +76,7 @@
 
 /* Every column is full-width for mobiles. */
 .site-branding,
+.search-results-search,
 .category-header,
 .index-content,
 .single-entry .entry-header,
@@ -98,6 +98,7 @@
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
+	.search-results-search,
 	.category-header,
 	.index-content,
 	.single-entry .entry-header,

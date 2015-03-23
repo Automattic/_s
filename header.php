@@ -6,6 +6,10 @@
  *
  * @package YuMag
  */
+
+// URL-path to images.
+$src = get_template_directory_uri() . '/assets/';
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -29,7 +33,7 @@
 	<div class="main-navigation-wrapper js-menu-contents">
 		<div class="main-navigation-site-logo">
 			<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
-				<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo-white.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo-white.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="69">
+				<img class="site-logo" src="<?php echo $src; ?>logo-white.svg" onerror="this.src='<?php echo $src; ?>logo-white.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="69">
 			</a>
 		</div>
 		<div class="widget-area menu-widget-area">
@@ -52,19 +56,37 @@
 <!-- Wrapper for whole page except off-canvas menus and skiplinks. -->
 <div id="page" class="hfeed site">
 
-	<?php if ( ! is_single() ) : ?>
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header<?php if ( is_single() ) : ?> site-header-single<?php endif; ?>" role="banner">
 
 		<div class="site-branding">
+			<?php if ( ! is_single() ) : ?>
 			<h1 class="site-title">
 				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
-					<img class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="71">
+					<img class="site-logo" src="<?php echo $src; ?>logo.svg" onerror="this.src='<?php echo $src; ?>logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="71">
 				</a>
 			</h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<?php else : ?>
+			<div class="site-title-single">
+				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
+					<img class="site-logo mini-site-logo" src="<?php echo $src; ?>logo-grey-small.png" srcset="<?php echo $src; ?>logo-grey-small@2x.png 2x, <?php echo $src; ?>logo-grey-small.png 1x" alt="<?php bloginfo( 'name' ); ?>" width="42" height="29">
+				</a>
+				<?php
+				/* translators: used between list items, there is a space on each side of the slash */
+				$cats = get_the_category();
+				if ( ! empty ( $cats ) && yumag_categorized_blog() ) {
+					$cat = $cats[0];
+					?>
+					<span class="slash">/</span>
+					<a class="category-link category-<?php echo $cat->slug; ?>" href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php _e( 'More posts in this category', 'yumag' ); ?>">
+						<img src="<?php echo $src . $cat->slug; ?>-grey-21.png" srcset="<?php echo $src . $cat->slug; ?>-grey-42.png 2x, <?php echo $src . $cat->slug; ?>-grey-21.png 1x" height="21" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
+					</a>
+					<?php
+				}
+				?>
+			</div>
+			<?php endif; ?>
 		</div><!-- .site-branding -->
 
 	</header><!-- #masthead -->
-	<?php endif; ?>
 
 	<div id="content" class="site-content">

@@ -790,8 +790,6 @@ a:active {
 }
 
 .single-entry .entry-image {
-	margin-top: 42px;
-	margin-top: 2.33333rem;
 	text-align: center;
 }
 .single-entry .entry-image img {
@@ -800,14 +798,6 @@ a:active {
 }
 .single-entry .entry-image.no-image {
 	display: none;
-}
-.single-entry .entry-image + .entry-header {
-	margin-top: 0;
-}
-.single-entry .entry-header,
-.single-entry .no-image + .entry-header {
-	margin-top: 56px;
-	margin-top: 3.11111rem;
 }
 .single-entry .entry-meta {
 	padding-bottom: 28px;

@@ -17,10 +17,23 @@
 	.template-two-columns {
 		@include rem( "top", ( $spacing * 1.5 ) );
 
+		.site-header {
+			@include rem( "margin-bottom", $spacing * 2 );
+		}
+
 		.entry-title,
 		.entry-subtitle,
 		.entry-meta {
 			text-align: left;
+		}
+
+		// Align title with top of featured image.
+		.entry-header {
+			margin-top: -0.8em;
+		}
+
+		.entry-title {
+			margin-top: 0;
 		}
 
 		hr,
