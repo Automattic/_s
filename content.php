@@ -18,5 +18,10 @@
 
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
+		<p class="read-more"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html_e( 'Read more', 'yumag' ); ?></a></p>
 	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<?php yumag_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
