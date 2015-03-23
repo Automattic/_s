@@ -79,7 +79,7 @@
 
 	.entry-title,
 	.entry-subtitle {
-		@include font-size-line( "large" );
+		@include font-size-line( "normal" );
 		margin: 0;
 		text-align: left;
 	}

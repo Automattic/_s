@@ -46,6 +46,11 @@
 		text-transform: none;
 	}
 
+	// Not uppercase, so slightly larger text.
+	.index-posts & .entry-title {
+		@include font-size-line( "large" );
+	}
+
 	hr,
 	&.single-entry .entry-content:before,
 	.category-header:before {

@@ -1881,9 +1881,9 @@ a:active {
 .index-posts .entry-title,
 .index-posts .entry-subtitle {
 	margin: 0;
-	font-size: 21px;
-	font-size: 1.16667rem;
-	line-height: 1.33333;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.55556;
 	text-align: left;
 }
 .index-posts .entry-content,
@@ -2302,6 +2302,11 @@ object {
 .category-open-minds .entry-subtitle {
 	text-transform: none;
 }
+.index-posts .category-open-minds .entry-title {
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
+}
 .category-open-minds hr,
 .category-open-minds.single-entry .entry-content:before,
 .category-open-minds .category-header:before {
@@ -2448,6 +2453,11 @@ object {
 .category-centre-stage .entry-subtitle {
 	font-style: italic;
 	text-transform: none;
+}
+.index-posts .category-centre-stage .entry-title {
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
 }
 .category-centre-stage hr,
 .category-centre-stage.single-entry .entry-content:before,
@@ -2653,9 +2663,15 @@ object {
 .category-back-page .entry-title {
 	text-transform: none;
 }
+.index-posts .category-back-page .entry-title {
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
+}
 .category-back-page .dropcap {
 	font-style: italic;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
+	text-transform: lowercase;
 }
 .category-back-page hr,
 .category-back-page.single-entry .entry-content:before,
