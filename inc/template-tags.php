@@ -160,7 +160,7 @@ endif;
 
 if ( ! function_exists( 'yumag_entry_footer' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information for the categories and comments.
  *
  * @since 1.0.0
  */
@@ -170,8 +170,6 @@ function yumag_entry_footer() {
 
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-
-		yumag_author_box();
 
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -190,26 +188,46 @@ function yumag_entry_footer() {
 
 		// Prepare the issue number format.
 		$number = $pp->get_the_issue_number();
-		$number = sprintf( __( 'ISSUE %s', 'yumag' ),
-			strtoupper( yumag_convert_number_to_words( $number ) )
-		);
-		$number = '<a class="entry-issue" href="' . $pp->get_the_issue_link() . '">' . $number . '</a>';
+		if ( $number ) {
+			$number = sprintf( __( 'ISSUE %s', 'yumag' ),
+				strtoupper( yumag_convert_number_to_words( $number ) )
+			);
+			$number = '<a class="entry-issue" href="' . $pp->get_the_issue_link() . '">' . $number . '</a> / ';
+		} else {
+			$number = '';
+		}
 
 		/* Prepare categories and datestamp output. */
 		if ( $categories_list && yumag_categorized_blog() ) {
-			$posted_on = sprintf( _x( '%1$s / %2$s / %3$s', 'Post footer metadata order', 'yumag' ),
+			$posted_on = sprintf( _x( '%1$s%2$s / %3$s', 'Post footer metadata order', 'yumag' ),
 				$number,
 				sprintf( '<span class="cat-links">%s</span>', $categories_list ),
 				$time_string
 			);
 		} else {
-			$posted_on = sprintf( _x( '%1$s / %2$s', 'Post footer metadata order (no category)', 'yumag' ),
+			$posted_on = sprintf( _x( '%1$s%2$s', 'Post footer metadata order (no category)', 'yumag' ),
 				$number,
 				$time_string
 			);
 		}
 
 		echo '<span class="posted-on">' . $posted_on . '</span>';
+
+	}
+
+}
+endif;
+
+if ( ! function_exists( 'yumag_entry_tags' ) ) :
+/**
+ * Prints HTML with meta information for the tags.
+ *
+ * @since 1.0.0
+ */
+function yumag_entry_tags() {
+
+	// Hide category and tag text for pages.
+	if ( 'post' == get_post_type() ) {
 
 		/* translators: used between list items, there is a space on each side of the slash */
 		$tags_list = get_the_tag_list( '', __( ' / ', 'yumag' ) );

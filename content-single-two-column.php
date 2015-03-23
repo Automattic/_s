@@ -22,6 +22,8 @@
 	</div><!-- .entry-content -->
 
 	<footer class="footer entry-footer">
+		<?php yumag_author_box(); ?>
 		<?php yumag_entry_footer(); ?>
+		<?php yumag_entry_tags(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
