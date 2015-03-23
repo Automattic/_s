@@ -128,7 +128,7 @@ function yumag_entry_image( $size = 'thumbnail', $linked = true ) {
 	if ( has_post_thumbnail() ) {
 		the_post_thumbnail( $size );
 	} else {
-		echo '<img class="entry-image no-image" src="' . get_template_directory_uri() . '/assets/no-thumbnail.png" width="666" height="444" alt="">';
+		echo '<img src="' . get_template_directory_uri() . '/assets/no-thumbnail.png" width="666" height="444" alt="">';
 	}
 
 	if ( $linked ) {
