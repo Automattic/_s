@@ -31,13 +31,13 @@ get_header(); ?>
 			<?php // Run through the loop, once for each section. ?>
 			<?php foreach( $sections as $section ) : ?>
 				<?php $cat = get_category_by_slug( $section ) ?>
-				<section class="issue-section category-<?php echo $section; ?>">
+				<section class="issue-section category-section category-<?php echo $section; ?>">
 					<header class="issue-section-header category-header">
 						<h2 class="taxonomy-title issue-section-title category-title"><img src="<?php echo get_template_directory_uri(); ?>/assets/<?php echo $cat->slug; ?>-42.png" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>"></h2>
 						<p class="taxonomy-description issue-section-description category-description"><?php echo esc_html( $cat->description ); ?></p>
 					</header>
-					<div class="category-content issue-section-content">
-						<div class="issue-section-posts category-posts category-<?php echo $section; ?>-posts">
+					<div class="category-content index-content issue-section-content">
+						<div class="issue-section-posts index-posts category-posts category-<?php echo $section; ?>-posts">
 							<div>
 
 							<?php /* The Loop */
