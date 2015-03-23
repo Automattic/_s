@@ -27,7 +27,7 @@ function yumag_body_classes( $classes ) {
 	}
 
 	// Add category-based classes.
-	if ( is_a( $post, 'WP_Post' ) && ! $pp->is_issue() ) {
+	if ( is_a( $post, 'WP_Post' ) && ! $pp->is_issue() && ! is_search() ) {
 		$categories = get_the_category( $post->ID );
 		foreach( $categories as $cat ) {
 			$classes[] = 'category-' . $cat->slug;
