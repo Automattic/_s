@@ -1,33 +1,4 @@
-.single .category-header {
-	@include rem( "margin-top", $spacing );
-}
-
-.category-title {
-	@include font-size-line( "huger", 1.5 );
-	margin: 0;
-	font-weight: bold;
-	letter-spacing: $letter-spacing__caps;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: $font-family__category;
-
-	a {
-		@extend %hide-underline;
-	}
-
-}
-
-.category-description {
-	text-align: center;
-	font-weight: bold;
-	font-family: $font-family__category;
-}
-
-.issue-section {
-	@include rem( "margin-top", ( $line * 2 ) );
-}
-
-.issue-section-header {
+.category-header {
 	@include rem( "margin-bottom", ( $line * 2 ) ); /* leave room for the description */
 	position: relative;
 	text-align: center;
@@ -46,29 +17,48 @@
 
 }
 
-.issue-section-title {
-	@include rem( "padding", ( $line * 0.5 ) );
-	position: relative;
-	display: inline-block;
-	z-index: 1;
-	margin: 0;
-	background: $background-color;
+.single .category-header {
+	@include rem( "margin-top", $spacing );
 }
 
-.issue-section-description {
+.category-title {
+	@include rem( "padding", ( $line * 0.5 ) );
+	@include font-size-line( "huger", 1.5 );
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 0;
+	font-weight: bold;
+	letter-spacing: $letter-spacing__caps;
+	font-family: $font-family__category;
+	text-align: center;
+	text-transform: uppercase;
+	background: $background-color;
+
+	a {
+		@extend %hide-underline;
+	}
+
+}
+
+.category-description {
 	@include rem( "margin-top", ( $line * -0.5 ) );
 	position: absolute;
 	top: 100%;
-	left: 0;
 	right: 0;
-	font-weight: normal;
-	text-align: center;
-	text-transform: lowercase;
+	left: 0;
 	z-index: 1;
+	font-weight: bold;
+	font-family: $font-family__category;
+	text-align: center;
+}
+
+.issue-section {
+	@include rem( "margin-top", ( $line * 2 ) );
 }
 
 /* Posts list for this section. */
-.issue-section-posts {
+.index-posts {
 	position: relative;
 	float: left;
 	left: 50%;
@@ -94,12 +84,15 @@
 		text-align: left;
 	}
 
-	.entry-meta,
-	.entry-content {
+	.entry-content,
+	.entry-footer {
 		display: none;
 	}
 
 	.entry-meta {
+		@include font-size-line( "small" );
+		display: block;
+		text-align: left;
 
 		a {
 			@extend %hide-underline;
@@ -113,6 +106,10 @@
 
 		}
 
+	}
+
+	.read-more {
+		display: none;
 	}
 
 	@include media( "issue-2-columns" ) {
@@ -135,6 +132,48 @@
 			@include font-size-line( "small" );
 			display: block;
 			text-align: left;
+		}
+
+	}
+
+}
+
+.search-results .index-posts {
+
+	.entry-meta {
+		display: none;
+	}
+
+}
+
+.archive.category .category-posts,
+.search-results .index-posts {
+
+	.entry-footer {
+		@include rem( "margin", ( $line * -0.5 ) 0 $line );
+		@include font-size-line( "smaller" );
+		display: block;
+		font-family: $font-family__meta;
+	}
+
+	.read-more {
+		display: block;
+	}
+
+	@include media( "issue-3-columns" ) {
+
+		.entry {
+
+			@include quantity-query( 3, "greater" ) {
+				width: 33%;
+				clear: none;
+
+				&:nth-child(3n+1) {
+					clear: left;
+				}
+
+			}
+
 		}
 
 	}

@@ -5,13 +5,25 @@
 	.category-description,
 	.dropcap,
 	.entry-subtitle,
-	.entry-content a {
+	.entry-content a,
+	.posted-on a {
 		color: $color__allaboutyu__dark;
+	}
+
+	.entry-content,
+	.posted-on {
+
+		a:hover,
+		a:focus,
+		a:active {
+			color: $color__link-hover;
+		}
+
 	}
 
 	hr,
 	&.single-entry .entry-content:before,
-	.issue-section-header:before {
+	.category-header:before {
 		background: $color__allaboutyu;
 	}
 
@@ -23,6 +35,14 @@
 	.footer a {
 		@extend %hide-underline;
 		color: $color__allaboutyu__darker;
+	}
+
+	.category-posts {
+
+		.entry-meta {
+			display: none;
+		}
+
 	}
 
 	@include issue-section-multicolumn-layout;

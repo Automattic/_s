@@ -769,7 +769,7 @@ a:active {
 .tags-links a,
 .issue-title a,
 .category-title a,
-.issue-section-posts .entry-meta a,
+.index-posts .entry-meta a,
 .category-yorklife .entry-title a,
 .category-yorklife .footer a,
 .category-open-minds .footer a,
@@ -1239,15 +1239,13 @@ a:active {
 
 /* Every column is full-width for mobiles. */
 .site-branding,
-.issue-header,
-.single .category-header,
-.issue-section-header,
-.issue-section-content,
+.category-header,
+.index-content,
 .single-entry .entry-header,
 .single-entry .entry-content,
-.entry-author,
-.posted-on,
-.tags-links,
+.single-entry .entry-author,
+.single-entry .posted-on,
+.single-entry .tags-links,
 .nav-previous,
 .nav-next,
 .comments-area,
@@ -1264,13 +1262,13 @@ a:active {
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
-	.issue-section-header,
-	.issue-section-content,
+	.category-header,
+	.index-content,
 	.single-entry .entry-header,
 	.single-entry .entry-content,
-	.entry-author,
-	.posted-on,
-	.tags-links,
+	.single-entry .entry-author,
+	.single-entry .posted-on,
+	.single-entry .tags-links,
 	.comments-area {
 		float: left;
 		display: inline;
@@ -1308,9 +1306,9 @@ a:active {
 	}
 	/* Narrower content column than everything else, for better line length. */
 	.single-entry .entry-content,
-	.entry-author,
-	.posted-on,
-	.tags-links {
+	.single-entry .entry-author,
+	.single-entry .posted-on,
+	.single-entry .tags-links {
 		float: left;
 		display: inline;
 		width: 66.66667%;
@@ -1347,9 +1345,9 @@ a:active {
 	}
 	/* Even narrower content column, to maintain sensible line length. */
 	.single-entry .entry-content,
-	.entry-author,
-	.posted-on,
-	.tags-links {
+	.single-entry .entry-author,
+	.single-entry .posted-on,
+	.single-entry .tags-links {
 		float: left;
 		display: inline;
 		width: 50%;
@@ -1725,57 +1723,16 @@ a:active {
 	font-weight: bold;
 }
 
-/* Lead/lede. */
-.lead {
-	font-weight: normal; 
-	font-size: 24px;
-	font-size: 1.33333rem;
-	line-height: 1.16667;
-}
-
-/* Dropcaps. */
-.dropcap {
-	margin-right: 3px;
-	margin-left: -5px;
-	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
-}
-
-/* Calls-to-action. */
-.call-to-action {
-	margin-top: 42px;
-	margin-top: 2.33333rem;
-	padding-top: 14px;
-	padding-top: 0.77778rem;
-	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
-	border-top: 0.77778rem solid #ccc;
-}
-
-/* Mini calls-to-action within the content (e.g. for contact details). */
-.content-details {
-	margin-bottom: 28px;
-	margin-bottom: 1.55556rem;
-	padding: 14px 0;
-	padding: 0.77778rem 0;
-	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
-	border-top: 2px dotted #ccc;
-	border-bottom: 2px solid #ccc;
-}
-.content-details p,
-.content-details li,
-.content-details > *:last-child {
-	margin-bottom: 0;
-}
-.content-details ul,
-.content-details ol {
-	margin-left: 0;
-}
-
 /* Post footer meta lines. */
 .posted-on {
 	display: block;
+}
+
+/* Read more link. */
+.read-more {
+	margin: -28px 0 28px;
+	margin: -1.55556rem 0 1.55556rem;
+	font-weight: bold;
 }
 
 /* 11.2 Comments
@@ -1840,42 +1797,14 @@ a:active {
 /* eg 'April 2015' */
 /* 11.4 Sections
 --------------------------------------------------------------*/
-.single .category-header {
-	margin-top: 28px;
-	margin-top: 1.55556rem;
-}
-
-.category-title {
-	margin: 0;
-	font-weight: bold;
-	font-size: 32px;
-	font-size: 1.77778rem;
-	line-height: 1.3125;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
-	text-align: center;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
-}
-
-.category-description {
-	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
-	text-align: center;
-}
-
-.issue-section {
-	margin-top: 56px;
-	margin-top: 3.11111rem;
-}
-
-.issue-section-header {
+.category-header {
 	/* leave room for the description */
 	position: relative;
 	margin-bottom: 56px;
 	margin-bottom: 3.11111rem;
 	text-align: center;
 }
-.issue-section-header:before {
+.category-header:before {
 	content: "";
 	position: absolute;
 	z-index: 0; 
@@ -1889,70 +1818,98 @@ a:active {
 	background: #dcd4c6;
 }
 
-.issue-section-title {
+.single .category-header {
+	margin-top: 28px;
+	margin-top: 1.55556rem;
+}
+
+.category-title {
 	position: relative;
 	z-index: 1;
 	display: inline-block;
 	margin: 0;
 	padding: 14px;
 	padding: 0.77778rem;
+	font-weight: bold;
+	font-size: 32px;
+	font-size: 1.77778rem;
+	line-height: 1.3125;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
 	background: #fff;
 }
 
-.issue-section-description {
+.category-description {
 	position: absolute;
-	z-index: 1; 
+	z-index: 1;
 	top: 100%;
 	right: 0;
 	left: 0;
 	margin-top: -14px;
 	margin-top: -0.77778rem;
-	font-weight: normal;
+	font-weight: bold;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 	text-align: center;
-	text-transform: lowercase;
+}
+
+.issue-section {
+	margin-top: 56px;
+	margin-top: 3.11111rem;
 }
 
 /* Posts list for this section. */
-.issue-section-posts {
+.index-posts {
 	position: relative;
 	left: 50%; 
 	float: left;
 }
-.issue-section-posts > div {
+.index-posts > div {
 	position: relative;
 	left: -50%; 
 	float: left;
 }
-.issue-section-posts .entry {
+.index-posts .entry {
 	margin-bottom: 28px;
 	margin-bottom: 1.55556rem;
 }
-.issue-section-posts .entry-image {
+.index-posts .entry-image {
 	margin-bottom: 14px;
 	margin-bottom: 0.77778rem;
 }
-.issue-section-posts .entry-title,
-.issue-section-posts .entry-subtitle {
+.index-posts .entry-title,
+.index-posts .entry-subtitle {
 	margin: 0;
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1.33333;
 	text-align: left;
 }
-.issue-section-posts .entry-meta,
-.issue-section-posts .entry-content {
+.index-posts .entry-content,
+.index-posts .entry-footer {
 	display: none;
 }
-.issue-section-posts .entry-meta a {
+.index-posts .entry-meta {
+	display: block;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	text-align: left;
+}
+.index-posts .entry-meta a {
 	color: #171717;
 }
-.issue-section-posts .entry-meta a:hover,
-.issue-section-posts .entry-meta a:focus,
-.issue-section-posts .entry-meta a:active {
+.index-posts .entry-meta a:hover,
+.index-posts .entry-meta a:focus,
+.index-posts .entry-meta a:active {
 	color: #0f3b6b;
 }
+.index-posts .read-more {
+	display: none;
+}
 @media (min-width: 500px) {
-	.issue-section-posts .entry {
+	.index-posts .entry {
 		float: left;
 		width: 50%;
 		max-width: 347px;
@@ -1961,10 +1918,10 @@ a:active {
 		padding: 0 14px;
 		padding: 0 0.77778rem;
 	}
-	.issue-section-posts .entry:nth-child(2n+1) {
+	.index-posts .entry:nth-child(2n+1) {
 		clear: left;
 	}
-	.issue-section-posts .entry-content {
+	.index-posts .entry-content {
 		display: block;
 		margin: 14px 0 0;
 		margin: 0.77778rem 0 0;
@@ -1972,6 +1929,40 @@ a:active {
 		font-size: 0.88889rem;
 		line-height: 1.75;
 		text-align: left;
+	}
+}
+
+.search-results .index-posts .entry-meta {
+	display: none;
+}
+
+.archive.category .category-posts .entry-footer,
+.search-results .index-posts .entry-footer {
+	display: block;
+	margin: -14px 0 28px;
+	margin: -0.77778rem 0 1.55556rem;
+	font-size: 14px;
+	font-size: 0.77778rem;
+	line-height: 2;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+}
+.archive.category .category-posts .read-more,
+.search-results .index-posts .read-more {
+	display: block;
+}
+@media (min-width: 900px) {
+	.archive.category .category-posts .entry:nth-last-child(n+3):first-child,
+	.archive.category .category-posts .entry:nth-last-child(n+3):first-child ~ *,
+	.search-results .index-posts .entry:nth-last-child(n+3):first-child,
+	.search-results .index-posts .entry:nth-last-child(n+3):first-child ~ * {
+		clear: none; 
+		width: 33%;
+	}
+	.archive.category .category-posts .entry:nth-last-child(n+3):first-child:nth-child(3n+1),
+	.archive.category .category-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(3n+1),
+	.search-results .index-posts .entry:nth-last-child(n+3):first-child:nth-child(3n+1),
+	.search-results .index-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(3n+1) {
+		clear: left;
 	}
 }
 
@@ -2000,7 +1991,7 @@ a:active {
  * 1. For the avatar positioning.
  * 2. Leave room for the avatar.
  */
-.entry-author {
+.entry-footer .entry-author {
 	position: relative;
 	/* 1 */
 	padding-top: 48px;
@@ -2185,8 +2176,17 @@ object {
 .category-yorklife .category-title a,
 .category-yorklife .category-description,
 .category-yorklife .dropcap,
-.category-yorklife .entry-content a {
+.category-yorklife .entry-content a,
+.category-yorklife .posted-on a {
 	color: #bfb097;
+}
+.category-yorklife .entry-content a:hover,
+.category-yorklife .entry-content a:focus,
+.category-yorklife .entry-content a:active,
+.category-yorklife .posted-on a:hover,
+.category-yorklife .posted-on a:focus,
+.category-yorklife .posted-on a:active {
+	color: #0f3b6b;
 }
 .category-yorklife .dropcap {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
@@ -2196,7 +2196,7 @@ object {
 }
 .category-yorklife hr,
 .category-yorklife.single-entry .entry-content:before,
-.category-yorklife .issue-section-header:before {
+.category-yorklife .category-header:before {
 	background: #dcd4c6;
 }
 .category-yorklife .call-to-action,
@@ -2205,6 +2205,9 @@ object {
 }
 .category-yorklife .footer a {
 	color: #94805b;
+}
+.category-yorklife .category-posts .entry-meta {
+	display: none;
 }
 .category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
@@ -2267,8 +2270,17 @@ object {
 .category-open-minds .category-description,
 .category-open-minds .dropcap,
 .category-open-minds .entry-subtitle,
-.category-open-minds .entry-content a {
+.category-open-minds .entry-content a,
+.category-open-minds .posted-on a {
 	color: #3d9aa9;
+}
+.category-open-minds .entry-content a:hover,
+.category-open-minds .entry-content a:focus,
+.category-open-minds .entry-content a:active,
+.category-open-minds .posted-on a:hover,
+.category-open-minds .posted-on a:focus,
+.category-open-minds .posted-on a:active {
+	color: #0f3b6b;
 }
 .category-open-minds .entry-title,
 .category-open-minds .entry-subtitle,
@@ -2292,7 +2304,7 @@ object {
 }
 .category-open-minds hr,
 .category-open-minds.single-entry .entry-content:before,
-.category-open-minds .issue-section-header:before {
+.category-open-minds .category-header:before {
 	background: #69bcc9;
 }
 .category-open-minds .call-to-action,
@@ -2311,13 +2323,6 @@ object {
 	font-size: 24px;
 	font-size: 1.33333rem;
 	line-height: 1.16667;
-}
-.category-open-minds .issue-section-posts .entry-meta {
-	display: block;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
-	text-align: left;
 }
 .category-open-minds .issue-section-posts .entry-content {
 	display: none;
@@ -2406,8 +2411,17 @@ object {
 .category-centre-stage .dropcap {
 	color: #e8e640;
 }
-.category-centre-stage .entry-content a {
+.category-centre-stage .entry-content a,
+.category-centre-stage .posted-on a {
 	color: #acab15;
+}
+.category-centre-stage .entry-content a:hover,
+.category-centre-stage .entry-content a:focus,
+.category-centre-stage .entry-content a:active,
+.category-centre-stage .posted-on a:hover,
+.category-centre-stage .posted-on a:focus,
+.category-centre-stage .posted-on a:active {
+	color: #0f3b6b;
 }
 .category-centre-stage .entry-title,
 .category-centre-stage .entry-subtitle,
@@ -2437,7 +2451,7 @@ object {
 }
 .category-centre-stage hr,
 .category-centre-stage.single-entry .entry-content:before,
-.category-centre-stage .issue-section-header:before {
+.category-centre-stage .category-header:before {
 	background: #f0ef84;
 }
 .category-centre-stage .call-to-action {
@@ -2455,10 +2469,6 @@ object {
 	font-size: 28px;
 	font-size: 1.55556rem;
 	line-height: 1;
-}
-.category-centre-stage .issue-section-posts .entry-meta {
-	display: block;
-	text-align: left;
 }
 @media (min-width: 1100px) {
 	.category-centre-stage .issue-section-posts .entry {
@@ -2540,12 +2550,21 @@ object {
 .category-all-about-yu .category-description,
 .category-all-about-yu .dropcap,
 .category-all-about-yu .entry-subtitle,
-.category-all-about-yu .entry-content a {
+.category-all-about-yu .entry-content a,
+.category-all-about-yu .posted-on a {
 	color: #67b46a;
+}
+.category-all-about-yu .entry-content a:hover,
+.category-all-about-yu .entry-content a:focus,
+.category-all-about-yu .entry-content a:active,
+.category-all-about-yu .posted-on a:hover,
+.category-all-about-yu .posted-on a:focus,
+.category-all-about-yu .posted-on a:active {
+	color: #0f3b6b;
 }
 .category-all-about-yu hr,
 .category-all-about-yu.single-entry .entry-content:before,
-.category-all-about-yu .issue-section-header:before {
+.category-all-about-yu .category-header:before {
 	background: #9acd9c;
 }
 .category-all-about-yu .call-to-action,
@@ -2554,6 +2573,9 @@ object {
 }
 .category-all-about-yu .footer a {
 	color: #448a47;
+}
+.category-all-about-yu .category-posts .entry-meta {
+	display: none;
 }
 .category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
@@ -2616,8 +2638,17 @@ object {
 .category-back-page .category-description,
 .category-back-page .dropcap,
 .category-back-page .entry-subtitle,
-.category-back-page .entry-content a {
+.category-back-page .entry-content a,
+.category-back-page .posted-on a {
 	color: #ce99d5;
+}
+.category-back-page .entry-content a:hover,
+.category-back-page .entry-content a:focus,
+.category-back-page .entry-content a:active,
+.category-back-page .posted-on a:hover,
+.category-back-page .posted-on a:focus,
+.category-back-page .posted-on a:active {
+	color: #0f3b6b;
 }
 .category-back-page .entry-title {
 	text-transform: none;
@@ -2628,7 +2659,7 @@ object {
 }
 .category-back-page hr,
 .category-back-page.single-entry .entry-content:before,
-.category-back-page .issue-section-header:before {
+.category-back-page .category-header:before {
 	background: #e8cfeb;
 }
 .category-back-page .call-to-action,

@@ -5,8 +5,20 @@
 	.category-description,
 	.dropcap,
 	.entry-subtitle,
-	.entry-content a {
+	.entry-content a,
+	.posted-on a {
 		color: $color__openminds__dark;
+	}
+
+	.entry-content,
+	.posted-on {
+
+		a:hover,
+		a:focus,
+		a:active {
+			color: $color__link-hover;
+		}
+
 	}
 
 	.entry-title,
@@ -36,7 +48,7 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.issue-section-header:before {
+	.category-header:before {
 		background: $color__openminds;
 	}
 
@@ -61,12 +73,6 @@
 	.entry-title {
 		@include font-size-line( "larger" );
 
-	}
-
-	.entry-meta {
-		@include font-size-line( "small" );
-		display: block;
-		text-align: left;
 	}
 
 	.entry-content {

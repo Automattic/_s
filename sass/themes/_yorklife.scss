@@ -4,8 +4,20 @@
 	.category-title a,
 	.category-description,
 	.dropcap,
-	.entry-content a {
+	.entry-content a,
+	.posted-on a {
 		color: $color__yorklife__dark;
+	}
+
+	.entry-content,
+	.posted-on {
+
+		a:hover,
+		a:focus,
+		a:active {
+			color: $color__link-hover;
+		}
+
 	}
 
 	.dropcap {
@@ -23,7 +35,7 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.issue-section-header:before {
+	.category-header:before {
 		background: $color__yorklife;
 	}
 
@@ -35,6 +47,14 @@
 	.footer a {
 		@extend %hide-underline;
 		color: $color__yorklife__darker;
+	}
+
+	.category-posts {
+
+		.entry-meta {
+			display: none;
+		}
+
 	}
 
 	@include issue-section-multicolumn-layout;

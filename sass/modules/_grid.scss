@@ -17,11 +17,11 @@
 //                       [COLUMN 12] .issue-header
 //                       [COLUMN 12] .category-header
 //  ############################################################################
-//  #                section.issue-section
+//  #                section.issue-section.category-section
 //  #                    [COLUMN 12/10] .category-header.issue-section-header
 //  #                        h2.category-title.issue-section-title
-//  #                    [COLUMN 12/10] .category-content.issue-section-content
-//  #                        .category-posts.issue-section-posts
+//  #                    [COLUMN 12/10] .category-content.index-content.issue-section-content
+//  #                        .category-posts.index-posts.issue-section-posts
 //  #                            article.entry[POST CLASSES]
 //  #                                [...]
 //  ############################################################################
@@ -77,15 +77,13 @@
 
 /* Every column is full-width for mobiles. */
 .site-branding,
-.issue-header,
-.single .category-header,
-.issue-section-header,
-.issue-section-content,
+.category-header,
+.index-content,
 .single-entry .entry-header,
 .single-entry .entry-content,
-.entry-author,
-.posted-on,
-.tags-links,
+.single-entry .entry-author,
+.single-entry .posted-on,
+.single-entry .tags-links,
 .nav-previous,
 .nav-next,
 .comments-area,
@@ -100,13 +98,13 @@
 	 * Leave a column free on either side of most content, for the Menu and
 	 * Search toggles.
 	 */
-	.issue-section-header,
-	.issue-section-content,
+	.category-header,
+	.index-content,
 	.single-entry .entry-header,
 	.single-entry .entry-content,
-	.entry-author,
-	.posted-on,
-	.tags-links,
+	.single-entry .entry-author,
+	.single-entry .posted-on,
+	.single-entry .tags-links,
 	.comments-area {
 		@include column(10);
 		@include push;
@@ -137,9 +135,9 @@
 
 	/* Narrower content column than everything else, for better line length. */
 	.single-entry .entry-content,
-	.entry-author,
-	.posted-on,
-	.tags-links {
+	.single-entry .entry-author,
+	.single-entry .posted-on,
+	.single-entry .tags-links {
 		@include column(8);
 		@include push(2);
 		@include pull(2);
@@ -172,9 +170,9 @@
 
 	/* Even narrower content column, to maintain sensible line length. */
 	.single-entry .entry-content,
-	.entry-author,
-	.posted-on,
-	.tags-links {
+	.single-entry .entry-author,
+	.single-entry .posted-on,
+	.single-entry .tags-links {
 		@include column(6);
 		@include push(3);
 		@include pull(3);

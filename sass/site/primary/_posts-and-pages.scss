@@ -164,3 +164,8 @@
 	display: block;
 }
 
+/* Read more link. */
+.read-more {
+	@include rem( "margin", ( $line * -1 ) 0 $line );
+	font-weight: bold;
+}

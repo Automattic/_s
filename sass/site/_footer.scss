@@ -16,7 +16,7 @@
  * 1. For the avatar positioning.
  * 2. Leave room for the avatar.
  */
-.entry-author {
+.entry-footer .entry-author {
 	position: relative; /* 1 */
 	padding-top: ( $avatar-diameter / 2 );
 }

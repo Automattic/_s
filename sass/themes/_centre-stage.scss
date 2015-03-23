@@ -4,8 +4,16 @@
 		color: $color__centrestage__dark;
 	}
 
-	.entry-content a {
+	.entry-content a,
+	.posted-on a {
 		color: $color__centrestage__darker;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__link-hover;
+		}
+
 	}
 
 	.entry-title,
@@ -44,7 +52,7 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.issue-section-header:before {
+	.category-header:before {
 		background: $color__centrestage;
 	}
 
@@ -68,11 +76,6 @@
 
 	.entry-title {
 		@include font-size-line( "huge" );
-	}
-
-	.entry-meta {
-		display: block;
-		text-align: left;
 	}
 
 	@include media( "issue-4-columns" ) {
