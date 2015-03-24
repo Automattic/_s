@@ -908,8 +908,8 @@ a:active {
 	top: 0;
 	/* 1 */
 	display: block;
-	width: 224px;
-	width: 12.44444rem;
+	width: 196px;
+	width: 10.88889rem;
 	height: 84px;
 	height: 4.66667rem;
 	padding-top: 28px;
@@ -1496,14 +1496,14 @@ a:active {
 9.0 Header
 --------------------------------------------------------------*/
 .site-header {
-	height: 224px;
-	height: 12.44444rem;
+	height: 196px;
+	height: 10.88889rem;
 }
 
 .site-title {
 	margin: 0;
-	line-height: 224px;
-	line-height: 12.44444rem;
+	line-height: 196px;
+	line-height: 10.88889rem;
 	text-align: center;
 }
 
