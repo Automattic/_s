@@ -7,13 +7,17 @@
  * @package YuMag
  */
 
-// Start with a list of sections (specifically their slugs), in order.
+/*
+ * Start with a list of sections (specifically their slugs), in order. The key
+ * holds the slug; the value defines how many flexbox columns to use (or
+ * 0|False for no flexbox).
+ */
 $sections = array(
-	'yorklife',
-	'open-minds',
-	'centre-stage',
-	'all-about-yu',
-	'back-page'
+	'yorklife' => 0,
+	'open-minds' => 2,
+	'centre-stage' => 3,
+	'all-about-yu' => 0,
+	'back-page' => 0
 );
 
 // URL-path to images.
@@ -32,7 +36,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<?php // Run through the loop, once for each section. ?>
-			<?php foreach( $sections as $section ) : ?>
+			<?php foreach( $sections as $section => $flex ) : ?>
 				<?php $cat = get_category_by_slug( $section ) ?>
 				<section class="issue-section category-section category-<?php echo $section; ?>">
 					<header class="issue-section-header category-header">
@@ -45,7 +49,12 @@ get_header(); ?>
 					</header>
 					<div class="category-content index-content issue-section-content">
 						<div class="issue-section-posts index-posts category-posts category-<?php echo $section; ?>-posts">
-							<div<?php if ( 'centre-stage' === $section ) echo ' class="js-convert-to-flexbox issue-section-noflex"'; ?>>
+							<div<?php
+							if ( $flex ) {
+								echo ' class="js-convert-to-flexbox issue-section-noflex"';
+								echo ' data-flexbox-columns="' . $flex . '"';
+							}
+							?>>
 
 							<?php /* The Loop */
 							while ( have_posts() ) :

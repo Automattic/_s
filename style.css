@@ -2452,8 +2452,6 @@ object {
 }
 @media (min-width: 1100px) {
 	.category-open-minds .issue-section-posts .entry {
-		clear: right;
-		float: right;
 		max-width: 50%;
 	}
 	.category-open-minds .issue-section-posts .entry .entry-image {
@@ -2466,7 +2464,8 @@ object {
 	}
 	.category-open-minds .issue-section-posts .entry .entry-title,
 	.category-open-minds .issue-section-posts .entry .entry-subtitle,
-	.category-open-minds .issue-section-posts .entry .entry-meta {
+	.category-open-minds .issue-section-posts .entry .entry-meta,
+	.category-open-minds .issue-section-posts .entry .entry-content {
 		clear: none;
 		margin-left: 41.66667%;
 	}
@@ -2485,28 +2484,33 @@ object {
 		font-size: 0.88889rem;
 		line-height: 1.3125;
 	}
-	.category-open-minds .issue-section-posts .entry:first-child {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry {
+		clear: right;
+		float: right;
+		max-width: 50%;
+	}
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child {
 		float: left;
 		max-width: 100%; 
 		margin-bottom: 0;
 	}
-	.category-open-minds .issue-section-posts .entry:first-child .entry-header {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-header {
 		padding-bottom: 14px;
 		padding-bottom: 0.77778rem;
 		background: #69bcc9;
 	}
-	.category-open-minds .issue-section-posts .entry:first-child .entry-image {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-image {
 		width: 100%;
 		margin-right: 0;
 	}
-	.category-open-minds .issue-section-posts .entry:first-child .entry-title,
-	.category-open-minds .issue-section-posts .entry:first-child .entry-subtitle,
-	.category-open-minds .issue-section-posts .entry:first-child .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-left: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
 	}
-	.category-open-minds .issue-section-posts .entry:first-child .entry-title {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-title {
 		clear: left;
 		padding-top: 14px;
 		padding-top: 0.77778rem;
@@ -2515,19 +2519,131 @@ object {
 		line-height: 1;
 		color: #fff;
 	}
-	.category-open-minds .issue-section-posts .entry:first-child .entry-subtitle {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle {
 		font-size: 24px;
 		font-size: 1.33333rem;
 		line-height: 1.16667;
 		color: #171717;
 	}
-	.category-open-minds .issue-section-posts .entry:first-child .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
 		font-size: 18px;
 		font-size: 1rem;
 		line-height: 1.55556;
 		color: #171717;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex .entry {
+		clear: none;
+		float: none;
+		width: auto;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child {
+		max-width: 50%;
+		margin-bottom: 0;
+		padding-right: 0;
+		padding-left: 0;
+		background: #69bcc9; 
+
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 1 50%;
+		-moz-box-flex: 1;
+		-ms-flex: 1 1 50%;
+		flex: 1 1 50%;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-header {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-image {
+		width: 100%;
+		margin-right: 0;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
+		margin-left: 0; 
+		padding: 0 28px;
+		padding: 0 1.55556rem;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
+		clear: left;
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+		font-size: 28px;
+		font-size: 1.55556rem;
+		line-height: 1;
+		color: #fff;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle {
+		font-size: 24px;
+		font-size: 1.33333rem;
+		line-height: 1.16667;
+		color: #171717;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
+		margin-top: 14px;
+		margin-top: 0.77778rem;
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+		color: #171717;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction: column;
+		max-width: 50%; 
+
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-moz-box-orient: vertical;
+		-moz-box-direction: normal;
+		-ms-flex-direction: column;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		-moz-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1 1 50%;
+		-moz-box-flex: 1;
+		-ms-flex: 1 1 50%;
+		flex: 1 1 50%;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+		width: 100%;
+		max-width: 100%;
+		min-height: 0;
+		margin-bottom: 0; 
+		padding-left: 28px;
+		padding-left: 1.55556rem;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry .entry-image {
+		line-height: 0.5;
+		/* fix for excess space under the image */
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child .entry-content,
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child ~ * .entry-content {
+		display: none;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry-content {
+		display: block;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry-content p {
+		margin-bottom: 0;
+		/* for alignment with bottom of flex container */
 	}
 }
 
