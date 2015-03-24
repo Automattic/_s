@@ -226,7 +226,17 @@ add_action( 'pre_get_posts', 'yumag_posts_per_page', 11 );
 endif;
 
 if ( ! function_exists( 'yumag_split_archive_title' ) ) :
-
+/**
+ * Separate an archive title so the value is wrapped in a separate span to its
+ * key, allowing separate styling.
+ *
+ * The value is wrapped in a `span.archive-term`.
+ *
+ * @since 1.0.0
+ *
+ * @param string $title Original archive title HTML.
+ * @return string Modified HTML.
+ */
 function yumag_split_archive_title( $title ) {
 
 	$replacement = '<span class="archive-term">%s</span>';

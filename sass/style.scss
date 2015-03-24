@@ -40,6 +40,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 13.0 Media
 	13.1 Captions
 	13.2 Galleries
+	13.3 Sliders
 14.0 Layouts
 15.0 Themes
 --------------------------------------------------------------*/
@@ -150,6 +151,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /* 13.2 Galleries
 --------------------------------------------------------------*/
 @import "media/galleries";
+
+/* 13.3 Sliders
+--------------------------------------------------------------*/
+@import "media/sliders";
 
 /*--------------------------------------------------------------
 14.0 Layouts

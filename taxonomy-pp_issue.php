@@ -33,6 +33,10 @@ get_header(); ?>
 
 		<main id="main" class="site-main" role="main">
 
+		<section class="issue-section slider">
+			<?php get_template_part( 'slider' ); ?>
+		</section>
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php // Run through the loop, once for each section. ?>
