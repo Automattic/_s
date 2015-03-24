@@ -67,8 +67,10 @@
 
 .entry-title {
 	@include rem( "margin-top", $line );
-	@include font-size-line( "gigantic", 2.5 );
+	@include font-size-line( "leviathan", 2.5 );
 	word-wrap: break-word;
+	text-transform: none;
+	font-family: $font-family__main;
 
 	.single-entry & {
 		@include rem( "margin-bottom", $line );

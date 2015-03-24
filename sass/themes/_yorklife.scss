@@ -24,11 +24,27 @@
 		font-family: $font-family__main;
 	}
 
-	.entry-title {
-		letter-spacing: -0.025em;
+	&.single-entry .entry-title {
+		@include font-size-line( "gigantic", 2.5 ); /* Slightly smaller, because full caps */
+	}
 
-		a {
-			@extend %hide-underline;
+	// Section-specific heading styling (not used in tag/search/author pages.)
+	&.single-entry,
+	.category-posts,
+	.issue-section-posts {
+
+		.entry-title {
+			text-transform: uppercase;
+			font-family: $font-family__sans-serif;
+		}
+
+	}
+
+	.category-posts,
+	.issue-section-posts {
+
+		.entry-title {
+			@include font-size-line( "normal" );
 		}
 
 	}

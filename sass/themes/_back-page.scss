@@ -21,13 +21,15 @@
 
 	}
 
-	.entry-title {
-		text-transform: none;
-	}
+	// Section-specific heading styling (not used in tag/search/author pages.)
+	&.single-entry,
+	.category-posts,
+	.index-section-posts {
 
-	// Not uppercase, so slightly larger text.
-	.index-posts & .entry-title {
-		@include font-size-line( "large" );
+		.entry-title {
+			font-family: $font-family__sans-serif;
+		}
+
 	}
 
 	.dropcap {

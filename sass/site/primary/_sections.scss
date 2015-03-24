@@ -84,6 +84,11 @@
 		text-align: left;
 	}
 
+	.entry-title {
+		@include font-size-line( "large" );
+		font-family: $font-family__main;
+	}
+
 	.entry-content,
 	.entry-footer {
 		display: none;

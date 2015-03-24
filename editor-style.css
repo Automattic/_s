@@ -842,9 +842,11 @@ a:active {
 .entry-title {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
-	font-size: 54px;
-	font-size: 3rem;
-	line-height: 1.2963;
+	font-size: 60px;
+	font-size: 3.33333rem;
+	line-height: 1.16667;
+	font-family: "Aleo", Constantia, Georgia, sans-serif; 
+	text-transform: none;
 	word-wrap: break-word;
 }
 .single-entry .entry-title {

@@ -39,20 +39,16 @@
 		color: $color__centrestage;
 	}
 
-	// .entry-title,
-	// .entry-subtitle {
-	// 	@extend %title-font;
-	// }
+	// Section-specific heading styling (not used in tag/search/author pages.)
+	&.single-entry,
+	.category-posts,
+	.index-section-posts {
 
-	.entry-title,
-	.entry-subtitle {
-		font-style: italic;
-		text-transform: none;
-	}
+		.entry-title,
+		.entry-subtitle {
+			font-style: italic;
+		}
 
-	// Not uppercase, so slightly larger text.
-	.index-posts & .entry-title {
-		@include font-size-line( "large" );
 	}
 
 	hr,
