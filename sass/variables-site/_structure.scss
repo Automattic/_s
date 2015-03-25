@@ -34,6 +34,10 @@ $height__masthead__mini: ( $line * 4 );
 $width__menu: ( $line * 10 );
 $width__menu-toggle: ( $line * 3 );
 
+$width__slider-caption: $width__menu;
+$width__slider-caption__wide: ( $line * 15 );
+$width__slider-caption__wider: ( $line * 19.5 );
+
 $width__rule: 25%;
 $height__rule: ( $line / 2 );
 
@@ -48,8 +52,10 @@ $breakpoints: (
     "main-spacing-1"       :  800px,
     "issue-3-columns"      :  900px,
     "main-spacing-2"       : 1020px,
+    "wide-slider"          : 1085px,
     "issue-4-columns"      : 1100px,
     "images-in-margin"     : 1120px,
     "main-spacing-3"       : 1160px,
+    "wider-slider"         : 1280px,
     "beyond-max-width"     : $body-width-maximum
 );

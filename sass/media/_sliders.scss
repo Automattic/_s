@@ -1,6 +1,7 @@
 .slider {
 	@include rem( "margin-bottom", ( $spacing * 2 ) );
 	margin-top: 0;
+	padding: 0; /* remove gutter so this lines up with section headers */
 
 	a {
 		border-bottom: 0;
@@ -16,7 +17,6 @@
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
-	max-width: 905px;
 }
 .iis-slide {
 	display: block;
@@ -130,14 +130,13 @@
 
 /* Captions */
 .iis-has-captions .iis-slide {
-//	@include rem( "padding-right", $width__menu );
-	max-width: calc( 100% - #{$width__menu} );
+	max-width: calc( 100% - #{$width__slider-caption} );
 	background-position: 50% 50%;
 	background-size: cover;
 	text-indent: 0;
 }
 .iis-caption {
-	@include rem( "width", $width__menu );
+	@include rem( "width", $width__slider-caption );
 	@include rem( "padding", $spacing $spacing ( $spacing * 0.5 ) ( $spacing * 0.5 ) );
 	@include rem( "border-right", $height__rule solid $color__neutral );
 	position: absolute;
@@ -183,6 +182,10 @@
 
 	}
 
+	.slider-caption-excerpt {
+		display: none;
+	}
+
 	.cat-links {
 		font-weight: bold;
 		font-family: $font-family__meta;
@@ -205,6 +208,65 @@
 	/* Put date on new line. */
 	.entry-date {
 		display: block;
+	}
+
+}
+
+/* Hide the slider for narrowest layouts */
+@media (max-width: 564px) {
+
+	.slider {
+		display: none;
+	}
+
+}
+
+/* Wide slider layout. */
+@include media( "wide-slider" ) {
+
+	.iis-has-captions .iis-slide {
+		max-width: 58.33333%;
+	}
+
+	.iis-caption {
+		width: 71.42857%; /* % of a %. Works out as 71% of 58%, i.e. 41% */
+
+		.slider-caption-excerpt {
+			@include rem( "margin-top", ( $line * 0.5 ) );
+			@include font-size-line( "smaller", 0.75 );
+			display: block;
+			color: $white;
+		}
+
+		/* Restore single-line category and date. */
+		.entry-date {
+			display: inline;
+		}
+
+		.slider-caption-footer .slash {
+			display: inline;
+		}
+
+	}
+
+}
+
+
+/* Even wider slider layout. */
+@include media( "wider-slider" ) {
+
+	.iis-has-captions .iis-slide {
+		max-width: 50%;
+	}
+
+	.iis-caption {
+		width: 100%; /* % of a %. Works out as 100% of 50%, i.e. 50% */
+
+		.slider-caption-excerpt {
+			@include rem( "margin-top", $line );
+			@include font-size-line( "small" );
+		}
+
 	}
 
 }

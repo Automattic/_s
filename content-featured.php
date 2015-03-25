@@ -29,6 +29,7 @@ if ( $img_src ) : ?>
 <?php
 $slider_captions .= '<div class="slider-caption ' . $caption_class . '">';
 $slider_captions .= the_subtitle( '<div class="slider-subtitle">', '</div>', false );
+$slider_captions .= '<p class="slider-caption-excerpt">' . get_the_excerpt() . '</p>';
 $slider_captions .= '<div class="slider-caption-footer">' . yumag_entry_footer( false ) . '</div>';
 $slider_captions .= '</div>';
 
