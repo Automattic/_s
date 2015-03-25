@@ -3,6 +3,9 @@
  * The template used for displaying the first individual featured content item
  * in the Ideal Image Slider.
  *
+ * The IMG markup is slightly different to allow us to load the first slider
+ * image only on page load, then lazy load the others.
+ *
  * @since 1.0.0
  * @link https://github.com/gilbitron/Ideal-Image-Slider
  *
