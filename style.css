@@ -1811,6 +1811,11 @@ a:active {
 	color: #171717;
 }
 
+/* TEMPORARY: REMOVE ISSUE HEADER TO DECLUTTER. */
+.issue-header {
+	display: none;
+}
+
 /* eg 'ISSUE ONE' */
 .issue-number,
 .search-term,
@@ -1910,6 +1915,8 @@ a:active {
 .issue-section {
 	margin-top: 56px;
 	margin-top: 3.11111rem;
+	margin-bottom: 56px;
+	margin-bottom: 3.11111rem;
 }
 
 /* Posts list for this section. */
@@ -1970,7 +1977,6 @@ a:active {
 @media (min-width: 500px) {
 	.index-posts .entry {
 		float: left;
-		width: 50%;
 		max-width: 347px;
 		max-width: 19.27778rem;
 		margin-bottom: 0; 
@@ -1979,6 +1985,10 @@ a:active {
 	}
 	.index-posts .entry:nth-child(2n+1) {
 		clear: left;
+	}
+	.index-posts .entry:nth-last-child(n+2):first-child,
+	.index-posts .entry:nth-last-child(n+2):first-child ~ * {
+		width: 50%;
 	}
 	.index-posts .entry-content {
 		display: block;
@@ -2441,9 +2451,9 @@ object {
 	position: absolute; 
 	bottom: 14px;
 	bottom: 0.77778rem;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
+	font-size: 14px;
+	font-size: 0.77778rem;
+	line-height: 2;
 }
 .iis-caption .slider-caption-footer .slash {
 	display: none;
@@ -2454,6 +2464,7 @@ object {
 .iis-caption .cat-links {
 	font-weight: bold;
 	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	letter-spacing: 0.05em;
 }
 .iis-caption .cat-links.cat-links a {
 	text-decoration: none;
@@ -2513,8 +2524,6 @@ object {
 		/* % of a %. Works out as 100% of 50%, i.e. 50% */
 	}
 	.iis-caption .slider-caption-excerpt {
-		margin-top: 28px;
-		margin-top: 1.55556rem;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -2646,7 +2655,8 @@ object {
 .category-yorklife .iis-caption {
 	border-right-color: #dcd4c6;
 }
-.category-yorklife .iis-caption .cat-links a {
+.category-yorklife .iis-caption .cat-links a,
+.category-yorklife .slider-subtitle {
 	color: #dcd4c6;
 }
 .category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
@@ -2753,7 +2763,8 @@ object {
 .category-open-minds .iis-caption {
 	border-right-color: #69bcc9;
 }
-.category-open-minds .iis-caption .cat-links a {
+.category-open-minds .iis-caption .cat-links a,
+.category-open-minds .slider-subtitle {
 	color: #69bcc9;
 }
 
@@ -3028,7 +3039,8 @@ object {
 .category-centre-stage .iis-caption {
 	border-right-color: #f0ef84;
 }
-.category-centre-stage .iis-caption .cat-links a {
+.category-centre-stage .iis-caption .cat-links a,
+.category-centre-stage .slider-subtitle {
 	color: #f0ef84;
 }
 
@@ -3216,7 +3228,8 @@ object {
 .category-all-about-yu .iis-caption {
 	border-right-color: #9acd9c;
 }
-.category-all-about-yu .iis-caption .cat-links a {
+.category-all-about-yu .iis-caption .cat-links a,
+.category-all-about-yu .slider-subtitle {
 	color: #9acd9c;
 }
 .category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
@@ -3319,7 +3332,8 @@ object {
 .category-back-page .iis-caption {
 	border-right-color: #e8cfeb;
 }
-.category-back-page .iis-caption .cat-links a {
+.category-back-page .iis-caption .cat-links a,
+.category-back-page .slider-subtitle {
 	color: #e8cfeb;
 }
 

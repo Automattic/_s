@@ -173,7 +173,7 @@
 
 	.slider-caption-footer {
 		@include rem( "bottom", ( $spacing * 0.5 ) );
-		@include font-size-line( "small" );
+		@include font-size-line( "smaller" );
 		position: absolute;
 
 		.slash {
@@ -189,6 +189,7 @@
 	.cat-links {
 		font-weight: bold;
 		font-family: $font-family__meta;
+		letter-spacing: $letter-spacing__caps;
 
 		&.cat-links a {
 			text-decoration: none;
@@ -263,7 +264,6 @@
 		width: 100%; /* % of a %. Works out as 100% of 50%, i.e. 50% */
 
 		.slider-caption-excerpt {
-			@include rem( "margin-top", $line );
 			@include font-size-line( "small" );
 		}
 

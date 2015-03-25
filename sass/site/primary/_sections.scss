@@ -55,6 +55,7 @@
 
 .issue-section {
 	@include rem( "margin-top", ( $line * 2 ) );
+	@include rem( "margin-bottom", ( $line * 2 ) );
 }
 
 /* Posts list for this section. */
@@ -123,11 +124,14 @@
 			@include rem( "max-width", ( 333px + ( $spacing * 0.5 ) ) );
 			@include rem( "padding", 0 ( $spacing * 0.5 ) );
 			float: left;
-			width: 50%;
 			margin-bottom: 0;
 
 			&:nth-child(2n+1) {
 				clear: left;
+			}
+
+			@include quantity-query( 2, "greater" ) {
+				width: 50%;
 			}
 
 		}
