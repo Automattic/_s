@@ -163,8 +163,11 @@ if ( ! function_exists( 'yumag_entry_footer' ) ) :
  * Prints HTML with meta information for the categories and comments.
  *
  * @since 1.0.0
+ *
+ * @param bool $echo Optional. Display (True) or return output. Default True.
+ * @return string The output (if $echo is False).
  */
-function yumag_entry_footer() {
+function yumag_entry_footer( $echo = true ) {
 
 	$pp = new PeriodicalPress_Template_Tags();
 
@@ -188,18 +191,18 @@ function yumag_entry_footer() {
 
 		// Prepare the issue number format.
 		$number = $pp->get_the_issue_number();
-		if ( $number ) {
+		if ( $number && is_single() ) {
 			$number = sprintf( __( 'ISSUE %s', 'yumag' ),
 				strtoupper( yumag_convert_number_to_words( $number ) )
 			);
-			$number = '<a class="entry-issue" href="' . $pp->get_the_issue_link() . '">' . $number . '</a> / ';
+			$number = '<a class="entry-issue" href="' . $pp->get_the_issue_link() . '">' . $number . '</a><span class="slash"> / </span>';
 		} else {
 			$number = '';
 		}
 
 		/* Prepare categories and datestamp output. */
 		if ( $categories_list && yumag_categorized_blog() ) {
-			$posted_on = sprintf( _x( '%1$s%2$s / %3$s', 'Post footer metadata order', 'yumag' ),
+			$posted_on = sprintf( _x( '%1$s%2$s<span class="slash"> / </span>%3$s', 'Post footer metadata order', 'yumag' ),
 				$number,
 				sprintf( '<span class="cat-links">%s</span>', $categories_list ),
 				$time_string
@@ -211,7 +214,13 @@ function yumag_entry_footer() {
 			);
 		}
 
-		echo '<span class="posted-on">' . $posted_on . '</span>';
+		$posted_on = '<span class="posted-on">' . $posted_on . '</span>';
+
+		if ( $echo ) {
+			echo $posted_on;
+		} else {
+			return $posted_on;
+		}
 
 	}
 

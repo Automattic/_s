@@ -45,6 +45,14 @@
 
 	}
 
+	.iis-caption {
+		border-right-color: $color__allaboutyu;
+	}
+
+	.iis-caption .cat-links a {
+		color: $color__allaboutyu;
+	}
+
 	@include issue-section-multicolumn-layout;
 
 }

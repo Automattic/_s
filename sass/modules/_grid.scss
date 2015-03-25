@@ -58,13 +58,14 @@
 //                           #respond.comment-respond
 //           [ROW] #secondary.widget-area.footer-widget-area
 //               [COLUMN 12/6/4] [WIDGETS]
-//           [ROW] #tertiary.footer.site-footer
+//           #tertiary.footer.site-footer
+//               [ROW] .footer-row.site-footer-row
 //               [COLUMN 12] .site-footer-content
 
 .site-header,
 .content-area,
 .footer-widget-area,
-.site-footer {
+.footer-row {
 	@include row;
 }
 
@@ -81,7 +82,6 @@
 .author-header,
 .author-bio-content,
 .index-content,
-.slider,
 .single-entry .entry-header,
 .single-entry .entry-content,
 .single-entry .entry-author,

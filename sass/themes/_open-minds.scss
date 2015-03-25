@@ -57,6 +57,14 @@
 		color: $color__openminds__darker;
 	}
 
+	.iis-caption {
+		border-right-color: $color__openminds;
+	}
+
+	.iis-caption .cat-links a {
+		color: $color__openminds;
+	}
+
 }
 
 .category-open-minds .issue-section-posts {

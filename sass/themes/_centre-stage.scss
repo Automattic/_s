@@ -71,6 +71,14 @@
 		color: $color__centrestage__darker;
 	}
 
+	.iis-caption {
+		border-right-color: $color__centrestage;
+	}
+
+	.iis-caption .cat-links a {
+		color: $color__centrestage;
+	}
+
 }
 
 .category-centre-stage .issue-section-posts {

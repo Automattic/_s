@@ -55,4 +55,12 @@
 		color: $color__backpage__darker;
 	}
 
+	.iis-caption {
+		border-right-color: $color__backpage;
+	}
+
+	.iis-caption .cat-links a {
+		color: $color__backpage;
+	}
+
 }

@@ -73,6 +73,14 @@
 
 	}
 
+	.iis-caption {
+		border-right-color: $color__yorklife;
+	}
+
+	.iis-caption .cat-links a {
+		color: $color__yorklife;
+	}
+
 	@include issue-section-multicolumn-layout;
 
 }
