@@ -721,20 +721,18 @@ var IdealImageSlider = (function() {
 
 })(IdealImageSlider);
 
-
 /**
  * Set up the Ideal Image Slider(s).
- * @since 1.0.0
  * @param {IdealImageSlider} IIS The IdealImageSlider constructor.
  */
-(function initSlider( IIS ) {
-	var slider = new IIS.Slider({
+( function initSlider( IIS ) {
+	var slider = new IIS.Slider( {
 		selector: '.js-slider',
 		height: 500,
 		interval: 4000,
 		transitionDuration: 300,
 		effect: 'fade'
-	});
+	} );
 	slider.addCaptions();
 	slider.start();
-})( IdealImageSlider );
+} )( IdealImageSlider );

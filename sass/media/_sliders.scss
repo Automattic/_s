@@ -1,16 +1,22 @@
-/*!
- * Ideal Image Slider v1.4.0
- *
- * By Gilbert Pellegrom
- * http://gilbert.pellegrom.me
- *
- * Copyright (C) 2014 Dev7studios
- * https://raw.githubusercontent.com/gilbitron/Ideal-Image-Slider/master/LICENSE
- */
+.slider {
+	@include rem( "margin-bottom", ( $spacing * 2.5 ) );
+	margin-top: 0;
+
+	a {
+		border-bottom: 0;
+	}
+
+}
+
+.slider-caption {
+	display: none;
+}
 
 .ideal-image-slider {
 	position: relative;
 	overflow: hidden;
+	margin: 0 auto;
+	max-width: 905px;
 }
 .iis-slide {
 	display: block;
@@ -123,43 +129,6 @@
 	opacity: 1.0;
 }
 
-/* Bullet Navigation */
-.iis-bullet-nav {
-	position: absolute;
-	bottom: 5%;
-	right: 5%;
-	z-index: 15;
-	width: 90%;
-	text-align: right;
-	opacity: 0.4;
-	transition: 0.3s ease-out;
-}
-.iis-has-captions .iis-bullet-nav {
-	max-width: 42%;
-}
-.iis-bullet-nav a {
-	display: inline-block;
-	width: 10px;
-	height: 10px;
-	background: transparent;
-	text-indent: 9999px;
-	margin: 0 5px;
-	border: 3px solid rgba(0,0,0,0.5);
-	border-radius: 10px;
-	cursor: pointer;
-	transition: 0.3s ease-out;
-}
-.iis-bullet-nav a.iis-bullet-active,
-.iis-bullet-nav a:hover {
-	background: #fff;
-}
-.ideal-image-slider:hover .iis-bullet-nav {
-	opacity: 0.7;
-}
-.ideal-image-slider:hover .iis-bullet-nav:hover {
-	opacity: 1.0;
-}
-
 /* Captions */
 .iis-has-captions .iis-slide {
 	text-indent: 0;
@@ -172,12 +141,10 @@
 	bottom: 0;
 	width: 100%;
 	z-index: 10;
+	text-align: center;
 	background: #000;
 	background: rgba(0,0,0,0.5);
 	color: $white;
-}
-.iis-has-bullet-nav .iis-caption {
-	max-width: 42%;
 }
 .iis-caption .iis-caption-title {
 	@include font-size-line( "huger", 1.5 );
@@ -195,25 +162,4 @@
 .iis-caption .iis-caption-content a:hover,
 .iis-caption .iis-caption-content a:active {
 	color: #fff;
-}
-
-/* Custom styling. */
-
-.slider {
-	@include rem( "margin-bottom", ( $spacing * 2.5 ) );
-	margin-top: 0;
-
-	a {
-		border-bottom: 0;
-	}
-
-}
-
-.ideal-image-slider {
-	margin: 0 auto;
-	max-width: 905px;
-}
-
-.slider-caption {
-	display: none;
 }

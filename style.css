@@ -2229,18 +2229,24 @@ object {
 
 /* 13.3 Sliders
 --------------------------------------------------------------*/
-/*!
- * Ideal Image Slider v1.4.0
- *
- * By Gilbert Pellegrom
- * http://gilbert.pellegrom.me
- *
- * Copyright (C) 2014 Dev7studios
- * https://raw.githubusercontent.com/gilbitron/Ideal-Image-Slider/master/LICENSE
- */
+.slider {
+	margin-top: 0; 
+	margin-bottom: 70px;
+	margin-bottom: 3.88889rem;
+}
+.slider a {
+	border-bottom: 0;
+}
+
+.slider-caption {
+	display: none;
+}
+
 .ideal-image-slider {
 	position: relative;
 	overflow: hidden;
+	max-width: 905px; 
+	margin: 0 auto;
 }
 
 .iis-slide {
@@ -2381,51 +2387,6 @@ object {
 	opacity: 1.0;
 }
 
-/* Bullet Navigation */
-.iis-bullet-nav {
-	position: absolute;
-	z-index: 15;
-	right: 5%;
-	bottom: 5%;
-	width: 90%;
-	text-align: right;
-	opacity: 0.4;
-	-webkit-transition: 0.3s ease-out;
-	transition: 0.3s ease-out;
-}
-
-.iis-has-captions .iis-bullet-nav {
-	max-width: 42%;
-}
-
-.iis-bullet-nav a {
-	display: inline-block;
-	width: 10px;
-	height: 10px;
-	margin: 0 5px;
-	text-indent: 9999px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-	border: 3px solid rgba(0, 0, 0, 0.5);
-	background: transparent;
-	-webkit-transition: 0.3s ease-out;
-	transition: 0.3s ease-out; 
-	cursor: pointer;
-}
-
-.iis-bullet-nav a.iis-bullet-active,
-.iis-bullet-nav a:hover {
-	background: #fff;
-}
-
-.ideal-image-slider:hover .iis-bullet-nav {
-	opacity: 0.7;
-}
-
-.ideal-image-slider:hover .iis-bullet-nav:hover {
-	opacity: 1.0;
-}
-
 /* Captions */
 .iis-has-captions .iis-slide {
 	text-indent: 0;
@@ -2441,13 +2402,10 @@ object {
 	min-height: 6.22222rem;
 	padding: 14px;
 	padding: 0.77778rem;
+	text-align: center;
 	background: #000;
 	background: rgba(0, 0, 0, 0.5);
 	color: #fff;
-}
-
-.iis-has-bullet-nav .iis-caption {
-	max-width: 42%;
 }
 
 .iis-caption .iis-caption-title {
@@ -2473,25 +2431,6 @@ object {
 .iis-caption .iis-caption-content a:hover,
 .iis-caption .iis-caption-content a:active {
 	color: #fff;
-}
-
-/* Custom styling. */
-.slider {
-	margin-top: 0; 
-	margin-bottom: 70px;
-	margin-bottom: 3.88889rem;
-}
-.slider a {
-	border-bottom: 0;
-}
-
-.ideal-image-slider {
-	max-width: 905px; 
-	margin: 0 auto;
-}
-
-.slider-caption {
-	display: none;
 }
 
 /*--------------------------------------------------------------
