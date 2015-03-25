@@ -1552,6 +1552,20 @@ a:active {
 	color: #e0e0e4;
 }
 
+.site-title-term {
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1;
+	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	vertical-align: top; 
+	text-transform: uppercase;
+	border: 0;
+	color: #9696a0;
+}
+
 /*--------------------------------------------------------------
 10.0 Widgets
 --------------------------------------------------------------*/

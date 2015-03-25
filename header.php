@@ -77,9 +77,7 @@ $src = get_template_directory_uri() . '/assets/';
 					$cat = $cats[0];
 					?>
 					<span class="slash">/</span>
-					<a class="category-link category-<?php echo $cat->slug; ?>" href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php _e( 'More posts in this category', 'yumag' ); ?>">
-						<img src="<?php echo $src . $cat->slug; ?>-grey-21.png" srcset="<?php echo $src . $cat->slug; ?>-grey-42.png 2x, <?php echo $src . $cat->slug; ?>-grey-21.png 1x" height="21" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
-					</a>
+					<a class="site-title-term category-link category-<?php echo $cat->slug; ?>" href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php _e( 'More posts in this category', 'yumag' ); ?>"><?php echo esc_html( $cat->cat_name ); ?></a>
 					<?php
 				}
 				?>
