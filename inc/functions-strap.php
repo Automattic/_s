@@ -416,7 +416,7 @@ function _strap_build_production($slug)
 
 	$s_style = $dst . DIRECTORY_SEPARATOR . 'style.less';
 	$content = file_get_contents($s_style);
-	$content = str_replace('@import "bootstrap/less/variables.less"', '@import "bootstrap/less/variables.less"' . "\n" . '@import "bootstrap/_vars.less"', $content);
+	$content = str_replace('@import "bootstrap/less/variables.less"', '@import "bootstrap/less/variables.less";' . "\n" . '@import "bootstrap/_vars.less"', $content);
 	$content = str_replace('bootstrap/', 'assets/components/bootstrap/', $content);
 	file_put_contents($s_style, $content);
 
