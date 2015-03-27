@@ -6286,8 +6286,6 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-#masthead:before,
-#masthead:after,
 #content:before,
 #content:after,
 #colophon:before,
@@ -6312,7 +6310,6 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-#masthead:after,
 #content:after,
 #colophon:after,
 #commentform .form-group:after {
@@ -6565,7 +6562,6 @@ button.close {
 /*
 Semantic grid
 */
-#masthead,
 #content,
 #colophon {
   margin-left: -15px;
