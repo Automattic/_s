@@ -1,0 +1,34 @@
+{
+  "name": "wd_s",
+  "description": "A project boilerplate for WebDevStudios.",
+  "version": "1.0.0",
+  "keywords": [
+    "css",
+    "js",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "wordpress"
+  ],
+  "homepage": "http://webdevstudios.com",
+  "main": [
+    "sass/style.scss",
+    "style.css"
+  ],
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "latest",
+    "neat": "latest"
+  }
+}

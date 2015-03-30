@@ -1,0 +1,44 @@
+{
+  "name": "wd_s",
+  "version": "1.0.0",
+  "description": "A project boilerplate for WebDevStudios.",
+  "author": "WebDevStudios",
+  "homepage": "https://github.com/WebDevStudios/wd_s",
+  "bugs": "https://github.com/WebDevStudios/wd_s/issues",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WebDevStudios/wd_s.git"
+  },
+  "licenses": [
+    {
+      "type": "GPL-2.0+",
+      "url": "https://github.com/WebDevStudios/wd_s/blob/master/LICENSE"
+    }
+  ],
+  "contributors": "https://github.com/WebDevStudios/wd_s/graphs/contributors",
+  "devDependencies": {
+    "css-parse": "latest",
+    "glob": "latest",
+    "grunt": "latest",
+    "grunt-autoprefixer": "latest",
+    "grunt-combine-media-queries": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-csscomb": "latest",
+    "grunt-githooks": "latest",
+    "grunt-newer": "latest",
+    "grunt-phpcs": "latest",
+    "grunt-shell": "latest",
+    "grunt-spritesmith": "latest",
+    "grunt-update-submodules": "latest",
+    "grunt-wp-i18n": "latest",
+    "load-grunt-tasks": "latest"
+  }
+}
