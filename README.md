@@ -1,7 +1,7 @@
 _s
 ===
 
-[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as sub-module with our new project boilerplate: [wd_s](https://github.com/WebDevStudios/wd_s) but can also be used as a stand-alone theme. Your pull request is welcome!
+[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as sub-module with our new project boilerplate: [wd_s](https://github.com/WebDevStudios/wd_s), but can also be used as a stand-alone theme. Your pull requests are welcome!
 
 # Pre-Installation
 
@@ -15,8 +15,6 @@ Basic knowledge of the command line and the following dependencies are required 
 - A fresh install of [https://wordpress.org/](https://wordpress.org/) and an empty /wp-content directory!
 
 # Installation
-
-Setting up by hand is a bit harder, but if you're comfortable with Git and doing a find & replace, you can get up and running a minutes.
 
 ##### 1) Navigate to the /themes folder of your project
 `cd /your-project/wordpress/wp-content/themes`
