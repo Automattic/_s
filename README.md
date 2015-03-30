@@ -1,7 +1,7 @@
-wd_s
+_s
 ===
 
-[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as sub-module with our new project boilerplate: [wd_s](https://github.com/WebDevStudios/wd_s). Pull requests are welcome.
+[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as sub-module with our new project boilerplate: [wd_s](https://github.com/WebDevStudios/wd_s) but can also be used as a stand-alone theme. Your pull request is welcome!
 
 # Pre-Installation
 
@@ -23,7 +23,7 @@ Setting up by hand is a bit harder, but if you're comfortable with Git and doing
 
 ##### 2) Clone
 
-`git clone --recursive git@github.com:WebDevStudios/_s.git`
+`git clone git@github.com:WebDevStudios/_s.git`
 
 ##### 3) Find & Replace
 
