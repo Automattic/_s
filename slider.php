@@ -19,8 +19,9 @@ $GLOBALS['slider_captions'] = '';
 if ( yumag_has_featured_posts() ) : ?>
 
 	<?php
-	// Get the featured posts.
+	// Get the featured posts, in random order.
 	$featured_posts = yumag_get_featured_posts();
+	shuffle( $featured_posts );
 	?>
 
 	<div class="js-slider">

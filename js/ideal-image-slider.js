@@ -833,7 +833,7 @@ var IdealImageSlider = (function() {
 	var slider = new IIS.Slider( {
 		selector: '.js-slider',
 		height: 352,
-		interval: 4000,
+		interval: 5000,
 		transitionDuration: 300,
 		effect: 'fade'
 	} );
