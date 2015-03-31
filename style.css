@@ -2018,6 +2018,37 @@ a:active {
 .search-results .index-posts .read-more {
 	display: block;
 }
+@media (min-width: 500px) {
+	.archive:not(.tax-pp_issue) .index-posts .entry,
+	.search-results .index-posts .entry {
+		float: left;
+		max-width: 347px;
+		max-width: 19.27778rem;
+		margin-bottom: 0; 
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+	}
+	.archive:not(.tax-pp_issue) .index-posts .entry:nth-child(2n+1),
+	.search-results .index-posts .entry:nth-child(2n+1) {
+		clear: left;
+	}
+	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+2):first-child,
+	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+2):first-child ~ *,
+	.search-results .index-posts .entry:nth-last-child(n+2):first-child,
+	.search-results .index-posts .entry:nth-last-child(n+2):first-child ~ * {
+		width: 50%;
+	}
+	.archive:not(.tax-pp_issue) .index-posts .entry-content,
+	.search-results .index-posts .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
+}
 @media (min-width: 900px) {
 	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child,
 	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child ~ *,
