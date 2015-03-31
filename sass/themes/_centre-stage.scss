@@ -22,6 +22,17 @@
 		font-family: $font-family__main;
 	}
 
+	h3:before {
+		content: '';
+		display: inline-block;
+		height: 2em;
+		width: 2em;
+		margin-top: -1em;
+		margin-left: -1.5rem;
+		margin-right: -1em;
+		background: $color__centrestage;
+	}
+
 	.category-title,
 	.category-title a,
 	.category-description {
@@ -35,6 +46,8 @@
 
 	.dropcap {
 		@include rem( "border", ( $line / 2 ) solid $color__centrestage );
+		margin-left: -1.5rem;
+		margin-right: 7px;
 		font-family: $font-family__main;
 		background: $color__centrestage;
 	}
@@ -61,7 +74,6 @@
 		border-color: $color__centrestage;
 	}
 
-	.call-to-action,
 	.content-details {
 		border-color: $color__centrestage__dark;
 	}

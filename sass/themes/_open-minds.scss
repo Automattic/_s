@@ -3,7 +3,6 @@
 	.category-title,
 	.category-title a,
 	.category-description,
-	.dropcap,
 	.lead,
 	.entry-subtitle,
 	.entry-content a,
@@ -33,7 +32,13 @@
 	}
 
 	.dropcap {
-
+		@include rem( "border-width", ( $line * 0.5 ) ( $line * 0.75 ) );
+		margin-right: 7px;
+		font-family: $font-family__main;
+		border-color: $color__openminds;
+		border-style: solid;
+		background: $color__openminds;
+		color: $white;
 	}
 
 	hr,

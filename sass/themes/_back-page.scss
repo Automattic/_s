@@ -33,10 +33,13 @@
 	}
 
 	.dropcap {
-		margin-right: 7px; /* More margin-right than usual, for the italics. */
+		@include rem( "border", ( $line / 2 ) solid $color__backpage__dark );
+		margin-right: 7px;
 		font-style: italic;
-		font-family: $font-family__main;
 		text-transform: lowercase;
+		font-family: $font-family__main;
+		color: $white;
+		background: $color__backpage__dark;
 	}
 
 	hr,

@@ -2778,7 +2778,6 @@ object {
 .category-open-minds .category-title,
 .category-open-minds .category-title a,
 .category-open-minds .category-description,
-.category-open-minds .dropcap,
 .category-open-minds .lead,
 .category-open-minds .entry-subtitle,
 .category-open-minds .entry-content a,
@@ -2801,6 +2800,16 @@ object {
 .category-open-minds h6 {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
+}
+.category-open-minds .dropcap {
+	margin-right: 7px;
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+	border-width: 14px 21px;
+	border-width: 0.77778rem 1.16667rem;
+	border-style: solid;
+	border-color: #69bcc9;
+	background: #69bcc9;
+	color: #fff;
 }
 .category-open-minds hr,
 .category-open-minds.single-entry .entry-content:before,
@@ -3088,6 +3097,16 @@ object {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
 }
+.category-centre-stage h3:before {
+	content: "";
+	display: inline-block;
+	width: 2em;
+	height: 2em;
+	margin-top: -1em;
+	margin-right: -1em;
+	margin-left: -1.5rem;
+	background: #f0ef84;
+}
 .category-centre-stage .category-title,
 .category-centre-stage .category-title a,
 .category-centre-stage .category-description {
@@ -3098,6 +3117,8 @@ object {
 	font-weight: normal;
 }
 .category-centre-stage .dropcap {
+	margin-right: 7px;
+	margin-left: -1.5rem;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	border: 14px solid #f0ef84;
 	border: 0.77778rem solid #f0ef84;
@@ -3119,7 +3140,6 @@ object {
 .category-centre-stage .call-to-action {
 	border-color: #f0ef84;
 }
-.category-centre-stage .call-to-action,
 .category-centre-stage .content-details {
 	border-color: #e8e640;
 }
@@ -3492,10 +3512,13 @@ object {
 }
 .category-back-page .dropcap {
 	margin-right: 7px;
-	/* More margin-right than usual, for the italics. */
 	font-style: italic;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	text-transform: lowercase;
+	border: 14px solid #ce99d5;
+	border: 0.77778rem solid #ce99d5;
+	background: #ce99d5; 
+	color: #fff;
 }
 .category-back-page hr,
 .category-back-page.single-entry .entry-content:before,
