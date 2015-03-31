@@ -121,26 +121,8 @@
 	@include media( "issue-2-columns" ) {
 
 		.entry {
-			@include rem( "max-width", ( 333px + ( $spacing * 0.5 ) ) );
 			@include rem( "padding", 0 ( $spacing * 0.5 ) );
-			float: left;
-			margin-bottom: 0;
 
-			&:nth-child(2n+1) {
-				clear: left;
-			}
-
-			@include quantity-query( 2, "greater" ) {
-				width: 50%;
-			}
-
-		}
-
-		.entry-content {
-			@include rem( "margin", ( $line * 0.5 ) 0 0 );
-			@include font-size-line( "small" );
-			display: block;
-			text-align: left;
 		}
 
 	}

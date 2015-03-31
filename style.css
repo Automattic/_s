@@ -1995,28 +1995,8 @@ a:active {
 }
 @media (min-width: 500px) {
 	.index-posts .entry {
-		float: left;
-		max-width: 347px;
-		max-width: 19.27778rem;
-		margin-bottom: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
-	}
-	.index-posts .entry:nth-child(2n+1) {
-		clear: left;
-	}
-	.index-posts .entry:nth-last-child(n+2):first-child,
-	.index-posts .entry:nth-last-child(n+2):first-child ~ * {
-		width: 50%;
-	}
-	.index-posts .entry-content {
-		display: block;
-		margin: 14px 0 0;
-		margin: 0.77778rem 0 0;
-		font-size: 16px;
-		font-size: 0.88889rem;
-		line-height: 1.75;
-		text-align: left;
 	}
 }
 
@@ -2686,6 +2666,30 @@ object {
 	display: none;
 }
 @media (min-width: 500px) {
+	.category-yorklife .issue-section-posts .entry {
+		float: left;
+		max-width: 347px;
+		max-width: 19.27778rem;
+		margin-bottom: 0; 
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-child(2n+1) {
+		clear: left;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+2):first-child,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+2):first-child ~ * {
+		width: 50%;
+	}
+	.category-yorklife .issue-section-posts .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
 	.category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
 		display: block;
 	}
@@ -2791,9 +2795,65 @@ object {
 	color: #69bcc9;
 }
 
-.category-open-minds .issue-section-posts .entry {
-	margin-bottom: 28px;
-	margin-bottom: 1.55556rem;
+@media (min-width: 500px) {
+	.category-open-minds .issue-section-posts .issue-section-flex {
+		/* First article. */
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry {
+		max-width: 666px;
+		margin-right: auto; 
+		margin-left: auto;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
+		text-align: center;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-header {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
+		background: #69bcc9;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title {
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+		font-size: 28px;
+		font-size: 1.55556rem;
+		line-height: 1;
+		color: #fff;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle {
+		font-size: 24px;
+		font-size: 1.33333rem;
+		line-height: 1.16667;
+		color: #171717;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
+		margin-top: 14px;
+		margin-top: 0.77778rem;
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+		color: #171717;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div {
+		width: 100%;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+		clear: none;
+		float: left; 
+		width: 50%;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-child(2n+1) {
+		clear: left;
+	}
 }
 .category-open-minds .issue-section-posts .entry-title {
 	font-size: 24px;
@@ -2902,18 +2962,13 @@ object {
 		max-width: 50%;
 		margin-bottom: 0;
 		padding-right: 0;
-		padding-left: 0;
-		background: #69bcc9; 
+		padding-left: 0; 
 
 		-webkit-box-flex: 1;
 		-webkit-flex: 1 1 50%;
 		-moz-box-flex: 1;
 		-ms-flex: 1 1 50%;
 		flex: 1 1 50%;
-	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-header {
-		padding-bottom: 14px;
-		padding-bottom: 0.77778rem;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-image {
 		width: 100%;
@@ -2922,32 +2977,10 @@ object {
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
-		margin-left: 0; 
-		padding: 0 28px;
-		padding: 0 1.55556rem;
+		margin-left: 0;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
 		clear: left;
-		padding-top: 14px;
-		padding-top: 0.77778rem;
-		font-size: 28px;
-		font-size: 1.55556rem;
-		line-height: 1;
-		color: #fff;
-	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle {
-		font-size: 24px;
-		font-size: 1.33333rem;
-		line-height: 1.16667;
-		color: #171717;
-	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
-		margin-top: 14px;
-		margin-top: 0.77778rem;
-		font-size: 18px;
-		font-size: 1rem;
-		line-height: 1.55556;
-		color: #171717;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > div {
 		display: -webkit-box;
@@ -3259,6 +3292,30 @@ object {
 	display: none;
 }
 @media (min-width: 500px) {
+	.category-all-about-yu .issue-section-posts .entry {
+		float: left;
+		max-width: 347px;
+		max-width: 19.27778rem;
+		margin-bottom: 0; 
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-child(2n+1) {
+		clear: left;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+2):first-child,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+2):first-child ~ * {
+		width: 50%;
+	}
+	.category-all-about-yu .issue-section-posts .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
 	.category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
 		display: block;
 	}
@@ -3358,6 +3415,85 @@ object {
 .category-back-page .iis-caption .cat-links a,
 .category-back-page .slider-subtitle {
 	color: #e8cfeb;
+}
+.category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
+	display: none;
+}
+@media (min-width: 500px) {
+	.category-back-page .issue-section-posts .entry {
+		float: left;
+		max-width: 347px;
+		max-width: 19.27778rem;
+		margin-bottom: 0; 
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+	}
+	.category-back-page .issue-section-posts .entry:nth-child(2n+1) {
+		clear: left;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+2):first-child,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+2):first-child ~ * {
+		width: 50%;
+	}
+	.category-back-page .issue-section-posts .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
+	.category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
+		display: block;
+	}
+	.category-back-page .issue-section-posts .entry:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media (min-width: 900px) {
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
+		clear: none; 
+		width: 33%;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child .entry-image,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * .entry-image {
+		display: block;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
+		clear: right; 
+		float: right;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media (min-width: 1100px) {
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
+		width: 25%;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
+		clear: none; 
+		float: left;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
+		display: block;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4),
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) {
+		clear: right; 
+		float: right;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-image,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-image {
+		display: none;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */

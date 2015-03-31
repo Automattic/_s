@@ -64,4 +64,6 @@
 		color: $color__backpage;
 	}
 
+	@include issue-section-multicolumn-layout;
+
 }
