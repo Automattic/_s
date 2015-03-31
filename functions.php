@@ -51,7 +51,7 @@ add_action( 'admin_init', 'init_debug', 1000 );
  * Set the max content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 658; /* pixels */
+	$content_width = 672; /* pixels */
 }
 
 if ( ! function_exists( 'yumag_setup' ) ) :
@@ -108,6 +108,7 @@ function yumag_setup() {
 	/*
 	 * Setup image dimensions.
 	 */
+	add_image_size( 'yumag-content-photo-full', 672, 378, true );
 	add_image_size( 'yumag-author-photo', 150, 150, true );
 	add_image_size( 'yumag-featured-photo', 905, 509, true );
 	add_image_size( 'yumag-featured-photo-portrait', 474, 474, true );
