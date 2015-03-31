@@ -70,8 +70,21 @@
 
 .category-open-minds .issue-section-posts {
 
+	.entry-title {
+		@include font-size-line( "larger" );
+
+	}
+
+	.entry-content {
+		display: none;
+	}
+
 	@include media( "issue-2-columns" ) {
 
+		/*
+		 * The flex containers have been added, but it isn't wide enough for a
+		 * flexbox layout yet.
+		 */
 		.issue-section-flex {
 
 			/* First article. */
@@ -136,15 +149,6 @@
 		}
 
 
-	}
-
-	.entry-title {
-		@include font-size-line( "larger" );
-
-	}
-
-	.entry-content {
-		display: none;
 	}
 
 	@include media( "issue-4-columns" ) {

@@ -88,6 +88,75 @@
 		@include font-size-line( "huge" );
 	}
 
+	@include media( "issue-2-columns" ) {
+
+		/*
+		 * The flex containers have been added, but it isn't wide enough for a
+		 * flexbox layout yet.
+		 */
+		.issue-section-flex {
+
+			/* First article. */
+			> .entry {
+				max-width: 666px;
+				margin-left: auto;
+				margin-right: auto;
+
+				&,
+				.entry-title,
+				.entry-subtitle,
+				.entry-meta {
+					text-align: center;
+				}
+
+				.entry-header {
+					@include rem( "padding-bottom", ( $line * 0.5 ) );
+				}
+
+				.entry-title,
+				.entry-subtitle,
+				.entry-meta {
+					@include rem( "padding", 0 ( $spacing * 0.5 ) );
+					text-align: center;
+				}
+
+				.entry-title {
+					@include rem( "margin-bottom", ( $line * 0.5 ) );
+					@include rem( "padding-top", ( $line * 0.5 ) );
+					@include font-size-line( "enormous", 1.5 );
+				}
+
+				.entry-subtitle {
+					@include font-size-line( "larger" );
+				}
+
+				.entry-meta {
+					@include rem( "margin-top", ( $line * 0.5 ) );
+					@include font-size-line( "normal" );
+				}
+
+			}
+
+			> div {
+				width: 100%;
+
+				.entry {
+					width: 50%;
+					clear: none;
+					float: left;
+
+					&:nth-child(2n+1) {
+						clear: left;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
 	@include media( "issue-4-columns" ) {
 
 		.entry {
@@ -175,6 +244,12 @@
 				width: auto;
 			}
 
+			.entry-content {
+				@include font-size-line( "small" );
+				display: block;
+				margin-bottom: 0;
+			}
+
 			// Largest (featured) article.
 			> .entry:first-child {
 				flex: 2 2 50%;
@@ -187,9 +262,6 @@
 					padding-top: 0;
 				}
 
-				.entry-title,
-				.entry-subtitle,
-				.entry-meta,
 				.entry-content {
 					text-align: center;
 				}
@@ -200,10 +272,6 @@
 					text-align: center;
 				}
 
-				.entry-subtitle {
-					@include font-size-line( "larger" );
-				}
-
 			}
 
 			// Both sidebars.
@@ -212,6 +280,7 @@
 				background: $color__centrestage;
 
 				.entry {
+					width: 100%;
 
 					@include quantity-query( 2, "greater" ) {
 						// If there's 2 articles in the column, save space by
