@@ -47,7 +47,7 @@
 	.template-scrolling-left {
 
 		.entry-image {
-			@include rem( "left", 8.33333% );
+			left: 8.33333%;
 		}
 
 	}
@@ -56,7 +56,7 @@
 	.template-scrolling-right {
 
 		.entry-image {
-			@include rem( "right", 8.33333% );
+			right: 8.33333%;
 		}
 
 	}
@@ -89,5 +89,47 @@
 		}
 
 	}
+
+	.template-scrolling-left {
+
+		.size-thumbnail.alignleft {
+			position: relative;
+			left: -150px;
+			margin-right: -150px;
+		}
+
+	}
+
+	.template-scrolling-right {
+
+		.size-thumbnail.alignright {
+			position: relative;
+			right: -150px;
+			margin-left: -150px;
+		}
+
+	}
+
+}
+
+@include media( "main-spacing-3" ) {
+
+	// .template-scrolling-left {
+
+	// 	.alignleft {
+	// 		position: absolute;
+	// 		left: 8.33333%;
+	// 	}
+
+	// }
+
+	// .template-scrolling-right {
+
+	// 	.alignright {
+	// 		position: absolute;
+	// 		left: 50%;
+	// 	}
+
+	// }
 
 }

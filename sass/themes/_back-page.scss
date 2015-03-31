@@ -6,7 +6,12 @@
 	.dropcap,
 	.entry-subtitle,
 	.entry-content a,
-	.posted-on a {
+	.posted-on a,
+	.quote-source,
+	h3,
+	h4,
+	h5,
+	h6 {
 		color: $color__backpage__dark;
 	}
 

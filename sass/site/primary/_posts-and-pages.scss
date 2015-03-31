@@ -5,6 +5,7 @@
 .single-entry {
 
 	.entry-image {
+		@include rem( "margin-bottom", ( $line * 0.5 ) );
 		text-align: center;
 
 		img {

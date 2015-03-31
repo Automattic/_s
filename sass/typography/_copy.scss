@@ -9,7 +9,12 @@ i {
 }
 
 blockquote {
-	@include rem( "margin", 0 $spacing );
+	@include rem( "margin", 0 $spacing $line );
+
+	p {
+		@include rem( "margin-bottom", ( $line * 0.5 ) );
+	}
+
 }
 
 address {
@@ -98,4 +103,13 @@ big {
 		margin-left: 0;
 	}
 
+}
+
+.quote-source {
+	@include font-size-line( "small" );
+	font-style: normal;
+	font-weight: bold;
+	color: $grey__light;
+	text-transform: uppercase;
+	text-indent: 0 !important;
 }

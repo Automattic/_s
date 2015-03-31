@@ -354,8 +354,12 @@ i {
 }
 
 blockquote {
-	margin: 0 28px;
-	margin: 0 1.55556rem;
+	margin: 0 28px 28px;
+	margin: 0 1.55556rem 1.55556rem;
+}
+blockquote p {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
 }
 
 address {
@@ -453,6 +457,17 @@ big {
 .content-details ul,
 .content-details ol {
 	margin-left: 0;
+}
+
+.quote-source {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	text-indent: 0 !important; 
+	text-transform: uppercase;
+	color: #9696a0;
 }
 
 /* Add a little spacing at the edges of the editing area. */
@@ -716,6 +731,12 @@ a:active {
 	margin-left: auto;
 }
 
+/* Thumbnail image size. */
+.size-thumbnail {
+	-webkit-border-radius: 50% 50%;
+	border-radius: 50% 50%;
+}
+
 /* Overhang margins on non-mobile layouts */
 @media (min-width: 720px) {
 	.alignleft {
@@ -796,6 +817,8 @@ a:active {
 }
 
 .single-entry .entry-image {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
 	text-align: center;
 }
 .single-entry .entry-image img {

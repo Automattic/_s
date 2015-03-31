@@ -67,6 +67,11 @@ function yumag_tinymce_setup( $settings ) {
 			'block' => 'div',
 			'classes' => 'content-details',
 			'wrapper' => true
+		),
+		array(
+			'title' => _x( 'Quote source', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'p',
+			'classes' => 'quote-source'
 		)
 	);
 	$style_formats = array_merge( $style_formats, $new_styles );
@@ -104,7 +109,6 @@ function yumag_tinymce_buttons_row_1( $buttons ) {
 		'alignright',
 		'wp_more',
 		'strikethrough',
-		'hr',
 		'wpUserAvatar'
 	) );
 
@@ -131,7 +135,6 @@ function yumag_tinymce_buttons_row_2( $buttons ) {
 		'alignleft',
 		'aligncenter',
 		'alignright',
-		'hr',
 		'strikethrough'
 	);
 

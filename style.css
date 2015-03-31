@@ -385,8 +385,12 @@ i {
 }
 
 blockquote {
-	margin: 0 28px;
-	margin: 0 1.55556rem;
+	margin: 0 28px 28px;
+	margin: 0 1.55556rem 1.55556rem;
+}
+blockquote p {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
 }
 
 address {
@@ -484,6 +488,17 @@ big {
 .content-details ul,
 .content-details ol {
 	margin-left: 0;
+}
+
+.quote-source {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	text-indent: 0 !important; 
+	text-transform: uppercase;
+	color: #9696a0;
 }
 
 /*--------------------------------------------------------------
@@ -1168,6 +1183,12 @@ a:active {
 	margin-left: auto;
 }
 
+/* Thumbnail image size. */
+.size-thumbnail {
+	-webkit-border-radius: 50% 50%;
+	border-radius: 50% 50%;
+}
+
 /* Overhang margins on non-mobile layouts */
 @media (min-width: 720px) {
 	.alignleft {
@@ -1638,6 +1659,8 @@ a:active {
 }
 
 .single-entry .entry-image {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
 	text-align: center;
 }
 .single-entry .entry-image img {
@@ -2631,6 +2654,16 @@ object {
 	.template-scrolling-right .entry-image {
 		position: absolute;
 	}
+	.template-scrolling-left .size-thumbnail.alignleft {
+		position: relative;
+		left: -150px;
+		margin-right: -150px;
+	}
+	.template-scrolling-right .size-thumbnail.alignright {
+		position: relative;
+		right: -150px;
+		margin-left: -150px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2641,7 +2674,8 @@ object {
 .category-yorklife .category-description,
 .category-yorklife .dropcap,
 .category-yorklife .entry-content a,
-.category-yorklife .posted-on a {
+.category-yorklife .posted-on a,
+.category-yorklife .quote-source {
 	color: #bfb097;
 }
 .category-yorklife .entry-content a:hover,
@@ -2781,7 +2815,8 @@ object {
 .category-open-minds .lead,
 .category-open-minds .entry-subtitle,
 .category-open-minds .entry-content a,
-.category-open-minds .posted-on a {
+.category-open-minds .posted-on a,
+.category-open-minds .quote-source {
 	color: #3d9aa9;
 }
 .category-open-minds .entry-content a:hover,
@@ -3088,6 +3123,9 @@ object {
 .category-centre-stage .posted-on a:active {
 	color: #0f3b6b;
 }
+.category-centre-stage .quote-source {
+	color: #acab15;
+}
 .category-centre-stage .entry-title,
 .category-centre-stage .entry-subtitle,
 .category-centre-stage h3,
@@ -3378,7 +3416,12 @@ object {
 .category-all-about-yu .dropcap,
 .category-all-about-yu .entry-subtitle,
 .category-all-about-yu .entry-content a,
-.category-all-about-yu .posted-on a {
+.category-all-about-yu .posted-on a,
+.category-all-about-yu .quote-source,
+.category-all-about-yu h3,
+.category-all-about-yu h4,
+.category-all-about-yu h5,
+.category-all-about-yu h6 {
 	color: #67b46a;
 }
 .category-all-about-yu .entry-content a:hover,
@@ -3494,7 +3537,12 @@ object {
 .category-back-page .dropcap,
 .category-back-page .entry-subtitle,
 .category-back-page .entry-content a,
-.category-back-page .posted-on a {
+.category-back-page .posted-on a,
+.category-back-page .quote-source,
+.category-back-page h3,
+.category-back-page h4,
+.category-back-page h5,
+.category-back-page h6 {
 	color: #ce99d5;
 }
 .category-back-page .entry-content a:hover,
