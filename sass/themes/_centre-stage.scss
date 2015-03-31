@@ -1,9 +1,5 @@
 .category-centre-stage {
 
-	.dropcap {
-		color: $color__centrestage__dark;
-	}
-
 	.entry-content a,
 	.posted-on a {
 		color: $color__centrestage__darker;
@@ -32,11 +28,15 @@
 		color: $black;
 	}
 
+	.lead {
+		font-style: italic;
+		font-weight: normal;
+	}
+
 	.dropcap {
-		@include rem( "border", ( $line / 2 ) solid $black );
+		@include rem( "border", ( $line / 2 ) solid $color__centrestage );
 		font-family: $font-family__main;
-		background: $black;
-		color: $color__centrestage;
+		background: $color__centrestage;
 	}
 
 	// Section-specific heading styling (not used in tag/search/author pages.)
@@ -245,6 +245,7 @@
 			}
 
 			.entry-content {
+				@include rem( "margin-top", ( $line * 0.5 ) );
 				@include font-size-line( "small" );
 				display: block;
 				margin-bottom: 0;

@@ -4,6 +4,7 @@
 	.category-title a,
 	.category-description,
 	.dropcap,
+	.lead,
 	.entry-subtitle,
 	.entry-content a,
 	.posted-on a {
@@ -29,12 +30,6 @@
 	h6 {
 		letter-spacing: normal;
 		font-family: $font-family__main;
-	}
-
-	.lead {
-		@include font-size-line( "large" );
-		font-weight: bold;
-		color: $color__openminds__dark;
 	}
 
 	.dropcap {

@@ -438,18 +438,20 @@ big {
 
 /* Lead/lede. */
 .lead {
-	font-weight: normal; 
-	font-size: 24px;
-	font-size: 1.33333rem;
-	line-height: 1.16667;
+	font-weight: bold; 
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
 }
 
 /* Dropcaps. */
 .dropcap {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 	margin-right: 3px;
 	margin-left: -5px;
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* Calls-to-action. */
@@ -2777,6 +2779,7 @@ object {
 .category-open-minds .category-title a,
 .category-open-minds .category-description,
 .category-open-minds .dropcap,
+.category-open-minds .lead,
 .category-open-minds .entry-subtitle,
 .category-open-minds .entry-content a,
 .category-open-minds .posted-on a {
@@ -2798,13 +2801,6 @@ object {
 .category-open-minds h6 {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
-}
-.category-open-minds .lead {
-	font-weight: bold;
-	font-size: 21px;
-	font-size: 1.16667rem;
-	line-height: 1.33333;
-	color: #3d9aa9;
 }
 .category-open-minds hr,
 .category-open-minds.single-entry .entry-content:before,
@@ -3071,9 +3067,6 @@ object {
 	}
 }
 
-.category-centre-stage .dropcap {
-	color: #e8e640;
-}
 .category-centre-stage .entry-content a,
 .category-centre-stage .posted-on a {
 	color: #acab15;
@@ -3100,12 +3093,15 @@ object {
 .category-centre-stage .category-description {
 	color: #171717;
 }
+.category-centre-stage .lead {
+	font-style: italic;
+	font-weight: normal;
+}
 .category-centre-stage .dropcap {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
-	border: 14px solid #171717;
-	border: 0.77778rem solid #171717;
-	background: #171717;
-	color: #f0ef84;
+	border: 14px solid #f0ef84;
+	border: 0.77778rem solid #f0ef84;
+	background: #f0ef84;
 }
 .category-centre-stage.single-entry .entry-title,
 .category-centre-stage.single-entry .entry-subtitle,
@@ -3283,6 +3279,8 @@ object {
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex .entry-content {
 		display: block;
+		margin-top: 14px;
+		margin-top: 0.77778rem;
 		margin-bottom: 0; 
 		font-size: 16px;
 		font-size: 0.88889rem;
@@ -3382,9 +3380,6 @@ object {
 }
 .category-all-about-yu .footer a {
 	color: #448a47;
-}
-.category-all-about-yu .category-posts .entry-meta {
-	display: none;
 }
 .category-all-about-yu .iis-caption {
 	border-right-color: #9acd9c;

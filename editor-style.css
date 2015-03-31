@@ -407,18 +407,20 @@ big {
 
 /* Lead/lede. */
 .lead {
-	font-weight: normal; 
-	font-size: 24px;
-	font-size: 1.33333rem;
-	line-height: 1.16667;
+	font-weight: bold; 
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
 }
 
 /* Dropcaps. */
 .dropcap {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 	margin-right: 3px;
 	margin-left: -5px;
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
 }
 
 /* Calls-to-action. */

@@ -56,16 +56,17 @@ big {
 
 /* Lead/lede. */
 .lead {
-	@include font-size-line( "larger" );
-	font-weight: normal;
+	@include font-size-line( "large" );
+	font-weight: bold;
 }
 
 /* Dropcaps. */
 .dropcap {
+	box-sizing: content-box;
 	margin-left: -5px;
 	margin-right: 3px;
 	font-weight: bold;
-	font-family: $font-family__dropcap;
+	//font-family: $font-family__dropcap;
 }
 
 /* Calls-to-action. */
