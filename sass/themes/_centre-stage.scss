@@ -26,7 +26,7 @@
 		font-family: $font-family__main;
 	}
 
-	h3:before {
+	.entry-content h3:before {
 		content: '';
 		display: inline-block;
 		height: 2em;

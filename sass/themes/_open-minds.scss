@@ -253,6 +253,11 @@
 				width: auto;
 			}
 
+			.entry-content {
+				@include font-size-line( "small" );
+				margin-bottom: 0;
+			}
+
 			// Largest (featured) article.
 			// 1. Apply gutter using margins instead of padding, so the
 			//    entry-image can be flush left/right with the background

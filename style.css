@@ -3035,6 +3035,12 @@ object {
 		float: none;
 		width: auto;
 	}
+	.category-open-minds .issue-section-posts .issue-section-flex .entry-content {
+		margin-bottom: 0; 
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child {
 		max-width: 50%;
 		margin-right: 28px;
@@ -3135,7 +3141,7 @@ object {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
 }
-.category-centre-stage h3:before {
+.category-centre-stage .entry-content h3:before {
 	content: "";
 	display: inline-block;
 	width: 2em;
