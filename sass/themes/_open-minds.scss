@@ -148,7 +148,6 @@
 
 		}
 
-
 	}
 
 	@include media( "issue-4-columns" ) {
@@ -254,10 +253,11 @@
 			}
 
 			// Largest (featured) article.
-			// 1. Apply gutter to sub-elements instead of the entry itself, so
-			//    the entry-image can be flush left/right with the background
+			// 1. Apply gutter using margins instead of padding, so the
+			//    entry-image can be flush left/right with the background
 			//    colour.
 			> .entry:first-child {
+				@include rem( "margin-right", ( $gutter * 2 ) ); //* 1 */
 				flex: 1 1 50%;
 				max-width: 50%;
 				margin-bottom: 0;
@@ -291,11 +291,11 @@
 				max-width: 50%;
 
 				.entry {
-					@include rem( "padding-left", ( $spacing ) );
 					width: 100%;
 					max-width: 100%;
 					min-height: 0;
 					margin-bottom: 0;
+					padding-left: 0; // for alignment with the centre gutter.
 
 					.entry-image {
 						line-height: 0.5; /* fix for excess space under the image */

@@ -2966,6 +2966,8 @@ object {
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child {
 		max-width: 50%;
+		margin-right: 28px;
+		margin-right: 1.55556rem;
 		margin-bottom: 0;
 		padding-right: 0;
 		padding-left: 0; 
@@ -3018,9 +3020,8 @@ object {
 		width: 100%;
 		max-width: 100%;
 		min-height: 0;
-		margin-bottom: 0; 
-		padding-left: 28px;
-		padding-left: 1.55556rem;
+		margin-bottom: 0;
+		padding-left: 0;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > div .entry .entry-image {
 		line-height: 0.5;
