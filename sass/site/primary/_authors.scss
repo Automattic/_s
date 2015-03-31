@@ -1,6 +1,11 @@
 .author-bio-section {
 	@include rem( "margin-bottom", ( $spacing * 2 ) );
 	text-align: center;
+
+	p {
+		@include rem( "margin-bottom", ( $line * 0.5 ) );
+	}
+
 }
 
 .author-image {

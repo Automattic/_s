@@ -924,6 +924,11 @@ a:active {
 /* Post footer meta lines. */
 .posted-on {
 	display: block;
+	/* Leave space between posted-on meta and author name/bio. */
+}
+.single-entry .posted-on {
+	margin-top: 56px;
+	margin-top: 3.11111rem;
 }
 
 /* Read more link. */

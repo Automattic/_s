@@ -1766,6 +1766,11 @@ a:active {
 /* Post footer meta lines. */
 .posted-on {
 	display: block;
+	/* Leave space between posted-on meta and author name/bio. */
+}
+.single-entry .posted-on {
+	margin-top: 56px;
+	margin-top: 3.11111rem;
 }
 
 /* Read more link. */
@@ -2053,6 +2058,10 @@ a:active {
 	margin-bottom: 56px;
 	margin-bottom: 3.11111rem;
 	text-align: center;
+}
+.author-bio-section p {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
 }
 
 .author-image {

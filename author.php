@@ -12,6 +12,8 @@ $curauth = get_query_var( 'author_name' )
 	? get_user_by( 'slug', get_query_var( 'author_name' ) )
 	: get_userdata( get_query_var( 'author' ) );
 
+$curauth_student = yumag_author_student_details( $curauth->ID );
+
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -27,7 +29,10 @@ get_header(); ?>
 					<?php the_archive_title( '<h1 class="author-title">', '</h1>' ); ?>
 				</header><!-- .author-header -->
 				<div class="author-bio-content">
-					<?php printf( '<div class="author-description">%s</div>',
+					<?php if ( ! empty( $curauth_student ) ) {
+						printf( '<p class="author-student-details">(%s)</p>', $curauth_student );
+					} ?>
+					<?php printf( '<p class="author-description">%s</p>',
 						esc_html( $curauth->description ) ); ?>
 					<?php if ( ! empty( $curauth->user_url ) ) : ?>
 						<p class="author-website">

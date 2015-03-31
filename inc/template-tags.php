@@ -73,23 +73,30 @@ function yumag_author_box() {
 	if ( $author_id ) {
 		echo '<div class="entry-author">';
 
+		// Profile image.
 		$default_avatar = get_stylesheet_directory_uri() . '/assets/default-avatar-192.png';
+		printf( '<a class="entry-author-avatar" href="%1$s" title="%2$s">%3$s</a>',
+			get_author_posts_url( $author_id ),
+			get_the_author(),
+			get_avatar( $author_id, 96, $default_avatar )
+		);
 
-		if ( function_exists( 'get_wp_user_avatar' ) ) {
-			printf( '<a class="entry-author-avatar" href="%1$s" title="%2$s">%3$s</a>',
-				get_author_posts_url( $author_id ),
-				get_the_author(),
-				get_avatar( $author_id, 96, $default_avatar )
-			);
-
-		}
-
+		// Name.
 		echo '<div class="entry-author-byline">';
 		printf( _x( 'by %s', 'post author', 'yumag' ),
 			'<a class="entry-author-name" href="' . get_author_posts_url( $author_id ) . '">' . get_the_author() . '</a>'
 		);
 		echo '</div>';
 
+		// College/Dept./Class-Of.
+		$uoy_details = yumag_author_student_details();
+		if ( ! empty( $uoy_details ) ) {
+			printf( '<div class="entry-author-student-details">(%s)</div>',
+				$uoy_details
+			);
+		}
+
+		// Bio.
 		$about = get_the_author_meta( 'description' );
 		if ( $about ) {
 			echo '<p class="entry-author-description">' . $about . '</p>';
@@ -100,6 +107,45 @@ function yumag_author_box() {
 		echo '</div>';
 	}
 
+}
+endif;
+
+if ( ! function_exists( 'yumag_author_student_details' ) ) :
+/**
+ * Get the specified user's Department, College, and Class-Of.
+ *
+ * @since 1.0.0
+ *
+ * @param int $author_id Optional. The user ID of the author whose details
+ *                       should be retrieved. If 0|False, get details for the
+ *                       current author.
+ * @return string The author's college/dept/class-of details, comma-separated.
+ */
+function yumag_author_student_details( $author_id = 0 ) {
+
+	if ( ! function_exists( 'types_render_usermeta_field' ) ) {
+		return '';
+	}
+
+	// Get the correct author details set up.
+	$opts = array();
+	if ( $author_id ) {
+		$opts['user_id'] = (int) $author_id;
+	}
+
+	$uoy_details = array();
+	foreach( array( 'department', 'college', 'class_of' ) as $field ) {
+		$$field = types_render_usermeta_field( "uoy_$field", array() );
+		if ( ! empty( $$field ) && ( 'None' !== $$field ) ) {
+			$uoy_details[] = $$field;
+		}
+	}
+
+	if ( ! empty( $uoy_details ) ) {
+		return implode( ', ', $uoy_details );
+	} else {
+		return '';
+	}
 }
 endif;
 

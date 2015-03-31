@@ -154,6 +154,12 @@
 /* Post footer meta lines. */
 .posted-on {
 	display: block;
+
+	/* Leave space between posted-on meta and author name/bio. */
+	.single-entry & {
+		@include rem( "margin-top", $line * 2 );
+	}
+
 }
 
 /* Read more link. */
