@@ -15,5 +15,6 @@
 embed,
 iframe,
 object {
+	display: block; /* Fix for text-indent being applied to containing p. */
 	max-width: 100%;
 }

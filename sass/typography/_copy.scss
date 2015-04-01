@@ -123,7 +123,19 @@ big {
 	background: $grey__lightest;
 
 	p {
-		@include rem( "margin-bottom", ( $line * 0.5 ) );
+		margin-bottom: 0;
+	}
+
+	/* Images */
+	.alignnone {
+		@include rem( "margin-left", ( $gutter * -1 ) );
+		@include rem( "margin-right", ( $gutter * -1 ) );
+		max-width: calc( 100% + ( #{$gutter} * 2 ) );
+
+		&:first-child {
+			@include rem( "margin-top", ( $line * -0.5 ) );
+		}
+
 	}
 
 	h3,
@@ -150,9 +162,10 @@ big {
 		color: $color__main;
 	}
 
-	.call-to-action.call-to-action { /* specificity hack for colours */
-		@include rem( "margin-top", ( $line * 0.5 ) );
-		border-color-top: $color__main;
+	.single-entry & .call-to-action { /* specificity hack for colours */
+		margin-top: $line__px;
+		margin-top: calc( ( #{$line} * 1.5 ) - #{$height__rule} );
+		border-top-color: $color__main;
 		color: $color__main;
 	}
 
@@ -165,6 +178,17 @@ big {
 		clear: right;
 		float: right;
 		width: 50%;
+
+		/* Fix text indenting when the box is not in the flow of the content. */
+		p:not(.lead) + & + p {
+			text-indent: $text-indent;
+		}
+
+		.alignnone:first-child {
+			@include rem( "margin-top", ( $line * -1 ) );
+			@include rem( "margin-left", ( $gutter * -2 ) );
+		}
+
 	}
 
 }

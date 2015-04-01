@@ -8,6 +8,30 @@
 
 }
 
+@include media( "wide-content-column" ) {
+
+	/* Switch coloured boxes to left hand side. */
+	.template-scrolling-left .textbox {
+		@include rem( "margin-right", $spacing );
+		clear: left;
+		float: left;
+		margin-left: 0;
+	}
+
+}
+
+@include media( "main-spacing-1" ) {
+
+	.template-scrolling-left .textbox {
+		left: auto;
+		right: 10%;
+		margin-left: 0;
+		margin-right: -5%;
+		margin-right: calc( -10% + #{$spacing} );
+	}
+
+}
+
 @include media( "main-spacing-2" ) {
 
 	.site-main {
@@ -98,6 +122,12 @@
 			margin-right: -150px;
 		}
 
+		.textbox {
+			right: 55%;
+			right: calc( 50% + ( #{$spacing} * 2 ) );
+			margin-right: -50%;
+		}
+
 	}
 
 	.template-scrolling-right {
@@ -106,6 +136,12 @@
 			position: relative;
 			right: -150px;
 			margin-left: -150px;
+		}
+
+		.textbox {
+			left: 55%;
+			left: calc( 50% + ( #{$spacing} * 2 ) );
+			margin-left: -50%;
 		}
 
 	}

@@ -512,10 +512,22 @@ big {
 	font-size: 0.88889rem;
 	line-height: 1.75;
 	background: #e0e0e4;
+	/* Images */
 }
 .textbox p {
-	margin-bottom: 14px;
-	margin-bottom: 0.77778rem;
+	margin-bottom: 0;
+}
+.textbox .alignnone {
+	max-width: -webkit-calc( 100% + ( 14px * 2 ));
+	max-width: calc( 100% + ( 14px * 2 )); 
+	margin-right: -14px;
+	margin-right: -0.77778rem;
+	margin-left: -14px;
+	margin-left: -0.77778rem;
+}
+.textbox .alignnone:first-child {
+	margin-top: -14px;
+	margin-top: -0.77778rem;
 }
 .textbox h3,
 .textbox h4,
@@ -542,22 +554,32 @@ big {
 	margin-bottom: 0.77778rem;
 	color: #171717;
 }
-.textbox .call-to-action.call-to-action {
+.single-entry .textbox .call-to-action {
 	/* specificity hack for colours */
-	margin-top: 14px;
-	margin-top: 0.77778rem;
-	color: #171717; 
-
-	border-color-top: #171717;
+	margin-top: 28px;
+	margin-top: -webkit-calc( ( 1.55556rem * 1.5 ) - 0.77778rem);
+	margin-top: calc( ( 1.55556rem * 1.5 ) - 0.77778rem);
+	border-top-color: #171717;
+	color: #171717;
 }
 
 @media (min-width: 600px) {
 	.textbox {
 		clear: right;
 		float: right;
-		width: 50%; 
+		width: 50%;
 		margin-left: 28px;
 		margin-left: 1.55556rem;
+		/* Fix text indenting when the box is not in the flow of the content. */
+	}
+	p:not(.lead) + .textbox + p {
+		text-indent: 4%;
+	}
+	.textbox .alignnone:first-child {
+		margin-top: -28px;
+		margin-top: -1.55556rem;
+		margin-left: -28px;
+		margin-left: -1.55556rem;
 	}
 }
 
@@ -2309,6 +2331,8 @@ a:active {
 embed,
 iframe,
 object {
+	display: block;
+	/* Fix for text-indent being applied to containing p. */
 	max-width: 100%;
 }
 
@@ -2679,6 +2703,28 @@ object {
 	max-width: 474px;
 }
 
+@media (min-width: 600px) {
+	/* Switch coloured boxes to left hand side. */
+	.template-scrolling-left .textbox {
+		clear: left;
+		float: left;
+		margin-right: 28px;
+		margin-right: 1.55556rem;
+		margin-left: 0;
+	}
+}
+
+@media (min-width: 800px) {
+	.template-scrolling-left .textbox {
+		right: 10%;
+		left: auto;
+		margin-right: -5%;
+		margin-right: -webkit-calc( -10% + 28px);
+		margin-right: calc( -10% + 28px); 
+		margin-left: 0;
+	}
+}
+
 @media (min-width: 1020px) {
 	.site-main {
 		position: relative;
@@ -2738,10 +2784,22 @@ object {
 		left: -150px;
 		margin-right: -150px;
 	}
+	.template-scrolling-left .textbox {
+		right: 55%;
+		right: -webkit-calc( 50% + ( 28px * 2 ));
+		right: calc( 50% + ( 28px * 2 ));
+		margin-right: -50%;
+	}
 	.template-scrolling-right .size-thumbnail.alignright {
 		position: relative;
 		right: -150px;
 		margin-left: -150px;
+	}
+	.template-scrolling-right .textbox {
+		left: 55%;
+		left: -webkit-calc( 50% + ( 28px * 2 ));
+		left: calc( 50% + ( 28px * 2 ));
+		margin-left: -50%;
 	}
 }
 
@@ -2949,6 +3007,7 @@ object {
 }
 .category-open-minds .textbox {
 	background: #69bcc9;
+	color: #fff;
 }
 
 .category-open-minds .issue-section-posts .entry-title {

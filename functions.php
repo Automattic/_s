@@ -109,6 +109,7 @@ function yumag_setup() {
 	 * Setup image dimensions.
 	 */
 	add_image_size( 'yumag-content-photo-full', 672, 378, true );
+	add_image_size( 'yumag-content-photo-half', 336, 9999 );
 	add_image_size( 'yumag-author-photo', 150, 150, true );
 	add_image_size( 'yumag-featured-photo', 905, 509, true );
 	add_image_size( 'yumag-featured-photo-portrait', 474, 474, true );

@@ -182,8 +182,8 @@ function yumag_image_size_choices( $sizes ) {
 
 	// Add the theme-specific sizes in.
 	return array_merge( $sizes, array(
-		'yumag-content-photo-full' => _x( 'Full width', 'Image size name', 'yumag' )
-		//'yumag-photo-small' => _x( 'Small', 'Image size name', 'yumag' )
+		'yumag-content-photo-full' => _x( 'Full width', 'Image size name', 'yumag' ),
+		'yumag-content-photo-half' => _x( 'Half width', 'Image size name', 'yumag' )
 	) );
 }
 add_filter( 'image_size_names_choose', 'yumag_image_size_choices', 9999 );
