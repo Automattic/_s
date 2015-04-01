@@ -51,6 +51,10 @@
 		color: $color__allaboutyu;
 	}
 
+	.textbox {
+		background: $color__allaboutyu;
+	}
+
 	@include issue-section-multicolumn-layout;
 
 }

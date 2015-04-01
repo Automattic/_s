@@ -57,9 +57,9 @@ function yumag_tinymce_setup( $settings ) {
 			'classes' => 'lead'
 		),
 		array(
-			'title' => _x( 'Call-to-action', 'TinyMCE styles dropdown', 'yumag' ),
+			'title' => _x( 'Textbox', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'aside',
-			'classes' => 'call-to-action',
+			'classes' => 'textbox',
 			'wrapper' => true
 		),
 		array(
@@ -72,11 +72,16 @@ function yumag_tinymce_setup( $settings ) {
 			'title' => _x( 'Quote source', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'p',
 			'classes' => 'quote-source'
+		),
+		array(
+			'title' => _x( 'Call-to-action', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'aside',
+			'classes' => 'call-to-action',
+			'wrapper' => true
 		)
 	);
 	$style_formats = array_merge( $style_formats, $new_styles );
 	$settings['style_formats'] = json_encode( $style_formats );
-
 
 	return $settings;
 }

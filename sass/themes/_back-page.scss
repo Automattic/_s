@@ -72,6 +72,10 @@
 		color: $color__backpage;
 	}
 
+	.textbox {
+		background: $color__backpage;
+	}
+
 	@include issue-section-multicolumn-layout;
 
 }

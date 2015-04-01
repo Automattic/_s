@@ -34,9 +34,14 @@ function yumag_body_classes( $classes ) {
 		}
 	}
 
+	// Add template class. This is removed/replaced if it's a 2-col template.
+	if ( is_single() ) {
+		$classes[] = 'template-one-column';
+	}
+
 	return $classes;
 }
-add_filter( 'body_class', 'yumag_body_classes' );
+add_filter( 'body_class', 'yumag_body_classes', 9 );
 endif;
 
 if ( ! function_exists( 'yumag_template_classes_single_fixed_left' ) ) :
@@ -49,6 +54,7 @@ if ( ! function_exists( 'yumag_template_classes_single_fixed_left' ) ) :
  * @return array
  */
 function yumag_template_classes_single_fixed_left( $classes ) {
+	$classes = array_diff( $classes, array( 'template-one-column' ) );
 	$classes[] = 'template-two-columns';
 	$classes[] = 'template-fixed-left';
 	return $classes;
@@ -65,6 +71,7 @@ if ( ! function_exists( 'yumag_template_classes_single_fixed_right' ) ) :
  * @return array
  */
 function yumag_template_classes_single_fixed_right( $classes ) {
+	$classes = array_diff( $classes, array( 'template-one-column' ) );
 	$classes[] = 'template-two-columns';
 	$classes[] = 'template-fixed-right';
 	return $classes;
@@ -81,6 +88,7 @@ if ( ! function_exists( 'yumag_template_classes_single_scrolling_left' ) ) :
  * @return array
  */
 function yumag_template_classes_single_scrolling_left( $classes ) {
+	$classes = array_diff( $classes, array( 'template-one-column' ) );
 	$classes[] = 'template-two-columns';
 	$classes[] = 'template-scrolling-left';
 	return $classes;
@@ -97,6 +105,7 @@ if ( ! function_exists( 'yumag_template_classes_single_scrolling_right' ) ) :
  * @return array
  */
 function yumag_template_classes_single_scrolling_right( $classes ) {
+	$classes = array_diff( $classes, array( 'template-one-column' ) );
 	$classes[] = 'template-two-columns';
 	$classes[] = 'template-scrolling-right';
 	return $classes;

@@ -113,3 +113,79 @@ big {
 	text-transform: uppercase;
 	text-indent: 0 !important;
 }
+
+/* Coloured box within article. */
+.textbox {
+	@include rem( "margin", 0 0 $line );
+	@include rem( "padding", ( $line * 0.5 ) $gutter );
+	@include font-size-line( "small" );
+	width: 100%;
+	background: $grey__lightest;
+
+	p {
+		@include rem( "margin-bottom", ( $line * 0.5 ) );
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include rem( "margin", $line 0 ( $line * 0.5 ) );
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+	}
+
+	:last-child {
+		margin-bottom: 0;
+	}
+
+	hr {
+		@include rem( "margin-top", ( $line * 0.5 ) );
+		@include rem( "margin-bottom", ( $line * 0.5 ) );
+		width: 100%;
+		height: 2px;
+		color: $color__main;
+	}
+
+	.call-to-action.call-to-action { /* specificity hack for colours */
+		@include rem( "margin-top", ( $line * 0.5 ) );
+		border-color-top: $color__main;
+		color: $color__main;
+	}
+
+}
+
+@include media( "wide-content-column" ) {
+
+	.textbox {
+		@include rem( "margin-left", $spacing );
+		clear: right;
+		float: right;
+		width: 50%;
+	}
+
+}
+
+@include media( "main-spacing-1" ) {
+
+	.textbox {
+		position: relative;
+		left: 10%;
+		margin-left: -5%;
+		margin-left: calc( -10% + #{$spacing} );
+	}
+
+}
+
+@include media( "main-spacing-2" ) {
+
+	.template-one-column .textbox {
+		left: 20%;
+		margin-left: -15%;
+		margin-left: calc( -20% + #{$spacing} );
+	}
+
+}

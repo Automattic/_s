@@ -48,6 +48,7 @@ $height__rule: ( $line / 2 );
 // how the site adapts at that breakpoint, to make code reading easier.
 $breakpoints: (
 	"issue-2-columns"      :  500px,
+	"wide-content-column"  :  600px,
 	"main-spacing"         :  720px,
     "main-spacing-1"       :  800px,
     "issue-3-columns"      :  900px,

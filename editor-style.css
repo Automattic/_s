@@ -470,6 +470,85 @@ big {
 	color: #9696a0;
 }
 
+/* Coloured box within article. */
+.textbox {
+	width: 100%;
+	margin: 0 0 28px;
+	margin: 0 0 1.55556rem;
+	padding: 14px 14px;
+	padding: 0.77778rem 0.77778rem;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
+	background: #e0e0e4;
+}
+.textbox p {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
+}
+.textbox h3,
+.textbox h4,
+.textbox h5,
+.textbox h6 {
+	margin: 28px 0 14px;
+	margin: 1.55556rem 0 0.77778rem;
+}
+.textbox h3:first-child,
+.textbox h4:first-child,
+.textbox h5:first-child,
+.textbox h6:first-child {
+	margin-top: 0;
+}
+.textbox :last-child {
+	margin-bottom: 0;
+}
+.textbox hr {
+	width: 100%;
+	height: 2px;
+	margin-top: 14px;
+	margin-top: 0.77778rem;
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
+	color: #171717;
+}
+.textbox .call-to-action.call-to-action {
+	/* specificity hack for colours */
+	margin-top: 14px;
+	margin-top: 0.77778rem;
+	color: #171717; 
+
+	border-color-top: #171717;
+}
+
+@media (min-width: 600px) {
+	.textbox {
+		clear: right;
+		float: right;
+		width: 50%; 
+		margin-left: 28px;
+		margin-left: 1.55556rem;
+	}
+}
+
+@media (min-width: 800px) {
+	.textbox {
+		position: relative;
+		left: 10%;
+		margin-left: -5%;
+		margin-left: -webkit-calc( -10% + 28px);
+		margin-left: calc( -10% + 28px);
+	}
+}
+
+@media (min-width: 1020px) {
+	.template-one-column .textbox {
+		left: 20%;
+		margin-left: -15%;
+		margin-left: -webkit-calc( -20% + 28px);
+		margin-left: calc( -20% + 28px);
+	}
+}
+
 /* Add a little spacing at the edges of the editing area. */
 #tinymce {
 	margin: 14px;

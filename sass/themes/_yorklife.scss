@@ -83,6 +83,10 @@
 		color: $color__yorklife;
 	}
 
+	.textbox {
+		background: $color__yorklife;
+	}
+
 	@include issue-section-multicolumn-layout;
 
 }
