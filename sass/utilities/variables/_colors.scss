@@ -2,23 +2,34 @@
 // Colors
 // -------------------------------------------------------------
 
-$color-background-body: #fff;
-$color-background-screen-reader: #f1f1f1;
-$color-background-hr: #ccc;
-$color-background-button: #e6e6e6;
-$color-background-pre: #eee;
-$color-background-ins: #fff9c0;
+$color-blue: #21759b;
+$color-dark-gray: #666666;
+$color-darker-gray: #333333;
+$color-darkest-gray: #111111;
+$color-light-gray: #cccccc;
+$color-lighter-gray: #eeeeee;
+$color-whitesmoke: #f1f1f1;
+$color-light-yellow: #fff9c0;
+$color-black: #000000;
+$color-white: #ffffff;
 
-$color-text-screen-reader: #21759b;
-$color-text-input: #666;
-$color-text-input-focus: #111;
-$color-link: royalblue;
-$color-link-visited: purple;
-$color-link-hover: midnightblue;
-$color-text-main: #404040;
+$color-background-body: $color-white;
+$color-background-screen-reader: $color-whitesmoke;
+$color-background-hr: $color-light-gray;
+$color-background-button: $color-blue;
+$color-background-pre: $color-lighter-gray;
+$color-background-ins: $color-light-yellow;
 
-$color-border-button: #ccc #ccc #bbb;
-$color-border-button-hover: #ccc #bbb #aaa;
-$color-border-button-focus: #aaa #bbb #bbb;
-$color-border-input: #ccc;
-$color-border-abbr: #666;
+$color-text-screen-reader: $color-blue;
+$color-text-input: $color-dark-gray;
+$color-text-input-focus: $color-darkest-gray;
+$color-link: $color-blue;
+$color-link-visited: $color-blue;
+$color-link-hover: $color-blue;
+$color-text-main: $color-darkest-gray;
+
+$color-border-button: $color-light-gray;
+$color-border-button-hover: $color-light-gray;
+$color-border-button-focus: $color-light-gray;
+$color-border-input: $color-light-gray;
+$color-border-abbr: $color-dark-gray;
