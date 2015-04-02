@@ -1,5 +1,24 @@
-// Media Queries using Sass List Maps
-// Usage: @include wider-than(desktop);
+////
+/// @author Damon Cook
+/// @group wds
+////
+
+/// Media Queries using Sass List Maps
+/// Define our breakpoints in $breakpoints variable and assign key value pairs in ems.
+///
+/// @example scss - Basic usage
+///    h1 {
+///        margin-left: 20px;
+///
+///        @include wider-than(desktop) {
+///            margin-left: 40px;
+///        }
+///
+/// @output @media (min-width: 85.375em) {}
+///
+/// @param {String} $screen-size - Typical values are phone portrait, phone landscape, desktop, large-desktop. [See available Breakpoints](#variable-breakpoints)
+///
+/// @requires $breakpoints
 
 @mixin wider-than($screen-size) {
 	@if map-has-key($breakpoints, $screen-size) {
