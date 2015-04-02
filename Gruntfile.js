@@ -69,7 +69,7 @@ module.exports = function(grunt) {
 						'undefined': 'Bourbon & Neat'
 					},
 					description: 'Sass Documentation, which includes Bourbon and Neat documentation as well.',
-					sort: ['group<'],
+					sort: ['group>'],
 				},
 			},
 		},
