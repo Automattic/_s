@@ -1,7 +1,7 @@
 _s
 ===
 
-[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as sub-module with our new project boilerplate [wd_s](https://github.com/WebDevStudios/wd_s), however this can also be used as a stand-alone theme. Your pull requests are welcome!
+[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as our internal starter theme. Your pull requests are welcome!
 
 # Pre-Installation
 
