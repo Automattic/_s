@@ -35,6 +35,7 @@
     "grunt-githooks": "latest",
     "grunt-newer": "latest",
     "grunt-phpcs": "latest",
+    "grunt-sassdoc": "latest",
     "grunt-shell": "latest",
     "grunt-spritesmith": "latest",
     "grunt-update-submodules": "latest",
