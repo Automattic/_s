@@ -1,17 +1,24 @@
-//--------------------------------------------------------------
-// Font Awesome Icon Map
-// -------------------------------------------------------------
+/// Declares FontAwesome as our chosen font icon family
+/// Used by @mixin icons()
+/// @author Damon Cook
+/// @group fontawesomeicons
+/// @see icons
 
-// Map icon names to font unicode characters
-// see @mixin in _icon-font-awesome.scss
-//
-// Example usage:
-//
-//    .menu-toggle {
-//        @include icon(before, favicon) {
-//            padding-left: 3px;
-//        }
-//    }
+$font-icon: "FontAwesome";
+
+
+/// Map icon names to font unicode characters
+///
+/// @example scss - Basic Usage
+///
+///    .menu-toggle {
+///        @include icon(before, navicon) {
+///           padding-left: 3px;
+///       }
+///   }
+///
+/// @group fontawesomeicons
+/// @see icons
 
 $icons: (
 
