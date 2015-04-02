@@ -1,17 +1,11 @@
-//--------------------------------------------------------------
-// Breakpoints
-// -------------------------------------------------------------
-
-// Define our media query breakpoints in $breakpoints variable
-// and assign key value pairs in ems.
-//
-// see @mixin in _media-queries.scss
-
+// Media Query Breakpoints
+/// Breakpoints Sass list map for Media Queries @mixin
+/// @group wds
 $breakpoints: (
-	large-desktop: 105em,    // 1680px
-	desktop: 85.375em,       // 1366px
-	tablet-landscape: 64em,  // 1024px
-	tablet-portrait: 48em,   // 768px
-	phone-landscape: 40em,   // 640px
-	phone-portrait: 22.5em,  // 360px
+		large-desktop: 105em, // 1680px
+		desktop: 85.375em, // 1366px
+		tablet-landscape: 64em, // 1024px
+		tablet-portrait: 48em, // 768px
+		phone-landscape: 40em, // 640px
+		phone-portrait: 22.5em, // 360px
 );

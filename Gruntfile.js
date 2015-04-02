@@ -49,6 +49,30 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		
+		sassdoc: {
+			default: {
+				src: [
+					'sass/**/*.scss',
+					'bower_components/bourbon/app/assets/stylesheets',
+					'bower_components/neat/app/assets/stylesheets'
+				],
+				options: {
+					dest: './sassdoc/',
+					display: {
+						access: ['public'],
+						watermark: false
+					},
+					groups: {
+						fontawesomeicons: 'Font Awesome Icons',
+						wds: 'WebDevStudios',
+						'undefined': 'Bourbon & Neat'
+					},
+					description: 'Sass Documentation, which includes Bourbon and Neat documentation as well.',
+					sort: ['group>'],
+				},
+			},
+		},
 
 		autoprefixer: {
 			options: {

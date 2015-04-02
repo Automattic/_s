@@ -1,40 +1,81 @@
-// For adding font icons to elements using CSS pseudo-elements
-// http://jaydenseric.com/blog/fun-with-sass-and-font-icons
-//
-// Example usage:
-//    .my-cool-title {
-//        @include icon(before, '\f04b') {
-//            padding-left: 3px;
-//        }
-//    }
-//
-// 	BE SURE TO ADD YOUR ICON TO _variables.scss, and then you can do this
-//    .menu-toggle {
-//        @include icon(before, favicon) {
-//            padding-left: 3px;
-//        }
-//    }
-//
-//  Be sure to declare your $font-icon font-family in variables.scss
+// ----------------------------------------------------------------------
+
+  // Icons using pseudo-selectors and Font Awesome
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Damon Cook
+/// @group fontawesomeicons
+////
+
+/// For adding Font Awesome font icons to elements using CSS Pseudo Elements
+///
+/// @link http://jaydenseric.com/blog/fun-with-sass-and-font-icons
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
+///
+/// @arg {String} $position [before] Set the Pseudo Elements. Accepted arguments: before, after, both
+/// @arg {Boolean | String} $icon [false] - Unicode character, e.g. \f0e0
+/// @arg {Boolean | String} $styles [true] - A place to put margin, padding, etc.
+///
+/// @requires icons
+/// @requires $font-icon
+///
+/// @content [a place for custom styles]
+/// @example scss - Basic Usage Sass
+///    [href^="mailto"] {
+///       @include icon(before, email) {
+///            padding-left: 3px;
+///        }
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    [href^="mailto"]:before {
+///        font-family: 'FontAwesome';
+///        font-weight: normal;
+///        font-style: normal;
+///
+///        padding-left: 3px;
+///
+///        content: '\f0e0';
+///
+///        speak: none;
+///    }
+/// 
+/// @example markup - Advanced Usage Sass
+/// // Icons :BEFORE and :AFTER. This should not come up often. Here is a convenient way to handle it: 
+/// // Example HTML: <button class="expand">Expand Horizontally</button>
+///
+///    .expand {
+///        @include icon(both) {
+///            color: gray;
+///        }
+///        @include icon(before, arrow-left, false) {
+///            margin-right: 10px;
+///        }
+///        @include icon(after, arrow-right, false) {
+///            margin-left: 10px;
+///        }
+///    }
 
 @mixin icon($position: before, $icon: false, $styles: true) {
-	@if $position == both {
-		$position: 'before, &:after';
-	}
-	// Either a :before or :after pseudo-element, or both, defaulting to :before
-	&:#{$position} {
-		@if $icon {
-			// A particular icon has been specified
-			content: "#{map-get($icons, $icon)}";
-		}
-		@if $styles {
-			// Supportive icon styles required
-			speak: none;
-			font-style: normal;
-			font-weight: normal;
-			font-family: $font-icon;
-		}
-		// Include any extra rules supplied for the pseudo-element
-		@content;
-	}
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            // A particular icon has been specified
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            // Supportive icon styles required
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: $font-icon;
+        }
+        // Include any extra rules supplied for the pseudo-element
+        @content;
+    }
 }

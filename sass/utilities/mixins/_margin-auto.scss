@@ -1,0 +1,30 @@
+// ----------------------------------------------------------------------
+
+  // Margin auto
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Damon Cook
+/// @group wds
+////
+
+/// Horizontally center a block element
+///
+/// @example scss - Basic Usage Sass
+///    .center-my-block-thingie {
+///        @include margin-auto();
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .center-my-block-thingie {
+///        display: block;
+///        margin-left: auto;
+///        margin-right: auto;
+///    }
+
+@mixin margin-auto {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
