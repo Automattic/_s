@@ -3,19 +3,19 @@
 //--------------------------------------------------------------
 
 .alignleft {
-    @include margin(0 24px 0 0);
+	@include margin(0 24px 0 0);
 
-    display: inline;
-    float: left;
+	display: inline;
+	float: left;
 }
 
 .alignright {
-    @include margin(0 0 0 24px);
+	@include margin(0 0 0 24px);
 
-    display: inline;
-    float: right;
+	display: inline;
+	float: right;
 }
 
 .aligncenter {
-    @include margin-auto;
+	@include margin-auto;
 }
