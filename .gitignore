@@ -5,6 +5,7 @@ backup-db/
 cache/
 backups/
 node_modules/
+bower_components/
 .idea/
 
 .htaccess
