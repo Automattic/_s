@@ -507,13 +507,8 @@ a:active {
 	color: midnightblue;
 }
 
-a:focus {
+a:focus { /* a :focus state is crucial for keyboard accessibility: http://24ways.org/2009/dont-lose-your-focus/ */
 	outline: thin dotted;
-}
-
-a:hover,
-a:active {
-	outline: 0;
 }
 
 /*--------------------------------------------------------------
