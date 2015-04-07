@@ -486,7 +486,8 @@ big {
 .textbox p {
 	margin-bottom: 0;
 }
-.textbox .alignnone {
+.textbox .alignnone,
+.textbox .aligncenter {
 	max-width: -webkit-calc( 100% + ( 14px * 2 ));
 	max-width: calc( 100% + ( 14px * 2 )); 
 	margin-right: -14px;
@@ -494,7 +495,8 @@ big {
 	margin-left: -14px;
 	margin-left: -0.77778rem;
 }
-.textbox .alignnone:first-child {
+.textbox .alignnone:first-child,
+.textbox .aligncenter:first-child {
 	margin-top: -14px;
 	margin-top: -0.77778rem;
 }
@@ -544,7 +546,7 @@ big {
 	p:not(.lead) + .textbox + p {
 		text-indent: 4%;
 	}
-	.textbox .alignnone:first-child {
+	.textbox .alignnone:first-child .aligncenter:first-child {
 		margin-top: -28px;
 		margin-top: -1.55556rem;
 		margin-left: -28px;

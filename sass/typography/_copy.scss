@@ -127,7 +127,8 @@ big {
 	}
 
 	/* Images */
-	.alignnone {
+	.alignnone,
+	.aligncenter {
 		@include rem( "margin-left", ( $gutter * -1 ) );
 		@include rem( "margin-right", ( $gutter * -1 ) );
 		max-width: calc( 100% + ( #{$gutter} * 2 ) );
@@ -184,7 +185,8 @@ big {
 			text-indent: $text-indent;
 		}
 
-		.alignnone:first-child {
+		.alignnone:first-child
+		.aligncenter:first-child {
 			@include rem( "margin-top", ( $line * -1 ) );
 			@include rem( "margin-left", ( $gutter * -2 ) );
 		}
