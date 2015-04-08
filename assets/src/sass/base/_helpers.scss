@@ -41,9 +41,6 @@
 
     }
 }
-.visuallyhidden {
-    @extend %visuallyhidden;
-}
 
 %invisible {
     /*
@@ -80,12 +77,62 @@
     *zoom: 1;
 }
 
-.subheading {
-    color: lighten( $font-color, 30% );
+/**
+ * Cross browser support for word wrapping
+ * Reference: http://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+ */
+%word-wrap {
+    -ms-word-break: break-all;
+        word-break: break-all;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
 }
 
-.fine-print {
-    @include rem( 'font-size', 12px );
+
+
+
+
+/* Visibility
+   ========================================================================== */
+
+.visuallyhidden {
+    @extend %visuallyhidden;
+}
+
+
+
+
+
+/* Corners
+   ========================================================================== */
+
+.corner {
+    border-radius: 4px;
+}
+
+
+
+
+
+/* Borders
+   ========================================================================== */
+
+.border {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border: 1px solid $alto;
+}
+
+.border--bottom {
+    border-top: none;
+    border-right: none;
+    border-left: none;
 }
 
 
@@ -99,8 +146,32 @@
     text-align: center;
 }
 
+.text-center--mobile {
+    @include mq( $until: tablet ) {
+        text-align: center;
+    }
+}
+
+.text-center--desktop {
+    @include mq( $from: tablet ) {
+        text-align: center;
+    }
+}
+
 .text-right {
     text-align: right;
+}
+
+.text-right--mobile {
+    @include mq( $until: tablet ) {
+        text-align: right;
+    }
+}
+
+.text-right--desktop {
+    @include mq( $from: tablet ) {
+        text-align: right;
+    }
 }
 
 .text-capitalize {
@@ -117,6 +188,19 @@
 
 /* Alignment
    ========================================================================== */
+
+.pull-center {
+    margin: 0 auto;
+    display: block;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
 
 .alignleft {
     @include mq( $from: tablet ) {
@@ -141,5 +225,24 @@
         clear: both;
         display: block;
         margin: 0 auto;
+    }
+}
+
+
+
+
+
+/* Hidden
+   ========================================================================== */
+
+.hide-on-mobile {
+    @include mq( $until: tablet ) {
+        display: none !important;
+    }
+}
+
+.hide-on-desktop {
+    @include mq( $from: tablet ) {
+        display: none !important;
     }
 }
