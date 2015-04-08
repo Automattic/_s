@@ -206,7 +206,7 @@ function _s_pagination( $echo = true ) {
 
    $r .= '    </ul>' . "\n";
 
-   $page_count = bws_result_count_output( array( 'echo' => false ) );
+   $page_count = _s_result_count_output( array( 'echo' => false ) );
 
    $r .= '    ' . $page_count . "\n";
    $r .= '</div>' . "\n";
@@ -216,6 +216,97 @@ function _s_pagination( $echo = true ) {
    } else {
        return $r;
    }
+}
+endif;
+
+
+
+
+
+if ( ! function_exists( '_s_result_count' ) ) :
+/**
+ * Result Count Meta
+ * @param  boolean $echo echo or return result
+ * @return string        output
+ */
+function _s_result_count( $echo = true ) {
+
+    $r = '';
+
+    global $wp_query;
+
+    $total_pages  = $wp_query->max_num_pages;
+    $total_items  = $wp_query->found_posts;
+    $current_page = max( 1, get_query_var('paged') );
+    $per_page     = $wp_query->get( 'posts_per_page' );
+    $page_start   = ( $per_page * $current_page ) - $per_page + 1;
+    $page_end     = min( $total_items, $per_page * $current_page );
+
+    if ( 1 == $total_items ) :
+
+        __( 'Showing: 1 Result', '_s' );
+
+    elseif ( $total_items <= $per_page || -1 == $per_page ) :
+
+        sprintf( __( 'Showing: %d Results', '_s' ), $total_items );
+
+    else :
+
+        $r .= 'Showing: ' . sprintf( _x( '%1$d&ndash;%2$d of %3$d', '%1$d = page_start, %2$d = page_end, %3$d = total_items', '_s' ), $page_start, $page_end, $total_items ) . "\n";
+
+    endif;
+
+    if ( $echo ) {
+        echo $r;
+    } else {
+        return $r;
+    }
+
+}
+endif;
+
+
+
+
+
+if ( ! function_exists( '_s_result_count_output' ) ) :
+/**
+ * Result Count Meta Output
+ * @param array $args options
+ * @return string           html output
+ */
+function _s_result_count_output( $args = array() ) {
+
+    $r = '';
+
+    $defaults = array (
+        'container'       => 'div',
+        'container_class' => '',
+        'echo'            => true
+    );
+
+    // Parse incoming $args into an array and merge it with $defaults
+    $args = wp_parse_args( $args, $defaults );
+
+    // OPTIONAL: Declare each item in $args as its own variable i.e. $type, $before.
+    extract( $args, EXTR_SKIP );
+
+    $result = _s_result_count( false );
+
+    if ( $result ) :
+
+        $classes = ( $container_class ) ? ' ' . $container_class : '';
+
+        $r = '<' . $container . ' class="page-count' . $classes . '">' . $result . '</' . $container . '>';
+
+    endif;
+
+    if ( $echo ) {
+        echo $r;
+    } else {
+        return $r;
+    }
+
 }
 endif;
 
