@@ -12,32 +12,75 @@
 }
 
 // Baseline, measured in pixels
+//
 // The value should be the same as the font-size value for the html element
 // If the html element's font-size is set to 62.5% (of the browser's default font-size of 16px),
 // then the variable below would be 10px.
-$baseline-px: 16px;
+//
+// @Bug - 04/08/2015
+//
+// Version: Libsass 3.1 (grunt-sass 0.18.0 or greater).
+// Issue: Can't calculate values with units (e.g. $baseline-px / 1rem * 1;)
+// Error: 3.9px/px/rem is not a valid CSS value
+// Fix: Libsass 3.2 will resolve issue
+// Temporary Fix: https://github.com/rowanmanning/rem
 
-@mixin rem( $property, $px-values ) {
-    // Convert the baseline into rems
-    $baseline-rem: $baseline-px / 1rem;
-    // Print the first line in pixel values
-    #{$property}: $px-values;
-    // If there is only one (numeric) value, return the property/value line for it.
-    @if type-of( $px-values ) == "number" {
-        #{$property}: $px-values / $baseline-rem;
-    } @else {
-        // Create an empty list that we can dump values into
-        $rem-values: unquote("");
-        @each $value in $px-values {
-            // If the value is zero, return 0
-            @if $value == 0 {
-                $rem-values: append( $rem-values, $value );
-            }
-            @else {
-                $rem-values: append( $rem-values, $value / $baseline-rem );
-            }
-        }
-        // Return the property and its list of converted values
-        #{$property}: $rem-values;
+// Baseline
+$baseline-px: 16 !default;
+
+// Get the rem equivalent of a value
+@function rem-value( $value ) {
+
+    // If value is a number, do some magic rem stuff
+    @if type-of( $value ) == "number" and unit( $value ) == "px" {
+
+        // Slightly hacky way of removing unit
+        $unitless-value: $value / ( $value * 0 + 1 );
+
+        // Return rem value
+        @return #{$unitless-value / $baseline-px}rem;
     }
+
+    // Non-numeric value, just return
+    @return $value;
 }
+
+// Rem mixin
+@mixin rem( $property, $values ) {
+
+    // Loop over pixel values to get rem values
+    $rem-values: unquote("");
+
+    @each $value in $values {
+        $rem-values: append( $rem-values, rem-value( $value ) );
+    }
+
+    // Set the pixel/rem values
+    #{$property}: $values;
+    #{$property}: $rem-values;
+}
+
+// @mixin rem( $property, $px-values ) {
+//     // Convert the baseline into rems
+//     $baseline-rem: $baseline-px / 1rem;
+//     // Print the first line in pixel values
+//     #{$property}: $px-values;
+//     // If there is only one (numeric) value, return the property/value line for it.
+//     @if type-of( $px-values ) == "number" {
+//         #{$property}: $px-values / $baseline-rem;
+//     } @else {
+//         // Create an empty list that we can dump values into
+//         $rem-values: unquote("");
+//         @each $value in $px-values {
+//             // If the value is zero, return 0
+//             @if $value == 0 {
+//                 $rem-values: append( $rem-values, $value );
+//             }
+//             @else {
+//                 $rem-values: append( $rem-values, $value / $baseline-rem );
+//             }
+//         }
+//         // Return the property and its list of converted values
+//         #{$property}: $rem-values;
+//     }
+// }
