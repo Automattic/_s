@@ -37,7 +37,8 @@ $mq-static-breakpoint: site;
 @import "base/normalize",
         "base/hbp5",
         "base/helpers",
-        "base/base";
+        "base/base",
+        "base/typography";
 
 // ==========================================================================
 // Layout
@@ -60,6 +61,7 @@ $mq-static-breakpoint: site;
 @import "modules/modules",
         "modules/comments",
         "modules/buttons",
+        "modules/forms",
         "modules/notifications",
         "modules/offcanvas",
         "modules/pagination",

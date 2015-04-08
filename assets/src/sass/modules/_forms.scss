@@ -1,0 +1,68 @@
+
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+/* General
+   ========================================================================== */
+
+::-webkit-input-placeholder {
+   color: $alto;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: $alto;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+   color: $alto;
+}
+
+:-ms-input-placeholder {
+   color: $alto;
+}
+
+input,
+textarea {
+    margin: 0 0 1em 0;
+    padding: .75em .5em;
+    width: 100%;
+    height: 2.572em;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid $alto;
+    @include transition( border .15s, box-shadow .15s, background .15s );
+}
+
+input:focus,
+textarea:focus {
+    border-color: $endeavour;
+    box-shadow: 0 0 5px $endeavour;
+    outline: none;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    margin: 0;
+    height: auto;
+    width: auto;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+button {
+    @include transition( all .15s );
+}
+
+/**
+ * Normalize sets as 'content-box'
+ */
+input[type="search"] {
+  @include box-sizing( border-box ); /* 1 */
+}
+
+textarea {
+    height: auto;
+    min-height: 50px;
+}

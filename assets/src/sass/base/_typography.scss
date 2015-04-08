@@ -1,0 +1,147 @@
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+/**
+ * Type uses Modular Scale - Major Third (1.250)
+ * http://type-scale.com/?size=16&scale=1.250&text=A%20Visual%20Type%20Scale&webfont=Libre+Baskerville&font-family=%27Libre%20Baskerville%27,%20serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-family: $font-family-secondary;
+    text-transform: uppercase;
+    color: $font-color;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+h1, .h1 {
+    margin: 0 0 .5em;
+    @include rem( 'font-size', 39px ); // 2.441em
+}
+
+h2, .h2 {
+    margin: 1.414em 0 .5em;
+    @include rem( 'font-size', 31px ); // 1.953em
+}
+
+h3, .h3 {
+    margin: 1.414em 0 .5em;
+    @include rem( 'font-size', 25px ); // 1.563em
+}
+
+h4, .h4 {
+    margin: 1.414em 0 .5em;
+    @include rem( 'font-size', 20px ); // 1.25em
+}
+
+h5, .h5 {
+    margin: 1em 0;
+    @include rem( 'font-size', 18px ); // 1.125em
+}
+
+h6, .h6 {
+    margin: 1.2em 0;
+    @include rem( 'font-size', 16px ); // 1em
+}
+
+p {
+    margin: 0 0 1.3em;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: $font-family;
+    color: $font-color;
+}
+
+a {
+    text-decoration: none;
+    color: $link-color;
+    @include transition-property( color, background, border );
+    @include transition-duration( .15s );
+    &:hover {
+        color: $charcoal;
+    }
+}
+
+blockquote {
+    margin: 0;
+    padding: 0 0 0 30px;
+    border-left: 3px solid $alto;
+    font-style: italic;
+}
+
+dt {
+    margin-bottom: .3em;
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 .75em 0;
+}
+
+
+
+
+
+/* Heading
+   ========================================================================== */
+
+.heading {}
+
+.heading--center {
+    text-align: center;
+}
+
+.heading--right {
+    text-align: right;
+}
+
+.heading--trim {
+    margin: 0;
+}
+
+.heading--snug {
+    margin-top: 0;
+}
+
+.heading--light {
+    color: white;
+}
+
+.heading--normal {
+    text-transform: none;
+}
+
+
+
+
+
+/* Subheading
+   ========================================================================== */
+
+.subheading {
+    color: lighten( $font-color, 30% );
+}
+
+
+
+
+
+/* Formatting
+   ========================================================================== */
+
+.fine-print {
+    @include rem( 'font-size', 12px );
+}
+
+.text-accent {
+    @include rem( 'font-size', 22px );
+}

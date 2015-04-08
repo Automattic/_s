@@ -30,7 +30,8 @@
 @import "base/normalize",
         "base/hbp5",
         "base/helpers",
-        "base/base";
+        "base/base",
+        "base/typography";
 
 // ==========================================================================
 // Layout
@@ -53,6 +54,7 @@
 @import "modules/modules",
         "modules/comments",
         "modules/buttons",
+        "modules/forms",
         "modules/mq-check",
         "modules/notifications",
         "modules/offcanvas",
