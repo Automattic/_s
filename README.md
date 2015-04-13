@@ -1,11 +1,11 @@
-_s
+WebDevStudio's _s
 ===
 
 [WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as our internal starter theme. Your pull requests are welcome!
 
 # Pre-Installation
 
-Basic knowledge of the command line and the following dependencies are required to use wd_s:
+Basic knowledge of the command line and the following dependencies are required to use _s:
 
 - Node ([http://nodejs.org/](http://nodejs.org/))
 - Ruby ([http://rubyinstaller.org/](http://rubyinstaller.org/))
@@ -27,7 +27,7 @@ The easiest way to get started, is by using the [Yeoman](http://yeoman.io/) gene
 ##### 3) Install the _s generator and build a theme
 `npm install -g generator-s && yo s`
 
-That's it! You're ready to start using [Grunt](https://github.com/WebDevStudios/wd_s/blob/master/README.md#using-grunt)!
+That's it! You're ready to start using [Grunt](https://github.com/WebDevStudios/_s/blob/master/README.md#using-grunt)!
 
 
 ## Manual Installation
