@@ -22,7 +22,7 @@
 }
 
 .comment-content a {
-	word-wrap: break-word;
+	@include word-break(keep-all);
 }
 
 .bypostauthor {
