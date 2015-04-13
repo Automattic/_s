@@ -292,21 +292,6 @@ textarea {
 	color: #171717;
 }
 
-/*
- * Only use one font variant (bold, no italics) when text is set in Adobe
- * Caslon Pro, since we don't load the other variants for page weight reasons.
- */
-.site-title {
-	font-weight: bold;
-	font-family: Times, "Times New Roman", serif;
-}
-.site-title,
-.site-title em,
-.site-title i,
-.site-title dfn {
-	font-style: normal;
-}
-
 /* Post- or widget-title level of heading. */
 h1,
 h2 {
@@ -337,7 +322,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-transform: uppercase;
 }
 
@@ -465,7 +450,7 @@ big {
 	padding-top: 14px;
 	padding-top: 0.77778rem;
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 0.77778rem solid #ccc;
 }
 
@@ -476,7 +461,7 @@ big {
 	padding: 14px 0;
 	padding: 0.77778rem 0;
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 2px dotted #ccc;
 	border-bottom: 2px solid #ccc;
 }
@@ -513,6 +498,7 @@ big {
 	line-height: 1.75;
 	background: #e0e0e4;
 	/* Images */
+	/* Override subheadings' decorative coloured squares. */
 }
 .textbox p {
 	margin-bottom: 0;
@@ -564,6 +550,9 @@ big {
 	border-top-color: #171717;
 	color: #171717;
 }
+.entry-content.entry-content .textbox h3:before {
+	display: none;
+}
 
 @media (min-width: 600px) {
 	.textbox {
@@ -611,6 +600,9 @@ html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+
+	-webkit-font-smoothing: subpixel-antialiased;
+	/* Fix for a flash of differently-aliased text during homepage slider transitions. */
 }
 
 /*
@@ -672,7 +664,7 @@ cite {
 	font-style: normal;
 	font-weight: bold;
 	font-size: 0.9em;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -704,7 +696,7 @@ figcaption,
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
 }
 
@@ -894,7 +886,8 @@ a:active {
 .category-open-minds .footer a,
 .category-centre-stage .footer a,
 .category-all-about-yu .footer a,
-.category-back-page .footer a {
+.category-back-page .footer a,
+.post-type-archive-yumag_notice .cat-links a {
 	border-bottom-color: transparent;
 }
 .entry-title-link:hover,
@@ -961,7 +954,7 @@ a:active {
 	list-style: none;
 	font-size: 16px;
 	font-size: 0.88889rem;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -1039,10 +1032,11 @@ a:active {
 	font-size: 1rem;
 	line-height: 84px;
 	line-height: 4.66667rem;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
+	outline: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	border: 0;
@@ -1674,7 +1668,7 @@ a:active {
 	margin-right: 0.1em;
 	font-size: 3em;
 	line-height: 1;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	color: #e0e0e4;
 }
 
@@ -1685,7 +1679,7 @@ a:active {
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	vertical-align: top; 
 	text-transform: uppercase;
 	border: 0;
@@ -1724,7 +1718,7 @@ a:active {
 }
 .widget,
 .widget a {
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 }
 .widget select {
 	max-width: 100%;
@@ -1860,7 +1854,7 @@ a:active {
 
 /* Footer author. */
 .entry-author {
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
 	/* The author's name */
 }
@@ -1934,7 +1928,7 @@ a:active {
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 }
 
 /* 11.3 Taxonomies
@@ -1968,7 +1962,7 @@ a:active {
 .search-term,
 .archive-term {
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif; 
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
@@ -1997,7 +1991,7 @@ a:active {
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -2039,7 +2033,7 @@ a:active {
 	font-size: 32px;
 	font-size: 1.77778rem;
 	line-height: 1.3125;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
@@ -2055,7 +2049,7 @@ a:active {
 	margin-top: -14px;
 	margin-top: -0.77778rem;
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
 }
 
@@ -2140,7 +2134,7 @@ a:active {
 	font-size: 14px;
 	font-size: 0.77778rem;
 	line-height: 2;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 }
 .archive:not(.tax-pp_issue) .index-posts .read-more,
 .search-results .index-posts .read-more {
@@ -2267,7 +2261,7 @@ a:active {
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif; 
 	/* 1 */
 	text-align: center;
 	background: #e0e0e4;
@@ -2627,7 +2621,7 @@ object {
 }
 .iis-caption .cat-links {
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em;
 }
 .iis-caption .cat-links.cat-links a {
@@ -2837,7 +2831,7 @@ object {
 .category-yorklife.single-entry .entry-title,
 .category-yorklife .category-posts .entry-title,
 .category-yorklife .issue-section-posts .entry-title {
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif; 
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: uppercase;
 }
 .category-yorklife .category-posts .entry-title,
@@ -2877,8 +2871,7 @@ object {
 @media (min-width: 500px) {
 	.category-yorklife .issue-section-posts .entry {
 		float: left;
-		max-width: 347px;
-		max-width: 19.27778rem;
+		width: 50%;
 		margin-bottom: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
@@ -2886,9 +2879,10 @@ object {
 	.category-yorklife .issue-section-posts .entry:nth-child(2n+1) {
 		clear: left;
 	}
-	.category-yorklife .issue-section-posts .entry:nth-last-child(n+2):first-child,
-	.category-yorklife .issue-section-posts .entry:nth-last-child(n+2):first-child ~ * {
-		width: 50%;
+	.category-yorklife .issue-section-posts .entry:nth-last-child(1):first-child,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(1):first-child ~ * {
+		/* Centre single articles */
+		margin-left: 25%;
 	}
 	.category-yorklife .issue-section-posts .entry-content {
 		display: block;
@@ -2951,6 +2945,9 @@ object {
 	}
 }
 
+.category-open-minds {
+	/* Blue square beside subheading. */
+}
 .category-open-minds .category-title,
 .category-open-minds .category-title a,
 .category-open-minds .category-description,
@@ -2977,6 +2974,15 @@ object {
 .category-open-minds h6 {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
+}
+.category-open-minds .entry-content h3:before {
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin-right: 0.5em;
+	margin-left: -1.5em;
+	background: #69bcc9;
 }
 .category-open-minds .dropcap {
 	margin-right: 7px;
@@ -3263,6 +3269,9 @@ object {
 	}
 }
 
+.category-centre-stage {
+	/* Yellow square behind first letter of subheading. */
+}
 .category-centre-stage .entry-content a,
 .category-centre-stage .posted-on a {
 	color: #acab15;
@@ -3575,6 +3584,9 @@ object {
 	}
 }
 
+.category-all-about-yu {
+	/* Green/black square next to first letter of subheading. */
+}
 .category-all-about-yu .category-title,
 .category-all-about-yu .category-title a,
 .category-all-about-yu .category-description,
@@ -3596,6 +3608,15 @@ object {
 .category-all-about-yu .posted-on a:focus,
 .category-all-about-yu .posted-on a:active {
 	color: #0f3b6b;
+}
+.category-all-about-yu .entry-content h3:before {
+	content: "";
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	margin-right: 0.5em;
+	margin-left: -1.5em;
+	background: #9acd9c;
 }
 .category-all-about-yu hr,
 .category-all-about-yu.single-entry .entry-content:before,
@@ -3625,8 +3646,7 @@ object {
 @media (min-width: 500px) {
 	.category-all-about-yu .issue-section-posts .entry {
 		float: left;
-		max-width: 347px;
-		max-width: 19.27778rem;
+		width: 50%;
 		margin-bottom: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
@@ -3634,9 +3654,10 @@ object {
 	.category-all-about-yu .issue-section-posts .entry:nth-child(2n+1) {
 		clear: left;
 	}
-	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+2):first-child,
-	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+2):first-child ~ * {
-		width: 50%;
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(1):first-child,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(1):first-child ~ * {
+		/* Centre single articles */
+		margin-left: 25%;
 	}
 	.category-all-about-yu .issue-section-posts .entry-content {
 		display: block;
@@ -3724,7 +3745,7 @@ object {
 .category-back-page.single-entry .entry-title,
 .category-back-page .category-posts .entry-title,
 .category-back-page .index-section-posts .entry-title {
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 }
 .category-back-page .dropcap {
 	margin-right: 7px;
@@ -3764,8 +3785,7 @@ object {
 @media (min-width: 500px) {
 	.category-back-page .issue-section-posts .entry {
 		float: left;
-		max-width: 347px;
-		max-width: 19.27778rem;
+		width: 50%;
 		margin-bottom: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
@@ -3773,9 +3793,10 @@ object {
 	.category-back-page .issue-section-posts .entry:nth-child(2n+1) {
 		clear: left;
 	}
-	.category-back-page .issue-section-posts .entry:nth-last-child(n+2):first-child,
-	.category-back-page .issue-section-posts .entry:nth-last-child(n+2):first-child ~ * {
-		width: 50%;
+	.category-back-page .issue-section-posts .entry:nth-last-child(1):first-child,
+	.category-back-page .issue-section-posts .entry:nth-last-child(1):first-child ~ * {
+		/* Centre single articles */
+		margin-left: 25%;
 	}
 	.category-back-page .issue-section-posts .entry-content {
 		display: block;
@@ -3836,6 +3857,55 @@ object {
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-image {
 		display: none;
 	}
+}
+
+.post-type-archive-yumag_notice .category-description {
+	color: #67b46a;
+}
+.post-type-archive-yumag_notice .category-header:before {
+	background: #9acd9c;
+}
+.post-type-archive-yumag_notice .index-content .index-posts .yumag_notice {
+	/* Specificity hack */
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
+}
+.post-type-archive-yumag_notice .entry-title {
+	font-weight: bold; 
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.55556;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+	text-transform: uppercase;
+}
+.post-type-archive-yumag_notice .entry-author-student-details {
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.55556;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+}
+.post-type-archive-yumag_notice p {
+	margin-bottom: 0;
+}
+.post-type-archive-yumag_notice p:not(.notice-label) + p:not(.notice-label) {
+	text-indent: 4%;
+}
+.post-type-archive-yumag_notice .index-posts .yumag_notice .entry-footer {
+	/* Specificity hack */
+	margin-top: 14px;
+	margin-top: 0.77778rem;
+}
+.post-type-archive-yumag_notice .notice-label {
+	font-weight: bold;
+	color: #67b46a;
+}
+.post-type-archive-yumag_notice .cat-links a {
+	color: #67b46a;
+}
+.post-type-archive-yumag_notice .cat-links a:hover,
+.post-type-archive-yumag_notice .cat-links a:focus,
+.post-type-archive-yumag_notice .cat-links a:active {
+	color: #0f3b6b;
 }
 
 /*# sourceMappingURL=style.css.map */

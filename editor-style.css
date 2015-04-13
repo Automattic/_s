@@ -272,10 +272,6 @@ textarea {
 	color: #171717;
 }
 
-/*
- * Only use one font variant (bold, no italics) when text is set in Adobe
- * Caslon Pro, since we don't load the other variants for page weight reasons.
- */
 /* Post- or widget-title level of heading. */
 h1,
 h2 {
@@ -306,7 +302,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-transform: uppercase;
 }
 
@@ -434,7 +430,7 @@ big {
 	padding-top: 14px;
 	padding-top: 0.77778rem;
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 0.77778rem solid #ccc;
 }
 
@@ -445,7 +441,7 @@ big {
 	padding: 14px 0;
 	padding: 0.77778rem 0;
 	font-weight: bold;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 2px dotted #ccc;
 	border-bottom: 2px solid #ccc;
 }
@@ -482,6 +478,7 @@ big {
 	line-height: 1.75;
 	background: #e0e0e4;
 	/* Images */
+	/* Override subheadings' decorative coloured squares. */
 }
 .textbox p {
 	margin-bottom: 0;
@@ -532,6 +529,9 @@ big {
 	margin-top: calc( ( 1.55556rem * 1.5 ) - 0.77778rem);
 	border-top-color: #171717;
 	color: #171717;
+}
+.entry-content.entry-content .textbox h3:before {
+	display: none;
 }
 
 @media (min-width: 600px) {
@@ -586,6 +586,9 @@ html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+
+	-webkit-font-smoothing: subpixel-antialiased;
+	/* Fix for a flash of differently-aliased text during homepage slider transitions. */
 }
 
 /*
@@ -647,7 +650,7 @@ cite {
 	font-style: normal;
 	font-weight: bold;
 	font-size: 0.9em;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -679,7 +682,7 @@ figcaption,
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
 }
 
@@ -1018,7 +1021,7 @@ a:active {
 
 /* Footer author. */
 .entry-author {
-	font-family: "Lato", "Proxima Nova", Corbel, Helvetica, sans-serif;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
 	/* The author's name */
 }
