@@ -642,32 +642,32 @@ img {
 	max-width: 100%;
 }
 
-/* line 30, sass/base/_media.scss */
+/* line 31, sass/base/_media.scss */
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 0 auto;
 }
 
-/* line 35, sass/base/_media.scss */
+/* line 36, sass/base/_media.scss */
 
 .wp-caption .wp-caption-text {
 	margin: 12px 0;
 }
 
-/* line 40, sass/base/_media.scss */
+/* line 41, sass/base/_media.scss */
 
 .wp-caption-text {
 	text-align: center;
 }
 
-/* line 46, sass/base/_media.scss */
+/* line 47, sass/base/_media.scss */
 
 .gallery {
 	margin: 0 0 24px;
 }
 
-/* line 50, sass/base/_media.scss */
+/* line 51, sass/base/_media.scss */
 
 .gallery-item {
 	height: auto;
@@ -677,55 +677,55 @@ img {
 	vertical-align: top;
 }
 
-/* line 57, sass/base/_media.scss */
+/* line 58, sass/base/_media.scss */
 
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
 
-/* line 61, sass/base/_media.scss */
+/* line 62, sass/base/_media.scss */
 
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
 }
 
-/* line 65, sass/base/_media.scss */
+/* line 66, sass/base/_media.scss */
 
 .gallery-columns-4 .gallery-item {
 	max-width: 25%;
 }
 
-/* line 69, sass/base/_media.scss */
+/* line 70, sass/base/_media.scss */
 
 .gallery-columns-5 .gallery-item {
 	max-width: 20%;
 }
 
-/* line 73, sass/base/_media.scss */
+/* line 74, sass/base/_media.scss */
 
 .gallery-columns-6 .gallery-item {
 	max-width: 16.66%;
 }
 
-/* line 77, sass/base/_media.scss */
+/* line 78, sass/base/_media.scss */
 
 .gallery-columns-7 .gallery-item {
 	max-width: 14.28%;
 }
 
-/* line 81, sass/base/_media.scss */
+/* line 82, sass/base/_media.scss */
 
 .gallery-columns-8 .gallery-item {
 	max-width: 12.5%;
 }
 
-/* line 85, sass/base/_media.scss */
+/* line 86, sass/base/_media.scss */
 
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
 
-/* line 90, sass/base/_media.scss */
+/* line 91, sass/base/_media.scss */
 
 .gallery-caption {
 	display: block;
