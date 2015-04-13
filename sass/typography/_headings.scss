@@ -1,20 +1,3 @@
-/*
- * Only use one font variant (bold, no italics) when text is set in Adobe
- * Caslon Pro, since we don't load the other variants for page weight reasons.
- */
-%title-font {
-	font-weight: bold;
-	font-family: $font-family__title;
-
-	&,
-	em,
-	i,
-	dfn {
-		font-style: normal;
-	}
-
-}
-
 /* Post- or widget-title level of heading. */
 h1,
 h2 {
