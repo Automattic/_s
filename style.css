@@ -880,37 +880,38 @@ a:active {
 /* line 7, sass/modules/_content.scss */
 
 .entry-title {
-	font-size: 2.25rem;
 	word-wrap: break-word;
+	word-break: keep-all;
+	font-size: 2.25rem;
 }
 
-/* line 12, sass/modules/_content.scss */
+/* line 13, sass/modules/_content.scss */
 
 .sticky {
 	display: block;
 }
 
-/* line 16, sass/modules/_content.scss */
+/* line 17, sass/modules/_content.scss */
 
 .hentry {
 	margin: 0 0 24px;
 }
 
-/* line 20, sass/modules/_content.scss */
+/* line 21, sass/modules/_content.scss */
 
 .byline,
 .updated:not(.published) {
 	display: none;
 }
 
-/* line 25, sass/modules/_content.scss */
+/* line 26, sass/modules/_content.scss */
 
 .single .byline,
 .group-blog .byline {
 	display: inline;
 }
 
-/* line 30, sass/modules/_content.scss */
+/* line 31, sass/modules/_content.scss */
 
 .page-content,
 .entry-content,
@@ -918,20 +919,20 @@ a:active {
 	margin: 24px 0 0;
 }
 
-/* line 36, sass/modules/_content.scss */
+/* line 37, sass/modules/_content.scss */
 
 .page-links {
 	margin: 0 0 24px;
 	clear: both;
 }
 
-/* line 42, sass/modules/_content.scss */
+/* line 43, sass/modules/_content.scss */
 
 .edit-link {
 	margin: 0 24px;
 }
 
-/* line 48, sass/modules/_content.scss */
+/* line 49, sass/modules/_content.scss */
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
