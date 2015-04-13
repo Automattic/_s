@@ -43,6 +43,7 @@ a {
 
 	// Menu area
 	ul {
+		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -65,15 +66,18 @@ a {
 			// Sub-menu items
 			li {
 
-				&:hover > ul {
+				&:hover > ul,
+				&.focus > ul{
 					left: 100%;
 				}
 			}
 
-			:hover > a {
+			:hover > a,
+			.focus > a {
 			}
 
-			a:hover {
+			a:hover,
+			a.focus {
 			}
 		}
 
@@ -83,7 +87,8 @@ a {
 		}
 
 		// Display sub-menu on hover
-		li:hover > ul {
+		li:hover > ul,
+		li.focus > ul {
 			left: auto;
 		}
 	}
@@ -93,7 +98,8 @@ a {
 		float: left;
 		position: relative;
 
-		&:hover > a {
+		&:hover > a,
+		&.focus > a {
 		}
 	}
 
@@ -110,19 +116,18 @@ a {
 }
 
 // Small menu
-
-.menu-toggle {
-	display: none;
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
 	}
 
 	.main-navigation ul {
-		display: none;
+		display: block;
 	}
 }
 
