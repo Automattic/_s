@@ -149,6 +149,38 @@ function yumag_author_student_details( $author_id = 0 ) {
 }
 endif;
 
+if ( ! function_exists( 'yumag_notice_student_details' ) ) :
+/**
+ * Get the Submission contributor's Department, College, and Class-Of.
+ *
+ * @since 1.0.0
+ *
+ * @return string The contributor's education details as a comma-separated list.
+ */
+function yumag_notice_student_details() {
+
+	if ( ! function_exists( 'types_render_field' ) || ( 'yumag_notice' !== get_post_type() ) ) {
+		return '';
+	}
+
+	$post_id = get_the_ID();
+
+	$uoy_details = array();
+	foreach( array( 'department', 'college', 'class_of' ) as $field ) {
+		$$field = types_render_field( "submission_$field", array() );
+		if ( ! empty( $$field ) && ( 'None' !== $$field ) ) {
+			$uoy_details[] = $$field;
+		}
+	}
+
+	if ( ! empty( $uoy_details ) ) {
+		return implode( ', ', $uoy_details );
+	} else {
+		return '';
+	}
+}
+endif;
+
 if ( ! function_exists( 'yumag_entry_image' ) ) :
 /**
  * Output the featured image (or 'post thumbnail') at the specified size.
