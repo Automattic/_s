@@ -44,6 +44,12 @@ input[type="radio"] {
 	padding: 0; // Addresses excess padding in IE8/9
 }
 
+// remove the clear x icon in IE
+input[type="text"]::-ms-clear,
+input[type="search"]::-ms-clear {
+	display: none;
+}
+
 input[type="search"] {
 	-webkit-appearance: textfield; // Addresses appearance set to searchfield in S5, Chrome
 	box-sizing: content-box;
