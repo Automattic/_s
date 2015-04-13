@@ -170,6 +170,11 @@ big {
 		color: $color__main;
 	}
 
+	/* Override subheadings' decorative coloured squares. */
+	.entry-content.entry-content & h3:before {
+		display: none;
+	}
+
 }
 
 @include media( "wide-content-column" ) {
