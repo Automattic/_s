@@ -15,6 +15,23 @@ Basic knowledge of the command line and the following dependencies are required 
 
 # Installation
 
+## Automatic Installation
+
+The easiest way to get started, is by using the [Yeoman](http://yeoman.io/) generator via the command line. It will ask you a series of questions and build the starter theme for you.
+
+##### 1) Create a new theme folder in `/wp-content/themes`
+
+##### 2) Navigate to your new theme folder
+`cd /your-project/wordpress/wp-content/themes/your-new-theme`
+
+##### 3) Install the _s generator and build a theme
+`npm install -g generator-s && yo s`
+
+That's it! You're ready to start using [Grunt](https://github.com/WebDevStudios/wd_s/blob/master/README.md#using-grunt)!
+
+
+## Manual Installation
+
 ##### 1) Navigate to the /themes folder of your project
 `cd /your-project/wordpress/wp-content/themes`
 
@@ -37,10 +54,13 @@ You'll need to change all instances of the names: `_s` to your project name.
 
 That's it! Now you can begin using Grunt.
 
-## Using Grunt
+# Usage
+After you've installed _s, and run `npm install && bower install` from the command line you can start using grunt.
+
+## Grunt
 
 ##### 1) Navigate to your new theme
-`cd /your-project/wordpress/wp-content/themes/_s`
+`cd /your-project/wordpress/wp-content/themes/your-new-theme`
 
 ##### 2) Grunt tasks available:
 
