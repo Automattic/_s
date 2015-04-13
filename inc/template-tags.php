@@ -305,6 +305,46 @@ function yumag_entry_footer( $echo = true ) {
 }
 endif;
 
+if ( ! function_exists( 'yumag_notice_footer' ) ) :
+/**
+ * Prints HTML with meta information for the Notice Type.
+ *
+ * @since 1.0.0
+ *
+ * @param bool $echo Optional. Display (True) or return output. Default True.
+ * @return string The output (if $echo is False).
+ */
+function yumag_notice_footer( $echo = true ) {
+
+	global $post;
+
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf( _x( '%1$s', 'Notices footer metadata order (no notice type)', 'yumag' ),
+		$time_string
+	);
+
+	$posted_on = '<span class="posted-on">' . $posted_on . '</span>';
+
+	if ( $echo ) {
+		echo $posted_on;
+	} else {
+		return $posted_on;
+	}
+
+}
+endif;
+
 if ( ! function_exists( 'yumag_entry_tags' ) ) :
 /**
  * Prints HTML with meta information for the tags.

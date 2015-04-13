@@ -1,0 +1,55 @@
+.post-type-archive-yumag_notice {
+
+	.category-description {
+		color: $color__allaboutyu__dark;
+	}
+
+	.category-header:before {
+		background: $color__allaboutyu;
+	}
+
+	.index-content .index-posts .yumag_notice { /* Specificity hack */
+		@include rem( "margin-bottom", $line );
+	}
+
+	.entry-title {
+		@include font-size-line( "normal" );
+		text-transform: uppercase;
+		font-family: $font-family__sans-serif;
+		font-weight: bold;
+	}
+
+	.entry-author-student-details {
+		@include font-size-line( "normal" );
+		font-family: $font-family__sans-serif;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	p:not(.notice-label) + p:not(.notice-label) {
+		text-indent: $text-indent;
+	}
+
+	.index-posts .yumag_notice .entry-footer { /* Specificity hack */
+		@include rem( "margin-top", ( $line / 2 ) );
+	}
+
+	.notice-label {
+		font-weight: bold;
+		color: $color__allaboutyu__dark;
+	}
+
+	.cat-links a {
+		@extend %hide-underline;
+		color: $color__allaboutyu__dark;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__link-hover;
+		}
+	}
+
+}
