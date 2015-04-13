@@ -25,6 +25,7 @@ img {
 
 .wp-caption {
 	@include margin(0 0 24px 0);
+
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
