@@ -55,8 +55,6 @@ dd {
 table {
 	@include margin(0 0 24px 0);
 	@include size(100% auto);
-
-	margin: 0 0 em(24px);
 }
 
 th {
