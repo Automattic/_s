@@ -26,6 +26,19 @@
 
 	}
 
+	/* Green/black square next to first letter of subheading. */
+	.entry-content h3:before {
+		content: '';
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+		//border-bottom: 0.5em solid $black;
+		//border-radius: 50%;
+		margin-left: -1.5em;
+		margin-right: 0.5em;
+		background: $color__allaboutyu;
+	}
+
 	hr,
 	&.single-entry .entry-content:before,
 	.category-header:before {

@@ -32,6 +32,17 @@
 		font-family: $font-family__main;
 	}
 
+	/* Blue square beside subheading. */
+	.entry-content h3:before {
+		content: '';
+		display: inline-block;
+		height: 1em;
+		width: 1em;
+		margin-left: -1.5em;
+		margin-right: 0.5em;
+		background: $color__openminds;
+	}
+
 	.dropcap {
 		@include rem( "border-width", ( $line * 0.5 ) ( $line * 0.75 ) );
 		margin-right: 7px;

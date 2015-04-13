@@ -26,6 +26,7 @@
 		font-family: $font-family__main;
 	}
 
+	/* Yellow square behind first letter of subheading. */
 	.entry-content h3:before {
 		content: '';
 		display: inline-block;
