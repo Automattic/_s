@@ -570,7 +570,7 @@ figure {
 
 ul,
 ol {
-	margin: 0 24px 48px 0;
+	margin: 0 0 48px 24px;
 }
 
 /* line 32, sass/base/_elements.scss */
