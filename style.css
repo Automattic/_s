@@ -1094,6 +1094,7 @@ textarea {
 
 .comment-content a {
 	word-wrap: break-word;
+	word-break: keep-all;
 }
 
 /* line 28, sass/modules/_comments.scss */
