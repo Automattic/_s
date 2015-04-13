@@ -1263,13 +1263,7 @@ Infinite scroll
 	display: none;
 }
 
-@media (min-width: 85.375em) {
-
-/* line 11, sass/structure/_layout.scss */
-
-.site-content {
-	margin: 40px auto 60px;
-}
+@media (min-width: 64em) {
 
 /* line 19, sass/structure/_layout.scss */
 
@@ -1300,6 +1294,16 @@ Infinite scroll
 
 #secondary:last-child {
 	margin-right: 0;
+}
+
+}
+
+@media (min-width: 85.375em) {
+
+/* line 11, sass/structure/_layout.scss */
+
+.site-content {
+	margin: 40px auto 60px;
 }
 
 }

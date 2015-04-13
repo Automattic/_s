@@ -19,7 +19,7 @@
 #primary {
 	@include fill-parent;
 
-	@include wider-than(desktop) {
+	@include wider-than(tablet-landscape) {
 		@include span-columns(8);
 	}
 }
@@ -27,7 +27,7 @@
 #secondary {
 	@include fill-parent;
 
-	@include wider-than(desktop) {
+	@include wider-than(tablet-landscape) {
 		@include span-columns(4);
 		@include omega();
 	}
