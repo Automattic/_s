@@ -26,7 +26,7 @@ figure {
 
 ul,
 ol {
-	@include margin(0 24px 48px 0);
+	@include margin(0 0 48px 24px);
 }
 
 ul {
