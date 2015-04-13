@@ -999,20 +999,27 @@ input[type="radio"] {
 	padding: 0;
 }
 
-/* line 47, sass/modules/_forms.scss */
+/* line 48, sass/modules/_forms.scss */
+
+input[type="text"]::-ms-clear,
+input[type="search"]::-ms-clear {
+	display: none;
+}
+
+/* line 53, sass/modules/_forms.scss */
 
 input[type="search"] {
 	-webkit-appearance: textfield;
 	box-sizing: content-box;
 }
 
-/* line 51, sass/modules/_forms.scss */
+/* line 57, sass/modules/_forms.scss */
 
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 
-/* line 56, sass/modules/_forms.scss */
+/* line 62, sass/modules/_forms.scss */
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -1020,7 +1027,7 @@ input::-moz-focus-inner {
 	padding: 0;
 }
 
-/* line 62, sass/modules/_forms.scss */
+/* line 68, sass/modules/_forms.scss */
 
 input[type="text"],
 input[type="email"],
@@ -1033,7 +1040,7 @@ textarea {
 	border-radius: 3px;
 }
 
-/* line 72, sass/modules/_forms.scss */
+/* line 78, sass/modules/_forms.scss */
 
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -1044,7 +1051,7 @@ textarea:focus {
 	color: #111111;
 }
 
-/* line 77, sass/modules/_forms.scss */
+/* line 83, sass/modules/_forms.scss */
 
 input[type="text"],
 input[type="email"],
@@ -1054,7 +1061,7 @@ input[type="search"] {
 	padding: 3px;
 }
 
-/* line 85, sass/modules/_forms.scss */
+/* line 91, sass/modules/_forms.scss */
 
 textarea {
 	padding: 6px;
