@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		
+
 		sassdoc: {
 			default: {
 				src: [
@@ -152,7 +152,7 @@ module.exports = function(grunt) {
 
 			css: {
 				files: ['sass/**/*.scss'],
-				tasks: ['styles'],
+				tasks: ['sass'],
 				options: {
 					spawn: false,
 					livereload: true,
