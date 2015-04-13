@@ -1,0 +1,37 @@
+// ----------------------------------------------------------------------
+
+  // Hyphens
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Stacy Kvernmo
+/// @group wds
+////
+
+/// Would you like to add hyphens?
+/// @param {String} $hyphens [auto]
+///     `auto` | `manual` | `none`
+///
+/// @link http://sassmeister.com/gist/3f09e69a73e14859f967 View hyphens in action
+///
+/// @example scss - Basic Usage Sass
+///    .text-we-should-hyphenate {
+///        @include hyphens(auto);
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .text-we-should-hyphenate {
+///          -moz-hyphens: auto;
+///          -webkit-hyphens: auto;
+///          -ms-hyphens: auto;
+///          hyphens: auto;
+///     }
+
+
+@mixin hyphens($hyphens: auto) {
+  -moz-hyphens: $hyphens;
+  -webkit-hyphens: $hyphens;
+  -ms-hyphens: $hyphens;
+  hyphens: $hyphens;
+}

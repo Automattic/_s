@@ -1,0 +1,34 @@
+// ----------------------------------------------------------------------
+
+  // Word Break
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Stacy Kvernmo
+/// @group wds
+////
+
+/// Keep words together if possible, but force break anything that is too long
+/// @param {String} $word-break [keep-all]
+///      `normal` | `break-all` | `keep-all`
+///
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/word-break View background information about word-break here
+/// @link http://sassmeister.com/gist/3f09e69a73e14859f967 View word-break in action
+///
+/// @example scss - Basic Usage Sass
+///    .break-long-words-only {
+///        @include word-break(keep-all);
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .break-long-words-only {
+///            word-wrap: break-word;
+///            word-break: keep-all;
+///     }
+
+
+@mixin word-break($word-break: keep-all) {
+    word-wrap: break-word;
+    word-break: $word-break;
+}
