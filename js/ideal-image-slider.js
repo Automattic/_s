@@ -834,8 +834,7 @@ var IdealImageSlider = (function() {
 		selector: '.js-slider',
 		height: 352,
 		interval: 5000,
-		transitionDuration: 300,
-		effect: 'fade'
+		transitionDuration: 300
 	} );
 	slider.addCaptions();
 //	slider.addThumbnailNav();
