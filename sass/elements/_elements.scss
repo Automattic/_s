@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	-webkit-font-smoothing: subpixel-antialiased; /* Fix for a flash of differently-aliased text during homepage slider transitions. */
 }
 
 /*
