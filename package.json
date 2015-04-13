@@ -1,21 +1,21 @@
 {
-  "name": "wd_s",
+  "name": "_s",
   "version": "1.0.0",
-  "description": "A project boilerplate for WebDevStudios.",
+  "description": "A theme boilerplate for WebDevStudios.",
   "author": "WebDevStudios",
-  "homepage": "https://github.com/WebDevStudios/wd_s",
-  "bugs": "https://github.com/WebDevStudios/wd_s/issues",
+  "homepage": "https://github.com/WebDevStudios/_s",
+  "bugs": "https://github.com/WebDevStudios/_s/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/WebDevStudios/wd_s.git"
+    "url": "git://github.com/WebDevStudios/_s.git"
   },
   "licenses": [
     {
       "type": "GPL-2.0+",
-      "url": "https://github.com/WebDevStudios/wd_s/blob/master/LICENSE"
+      "url": "https://github.com/WebDevStudios/_s/blob/master/LICENSE"
     }
   ],
-  "contributors": "https://github.com/WebDevStudios/wd_s/graphs/contributors",
+  "contributors": "https://github.com/WebDevStudios/_s/graphs/contributors",
   "devDependencies": {
     "css-parse": "latest",
     "glob": "latest",
