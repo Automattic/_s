@@ -610,10 +610,9 @@ table {
 	margin: 0 0 24px;
 	height: auto;
 	width: 100%;
-	margin: 0 0 1.5em;
 }
 
-/* line 62, sass/base/_elements.scss */
+/* line 60, sass/base/_elements.scss */
 
 th {
 	font-weight: 700;
