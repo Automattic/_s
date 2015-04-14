@@ -2071,8 +2071,10 @@ a:active {
 	bottom: 14px;
 	bottom: 0.77778rem;
 	width: 50%;
-	margin: 14px 14px 0;
-	margin: 0.77778rem 0.77778rem 0;
+	margin: 14px 0 0;
+	margin: 0.77778rem 0 0;
+	padding: 0 84px;
+	padding: 0 4.66667rem;
 	font-weight: bold;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-align: center;
