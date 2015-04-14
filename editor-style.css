@@ -1068,8 +1068,8 @@ a:active {
 
 /* Read more link. */
 .read-more {
-	margin: -28px 0 28px;
-	margin: -1.55556rem 0 1.55556rem;
+	margin: 14px 0 28px;
+	margin: 0.77778rem 0 1.55556rem;
 	font-weight: bold;
 }
 

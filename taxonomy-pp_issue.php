@@ -51,7 +51,7 @@ get_header(); ?>
 						</h2>
 						<p class="taxonomy-description issue-section-description category-description"><?php echo esc_html( $cat->description ); ?></p>
 						<p class="taxonomy-link issue-section-link category-archive-link">
-							<a href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php printf( _x( '%s archives', 'Category archives link', 'yumag' ), esc_attr( $cat->name ) ); ?>">More in this section &rarr;</a>
+							<a href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php printf( _x( '%s archives', 'Category archives link', 'yumag' ), esc_attr( $cat->name ) ); ?>">More in this section</a>
 						</p>
 					</header>
 					<div class="category-content index-content issue-section-content">

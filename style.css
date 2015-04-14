@@ -1025,8 +1025,8 @@ a:active {
 .search-toggle {
 	position: fixed;
 	z-index: 10;
-	top: 196px;
-	top: 10.88889rem;
+	top: 210px;
+	top: 11.66667rem;
 	/* 1 */
 	display: block;
 	height: 84px;
@@ -1926,8 +1926,8 @@ a:active {
 
 /* Read more link. */
 .read-more {
-	margin: -28px 0 28px;
-	margin: -1.55556rem 0 1.55556rem;
+	margin: 14px 0 28px;
+	margin: 0.77778rem 0 1.55556rem;
 	font-weight: bold;
 }
 
@@ -2097,8 +2097,8 @@ a:active {
 }
 
 .issue-section {
-	margin-top: 56px;
-	margin-top: 3.11111rem;
+	margin-top: 84px;
+	margin-top: 4.66667rem;
 	margin-bottom: 56px;
 	margin-bottom: 3.11111rem;
 }
@@ -2155,6 +2155,9 @@ a:active {
 .index-posts .entry-meta a:active {
 	color: #0f3b6b;
 }
+.index-posts .entry-content p {
+	margin-bottom: 0;
+}
 .index-posts .read-more {
 	display: none;
 }
@@ -2172,8 +2175,8 @@ a:active {
 .archive:not(.tax-pp_issue) .index-posts .entry-footer,
 .search-results .index-posts .entry-footer {
 	display: block;
-	margin: -14px 0 28px;
-	margin: -0.77778rem 0 1.55556rem;
+	margin: 14px 0 28px;
+	margin: 0.77778rem 0 1.55556rem;
 	font-size: 14px;
 	font-size: 0.77778rem;
 	line-height: 2;

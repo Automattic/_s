@@ -165,6 +165,6 @@
 
 /* Read more link. */
 .read-more {
-	@include rem( "margin", ( $line * -1 ) 0 $line );
+	@include rem( "margin", ( $line * 0.5 ) 0 $line );
 	font-weight: bold;
 }
