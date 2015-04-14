@@ -40,7 +40,6 @@ function customize_menu(){
     remove_menu_page('edit-comments.php');
     remove_menu_page('themes.php');
     remove_menu_page('tools.php');
-    remove_menu_page('plugins.php');
     remove_menu_page('edit.php?post_type=feedback');
 
     // http://codex.wordpress.org/Function_Reference/add_menu_page
