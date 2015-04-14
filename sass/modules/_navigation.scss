@@ -67,7 +67,7 @@ a {
 			li {
 
 				&:hover > ul,
-				&.focus > ul{
+				&.focus > ul {
 					left: 100%;
 				}
 			}
@@ -137,6 +137,7 @@ a {
 
 	.site-main & {
 		@include margin(0 0 24px 0);
+
 		overflow: hidden;
 	}
 
