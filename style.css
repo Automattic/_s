@@ -1088,10 +1088,9 @@ a:active {
 .menu-toggle-outer,
 .search-toggle-outer {
 	display: inline-block;
-	padding: 0 0.5em;
+	padding: 0 0.5em; 
 	line-height: 56px;
 	line-height: 3.11111rem;
-	background: #fff;
 }
 
 .menu-toggle {
@@ -2435,6 +2434,10 @@ object {
 
 /* 13.3 Sliders
 --------------------------------------------------------------*/
+.no-js .slider {
+	display: none !important;
+}
+
 .slider {
 	margin-top: 0;
 	margin-bottom: 56px;

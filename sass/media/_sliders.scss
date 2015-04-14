@@ -1,3 +1,7 @@
+.no-js .slider {
+	display: none !important;
+}
+
 .slider {
 	@include rem( "margin-bottom", ( $spacing * 2 ) );
 	margin-top: 0;
