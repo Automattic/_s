@@ -48,16 +48,15 @@ function _s_scripts() {
 	$debug = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG == true ) || ( isset( $_GET['script_debug'] ) ) ? true : false;
 
 	/**
-	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues
+	 * If we are debugging the site, use a unique version every page load so as to ensure no cache issues.
 	 */
 	$version = '1.0.0';
-	$fa_version = '4.3.0';
 
 	/**
 	 * Should we load minified scripts? Also enqueue live reload to allow for extensionless reloading.
 	 */
 	$suffix = '.min';
-	if( true === $debug ) {
+	if ( true === $debug ) {
 
 		$suffix = '';
 		$version = time();
@@ -66,7 +65,7 @@ function _s_scripts() {
 	}
 
 	wp_deregister_style( 'font-awesome' );
-	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/' . $fa_version . '/css/font-awesome.min.css', array(), $fa_version );
+	wp_register_style( 'font-awesome', get_stylesheet_directory_uri() . '/bower_components/fontawesome/css/font-awesome.min.css', array(), $version );
 
 	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( '_s-google-font', _s_font_url(), array(), null );
