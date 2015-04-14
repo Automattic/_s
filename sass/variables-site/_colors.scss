@@ -40,16 +40,16 @@ $yucycle-blue__light:  #d3eef9;
 $jambalaya:       #4d2b10; // dark brown
 $mountain-meadow: #149b71; // turquoise
 $yellow-green:    #b0d46b; // light green
-$downy:           #69bcc9; // light blue
+$downy:           #69bcc9; // light blue         // Open minds
 $plum:            #803c7d; // purple
 //// row 2
 $muddy-waters:    #b68859; // mid brown
-$spring-rain:     #9acd9c; // mint
-$sahara-sand:     #f0ef84; // pale yellow-green
+$spring-rain:     #9acd9c; // mint              // All about yu
+$sahara-sand:     #f0ef84; // pale yellow-green // Centre stage
 $jungle-mist:     #b6ced3; // sky blue
 $tapestry:        #b967a7; // dull magenta
 //// row 3
-$sisal:           #dcd4c6; // warm grey
+$sisal:           #dcd4c6; // warm grey         // Yorklife
 $tango:           #f38118; // orange
 $ripe-lemon:      #f7ed27; // yellow
 $curious-blue:    #139ceb; // bright blue
@@ -59,6 +59,8 @@ $dove-grey:       #686767; // dark grey
 $oslo-grey:       #818386; // aluminium
 $fun-blue:        #1960ae; // flag blue
 $shiraz:          #ae0922; // dark red
+
+$snuff:           #e8cfeb; // pink              // Back page
 
 // Functional colours
 // -------------------------------------------------------------
@@ -95,16 +97,16 @@ $color__yorklife:    $sisal;
 $color__openminds:   $downy;
 $color__centrestage: $sahara-sand;
 $color__allaboutyu:  $spring-rain;
-$color__backpage:    #e8cfeb;
+$color__backpage:    $snuff;
 
 $color__yorklife__dark:    darken( $sisal, 15% );
 $color__openminds__dark:   darken( $downy, 15% );
 $color__centrestage__dark: darken( $sahara-sand, 15% );
 $color__allaboutyu__dark:  darken( $spring-rain, 15% );
-$color__backpage__dark:    darken( #e8cfeb, 15% );
+$color__backpage__dark:    darken( $snuff, 15% );
 
 $color__yorklife__darker:    darken( $sisal, 35% );
 $color__openminds__darker:   darken( $downy, 30% );
 $color__centrestage__darker: darken( $sahara-sand, 35% );
 $color__allaboutyu__darker:  darken( $spring-rain, 30% );
-$color__backpage__darker:    darken( #e8cfeb, 30% );
+$color__backpage__darker:    darken( $snuff, 30% );
