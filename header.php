@@ -59,16 +59,10 @@ $src = get_template_directory_uri() . '/assets/';
 	<header id="masthead" class="site-header<?php if ( is_single() ) : ?> site-header-single<?php endif; ?>" role="banner">
 
 		<div class="site-branding">
-			<?php if ( ! is_single() ) : ?>
-			<h1 class="site-title">
-				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
-					<img class="site-logo" src="<?php echo $src; ?>logo.svg" onerror="this.src='<?php echo $src; ?>logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="71">
-				</a>
-			</h1>
-			<?php else : ?>
+			<?php if ( is_single() ) : ?>
 			<div class="site-title-single">
 				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
-					<img class="site-logo mini-site-logo" src="<?php echo $src; ?>logo-grey-small.png" srcset="<?php echo $src; ?>logo-grey-small@2x.png 2x, <?php echo $src; ?>logo-grey-small.png 1x" alt="<?php bloginfo( 'name' ); ?>" width="42" height="29">
+					<img class="site-logo mini-site-logo" src="<?php echo $src; ?>logo-black-small.png" srcset="<?php echo $src; ?>logo-black-small@2x.png 2x, <?php echo $src; ?>logo-black-small.png 1x" alt="<?php bloginfo( 'name' ); ?>" width="42" height="29">
 				</a>
 				<?php
 				/* translators: used between list items, there is a space on each side of the slash */
@@ -82,6 +76,12 @@ $src = get_template_directory_uri() . '/assets/';
 				}
 				?>
 			</div>
+			<?php else : ?>
+			<h1 class="site-title">
+				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
+					<img class="site-logo" src="<?php echo $src; ?>logo.svg" onerror="this.src='<?php echo $src; ?>logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="71">
+				</a>
+			</h1>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
