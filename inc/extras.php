@@ -111,7 +111,8 @@ if ( ! function_exists( 'yumag_entry_classes' ) ) :
  * Filter to add generic class for both posts and pages to the article element.
  *
  * Adds the class 'entry' in all cases. If this is a page or a single post,
- * also adds a 'single-entry' class.
+ * also adds a 'single-entry' class. If this is a Notice, add a class for the
+ * notice type.
  *
  * @since 1.0.0
  *
@@ -123,6 +124,15 @@ function yumag_entry_classes( $classes ) {
 	if ( is_single() || is_page() ) {
 		$classes[] = 'single-entry';
 	}
+
+	$tax = 'yumag_notice_type';
+	if ( ( 'yumag_notice' === get_post_type() ) && taxonomy_exists( $tax ) ) {
+		$notice_types = wp_get_post_terms( get_the_ID(), $tax );
+		foreach ( $notice_types as $nt ) {
+			$classes[] = 'type-' . $nt->slug;
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'post_class', 'yumag_entry_classes' );

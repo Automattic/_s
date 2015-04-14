@@ -3915,16 +3915,13 @@ object {
 	border-top: 14px solid #9acd9c;
 	border-top: 0.77778rem solid #9acd9c;
 }
-.post-type-archive-yumag_notice .category-description,
-.post-type-archive-yumag_notice .category-archive-link a {
-	color: #67b46a;
-}
-.post-type-archive-yumag_notice .category-header:before {
-	background: #9acd9c;
+.post-type-archive-yumag_notice .type-obituary .entry-header {
+	border-top-color: #171717;
 }
 .post-type-archive-yumag_notice .category-header {
 	margin-bottom: 56px;
 	margin-bottom: 3.11111rem;
+	background: #9acd9c;
 }
 .post-type-archive-yumag_notice .index-content .index-posts .yumag_notice {
 	/* Specificity hack */

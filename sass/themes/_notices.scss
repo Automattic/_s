@@ -5,17 +5,13 @@
 		@include rem( "padding-top", $height__rule );
 	}
 
-	.category-description,
-	.category-archive-link a {
-		color: $color__allaboutyu__dark;
-	}
-
-	.category-header:before {
-		background: $color__allaboutyu;
+	.type-obituary .entry-header {
+		border-top-color: $color__main;
 	}
 
 	.category-header {
 		@include rem( "margin-bottom", ( $line * 2 ) );
+		background: $color__allaboutyu;
 	}
 
 	.index-content .index-posts .yumag_notice { /* Specificity hack */
