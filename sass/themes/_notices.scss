@@ -1,7 +1,7 @@
 .post-type-archive-yumag_notice {
 
 	.category-description,
-	.category-link a {
+	.category-archive-link a {
 		color: $color__allaboutyu__dark;
 	}
 
@@ -55,6 +55,14 @@
 		&:active {
 			color: $color__link-hover;
 		}
+	}
+
+	.obit-label {
+		font-weight: bold;
+	}
+
+	.entry-image {
+		@include rem( "margin", ( $line * 0.5 ) 0 0 );
 	}
 
 }
