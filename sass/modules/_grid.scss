@@ -17,7 +17,7 @@
 //                       .archive-header.issue-header
 //  ############################################################################
 //  #                section.issue-section.category-section
-//  #                    [COLUMN 12/10] .category-header.issue-section-header
+//  #                    .category-header.issue-section-header
 //  #                        h2.category-title.issue-section-title
 //  #                    [COLUMN 12/10] .category-content.index-content.issue-section-content
 //  #                        .category-posts.index-posts.issue-section-posts
@@ -82,7 +82,6 @@
 /* Every column is full-width for mobiles. */
 .site-branding,
 .search-results-search,
-.category-header,
 .author-header,
 .author-bio-content,
 .index-content,
@@ -108,7 +107,6 @@
 	.search-results-search,
 	.author-header,
 	.author-bio-content,
-	.category-header,
 	.index-content,
 	.slider,
 	.single-entry .entry-header,

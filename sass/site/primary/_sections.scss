@@ -2,7 +2,7 @@
 	@include rem( "margin-bottom", $line );
 	position: relative;
 	overflow: hidden; // hide logo circle overflow
-	height: 150px; // cut off top and bottom of logo circle
+	height: 160px; // cut off top and bottom of logo circle
 	text-align: center;
 
 	// &:before {
@@ -55,24 +55,24 @@
 	@include rem( "margin", ( $spacing * 0.5 ) ( $spacing * 0.5 ) 0 );
 	position: absolute;
 	z-index: 1;
+	width: 50%;
 	font-weight: bold;
 	font-family: $font-family__category;
+	text-align: center;
 	color: $white;
 }
 
 .category-description {
-	@include rem( "margin-right", 50% );
 	left: 0;
 	padding-right: 130px; // half-width of the section logo
-	text-align: left;
+	//text-align: left;
 }
 
 .category-archive-link {
-	@include rem( "margin-left", 50% );
 	@include font-size-line( "small" );
 	right: 0;
 	padding-left: 130px; // half-width of the section logo
-	text-align: right;
+	//text-align: right;
 	text-transform: uppercase;
 
 	a {

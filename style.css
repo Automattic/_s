@@ -1381,7 +1381,6 @@ a:active {
 /* Every column is full-width for mobiles. */
 .site-branding,
 .search-results-search,
-.category-header,
 .author-header,
 .author-bio-content,
 .index-content,
@@ -1409,7 +1408,6 @@ a:active {
 	.search-results-search,
 	.author-header,
 	.author-bio-content,
-	.category-header,
 	.index-content,
 	.slider,
 	.single-entry .entry-header,
@@ -2030,7 +2028,7 @@ a:active {
 .category-header {
 	position: relative;
 	overflow: hidden;
-	height: 150px;
+	height: 160px;
 	margin-bottom: 28px;
 	margin-bottom: 1.55556rem;
 	text-align: center;
@@ -2072,28 +2070,26 @@ a:active {
 	z-index: 1;
 	bottom: 14px;
 	bottom: 0.77778rem;
+	width: 50%;
 	margin: 14px 14px 0;
 	margin: 0.77778rem 0.77778rem 0;
 	font-weight: bold;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+	text-align: center;
 	color: #fff;
 }
 
 .category-description {
 	left: 0;
-	margin-right: 50%;
 	padding-right: 130px;
-	text-align: left;
 }
 
 .category-archive-link {
 	right: 0;
-	margin-left: 50%;
 	padding-left: 130px;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	text-align: right;
 	text-transform: uppercase;
 }
 .category-archive-link a {
