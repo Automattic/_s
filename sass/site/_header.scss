@@ -32,7 +32,8 @@
 }
 
 .site-header-single {
-	@include rem( "margin", $line 0 );
+	@include rem( "margin-top", $line );
+	@include rem( "margin-bottom", $line );
 	height: auto;
 	text-align: center;
 

@@ -11,7 +11,7 @@
 //               h1.site-title
 //               h2.site-description
 //       #content.site-content
-//           [ROW] #primary.content-area
+//           #primary.content-area
 //               main#main.site-main
 //                   header.above-single-header
 //                       .archive-header.issue-header
@@ -25,20 +25,22 @@
 //  #                                [...]
 //  ############################################################################
 //                    article.entry[POST CLASSES]
-//                       [COLUMN x/10/8] .entry-image
-//                       [COLUMN 12/10/8] .entry-header
-//                           a.entry-title-link
-//                               h1.entry-title
-//                               h2.entry-subtitle
-//                           .entry-meta
-//                           	.byline
-//                       [COLUMN 12/10/8/6] .entry-content
-//                           [CONTENT]
-//                       .footer.entry-footer
+//                       [ROW] .entry-above-footer
+//                           [COLUMN x/10/8] .entry-image
+//                           [COLUMN 12/10/8] .entry-header
+//                               a.entry-title-link
+//                                   h1.entry-title
+//                                   h2.entry-subtitle
+//                               .entry-meta
+//                               	.byline
+//                           [COLUMN 12/10/8/6] .entry-content
+//                               [CONTENT]
+//                       .footer.entry-footer-wrap
+//                           [ROW] .entry-footer
 //                           [COLUMN 12/10/8/6] .entry-author
 //                           [COLUMN 12/10/8/6] .posted-on
 //                           [COLUMN 12/10/8/6] .tags-links
-//                   #comments.comments-footer
+//                   [ROW] #comments.comments-footer
 //                       [COLUMN 12/10] .comments-area
 //                           h2.comments-title
 //                           [NESTED-ROW] #comment-nav-above.comment-navigation
@@ -63,7 +65,9 @@
 //               [COLUMN 12] .site-footer-content
 
 .site-header,
-.content-area,
+.single-entry .entry-above-footer,
+.single-entry .entry-footer,
+.single-entry .comments-footer,
 .footer-widget-area,
 .footer-row {
 	@include row;

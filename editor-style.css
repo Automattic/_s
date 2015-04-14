@@ -862,6 +862,7 @@ a:active {
 8.0 Clearings
 --------------------------------------------------------------*/
 .clear,
+.content-area,
 .entry-content,
 .single-entry .entry-footer,
 .comments-footer,
@@ -876,6 +877,8 @@ a:active {
 }
 .clear:before,
 .clear:after,
+.content-area:before,
+.content-area:after,
 .entry-content:before,
 .entry-content:after,
 .single-entry .entry-footer:before,
@@ -900,6 +903,7 @@ a:active {
 	display: table;
 }
 .clear:after,
+.content-area:after,
 .entry-content:after,
 .single-entry .entry-footer:after,
 .comments-footer:after,
