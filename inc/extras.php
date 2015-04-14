@@ -44,40 +44,6 @@ function yumag_body_classes( $classes ) {
 add_filter( 'body_class', 'yumag_body_classes', 9 );
 endif;
 
-if ( ! function_exists( 'yumag_template_classes_single_fixed_left' ) ) :
-/**
- * Add template-targetting body classes.
- *
- * @since 1.0.0
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function yumag_template_classes_single_fixed_left( $classes ) {
-	$classes = array_diff( $classes, array( 'template-one-column' ) );
-	$classes[] = 'template-two-columns';
-	$classes[] = 'template-fixed-left';
-	return $classes;
-}
-endif;
-
-if ( ! function_exists( 'yumag_template_classes_single_fixed_right' ) ) :
-/**
- * Add template-targetting body classes.
- *
- * @since 1.0.0
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
-function yumag_template_classes_single_fixed_right( $classes ) {
-	$classes = array_diff( $classes, array( 'template-one-column' ) );
-	$classes[] = 'template-two-columns';
-	$classes[] = 'template-fixed-right';
-	return $classes;
-}
-endif;
-
 if ( ! function_exists( 'yumag_template_classes_single_scrolling_left' ) ) :
 /**
  * Add template-targetting body classes.
