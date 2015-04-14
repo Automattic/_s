@@ -119,7 +119,7 @@
 
 				.entry-header {
 					@include rem( "padding-bottom", ( $line * 0.5 ) );
-					background: $color__openminds;
+					background: $color__main;
 				}
 
 				.entry-title,
@@ -136,13 +136,18 @@
 
 				.entry-subtitle {
 					@include font-size-line( "larger" );
-					color: $color__main;
+					color: $color__openminds;
 				}
 
 				.entry-meta {
 					@include rem( "margin-top", ( $line * 0.5 ) );
 					@include font-size-line( "small" );
-					color: $color__main;
+					color: $color__openminds;
+
+					a {
+						color: $color__openminds;
+					}
+
 				}
 
 			}
@@ -220,7 +225,7 @@
 
 					.entry-header {
 						@include rem( "padding-bottom", ( $line * 0.5 ) );
-						background: $color__openminds;
+						background: $color__main;
 					}
 
 					.entry-image {
@@ -244,13 +249,13 @@
 
 					.entry-subtitle {
 						@include font-size-line( "larger" );
-						color: $color__main;
+						color: $color__openminds;
 					}
 
 					.entry-meta {
 						@include rem( "margin-top", ( $line * 0.5 ) );
 						@include font-size-line( "small" );
-						color: $color__main;
+						color: $color__openminds;
 					}
 
 				}
