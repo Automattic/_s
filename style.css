@@ -3909,6 +3909,12 @@ object {
 	}
 }
 
+.post-type-archive-yumag_notice .entry-header {
+	padding-top: 14px;
+	padding-top: 0.77778rem; 
+	border-top: 14px solid #9acd9c;
+	border-top: 0.77778rem solid #9acd9c;
+}
 .post-type-archive-yumag_notice .category-description,
 .post-type-archive-yumag_notice .category-archive-link a {
 	color: #67b46a;

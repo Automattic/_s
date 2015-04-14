@@ -1,5 +1,10 @@
 .post-type-archive-yumag_notice {
 
+	.entry-header {
+		@include rem( "border-top", $height__rule solid $color__allaboutyu );
+		@include rem( "padding-top", $height__rule );
+	}
+
 	.category-description,
 	.category-archive-link a {
 		color: $color__allaboutyu__dark;
