@@ -1053,7 +1053,7 @@ a:active {
 	border-radius: 0;
 	border: 0;
 	background: transparent;
-	color: #9696a0;
+	color: #171717;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	text-shadow: none;
@@ -1072,7 +1072,7 @@ a:active {
 .search-toggle:hover,
 .search-toggle:focus,
 .search-toggle:active {
-	color: #171717;
+	color: #626272;
 }
 .menu-toggle:hover,
 .menu-toggle:focus,
@@ -1137,7 +1137,7 @@ a:active {
 .menu-left-toggled .menu-toggle {
 	left: 364px;
 	left: 20.22222rem;
-	color: #171717;
+	color: #626272;
 }
 .menu-left-toggled .main-navigation-wrapper {
 	display: block;
@@ -1164,7 +1164,7 @@ a:active {
 .menu-right-toggled .search-toggle {
 	right: 364px;
 	right: 20.22222rem;
-	color: #171717;
+	color: #626272;
 }
 .menu-right-toggled .main-search-wrapper {
 	display: block;
@@ -2286,6 +2286,10 @@ a:active {
 	text-transform: none;
 }
 
+.author-student-details {
+	font-style: italic;
+}
+
 .author-website {
 	margin-top: 14px;
 	margin-top: 0.77778rem;
@@ -3087,7 +3091,7 @@ object {
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-header {
 		padding-bottom: 14px;
 		padding-bottom: 0.77778rem;
-		background: #69bcc9;
+		background: #171717;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-title,
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
@@ -3107,7 +3111,7 @@ object {
 		font-size: 24px;
 		font-size: 1.33333rem;
 		line-height: 1.16667;
-		color: #171717;
+		color: #69bcc9;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		margin-top: 14px;
@@ -3115,7 +3119,10 @@ object {
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
-		color: #171717;
+		color: #69bcc9;
+	}
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta a {
+		color: #69bcc9;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div {
 		width: 100%;
@@ -3176,7 +3183,7 @@ object {
 	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-header {
 		padding-bottom: 14px;
 		padding-bottom: 0.77778rem;
-		background: #69bcc9;
+		background: #171717;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-image {
 		width: 100%;
@@ -3202,7 +3209,7 @@ object {
 		font-size: 24px;
 		font-size: 1.33333rem;
 		line-height: 1.16667;
-		color: #171717;
+		color: #69bcc9;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-top: 14px;
@@ -3210,7 +3217,7 @@ object {
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
-		color: #171717;
+		color: #69bcc9;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex {
 		display: -webkit-box;
