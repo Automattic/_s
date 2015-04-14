@@ -330,7 +330,7 @@ function yumag_notice_footer( $echo = true ) {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf( _x( '%1$s', 'Notices footer metadata order (no notice type)', 'yumag' ),
+	$posted_on = sprintf( _x( 'Posted %1$s', 'Notices footer date field', 'yumag' ),
 		$time_string
 	);
 
