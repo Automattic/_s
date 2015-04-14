@@ -2029,22 +2029,11 @@ a:active {
 
 .category-header {
 	position: relative;
+	overflow: hidden;
+	height: 150px;
 	margin-bottom: 28px;
 	margin-bottom: 1.55556rem;
 	text-align: center;
-}
-.category-header:before {
-	content: "";
-	position: absolute;
-	z-index: 0; 
-	top: 50%;
-	left: 0;
-	width: 100%;
-	height: 14px;
-	height: 0.77778rem;
-	margin-top: -7px;
-	margin-top: -0.38889rem;
-	background: #9696a0;
 }
 
 .single .category-header {
@@ -2053,12 +2042,12 @@ a:active {
 }
 
 .category-title {
-	position: relative;
+	position: absolute;
 	z-index: 1;
+	top: 50%;
+	left: 50%;
 	display: inline-block;
-	margin: 0;
-	padding: 14px;
-	padding: 0.77778rem;
+	margin: -125px 0 0 -125px;
 	font-weight: bold;
 	font-size: 32px;
 	font-size: 1.77778rem;
@@ -2067,10 +2056,13 @@ a:active {
 	text-align: center;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
-	background: #fff;
 }
 .category-title a {
 	border-bottom: 0;
+}
+.category-title img {
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
 }
 
 /* Left- and right-aligned text underneath the section heading. */
@@ -2078,31 +2070,34 @@ a:active {
 .category-archive-link {
 	position: absolute;
 	z-index: 1;
-	top: 50%;
-	margin: 14px 0 0;
-	margin: 0.77778rem 0 0;
+	bottom: 14px;
+	bottom: 0.77778rem;
+	margin: 14px 14px 0;
+	margin: 0.77778rem 0.77778rem 0;
 	font-weight: bold;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+	color: #fff;
 }
 
 .category-description {
 	left: 0;
 	margin-right: 50%;
-	padding-right: 138px;
-	padding-right: 7.66667rem;
+	padding-right: 130px;
 	text-align: left;
 }
 
 .category-archive-link {
 	right: 0;
 	margin-left: 50%;
-	padding-left: 138px;
-	padding-left: 7.66667rem;
+	padding-left: 130px;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
 	text-align: right;
 	text-transform: uppercase;
+}
+.category-archive-link a {
+	color: inherit;
 }
 
 .issue-section {
@@ -2844,8 +2839,6 @@ object {
 --------------------------------------------------------------*/
 .category-yorklife .category-title,
 .category-yorklife .category-title a,
-.category-yorklife .category-description,
-.category-yorklife .category-archive-link a,
 .category-yorklife .site-title-term.category-link,
 .category-yorklife .dropcap,
 .category-yorklife .entry-content a,
@@ -2884,7 +2877,7 @@ object {
 }
 .category-yorklife hr,
 .category-yorklife.single-entry .entry-content:before,
-.category-yorklife .category-header:before {
+.category-yorklife .category-header {
 	background: #dcd4c6;
 }
 .category-yorklife .call-to-action,
@@ -2992,8 +2985,6 @@ object {
 }
 .category-up-close-and-personal .category-title,
 .category-up-close-and-personal .category-title a,
-.category-up-close-and-personal .category-description,
-.category-up-close-and-personal .category-archive-link a,
 .category-up-close-and-personal .site-title-term.category-link,
 .category-up-close-and-personal .lead,
 .category-up-close-and-personal .entry-subtitle,
@@ -3040,7 +3031,7 @@ object {
 }
 .category-up-close-and-personal hr,
 .category-up-close-and-personal.single-entry .entry-content:before,
-.category-up-close-and-personal .category-header:before {
+.category-up-close-and-personal .category-header {
 	background: #69bcc9;
 }
 .category-up-close-and-personal .call-to-action,
@@ -3331,9 +3322,7 @@ object {
 .category-centre-stage .quote-source {
 	color: #acab15;
 }
-.category-centre-stage .category-description,
-.category-centre-stage .site-title-term.category-link,
-.category-centre-stage .category-archive-link a {
+.category-centre-stage .site-title-term.category-link {
 	color: #dad81b;
 }
 .category-centre-stage .entry-title,
@@ -3381,7 +3370,7 @@ object {
 }
 .category-centre-stage hr,
 .category-centre-stage.single-entry .entry-content:before,
-.category-centre-stage .category-header:before {
+.category-centre-stage .category-header {
 	background: #f0ef84;
 }
 .category-centre-stage .call-to-action {
@@ -3637,8 +3626,6 @@ object {
 }
 .category-all-about-yu .category-title,
 .category-all-about-yu .category-title a,
-.category-all-about-yu .category-description,
-.category-all-about-yu .category-archive-link a,
 .category-all-about-yu .site-title-term.category-link,
 .category-all-about-yu .dropcap,
 .category-all-about-yu .entry-subtitle,
@@ -3670,7 +3657,7 @@ object {
 }
 .category-all-about-yu hr,
 .category-all-about-yu.single-entry .entry-content:before,
-.category-all-about-yu .category-header:before {
+.category-all-about-yu .category-header {
 	background: #9acd9c;
 }
 .category-all-about-yu .call-to-action,
@@ -3772,8 +3759,6 @@ object {
 
 .category-back-page .category-title,
 .category-back-page .category-title a,
-.category-back-page .category-description,
-.category-back-page .category-archive-link a,
 .category-back-page .site-title-term.category-link,
 .category-back-page .dropcap,
 .category-back-page .entry-subtitle,
@@ -3811,7 +3796,7 @@ object {
 }
 .category-back-page hr,
 .category-back-page.single-entry .entry-content:before,
-.category-back-page .category-header:before {
+.category-back-page .category-header {
 	background: #e8cfeb;
 }
 .category-back-page .call-to-action,

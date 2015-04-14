@@ -16,9 +16,7 @@
 		color: $color__centrestage__darker;
 	}
 
-	.category-description,
-	.site-title-term.category-link,
-	.category-archive-link a {
+	.site-title-term.category-link {
 		color: $color__centrestage__dark;
 	}
 
@@ -76,7 +74,7 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.category-header:before {
+	.category-header {
 		background: $color__centrestage;
 	}
 

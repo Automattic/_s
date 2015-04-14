@@ -2,8 +2,6 @@
 
 	.category-title,
 	.category-title a,
-	.category-description,
-	.category-archive-link a,
 	.site-title-term.category-link,
 	.dropcap,
 	.entry-content a,
@@ -54,7 +52,7 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.category-header:before {
+	.category-header {
 		background: $color__yorklife;
 	}
 
