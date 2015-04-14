@@ -2144,12 +2144,13 @@ a:active {
 }
 .index-posts .entry-meta {
 	display: block;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
+	font-size: 14px;
+	font-size: 0.77778rem;
+	line-height: 2;
 	text-align: left;
 }
 .index-posts .entry-meta a {
+	font-weight: normal;
 	color: #171717;
 }
 .index-posts .entry-meta a:hover,
@@ -3111,9 +3112,9 @@ object {
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
-		font-size: 18px;
-		font-size: 1rem;
-		line-height: 1.55556;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
 		color: #171717;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div {
@@ -3158,9 +3159,9 @@ object {
 		line-height: 1.16667;
 	}
 	.category-up-close-and-personal .issue-section-posts .entry .entry-meta {
-		font-size: 16px;
-		font-size: 0.88889rem;
-		line-height: 1.3125;
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1.5;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry {
 		clear: right;
@@ -3206,9 +3207,9 @@ object {
 	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
-		font-size: 18px;
-		font-size: 1rem;
-		line-height: 1.55556;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
 		color: #171717;
 	}
 	.category-up-close-and-personal .issue-section-posts .issue-section-flex {
@@ -3462,9 +3463,9 @@ object {
 	.category-centre-stage .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
-		font-size: 18px;
-		font-size: 1rem;
-		line-height: 1.55556;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > div {
 		width: 100%;
@@ -3492,9 +3493,9 @@ object {
 	}
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2) .entry-meta,
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) .entry-meta {
-		font-size: 16px;
-		font-size: 0.88889rem;
-		line-height: 1.75;
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 2;
 	}
 	.category-centre-stage .issue-section-posts .entry-image {
 		padding-top: 14px;

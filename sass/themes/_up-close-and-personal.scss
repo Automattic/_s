@@ -141,7 +141,7 @@
 
 				.entry-meta {
 					@include rem( "margin-top", ( $line * 0.5 ) );
-					@include font-size-line( "normal" );
+					@include font-size-line( "small" );
 					color: $color__main;
 				}
 
@@ -200,7 +200,7 @@
 			}
 
 			.entry-meta {
-				@include font-size-line( "small", 0.75 );
+				@include font-size-line( "smaller", 0.75 );
 			}
 
 		}
@@ -249,7 +249,7 @@
 
 					.entry-meta {
 						@include rem( "margin-top", ( $line * 0.5 ) );
-						@include font-size-line( "normal" );
+						@include font-size-line( "small" );
 						color: $color__main;
 					}
 

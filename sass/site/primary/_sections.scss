@@ -115,12 +115,13 @@
 	}
 
 	.entry-meta {
-		@include font-size-line( "small" );
+		@include font-size-line( "smaller" );
 		display: block;
 		text-align: left;
 
 		a {
 			@extend %hide-underline;
+			font-weight: normal;
 			color: $color__main;
 
 			&:hover,

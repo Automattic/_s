@@ -174,7 +174,7 @@
 
 				.entry-meta {
 					@include rem( "margin-top", ( $line * 0.5 ) );
-					@include font-size-line( "normal" );
+					@include font-size-line( "small" );
 				}
 
 			}
@@ -213,7 +213,7 @@
 					}
 
 					.entry-meta {
-						@include font-size-line( "small" );
+						@include font-size-line( "smaller" );
 					}
 
 				}
