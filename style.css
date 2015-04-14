@@ -3345,7 +3345,9 @@ object {
 	background: #f0ef84;
 }
 .category-centre-stage .category-title,
-.category-centre-stage .category-title a {
+.category-centre-stage .category-title a,
+.category-centre-stage .category-description,
+.category-centre-stage .category-archive-link a {
 	color: #171717;
 }
 .category-centre-stage .lead {
