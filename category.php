@@ -23,7 +23,7 @@ get_header(); ?>
 				<section class="category-section">
 					<header class="page-header category-header">
 						<h1 class="taxonomy-title category-title">
-							<img src="<?php echo $src . $cat->slug; ?>-42.png" srcset="<?php echo $src . $cat->slug; ?>-84.png 2x, <?php echo $src . $cat->slug; ?>-42.png 1x" height="42" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
+							<img src="<?php echo $src . $cat->slug; ?>.png" srcset="<?php echo $src . $cat->slug; ?>@2x.png 2x, <?php echo $src . $cat->slug; ?>.png 1x" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
 						</h1>
 						<p class="taxonomy-description category-description"><?php echo esc_html( $cat->description ); ?></p>
 					</header><!-- .category-header -->
