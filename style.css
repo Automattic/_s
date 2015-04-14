@@ -880,10 +880,10 @@ a:active {
 .cat-links a,
 .tags-links a,
 .archive-title a,
-.category-title a,
+.category-archive-link a,
 .index-posts .entry-meta a,
 .category-yorklife .footer a,
-.category-open-minds .footer a,
+.category-up-close-and-personal .footer a,
 .category-centre-stage .footer a,
 .category-all-about-yu .footer a,
 .category-back-page .footer a,
@@ -897,9 +897,9 @@ a:active {
 .cat-links a:hover,
 .tags-links a:hover,
 .archive-title a:hover,
-.category-title a:hover,
+.category-archive-link a:hover,
 .category-yorklife .footer a:hover,
-.category-open-minds .footer a:hover,
+.category-up-close-and-personal .footer a:hover,
 .category-centre-stage .footer a:hover,
 .category-all-about-yu .footer a:hover,
 .category-back-page .footer a:hover,
@@ -910,9 +910,9 @@ a:active {
 .cat-links a:focus,
 .tags-links a:focus,
 .archive-title a:focus,
-.category-title a:focus,
+.category-archive-link a:focus,
 .category-yorklife .footer a:focus,
-.category-open-minds .footer a:focus,
+.category-up-close-and-personal .footer a:focus,
 .category-centre-stage .footer a:focus,
 .category-all-about-yu .footer a:focus,
 .category-back-page .footer a:focus,
@@ -923,9 +923,9 @@ a:active {
 .cat-links a:active,
 .tags-links a:active,
 .archive-title a:active,
-.category-title a:active,
+.category-archive-link a:active,
 .category-yorklife .footer a:active,
-.category-open-minds .footer a:active,
+.category-up-close-and-personal .footer a:active,
 .category-centre-stage .footer a:active,
 .category-all-about-yu .footer a:active,
 .category-back-page .footer a:active {
@@ -1013,20 +1013,27 @@ a:active {
 /*
  * Sidebar toggle buttons.
  * 1. Overlay the main .site container.
+ * 2. Compensate for toggle-outer padding, so the button still aligns with the
+ *    bottom of the masthead.
  */
 .menu-toggle,
 .search-toggle {
 	position: fixed;
 	z-index: 10;
-	top: 0;
+	top: 196px;
+	top: 10.88889rem;
 	/* 1 */
 	display: block;
-	width: 196px;
-	width: 10.88889rem;
 	height: 84px;
 	height: 4.66667rem;
+	margin-top: -0.5em;
+	/* 2 */
+	margin-bottom: -0.5em;
 	padding-top: 28px;
 	padding-top: 1.55556rem;
+	/* 2 */
+	padding-right: 0;
+	padding-left: 0;
 	font-weight: bold;
 	font-size: 18px;
 	font-size: 1rem;
@@ -1191,17 +1198,23 @@ a:active {
 
 /* Admin bar is being displayed, so move position-fixed elements down. */
 .admin-bar .main-navigation-wrapper,
-.admin-bar .main-search-wrapper,
+.admin-bar .main-search-wrapper {
+	top: 32px;
+}
 .admin-bar .menu-toggle,
 .admin-bar .search-toggle {
-	top: 32px;
+	top: 228px;
+	top: 12.66667rem;
 }
 @media screen and (max-width: 782px) {
 	.admin-bar .main-navigation-wrapper,
-	.admin-bar .main-search-wrapper,
+	.admin-bar .main-search-wrapper {
+		top: 46px;
+	}
 	.admin-bar .menu-toggle,
 	.admin-bar .search-toggle {
-		top: 46px;
+		top: 242px;
+		top: 13.44444rem;
 	}
 }
 
@@ -1997,10 +2010,9 @@ a:active {
 }
 
 .category-header {
-	/* leave room for the description */
 	position: relative;
-	margin-bottom: 56px;
-	margin-bottom: 3.11111rem;
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
 	text-align: center;
 }
 .category-header:before {
@@ -2039,18 +2051,40 @@ a:active {
 	text-transform: uppercase;
 	background: #fff;
 }
+.category-title a {
+	border-bottom: 0;
+}
 
-.category-description {
+/* Left- and right-aligned text underneath the section heading. */
+.category-description,
+.category-archive-link {
 	position: absolute;
 	z-index: 1;
-	top: 100%;
-	right: 0;
-	left: 0;
-	margin-top: -14px;
-	margin-top: -0.77778rem;
+	top: 50%;
+	margin: 14px 0 0;
+	margin: 0.77778rem 0 0;
 	font-weight: bold;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	line-height: 1.75;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-	text-align: center;
+}
+
+.category-description {
+	left: 0;
+	margin-right: 50%;
+	padding-right: 138px;
+	padding-right: 7.66667rem;
+	text-align: left;
+}
+
+.category-archive-link {
+	right: 0;
+	margin-left: 50%;
+	padding-left: 138px;
+	padding-left: 7.66667rem;
+	text-align: right;
+	text-transform: uppercase;
 }
 
 .issue-section {
@@ -2805,6 +2839,8 @@ object {
 .category-yorklife .category-title,
 .category-yorklife .category-title a,
 .category-yorklife .category-description,
+.category-yorklife .category-archive-link a,
+.category-yorklife .site-title-term.category-link,
 .category-yorklife .dropcap,
 .category-yorklife .entry-content a,
 .category-yorklife .posted-on a,
@@ -2945,37 +2981,39 @@ object {
 	}
 }
 
-.category-open-minds {
+.category-up-close-and-personal {
 	/* Blue square beside subheading. */
 }
-.category-open-minds .category-title,
-.category-open-minds .category-title a,
-.category-open-minds .category-description,
-.category-open-minds .lead,
-.category-open-minds .entry-subtitle,
-.category-open-minds .entry-content a,
-.category-open-minds .posted-on a,
-.category-open-minds .quote-source {
+.category-up-close-and-personal .category-title,
+.category-up-close-and-personal .category-title a,
+.category-up-close-and-personal .category-description,
+.category-up-close-and-personal .category-archive-link a,
+.category-up-close-and-personal .site-title-term.category-link,
+.category-up-close-and-personal .lead,
+.category-up-close-and-personal .entry-subtitle,
+.category-up-close-and-personal .entry-content a,
+.category-up-close-and-personal .posted-on a,
+.category-up-close-and-personal .quote-source {
 	color: #3d9aa9;
 }
-.category-open-minds .entry-content a:hover,
-.category-open-minds .entry-content a:focus,
-.category-open-minds .entry-content a:active,
-.category-open-minds .posted-on a:hover,
-.category-open-minds .posted-on a:focus,
-.category-open-minds .posted-on a:active {
+.category-up-close-and-personal .entry-content a:hover,
+.category-up-close-and-personal .entry-content a:focus,
+.category-up-close-and-personal .entry-content a:active,
+.category-up-close-and-personal .posted-on a:hover,
+.category-up-close-and-personal .posted-on a:focus,
+.category-up-close-and-personal .posted-on a:active {
 	color: #0f3b6b;
 }
-.category-open-minds .entry-title,
-.category-open-minds .entry-subtitle,
-.category-open-minds h3,
-.category-open-minds h4,
-.category-open-minds h5,
-.category-open-minds h6 {
+.category-up-close-and-personal .entry-title,
+.category-up-close-and-personal .entry-subtitle,
+.category-up-close-and-personal h3,
+.category-up-close-and-personal h4,
+.category-up-close-and-personal h5,
+.category-up-close-and-personal h6 {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
 }
-.category-open-minds .entry-content h3:before {
+.category-up-close-and-personal .entry-content h3:before {
 	content: "";
 	display: inline-block;
 	width: 1em;
@@ -2984,7 +3022,7 @@ object {
 	margin-left: -1.5em;
 	background: #69bcc9;
 }
-.category-open-minds .dropcap {
+.category-up-close-and-personal .dropcap {
 	margin-right: 7px;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	border-width: 14px 21px;
@@ -2994,71 +3032,71 @@ object {
 	background: #69bcc9;
 	color: #fff;
 }
-.category-open-minds hr,
-.category-open-minds.single-entry .entry-content:before,
-.category-open-minds .category-header:before {
+.category-up-close-and-personal hr,
+.category-up-close-and-personal.single-entry .entry-content:before,
+.category-up-close-and-personal .category-header:before {
 	background: #69bcc9;
 }
-.category-open-minds .call-to-action,
-.category-open-minds .contact-details {
+.category-up-close-and-personal .call-to-action,
+.category-up-close-and-personal .contact-details {
 	border-top-color: #69bcc9;
 }
-.category-open-minds .footer a {
+.category-up-close-and-personal .footer a {
 	color: #296770;
 }
-.category-open-minds .iis-caption {
+.category-up-close-and-personal .iis-caption {
 	border-right-color: #69bcc9;
 }
-.category-open-minds .iis-caption .cat-links a,
-.category-open-minds .slider-subtitle {
+.category-up-close-and-personal .iis-caption .cat-links a,
+.category-up-close-and-personal .slider-subtitle {
 	color: #69bcc9;
 }
-.category-open-minds .textbox {
+.category-up-close-and-personal .textbox {
 	background: #69bcc9;
 	color: #fff;
 }
 
-.category-open-minds .issue-section-posts .entry-title {
+.category-up-close-and-personal .issue-section-posts .entry-title {
 	font-size: 24px;
 	font-size: 1.33333rem;
 	line-height: 1.16667;
 }
-.category-open-minds .issue-section-posts .entry-content {
+.category-up-close-and-personal .issue-section-posts .entry-content {
 	display: none;
 }
 @media (min-width: 500px) {
-	.category-open-minds .issue-section-posts {
+	.category-up-close-and-personal .issue-section-posts {
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
 		 * flexbox layout yet.
 		 */
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex {
 		/* First article. */
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry {
 		max-width: 666px;
 		margin-right: auto; 
 		margin-left: auto;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-title,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		text-align: center;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-header {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-header {
 		padding-bottom: 14px;
 		padding-bottom: 0.77778rem;
 		background: #69bcc9;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-title,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		padding: 0 14px;
 		padding: 0 0.77778rem;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-title {
 		padding-top: 14px;
 		padding-top: 0.77778rem;
 		font-size: 28px;
@@ -3066,13 +3104,13 @@ object {
 		line-height: 1;
 		color: #fff;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-subtitle {
 		font-size: 24px;
 		font-size: 1.33333rem;
 		line-height: 1.16667;
 		color: #171717;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
 		font-size: 18px;
@@ -3080,79 +3118,79 @@ object {
 		line-height: 1.55556;
 		color: #171717;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div {
 		width: 100%;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry {
 		clear: none;
 		float: left; 
 		width: 50%;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-child(2n+1) {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry:nth-child(2n+1) {
 		clear: left;
 	}
 }
 @media (min-width: 1100px) {
-	.category-open-minds .issue-section-posts .entry {
+	.category-up-close-and-personal .issue-section-posts .entry {
 		max-width: 50%;
 	}
-	.category-open-minds .issue-section-posts .entry .entry-image {
+	.category-up-close-and-personal .issue-section-posts .entry .entry-image {
 		float: left;
 		width: 37.5%;
 		margin-bottom: 0;
 	}
-	.category-open-minds .issue-section-posts .entry .entry-image img {
+	.category-up-close-and-personal .issue-section-posts .entry .entry-image img {
 		width: 100%;
 	}
-	.category-open-minds .issue-section-posts .entry .entry-title,
-	.category-open-minds .issue-section-posts .entry .entry-subtitle,
-	.category-open-minds .issue-section-posts .entry .entry-meta,
-	.category-open-minds .issue-section-posts .entry .entry-content {
+	.category-up-close-and-personal .issue-section-posts .entry .entry-title,
+	.category-up-close-and-personal .issue-section-posts .entry .entry-subtitle,
+	.category-up-close-and-personal .issue-section-posts .entry .entry-meta,
+	.category-up-close-and-personal .issue-section-posts .entry .entry-content {
 		clear: none;
 		margin-left: 41.66667%;
 	}
-	.category-open-minds .issue-section-posts .entry .entry-title {
+	.category-up-close-and-personal .issue-section-posts .entry .entry-title {
 		font-size: 21px;
 		font-size: 1.16667rem;
 		line-height: 1.33333;
 	}
-	.category-open-minds .issue-section-posts .entry .entry-subtitle {
+	.category-up-close-and-personal .issue-section-posts .entry .entry-subtitle {
 		font-size: 18px;
 		font-size: 1rem;
 		line-height: 1.16667;
 	}
-	.category-open-minds .issue-section-posts .entry .entry-meta {
+	.category-up-close-and-personal .issue-section-posts .entry .entry-meta {
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.3125;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry {
 		clear: right;
 		float: right;
 		max-width: 50%;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child {
 		float: left;
 		max-width: 100%; 
 		margin-bottom: 0;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-header {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-header {
 		padding-bottom: 14px;
 		padding-bottom: 0.77778rem;
 		background: #69bcc9;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-image {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-image {
 		width: 100%;
 		margin-right: 0;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-title,
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle,
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-title,
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle,
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-left: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-title {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-title {
 		clear: left;
 		padding-top: 14px;
 		padding-top: 0.77778rem;
@@ -3161,13 +3199,13 @@ object {
 		line-height: 1;
 		color: #fff;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle {
 		font-size: 24px;
 		font-size: 1.33333rem;
 		line-height: 1.16667;
 		color: #171717;
 	}
-	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
+	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
 		font-size: 18px;
@@ -3175,25 +3213,25 @@ object {
 		line-height: 1.55556;
 		color: #171717;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: flex;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex .entry {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex .entry {
 		clear: none;
 		float: none;
 		width: auto;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex .entry-content {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex .entry-content {
 		margin-bottom: 0; 
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child {
 		max-width: 50%;
 		margin-right: 28px;
 		margin-right: 1.55556rem;
@@ -3207,19 +3245,19 @@ object {
 		-ms-flex: 1 1 50%;
 		flex: 1 1 50%;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-image {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-image {
 		width: 100%;
 		margin-right: 0;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-title,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
 		margin-left: 0;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
 		clear: left;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
@@ -3245,25 +3283,25 @@ object {
 		-ms-flex: 1 1 50%;
 		flex: 1 1 50%;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry {
 		width: 100%;
 		max-width: 100%;
 		min-height: 0;
 		margin-bottom: 0;
 		padding-left: 0;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry .entry-image {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry .entry-image {
 		line-height: 0.5;
 		/* fix for excess space under the image */
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child .entry-content,
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child ~ * .entry-content {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child .entry-content,
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child ~ * .entry-content {
 		display: none;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry-content {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry-content {
 		display: block;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry-content p {
+	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry-content p {
 		margin-bottom: 0;
 		/* for alignment with bottom of flex container */
 	}
@@ -3287,6 +3325,11 @@ object {
 .category-centre-stage .quote-source {
 	color: #acab15;
 }
+.category-centre-stage .category-description,
+.category-centre-stage .site-title-term.category-link,
+.category-centre-stage .category-archive-link a {
+	color: #dad81b;
+}
 .category-centre-stage .entry-title,
 .category-centre-stage .entry-subtitle,
 .category-centre-stage h3,
@@ -3307,8 +3350,7 @@ object {
 	background: #f0ef84;
 }
 .category-centre-stage .category-title,
-.category-centre-stage .category-title a,
-.category-centre-stage .category-description {
+.category-centre-stage .category-title a {
 	color: #171717;
 }
 .category-centre-stage .lead {
@@ -3340,7 +3382,7 @@ object {
 	border-color: #f0ef84;
 }
 .category-centre-stage .content-details {
-	border-color: #e8e640;
+	border-color: #dad81b;
 }
 .category-centre-stage .footer a {
 	color: #acab15;
@@ -3590,6 +3632,8 @@ object {
 .category-all-about-yu .category-title,
 .category-all-about-yu .category-title a,
 .category-all-about-yu .category-description,
+.category-all-about-yu .category-archive-link a,
+.category-all-about-yu .site-title-term.category-link,
 .category-all-about-yu .dropcap,
 .category-all-about-yu .entry-subtitle,
 .category-all-about-yu .entry-content a,
@@ -3723,6 +3767,8 @@ object {
 .category-back-page .category-title,
 .category-back-page .category-title a,
 .category-back-page .category-description,
+.category-back-page .category-archive-link a,
+.category-back-page .site-title-term.category-link,
 .category-back-page .dropcap,
 .category-back-page .entry-subtitle,
 .category-back-page .entry-content a,
@@ -3859,11 +3905,16 @@ object {
 	}
 }
 
-.post-type-archive-yumag_notice .category-description {
+.post-type-archive-yumag_notice .category-description,
+.post-type-archive-yumag_notice .category-link a {
 	color: #67b46a;
 }
 .post-type-archive-yumag_notice .category-header:before {
 	background: #9acd9c;
+}
+.post-type-archive-yumag_notice .category-header {
+	margin-bottom: 56px;
+	margin-bottom: 3.11111rem;
 }
 .post-type-archive-yumag_notice .index-content .index-posts .yumag_notice {
 	/* Specificity hack */

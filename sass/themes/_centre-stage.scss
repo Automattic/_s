@@ -16,6 +16,12 @@
 		color: $color__centrestage__darker;
 	}
 
+	.category-description,
+	.site-title-term.category-link,
+	.category-archive-link a {
+		color: $color__centrestage__dark;
+	}
+
 	.entry-title,
 	.entry-subtitle,
 	h3,
@@ -39,8 +45,7 @@
 	}
 
 	.category-title,
-	.category-title a,
-	.category-description {
+	.category-title a {
 		color: $black;
 	}
 

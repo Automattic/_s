@@ -85,18 +85,23 @@
 /*
  * Sidebar toggle buttons.
  * 1. Overlay the main .site container.
+ * 2. Compensate for toggle-outer padding, so the button still aligns with the
+ *    bottom of the masthead.
  */
 .menu-toggle,
 .search-toggle {
 	@include font-size( "normal" );
-	@include rem( "width", $height__masthead );
+	@include rem( "top", $height__masthead );
 	@include rem( "height", $width__menu-toggle );
 	@include rem( "padding-top", $line );
 	@include rem( "line-height", $width__menu-toggle );
 	position: fixed;
-	top: 0;
 	z-index: 10; /* 1 */
 	display: block;
+	margin-top: -0.5em; /* 2 */
+	margin-bottom: -0.5em; /* 2 */
+	padding-right: 0;
+	padding-left: 0;
 	border: 0;
 	border-radius: 0;
 	box-shadow: none;
@@ -242,13 +247,25 @@
 .admin-bar {
 
 	.main-navigation-wrapper,
-	.main-search-wrapper,
+	.main-search-wrapper {
+		top: 32px;
+	}
+
 	.menu-toggle,
 	.search-toggle {
-		top: 32px;
+		@include rem( "top", 32px + ( $text-size__px * ( $height__masthead / 1rem ) ) );
+	}
 
-		@media screen and ( max-width: 782px ) {
+	@media screen and ( max-width: 782px ) {
+
+		.main-navigation-wrapper,
+		.main-search-wrapper {
 			top: 46px;
+		}
+
+		.menu-toggle,
+		.search-toggle {
+			@include rem( "top", 46px + ( $text-size__px * ( $height__masthead / 1rem ) ) );
 		}
 
 	}

@@ -26,7 +26,10 @@ get_header(); ?>
 					<h1 class="taxonomy-title category-title notices-title">
 						<img src="<?php echo $src . $slug; ?>-42.png" srcset="<?php echo $src . $slug; ?>-84.png 2x, <?php echo $src . $slug; ?>-42.png 1x" height="42" alt="<?php esc_attr_e( 'On the Grapevine', 'yumag' ); ?>">
 					</h1>
-					<p class="taxonomy-description category-description"><?php esc_html_e( 'Standfirst to add here', 'yumag' ); ?></p>
+					<p class="taxonomy-description category-description"><?php esc_html_e( 'news from fellow alumni', 'yumag' ); ?></p>
+						<p class="taxonomy-link category-archive-link">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">Back to latest issue</a>
+						</p>
 				</header>
 				<div class="index-content">
 					<div class="index-posts">

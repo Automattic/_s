@@ -1,8 +1,10 @@
-.category-open-minds {
+.category-up-close-and-personal {
 
 	.category-title,
 	.category-title a,
 	.category-description,
+	.category-archive-link a,
+	.site-title-term.category-link,
 	.lead,
 	.entry-subtitle,
 	.entry-content a,
@@ -85,7 +87,7 @@
 
 }
 
-.category-open-minds .issue-section-posts {
+.category-up-close-and-personal .issue-section-posts {
 
 	.entry-title {
 		@include font-size-line( "larger" );

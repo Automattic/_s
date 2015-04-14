@@ -69,6 +69,11 @@ function yumag_tinymce_setup( $settings ) {
 			'wrapper' => true
 		),
 		array(
+			'title' => _x( 'Dept/college/class-of', 'TinyMCE styles dropdown', 'yumag' ),
+			'inline' => 'i',
+			'classes' => 'student-details'
+		),
+		array(
 			'title' => _x( 'Quote source', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'p',
 			'classes' => 'quote-source'

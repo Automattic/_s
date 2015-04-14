@@ -1,11 +1,16 @@
 .post-type-archive-yumag_notice {
 
-	.category-description {
+	.category-description,
+	.category-link a {
 		color: $color__allaboutyu__dark;
 	}
 
 	.category-header:before {
 		background: $color__allaboutyu;
+	}
+
+	.category-header {
+		@include rem( "margin-bottom", ( $line * 2 ) );
 	}
 
 	.index-content .index-posts .yumag_notice { /* Specificity hack */

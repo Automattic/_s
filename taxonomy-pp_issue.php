@@ -14,7 +14,7 @@
  */
 $sections = array(
 	'yorklife' => 0,
-	'open-minds' => 2,
+	'up-close-and-personal' => 2,
 	'centre-stage' => 3,
 	'all-about-yu' => 0,
 	'back-page' => 0
@@ -42,7 +42,7 @@ get_header(); ?>
 			<?php // Run through the loop, once for each section. ?>
 			<?php foreach( $sections as $section => $flex ) : ?>
 				<?php $cat = get_category_by_slug( $section ) ?>
-				<section class="issue-section category-section category-<?php echo $section; ?>">
+				<section class="issue-section category-section category-<?php echo $section; ?>" id="<?php echo $cat->slug; ?>">
 					<header class="issue-section-header category-header">
 						<h2 class="taxonomy-title issue-section-title category-title">
 							<a href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php printf( _x( '%s archives', 'Category archives link', 'yumag' ), esc_attr( $cat->name ) ); ?>">
@@ -50,6 +50,9 @@ get_header(); ?>
 							</a>
 						</h2>
 						<p class="taxonomy-description issue-section-description category-description"><?php echo esc_html( $cat->description ); ?></p>
+						<p class="taxonomy-link issue-section-link category-archive-link">
+							<a href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php printf( _x( '%s archives', 'Category archives link', 'yumag' ), esc_attr( $cat->name ) ); ?>">More in this section &rarr;</a>
+						</p>
 					</header>
 					<div class="category-content index-content issue-section-content">
 						<div class="issue-section-posts index-posts category-posts category-<?php echo $section; ?>-posts">

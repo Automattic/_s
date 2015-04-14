@@ -26,6 +26,9 @@ get_header(); ?>
 							<img src="<?php echo $src . $cat->slug; ?>.png" srcset="<?php echo $src . $cat->slug; ?>@2x.png 2x, <?php echo $src . $cat->slug; ?>.png 1x" alt="<?php echo esc_attr( $cat->cat_name ); ?>">
 						</h1>
 						<p class="taxonomy-description category-description"><?php echo esc_html( $cat->description ); ?></p>
+						<p class="taxonomy-link category-archive-link">
+							<a href="<?php echo esc_url( home_url( '/#' . $cat->slug ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">Back to latest issue</a>
+						</p>
 					</header><!-- .category-header -->
 					<div class="category-content index-content">
 						<div class="category-posts index-posts category-<?php echo $cat->slug; ?>-posts">

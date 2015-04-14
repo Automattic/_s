@@ -1,5 +1,5 @@
 .category-header {
-	@include rem( "margin-bottom", ( $line * 2 ) ); /* leave room for the description */
+	@include rem( "margin-bottom", $line );
 	position: relative;
 	text-align: center;
 
@@ -36,22 +36,44 @@
 	background: $background-color;
 
 	a {
+		border-bottom: 0;
+	}
+
+}
+
+/* Left- and right-aligned text underneath the section heading. */
+.category-description,
+.category-archive-link {
+	@include rem( "margin", ( $height__rule ) 0 0 );
+	@include font-size-line( "small" );
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	font-weight: bold;
+	font-family: $font-family__category;
+}
+
+.category-description {
+	@include rem( "margin-right", 50% );
+	@include rem( "padding-right", 138px ); // half-width of the widest section logo
+	left: 0;
+	text-align: left;
+}
+
+.category-archive-link {
+	@include rem( "margin-left", 50% );
+	@include rem( "padding-left", 138px ); // half-width of the widest section logo
+	right: 0;
+	text-align: right;
+	text-transform: uppercase;
+
+	a {
 		@extend %hide-underline;
 	}
 
 }
 
-.category-description {
-	@include rem( "margin-top", ( $line * -0.5 ) );
-	position: absolute;
-	top: 100%;
-	right: 0;
-	left: 0;
-	z-index: 1;
-	font-weight: bold;
-	font-family: $font-family__category;
-	text-align: center;
-}
+
 
 .issue-section {
 	@include rem( "margin-top", ( $line * 2 ) );
