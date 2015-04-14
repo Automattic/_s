@@ -43,10 +43,13 @@
 	}
 
 	.category-title,
-	.category-title a,
+	.category-title a {
+		color: $black;
+	}
+
 	.category-description,
 	.category-archive-link a {
-		color: $black;
+		color: $grey__light;
 	}
 
 	.lead {
