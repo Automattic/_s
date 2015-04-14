@@ -11,13 +11,15 @@
 $src = get_template_directory_uri() . '/assets/';
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <title><?php wp_title( '/', true, 'right' ); ?></title>
+
+<script>(function(d,c,b){if(d.classList){d.classList.remove(c);d.classList.add(b)} else d.className=d.className.replace(new RegExp('(^| )'+c+'( |$)','gi'),' '+b+' ')})(document.documentElement,'no-js','js')</script>
 
 <?php wp_head(); ?>
 </head>

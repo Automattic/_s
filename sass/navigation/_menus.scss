@@ -1,3 +1,9 @@
+/* Hide menus when JavaScript is off */
+.no-js .js-menu-area {
+	display: none !important;
+}
+
+
 /* Animation for moving the page 'out of the way' of the sidebars. */
 .site {
 	transition: $transition-time__menu transform $transition-type;

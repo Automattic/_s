@@ -935,6 +935,11 @@ a:active {
 
 /* 5.2 Menus
 --------------------------------------------------------------*/
+/* Hide menus when JavaScript is off */
+.no-js .js-menu-area {
+	display: none !important;
+}
+
 /* Animation for moving the page 'out of the way' of the sidebars. */
 .site {
 	-webkit-transition: 0.1s -webkit-transform ease-in;
