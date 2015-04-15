@@ -6,13 +6,16 @@
  *
  * @package YuMag
  */
+
+// URL-path to images.
+$src = get_template_directory_uri() . '/assets/';
 ?>
 		<div id="tertiary" class="footer site-footer">
 			<div class="footer-row site-footer-row">
 				<div class="site-footer-content">
 					<div class="footer-site-logo">
 						<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.svg" onerror="this.src='<?php echo get_stylesheet_directory_uri(); ?>/assets/logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="69">
+							<img src="<?php echo $src; ?>logo.png" srcset="<?php echo $src; ?>logo@2x.png 2x, <?php echo $src; ?>logo.png 1x" alt="<?php bloginfo( 'name' ); ?>" width="124" height="85">
 						</a>
 					</div>
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
