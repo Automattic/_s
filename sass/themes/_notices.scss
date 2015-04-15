@@ -34,7 +34,7 @@
 		margin-bottom: 0;
 	}
 
-	p:not(.notice-label) + p:not(.notice-label) {
+	.yumag_notice p:not(.notice-label) + p:not(.notice-label) {
 		text-indent: $text-indent;
 	}
 

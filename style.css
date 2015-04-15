@@ -3943,7 +3943,7 @@ object {
 .post-type-archive-yumag_notice p {
 	margin-bottom: 0;
 }
-.post-type-archive-yumag_notice p:not(.notice-label) + p:not(.notice-label) {
+.post-type-archive-yumag_notice .yumag_notice p:not(.notice-label) + p:not(.notice-label) {
 	text-indent: 4%;
 }
 .post-type-archive-yumag_notice .index-posts .yumag_notice .entry-footer {
