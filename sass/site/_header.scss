@@ -33,7 +33,6 @@
 
 .site-header-single {
 	@include rem( "margin-top", $line );
-	@include rem( "margin-bottom", $line );
 	height: auto;
 	text-align: center;
 
