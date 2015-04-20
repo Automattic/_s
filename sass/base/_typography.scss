@@ -26,7 +26,7 @@ h6 {
 // Copy
 
 p {
-	@include margin(0 0 24px 0);
+	margin: 0 0 rem(24) 0;
 }
 
 b,
@@ -43,8 +43,7 @@ i {
 
 blockquote,
 q {
-	@include margin(0 24px);
-
+	margin: 0 rem(24);
 	quotes: "" "";
 
 	&:before,
@@ -54,19 +53,18 @@ q {
 }
 
 address {
-	@include margin(0 0 24px 0);
+	margin: 0 0 rem(24) 0;
 }
 
 pre {
-	@include margin(0 0 24px);
-	@include padding(24px);
-
 	background: $color-background-pre;
 	font-family: $font-pre;
 	font-size: rem(15);
 	line-height: $line-height-pre;
+	margin: 0 0 rem(24);
 	max-width: 100%;
 	overflow: auto;
+	padding: rem(24);
 }
 
 code,

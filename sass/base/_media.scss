@@ -7,10 +7,9 @@
 .comment-content {
 
 	img.wp-smiley {
-		@include margin(0);
-		@include padding(0);
-
 		border: none;
+		margin: 0;
+		padding: 0;
 	}
 }
 
@@ -24,8 +23,7 @@ img {
 // Captions
 
 .wp-caption {
-	@include margin(0 0 24px 0);
-
+	margin: 0 0 rem(24) 0;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -34,7 +32,7 @@ img {
 	}
 
 	.wp-caption-text {
-		@include margin(12px 0);
+		margin: rem(12) 0;
 	}
 }
 
@@ -45,7 +43,7 @@ img {
 // Galleries
 
 .gallery {
-	@include margin(0 0 24px 0);
+	margin: 0 0 rem(24) 0;
 }
 
 .gallery-item {
