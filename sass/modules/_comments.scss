@@ -21,10 +21,6 @@
 	float: left;
 }
 
-.comment-content a {
-	@include word-break(keep-all);
-}
-
 .bypostauthor {
 	display: block;
 }

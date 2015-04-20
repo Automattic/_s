@@ -5,8 +5,6 @@
 // Posts and pages
 
 .entry-title {
-	@include word-break(keep-all);
-
 	font-size: rem(36);
 }
 

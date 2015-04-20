@@ -113,3 +113,13 @@ small {
 big {
 	font-size: 125%;
 }
+
+// Word Wrapping
+.entry-title,
+.entry-content,
+.comments-title,
+.comment-content,
+.widget-title,
+.widget {
+	@include word-break();
+}
