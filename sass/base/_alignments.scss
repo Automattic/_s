@@ -7,13 +7,13 @@
 
 	display: inline;
 	float: left;
+	margin: 0 rem(24) 0 0;
 }
 
 .alignright {
-	@include margin(0 0 0 24px);
-
 	display: inline;
 	float: right;
+	margin: 0 0 0 rem(24);
 }
 
 .aligncenter {

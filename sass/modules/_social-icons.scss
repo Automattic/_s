@@ -5,10 +5,9 @@
 		padding: 0;
 
 		li {
-			@include margin(null 23px null null);
-
 			display: inline-block;
 			list-style: none;
+			margin-right: rem(24);
 
 			&:last-child {
 				margin: 0;

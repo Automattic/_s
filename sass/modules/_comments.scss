@@ -12,11 +12,11 @@
 }
 
 .comment-meta {
-	@include margin(0 0 14px 0);
+	margin: 0 0 rem(14) 0;
 }
 
 .avatar {
-	@include margin(0 10px 0 0);
+	margin: 0 rem(10) 0 0;
 
 	float: left;
 }

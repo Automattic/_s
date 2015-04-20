@@ -15,8 +15,6 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@include padding(9px 16px 6px);
-
 	border: 1px solid;
 	border-color: $color-border-button;
 	border-radius: 3px;
@@ -25,6 +23,7 @@ input[type="submit"] {
 	color: rgba(0, 0, 0, .8);
 	font-size: rem(12);
 	line-height: 1;
+	padding: rem(9) rem(16) rem(6);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 
 	&:hover {
@@ -85,13 +84,13 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	@include padding(3px);
+	padding: rem(3);
 }
 
 textarea {
-	@include padding(6px);
 	@include size(100% auto);
 
 	overflow: auto; // Removes default vertical scrollbar in IE6/7/8/9
+	padding: rem(6);
 	vertical-align: top; // Improves readability and alignment in all browsers
 }

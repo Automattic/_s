@@ -25,7 +25,7 @@ a {
 	ul {
 
 		li {
-			@include margin(0 10px 0 0);
+			margin: 0 rem(10) 0 0;
 		}
 
 	}
@@ -136,8 +136,7 @@ a {
 .post-navigation {
 
 	.site-main & {
-		@include margin(0 0 24px 0);
-
+		margin: 0 0 rem(24) 0;
 		overflow: hidden;
 	}
 
