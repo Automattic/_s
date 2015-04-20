@@ -85,7 +85,7 @@ function yumag_setup() {
 
 	add_theme_support( 'featured-content', array(
 		'filter'     => 'yumag_get_featured_posts',
-		'max_posts'  => 4,
+		'max_posts'  => 10,
 		'post_types' => array( 'post', 'page' )
 	) );
 
