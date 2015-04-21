@@ -335,27 +335,29 @@ h3 {
 }
 
 h4 {
-	margin: 28px 0 14px;
-	margin: 1.55556rem 0 0.77778rem;
+	margin: 42px 0 28px;
+	margin: 2.33333rem 0 1.55556rem;
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1.33333;
 }
 
 h5 {
-	margin: 28px 0 14px;
-	margin: 1.55556rem 0 0.77778rem;
-	font-size: 18px;
-	font-size: 1rem;
-	line-height: 1.55556;
+	margin: 42px 0 28px;
+	margin: 2.33333rem 0 1.55556rem;
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
+	text-transform: none;
 }
 
 h6 {
 	margin: 28px 0 14px;
 	margin: 1.55556rem 0 0.77778rem;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.55556;
+	text-transform: none;
 }
 
 p {
@@ -3688,6 +3690,12 @@ object {
 .category-all-about-yu .textbox {
 	background: #9acd9c;
 }
+.category-all-about-yu .textbox h3,
+.category-all-about-yu .textbox h4,
+.category-all-about-yu .textbox h5,
+.category-all-about-yu .textbox h6 {
+	color: #171717;
+}
 .category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
 }
@@ -3826,6 +3834,12 @@ object {
 }
 .category-back-page .textbox {
 	background: #e8cfeb;
+}
+.category-back-page .textbox h3,
+.category-back-page .textbox h4,
+.category-back-page .textbox h5,
+.category-back-page .textbox h6 {
+	color: #171717;
 }
 .category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;

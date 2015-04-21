@@ -25,7 +25,6 @@ h5,
 h6 {
 	font-family: $font-family__heading;
 	text-transform: uppercase;
-	//letter-spacing: 0.1em;
 }
 
 h3 {
@@ -34,16 +33,18 @@ h3 {
 }
 
 h4 {
-	@include rem( "margin", $line 0 ( $line * 0.5 ) );
+	@include rem( "margin", ( $line * 1.5 ) 0 $line );
 	@include font-size-line( "large" );
 }
 
 h5 {
-	@include rem( "margin", $line 0 ( $line * 0.5 ) );
-	@include font-size-line( "normal" );
+	@include rem( "margin", ( $line * 1.5 )  0 $line );
+	@include font-size-line( "large" );
+	text-transform: none;
 }
 
 h6 {
 	@include rem( "margin", $line 0 ( $line * 0.5 ) );
-	@include font-size-line( "small" );
+	@include font-size-line( "normal" );
+	text-transform: none;
 }
