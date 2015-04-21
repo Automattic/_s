@@ -126,6 +126,11 @@ big {
 		margin-bottom: 0;
 	}
 
+	blockquote {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
 	/* Images */
 	.alignnone,
 	.aligncenter {
@@ -149,6 +154,11 @@ big {
 			margin-top: 0;
 		}
 
+	}
+
+	/* Links */
+	.entry-content.entry-content & a { // specificity hack
+		color: $color__link-hover;
 	}
 
 	:last-child {

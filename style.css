@@ -500,10 +500,15 @@ big {
 	line-height: 1.75;
 	background: #e0e0e4;
 	/* Images */
+	/* Links */
 	/* Override subheadings' decorative coloured squares. */
 }
 .textbox p {
 	margin-bottom: 0;
+}
+.textbox blockquote {
+	margin-right: 0; 
+	margin-left: 0;
 }
 .textbox .alignnone,
 .textbox .aligncenter {
@@ -531,6 +536,9 @@ big {
 .textbox h5:first-child,
 .textbox h6:first-child {
 	margin-top: 0;
+}
+.entry-content.entry-content .textbox a {
+	color: #0f3b6b;
 }
 .textbox :last-child {
 	margin-bottom: 0;
