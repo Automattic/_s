@@ -3,10 +3,9 @@
 	.category-title,
 	.category-title a,
 	.site-title-term.category-link,
-	.dropcap,
 	.entry-content a,
 	.posted-on a,
-	.quote-source {
+	.dropcap {
 		color: $color__yorklife__dark;
 	}
 
@@ -50,18 +49,8 @@
 
 	}
 
-	hr,
-	&.single-entry .entry-content:before,
-	.category-header,
-	.sixty-seconds,
-	.textbox,
-	.whats-on {
+	.category-header {
 		background: $color__yorklife;
-	}
-
-	.call-to-action,
-	.content-details {
-		border-color: $color__yorklife;
 	}
 
 	.footer a {

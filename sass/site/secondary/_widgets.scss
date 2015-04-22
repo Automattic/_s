@@ -2,12 +2,8 @@
 	@include rem( "margin", ( $spacing * 2) 0 );
 	@include rem( "padding", 0 $padding__widget );
 	@include rem( "border-left", $border-width__widget solid );
-	border-color: $background-color__rule;
+	border-color: $color__yorklife;
 
-	/* Different colours for different categories. */
-	.category-yorklife & {
-		border-color: $color__yorklife;
-	}
 	.category-open-minds & {
 		border-color: $color__openminds;
 	}

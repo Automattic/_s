@@ -79,7 +79,6 @@ big {
 	margin-left: -5px;
 	margin-right: 3px;
 	font-weight: bold;
-	//font-family: $font-family__dropcap;
 }
 
 /* Calls-to-action. */
@@ -88,7 +87,7 @@ big {
 	@include rem( "padding-top", ( $line * 0.5 ) );
 	font-weight: bold;
 	font-family: $font-family__meta;
-	border-top: $height__rule solid $background-color__rule;
+	border-top: $height__rule solid $color__yorklife;
 }
 
 /* Mini calls-to-action within the content (e.g. for contact details). */
@@ -97,8 +96,8 @@ big {
 	@include rem( "padding", ( $line * 0.5 ) 0 );
 	font-weight: bold;
 	font-family: $font-family__meta;
-	border-top: 2px dotted $background-color__rule;
-	border-bottom: 2px solid $background-color__rule;
+	border-top: 2px dotted $color__yorklife;
+	border-bottom: 2px solid $color__yorklife;
 
 	p,
 	li,
@@ -117,7 +116,7 @@ big {
 	@include font-size-line( "small" );
 	font-style: normal;
 	font-weight: bold;
-	color: $grey__light;
+	color: $color__yorklife__dark;
 	text-transform: uppercase;
 	text-indent: 0 !important;
 }
@@ -130,7 +129,7 @@ big {
 	@include rem( "padding", ( $line * 0.5 ) $gutter );
 	@include font-size-line( "small" );
 	width: 100%;
-	background: $grey__lightest;
+	background: $color__yorklife;
 
 	p {
 		margin-bottom: 0;

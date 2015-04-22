@@ -460,7 +460,7 @@ big {
 	padding-top: 0.77778rem;
 	font-weight: bold;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-	border-top: 0.77778rem solid #ccc;
+	border-top: 0.77778rem solid #dcd4c6;
 }
 
 /* Mini calls-to-action within the content (e.g. for contact details). */
@@ -471,8 +471,8 @@ big {
 	padding: 0.77778rem 0;
 	font-weight: bold;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-	border-top: 2px dotted #ccc;
-	border-bottom: 2px solid #ccc;
+	border-top: 2px dotted #dcd4c6;
+	border-bottom: 2px solid #dcd4c6;
 }
 .content-details p,
 .content-details li,
@@ -492,7 +492,7 @@ big {
 	line-height: 1.75;
 	text-indent: 0 !important; 
 	text-transform: uppercase;
-	color: #9696a0;
+	color: #bfb097;
 }
 
 /* Coloured box within article. */
@@ -507,7 +507,7 @@ big {
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
-	background: #e0e0e4;
+	background: #dcd4c6;
 	/* Images */
 	/* Links */
 	/* Override subheadings' decorative coloured squares. */
@@ -811,7 +811,7 @@ hr {
 	margin: 42px 37.5%;
 	margin: 2.33333rem 37.5%;
 	border: 0;
-	background-color: #ccc;
+	background-color: #dcd4c6;
 }
 
 img {
@@ -1859,13 +1859,9 @@ a:active {
 	padding: 0 0.77778rem;
 	border-left: 14px solid;
 	border-left: 0.77778rem solid;
-	border-color: #ccc;
-	/* Different colours for different categories. */
+	border-color: #dcd4c6;
 	/* Links. */
 	/* Make sure select elements fit in widgets. */
-}
-.category-yorklife .widget {
-	border-color: #dcd4c6;
 }
 .category-open-minds .widget {
 	border-color: #69bcc9;
@@ -1944,7 +1940,7 @@ a:active {
 	margin: 14px 0 42px;
 	margin: 0.77778rem 0 2.33333rem;
 	margin-left: 37.5%;
-	background: #ccc;
+	background: #dcd4c6;
 }
 .single-entry .entry-content p:not(.lead) + p {
 	text-indent: 4%;
@@ -2985,10 +2981,9 @@ object {
 .category-yorklife .category-title,
 .category-yorklife .category-title a,
 .category-yorklife .site-title-term.category-link,
-.category-yorklife .dropcap,
 .category-yorklife .entry-content a,
 .category-yorklife .posted-on a,
-.category-yorklife .quote-source {
+.category-yorklife .dropcap {
 	color: #bfb097;
 }
 .category-yorklife .entry-content a:hover,
@@ -3020,17 +3015,8 @@ object {
 	font-size: 1rem;
 	line-height: 1.55556;
 }
-.category-yorklife hr,
-.category-yorklife.single-entry .entry-content:before,
-.category-yorklife .category-header,
-.category-yorklife .sixty-seconds,
-.category-yorklife .textbox,
-.category-yorklife .whats-on {
+.category-yorklife .category-header {
 	background: #dcd4c6;
-}
-.category-yorklife .call-to-action,
-.category-yorklife .content-details {
-	border-color: #dcd4c6;
 }
 .category-yorklife .footer a {
 	color: #94805b;

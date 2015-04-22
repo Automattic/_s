@@ -67,7 +67,7 @@ cite {
 
 hr {
 	@include rem( "margin", ( $line * 1.5 ) ( ( 100% - $width__rule ) / 2 ) );
-	background-color: $background-color__rule;
+	background-color: $color__yorklife;
 	border: 0;
 	width: $width__rule;
 	height: $height__rule;
