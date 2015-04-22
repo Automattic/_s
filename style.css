@@ -374,10 +374,17 @@ i {
 blockquote {
 	margin: 0 28px 28px;
 	margin: 0 1.55556rem 1.55556rem;
+	/*
+	 * When 2 quotes run into one blockquote container (due to TinyMCE quirks),
+	 * don't indent the first paragraph of the second quote.
+	 */
 }
 blockquote p {
 	margin-bottom: 14px;
 	margin-bottom: 0.77778rem;
+}
+blockquote .quote-source + p {
+	text-indent: 0;
 }
 
 address {
@@ -691,6 +698,7 @@ big {
 		margin-left: -28px;
 		margin-left: -1.55556rem;
 	}
+	/* Flow text in box next to the icon (not below it, as before) */
 	.sixty-seconds,
 	.whats-on {
 		min-height: 140px;
