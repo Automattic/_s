@@ -242,8 +242,21 @@ big {
 
 }
 
-.whats-on:before {
-	background-image: url("assets/whats-on-alpha.png");
+.whats-on {
+
+	&:before {
+		background-image: url("assets/whats-on-alpha.png");
+	}
+
+	/* Calls to action - remove thick line (as it clashes with the icon) */
+	.call-to-action {
+		@include rem( "margin-top", ( $line * 1.5 ) );
+		font-weight: bold;
+		font-family: $font-family__meta;
+		padding-top: 0;
+		border-top: 0;
+	}
+
 }
 
 @include media-retina {

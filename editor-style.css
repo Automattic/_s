@@ -647,8 +647,19 @@ big {
 	text-transform: none;
 }
 
+.whats-on {
+	/* Calls to action - remove thick line (as it clashes with the icon) */
+}
 .whats-on:before {
 	background-image: url("assets/whats-on-alpha.png");
+}
+.whats-on .call-to-action {
+	margin-top: 42px;
+	margin-top: 2.33333rem;
+	padding-top: 0;
+	font-weight: bold;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+	border-top: 0;
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
