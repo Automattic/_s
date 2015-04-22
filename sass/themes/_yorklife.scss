@@ -52,7 +52,10 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.category-header {
+	.category-header,
+	.sixty-seconds,
+	.textbox,
+	.whats-on {
 		background: $color__yorklife;
 	}
 
@@ -81,10 +84,6 @@
 	.iis-caption .cat-links a,
 	.slider-subtitle {
 		color: $color__yorklife;
-	}
-
-	.textbox {
-		background: $color__yorklife;
 	}
 
 	@include issue-section-multicolumn-layout;

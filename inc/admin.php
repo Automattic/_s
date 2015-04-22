@@ -57,9 +57,21 @@ function yumag_tinymce_setup( $settings ) {
 			'classes' => 'lead'
 		),
 		array(
-			'title' => _x( 'Textbox', 'TinyMCE styles dropdown', 'yumag' ),
+			'title' => _x( 'Coloured box', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'aside',
 			'classes' => 'textbox',
+			'wrapper' => true
+		),
+		array(
+			'title' => _x( '60 Seconds box', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'aside',
+			'classes' => 'sixty-seconds',
+			'wrapper' => true
+		),
+		array(
+			'title' => _x( 'What\'s On box', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'aside',
+			'classes' => 'whats-on',
 			'wrapper' => true
 		),
 		array(

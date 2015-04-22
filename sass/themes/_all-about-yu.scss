@@ -41,7 +41,8 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.category-header {
+	.category-header,
+	.sixty-seconds {
 		background: $color__allaboutyu;
 	}
 
@@ -64,8 +65,15 @@
 		color: $color__allaboutyu;
 	}
 
-	.textbox {
+	.textbox,
+	.sixty-seconds,
+	.whats-on {
 		background: $color__allaboutyu;
+
+		/* The square before the subheading */
+		h3:before {
+			display: none;
+		}
 
 		h3,
 		h4,
@@ -75,6 +83,7 @@
 		}
 
 	}
+
 
 	@include issue-section-multicolumn-layout;
 

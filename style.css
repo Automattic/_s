@@ -489,7 +489,9 @@ big {
 }
 
 /* Coloured box within article. */
-.textbox {
+.textbox,
+.sixty-seconds,
+.whats-on {
 	width: 100%;
 	margin: 0 0 28px;
 	margin: 0 0 1.55556rem;
@@ -503,15 +505,23 @@ big {
 	/* Links */
 	/* Override subheadings' decorative coloured squares. */
 }
-.textbox p {
+.textbox p,
+.sixty-seconds p,
+.whats-on p {
 	margin-bottom: 0;
 }
-.textbox blockquote {
+.textbox blockquote,
+.sixty-seconds blockquote,
+.whats-on blockquote {
 	margin-right: 0; 
 	margin-left: 0;
 }
 .textbox .alignnone,
-.textbox .aligncenter {
+.textbox .aligncenter,
+.sixty-seconds .alignnone,
+.sixty-seconds .aligncenter,
+.whats-on .alignnone,
+.whats-on .aligncenter {
 	max-width: -webkit-calc( 100% + ( 14px * 2 ));
 	max-width: calc( 100% + ( 14px * 2 )); 
 	margin-right: -14px;
@@ -520,30 +530,56 @@ big {
 	margin-left: -0.77778rem;
 }
 .textbox .alignnone:first-child,
-.textbox .aligncenter:first-child {
+.textbox .aligncenter:first-child,
+.sixty-seconds .alignnone:first-child,
+.sixty-seconds .aligncenter:first-child,
+.whats-on .alignnone:first-child,
+.whats-on .aligncenter:first-child {
 	margin-top: -14px;
 	margin-top: -0.77778rem;
 }
 .textbox h3,
 .textbox h4,
 .textbox h5,
-.textbox h6 {
+.textbox h6,
+.sixty-seconds h3,
+.sixty-seconds h4,
+.sixty-seconds h5,
+.sixty-seconds h6,
+.whats-on h3,
+.whats-on h4,
+.whats-on h5,
+.whats-on h6 {
 	margin: 28px 0 14px;
 	margin: 1.55556rem 0 0.77778rem;
 }
 .textbox h3:first-child,
 .textbox h4:first-child,
 .textbox h5:first-child,
-.textbox h6:first-child {
+.textbox h6:first-child,
+.sixty-seconds h3:first-child,
+.sixty-seconds h4:first-child,
+.sixty-seconds h5:first-child,
+.sixty-seconds h6:first-child,
+.whats-on h3:first-child,
+.whats-on h4:first-child,
+.whats-on h5:first-child,
+.whats-on h6:first-child {
 	margin-top: 0;
 }
-.entry-content.entry-content .textbox a {
+.entry-content.entry-content .textbox a,
+.entry-content.entry-content .sixty-seconds a,
+.entry-content.entry-content .whats-on a {
 	color: #0f3b6b;
 }
-.textbox :last-child {
+.textbox :last-child,
+.sixty-seconds :last-child,
+.whats-on :last-child {
 	margin-bottom: 0;
 }
-.textbox hr {
+.textbox hr,
+.sixty-seconds hr,
+.whats-on hr {
 	width: 100%;
 	height: 2px;
 	margin-top: 14px;
@@ -552,7 +588,9 @@ big {
 	margin-bottom: 0.77778rem;
 	color: #171717;
 }
-.single-entry .textbox .call-to-action {
+.single-entry .textbox .call-to-action,
+.single-entry .sixty-seconds .call-to-action,
+.single-entry .whats-on .call-to-action {
 	/* specificity hack for colours */
 	margin-top: 28px;
 	margin-top: -webkit-calc( ( 1.55556rem * 1.5 ) - 0.77778rem);
@@ -560,8 +598,79 @@ big {
 	border-top-color: #171717;
 	color: #171717;
 }
-.entry-content.entry-content .textbox h3:before {
+.entry-content.entry-content .textbox h3:before,
+.entry-content.entry-content .sixty-seconds h3:before,
+.entry-content.entry-content .whats-on h3:before {
 	display: none;
+}
+
+/* Icon box */
+.sixty-seconds,
+.whats-on {
+	position: relative;
+	padding-top: 140px;
+	padding-top: 7.77778rem;
+	/* Icon */
+	/* Square part of the icon */
+	/* Border below icon */
+	/* Heading */
+	/* Subheadings */
+}
+.sixty-seconds:before,
+.sixty-seconds:after,
+.whats-on:before,
+.whats-on:after {
+	content: "";
+	position: absolute;
+	left: 14px;
+	left: 0.77778rem;
+	display: block;
+	width: 112px;
+}
+.sixty-seconds:before,
+.whats-on:before {
+	top: 14px;
+	top: 0.77778rem;
+	height: 104px;
+	background: #171717 url("assets/60-seconds-alpha.png") center center no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+.sixty-seconds:after,
+.whats-on:after {
+	top: 122px;
+	top: 6.77778rem;
+	border-bottom: 4px solid #171717;
+}
+.sixty-seconds h3,
+.whats-on h3 {
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
+}
+.sixty-seconds h4,
+.sixty-seconds h5,
+.whats-on h4,
+.whats-on h5 {
+	font-style: italic;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.55556;
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+	text-transform: none;
+}
+
+.whats-on:before {
+	background-image: url("assets/whats-on-alpha.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
+	.sixty-seconds:before {
+		background-image: url("assets/60-seconds-alpha@2x.png");
+	}
+	.whats-on:before {
+		background-image: url("assets/whats-on-alpha@2x.png");
+	}
 }
 
 @media (min-width: 600px) {
@@ -581,6 +690,15 @@ big {
 		margin-top: -1.55556rem;
 		margin-left: -28px;
 		margin-left: -1.55556rem;
+	}
+	.sixty-seconds,
+	.whats-on {
+		min-height: 140px;
+		min-height: 7.77778rem;
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+		padding-left: 140px;
+		padding-left: 7.77778rem;
 	}
 }
 
@@ -2891,7 +3009,10 @@ object {
 }
 .category-yorklife hr,
 .category-yorklife.single-entry .entry-content:before,
-.category-yorklife .category-header {
+.category-yorklife .category-header,
+.category-yorklife .sixty-seconds,
+.category-yorklife .textbox,
+.category-yorklife .whats-on {
 	background: #dcd4c6;
 }
 .category-yorklife .call-to-action,
@@ -2910,9 +3031,6 @@ object {
 .category-yorklife .iis-caption .cat-links a,
 .category-yorklife .slider-subtitle {
 	color: #dcd4c6;
-}
-.category-yorklife .textbox {
-	background: #dcd4c6;
 }
 .category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
@@ -3062,8 +3180,18 @@ object {
 .category-up-close-and-personal .slider-subtitle {
 	color: #69bcc9;
 }
-.category-up-close-and-personal .textbox {
+.category-up-close-and-personal .textbox,
+.category-up-close-and-personal .sixty-seconds,
+.category-up-close-and-personal .whats-on {
 	background: #69bcc9;
+	/* Hide the blue square */
+}
+.category-up-close-and-personal .textbox h3:before,
+.category-up-close-and-personal .sixty-seconds h3:before,
+.category-up-close-and-personal .whats-on h3:before {
+	display: none;
+}
+.category-up-close-and-personal .textbox {
 	color: #fff;
 }
 
@@ -3394,7 +3522,8 @@ object {
 .category-centre-stage .category-header {
 	background: #f0ef84;
 }
-.category-centre-stage .call-to-action {
+.category-centre-stage .call-to-action,
+.category-centre-stage .sixty-seconds {
 	border-color: #f0ef84;
 }
 .category-centre-stage .content-details {
@@ -3410,8 +3539,16 @@ object {
 .category-centre-stage .slider-subtitle {
 	color: #f0ef84;
 }
-.category-centre-stage .textbox {
+.category-centre-stage .textbox,
+.category-centre-stage .sixty-seconds,
+.category-centre-stage .whats-on {
 	background: #f0ef84;
+	/* Hide the yellow square */
+}
+.category-centre-stage .textbox h3:before,
+.category-centre-stage .sixty-seconds h3:before,
+.category-centre-stage .whats-on h3:before {
+	display: none;
 }
 .category-centre-stage .textbox h3,
 .category-centre-stage .textbox h4,
@@ -3419,9 +3556,6 @@ object {
 .category-centre-stage .textbox h6 {
 	font-style: italic;
 	text-transform: none;
-}
-.category-centre-stage .textbox h3:before {
-	display: none;
 }
 
 .category-centre-stage .issue-section-posts .entry-title {
@@ -3678,7 +3812,8 @@ object {
 }
 .category-all-about-yu hr,
 .category-all-about-yu.single-entry .entry-content:before,
-.category-all-about-yu .category-header {
+.category-all-about-yu .category-header,
+.category-all-about-yu .sixty-seconds {
 	background: #9acd9c;
 }
 .category-all-about-yu .call-to-action,
@@ -3695,13 +3830,29 @@ object {
 .category-all-about-yu .slider-subtitle {
 	color: #9acd9c;
 }
-.category-all-about-yu .textbox {
+.category-all-about-yu .textbox,
+.category-all-about-yu .sixty-seconds,
+.category-all-about-yu .whats-on {
 	background: #9acd9c;
+	/* The square before the subheading */
+}
+.category-all-about-yu .textbox h3:before,
+.category-all-about-yu .sixty-seconds h3:before,
+.category-all-about-yu .whats-on h3:before {
+	display: none;
 }
 .category-all-about-yu .textbox h3,
 .category-all-about-yu .textbox h4,
 .category-all-about-yu .textbox h5,
-.category-all-about-yu .textbox h6 {
+.category-all-about-yu .textbox h6,
+.category-all-about-yu .sixty-seconds h3,
+.category-all-about-yu .sixty-seconds h4,
+.category-all-about-yu .sixty-seconds h5,
+.category-all-about-yu .sixty-seconds h6,
+.category-all-about-yu .whats-on h3,
+.category-all-about-yu .whats-on h4,
+.category-all-about-yu .whats-on h5,
+.category-all-about-yu .whats-on h6 {
 	color: #171717;
 }
 .category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
@@ -3823,7 +3974,8 @@ object {
 }
 .category-back-page hr,
 .category-back-page.single-entry .entry-content:before,
-.category-back-page .category-header {
+.category-back-page .category-header,
+.category-back-page .sixty-seconds {
 	background: #e8cfeb;
 }
 .category-back-page .call-to-action,
@@ -3840,13 +3992,23 @@ object {
 .category-back-page .slider-subtitle {
 	color: #e8cfeb;
 }
-.category-back-page .textbox {
+.category-back-page .textbox,
+.category-back-page .sixty-seconds,
+.category-back-page .whats-on {
 	background: #e8cfeb;
 }
 .category-back-page .textbox h3,
 .category-back-page .textbox h4,
 .category-back-page .textbox h5,
-.category-back-page .textbox h6 {
+.category-back-page .textbox h6,
+.category-back-page .sixty-seconds h3,
+.category-back-page .sixty-seconds h4,
+.category-back-page .sixty-seconds h5,
+.category-back-page .sixty-seconds h6,
+.category-back-page .whats-on h3,
+.category-back-page .whats-on h4,
+.category-back-page .whats-on h5,
+.category-back-page .whats-on h6 {
 	color: #171717;
 }
 .category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {

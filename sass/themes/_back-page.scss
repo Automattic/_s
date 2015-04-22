@@ -49,7 +49,8 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.category-header {
+	.category-header,
+	.sixty-seconds {
 		background: $color__backpage;
 	}
 
@@ -72,7 +73,9 @@
 		color: $color__backpage;
 	}
 
-	.textbox {
+	.textbox,
+	.sixty-seconds,
+	.whats-on {
 		background: $color__backpage;
 
 		h3,

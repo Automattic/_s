@@ -78,8 +78,19 @@
 		color: $color__openminds;
 	}
 
-	.textbox {
+	.textbox,
+	.sixty-seconds,
+	.whats-on {
 		background: $color__openminds;
+
+		/* Hide the blue square */
+		h3:before {
+			display: none;
+		}
+
+	}
+
+	.textbox {
 		color: $white;
 	}
 

@@ -469,7 +469,9 @@ big {
 }
 
 /* Coloured box within article. */
-.textbox {
+.textbox,
+.sixty-seconds,
+.whats-on {
 	width: 100%;
 	margin: 0 0 28px;
 	margin: 0 0 1.55556rem;
@@ -483,15 +485,23 @@ big {
 	/* Links */
 	/* Override subheadings' decorative coloured squares. */
 }
-.textbox p {
+.textbox p,
+.sixty-seconds p,
+.whats-on p {
 	margin-bottom: 0;
 }
-.textbox blockquote {
+.textbox blockquote,
+.sixty-seconds blockquote,
+.whats-on blockquote {
 	margin-right: 0; 
 	margin-left: 0;
 }
 .textbox .alignnone,
-.textbox .aligncenter {
+.textbox .aligncenter,
+.sixty-seconds .alignnone,
+.sixty-seconds .aligncenter,
+.whats-on .alignnone,
+.whats-on .aligncenter {
 	max-width: -webkit-calc( 100% + ( 14px * 2 ));
 	max-width: calc( 100% + ( 14px * 2 )); 
 	margin-right: -14px;
@@ -500,30 +510,56 @@ big {
 	margin-left: -0.77778rem;
 }
 .textbox .alignnone:first-child,
-.textbox .aligncenter:first-child {
+.textbox .aligncenter:first-child,
+.sixty-seconds .alignnone:first-child,
+.sixty-seconds .aligncenter:first-child,
+.whats-on .alignnone:first-child,
+.whats-on .aligncenter:first-child {
 	margin-top: -14px;
 	margin-top: -0.77778rem;
 }
 .textbox h3,
 .textbox h4,
 .textbox h5,
-.textbox h6 {
+.textbox h6,
+.sixty-seconds h3,
+.sixty-seconds h4,
+.sixty-seconds h5,
+.sixty-seconds h6,
+.whats-on h3,
+.whats-on h4,
+.whats-on h5,
+.whats-on h6 {
 	margin: 28px 0 14px;
 	margin: 1.55556rem 0 0.77778rem;
 }
 .textbox h3:first-child,
 .textbox h4:first-child,
 .textbox h5:first-child,
-.textbox h6:first-child {
+.textbox h6:first-child,
+.sixty-seconds h3:first-child,
+.sixty-seconds h4:first-child,
+.sixty-seconds h5:first-child,
+.sixty-seconds h6:first-child,
+.whats-on h3:first-child,
+.whats-on h4:first-child,
+.whats-on h5:first-child,
+.whats-on h6:first-child {
 	margin-top: 0;
 }
-.entry-content.entry-content .textbox a {
+.entry-content.entry-content .textbox a,
+.entry-content.entry-content .sixty-seconds a,
+.entry-content.entry-content .whats-on a {
 	color: #0f3b6b;
 }
-.textbox :last-child {
+.textbox :last-child,
+.sixty-seconds :last-child,
+.whats-on :last-child {
 	margin-bottom: 0;
 }
-.textbox hr {
+.textbox hr,
+.sixty-seconds hr,
+.whats-on hr {
 	width: 100%;
 	height: 2px;
 	margin-top: 14px;
@@ -532,7 +568,9 @@ big {
 	margin-bottom: 0.77778rem;
 	color: #171717;
 }
-.single-entry .textbox .call-to-action {
+.single-entry .textbox .call-to-action,
+.single-entry .sixty-seconds .call-to-action,
+.single-entry .whats-on .call-to-action {
 	/* specificity hack for colours */
 	margin-top: 28px;
 	margin-top: -webkit-calc( ( 1.55556rem * 1.5 ) - 0.77778rem);
@@ -540,8 +578,79 @@ big {
 	border-top-color: #171717;
 	color: #171717;
 }
-.entry-content.entry-content .textbox h3:before {
+.entry-content.entry-content .textbox h3:before,
+.entry-content.entry-content .sixty-seconds h3:before,
+.entry-content.entry-content .whats-on h3:before {
 	display: none;
+}
+
+/* Icon box */
+.sixty-seconds,
+.whats-on {
+	position: relative;
+	padding-top: 140px;
+	padding-top: 7.77778rem;
+	/* Icon */
+	/* Square part of the icon */
+	/* Border below icon */
+	/* Heading */
+	/* Subheadings */
+}
+.sixty-seconds:before,
+.sixty-seconds:after,
+.whats-on:before,
+.whats-on:after {
+	content: "";
+	position: absolute;
+	left: 14px;
+	left: 0.77778rem;
+	display: block;
+	width: 112px;
+}
+.sixty-seconds:before,
+.whats-on:before {
+	top: 14px;
+	top: 0.77778rem;
+	height: 104px;
+	background: #171717 url("assets/60-seconds-alpha.png") center center no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+.sixty-seconds:after,
+.whats-on:after {
+	top: 122px;
+	top: 6.77778rem;
+	border-bottom: 4px solid #171717;
+}
+.sixty-seconds h3,
+.whats-on h3 {
+	font-size: 21px;
+	font-size: 1.16667rem;
+	line-height: 1.33333;
+}
+.sixty-seconds h4,
+.sixty-seconds h5,
+.whats-on h4,
+.whats-on h5 {
+	font-style: italic;
+	font-size: 18px;
+	font-size: 1rem;
+	line-height: 1.55556;
+	font-family: "Aleo", Constantia, Georgia, sans-serif;
+	text-transform: none;
+}
+
+.whats-on:before {
+	background-image: url("assets/whats-on-alpha.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {
+	.sixty-seconds:before {
+		background-image: url("assets/60-seconds-alpha@2x.png");
+	}
+	.whats-on:before {
+		background-image: url("assets/whats-on-alpha@2x.png");
+	}
 }
 
 @media (min-width: 600px) {
@@ -561,6 +670,15 @@ big {
 		margin-top: -1.55556rem;
 		margin-left: -28px;
 		margin-left: -1.55556rem;
+	}
+	.sixty-seconds,
+	.whats-on {
+		min-height: 140px;
+		min-height: 7.77778rem;
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+		padding-left: 140px;
+		padding-left: 7.77778rem;
 	}
 }
 

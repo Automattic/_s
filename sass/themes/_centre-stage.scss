@@ -83,7 +83,8 @@
 		background: $color__centrestage;
 	}
 
-	.call-to-action {
+	.call-to-action,
+	.sixty-seconds {
 		border-color: $color__centrestage;
 	}
 
@@ -105,21 +106,24 @@
 		color: $color__centrestage;
 	}
 
-	.textbox {
+	.textbox,
+	.sixty-seconds,
+	.whats-on {
 		background: $color__centrestage;
 
-		h3,
-		h4,
-		h5,
-		h6 {
-			font-style: italic;
-			text-transform: none;
-		}
-
+		/* Hide the yellow square */
 		h3:before {
 			display: none;
 		}
 
+	}
+
+	.textbox h3,
+	.textbox h4,
+	.textbox h5,
+	.textbox h6 {
+		font-style: italic;
+		text-transform: none;
 	}
 
 }
