@@ -55,5 +55,6 @@
 
 }
 
-.footer-site-logo {
+.footer-uoy-logo {
+	@include rem( "margin-top", ( $line * 2 ) );
 }
