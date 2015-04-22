@@ -55,7 +55,7 @@ function add_types_custom_meta($data, $post, $context) {
         $public_types_fields = types_get_fields_by_group('public');
 
         foreach ( $post_custom_data as $key => $value ) {
-            if ( in_array($key, array_keys($public_types_fields)) ) {
+            if ( in_array($key, array_keys($public_types_fields)) || in_array(substr($key, 5), array_keys($public_types_fields)) ) {
                 $types_custom_meta[$key] = $value;
             }
         }
