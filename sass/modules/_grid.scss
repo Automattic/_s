@@ -35,11 +35,14 @@
 //                               	.byline
 //                           [COLUMN 12/10/8/6] .entry-content
 //                               [CONTENT]
+//                       .related-posts-wrap
+//                           [ROW] .related-posts
+//                               [COLUMN 12/10] #jp-relatedposts.jp-relatedposts
 //                       .footer.entry-footer-wrap
 //                           [ROW] .entry-footer
-//                           [COLUMN 12/10/8/6] .entry-author
-//                           [COLUMN 12/10/8/6] .posted-on
-//                           [COLUMN 12/10/8/6] .tags-links
+//                               [COLUMN 12/10/8/6] .entry-author
+//                               [COLUMN 12/10/8/6] .posted-on
+//                               [COLUMN 12/10/8/6] .tags-links
 //                   [ROW] #comments.comments-footer
 //                       [COLUMN 12/10] .comments-area
 //                           h2.comments-title
@@ -66,6 +69,7 @@
 
 .site-header,
 .single-entry .entry-above-footer,
+.single-entry .related-posts,
 .single-entry .entry-footer,
 .single-entry .comments-footer,
 .footer-widget-area,
@@ -87,6 +91,7 @@
 .index-content,
 .single-entry .entry-header,
 .single-entry .entry-content,
+.single-entry .jp-relatedposts,
 .single-entry .entry-author,
 .single-entry .posted-on,
 .single-entry .tags-links,
@@ -111,6 +116,7 @@
 	.slider,
 	.single-entry .entry-header,
 	.single-entry .entry-content,
+	.single-entry .jp-relatedposts,
 	.single-entry .entry-author,
 	.single-entry .posted-on,
 	.single-entry .tags-links,

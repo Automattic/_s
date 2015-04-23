@@ -22,6 +22,11 @@
 			?>
 		</div><!-- .entry-content -->
 	</div><!-- .entry-above-footer -->
+	<div class="related-posts-wrap">
+		<div class="related-posts">
+			<?php echo do_shortcode( '[jetpack-related-posts]' ); ?>
+		</div><!-- .related-posts -->
+	</div><!-- .related-posts-wrap -->
 	<div class="footer entry-footer-wrap">
 		<footer class="entry-footer">
 			<?php yumag_author_box(); ?>

@@ -53,3 +53,25 @@ function yumag_has_featured_posts( $minimum = 1 ) {
     return true;
 }
 endif;
+
+if ( ! function_exists( 'yumag_remove_related_posts' ) ) :
+/**
+ * Remove the Jetpack Related Posts section from the bottom of entry content,
+ * so it can be manually re-added where we want it.
+ *
+ * @since 1.0.0
+ */
+function yumag_remove_related_posts() {
+	if ( class_exists( 'Jetpack_RelatedPosts' ) ) {
+
+		// Get rid of default placement for Related Posts.
+		$jprp = Jetpack_RelatedPosts::init();
+		remove_filter( 'the_content', array( $jprp, 'filter_add_target_to_dom' ), 40 );
+
+		// Remove default CSS.
+		wp_dequeue_style( 'jetpack_related-posts' );
+
+	}
+}
+add_action( 'wp_head', 'yumag_remove_related_posts', 20 );
+endif;
