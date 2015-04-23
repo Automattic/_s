@@ -487,7 +487,7 @@ function yumag_related_posts() {
 		/* Output. */
 		if ( $related_posts ) {
 			echo '<div class="related-posts">';
-			echo '<h2 class="related-posts-title">' . __( 'You may also be interested in&hellip;', 'yumag' ) . '</h2>';
+			echo '<h2 class="related-posts-title">' . __( 'You may also like&hellip;', 'yumag' ) . '</h2>';
 			echo '<div class="index-content">';
 			echo '<div class="index-posts">';
 			echo '<div>';
