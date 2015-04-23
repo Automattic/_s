@@ -248,6 +248,8 @@ if ( ! function_exists( 'yumag_entry_footer' ) ) :
  */
 function yumag_entry_footer( $echo = true ) {
 
+	global $wp_query;
+
 	$pp = new PeriodicalPress_Template_Tags();
 
 	// Hide category and tag text for pages.
@@ -270,7 +272,7 @@ function yumag_entry_footer( $echo = true ) {
 
 		// Prepare the issue number format.
 		$number = $pp->get_the_issue_number();
-		if ( $number && is_single() ) {
+		if ( $number && is_single() && ( get_the_ID() === $wp_query->queried_object_id ) ) {
 			$number = sprintf( __( 'ISSUE %s', 'yumag' ),
 				strtoupper( yumag_convert_number_to_words( $number ) )
 			);
