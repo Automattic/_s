@@ -460,16 +460,50 @@ function yumag_categorized_blog() {
 	}
 }
 
+if ( ! function_exists( 'yumag_related_posts' ) ) :
 /**
- * Flush out the transients used in yumag_categorized_blog.
+ * Output related posts for a single post.
+ *
+ * Uses the Jetpack Related Posts feature, so will only work if Jetpack is
+ * active.
+ *
+ * @global WP_Post $post The post object.
  *
  * @since 1.0.0
  */
-function yumag_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
+function yumag_related_posts() {
+
+	global $post;
+
+	if ( class_exists( 'Jetpack_RelatedPosts' ) && method_exists( 'Jetpack_RelatedPosts', 'init_raw' ) ) {
+
+		/* Get the related posts from Jetpack. */
+		$jprp = Jetpack_RelatedPosts::init_raw();
+		$jprp->set_query_name( 'yumag-related-posts' );
+		$related_posts = $jprp->get_for_post_id( get_the_ID(), array( 'size' => 3 ) );
+
+		/* Output. */
+		if ( $related_posts ) {
+			echo '<div class="related-posts">';
+			echo '<h2 class="related-posts-title">' . __( 'You may also be interested in&hellip;', 'yumag' ) . '</h2>';
+			echo '<div class="index-content">';
+			echo '<div class="index-posts">';
+			echo '<div>';
+
+			/* New mini-loop. */
+			foreach ( $related_posts as $result ) {
+				$post = get_post( $result['id'] );
+				setup_postdata( $post );
+				get_template_part( 'content', 'relatedposts' );
+			}
+			wp_reset_postdata();
+
+			echo '</div>';
+			echo '</div><!-- .index-posts -->';
+			echo '</div><!-- .index-content -->';
+			echo '</div><!-- .related-posts -->';
+		}
+
 	}
-	delete_transient( 'yumag_categories' );
 }
-add_action( 'edit_category', 'yumag_category_transient_flusher' );
-add_action( 'save_post',     'yumag_category_transient_flusher' );
+endif;

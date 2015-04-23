@@ -37,7 +37,8 @@
 //                               [CONTENT]
 //                       .related-posts-wrap
 //                           [ROW] .related-posts
-//                               [COLUMN 12/10] #jp-relatedposts.jp-relatedposts
+//                               [COLUMN 12/10] .index-content
+//                                   .index-posts
 //                       .footer.entry-footer-wrap
 //                           [ROW] .entry-footer
 //                               [COLUMN 12/10/8/6] .entry-author
@@ -68,10 +69,10 @@
 //               [COLUMN 12] .site-footer-content
 
 .site-header,
-.single-entry .entry-above-footer,
-.single-entry .related-posts,
-.single-entry .entry-footer,
-.single-entry .comments-footer,
+.single-entry-above-footer,
+.related-posts,
+.entry-footer-wrap .entry-footer,
+.comments-footer,
 .footer-widget-area,
 .footer-row {
 	@include row;
@@ -89,12 +90,11 @@
 .author-header,
 .author-bio-content,
 .index-content,
-.single-entry .entry-header,
-.single-entry .entry-content,
-.single-entry .jp-relatedposts,
-.single-entry .entry-author,
-.single-entry .posted-on,
-.single-entry .tags-links,
+.single-entry-above-footer .entry-header,
+.single-entry-above-footer .entry-content,
+.single-entry-footer .entry-author,
+.single-entry-footer .posted-on,
+.single-entry-footer .tags-links,
 .nav-previous,
 .nav-next,
 .comments-area,
@@ -114,12 +114,11 @@
 	.author-bio-content,
 	.index-content,
 	.slider,
-	.single-entry .entry-header,
-	.single-entry .entry-content,
-	.single-entry .jp-relatedposts,
-	.single-entry .entry-author,
-	.single-entry .posted-on,
-	.single-entry .tags-links,
+	.single-entry-above-footer .entry-header,
+	.single-entry-above-footer .entry-content,
+	.single-entry-footer .entry-author,
+	.single-entry-footer .posted-on,
+	.single-entry-footer .tags-links,
 	.comments-area {
 		@include column(10);
 		@include push;
@@ -142,7 +141,7 @@
 @include media( "main-spacing-1" ) {
 
 	/* Start limiting featured image size. */
-	.single-entry .entry-image {
+	.single-entry-above-footer .entry-image {
 		@include column(10);
 		@include push;
 		@include pull;
@@ -150,10 +149,10 @@
 
 	/* Narrower content column than everything else, for better line length. */
 	.author-bio-content,
-	.single-entry .entry-content,
-	.single-entry .entry-author,
-	.single-entry .posted-on,
-	.single-entry .tags-links {
+	.single-entry-above-footer .entry-content,
+	.single-entry-footer .entry-author,
+	.single-entry-footer .posted-on,
+	.single-entry-footer .tags-links {
 		@include column(8);
 		@include push(2);
 		@include pull(2);
@@ -177,8 +176,8 @@
 @include media( "main-spacing-2" ) {
 
 	/* Narrower heading area. */
-	.single-entry .entry-image,
-	.single-entry .entry-header {
+	.single-entry-above-footer .entry-image,
+	.single-entry-above-footer .entry-header {
 		@include column(8);
 		@include push(2);
 		@include pull(2);
@@ -186,10 +185,10 @@
 
 	/* Even narrower content column, to maintain sensible line length. */
 	.author-bio-content,
-	.single-entry .entry-content,
-	.single-entry .entry-author,
-	.single-entry .posted-on,
-	.single-entry .tags-links {
+	.single-entry-above-footer .entry-content,
+	.single-entry-footer .entry-author,
+	.single-entry-footer .posted-on,
+	.single-entry-footer .tags-links {
 		@include column(6);
 		@include push(3);
 		@include pull(3);
@@ -204,14 +203,14 @@
 	.template-fixed-left,
 	.template-scrolling-left {
 
-		.entry-image {
+		.single-entry-above-footer .entry-image {
 			@include column(4);
 			margin-left: 0;
 			margin-right: 0;
 		}
 
-		.entry-header,
-		.entry-content {
+		.single-entry-above-footer .entry-header,
+		.single-entry-above-footer .entry-content {
 			@include column(6);
 			@include pull;
 			@include push(5);
@@ -223,14 +222,14 @@
 	.template-fixed-right,
 	.template-scrolling-right {
 
-		.entry-image {
+		.single-entry-above-footer .entry-image {
 			@include column(4);
 			margin-right: 0;
 			margin-left: 0;
 		}
 
-		.entry-header,
-		.entry-content {
+		.single-entry-above-footer .entry-header,
+		.single-entry-above-footer .entry-content {
 			@include column(6);
 			@include pull(5);
 			@include push;
@@ -245,8 +244,8 @@
 	.template-fixed-left,
 	.template-scrolling-left {
 
-		.entry-header,
-		.entry-content {
+		.single-entry-above-footer .entry-header,
+		.single-entry-above-footer .entry-content {
 			@include column(5);
 			@include pull;
 			@include push(6);
@@ -257,8 +256,8 @@
 	.template-fixed-right,
 	.template-scrolling-right {
 
-		.entry-header,
-		.entry-content {
+		.single-entry-above-footer .entry-header,
+		.single-entry-above-footer .entry-content {
 			@include column(5);
 			@include pull(6);
 			@include push;

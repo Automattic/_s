@@ -2,7 +2,7 @@
 	display: block;
 }
 
-.single-entry {
+.single-entry-above-footer {
 
 	.entry-image {
 		@include rem( "margin-bottom", ( $line * 0.5 ) );
@@ -50,6 +50,10 @@
 
 }
 
+.related-posts {
+	@include rem( "margin-bottom", ( $line * 2.5 ) );
+}
+
 .entry-image-link {
 
 	&,
@@ -73,7 +77,7 @@
 	text-transform: none;
 	font-family: $font-family__main;
 
-	.single-entry & {
+	.single-entry-above-footer & {
 		@include rem( "margin-bottom", $line );
 	}
 
@@ -157,7 +161,7 @@
 	display: block;
 
 	/* Leave space between posted-on meta and author name/bio. */
-	.single-entry & {
+	.single-entry-above-footer & {
 		@include rem( "margin-top", $line * 2 );
 	}
 

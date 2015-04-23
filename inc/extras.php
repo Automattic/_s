@@ -120,8 +120,11 @@ if ( ! function_exists( 'yumag_entry_classes' ) ) :
  * @return array The classes array.
  */
 function yumag_entry_classes( $classes ) {
+
+	global $wp_query;
+
 	$classes[] = 'entry';
-	if ( is_single() || is_page() ) {
+	if ( ( is_single() && get_the_ID() === $wp_query->queried_object_id ) || is_page() ) {
 		$classes[] = 'single-entry';
 	}
 
@@ -243,3 +246,17 @@ function yumag_split_archive_title( $title ) {
 }
 add_filter( 'get_the_archive_title', 'yumag_split_archive_title', 60 );
 endif;
+
+/**
+ * Flush out the transients used in yumag_categorized_blog.
+ *
+ * @since 1.0.0
+ */
+function yumag_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	delete_transient( 'yumag_categories' );
+}
+add_action( 'edit_category', 'yumag_category_transient_flusher' );
+add_action( 'save_post',     'yumag_category_transient_flusher' );

@@ -161,7 +161,13 @@
 
 }
 
+.related-posts-title {
+	@include rem( "margin-top", ( $line * -1 ) );
+	@include font-size-line( "larger" );
+}
+
 .archive:not(.tax-pp_issue) .index-posts,
+.related-posts .index-posts,
 .search-results .index-posts {
 
 	.entry-footer {
