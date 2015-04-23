@@ -7,7 +7,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="entry-above-footer">
+	<div class="entry-above-footer single-entry-above-footer">
 		<header class="entry-header">
 			<?php yumag_entry_title() ?>
 		</header><!-- .entry-header -->
