@@ -74,12 +74,14 @@ function add_types_custom_meta($data, $post, $context) {
   return $data;
 }
 
-function parse_excerpt_markdown($data, $post, $context) {
+function parse_excerpt_markdown( $excerpt ) {
   if (class_exists(WPCom_Markdown)) {
-    $markdown_excerpt = WPCom_Markdown::get_instance()->transform( $data['excerpt'] );
-    $data['excerpt'] = stripslashes($markdown_excerpt);
+    $excerpt = WPCom_Markdown::get_instance()->transform( $excerpt );
+    $excerpt = stripslashes($excerpt);
+    $excerpt = wpautop($excerpt);
+    $excerpt = str_replace("\n", "", $excerpt);
   }
-  return $data;
+  return $excerpt;
 }
 
 add_action( 'init', 'register_media_taxonomies' );
@@ -88,7 +90,8 @@ add_action( 'after_setup_theme', 'setup' );
 add_filter( 'login_redirect', 'redirect_to_posts' );
 add_action( 'admin_menu', 'customize_menu', 999 );
 add_filter( 'json_prepare_post', 'add_types_custom_meta', 10, 3 );
-add_filter( 'json_prepare_post', 'parse_excerpt_markdown', 10, 3 );
+remove_filter( 'the_excerpt', 'wpautop' ); // Remove this and apply in parse_excerpt_markdown
+add_filter( 'get_the_excerpt', 'parse_excerpt_markdown' );
 
 if( class_exists( WpeCommon ) ){
   require 'wpengine.php';
