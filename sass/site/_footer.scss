@@ -58,3 +58,7 @@
 .footer-uoy-logo {
 	@include rem( "margin-top", ( $line * 2 ) );
 }
+
+.site-footer .site-logo-link {
+	border-bottom: 0;
+}
