@@ -70,7 +70,7 @@ function _s_setup() {
 	) );
 	
 	/*
-	 * Remove margin from HTML/Body added by Admin Bar
+	 * Remove margin from HTML/BODY added by Admin Bar
 	 * Useful if absolute positioning used in header area
 	 */
 	 /*
