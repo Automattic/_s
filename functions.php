@@ -26,6 +26,12 @@ function register_media_taxonomies(){
     register_taxonomy_for_object_type( 'post_tag', 'attachment' );
 }
 
+function add_markdown_support() {
+    if (function_exists(jetpack_require_lib)) {
+        jetpack_require_lib( 'markdown' );
+    }
+}
+
 function api_url(){
     wp_redirect( 'http://wp-api.org' );
 }
@@ -68,11 +74,21 @@ function add_types_custom_meta($data, $post, $context) {
     return $data;
 }
 
+function parse_excerpt_markdown($data, $post, $context) {
+    if (class_exists(WPCom_Markdown)) {
+        $markdown_excerpt = WPCom_Markdown::get_instance()->transform( $data['excerpt'] );
+        $data['excerpt'] = stripslashes($markdown_excerpt);
+    }
+    return $data;
+}
+
 add_action( 'init', 'register_media_taxonomies' );
+add_action( 'init', 'add_markdown_support' );
 add_action( 'after_setup_theme', 'setup' );
 add_filter( 'login_redirect', 'redirect_to_posts' );
 add_action( 'admin_menu', 'customize_menu', 999 );
 add_filter( 'json_prepare_post', 'add_types_custom_meta', 10, 3 );
+add_filter( 'json_prepare_post', 'parse_excerpt_markdown', 10, 3 );
 
 if( class_exists( WpeCommon ) ){
     require 'wpengine.php';
