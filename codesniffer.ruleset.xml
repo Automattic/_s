@@ -8,12 +8,5 @@
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
-		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-
-		<exclude name="WordPress.XSS.EscapeOutput" />
-		<exclude name="WordPress.WhiteSpace.ScopeIndent.Incorrect" />
-		<exclude name="WordPress.Variables.GlobalVariables" />
 	</rule>
 </ruleset>
