@@ -576,8 +576,8 @@ big {
 .whats-on h4,
 .whats-on h5,
 .whats-on h6 {
-	margin: 28px 0 14px;
-	margin: 1.55556rem 0 0.77778rem;
+	margin: 28px 0;
+	margin: 1.55556rem 0;
 }
 .textbox h3:first-child,
 .textbox h4:first-child,

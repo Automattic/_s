@@ -188,7 +188,7 @@ big {
 	h4,
 	h5,
 	h6 {
-		@include rem( "margin", $line 0 ( $line * 0.5 ) );
+		@include rem( "margin", $line 0 );
 
 		&:first-child {
 			margin-top: 0;
