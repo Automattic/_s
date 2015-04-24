@@ -461,6 +461,14 @@ big {
 	font-weight: bold;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 0.77778rem solid #dcd4c6;
+	/* Less paragraph spacing and no indents. */
+}
+.call-to-action p {
+	margin-bottom: 14px;
+	margin-bottom: 0.77778rem;
+}
+.single-entry-above-footer .entry-content .call-to-action p:not(.lead) + p {
+	text-indent: 0;
 }
 
 /* Mini calls-to-action within the content (e.g. for contact details). */
