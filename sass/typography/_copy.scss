@@ -71,6 +71,7 @@ big {
 .lead {
 	@include font-size-line( "large" );
 	font-weight: bold;
+	text-indent: 0;
 }
 
 /* Dropcaps. */
@@ -93,6 +94,7 @@ big {
 	p {
 		@include rem( "margin-bottom", ( $line * 0.5 ) );
 
+		&:not(.lead) + p,
 		.single-entry-above-footer .entry-content &:not(.lead) + p {
 			text-indent: 0;
 		}
@@ -109,6 +111,12 @@ big {
 	font-family: $font-family__meta;
 	border-top: 2px dotted $color__yorklife;
 	border-bottom: 2px solid $color__yorklife;
+
+	/* No indents. */
+	p:not(.lead) + p,
+	.single-entry-above-footer .entry-content & p:not(.lead) + p {
+		text-indent: 0;
+	}
 
 	p,
 	li,
@@ -149,6 +157,18 @@ big {
 	blockquote {
 		margin-left: 0;
 		margin-right: 0;
+	}
+
+	ul,
+	ol {
+		padding-left: 0;
+
+		/* Reinstate list margins for sublists */
+		ul,
+		ol {
+			@include rem( "padding-left", $spacing );
+		}
+
 	}
 
 	/* Images */

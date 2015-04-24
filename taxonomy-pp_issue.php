@@ -14,7 +14,7 @@
  */
 $sections = array(
 	'yorklife' => 0,
-	'up-close-and-personal' => 2,
+	'open-minds' => 2,
 	'centre-stage' => 3,
 	'all-about-yu' => 0,
 	'back-page' => 0

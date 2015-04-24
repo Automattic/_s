@@ -436,10 +436,11 @@ big {
 
 /* Lead/lede. */
 .lead {
-	font-weight: bold; 
+	font-weight: bold;
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1.33333;
+	text-indent: 0;
 }
 
 /* Dropcaps. */
@@ -467,6 +468,7 @@ big {
 	margin-bottom: 14px;
 	margin-bottom: 0.77778rem;
 }
+.call-to-action p:not(.lead) + p,
 .single-entry-above-footer .entry-content .call-to-action p:not(.lead) + p {
 	text-indent: 0;
 }
@@ -481,6 +483,11 @@ big {
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 2px dotted #dcd4c6;
 	border-bottom: 2px solid #dcd4c6;
+	/* No indents. */
+}
+.content-details p:not(.lead) + p,
+.single-entry-above-footer .entry-content .content-details p:not(.lead) + p {
+	text-indent: 0;
 }
 .content-details p,
 .content-details li,
@@ -530,6 +537,30 @@ big {
 .whats-on blockquote {
 	margin-right: 0; 
 	margin-left: 0;
+}
+.textbox ul,
+.textbox ol,
+.sixty-seconds ul,
+.sixty-seconds ol,
+.whats-on ul,
+.whats-on ol {
+	padding-left: 0;
+	/* Reinstate list margins for sublists */
+}
+.textbox ul ul,
+.textbox ul ol,
+.textbox ol ul,
+.textbox ol ol,
+.sixty-seconds ul ul,
+.sixty-seconds ul ol,
+.sixty-seconds ol ul,
+.sixty-seconds ol ol,
+.whats-on ul ul,
+.whats-on ul ol,
+.whats-on ol ul,
+.whats-on ol ol {
+	padding-left: 28px;
+	padding-left: 1.55556rem;
 }
 .textbox .alignnone,
 .textbox .aligncenter,
@@ -1036,7 +1067,7 @@ a:active {
 .category-archive-link a,
 .index-posts .entry-meta a,
 .category-yorklife .footer a,
-.category-up-close-and-personal .footer a,
+.category-open-minds .footer a,
 .category-centre-stage .footer a,
 .category-all-about-yu .footer a,
 .category-back-page .footer a,
@@ -1052,7 +1083,7 @@ a:active {
 .archive-title a:hover,
 .category-archive-link a:hover,
 .category-yorklife .footer a:hover,
-.category-up-close-and-personal .footer a:hover,
+.category-open-minds .footer a:hover,
 .category-centre-stage .footer a:hover,
 .category-all-about-yu .footer a:hover,
 .category-back-page .footer a:hover,
@@ -1065,7 +1096,7 @@ a:active {
 .archive-title a:focus,
 .category-archive-link a:focus,
 .category-yorklife .footer a:focus,
-.category-up-close-and-personal .footer a:focus,
+.category-open-minds .footer a:focus,
 .category-centre-stage .footer a:focus,
 .category-all-about-yu .footer a:focus,
 .category-back-page .footer a:focus,
@@ -1078,7 +1109,7 @@ a:active {
 .archive-title a:active,
 .category-archive-link a:active,
 .category-yorklife .footer a:active,
-.category-up-close-and-personal .footer a:active,
+.category-open-minds .footer a:active,
 .category-centre-stage .footer a:active,
 .category-all-about-yu .footer a:active,
 .category-back-page .footer a:active {
@@ -3160,37 +3191,37 @@ object {
 	}
 }
 
-.category-up-close-and-personal {
+.category-open-minds {
 	/* Blue square beside subheading. */
 }
-.category-up-close-and-personal .category-title,
-.category-up-close-and-personal .category-title a,
-.category-up-close-and-personal .site-title-term.category-link,
-.category-up-close-and-personal .lead,
-.category-up-close-and-personal .entry-subtitle,
-.category-up-close-and-personal .entry-content a,
-.category-up-close-and-personal .posted-on a,
-.category-up-close-and-personal .quote-source {
+.category-open-minds .category-title,
+.category-open-minds .category-title a,
+.category-open-minds .site-title-term.category-link,
+.category-open-minds .lead,
+.category-open-minds .entry-subtitle,
+.category-open-minds .entry-content a,
+.category-open-minds .posted-on a,
+.category-open-minds .quote-source {
 	color: #3d9aa9;
 }
-.category-up-close-and-personal .entry-content a:hover,
-.category-up-close-and-personal .entry-content a:focus,
-.category-up-close-and-personal .entry-content a:active,
-.category-up-close-and-personal .posted-on a:hover,
-.category-up-close-and-personal .posted-on a:focus,
-.category-up-close-and-personal .posted-on a:active {
+.category-open-minds .entry-content a:hover,
+.category-open-minds .entry-content a:focus,
+.category-open-minds .entry-content a:active,
+.category-open-minds .posted-on a:hover,
+.category-open-minds .posted-on a:focus,
+.category-open-minds .posted-on a:active {
 	color: #0f3b6b;
 }
-.category-up-close-and-personal .entry-title,
-.category-up-close-and-personal .entry-subtitle,
-.category-up-close-and-personal h3,
-.category-up-close-and-personal h4,
-.category-up-close-and-personal h5,
-.category-up-close-and-personal h6 {
+.category-open-minds .entry-title,
+.category-open-minds .entry-subtitle,
+.category-open-minds h3,
+.category-open-minds h4,
+.category-open-minds h5,
+.category-open-minds h6 {
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	letter-spacing: normal;
 }
-.category-up-close-and-personal .entry-content h3:before {
+.category-open-minds .entry-content h3:before {
 	content: "";
 	display: inline-block;
 	width: 1em;
@@ -3199,7 +3230,7 @@ object {
 	margin-left: -1.5em;
 	background: #69bcc9;
 }
-.category-up-close-and-personal .dropcap {
+.category-open-minds .dropcap {
 	margin-right: 7px;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	border-width: 14px 21px;
@@ -3209,81 +3240,81 @@ object {
 	background: #69bcc9;
 	color: #fff;
 }
-.category-up-close-and-personal hr,
-.category-up-close-and-personal.single-entry .entry-content:before,
-.category-up-close-and-personal .category-header {
+.category-open-minds hr,
+.category-open-minds.single-entry .entry-content:before,
+.category-open-minds .category-header {
 	background: #69bcc9;
 }
-.category-up-close-and-personal .call-to-action,
-.category-up-close-and-personal .contact-details {
+.category-open-minds .call-to-action,
+.category-open-minds .contact-details {
 	border-top-color: #69bcc9;
 }
-.category-up-close-and-personal .footer a {
+.category-open-minds .footer a {
 	color: #296770;
 }
-.category-up-close-and-personal .iis-caption {
+.category-open-minds .iis-caption {
 	border-right-color: #69bcc9;
 }
-.category-up-close-and-personal .iis-caption .cat-links a,
-.category-up-close-and-personal .slider-subtitle {
+.category-open-minds .iis-caption .cat-links a,
+.category-open-minds .slider-subtitle {
 	color: #69bcc9;
 }
-.category-up-close-and-personal .textbox,
-.category-up-close-and-personal .sixty-seconds,
-.category-up-close-and-personal .whats-on {
+.category-open-minds .textbox,
+.category-open-minds .sixty-seconds,
+.category-open-minds .whats-on {
 	background: #69bcc9;
 	/* Hide the blue square */
 }
-.category-up-close-and-personal .textbox h3:before,
-.category-up-close-and-personal .sixty-seconds h3:before,
-.category-up-close-and-personal .whats-on h3:before {
+.category-open-minds .textbox h3:before,
+.category-open-minds .sixty-seconds h3:before,
+.category-open-minds .whats-on h3:before {
 	display: none;
 }
-.category-up-close-and-personal .textbox {
+.category-open-minds .textbox {
 	color: #fff;
 }
 
-.category-up-close-and-personal .issue-section-posts .entry-title {
+.category-open-minds .issue-section-posts .entry-title {
 	font-size: 24px;
 	font-size: 1.33333rem;
 	line-height: 1.16667;
 }
-.category-up-close-and-personal .issue-section-posts .entry-content {
+.category-open-minds .issue-section-posts .entry-content {
 	display: none;
 }
 @media (min-width: 500px) {
-	.category-up-close-and-personal .issue-section-posts {
+	.category-open-minds .issue-section-posts {
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
 		 * flexbox layout yet.
 		 */
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex {
+	.category-open-minds .issue-section-posts .issue-section-flex {
 		/* First article. */
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry {
 		max-width: 666px;
 		margin-right: auto; 
 		margin-left: auto;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-title,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		text-align: center;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-header {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-header {
 		padding-bottom: 14px;
 		padding-bottom: 0.77778rem;
 		background: #171717;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-title,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		padding: 0 14px;
 		padding: 0 0.77778rem;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-title {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title {
 		padding-top: 14px;
 		padding-top: 0.77778rem;
 		font-size: 28px;
@@ -3291,13 +3322,13 @@ object {
 		line-height: 1;
 		color: #fff;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-subtitle {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle {
 		font-size: 24px;
 		font-size: 1.33333rem;
 		line-height: 1.16667;
 		color: #69bcc9;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
 		font-size: 16px;
@@ -3305,82 +3336,82 @@ object {
 		line-height: 1.75;
 		color: #69bcc9;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry .entry-meta a {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta a {
 		color: #69bcc9;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div {
+	.category-open-minds .issue-section-posts .issue-section-flex > div {
 		width: 100%;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
 		clear: none;
 		float: left; 
 		width: 50%;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry:nth-child(2n+1) {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-child(2n+1) {
 		clear: left;
 	}
 }
 @media (min-width: 1100px) {
-	.category-up-close-and-personal .issue-section-posts .entry {
+	.category-open-minds .issue-section-posts .entry {
 		max-width: 50%;
 	}
-	.category-up-close-and-personal .issue-section-posts .entry .entry-image {
+	.category-open-minds .issue-section-posts .entry .entry-image {
 		float: left;
 		width: 37.5%;
 		margin-bottom: 0;
 	}
-	.category-up-close-and-personal .issue-section-posts .entry .entry-image img {
+	.category-open-minds .issue-section-posts .entry .entry-image img {
 		width: 100%;
 	}
-	.category-up-close-and-personal .issue-section-posts .entry .entry-title,
-	.category-up-close-and-personal .issue-section-posts .entry .entry-subtitle,
-	.category-up-close-and-personal .issue-section-posts .entry .entry-meta,
-	.category-up-close-and-personal .issue-section-posts .entry .entry-content {
+	.category-open-minds .issue-section-posts .entry .entry-title,
+	.category-open-minds .issue-section-posts .entry .entry-subtitle,
+	.category-open-minds .issue-section-posts .entry .entry-meta,
+	.category-open-minds .issue-section-posts .entry .entry-content {
 		clear: none;
 		margin-left: 41.66667%;
 	}
-	.category-up-close-and-personal .issue-section-posts .entry .entry-title {
+	.category-open-minds .issue-section-posts .entry .entry-title {
 		font-size: 21px;
 		font-size: 1.16667rem;
 		line-height: 1.33333;
 	}
-	.category-up-close-and-personal .issue-section-posts .entry .entry-subtitle {
+	.category-open-minds .issue-section-posts .entry .entry-subtitle {
 		font-size: 18px;
 		font-size: 1rem;
 		line-height: 1.16667;
 	}
-	.category-up-close-and-personal .issue-section-posts .entry .entry-meta {
+	.category-open-minds .issue-section-posts .entry .entry-meta {
 		font-size: 14px;
 		font-size: 0.77778rem;
 		line-height: 1.5;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry {
 		clear: right;
 		float: right;
 		max-width: 50%;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child {
 		float: left;
 		max-width: 100%; 
 		margin-bottom: 0;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-header {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-header {
 		padding-bottom: 14px;
 		padding-bottom: 0.77778rem;
 		background: #171717;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-image {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-image {
 		width: 100%;
 		margin-right: 0;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-title,
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle,
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-left: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-title {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-title {
 		clear: left;
 		padding-top: 14px;
 		padding-top: 0.77778rem;
@@ -3389,13 +3420,13 @@ object {
 		line-height: 1;
 		color: #fff;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle {
 		font-size: 24px;
 		font-size: 1.33333rem;
 		line-height: 1.16667;
 		color: #69bcc9;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-noflex .entry:first-child .entry-meta {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
 		font-size: 16px;
@@ -3403,25 +3434,25 @@ object {
 		line-height: 1.75;
 		color: #69bcc9;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex {
+	.category-open-minds .issue-section-posts .issue-section-flex {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: flex;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex .entry {
+	.category-open-minds .issue-section-posts .issue-section-flex .entry {
 		clear: none;
 		float: none;
 		width: auto;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex .entry-content {
+	.category-open-minds .issue-section-posts .issue-section-flex .entry-content {
 		margin-bottom: 0; 
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child {
 		max-width: 50%;
 		margin-right: 28px;
 		margin-right: 1.55556rem;
@@ -3435,19 +3466,19 @@ object {
 		-ms-flex: 1 1 50%;
 		flex: 1 1 50%;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-image {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-image {
 		width: 100%;
 		margin-right: 0;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-title,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle,
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
 		margin-left: 0;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
 		clear: left;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div {
+	.category-open-minds .issue-section-posts .issue-section-flex > div {
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: -moz-box;
@@ -3473,25 +3504,25 @@ object {
 		-ms-flex: 1 1 50%;
 		flex: 1 1 50%;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
 		width: 100%;
 		max-width: 100%;
 		min-height: 0;
 		margin-bottom: 0;
 		padding-left: 0;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry .entry-image {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry .entry-image {
 		line-height: 0.5;
 		/* fix for excess space under the image */
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child .entry-content,
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child ~ * .entry-content {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child .entry-content,
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-last-child(n+3):first-child ~ * .entry-content {
 		display: none;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry-content {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry-content {
 		display: block;
 	}
-	.category-up-close-and-personal .issue-section-posts .issue-section-flex > div .entry-content p {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry-content p {
 		margin-bottom: 0;
 		/* for alignment with bottom of flex container */
 	}
