@@ -509,3 +509,21 @@ function yumag_related_posts() {
 	}
 }
 endif;
+
+
+function yumag_image_credits( $before = '<p class="image-credits"><small>Image credits:<br>', $separator = '<br>', $after = '</small></p>' ) {
+
+	// Get the image credits class, if it exists.
+	if ( ! class_exists( 'YuMag_Plugin' ) ) {
+		return;
+	}
+	$plugin = YuMag_Plugin::get_instance();
+	if ( ! class_exists( 'YuMag_Plugin_Image_Credits' ) ) {
+		return;
+	}
+	$plugin_ic = YuMag_Plugin_Image_Credits::get_instance( $plugin );
+
+	// Output the image credits.
+	$plugin_ic->the_image_credits( $before, $separator, $after );
+
+}

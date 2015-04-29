@@ -1,13 +1,19 @@
+figure {
+	@include rem( "margin", $line $text-indent );
+}
+
 .alignleft {
 	@include rem( "margin-right", $spacing );
 	display: inline;
 	float: left;
+	margin-top: 0;
 }
 
 .alignright {
 	@include rem( "margin-left", $spacing );
 	display: inline;
 	float: right;
+	margin-top: 0;
 }
 
 .aligncenter {
@@ -35,23 +41,14 @@
 }
 
 /* Fully in margins on widest layout */
-// @include media( "images-in-margin" ) {
+@include media( "images-in-margin" ) {
 
-// 	.entry-content {
-// 		position: relative;
-// 	}
+	.alignleft {
+		@include rem( "margin-left", ( ( ( $width__half-image / 4 ) + ( $gutter-width * 2 ) ) * -1 ) );
+	}
 
-// 	.alignleft {
-// 		position: absolute;
-// 		right: 100%;
-// 		margin-left: 0;
-// 		margin-right: $gutter-width;
-// 		text-align: center;
-// 		max-width: ((100% / $columns) * 2);
-// 	}
+	.alignright {
+		@include rem( "margin-right", ( ( ( $width__half-image / 4 ) + ( $gutter-width * 2 ) ) * -1 ) );
+	}
 
-// 	.alignright {
-// 		@include rem( "margin-left", ( -233px - $gutter-width ) );
-// 	}
-
-// }
+}

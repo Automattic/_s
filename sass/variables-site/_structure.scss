@@ -45,6 +45,8 @@ $width__slider-caption__wider: ( $line * 19.5 );
 $width__rule: 25%;
 $height__rule: ( $line / 2 );
 
+$width__half-image: 336px;
+
 // Media queries
 // -------------------------------------------------------------
 
@@ -54,13 +56,13 @@ $breakpoints: (
 	"issue-2-columns"      :  500px,
 	"wide-content-column"  :  600px,
 	"main-spacing"         :  720px,
-    "main-spacing-1"       :  800px,
-    "issue-3-columns"      :  900px,
-    "main-spacing-2"       : 1020px,
-    "wide-slider"          : 1085px,
-    "issue-4-columns"      : 1100px,
-    "images-in-margin"     : 1120px,
-    "main-spacing-3"       : 1160px,
-    "wider-slider"         : 1280px,
-    "beyond-max-width"     : $body-width-maximum
+	"main-spacing-1"       :  800px,
+	"issue-3-columns"      :  900px,
+	"main-spacing-2"       : 1020px,
+	"wide-slider"          : 1085px,
+	"issue-4-columns"      : 1100px,
+	"images-in-margin"     : 1120px,
+	"main-spacing-3"       : 1160px,
+	"wider-slider"         : 1280px,
+	"beyond-max-width"     : $body-width-maximum
 );

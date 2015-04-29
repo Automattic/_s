@@ -140,6 +140,14 @@ big {
 	text-indent: 0 !important;
 }
 
+// /* Small print for image attributions. */
+// .image-credits {
+// 	/* Leave extra space above the attribution. */
+// 	@include rem( "margin-top", ( $line * 2 ) );
+// 	margin-bottom: 0;
+// 	text-indent: 0 !important;
+// }
+
 /* Coloured box within article. */
 .textbox,
 .sixty-seconds,
@@ -303,7 +311,7 @@ big {
 
 @include media( "wide-content-column" ) {
 
-	.textbox {
+	.textbox.side {
 		@include rem( "margin-left", $spacing );
 		clear: right;
 		float: right;
@@ -334,7 +342,7 @@ big {
 
 @include media( "main-spacing-1" ) {
 
-	.textbox {
+	.textbox.side {
 		position: relative;
 		left: 10%;
 		margin-left: -5%;
@@ -345,7 +353,7 @@ big {
 
 @include media( "main-spacing-2" ) {
 
-	.template-one-column .textbox {
+	.template-one-column .textbox.side {
 		left: 20%;
 		margin-left: -15%;
 		margin-left: calc( -20% + #{$spacing} );

@@ -729,7 +729,7 @@ big {
 }
 
 @media (min-width: 600px) {
-	.textbox {
+	.textbox.side {
 		clear: right;
 		float: right;
 		width: 50%;
@@ -737,10 +737,10 @@ big {
 		margin-left: 1.55556rem;
 		/* Fix text indenting when the box is not in the flow of the content. */
 	}
-	p:not(.lead) + .textbox + p {
+	p:not(.lead) + .textbox.side + p {
 		text-indent: 4%;
 	}
-	.textbox .alignnone:first-child .aligncenter:first-child {
+	.textbox.side .alignnone:first-child .aligncenter:first-child {
 		margin-top: -28px;
 		margin-top: -1.55556rem;
 		margin-left: -28px;
@@ -759,7 +759,7 @@ big {
 }
 
 @media (min-width: 800px) {
-	.textbox {
+	.textbox.side {
 		position: relative;
 		left: 10%;
 		margin-left: -5%;
@@ -769,7 +769,7 @@ big {
 }
 
 @media (min-width: 1020px) {
-	.template-one-column .textbox {
+	.template-one-column .textbox.side {
 		left: 20%;
 		margin-left: -15%;
 		margin-left: -webkit-calc( -20% + 28px);
@@ -1461,16 +1461,23 @@ a:active {
 /*--------------------------------------------------------------
 7.0 Alignments
 --------------------------------------------------------------*/
+figure {
+	margin: 28px 4%;
+	margin: 1.55556rem 4%;
+}
+
 .alignleft {
-	float: left; 
+	float: left;
 	display: inline;
+	margin-top: 0; 
 	margin-right: 28px;
 	margin-right: 1.55556rem;
 }
 
 .alignright {
-	float: right; 
+	float: right;
 	display: inline;
+	margin-top: 0; 
 	margin-left: 28px;
 	margin-left: 1.55556rem;
 }
@@ -1502,6 +1509,17 @@ a:active {
 }
 
 /* Fully in margins on widest layout */
+@media (min-width: 1120px) {
+	.alignleft {
+		margin-left: -140px;
+		margin-left: -7.77778rem;
+	}
+	.alignright {
+		margin-right: -140px;
+		margin-right: -7.77778rem;
+	}
+}
+
 /* 7.1 Grid
 --------------------------------------------------------------*/
 .site-header,
@@ -2963,17 +2981,17 @@ object {
 /*--------------------------------------------------------------
 14.0 Layouts
 --------------------------------------------------------------*/
-.template-two-columns .entry-image {
+.template-two-columns .single-entry-above-footer .entry-image {
 	text-align: center;
 	/* Prevent featured image from being larger than its natural size. */
 }
-.template-two-columns .entry-image img {
+.template-two-columns .single-entry-above-footer .entry-image img {
 	max-width: 474px;
 }
 
 @media (min-width: 600px) {
 	/* Switch coloured boxes to left hand side. */
-	.template-scrolling-left .textbox {
+	.template-scrolling-left .textbox.side {
 		clear: left;
 		float: left;
 		margin-right: 28px;
@@ -2983,7 +3001,7 @@ object {
 }
 
 @media (min-width: 800px) {
-	.template-scrolling-left .textbox {
+	.template-scrolling-left .textbox.side {
 		right: 10%;
 		left: auto;
 		margin-right: -5%;
@@ -3021,11 +3039,11 @@ object {
 	.template-two-columns .entry-content:before {
 		margin-left: 0;
 	}
-	.template-scrolling-left .entry-image,
-	.template-scrolling-right .entry-image {
+	.template-scrolling-left .single-entry-above-footer .entry-image,
+	.template-scrolling-right .single-entry-above-footer .entry-image {
 		position: absolute;
 	}
-	.template-scrolling-left .entry-image {
+	.template-scrolling-left .single-entry-above-footer .entry-image {
 		left: 8.33333%;
 	}
 	.template-scrolling-left .size-thumbnail.alignleft {
@@ -3033,13 +3051,13 @@ object {
 		left: -150px;
 		margin-right: -150px;
 	}
-	.template-scrolling-left .textbox {
+	.template-scrolling-left .textbox.side {
 		right: 55%;
 		right: -webkit-calc( 50% + ( 28px * 2 ));
 		right: calc( 50% + ( 28px * 2 ));
 		margin-right: -50%;
 	}
-	.template-scrolling-right .entry-image {
+	.template-scrolling-right .single-entry-above-footer .entry-image {
 		right: 8.33333%;
 	}
 	.template-scrolling-right .size-thumbnail.alignright {
@@ -3047,7 +3065,7 @@ object {
 		right: -150px;
 		margin-left: -150px;
 	}
-	.template-scrolling-right .textbox {
+	.template-scrolling-right .textbox.side {
 		left: 55%;
 		left: -webkit-calc( 50% + ( 28px * 2 ));
 		left: calc( 50% + ( 28px * 2 ));

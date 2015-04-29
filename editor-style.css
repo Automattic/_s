@@ -709,7 +709,7 @@ big {
 }
 
 @media (min-width: 600px) {
-	.textbox {
+	.textbox.side {
 		clear: right;
 		float: right;
 		width: 50%;
@@ -717,10 +717,10 @@ big {
 		margin-left: 1.55556rem;
 		/* Fix text indenting when the box is not in the flow of the content. */
 	}
-	p:not(.lead) + .textbox + p {
+	p:not(.lead) + .textbox.side + p {
 		text-indent: 4%;
 	}
-	.textbox .alignnone:first-child .aligncenter:first-child {
+	.textbox.side .alignnone:first-child .aligncenter:first-child {
 		margin-top: -28px;
 		margin-top: -1.55556rem;
 		margin-left: -28px;
@@ -739,7 +739,7 @@ big {
 }
 
 @media (min-width: 800px) {
-	.textbox {
+	.textbox.side {
 		position: relative;
 		left: 10%;
 		margin-left: -5%;
@@ -749,7 +749,7 @@ big {
 }
 
 @media (min-width: 1020px) {
-	.template-one-column .textbox {
+	.template-one-column .textbox.side {
 		left: 20%;
 		margin-left: -15%;
 		margin-left: -webkit-calc( -20% + 28px);
@@ -1001,16 +1001,23 @@ a:active {
 /*--------------------------------------------------------------
 7.0 Alignments
 --------------------------------------------------------------*/
+figure {
+	margin: 28px 4%;
+	margin: 1.55556rem 4%;
+}
+
 .alignleft {
-	float: left; 
+	float: left;
 	display: inline;
+	margin-top: 0; 
 	margin-right: 28px;
 	margin-right: 1.55556rem;
 }
 
 .alignright {
-	float: right; 
+	float: right;
 	display: inline;
+	margin-top: 0; 
 	margin-left: 28px;
 	margin-left: 1.55556rem;
 }
@@ -1042,6 +1049,17 @@ a:active {
 }
 
 /* Fully in margins on widest layout */
+@media (min-width: 1120px) {
+	.alignleft {
+		margin-left: -140px;
+		margin-left: -7.77778rem;
+	}
+	.alignright {
+		margin-right: -140px;
+		margin-right: -7.77778rem;
+	}
+}
+
 /*--------------------------------------------------------------
 8.0 Clearings
 --------------------------------------------------------------*/

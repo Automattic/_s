@@ -1,4 +1,4 @@
-.template-two-columns .entry-image {
+.template-two-columns .single-entry-above-footer .entry-image {
 	text-align: center;
 
 	/* Prevent featured image from being larger than its natural size. */
@@ -11,7 +11,7 @@
 @include media( "wide-content-column" ) {
 
 	/* Switch coloured boxes to left hand side. */
-	.template-scrolling-left .textbox {
+	.template-scrolling-left .textbox.side {
 		@include rem( "margin-right", $spacing );
 		clear: left;
 		float: left;
@@ -22,7 +22,7 @@
 
 @include media( "main-spacing-1" ) {
 
-	.template-scrolling-left .textbox {
+	.template-scrolling-left .textbox.side {
 		left: auto;
 		right: 10%;
 		margin-left: 0;
@@ -70,7 +70,7 @@
 	.template-scrolling-left,
 	.template-scrolling-right {
 
-		.entry-image {
+		.single-entry-above-footer .entry-image {
 			position: absolute;
 		}
 
@@ -78,7 +78,7 @@
 
 	.template-scrolling-left {
 
-		.entry-image {
+		.single-entry-above-footer .entry-image {
 			left: 8.33333%;
 		}
 
@@ -88,7 +88,7 @@
 			margin-right: -150px;
 		}
 
-		.textbox {
+		.textbox.side {
 			right: 55%;
 			right: calc( 50% + ( #{$spacing} * 2 ) );
 			margin-right: -50%;
@@ -98,7 +98,7 @@
 
 	.template-scrolling-right {
 
-		.entry-image {
+		.single-entry-above-footer .entry-image {
 			right: 8.33333%;
 		}
 
@@ -108,7 +108,7 @@
 			margin-left: -150px;
 		}
 
-		.textbox {
+		.textbox.side {
 			left: 55%;
 			left: calc( 50% + ( #{$spacing} * 2 ) );
 			margin-left: -50%;

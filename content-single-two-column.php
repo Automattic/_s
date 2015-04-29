@@ -28,6 +28,7 @@
 	<div class="footer entry-footer-wrap">
 		<footer class="entry-footer single-entry-footer">
 			<?php yumag_author_box(); ?>
+			<?php yumag_image_credits(); ?>
 			<?php yumag_entry_footer(); ?>
 			<?php yumag_entry_tags(); ?>
 		</footer><!-- .entry-footer -->

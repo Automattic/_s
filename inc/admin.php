@@ -62,10 +62,15 @@ function yumag_tinymce_setup( $settings ) {
 			'classes' => 'lead'
 		),
 		array(
-			'title' => _x( 'Coloured box', 'TinyMCE styles dropdown', 'yumag' ),
 			'title' => _x( 'Coloured box (full width)', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'aside',
 			'classes' => 'textbox',
+			'wrapper' => true
+		),
+		array(
+			'title' => _x( 'Coloured box (half width)', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'aside',
+			'classes' => 'textbox side',
 			'wrapper' => true
 		),
 		array(

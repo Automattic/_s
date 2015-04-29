@@ -75,3 +75,21 @@ function yumag_remove_related_posts() {
 }
 add_action( 'wp_head', 'yumag_remove_related_posts', 20 );
 endif;
+
+if ( ! function_exists( 'yumag_exclude_from_related_posts' ) ) :
+/**
+ * Filter to exclude posts in the Back Page from Jetpack Related Posts results.
+ *
+ * @since 1.0.0
+ *
+ * @param array $filters Filters for excluding posts from related posts list.
+ * @return array The revised filters.
+ */
+function yumag_exclude_from_related_posts( $filters ) {
+	$filters[] = array(
+		'not' => array( 'term' => array( 'category.slug' => 'back-page' ) )
+	);
+	return $filters;
+}
+add_filter( 'jetpack_relatedposts_filter_filters', 'yumag_exclude_from_related_posts' );
+endif;
