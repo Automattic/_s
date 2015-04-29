@@ -54,18 +54,26 @@ function customize_menu(){
 
 // Add custom fields created by Types plugin to public types_custom_meta key
 function add_types_custom_meta($data, $post, $context) {
-  if (function_exists(types_get_fields_by_group)) {
+  if (function_exists(types_get_fields)) {
     $post_custom_data = get_post_custom( $post['ID'] );
 
-    // Get a list of Types custom fields in the "public" group
-    $public_types_fields = types_get_fields_by_group('public');
+    // Get a list of custom fields added by Types plugin
+    $all_types_fields = types_get_fields();
 
+    // Create a new array of custom field names
+    $post_custom_types_fields = array();
+    foreach ( $all_types_fields as $key => $value ) {
+      $post_custom_types_fields[] = $value['meta_key'];
+    }
+
+    // Check each post_meta value on post to see if its in the list of Types custom fields
     foreach ( $post_custom_data as $key => $value ) {
-      if ( in_array($key, array_keys($public_types_fields)) || in_array(substr($key, 5), array_keys($public_types_fields)) ) {
+      if ( in_array($key, $post_custom_types_fields) ) {
         $types_custom_meta[$key] = $value;
       }
     }
 
+    // If there were any Types custom fields on this post, add them to the API response
     if ( !empty($types_custom_meta) ) {
       $data['types_custom_meta'] = $types_custom_meta;
     }
