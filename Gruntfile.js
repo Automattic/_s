@@ -23,17 +23,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		csscomb: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: '',
-					src: ['**/*.css'],
-					dest: '',
-				}]
-			}
-		},
-
 		sass: {
 			dist: {
 				options: {
@@ -50,36 +39,12 @@ module.exports = function(grunt) {
 			}
 		},
 
-		sassdoc: {
-			default: {
-				src: [
-					'sass/**/*.scss',
-					'bower_components/bourbon/app/assets/stylesheets',
-					'bower_components/neat/app/assets/stylesheets'
-				],
-				options: {
-					dest: './sassdoc/',
-					display: {
-						access: ['public'],
-						watermark: false
-					},
-					groups: {
-						fontawesomeicons: 'Font Awesome Icons',
-						wds: 'WebDevStudios',
-						'undefined': 'Bourbon & Neat'
-					},
-					description: 'Sass Documentation, which includes Bourbon and Neat documentation as well.',
-					sort: ['group>'],
-				},
-			},
-		},
-
 		autoprefixer: {
 			options: {
-				browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+				browsers: ['last 2 versions', 'ie 9']
 			},
 			dist: {
-				src:  'style.css'
+				src: ['*.css', '!*.min.css', '!bower_components', '!node_modules']
 			}
 		},
 
@@ -94,11 +59,22 @@ module.exports = function(grunt) {
 			}
 		},
 
+		csscomb: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '',
+					src: ['*.css', '!*.min.css', '!bower_components', '!node_modules'],
+					dest: '',
+				}]
+			}
+		},
+
 		cssmin: {
 			minify: {
 				expand: true,
 				cwd: '',
-				src: ['*.css', '!*.min.css'],
+				src: ['*.css', '!*.min.css', '!bower_components', '!node_modules'],
 				dest: '',
 				ext: '.min.css'
 			}
@@ -205,7 +181,7 @@ module.exports = function(grunt) {
 		addtextdomain: {
 			theme: {
 				options: {
-					textdomain: '_s'
+					textdomain: 'mcf'
 				},
 				target: {
 					files: {
@@ -239,6 +215,31 @@ module.exports = function(grunt) {
 				standard: 'WordPress'
 			}
 		},
+
+		sassdoc: {
+			default: {
+				src: [
+					'sass/**/*.scss',
+					'bower_components/bourbon/app/assets/stylesheets',
+					'bower_components/neat/app/assets/stylesheets'
+				],
+				options: {
+					dest: './sassdoc/',
+					display: {
+						access: ['public'],
+						watermark: false
+					},
+					groups: {
+						fontawesomeicons: 'Font Awesome Icons',
+						wds: 'WebDevStudios',
+						'undefined': 'Bourbon & Neat'
+					},
+					description: 'Sass Documentation, which includes Bourbon and Neat documentation as well.',
+					sort: ['group>'],
+				},
+			},
+		},
+
 
 	});
 
