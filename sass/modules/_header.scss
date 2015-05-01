@@ -7,7 +7,6 @@
 }
 
 .site-description {
-	@include margin(0 0 24px 0);
-
 	font-size: rem(24);
+	margin: 0 0 rem(24) 0;
 }

@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 .widget {
-	@include margin(0 0 24px);
+	margin: 0 0 rem(24);
 
 	// Make sure select elements fit in widgets
 	select {
