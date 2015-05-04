@@ -1,0 +1,75 @@
+//--------------------------------------------------------------
+// Social Menu
+//--------------------------------------------------------------
+
+.menu-social {
+
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		list-style: none;
+		margin-right: rem(24);
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	a {
+		color: $color-dark-gray;
+
+		&:hover,
+		&:focus {
+			color: $color-light-gray;
+		}
+	}
+
+	a::before {
+		font-size: rem(28);
+		vertical-align: middle;
+	}
+
+	a[href*="facebook.com"] {
+		@include icon(before, facebook-square) {
+			font-size: rem(22);
+		}
+	}
+
+	a[href*="twitter.com"] {
+		@include icon(before, twitter-square) {
+			font-size: rem(28);
+		}
+	}
+
+	a[href*="instagram.com"] {
+		@include icon(before, instagram) {
+			font-size: rem(28);
+		}
+	}
+
+	a[href*="youtube.com"] {
+		@include icon(before, youtube-square) {
+			font-size: rem(25);
+		}
+	}
+
+	a[href*="linkedin.com"] {
+		@include icon(before, linkedin-square) {
+			font-size: rem(25);
+		}
+	}
+
+	a[href*="pinterest.com"] {
+		@include icon(before, pinterest-square) {
+			font-size: rem(25);
+		}
+	}
+
+	a[href*="feed"] {
+		@include icon(before, rss-square) {
+			font-size: rem(22);
+		}
+	}
+}
