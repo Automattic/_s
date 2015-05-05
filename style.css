@@ -3095,13 +3095,13 @@ object {
 .category-yorklife .dropcap {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 }
-.category-yorklife.single-entry-above-footer .entry-title {
+.category-yorklife .single-entry-above-footer .entry-title {
 	font-size: 54px;
 	font-size: 3rem;
 	line-height: 1.2963;
 	/* Slightly smaller, because full caps */
 }
-.category-yorklife.single-entry-above-footer .entry-title,
+.category-yorklife .single-entry-above-footer .entry-title,
 .category-yorklife .category-posts .entry-title,
 .category-yorklife .issue-section-posts .entry-title {
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif; 
@@ -3259,7 +3259,7 @@ object {
 	color: #fff;
 }
 .category-open-minds hr,
-.category-open-minds.single-entry-above-footer .entry-content:before,
+.category-open-minds .single-entry-above-footer .entry-content:before,
 .category-open-minds .category-header {
 	background: #69bcc9;
 }
@@ -3606,8 +3606,8 @@ object {
 	border: 0.77778rem solid #f0ef84;
 	background: #f0ef84;
 }
-.category-centre-stage.single-entry-above-footer .entry-title,
-.category-centre-stage.single-entry-above-footer .entry-subtitle,
+.category-centre-stage .single-entry-above-footer .entry-title,
+.category-centre-stage .single-entry-above-footer .entry-subtitle,
 .category-centre-stage .category-posts .entry-title,
 .category-centre-stage .category-posts .entry-subtitle,
 .category-centre-stage .index-section-posts .entry-title,
@@ -3615,7 +3615,7 @@ object {
 	font-style: italic;
 }
 .category-centre-stage hr,
-.category-centre-stage.single-entry-above-footer .entry-content:before,
+.category-centre-stage.single-entry .entry-content:before,
 .category-centre-stage .category-header {
 	background: #f0ef84;
 }
@@ -3908,7 +3908,7 @@ object {
 	background: #9acd9c;
 }
 .category-all-about-yu hr,
-.category-all-about-yu.single-entry-above-footer .entry-content:before,
+.category-all-about-yu .single-entry-above-footer .entry-content:before,
 .category-all-about-yu .category-header,
 .category-all-about-yu .sixty-seconds {
 	background: #9acd9c;
@@ -4054,7 +4054,7 @@ object {
 .category-back-page .posted-on a:active {
 	color: #0f3b6b;
 }
-.category-back-page.single-entry-above-footer .entry-title,
+.category-back-page .single-entry-above-footer .entry-title,
 .category-back-page .category-posts .entry-title,
 .category-back-page .index-section-posts .entry-title {
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
@@ -4070,7 +4070,7 @@ object {
 	color: #fff;
 }
 .category-back-page hr,
-.category-back-page.single-entry-above-footer .entry-content:before,
+.category-back-page .single-entry-above-footer .entry-content:before,
 .category-back-page .category-header,
 .category-back-page .sixty-seconds {
 	background: #e8cfeb;
