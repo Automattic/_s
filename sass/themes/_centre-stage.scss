@@ -66,7 +66,7 @@
 	}
 
 	// Section-specific heading styling (not used in tag/search/author pages.)
-	&.single-entry,
+	&.single-entry-above-footer,
 	.category-posts,
 	.index-section-posts {
 
@@ -78,7 +78,7 @@
 	}
 
 	hr,
-	&.single-entry .entry-content:before,
+	&.single-entry-above-footer .entry-content:before,
 	.category-header {
 		background: $color__centrestage;
 	}
