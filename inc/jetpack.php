@@ -16,7 +16,7 @@ if ( ! function_exists( 'yumag_get_featured_posts' ) ) :
  * @return array The featured posts.
  */
 function yumag_get_featured_posts() {
-    return apply_filters( 'yumag_get_featured_posts', array() );
+	return apply_filters( 'yumag_get_featured_posts', array() );
 }
 endif;
 
@@ -35,22 +35,22 @@ function yumag_has_featured_posts( $minimum = 1 ) {
 
 	$pp = new PeriodicalPress_Template_Tags();
 
-    if ( ! $pp->is_issue() ) {
-        return false;
-    }
+	if ( ! $pp->is_issue() && ! is_home() ) {
+		return false;
+	}
 
-    $minimum = absint( $minimum );
-    $featured_posts = apply_filters( 'yumag_get_featured_posts', array() );
+	$minimum = absint( $minimum );
+	$featured_posts = apply_filters( 'yumag_get_featured_posts', array() );
 
-    if ( ! is_array( $featured_posts ) ) {
-        return false;
-    }
+	if ( ! is_array( $featured_posts ) ) {
+		return false;
+	}
 
-    if ( $minimum > count( $featured_posts ) ) {
-        return false;
-    }
+	if ( $minimum > count( $featured_posts ) ) {
+		return false;
+	}
 
-    return true;
+	return true;
 }
 endif;
 
