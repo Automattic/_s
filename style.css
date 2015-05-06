@@ -3984,6 +3984,9 @@ object {
 		padding-top: 0;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > .entry:first-child .entry-content {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
 		text-align: center;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
@@ -3995,6 +3998,8 @@ object {
 		text-align: center;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) {
+		padding: 14px 0;
+		padding: 0.77778rem 0;
 		background: #f0ef84; 
 
 		-webkit-box-flex: 1;
@@ -4006,12 +4011,62 @@ object {
 	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry {
 		width: 100%;
 	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:last-child {
+		margin-bottom: 0;
+	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry .entry-image {
+		padding-top: 0;
+	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+2):first-child .entry-content,
 	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+2):first-child ~ * .entry-content {
 		display: none;
 	}
-	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+3):first-child .entry-image,
-	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+3):first-child ~ * .entry-image {
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+3):first-child:nth-child(n+3):before,
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+3):before {
+		content: "";
+		display: block;
+		width: 50%;
+		height: 2px;
+		margin-top: -14px;
+		margin-top: -0.77778rem;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		background: #171717;
+	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+3):first-child:nth-child(n+3) .entry-image,
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+3) .entry-image {
+		display: none;
+	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+4):first-child:nth-child(2):before,
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+4):first-child ~ *:nth-child(2):before {
+		content: "";
+		display: block;
+		width: 50%;
+		height: 2px;
+		margin-top: -14px;
+		margin-top: -0.77778rem;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		background: #171717;
+	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+4):first-child:nth-child(2) .entry-image,
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+4):first-child ~ *:nth-child(2) .entry-image {
+		display: none;
+	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+5):first-child:nth-child(1):before,
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+5):first-child ~ *:nth-child(1):before {
+		content: "";
+		display: block;
+		width: 50%;
+		height: 2px;
+		margin-top: -14px;
+		margin-top: -0.77778rem;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		background: #171717;
+	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+5):first-child:nth-child(1) .entry-image,
+	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(n+2) .entry:nth-last-child(n+5):first-child ~ *:nth-child(1) .entry-image {
 		display: none;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > :nth-child(2) {

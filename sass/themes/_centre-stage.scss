@@ -310,6 +310,7 @@
 				}
 
 				.entry-content {
+					@include font-size-line("normal");
 					text-align: center;
 				}
 
@@ -323,11 +324,20 @@
 
 			// Both sidebars.
 			> :nth-child(n+2) {
+				@include rem("padding", $gutter 0);
 				flex: 1 1 25%;
 				background: $color__centrestage;
 
 				.entry {
 					width: 100%;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					.entry-image {
+						padding-top: 0;
+					}
 
 					@include quantity-query( 2, "greater" ) {
 						// If there's 2 articles in the column, save space by
@@ -339,11 +349,68 @@
 					}
 
 					@include quantity-query( 3, "greater" ) {
+
 						// If there's 3 articles, save more space by hiding the
 						// image.
-						.entry-image {
-							display: none;
+						&:nth-child(n+3) {
+							&:before {
+								@include rem("margin-top", ($line * -0.5));
+								@include rem("margin-bottom", $line);
+								content: '';
+								display: block;
+								width: 50%;
+								height: 2px;
+								background: $black;
+							}
+
+							.entry-image {
+								display: none;
+							}
+
 						}
+
+					}
+
+					@include quantity-query( 4, "greater" ) {
+
+						&:nth-child(2) {
+
+							&:before {
+								@include rem("margin-top", ($line * -0.5));
+								@include rem("margin-bottom", $line);
+								content: '';
+								display: block;
+								width: 50%;
+								height: 2px;
+								background: $black;
+							}
+
+							.entry-image {
+								display: none;
+							}
+						}
+
+					}
+
+					@include quantity-query( 5, "greater" ) {
+
+						&:nth-child(1) {
+
+							&:before {
+								@include rem("margin-top", ($line * -0.5));
+								@include rem("margin-bottom", $line);
+								content: '';
+								display: block;
+								width: 50%;
+								height: 2px;
+								background: $black;
+							}
+
+							.entry-image {
+								display: none;
+							}
+						}
+
 					}
 
 				}
