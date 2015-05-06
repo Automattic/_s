@@ -317,6 +317,10 @@
 					clear: left;
 				}
 
+				.entry-subtitle {
+					@include rem("margin-top", ($line * 0.5));
+				}
+
 			}
 
 			// Sidebar. Both a flexbox item (horizontal) and a flexbox
@@ -360,6 +364,20 @@
 
 			}
 
+		}
+
+		.issue-section-leftovers {
+			@include rem("margin-top", ($line * 1.5));
+			width: 100%;
+
+			.entry {
+				float: left;
+
+				&:nth-child(2n+1) {
+					clear: left;
+				}
+
+			}
 
 		}
 

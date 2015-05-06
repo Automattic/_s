@@ -9,30 +9,42 @@
 }
 
 .author-image {
-	@include rem( "margin-top", ( $spacing * -1 ) );
-	position: relative;
 
-	&:before {
-		@include rem( "height", $height__rule );
-		@include rem( "margin-top", ( $height__rule * -0.5 ) );
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		background: $color__neutral;
-		z-index: 0;
-	}
-
-	/* Image stacks over horizontal line (with fake gaps either side). */
 	img {
-		@include rem( "border-width", ( $spacing * 0.5 ) );
-		position: relative;
-		z-index: 1;
-		border-color: $background-color;
-		border-style: solid;
+		width: 250px;
+		height: 250px;
+		border: 50px solid $white;
+		//border: 50px solid $white;
 	}
 
+// 	@include rem( "margin-top", ( $spacing * -1 ) );
+// 	position: relative;
+
+// 	&:before {
+// 		@include rem( "height", $height__rule );
+// 		@include rem( "margin-top", ( $height__rule * -0.5 ) );
+// 		content: '';
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 0;
+// 		width: 100%;
+// 		background: $color__neutral;
+// 		z-index: 0;
+// 	}
+
+// 	/* Image stacks over horizontal line (with fake gaps either side). */
+// 	img {
+// 		@include rem( "border-width", ( $spacing * 0.5 ) );
+// 		position: relative;
+// 		z-index: 1;
+// 		border-color: $background-color;
+// 		border-style: solid;
+// 	}
+
+}
+
+.author-header {
+	background: $color__allaboutyu;
 }
 
 .author-title {

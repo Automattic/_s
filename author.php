@@ -26,9 +26,9 @@ get_header(); ?>
 					<div class="author-image">
 						<?php echo get_avatar( $curauth->ID, 150 ); ?>
 					</div>
-					<?php the_archive_title( '<h1 class="author-title">', '</h1>' ); ?>
 				</header><!-- .author-header -->
 				<div class="author-bio-content">
+					<?php the_archive_title( '<h1 class="author-title">', '</h1>' ); ?>
 					<?php if ( ! empty( $curauth_student ) ) {
 						printf( '<p class="author-student-details">(%s)</p>', $curauth_student );
 					} ?>

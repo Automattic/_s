@@ -1073,6 +1073,7 @@ figure {
 .site-content,
 .site-footer,
 .issue-section,
+.issue-section-leftovers,
 .category-posts,
 .author-bio-section {
 	*zoom: 1;
@@ -1097,6 +1098,8 @@ figure {
 .site-footer:after,
 .issue-section:before,
 .issue-section:after,
+.issue-section-leftovers:before,
+.issue-section-leftovers:after,
 .category-posts:before,
 .category-posts:after,
 .author-bio-section:before,
@@ -1114,6 +1117,7 @@ figure {
 .site-content:after,
 .site-footer:after,
 .issue-section:after,
+.issue-section-leftovers:after,
 .category-posts:after,
 .author-bio-section:after {
 	clear: both;

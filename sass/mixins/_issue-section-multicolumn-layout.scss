@@ -257,7 +257,7 @@
 
 				}
 
-				@include quantity-query( 8, "greater" ) {
+				@include quantity-query( 9, "greater" ) {
 
 					&:nth-child(n+4) {
 
@@ -270,7 +270,7 @@
 
 				}
 
-				@include quantity-query ( 10, "greater" ) {
+				@include quantity-query ( 11, "greater" ) {
 
 					&:nth-child(4):before {
 						@include rem("margin-bottom", ($line * 0.5));
