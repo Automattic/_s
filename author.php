@@ -24,7 +24,7 @@ get_header(); ?>
 			<section class="author-bio-section">
 				<header class="author-header">
 					<div class="author-image">
-						<?php echo get_avatar( $curauth->ID, 150 ); ?>
+						<?php echo get_avatar( $curauth->ID, 300 ); ?>
 					</div>
 				</header><!-- .author-header -->
 				<div class="author-bio-content">
