@@ -74,7 +74,26 @@
 
 				@include quantity-query( 4, "greater" ) {
 
+					/* Fake heading */
+					&:nth-child(3):before {
+						@include rem("margin-bottom", $line);
+						@include rem("padding", ($gutter * 0.5));
+						@include font-size-line("small");
+						content: 'Also in this issue';
+						float: right;
+						clear: right;
+						display: block;
+						width: 100%;
+						font-family: $font-family__heading;
+						font-weight: bold;
+						text-align: center;
+						text-transform: uppercase;
+						background-color: $black;
+						color: $white;
+					}
+
 					&:nth-child(n+3) {
+						@include rem("padding-bottom", $line);
 						float: right;
 						clear: right;
 
@@ -82,6 +101,56 @@
 							display: none;
 						}
 
+						.entry-content {
+							@include font-size-line("smaller", 0.66667);
+						}
+
+					}
+
+				}
+
+				@include quantity-query( 5, "greater" ) {
+
+					&:nth-child(n+3) {
+
+						.entry-title {
+							@include font-size-line("normal");
+						}
+
+						.entry-subtitle {
+							@include font-size-line("small");
+						}
+
+						.entry-content,
+						.entry-meta {
+							display: none;
+						}
+
+					}
+
+				}
+
+				@include quantity-query( 8, "greater" ) {
+
+					&:nth-child(n+3) {
+
+						.entry-title,
+						.entry-subtitle {
+							@include font-size-line("smaller", 0.5);
+						}
+
+					}
+
+				}
+
+				@include quantity-query ( 10, "greater" ) {
+
+					&:nth-child(3):before {
+						@include rem("margin-bottom", ($line * 0.5));
+					}
+
+					&:nth-child(n+3) {
+						@include rem("padding-bottom", ($line * 0.5));
 					}
 
 				}
@@ -100,18 +169,58 @@
 					&:nth-child(n+3) {
 						float: left;
 						clear: none;
+						padding-bottom: 0;
+
+						/* Resets from previous media query */
 
 						.entry-image {
 							display: block;
 						}
 
+						.entry-title {
+							@include font-size-line("large");
+						}
+
+						.entry-subtitle {
+							@include font-size-line("normal");
+						}
+
+						.entry-content {
+							@include font-size-line("small");
+							display: block;
+						}
+
+					}
+
+					/* Remove old fake heading */
+					&:nth-child(3):before {
+						display: none;
 					}
 
 				}
 
 				@include quantity-query( 5, "greater" ) {
 
+					/* Fake heading */
+					&:nth-child(4):before {
+						@include rem("margin-bottom", $line);
+						@include rem("padding", ($gutter * 0.5));
+						@include font-size-line("small");
+						content: 'Also in this issue';
+						float: right;
+						clear: right;
+						display: block;
+						width: 100%;
+						font-family: $font-family__heading;
+						font-weight: bold;
+						text-align: center;
+						text-transform: uppercase;
+						background-color: $black;
+						color: $white;
+					}
+
 					&:nth-child(n+4) {
+						@include rem("padding-bottom", $line);
 						float: right;
 						clear: right;
 
@@ -119,6 +228,56 @@
 							display: none;
 						}
 
+						.entry-content {
+							@include font-size-line("smaller", 0.66667);
+						}
+
+					}
+
+				}
+
+				@include quantity-query( 6, "greater" ) {
+
+					&:nth-child(n+4) {
+
+						.entry-title {
+							@include font-size-line("normal");
+						}
+
+						.entry-subtitle {
+							@include font-size-line("small");
+						}
+
+						.entry-content,
+						.entry-meta {
+							display: none;
+						}
+
+					}
+
+				}
+
+				@include quantity-query( 8, "greater" ) {
+
+					&:nth-child(n+4) {
+
+						.entry-title,
+						.entry-subtitle {
+							@include font-size-line("smaller", 0.5);
+						}
+
+					}
+
+				}
+
+				@include quantity-query ( 10, "greater" ) {
+
+					&:nth-child(4):before {
+						@include rem("margin-bottom", ($line * 0.5));
+					}
+
+					&:nth-child(n+4) {
+						@include rem("padding-bottom", ($line * 0.5));
 					}
 
 				}

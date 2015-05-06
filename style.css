@@ -3104,23 +3104,16 @@ object {
 .category-yorklife .single-entry-above-footer .entry-title,
 .category-yorklife .category-posts .entry-title,
 .category-yorklife .issue-section-posts .entry-title {
-	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif; 
-	text-transform: uppercase;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 }
-.category-yorklife .category-posts .entry-title,
-.category-yorklife .issue-section-posts .entry-title {
-	font-size: 18px;
-	font-size: 1rem;
-	line-height: 1.55556;
+.category-yorklife .single-entry-above-footer .entry-title {
+	text-transform: uppercase;
 }
 .category-yorklife .category-header {
 	background: #dcd4c6;
 }
 .category-yorklife .footer a {
 	color: #94805b;
-}
-.category-yorklife .category-posts .entry-meta {
-	display: none;
 }
 .category-yorklife .iis-caption {
 	border-right-color: #dcd4c6;
@@ -3174,38 +3167,202 @@ object {
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * .entry-image {
 		display: block;
 	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
+		/* Fake heading */
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(3):before,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(3):before {
+		content: "Also in this issue";
+		clear: right;
+		float: right;
+		display: block;
+		width: 100%;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		padding: 7px;
+		padding: 0.38889rem;
+		font-weight: bold;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: #171717;
+		color: #fff;
+	}
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
 		clear: right; 
 		float: right;
+		padding-bottom: 28px;
+		padding-bottom: 1.55556rem;
 	}
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
 		display: none;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-content,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-content {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1.33334;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-title,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-title {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-subtitle,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-content,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-meta,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-content,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-meta {
+		display: none;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+3) .entry-title,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+3) .entry-subtitle,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+3) .entry-title,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(3):before,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(3):before {
+		margin-bottom: 14px;
+		margin-bottom: 0.77778rem;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(n+3),
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(n+3) {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
 	}
 }
 @media (min-width: 1100px) {
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
+		/* Remove old fake heading */
 	}
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
-		clear: none; 
+		clear: none;
 		float: left;
+		padding-bottom: 0;
+		/* Resets from previous media query */
 	}
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
 		display: block;
 	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-title,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-title {
+		font-size: 21px;
+		font-size: 1.16667rem;
+		line-height: 1.33333;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-subtitle,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-content,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-content {
+		display: block; 
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(3):before,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(3):before {
+		display: none;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ * {
+		/* Fake heading */
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(4):before,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(4):before {
+		content: "Also in this issue";
+		clear: right;
+		float: right;
+		display: block;
+		width: 100%;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		padding: 7px;
+		padding: 0.38889rem;
+		font-weight: bold;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: #171717;
+		color: #fff;
+	}
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4),
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) {
 		clear: right; 
 		float: right;
+		padding-bottom: 28px;
+		padding-bottom: 1.55556rem;
 	}
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-image,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-image {
 		display: none;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-content,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-content {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1.33334;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-title,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-title {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-subtitle,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-subtitle {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-content,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-meta,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-content,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-meta {
+		display: none;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+4) .entry-title,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+4) .entry-subtitle,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+4) .entry-title,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+4) .entry-subtitle {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(4):before,
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(4):before {
+		margin-bottom: 14px;
+		margin-bottom: 0.77778rem;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(n+4),
+	.category-yorklife .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(n+4) {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
 	}
 }
 
@@ -3997,38 +4154,202 @@ object {
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * .entry-image {
 		display: block;
 	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
+		/* Fake heading */
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(3):before,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(3):before {
+		content: "Also in this issue";
+		clear: right;
+		float: right;
+		display: block;
+		width: 100%;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		padding: 7px;
+		padding: 0.38889rem;
+		font-weight: bold;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: #171717;
+		color: #fff;
+	}
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
 		clear: right; 
 		float: right;
+		padding-bottom: 28px;
+		padding-bottom: 1.55556rem;
 	}
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
 		display: none;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-content,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-content {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1.33334;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-title,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-title {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-subtitle,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-content,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-meta,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-content,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-meta {
+		display: none;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+3) .entry-title,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+3) .entry-subtitle,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+3) .entry-title,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(3):before,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(3):before {
+		margin-bottom: 14px;
+		margin-bottom: 0.77778rem;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(n+3),
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(n+3) {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
 	}
 }
 @media (min-width: 1100px) {
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
+		/* Remove old fake heading */
 	}
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
-		clear: none; 
+		clear: none;
 		float: left;
+		padding-bottom: 0;
+		/* Resets from previous media query */
 	}
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
 		display: block;
 	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-title,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-title {
+		font-size: 21px;
+		font-size: 1.16667rem;
+		line-height: 1.33333;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-subtitle,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-content,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-content {
+		display: block; 
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(3):before,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(3):before {
+		display: none;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ * {
+		/* Fake heading */
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(4):before,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(4):before {
+		content: "Also in this issue";
+		clear: right;
+		float: right;
+		display: block;
+		width: 100%;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		padding: 7px;
+		padding: 0.38889rem;
+		font-weight: bold;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: #171717;
+		color: #fff;
+	}
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4),
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) {
 		clear: right; 
 		float: right;
+		padding-bottom: 28px;
+		padding-bottom: 1.55556rem;
 	}
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-image,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-image {
 		display: none;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-content,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-content {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1.33334;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-title,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-title {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-subtitle,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-subtitle {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-content,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-meta,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-content,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-meta {
+		display: none;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+4) .entry-title,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+4) .entry-subtitle,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+4) .entry-title,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+4) .entry-subtitle {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(4):before,
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(4):before {
+		margin-bottom: 14px;
+		margin-bottom: 0.77778rem;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(n+4),
+	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(n+4) {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
 	}
 }
 
@@ -4153,38 +4474,202 @@ object {
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * .entry-image {
 		display: block;
 	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
+		/* Fake heading */
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(3):before,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(3):before {
+		content: "Also in this issue";
+		clear: right;
+		float: right;
+		display: block;
+		width: 100%;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		padding: 7px;
+		padding: 0.38889rem;
+		font-weight: bold;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: #171717;
+		color: #fff;
+	}
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
 		clear: right; 
 		float: right;
+		padding-bottom: 28px;
+		padding-bottom: 1.55556rem;
 	}
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
 		display: none;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-content,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-content {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1.33334;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-title,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-title {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-subtitle,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-content,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+3) .entry-meta,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-content,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+3) .entry-meta {
+		display: none;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+3) .entry-title,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+3) .entry-subtitle,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+3) .entry-title,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(3):before,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(3):before {
+		margin-bottom: 14px;
+		margin-bottom: 0.77778rem;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(n+3),
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(n+3) {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
 	}
 }
 @media (min-width: 1100px) {
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
+		/* Remove old fake heading */
 	}
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3),
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) {
-		clear: none; 
+		clear: none;
 		float: left;
+		padding-bottom: 0;
+		/* Resets from previous media query */
 	}
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-image,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-image {
 		display: block;
 	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-title,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-title {
+		font-size: 21px;
+		font-size: 1.16667rem;
+		line-height: 1.33333;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-subtitle,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-subtitle {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(n+3) .entry-content,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(n+3) .entry-content {
+		display: block; 
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child:nth-child(3):before,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ *:nth-child(3):before {
+		display: none;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ * {
+		/* Fake heading */
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(4):before,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(4):before {
+		content: "Also in this issue";
+		clear: right;
+		float: right;
+		display: block;
+		width: 100%;
+		margin-bottom: 28px;
+		margin-bottom: 1.55556rem;
+		padding: 7px;
+		padding: 0.38889rem;
+		font-weight: bold;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: #171717;
+		color: #fff;
+	}
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4),
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) {
 		clear: right; 
 		float: right;
+		padding-bottom: 28px;
+		padding-bottom: 1.55556rem;
 	}
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-image,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-image {
 		display: none;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child:nth-child(n+4) .entry-content,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+5):first-child ~ *:nth-child(n+4) .entry-content {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1.33334;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-title,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-title {
+		font-size: 18px;
+		font-size: 1rem;
+		line-height: 1.55556;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-subtitle,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-subtitle {
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-content,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child:nth-child(n+4) .entry-meta,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-content,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+6):first-child ~ *:nth-child(n+4) .entry-meta {
+		display: none;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+4) .entry-title,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child:nth-child(n+4) .entry-subtitle,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+4) .entry-title,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+8):first-child ~ *:nth-child(n+4) .entry-subtitle {
+		font-size: 14px;
+		font-size: 0.77778rem;
+		line-height: 1;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(4):before,
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(4):before {
+		margin-bottom: 14px;
+		margin-bottom: 0.77778rem;
+	}
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child:nth-child(n+4),
+	.category-back-page .issue-section-posts .entry:nth-last-child(n+10):first-child ~ *:nth-child(n+4) {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
 	}
 }
 

@@ -34,19 +34,13 @@
 	.issue-section-posts {
 
 		.entry-title {
-			text-transform: uppercase;
 			font-family: $font-family__sans-serif;
 		}
 
 	}
 
-	.category-posts,
-	.issue-section-posts {
-
-		.entry-title {
-			@include font-size-line( "normal" );
-		}
-
+	.single-entry-above-footer .entry-title {
+		text-transform: uppercase;
 	}
 
 	.category-header {
@@ -56,14 +50,6 @@
 	.footer a {
 		@extend %hide-underline;
 		color: $color__yorklife__darker;
-	}
-
-	.category-posts {
-
-		.entry-meta {
-			display: none;
-		}
-
 	}
 
 	.iis-caption {
