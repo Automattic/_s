@@ -1,9 +1,9 @@
 {
   "name": "_s",
   "version": "1.0.0",
-  "description": "A starter theme based on _s",
+  "description": "A theme boilerplate for WebDevStudios.",
   "author": "WebDevStudios",
-  "homepage": "http://webdevstudios.com",
+  "homepage": "https://github.com/WebDevStudios/_s",
   "bugs": "https://github.com/WebDevStudios/_s/issues",
   "repository": {
     "type": "git",
