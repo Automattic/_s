@@ -49,11 +49,13 @@ get_header(); ?>
 							?>
 
 						<?php endwhile; ?>
-						<?php the_posts_navigation(); ?>
 
 						</div>
 					</div><!-- .index-posts -->
 				</div><!-- .index-content -->
+				<footer class="next-prev-wrap">
+					<?php the_posts_navigation(); ?>
+				</footer><!-- .next-prev-wrap -->
 			</section><!-- .archive-section -->
 
 		<?php else : ?>

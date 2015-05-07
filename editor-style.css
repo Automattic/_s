@@ -1075,7 +1075,8 @@ figure {
 .issue-section,
 .issue-section-leftovers,
 .category-posts,
-.author-bio-section {
+.author-bio-section,
+.next-prev-wrap {
 	*zoom: 1;
 }
 .clear:before,
@@ -1103,7 +1104,9 @@ figure {
 .category-posts:before,
 .category-posts:after,
 .author-bio-section:before,
-.author-bio-section:after {
+.author-bio-section:after,
+.next-prev-wrap:before,
+.next-prev-wrap:after {
 	content: " ";
 	display: table;
 }
@@ -1119,7 +1122,8 @@ figure {
 .issue-section:after,
 .issue-section-leftovers:after,
 .category-posts:after,
-.author-bio-section:after {
+.author-bio-section:after,
+.next-prev-wrap:after {
 	clear: both;
 }
 

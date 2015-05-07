@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: YuMag
 Theme URI: http://www.yumagazine.co.uk/
@@ -1026,6 +1027,52 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+/* Pagination. */
+.next-prev-wrap {
+	margin-bottom: 56px;
+	margin-bottom: 3.11111rem;
+	vertical-align: middle;
+}
+.next-prev-wrap a {
+	font-weight: bold;
+	font-size: 16px;
+	font-size: 0.88889rem;
+	/* to match the arrow line-height */
+	line-height: 2em;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+	vertical-align: top; 
+	text-decoration: none;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	border-bottom: 0;
+	color: #171717;
+}
+.next-prev-wrap a:hover,
+.next-prev-wrap a:focus,
+.next-prev-wrap a:active {
+	border-bottom: 0; 
+	color: #0f3b6b;
+}
+.next-prev-wrap .nav-previous,
+.next-prev-wrap .nav-next {
+	float: left;
+	width: 49%;
+	margin: 0;
+}
+.next-prev-wrap .nav-next {
+	float: right;
+}
+.next-prev-wrap .nav-previous a:before {
+	content: "← ";
+	font-size: 2em;
+	line-height: 1em;
+}
+.next-prev-wrap .nav-next a:after {
+	content: " →";
+	font-size: 2em;
+	line-height: 1em;
+}
+
 /* Next-post/-page links. */
 .nav-next {
 	text-align: right;
@@ -1528,7 +1575,8 @@ figure {
 .entry-footer-wrap .entry-footer,
 .comments-footer,
 .footer-widget-area,
-.footer-row {
+.footer-row,
+.next-prev-wrap .posts-navigation {
 	display: block;
 	max-width: 1400px;
 	margin: 0 auto;
@@ -1549,7 +1597,9 @@ figure {
 .footer-widget-area:before,
 .footer-widget-area:after,
 .footer-row:before,
-.footer-row:after {
+.footer-row:after,
+.next-prev-wrap .posts-navigation:before,
+.next-prev-wrap .posts-navigation:after {
 	content: " ";
 	display: table;
 }
@@ -1559,7 +1609,8 @@ figure {
 .entry-footer-wrap .entry-footer:after,
 .comments-footer:after,
 .footer-widget-area:after,
-.footer-row:after {
+.footer-row:after,
+.next-prev-wrap .posts-navigation:after {
 	clear: both;
 }
 
@@ -1619,6 +1670,7 @@ figure {
 	.single-entry-footer .entry-author,
 	.single-entry-footer .posted-on,
 	.single-entry-footer .tags-links,
+	.nav-links,
 	.comments-area {
 		float: left;
 		display: inline;
@@ -1798,7 +1850,8 @@ figure {
 .issue-section,
 .issue-section-leftovers,
 .category-posts,
-.author-bio-section {
+.author-bio-section,
+.next-prev-wrap {
 	*zoom: 1;
 }
 .clear:before,
@@ -1826,7 +1879,9 @@ figure {
 .category-posts:before,
 .category-posts:after,
 .author-bio-section:before,
-.author-bio-section:after {
+.author-bio-section:after,
+.next-prev-wrap:before,
+.next-prev-wrap:after {
 	content: " ";
 	display: table;
 }
@@ -1842,7 +1897,8 @@ figure {
 .issue-section:after,
 .issue-section-leftovers:after,
 .category-posts:after,
-.author-bio-section:after {
+.author-bio-section:after,
+.next-prev-wrap:after {
 	clear: both;
 }
 

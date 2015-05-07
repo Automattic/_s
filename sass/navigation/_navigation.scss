@@ -1,3 +1,55 @@
+/* Pagination. */
+.next-prev-wrap {
+	@include rem("margin-bottom", ($line * 2));
+	vertical-align: middle;
+
+	a {
+		@include font-size("small");
+		font-family: $font-family__meta;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: $letter-spacing__caps;
+		text-decoration: none;
+		border-bottom: 0;
+		color: $black;
+		/* to match the arrow line-height */
+		line-height: 2em;
+		vertical-align: top;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__link-hover;
+			border-bottom: 0;
+		}
+
+	}
+
+	.nav-previous,
+	.nav-next {
+		float: left;
+		width: 49%;
+		margin: 0;
+	}
+
+	.nav-next {
+		float: right;
+	}
+
+	.nav-previous a:before {
+		content: '← ';
+		font-size: 2em;
+		line-height: 1em;
+	}
+
+	.nav-next a:after {
+		content: ' →';
+		font-size: 2em;
+		line-height: 1em;
+	}
+
+}
+
 /* Next-post/-page links. */
 .nav-next {
 	text-align: right;

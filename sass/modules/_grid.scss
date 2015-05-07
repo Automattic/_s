@@ -74,7 +74,8 @@
 .entry-footer-wrap .entry-footer,
 .comments-footer,
 .footer-widget-area,
-.footer-row {
+.footer-row,
+.next-prev-wrap .posts-navigation {
 	@include row;
 }
 
@@ -117,6 +118,7 @@
 	.single-entry-footer .entry-author,
 	.single-entry-footer .posted-on,
 	.single-entry-footer .tags-links,
+	.nav-links,
 	.comments-area {
 		@include column(10);
 		@include push;
