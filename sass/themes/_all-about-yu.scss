@@ -11,12 +11,15 @@
 	h3,
 	h4,
 	h5,
-	h6 {
+	h6,
+	.related-posts & .entry-subtitle,
+	.related-posts & .cat-links a {
 		color: $color__allaboutyu__dark;
 	}
 
 	.entry-content,
-	.posted-on {
+	.posted-on,
+	.related-posts & .cat-links {
 
 		a:hover,
 		a:focus,
@@ -48,7 +51,7 @@
 
 	.call-to-action,
 	.content-details {
-		border-top-color: $color__allaboutyu;
+		border-color: $color__allaboutyu;
 	}
 
 	.footer a {

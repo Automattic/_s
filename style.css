@@ -3070,7 +3070,8 @@ object {
 .category-yorklife .site-title-term.category-link,
 .category-yorklife .entry-content a,
 .category-yorklife .posted-on a,
-.category-yorklife .dropcap {
+.category-yorklife .dropcap,
+.related-posts .category-yorklife .cat-links a {
 	color: #bfb097;
 }
 .category-yorklife .entry-content a:hover,
@@ -3078,8 +3079,14 @@ object {
 .category-yorklife .entry-content a:active,
 .category-yorklife .posted-on a:hover,
 .category-yorklife .posted-on a:focus,
-.category-yorklife .posted-on a:active {
+.category-yorklife .posted-on a:active,
+.related-posts .category-yorklife .cat-links a:hover,
+.related-posts .category-yorklife .cat-links a:focus,
+.related-posts .category-yorklife .cat-links a:active {
 	color: #0f3b6b;
+}
+.related-posts .category-yorklife .entry-subtitle {
+	color: #171717;
 }
 .category-yorklife .dropcap {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
@@ -3365,7 +3372,9 @@ object {
 .category-open-minds .entry-subtitle,
 .category-open-minds .entry-content a,
 .category-open-minds .posted-on a,
-.category-open-minds .quote-source {
+.category-open-minds .quote-source,
+.related-posts .category-open-minds .entry-subtitle,
+.related-posts .category-open-minds .cat-links a {
 	color: #3d9aa9;
 }
 .category-open-minds .entry-content a:hover,
@@ -3373,7 +3382,10 @@ object {
 .category-open-minds .entry-content a:active,
 .category-open-minds .posted-on a:hover,
 .category-open-minds .posted-on a:focus,
-.category-open-minds .posted-on a:active {
+.category-open-minds .posted-on a:active,
+.related-posts .category-open-minds .cat-links a:hover,
+.related-posts .category-open-minds .cat-links a:focus,
+.related-posts .category-open-minds .cat-links a:active {
 	color: #0f3b6b;
 }
 .category-open-minds .entry-title,
@@ -3410,8 +3422,8 @@ object {
 	background: #69bcc9;
 }
 .category-open-minds .call-to-action,
-.category-open-minds .contact-details {
-	border-top-color: #69bcc9;
+.category-open-minds .content-details {
+	border-color: #69bcc9;
 }
 .category-open-minds .footer a {
 	color: #296770;
@@ -3711,7 +3723,8 @@ object {
 	/* Yellow square behind first letter of subheading. */
 }
 .category-centre-stage .entry-content a,
-.category-centre-stage .posted-on a {
+.category-centre-stage .posted-on a,
+.related-posts .category-centre-stage .cat-links a {
 	color: #acab15;
 }
 .category-centre-stage .entry-content a:hover,
@@ -3719,7 +3732,10 @@ object {
 .category-centre-stage .entry-content a:active,
 .category-centre-stage .posted-on a:hover,
 .category-centre-stage .posted-on a:focus,
-.category-centre-stage .posted-on a:active {
+.category-centre-stage .posted-on a:active,
+.related-posts .category-centre-stage .cat-links a:hover,
+.related-posts .category-centre-stage .cat-links a:focus,
+.related-posts .category-centre-stage .cat-links a:active {
 	color: #0f3b6b;
 }
 .category-centre-stage .quote-source {
@@ -3748,7 +3764,8 @@ object {
 	background: #f0ef84;
 }
 .category-centre-stage .category-title,
-.category-centre-stage .category-title a {
+.category-centre-stage .category-title a,
+.related-posts .category-centre-stage .entry-subtitle {
 	color: #171717;
 }
 .category-centre-stage .category-description,
@@ -4103,7 +4120,9 @@ object {
 .category-all-about-yu h3,
 .category-all-about-yu h4,
 .category-all-about-yu h5,
-.category-all-about-yu h6 {
+.category-all-about-yu h6,
+.related-posts .category-all-about-yu .entry-subtitle,
+.related-posts .category-all-about-yu .cat-links a {
 	color: #67b46a;
 }
 .category-all-about-yu .entry-content a:hover,
@@ -4111,7 +4130,10 @@ object {
 .category-all-about-yu .entry-content a:active,
 .category-all-about-yu .posted-on a:hover,
 .category-all-about-yu .posted-on a:focus,
-.category-all-about-yu .posted-on a:active {
+.category-all-about-yu .posted-on a:active,
+.related-posts .category-all-about-yu .cat-links a:hover,
+.related-posts .category-all-about-yu .cat-links a:focus,
+.related-posts .category-all-about-yu .cat-links a:active {
 	color: #0f3b6b;
 }
 .category-all-about-yu .entry-content h3:before {
@@ -4131,7 +4153,7 @@ object {
 }
 .category-all-about-yu .call-to-action,
 .category-all-about-yu .content-details {
-	border-top-color: #9acd9c;
+	border-color: #9acd9c;
 }
 .category-all-about-yu .footer a {
 	color: #448a47;
@@ -4423,7 +4445,9 @@ object {
 .category-back-page h3,
 .category-back-page h4,
 .category-back-page h5,
-.category-back-page h6 {
+.category-back-page h6,
+.related-posts .category-back-page .entry-subtitle,
+.related-posts .category-back-page .cat-links a {
 	color: #ce99d5;
 }
 .category-back-page .entry-content a:hover,
@@ -4431,7 +4455,10 @@ object {
 .category-back-page .entry-content a:active,
 .category-back-page .posted-on a:hover,
 .category-back-page .posted-on a:focus,
-.category-back-page .posted-on a:active {
+.category-back-page .posted-on a:active,
+.related-posts .category-back-page .cat-links a:hover,
+.related-posts .category-back-page .cat-links a:focus,
+.related-posts .category-back-page .cat-links a:active {
 	color: #0f3b6b;
 }
 .category-back-page .single-entry-above-footer .entry-title,
@@ -4457,7 +4484,7 @@ object {
 }
 .category-back-page .call-to-action,
 .category-back-page .content-details {
-	border-top-color: #e8cfeb;
+	border-color: #e8cfeb;
 }
 .category-back-page .footer a {
 	color: #b463be;

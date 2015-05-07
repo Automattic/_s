@@ -1,7 +1,8 @@
 .category-centre-stage {
 
 	.entry-content a,
-	.posted-on a {
+	.posted-on a,
+	.related-posts & .cat-links a {
 		color: $color__centrestage__darker;
 
 		&:hover,
@@ -43,7 +44,8 @@
 	}
 
 	.category-title,
-	.category-title a {
+	.category-title a,
+	.related-posts & .entry-subtitle {
 		color: $black;
 	}
 

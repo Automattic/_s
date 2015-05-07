@@ -7,12 +7,15 @@
 	.entry-subtitle,
 	.entry-content a,
 	.posted-on a,
-	.quote-source {
+	.quote-source,
+	.related-posts & .entry-subtitle,
+	.related-posts & .cat-links a {
 		color: $color__openminds__dark;
 	}
 
 	.entry-content,
-	.posted-on {
+	.posted-on,
+	.related-posts & .cat-links {
 
 		a:hover,
 		a:focus,
@@ -60,8 +63,8 @@
 	}
 
 	.call-to-action,
-	.contact-details {
-		border-top-color: $color__openminds;
+	.content-details {
+		border-color: $color__openminds;
 	}
 
 	.footer a {

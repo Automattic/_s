@@ -5,12 +5,14 @@
 	.site-title-term.category-link,
 	.entry-content a,
 	.posted-on a,
-	.dropcap {
+	.dropcap,
+	.related-posts & .cat-links a {
 		color: $color__yorklife__dark;
 	}
 
 	.entry-content,
-	.posted-on {
+	.posted-on,
+	.related-posts & .cat-links {
 
 		a:hover,
 		a:focus,
@@ -18,6 +20,10 @@
 			color: $color__link-hover;
 		}
 
+	}
+
+	.related-posts & .entry-subtitle {
+		color: $black;
 	}
 
 	.dropcap {
