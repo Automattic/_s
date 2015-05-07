@@ -54,7 +54,11 @@ get_header(); ?>
 					</div><!-- .index-posts -->
 				</div><!-- .index-content -->
 				<footer class="next-prev-wrap">
-					<?php the_posts_navigation(); ?>
+					<?php the_posts_navigation( array(
+						'prev_text' => __( 'Older news', 'yumag' ),
+						'next_text' => __( 'Newer news', 'yumag' ),
+						'screen_reader_text' => __( 'Notices navigation', 'yumag' )
+					) ); ?>
 				</footer><!-- .next-prev-wrap -->
 			</section><!-- .archive-section -->
 

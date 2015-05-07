@@ -27,13 +27,18 @@
 
 	.nav-previous,
 	.nav-next {
-		float: left;
 		width: 49%;
 		margin: 0;
 	}
 
+	.nav-previous {
+		float: left;
+		padding-right: 1em;
+	}
+
 	.nav-next {
 		float: right;
+		padding-left: 1em;
 	}
 
 	.nav-previous a:before {
@@ -50,7 +55,10 @@
 
 }
 
-/* Next-post/-page links. */
+.nav-previous {
+	text-align: left;
+}
+
 .nav-next {
 	text-align: right;
 }

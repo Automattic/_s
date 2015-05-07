@@ -76,8 +76,12 @@
 
 
 .issue-section {
-	@include rem( "margin-top", ( $line * 3 ) );
 	@include rem( "margin-bottom", ( $line * 2 ) );
+
+	+ .issue-section {
+		@include rem( "margin-top", ( $line * 3 ) );
+	}
+
 }
 
 /* Posts list for this section. */
@@ -173,6 +177,10 @@
 .related-posts .index-posts,
 .search-results .index-posts {
 
+	.entry {
+		@include rem( "margin-bottom", $line );
+	}
+
 	.entry-footer {
 		@include rem( "margin", ( $line * 0.5 ) 0 $line );
 		@include font-size-line( "smaller" );
@@ -190,7 +198,6 @@
 			@include rem( "max-width", ( 333px + ( $spacing * 0.5 ) ) );
 			@include rem( "padding", 0 ( $spacing * 0.5 ) );
 			float: left;
-			margin-bottom: 0;
 
 			&:nth-child(2n+1) {
 				clear: left;

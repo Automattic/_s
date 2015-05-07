@@ -1055,12 +1055,16 @@ textarea {
 }
 .next-prev-wrap .nav-previous,
 .next-prev-wrap .nav-next {
-	float: left;
 	width: 49%;
 	margin: 0;
 }
+.next-prev-wrap .nav-previous {
+	float: left;
+	padding-right: 1em;
+}
 .next-prev-wrap .nav-next {
 	float: right;
+	padding-left: 1em;
 }
 .next-prev-wrap .nav-previous a:before {
 	content: "← ";
@@ -1073,7 +1077,10 @@ textarea {
 	line-height: 1em;
 }
 
-/* Next-post/-page links. */
+.nav-previous {
+	text-align: left;
+}
+
 .nav-next {
 	text-align: right;
 }
@@ -1645,8 +1652,6 @@ figure {
 .single-entry-footer .entry-author,
 .single-entry-footer .posted-on,
 .single-entry-footer .tags-links,
-.nav-previous,
-.nav-next,
 .comments-area,
 .comment,
 .site-footer-content {
@@ -1686,14 +1691,6 @@ figure {
 		width: 100%;
 		padding: 0 14px;
 	}
-	/* Nested side-by-side columns. */
-	.nav-previous,
-	.nav-next {
-		float: left;
-		display: inline;
-		width: 50%;
-		padding: 0 14px;
-	}
 }
 
 @media (min-width: 800px) {
@@ -1711,6 +1708,7 @@ figure {
 	.single-entry-above-footer .entry-content,
 	.single-entry-footer .entry-author,
 	.single-entry-footer .posted-on,
+	.nav-links,
 	.single-entry-footer .tags-links {
 		float: left;
 		display: inline;
@@ -1718,20 +1716,6 @@ figure {
 		margin-right: 16.66667%; 
 		margin-left: 16.66667%;
 		padding: 0 14px;
-	}
-	/* More spacing between side-by-side columns. */
-	.nav-previous,
-	.nav-next {
-		float: left;
-		display: inline;
-		width: 40%;
-		padding: 0 14px;
-	}
-	.nav-previous {
-		margin-right: 10%;
-	}
-	.nav-next {
-		margin-left: 10%;
 	}
 }
 
@@ -1751,6 +1735,7 @@ figure {
 	.single-entry-above-footer .entry-content,
 	.single-entry-footer .entry-author,
 	.single-entry-footer .posted-on,
+	.nav-links,
 	.single-entry-footer .tags-links {
 		float: left;
 		display: inline;
@@ -2244,9 +2229,11 @@ figure {
 	color: #171717;
 }
 
-/* TEMPORARY: REMOVE ISSUE HEADER TO DECLUTTER. */
-.issue-header {
-	display: none;
+.next-prev-issue-title {
+	position: relative;
+	padding-bottom: 28px;
+	padding-bottom: 1.55556rem;
+	text-align: center;
 }
 
 /* eg 'ISSUE ONE' */
@@ -2367,10 +2354,12 @@ figure {
 }
 
 .issue-section {
-	margin-top: 84px;
-	margin-top: 4.66667rem;
 	margin-bottom: 56px;
 	margin-bottom: 3.11111rem;
+}
+.issue-section + .issue-section {
+	margin-top: 84px;
+	margin-top: 4.66667rem;
 }
 
 /* Posts list for this section. */
@@ -2451,6 +2440,12 @@ figure {
 	line-height: 1.16667;
 }
 
+.archive:not(.tax-pp_issue) .index-posts .entry,
+.related-posts .index-posts .entry,
+.search-results .index-posts .entry {
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
+}
 .archive:not(.tax-pp_issue) .index-posts .entry-footer,
 .related-posts .index-posts .entry-footer,
 .search-results .index-posts .entry-footer {
@@ -2471,10 +2466,9 @@ figure {
 	.archive:not(.tax-pp_issue) .index-posts .entry,
 	.related-posts .index-posts .entry,
 	.search-results .index-posts .entry {
-		float: left;
+		float: left; 
 		max-width: 347px;
 		max-width: 19.27778rem;
-		margin-bottom: 0; 
 		padding: 0 14px;
 		padding: 0 0.77778rem;
 	}

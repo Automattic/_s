@@ -17,9 +17,10 @@
 
 }
 
-/* TEMPORARY: REMOVE ISSUE HEADER TO DECLUTTER. */
-.issue-header {
-	display: none;
+.next-prev-issue-title {
+	@include rem( "padding-bottom", $line );
+	position: relative;
+	text-align: center;
 }
 
 /* eg 'ISSUE ONE' */

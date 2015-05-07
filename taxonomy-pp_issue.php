@@ -27,13 +27,11 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 
-		<section class="issue-section slider">
-			<?php get_template_part( 'slider' ); ?>
-		</section>
-
-		<header class="archive-header issue-header">
-			<h1 class="archive-title issue-title"><?php yumag_issue_title(); ?></h1>
-		</header><!-- .archive-header -->
+		<?php if ( is_home() ) : ?>
+			<section class="issue-section slider">
+				<?php get_template_part( 'slider' ); ?>
+			</section>
+		<?php endif; ?>
 
 		<main id="main" class="site-main" role="main">
 
@@ -79,6 +77,14 @@ get_header(); ?>
 					</div><!-- .issue-section-content -->
 				</section><!-- .issue-section -->
 			<?php endforeach; ?>
+
+			<footer class="next-prev-wrap issue-next-prev-wrap">
+				<?php the_posts_navigation( array(
+					'prev_text' => __( 'Previous Issue', 'yumag' ),
+					'next_text' => __( 'Next Issue', 'yumag' ),
+					'screen_reader_text' => __( 'Issues navigation', 'yumag' )
+				) ); ?>
+			</footer><!-- .next-prev-wrap -->
 
 		<?php else : ?>
 

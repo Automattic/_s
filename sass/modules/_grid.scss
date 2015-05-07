@@ -95,8 +95,6 @@
 .single-entry-footer .entry-author,
 .single-entry-footer .posted-on,
 .single-entry-footer .tags-links,
-.nav-previous,
-.nav-next,
 .comments-area,
 .comment,
 .site-footer-content {
@@ -129,13 +127,6 @@
 	.comment {
 		@include column(10, $padding, 10);
 	}
-
-
-	/* Nested side-by-side columns. */
-	.nav-previous,
-	.nav-next {
-		@include column(5, $padding, 10);
-	}
 }
 
 @include media( "main-spacing-1" ) {
@@ -152,23 +143,11 @@
 	.single-entry-above-footer .entry-content,
 	.single-entry-footer .entry-author,
 	.single-entry-footer .posted-on,
+	.nav-links,
 	.single-entry-footer .tags-links {
 		@include column(8);
 		@include push(2);
 		@include pull(2);
-	}
-
-	/* More spacing between side-by-side columns. */
-	.nav-previous,
-	.nav-next {
-		@include column(4, $padding, 10);
-	}
-
-	.nav-previous {
-		@include pull(1, 10);
-	}
-	.nav-next {
-		@include push(1, 10);
 	}
 
 }
@@ -188,6 +167,7 @@
 	.single-entry-above-footer .entry-content,
 	.single-entry-footer .entry-author,
 	.single-entry-footer .posted-on,
+	.nav-links,
 	.single-entry-footer .tags-links {
 		@include column(6);
 		@include push(3);
