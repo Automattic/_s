@@ -1,6 +1,6 @@
 //--------------------------------------------------------------
 // Base Layout
-//--------------------------------------------------------------*/
+//--------------------------------------------------------------
 
 // Structure
 
@@ -16,7 +16,7 @@
 	}
 }
 
-#primary {
+.primary {
 	@include fill-parent;
 
 	@include wider-than(tablet-landscape) {
@@ -24,7 +24,7 @@
 	}
 }
 
-#secondary {
+.secondary {
 	@include fill-parent;
 
 	@include wider-than(tablet-landscape) {
