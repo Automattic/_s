@@ -9,7 +9,7 @@ i {
 }
 
 blockquote {
-	@include rem( "margin", 0 $spacing $line );
+	@include rem( "margin", 0 0 $line );
 
 	p {
 		@include rem( "margin-bottom", ( $line * 0.5 ) );
@@ -336,6 +336,15 @@ big {
 		@include rem( "min-height", ( $width__icon + $spacing ) );
 		@include rem( "padding-top", ( $line * 0.5 ) );
 		@include rem( "padding-left", ( $width__icon + $spacing ) );
+	}
+
+}
+
+@include media( "main-spacing" ) {
+
+	blockquote {
+		@include rem("margin-left", $spacing);
+		@include rem("margin-right", $spacing);
 	}
 
 }

@@ -13,7 +13,8 @@
 	h5,
 	h6,
 	.related-posts & .entry-subtitle,
-	.related-posts & .cat-links a {
+	.related-posts & .cat-links a,
+	.dropcap {
 		color: $color__backpage__dark;
 	}
 
@@ -38,16 +39,6 @@
 			font-family: $font-family__sans-serif;
 		}
 
-	}
-
-	.dropcap {
-		@include rem( "border", ( $line / 2 ) solid $color__backpage__dark );
-		margin-right: 7px;
-		font-style: italic;
-		text-transform: lowercase;
-		font-family: $font-family__main;
-		color: $white;
-		background: $color__backpage__dark;
 	}
 
 	hr,
@@ -86,6 +77,21 @@
 		h5,
 		h6 {
 			color: $color__main;
+		}
+
+	}
+
+	@include media( "main-spacing" ) {
+
+		/* This dropcap style doesn't work on mobiles. */
+		.dropcap {
+			@include rem( "border", ( $line / 2 ) solid $color__backpage__dark );
+			margin-right: 7px;
+			font-style: italic;
+			text-transform: lowercase;
+			font-family: $font-family__main;
+			color: $white;
+			background: $color__backpage__dark;
 		}
 
 	}

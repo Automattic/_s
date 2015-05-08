@@ -46,16 +46,6 @@
 		background: $color__openminds;
 	}
 
-	.dropcap {
-		@include rem( "border-width", ( $line * 0.5 ) ( $line * 0.75 ) );
-		margin-right: 7px;
-		font-family: $font-family__main;
-		border-color: $color__openminds;
-		border-style: solid;
-		background: $color__openminds;
-		color: $white;
-	}
-
 	hr,
 	.single-entry-above-footer .entry-content:before,
 	.category-header {
@@ -77,7 +67,8 @@
 	}
 
 	.iis-caption .cat-links a,
-	.slider-subtitle {
+	.slider-subtitle,
+	.dropcap {
 		color: $color__openminds;
 	}
 
@@ -95,6 +86,21 @@
 
 	.textbox {
 		color: $white;
+	}
+
+	@include media( "main-spacing" ) {
+
+		/* This dropcap style doesn't work on mobiles. */
+		.dropcap {
+			@include rem( "border-width", ( $line * 0.5 ) ( $line * 0.75 ) );
+			margin-right: 7px;
+			font-family: $font-family__main;
+			border-color: $color__openminds;
+			border-style: solid;
+			background: $color__openminds;
+			color: $white;
+		}
+
 	}
 
 }

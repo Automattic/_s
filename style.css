@@ -381,8 +381,8 @@ i {
 }
 
 blockquote {
-	margin: 0 28px 28px;
-	margin: 0 1.55556rem 1.55556rem;
+	margin: 0 0 28px;
+	margin: 0 0 1.55556rem;
 	/*
 	 * When 2 quotes run into one blockquote container (due to TinyMCE quirks),
 	 * don't indent the first paragraph of the second quote.
@@ -762,6 +762,15 @@ big {
 		padding-top: 0.77778rem;
 		padding-left: 140px;
 		padding-left: 7.77778rem;
+	}
+}
+
+@media (min-width: 720px) {
+	blockquote {
+		margin-right: 28px;
+		margin-right: 1.55556rem; 
+		margin-left: 28px;
+		margin-left: 1.55556rem;
 	}
 }
 
@@ -3501,16 +3510,6 @@ object {
 	margin-left: -1.5em;
 	background: #69bcc9;
 }
-.category-open-minds .dropcap {
-	margin-right: 7px;
-	font-family: "Aleo", Constantia, Georgia, sans-serif;
-	border-width: 14px 21px;
-	border-width: 0.77778rem 1.16667rem;
-	border-style: solid;
-	border-color: #69bcc9;
-	background: #69bcc9;
-	color: #fff;
-}
 .category-open-minds hr,
 .category-open-minds .single-entry-above-footer .entry-content:before,
 .category-open-minds .category-header {
@@ -3527,7 +3526,8 @@ object {
 	border-right-color: #69bcc9;
 }
 .category-open-minds .iis-caption .cat-links a,
-.category-open-minds .slider-subtitle {
+.category-open-minds .slider-subtitle,
+.category-open-minds .dropcap {
 	color: #69bcc9;
 }
 .category-open-minds .textbox,
@@ -3543,6 +3543,21 @@ object {
 }
 .category-open-minds .textbox {
 	color: #fff;
+}
+@media (min-width: 720px) {
+	.category-open-minds {
+		/* This dropcap style doesn't work on mobiles. */
+	}
+	.category-open-minds .dropcap {
+		margin-right: 7px;
+		font-family: "Aleo", Constantia, Georgia, sans-serif;
+		border-width: 14px 21px;
+		border-width: 0.77778rem 1.16667rem;
+		border-style: solid;
+		border-color: #69bcc9;
+		background: #69bcc9;
+		color: #fff;
+	}
 }
 
 .category-open-minds .issue-section-posts .entry-title {
@@ -4542,7 +4557,8 @@ object {
 .category-back-page h5,
 .category-back-page h6,
 .related-posts .category-back-page .entry-subtitle,
-.related-posts .category-back-page .cat-links a {
+.related-posts .category-back-page .cat-links a,
+.category-back-page .dropcap {
 	color: #ce99d5;
 }
 .category-back-page .entry-content a:hover,
@@ -4560,16 +4576,6 @@ object {
 .category-back-page .category-posts .entry-title,
 .category-back-page .index-section-posts .entry-title {
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-}
-.category-back-page .dropcap {
-	margin-right: 7px;
-	font-style: italic;
-	font-family: "Aleo", Constantia, Georgia, sans-serif;
-	text-transform: lowercase;
-	border: 14px solid #ce99d5;
-	border: 0.77778rem solid #ce99d5;
-	background: #ce99d5; 
-	color: #fff;
 }
 .category-back-page hr,
 .category-back-page .single-entry-above-footer .entry-content:before,
@@ -4609,6 +4615,21 @@ object {
 .category-back-page .whats-on h5,
 .category-back-page .whats-on h6 {
 	color: #171717;
+}
+@media (min-width: 720px) {
+	.category-back-page {
+		/* This dropcap style doesn't work on mobiles. */
+	}
+	.category-back-page .dropcap {
+		margin-right: 7px;
+		font-style: italic;
+		font-family: "Aleo", Constantia, Georgia, sans-serif;
+		text-transform: lowercase;
+		border: 14px solid #ce99d5;
+		border: 0.77778rem solid #ce99d5;
+		background: #ce99d5; 
+		color: #fff;
+	}
 }
 .category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;

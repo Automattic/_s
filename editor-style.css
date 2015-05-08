@@ -360,8 +360,8 @@ i {
 }
 
 blockquote {
-	margin: 0 28px 28px;
-	margin: 0 1.55556rem 1.55556rem;
+	margin: 0 0 28px;
+	margin: 0 0 1.55556rem;
 	/*
 	 * When 2 quotes run into one blockquote container (due to TinyMCE quirks),
 	 * don't indent the first paragraph of the second quote.
@@ -741,6 +741,15 @@ big {
 		padding-top: 0.77778rem;
 		padding-left: 140px;
 		padding-left: 7.77778rem;
+	}
+}
+
+@media (min-width: 720px) {
+	blockquote {
+		margin-right: 28px;
+		margin-right: 1.55556rem; 
+		margin-left: 28px;
+		margin-left: 1.55556rem;
 	}
 }
 
