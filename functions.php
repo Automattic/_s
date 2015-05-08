@@ -50,8 +50,8 @@ function _s_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', '_s' ),
-		'social'  => __( 'Social Menu', '_s' ),
+		'primary' => esc_html__( 'Primary Menu', '_s' ),
+		'social'  => esc_html__( 'Social Menu', '_s' ),
 	) );
 
 	/*
@@ -83,9 +83,9 @@ function _s_widgets_init() {
 
 	// Define sidebars
 	$sidebars = array(
-		'sidebar-1'  => __( 'Sidebar 1', '_s' ),
-	//	'sidebar-2'  => __( 'Sidebar 2', '_s' ),
-	//	'sidebar-3'  => __( 'Sidebar 3', '_s' ),
+		'sidebar-1'  => esc_html( 'Sidebar 1', '_s' ),
+	//	'sidebar-2'  => esc_html( 'Sidebar 2', '_s' ),
+	//	'sidebar-3'  => esc_html( 'Sidebar 3', '_s' ),
 	);
 
 	// Loop through each sidebar and register
@@ -93,7 +93,7 @@ function _s_widgets_init() {
 		register_sidebar( array(
 			'name'          => $sidebar_name,
 			'id'            => $sidebar_id,
-			'description'   => __( 'Widget area for ' . $sidebar_name . '', '_s' ),
+			'description'   => esc_html( 'Widget area for ' . $sidebar_name . '', '_s' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
