@@ -237,7 +237,7 @@ big {
 /* Icon box */
 .sixty-seconds,
 .whats-on {
-	@include rem( "padding-top", ( $width__icon + $spacing ) );
+	@include rem( "padding-top", ( $width__icon + $spacing + $line__px ) );
 	position: relative;
 
 	/* Icon */
@@ -252,7 +252,7 @@ big {
 
 	/* Square part of the icon */
 	&:before {
-		@include rem( "top", ( $spacing / 2 ) );
+		top: ( $spacing / 2 );
 		height: $height__icon;
 		background: $black url("assets/60-seconds-alpha.png") center center no-repeat;
 		background-size: contain;
@@ -260,7 +260,7 @@ big {
 
 	/* Border below icon */
 	&:after {
-		@include rem( "top", ( ( $spacing / 2 ) + $width__icon - ( ( $width__icon - $height__icon - $height__icon-rule ) ) ) );
+		top: ( ( $spacing / 2 ) + $width__icon - ( ( $width__icon - $height__icon - $height__icon-rule ) ) );
 		border-bottom: $height__icon-rule solid $black;
 	}
 

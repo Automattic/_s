@@ -276,7 +276,7 @@ th {
 2.0 Typography
 --------------------------------------------------------------*/
 html {
-	font-size: 18px; 
+	font-size: 15px; 
 	line-height: 1.55556;
 }
 
@@ -291,6 +291,14 @@ textarea {
 	line-height: 1.55556;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	color: #171717;
+}
+
+/* Bigger text for wider screens */
+@media (min-width: 720px) {
+	html {
+		font-size: 18px; 
+		line-height: 1.55556;
+	}
 }
 
 /* Post- or widget-title level of heading. */
@@ -653,8 +661,8 @@ big {
 .sixty-seconds,
 .whats-on {
 	position: relative;
-	padding-top: 140px;
-	padding-top: 7.77778rem;
+	padding-top: 168px;
+	padding-top: 9.33333rem;
 	/* Icon */
 	/* Square part of the icon */
 	/* Border below icon */
@@ -675,7 +683,6 @@ big {
 .sixty-seconds:before,
 .whats-on:before {
 	top: 14px;
-	top: 0.77778rem;
 	height: 104px;
 	background: #171717 url("assets/60-seconds-alpha.png") center center no-repeat;
 	-webkit-background-size: contain;
@@ -684,7 +691,6 @@ big {
 .sixty-seconds:after,
 .whats-on:after {
 	top: 122px;
-	top: 6.77778rem;
 	border-bottom: 4px solid #171717;
 }
 .sixty-seconds h3,
@@ -1118,8 +1124,8 @@ a:active {
 .cat-links a,
 .tags-links a,
 .archive-title a,
-.category-archive-link a,
 .index-posts .entry-meta a,
+.category-archive-link a,
 .category-yorklife .footer a,
 .category-open-minds .footer a,
 .category-centre-stage .footer a,
@@ -1263,8 +1269,8 @@ a:active {
 .search-toggle {
 	position: fixed;
 	z-index: 10;
-	top: 210px;
-	top: 11.66667rem;
+	top: 14px;
+	top: 0.77778rem;
 	/* 1 */
 	display: block;
 	height: 84px;
@@ -1464,6 +1470,8 @@ a:active {
 @media (min-width: 720px) {
 	.menu-toggle,
 	.search-toggle {
+		top: 210px;
+		top: 11.66667rem;
 		padding-top: 14px;
 		padding-top: 0.77778rem;
 	}
@@ -1661,36 +1669,35 @@ figure {
 	padding: 0 14px;
 }
 
-@media (min-width: 720px) {
-	/*
-	 * Leave a column free on either side of most content, for the Menu and
-	 * Search toggles.
-	 */
-	.search-results-search,
-	.index-content,
-	.author-bio-content,
-	.slider,
-	.single-entry-above-footer .entry-header,
-	.single-entry-above-footer .entry-content,
-	.single-entry-footer .entry-author,
-	.single-entry-footer .posted-on,
-	.single-entry-footer .tags-links,
-	.nav-links,
-	.comments-area {
-		float: left;
-		display: inline;
-		width: 83.33333%;
-		margin-right: 8.33333%; 
-		margin-left: 8.33333%;
-		padding: 0 14px;
-	}
-	/* Nested single column. */
-	.comment {
-		float: left;
-		display: inline;
-		width: 100%;
-		padding: 0 14px;
-	}
+/*
+ * Leave a column free on either side of most content, for the Menu and
+ * Search toggles.
+ */
+.search-results-search,
+.index-content,
+.author-bio-content,
+.slider,
+.single-entry-above-footer .entry-header,
+.single-entry-above-footer .entry-content,
+.single-entry-footer .entry-author,
+.single-entry-footer .posted-on,
+.single-entry-footer .tags-links,
+.nav-links,
+.comments-area {
+	float: left;
+	display: inline;
+	width: 83.33333%;
+	margin-right: 8.33333%; 
+	margin-left: 8.33333%;
+	padding: 0 14px;
+}
+
+/* Nested single column. */
+.comment {
+	float: left;
+	display: inline;
+	width: 100%;
+	padding: 0 14px;
 }
 
 @media (min-width: 800px) {
@@ -2083,9 +2090,9 @@ figure {
 .entry-title {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
-	font-size: 60px;
-	font-size: 3.33333rem;
-	line-height: 1.16667;
+	font-size: 40px;
+	font-size: 2.22222rem;
+	line-height: 1.05;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 	word-wrap: break-word;
@@ -2099,6 +2106,9 @@ figure {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
 	font-weight: normal;
+	font-size: 32px;
+	font-size: 1.77778rem;
+	line-height: 1.3125;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 }
@@ -2179,6 +2189,19 @@ figure {
 	font-weight: bold;
 }
 
+@media (min-width: 720px) {
+	.entry-title {
+		font-size: 60px;
+		font-size: 3.33333rem;
+		line-height: 1.16667;
+	}
+	.entry-subtitle {
+		font-size: 40px;
+		font-size: 2.22222rem;
+		line-height: 1.4;
+	}
+}
+
 /* 11.2 Comments
 --------------------------------------------------------------*/
 .comments-footer {
@@ -2253,9 +2276,10 @@ figure {
 	margin-bottom: 3.11111rem;
 	text-align: center;
 	/* Both the text field and the button */
+	/* Hide button to save space on mobiles. */
 }
 .search-results-search input {
-	width: 40%;
+	width: 80%;
 	font-size: 24px;
 	font-size: 1.33333rem;
 	line-height: 1.16667;
@@ -2264,15 +2288,28 @@ figure {
 	border-radius: 0;
 }
 .search-results-search .search-submit {
-	width: auto;
-	padding: 3px 1em;
-	font-weight: bold;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
-	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-	letter-spacing: 0.05em; 
-	text-transform: uppercase;
+	display: none;
+}
+
+@media (min-width: 720px) {
+	.search-results-search {
+		/* Big central search form */
+	}
+	.search-results-search input {
+		width: 40%;
+	}
+	.search-results-search .search-submit {
+		display: inline-block;
+		width: auto;
+		padding: 3px 1em;
+		font-weight: bold;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		letter-spacing: 0.05em; 
+		text-transform: uppercase;
+	}
 }
 
 .category-header,
@@ -2321,36 +2358,8 @@ figure {
 /* Left- and right-aligned text underneath the section heading. */
 .category-description,
 .category-archive-link {
-	position: absolute;
-	z-index: 1;
-	bottom: 14px;
-	bottom: 0.77778rem;
-	width: 50%;
-	margin: 14px 0 0;
-	margin: 0.77778rem 0 0;
-	padding: 0 84px;
-	padding: 0 4.66667rem;
-	font-weight: bold;
-	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-	text-align: center;
-	color: #fff;
-}
-
-.category-description {
-	left: 0;
-	padding-right: 130px;
-}
-
-.category-archive-link {
-	right: 0;
-	padding-left: 130px;
-	font-size: 16px;
-	font-size: 0.88889rem;
-	line-height: 1.75;
-	text-transform: uppercase;
-}
-.category-archive-link a {
-	color: inherit;
+	/* Don't show for mobiles, as the screen isn't wide enough for them. */
+	display: none;
 }
 
 .issue-section {
@@ -2514,6 +2523,42 @@ figure {
 	.search-results .index-posts .entry:nth-last-child(n+3):first-child:nth-child(3n+1),
 	.search-results .index-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(3n+1) {
 		clear: left;
+	}
+}
+
+@media (min-width: 720px) {
+	/* Left- and right-aligned text underneath the section heading. */
+	.category-description,
+	.category-archive-link {
+		position: absolute;
+		z-index: 1;
+		bottom: 14px;
+		bottom: 0.77778rem;
+		display: block;
+		width: 50%;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		padding: 0 84px;
+		padding: 0 4.66667rem;
+		font-weight: bold;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		text-align: center;
+		color: #fff;
+	}
+	.category-description {
+		left: 0;
+		padding-right: 130px;
+	}
+	.category-archive-link {
+		right: 0;
+		padding-left: 130px;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-transform: uppercase;
+	}
+	.category-archive-link a {
+		color: inherit;
 	}
 }
 

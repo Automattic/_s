@@ -255,7 +255,7 @@ th {
 2.0 Typography
 --------------------------------------------------------------*/
 html {
-	font-size: 18px; 
+	font-size: 15px; 
 	line-height: 1.55556;
 }
 
@@ -270,6 +270,14 @@ textarea {
 	line-height: 1.55556;
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 	color: #171717;
+}
+
+/* Bigger text for wider screens */
+@media (min-width: 720px) {
+	html {
+		font-size: 18px; 
+		line-height: 1.55556;
+	}
 }
 
 /* Post- or widget-title level of heading. */
@@ -632,8 +640,8 @@ big {
 .sixty-seconds,
 .whats-on {
 	position: relative;
-	padding-top: 140px;
-	padding-top: 7.77778rem;
+	padding-top: 168px;
+	padding-top: 9.33333rem;
 	/* Icon */
 	/* Square part of the icon */
 	/* Border below icon */
@@ -654,7 +662,6 @@ big {
 .sixty-seconds:before,
 .whats-on:before {
 	top: 14px;
-	top: 0.77778rem;
 	height: 104px;
 	background: #171717 url("assets/60-seconds-alpha.png") center center no-repeat;
 	-webkit-background-size: contain;
@@ -663,7 +670,6 @@ big {
 .sixty-seconds:after,
 .whats-on:after {
 	top: 122px;
-	top: 6.77778rem;
 	border-bottom: 4px solid #171717;
 }
 .sixty-seconds h3,
@@ -1192,9 +1198,9 @@ figure {
 .entry-title {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
-	font-size: 60px;
-	font-size: 3.33333rem;
-	line-height: 1.16667;
+	font-size: 40px;
+	font-size: 2.22222rem;
+	line-height: 1.05;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 	word-wrap: break-word;
@@ -1208,6 +1214,9 @@ figure {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
 	font-weight: normal;
+	font-size: 32px;
+	font-size: 1.77778rem;
+	line-height: 1.3125;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 }
@@ -1286,6 +1295,19 @@ figure {
 	margin: 14px 0 28px;
 	margin: 0.77778rem 0 1.55556rem;
 	font-weight: bold;
+}
+
+@media (min-width: 720px) {
+	.entry-title {
+		font-size: 60px;
+		font-size: 3.33333rem;
+		line-height: 1.16667;
+	}
+	.entry-subtitle {
+		font-size: 40px;
+		font-size: 2.22222rem;
+		line-height: 1.4;
+	}
 }
 
 /* Make paragraph indents work outside the `.single-entry` wrapper. */

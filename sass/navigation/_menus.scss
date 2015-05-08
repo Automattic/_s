@@ -97,7 +97,7 @@
 .menu-toggle,
 .search-toggle {
 	@include font-size( "normal" );
-	@include rem( "top", ( $height__masthead + $height__rule ) );
+	@include rem( "top", ( $height__rule ) );
 	@include rem( "height", $width__menu-toggle );
 	@include rem( "padding-top", $line );
 	@include rem( "line-height", $width__menu-toggle );
@@ -283,6 +283,7 @@
 
 	.menu-toggle,
 	.search-toggle {
+		@include rem( "top", ( $height__masthead + $height__rule ) );
 		@include rem( "padding-top", ( $line / 2 ) );
 	}
 

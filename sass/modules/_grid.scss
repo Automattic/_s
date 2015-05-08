@@ -101,32 +101,29 @@
 	@include column(12);
 }
 
-@include media( "main-spacing" ) {
+/*
+ * Leave a column free on either side of most content, for the Menu and
+ * Search toggles.
+ */
+.search-results-search,
+.index-content,
+.author-bio-content,
+.slider,
+.single-entry-above-footer .entry-header,
+.single-entry-above-footer .entry-content,
+.single-entry-footer .entry-author,
+.single-entry-footer .posted-on,
+.single-entry-footer .tags-links,
+.nav-links,
+.comments-area {
+	@include column(10);
+	@include push;
+	@include pull;
+}
 
-	/*
-	 * Leave a column free on either side of most content, for the Menu and
-	 * Search toggles.
-	 */
-	.search-results-search,
-	.index-content,
-	.author-bio-content,
-	.slider,
-	.single-entry-above-footer .entry-header,
-	.single-entry-above-footer .entry-content,
-	.single-entry-footer .entry-author,
-	.single-entry-footer .posted-on,
-	.single-entry-footer .tags-links,
-	.nav-links,
-	.comments-area {
-		@include column(10);
-		@include push;
-		@include pull;
-	}
-
-	/* Nested single column. */
-	.comment {
-		@include column(10, $padding, 10);
-	}
+/* Nested single column. */
+.comment {
+	@include column(10, $padding, 10);
 }
 
 @include media( "main-spacing-1" ) {

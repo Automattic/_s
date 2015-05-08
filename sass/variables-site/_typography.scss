@@ -79,6 +79,7 @@ $line-heights: ();
 $text-indent: 4%;
 
 // Element font sizes
+$font-size__html__mobile: ($text-size__px / 1.2);
 $font-size__html: $text-size__px;
 
 // Elements: number of lines

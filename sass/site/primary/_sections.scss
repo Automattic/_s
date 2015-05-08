@@ -41,39 +41,9 @@
 /* Left- and right-aligned text underneath the section heading. */
 .category-description,
 .category-archive-link {
-	@include rem( "bottom", ( $spacing * 0.5 ) );
-	@include rem( "margin", ( $spacing * 0.5 ) 0 0 );
-	@include rem( "padding", 0 $width__menu-toggle );
-	position: absolute;
-	z-index: 1;
-	width: 50%;
-	font-weight: bold;
-	font-family: $font-family__category;
-	text-align: center;
-	color: $white;
+	/* Don't show for mobiles, as the screen isn't wide enough for them. */
+	display: none;
 }
-
-.category-description {
-	left: 0;
-	padding-right: 130px; // half-width of the section logo
-	//text-align: left;
-}
-
-.category-archive-link {
-	@include font-size-line( "small" );
-	right: 0;
-	padding-left: 130px; // half-width of the section logo
-	//text-align: right;
-	text-transform: uppercase;
-
-	a {
-		color: inherit;
-		@extend %hide-underline;
-	}
-
-}
-
-
 
 .issue-section {
 	@include rem( "margin-bottom", ( $line * 2 ) );
@@ -233,6 +203,47 @@
 
 			}
 
+		}
+
+	}
+
+}
+
+
+@include media( "main-spacing" ) {
+
+	/* Left- and right-aligned text underneath the section heading. */
+	.category-description,
+	.category-archive-link {
+		@include rem( "bottom", ( $spacing * 0.5 ) );
+		@include rem( "margin", ( $spacing * 0.5 ) 0 0 );
+		@include rem( "padding", 0 $width__menu-toggle );
+		position: absolute;
+		z-index: 1;
+		display: block;
+		width: 50%;
+		font-weight: bold;
+		font-family: $font-family__category;
+		text-align: center;
+		color: $white;
+	}
+
+	.category-description {
+		left: 0;
+		padding-right: 130px; // half-width of the section logo
+		//text-align: left;
+	}
+
+	.category-archive-link {
+		@include font-size-line( "small" );
+		right: 0;
+		padding-left: 130px; // half-width of the section logo
+		//text-align: right;
+		text-transform: uppercase;
+
+		a {
+			color: inherit;
+			@extend %hide-underline;
 		}
 
 	}

@@ -42,19 +42,39 @@
 	/* Both the text field and the button */
 	input {
 		@include font-size-line( "larger" );
-		width: 40%;
+		width: 80%;
 		border-radius: 0;
 		vertical-align: middle;
 	}
 
+	/* Hide button to save space on mobiles. */
 	.search-submit {
-		@include font-size-line( "small" );
-		width: auto;
-		padding: 3px 1em;
-		font-weight: bold;
-		font-family: $font-family__button;
-		text-transform: uppercase;
-		letter-spacing: $letter-spacing__caps;
+		display: none;
+	}
+
+}
+
+
+@include media( "main-spacing" ) {
+
+	.search-results-search {
+
+		input {
+			width: 40%;
+		}
+
+		/* Big central search form */
+		.search-submit {
+			@include font-size-line( "small" );
+			display: inline-block;
+			width: auto;
+			padding: 3px 1em;
+			font-weight: bold;
+			font-family: $font-family__button;
+			text-transform: uppercase;
+			letter-spacing: $letter-spacing__caps;
+		}
+
 	}
 
 }
