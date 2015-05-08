@@ -1,0 +1,9 @@
+// ------------------------------------------------------------
+// Omega Reset
+// Courtesy of Josh Fry: http://www.joshfry.me/blog/2013/05/13/omega-reset-for-bourbon-neat
+// ------------------------------------------------------------
+
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
