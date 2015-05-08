@@ -18,15 +18,17 @@
 		</div><!-- .site-info -->
 
 		<?php
-			// Social menu
-			wp_nav_menu( array(
-				'theme_location' => 'social',
-				'container'      => false,
-				'menu_class'     => 'menu-social',
-				'link_before'    => '<span class="screen-reader-text">',
-				'link_after'     => '</span>'
-				)
-			);
+			if ( has_nav_menu( 'social' ) ) :
+				// Social menu
+				wp_nav_menu( array(
+					'theme_location' => 'social',
+					'container'      => false,
+					'menu_class'     => 'menu-social',
+					'link_before'    => '<span class="screen-reader-text">',
+					'link_after'     => '</span>'
+					)
+				);
+			endif;
 		?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
