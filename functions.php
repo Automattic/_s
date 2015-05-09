@@ -83,9 +83,9 @@ function _s_widgets_init() {
 
 	// Define sidebars
 	$sidebars = array(
-		'sidebar-1'  => esc_html( 'Sidebar 1', '_s' ),
-	//	'sidebar-2'  => esc_html( 'Sidebar 2', '_s' ),
-	//	'sidebar-3'  => esc_html( 'Sidebar 3', '_s' ),
+		'sidebar-1'  => esc_html__( 'Sidebar 1', '_s' ),
+	//	'sidebar-2'  => esc_html__( 'Sidebar 2', '_s' ),
+	//	'sidebar-3'  => esc_html__( 'Sidebar 3', '_s' ),
 	);
 
 	// Loop through each sidebar and register
@@ -93,7 +93,7 @@ function _s_widgets_init() {
 		register_sidebar( array(
 			'name'          => $sidebar_name,
 			'id'            => $sidebar_id,
-			'description'   => esc_html( 'Widget area for ' . $sidebar_name . '', '_s' ),
+			'description'   => esc_html__( 'Widget area for ' . $sidebar_name . '', '_s' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
