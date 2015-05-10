@@ -2,22 +2,11 @@ figure {
 	@include rem( "margin", $line $text-indent );
 }
 
-.alignleft {
-	@include rem( "margin-right", $spacing );
-	display: inline;
-	float: left;
-	margin-top: 0;
-}
-
+.aligncenter,
+.alignleft,
 .alignright {
-	@include rem( "margin-left", $spacing );
-	display: inline;
-	float: right;
-	margin-top: 0;
-}
-
-.aligncenter {
 	@include center-block;
+	@include rem( "margin", $line 0 );
 }
 
 /* Thumbnail image size. */
@@ -29,12 +18,16 @@ figure {
 @include media( "main-spacing" ) {
 
 	.alignleft {
-		@include rem( "margin-left", ( $gutter-width * -1 ) );
+		@include rem( "margin", 0 $spacing $line ( $gutter-width * -1 ) );
+		display: inline;
+		float: left;
 		padding: 0;
 	}
 
 	.alignright {
-		@include rem( "margin-right", ( $gutter-width * -1 ) );
+		@include rem( "margin", 0 ( $gutter-width * -1 ) $line $spacing );
+		display: inline;
+		float: right;
 		padding: 0;
 	}
 
@@ -43,11 +36,11 @@ figure {
 /* Fully in margins on widest layout */
 @include media( "images-in-margin" ) {
 
-	.alignleft {
+	.alignleft:not(.size-thumbnail) {
 		@include rem( "margin-left", ( ( ( $width__half-image / 4 ) + ( $gutter-width * 2 ) ) * -1 ) );
 	}
 
-	.alignright {
+	.alignright:not(.size-thumbnail) {
 		@include rem( "margin-right", ( ( ( $width__half-image / 4 ) + ( $gutter-width * 2 ) ) * -1 ) );
 	}
 

@@ -1021,24 +1021,12 @@ figure {
 	margin: 1.55556rem 4%;
 }
 
-.alignleft {
-	float: left;
-	display: inline;
-	margin-top: 0; 
-	margin-right: 28px;
-	margin-right: 1.55556rem;
-}
-
+.aligncenter,
+.alignleft,
 .alignright {
-	float: right;
-	display: inline;
-	margin-top: 0; 
-	margin-left: 28px;
-	margin-left: 1.55556rem;
-}
-
-.aligncenter {
 	display: block;
+	margin: 28px 0;
+	margin: 1.55556rem 0; 
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -1052,24 +1040,28 @@ figure {
 /* Overhang margins on non-mobile layouts */
 @media (min-width: 720px) {
 	.alignleft {
-		margin-left: -28px;
-		margin-left: -1.55556rem;
+		float: left;
+		display: inline;
+		margin: 0 28px 28px -28px;
+		margin: 0 1.55556rem 1.55556rem -1.55556rem;
 		padding: 0;
 	}
 	.alignright {
-		margin-right: -28px;
-		margin-right: -1.55556rem;
+		float: right;
+		display: inline;
+		margin: 0 -28px 28px 28px;
+		margin: 0 -1.55556rem 1.55556rem 1.55556rem;
 		padding: 0;
 	}
 }
 
 /* Fully in margins on widest layout */
 @media (min-width: 1120px) {
-	.alignleft {
+	.alignleft:not(.size-thumbnail) {
 		margin-left: -140px;
 		margin-left: -7.77778rem;
 	}
-	.alignright {
+	.alignright:not(.size-thumbnail) {
 		margin-right: -140px;
 		margin-right: -7.77778rem;
 	}
