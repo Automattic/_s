@@ -27,7 +27,6 @@
 
 	.nav-previous,
 	.nav-next {
-		width: 49%;
 		margin: 0;
 	}
 
@@ -61,4 +60,18 @@
 
 .nav-next {
 	text-align: right;
+}
+
+
+@include media("wide-content-column") {
+
+	.next-prev-wrap {
+
+		.nav-previous,
+		.nav-next {
+			width: 49%;
+		}
+
+	}
+
 }

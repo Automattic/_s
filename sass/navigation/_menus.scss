@@ -277,6 +277,47 @@
 
 }
 
+/* Fallback menu at bottom of page, for when the JS-dependent sidebars are inaccessible. */
+.backup-menu {
+	color: $white;
+	background: $black;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+	}
+
+	li {
+		@include rem("margin", ($line * 0.25) 0);
+		@include rem("padding", 0 $gutter);
+		display: inline-block;
+	}
+
+	a {
+		@include font-size-line("smaller");
+		color: $white;
+		border-bottom-color: transparent;
+		text-transform: uppercase;
+		font-family: $font-family__button;
+		font-weight: bold;
+
+		&:hover,
+		&:focus {
+			color: $color__link-hover__reversed;
+			border-bottom-color: $color__link-hover__reversed;
+		}
+
+	}
+
+}
+
+.js .js-hidden-menu-wrap {
+	display: none;
+}
+
+
 /* Space out the toggle buttons more for wider screens */
 @include media( "main-spacing" ) {
 

@@ -32,6 +32,16 @@ $src = get_template_directory_uri() . '/assets/';
 			</div><!-- .site-footer-row -->
 		</div><!-- .site-footer -->
 
+		<div class="backup-menu js-hidden-menu-wrap">
+			<?php wp_nav_menu( array(
+				'theme_location' => 'utilities',
+				'depth' => -1,
+				'container' => false,
+				'menu_id' => 'utilities-footer-menu',
+				'menu_class' => 'js-hidden-menu'
+			) ); ?>
+		</div>
+
 	</div><!-- #content -->
 
 </div><!-- #page -->

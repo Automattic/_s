@@ -1070,7 +1070,6 @@ textarea {
 }
 .next-prev-wrap .nav-previous,
 .next-prev-wrap .nav-next {
-	width: 49%;
 	margin: 0;
 }
 .next-prev-wrap .nav-previous {
@@ -1098,6 +1097,13 @@ textarea {
 
 .nav-next {
 	text-align: right;
+}
+
+@media (min-width: 600px) {
+	.next-prev-wrap .nav-previous,
+	.next-prev-wrap .nav-next {
+		width: 49%;
+	}
 }
 
 /* 5.1 Links
@@ -1473,6 +1479,44 @@ a:active {
 		top: 242px;
 		top: 13.44444rem;
 	}
+}
+
+/* Fallback menu at bottom of page, for when the JS-dependent sidebars are inaccessible. */
+.backup-menu {
+	background: #171717; 
+	color: #fff;
+}
+.backup-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+.backup-menu li {
+	display: inline-block; 
+	margin: 7px 0;
+	margin: 0.38889rem 0;
+	padding: 0 14px;
+	padding: 0 0.77778rem;
+}
+.backup-menu a {
+	font-weight: bold; 
+	font-size: 14px;
+	font-size: 0.77778rem;
+	line-height: 2;
+	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+	text-transform: uppercase;
+	border-bottom-color: transparent;
+	color: #fff;
+}
+.backup-menu a:hover,
+.backup-menu a:focus {
+	border-bottom-color: #a1d5dd; 
+	color: #a1d5dd;
+}
+
+.js .js-hidden-menu-wrap {
+	display: none;
 }
 
 /* Space out the toggle buttons more for wider screens */
@@ -1935,6 +1979,8 @@ figure {
 	height: auto;
 	margin-top: 28px;
 	margin-top: 1.55556rem;
+	margin-bottom: 28px;
+	margin-bottom: 1.55556rem;
 	text-align: center;
 }
 .site-header-single a {
@@ -1946,28 +1992,41 @@ figure {
 	vertical-align: top;
 }
 .site-header-single .slash {
-	position: relative;
-	top: -0.3em;
-	display: inline-block;
-	margin-right: 0.1em;
-	font-size: 3em;
-	line-height: 1;
-	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-	color: #e0e0e4;
+	display: none;
 }
 
 .site-title-term {
-	position: relative;
-	display: inline-block;
-	font-weight: bold;
-	font-size: 21px;
-	font-size: 1.16667rem;
-	line-height: 1;
-	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-	vertical-align: top; 
-	text-transform: uppercase;
-	border: 0;
-	color: #9696a0;
+	display: none;
+}
+
+/* Space out the toggle buttons more for wider screens */
+@media (min-width: 720px) {
+	.site-header-single {
+		margin-bottom: 0;
+	}
+	.site-header-single .slash {
+		position: relative;
+		top: -0.3em;
+		display: inline-block;
+		margin-right: 0.1em;
+		font-size: 3em;
+		line-height: 1;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		color: #e0e0e4;
+	}
+	.site-title-term {
+		position: relative;
+		display: inline-block;
+		font-weight: bold;
+		font-size: 21px;
+		font-size: 1.16667rem;
+		line-height: 1;
+		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
+		vertical-align: top; 
+		text-transform: uppercase;
+		border: 0;
+		color: #9696a0;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2679,7 +2738,7 @@ figure {
 }
 
 .site-footer .site-logo-link {
-	border-bottom: 0;
+	border-bottom: 0 !important;
 }
 
 /*--------------------------------------------------------------
@@ -2789,6 +2848,7 @@ object {
 .ideal-image-slider {
 	position: relative;
 	overflow: hidden;
+	max-width: 1300px; 
 	margin: 0 auto;
 }
 

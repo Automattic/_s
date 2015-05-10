@@ -33,6 +33,7 @@
 
 .site-header-single {
 	@include rem( "margin-top", $line );
+	@include rem( "margin-bottom", $line );
 	height: auto;
 	text-align: center;
 
@@ -46,26 +47,45 @@
 	}
 
 	.slash {
-		position: relative;
-		top: -0.3em;
-		display: inline-block;
-		margin-right: 0.1em;
-		font-size: 3em;
-		line-height: 1;
-		font-family: $font-family__sans-serif;
-		color: $grey__lightest;
+		display: none;
 	}
 
 }
 
 .site-title-term {
-	@include font-size-line( "large", 0.75 );
-	position: relative;
-	display: inline-block;
-	font-weight: bold;
-	font-family: $font-family__sans-serif;
-	text-transform: uppercase;
-	color: $grey__light;
-	border: 0;
-	vertical-align: top;
+	display: none;
+}
+
+
+/* Space out the toggle buttons more for wider screens */
+@include media( "main-spacing" ) {
+
+	.site-header-single {
+		margin-bottom: 0;
+
+		.slash {
+			position: relative;
+			top: -0.3em;
+			display: inline-block;
+			margin-right: 0.1em;
+			font-size: 3em;
+			line-height: 1;
+			font-family: $font-family__sans-serif;
+			color: $grey__lightest;
+		}
+
+	}
+
+	.site-title-term {
+		@include font-size-line( "large", 0.75 );
+		position: relative;
+		display: inline-block;
+		font-weight: bold;
+		font-family: $font-family__sans-serif;
+		text-transform: uppercase;
+		color: $grey__light;
+		border: 0;
+		vertical-align: top;
+	}
+
 }
