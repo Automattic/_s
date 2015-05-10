@@ -100,7 +100,7 @@ msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:53
-msgid "Primary Location"
+msgid "Primary"
 msgstr "
 
 #: functions.php:88
