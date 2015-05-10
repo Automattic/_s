@@ -205,7 +205,25 @@ function yumag_entry_image( $size = 'thumbnail', $linked = true ) {
 	}
 
 	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( $size );
+
+		if ( 'yumag-featured-photo' === $size ) {
+			$img_id = get_post_thumbnail_id();
+			$img_array = wp_get_attachment_image_src($img_id, 'yumag-featured-photo', true);
+			$img_wide = $img_array[0];
+			$img_array = wp_get_attachment_image_src($img_id, 'yumag-featured-photo-portrait', true);
+			$img_narrow = $img_array[0];
+
+			echo '<picture>';
+			echo '<!--[if IE 9]><video style="display: none;"><![endif]-->';
+			echo '<source srcset="' . $img_wide . '" media="(min-width: 500px)">';
+			echo '<source srcset="' . $img_narrow . '" media="(max-width: 500px)">';
+			echo '<!--[if IE 9]></video><![endif]-->';
+			echo '<img src="' . $img_wide . '" width="905" height="509" alt="">';
+			echo '</picture>';
+
+		} else {
+			the_post_thumbnail( $size );
+		}
 	} else {
 		echo '<img src="' . get_template_directory_uri() . '/assets/no-thumbnail.png" width="666" height="444" alt="">';
 	}
