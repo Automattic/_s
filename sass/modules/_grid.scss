@@ -109,6 +109,7 @@
 .index-content,
 .author-bio-content,
 .slider,
+.single-entry-above-footer .entry-image,
 .single-entry-above-footer .entry-header,
 .single-entry-above-footer .entry-content,
 .single-entry-footer .entry-author,
@@ -127,13 +128,6 @@
 }
 
 @include media( "main-spacing-1" ) {
-
-	/* Start limiting featured image size. */
-	.single-entry-above-footer .entry-image {
-		@include column(10);
-		@include push;
-		@include pull;
-	}
 
 	/* Narrower content column than everything else, for better line length. */
 	.author-bio-content,

@@ -1686,6 +1686,7 @@ figure {
 .index-content,
 .author-bio-content,
 .slider,
+.single-entry-above-footer .entry-image,
 .single-entry-above-footer .entry-header,
 .single-entry-above-footer .entry-content,
 .single-entry-footer .entry-author,
@@ -1710,15 +1711,6 @@ figure {
 }
 
 @media (min-width: 800px) {
-	/* Start limiting featured image size. */
-	.single-entry-above-footer .entry-image {
-		float: left;
-		display: inline;
-		width: 83.33333%;
-		margin-right: 8.33333%; 
-		margin-left: 8.33333%;
-		padding: 0 14px;
-	}
 	/* Narrower content column than everything else, for better line length. */
 	.author-bio-content,
 	.single-entry-above-footer .entry-content,
