@@ -85,18 +85,8 @@
 }
 
 
-/* Every column is full-width for mobiles. */
+/* Columns that are full-width for mobiles. */
 .site-branding,
-.search-results-search,
-.index-content,
-.author-bio-content,
-.single-entry-above-footer .entry-header,
-.single-entry-above-footer .entry-content,
-.single-entry-footer .entry-author,
-.single-entry-footer .posted-on,
-.single-entry-footer .tags-links,
-.comments-area,
-.comment,
 .site-footer-content {
 	@include column(12);
 }

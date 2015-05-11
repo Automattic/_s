@@ -35,7 +35,8 @@
 }
 
 /* Big central search form */
-.search-results-search {
+.search-results-search,
+.page-search {
 	@include rem( "margin-bottom", ( $line * 2 ) );
 	text-align: center;
 
@@ -57,7 +58,8 @@
 
 @include media( "main-spacing" ) {
 
-	.search-results-search {
+	.search-results-search,
+	.page-search {
 
 		input {
 			width: 40%;

@@ -1697,18 +1697,8 @@ figure {
 	clear: both;
 }
 
-/* Every column is full-width for mobiles. */
+/* Columns that are full-width for mobiles. */
 .site-branding,
-.search-results-search,
-.index-content,
-.author-bio-content,
-.single-entry-above-footer .entry-header,
-.single-entry-above-footer .entry-content,
-.single-entry-footer .entry-author,
-.single-entry-footer .posted-on,
-.single-entry-footer .tags-links,
-.comments-area,
-.comment,
 .site-footer-content {
 	float: left;
 	display: inline;
@@ -2325,14 +2315,16 @@ figure {
 }
 
 /* Big central search form */
-.search-results-search {
+.search-results-search,
+.page-search {
 	margin-bottom: 56px;
 	margin-bottom: 3.11111rem;
 	text-align: center;
 	/* Both the text field and the button */
 	/* Hide button to save space on mobiles. */
 }
-.search-results-search input {
+.search-results-search input,
+.page-search input {
 	width: 80%;
 	font-size: 24px;
 	font-size: 1.33333rem;
@@ -2341,18 +2333,22 @@ figure {
 	-webkit-border-radius: 0;
 	border-radius: 0;
 }
-.search-results-search .search-submit {
+.search-results-search .search-submit,
+.page-search .search-submit {
 	display: none;
 }
 
 @media (min-width: 720px) {
-	.search-results-search {
+	.search-results-search,
+	.page-search {
 		/* Big central search form */
 	}
-	.search-results-search input {
+	.search-results-search input,
+	.page-search input {
 		width: 40%;
 	}
-	.search-results-search .search-submit {
+	.search-results-search .search-submit,
+	.page-search .search-submit {
 		display: inline-block;
 		width: auto;
 		padding: 3px 1em;
