@@ -4,8 +4,18 @@
 
 // Structure
 
-.site {
+.wrap {
 	@include outer-container;
+	padding: 0 2*$gutter;
+	
+	@include wider-than(desktop) {
+		padding: 0;
+	}
+}
+
+.site-header,
+.site-footer {
+	padding: 0 2*$gutter;
 }
 
 .site-content {

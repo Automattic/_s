@@ -7,7 +7,8 @@
 
 get_header(); ?>
 
-	<div class="primary content-area">
+	<div class="wrap content-area">
+		
 		<main id="main" class="site-main" role="main">
 
 			<section class="error-404 not-found">
@@ -51,6 +52,7 @@ get_header(); ?>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
-	</div><!-- .primary -->
+		
+	</div><!-- .wrap -->
 
 <?php get_footer(); ?>
