@@ -2698,6 +2698,7 @@ figure {
 	top: -48px;
 	left: 50%;
 	margin-left: -48px;
+	border: 0 !important;
 }
 
 /* Leave some more space under the avatar. */

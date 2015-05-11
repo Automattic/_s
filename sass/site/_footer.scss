@@ -27,6 +27,7 @@
 	top: ( -1 * ( $avatar-diameter / 2 ) );
 	left: 50%;
 	margin-left: ( -1 * ( $avatar-diameter / 2 ) );
+	border: 0 !important;
 }
 
 /* Leave some more space under the avatar. */
