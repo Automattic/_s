@@ -31,9 +31,21 @@
 					oddColumn.appendChild( posts[ i2 ] );
 				}
 
+				if ( oddColumn.childNodes.length % 2 ) {
+					oddColumn.className = 'issue-section-odd-contents';
+				} else {
+					oddColumn.className = 'issue-section-even-contents';
+				}
+
 				// Assemble right column.
 				for ( i2 = l2, l2 = posts.length; i2 < l2; i2++ ) {
 					evenColumn.appendChild( posts[ i2 ] );
+				}
+
+				if ( evenColumn.childNodes.length % 2 ) {
+					evenColumn.className = 'issue-section-odd-contents';
+				} else {
+					evenColumn.className = 'issue-section-even-contents';
 				}
 
 			} else {

@@ -138,67 +138,27 @@
 
 	@include media( "issue-2-columns" ) {
 
+		.entry {
+			width: 50%;
+			clear: none;
+			float: left;
+
+		}
+
+		.issue-section-flex > div:first-of-type .entry:nth-child(2n),
+		.issue-section-flex > .issue-section-odd-contents + div .entry:nth-child(2n+1),
+		.issue-section-flex > .issue-section-even-contents + div .entry:nth-child(2n) {
+			clear: left;
+		}
+
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
 		 * flexbox layout yet.
 		 */
 		.issue-section-flex {
 
-			/* First article. */
-			> .entry {
-				max-width: 666px;
-				margin-left: auto;
-				margin-right: auto;
-
-				&,
-				.entry-title,
-				.entry-subtitle,
-				.entry-meta {
-					text-align: center;
-				}
-
-				.entry-header {
-					@include rem( "padding-bottom", ( $line * 0.5 ) );
-				}
-
-				.entry-title,
-				.entry-subtitle,
-				.entry-meta {
-					@include rem( "padding", 0 ( $spacing * 0.5 ) );
-					text-align: center;
-				}
-
-				.entry-title {
-					@include rem( "margin-bottom", ( $line * 0.5 ) );
-					@include rem( "padding-top", ( $line * 0.5 ) );
-					@include font-size-line( "enormous", 1.5 );
-				}
-
-				.entry-subtitle {
-					@include font-size-line( "larger" );
-				}
-
-				.entry-meta {
-					@include rem( "margin-top", ( $line * 0.5 ) );
-					@include font-size-line( "small" );
-				}
-
-			}
-
 			> div {
 				width: 100%;
-
-				.entry {
-					width: 50%;
-					clear: none;
-					float: left;
-
-					&:nth-child(2n+1) {
-						clear: left;
-					}
-
-				}
-
 			}
 
 		}
@@ -316,10 +276,27 @@
 					text-align: center;
 				}
 
+				.entry-title,
+				.entry-subtitle,
+				.entry-meta,
+				.entry-content {
+					@include rem( "padding", 0 ( $spacing * 0.5 ) );
+					text-align: center;
+				}
+
 				.entry-title {
 					@include rem( "margin-bottom", ( $line * 0.5 ) );
 					@include font-size-line( "enormous", 1.5 );
 					text-align: center;
+				}
+
+				.entry-subtitle {
+					@include font-size-line( "larger" );
+				}
+
+				.entry-meta {
+					@include rem( "margin-top", ( $line * 0.5 ) );
+					@include font-size-line( "small" );
 				}
 
 			}
