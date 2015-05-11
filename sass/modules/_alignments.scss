@@ -1,5 +1,7 @@
 figure {
 	@include rem( "margin", $line $text-indent );
+	/* Prevent other elements showing through in the gap between the image and its caption. */
+	background-color: $background-color;
 }
 
 .aligncenter,

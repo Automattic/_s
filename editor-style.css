@@ -1019,6 +1019,8 @@ a:active {
 figure {
 	margin: 28px 4%;
 	margin: 1.55556rem 4%;
+	/* Prevent other elements showing through in the gap between the image and its caption. */
+	background-color: #fff;
 }
 
 .aligncenter,
