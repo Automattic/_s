@@ -260,3 +260,29 @@ function yumag_category_transient_flusher() {
 }
 add_action( 'edit_category', 'yumag_category_transient_flusher' );
 add_action( 'save_post',     'yumag_category_transient_flusher' );
+
+if ( ! function_exists( 'yumag_google_fonts' ) ) :
+/**
+ * Output the script element for async loading of Lato webfont.
+ *
+ * @since 1.0.0
+ */
+function yumag_google_fonts() {
+?>
+	<script type="text/javascript">
+	WebFontConfig = {
+	google: { families: [ 'Lato:300,700:latin' ] }
+	};
+	(function() {
+	var wf = document.createElement('script');
+	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	wf.type = 'text/javascript';
+	wf.async = 'true';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(wf, s);
+	})(); </script>
+<?php
+}
+add_action( 'wp_footer', 'yumag_google_fonts' );
+endif;
