@@ -141,7 +141,7 @@
 
 				}
 
-				@include quantity-query ( 10, "greater" ) {
+				@include quantity-query( 10, "greater" ) {
 
 					&:nth-child(3):before,
 					&:nth-child(n+3) {
