@@ -3608,71 +3608,51 @@ object {
 }
 @media (min-width: 500px) {
 	.category-open-minds .issue-section-posts {
+		/* Float-clearing for every other article */
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
 		 * flexbox layout yet.
 		 */
 	}
+	.category-open-minds .issue-section-posts .entry {
+		clear: none;
+		float: left; 
+		width: 50%;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-child(2n),
+	.category-open-minds .issue-section-posts .issue-section-leftovers .entry:nth-child(2n+1) {
+		clear: left;
+	}
 	.category-open-minds .issue-section-posts .issue-section-flex {
 		/* First article. */
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry {
-		max-width: 666px;
-		margin-right: auto; 
-		margin-left: auto;
-	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
-		text-align: center;
+		/* Leave space around the text, so it isn't flush to the left edge of the first article's black background */
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-header {
-		padding-bottom: 14px;
-		padding-bottom: 0.77778rem;
 		background: #171717;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
-		padding: 0 14px;
-		padding: 0 0.77778rem;
+		padding-right: 14px;
+		padding-right: 0.77778rem; 
+		padding-left: 14px;
+		padding-left: 0.77778rem;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-title {
-		padding-top: 14px;
-		padding-top: 0.77778rem;
-		font-size: 28px;
-		font-size: 1.55556rem;
-		line-height: 1;
 		color: #fff;
 	}
-	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle {
-		font-size: 24px;
-		font-size: 1.33333rem;
-		line-height: 1.16667;
-		color: #69bcc9;
-	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta {
-		margin-top: 14px;
-		margin-top: 0.77778rem;
-		font-size: 16px;
-		font-size: 0.88889rem;
-		line-height: 1.75;
 		color: #69bcc9;
 	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-subtitle a,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry .entry-meta a {
 		color: #69bcc9;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > div {
 		width: 100%;
-	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
-		clear: none;
-		float: left; 
-		width: 50%;
-	}
-	.category-open-minds .issue-section-posts .issue-section-flex > div .entry:nth-child(2n+1) {
-		clear: left;
 	}
 }
 @media (min-width: 1100px) {
@@ -3794,17 +3774,39 @@ object {
 		width: 100%;
 		margin-right: 0;
 	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-header {
+		padding-bottom: 14px;
+		padding-bottom: 0.77778rem;
+	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle,
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
 		margin-left: 0;
+		padding: 0 14px;
+		padding: 0 0.77778rem;
+		text-align: center;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-title {
-		clear: left;
+		clear: left; 
+		padding-top: 14px;
+		padding-top: 0.77778rem;
+		font-size: 28px;
+		font-size: 1.55556rem;
+		line-height: 1;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-subtitle {
 		margin-top: 14px;
 		margin-top: 0.77778rem;
+		font-size: 24px;
+		font-size: 1.33333rem;
+		line-height: 1.16667;
+	}
+	.category-open-minds .issue-section-posts .issue-section-flex > .entry:first-child .entry-meta {
+		margin-top: 14px;
+		margin-top: 0.77778rem;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > div {
 		display: -webkit-box;

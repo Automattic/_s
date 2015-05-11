@@ -118,6 +118,18 @@
 
 	@include media( "issue-2-columns" ) {
 
+		.entry {
+			width: 50%;
+			clear: none;
+			float: left;
+		}
+
+		/* Float-clearing for every other article */
+		.issue-section-flex > div .entry:nth-child(2n),
+		.issue-section-leftovers .entry:nth-child(2n+1) {
+			clear: left;
+		}
+
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
 		 * flexbox layout yet.
@@ -126,42 +138,25 @@
 
 			/* First article. */
 			> .entry {
-				max-width: 666px;
-				margin-left: auto;
-				margin-right: auto;
-
-				&,
-				.entry-title,
-				.entry-subtitle,
-				.entry-meta {
-					text-align: center;
-				}
 
 				.entry-header {
-					@include rem( "padding-bottom", ( $line * 0.5 ) );
 					background: $color__main;
 				}
 
+				/* Leave space around the text, so it isn't flush to the left edge of the first article's black background */
 				.entry-title,
 				.entry-subtitle,
 				.entry-meta {
-					@include rem( "padding", 0 ( $spacing * 0.5 ) );
+					@include rem( "padding-left", $gutter );
+					@include rem( "padding-right", $gutter );
 				}
 
 				.entry-title {
-					@include rem( "padding-top", ( $line * 0.5 ) );
-					@include font-size-line( "huge" );
 					color: $white;
 				}
 
-				.entry-subtitle {
-					@include font-size-line( "larger" );
-					color: $color__openminds;
-				}
-
+				.entry-subtitle,
 				.entry-meta {
-					@include rem( "margin-top", ( $line * 0.5 ) );
-					@include font-size-line( "small" );
 					color: $color__openminds;
 
 					a {
@@ -174,18 +169,6 @@
 
 			> div {
 				width: 100%;
-
-				.entry {
-					width: 50%;
-					clear: none;
-					float: left;
-
-					&:nth-child(2n+1) {
-						clear: left;
-					}
-
-				}
-
 			}
 
 		}
@@ -316,18 +299,32 @@
 					margin-right: 0;
 				}
 
+				.entry-header {
+					@include rem( "padding-bottom", ( $line * 0.5 ) );
+				}
+
 				.entry-title,
 				.entry-subtitle,
 				.entry-meta {
+					@include rem( "padding", 0 ( $spacing * 0.5 ) );
 					margin-left: 0;
+					text-align: center;
 				}
 
 				.entry-title {
+					@include rem( "padding-top", ( $line * 0.5 ) );
+					@include font-size-line( "huge" );
 					clear: left;
 				}
 
 				.entry-subtitle {
 					@include rem("margin-top", ($line * 0.5));
+					@include font-size-line( "larger" );
+				}
+
+				.entry-meta {
+					@include rem( "margin-top", ( $line * 0.5 ) );
+					@include font-size-line( "small" );
 				}
 
 			}
