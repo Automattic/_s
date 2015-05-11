@@ -16,7 +16,6 @@
 				@include rem( "padding", 0 ( $spacing * 0.5 ) );
 				float: left;
 				width: 50%;
-				margin-bottom: 0;
 
 				&:nth-child(2n+1) {
 					clear: left;
@@ -93,7 +92,6 @@
 					}
 
 					&:nth-child(n+3) {
-						@include rem("padding-bottom", $line);
 						float: right;
 						clear: right;
 
@@ -145,12 +143,9 @@
 
 				@include quantity-query ( 10, "greater" ) {
 
-					&:nth-child(3):before {
-						@include rem("margin-bottom", ($line * 0.5));
-					}
-
+					&:nth-child(3):before,
 					&:nth-child(n+3) {
-						@include rem("padding-bottom", ($line * 0.5));
+						@include rem("margin-bottom", ($line * 0.5));
 					}
 
 				}
@@ -164,6 +159,7 @@
 			.entry {
 
 				@include quantity-query( 4, "greater" ) {
+					@include rem( "margin-bottom", $line );
 					width: 25%;
 
 					&:nth-child(n+3) {
@@ -220,7 +216,6 @@
 					}
 
 					&:nth-child(n+4) {
-						@include rem("padding-bottom", $line);
 						float: right;
 						clear: right;
 
@@ -272,12 +267,9 @@
 
 				@include quantity-query ( 11, "greater" ) {
 
-					&:nth-child(4):before {
-						@include rem("margin-bottom", ($line * 0.5));
-					}
-
+					&:nth-child(4):before,
 					&:nth-child(n+4) {
-						@include rem("padding-bottom", ($line * 0.5));
+						@include rem("margin-bottom", ($line * 0.5));
 					}
 
 				}
