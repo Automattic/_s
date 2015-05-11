@@ -4107,8 +4107,10 @@ object {
 		order: 2;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > .entry:first-child .entry-image {
-		width: 100%;
 		padding-top: 0;
+	}
+	.category-centre-stage .issue-section-posts .issue-section-flex > .entry:first-child .entry-image img {
+		width: 100%;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex > .entry:first-child .entry-content {
 		font-size: 18px;

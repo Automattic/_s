@@ -267,8 +267,12 @@
 				margin-bottom: 0;
 
 				.entry-image {
-					width: 100%;
 					padding-top: 0;
+
+					img {
+						width: 100%;
+					}
+
 				}
 
 				.entry-content {
