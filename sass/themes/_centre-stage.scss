@@ -281,7 +281,7 @@
 
 			// Largest (featured) article.
 			> .entry:first-child {
-				flex: 2 2 50%;
+				flex: 2 0 50%;
 				order: 2;
 				max-width: 50%;
 				margin-bottom: 0;
@@ -328,7 +328,8 @@
 			// Both sidebars.
 			> :nth-child(n+2) {
 				@include rem("padding", $gutter 0);
-				flex: 1 1 25%;
+				//flex: 1 1 25%;
+				width: 25%;
 				background: $color__centrestage;
 
 				.entry {
