@@ -1,0 +1,16 @@
+/* IE10+ fixes */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: map-get($breakpoints, "issue-4-columns")) {
+
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+		/* Fix vertical spacing of 2nd-4th posts in Open Minds section */
+		flex: 0 1 33%;
+	}
+
+	.category-open-minds .issue-section-posts,
+	.category-centre-stage .issue-section-posts {
+		/* Fix total width of the flexbox section. */
+		width: 100%;
+	}
+
+}

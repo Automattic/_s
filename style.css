@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	13.3 Sliders
 14.0 Layouts
 15.0 Themes
+16.0 Browser compatibility
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -3756,6 +3757,8 @@ object {
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: flex;
+		/* Fix for IE11 flexbox size */
+		width: 100%;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex .entry {
 		clear: none;
@@ -3852,6 +3855,12 @@ object {
 		min-height: 0;
 		margin-bottom: 0;
 		padding-left: 0;
+
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 1 auto;
+		-moz-box-flex: 0;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > div .entry .entry-image {
 		line-height: 0.5;
@@ -4956,6 +4965,26 @@ object {
 .post-type-archive-yumag_notice .entry-image {
 	margin: 14px 0 0;
 	margin: 0.77778rem 0 0;
+}
+
+/*--------------------------------------------------------------
+16.0 Browser compatibility
+--------------------------------------------------------------*/
+/* IE10+ fixes */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1100px) {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+		/* Fix vertical spacing of 2nd-4th posts in Open Minds section */
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 1 33%;
+		-moz-box-flex: 0;
+		-ms-flex: 0 1 33%;
+		flex: 0 1 33%;
+	}
+	.category-open-minds .issue-section-posts,
+	.category-centre-stage .issue-section-posts {
+		/* Fix total width of the flexbox section. */
+		width: 100%;
+	}
 }
 
 /*# sourceMappingURL=style.css.map */

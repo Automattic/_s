@@ -288,6 +288,8 @@
 		// Flexbox version, using wrapper elements added in javascript.
 		.issue-section-flex {
 			display: flex;
+			/* Fix for IE11 flexbox size */
+			width: 100%;
 
 			.entry {
 				clear: none;
@@ -362,6 +364,7 @@
 					min-height: 0;
 					margin-bottom: 0;
 					padding-left: 0; // for alignment with the centre gutter.
+					flex: 0 1 auto;
 
 					.entry-image {
 						line-height: 0.5; /* fix for excess space under the image */
