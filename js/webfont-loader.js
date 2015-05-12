@@ -41,8 +41,9 @@
 
 	// time to get the actual css file
 	function injectFontsStylesheet() {
+		var isIE = /*@cc_on!@*/false;
 		// if this is an older browser
-		if ( ! window.localStorage || ! window.XMLHttpRequest ) {
+		if ( isIE || ! window.localStorage || ! window.XMLHttpRequest ) {
 			var stylesheet = document.createElement( 'link' );
 			stylesheet.href = css_href;
 			stylesheet.rel = 'stylesheet';

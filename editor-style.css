@@ -310,7 +310,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-transform: uppercase;
 }
@@ -425,7 +425,7 @@ big {
 
 /* Lead/lede. */
 .lead {
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1.33333;
@@ -439,7 +439,7 @@ big {
 	box-sizing: content-box;
 	margin-right: 3px;
 	margin-left: -5px;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 /* Calls-to-action. */
@@ -448,7 +448,7 @@ big {
 	margin-top: 2.33333rem;
 	padding-top: 14px;
 	padding-top: 0.77778rem;
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 0.77778rem solid #dcd4c6;
 	/* Less paragraph spacing and no indents. */
@@ -490,7 +490,7 @@ big {
 
 .quote-source {
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
@@ -701,7 +701,7 @@ big {
 	margin-top: 42px;
 	margin-top: 2.33333rem;
 	padding-top: 0;
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 0;
 }
@@ -844,7 +844,7 @@ q:after {
 
 blockquote {
 	font-style: italic;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1.33333;
@@ -853,7 +853,7 @@ blockquote {
 
 cite {
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 0.9em;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em; 
@@ -883,7 +883,7 @@ figure {
 
 figcaption,
 .wp-caption-dd {
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
@@ -941,7 +941,7 @@ li > ol {
 }
 
 dt {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 dd {
@@ -1252,7 +1252,7 @@ figure {
 	text-align: center;
 }
 .entry-meta a {
-	font-weight: 600; 
+	font-weight: 700; 
 	color: inherit;
 }
 
@@ -1263,7 +1263,7 @@ figure {
 	/* The author's name */
 }
 .entry-author a {
-	font-weight: 600;
+	font-weight: 700;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -1277,7 +1277,7 @@ figure {
 /* Categories in entry footer. */
 .entry-issue,
 .cat-links a {
-	font-weight: 600;
+	font-weight: 700;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -1286,7 +1286,7 @@ figure {
 	display: block;
 }
 .tags-links a {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 /* Post footer meta lines. */
