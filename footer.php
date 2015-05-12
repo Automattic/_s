@@ -21,6 +21,7 @@ $src = get_template_directory_uri() . '/assets/';
 					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 					<p class="site-credits">
 					<small class="site-editor">Online Editor: <a href="<?php echo esc_url( home_url( '/author/alfiepackham/' ) ); ?>">Alfie Packham</a></small><br>
+					<small class="site-editor">Editor: <a href="http://www.yorkspace.net/about/team">Sarah Phillips</a></small><br>
 					<small class="site-editor">Web design by <a href="http://www.cjbarnes.co.uk/">Chris Barnes</a></small><br>
 					<small class="colophon">© 2015<?php if ( 2015 < (int) date( 'Y' ) ) echo '&ndash;' . date( 'Y' ); ?> University of York</small></p>
 					<div class="footer-uoy-logo">
