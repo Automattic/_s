@@ -58,7 +58,8 @@
 		var buttons = document.querySelectorAll( '.js-menu-toggle' );
 
 		// Visible changes.
-		document.body.classList.remove( 'menu-left-toggled', 'menu-right-toggled' );
+		document.body.classList.remove( 'menu-left-toggled' );
+		document.body.classList.remove( 'menu-right-toggled' );
 
 		// Invisible (accessibility) changes.
 		Array.prototype.forEach.call( menus, function ( menu ) {
