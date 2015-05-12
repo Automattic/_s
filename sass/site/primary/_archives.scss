@@ -5,7 +5,7 @@
 .archive-title {
 	@include font-size-line( "normal" );
 	margin: 0;
-	font-weight: normal;
+	font-weight: $font-weight__serif;
 	font-family: $font-family__main;
 	text-transform: none;
 
@@ -27,7 +27,7 @@
 .issue-number,
 .search-term,
 .archive-term {
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	letter-spacing: $letter-spacing__caps;
 	text-align: center;
 	text-transform: uppercase;
@@ -71,7 +71,7 @@
 			display: inline-block;
 			width: auto;
 			padding: 3px 1em;
-			font-weight: bold;
+			font-weight: $font-weight__serif__bold;
 			font-family: $font-family__button;
 			text-transform: uppercase;
 			letter-spacing: $letter-spacing__caps;

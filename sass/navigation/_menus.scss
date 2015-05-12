@@ -45,7 +45,7 @@
 
     /* Make sure links are visible. */
     a {
-    	font-weight: bold;
+    	font-weight: $font-weight__serif__bold;
     	color: $color__link__reversed;
     	border-bottom: 0;
 
@@ -113,7 +113,7 @@
 	box-shadow: none;
 	text-shadow: none;
 	background: transparent;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	font-family: $font-family__button;
 	letter-spacing: $letter-spacing__caps;
 	text-align: center;
@@ -301,7 +301,7 @@
 		border-bottom-color: transparent;
 		text-transform: uppercase;
 		font-family: $font-family__button;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 
 		&:hover,
 		&:focus {

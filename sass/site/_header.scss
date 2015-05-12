@@ -80,7 +80,7 @@
 		@include font-size-line( "large", 0.75 );
 		position: relative;
 		display: inline-block;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 		font-family: $font-family__sans-serif;
 		text-transform: uppercase;
 		color: $grey__light;

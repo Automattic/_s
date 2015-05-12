@@ -35,7 +35,7 @@
 	@include font-size-line( "larger" );
 	margin-top: 0;
 	text-align: left;
-	font-weight: normal;
+	font-weight: $font-weight__serif;
 	font-family: $font-family__main;
 	text-transform: none;
 }

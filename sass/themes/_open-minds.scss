@@ -130,6 +130,19 @@
 			clear: left;
 		}
 
+		.issue-section-noflex {
+
+			.entry {
+				clear: none;
+
+				&:nth-child(2n+1) {
+					clear: left;
+				}
+
+			}
+
+		}
+
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
 		 * flexbox layout yet.
@@ -217,9 +230,14 @@
 		.issue-section-noflex {
 
 			.entry {
-				clear: right;
 				float: right;
 				max-width: 50%;
+
+				/* Override 2-col flexbox clearing */
+				&,
+				&:nth-child(2n+1) {
+					clear: right;
+				}
 
 				&:first-child {
 					float: left;

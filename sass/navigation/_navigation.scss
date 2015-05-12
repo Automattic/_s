@@ -6,7 +6,7 @@
 	a {
 		@include font-size("small");
 		font-family: $font-family__meta;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 		text-transform: uppercase;
 		letter-spacing: $letter-spacing__caps;
 		text-decoration: none;

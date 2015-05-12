@@ -22,7 +22,7 @@
 		@include font-size-line( "normal" );
 		text-transform: uppercase;
 		font-family: $font-family__sans-serif;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 	}
 
 	.entry-author-student-details {
@@ -43,7 +43,7 @@
 	}
 
 	.notice-label {
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 		color: $color__allaboutyu__dark;
 	}
 
@@ -59,7 +59,7 @@
 	}
 
 	.obit-label {
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 	}
 
 	.entry-image {

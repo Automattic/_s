@@ -70,7 +70,7 @@ big {
 /* Lead/lede. */
 .lead {
 	@include font-size-line( "large" );
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	text-indent: 0;
 }
 
@@ -79,14 +79,14 @@ big {
 	box-sizing: content-box;
 	margin-left: -5px;
 	margin-right: 3px;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 }
 
 /* Calls-to-action. */
 .call-to-action {
 	@include rem( "margin-top", ( $line * 1.5 ) );
 	@include rem( "padding-top", ( $line * 0.5 ) );
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	font-family: $font-family__meta;
 	border-top: $height__rule solid $color__yorklife;
 
@@ -134,7 +134,7 @@ big {
 .quote-source {
 	@include font-size-line( "small" );
 	font-style: normal;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	color: $color__yorklife__dark;
 	text-transform: uppercase;
 	text-indent: 0 !important;
@@ -289,7 +289,7 @@ big {
 	/* Calls to action - remove thick line (as it clashes with the icon) */
 	.call-to-action {
 		@include rem( "margin-top", ( $line * 1.5 ) );
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 		font-family: $font-family__meta;
 		padding-top: 0;
 		border-top: 0;

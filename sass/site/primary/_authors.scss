@@ -25,7 +25,7 @@
 .author-title {
 	@include rem( "margin", ( $spacing * 0.5 ) 0 );
 	@include font-size-line( "larger" );
-	font-weight: normal;
+	font-weight: $font-weight__serif;
 	font-family: $font-family__main;
 	letter-spacing: normal;
 	text-transform: none;

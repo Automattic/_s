@@ -22,7 +22,7 @@
 	left: 50%;
 	display: inline-block;
 	margin: -125px 0 0 -125px;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	letter-spacing: $letter-spacing__caps;
 	font-family: $font-family__category;
 	text-align: center;
@@ -98,7 +98,7 @@
 
 		a {
 			@extend %hide-underline;
-			font-weight: normal;
+			font-weight: $font-weight__serif;
 			color: $color__main;
 
 			&:hover,
@@ -222,7 +222,7 @@
 		z-index: 1;
 		display: block;
 		width: 50%;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 		font-family: $font-family__category;
 		text-align: center;
 		color: $white;
