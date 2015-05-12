@@ -13,9 +13,6 @@ $GLOBALS['slider_captions'] = '';
 
 // All HTML for the post captions (which must be outputted outside the slider
 // object) will be added to this string.
-
-
-// TODO: Also check if this is the current issue.
 if ( yumag_has_featured_posts() ) : ?>
 
 	<?php

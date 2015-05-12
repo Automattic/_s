@@ -312,7 +312,11 @@ var IdealImageSlider = (function() {
 		// Slides
 		var origChildren = _toArray(sliderEl.children),
 			validSlides = [];
-		sliderEl.innerHTML = '';
+		/**
+		 * REMOVED AS IT BREAKS IE10/11 support, because setting innerHTML to
+		 * empty destroys the child elements of the origChildren entries.
+		 */
+		//sliderEl.innerHTML = '';
 		Array.prototype.forEach.call(origChildren, function(slide, i){
 			if(slide instanceof HTMLImageElement || slide instanceof HTMLAnchorElement){
 				var slideEl = document.createElement('a'),
@@ -728,104 +732,6 @@ var IdealImageSlider = (function() {
 })(IdealImageSlider);
 
 /**
- * Thumbnails extension for Gilber Pellegrom's Ideal Image Slider.
- *
- * Adapted from "Ideal Image Slider: Bullet Navigation Extension v1.0.2" by
- * Gilbert Pellegrom.
- *
- * @author cJ barnes http://www.cjbarnes.co.uk
- * @param {IdealImageSlider} IIS The slider class.
- */
-( function( IIS ) {
-	'use strict';
-
-	/**
-	 * [_updateActiveThumbnail description]
-	 * @param {[type]} slider [description]
-	 * @param {[type]} activeIndex [description]
-	 */
-	var _updateActiveThumbnail = function ( slider, activeIndex ) {
-
-		var thumbs = slider._attributes.thumbNav.querySelectorAll('a');
-		if ( ! thumbs ) {
-			return;
-		}
-
-		/**
-		 * [description]
-		 * @param {[type]} thumb [description]
-		 */
-		Array.prototype.forEach.call( thumbs, function ( thumb, i ) {
-			IIS._removeClass( thumb, 'iis-thumb-active' );
-			thumb.setAttribute( 'aria-selected', 'false' );
-			if( i === activeIndex ){
-				IIS._addClass( thumb, 'iis-thumb-active' );
-				thumb.setAttribute( 'aria-selected', 'true' );
-			}
-		}.bind( this ) );
-
-	};
-
-	/**
-	 * Initialize the thumbnail navigation - create elements and bind events.
-	 */
-	IIS.Slider.prototype.addThumbnailNav = function () {
-		IIS._addClass(this._attributes.container, 'iis-has-thumb-nav');
-
-		// Create thumbnail nav
-		var thumbNav = document.createElement('div');
-		IIS._addClass( thumbNav, 'iis-thumb-nav' );
-		thumbNav.setAttribute( 'role', 'tablist' );
-
-		/**
-		 * Create thumbnails.
-		 * @param {[type]} slide [description]
-		 * @param {[type]} i
-		 */
-		Array.prototype.forEach.call(this._attributes.slides, function( slide, i ){
-			var thumb = document.createElement( 'a' );
-			thumb.innerHTML = i + 1;
-			thumb.setAttribute( 'role', 'tab' );
-
-			/**
-			 * [description]
-			 * @param {[type]}
-			 */
-			thumb.addEventListener( 'click', function () {
-				if ( IIS._hasClass( this._attributes.container, this.settings.classes.animating ) ) {
-					return false;
-				}
-				this.stop();
-				this.gotoSlide( i + 1 );
-			}.bind( this ) );
-
-			thumbNav.appendChild( thumb );
-		}.bind(this));
-
-		this._attributes.thumbNav = thumbNav;
-		this._attributes.container.appendChild( thumbNav );
-		_updateActiveThumbnail( this, 0 );
-
-		// Hook up to afterChange events
-		var origAfterChange = this.settings.afterChange;
-		/**
-		 * [afterChange description]
-		 * @return {[type]} [description]
-		 */
-		var afterChange = function () {
-			var slides = this._attributes.slides,
-				index = slides.indexOf( this._attributes.currentSlide );
-			_updateActiveThumbnail( this, index );
-			return origAfterChange();
-		}.bind( this );
-		this.settings.afterChange = afterChange;
-	};
-
-	return IIS;
-
-} )( IdealImageSlider );
-
-/**
  * Set up the Ideal Image Slider(s).
  * @param {IdealImageSlider} IIS The IdealImageSlider constructor.
  */
@@ -836,7 +742,6 @@ var IdealImageSlider = (function() {
 		interval: 5000,
 		transitionDuration: 300
 	} );
-	slider.addCaptions();
-//	slider.addThumbnailNav();
+	slider.addCaptions.bind(slider)();
 	slider.start();
 } )( IdealImageSlider );

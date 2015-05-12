@@ -841,6 +841,11 @@ html {
 	/* 3 */
 }
 
+.site-main {
+	/* For positioning of main content under the slider in Firefox/IE. */
+	clear: both;
+}
+
 blockquote,
 q {
 	quotes: "" "";
