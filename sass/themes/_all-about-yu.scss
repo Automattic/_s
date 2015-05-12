@@ -2,8 +2,6 @@
 
 	.category-title,
 	.category-title a,
-	.category-description,
-	.category-archive-link a,
 	.site-title-term.category-link,
 	.dropcap,
 	.entry-subtitle,
@@ -13,12 +11,15 @@
 	h3,
 	h4,
 	h5,
-	h6 {
+	h6,
+	.related-posts & .entry-subtitle,
+	.related-posts & .cat-links a {
 		color: $color__allaboutyu__dark;
 	}
 
 	.entry-content,
-	.posted-on {
+	.posted-on,
+	.related-posts & .cat-links {
 
 		a:hover,
 		a:focus,
@@ -42,14 +43,15 @@
 	}
 
 	hr,
-	&.single-entry .entry-content:before,
-	.category-header:before {
+	.single-entry-above-footer .entry-content:before,
+	.category-header,
+	.sixty-seconds {
 		background: $color__allaboutyu;
 	}
 
 	.call-to-action,
 	.content-details {
-		border-top-color: $color__allaboutyu;
+		border-color: $color__allaboutyu;
 	}
 
 	.footer a {
@@ -66,9 +68,25 @@
 		color: $color__allaboutyu;
 	}
 
-	.textbox {
+	.textbox,
+	.sixty-seconds,
+	.whats-on {
 		background: $color__allaboutyu;
+
+		/* The square before the subheading */
+		h3:before {
+			display: none;
+		}
+
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $color__main;
+		}
+
 	}
+
 
 	@include issue-section-multicolumn-layout;
 

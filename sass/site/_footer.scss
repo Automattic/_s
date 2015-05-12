@@ -27,6 +27,7 @@
 	top: ( -1 * ( $avatar-diameter / 2 ) );
 	left: 50%;
 	margin-left: ( -1 * ( $avatar-diameter / 2 ) );
+	border: 0 !important;
 }
 
 /* Leave some more space under the avatar. */
@@ -55,5 +56,10 @@
 
 }
 
-.footer-site-logo {
+.footer-uoy-logo {
+	@include rem( "margin-top", ( $line * 2 ) );
+}
+
+.site-footer .site-logo-link {
+	border-bottom: 0 !important;
 }

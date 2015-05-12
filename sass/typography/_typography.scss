@@ -1,6 +1,6 @@
 html {
 	@include rem( "line-height", map_get( $line-heights, "normal" ) );
-	font-size: $font-size__html;
+	font-size: $font-size__html__mobile;
 }
 
 body,
@@ -13,3 +13,15 @@ textarea {
 	font-family: $font-family__main;
 	color: $color__main;
 }
+
+/* Bigger text for wider screens */
+@include media( "main-spacing" ) {
+
+	html {
+		@include rem( "line-height", map_get( $line-heights, "normal" ) );
+		font-size: $font-size__html;
+	}
+
+}
+
+

@@ -1,42 +1,39 @@
-.category-header {
+.category-header,
+.author-header {
 	@include rem( "margin-bottom", $line );
 	position: relative;
+	overflow: hidden; // hide logo circle overflow
+	height: 160px; // cut off top and bottom of logo circle
 	text-align: center;
-
-	&:before {
-		@include rem( "height", $height__rule );
-		@include rem( "margin-top", ( $height__rule * -0.5 ) );
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		background: $color__neutral;
-		z-index: 0;
-	}
-
 }
 
-.single .category-header {
+.single .category-header,
+.single .author-header {
 	@include rem( "margin-top", $spacing );
 }
 
-.category-title {
-	@include rem( "padding", ( $line * 0.5 ) );
+.category-title,
+.author-image {
+	//@include rem( "padding", ( $line * 0.5 ) );
 	@include font-size-line( "huger", 1.5 );
-	position: relative;
+	position: absolute;
 	z-index: 1;
+	top: 50%;
+	left: 50%;
 	display: inline-block;
-	margin: 0;
-	font-weight: bold;
+	margin: -125px 0 0 -125px;
+	font-weight: $font-weight__serif__bold;
 	letter-spacing: $letter-spacing__caps;
 	font-family: $font-family__category;
 	text-align: center;
 	text-transform: uppercase;
-	background: $background-color;
 
 	a {
 		border-bottom: 0;
+	}
+
+	img {
+		border-radius: 50%;
 	}
 
 }
@@ -44,40 +41,17 @@
 /* Left- and right-aligned text underneath the section heading. */
 .category-description,
 .category-archive-link {
-	@include rem( "margin", ( $height__rule ) 0 0 );
-	@include font-size-line( "small" );
-	position: absolute;
-	top: 50%;
-	z-index: 1;
-	font-weight: bold;
-	font-family: $font-family__category;
+	/* Don't show for mobiles, as the screen isn't wide enough for them. */
+	display: none;
 }
-
-.category-description {
-	@include rem( "margin-right", 50% );
-	@include rem( "padding-right", 138px ); // half-width of the widest section logo
-	left: 0;
-	text-align: left;
-}
-
-.category-archive-link {
-	@include rem( "margin-left", 50% );
-	@include rem( "padding-left", 138px ); // half-width of the widest section logo
-	right: 0;
-	text-align: right;
-	text-transform: uppercase;
-
-	a {
-		@extend %hide-underline;
-	}
-
-}
-
-
 
 .issue-section {
-	@include rem( "margin-top", ( $line * 2 ) );
 	@include rem( "margin-bottom", ( $line * 2 ) );
+
+	+ .issue-section {
+		@include rem( "margin-top", ( $line * 3 ) );
+	}
+
 }
 
 /* Posts list for this section. */
@@ -118,12 +92,13 @@
 	}
 
 	.entry-meta {
-		@include font-size-line( "small" );
+		@include font-size-line( "smaller" );
 		display: block;
 		text-align: left;
 
 		a {
 			@extend %hide-underline;
+			font-weight: $font-weight__serif;
 			color: $color__main;
 
 			&:hover,
@@ -134,6 +109,10 @@
 
 		}
 
+	}
+
+	.entry-content p {
+		margin-bottom: 0;
 	}
 
 	.read-more {
@@ -159,11 +138,21 @@
 
 }
 
+.related-posts-title {
+	@include rem( "margin-top", ( $line * -1 ) );
+	@include font-size-line( "larger" );
+}
+
 .archive:not(.tax-pp_issue) .index-posts,
+.related-posts .index-posts,
 .search-results .index-posts {
 
+	.entry {
+		@include rem( "margin-bottom", $line );
+	}
+
 	.entry-footer {
-		@include rem( "margin", ( $line * -0.5 ) 0 $line );
+		@include rem( "margin", ( $line * 0.5 ) 0 $line );
 		@include font-size-line( "smaller" );
 		display: block;
 		font-family: $font-family__meta;
@@ -179,7 +168,6 @@
 			@include rem( "max-width", ( 333px + ( $spacing * 0.5 ) ) );
 			@include rem( "padding", 0 ( $spacing * 0.5 ) );
 			float: left;
-			margin-bottom: 0;
 
 			&:nth-child(2n+1) {
 				clear: left;
@@ -215,6 +203,47 @@
 
 			}
 
+		}
+
+	}
+
+}
+
+
+@include media( "main-spacing" ) {
+
+	/* Left- and right-aligned text underneath the section heading. */
+	.category-description,
+	.category-archive-link {
+		@include rem( "bottom", ( $spacing * 0.5 ) );
+		@include rem( "margin", ( $spacing * 0.5 ) 0 0 );
+		@include rem( "padding", 0 $width__menu-toggle );
+		position: absolute;
+		z-index: 1;
+		display: block;
+		width: 50%;
+		font-weight: $font-weight__serif__bold;
+		font-family: $font-family__category;
+		text-align: center;
+		color: $white;
+	}
+
+	.category-description {
+		left: 0;
+		padding-right: 130px; // half-width of the section logo
+		//text-align: left;
+	}
+
+	.category-archive-link {
+		@include font-size-line( "small" );
+		right: 0;
+		padding-left: 130px; // half-width of the section logo
+		//text-align: right;
+		text-transform: uppercase;
+
+		a {
+			color: inherit;
+			@extend %hide-underline;
 		}
 
 	}

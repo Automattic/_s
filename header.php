@@ -81,7 +81,7 @@ $src = get_template_directory_uri() . '/assets/';
 			<?php else : ?>
 			<h1 class="site-title">
 				<a class="site-logo-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e( 'Go to latest issue', 'yumag' ); ?>">
-					<img class="site-logo" src="<?php echo $src; ?>logo.svg" onerror="this.src='<?php echo $src; ?>logo.png'" alt="<?php bloginfo( 'name' ); ?>" width="100" height="71">
+					<img class="site-logo" src="<?php echo $src; ?>logo.png" srcset="<?php echo $src; ?>logo@2x.png 2x, <?php echo $src; ?>logo.png 1x" alt="<?php bloginfo( 'name' ); ?>" width="124" height="85">
 				</a>
 			</h1>
 			<?php endif; ?>

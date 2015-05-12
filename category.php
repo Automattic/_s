@@ -33,17 +33,16 @@ get_header(); ?>
 					<div class="category-content index-content">
 						<div class="category-posts index-posts category-<?php echo $cat->slug; ?>-posts">
 							<div>
-
 							<?php /* Start the Loop */ ?>
 							<?php while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part( 'content', get_post_format() ); ?>
 							<?php endwhile; ?>
-
-							<?php the_posts_navigation(); ?>
-
 							</div>
 						</div><!-- .category-posts -->
 					</div><!-- .category-content -->
+					<footer class="next-prev-wrap">
+						<?php the_posts_navigation(); ?>
+					</footer><!-- .next-prev-wrap -->
 				</section><!-- .category-section -->
 
 			<?php else : ?>

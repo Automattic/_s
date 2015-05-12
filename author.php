@@ -24,11 +24,11 @@ get_header(); ?>
 			<section class="author-bio-section">
 				<header class="author-header">
 					<div class="author-image">
-						<?php echo get_avatar( $curauth->ID, 150 ); ?>
+						<?php echo get_avatar( $curauth->ID, 300 ); ?>
 					</div>
-					<?php the_archive_title( '<h1 class="author-title">', '</h1>' ); ?>
 				</header><!-- .author-header -->
 				<div class="author-bio-content">
+					<?php the_archive_title( '<h1 class="author-title">', '</h1>' ); ?>
 					<?php if ( ! empty( $curauth_student ) ) {
 						printf( '<p class="author-student-details">(%s)</p>', $curauth_student );
 					} ?>
@@ -51,17 +51,16 @@ get_header(); ?>
 				<div class="index-content author-index-content">
 					<div class="index-posts author-index-posts">
 						<div>
-
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'content', get_post_format() ); ?>
 						<?php endwhile; ?>
-
-						<?php the_posts_navigation(); ?>
-
 						</div>
 					</div><!-- .index-posts -->
 				</div><!-- .index-content -->
+				<footer class="next-prev-wrap">
+					<?php the_posts_navigation(); ?>
+				</footer><!-- .next-prev-wrap -->
 			</section><!-- .author-index-section -->
 
 		<?php else : ?>

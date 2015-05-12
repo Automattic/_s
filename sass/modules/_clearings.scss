@@ -8,7 +8,9 @@
 .site-content,
 .site-footer,
 .issue-section,
+.issue-section-leftovers,
 .category-posts,
-.author-bio-section {
+.author-bio-section,
+.next-prev-wrap {
 	@include clearfix;
 }

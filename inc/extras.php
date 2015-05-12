@@ -111,7 +111,8 @@ if ( ! function_exists( 'yumag_entry_classes' ) ) :
  * Filter to add generic class for both posts and pages to the article element.
  *
  * Adds the class 'entry' in all cases. If this is a page or a single post,
- * also adds a 'single-entry' class.
+ * also adds a 'single-entry' class. If this is a Notice, add a class for the
+ * notice type.
  *
  * @since 1.0.0
  *
@@ -119,10 +120,22 @@ if ( ! function_exists( 'yumag_entry_classes' ) ) :
  * @return array The classes array.
  */
 function yumag_entry_classes( $classes ) {
+
+	global $wp_query;
+
 	$classes[] = 'entry';
-	if ( is_single() || is_page() ) {
+	if ( ( is_single() && get_the_ID() === $wp_query->queried_object_id ) || is_page() ) {
 		$classes[] = 'single-entry';
 	}
+
+	$tax = 'yumag_notice_type';
+	if ( ( 'yumag_notice' === get_post_type() ) && taxonomy_exists( $tax ) ) {
+		$notice_types = wp_get_post_terms( get_the_ID(), $tax );
+		foreach ( $notice_types as $nt ) {
+			$classes[] = 'type-' . $nt->slug;
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'post_class', 'yumag_entry_classes' );
@@ -232,4 +245,44 @@ function yumag_split_archive_title( $title ) {
 	return $title;
 }
 add_filter( 'get_the_archive_title', 'yumag_split_archive_title', 60 );
+endif;
+
+/**
+ * Flush out the transients used in yumag_categorized_blog.
+ *
+ * @since 1.0.0
+ */
+function yumag_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	delete_transient( 'yumag_categories' );
+}
+add_action( 'edit_category', 'yumag_category_transient_flusher' );
+add_action( 'save_post',     'yumag_category_transient_flusher' );
+
+if ( ! function_exists( 'yumag_google_fonts' ) ) :
+/**
+ * Output the script element for async loading of Lato webfont.
+ *
+ * @since 1.0.0
+ */
+function yumag_google_fonts() {
+?>
+	<script type="text/javascript">
+	WebFontConfig = {
+	google: { families: [ 'Lato:300,700:latin' ] }
+	};
+	(function() {
+	var wf = document.createElement('script');
+	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	wf.type = 'text/javascript';
+	wf.async = 'true';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(wf, s);
+	})(); </script>
+<?php
+}
+add_action( 'wp_footer', 'yumag_google_fonts' );
 endif;

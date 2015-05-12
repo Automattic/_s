@@ -40,6 +40,16 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 		return;
 	}
 
+	/**
+	 * Don't dropcap paragraphs that contain a script (due to flaws in the WP
+	 * Twitter embed code).
+	 */
+	for ( i = 0, l = p.children.length; i < l; i++ ) {
+		if ( 'SCRIPT' === p.children[ i ].tagName ) {
+			return;
+		}
+	}
+
 	// Wrap the first letter (and preceding punctuation) in a span.
 	p.innerHTML = p.innerHTML.replace( pattern, '<span class="dropcap">$1</span>' );
 	dropcap = p.querySelector( '.dropcap' );

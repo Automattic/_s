@@ -2,7 +2,7 @@
 	display: block;
 }
 
-.single-entry {
+.single-entry-above-footer {
 
 	.entry-image {
 		@include rem( "margin-bottom", ( $line * 0.5 ) );
@@ -33,7 +33,7 @@
 			top: 0;
 			width: $width__rule;
 			margin-left: ( ( 100% - $width__rule ) / 2 );
-			background: $background-color__rule;
+			background: $color__yorklife;
 		}
 
 		p:not(.lead) + p {
@@ -48,6 +48,10 @@
 
 	}
 
+}
+
+.related-posts {
+	@include rem( "margin-bottom", ( $line * 2.5 ) );
 }
 
 .entry-image-link {
@@ -68,12 +72,12 @@
 
 .entry-title {
 	@include rem( "margin-top", $line );
-	@include font-size-line( "leviathan", 2.5 );
+	@include font-size-line( "enormous", 1.5 );
 	word-wrap: break-word;
 	text-transform: none;
 	font-family: $font-family__main;
 
-	.single-entry & {
+	.single-entry-above-footer & {
 		@include rem( "margin-bottom", $line );
 	}
 
@@ -81,7 +85,8 @@
 
 .entry-subtitle {
 	@include rem( "margin-top", $line );
-	font-weight: normal;
+	@include font-size-line( "huger", 1.5 );
+	font-weight: $font-weight__serif;
 	text-transform: none;
 	font-family: $font-family__main;
 }
@@ -108,7 +113,7 @@
 	a {
 		@extend %hide-underline;
 		color: inherit;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 	}
 
 }
@@ -121,7 +126,7 @@
 	/* The author's name */
 	a {
 		@extend %hide-underline;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 		text-transform: uppercase;
 		letter-spacing: $letter-spacing__caps;
 	}
@@ -137,7 +142,7 @@
 .entry-issue,
 .cat-links a {
 	@extend %hide-underline;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	text-transform: uppercase;
 	letter-spacing: $letter-spacing__caps;
 }
@@ -147,7 +152,7 @@
 
 	a {
 		@extend %hide-underline;
-		font-weight: bold;
+		font-weight: $font-weight__serif__bold;
 	}
 
 }
@@ -157,7 +162,7 @@
 	display: block;
 
 	/* Leave space between posted-on meta and author name/bio. */
-	.single-entry & {
+	.single-entry-above-footer & {
 		@include rem( "margin-top", $line * 2 );
 	}
 
@@ -165,6 +170,19 @@
 
 /* Read more link. */
 .read-more {
-	@include rem( "margin", ( $line * -1 ) 0 $line );
+	@include rem( "margin", ( $line * 0.5 ) 0 $line );
 	font-weight: bold;
+}
+
+
+@include media( "main-spacing" ) {
+
+	.entry-title {
+		@include font-size-line( "leviathan", 2.5 );
+	}
+
+	.entry-subtitle {
+		@include font-size-line( "enormous", 2 );
+	}
+
 }

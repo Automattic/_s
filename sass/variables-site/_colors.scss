@@ -89,8 +89,8 @@ $color__link-visited:         $color__link;
 $color__link-hover:           darken( $color__link, 15% );
 $color__link__reversed:       $downy;
 $color__link-hover__reversed: lighten( $color__link__reversed, 15% );
-$color__menu-toggle:          $grey__light;
-$color__menu-toggle-hover:    $color__main;
+$color__menu-toggle:          $color__main;
+$color__menu-toggle-hover:    $grey;
 
 $color__neutral:     $grey__light;
 $color__yorklife:    $sisal;

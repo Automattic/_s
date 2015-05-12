@@ -14,7 +14,7 @@
  */
 $sections = array(
 	'yorklife' => 0,
-	'up-close-and-personal' => 2,
+	'open-minds' => 2,
 	'centre-stage' => 3,
 	'all-about-yu' => 0,
 	'back-page' => 0
@@ -27,13 +27,11 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 
-		<section class="issue-section slider">
-			<?php get_template_part( 'slider' ); ?>
-		</section>
-
-		<header class="archive-header issue-header">
-			<h1 class="archive-title issue-title"><?php yumag_issue_title(); ?></h1>
-		</header><!-- .archive-header -->
+		<?php if ( is_home() ) : ?>
+			<section class="issue-section slider">
+				<?php get_template_part( 'slider' ); ?>
+			</section>
+		<?php endif; ?>
 
 		<main id="main" class="site-main" role="main">
 
@@ -51,7 +49,7 @@ get_header(); ?>
 						</h2>
 						<p class="taxonomy-description issue-section-description category-description"><?php echo esc_html( $cat->description ); ?></p>
 						<p class="taxonomy-link issue-section-link category-archive-link">
-							<a href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php printf( _x( '%s archives', 'Category archives link', 'yumag' ), esc_attr( $cat->name ) ); ?>">More in this section &rarr;</a>
+							<a href="<?php echo get_category_link( $cat->cat_ID ); ?>" title="<?php printf( _x( '%s archives', 'Category archives link', 'yumag' ), esc_attr( $cat->name ) ); ?>">More in this section</a>
 						</p>
 					</header>
 					<div class="category-content index-content issue-section-content">
@@ -79,6 +77,14 @@ get_header(); ?>
 					</div><!-- .issue-section-content -->
 				</section><!-- .issue-section -->
 			<?php endforeach; ?>
+
+			<footer class="next-prev-wrap issue-next-prev-wrap">
+				<?php the_posts_navigation( array(
+					'prev_text' => __( 'Previous Issue', 'yumag' ),
+					'next_text' => __( 'Next Issue', 'yumag' ),
+					'screen_reader_text' => __( 'Issues navigation', 'yumag' )
+				) ); ?>
+			</footer><!-- .next-prev-wrap -->
 
 		<?php else : ?>
 

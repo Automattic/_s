@@ -20,6 +20,7 @@ function yumag_tinymce_setup( $settings ) {
 	// Get the Formats dropdown contents.
 	if ( ! empty( $settings['block_formats'] ) ) {
 		$block_formats = explode( ';', $settings['block_formats'] );
+
 		/*
 		 * Don't allow user to select these default formats:
 		 * - Pre
@@ -34,12 +35,16 @@ function yumag_tinymce_setup( $settings ) {
 			'Heading 6=h6'
 		) );
 	} else {
-		$block_formats = array();
+		$block_formats = array(
+			'Paragraph=p',
+			'Heading 3=h3',
+			'Heading 4=h4',
+			'Heading 5=h5'
+		);
 	}
 
 	// Re-add some block formats with different names.
 	$block_formats[] = 'Title=h2';
-	$block_formats[] = 'Verse=pre';
 
 	$settings['block_formats'] = implode( ';', $block_formats );
 
@@ -57,9 +62,27 @@ function yumag_tinymce_setup( $settings ) {
 			'classes' => 'lead'
 		),
 		array(
-			'title' => _x( 'Textbox', 'TinyMCE styles dropdown', 'yumag' ),
+			'title' => _x( 'Coloured box (full width)', 'TinyMCE styles dropdown', 'yumag' ),
 			'block' => 'aside',
 			'classes' => 'textbox',
+			'wrapper' => true
+		),
+		array(
+			'title' => _x( 'Coloured box (half width)', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'aside',
+			'classes' => 'textbox side',
+			'wrapper' => true
+		),
+		array(
+			'title' => _x( '60 Seconds box', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'aside',
+			'classes' => 'sixty-seconds',
+			'wrapper' => true
+		),
+		array(
+			'title' => _x( 'What\'s On box', 'TinyMCE styles dropdown', 'yumag' ),
+			'block' => 'aside',
+			'classes' => 'whats-on',
 			'wrapper' => true
 		),
 		array(

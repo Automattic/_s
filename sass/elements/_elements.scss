@@ -52,13 +52,13 @@ q {
 blockquote {
 	@include font-size-line( "large" );
 	font-style: italic;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	font-family: $font-family__blockquote;
 }
 
 cite {
 	font-style: normal;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	font-size: 0.9em;
 	font-family: $font-family__cite;
 	text-transform: uppercase;
@@ -67,7 +67,7 @@ cite {
 
 hr {
 	@include rem( "margin", ( $line * 1.5 ) ( ( 100% - $width__rule ) / 2 ) );
-	background-color: $background-color__rule;
+	background-color: $color__yorklife;
 	border: 0;
 	width: $width__rule;
 	height: $height__rule;
@@ -87,7 +87,7 @@ figure {
 figcaption,
 .wp-caption-dd {
 	@include font-size-line("small");
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	font-family: $font-family__caption;
 	text-align: center;
 }

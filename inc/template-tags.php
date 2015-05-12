@@ -48,8 +48,9 @@ if ( ! function_exists( 'yumag_byline' ) ) :
  */
 function yumag_byline() {
 
-	// Don't show the byline if author is the generic 'Staff Writer'.
-	if ( 'staff writer' !== strtolower( get_the_author() ) ) {
+	// Don't show the byline if author is the generic 'Staff/Guest Writer'.
+	if ( ( 'staff writer' !== strtolower( get_the_author() ) ) &&
+		( 'guest writer' !== strtolower( get_the_author() ) ) ) {
 		$byline = sprintf(
 			_x( 'by %s', 'post author', 'yumag' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
@@ -204,7 +205,25 @@ function yumag_entry_image( $size = 'thumbnail', $linked = true ) {
 	}
 
 	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( $size );
+
+		if ( 'yumag-featured-photo' === $size ) {
+			$img_id = get_post_thumbnail_id();
+			$img_array = wp_get_attachment_image_src($img_id, 'yumag-featured-photo', true);
+			$img_wide = $img_array[0];
+			$img_array = wp_get_attachment_image_src($img_id, 'yumag-featured-photo-portrait', true);
+			$img_narrow = $img_array[0];
+
+			echo '<picture>';
+			echo '<!--[if IE 9]><video style="display: none;"><![endif]-->';
+			echo '<source srcset="' . $img_wide . '" media="(min-width: 500px)">';
+			echo '<source srcset="' . $img_narrow . '" media="(max-width: 500px)">';
+			echo '<!--[if IE 9]></video><![endif]-->';
+			echo '<img src="' . $img_wide . '" width="905" height="509" alt="">';
+			echo '</picture>';
+
+		} else {
+			the_post_thumbnail( $size );
+		}
 	} else {
 		echo '<img src="' . get_template_directory_uri() . '/assets/no-thumbnail.png" width="666" height="444" alt="">';
 	}
@@ -247,6 +266,8 @@ if ( ! function_exists( 'yumag_entry_footer' ) ) :
  */
 function yumag_entry_footer( $echo = true ) {
 
+	global $wp_query;
+
 	$pp = new PeriodicalPress_Template_Tags();
 
 	// Hide category and tag text for pages.
@@ -269,7 +290,7 @@ function yumag_entry_footer( $echo = true ) {
 
 		// Prepare the issue number format.
 		$number = $pp->get_the_issue_number();
-		if ( $number && is_single() ) {
+		if ( $number && is_single() && ( get_the_ID() === $wp_query->queried_object_id ) ) {
 			$number = sprintf( __( 'ISSUE %s', 'yumag' ),
 				strtoupper( yumag_convert_number_to_words( $number ) )
 			);
@@ -459,16 +480,68 @@ function yumag_categorized_blog() {
 	}
 }
 
+if ( ! function_exists( 'yumag_related_posts' ) ) :
 /**
- * Flush out the transients used in yumag_categorized_blog.
+ * Output related posts for a single post.
+ *
+ * Uses the Jetpack Related Posts feature, so will only work if Jetpack is
+ * active.
+ *
+ * @global WP_Post $post The post object.
  *
  * @since 1.0.0
  */
-function yumag_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+function yumag_related_posts() {
+
+	global $post;
+
+	if ( class_exists( 'Jetpack_RelatedPosts' ) && method_exists( 'Jetpack_RelatedPosts', 'init_raw' ) ) {
+
+		/* Get the related posts from Jetpack. */
+		$jprp = Jetpack_RelatedPosts::init_raw();
+		$jprp->set_query_name( 'yumag-related-posts' );
+		$related_posts = $jprp->get_for_post_id( get_the_ID(), array( 'size' => 3 ) );
+
+		/* Output. */
+		if ( $related_posts ) {
+			echo '<div class="related-posts">';
+			echo '<h2 class="related-posts-title">' . __( 'You may also like&hellip;', 'yumag' ) . '</h2>';
+			echo '<div class="index-content">';
+			echo '<div class="index-posts">';
+			echo '<div>';
+
+			/* New mini-loop. */
+			foreach ( $related_posts as $result ) {
+				$post = get_post( $result['id'] );
+				setup_postdata( $post );
+				get_template_part( 'content', 'relatedposts' );
+			}
+			wp_reset_postdata();
+
+			echo '</div>';
+			echo '</div><!-- .index-posts -->';
+			echo '</div><!-- .index-content -->';
+			echo '</div><!-- .related-posts -->';
+		}
+
+	}
+}
+endif;
+
+
+function yumag_image_credits( $before = '<p class="image-credits"><small>Image credits:<br>', $separator = '<br>', $after = '</small></p>' ) {
+
+	// Get the image credits class, if it exists.
+	if ( ! class_exists( 'YuMag_Plugin' ) ) {
 		return;
 	}
-	delete_transient( 'yumag_categories' );
+	$plugin = YuMag_Plugin::get_instance();
+	if ( ! class_exists( 'YuMag_Plugin_Image_Credits' ) ) {
+		return;
+	}
+	$plugin_ic = YuMag_Plugin_Image_Credits::get_instance( $plugin );
+
+	// Output the image credits.
+	$plugin_ic->the_image_credits( $before, $separator, $after );
+
 }
-add_action( 'edit_category', 'yumag_category_transient_flusher' );
-add_action( 'save_post',     'yumag_category_transient_flusher' );

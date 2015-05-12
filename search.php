@@ -25,17 +25,20 @@ get_header(); ?>
 				<div class="index-content search-content">
 					<div class="index-posts search-posts">
 						<div>
-
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<?php get_template_part( 'content', 'search' ); ?>
 						<?php endwhile; ?>
-
-						<?php the_posts_navigation(); ?>
-
 						</div>
 					</div><!-- .index-posts -->
 				</div><!-- .index-content -->
+				<footer class="next-prev-wrap">
+					<?php the_posts_navigation( array(
+					'prev_text' => __( 'Previous', 'yumag' ),
+					'next_text' => __( 'Next', 'yumag' ),
+					'screen_reader_text' => __( 'Search results navigation', 'yumag' )
+				) ); ?>
+				</footer><!-- .next-prev-wrap -->
 			</section><!-- .search-section -->
 
 		<?php else : ?>

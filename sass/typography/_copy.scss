@@ -9,10 +9,18 @@ i {
 }
 
 blockquote {
-	@include rem( "margin", 0 $spacing $line );
+	@include rem( "margin", 0 0 $line );
 
 	p {
 		@include rem( "margin-bottom", ( $line * 0.5 ) );
+	}
+
+	/*
+	 * When 2 quotes run into one blockquote container (due to TinyMCE quirks),
+	 * don't indent the first paragraph of the second quote.
+	 */
+	.quote-source + p {
+		text-indent: 0;
 	}
 
 }
@@ -62,7 +70,8 @@ big {
 /* Lead/lede. */
 .lead {
 	@include font-size-line( "large" );
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
+	text-indent: 0;
 }
 
 /* Dropcaps. */
@@ -70,17 +79,28 @@ big {
 	box-sizing: content-box;
 	margin-left: -5px;
 	margin-right: 3px;
-	font-weight: bold;
-	//font-family: $font-family__dropcap;
+	font-weight: $font-weight__serif__bold;
 }
 
 /* Calls-to-action. */
 .call-to-action {
 	@include rem( "margin-top", ( $line * 1.5 ) );
 	@include rem( "padding-top", ( $line * 0.5 ) );
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	font-family: $font-family__meta;
-	border-top: $height__rule solid $background-color__rule;
+	border-top: $height__rule solid $color__yorklife;
+
+	/* Less paragraph spacing and no indents. */
+	p {
+		@include rem( "margin-bottom", ( $line * 0.5 ) );
+
+		&:not(.lead) + p,
+		.single-entry-above-footer .entry-content &:not(.lead) + p {
+			text-indent: 0;
+		}
+
+	}
+
 }
 
 /* Mini calls-to-action within the content (e.g. for contact details). */
@@ -89,8 +109,14 @@ big {
 	@include rem( "padding", ( $line * 0.5 ) 0 );
 	font-weight: bold;
 	font-family: $font-family__meta;
-	border-top: 2px dotted $background-color__rule;
-	border-bottom: 2px solid $background-color__rule;
+	border-top: 2px dotted $color__yorklife;
+	border-bottom: 2px solid $color__yorklife;
+
+	/* No indents. */
+	p:not(.lead) + p,
+	.single-entry-above-footer .entry-content & p:not(.lead) + p {
+		text-indent: 0;
+	}
 
 	p,
 	li,
@@ -108,22 +134,49 @@ big {
 .quote-source {
 	@include font-size-line( "small" );
 	font-style: normal;
-	font-weight: bold;
-	color: $grey__light;
+	font-weight: $font-weight__serif__bold;
+	color: $color__yorklife__dark;
 	text-transform: uppercase;
 	text-indent: 0 !important;
 }
 
+// /* Small print for image attributions. */
+// .image-credits {
+// 	/* Leave extra space above the attribution. */
+// 	@include rem( "margin-top", ( $line * 2 ) );
+// 	margin-bottom: 0;
+// 	text-indent: 0 !important;
+// }
+
 /* Coloured box within article. */
-.textbox {
+.textbox,
+.sixty-seconds,
+.whats-on {
 	@include rem( "margin", 0 0 $line );
 	@include rem( "padding", ( $line * 0.5 ) $gutter );
 	@include font-size-line( "small" );
 	width: 100%;
-	background: $grey__lightest;
+	background: $color__yorklife;
 
 	p {
 		margin-bottom: 0;
+	}
+
+	blockquote {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	ul,
+	ol {
+		padding-left: 0;
+
+		/* Reinstate list margins for sublists */
+		ul,
+		ol {
+			@include rem( "padding-left", $spacing );
+		}
+
 	}
 
 	/* Images */
@@ -143,7 +196,7 @@ big {
 	h4,
 	h5,
 	h6 {
-		@include rem( "margin", $line 0 ( $line * 0.5 ) );
+		@include rem( "margin", $line 0 );
 
 		&:first-child {
 			margin-top: 0;
@@ -151,16 +204,20 @@ big {
 
 	}
 
+	/* Links */
+	.entry-content.entry-content & a { // specificity hack
+		color: $color__link-hover;
+	}
+
 	:last-child {
 		margin-bottom: 0;
 	}
 
 	hr {
-		@include rem( "margin-top", ( $line * 0.5 ) );
-		@include rem( "margin-bottom", ( $line * 0.5 ) );
+		@include rem( "margin", ( $line * 0.5 ) 0 );
 		width: 100%;
 		height: 2px;
-		color: $color__main;
+		background: $color__main;
 	}
 
 	.single-entry & .call-to-action { /* specificity hack for colours */
@@ -177,9 +234,84 @@ big {
 
 }
 
+/* Icon box */
+.sixty-seconds,
+.whats-on {
+	@include rem( "padding-top", ( $width__icon + $spacing + $line__px ) );
+	position: relative;
+
+	/* Icon */
+	&:before,
+	&:after {
+		@include rem( "left", ( $spacing / 2 ) );
+		content: "";
+		position: absolute;
+		display: block;
+		width: $width__icon;
+	}
+
+	/* Square part of the icon */
+	&:before {
+		top: ( $spacing / 2 );
+		height: $height__icon;
+		background: $black url("assets/60-seconds-alpha.png") center center no-repeat;
+		background-size: contain;
+	}
+
+	/* Border below icon */
+	&:after {
+		top: ( ( $spacing / 2 ) + $width__icon - ( ( $width__icon - $height__icon - $height__icon-rule ) ) );
+		border-bottom: $height__icon-rule solid $black;
+	}
+
+	/* Heading */
+	h3 {
+		@include font-size-line( "large" );
+	}
+
+	/* Subheadings */
+	h4,
+	h5 {
+		@include font-size-line( "normal" );
+		font-family: $font-family__main;
+		font-style: italic;
+		text-transform: none;
+	}
+
+}
+
+.whats-on {
+
+	&:before {
+		background-image: url("assets/whats-on-alpha.png");
+	}
+
+	/* Calls to action - remove thick line (as it clashes with the icon) */
+	.call-to-action {
+		@include rem( "margin-top", ( $line * 1.5 ) );
+		font-weight: $font-weight__serif__bold;
+		font-family: $font-family__meta;
+		padding-top: 0;
+		border-top: 0;
+	}
+
+}
+
+@include media-retina {
+
+	.sixty-seconds:before {
+		background-image: url("assets/60-seconds-alpha@2x.png");
+	}
+
+	.whats-on:before {
+		background-image: url("assets/whats-on-alpha@2x.png");
+	}
+
+}
+
 @include media( "wide-content-column" ) {
 
-	.textbox {
+	.textbox.side {
 		@include rem( "margin-left", $spacing );
 		clear: right;
 		float: right;
@@ -198,11 +330,28 @@ big {
 
 	}
 
+	/* Flow text in box next to the icon (not below it, as before) */
+	.sixty-seconds,
+	.whats-on {
+		@include rem( "min-height", ( $width__icon + $spacing ) );
+		@include rem( "padding-top", ( $line * 0.5 ) );
+		@include rem( "padding-left", ( $width__icon + $spacing ) );
+	}
+
+}
+
+@include media( "main-spacing" ) {
+
+	blockquote {
+		@include rem("margin-left", $spacing);
+		@include rem("margin-right", $spacing);
+	}
+
 }
 
 @include media( "main-spacing-1" ) {
 
-	.textbox {
+	.textbox.side {
 		position: relative;
 		left: 10%;
 		margin-left: -5%;
@@ -213,7 +362,7 @@ big {
 
 @include media( "main-spacing-2" ) {
 
-	.template-one-column .textbox {
+	.template-one-column .textbox.side {
 		left: 20%;
 		margin-left: -15%;
 		margin-left: calc( -20% + #{$spacing} );

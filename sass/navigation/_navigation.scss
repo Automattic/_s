@@ -1,4 +1,77 @@
-/* Next-post/-page links. */
+/* Pagination. */
+.next-prev-wrap {
+	@include rem("margin-bottom", ($line * 2));
+	vertical-align: middle;
+
+	a {
+		@include font-size("small");
+		font-family: $font-family__meta;
+		font-weight: $font-weight__serif__bold;
+		text-transform: uppercase;
+		letter-spacing: $letter-spacing__caps;
+		text-decoration: none;
+		border-bottom: 0;
+		color: $black;
+		/* to match the arrow line-height */
+		line-height: 2em;
+		vertical-align: top;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $color__link-hover;
+			border-bottom: 0;
+		}
+
+	}
+
+	.nav-previous,
+	.nav-next {
+		margin: 0;
+	}
+
+	.nav-previous {
+		float: left;
+		padding-right: 1em;
+	}
+
+	.nav-next {
+		float: right;
+		padding-left: 1em;
+	}
+
+	.nav-previous a:before {
+		content: '← ';
+		font-size: 2em;
+		line-height: 1em;
+	}
+
+	.nav-next a:after {
+		content: ' →';
+		font-size: 2em;
+		line-height: 1em;
+	}
+
+}
+
+.nav-previous {
+	text-align: left;
+}
+
 .nav-next {
 	text-align: right;
+}
+
+
+@include media("wide-content-column") {
+
+	.next-prev-wrap {
+
+		.nav-previous,
+		.nav-next {
+			width: 49%;
+		}
+
+	}
+
 }

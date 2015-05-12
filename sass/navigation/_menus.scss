@@ -45,7 +45,7 @@
 
     /* Make sure links are visible. */
     a {
-    	font-weight: bold;
+    	font-weight: $font-weight__serif__bold;
     	color: $color__link__reversed;
     	border-bottom: 0;
 
@@ -97,7 +97,7 @@
 .menu-toggle,
 .search-toggle {
 	@include font-size( "normal" );
-	@include rem( "top", $height__masthead );
+	@include rem( "top", ( $height__rule ) );
 	@include rem( "height", $width__menu-toggle );
 	@include rem( "padding-top", $line );
 	@include rem( "line-height", $width__menu-toggle );
@@ -113,7 +113,7 @@
 	box-shadow: none;
 	text-shadow: none;
 	background: transparent;
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	font-family: $font-family__button;
 	letter-spacing: $letter-spacing__caps;
 	text-align: center;
@@ -147,7 +147,6 @@
 	@include rem( "line-height", ( $width__menu-toggle - $line ) );
 	display: inline-block;
 	padding: 0 0.5em;
-	//background: $background-color;
 }
 
 .menu-toggle {
@@ -278,11 +277,53 @@
 
 }
 
+/* Fallback menu at bottom of page, for when the JS-dependent sidebars are inaccessible. */
+.backup-menu {
+	color: $white;
+	background: $black;
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-align: center;
+	}
+
+	li {
+		@include rem("margin", ($line * 0.25) 0);
+		@include rem("padding", 0 $gutter);
+		display: inline-block;
+	}
+
+	a {
+		@include font-size-line("smaller");
+		color: $white;
+		border-bottom-color: transparent;
+		text-transform: uppercase;
+		font-family: $font-family__button;
+		font-weight: $font-weight__serif__bold;
+
+		&:hover,
+		&:focus {
+			color: $color__link-hover__reversed;
+			border-bottom-color: $color__link-hover__reversed;
+		}
+
+	}
+
+}
+
+.js .js-hidden-menu-wrap {
+	display: none;
+}
+
+
 /* Space out the toggle buttons more for wider screens */
 @include media( "main-spacing" ) {
 
 	.menu-toggle,
 	.search-toggle {
+		@include rem( "top", ( $height__masthead + $height__rule ) );
 		@include rem( "padding-top", ( $line / 2 ) );
 	}
 

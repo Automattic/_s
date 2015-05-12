@@ -24,7 +24,7 @@ get_header(); ?>
 			<section class="archive-section">
 				<header class="page-header category-header notices-header">
 					<h1 class="taxonomy-title category-title notices-title">
-						<img src="<?php echo $src . $slug; ?>-42.png" srcset="<?php echo $src . $slug; ?>-84.png 2x, <?php echo $src . $slug; ?>-42.png 1x" height="42" alt="<?php esc_attr_e( 'On the Grapevine', 'yumag' ); ?>">
+						<img src="<?php echo $src . $slug; ?>.png" srcset="<?php echo $src . $slug; ?>@2x.png 2x, <?php echo $src . $slug; ?>.png 1x" alt="<?php esc_attr_e( 'On the Grapevine', 'yumag' ); ?>">
 					</h1>
 					<p class="taxonomy-description category-description"><?php esc_html_e( 'news from fellow alumni', 'yumag' ); ?></p>
 						<p class="taxonomy-link category-archive-link">
@@ -49,11 +49,17 @@ get_header(); ?>
 							?>
 
 						<?php endwhile; ?>
-						<?php the_posts_navigation(); ?>
 
 						</div>
 					</div><!-- .index-posts -->
 				</div><!-- .index-content -->
+				<footer class="next-prev-wrap">
+					<?php the_posts_navigation( array(
+						'prev_text' => __( 'Older news', 'yumag' ),
+						'next_text' => __( 'Newer news', 'yumag' ),
+						'screen_reader_text' => __( 'Notices navigation', 'yumag' )
+					) ); ?>
+				</footer><!-- .next-prev-wrap -->
 			</section><!-- .archive-section -->
 
 		<?php else : ?>

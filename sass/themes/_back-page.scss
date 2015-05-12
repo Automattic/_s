@@ -2,8 +2,6 @@
 
 	.category-title,
 	.category-title a,
-	.category-description,
-	.category-archive-link a,
 	.site-title-term.category-link,
 	.dropcap,
 	.entry-subtitle,
@@ -13,12 +11,16 @@
 	h3,
 	h4,
 	h5,
-	h6 {
+	h6,
+	.related-posts & .entry-subtitle,
+	.related-posts & .cat-links a,
+	.dropcap {
 		color: $color__backpage__dark;
 	}
 
 	.entry-content,
-	.posted-on {
+	.posted-on,
+	.related-posts & .cat-links {
 
 		a:hover,
 		a:focus,
@@ -29,7 +31,7 @@
 	}
 
 	// Section-specific heading styling (not used in tag/search/author pages.)
-	&.single-entry,
+	.single-entry-above-footer,
 	.category-posts,
 	.index-section-posts {
 
@@ -39,25 +41,16 @@
 
 	}
 
-	.dropcap {
-		@include rem( "border", ( $line / 2 ) solid $color__backpage__dark );
-		margin-right: 7px;
-		font-style: italic;
-		text-transform: lowercase;
-		font-family: $font-family__main;
-		color: $white;
-		background: $color__backpage__dark;
-	}
-
 	hr,
-	&.single-entry .entry-content:before,
-	.category-header:before {
+	.single-entry-above-footer .entry-content:before,
+	.category-header,
+	.sixty-seconds {
 		background: $color__backpage;
 	}
 
 	.call-to-action,
 	.content-details {
-		border-top-color: $color__backpage;
+		border-color: $color__backpage;
 	}
 
 	.footer a {
@@ -74,8 +67,33 @@
 		color: $color__backpage;
 	}
 
-	.textbox {
+	.textbox,
+	.sixty-seconds,
+	.whats-on {
 		background: $color__backpage;
+
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $color__main;
+		}
+
+	}
+
+	@include media( "main-spacing" ) {
+
+		/* This dropcap style doesn't work on mobiles. */
+		.dropcap {
+			@include rem( "border", ( $line / 2 ) solid $color__backpage__dark );
+			margin-right: 7px;
+			font-style: italic;
+			text-transform: lowercase;
+			font-family: $font-family__main;
+			color: $white;
+			background: $color__backpage__dark;
+		}
+
 	}
 
 	@include issue-section-multicolumn-layout;

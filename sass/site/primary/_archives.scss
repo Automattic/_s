@@ -5,7 +5,7 @@
 .archive-title {
 	@include font-size-line( "normal" );
 	margin: 0;
-	font-weight: normal;
+	font-weight: $font-weight__serif;
 	font-family: $font-family__main;
 	text-transform: none;
 
@@ -17,16 +17,17 @@
 
 }
 
-/* TEMPORARY: REMOVE ISSUE HEADER TO DECLUTTER. */
-.issue-header {
-	display: none;
+.next-prev-issue-title {
+	@include rem( "padding-bottom", $line );
+	position: relative;
+	text-align: center;
 }
 
 /* eg 'ISSUE ONE' */
 .issue-number,
 .search-term,
 .archive-term {
-	font-weight: bold;
+	font-weight: $font-weight__serif__bold;
 	letter-spacing: $letter-spacing__caps;
 	text-align: center;
 	text-transform: uppercase;
@@ -34,26 +35,48 @@
 }
 
 /* Big central search form */
-.search-results-search {
+.search-results-search,
+.page-search {
 	@include rem( "margin-bottom", ( $line * 2 ) );
 	text-align: center;
 
 	/* Both the text field and the button */
 	input {
 		@include font-size-line( "larger" );
-		width: 40%;
+		width: 80%;
 		border-radius: 0;
 		vertical-align: middle;
 	}
 
+	/* Hide button to save space on mobiles. */
 	.search-submit {
-		@include font-size-line( "small" );
-		width: auto;
-		padding: 3px 1em;
-		font-weight: bold;
-		font-family: $font-family__button;
-		text-transform: uppercase;
-		letter-spacing: $letter-spacing__caps;
+		display: none;
+	}
+
+}
+
+
+@include media( "main-spacing" ) {
+
+	.search-results-search,
+	.page-search {
+
+		input {
+			width: 40%;
+		}
+
+		/* Big central search form */
+		.search-submit {
+			@include font-size-line( "small" );
+			display: inline-block;
+			width: auto;
+			padding: 3px 1em;
+			font-weight: $font-weight__serif__bold;
+			font-family: $font-family__button;
+			text-transform: uppercase;
+			letter-spacing: $letter-spacing__caps;
+		}
+
 	}
 
 }

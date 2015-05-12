@@ -1,7 +1,8 @@
 .category-centre-stage {
 
 	.entry-content a,
-	.posted-on a {
+	.posted-on a,
+	.related-posts & .cat-links a {
 		color: $color__centrestage__darker;
 
 		&:hover,
@@ -16,9 +17,7 @@
 		color: $color__centrestage__darker;
 	}
 
-	.category-description,
-	.site-title-term.category-link,
-	.category-archive-link a {
+	.site-title-term.category-link {
 		color: $color__centrestage__dark;
 	}
 
@@ -45,13 +44,19 @@
 	}
 
 	.category-title,
-	.category-title a {
+	.category-title a,
+	.related-posts & .entry-subtitle {
 		color: $black;
+	}
+
+	.category-description,
+	.category-archive-link a {
+		color: $grey__light;
 	}
 
 	.lead {
 		font-style: italic;
-		font-weight: normal;
+		font-weight: $font-weight__serif;
 	}
 
 	.dropcap {
@@ -63,7 +68,7 @@
 	}
 
 	// Section-specific heading styling (not used in tag/search/author pages.)
-	&.single-entry,
+	.single-entry-above-footer,
 	.category-posts,
 	.index-section-posts {
 
@@ -76,11 +81,12 @@
 
 	hr,
 	&.single-entry .entry-content:before,
-	.category-header:before {
+	.category-header {
 		background: $color__centrestage;
 	}
 
-	.call-to-action {
+	.call-to-action,
+	.sixty-seconds {
 		border-color: $color__centrestage;
 	}
 
@@ -102,21 +108,24 @@
 		color: $color__centrestage;
 	}
 
-	.textbox {
+	.textbox,
+	.sixty-seconds,
+	.whats-on {
 		background: $color__centrestage;
 
-		h3,
-		h4,
-		h5,
-		h6 {
-			font-style: italic;
-			text-transform: none;
-		}
-
+		/* Hide the yellow square */
 		h3:before {
 			display: none;
 		}
 
+	}
+
+	.textbox h3,
+	.textbox h4,
+	.textbox h5,
+	.textbox h6 {
+		font-style: italic;
+		text-transform: none;
 	}
 
 }
@@ -129,67 +138,40 @@
 
 	@include media( "issue-2-columns" ) {
 
+		.entry {
+			width: 50%;
+			clear: none;
+			float: left;
+
+		}
+
+		.issue-section-noflex {
+
+			.entry {
+				clear: none;
+
+				&:nth-child(2n+1) {
+					clear: left;
+				}
+
+			}
+
+		}
+
+		.issue-section-flex > div:first-of-type .entry:nth-child(2n),
+		.issue-section-flex > .issue-section-odd-contents + div .entry:nth-child(2n+1),
+		.issue-section-flex > .issue-section-even-contents + div .entry:nth-child(2n) {
+			clear: left;
+		}
+
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
 		 * flexbox layout yet.
 		 */
 		.issue-section-flex {
 
-			/* First article. */
-			> .entry {
-				max-width: 666px;
-				margin-left: auto;
-				margin-right: auto;
-
-				&,
-				.entry-title,
-				.entry-subtitle,
-				.entry-meta {
-					text-align: center;
-				}
-
-				.entry-header {
-					@include rem( "padding-bottom", ( $line * 0.5 ) );
-				}
-
-				.entry-title,
-				.entry-subtitle,
-				.entry-meta {
-					@include rem( "padding", 0 ( $spacing * 0.5 ) );
-					text-align: center;
-				}
-
-				.entry-title {
-					@include rem( "margin-bottom", ( $line * 0.5 ) );
-					@include rem( "padding-top", ( $line * 0.5 ) );
-					@include font-size-line( "enormous", 1.5 );
-				}
-
-				.entry-subtitle {
-					@include font-size-line( "larger" );
-				}
-
-				.entry-meta {
-					@include rem( "margin-top", ( $line * 0.5 ) );
-					@include font-size-line( "normal" );
-				}
-
-			}
-
 			> div {
 				width: 100%;
-
-				.entry {
-					width: 50%;
-					clear: none;
-					float: left;
-
-					&:nth-child(2n+1) {
-						clear: left;
-					}
-
-				}
-
 			}
 
 		}
@@ -210,7 +192,7 @@
 					}
 
 					.entry-meta {
-						@include font-size-line( "small" );
+						@include font-size-line( "smaller" );
 					}
 
 				}
@@ -227,26 +209,33 @@
 		.issue-section-noflex {
 
 			.entry {
-				float: left;
+				float: right;
 				max-width: 25%;
-				background: $color__centrestage;
+
+				/* Override 2-col layout */
+				&,
+				&:nth-child(2n+1) {
+					clear: none;
+				}
+
+				/* Start new rows for article 4, 6, 10, 14 etc */
+				&:nth-child(4),
+				&:nth-child(4n+10) {
+					clear: right;
+				}
+				&:nth-child(6) {
+					clear: both;
+				}
 
 				// Largest (featured) article.
 				&:first-child {
+					float: left;
 					max-width: 50%;
 					margin-bottom: 0;
-					background: transparent;
 
 					.entry-image {
 						width: 100%;
 						padding-top: 0;
-					}
-
-					.entry-title,
-					.entry-subtitle,
-					.entry-meta,
-					.entry-content {
-						text-align: center;
 					}
 
 					.entry-title {
@@ -292,17 +281,30 @@
 
 			// Largest (featured) article.
 			> .entry:first-child {
-				flex: 2 2 50%;
+				flex: 2 0 50%;
 				order: 2;
 				max-width: 50%;
 				margin-bottom: 0;
 
 				.entry-image {
-					width: 100%;
 					padding-top: 0;
+
+					img {
+						width: 100%;
+					}
+
 				}
 
 				.entry-content {
+					@include font-size-line("normal");
+					text-align: center;
+				}
+
+				.entry-title,
+				.entry-subtitle,
+				.entry-meta,
+				.entry-content {
+					@include rem( "padding", 0 ( $spacing * 0.5 ) );
 					text-align: center;
 				}
 
@@ -312,15 +314,34 @@
 					text-align: center;
 				}
 
+				.entry-subtitle {
+					@include font-size-line( "larger" );
+				}
+
+				.entry-meta {
+					@include rem( "margin-top", ( $line * 0.5 ) );
+					@include font-size-line( "small" );
+				}
+
 			}
 
 			// Both sidebars.
 			> :nth-child(n+2) {
-				flex: 1 1 25%;
+				@include rem("padding", $gutter 0);
+				//flex: 1 1 25%;
+				width: 25%;
 				background: $color__centrestage;
 
 				.entry {
 					width: 100%;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					.entry-image {
+						padding-top: 0;
+					}
 
 					@include quantity-query( 2, "greater" ) {
 						// If there's 2 articles in the column, save space by
@@ -332,11 +353,68 @@
 					}
 
 					@include quantity-query( 3, "greater" ) {
+
 						// If there's 3 articles, save more space by hiding the
 						// image.
-						.entry-image {
-							display: none;
+						&:nth-child(n+3) {
+							&:before {
+								@include rem("margin-top", ($line * -0.5));
+								@include rem("margin-bottom", $line);
+								content: '';
+								display: block;
+								width: 50%;
+								height: 2px;
+								background: $black;
+							}
+
+							.entry-image {
+								display: none;
+							}
+
 						}
+
+					}
+
+					@include quantity-query( 4, "greater" ) {
+
+						&:nth-child(2) {
+
+							&:before {
+								@include rem("margin-top", ($line * -0.5));
+								@include rem("margin-bottom", $line);
+								content: '';
+								display: block;
+								width: 50%;
+								height: 2px;
+								background: $black;
+							}
+
+							.entry-image {
+								display: none;
+							}
+						}
+
+					}
+
+					@include quantity-query( 5, "greater" ) {
+
+						&:nth-child(1) {
+
+							&:before {
+								@include rem("margin-top", ($line * -0.5));
+								@include rem("margin-bottom", $line);
+								content: '';
+								display: block;
+								width: 50%;
+								height: 2px;
+								background: $black;
+							}
+
+							.entry-image {
+								display: none;
+							}
+						}
+
 					}
 
 				}
