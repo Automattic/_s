@@ -62,4 +62,12 @@
 		display: none;
 	}
 
+	/* Use no-js version of menu, to work around absence of transform support */
+	.js-menu-area {
+		display: none !important;
+	}
+	.js-hidden-menu-wrap {
+		display: block;
+	}
+
 }

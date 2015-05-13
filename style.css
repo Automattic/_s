@@ -5020,9 +5020,16 @@ object {
 /* IE8 only fixes */
 .lte8 {
 	/* Anything that won't work on IE8 and therefore should be hidden. */
+	/* Use no-js version of menu, to work around absence of transform support */
 }
 .lte8 .slider {
 	display: none;
+}
+.lte8 .js-menu-area {
+	display: none !important;
+}
+.lte8 .js-hidden-menu-wrap {
+	display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
