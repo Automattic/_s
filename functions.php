@@ -175,11 +175,19 @@ add_action( 'widgets_init', 'yumag_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
+ *
+ * @global $wp_scripts
  */
 function yumag_scripts() {
+	global $wp_scripts;
+
 	$src = get_template_directory_uri() . '/js/';
 
 	wp_enqueue_style( 'yumag-style', get_stylesheet_uri() );
+
+	// Load IE polyfills/fixes first.
+	wp_enqueue_script( 'yumag-ie', $src . 'ie.js', array(), '20150513' );
+	$wp_scripts->add_data( 'yumag-ie', 'conditional', 'lte IE 9' );
 
 	// Load non-essential webfonts.
 	wp_enqueue_script( 'yumag-webfont-loader', $src . 'webfont-loader.js', array(), '20150223', true );

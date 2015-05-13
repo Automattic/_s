@@ -1,4 +1,4 @@
-/* IE10+ fixes */
+/* IE10-11 fixes */
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: map-get($breakpoints, "issue-4-columns")) {
 
@@ -11,6 +11,45 @@
 	.category-centre-stage .issue-section-posts {
 		/* Fix total width of the flexbox section. */
 		width: 100%;
+	}
+
+}
+
+/* IE8-9 fixes */
+.lte9 {
+
+	/* Fix abs-pos of sidebar toggles - they're being positioned relative to the
+	 * visible document, not the (off-screen) sidebar */
+	.menu-toggle {
+		@include rem( "left", 0.5rem ); // 'Magic number' due to offset problem.
+	}
+	.search-toggle {
+		right: 0;
+	}
+
+	/* Work around absence of translate3d */
+	.menu-left-toggled {
+
+		.site {
+			-ms-transform: translateX( cj-calculate-rem-fallback( $width__menu ) );
+			-ms-transform: translateX( $width__menu );
+		}
+
+		.menu-toggle {
+			@include rem( "left", ( $width__menu + 0.5rem ) ); // That 'magic number' again
+		}
+
+	}
+	.menu-right-toggled {
+
+		.site {
+			-ms-transform: translateX( cj-calculate-rem-fallback( ( -1 * $width__menu ) ), 0, 0 );
+			-ms-transform: translateX( ( -1 * $width__menu ) );
+		}
+		.search-toggle {
+			@include rem( "right", $width__menu );
+		}
+
 	}
 
 }

@@ -4987,4 +4987,34 @@ object {
 	}
 }
 
+/* IE8-9 fixes */
+.lte9 {
+	/* Fix abs-pos of sidebar toggles - they're being positioned relative to the
+	 * visible document, not the (off-screen) sidebar */
+	/* Work around absence of translate3d */
+}
+.lte9 .menu-toggle {
+	left: 9px;
+	left: 0.5rem;
+}
+.lte9 .search-toggle {
+	right: 0;
+}
+.lte9 .menu-left-toggled .site {
+	-ms-transform: translateX(280px);
+	-ms-transform: translateX(15.55556rem);
+}
+.lte9 .menu-left-toggled .menu-toggle {
+	left: 289px;
+	left: 16.05556rem;
+}
+.lte9 .menu-right-toggled .site {
+	-ms-transform: translateX(-280px, 0, 0);
+	-ms-transform: translateX(-15.55556rem);
+}
+.lte9 .menu-right-toggled .search-toggle {
+	right: 280px;
+	right: 15.55556rem;
+}
+
 /*# sourceMappingURL=style.css.map */
