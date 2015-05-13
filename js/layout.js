@@ -6,7 +6,7 @@
 ( function initHomepage() {
 	'use strict';
 
-	if ( window.noFlexboxing ) {
+	if ( window.ie_lte9 ) {
 		return;
 	}
 

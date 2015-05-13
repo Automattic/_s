@@ -11,6 +11,11 @@ http://www.apache.org/licenses/LICENSE-2.0.html
 ( function() {
 	'use strict';
 
+	// Dropcaps script doesn't support IE9-, so disable it here.
+	if ( window.ie_lte9 ) {
+		return;
+	}
+
 	var i,
 		l,
 		p,

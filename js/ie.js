@@ -4,4 +4,4 @@ if("document" in self){if(!("classList" in document.createElement("_"))){(functi
 
 /* Turn off flexbox-related layout changes. I know feature detection is better
  * but this works for now, and it's only for IE8-9 anyway. */
-window.noFlexboxing = true;
+window.ie_lte9 = true;
