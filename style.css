@@ -5017,4 +5017,12 @@ object {
 	right: 15.55556rem;
 }
 
+/* IE8 only fixes */
+.lte8 {
+	/* Anything that won't work on IE8 and therefore should be hidden. */
+}
+.lte8 .slider {
+	display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

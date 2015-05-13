@@ -53,3 +53,13 @@
 	}
 
 }
+
+/* IE8 only fixes */
+.lte8 {
+
+	/* Anything that won't work on IE8 and therefore should be hidden. */
+	.slider {
+		display: none;
+	}
+
+}
