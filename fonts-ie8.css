@@ -1,0 +1,36 @@
+/**
+ * Deferred loading and caching of webfonts in page footer.
+ */
+@font-face {
+	font-style: normal;
+	font-weight: normal;
+	font-family: "Aleo";
+
+	src: url("fonts/Aleo-Light-webfont.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+	font-style: italic;
+	font-weight: normal;
+	font-family: "Aleo";
+
+	src: url("fonts/Aleo-LightItalic-webfont.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+	font-style: normal;
+	font-weight: bold;
+	font-family: "Aleo";
+
+	src: url("fonts/Aleo-Bold-webfont.eot?#iefix") format("embedded-opentype");
+}
+
+@font-face {
+	font-style: italic;
+	font-weight: bold;
+	font-family: "Aleo";
+
+	src: url("fonts/Aleo-BoldItalic-webfont.eot?#iefix") format("embedded-opentype");
+}
+
+/*# sourceMappingURL=fonts-ie8.css.map */

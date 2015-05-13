@@ -177,15 +177,19 @@ add_action( 'widgets_init', 'yumag_widgets_init' );
  * Enqueue scripts and styles.
  *
  * @global $wp_scripts
+ * @global $wp_styles
  */
 function yumag_scripts() {
 	global $wp_scripts;
+	global $wp_styles;
 
 	$src = get_template_directory_uri() . '/js/';
 
 	wp_enqueue_style( 'yumag-style', get_stylesheet_uri() );
 
-	// Load IE polyfills/fixes first.
+	// Webfonts for IE8 (instead of the webfont-loader javascript).
+	wp_enqueue_style( 'yumag-ie-fonts', get_stylesheet_directory_uri() . '/fonts-ie8.css', array(), '20150513' );
+	$wp_styles->add_data( 'yumag-ie-fonts', 'conditional', 'lte IE 8' );
 	wp_enqueue_script( 'yumag-ie', $src . 'ie.js', array(), '20150513' );
 	$wp_scripts->add_data( 'yumag-ie', 'conditional', 'lte IE 9' );
 
