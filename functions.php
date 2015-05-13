@@ -190,7 +190,13 @@ function yumag_scripts() {
 	// Webfonts for IE8 (instead of the webfont-loader javascript).
 	wp_enqueue_style( 'yumag-ie-fonts', get_stylesheet_directory_uri() . '/fonts-ie8.css', array(), '20150513' );
 	$wp_styles->add_data( 'yumag-ie-fonts', 'conditional', 'lte IE 8' );
+
+	// Load IE polyfills/fixes (in conditional comments) first.
+	wp_enqueue_script( 'yumag-html5shiv-js', $src . 'vendor/html5shiv.min.js', array(), '3.7.3-pre' );
+	wp_enqueue_script( 'yumag-respond-js', $src . 'vendor/respond.min.js', array(), '1.4.2' );
 	wp_enqueue_script( 'yumag-ie', $src . 'ie.js', array(), '20150513' );
+	$wp_scripts->add_data( 'yumag-html5shiv-js', 'conditional', 'lte IE 8' );
+	$wp_scripts->add_data( 'yumag-respond-js', 'conditional', 'lte IE 8' );
 	$wp_scripts->add_data( 'yumag-ie', 'conditional', 'lte IE 9' );
 
 	// Load non-essential webfonts.
