@@ -6,6 +6,10 @@
 ( function initHomepage() {
 	'use strict';
 
+	if ( window.noFlexboxing ) {
+		return;
+	}
+
 	var i,
 		i2,
 		l,
