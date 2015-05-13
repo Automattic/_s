@@ -355,6 +355,15 @@ var IdealImageSlider = (function() {
 					} else {
 						slideEl.setAttribute('data-src', slide.getAttribute('src'));
 					}
+
+					// Added for caption compatibility in IE10 and below
+					if ( slide.getAttribute( 'data-caption' ) ) {
+						slideEl.setAttribute('data-caption', slide.getAttribute('data-caption'));
+					}
+					if ( slide.getAttribute( 'data-category' ) ) {
+						slideEl.setAttribute('data-category', slide.getAttribute('data-category'));
+					}
+
 				}
 
 				if(href) slideEl.setAttribute('href', href);
