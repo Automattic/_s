@@ -2141,9 +2141,9 @@ figure {
 .entry-title {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
-	font-size: 40px;
-	font-size: 2.22222rem;
-	line-height: 1.05;
+	font-size: 32px;
+	font-size: 1.77778rem;
+	line-height: 1.3125;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 	word-wrap: break-word;
@@ -2157,9 +2157,9 @@ figure {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
 	font-weight: 300;
-	font-size: 32px;
-	font-size: 1.77778rem;
-	line-height: 1.3125;
+	font-size: 28px;
+	font-size: 1.55556rem;
+	line-height: 1.5;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 }
@@ -3245,19 +3245,10 @@ object {
 .category-yorklife .dropcap {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 }
-.category-yorklife .single-entry-above-footer .entry-title {
-	font-size: 54px;
-	font-size: 3rem;
-	line-height: 1.2963;
-	/* Slightly smaller, because full caps */
-}
 .category-yorklife .single-entry-above-footer .entry-title,
 .category-yorklife .category-posts .entry-title,
 .category-yorklife .issue-section-posts .entry-title {
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-}
-.category-yorklife .single-entry-above-footer .entry-title {
-	text-transform: uppercase;
 }
 .category-yorklife .category-header {
 	background: #dcd4c6;

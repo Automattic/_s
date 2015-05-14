@@ -1207,9 +1207,9 @@ figure {
 .entry-title {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
-	font-size: 40px;
-	font-size: 2.22222rem;
-	line-height: 1.05;
+	font-size: 32px;
+	font-size: 1.77778rem;
+	line-height: 1.3125;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 	word-wrap: break-word;
@@ -1223,9 +1223,9 @@ figure {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
 	font-weight: 300;
-	font-size: 32px;
-	font-size: 1.77778rem;
-	line-height: 1.3125;
+	font-size: 28px;
+	font-size: 1.55556rem;
+	line-height: 1.5;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 }

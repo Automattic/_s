@@ -72,7 +72,7 @@
 
 .entry-title {
 	@include rem( "margin-top", $line );
-	@include font-size-line( "enormous", 1.5 );
+	@include font-size-line( "huger", 1.5 );
 	word-wrap: break-word;
 	text-transform: none;
 	font-family: $font-family__main;
@@ -85,7 +85,7 @@
 
 .entry-subtitle {
 	@include rem( "margin-top", $line );
-	@include font-size-line( "huger", 1.5 );
+	@include font-size-line( "huge", 1.5 );
 	font-weight: $font-weight__serif;
 	text-transform: none;
 	font-family: $font-family__main;

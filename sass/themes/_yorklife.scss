@@ -30,10 +30,6 @@
 		font-family: $font-family__main;
 	}
 
-	.single-entry-above-footer .entry-title {
-		@include font-size-line( "gigantic", 2.5 ); /* Slightly smaller, because full caps */
-	}
-
 	// Section-specific heading styling (not used in tag/search/author pages.)
 	.single-entry-above-footer,
 	.category-posts,
@@ -43,10 +39,6 @@
 			font-family: $font-family__sans-serif;
 		}
 
-	}
-
-	.single-entry-above-footer .entry-title {
-		text-transform: uppercase;
 	}
 
 	.category-header {
