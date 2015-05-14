@@ -175,7 +175,8 @@
 }
 
 
-@include media( "main-spacing" ) {
+// Should affect print as well as screen, so don't use mixin
+@media (min-width: map_get( $breakpoints, "main-spacing" ) ) {
 
 	.entry-title {
 		@include font-size-line( "leviathan", 2.5 );

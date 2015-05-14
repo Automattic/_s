@@ -1306,7 +1306,7 @@ figure {
 	font-weight: bold;
 }
 
-@media screen and (min-width: 720px) {
+@media (min-width: 720px) {
 	.entry-title {
 		font-size: 60px;
 		font-size: 3.33333rem;
