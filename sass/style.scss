@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	13.3 Sliders
 14.0 Layouts
 15.0 Themes
+16.0 Browser compatibility
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "functions/functions-master";
@@ -170,3 +171,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "themes/all-about-yu";
 @import "themes/back-page";
 @import "themes/notices";
+
+/*--------------------------------------------------------------
+16.0 Browser compatibility
+--------------------------------------------------------------*/
+@import "ie";

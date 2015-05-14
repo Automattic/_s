@@ -175,11 +175,32 @@ add_action( 'widgets_init', 'yumag_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
+ *
+ * @global $wp_scripts
+ * @global $wp_styles
  */
 function yumag_scripts() {
+	global $wp_scripts;
+	global $wp_styles;
+
 	$src = get_template_directory_uri() . '/js/';
 
 	wp_enqueue_style( 'yumag-style', get_stylesheet_uri() );
+
+	// Webfonts for IE8 (instead of the webfont-loader javascript).
+	wp_enqueue_style( 'yumag-ie-fonts', get_stylesheet_directory_uri() . '/fonts-ie8.css', array(), '20150513' );
+	$wp_styles->add_data( 'yumag-ie-fonts', 'conditional', 'lte IE 8' );
+
+	// Print styles
+	wp_enqueue_style( 'yumag-print', get_stylesheet_directory_uri() . '/print.css', array(), '20150514', 'print' );
+
+	// Load IE polyfills/fixes (in conditional comments) first.
+	wp_enqueue_script( 'yumag-html5shiv-js', $src . 'vendor/html5shiv.min.js', array(), '3.7.3-pre' );
+	wp_enqueue_script( 'yumag-respond-js', $src . 'vendor/respond.min.js', array(), '1.4.2' );
+	wp_enqueue_script( 'yumag-ie', $src . 'ie.js', array(), '20150513' );
+	$wp_scripts->add_data( 'yumag-html5shiv-js', 'conditional', 'lte IE 8' );
+	$wp_scripts->add_data( 'yumag-respond-js', 'conditional', 'lte IE 8' );
+	$wp_scripts->add_data( 'yumag-ie', 'conditional', 'lte IE 9' );
 
 	// Load non-essential webfonts.
 	wp_enqueue_script( 'yumag-webfont-loader', $src . 'webfont-loader.js', array(), '20150223', true );

@@ -1,0 +1,24 @@
+/* Hidden elements */
+.js-menu-area,
+.js-hidden-menu-wrap,
+.site-title-single,
+.site-credits,
+.footer-uoy-logo,
+.entry-author-avatar,
+.tags-links,
+.related-posts-wrap {
+	display: none !important;
+}
+
+/* Basic print font sizes */
+html {
+	font-size: 10pt;
+}
+
+/* Make logo smaller so it looks better */
+.footer-site-logo img {
+	width: 62px;
+	height: 43px;
+}
+
+/*# sourceMappingURL=print.css.map */

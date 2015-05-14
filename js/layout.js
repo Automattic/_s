@@ -6,6 +6,10 @@
 ( function initHomepage() {
 	'use strict';
 
+	if ( window.ie_lte9 ) {
+		return;
+	}
+
 	var i,
 		i2,
 		l,

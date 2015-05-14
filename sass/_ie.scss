@@ -1,0 +1,135 @@
+/* IE10-11 fixes */
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: map-get($breakpoints, "issue-4-columns")) {
+
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+		/* Fix vertical spacing of 2nd-4th posts in Open Minds section */
+		flex: 0 1 33%;
+	}
+
+	.category-open-minds .issue-section-posts,
+	.category-centre-stage .issue-section-posts {
+		/* Fix total width of the flexbox section. */
+		width: 100%;
+	}
+
+}
+
+/* IE8-9 fixes */
+.lte9 {
+
+	/* Fix abs-pos of sidebar toggles - they're being positioned relative to the
+	 * visible document, not the (off-screen) sidebar */
+	.menu-toggle {
+		@include rem( "left", 0.5rem ); // 'Magic number' due to offset problem.
+	}
+	.search-toggle {
+		right: 0;
+	}
+
+	/* Work around absence of translate3d */
+	.menu-left-toggled {
+
+		.site {
+			-ms-transform: translateX( cj-calculate-rem-fallback( $width__menu ) );
+			-ms-transform: translateX( $width__menu );
+		}
+
+		.menu-toggle {
+			@include rem( "left", ( $width__menu + 0.5rem ) ); // That 'magic number' again
+		}
+
+	}
+	.menu-right-toggled {
+
+		.site {
+			-ms-transform: translateX( cj-calculate-rem-fallback( ( -1 * $width__menu ) ), 0, 0 );
+			-ms-transform: translateX( ( -1 * $width__menu ) );
+		}
+		.search-toggle {
+			@include rem( "right", $width__menu );
+		}
+
+	}
+
+}
+
+/* IE8 only fixes */
+.lte8 {
+
+	/* Anything that won't work on IE8 and therefore should be hidden. */
+	.slider {
+		display: none;
+	}
+
+	/* Use no-js version of menu, to work around absence of transform support */
+	.js-menu-area {
+		display: none !important;
+	}
+	.js-hidden-menu-wrap {
+		display: block;
+	}
+
+	/* Fix too-wide All About Yu section */
+	.category-all-about-yu .issue-section-posts,
+	.category-all-about-yu .issue-section-posts > div {
+		max-width: 100%;
+	}
+
+	/* Fix for missing nth-child selector support */
+	.issue-section-posts .nth-child-odd {
+		clear: left;
+	}
+
+	/* Fix for super-narrow Open Minds and Centre Stage sections. */
+	.category-open-minds,
+	.category-centre-stage {
+
+		.issue-section-posts,
+		.issue-section-noflex {
+			width: 100%;
+		}
+	}
+
+	/* Fix Open Minds rows */
+	.category-open-minds .issue-section-posts .issue-section-noflex .nth-child-odd {
+		clear: right;
+
+		&:first-child {
+			clear: none;
+		}
+
+	}
+
+	/* Fix Open Minds featured article author */
+	.category-open-minds .issue-section-posts .entry:first-child .byline a {
+		color: $color__openminds;
+	}
+
+	/* Fix Centre Stage article widths and alignments */
+	.category-centre-stage .issue-section-posts .issue-section-noflex .entry {
+		float: left;
+		max-width: 50%;
+
+		.entry-image {
+			padding-top: 0;
+		}
+
+		&:first-child {
+
+			.entry-title,
+			.entry-subtitle {
+				text-align: left;
+			}
+
+		}
+
+	}
+
+	/* Don't show the footer author image on IE8, since it ends up overlapping
+	 * the other author details. */
+	.entry-author-avatar {
+		display: none;
+	}
+
+}

@@ -12,6 +12,7 @@
 
 	img {
 		width: 250px;
+		max-width: 250px; /* Override max-width:100%, which breaks in IE8 */
 		height: 250px;
 		border: 50px solid $white;
 	}

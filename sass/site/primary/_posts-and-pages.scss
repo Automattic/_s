@@ -72,7 +72,7 @@
 
 .entry-title {
 	@include rem( "margin-top", $line );
-	@include font-size-line( "enormous", 1.5 );
+	@include font-size-line( "huger", 1.5 );
 	word-wrap: break-word;
 	text-transform: none;
 	font-family: $font-family__main;
@@ -85,7 +85,7 @@
 
 .entry-subtitle {
 	@include rem( "margin-top", $line );
-	@include font-size-line( "huger", 1.5 );
+	@include font-size-line( "huge", 1.5 );
 	font-weight: $font-weight__serif;
 	text-transform: none;
 	font-family: $font-family__main;
@@ -175,7 +175,8 @@
 }
 
 
-@include media( "main-spacing" ) {
+// Should affect print as well as screen, so don't use mixin
+@media (min-width: map_get( $breakpoints, "main-spacing" ) ) {
 
 	.entry-title {
 		@include font-size-line( "leviathan", 2.5 );

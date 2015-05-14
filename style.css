@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	13.3 Sliders
 14.0 Layouts
 15.0 Themes
+16.0 Browser compatibility
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Normalize
@@ -294,7 +295,7 @@ textarea {
 }
 
 /* Bigger text for wider screens */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	html {
 		font-size: 18px; 
 		line-height: 1.55556;
@@ -331,7 +332,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	text-transform: uppercase;
 }
@@ -446,7 +447,7 @@ big {
 
 /* Lead/lede. */
 .lead {
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1.33333;
@@ -460,7 +461,7 @@ big {
 	box-sizing: content-box;
 	margin-right: 3px;
 	margin-left: -5px;
-	font-weight: 600;
+	font-weight: 700;
 }
 
 /* Calls-to-action. */
@@ -469,7 +470,7 @@ big {
 	margin-top: 2.33333rem;
 	padding-top: 14px;
 	padding-top: 0.77778rem;
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 0.77778rem solid #dcd4c6;
 	/* Less paragraph spacing and no indents. */
@@ -511,7 +512,7 @@ big {
 
 .quote-source {
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
@@ -722,7 +723,7 @@ big {
 	margin-top: 42px;
 	margin-top: 2.33333rem;
 	padding-top: 0;
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	border-top: 0;
 }
@@ -736,7 +737,7 @@ big {
 	}
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 	.textbox.side {
 		clear: right;
 		float: right;
@@ -766,7 +767,7 @@ big {
 	}
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	blockquote {
 		margin-right: 28px;
 		margin-right: 1.55556rem; 
@@ -775,7 +776,7 @@ big {
 	}
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
 	.textbox.side {
 		position: relative;
 		left: 10%;
@@ -785,7 +786,7 @@ big {
 	}
 }
 
-@media (min-width: 1020px) {
+@media screen and (min-width: 1020px) {
 	.template-one-column .textbox.side {
 		left: 20%;
 		margin-left: -15%;
@@ -841,6 +842,11 @@ html {
 	/* 3 */
 }
 
+.site-main {
+	/* For positioning of main content under the slider in Firefox/IE. */
+	clear: both;
+}
+
 blockquote,
 q {
 	quotes: "" "";
@@ -854,7 +860,7 @@ q:after {
 
 blockquote {
 	font-style: italic;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 21px;
 	font-size: 1.16667rem;
 	line-height: 1.33333;
@@ -863,7 +869,7 @@ blockquote {
 
 cite {
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 0.9em;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em; 
@@ -880,10 +886,12 @@ hr {
 }
 
 img {
+	/* Adhere to container width. */
+	width: auto\9;
 	/* Make sure images are scaled correctly. */
 	max-width: 100%;
 	height: auto;
-	/* Adhere to container width. */
+	/* IE8 hack to fix distorted images with max-widths */
 }
 
 figure {
@@ -893,7 +901,7 @@ figure {
 
 figcaption,
 .wp-caption-dd {
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: 1.75;
@@ -951,7 +959,7 @@ li > ol {
 }
 
 dt {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 dd {
@@ -1050,7 +1058,7 @@ textarea {
 	vertical-align: middle;
 }
 .next-prev-wrap a {
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	/* to match the arrow line-height */
@@ -1100,7 +1108,7 @@ textarea {
 	text-align: right;
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 	.next-prev-wrap .nav-previous,
 	.next-prev-wrap .nav-next {
 		width: 49%;
@@ -1240,10 +1248,11 @@ a:active {
 	height: 100%;
 	color: #fff;
 	/* Make sure links are visible. */
+	/* Hide links that are only used in the backup menu in the page footer */
 }
 .main-navigation-wrapper a,
 .main-search-wrapper a {
-	font-weight: 600;
+	font-weight: 700;
 	border-bottom: 0; 
 	color: #69bcc9;
 }
@@ -1254,6 +1263,10 @@ a:active {
 .main-search-wrapper a:focus,
 .main-search-wrapper a:active {
 	color: #a1d5dd;
+}
+.main-navigation-wrapper .no-js-only,
+.main-search-wrapper .no-js-only {
+	display: none;
 }
 
 .main-navigation-wrapper {
@@ -1299,7 +1312,7 @@ a:active {
 	/* 2 */
 	padding-right: 0;
 	padding-left: 0;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 18px;
 	font-size: 1rem;
 	line-height: 84px;
@@ -1501,7 +1514,7 @@ a:active {
 	padding: 0 0.77778rem;
 }
 .backup-menu a {
-	font-weight: 600; 
+	font-weight: 700; 
 	font-size: 14px;
 	font-size: 0.77778rem;
 	line-height: 2;
@@ -1521,7 +1534,7 @@ a:active {
 }
 
 /* Space out the toggle buttons more for wider screens */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.menu-toggle,
 	.search-toggle {
 		top: 210px;
@@ -1560,7 +1573,7 @@ a:active {
 	width: auto;
 	height: auto;
 	padding: 15px 23px 14px;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 16px;
 	font-size: 0.88889rem;
 	line-height: normal;
@@ -1601,7 +1614,7 @@ figure {
 }
 
 /* Overhang margins on non-mobile layouts */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.alignleft {
 		float: left;
 		display: inline;
@@ -1619,7 +1632,7 @@ figure {
 }
 
 /* Fully in margins on widest layout */
-@media (min-width: 1120px) {
+@media screen and (min-width: 1120px) {
 	.alignleft:not(.size-thumbnail) {
 		margin-left: -140px;
 		margin-left: -7.77778rem;
@@ -1739,7 +1752,7 @@ figure {
 	padding: 0 14px;
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
 	/* Narrower content column than everything else, for better line length. */
 	.author-bio-content,
 	.single-entry-above-footer .entry-content,
@@ -1756,7 +1769,7 @@ figure {
 	}
 }
 
-@media (min-width: 1020px) {
+@media screen and (min-width: 1020px) {
 	/* Narrower heading area. */
 	.single-entry-above-footer .entry-image,
 	.single-entry-above-footer .entry-header {
@@ -1832,7 +1845,7 @@ figure {
 	}
 }
 
-@media (min-width: 1160px) {
+@media screen and (min-width: 1160px) {
 	.template-fixed-left .single-entry-above-footer .entry-header,
 	.template-fixed-left .single-entry-above-footer .entry-content,
 	.template-scrolling-left .single-entry-above-footer .entry-header,
@@ -1985,7 +1998,7 @@ figure {
 }
 
 /* Space out the toggle buttons more for wider screens */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.site-header-single {
 		margin-bottom: 0;
 	}
@@ -2002,7 +2015,7 @@ figure {
 	.site-title-term {
 		position: relative;
 		display: inline-block;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 21px;
 		font-size: 1.16667rem;
 		line-height: 1;
@@ -2135,9 +2148,9 @@ figure {
 .entry-title {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
-	font-size: 40px;
-	font-size: 2.22222rem;
-	line-height: 1.05;
+	font-size: 32px;
+	font-size: 1.77778rem;
+	line-height: 1.3125;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 	word-wrap: break-word;
@@ -2151,9 +2164,9 @@ figure {
 	margin-top: 28px;
 	margin-top: 1.55556rem;
 	font-weight: 300;
-	font-size: 32px;
-	font-size: 1.77778rem;
-	line-height: 1.3125;
+	font-size: 28px;
+	font-size: 1.55556rem;
+	line-height: 1.5;
 	font-family: "Aleo", Constantia, Georgia, sans-serif; 
 	text-transform: none;
 }
@@ -2180,7 +2193,7 @@ figure {
 	text-align: center;
 }
 .entry-meta a {
-	font-weight: 600; 
+	font-weight: 700; 
 	color: inherit;
 }
 
@@ -2191,7 +2204,7 @@ figure {
 	/* The author's name */
 }
 .entry-author a {
-	font-weight: 600;
+	font-weight: 700;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -2205,7 +2218,7 @@ figure {
 /* Categories in entry footer. */
 .entry-issue,
 .cat-links a {
-	font-weight: 600;
+	font-weight: 700;
 	letter-spacing: 0.05em; 
 	text-transform: uppercase;
 }
@@ -2214,7 +2227,7 @@ figure {
 	display: block;
 }
 .tags-links a {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 /* Post footer meta lines. */
@@ -2308,7 +2321,7 @@ figure {
 .issue-number,
 .search-term,
 .archive-term {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif; 
 	text-align: center;
 	letter-spacing: 0.05em;
@@ -2339,7 +2352,7 @@ figure {
 	display: none;
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.search-results-search,
 	.page-search {
 		/* Big central search form */
@@ -2353,7 +2366,7 @@ figure {
 		display: inline-block;
 		width: auto;
 		padding: 3px 1em;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -2387,7 +2400,7 @@ figure {
 	left: 50%;
 	display: inline-block;
 	margin: -125px 0 0 -125px;
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 32px;
 	font-size: 1.77778rem;
 	line-height: 1.3125;
@@ -2481,7 +2494,7 @@ figure {
 .index-posts .read-more {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.index-posts .entry {
 		padding: 0 14px;
 		padding: 0 0.77778rem;
@@ -2522,7 +2535,7 @@ figure {
 .search-results .index-posts .read-more {
 	display: block;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.archive:not(.tax-pp_issue) .index-posts .entry,
 	.related-posts .index-posts .entry,
 	.search-results .index-posts .entry {
@@ -2557,7 +2570,7 @@ figure {
 		text-align: left;
 	}
 }
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
 	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child,
 	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child ~ *,
 	.related-posts .index-posts .entry:nth-last-child(n+3):first-child,
@@ -2577,7 +2590,7 @@ figure {
 	}
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	/* Left- and right-aligned text underneath the section heading. */
 	.category-description,
 	.category-archive-link {
@@ -2591,7 +2604,7 @@ figure {
 		margin: 0.77778rem 0 0;
 		padding: 0 84px;
 		padding: 0 4.66667rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 		text-align: center;
 		color: #fff;
@@ -2625,6 +2638,8 @@ figure {
 
 .author-image img {
 	width: 250px;
+	max-width: 250px;
+	/* Override max-width:100%, which breaks in IE8 */
 	height: 250px;
 	border: 50px solid #fff;
 }
@@ -3010,7 +3025,7 @@ object {
 	/* Put date on new line. */
 }
 .iis-caption .iis-caption-title {
-	font-weight: 600; 
+	font-weight: 700; 
 	font-size: 32px;
 	font-size: 1.77778rem;
 	line-height: 1.3125;
@@ -3047,7 +3062,7 @@ object {
 	display: none;
 }
 .iis-caption .cat-links {
-	font-weight: 600;
+	font-weight: 700;
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
 	letter-spacing: 0.05em;
 }
@@ -3073,7 +3088,7 @@ object {
 }
 
 /* Wide slider layout. */
-@media (min-width: 1085px) {
+@media screen and (min-width: 1085px) {
 	.iis-has-captions .iis-slide {
 		max-width: 58.33333%;
 	}
@@ -3100,7 +3115,7 @@ object {
 }
 
 /* Even wider slider layout. */
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
 	.iis-has-captions .iis-slide {
 		max-width: 50%;
 	}
@@ -3126,7 +3141,7 @@ object {
 	max-width: 474px;
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 	/* Switch coloured boxes to left hand side. */
 	.template-scrolling-left .textbox.side {
 		clear: left;
@@ -3137,7 +3152,7 @@ object {
 	}
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
 	.template-scrolling-left .textbox.side {
 		right: 10%;
 		left: auto;
@@ -3148,7 +3163,7 @@ object {
 	}
 }
 
-@media (min-width: 1020px) {
+@media screen and (min-width: 1020px) {
 	.site-main {
 		position: relative;
 		/* for relative scaling of fixed-position images */
@@ -3239,19 +3254,10 @@ object {
 .category-yorklife .dropcap {
 	font-family: "Aleo", Constantia, Georgia, sans-serif;
 }
-.category-yorklife .single-entry-above-footer .entry-title {
-	font-size: 54px;
-	font-size: 3rem;
-	line-height: 1.2963;
-	/* Slightly smaller, because full caps */
-}
 .category-yorklife .single-entry-above-footer .entry-title,
 .category-yorklife .category-posts .entry-title,
 .category-yorklife .issue-section-posts .entry-title {
 	font-family: "Lato", "Aleo", Constantia, Georgia, sans-serif;
-}
-.category-yorklife .single-entry-above-footer .entry-title {
-	text-transform: uppercase;
 }
 .category-yorklife .category-header {
 	background: #dcd4c6;
@@ -3269,7 +3275,7 @@ object {
 .category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-yorklife .issue-section-posts .entry {
 		float: left;
 		width: 50%; 
@@ -3284,7 +3290,15 @@ object {
 		/* Centre single articles */
 		margin-left: 25%;
 	}
-	.category-yorklife .issue-section-posts .entry-content {
+	.category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
+		display: block;
+	}
+	.category-yorklife .issue-section-posts .entry:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media screen and (min-width: 900px) {
+	.category-yorklife .issue-section-posts .entry .entry-content {
 		display: block;
 		margin: 14px 0 0;
 		margin: 0.77778rem 0 0;
@@ -3293,14 +3307,6 @@ object {
 		line-height: 1.75;
 		text-align: left;
 	}
-	.category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
-		display: block;
-	}
-	.category-yorklife .issue-section-posts .entry:nth-child(n+3) .entry-image {
-		display: none;
-	}
-}
-@media (min-width: 900px) {
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -3325,7 +3331,7 @@ object {
 		margin-bottom: 1.55556rem;
 		padding: 7px;
 		padding: 0.38889rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -3384,7 +3390,7 @@ object {
 		margin-bottom: 0.77778rem;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
@@ -3441,7 +3447,7 @@ object {
 		margin-bottom: 1.55556rem;
 		padding: 7px;
 		padding: 0.38889rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -3579,7 +3585,7 @@ object {
 .category-open-minds .textbox {
 	color: #fff;
 }
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.category-open-minds {
 		/* This dropcap style doesn't work on mobiles. */
 	}
@@ -3603,7 +3609,7 @@ object {
 .category-open-minds .issue-section-posts .entry-content {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-open-minds .issue-section-posts {
 		/* Float-clearing for every other article */
 		/*
@@ -3658,7 +3664,7 @@ object {
 		width: 100%;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-open-minds .issue-section-posts .entry {
 		max-width: 50%;
 	}
@@ -3751,6 +3757,8 @@ object {
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: flex;
+		/* Fix for IE11 flexbox size */
+		width: 100%;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex .entry {
 		clear: none;
@@ -3847,6 +3855,12 @@ object {
 		min-height: 0;
 		margin-bottom: 0;
 		padding-left: 0;
+
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 1 auto;
+		-moz-box-flex: 0;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
 	}
 	.category-open-minds .issue-section-posts .issue-section-flex > div .entry .entry-image {
 		line-height: 0.5;
@@ -3995,7 +4009,7 @@ object {
 	font-size: 1.55556rem;
 	line-height: 1;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-centre-stage .issue-section-posts {
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
@@ -4022,7 +4036,7 @@ object {
 		width: 100%;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2),
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) {
 		padding-bottom: 14px;
@@ -4335,7 +4349,7 @@ object {
 .category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-all-about-yu .issue-section-posts .entry {
 		float: left;
 		width: 50%; 
@@ -4350,7 +4364,15 @@ object {
 		/* Centre single articles */
 		margin-left: 25%;
 	}
-	.category-all-about-yu .issue-section-posts .entry-content {
+	.category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
+		display: block;
+	}
+	.category-all-about-yu .issue-section-posts .entry:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media screen and (min-width: 900px) {
+	.category-all-about-yu .issue-section-posts .entry .entry-content {
 		display: block;
 		margin: 14px 0 0;
 		margin: 0.77778rem 0 0;
@@ -4359,14 +4381,6 @@ object {
 		line-height: 1.75;
 		text-align: left;
 	}
-	.category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
-		display: block;
-	}
-	.category-all-about-yu .issue-section-posts .entry:nth-child(n+3) .entry-image {
-		display: none;
-	}
-}
-@media (min-width: 900px) {
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -4391,7 +4405,7 @@ object {
 		margin-bottom: 1.55556rem;
 		padding: 7px;
 		padding: 0.38889rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -4450,7 +4464,7 @@ object {
 		margin-bottom: 0.77778rem;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
@@ -4507,7 +4521,7 @@ object {
 		margin-bottom: 1.55556rem;
 		padding: 7px;
 		padding: 0.38889rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -4639,7 +4653,7 @@ object {
 .category-back-page .whats-on h6 {
 	color: #171717;
 }
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.category-back-page {
 		/* This dropcap style doesn't work on mobiles. */
 	}
@@ -4657,7 +4671,7 @@ object {
 .category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-back-page .issue-section-posts .entry {
 		float: left;
 		width: 50%; 
@@ -4672,7 +4686,15 @@ object {
 		/* Centre single articles */
 		margin-left: 25%;
 	}
-	.category-back-page .issue-section-posts .entry-content {
+	.category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
+		display: block;
+	}
+	.category-back-page .issue-section-posts .entry:nth-child(n+3) .entry-image {
+		display: none;
+	}
+}
+@media screen and (min-width: 900px) {
+	.category-back-page .issue-section-posts .entry .entry-content {
 		display: block;
 		margin: 14px 0 0;
 		margin: 0.77778rem 0 0;
@@ -4681,14 +4703,6 @@ object {
 		line-height: 1.75;
 		text-align: left;
 	}
-	.category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
-		display: block;
-	}
-	.category-back-page .issue-section-posts .entry:nth-child(n+3) .entry-image {
-		display: none;
-	}
-}
-@media (min-width: 900px) {
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -4713,7 +4727,7 @@ object {
 		margin-bottom: 1.55556rem;
 		padding: 7px;
 		padding: 0.38889rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -4772,7 +4786,7 @@ object {
 		margin-bottom: 0.77778rem;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
@@ -4829,7 +4843,7 @@ object {
 		margin-bottom: 1.55556rem;
 		padding: 7px;
 		padding: 0.38889rem;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 16px;
 		font-size: 0.88889rem;
 		line-height: 1.75;
@@ -4909,7 +4923,7 @@ object {
 	margin-bottom: 1.55556rem;
 }
 .post-type-archive-yumag_notice .entry-title {
-	font-weight: 600; 
+	font-weight: 700; 
 	font-size: 18px;
 	font-size: 1rem;
 	line-height: 1.55556;
@@ -4934,7 +4948,7 @@ object {
 	margin-top: 0.77778rem;
 }
 .post-type-archive-yumag_notice .notice-label {
-	font-weight: 600;
+	font-weight: 700;
 	color: #67b46a;
 }
 .post-type-archive-yumag_notice .cat-links a {
@@ -4946,11 +4960,120 @@ object {
 	color: #0f3b6b;
 }
 .post-type-archive-yumag_notice .obit-label {
-	font-weight: 600;
+	font-weight: 700;
 }
 .post-type-archive-yumag_notice .entry-image {
 	margin: 14px 0 0;
 	margin: 0.77778rem 0 0;
+}
+
+/*--------------------------------------------------------------
+16.0 Browser compatibility
+--------------------------------------------------------------*/
+/* IE10-11 fixes */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1100px) {
+	.category-open-minds .issue-section-posts .issue-section-flex > div .entry {
+		/* Fix vertical spacing of 2nd-4th posts in Open Minds section */
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 1 33%;
+		-moz-box-flex: 0;
+		-ms-flex: 0 1 33%;
+		flex: 0 1 33%;
+	}
+	.category-open-minds .issue-section-posts,
+	.category-centre-stage .issue-section-posts {
+		/* Fix total width of the flexbox section. */
+		width: 100%;
+	}
+}
+
+/* IE8-9 fixes */
+.lte9 {
+	/* Fix abs-pos of sidebar toggles - they're being positioned relative to the
+	 * visible document, not the (off-screen) sidebar */
+	/* Work around absence of translate3d */
+}
+.lte9 .menu-toggle {
+	left: 9px;
+	left: 0.5rem;
+}
+.lte9 .search-toggle {
+	right: 0;
+}
+.lte9 .menu-left-toggled .site {
+	-ms-transform: translateX(280px);
+	-ms-transform: translateX(15.55556rem);
+}
+.lte9 .menu-left-toggled .menu-toggle {
+	left: 289px;
+	left: 16.05556rem;
+}
+.lte9 .menu-right-toggled .site {
+	-ms-transform: translateX(-280px, 0, 0);
+	-ms-transform: translateX(-15.55556rem);
+}
+.lte9 .menu-right-toggled .search-toggle {
+	right: 280px;
+	right: 15.55556rem;
+}
+
+/* IE8 only fixes */
+.lte8 {
+	/* Anything that won't work on IE8 and therefore should be hidden. */
+	/* Use no-js version of menu, to work around absence of transform support */
+	/* Fix too-wide All About Yu section */
+	/* Fix for missing nth-child selector support */
+	/* Fix for super-narrow Open Minds and Centre Stage sections. */
+	/* Fix Open Minds rows */
+	/* Fix Open Minds featured article author */
+	/* Fix Centre Stage article widths and alignments */
+	/* Don't show the footer author image on IE8, since it ends up overlapping
+	 * the other author details. */
+}
+.lte8 .slider {
+	display: none;
+}
+.lte8 .js-menu-area {
+	display: none !important;
+}
+.lte8 .js-hidden-menu-wrap {
+	display: block;
+}
+.lte8 .category-all-about-yu .issue-section-posts,
+.lte8 .category-all-about-yu .issue-section-posts > div {
+	max-width: 100%;
+}
+.lte8 .issue-section-posts .nth-child-odd {
+	clear: left;
+}
+.lte8 .category-open-minds .issue-section-posts,
+.lte8 .category-open-minds .issue-section-noflex,
+.lte8 .category-centre-stage .issue-section-posts,
+.lte8 .category-centre-stage .issue-section-noflex {
+	width: 100%;
+}
+.lte8 .category-open-minds .issue-section-posts .issue-section-noflex .nth-child-odd {
+	clear: right;
+}
+.lte8 .category-open-minds .issue-section-posts .issue-section-noflex .nth-child-odd:first-child {
+	clear: none;
+}
+.lte8 .category-open-minds .issue-section-posts .entry:first-child .byline a {
+	color: #69bcc9;
+}
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry {
+	float: left;
+	max-width: 50%;
+}
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry .entry-image {
+	padding-top: 0;
+}
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry:first-child .entry-title,
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle {
+	text-align: left;
+}
+.lte8 .entry-author-avatar {
+	display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

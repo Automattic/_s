@@ -26,17 +26,6 @@
 					margin-left: 25%;
 				}
 
-			}
-
-			.entry-content {
-				@include rem( "margin", ( $line * 0.5 ) 0 0 );
-				@include font-size-line( "small" );
-				display: block;
-				text-align: left;
-			}
-
-			.entry {
-
 				&:nth-child(n+2) {
 
 					.entry-image {
@@ -60,6 +49,13 @@
 		@include media( "issue-3-columns" ) {
 
 			.entry {
+
+				.entry-content {
+					@include rem( "margin", ( $line * 0.5 ) 0 0 );
+					@include font-size-line( "small" );
+					display: block;
+					text-align: left;
+				}
 
 				@include quantity-query( 3, "greater" ) {
 					width: 33%;

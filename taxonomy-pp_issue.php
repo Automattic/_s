@@ -72,6 +72,10 @@ get_header(); ?>
 							rewind_posts();
 							?>
 
+							<?php if ( 'all-about-yu' === $section ) {
+								get_template_part( 'grapevine-fake-article' );
+							} ?>
+
 							</div>
 						</div><!-- .issue-section-posts -->
 					</div><!-- .issue-section-content -->

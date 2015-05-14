@@ -4,6 +4,12 @@
  * Handles toggling the navigation menu for small screens.
  */
 ( function initMenuAreas() {
+
+	/* Don't use toggle-menus in IE8, as there's no transform support. */
+	if ( ! ( 'querySelector' in document ) || ! ( 'addEventListener' in window ) ) {
+		return;
+	}
+
 	var containers,
 		container,
 		button,
@@ -58,7 +64,8 @@
 		var buttons = document.querySelectorAll( '.js-menu-toggle' );
 
 		// Visible changes.
-		document.body.classList.remove( 'menu-left-toggled', 'menu-right-toggled' );
+		document.body.classList.remove( 'menu-left-toggled' );
+		document.body.classList.remove( 'menu-right-toggled' );
 
 		// Invisible (accessibility) changes.
 		Array.prototype.forEach.call( menus, function ( menu ) {
