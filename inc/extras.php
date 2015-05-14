@@ -286,3 +286,18 @@ function yumag_google_fonts() {
 }
 add_action( 'wp_footer', 'yumag_google_fonts' );
 endif;
+
+if ( ! function_exists( 'yumag_tag_cloud_args' ) ) :
+/**
+ * Filter arguments of tag cloud widget to put a separator between tags.
+ *
+ * @since 1.0.0
+ *
+ * @param array $args Arguments for the tag cloud widget display.
+ */
+function yumag_tag_cloud_args( $args ) {
+	$args['separator']= ' . ';
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'yumag_tag_cloud_args');
+endif;
