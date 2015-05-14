@@ -179,6 +179,7 @@
 	}
 
 	@include media( "issue-4-columns" ) {
+		max-width: 100%; // firefox fix
 
 		.entry {
 
@@ -265,6 +266,7 @@
 		// Flexbox version, using wrapper elements added in javascript.
 		.issue-section-flex {
 			display: flex;
+			max-width: 100%; // firefox fix
 
 			.entry {
 				clear: none;

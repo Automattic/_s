@@ -4037,6 +4037,9 @@ object {
 	}
 }
 @media screen and (min-width: 1100px) {
+	.category-centre-stage .issue-section-posts {
+		max-width: 100%;
+	}
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2),
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) {
 		padding-bottom: 14px;
@@ -4109,6 +4112,7 @@ object {
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: flex;
+		max-width: 100%;
 	}
 	.category-centre-stage .issue-section-posts .issue-section-flex .entry {
 		clear: none;
