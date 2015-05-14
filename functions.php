@@ -191,6 +191,9 @@ function yumag_scripts() {
 	wp_enqueue_style( 'yumag-ie-fonts', get_stylesheet_directory_uri() . '/fonts-ie8.css', array(), '20150513' );
 	$wp_styles->add_data( 'yumag-ie-fonts', 'conditional', 'lte IE 8' );
 
+	// Print styles
+	wp_enqueue_style( 'yumag-print', get_stylesheet_directory_uri() . '/print.css', array(), '20150514', 'print' );
+
 	// Load IE polyfills/fixes (in conditional comments) first.
 	wp_enqueue_script( 'yumag-html5shiv-js', $src . 'vendor/html5shiv.min.js', array(), '3.7.3-pre' );
 	wp_enqueue_script( 'yumag-respond-js', $src . 'vendor/respond.min.js', array(), '1.4.2' );

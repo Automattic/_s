@@ -273,7 +273,7 @@ textarea {
 }
 
 /* Bigger text for wider screens */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	html {
 		font-size: 18px; 
 		line-height: 1.55556;
@@ -715,7 +715,7 @@ big {
 	}
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 	.textbox.side {
 		clear: right;
 		float: right;
@@ -745,7 +745,7 @@ big {
 	}
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	blockquote {
 		margin-right: 28px;
 		margin-right: 1.55556rem; 
@@ -754,7 +754,7 @@ big {
 	}
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
 	.textbox.side {
 		position: relative;
 		left: 10%;
@@ -764,7 +764,7 @@ big {
 	}
 }
 
-@media (min-width: 1020px) {
+@media screen and (min-width: 1020px) {
 	.template-one-column .textbox.side {
 		left: 20%;
 		margin-left: -15%;
@@ -1046,7 +1046,7 @@ figure {
 }
 
 /* Overhang margins on non-mobile layouts */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.alignleft {
 		float: left;
 		display: inline;
@@ -1064,7 +1064,7 @@ figure {
 }
 
 /* Fully in margins on widest layout */
-@media (min-width: 1120px) {
+@media screen and (min-width: 1120px) {
 	.alignleft:not(.size-thumbnail) {
 		margin-left: -140px;
 		margin-left: -7.77778rem;
@@ -1306,7 +1306,7 @@ figure {
 	font-weight: bold;
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.entry-title {
 		font-size: 60px;
 		font-size: 3.33333rem;

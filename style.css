@@ -295,7 +295,7 @@ textarea {
 }
 
 /* Bigger text for wider screens */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	html {
 		font-size: 18px; 
 		line-height: 1.55556;
@@ -737,7 +737,7 @@ big {
 	}
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 	.textbox.side {
 		clear: right;
 		float: right;
@@ -767,7 +767,7 @@ big {
 	}
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	blockquote {
 		margin-right: 28px;
 		margin-right: 1.55556rem; 
@@ -776,7 +776,7 @@ big {
 	}
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
 	.textbox.side {
 		position: relative;
 		left: 10%;
@@ -786,7 +786,7 @@ big {
 	}
 }
 
-@media (min-width: 1020px) {
+@media screen and (min-width: 1020px) {
 	.template-one-column .textbox.side {
 		left: 20%;
 		margin-left: -15%;
@@ -1106,7 +1106,7 @@ textarea {
 	text-align: right;
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 	.next-prev-wrap .nav-previous,
 	.next-prev-wrap .nav-next {
 		width: 49%;
@@ -1527,7 +1527,7 @@ a:active {
 }
 
 /* Space out the toggle buttons more for wider screens */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.menu-toggle,
 	.search-toggle {
 		top: 210px;
@@ -1607,7 +1607,7 @@ figure {
 }
 
 /* Overhang margins on non-mobile layouts */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.alignleft {
 		float: left;
 		display: inline;
@@ -1625,7 +1625,7 @@ figure {
 }
 
 /* Fully in margins on widest layout */
-@media (min-width: 1120px) {
+@media screen and (min-width: 1120px) {
 	.alignleft:not(.size-thumbnail) {
 		margin-left: -140px;
 		margin-left: -7.77778rem;
@@ -1745,7 +1745,7 @@ figure {
 	padding: 0 14px;
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
 	/* Narrower content column than everything else, for better line length. */
 	.author-bio-content,
 	.single-entry-above-footer .entry-content,
@@ -1762,7 +1762,7 @@ figure {
 	}
 }
 
-@media (min-width: 1020px) {
+@media screen and (min-width: 1020px) {
 	/* Narrower heading area. */
 	.single-entry-above-footer .entry-image,
 	.single-entry-above-footer .entry-header {
@@ -1838,7 +1838,7 @@ figure {
 	}
 }
 
-@media (min-width: 1160px) {
+@media screen and (min-width: 1160px) {
 	.template-fixed-left .single-entry-above-footer .entry-header,
 	.template-fixed-left .single-entry-above-footer .entry-content,
 	.template-scrolling-left .single-entry-above-footer .entry-header,
@@ -1991,7 +1991,7 @@ figure {
 }
 
 /* Space out the toggle buttons more for wider screens */
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.site-header-single {
 		margin-bottom: 0;
 	}
@@ -2240,7 +2240,7 @@ figure {
 	font-weight: bold;
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.entry-title {
 		font-size: 60px;
 		font-size: 3.33333rem;
@@ -2345,7 +2345,7 @@ figure {
 	display: none;
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.search-results-search,
 	.page-search {
 		/* Big central search form */
@@ -2487,7 +2487,7 @@ figure {
 .index-posts .read-more {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.index-posts .entry {
 		padding: 0 14px;
 		padding: 0 0.77778rem;
@@ -2528,7 +2528,7 @@ figure {
 .search-results .index-posts .read-more {
 	display: block;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.archive:not(.tax-pp_issue) .index-posts .entry,
 	.related-posts .index-posts .entry,
 	.search-results .index-posts .entry {
@@ -2563,7 +2563,7 @@ figure {
 		text-align: left;
 	}
 }
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
 	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child,
 	.archive:not(.tax-pp_issue) .index-posts .entry:nth-last-child(n+3):first-child ~ *,
 	.related-posts .index-posts .entry:nth-last-child(n+3):first-child,
@@ -2583,7 +2583,7 @@ figure {
 	}
 }
 
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	/* Left- and right-aligned text underneath the section heading. */
 	.category-description,
 	.category-archive-link {
@@ -3079,7 +3079,7 @@ object {
 }
 
 /* Wide slider layout. */
-@media (min-width: 1085px) {
+@media screen and (min-width: 1085px) {
 	.iis-has-captions .iis-slide {
 		max-width: 58.33333%;
 	}
@@ -3106,7 +3106,7 @@ object {
 }
 
 /* Even wider slider layout. */
-@media (min-width: 1280px) {
+@media screen and (min-width: 1280px) {
 	.iis-has-captions .iis-slide {
 		max-width: 50%;
 	}
@@ -3132,7 +3132,7 @@ object {
 	max-width: 474px;
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 600px) {
 	/* Switch coloured boxes to left hand side. */
 	.template-scrolling-left .textbox.side {
 		clear: left;
@@ -3143,7 +3143,7 @@ object {
 	}
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
 	.template-scrolling-left .textbox.side {
 		right: 10%;
 		left: auto;
@@ -3154,7 +3154,7 @@ object {
 	}
 }
 
-@media (min-width: 1020px) {
+@media screen and (min-width: 1020px) {
 	.site-main {
 		position: relative;
 		/* for relative scaling of fixed-position images */
@@ -3275,7 +3275,7 @@ object {
 .category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-yorklife .issue-section-posts .entry {
 		float: left;
 		width: 50%; 
@@ -3306,7 +3306,7 @@ object {
 		display: none;
 	}
 }
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -3390,7 +3390,7 @@ object {
 		margin-bottom: 0.77778rem;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
@@ -3585,7 +3585,7 @@ object {
 .category-open-minds .textbox {
 	color: #fff;
 }
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.category-open-minds {
 		/* This dropcap style doesn't work on mobiles. */
 	}
@@ -3609,7 +3609,7 @@ object {
 .category-open-minds .issue-section-posts .entry-content {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-open-minds .issue-section-posts {
 		/* Float-clearing for every other article */
 		/*
@@ -3664,7 +3664,7 @@ object {
 		width: 100%;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-open-minds .issue-section-posts .entry {
 		max-width: 50%;
 	}
@@ -4009,7 +4009,7 @@ object {
 	font-size: 1.55556rem;
 	line-height: 1;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-centre-stage .issue-section-posts {
 		/*
 		 * The flex containers have been added, but it isn't wide enough for a
@@ -4036,7 +4036,7 @@ object {
 		width: 100%;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child:nth-child(n+2),
 	.category-centre-stage .issue-section-posts .entry:nth-last-child(n+3):first-child ~ *:nth-child(n+2) {
 		padding-bottom: 14px;
@@ -4349,7 +4349,7 @@ object {
 .category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-all-about-yu .issue-section-posts .entry {
 		float: left;
 		width: 50%; 
@@ -4380,7 +4380,7 @@ object {
 		display: none;
 	}
 }
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -4464,7 +4464,7 @@ object {
 		margin-bottom: 0.77778rem;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
@@ -4653,7 +4653,7 @@ object {
 .category-back-page .whats-on h6 {
 	color: #171717;
 }
-@media (min-width: 720px) {
+@media screen and (min-width: 720px) {
 	.category-back-page {
 		/* This dropcap style doesn't work on mobiles. */
 	}
@@ -4671,7 +4671,7 @@ object {
 .category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
 	display: none;
 }
-@media (min-width: 500px) {
+@media screen and (min-width: 500px) {
 	.category-back-page .issue-section-posts .entry {
 		float: left;
 		width: 50%; 
@@ -4702,7 +4702,7 @@ object {
 		display: none;
 	}
 }
-@media (min-width: 900px) {
+@media screen and (min-width: 900px) {
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -4786,7 +4786,7 @@ object {
 		margin-bottom: 0.77778rem;
 	}
 }
-@media (min-width: 1100px) {
+@media screen and (min-width: 1100px) {
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+4):first-child ~ * {
 		width: 25%;
