@@ -870,10 +870,12 @@ hr {
 }
 
 img {
+	/* Adhere to container width. */
+	width: auto\9;
 	/* Make sure images are scaled correctly. */
 	max-width: 100%;
 	height: auto;
-	/* Adhere to container width. */
+	/* IE8 hack to fix distorted images with max-widths */
 }
 
 figure {

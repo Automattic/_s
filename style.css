@@ -886,10 +886,12 @@ hr {
 }
 
 img {
+	/* Adhere to container width. */
+	width: auto\9;
 	/* Make sure images are scaled correctly. */
 	max-width: 100%;
 	height: auto;
-	/* Adhere to container width. */
+	/* IE8 hack to fix distorted images with max-widths */
 }
 
 figure {
@@ -1246,6 +1248,7 @@ a:active {
 	height: 100%;
 	color: #fff;
 	/* Make sure links are visible. */
+	/* Hide links that are only used in the backup menu in the page footer */
 }
 .main-navigation-wrapper a,
 .main-search-wrapper a {
@@ -1260,6 +1263,10 @@ a:active {
 .main-search-wrapper a:focus,
 .main-search-wrapper a:active {
 	color: #a1d5dd;
+}
+.main-navigation-wrapper .no-js-only,
+.main-search-wrapper .no-js-only {
+	display: none;
 }
 
 .main-navigation-wrapper {
@@ -2631,6 +2638,8 @@ figure {
 
 .author-image img {
 	width: 250px;
+	max-width: 250px;
+	/* Override max-width:100%, which breaks in IE8 */
 	height: 250px;
 	border: 50px solid #fff;
 }
@@ -3281,15 +3290,6 @@ object {
 		/* Centre single articles */
 		margin-left: 25%;
 	}
-	.category-yorklife .issue-section-posts .entry-content {
-		display: block;
-		margin: 14px 0 0;
-		margin: 0.77778rem 0 0;
-		font-size: 16px;
-		font-size: 0.88889rem;
-		line-height: 1.75;
-		text-align: left;
-	}
 	.category-yorklife .issue-section-posts .entry:nth-child(n+2) .entry-image {
 		display: block;
 	}
@@ -3298,6 +3298,15 @@ object {
 	}
 }
 @media screen and (min-width: 900px) {
+	.category-yorklife .issue-section-posts .entry .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-yorklife .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -4355,15 +4364,6 @@ object {
 		/* Centre single articles */
 		margin-left: 25%;
 	}
-	.category-all-about-yu .issue-section-posts .entry-content {
-		display: block;
-		margin: 14px 0 0;
-		margin: 0.77778rem 0 0;
-		font-size: 16px;
-		font-size: 0.88889rem;
-		line-height: 1.75;
-		text-align: left;
-	}
 	.category-all-about-yu .issue-section-posts .entry:nth-child(n+2) .entry-image {
 		display: block;
 	}
@@ -4372,6 +4372,15 @@ object {
 	}
 }
 @media screen and (min-width: 900px) {
+	.category-all-about-yu .issue-section-posts .entry .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-all-about-yu .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -4677,15 +4686,6 @@ object {
 		/* Centre single articles */
 		margin-left: 25%;
 	}
-	.category-back-page .issue-section-posts .entry-content {
-		display: block;
-		margin: 14px 0 0;
-		margin: 0.77778rem 0 0;
-		font-size: 16px;
-		font-size: 0.88889rem;
-		line-height: 1.75;
-		text-align: left;
-	}
 	.category-back-page .issue-section-posts .entry:nth-child(n+2) .entry-image {
 		display: block;
 	}
@@ -4694,6 +4694,15 @@ object {
 	}
 }
 @media screen and (min-width: 900px) {
+	.category-back-page .issue-section-posts .entry .entry-content {
+		display: block;
+		margin: 14px 0 0;
+		margin: 0.77778rem 0 0;
+		font-size: 16px;
+		font-size: 0.88889rem;
+		line-height: 1.75;
+		text-align: left;
+	}
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child,
 	.category-back-page .issue-section-posts .entry:nth-last-child(n+3):first-child ~ * {
 		clear: none; 
@@ -5012,6 +5021,14 @@ object {
 .lte8 {
 	/* Anything that won't work on IE8 and therefore should be hidden. */
 	/* Use no-js version of menu, to work around absence of transform support */
+	/* Fix too-wide All About Yu section */
+	/* Fix for missing nth-child selector support */
+	/* Fix for super-narrow Open Minds and Centre Stage sections. */
+	/* Fix Open Minds rows */
+	/* Fix Open Minds featured article author */
+	/* Fix Centre Stage article widths and alignments */
+	/* Don't show the footer author image on IE8, since it ends up overlapping
+	 * the other author details. */
 }
 .lte8 .slider {
 	display: none;
@@ -5021,6 +5038,42 @@ object {
 }
 .lte8 .js-hidden-menu-wrap {
 	display: block;
+}
+.lte8 .category-all-about-yu .issue-section-posts,
+.lte8 .category-all-about-yu .issue-section-posts > div {
+	max-width: 100%;
+}
+.lte8 .issue-section-posts .nth-child-odd {
+	clear: left;
+}
+.lte8 .category-open-minds .issue-section-posts,
+.lte8 .category-open-minds .issue-section-noflex,
+.lte8 .category-centre-stage .issue-section-posts,
+.lte8 .category-centre-stage .issue-section-noflex {
+	width: 100%;
+}
+.lte8 .category-open-minds .issue-section-posts .issue-section-noflex .nth-child-odd {
+	clear: right;
+}
+.lte8 .category-open-minds .issue-section-posts .issue-section-noflex .nth-child-odd:first-child {
+	clear: none;
+}
+.lte8 .category-open-minds .issue-section-posts .entry:first-child .byline a {
+	color: #69bcc9;
+}
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry {
+	float: left;
+	max-width: 50%;
+}
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry .entry-image {
+	padding-top: 0;
+}
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry:first-child .entry-title,
+.lte8 .category-centre-stage .issue-section-posts .issue-section-noflex .entry:first-child .entry-subtitle {
+	text-align: left;
+}
+.lte8 .entry-author-avatar {
+	display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

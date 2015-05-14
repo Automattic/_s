@@ -57,6 +57,11 @@
 
     }
 
+    /* Hide links that are only used in the backup menu in the page footer */
+    .no-js-only {
+    	display: none;
+    }
+
 }
 
 

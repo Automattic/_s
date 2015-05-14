@@ -70,4 +70,66 @@
 		display: block;
 	}
 
+	/* Fix too-wide All About Yu section */
+	.category-all-about-yu .issue-section-posts,
+	.category-all-about-yu .issue-section-posts > div {
+		max-width: 100%;
+	}
+
+	/* Fix for missing nth-child selector support */
+	.issue-section-posts .nth-child-odd {
+		clear: left;
+	}
+
+	/* Fix for super-narrow Open Minds and Centre Stage sections. */
+	.category-open-minds,
+	.category-centre-stage {
+
+		.issue-section-posts,
+		.issue-section-noflex {
+			width: 100%;
+		}
+	}
+
+	/* Fix Open Minds rows */
+	.category-open-minds .issue-section-posts .issue-section-noflex .nth-child-odd {
+		clear: right;
+
+		&:first-child {
+			clear: none;
+		}
+
+	}
+
+	/* Fix Open Minds featured article author */
+	.category-open-minds .issue-section-posts .entry:first-child .byline a {
+		color: $color__openminds;
+	}
+
+	/* Fix Centre Stage article widths and alignments */
+	.category-centre-stage .issue-section-posts .issue-section-noflex .entry {
+		float: left;
+		max-width: 50%;
+
+		.entry-image {
+			padding-top: 0;
+		}
+
+		&:first-child {
+
+			.entry-title,
+			.entry-subtitle {
+				text-align: left;
+			}
+
+		}
+
+	}
+
+	/* Don't show the footer author image on IE8, since it ends up overlapping
+	 * the other author details. */
+	.entry-author-avatar {
+		display: none;
+	}
+
 }

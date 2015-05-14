@@ -81,6 +81,7 @@ hr {
 img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
+	width: auto\9; /* IE8 hack to fix distorted images with max-widths */
 }
 
 // Remove normalize left/right padding that alters proper content alignment.

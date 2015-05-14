@@ -5,3 +5,40 @@ if("document" in self){if(!("classList" in document.createElement("_"))){(functi
 /* Turn off flexbox-related layout changes. I know feature detection is better
  * but this works for now, and it's only for IE8-9 anyway. */
 window.ie_lte9 = true;
+
+// IE8-only changes
+( function forIE8() {
+	if ( document.documentElement.classList.contains( 'ie8' ) ) {
+
+		/* Add 'odd' and 'even' classes to articles in listings, so we can
+	     * replace nth-child selectors in IE8. */
+	 	function classifyOddEven() {
+			var i, l, i2, l2, postList, posts;
+			var postLists = document.querySelectorAll( '.index-posts, .issue-section-posts' );
+
+			for ( i = 0, l = postLists.length; i < l; i++  ) {
+				postList = postLists[ i ];
+				posts = postList.querySelectorAll( '.entry' );
+
+				for ( i2 = 0, l2 = posts.length; i2 < l2; i2++ ) {
+					if ( 0 === ( i2 % 2 ) ) { // reversed because we start at 0
+						posts[ i2 ].classList.add( 'nth-child-odd' );
+					} else {
+						posts[ i2 ].classList.add( 'nth-child-even' );
+					}
+				}
+
+			}
+
+		};
+
+		/* Init everything */
+		document.attachEvent( 'onreadystatechange', function () {
+			if ( 'loading' != document.readyState ) {
+				classifyOddEven();
+			}
+		} );
+
+	}
+} )();
+
