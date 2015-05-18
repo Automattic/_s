@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying page content in page.php
+ * The template used for displaying page content in buddypress.php
  *
  * @package _s
  */
