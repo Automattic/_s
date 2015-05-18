@@ -21,32 +21,40 @@ a {
 // Default menu (active after a fresh WordPress install)
 
 .menu {
+	@include margin-padding-reset;
+	
+	list-style: none;
 
-	ul {
-
-		li {
-			margin: 0 rem(10) 0 0;
-		}
-
+	li {
+		margin: 0 rem(10) 0 0;
 	}
-
-}
-
-// Main navigation (after creating a menu in the dashboard)
-
-.main-navigation {
-	@include size(100% auto);
-
-	clear: both;
-	display: block;
-	float: left;
-
-	// Menu area
+	
 	ul {
-		display: none;
+		@include margin-padding-reset;
+		
 		list-style: none;
-		margin: 0;
-		padding-left: 0;
+	}
+	
+	&.menu-horizontal {
+		
+		li {
+			display: inline-block;
+		}
+	}
+	
+	&.menu-vertical {
+		
+		li {
+			margin: 0;
+		}
+		
+		a {
+			padding: rem(10);
+			border-bottom: 1px solid $color-background-hr;
+		}
+	}
+	
+	&.dropdown {
 
 		// Sub-menu
 		ul {
@@ -56,7 +64,7 @@ a {
 			position: absolute;
 			top: em(24px);
 			z-index: 99999;
-
+			
 			// Sub-sub menu
 			ul {
 				left: -999em;
@@ -71,6 +79,11 @@ a {
 					left: 100%;
 				}
 			}
+			
+			// Sub-menu links
+			a {
+				@include size(200px auto);
+			}
 
 			:hover > a,
 			.focus > a {
@@ -80,38 +93,47 @@ a {
 			a.focus {
 			}
 		}
-
-		// Sub-menu links
-		a {
-			@include size(200px auto);
-		}
-
+		
 		// Display sub-menu on hover
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
 		}
-	}
-
-	// Menu items
-	li {
-		float: left;
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
+		
+		// Menu items
+		li {
+			float: left;
+			position: relative;
+	
+			&:hover > a,
+			&.focus > a {
+			}
 		}
 	}
-
+	
 	// Menu hyperlinks
 	a {
 		display: block;
 		text-decoration: none;
 	}
-
+	
 	// Current items
 	.current_page_item a,
 	.current-menu-item a {
+	}
+}
+
+// Main navigation (after creating a menu in the dashboard)
+.main-navigation {
+	@include size(100% auto);
+
+	clear: both;
+	display: block;
+	float: left;
+
+	// Menu area
+	ul {
+		display: none;
 	}
 }
 

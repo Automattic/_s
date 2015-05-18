@@ -23,7 +23,7 @@
 				wp_nav_menu( array(
 					'theme_location' => 'social',
 					'container'      => false,
-					'menu_class'     => 'menu-social',
+					'menu_class'     => 'menu-social menu menu-horizontal',
 					'link_before'    => '<span class="screen-reader-text">',
 					'link_after'     => '</span>'
 					)

@@ -1,0 +1,27 @@
+// ----------------------------------------------------------------------
+
+  // Margin & Padding Reset
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Greg Rickaby
+/// @group wds
+////
+
+/// Resets margin and padding on any element
+///
+/// @example scss - Basic Usage Sass
+///    .foo {
+///			@include margin-padding-reset;
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .foo {
+///         margin: 0;
+///         padding: 0;
+///    }
+@mixin margin-padding-reset {
+	margin: 0;
+	padding: 0;
+}
