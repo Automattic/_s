@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme.
+ * Theme Header
  *
  * @package _s2
  */
@@ -23,7 +23,7 @@
 
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s2' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s2' ); ?></a>
 
 	<!-- Site Header -->
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">

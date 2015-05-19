@@ -5,28 +5,16 @@
  * @package _s2
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
 
 if ( ! function_exists( '_s2_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
  */
 function _s2_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s2' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( '_s2', get_template_directory() . '/languages' );
 
@@ -38,7 +26,7 @@ function _s2_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -75,6 +63,19 @@ function _s2_setup() {
 }
 endif; // _s2_setup
 add_action( 'after_setup_theme', '_s2_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function _s2_content_width() {
+	$GLOBALS['content_width'] = apply_filters( '_s2_content_width', 640 );
+}
+add_action( 'after_setup_theme', '_s2_content_width', 0 );
+
 
 /**
  * Register widget area.
