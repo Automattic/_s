@@ -21,6 +21,6 @@
     "neat": "latest",
     "drop": "https://github.com/cferdinandi/drop.git",
     "astro": "https://github.com/cferdinandi/astro.git",
-    "html5shiv-dist": "~3.6.2"
+    "html5shiv": "latest"
   }
 }
