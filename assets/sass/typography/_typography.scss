@@ -3,10 +3,10 @@ button,
 input,
 select,
 textarea {
-	color: $color__text-main;
+	color: $main_color;
 	font-family: $font__main;
-	@include font-size(1);
-	line-height: $font__line-height-body;
+	@include font-size(16);
+	line-height: 1.5;
 }
 
 @import "headers";

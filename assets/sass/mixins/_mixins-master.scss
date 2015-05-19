@@ -31,6 +31,7 @@
  * Genericon Mixin
  */
 @mixin genericon-rules {
+	font-size: 16px;
 	vertical-align: top;
 	text-align: center;
 	-moz-transition: color .1s ease-in 0;
@@ -48,11 +49,6 @@
 	speak: none;
 }
 
-// Rem output with px fallback
-@mixin font-size($sizeValue: 1) {
-	font-size: ($sizeValue * 16) + px;
-	font-size: $sizeValue + rem;
-}
 
 /* 
  * 
@@ -61,7 +57,7 @@
  *
  * usage: @include font-size(16);
  */
-// @mixin font-size( $sizeValue: 16 ){
-//   font-size: $sizeValue + px; //fallback for old browsers
-//   font-size: (0.1 * $sizeValue) + rem;
-// }
+@mixin font-size( $sizeValue: 16 ){
+  font-size: $sizeValue + px; // fallback for old browsers
+  font-size: rem($sizeValue); // requires Bourbon
+}

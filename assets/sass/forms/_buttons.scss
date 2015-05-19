@@ -3,9 +3,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: none;
-	border-color: $color__border-button;
+	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
-	background: $color__background-button;
+	background: #e6e6e6;
 	color: rgba(0, 0, 0, .8);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
