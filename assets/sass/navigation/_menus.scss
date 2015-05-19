@@ -12,7 +12,6 @@
 		list-style: none;
 	}
 
-<<<<<<< HEAD
 	li {
 		
 		a {
@@ -25,48 +24,8 @@
 				opacity:1;
 			}
 		}
-=======
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
->>>>>>> 18f843e... _s: Tabbable dropdown menus.
 	}
 
-<<<<<<< HEAD
 	.sub-menu, .children {
 		position: absolute;
 		top: 100%;
@@ -84,10 +43,6 @@
 		ul, ol {
 			margin-left: 0;
 			list-style: none;
-=======
-		&:hover > a,
-		&.focus > a {
->>>>>>> 18f843e... _s: Tabbable dropdown menus.
 		}
 
 		&.active {
@@ -101,12 +56,3 @@
 .menu-item-has-children {
 	position: relative;
 }
-
-/*  Display a caret after each dropdown link when JavaScript is supported.
- *  You can remove this or change it to a different symbol.
- *  (For example, a "+" symbol.) */
-
-
-
-
-

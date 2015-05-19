@@ -71,7 +71,7 @@ function _s2_setup() {
 	add_theme_support( 'title-tag' );
 
 	// WordPress TinyMCE editor Stylesheet
-	add_editor_style( get_template_directory_uri() . '/css/editor-style.css' );
+	add_editor_style( get_template_directory_uri() . '/assets/css/editor-style.css' );
 }
 endif; // _s2_setup
 add_action( 'after_setup_theme', '_s2_setup' );
@@ -100,7 +100,7 @@ add_action( 'widgets_init', '_s2_widgets_init' );
 function _s2_scripts() {
 	wp_enqueue_style( '_s2-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( '_s2-scripts', get_template_directory_uri() . '/js/main.js', array(), '20120206', true );
+	wp_enqueue_script( '_s2-scripts', get_template_directory_uri() . '/assets/js/main.js', array(), '20120206', true );
 
 	// Load comments script for single pages only
 	if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -122,7 +122,7 @@ add_action( 'wp_enqueue_scripts', 'prefix_add_ie8_style_sheet', 200 );
  */
 function prefix_add_ie8_style_sheet() {
 	global $wp_styles;	
-	wp_enqueue_style( 'ie8-styles', get_stylesheet_directory_uri() . '/ie8-style.css', array(), '1.0.0' );
+	wp_enqueue_style( 'ie8-styles', get_stylesheet_directory_uri() . '/assets/css/ie8-style.css', array(), '1.0.0' );
 	$wp_styles->add_data( 'ie8-styles', 'conditional', 'lte IE 8' );
 }
 

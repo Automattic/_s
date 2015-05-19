@@ -7,8 +7,9 @@
     "grunt-contrib-imagemin": "^0.8.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-sass": "^0.8.0",
     "grunt-contrib-uglify": "^0.5.1",
-    "grunt-contrib-watch": "^0.6.1"
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-header": "^1.0.0",
+    "grunt-sass": "^1.0.0"
   }
 }

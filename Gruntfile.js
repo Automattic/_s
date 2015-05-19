@@ -5,12 +5,10 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        // sass
-        sass: {
+        header: {
             dist: {
                 options: {
-                    style: 'compressed',
-                    banner: '/*\n' +
+                    text: '/*\n' +
                             'Theme Name: _s2\n' +
                             'Theme URI: https://github.com/S2web/_s2\n' +
                             'Author: Steven Slack\n' +
@@ -25,23 +23,28 @@ module.exports = function(grunt) {
                             'Use it to make something cool, have fun, and share what you\'ve learned with others.\n\n' +
                              '_s2 is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.\n' +
                             ' */\n',
-                    sourcemap: 'none',
                 },
+                files: {
+                    'style.css' : 'style.css'
+                }
+            }
+        },
+
+        // sass
+        sass: {
+            options: {
+                outputStyle: 'compressed',
+                sourceMap: false
+            },
+            dist: {
                 files: {
                     'style.css': 'assets/sass/style.scss',
                 }
             },
             Editor: {
-                 options: {
-                    style: 'compressed',
-                    banner: '/*\n' +
-                            'Theme Name: _s2\n' +
-                            ' */\n',
-                    sourcemap: 'none',
-                },
                 files: {
-                    'css/editor-style.css': 'assets/sass/editor-style.scss',
-                    'css/ie8-style.css': 'assets/sass/ie8-style.scss'
+                    'assets/css/editor-style.css': 'assets/sass/editor-style.scss',
+                    'assets/css/ie8-style.css': 'assets/sass/ie8-style.scss'
                 }
             }
         },
@@ -56,8 +59,8 @@ module.exports = function(grunt) {
                 },
                 expand: true,
                 flatten: true,
-                src: 'css/*.css',
-                dest: 'css/',
+                src: 'assets/css/*.css',
+                dest: 'assets/css/',
             },
             // prefix main file
             single_file: {
@@ -114,9 +117,9 @@ module.exports = function(grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'img/',
+                    cwd: 'assets/img/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'img/'
+                    dest: 'assets/img/'
                 }]
             }
         },
@@ -132,26 +135,27 @@ module.exports = function(grunt) {
                 tasks: ['jshint', 'uglify']
             },
             images: {
-                files: ['img/**/*.{png,jpg,gif}'],
+                files: ['assets/img/**/*.{png,jpg,gif}'],
                 tasks: ['imagemin']
             },
             livereload: {
                 options: { livereload: true },
-                files: ['style.css', 'assets/js/*.js', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}']
+                files: ['style.css', 'assets/js/*.js', 'assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
 
     });
 
     
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-header');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // register task
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'jshint', 'uglify', 'imagemin', 'watch']);
+    grunt.registerTask( 'default', ['sass', 'autoprefixer', 'jshint', 'uglify', 'header', 'watch'] );
 
 };
