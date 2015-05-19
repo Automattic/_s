@@ -5,7 +5,7 @@
  * Color Variables
  */
 $border-color: #e3e3e3;
-$comment-bg-color: #f3f3f3;
+$comment-bg-color: white;
 $post-author-border: rgba(153,55,0,0.75);
 
 .comment-list {
@@ -104,7 +104,7 @@ $post-author-border: rgba(153,55,0,0.75);
 	position:relative;
 	background: $comment-bg-color;
 	border: 1px solid $border-color;
-	border-radius: 0 10px 0;
+	border-radius: 0 5px 0;
 	padding:1em;
 	margin: 0.8em 0 1em;
 
@@ -124,13 +124,17 @@ $post-author-border: rgba(153,55,0,0.75);
 		left:17px;
 		@include triangle(28px, $border-color, up);
 	}
-	p:last-of-type {
-		margin-bottom: 0;
+	p { 
+		&:first-of-type {
+			margin-top: 0;
+		}
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 }
 
 .comment-reply-link {
-	//background:$comment-bg-color;
 	float: right;
 	display: inline-block;
 	margin-top: -1.5rem;
@@ -145,13 +149,21 @@ $post-author-border: rgba(153,55,0,0.75);
 /**
  * Comment Reply Form
  */
+.comment-form-author,
+.comment-form-email, 
+.comment-form-url,
+.comment-form-comment {
+	label:before {
+		margin-right: 0.3em;
+		vertical-align:middle;
+		@include genericon-rules;
+	}
+}
 
 .comment-form-author {
 	label {
 		&:before {
 			content: '\f304';
-			margin-right: 0.3em;
-			@include genericon-rules;
 		}
 	}
 }
@@ -160,8 +172,6 @@ $post-author-border: rgba(153,55,0,0.75);
 	label {
 		&:before {
 			content: '\f410';
-			margin-right: 0.3em;
-			@include genericon-rules;
 		}
 	}
 }
@@ -170,8 +180,6 @@ $post-author-border: rgba(153,55,0,0.75);
 	label {
 		&:before {
 			content: '\f409';
-			margin-right: 0.3em;
-			@include genericon-rules;
 		}
 	}
 }
@@ -180,8 +188,6 @@ $post-author-border: rgba(153,55,0,0.75);
 	label {
 		&:before {
 			content: '\f300';
-			margin-right: 0.3em;
-			@include genericon-rules;
 		}
 	}	
 }
