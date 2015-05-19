@@ -6,7 +6,7 @@
 .nav-toggle {
   float: right;
   display: block;
-  padding: 1.8em 1em;
+  padding: 1em 1.5em;
   text-decoration: none;
   &:hover, &:focus {
     color: #333;
@@ -81,7 +81,7 @@
 		display: block;
 		visibility: visible;
 	}
-	.nav-collapse {
+	.nav-menu {
 		max-height: 0;
 		overflow: hidden;
 		width: 100%;

@@ -9,9 +9,8 @@ input[type="submit"] {
 	color: rgba(0, 0, 0, .8);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	@include font-size(0.75);
 	line-height: 1;
-	padding: 0.75em 1em;
+	padding: 1em 1.5em;
 	text-decoration: none;
 	user-select: none;
 	vertical-align: middle;
