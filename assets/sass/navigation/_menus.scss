@@ -4,7 +4,6 @@
 	clear:both;
 	position: relative;
 	width:100%;
-	background: #4d4d4d;
 
 	ul {
 		margin: 0;
@@ -20,7 +19,6 @@
 			text-decoration: none;
 			outline:none;
 			&:hover {
-				background: lighten(#4d4d4d,10);
 				opacity:1;
 			}
 		}
@@ -37,7 +35,6 @@
 		margin-left: 0;
 		text-align: left;
 		
-		background: lighten(#4d4d4d,10);
 		z-index: 1000;
 		
 		ul, ol {

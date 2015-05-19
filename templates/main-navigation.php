@@ -1,4 +1,6 @@
-		<button class="nav-toggle" data-nav-toggle="#nav-primary" href="#"><?php _e( 'Menu', '_s2' ); ?> <span class="genericon genericon-menu"></span></button>
+		<button class="nav-toggle" aria-controls="nav-primary" data-nav-toggle="#nav-primary" href="#">
+			<?php _e( 'Menu', '_s2' ); ?> <span class="burger-icon" aria-hidden="true"></span>
+		</button>
 
 		<nav id="site-navigation" class="nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 			<?php wp_nav_menu( 

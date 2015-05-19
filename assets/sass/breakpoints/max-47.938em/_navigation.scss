@@ -1,18 +1,43 @@
 
 
-/* =Menu
+/* Menu Toggle
 ----------------------------------------------- */
 
 .nav-toggle {
-  float: right;
-  display: block;
-  padding: 1em 1.5em;
-  text-decoration: none;
-  &:hover, &:focus {
-    color: #333;
+    display: block;
+    float: right;
+    padding: 1em 1.5em;
+    cursor: pointer;
     text-decoration: none;
-  }
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .burger-icon {
+        display: inline-block;
+        margin-left: .3em;
+        vertical-align: middle; 
+    }
+
+    &.active .burger-icon {
+        @include burger-to-cross;
+    }
 }
+
+.burger-icon {
+	@include burger(25px, 3px, 5px, #444);
+}
+
+
+
+
+/* Main Menu
+ ----------------------------------------------- */
 
 .nav {
 	width: 100%;
@@ -25,14 +50,13 @@
 		> a {
 			padding: 1em;
 			font-weight: 300;
-			border-bottom: 1px solid #686868;
+			border-bottom: 1px solid #ccc;
 		}
 	}
 
 	.sub-menu, .children {
 		position: relative;
 		width: 100%;
-		background:lighten(#4d4d4d,10);
 		display:block;
 		overflow: hidden;
 		max-height: 0px;
@@ -46,6 +70,7 @@
 		}
 
 		li {
+			position:relative;
 			&:before {
 				content: '-';
 				position: absolute;
@@ -54,15 +79,14 @@
 			}
 			a {
 				padding-left:2em;
-				width: 100%;
-				&:hover {
-					background: #686868;
-				}
+				width: 100%;	
 			}
 			ul {
-				background:lighten(#4d4d4d,15);
-				a:hover {
-					background: #d1d1d1;
+				li {
+					&:before { left:2em; }
+					a {
+						padding-left:3em;
+					}
 				}
 			} // grandchild 
 		} // end list element
