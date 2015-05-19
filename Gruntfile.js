@@ -41,10 +41,25 @@ module.exports = function(grunt) {
                     'style.css': 'assets/sass/style.scss',
                 }
             },
-            Editor: {
+            CSS: {
                 files: {
                     'assets/css/editor-style.css': 'assets/sass/editor-style.scss',
-                    'assets/css/ie8-style.css': 'assets/sass/ie8-style.scss'
+                    'assets/css/ie8-style.css': 'assets/sass/ie8-style.scss',
+                    'assets/css/login.css': 'assets/sass/login.scss',
+                    'assets/css/critical.min.css' : 'assets/css/critical.css'
+                }
+            }
+        },
+
+        criticalcss: {
+            custom_options: {
+                options: {
+                    url: "http://localhost/multisite/terra/", // enter your localhost URL
+                    width: 1200,
+                    height: 900,
+                    outputfile: "assets/css/critical.css",
+                    filename: "style.css",
+                    ignoreConsole: true
                 }
             }
         },
@@ -73,17 +88,16 @@ module.exports = function(grunt) {
             },
         },
         
-
-        // javascript linting with jshint
-        jshint: {
-            options: {
-                "force": true
-            },
-            all: [
-                'Gruntfile.js',
-                '/js/**/*.js'
-            ]
-        },
+        // // javascript linting with jshint
+        // jshint: {
+        //     options: {
+        //         "force": true
+        //     },
+        //     all: [
+        //         'Gruntfile.js',
+        //         'assets/js/**/*.js'
+        //     ]
+        // },
 
         // uglify to concat, minify, and make source maps
         uglify: {
@@ -101,7 +115,7 @@ module.exports = function(grunt) {
                         'assets/js/components/init.js',
                     ],
                     'assets/js/html5.js' : [
-                        'bower_components/html5shiv-dist/html5shiv.js'
+                        'bower_components/html5shiv/dist/html5shiv.js'
                     ]
                 }
             }
@@ -132,7 +146,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: 'assets/js/components/init.js',
-                tasks: ['jshint', 'uglify']
+                tasks: ['uglify']
             },
             images: {
                 files: ['assets/img/**/*.{png,jpg,gif}'],
@@ -152,10 +166,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-header');
+    grunt.loadNpmTasks('grunt-criticalcss');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // register task
-    grunt.registerTask( 'default', ['sass', 'autoprefixer', 'jshint', 'uglify', 'header', 'watch'] );
+    grunt.registerTask( 'default', ['sass', 'autoprefixer', 'uglify', 'header', 'watch'] );
+
+    grunt.registerTask( 'critical', ['criticalcss'] );
+    grunt.registerTask( 'images', ['imagemin'] );
 
 };
