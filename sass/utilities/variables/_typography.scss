@@ -9,4 +9,5 @@ $font-pre: "Courier 10 Pitch", Courier, monospace;
 $font-icon: "FontAwesome";
 
 $line-height-body: 1.0;
-$line-height-pre: 1.6;
+$line-height-paragraphs: 1.625;
+$line-height-pre: $line-height-paragraphs;
