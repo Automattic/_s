@@ -14,7 +14,7 @@ module.exports = function(grunt) {
                             'Author: Steven Slack\n' +
                             'Author URI: http://s2webpress.com\n' +
                             'Description: A starter theme based on <em>underscores</em> by Automattic\n' +
-                            'Version: 1.1-wpcom\n' +
+                            'Version: 1.3\n' +
                             'License: GNU General Public License v2 or later\n' +
                             'License URI: http://www.gnu.org/licenses/gpl-2.0.html\n' +
                             'Text Domain: _s2\n' +

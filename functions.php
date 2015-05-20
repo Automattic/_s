@@ -123,7 +123,7 @@ add_action( 'wp_enqueue_scripts', 'prefix_add_ie8_style_sheet', 200 );
  */
 function prefix_add_ie8_style_sheet() {
 	global $wp_styles;	
-	wp_enqueue_style( 'ie8-styles', get_stylesheet_directory_uri() . '/assets/css/ie8-style.css', array(), '1.0.0' );
+	wp_enqueue_style( 'ie8-styles', get_stylesheet_directory_uri() . '/assets/css/ie8-style.css', array(), '1.3' );
 	$wp_styles->add_data( 'ie8-styles', 'conditional', 'lte IE 8' );
 }
 
