@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 			all: {
 				'src': 'images/sprites/*.png',
 				'dest': 'images/sprites.png',
-				'destCss': 'sass/partials/_sprites.scss',
+				'destCss': 'sass/base/_sprites.scss',
 				'imgPath': 'images/sprites.png',
 				'algorithm': 'binary-tree',
 			}
