@@ -48,6 +48,7 @@ You'll need to change all instances of the names: `_s` to your project name.
 - Search for: `Text Domain: _s` and replace with: `Text Domain: project-name` in style.css
 - Search for (and include the leading space): <code>&nbsp;_s</code> and replace with: <code>&nbsp;Project Name</code>(with a space before it) to capture DocBlocks
 - Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
+- Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
 
 ##### 4) Install Grunt and Dependencies
 - Run `npm install && bower install` from the command line to install Grunt and pull down any dependencies via Bower.
