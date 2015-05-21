@@ -59,7 +59,6 @@ function _s_scripts() {
 	if ( true === $debug ) {
 
 		$suffix = '';
-		$version = time();
 		wp_enqueue_script( 'live-reload', '//localhost:35729/livereload.js', array(), $version, true );
 
 	}
