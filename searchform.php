@@ -4,8 +4,6 @@
 		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'hippie' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search...', 'hippie' ) ?>" />
 	</label>
 	<button aria-label="search">
-		<svg class="icon icon-search">
-			<use xlink:href="#icon-search"></use>
-		</svg>
+		<?php _s_do_svg( 'icon-search' ); ?>
 	</button>
 </form>

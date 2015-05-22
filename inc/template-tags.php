@@ -270,7 +270,7 @@ add_action( 'save_post',     '_s_category_transient_flusher' );
 function _s_do_svg( $icon_name ) { ?>
 
 	<svg class="icon icon-<?php echo esc_html( $icon_name ); ?>">
-		<use xlink:href="#icon-<?php echo esc_html( $icon_name ); ?>"></use>
+		<use xlink:href="#icon-facebook-square"></use>
 	</svg>
 
 <?php }
@@ -283,7 +283,7 @@ function _s_do_social_icons() { ?>
 
 	<ul class="social-icons">
 		<li>
-			<a href="https://www.facebook.com/#"><?php _s_do_svg( 'youtube-square' ); ?></a>
+			<a href="https://www.facebook.com/#"><?php _s_do_svg( 'facebook-square' ); ?></a>
 		</li>
 		<li>
 			<a href="https://twitter.com/#"><?php _s_do_svg( 'twitter-square' ); ?></a>
