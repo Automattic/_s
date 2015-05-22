@@ -23,6 +23,32 @@ module.exports = function(grunt) {
 			}
 		},
 
+		svgmin: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: 'images/svg',
+					src: ['*.svg'],
+					dest: 'images/svg'
+				}]
+			}
+		},
+
+		svgstore: {
+			options: {
+				prefix: 'icon-',
+				cleanup: ['fill', 'style'],
+				svg: {
+					style: 'display: none;'
+				}
+			},
+			default: {
+				files: {
+					'images/svg-defs.svg': ['images/svg/*.svg'],
+				}
+			}
+		},
+
 		sass: {
 			options: {
 				sourceMap: true,
@@ -145,6 +171,15 @@ module.exports = function(grunt) {
 				},
 			},
 
+			svg: {
+				files: ['images/svg/*.svg'],
+				tasks: ['svgstore'],
+				options: {
+					spawn: false,
+					livereload: true,
+				},
+			},
+
 		},
 
 		shell: {
@@ -248,7 +283,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('javascript', ['concat', 'uglify']);
 	grunt.registerTask('imageminnewer', ['newer:imagemin']);
 	grunt.registerTask('sprites', ['sprite']);
+	grunt.registerTask('icons', ['svgmin', 'svgstore']);
 	grunt.registerTask('i18n', ['makepot']);
-	grunt.registerTask('default', ['styles', 'javascript', 'imageminnewer', 'i18n', 'sassdoc']);
+	grunt.registerTask('default', ['styles', 'javascript', 'imageminnewer', 'icons', 'i18n', 'sassdoc']);
 
 };

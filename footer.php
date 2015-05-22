@@ -19,19 +19,7 @@
 				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
 			</div><!-- .site-info -->
 
-			<?php
-				if ( has_nav_menu( 'social' ) ) :
-					// Social menu
-					wp_nav_menu( array(
-						'theme_location' => 'social',
-						'container'      => false,
-						'menu_class'     => 'menu-social menu menu-horizontal',
-						'link_before'    => '<span class="screen-reader-text">',
-						'link_after'     => '</span>'
-						)
-					);
-				endif;
-			?>
+			<?php _s_do_social_icons(); ?>
 
 		</div><!-- .wrap -->
 	</footer><!-- #colophon -->

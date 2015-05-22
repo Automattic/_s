@@ -38,6 +38,8 @@
     "grunt-sassdoc": "latest",
     "grunt-shell": "latest",
     "grunt-spritesmith": "latest",
+    "grunt-svgmin": "latest",
+    "grunt-svgstore": "latest",
     "grunt-update-submodules": "latest",
     "grunt-wp-i18n": "latest",
     "load-grunt-tasks": "latest"
