@@ -270,7 +270,7 @@ add_action( 'save_post',     '_s_category_transient_flusher' );
 function _s_do_svg( $icon_name ) { ?>
 
 	<svg class="icon icon-<?php echo esc_html( $icon_name ); ?>">
-		<use xlink:href="#icon-facebook-square"></use>
+		<use xlink:href="#icon-<?php echo esc_html( $icon_name ); ?>"></use>
 	</svg>
 
 <?php }
