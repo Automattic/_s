@@ -65,16 +65,18 @@ After you've installed _s, and run `npm install && bower install` from the comma
 
 ##### 2) Grunt tasks available:
 
-`grunt watch` - Automatically handle changes to CSS, javascript, and image sprites
+`grunt watch` - Automatically handle changes to CSS, javascript, SVG and image sprites.
 
-`grunt javascript` - Concatenate and minify javascript files
+`grunt javascript` - Concatenate and minify javascript files.
 
-`grunt styles` - Comb, compile, prefix, combine media queries, and minify CSS files
+`grunt styles` - Comb, compile, prefix, combine media queries, and minify CSS files.
 
-`grunt imageminnewer` - Minify images
+`grunt imageminnewer` - Minify images.
 
-`grunt sprites` - Generate image sprites and the associated CSS
+`grunt sprites` - Generate image sprites and the associated CSS.
 
-`grunt i18n` - Generate a translation file
+`grunt icons` - Generate SVG sprites.
+
+`grunt i18n` - Generate a translation file.
 
 `grunt` - Do it all once!
