@@ -228,7 +228,7 @@ endif;
  */
 function _s_categorized_blog() {
 
-	if ( false === ( $all_the_cool_cats = get_transient( '_s_hippie_categories' ) ) ) {
+	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
 
 		// Create an array of categories
 		$all_the_cool_cats = get_categories( array(
@@ -240,7 +240,7 @@ function _s_categorized_blog() {
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
 		// Place number of categories into a transient
-		set_transient( '_s_hippie_categories', $all_the_cool_cats );
+		set_transient( '_s_categories', $all_the_cool_cats );
 	}
 
 	// There is only 1 category, so return false
