@@ -232,8 +232,9 @@ function _s_categorized_blog() {
 
 		// Create an array of categories
 		$all_the_cool_cats = get_categories( array(
-			'hide_empty' => 1, // Only count categories with posts
-			'number'     => 2, // Only return two categories
+			'fields'     => 'ids', // Only query category IDs
+			'hide_empty' => 1,     // Only count categories with posts
+			'number'     => 2,     // Only return two categories
 		) );
 
 		// Count the number of categories that are attached to the posts
