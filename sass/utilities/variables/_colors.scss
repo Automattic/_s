@@ -33,3 +33,31 @@ $color-border-button-hover: $color-light-gray;
 $color-border-button-focus: $color-light-gray;
 $color-border-input: $color-light-gray;
 $color-border-abbr: $color-dark-gray;
+
+// Social Media Colors
+$color-rss: #ff9900;
+$color-twitter: #00aced;
+$color-facebook: #3b5998;
+$color-googleplus: #dd4b39;
+$color-pinterest: #cb2027;
+$color-linkedin: #007bb6;
+$color-youtube: #bb0000;
+$color-instagram: #517fa4;
+
+$social-colors: (
+	rss: $color-rss,
+	rss-square: $color-rss,
+	twitter: $color-twitter,
+	twitter-square: $color-twitter,
+	facebook: $color-facebook,
+	facebook-square: $color-facebook,
+	googleplus: $color-googleplus,
+	googleplus-square: $color-googleplus,
+	pinterest: $color-pinterest,
+	pinterest-square: $color-pinterest,
+	linkedin: $color-linkedin,
+	linkedin-square: $color-linkedin,
+	youtube: $color-youtube,
+	youtube-square: $color-youtube,
+	instagram: $color-instagram,
+);

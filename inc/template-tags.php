@@ -261,3 +261,42 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
+
+/**
+ * Echo SVG markup.
+ *
+ * @param  string $icon_name Use the icon name, such as "facebook-square"
+ */
+function _s_do_svg( $icon_name ) { ?>
+
+	<svg class="icon icon-<?php echo esc_html( $icon_name ); ?>">
+		<use xlink:href="#icon-<?php echo esc_html( $icon_name ); ?>"></use>
+	</svg>
+
+<?php }
+
+
+/**
+ * Social icons with SVG.
+ */
+function _s_do_social_icons() { ?>
+
+	<ul class="social-icons">
+		<li>
+			<a href="https://www.facebook.com/#"><?php _s_do_svg( 'facebook-square' ); ?></a>
+		</li>
+		<li>
+			<a href="https://twitter.com/#"><?php _s_do_svg( 'twitter-square' ); ?></a>
+		</li>
+		<li>
+			<a href="https://instagram.com/#"><?php _s_do_svg( 'instagram' ); ?></a>
+		</li>
+		<li>
+			<a href="https://www.youtube.com/channel/#"><?php _s_do_svg( 'youtube-square' ); ?></a>
+		</li>
+		<li>
+			<a href="/feed"><?php _s_do_svg( 'rss-square' ); ?></a>
+		</li>
+	</ul>
+
+<?php }

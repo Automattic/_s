@@ -1,0 +1,31 @@
+//--------------------------------------------------------------
+// Social Icons
+//--------------------------------------------------------------
+
+.social-icons {
+	@include margin-padding-reset;
+
+	li {
+		display: inline-block;
+		margin-right: rem(24);
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.icon {
+		@include size(48px 48px);
+	}
+
+	// Loop through all social icons and set colors
+	@each $social-color, $color in $social-colors {
+		.icon-#{$social-color} {
+			fill: $color-darker-gray;
+
+			&:hover {
+				fill: $color;
+			}
+		}
+	}
+}

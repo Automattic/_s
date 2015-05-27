@@ -77,3 +77,19 @@ function _s_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
+
+
+/**
+ * Add SVG definitions to <head>
+ */
+function _s_include_svg_definitions() {
+
+	// Define svg sprite file
+	$svg_defs = get_template_directory() . '/images/svg-defs.svg';
+
+	// If it exsists, include it
+	if ( file_exists( $svg_defs ) ) {
+		require_once( $svg_defs );
+	}
+}
+add_action( 'wp_head', '_s_include_svg_definitions' );
