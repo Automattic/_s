@@ -1,7 +1,10 @@
 <?php
 /**
+ * Template part for displaying single posts.
+ *
  * @package _s
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -27,3 +30,4 @@
 		<?php _s_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
