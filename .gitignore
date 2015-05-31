@@ -1,23 +1,12 @@
-uploads/
-blogs.dir/
-upgrade/
-backup-db/
-cache/
-backups/
+bower_components/bourbon
+bower_components/neat
 node_modules/
 .idea/
+.sass-cache
 
 .htaccess
-.sass-cache
 compass_app_log.txt
-
-advanced-cache.php
-wp-cache-config.php
-
-sitemap.xml
-sitemap.xml.gz
 *.log
-
 .DS_Store
 .AppleDouble
 .LSOverride
