@@ -15,7 +15,7 @@
 	}
 
 	.icon {
-		@include size(48px 48px);
+		@include size(rem(48) rem(48));
 	}
 
 	// Loop through all social icons and set colors
