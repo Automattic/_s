@@ -22,38 +22,38 @@ a {
 
 .menu {
 	@include margin-padding-reset;
-	
+
 	list-style: none;
 
 	li {
 		margin: 0 rem(10) 0 0;
 	}
-	
+
 	ul {
 		@include margin-padding-reset;
-		
+
 		list-style: none;
 	}
-	
+
 	&.menu-horizontal {
-		
+
 		li {
 			display: inline-block;
 		}
 	}
-	
+
 	&.menu-vertical {
-		
+
 		li {
 			margin: 0;
 		}
-		
+
 		a {
 			padding: rem(10);
 			border-bottom: 1px solid $color-background-hr;
 		}
 	}
-	
+
 	&.dropdown {
 
 		// Sub-menu
@@ -64,7 +64,7 @@ a {
 			position: absolute;
 			top: em(24px);
 			z-index: 99999;
-			
+
 			// Sub-sub menu
 			ul {
 				left: -999em;
@@ -79,7 +79,7 @@ a {
 					left: 100%;
 				}
 			}
-			
+
 			// Sub-menu links
 			a {
 				@include size(200px auto);
@@ -93,30 +93,30 @@ a {
 			a.focus {
 			}
 		}
-		
+
 		// Display sub-menu on hover
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
 		}
-		
+
 		// Menu items
 		li {
 			float: left;
 			position: relative;
-	
+
 			&:hover > a,
 			&.focus > a {
 			}
 		}
 	}
-	
+
 	// Menu hyperlinks
 	a {
 		display: block;
 		text-decoration: none;
 	}
-	
+
 	// Current items
 	.current_page_item a,
 	.current-menu-item a {
@@ -134,22 +134,23 @@ a {
 	// Menu area
 	ul {
 		display: none;
+
+		@include wider-than(phone-landscape) {
+			display: block;
+		}
+	}
+
+	&.toggled ul {
+		display: block;
 	}
 }
 
 // Small menu
-.menu-toggle,
-.main-navigation.toggled ul {
+.menu-toggle {
 	display: block;
-}
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
+	@include wider-than(phone-landscape) {
 		display: none;
-	}
-
-	.main-navigation ul {
-		display: block;
 	}
 }
 
