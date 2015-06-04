@@ -17,7 +17,7 @@ input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: $color-border-button;
-	border-radius: 3px;
+	border-radius: $border-radius;
 	background: $color-background-button;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
@@ -72,7 +72,7 @@ input[type="search"],
 textarea {
 	color: $color-text-input;
 	border: 1px solid $color-border-input;
-	border-radius: 3px;
+	border-radius: $border-radius;
 
 	&:focus {
 		color: $color-text-input-focus;
