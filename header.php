@@ -6,6 +6,7 @@
  *
  * @package _s
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -23,11 +24,10 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site container">
-	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation navbar navbar-default" role="navigation">
