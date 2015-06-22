@@ -38,7 +38,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		global $page, $paged;
 
-		// Add the blog name
+		// Add the blog name.
 		$title .= get_bloginfo( 'name', 'display' );
 
 		// Add the blog description for the home/front page.
@@ -47,9 +47,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 			$title .= " $sep $site_description";
 		}
 
-		// Add a page number if necessary:
+		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', '_s' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( esc_html__( 'Page %s', '_s' ), max( $paged, $page ) );
 		}
 
 		return $title;
