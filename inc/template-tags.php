@@ -123,7 +123,14 @@ function _s_entry_footer() {
 		echo '</span>';
 	}
 
-	edit_post_link( esc_html__( 'Edit', '_s' ), '<span class="edit-link">', '</span>' );
+	edit_post_link(
+		sprintf(
+			esc_html_x( 'Edit %s', 'name of current post', '_s' ),
+			wp_kses( the_title( '<span class="screen-reader-text">"', '"</span>', false ), array( 'span' => array( 'class' => array() ) ) )
+		),
+		'<span class="edit-link">',
+		'</span>'
+	);
 }
 endif;
 
