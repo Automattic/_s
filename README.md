@@ -1,7 +1,7 @@
 WebDevStudio's wd_s
 ===
 
-[WebDevStudios](http://webdevstudios.com) fork of Automattic's [wd_s](https://github.com/Automattic/_s). Used primarily as our internal starter theme. Your pull requests are welcome!
+[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as our internal starter theme. Your pull requests are welcome!
 
 # Pre-Installation
 
@@ -27,7 +27,7 @@ The easiest way to get started, is by using the [Yeoman](http://yeoman.io/) gene
 ##### 3) Install the wd_s generator and build a theme
 `npm install -g generator-s && yo s`
 
-That's it! You're ready to start using [Grunt](https://github.com/WebDevStudios/_s/blob/master/README.md#using-grunt)!
+That's it! You're ready to start using [Grunt](https://github.com/WebDevStudios/wd_s/blob/master/README.md#using-grunt)!
 
 
 ## Manual Installation
@@ -37,7 +37,7 @@ That's it! You're ready to start using [Grunt](https://github.com/WebDevStudios/
 
 ##### 2) Clone
 
-`git clone git@github.com:WebDevStudios/_s.git`
+`git clone git@github.com:WebDevStudios/wd_s.git`
 
 ##### 3) Find & Replace
 
