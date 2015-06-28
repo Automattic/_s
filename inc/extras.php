@@ -67,16 +67,18 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 endif;
 
 /**
- * Allows designers to hide/show the Admin Bar w/out logging out.
+ * Allows an administrator to set the logged in user.
+ * 
+ * Setting to false will emulate a logged out user.
  *
  * @return void
  */
-function _s_show_admin_bar() {
-	if ( ! is_user_logged_in() || ! isset ( $_GET['show_admin_bar'] ) ) {
+function _s_wp_set_current_user() {
+	if ( ! is_user_logged_in() || ! isset ( $_GET['wp_set_current_user'] ) || ! current_user_can( 'create_users' ) ) {
 		return;
 	}
 
-	show_admin_bar( 'true' == $_GET['show_admin_bar'] ? true : false );
+	wp_set_current_user( is_numeric( $_GET['wp_set_current_user'] ) ? absint( $_GET['wp_set_current_user'] ) : ( 'true' == $_GET['wp_set_current_user'] ? true : false ) );
 }
 
-add_action( 'init', '_s_show_admin_bar' );
+add_action( 'init', '_s_wp_set_current_user' );
