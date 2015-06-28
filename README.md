@@ -1,11 +1,11 @@
 WebDevStudio's _s
 ===
 
-[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used primarily as our internal starter theme. Your pull requests are welcome!
+[WebDevStudios](http://webdevstudios.com) fork of Automattic's [wd_s](https://github.com/Automattic/_s). Used primarily as our internal starter theme. Your pull requests are welcome!
 
 # Pre-Installation
 
-Basic knowledge of the command line and the following dependencies are required to use _s:
+Basic knowledge of the command line and the following dependencies are required to use wd_s:
 
 - Node ([http://nodejs.org/](http://nodejs.org/))
 - Ruby ([http://rubyinstaller.org/](http://rubyinstaller.org/))
@@ -24,7 +24,7 @@ The easiest way to get started, is by using the [Yeoman](http://yeoman.io/) gene
 ##### 2) Navigate to your new theme folder
 `cd /your-project/wordpress/wp-content/themes/your-new-theme`
 
-##### 3) Install the _s generator and build a theme
+##### 3) Install the wd_s generator and build a theme
 `npm install -g generator-s && yo s`
 
 That's it! You're ready to start using [Grunt](https://github.com/WebDevStudios/_s/blob/master/README.md#using-grunt)!
@@ -56,7 +56,7 @@ You'll need to change all instances of the names: `_s` to your project name.
 That's it! Now you can begin using Grunt.
 
 # Usage
-After you've installed _s, and run `npm install && bower install` from the command line you can start using grunt.
+After you've installed wd_s, and run `npm install && bower install` from the command line you can start using grunt.
 
 ## Grunt
 
