@@ -1,4 +1,4 @@
-WebDevStudio's _s
+WebDevStudio's wd_s
 ===
 
 [WebDevStudios](http://webdevstudios.com) fork of Automattic's [wd_s](https://github.com/Automattic/_s). Used primarily as our internal starter theme. Your pull requests are welcome!
