@@ -65,3 +65,18 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', '_s_render_title' );
 
 endif;
+
+/**
+ * Allows designers to hide/show the Admin Bar w/out logging out.
+ *
+ * @return void
+ */
+function _s_show_admin_bar() {
+	if ( ! is_user_logged_in() || ! isset ( $_GET['show_admin_bar'] ) ) {
+		return;
+	}
+
+	show_admin_bar( 'true' == $_GET['show_admin_bar'] ? true : false );
+}
+
+add_action( 'init', '_s_show_admin_bar' );
