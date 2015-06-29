@@ -2,29 +2,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _strap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-03-27 01:10+0100\n"
-"PO-Revision-Date: 2015-03-27 01:11+0100\n"
+"POT-Creation-Date: 2015-06-23 01:05+0100\n"
+"PO-Revision-Date: 2015-06-23 01:05+0100\n"
 "Last-Translator: Piero Bellomo <piero.bellomo@viewlab.net>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
 "esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ..\\\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: C:\\apache\\xampp\\htdocs\\www._strap.co\\wp-content"
-"\\themes\\_strap\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:15
+#: 404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Sembra che la pagina non esista."
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:19
+#: 404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -32,16 +31,16 @@ msgstr ""
 "Sembra che non sia stato trovato nulla in questa posizione. Forse puoi "
 "provare uno dei link poco sotto, o una ricerca?"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:27
+#: 404.php:27
 msgid "Most Used Categories"
 msgstr "Categorie più usate"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/404.php:44
+#: 404.php:44
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Prova a cercare negli archivi per mese. %1$s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:28
+#: comments.php:29
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -49,121 +48,75 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "Un pensiero su &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s pensieri su &ldquo;%2$s&rdquo;"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:35
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:56
+#: comments.php:38 comments.php:59
 msgid "Comment navigation"
 msgstr "Navigazione commenti"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:38
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:59
+#: comments.php:41 comments.php:62
 msgid "Older Comments"
 msgstr "Commenti meno recenti"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:39
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:60
+#: comments.php:42 comments.php:63
 msgid "Newer Comments"
 msgstr "Commenti più recenti"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/comments.php:72
+#: comments.php:75
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi per questo articolo."
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:13
-msgid "Nothing Found"
-msgstr "Nessun contenuto trovato"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:19
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-"Pronto per pubblicare il tuo primo post? <a href=\"%1$s\">Inizia da qui</a>."
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:23
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Spiacente, ma non ci sono risultati per il tuo termine di ricerca. Per "
-"favore riprova usando un termine diverso."
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-none.php:28
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Sembra che non sia possibile trovare ciò che stai cercando. Forse una "
-"ricerca ti potrà aiutare."
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-page.php:18
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-single.php:20
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:29
-msgid "Pages:"
-msgstr "Pagine"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content-page.php:25
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:126
-msgid "Edit"
-msgstr "Modifica"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/content.php:22
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Continua a leggere %s <span class=\"meta-nav\">&rarr;</span>"
-
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:15
+#: footer.php:16
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:15
+#: footer.php:16
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Proudly powered by %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/footer.php:17
+#: footer.php:18
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr "Theme: %1$s di %2$s."
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:53
+#: functions.php:45
 msgid "Primary Menu"
 msgstr "Menù principale"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/functions.php:88
+#: functions.php:100
 msgid "Sidebar"
 msgstr "Barra laterale"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:34
+#: header.php:34
 msgid "Skip to content"
 msgstr "Salta al contenuto"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/header.php:37
+#: header.php:37
 msgid "Toggle navigation"
 msgstr "Inverti navigazione"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/extras.php:52
+#: inc/extras.php:52
 #, php-format
 msgid "Page %s"
 msgstr "Pagina %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:132
+#: inc/functions-strap.php:132
 msgid "Name"
 msgstr "Nome"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:138
+#: inc/functions-strap.php:138
 msgid "Email"
 msgstr "Email"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:144
+#: inc/functions-strap.php:144
 msgid "Website"
 msgstr "Sito web"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:151
+#: inc/functions-strap.php:151
 msgctxt "noun"
 msgid "Comment"
 msgstr "Commento"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:154
+#: inc/functions-strap.php:154
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
@@ -172,217 +125,256 @@ msgstr ""
 "Puoi usare questi <abbr title=\"HyperText Markup Language\">HTML</abbr> tag "
 "e attributi: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:212
+#: inc/functions-strap.php:212
 msgid "Name your new _strapped theme"
 msgstr "Dai un nome al tuo nuovo tema _strap"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:216
+#: inc/functions-strap.php:216
 msgid "Theme name"
 msgstr "Nome del tema"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:217
+#: inc/functions-strap.php:217
 msgid "Theme slug"
 msgstr "Slug del tema"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:225
+#: inc/functions-strap.php:225
 msgid "Something like \"My Awesome Theme\" "
 msgstr "Qualcosa come \"Un Tema Straordinario\" "
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:233
+#: inc/functions-strap.php:233
 msgid "Something like \"my-awesome-theme\" or \"mat\" "
 msgstr "Qualcosa come \"\"un-tema-straordinario\" o \"uts\" "
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:278
+#: inc/functions-strap.php:278
 msgid "Name is required"
 msgstr "Nome è un campo obbligatorio"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:285
+#: inc/functions-strap.php:285
 #, php-format
 msgid "You must specify a valid Theme slug - try: %s"
 msgstr "Occorre specificare uno slug valido - prova con: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:292
+#: inc/functions-strap.php:292
 #, php-format
 msgid "%s is not a valid Theme slug - try: %s instead"
 msgstr "%s non è uno slug valido - prova con: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:318
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:319
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:336
+#: inc/functions-strap.php:318 inc/functions-strap.php:319
+#: inc/functions-strap.php:336
 msgid "Build theme"
 msgstr "Crea tema"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/functions-strap.php:343
+#: inc/functions-strap.php:343
 msgid "_strap it!"
 msgstr "crea il tuo _strap!"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:23
+#: inc/template-tags.php:23
 msgid "Posts navigation"
 msgstr "Navigazione articoli"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:27
+#: inc/template-tags.php:27
 msgid "Older posts"
 msgstr "Articoli meno recenti"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:31
+#: inc/template-tags.php:31
 msgid "Newer posts"
 msgstr "Articoli più recenti"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:56
+#: inc/template-tags.php:56
 msgid "Post navigation"
 msgstr "Navigazione per articolo"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:86
+#: inc/template-tags.php:86
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr "Pubblicato il %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:91
+#: inc/template-tags.php:91
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr "da %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:108
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:114
+#: inc/template-tags.php:108 inc/template-tags.php:114
 msgid ", "
 msgstr ", "
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:110
+#: inc/template-tags.php:110
 #, php-format
 msgid "Posted in %1$s"
 msgstr "Pubblicato in %1$s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:116
+#: inc/template-tags.php:116
 #, php-format
 msgid "Tagged %1$s"
 msgstr "Etichette %1$s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:122
+#: inc/template-tags.php:122
 msgid "Leave a comment"
 msgstr "Lascia un commento"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:122
+#: inc/template-tags.php:122
 msgid "1 Comment"
 msgstr "1 Commento"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:122
+#: inc/template-tags.php:122
 msgid "% Comments"
 msgstr "% Commenti"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:143
+#: inc/template-tags.php:126 template-parts/content-page.php:26
+msgid "Edit"
+msgstr "Modifica"
+
+#: inc/template-tags.php:143
 #, php-format
 msgid "Category: %s"
 msgstr "Categoria: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:145
+#: inc/template-tags.php:145
 #, php-format
 msgid "Tag: %s"
 msgstr "Tag: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:147
+#: inc/template-tags.php:147
 #, php-format
 msgid "Author: %s"
 msgstr "Autore: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:149
+#: inc/template-tags.php:149
 #, php-format
 msgid "Year: %s"
 msgstr "Anno: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:149
+#: inc/template-tags.php:149
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:151
+#: inc/template-tags.php:151
 #, php-format
 msgid "Month: %s"
 msgstr "Mese: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:151
+#: inc/template-tags.php:151
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:153
+#: inc/template-tags.php:153
 #, php-format
 msgid "Day: %s"
 msgstr "Giorno: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:153
+#: inc/template-tags.php:153
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "j F Y"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:156
+#: inc/template-tags.php:156
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr "Digressioni"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:158
+#: inc/template-tags.php:158
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Gallerie"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:160
+#: inc/template-tags.php:160
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Immagini"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:162
+#: inc/template-tags.php:162
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr "Video"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:164
+#: inc/template-tags.php:164
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citazioni"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:166
+#: inc/template-tags.php:166
 msgctxt "post format archive title"
 msgid "Links"
 msgstr "Link"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:168
+#: inc/template-tags.php:168
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Status"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:170
+#: inc/template-tags.php:170
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr "Audio"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:172
+#: inc/template-tags.php:172
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Chat"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:175
+#: inc/template-tags.php:175
 #, php-format
 msgid "Archives: %s"
 msgstr "Archivi: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:179
+#: inc/template-tags.php:179
 #, php-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/inc/template-tags.php:181
+#: inc/template-tags.php:181
 msgid "Archives"
 msgstr "Archivi"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/search.php:16
+#: search.php:16
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Risultati della ricerca per: %s"
 
-#: C:\apache\xampp\htdocs\www._strap.co\wp-content\themes\_strap/searchform.php:10
+#: searchform.php:10
 msgid "Search &hellip;"
 msgstr "Cerca &hellip;"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Nessun contenuto trovato"
+
+#: template-parts/content-none.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto per pubblicare il tuo primo post? <a href=\"%1$s\">Inizia da qui</a>."
+
+#: template-parts/content-none.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Spiacente, ma non ci sono risultati per il tuo termine di ricerca. Per "
+"favore riprova usando un termine diverso."
+
+#: template-parts/content-none.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Sembra che non sia possibile trovare ciò che stai cercando. Forse una "
+"ricerca ti potrà aiutare."
+
+#: template-parts/content-page.php:19 template-parts/content-single.php:23
+#: template-parts/content.php:32
+msgid "Pages:"
+msgstr "Pagine"
+
+#: template-parts/content.php:25
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continua a leggere %s <span class=\"meta-nav\">&rarr;</span>"
 
 #~ msgid "_s"
 #~ msgstr "_s"
