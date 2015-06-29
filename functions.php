@@ -36,7 +36,7 @@ function _s_setup() {
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
 
@@ -59,7 +59,7 @@ function _s_setup() {
 
 	/*
 	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
@@ -93,7 +93,7 @@ add_action( 'after_setup_theme', '_s_content_width', 0 );
 /**
  * Register widget area.
  *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function _s_widgets_init() {
 	register_sidebar( array(
