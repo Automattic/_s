@@ -545,21 +545,23 @@ function _strap_rmdir_tree($dir) {
  * Find .gitignored files
  */
 function _strap_gitignore($file) { # $file = '/absolute/path/to/.gitignore'
-	$dir = dirname($file);
 	$matches = array();
-	$lines = file($file);
-	foreach ($lines as $line) {
-		$line = trim($line);
-		if ($line === '') continue;                 # empty line
-		if (substr($line, 0, 1) == '#') continue;   # a comment
-		if (substr($line, 0, 1) == '!') {           # negated glob
-			$line = substr($line, 1);
-			$files = array_diff(glob($dir . DIRECTORY_SEPARATOR .  '*'), glob($dir . DIRECTORY_SEPARATOR .  $line));
-		} else {                                    # normal glob
-			$files = glob($dir . DIRECTORY_SEPARATOR .  $line);
+	if( is_file($file) ) {
+		$dir = dirname($file);
+		$lines = file($file);
+		foreach ($lines as $line) {
+			$line = trim($line);
+			if ($line === '') continue;                 # empty line
+			if (substr($line, 0, 1) == '#') continue;   # a comment
+			if (substr($line, 0, 1) == '!') {           # negated glob
+				$line = substr($line, 1);
+				$files = array_diff(glob($dir . DIRECTORY_SEPARATOR .  '*'), glob($dir . DIRECTORY_SEPARATOR .  $line));
+			} else {                                    # normal glob
+				$files = glob($dir . DIRECTORY_SEPARATOR .  $line);
+			}
+			$matches = array_merge($matches, $files);
 		}
-		$matches = array_merge($matches, $files);
+		foreach($matches as $i => $match) $matches[$i] = realpath($match);
 	}
-	foreach($matches as $i => $match) $matches[$i] = realpath($match);
 	return $matches;
 }
