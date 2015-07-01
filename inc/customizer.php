@@ -1,6 +1,6 @@
 <?php
 /**
- * _s Theme Customizer
+ * _s Theme Customizer.
  *
  * @package _s
  */

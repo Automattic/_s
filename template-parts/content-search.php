@@ -1,8 +1,8 @@
 <?php
 /**
- * The template part for displaying results in search pages.
+ * Template part for displaying results in search pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
  */
