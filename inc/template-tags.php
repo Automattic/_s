@@ -125,8 +125,9 @@ function _s_entry_footer() {
 
 	edit_post_link(
 		sprintf(
-			esc_html_x( 'Edit %s', 'name of current post', '_s' ),
-			wp_kses( the_title( '<span class="screen-reader-text">"', '"</span>', false ), array( 'span' => array( 'class' => array() ) ) )
+			/* translators: %s: Name of current post */
+			esc_html__( 'Edit %s', '_s' ),
+			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',
 		'</span>'
