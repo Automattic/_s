@@ -14,6 +14,12 @@
  * @return array
  */
 function _s_body_classes( $classes ) {
+
+	// Give all pages a unique class.
+	if ( is_page() ) {
+		$classes[] = 'page-' . basename( get_permalink() );
+	}
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -68,7 +74,7 @@ endif;
 
 /**
  * Allows an administrator to set the logged in user.
- * 
+ *
  * Setting to false will emulate a logged out user.
  *
  * @return void
