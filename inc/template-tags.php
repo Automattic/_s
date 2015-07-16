@@ -7,13 +7,13 @@
  * @package _s
  */
 
-if ( ! function_exists( 'posts_navigation' ) ) :
+if ( ! function_exists( 'wds_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @todo Remove this function when WordPress 4.3 is released.
  */
-function posts_navigation() {
+function wds_posts_navigation() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;

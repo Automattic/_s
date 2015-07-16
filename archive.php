@@ -36,7 +36,7 @@ get_header(); ?>
 	
 				<?php endwhile; ?>
 	
-				<?php posts_navigation(); ?>
+				<?php wds_posts_navigation(); ?>
 	
 			<?php else : ?>
 	
