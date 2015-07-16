@@ -63,10 +63,6 @@ function _s_scripts() {
 
 	}
 
-	wp_deregister_style( 'font-awesome' );
-	wp_register_style( 'font-awesome', get_stylesheet_directory_uri() . '/bower_components/fontawesome/css/font-awesome.min.css', array(), $version );
-
-	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( '_s-google-font', _s_font_url(), array(), null );
 	wp_enqueue_style( '_s-style', get_stylesheet_directory_uri() . '/style' . $suffix . '.css', array(), $version );
 
@@ -80,7 +76,7 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 
 /**
- * Add SVG definitions to <head>
+ * Add SVG definitions to <head>.
  */
 function _s_include_svg_definitions() {
 

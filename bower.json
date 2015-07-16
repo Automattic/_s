@@ -29,7 +29,6 @@
   ],
   "dependencies": {
     "bourbon": "latest",
-    "neat": "latest",
-    "fontawesome": "latest"
+    "neat": "latest"
   }
 }
