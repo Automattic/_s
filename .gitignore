@@ -3,7 +3,7 @@ bower_components/neat
 node_modules/
 .idea/
 .sass-cache
-
+*.sublime-project
 .htaccess
 compass_app_log.txt
 *.log
