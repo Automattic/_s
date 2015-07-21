@@ -32,7 +32,7 @@ Checkout the official wd_s [theme generator](http://generate.themeindex.io/). On
 
 # Manual Theme Setup
 
-[Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your project's `/themes` directory
+1) [Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your project's `/themes` directory
 
 2) Find & Replace
 
