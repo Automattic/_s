@@ -10,6 +10,7 @@ wd_s
 - Bourbon
 - Neat
 - Bower
+- WDS Simple Page Builder support
 - SVG support
 - Image sprite support
 - Script linting and CSS minifcation
@@ -29,13 +30,7 @@ Basic knowledge of the command line and the following dependencies are required 
 
 ##### 1) [Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your project's `/themes` directory
 
-##### 2) Navigate to the `/themes` directory of your project
-
-```bash
-cd /your-project/wordpress/wp-content/themes
-```
-
-##### 3) Find & Replace
+##### 2) Find & Replace
 
 You'll need to change all instances of the names: `_s` to your project name. While this can be a tedious chore, SublimeText can do a global "find & replace"; allowing you to do this in under 60 seconds.
 
@@ -46,7 +41,13 @@ You'll need to change all instances of the names: `_s` to your project name. Whi
 - Search for: `_s-` and replace with: `project-name-` to capture prefixed handles
 - Search for `_s.pot` and replace with: `project-name.pot` to capture translation files
 
-##### 4) Install Dependencies
+##### 3) From the command line, navigate to the `/themes` directory of your project
+
+```bash
+cd /your-project/wordpress/wp-content/themes
+```
+
+##### 4) Install dependencies
 
 ```bash
 npm install && bower install
@@ -56,13 +57,13 @@ You are now ready to use wd_s.
 
 # How to use Grunt
 
-##### 1) Navigate to your new theme
+##### 1) From the command line, navigate to your theme
 
 ```bash
-cd /your-project/wordpress/wp-content/themes/your-new-theme
+cd /your-project/wordpress/wp-content/themes/your-theme
 ```
 
-##### 2) Grunt tasks available:
+##### 2) Type any of the following Grunt tasks to perform an action
 
 `grunt watch` - Automatically handle changes to CSS, javascript, SVG's and image sprites
 
@@ -80,4 +81,4 @@ cd /your-project/wordpress/wp-content/themes/your-new-theme
 
 `grunt sassdoc` - Re-generate the SassDocs
 
-`grunt` - Do it all once!
+`grunt` - Do all the above tasks at the same time
