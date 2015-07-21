@@ -1,7 +1,7 @@
-WebDevStudio's wd_s
+wd_s
 ===
 
-[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used as our internal starter theme. Pull requests are welcome!
+[WebDevStudios](http://webdevstudios.com) fork of Automattic's [_s](https://github.com/Automattic/_s). Used as our new project starter theme. Pull requests are welcome!
 
 # Features
 - Grunt
@@ -23,7 +23,7 @@ Basic knowledge of the command line and the following dependencies are required 
 - [Node](http://nodejs.org/)
 - [Grunt CLI](https://www.npmjs.com/package/grunt-cli) - `npm install -g grunt-cli`
 - [Bower](http://bower.io/) - `npm install -g bower`
-- [Sass](http://sass-lang.com/install)) - `gem install sass`
+- [Sass](http://sass-lang.com/install) - `gem install sass`
 
 # Setup & Installation
 
@@ -37,7 +37,7 @@ cd /your-project/wordpress/wp-content/themes
 
 ##### 3) Find & Replace
 
-You'll need to change all instances of the names: `_s` to your project name.
+You'll need to change all instances of the names: `_s` to your project name. While this can be a tedious chore, SublimeText can do a global "find & replace"; allowing you to do this in under 60 seconds.
 
 - Search for: `'_s'` and replace with: `'project-name'` (inside single quotations) to capture the text domain
 - Search for: `_s_` and replace with: `project-name_` to capture all the function names
