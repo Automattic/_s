@@ -1,4 +1,6 @@
 /**
+ * customizer.js
+ *
  * Theme Customizer enhancements for a better user experience.
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
@@ -27,8 +29,10 @@
 			} else {
 				$( '.site-title, .site-description' ).css( {
 					'clip': 'auto',
-					'color': to,
 					'position': 'relative'
+				} );
+				$( '.site-title a, .site-description' ).css( {
+					'color': to
 				} );
 			}
 		} );
