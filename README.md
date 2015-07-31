@@ -32,6 +32,8 @@ Checkout the official wd_s [theme generator](http://generate.themeindex.io/). On
 
 # Manual Theme Setup
 
+If you prefer to setup your new theme by hand, then you need to do some finding and replacing:
+
 1) [Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your project's `/themes` directory
 
 2) Find & Replace
@@ -61,7 +63,7 @@ cd /your-project/wordpress/wp-content/themes
 npm install && bower install
 ```
 
-You are now ready to use wd_s.
+You are now ready to use wd_s!
 
 # How to use Grunt
 
@@ -71,9 +73,9 @@ You are now ready to use wd_s.
 cd /your-project/wordpress/wp-content/themes/your-theme
 ```
 
-2) Type any of the following Grunt tasks to perform an action
+2) Type any of the following Grunt tasks to perform an action:
 
-`grunt watch` - Automatically handle changes to CSS, javascript, SVG's and image sprites
+`grunt watch` - Automatically handle changes to CSS, JS, SVGs, and image sprites. Plus live reload!
 
 `grunt javascript` - Concatenate and minify javascript files
 
