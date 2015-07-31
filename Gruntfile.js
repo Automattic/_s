@@ -24,12 +24,20 @@ module.exports = function(grunt) {
 		},
 
 		svgmin: {
+			options: {
+				plugins: [ // https://github.com/svg/svgo/tree/master/plugins
+					{ removeComments: true },
+					{ removeTitle: true },
+					{ removeUselessStrokeAndFill: true },
+					{ removeEmptyAttrs: true }
+				]
+			},
 			dist: {
 				files: [{
 					expand: true,
-					cwd: 'images/svg',
-					src: ['*.svg'],
-					dest: 'images/svg'
+					cwd: '',
+					src: ['images/svg/*.svg'],
+					dest: ''
 				}]
 			}
 		},
@@ -44,7 +52,7 @@ module.exports = function(grunt) {
 			},
 			default: {
 				files: {
-					'images/svg-defs.svg': ['images/svg/*.svg'],
+					'images/svg-defs.svg': 'images/svg/*.svg',
 				}
 			}
 		},
@@ -68,10 +76,14 @@ module.exports = function(grunt) {
 
 		autoprefixer: {
 			options: {
-				browsers: ['last 2 versions', 'ie 9']
+				browsers: ['last 2 versions', 'ie 9'],
+				map: {
+					inline: false,
+					sourcesContent: false
+				}
 			},
 			dist: {
-				src: ['*.css', '!*.min.css', '!bower_components', '!node_modules']
+				src: ['style.css']
 			}
 		},
 
@@ -91,7 +103,7 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					cwd: '',
-					src: ['*.css', '!*.min.css', '!editor-style.css', '!rtl.css', '!bower_components', '!node_modules'],
+					src: ['style.css'],
 					dest: '',
 				}]
 			}
@@ -101,7 +113,7 @@ module.exports = function(grunt) {
 			minify: {
 				expand: true,
 				cwd: '',
-				src: ['*.css', '!*.min.css', '!editor-style.css', '!rtl.css', '!bower_components', '!node_modules'],
+				src: ['style.css'],
 				dest: '',
 				ext: '.min.css'
 			}
@@ -109,9 +121,7 @@ module.exports = function(grunt) {
 
 		concat: {
 			dist: {
-				src: [
-					'js/concat/*.js'
-				],
+				src: ['js/concat/*.js'],
 				dest: 'js/project.js',
 			}
 		},
@@ -155,7 +165,7 @@ module.exports = function(grunt) {
 
 			css: {
 				files: ['sass/**/*.scss'],
-				tasks: ['sass'],
+				tasks: ['styles'],
 				options: {
 					spawn: false,
 					livereload: true,
@@ -198,7 +208,7 @@ module.exports = function(grunt) {
 				options: {
 					cwd: '',
 					domainPath: 'languages/',
-					potFilename: '_s.pot',
+					potFilename: 'clp.pot',
 					type: 'wp-theme'
 				}
 			}
@@ -217,7 +227,7 @@ module.exports = function(grunt) {
 		addtextdomain: {
 			theme: {
 				options: {
-					textdomain: '_s'
+					textdomain: 'clp'
 				},
 				target: {
 					files: {
@@ -266,6 +276,7 @@ module.exports = function(grunt) {
 						watermark: false
 					},
 					groups: {
+						fontawesomeicons: 'Font Awesome Icons',
 						wds: 'WebDevStudios',
 						'undefined': 'Bourbon & Neat'
 					},
