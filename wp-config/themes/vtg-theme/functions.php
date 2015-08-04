@@ -5,6 +5,8 @@
  * @package _s
  */
 
+define( 'ASSETS_VERSION', '1.0.0' );
+
 if ( ! function_exists( '_s_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -112,11 +114,17 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/vendor/modernizr/modernizr.js', array(), '2.8.3', false );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		wp_enqueue_style( '_s-style-dev', get_stylesheet_directory_uri() . '/assets/build/styles.css', array(), ASSETS_VERSION );
+		wp_enqueue_script( '_s-scripts-dev', get_template_directory_uri() . '/assets/build/scripts.js', array( 'modernizr', 'jquery' ), ASSETS_VERSION, true );
+		wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/assets/build/navigation.js', array(), ASSETS_VERSION, true );
+		wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/assets/build/skip-link-focus-fix.js', array(), ASSETS_VERSION, true );
+	} else {
+		wp_enqueue_style( '_s-style', get_template_directory_uri() . '/assets/dist/styles-min.css', array(), ASSETS_VERSION );
+		wp_enqueue_script( '_s-scripts', get_template_directory_uri() . '/assets/dist/scripts-min.js', array( 'modernizr', 'jquery' ), ASSETS_VERSION, true );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

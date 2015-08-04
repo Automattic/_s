@@ -1,0 +1,57 @@
+*.log
+/sitemap.xml
+sitemap.xml.gz
+.DS_Store
+node_modules/
+*.css.map
+.sass-cache/
+.travis.yml
+
+# If site uses nginx
+# .htaccess
+
+# WordPress core files
+/wp
+wp-content/plugins/
+wp-content/mu-plugins/
+
+/wp-content/uploads/
+/wp-content/advanced-cache.php
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/blogs.dir/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/wp-cache-config.php
+/wp-config.php
+wp-content/themes/twentyfourteen/
+wp-content/themes/twentythirteen/
+/wp-content/themes/twentyfifteen/
+wp-content/themes/orange-herd/Gemfile.lock
+
+/index.php
+/wp-content/index.php
+/wp-content/plugins/index.php
+/wp-content/themes/index.php
+
+/wp-admin/
+/license.txt
+/readme.html
+/wp-activate.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-includes/
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+
+
+# Pressable files
+.hint
