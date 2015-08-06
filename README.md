@@ -26,11 +26,7 @@ Basic knowledge of the command line and the following dependencies are required 
 * [Bower](http://bower.io/) - `npm install -g bower`
 * [Sass](http://sass-lang.com/install) - `gem install sass`
 
-# Automatic Theme Setup
-
-Checkout the official wd_s [theme generator](http://generate.themeindex.io/). Once you setup the theme, you can start the [install](https://github.com/WebDevStudios/wd_s#installation).
-
-# Manual Theme Setup
+# Theme Setup
 
 If you prefer to setup your new theme by hand, then you need to do some finding and replacing:
 
