@@ -165,7 +165,7 @@ module.exports = function(grunt) {
 
 			css: {
 				files: ['sass/**/*.scss'],
-				tasks: ['styles'],
+				tasks: ['sass'],
 				options: {
 					spawn: false,
 					livereload: true,
@@ -189,7 +189,6 @@ module.exports = function(grunt) {
 					livereload: true,
 				},
 			},
-
 		},
 
 		shell: {
@@ -285,7 +284,6 @@ module.exports = function(grunt) {
 				},
 			},
 		},
-
 
 	});
 
