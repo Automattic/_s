@@ -28,7 +28,7 @@ Basic knowledge of the command line and the following dependencies are required 
 
 # Theme Setup
 
-If you prefer to setup your new theme by hand, then you need to do some finding and replacing:
+To get started, we'll download the files and then to do some finding and replacing:
 
 1) [Download](https://github.com/WebDevStudios/wd_s/archive/master.zip) and extract the zip into your project's `/themes` directory
 
