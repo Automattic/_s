@@ -23,7 +23,7 @@ function _s_body_classes( $classes ) {
 }
 add_filter( 'body_class', '_s_body_classes' );
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '>' ) ) :
 	/**
 	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
 	 *
@@ -39,7 +39,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		global $page, $paged;
 
 		// Add the blog name.
-		$title .= get_bloginfo( 'name', 'display' );
+		$title = get_bloginfo( 'name', 'display' );
 
 		// Add the blog description for the home/front page.
 		$site_description = get_bloginfo( 'description', 'display' );
