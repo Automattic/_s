@@ -169,26 +169,6 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 
 /**
- * Add Admin Options menu item
- *
- * Managed by Advanced Custom Fields Plugin
- *
- */
-function _s_acf_options_page_settings( $settings )
-{
-    $settings['title'] = 'Global Options';
-    // $settings['pages'] = array('Header', 'Sidebar', 'Footer');
-
-    return $settings;
-}
-
-add_filter('acf/options_page/settings', '_s_acf_options_page_settings');
-
-
-
-
-
-/**
  * Order Menu Items
  */
 function _s_custom_menu_order( $menu_ord ) {
