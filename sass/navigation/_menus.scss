@@ -5,6 +5,7 @@
 	width: 100%;
 
 	ul {
+		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -23,7 +24,8 @@
 			}
 
 			li {
-				&:hover > ul {
+				&:hover > ul,
+				&.focus > ul {
 					left: 100%;
 				}
 			}
@@ -32,14 +34,17 @@
 				width: 200px;
 			}
 
-			:hover > a {
+			:hover > a,
+			.focus > a {
 			}
 
-			a:hover {
+			a:hover,
+			a.focus {
 			}
 		}
 
-		li:hover > ul {
+		li:hover > ul,
+		li.focus > ul {
 			left: auto;
 		}
 	}
@@ -47,7 +52,8 @@
 		float: left;
 		position: relative;
 
-		&:hover > a {
+		&:hover > a,
+		&.focus > a {
 		}
 	}
 	a {
@@ -61,40 +67,38 @@
 	}
 }
 
-/* Small menu */
-.menu-toggle {
-	display: none;
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
 		display: none;
 	}
+	.main-navigation ul {
+		display: block;
+	}
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+	& .nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	& .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
 }
