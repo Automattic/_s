@@ -23,6 +23,16 @@ require get_template_directory() . '/inc/plugins.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
+ * Post Types
+ */
+// require get_template_directory() . '/inc/cpt/cpt-name.php';
+
+/**
+ * Taxonomies
+ */
+// require get_template_directory() . '/inc/tax/taxonomy-name.php';
+
+/**
  * Custom functions
  */
 require get_template_directory() . '/inc/functions.php';
