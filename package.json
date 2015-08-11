@@ -13,9 +13,9 @@
     "grunt-csscomb": "^3.0.0",
     "grunt-newer": "^1.1.0",
     "grunt-notify": "^0.4.1",
-    "grunt-sass": "^0.18.1",
-    "load-grunt-tasks": "^3.1.0",
-    "time-grunt": "^1.0.0"
+    "grunt-sass": "^1.0.0",
+    "load-grunt-tasks": "^3.2.0",
+    "time-grunt": "^1.2.1"
   },
   "repository": {
     "type": "git",
