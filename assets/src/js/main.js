@@ -60,6 +60,7 @@
 
                             resized = false;
 
+                            EV.utils.mqState.checkStateView();
                         }
 
                     }, 50);
