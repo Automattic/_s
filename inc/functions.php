@@ -341,56 +341,59 @@ if ( ! function_exists( '_s_pagination' ) ) :
 * @param str $echo
 * @return str $r
 */
-function _s_pagination( $echo = true ) {
+function _s_pagination( $query = false, $echo = true ) {
 
-   global $wp_query;
+    global $wp_query;
 
-   $total_pages  = $wp_query->max_num_pages;
-   $current_page = max( 1, get_query_var('paged') );
+    $total_pages  = ( $query ) ? $query->max_num_pages : $wp_query->max_num_pages;
+    $current_page = max( 1, get_query_var('paged') );
 
-   $big = 999999999; // need an unlikely integer
+    $big = 999999999; // need an unlikely integer
 
-   $pages = paginate_links( array(
-       'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-       'format'             => '?paged=%#%',
-       'total'              => $total_pages,
-       'current'            => $current_page,
-       'prev_next'          => true,
-       'prev_text'          => '&laquo; Prev',
-       'next_text'          => 'Next &raquo;',
-       'type'               => 'array',
-       'show_all'           => false,
-       'end_size'           => 1,
-       'mid_size'           => 2,
-       'add_args'           => false,
-       'add_fragment'       => '',
-       'before_page_number' => '',
-       'after_page_number'  => ''
-   ) );
+    $pages = paginate_links( array(
+        'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        'format'             => '?paged=%#%',
+        'total'              => $total_pages,
+        'current'            => $current_page,
+        'prev_next'          => true,
+        'prev_text'          => '<i class="icon-keyboard-arrow-left"></i>',
+        'next_text'          => '<i class="icon-keyboard-arrow-right"></i>',
+        'type'               => 'array',
+        'show_all'           => false,
+        'end_size'           => 1,
+        'mid_size'           => 2,
+        'add_args'           => false,
+        'add_fragment'       => '',
+        'before_page_number' => '',
+        'after_page_number'  => ''
+    ) );
 
-   // only show pagination if needed
-   if( !$pages ) // returns null if only 1 page of results
-       return;
+    // only show pagination if needed
+    if( !$pages ) // returns null if only 1 page of results
+        return;
 
-   $r = '<div class="pagination-wrap pagination-centered">' . "\n";
-   $r .= '    <ul class="pagination">' . "\n";
+    $r = '<div class="pagination-wrap pagination-centered">' . "\n";
+    $r .= '    <ul class="pagination">' . "\n";
 
-   foreach( $pages as $page ) {
-       $r .= '        <li class="pagination__item">' . $page . '</li>' . "\n";
-   }
+    foreach( $pages as $page ) {
+        $r .= '        <li class="pagination__item">' . $page . '</li>' . "\n";
+    }
 
-   $r .= '    </ul>' . "\n";
+    $r .= '    </ul>' . "\n";
 
-   $page_count = _s_result_count_output( array( 'echo' => false ) );
+    $page_count = _s_result_count_output( array(
+        'query' => $query,
+        'echo'  => false
+    ) );
 
-   $r .= '    ' . $page_count . "\n";
-   $r .= '</div>' . "\n";
+    $r .= '    ' . $page_count . "\n";
+    $r .= '</div>' . "\n";
 
-   if( $echo ) {
-       echo $r;
-   } else {
-       return $r;
-   }
+    if ( $echo ) {
+        echo $r;
+    } else {
+        return $r;
+    }
 }
 endif;
 
@@ -404,30 +407,30 @@ if ( ! function_exists( '_s_result_count' ) ) :
  * @param  boolean $echo echo or return result
  * @return string        output
  */
-function _s_result_count( $echo = true ) {
+function _s_result_count( $query = false, $echo = true ) {
 
     $r = '';
 
     global $wp_query;
 
-    $total_pages  = $wp_query->max_num_pages;
-    $total_items  = $wp_query->found_posts;
+    $total_pages  = ( $query ) ? $query->max_num_pages : $wp_query->max_num_pages;
+    $total_items  = ( $query ) ? $query->found_posts : $wp_query->found_posts;
     $current_page = max( 1, get_query_var('paged') );
-    $per_page     = $wp_query->get( 'posts_per_page' );
+    $per_page     = ( $query ) ? $query->query_vars['posts_per_page'] : $wp_query->get( 'posts_per_page' );
     $page_start   = ( $per_page * $current_page ) - $per_page + 1;
     $page_end     = min( $total_items, $per_page * $current_page );
 
     if ( 1 == $total_items ) :
 
-        __( 'Showing: 1 Result', '_s' );
+        $r .= __( 'Showing: 1 Result', 'elevator' );
 
     elseif ( $total_items <= $per_page || -1 == $per_page ) :
 
-        sprintf( __( 'Showing: %d Results', '_s' ), $total_items );
+        $r .= sprintf( __( 'Showing: %d Results', 'elevator' ), $total_items );
 
     else :
 
-        $r .= 'Showing: ' . sprintf( _x( '%1$d&ndash;%2$d of %3$d', '%1$d = page_start, %2$d = page_end, %3$d = total_items', '_s' ), $page_start, $page_end, $total_items ) . "\n";
+        $r .= 'Showing: ' . sprintf( _x( '%1$d&ndash;%2$d of %3$d', '%1$d = page_start, %2$d = page_end, %3$d = total_items', 'elevator' ), $page_start, $page_end, $total_items ) . "\n";
 
     endif;
 
@@ -457,6 +460,7 @@ function _s_result_count_output( $args = array() ) {
     $defaults = array (
         'container'       => 'div',
         'container_class' => '',
+        'query'           => false,
         'echo'            => true
     );
 
@@ -466,7 +470,7 @@ function _s_result_count_output( $args = array() ) {
     // OPTIONAL: Declare each item in $args as its own variable i.e. $type, $before.
     extract( $args, EXTR_SKIP );
 
-    $result = _s_result_count( false );
+    $result = _s_result_count( $query, false );
 
     if ( $result ) :
 
