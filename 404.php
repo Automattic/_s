@@ -22,7 +22,14 @@ get_header(); ?>
 
 					<?php get_search_form(); ?>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+					<?php the_widget(
+						'WP_Widget_Recent_Posts',
+						array(),
+						array(
+							'before_title'  => '<h2 class="widget-title">',
+							'after_title'   => '</h2>',
+						)
+					); ?>
 
 					<?php if ( _s_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
@@ -44,10 +51,26 @@ get_header(); ?>
 					<?php
 						/* translators: %1$s: smiley */
 						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+						the_widget(
+							'WP_Widget_Archives',
+							array(
+								'dropdown' => '1',
+							),
+							array(
+								'before_title' => '<h2 class="widget-title">',
+								'after_title'  => "</h2>$archive_content",
+							)
+						);
 					?>
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+					<?php the_widget(
+						'WP_Widget_Tag_Cloud',
+						array(),
+						array(
+							'before_title'  => '<h2 class="widget-title">',
+							'after_title'   => '</h2>',
+						)
+					); ?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
