@@ -120,4 +120,6 @@
     $font-size                               : 16px;
     $font-color                              : $charcoal;
     $link-color                              : $success;
-    $selection-highlight                     : $error;
+
+    $selection-highlight-background          : $error;
+    $selection-highlight-color               : white;

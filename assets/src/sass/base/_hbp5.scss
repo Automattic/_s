@@ -24,12 +24,14 @@ body {
  */
 
 ::-moz-selection {
-    background: $selection-highlight;
+    background: $selection-highlight-background;
+    color: $selection-highlight-color;
     text-shadow: none;
 }
 
 ::selection {
-    background: $selection-highlight;
+    background: $selection-highlight-background;
+    color: $selection-highlight-color;
     text-shadow: none;
 }
 
