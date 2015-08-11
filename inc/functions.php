@@ -6,6 +6,181 @@
  */
 
 /* ==========================================================================
+   Utilities
+   ========================================================================== */
+
+/**
+ * Set offset for custom pagination
+ */
+function _s_get_offset( $limit = '' ) {
+
+    // value set for posts per page
+    $number = ( $limit ) ? $limit : get_query_var( 'posts_per_page' );
+
+    // determine what page we're on
+    $page   = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+    // get offset so we can show what thoughts to display
+    return 1 == $page ? ( $page - 1 ) : ( ( $page - 1 ) * $number );
+
+}
+
+
+
+
+
+/**
+ * Sanitize Value
+ *
+ * Primarily used for output from Advanced Custom Field Plugin
+ *
+ * wp_kses_allowed_html( 'post' ) => This will return a list of allowed HTML
+ * tags for a given content. In this case, posts. Anything not in the list
+ * will be removed.
+ *
+ * Reference: https://codex.wordpress.org/Function_Reference/wp_kses_allowed_html
+ *            https://developer.wordpress.org/reference/functions/wp_kses_allowed_html/
+ *
+ * @param  string $value
+ * @return string
+ */
+function _s_sanitize( $value ) {
+
+    return wp_kses( $value, wp_kses_allowed_html( 'post' ) );
+
+}
+
+
+
+
+
+/**
+ * Get image path
+ *
+ * Get image src with option to fallback
+ *
+ * @param  array  $args options passed to function
+ * @return mixed        boolean/string
+ */
+function _s_get_image( $args = array() ) {
+
+    // image path
+    $r = array();
+
+    $defaults = array (
+        'image_id' => '',
+        'size'     => '588x320',
+        'field'    => '',
+        'field_id' => '',
+        'fallback' => false,
+        'echo'     => false,
+        'path'     => false
+    );
+
+    // Parse incoming $args into an array and merge it with $defaults
+    $args = wp_parse_args( $args, $defaults );
+
+    // OPTIONAL: Declare each item in $args as its own variable i.e. $type, $before.
+    extract( $args, EXTR_SKIP );
+
+    // image id from ACF field (regular or repeater)
+    if( ! $image_id && $field ) :
+
+        $image_id = ( get_sub_field( $field, $field_id ) ) ? get_sub_field( $field, $field_id ) : get_field( $field, $field_id );
+
+    endif;
+
+    // image data
+    $image_data = wp_get_attachment_image_src( $image_id, $size );
+
+    // get image path or decide to use fallback
+    if ( ! $image_data && $fallback ) :
+        // fallback image path
+        $r[0] = constant( 'FB_' . $size );
+
+        // image dimensions (identical return array as wp_get_attachment_image_src)
+        $parts = explode( 'x', $size );
+        $r[1]  = $parts[0];
+        $r[2]  = $parts[1];
+    else:
+        // image data
+        $r = $image_data;
+    endif;
+
+    // return path only
+    if ( $path && ! $echo ) :
+        $r = $r[0];
+    endif;
+
+    if ( $echo ) :
+        echo $r[0]; // return just image path
+    else :
+        return $r;
+    endif;
+
+}
+
+
+
+
+
+/**
+ * Simple Url
+ *
+ * Remove 'http(s)', '//:', '/', 'www' from url
+ *
+ * @param  string $url
+ * @return string
+ */
+function _s_simple_url( $url ) {
+
+    $url = trim( $url, '/' );
+
+    // If scheme not included, prepend it
+    if ( !preg_match( '#^http(s)?://#', $url ) ) {
+
+        $url = 'http://' . $url;
+    }
+
+    $parts = parse_url( $url );
+
+    // remove www
+    $url = preg_replace('/^www\./', '', $parts['host']);
+
+    return $url;
+
+}
+
+
+
+
+
+/**
+ * Get post's content
+ *
+ * Must be used within loop
+ * @param  $id      int/string    Specific post ID where your value was entered. Defaults to current post ID (not required). This can also be options / taxonomies / users / etc
+ * @param  $format  boolean       whether or not to format the value loaded from the db. Defaults to true (not required).
+ * @param  $echo    boolean       echo or return result
+ * @return boolean/string
+ */
+function _s_the_content( $id = '', $format = true, $echo = true ) {
+
+    $r = ( get_field( 'content', $id ) ) ? get_field( 'content', $id, (bool)$format ) : get_the_content();
+
+    if( $echo ) :
+        echo $r;
+    else :
+        return $r;
+    endif;
+
+}
+
+
+
+
+
+/* ==========================================================================
    Comments
    ========================================================================== */
 
