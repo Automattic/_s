@@ -202,32 +202,6 @@
     float: right;
 }
 
-.alignleft {
-    @include mq( $from: tablet ) {
-        margin-right: 1.5em;
-        margin-bottom: 1.5em;
-        display: inline;
-        float: left;
-    }
-}
-
-.alignright {
-    @include mq( $from: tablet ) {
-        margin-left: 1.5em;
-        margin-bottom: 1.5em;
-        display: inline;
-        float: right;
-    }
-}
-
-.aligncenter {
-    @include mq( $from: tablet ) {
-        clear: both;
-        display: block;
-        margin: 0 auto;
-    }
-}
-
 
 
 
