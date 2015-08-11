@@ -55,3 +55,54 @@
 .l-container {
     @include clearfix;
 }
+
+
+
+
+
+/* Sections
+   ========================================================================== */
+
+.l-section {
+    padding: 0 .5em;
+}
+
+.l-section--xs {
+    padding: .5em;
+}
+
+.l-section--sm {
+    padding: 1em .5em;
+
+    @include mq( $until: tablet ) {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+}
+
+.l-section--md {
+    padding: 2em .5em;
+
+    @include mq( $until: tablet ) {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+}
+
+.l-section--lg {
+    padding: 3em .5em;
+
+    @include mq( $until: tablet ) {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+}
+
+.l-section--xl {
+    padding: 4em .5em;
+
+    @include mq( $until: tablet ) {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+}
