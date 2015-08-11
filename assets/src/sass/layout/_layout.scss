@@ -106,3 +106,59 @@
         padding-bottom: 1em;
     }
 }
+
+
+
+
+
+/* Layouts
+   ========================================================================== */
+
+.l-primary {
+    @include mq( $until: tablet ) {
+        padding-bottom: 2em;
+    }
+    @include mq( $from: tablet ) {
+        padding-right: 1.5em;
+        @include span( 8 no-gutters );
+    }
+    @include mq( $from: site ) {
+        @include span( 9 no-gutters );
+    }
+}
+
+.l-secondary {
+    @include mq( $from: tablet ) {
+        padding-left: 1.5em;
+        @include span( 4 no-gutters );
+    }
+    @include mq( $from: site ) {
+        @include span( 3 no-gutters );
+    }
+}
+
+.l-split {
+    @include mq( $until: tablet ) {
+        & + & {
+            padding-top: 1em;
+        }
+    }
+
+    @include mq( $from: tablet ) {
+        padding: 0 1em;
+
+        &:first-child {
+            padding-left: 0;
+            @include span( 6 no-gutters first );
+        }
+
+        &:last-child {
+            padding-right: 0;
+            @include span( 6 no-gutters last );
+        }
+    }
+}
+
+.l-split--full {
+    padding: 0;
+}
