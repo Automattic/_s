@@ -67,7 +67,7 @@ a {
     @include transition-property( color, background, border );
     @include transition-duration( .15s );
     &:hover {
-        color: $charcoal;
+        color: $link-color-hover;
     }
 }
 
