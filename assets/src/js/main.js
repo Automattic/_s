@@ -3,7 +3,7 @@
 
     $(document).ready( function() {
 
-        var Elevator = {
+        var EV = {
             init : function() {
                 this.utils.init();
             },
@@ -29,23 +29,24 @@
                     },
                     checkStateView : function() {
 
-                        Elevator.vals.view  = parseInt( $('.mq-state').css('z-index') );
+                        EV.vals.view  = parseInt( $('.mq-state').css('z-index') );
 
                         // fallback to desktop if browser doesn't support media queries
-                        if ( ! Modernizr.mq( 'only all' ) ) Elevator.vals.view = 30;
+                        if ( ! Modernizr.mq( 'only all' ) ) EV.vals.view = 30;
 
                     },
 
                 },
+
                 setDelay : function() {
 
                     var scrolled = false,
                         resized  = false;
 
                     // delay checking of scroll
-                    Elevator.vals.$window.on( 'scroll touchmove', function() { scrolled = true; });
+                    EV.vals.$window.on( 'scroll touchmove', function() { scrolled = true; });
                     // delay checking of window resize
-                    Elevator.vals.$window.on( 'resize', function() { resized = true; });
+                    EV.vals.$window.on( 'resize', function() { resized = true; });
 
                     setInterval( function() {
 
@@ -89,7 +90,7 @@
             },
         };
 
-        Elevator.init();
+        EV.init();
 
     });
 
