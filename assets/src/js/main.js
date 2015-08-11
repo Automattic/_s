@@ -8,7 +8,7 @@
                 this.utils.init();
             },
             vals : {
-                $window : $(window)
+                $window : $(window) // http://jsperf.com/jquery-window-cache
             },
             utils : {
 
