@@ -15,8 +15,8 @@
         background-color: $mercury;
 
         footer {
-            @extend %clearfix;
             margin-bottom: .5em;
+            @include clearfix;
         }
     }
 

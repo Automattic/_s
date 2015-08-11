@@ -7,10 +7,10 @@
    ========================================================================== */
 
 %l-constrained {
-    @extend %clearfix;
     margin: 0 auto;
     width: 100%;
     max-width: $site-constraint;
+    @include clearfix;
 }
 
 .l-constrained {
@@ -18,5 +18,5 @@
 }
 
 .l-container {
-    @extend %clearfix;
+    @include clearfix;
 }

@@ -3,12 +3,76 @@
 // Mixins
 // ==========================================================================
 
+/// Provides an easy way to include a clearfix for containing floats.
+///
+/// @link http://cssmojo.com/latest_new_clearfix_so_far/
+///
+/// @example scss - Usage
+///   .element {
+///     @include clearfix;
+///   }
+///
+/// @example css - CSS Output
+///   .element::after {
+///     clear: both;
+///     content: "";
+///     display: table;
+///   }
 
-// Box Sizing
-@mixin box-sizing( $box-model ) {
-    -webkit-box-sizing: $box-model; // Safari <= 5
-       -moz-box-sizing: $box-model; // Firefox <= 19
-            box-sizing: $box-model;
+@mixin clearfix {
+
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+/// Word Wrapping
+///
+/// Break lines within words in order to prevent overflow for long, unbreakable
+/// strings.
+///
+/// Spec introduces new property 'overflow-wrap', but word-break should still be treated as alternative
+/// Reference: http://www.w3.org/TR/css3-text/#overflow-wrap
+///
+/// Previous approach was too aggressive in that it broke words wherever.
+///
+/// @link https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+/// @link (old) http://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+
+@mixin overflow-wrap() {
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    overflow-wrap: break-word;
+
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+            hyphens: auto;
+}
+
+///
+/// Cross browser support for word wrapping.
+///
+/// @link http://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+/// @link https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+///
+
+@mixin word-wrap {
+
+    /* Warning: Needed for oldIE (lte ie8) support, but words are broken up letter-by-letter */
+    // -ms-word-break: break-all;
+    //     word-break: break-all;
+
+    /* Non standard for webkit */
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
 }
 
 // Baseline, measured in pixels
