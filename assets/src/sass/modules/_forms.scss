@@ -59,7 +59,7 @@ button {
  * Normalize sets as 'content-box'
  */
 input[type="search"] {
-  @include box-sizing( border-box ); /* 1 */
+  box-sizing: border-box; /* 1 */
 }
 
 textarea {

@@ -16,15 +16,15 @@ html {
 *,
 *:after,
 *:before {
-    @include box-sizing( border-box );
+    box-sizing: border-box;
     -webkit-font-smoothing: antialiased; /* 1 */
-    @media /* 2 */
+    @media
         only screen and (-webkit-min-device-pixel-ratio: 1.25),
         only screen and ( min-device-pixel-ratio: 1.25),
         only screen and ( min-resolution: 200dpi),
         only screen and ( min-resolution: 1.25dppx) {
             -webkit-font-smoothing: subpixel-antialiased;
-    }
+    } /* 2 */
 }
 
 embed,
