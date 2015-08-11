@@ -26,7 +26,7 @@ $mq-static-breakpoint: site;
 // Dependencies
 // ==========================================================================
 
-@import "../../../bower_components/bourbon/dist/bourbon", // [libsass] must use 3.2.3 | current => 4.1 (1/15/2015)
+@import "../../../bower_components/bourbon/app/assets/stylesheets/bourbon",
         "../../../bower_components/sass-mq/mq",
         "../../../bower_components/susy/sass/susy";
 
