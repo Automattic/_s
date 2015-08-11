@@ -17,6 +17,41 @@
     @extend %l-constrained;
 }
 
+.l-constrained--mobile {
+    @extend %l-constrained;
+    max-width: $mobile;
+}
+
+.l-constrained--mobile-landscape {
+    @extend %l-constrained;
+    max-width: $mobile-landscape;
+}
+
+.l-constrained--mobile-wide {
+    @extend %l-constrained;
+    max-width: $mobile-wide;
+}
+
+.l-constrained--tablet {
+    @extend %l-constrained;
+    max-width: $tablet;
+}
+
+.l-constrained--tablet-landscape {
+    @extend %l-constrained;
+    max-width: $tablet-landscape;
+}
+
+.l-constrained--site {
+    @extend %l-constrained;
+    max-width: $site;
+}
+
+.l-constrained--desktop-wide {
+    @extend %l-constrained;
+    max-width: $desktop-wide;
+}
+
 .l-container {
     @include clearfix;
 }
