@@ -17,6 +17,7 @@
                     this.mqState.appendEl();
                     this.mqState.checkStateView();
                     this.setDelay();
+                    this.scrollIt();
 
                 },
                 mqState : {
@@ -61,6 +62,29 @@
                         }
 
                     }, 50);
+                },
+
+                scrollIt : function() {
+
+                    // Animate the scroll to top
+                    $('.js-to-top').on( 'click', function( e ) {
+
+                        e.preventDefault();
+
+                        $('html, body').animate( { scrollTop: 0 }, 300 );
+
+                    });
+
+                    // Animate scroll to id
+                    $('.js-scroll-to').on( 'click', function( e ) {
+
+                        e.preventDefault();
+
+                        var href        = $(this).attr('href'),
+                            scrollPoint = $(href).offset();
+
+                        $('html, body').animate( { scrollTop: scrollPoint.top }, 300 );
+                    });
                 }
             },
         };
