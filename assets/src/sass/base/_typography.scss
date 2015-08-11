@@ -20,12 +20,12 @@ h1, h2, h3, h4 {
 
 h1, .h1 {
     margin: 0 0 .5em;
-    @include rem( 'font-size', 39px ); // 2.441em
+    @include rem( 'font-size', 39px ); // 2.438em
 }
 
 h2, .h2 {
     margin: 1.414em 0 .5em;
-    @include rem( 'font-size', 31px ); // 1.953em
+    @include rem( 'font-size', 31px ); // 1.938em
 }
 
 h3, .h3 {
