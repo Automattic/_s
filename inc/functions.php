@@ -544,7 +544,7 @@ function _s_social_icons( $args = array() ) {
 
     endif;
 
-    if( $echo ) :
+    if ( $echo ) :
         echo $r;
     else :
         return $r;
