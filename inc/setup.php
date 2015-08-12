@@ -106,6 +106,40 @@ add_action( 'after_setup_theme', '_s_content_width', 0 );
 
 
 /**
+ * Set X-UA-Compatible for IE
+ *
+ * Sends headers to browser in an attempt to have IE render the website using
+ * their latest rendering engine (i.e. IE=edge). Additionally, attempts to
+ * activate Chrome Frame add-on if it exists.
+ *
+ * IE browser may show compatibility icon in address bar when using HTML5 Boilerplate's
+ * heading markup which contains conditional comments on HTML tag.
+ *
+ * Setting the X-UA-Compatible meta tag will not work if placed after the HTML
+ * conditional comments.
+ *
+ * While there are workarounds, the preferred method is to send headers, not markup.
+ *
+ * IE should attempt to render website using its "stable" engine. I believe as
+ * of IE10, this is edge.
+ *
+ * @link Explanation of values: http://stackoverflow.com/a/14637972/3163972
+ * @link Solution: http://stackoverflow.com/a/9624500/3163972
+ * @link HTML5 Boilerplate's Take: https://github.com/h5bp/html5-boilerplate/issues/378
+ * @link Reasons Compatibility Mode may be set: http://stackoverflow.com/a/3726605/3163972
+ */
+function prefix_add_header_xua() {
+
+    header( 'X-UA-Compatible: IE=edge,chrome=1' );
+
+}
+add_action( 'send_headers', 'prefix_add_header_xua' );
+
+
+
+
+
+/**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
