@@ -24,23 +24,43 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
+<div id="outer-wrap">
+<div id="inner-wrap">
+<header class="header">
+	<div id="top" class="l-constrained">
+		<!-- <div class="l-logo">
+			<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<img class="logo__image" src="<?php echo get_template_directory_uri(); ?>/assets/dist/img/logo@2x.png" width="197" height="48" alt="<?php echo esc_attr( bloginfo( 'name' ) ); ?>">
+			</a>
+		</div> -->
+		<a id="nav-open-btn" class="menu-toggle js-menu-toggle" href="#offcanvas"><span class="menu-toggle__line"></span><span class="visuallyhidden">Menu</span></a>
+		<div class="offcanvas-wrap l-header-content">
+			<div id="offcanvas" class="offcanvas">
+				<a id="nav-close-btn" class="menu-toggle menu-toggle--close" href="#top"><span class="menu-toggle__line"></span><span class="visuallyhidden">Close</span></a>
+				<nav class="l-header-main" role="navigation">
+					<ul class="main">
+						<li class="main__item"><a class="main__link" href="#">Content</a></li>
+						<li class="main__item"><a class="main__link" href="#">Partners</a></li>
+						<li class="main__item"><a class="main__link" href="#">Production Services</a></li>
+						<li class="main__item"><a class="main__link" href="#">About 1620</a></li>
+						<li class="main__item"><a class="main__link" href="#">Blog</a></li>
+						<li class="main__item"><a class="main__link" href="#">Shop</a></li>
+					</ul>
+				</nav>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif; ?>
-			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-		</div><!-- .site-branding -->
+				<?php // wp_nav_menu( array(
+					  //  'theme_location' => 'primary',
+					  //  'container'      => '',
+					  //  'menu_class'     => 'main',
+					  //  'walker'         => new EV_Sub_Level_Walker
+					//)
+				//); ?>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+			</div>
+		</div>
+	</div>
+</header>
+	<div class="wrap">
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+	</div>

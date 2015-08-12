@@ -124,3 +124,27 @@
 
     $selection-highlight-background          : $error;
     $selection-highlight-color               : white;
+
+// ==========================================================================
+// Offcanvas
+// ==========================================================================
+
+    // Menu
+    // ----------------------------------------------------------------------
+
+    $offcanvas-background-color              : $off-black;
+    $offcanvas-link-color                    : white;
+    $offcanvas-link-color-hover              : $error;
+    $offcanvas-link-background-color-hover   : darken( $charcoal, 2% );
+    $offcanvas-link-border-color             : lighten( $off-black, 6% );
+
+    // Toggle
+    // ----------------------------------------------------------------------
+
+    $menu-toggle-background-color                          : $error;
+    $menu-toggle-background-color-hover                    : white;
+    $menu-toggle-border-color                              : $error;
+    $menu-toggle-border-color-hover                        : $error;
+    $menu-toggle-line-color                                : white;
+    $menu-toggle-line-color-hover                          : $error;
+    $menu-toggle-line-color-active                         : $error;

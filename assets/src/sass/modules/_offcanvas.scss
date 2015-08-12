@@ -41,40 +41,7 @@
     }
 }
 
-.menu-btn {
-    margin: .5em;
-    text-align: right;
-    @include mq( $from: tablet ) {
-        display: none;
-    }
-}
-
-.menu-btn__icon {
-    padding: 10px 14px;
-    display: inline-block;
-    background-color: $charcoal;
-    border-radius: 2px;
-    color: white;
-    @include rem( 'font-size', 22px );
-
-    &:hover {
-        color: white;
-        background-color: $success;
-    }
-
-    & > span {
-        width: 18px;
-        height: 2px;
-        display: block;
-        background-color: white;
-
-        & + span {
-            margin-top: 3px;
-        }
-    }
-}
-
-.nav-primary { // #nav
+.offcanvas { // #nav
     @include mq( $until: tablet ) {
         position: absolute;
         top: 0;
@@ -82,6 +49,10 @@
         z-index: 200;
         overflow: hidden;
         color: white;
+    }
+
+    .no-js & {
+        background-color: $offcanvas-background-color;
     }
 
     &:not(:target) {
@@ -96,11 +67,11 @@
             height: 100%;
             width: 70%;
             right: -70%;
-            background-color: $off-black;
+            background-color: $offcanvas-background-color;
             box-shadow: inset 1.5em 0 1.5em -.75em rgba( black, .25 );
         }
 
-        .block {
+        .offcanvas-wrap {
             background-color: transparent;
         }
     }
@@ -115,7 +86,7 @@
 
     .csstransforms3d.csstransitions.js-ready & {
 
-        .block {
+        .offcanvas-wrap {
             @include mq( $until: tablet ) {
                 opacity: .7;
                 @include transition( opacity 300ms 100ms, transform 500ms ease );
@@ -127,7 +98,7 @@
 
     .csstransforms3d.csstransitions.js-nav & {
 
-        .block {
+        .offcanvas-wrap {
             @include mq( $until: tablet ) {
                 opacity: 1;
                 @include transform( translate3d( 0, 0, 0 ) );
@@ -135,7 +106,7 @@
         }
     }
 
-    .block {
+    .offcanvas-wrap {
         @include mq( $until: tablet ) {
             margin: 0 auto;
             z-index: 2;
@@ -143,42 +114,143 @@
         }
     }
 
-    .menu-main {
+    /**
+     * May be overqualified/redundant if styling in _modules.scss. Rereference '.main' and .main__link'
+     */
+    .main {
         @include mq( $until: tablet ) {
-            border-top: 1px solid lighten( $off-black, 6% );
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            border-top: 1px solid $offcanvas-link-border-color;
         }
 
         > li {
             @include mq( $until: tablet ) {
                 display: block;
-                border-bottom: 1px solid lighten( $off-black, 6% );
+                border-bottom: 1px solid $offcanvas-link-border-color;
             }
 
             a {
                 @include mq( $until: tablet ) {
-                    padding: 1em 2em;
+                    padding: 1em;
                     display: block;
-                    color: $alto;
+                    color: $offcanvas-link-color;
                 }
 
                 &:focus, &:hover {
                     @include mq( $until: tablet ) {
-                        color: white;
-                        background-color: $success;
+                        color: $offcanvas-link-color-hover;
+                        background-color: $offcanvas-link-background-color-hover;
                     }
                 }
             }
         }
     }
 }
-.head { // #top
 
-    > .head-row {
 
-        > .menu-btn {
-            @include mq( $until: tablet ) {
-                float: right;
-            }
+
+
+
+/* Menu Toggle
+   ========================================================================== */
+
+.menu-toggle {
+    margin-top: 24px;
+    margin-right: 12px;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    display: none;
+    background-color: $menu-toggle-background-color;
+    border: 2px solid $menu-toggle-border-color;
+    border-radius: 2px;
+
+    &:hover,
+    .js-nav &:hover {
+        background-color: $menu-toggle-background-color-hover;
+        border-color: $menu-toggle-border-color-hover;
+    }
+    .js-nav & {
+        background-color: transparent;
+    }
+
+    @include mq( $until: tablet ) {
+        display: block;
+        float: right;
+    }
+}
+
+.menu-toggle--close {
+
+    .js & {
+        display: none;
+    }
+}
+
+.menu-toggle__line {
+    margin-top: -1px;
+    margin-left: -10px;
+    width: 20px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $menu-toggle-line-color;
+    -webkit-backface-visibility: hidden;
+    @include transition( background .15s );
+
+    .menu-toggle:hover & {
+        background-color: $menu-toggle-line-color-hover ;
+    }
+
+    .js-nav &,
+    .js-nav .menu-toggle:hover &,
+    .no-js .menu-toggle--close &,
+    .no-js .menu-toggle--close:hover & {
+        background-color: rgba( $menu-toggle-line-color-hover, 0 );
+
+        &:before,
+        &:after {
+            background-color: $menu-toggle-line-color-hover;
+        }
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-color: inherit;
+        -webkit-backface-visibility: hidden;
+
+        .js-nav &,
+        .no-js .menu-toggle--close & {
+            background-color: $menu-toggle-line-color-active;
+        }
+    }
+
+    &:before {
+        @include transform( translateY( -6px ) );
+        @include transition( transform .3s );
+
+        .js-nav &,
+        .no-js .menu-toggle--close & {
+            @include transform( rotate( 45deg ) );
+        }
+    }
+
+    &:after {
+        @include transform( translateY( 6px ) );
+        @include transition( transform .3s );
+
+        .js-nav &,
+        .no-js .menu-toggle--close & {
+            @include transform( rotate( -45deg ) );
         }
     }
 }
