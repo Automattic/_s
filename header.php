@@ -39,12 +39,12 @@
 				<a id="nav-close-btn" class="menu-toggle menu-toggle--close" href="#top"><span class="menu-toggle__line"></span><span class="visuallyhidden">Close</span></a>
 				<nav class="l-header-main" role="navigation">
 					<ul class="main">
-						<li class="main__item"><a class="main__link" href="#">Content</a></li>
-						<li class="main__item"><a class="main__link" href="#">Partners</a></li>
-						<li class="main__item"><a class="main__link" href="#">Production Services</a></li>
-						<li class="main__item"><a class="main__link" href="#">About 1620</a></li>
-						<li class="main__item"><a class="main__link" href="#">Blog</a></li>
-						<li class="main__item"><a class="main__link" href="#">Shop</a></li>
+						<li class="main__item"><a class="main__link" href="#">Link Item</a></li>
+						<li class="main__item"><a class="main__link" href="#">Link Item</a></li>
+						<li class="main__item"><a class="main__link" href="#">Link Item</a></li>
+						<li class="main__item"><a class="main__link" href="#">Link Item</a></li>
+						<li class="main__item"><a class="main__link" href="#">Link Item</a></li>
+						<li class="main__item"><a class="main__link" href="#">Link Item</a></li>
 					</ul>
 				</nav>
 
