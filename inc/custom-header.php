@@ -1,7 +1,6 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
- * http://codex.wordpress.org/Custom_Headers
+ * Sample implementation of the Custom Header feature.
  *
  * You can add an optional custom header image to header.php like so ...
  *
@@ -10,6 +9,8 @@
 		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 	</a>
 	<?php endif; // End header image check. ?>
+ *
+ * @link http://codex.wordpress.org/Custom_Headers
  *
  * @package _s
  */

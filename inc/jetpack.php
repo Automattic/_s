@@ -1,7 +1,8 @@
 <?php
 /**
- * Jetpack Compatibility File
- * See: https://jetpack.me/
+ * Jetpack Compatibility File.
+ *
+ * @link https://jetpack.me/
  *
  * @package _s
  */
