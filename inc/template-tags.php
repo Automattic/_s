@@ -300,3 +300,76 @@ function _s_do_social_icons() { ?>
 	</ul>
 
 <?php }
+
+/**
+ * Limit the excerpt.
+ *
+ * @param  int     $num_words  The word limit.
+ * @param  string  $more       The "read more" text.
+ *
+ * @return string              The shortened excerpt.
+ */
+function _s_get_the_excerpt( $num_words = 20, $more = '...' ) {
+	return wp_trim_words( get_the_excerpt(), $num_words, $more );
+}
+
+/**
+ * Echo an image, no matter what.
+ *
+ * @param string  $size  The image size you want to display.
+ */
+function _s_do_post_image( $size = 'thumbnail' ) {
+
+	// If featured image is present, use that
+	if ( has_post_thumbnail() ) {
+		return the_post_thumbnail( $size );
+	}
+
+	// Check for any attached image
+	$media = get_attached_media( 'image', get_the_ID() );
+	$media = current( $media );
+
+	// Set up default image path
+	$media_url = get_stylesheet_directory_uri() . '/images/placeholder.png';
+
+	// If an image is present, then use it
+	if ( is_array( $media ) && 0 < count( $media ) ) {
+		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
+	}
+
+	echo '<img src="' . esc_url( $media_url ) . '" class="attachment-thumbnail wp-post-image" alt="' . esc_html( get_the_title() )  . '" />';
+}
+
+/**
+ * Return an image URI, no matter what.
+ *
+ * @param  string  $size  The image size you want to return.
+ * @return string         The image URI.
+ */
+function _s_get_post_image_uri( $size = 'thumbnail' ) {
+
+	// If featured image is present, use that
+	if ( has_post_thumbnail() ) {
+
+		$featured_image_id = get_post_thumbnail_id( get_the_ID() );
+		$media = wp_get_attachment_image_src( $featured_image_id, $size );
+
+		if ( is_array( $media ) ) {
+			return current( $media );
+		}
+	}
+
+	// Check for any attached image
+	$media = get_attached_media( 'image', get_the_ID() );
+	$media = current( $media );
+
+	// Set up default image path
+	$media_url = get_stylesheet_directory_uri() . '/images/placeholder.png';
+
+	// If an image is present, then use it
+	if ( is_array( $media ) && 0 < count( $media ) ) {
+		$media_url = ( 'thumbnail' === $size ) ? wp_get_attachment_thumb_url( $media->ID ) : wp_get_attachment_url( $media->ID );
+	}
+
+	return $media_url;
+}
