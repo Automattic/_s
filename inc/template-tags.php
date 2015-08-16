@@ -89,7 +89,7 @@ function _s_posted_on() {
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', '_s' ),
-		'<span class="author vcard" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" itemprop=""url><span class="entry-author-name" itemprop="name">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" itemprop="url"><span class="entry-author-name" itemprop="name">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
