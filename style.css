@@ -195,6 +195,7 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: button;
+	-moz-appearance: button;
 	cursor: pointer;
 }
 
@@ -226,12 +227,14 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
 	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
 	box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
+	-moz-appearance: none;
 }
 
 fieldset {
