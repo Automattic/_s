@@ -45,7 +45,7 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
  */
 function _s_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
+	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
 		if ( $categories_list && _s_categorized_blog() ) {
