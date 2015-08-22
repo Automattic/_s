@@ -20,7 +20,7 @@ function _s_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
-	 * to change '_s' to the name of your theme in all the template files
+	 * to change '_s' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
