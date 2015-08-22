@@ -1,6 +1,6 @@
 <?php
 /**
- * _s Functions and definitions.
+ * _s functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -71,7 +71,7 @@ function _s_setup() {
 		'link',
 	) );
 
-	// Setup the WordPress core custom background feature.
+	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
