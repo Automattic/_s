@@ -22,3 +22,12 @@ function _s_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
+
+/**
+ * Adds SVG file support when uploading to media library
+ */
+function cc_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
