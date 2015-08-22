@@ -1,8 +1,8 @@
 <?php
 /**
- * _s functions and definitions.
+ * _s Functions and definitions.
  *
- * @link https://codex.wordpress.org/Functions_File_Explained
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package _s
  */
