@@ -19,11 +19,11 @@ function _s_comment_nav() {
 			<div class="nav-links">
 				<?php
 					if ( $prev_link = get_previous_comments_link( __( 'Older Comments', '_s' ) ) ) :
-						printf( '<div class="nav-previous">%s</div>', $prev_link );
+						printf( '<div class="nav-previous">%s</div>', esc_html( $prev_link ) );
 					endif;
 
 					if ( $next_link = get_next_comments_link( __( 'Newer Comments', '_s' ) ) ) :
-						printf( '<div class="nav-next">%s</div>', $next_link );
+						printf( '<div class="nav-next">%s</div>', esc_html( $next_link ) );
 					endif;
 				?>
 			</div><!-- .nav-links -->
