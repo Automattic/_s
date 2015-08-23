@@ -9,7 +9,7 @@
   /**
    * @module Main app module
    */
-   var _s = (function(){
+   var _s = (function(document){
 
     function init(){
       // Initialize Foundation
@@ -21,7 +21,7 @@
     return {
       init: init
     };
-  })();
+  })(document);
 
   /**
    * Initialize _s module
