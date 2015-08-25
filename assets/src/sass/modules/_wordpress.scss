@@ -52,13 +52,14 @@
  * Work around WP inline style of width
  * https://core.trac.wordpress.org/ticket/14380
  * Noted: 3.9
+ * 1. _normalize.scss adds horizontal margins to 'figure' element.
  */
 .wp-caption {
-    margin-bottom: 1em;
     padding: 0.5em;
     max-width: 100%;
     border: 1px solid $off-white;
     text-align: center;
+    @include rem( 'margin', 0 0 18px 0 );
 
     > img {
         padding: 0;
