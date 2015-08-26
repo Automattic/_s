@@ -31,9 +31,18 @@
         }
     }
 }
-@include mq( $from: tablet ) {
+@include mq( $from: mobile-wide ) {
     .mq-state {
         z-index: 15;
+
+        &:before {
+            content: "mobile-wide";
+        }
+    }
+}
+@include mq( $from: tablet ) {
+    .mq-state {
+        z-index: 20;
 
         &:before {
             content: "tablet";
@@ -42,7 +51,7 @@
 }
 @include mq( $from: tablet-landscape ) {
     .mq-state {
-        z-index: 20;
+        z-index: 25;
 
         &:before {
             content: "tablet-landscape";
@@ -51,7 +60,7 @@
 }
 @include mq( $from: site-constraint ) {
     .mq-state {
-        z-index: 25;
+        z-index: 30;
 
         &:before {
             content: "site-constraint";
@@ -60,7 +69,7 @@
 }
 @include mq( $from: desktop ) {
     .mq-state {
-        z-index: 30;
+        z-index: 35;
 
         &:before {
             content: "desktop";
