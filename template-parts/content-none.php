@@ -1,11 +1,12 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found.
+ * Template part for displaying a message that posts cannot be found.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package _s
  */
+
 ?>
 
 <section class="no-results not-found">
