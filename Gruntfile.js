@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 				options: {
 					cwd: '',
 					domainPath: 'languages/',
-					potFilename: 'clp.pot',
+					potFilename: '_s.pot',
 					type: 'wp-theme'
 				}
 			}
@@ -226,7 +226,7 @@ module.exports = function(grunt) {
 		addtextdomain: {
 			theme: {
 				options: {
-					textdomain: 'clp'
+					textdomain: '_s'
 				},
 				target: {
 					files: {
