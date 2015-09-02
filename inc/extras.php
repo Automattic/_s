@@ -71,20 +71,3 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', '_s_render_title' );
 
 endif;
-
-/**
- * Allows an administrator to set the logged in user.
- *
- * Setting to false will emulate a logged out user.
- *
- * @return void
- */
-function _s_wp_set_current_user() {
-	if ( ! is_user_logged_in() || ! isset ( $_GET['wp_set_current_user'] ) || ! current_user_can( 'create_users' ) ) {
-		return;
-	}
-
-	wp_set_current_user( is_numeric( $_GET['wp_set_current_user'] ) ? absint( $_GET['wp_set_current_user'] ) : ( 'true' == $_GET['wp_set_current_user'] ? true : false ) );
-}
-
-add_action( 'init', '_s_wp_set_current_user' );
