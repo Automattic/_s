@@ -1,0 +1,35 @@
+// ----------------------------------------------------------------------
+
+  // List Reset
+
+// ----------------------------------------------------------------------
+
+////
+/// @author Greg Rickaby
+/// @group wds
+////
+
+/// Resest all padding and styles on both unordered and ordered lists.
+///
+/// @example scss - Basic Usage Sass
+///    .foo-list {
+///        @include list-reset;
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .foo-list {
+///         clear: both;
+///			content: "";
+///			display: table;
+///        	margin: 0;
+///        	padding: 0;
+///        	list-style: none;
+///
+///    }
+
+@mixin list-reset {
+	@include clearfix;
+	@include margin-padding-reset;
+
+	list-style: none;
+}
