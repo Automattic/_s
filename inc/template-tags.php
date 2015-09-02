@@ -263,21 +263,30 @@ add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
 
 /**
- * Echo SVG markup.
+ * Return SVG markup.
  *
- * @param  string $icon_name Use the icon name, such as "facebook-square"
+ * @param  string   $icon_name   Use the icon name, such as "facebook-square"
  */
-function _s_do_svg( $icon_name ) { ?>
+function _s_get_svg( $icon_name ) {
 
-	<svg class="icon icon-<?php echo esc_html( $icon_name ); ?>">
-		<use xlink:href="#icon-<?php echo esc_html( $icon_name ); ?>"></use>
-	</svg>
+	$svg = '<svg class="icon icon-' . esc_html( $icon_name ) . '">';
+	$svg .= '	<use xlink:href="#icon-' . esc_html( $icon_name ) . '"></use>';
+	$svg .= '</svg>';
 
-<?php }
-
+	return $svg;
+}
 
 /**
- * Social icons with SVG.
+ * Echo SVG markup.
+ *
+ * @param  string   $icon_name   Use the icon name, such as "facebook-square"
+ */
+function _s_do_svg( $icon_name ) {
+	echo _s_get_svg( $icon_name );
+}
+
+/**
+ * Echo social icons with SVG.
  */
 function _s_do_social_icons() { ?>
 
