@@ -4,18 +4,19 @@
    Plugin Specific
    ========================================================================== */
 
+/* Advanced Custom Fields
+   -------------------------------------------------------------------------- */
+
 /**
 * Add Admin Options menu item
 *
-* Managed by Advanced Custom Fields Plugin
-*
+* @link http://www.advancedcustomfields.com/resources/acf_add_options_page/
 */
-if( function_exists( 'acf_add_options_page' ) ) {
+if ( function_exists( 'acf_add_options_page' ) ) {
 
-    acf_add_options_page(array(
-        'page_title'    => 'Global Options',
-        'menu_title'    => 'Global Options'
-    ));
+    acf_add_options_page( array(
+        'page_title' => 'Global Options'
+    ) );
 
 }
 
@@ -25,8 +26,6 @@ if( function_exists( 'acf_add_options_page' ) ) {
 
 /**
  * Hide ACF menu from regular wp users
- *
- * Plugin: Advanced Custom Fields
  */
 function _s_hide_acf_menu() {
 
@@ -53,10 +52,11 @@ add_action( 'admin_menu', '_s_hide_acf_menu', 999 );
 
 
 
+/* Yoast SEO
+   -------------------------------------------------------------------------- */
+
 /**
  * Change order of Yoast SEO plugin meta box
- *
- * Plugin: Yoast SEO
  */
 function _s_yoast_meta_order() {
 
@@ -72,7 +72,7 @@ add_filter( 'wpseo_metabox_prio', '_s_yoast_meta_order' );
 /**
  * Hide Yoast columns on overview screens
  *
- * Plugin: Yoast SEO
+ * @link https://yoast.com/wordpress/plugins/seo/api/
  */
 function _s_hide_yoast_columns() {
 
@@ -80,7 +80,7 @@ function _s_hide_yoast_columns() {
         return false;
     }
 
-
     add_filter( 'wpseo_use_page_analysis', '__return_false' );
+
 }
 add_action( 'init', '_s_hide_yoast_columns' );
