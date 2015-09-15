@@ -114,7 +114,7 @@ module.exports = function ( grunt ) {
             js: {
                 expand: true,
                 cwd: '<%= config.src %>/js/plugins/',
-                src: 'modernizr-2.8.3.min.js',
+                src: 'modernizr-3.0.0.min.js',
                 dest: '<%= config.dist %>/js/plugins/',
             }
         },
