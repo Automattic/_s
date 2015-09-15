@@ -25,28 +25,26 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 
 /**
- * Hide ACF menu from regular wp users
+ * Hide ACF admin menu from WordPress users
+ *
+ * Note: to allow all admins access, use: return current_user_can( 'manage_options' );
+ *
+ * @link http://www.advancedcustomfields.com/resources/how-to-hide-acf-menu-from-clients/
  */
-function _s_hide_acf_menu() {
+function _s_hide_acf_menu( $show ) {
 
     // provide a list of usernames who can edit custom field definitions here
     $admins = array(
-        'elevator'
+        'clnt0000'
     );
 
     // get the current user
     $current_user = wp_get_current_user();
 
-    // match and remove if needed
-    if( !in_array( $current_user->user_login, $admins ) ) {
-
-        // Plugins
-        remove_menu_page( 'edit.php?post_type=acf' ); // Advanced Custom Fields
-
-    }
+    return ( in_array( $current_user->user_login, $admins ) ) ? true : false;
 
 }
-add_action( 'admin_menu', '_s_hide_acf_menu', 999 );
+add_filter( 'acf/settings/show_admin', '_s_hide_acf_menu' );
 
 
 
