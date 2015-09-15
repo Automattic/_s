@@ -16,7 +16,7 @@ module.exports = function ( grunt ) {
         config: {
             src: 'assets/src',
             dist: 'assets/dist',
-            devUrl: 'starter.dev'
+            devUrl: 'clnt0000.dev'
         },
 
         // Libsass
