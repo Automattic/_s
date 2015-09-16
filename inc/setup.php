@@ -128,12 +128,12 @@ add_action( 'after_setup_theme', '_s_content_width', 0 );
  * @link HTML5 Boilerplate's Take: https://github.com/h5bp/html5-boilerplate/issues/378
  * @link Reasons Compatibility Mode may be set: http://stackoverflow.com/a/3726605/3163972
  */
-function prefix_add_header_xua() {
+function _s_add_header_xua() {
 
     header( 'X-UA-Compatible: IE=edge,chrome=1' );
 
 }
-add_action( 'send_headers', 'prefix_add_header_xua' );
+add_action( 'send_headers', '_s_add_header_xua' );
 
 
 
