@@ -29,11 +29,13 @@ msgstr ""
 
 #. translators: %1$s: smiley
 #: 404.php:46
+#, php-format
 #@ _s
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #: comments.php:31
+#, php-format
 #@ _s
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -67,11 +69,13 @@ msgid "https://wordpress.org/"
 msgstr ""
 
 #: footer.php:18
+#, php-format
 #@ _s
 msgid "Proudly powered by %s"
 msgstr ""
 
 #: footer.php:20
+#, php-format
 #@ _s
 msgid "Theme: %1$s by %2$s."
 msgstr ""
@@ -92,12 +96,14 @@ msgid "Skip to content"
 msgstr ""
 
 #: inc/template-tags.php:28
+#, php-format
 #@ _s
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
 #: inc/template-tags.php:33
+#, php-format
 #@ _s
 msgctxt "post author"
 msgid "by %s"
@@ -110,11 +116,13 @@ msgid ", "
 msgstr ""
 
 #: inc/template-tags.php:52
+#, php-format
 #@ _s
 msgid "Posted in %1$s"
 msgstr ""
 
 #: inc/template-tags.php:58
+#, php-format
 #@ _s
 msgid "Tagged %1$s"
 msgstr ""
@@ -130,17 +138,20 @@ msgid "1 Comment"
 msgstr ""
 
 #: inc/template-tags.php:64
+#, php-format
 #@ _s
 msgid "% Comments"
 msgstr ""
 
 #. translators: %s: Name of current post
 #: inc/template-tags.php:71 template-parts/content-page.php:32
+#, php-format
 #@ _s
 msgid "Edit %s"
 msgstr ""
 
 #: search.php:18
+#, php-format
 #@ _s
 msgid "Search Results for: %s"
 msgstr ""
@@ -151,6 +162,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: template-parts/content-none.php:20
+#, php-format
 #@ _s
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -173,6 +185,7 @@ msgstr ""
 
 #. translators: %s: Name of current post.
 #: template-parts/content.php:27
+#, php-format
 #@ _s
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
