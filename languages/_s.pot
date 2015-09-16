@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n" 
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
 "POT-Creation-Date: 2015-09-16 19:02:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,17 +43,20 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:40 comments.php:61
+#: comments.php:40
+#: comments.php:61
 #@ _s
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43 comments.php:64
+#: comments.php:43
+#: comments.php:64
 #@ _s
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44 comments.php:65
+#: comments.php:44
+#: comments.php:65
 #@ _s
 msgid "Newer Comments"
 msgstr ""
@@ -80,7 +83,8 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:47 header.php:38
+#: functions.php:47
+#: header.php:38
 #@ _s
 msgid "Primary Menu"
 msgstr ""
@@ -177,7 +181,8 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:21 template-parts/content-single.php:25
+#: template-parts/content-page.php:21
+#: template-parts/content-single.php:25
 #: template-parts/content.php:34
 #@ _s
 msgid "Pages:"
