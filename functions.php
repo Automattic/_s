@@ -69,6 +69,38 @@ function _s_setup() {
 
 	// Add styles to the post editor
 	add_editor_style( array( 'editor-style.css', _s_font_url() ) );
+
+	if ( version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) :
+
+		// Add theme support for WDS Simple Page Builder
+		add_theme_support( 'wds-simple-page-builder' );
+		wds_page_builder_theme_support( array(
+			'hide_options'    => 'disabled', // set to true to hide them completely
+			'parts_dir'       => 'pagebuilder',
+			'parts_prefix'    => 'part',
+			'use_wrap'        => 'on', // on is TRUE
+			'container'       => 'section',
+			'container_class' => 'pagebuilder-part', // can use multiple classes, separated by a space
+
+			// Add any other supported post types here
+			'post_types'      => array(
+				'page',
+			),
+		) );
+
+		// Define areas
+		$page_builder_areas = array(
+			'hero'           => array( 'name' => esc_html__( 'Hero Area', '_s' ), ),
+			'before_content' => array( 'name' => esc_html__( 'Before Content Area', '_s' ), ),
+			'after_content'  => array( 'name' => esc_html__( 'After Content Area', '_s' ), ),
+		);
+
+		// Loop through and register each area
+		foreach ( $page_builder_areas as $page_builder_area_slug => $page_builder_area ) {
+			register_page_builder_area( $page_builder_area_slug, $page_builder_area );
+		}
+
+	endif;
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );

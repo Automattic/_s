@@ -37,7 +37,6 @@ function _s_font_url() {
 	return $fonts_url;
 }
 
-
 /**
  * Enqueue scripts and styles.
  */
@@ -74,6 +73,27 @@ function _s_scripts() {
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
+
+if ( version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) :
+
+	/**
+	 * Conditionally enqueue styles & scripts via Page Builder.
+	 */
+	function _s_enqueue_page_builder_scripts() {
+
+		// Get the page builder parts
+		$parts = get_page_builder_parts();
+
+		// // If page builder part exsists, enqueue script
+		// if ( in_array( 'cover-flow' , $parts ) ) {
+		// 	wp_register_script( 'cover-flow', get_stylesheet_directory_uri() . '/js/cover-flow-script.js', array(), $version, true );
+		// 	wp_enqueue_script( 'cover-flow' );
+		// }
+
+	}
+	add_action( 'wds_page_builder_after_load_parts', '_s_enqueue_page_builder_scripts' );
+
+endif;
 
 /**
  * Add SVG definitions to <head>.

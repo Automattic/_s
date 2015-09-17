@@ -10,6 +10,10 @@
 
 	</div><!-- #content -->
 
+	<div class="footer-area">
+		<?php wds_page_builder_area( 'after_content' ); ?>
+	</div>
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="wrap">
 
