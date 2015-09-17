@@ -21,7 +21,6 @@ img {
 }
 
 // Captions
-
 .wp-caption {
 	margin: 0 0 rem(24) 0;
 	max-width: 100%;
@@ -29,6 +28,16 @@ img {
 	img[class*="wp-image-"] {
 		display: block;
 		margin: 0 auto;
+	}
+
+	// Add a margin right to left-aligned images with captions
+	&.alignleft {
+		margin-right: 1.5rem;
+	}
+
+	// Add a margin left to right-aligned images with captions
+	&.alignright {
+		margin-left: 1.5rem;
 	}
 
 	.wp-caption-text {
