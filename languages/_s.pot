@@ -114,7 +114,8 @@ msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:50 inc/template-tags.php:56
+#: inc/template-tags.php:50
+#: inc/template-tags.php:56
 #@ _s
 msgid ", "
 msgstr ""
@@ -148,7 +149,8 @@ msgid "% Comments"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:71 template-parts/content-page.php:32
+#: inc/template-tags.php:71
+#: template-parts/content-page.php:32
 #, php-format
 #@ _s
 msgid "Edit %s"
