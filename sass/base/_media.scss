@@ -30,6 +30,11 @@ img {
 		margin: 0 auto;
 	}
 
+	// Add auto margins so image is centered
+	&.aligncenter {
+		margin: 0 auto rem(24) auto;
+	}
+
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
 		margin-right: 1.5rem;
