@@ -37,12 +37,12 @@ img {
 
 	// Add a margin right to left-aligned images with captions
 	&.alignleft {
-		margin-right: 1.5rem;
+		margin-right: rem(24);
 	}
 
 	// Add a margin left to right-aligned images with captions
 	&.alignright {
-		margin-left: 1.5rem;
+		margin-left: rem(24);
 	}
 
 	.wp-caption-text {
