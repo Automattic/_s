@@ -87,7 +87,6 @@ address {
 }
 
 pre {
-	background: $color-background-pre;
 	font-family: $font-pre;
 	font-size: rem(15);
 	line-height: $line-height-pre;
@@ -113,7 +112,6 @@ acronym {
 
 mark,
 ins {
-	background: $color-background-ins;
 	text-decoration: none;
 }
 
