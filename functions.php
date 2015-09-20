@@ -69,8 +69,7 @@ function _s_setup() {
 
 	// Add styles to the post editor
 	add_editor_style( array( 'editor-style.css', _s_font_url() ) );
-
-	if ( version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) :
+	if ( class_exists( 'WDS_Simple_Page_Builder' ) && version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) :
 
 		// Add theme support for WDS Simple Page Builder
 		add_theme_support( 'wds-simple-page-builder' );

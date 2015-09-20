@@ -74,7 +74,7 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 
-if ( version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) :
+if ( class_exists( 'WDS_Simple_Page_Builder' ) && version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) :
 
 	/**
 	 * Conditionally enqueue styles & scripts via Page Builder.
