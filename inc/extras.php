@@ -71,3 +71,15 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', '_s_render_title' );
 
 endif;
+
+
+/**
+ * Adds a fallback for wds_page_builder_area() if PageBuilder is not available
+ *
+ * @param string $area Name of the area
+ */
+if ( ! function_exists( 'wds_page_builder_area' ) ) {
+	function wds_page_builder_area( $area ) {
+		do_action( $area );
+	}
+}
