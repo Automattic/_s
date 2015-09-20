@@ -56,7 +56,7 @@ function _s_header_style() {
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( 'blank' === $header_text_color ) :
+		if ( ! display_header_text() ) :
 	?>
 		.site-title,
 		.site-description {
