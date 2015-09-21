@@ -1,11 +1,12 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates
+ * Custom functions that act independently of the theme templates.
  *
- * Eventually, some of the functionality here could be replaced by core features
+ * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package _s
  */
+
 
 /**
  * Adds custom classes to the array of body classes.
@@ -24,6 +25,7 @@ function _s_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
+
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
