@@ -3,7 +3,7 @@
 		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'hippie' ) ?></span>
 		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'hippie' ) ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo esc_attr_x( 'Search...', 'hippie' ) ?>" />
 	</label>
-	<button aria-label="search">
-		<?php _s_do_svg( 'search' ); ?>
+	<button>
+		<?php _e( 'Submit', '_s' ); ?>
 	</button>
 </form>
