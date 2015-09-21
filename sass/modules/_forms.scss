@@ -17,9 +17,11 @@ input[type="reset"],
 input[type="submit"] {
 	background-color: $color-dark-gray;
 	border: none;
-	border-radius: none;
+	border-radius: 0;
 	color: $color-white;
+	min-height: rem(31);
 	vertical-align: top;
+	-webkit-appearance: none; // Remove iOS styles
 
 	&:hover {
 		background-color: $color-darker-gray;
@@ -62,11 +64,14 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
+input[type="number"],
 textarea {
 	color: $color-text-input;
 	border: 1px solid $color-border-input;
-	border-radius: none;
+	border-radius: 0;
 	line-height: 1.45;
+	-webkit-appearance: none; // Remove iOS styles
 
 	&:focus {
 		color: $color-text-input-focus;

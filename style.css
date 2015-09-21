@@ -980,12 +980,16 @@ input[type='button'],
 input[type='reset'],
 input[type='submit']
 {
+    min-height: 1.9375rem;
+
     vertical-align: top;
 
     color: #fff;
     border: none;
-    border-radius: none;
+    border-radius: 0;
     background-color: #666;
+
+    -webkit-appearance: none;
 }
 
 button:hover,
@@ -1045,13 +1049,17 @@ input[type='email'],
 input[type='url'],
 input[type='password'],
 input[type='search'],
+input[type='tel'],
+input[type='number'],
 textarea
 {
     line-height: 1.45;
 
     color: #666;
     border: 1px solid #ccc;
-    border-radius: none;
+    border-radius: 0;
+
+    -webkit-appearance: none;
 }
 
 input[type='text']:focus,
@@ -1059,6 +1067,8 @@ input[type='email']:focus,
 input[type='url']:focus,
 input[type='password']:focus,
 input[type='search']:focus,
+input[type='tel']:focus,
+input[type='number']:focus,
 textarea:focus
 {
     color: #111;
