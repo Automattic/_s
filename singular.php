@@ -15,10 +15,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php
-			// Start the loop.
 			while ( have_posts() ) : the_post();
 
-				// Include the page content template.
 				if ( is_singular( 'page' ) ) {
 					get_template_part( 'template-parts/content', 'page' );
 				} else {
@@ -30,27 +28,11 @@ get_header(); ?>
 					comments_template();
 				}
 
-				if ( is_singular( 'attachment' ) ) {
-					// Parent post navigation
-					the_post_navigation( array(
-						'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', '_s' ),
-					) );
+				if ( is_singular( array( 'post', 'attachment' ) ) ) {
+					the_post_navigation();
 				}
 
-				if ( is_singular( 'post' ) ) {
-					// Previous/next post navigation.
-					the_post_navigation( array(
-						'next_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next', '_s' ) . '</span> ' .
-							'<span class="screen-reader-text">' . esc_html__( 'Next post:', '_s' ) . '</span> ' .
-							'<span class="post-title">%title</span>',
-						'prev_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous', '_s' ) . '</span> ' .
-							'<span class="screen-reader-text">' . esc_html__( 'Previous post:', '_s' ) . '</span> ' .
-							'<span class="post-title">%title</span>',
-					) );
-				}
-
-				// End of the loop.
-			endwhile;
+			endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->
