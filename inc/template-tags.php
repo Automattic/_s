@@ -157,7 +157,7 @@ function _s_do_social_icons() { ?>
 			<a href="https://twitter.com/#" title="Twitter"><?php _s_do_svg( 'twitter-square' ); ?></a>
 		</li>
 		<li class="social-icon">
-			<a href="https://instagram.com/#" title="LinkedIn"><?php _s_do_svg( 'instagram' ); ?></a>
+			<a href="https://instagram.com/#" title="Instagram"><?php _s_do_svg( 'instagram' ); ?></a>
 		</li>
 		<li class="social-icon">
 			<a href="https://www.youtube.com/channel/#" title="YouTube"><?php _s_do_svg( 'youtube-square' ); ?></a>
