@@ -141,7 +141,15 @@ function _s_get_attachment_alt( $attachment_id = 0 ) {
  * Get image src with option to fallback
  *
  * @param  array  $args options passed to function
- * @return mixed        boolean/string
+ * @return mixed
+ *
+ *         array        [0] => path
+ *                      [1] => width
+ *                      [2] => height
+ *                      [3] => boolean: true if path is a resized image, false if it is the original or if no image is available.
+ *                      [4] => alt text _s_get_attachment_alt()
+ *
+ *         string       path
  */
 function _s_get_image( $args = array() ) {
 
