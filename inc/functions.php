@@ -63,17 +63,15 @@ function _s_sanitize( $value ) {
  * @link https://developer.wordpress.org/reference/functions/wp_prepare_attachment_for_js/#source-code
  *
  * @param  integer    $attachment_id    the attachment id
- * @return array
+ * @return mixed      array/boolean
  */
 function _s_get_attachment_meta( $attachment_id = 0 ) {
 
-    $r = array();
-
     if ( ! $attachment = get_post( $attachment_id ) )
-        return $r;
+        return false;
 
     if ( 'attachment' != $attachment->post_type )
-        return $r;
+        return false;
 
     return array(
         'alt'         => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
