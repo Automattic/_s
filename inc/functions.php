@@ -55,6 +55,87 @@ function _s_sanitize( $value ) {
 
 
 /**
+ * Get Image Attachment Metadata
+ *
+ * Primarily used to retrieve details for outputting alt text. However,
+ * additional metadata can be added to array as needed. Reference link below.
+ *
+ * @link https://developer.wordpress.org/reference/functions/wp_prepare_attachment_for_js/#source-code
+ *
+ * @param  integer    $attachment_id    the attachment id
+ * @return array
+ */
+function _s_get_attachment_meta( $attachment_id = 0 ) {
+
+    $r = array();
+
+    if ( ! $attachment = get_post( $attachment_id ) )
+        return $r;
+
+    if ( 'attachment' != $attachment->post_type )
+        return $r;
+
+    return array(
+        'alt'         => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+        'caption'     => $attachment->post_excerpt,
+        'description' => $attachment->post_content,
+        'title'       => $attachment->post_title
+    );
+
+}
+
+
+
+
+
+/**
+ * Get Attachment Alt Text
+ *
+ * Run through the following attachment details and attempt to gather alt text.
+ *
+ * - alt
+ * - caption
+ * - description
+ * - title (usually filename w/out extension if nothing manually entered)
+ *
+ * @param  integer    $attachment_id    the attachment id
+ * @return string
+ */
+function _s_get_attachment_alt( $attachment_id = 0 ) {
+
+    $r = '';
+
+    if ( $meta = _s_get_attachment_meta( $attachment_id ) ) :
+
+        if ( $meta['alt'] ) :
+
+            $r = $meta['alt'];
+
+        elseif ( $meta['caption'] ) :
+
+            $r = $meta['caption'];
+
+        elseif ( $meta['description'] ) :
+
+            $r = $meta['description'];
+
+        elseif ( $meta['title'] ) :
+
+            $r = $meta['title'];
+
+        endif;
+
+    endif;
+
+    return $r;
+
+}
+
+
+
+
+
+/**
  * Get image path
  *
  * Get image src with option to fallback
