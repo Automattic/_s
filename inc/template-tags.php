@@ -145,31 +145,6 @@ function _s_do_svg( $icon_name ) {
 }
 
 /**
- * Echo social icons with SVG.
- */
-function _s_do_social_icons() { ?>
-
-	<ul class="social-icons">
-		<li class="social-icon">
-			<a href="https://www.facebook.com/#" title="Facebook"><?php _s_do_svg( 'facebook-square' ); ?></a>
-		</li>
-		<li class="social-icon">
-			<a href="https://twitter.com/#" title="Twitter"><?php _s_do_svg( 'twitter-square' ); ?></a>
-		</li>
-		<li class="social-icon">
-			<a href="https://instagram.com/#" title="Instagram"><?php _s_do_svg( 'instagram' ); ?></a>
-		</li>
-		<li class="social-icon">
-			<a href="https://www.youtube.com/channel/#" title="YouTube"><?php _s_do_svg( 'youtube-square' ); ?></a>
-		</li>
-		<li class="social-icon">
-			<a href="/feed" title="RSS Feed"><?php _s_do_svg( 'rss-square' ); ?></a>
-		</li>
-	</ul>
-
-<?php }
-
-/**
  * Limit the excerpt.
  *
  * @param  int     $num_words  The word limit.
