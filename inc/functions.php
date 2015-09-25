@@ -186,6 +186,10 @@ function _s_get_image( $args = array() ) {
     else:
         // image data
         $r = $image_data;
+
+        // image alt text
+        $r[] = _s_get_attachment_alt( $image_id );
+
     endif;
 
     // return path only
