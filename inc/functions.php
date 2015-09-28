@@ -182,6 +182,7 @@ function _s_get_image( $args = array() ) {
 
     // get image path or decide to use fallback
     if ( ! $image_data && $fallback ) :
+
         // fallback image path
         $r[0] = constant( 'FB_' . $size );
 
@@ -189,7 +190,10 @@ function _s_get_image( $args = array() ) {
         $parts = explode( 'x', $size );
         $r[1]  = $parts[0];
         $r[2]  = $parts[1];
-    else:
+
+    // get image data and alt text
+    elseif ( $image_data ) :
+
         // image data
         $r = $image_data;
 
