@@ -191,6 +191,12 @@ function _s_get_image( $args = array() ) {
         $r[1]  = $parts[0];
         $r[2]  = $parts[1];
 
+        // was image resized? Consistent with return values for wp_get_attachment_image_src()
+        $r[3] = false;
+
+        // alt text
+        $r[4] = '';
+
     // get image data and alt text
     elseif ( $image_data ) :
 
@@ -199,12 +205,6 @@ function _s_get_image( $args = array() ) {
 
         // image alt text
         $r[] = _s_get_attachment_alt( $image_id );
-        
-        // was image resized? Consistent with return values for wp_get_attachment_image_src()
-        $r[3] = false;
-
-        // alt text
-        $r[4] = '';
 
     endif;
 
