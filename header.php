@@ -25,7 +25,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<?php wds_page_builder_area( 'hero' ); ?>
 
