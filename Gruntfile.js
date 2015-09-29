@@ -275,7 +275,6 @@ module.exports = function(grunt) {
 						watermark: false
 					},
 					groups: {
-						fontawesomeicons: 'Font Awesome Icons',
 						wds: 'WebDevStudios',
 						'undefined': 'Bourbon & Neat'
 					},
