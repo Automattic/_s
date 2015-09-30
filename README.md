@@ -47,10 +47,10 @@ Once you've setup the theme, you can start the [install](https://github.com/WebD
 
 # Installation
 
-1) From the command line, navigate to the `/themes` directory of your project
+1) From the command line, change directories to your new theme directory
 
 ```bash
-cd /your-project/wordpress/wp-content/themes
+cd /your-project/wordpress/wp-content/themes/your-theme
 ```
 
 2) Install dependencies
