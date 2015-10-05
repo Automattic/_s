@@ -1,0 +1,13 @@
+$layers: (
+	'layer-1',
+	'layer-2',
+);
+
+@function layer-index($layer) {
+	@return index(reverse-list($layers), $layer);
+}
+
+@mixin z-index($layer, $position:relative) {
+	position: $position;
+	z-index: layer-index($layer);
+}
