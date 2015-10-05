@@ -33,6 +33,7 @@
     "grunt-csscomb": "latest",
     "grunt-githooks": "latest",
     "grunt-newer": "latest",
+    "grunt-notify": "latest",
     "grunt-phpcs": "latest",
     "grunt-sass": "latest",
     "grunt-sassdoc": "latest",
