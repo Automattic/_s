@@ -87,14 +87,12 @@ module.exports = function(grunt) {
 			}
 		},
 
-		cmq: {
-			options: {
-				log: false
-			},
-			dist: {
-				files: {
-					'style.css': 'style.css'
-				}
+		combine_mq: {
+			default_options: {
+				expand: true,
+				cwd: '',
+				src: ['style.css'],
+				dest: ''
 			}
 		},
 
@@ -286,7 +284,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('styles', ['sass', 'autoprefixer', 'cmq', 'csscomb', 'cssmin']);
+	grunt.registerTask('styles', ['sass', 'autoprefixer', 'combine_mq', 'csscomb', 'cssmin']);
 	grunt.registerTask('javascript', ['concat', 'uglify']);
 	grunt.registerTask('imageminnewer', ['newer:imagemin']);
 	grunt.registerTask('sprites', ['sprite']);
