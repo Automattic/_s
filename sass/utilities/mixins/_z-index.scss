@@ -1,0 +1,33 @@
+// z-index
+//
+// Instead of specifying your own z-index:, just use the
+// @include z-index(<layer-name>, absolute|relative) mixin
+// and add your <layer-name> to the list $layers.
+//
+// Then, to change the order of the layers, just re-order
+// the items in $layers, which assigns z-index: <number>
+// from the top down.
+//
+// E.g.:
+//
+//    $layers: (
+//        'layer-b', // This layer will show above layer-a and get z-index: 2
+//        'layer-a', // This layer will get z-index: 1
+//    );
+
+// The layers, add them here.
+$layers: (
+	// 'layer-a',
+	// 'layer-b',
+);
+
+// Gets the index (in reverse) of the item's position to use as z-index.
+@function layer-index($layer) {
+	@return index(reverse-list($layers), $layer);
+}
+
+// z-index Mixin used to automatically assign z-index based on position in $layers
+@mixin z-index($layer, $position:relative) {
+	position: $position;
+	z-index: layer-index($layer);
+}

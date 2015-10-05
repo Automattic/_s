@@ -21,7 +21,7 @@
     "glob": "latest",
     "grunt": "latest",
     "grunt-autoprefixer": "latest",
-    "grunt-combine-media-queries": "latest",
+    "grunt-combine-mq": "latest",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-connect": "latest",
