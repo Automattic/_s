@@ -643,26 +643,6 @@ img {
   margin: 0 0 1.5rem 0;
 }
 
-#layer-1 {
-  position: absolute;
-  z-index: 2;
-  background-color: red;
-}
-
-#layer-2 {
-  position: absolute;
-  z-index: 1;
-  background-color: green;
-}
-
-#layer-1,
-#layer-2 {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 a {
   color: #21759b;
 }
