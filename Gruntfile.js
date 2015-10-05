@@ -294,4 +294,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('i18n', ['makepot']);
 	grunt.registerTask('default', ['styles', 'javascript', 'imageminnewer', 'icons', 'i18n', 'sassdoc']);
 
+	// grunt-notify shows native notifications on errors.
+	grunt.loadNpmTasks('grunt-notify');
+
 };
