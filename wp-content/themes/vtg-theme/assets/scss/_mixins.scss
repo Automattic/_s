@@ -1,0 +1,53 @@
+Skip to content
+This repository  
+Pull requests
+Issues
+Gist
+ @webwolf2112
+ Unwatch 10
+  Star 0
+ Fork 0 voltagead/bluestar PRIVATE
+Branch: master  bluestar/wp-content/themes/bluestar/assets/scss/_mixins.scss
+@cfreecfree on Aug 26 Reorganized styles
+1 contributor
+RawBlameHistory     61 lines (44 sloc)  1004 Bytes
+//--------------------------------------------------------------
+// Mixins
+//--------------------------------------------------------------
+
+// -------------------
+// Media Query Helpers
+// -------------------
+
+@mixin breakpoint($bp, $direction: min) {
+	@media (#{$direction}-width: $bp)  {
+		@content;
+	}
+}
+
+
+
+
+// ---------
+// Clearings
+// ---------
+
+// Overrides Compass-related issues and stops deprecation warnings
+// See: https://github.com/Compass/compass/issues/1924
+@mixin box-sizing($value) {
+	-moz-box-sizing: $value;
+	box-sizing: $value;
+}
+
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: '';
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
