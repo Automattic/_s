@@ -76,7 +76,7 @@ gulp.task('lint', function() {
 
 // Compile JS
 gulp.task('js', ['lint'], function() {
-	gulp.src(path.JS)
+	gulp.src(path.WATCH_JS)
 		.pipe(concat('scripts.js'))
 		.pipe(livereload())
 		.pipe(gulp.dest(path.BUILD));
@@ -86,7 +86,7 @@ gulp.task('js', ['lint'], function() {
 gulp.task('watch', function() {
 	gulp.watch(path.WATCH_JS, ['js']);
 	gulp.watch(path.WATCH_CSS, ['sass']);
-	
+
 	livereload.listen();
 });
 
