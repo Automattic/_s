@@ -16,6 +16,13 @@
  */
 function _s_body_classes( $classes ) {
 
+	global $is_IE;
+
+	// If it's IE, add a class.
+	if ( $is_IE ) {
+		$classes[] = 'ie';
+	}
+
 	// Give all pages a unique class.
 	if ( is_page() ) {
 		$classes[] = 'page-' . basename( get_permalink() );
