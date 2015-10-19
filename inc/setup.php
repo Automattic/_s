@@ -299,12 +299,12 @@ add_action( 'widgets_init', '_s_remove_recent_comments_style' );
 /**
 * Add style dropdown to MCE editor
 */
-function coop022901_mce_editor_buttons( $buttons ) {
+function _s__mce_editor_buttons( $buttons ) {
 
    array_unshift( $buttons, 'styleselect' );
    return $buttons;
 }
-add_filter( 'mce_buttons_2', 'coop022901_mce_editor_buttons' );
+add_filter( 'mce_buttons_2', '_s__mce_editor_buttons' );
 
 
 
@@ -313,7 +313,7 @@ add_filter( 'mce_buttons_2', 'coop022901_mce_editor_buttons' );
 /**
 * Add styles/classes to the "Styles" drop-down
 */
-function coop022901_mce_before_init( $settings ) {
+function _s__mce_before_init( $settings ) {
 
    $style_formats = array(
         array(
@@ -379,4 +379,4 @@ function coop022901_mce_before_init( $settings ) {
    return $settings;
 
 }
-add_filter( 'tiny_mce_before_init', 'coop022901_mce_before_init' );
+add_filter( 'tiny_mce_before_init', '_s__mce_before_init' );
