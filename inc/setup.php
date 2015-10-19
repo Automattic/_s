@@ -1,7 +1,7 @@
 <?php
 
 /* ==========================================================================
-   Admin Setup
+   General Setup
    ========================================================================== */
 
 if ( ! function_exists( '_s_setup' ) ) :
@@ -129,9 +129,7 @@ add_action( 'after_setup_theme', '_s_content_width', 0 );
  * @link Reasons Compatibility Mode may be set: http://stackoverflow.com/a/3726605/3163972
  */
 function _s_add_header_xua() {
-
     header( 'X-UA-Compatible: IE=edge,chrome=1' );
-
 }
 add_action( 'send_headers', '_s_add_header_xua' );
 
@@ -145,6 +143,7 @@ add_action( 'send_headers', '_s_add_header_xua' );
  * WordPress 4.2 introduced emoji JS and CSS in the page's head
  */
 function _s_disable_emoji() {
+
     remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
     remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -153,6 +152,7 @@ function _s_disable_emoji() {
     remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
     remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
     add_filter( 'tiny_mce_plugins', 'disable_tinymce_emoji' );
+
 }
 add_action( 'init', '_s_disable_emoji', 1 );
 /**
@@ -194,40 +194,63 @@ add_action( 'widgets_init', '_s_widgets_init' );
  */
 function _s_scripts() {
 
-    if ( !is_admin() ) {
+    if ( ! is_admin() ) {
 
         // Styles
-        wp_enqueue_style( 'googlefonts', add_query_arg( 'family', 'Open+Sans:400,300,700|Roboto:400,100,900italic', '//fonts.googleapis.com/css' ), array(), null );
-        wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/dist/css/main.min.css', array(), null );
+        wp_enqueue_style( 'googlefonts', add_query_arg( 'family', 'Open+Sans:400,300,700|Roboto:400,100,900italic', '//fonts.googleapis.com/css' ) );
+        wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/dist/css/main.min.css' );
         wp_enqueue_style( '_s-style', get_stylesheet_uri(), array( 'main' ) );
 
         // IE Conditional
-        wp_register_style( 'no-mq', get_template_directory_uri() . '/assets/dist/css/no-mq.css', array(), null );
+        wp_register_style( 'no-mq', get_template_directory_uri() . '/assets/dist/css/no-mq.css' );
         $GLOBALS['wp_styles']->add_data( 'no-mq', 'conditional', 'lte IE 8' );
         wp_enqueue_style( 'no-mq' );
 
         // Scripts
         wp_enqueue_script( 'jquery' );
-        wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/dist/js/plugins/modernizr-3.0.0.min.js', array(), null );
-        wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/dist/js/plugins.min.js', array( 'jquery' ), null, true );
-        wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/dist/js/main.min.js', array( 'jquery', 'plugins' ), null, true );
+        wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/dist/js/plugins/modernizr-3.0.0.min.js' );
+        wp_enqueue_script( 'plugins', get_template_directory_uri() . '/assets/dist/js/plugins.min.js', array( 'jquery' ), false, true );
+        wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/dist/js/main.min.js', array( 'jquery', 'plugins' ), false, true );
 
         // values available to js
         wp_localize_script( 'main', 'ELEV', array(
-                'siteUrl' => site_url(),
+                'siteUrl'      => site_url(),
                 'directoryUrl' => get_template_directory_uri()
             )
         );
     }
+
+    // comments
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 
 
 
+
+/**
+ * Remove inline styling for recent comments widget
+ */
+function _s_remove_recent_comments_style() {
+
+        global $wp_widget_factory;
+
+        remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+
+    }
+add_action( 'widgets_init', '_s_remove_recent_comments_style' );
+
+
+
+
+
+/* ==========================================================================
+   Project Specific
+   ========================================================================== */
 
 /**
  * Order Menu Items
@@ -275,26 +298,6 @@ add_action( 'pre_get_posts', '_s_modify_main_query', 1 );
 
 
 
-
-/**
- * Remove inline styling for recent comments widget
- */
-function _s_remove_recent_comments_style() {
-
-        global $wp_widget_factory;
-
-        remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-
-    }
-add_action( 'widgets_init', '_s_remove_recent_comments_style' );
-
-
-
-
-
-/* ==========================================================================
-   Project Specific
-   ========================================================================== */
 
 /**
 * Add style dropdown to MCE editor
