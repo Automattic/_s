@@ -56,7 +56,8 @@
 /* Visibility
    ========================================================================== */
 
-.visuallyhidden {
+.visuallyhidden,
+.screen-reader-text {
     @extend %visuallyhidden;
 }
 
