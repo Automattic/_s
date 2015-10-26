@@ -59,7 +59,6 @@ function _s_scripts() {
 
 		$suffix = '';
 		wp_enqueue_script( 'live-reload', '//localhost:35729/livereload.js', array(), $version, true );
-
 	}
 
 	wp_enqueue_style( '_s-google-font', _s_font_url(), array(), null );

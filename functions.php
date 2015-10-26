@@ -67,10 +67,17 @@ function _s_setup() {
 
 	// Add styles to the post editor
 	add_editor_style( array( 'editor-style.css', _s_font_url() ) );
+
+	/**
+	 * Enable support and set configuration options for
+	 * WDS Simple Page Builder.
+	 */
 	if ( class_exists( 'WDS_Simple_Page_Builder' ) && version_compare( WDS_Simple_Page_Builder::VERSION, '1.6', '>=' ) ) :
 
-		// Add theme support for WDS Simple Page Builder
+		// Add theme support
 		add_theme_support( 'wds-simple-page-builder' );
+
+		// Define options
 		wds_page_builder_theme_support( array(
 			'hide_options'    => 'disabled', // set to true to hide them completely
 			'parts_dir'       => 'pagebuilder',
@@ -78,11 +85,7 @@ function _s_setup() {
 			'use_wrap'        => 'on', // on is TRUE
 			'container'       => 'section',
 			'container_class' => 'pagebuilder-part', // can use multiple classes, separated by a space
-
-			// Add any other supported post types here
-			'post_types'      => array(
-				'page',
-			),
+			'post_types'      => array( 'page', ), // Add any other supported post types here
 		) );
 
 		// Define areas
@@ -101,7 +104,6 @@ function _s_setup() {
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
-
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -134,7 +136,7 @@ function _s_widgets_init() {
 		register_sidebar( array(
 			'name'          => $sidebar_name,
 			'id'            => $sidebar_id,
-			'description'   => sprintf ( __( 'Widget area for %s', '_s' ), $sidebar_name ),
+			'description'   => sprintf ( esc_html__( 'Widget area for %s', '_s' ), $sidebar_name ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
