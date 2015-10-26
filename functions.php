@@ -134,7 +134,7 @@ function _s_widgets_init() {
 		register_sidebar( array(
 			'name'          => $sidebar_name,
 			'id'            => $sidebar_id,
-			'description'   => esc_html__( 'Widget area for ' . $sidebar_name . '', '_s' ),
+			'description'   => sprintf ( __( 'Widget area for %s', '_s' ), $sidebar_name ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="widget-title">',
