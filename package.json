@@ -3,19 +3,13 @@
   "version": "1.0.0",
   "description": "A theme boilerplate for WebDevStudios.",
   "author": "WebDevStudios",
-  "homepage": "https://github.com/WebDevStudios/_s",
-  "bugs": "https://github.com/WebDevStudios/_s/issues",
   "repository": {
-    "type": "git",
-    "url": "git://github.com/WebDevStudios/_s.git"
-  },
-  "licenses": [
-    {
-      "type": "GPL-2.0+",
-      "url": "https://github.com/WebDevStudios/_s/blob/master/LICENSE"
-    }
-  ],
-  "contributors": "https://github.com/WebDevStudios/_s/graphs/contributors",
+  "type": "git",
+  "url": "https://github.com/WebDevStudios/wd_s"
+},
+  "bugs": {
+  "url": "https://github.com/WebDevStudios/wd_s/issues/"
+},
   "devDependencies": {
     "css-parse": "latest",
     "glob": "latest",
@@ -44,5 +38,6 @@
     "grunt-update-submodules": "latest",
     "grunt-wp-i18n": "latest",
     "load-grunt-tasks": "latest"
-  }
+  },
+  "license": "GPL-2.0+"
 }
