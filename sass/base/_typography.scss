@@ -25,38 +25,47 @@ h6 {
 
 h1,
 .h1 {
-	
+
 }
 
 h2,
 .h2 {
-	
+
 }
 
 h3,
 .h3 {
-	
+
 }
 
 h4,
 .h4 {
-	
+
 }
 
 h5,
 .h5 {
-	
+
 }
 
 h6,
 .h6 {
-	
+
 }
 
 // Copy
 
 p {
 	margin: 0 0 rem(24) 0;
+}
+
+.smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.legibility {
+  text-rendering: optimizeLegibility;
 }
 
 b,
