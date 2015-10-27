@@ -78,34 +78,34 @@ function _s_entry_footer() {
 endif;
 
 /**
- * Returns true if a blog has more than 1 category.
+ * Returns true if a blog has more than 1 category with posts.
  *
  * @return bool
  */
 function _s_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
 
-			// We only need to know if there is more than one category.
-			'number'     => 2,
+	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
+
+		// Create an array of categories
+		$all_the_cool_cats = get_categories( array(
+			'fields'     => 'ids', // Only query category IDs
+			'hide_empty' => 1,     // Only count categories with posts
+			'number'     => 2,     // Only return two categories
 		) );
 
-		// Count the number of categories that are attached to the posts.
+		// Count the number of categories that are attached to the posts
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
+		// Place number of categories into a transient
 		set_transient( '_s_categories', $all_the_cool_cats );
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so _s_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so _s_categorized_blog should return false.
+	// There is only 1 category, so return false
+	if ( 1 === $all_the_cool_cats ) {
 		return false;
 	}
+
+	return true;
 }
 
 /**
