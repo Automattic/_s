@@ -4,38 +4,35 @@
   "description": "A theme boilerplate for WebDevStudios.",
   "author": "WebDevStudios",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/WebDevStudios/wd_s"
-},
+    "type": "git",
+    "url": "https://github.com/WebDevStudios/wd_s"
+  },
   "bugs": {
-  "url": "https://github.com/WebDevStudios/wd_s/issues/"
-},
+    "url": "https://github.com/WebDevStudios/wd_s/issues/"
+  },
   "devDependencies": {
-    "css-parse": "latest",
+    "autoprefixer": "latest",
+    "css-mqpacker": "latest",
     "glob": "latest",
     "grunt": "latest",
-    "grunt-autoprefixer": "latest",
-    "grunt-combine-mq": "latest",
-    "grunt-contrib-clean": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-connect": "latest",
-    "grunt-contrib-cssmin": "latest",
     "grunt-contrib-imagemin": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-csscomb": "latest",
+    "grunt-cssnano": "latest",
     "grunt-githooks": "latest",
     "grunt-newer": "latest",
     "grunt-notify": "latest",
     "grunt-phpcs": "latest",
+    "grunt-postcss": "latest",
     "grunt-sass": "latest",
     "grunt-sassdoc": "latest",
     "grunt-shell": "latest",
     "grunt-spritesmith": "latest",
     "grunt-svgmin": "latest",
     "grunt-svgstore": "latest",
-    "grunt-update-submodules": "latest",
     "grunt-wp-i18n": "latest",
     "load-grunt-tasks": "latest"
   },

@@ -74,46 +74,26 @@ module.exports = function(grunt) {
 			}
 		},
 
-		autoprefixer: {
+		postcss: {
 			options: {
-				browsers: ['last 2 versions', 'ie 9'],
-				map: {
-					inline: false,
-					sourcesContent: false
-				}
+				map: true,
+				processors: [
+					require('autoprefixer')({ browsers: ['last 2 versions'] }),
+					require('css-mqpacker')
+			]},
+			dist: {
+				src: 'style.css'
+			}
+		},
+
+		cssnano: {
+			options: {
+				sourcemap: true
 			},
 			dist: {
-				src: ['style.css']
-			}
-		},
-
-		combine_mq: {
-			default_options: {
-				expand: true,
-				cwd: '',
-				src: ['style.css'],
-				dest: ''
-			}
-		},
-
-		csscomb: {
-			dist: {
-				files: [{
-					expand: true,
-					cwd: '',
-					src: ['style.css'],
-					dest: '',
-				}]
-			}
-		},
-
-		cssmin: {
-			minify: {
-				expand: true,
-				cwd: '',
-				src: ['style.css'],
-				dest: '',
-				ext: '.min.css'
+				files: {
+					'style.min.css': 'style.css'
+				}
 			}
 		},
 
@@ -163,7 +143,7 @@ module.exports = function(grunt) {
 
 			css: {
 				files: ['sass/**/*.scss'],
-				tasks: ['sass'],
+				tasks: ['styles'],
 				options: {
 					spawn: false,
 					livereload: true,
@@ -196,8 +176,7 @@ module.exports = function(grunt) {
 		},
 
 		clean: {
-			js: ['js/project*', 'js/**/*.min.js'],
-			css: ['style.css', 'style.min.css']
+			js: ['js/project*', 'js/**/*.min.js']
 		},
 
 		makepot: {
@@ -294,7 +273,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask('styles', ['sass', 'autoprefixer', 'combine_mq', 'csscomb', 'cssmin']);
+	grunt.registerTask('styles', ['sass', 'postcss', 'cssnano']);
 	grunt.registerTask('javascript', ['concat', 'uglify']);
 	grunt.registerTask('imageminnewer', ['newer:imagemin']);
 	grunt.registerTask('sprites', ['sprite']);
