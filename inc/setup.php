@@ -248,6 +248,29 @@ add_action( 'widgets_init', '_s_remove_recent_comments_style' );
 
 
 
+/**
+ * Remove Link When Adding Media
+ *
+ * Adding media to a WYSIWYG editor can sometimes automatically include a link
+ * to the file. This sets the default behavior for all users to none.
+ *
+ * @return void
+ */
+function _s_media_linking() {
+
+    $setting = get_option( 'image_default_link_type' );
+
+    if ( $setting !== 'none' ) {
+        update_option( 'image_default_link_type', 'none' );
+    }
+
+}
+add_action( 'admin_init', '_s_media_linking', 10 );
+
+
+
+
+
 /* ==========================================================================
    Project Specific
    ========================================================================== */
