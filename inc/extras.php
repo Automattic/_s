@@ -18,6 +18,10 @@ function _s_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
+	// Adds hfeed to the body only on pages that are not singular
+	if (! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
 
 	return $classes;
 }
