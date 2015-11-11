@@ -18,7 +18,7 @@ function _s_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-	
+
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -27,3 +27,22 @@ function _s_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
+
+/**
+ * Removes hentry class from the array of post classes.
+ * Currently, having the class on pages is not correct use of hentry.
+ * hentry requires more properties than pages typically have.
+ * Core is not likely to remove class because of backward compatibility.
+ * See: https://core.trac.wordpress.org/ticket/28482
+ *
+ * @param array $classes Classes for the post element.
+ * @return array
+ */
+function _s_post_classes( $classes ) {
+	if ( 'page' === get_post_type() ) {
+		$classes = array_diff( $classes, array( 'hentry' ) );
+	}
+
+	return $classes;
+}
+add_filter( 'post_class', '_s_post_classes' );
