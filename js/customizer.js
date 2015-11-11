@@ -27,7 +27,7 @@
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title, .site-description' ).css( {
 					'clip': 'auto',
 					'position': 'relative'
 				} );
