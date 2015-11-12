@@ -742,7 +742,8 @@ a:active {
 	display: block;
 }
 
-.hentry {
+.post,
+.page {
 	margin: 0 0 1.5em;
 }
 

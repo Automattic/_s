@@ -30,10 +30,11 @@ add_filter( 'body_class', '_s_body_classes' );
 
 /**
  * Removes hentry class from the array of post classes.
+ *
  * Currently, having the class on pages is not correct use of hentry.
  * hentry requires more properties than pages typically have.
  * Core is not likely to remove class because of backward compatibility.
- * See: https://core.trac.wordpress.org/ticket/28482
+ * @see https://core.trac.wordpress.org/ticket/28482
  *
  * @param array $classes Classes for the post element.
  * @return array
