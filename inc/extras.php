@@ -19,6 +19,11 @@ function _s_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );

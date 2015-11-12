@@ -591,7 +591,8 @@ a:active {
 
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
 }
 
 /* Small menu. */
@@ -663,6 +664,11 @@ a:active {
 	z-index: 100000; /* Above WP toolbar. */
 }
 
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
@@ -702,6 +708,7 @@ a:active {
 .site-footer:after {
 	content: "";
 	display: table;
+	table-layout: fixed;
 }
 
 .clear:after,
@@ -723,11 +730,6 @@ a:active {
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
-}
-
-/* Search widget. */
-.widget_search .search-submit {
-	display: none;
 }
 
 /*--------------------------------------------------------------
