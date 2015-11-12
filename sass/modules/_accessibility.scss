@@ -6,8 +6,6 @@
 	width: 1px;
 	overflow: hidden;
 
-	&:hover,
-	&:active,
 	&:focus {
 		background-color: $color__background-screen;
 		border-radius: 3px;
@@ -26,4 +24,9 @@
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
 	}
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
 }

@@ -14,6 +14,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
 _s is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
@@ -271,6 +272,7 @@ input,
 select,
 textarea {
 	color: #404040;
+	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -527,6 +529,7 @@ a:active {
 }
 
 .main-navigation ul {
+	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -564,41 +567,46 @@ a:active {
 
 }
 
-.main-navigation li:hover > a {
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
 }
 
-.main-navigation ul ul :hover > a {
+.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
 }
 
-.main-navigation ul ul a:hover {
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
 }
 
-.main-navigation ul li:hover > ul {
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
 	left: auto;
 }
 
-.main-navigation ul ul li:hover > ul {
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
 	left: 100%;
 }
 
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
 }
 
 /* Small menu. */
-.menu-toggle {
-	display: none;
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
 }
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
 		display: none;
+	}
+	.main-navigation ul {
+		display: block;
 	}
 }
 
@@ -636,8 +644,6 @@ a:active {
 	overflow: hidden;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
@@ -656,6 +662,11 @@ a:active {
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -697,6 +708,7 @@ a:active {
 .site-footer:after {
 	content: "";
 	display: table;
+	table-layout: fixed;
 }
 
 .clear:after,
@@ -718,11 +730,6 @@ a:active {
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
-}
-
-/* Search widget. */
-.widget_search .search-submit {
-	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -822,15 +829,16 @@ object {
 
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin: 0 auto;
-}
-
-.wp-caption-text {
-	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
 }
 
 /*--------------------------------------------------------------
