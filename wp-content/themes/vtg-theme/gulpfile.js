@@ -122,4 +122,5 @@ gulp.task('compressImgs', function() {
 });
 
 // Build
+gulp.task('stage', ['buildCss', 'buildJs']);
 gulp.task('prod', ['buildCss', 'buildJs', 'compressImgs']);
