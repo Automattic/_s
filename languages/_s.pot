@@ -84,14 +84,18 @@ msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: functions.php:47
-#: header.php:38
 #@ _s
-msgid "Primary Menu"
+msgid "Primary"
 msgstr ""
 
 #: functions.php:102
 #@ _s
 msgid "Sidebar"
+msgstr ""
+
+#: header.php:38
+#@ _s
+msgid "Primary Menu"
 msgstr ""
 
 #: header.php:25
