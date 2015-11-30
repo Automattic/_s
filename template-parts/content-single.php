@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<div class="entry-meta">
-			<?php _s_posted_on(); ?>
+			<?php _s_entry_meta(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 

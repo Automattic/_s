@@ -7,11 +7,11 @@
  * @package _s
  */
 
-if ( ! function_exists( '_s_posted_on' ) ) :
+if ( ! function_exists( '_s_entry_meta' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function _s_posted_on() {
+function _s_entry_meta() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
