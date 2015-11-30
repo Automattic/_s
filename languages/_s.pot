@@ -84,9 +84,8 @@ msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: functions.php:47
-#: header.php:38
 #@ _s
-msgid "Primary Menu"
+msgid "Primary"
 msgstr ""
 
 #: functions.php:102
@@ -97,6 +96,11 @@ msgstr ""
 #: header.php:25
 #@ _s
 msgid "Skip to content"
+msgstr ""
+
+#: header.php:38
+#@ _s
+msgid "Primary Menu"
 msgstr ""
 
 #: inc/template-tags.php:28

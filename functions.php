@@ -44,7 +44,7 @@ function _s_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', '_s' ),
+		'primary' => esc_html__( 'Primary', '_s' ),
 	) );
 
 	/*
