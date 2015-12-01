@@ -10,7 +10,7 @@
 	</a>
 	<?php endif; // End header image check. ?>
  *
- * @link http://codex.wordpress.org/Custom_Headers
+ * @link https://codex.wordpress.org/Custom_Headers
  *
  * @package _s
  */
