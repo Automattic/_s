@@ -22,9 +22,9 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
-
-	<?php if ( have_comments() ) : ?>
+	<?php
+	// You can start editing here -- including this comment!
+	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
@@ -66,17 +66,20 @@ if ( post_password_required() ) {
 
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-below -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php
+		endif; // Check for comment navigation.
 
-	<?php endif; // Check for have_comments(). ?>
+	endif; // Check for have_comments().
 
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', '_s' ); ?></p>
-	<?php endif; ?>
+	<?php
+	endif;
 
-	<?php comment_form(); ?>
+	comment_form();
+	?>
 
 </div><!-- #comments -->
