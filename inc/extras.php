@@ -27,3 +27,13 @@ function _s_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );
+
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function _s_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
+	}
+}
+add_action( 'wp_head', '_s_pingback_header' );
