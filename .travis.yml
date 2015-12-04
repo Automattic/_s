@@ -10,6 +10,8 @@ language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
+  # aliased to a recent 5.6.x version
+  - "5.6"
   # aliased to a recent 5.5.x version
   - "5.5"
   # aliased to a recent 5.4.x version
@@ -26,6 +28,10 @@ env:
   # @link https://github.com/WordPress/WordPress
   - WP_VERSION=master WP_MULTISITE=0
   - WP_VERSION=master WP_MULTISITE=1
+  # WordPress 4.3
+  # @link https://github.com/WordPress/WordPress/tree/4.3-branch
+  - WP_VERSION=4.3 WP_MULTISITE=0
+  - WP_VERSION=4.3 WP_MULTISITE=1
   # WordPress 4.2
   # @link https://github.com/WordPress/WordPress/tree/4.2-branch
   - WP_VERSION=4.2 WP_MULTISITE=0
@@ -40,10 +46,13 @@ env:
 # @link http://docs.travis-ci.com/user/build-configuration/
 matrix:
   include:
-    - php: 5.6
+    - php: 7.0
+      env: WP_VERSION=master
+    - php: hhvm
       env: WP_VERSION=master
   allow_failures:
-    - php: 5.6
+    - php: 7.0
+    - php: hhvm
   fast_finish: true
 
 # Use this to prepare the system to install prerequisites or dependencies.
