@@ -77,7 +77,7 @@ function _s_setup() {
 		'default-image' => '',
 	) ) );
 }
-endif; // _s_setup
+endif;
 add_action( 'after_setup_theme', '_s_setup' );
 
 /**

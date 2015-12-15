@@ -34,15 +34,17 @@ add_action( 'after_setup_theme', '_s_custom_header_setup' );
 
 if ( ! function_exists( '_s_header_style' ) ) :
 /**
- * Styles the header image and text displayed on the blog
+ * Styles the header image and text displayed on the blog.
  *
  * @see _s_custom_header_setup().
  */
 function _s_header_style() {
 	$header_text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value.
+	/*
+	 * If no custom options for text are set, let's bail.
+	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
+	 */
 	if ( HEADER_TEXTCOLOR === $header_text_color ) {
 		return;
 	}
@@ -71,4 +73,4 @@ function _s_header_style() {
 	</style>
 	<?php
 }
-endif; // _s_header_style
+endif;
