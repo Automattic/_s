@@ -2,6 +2,6 @@
     "preset": "wordpress",
     "fileExtensions": [ ".js" ],
     "excludeFiles": [
-    	"js/skip-link-focus-fix.js"
+    	"js/**.min.js"
     ]
 }
