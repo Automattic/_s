@@ -570,7 +570,7 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
+	display: inline-block;
 	position: relative;
 }
 
