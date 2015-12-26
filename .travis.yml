@@ -62,7 +62,7 @@ before_script:
     # @link http://jshint.com/docs/
     - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
     # Pull in the WP Core jshint rules.
-    - wget https://develop.svn.wordpress.org/trunk/.jshintrc
+    - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
 
 # Run test script commands.
 # Default is specific to project language.
