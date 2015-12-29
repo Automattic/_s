@@ -1,33 +1,27 @@
 {
-  "name": "orange-herd",
+  "name": "vtg",
   "version": "1.0.0",
-  "description": "Broncos' fan site",
+  "description": "Voltage Site",
   "main": "gulpfile.js",
   "scripts": {
     "gulp": "node_modules/.bin/gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/voltagead/orange-herd.git"
-  },
-  "author": "Voltage",
-  "bugs": {
-    "url": "https://github.com/voltagead/orange-herd/issues"
-  },
-  "homepage": "https://github.com/voltagead/orange-herd#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
-    "gulp-bower": "0.0.10",
+    "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
-    "gulp-imageoptim": "^0.2.12",
+    "gulp-imagemin": "^2.4.0",
     "gulp-jshint": "^1.11.2",
     "gulp-livereload": "^3.8.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.4.1"
+    "gulp-uglify": "^1.4.1",
+    "jquery": "^2.1.4",
+    "normalize.scss": "^0.1.0",
+    "susy": "^2.2.9"
   },
   "private": true
 }
