@@ -5,10 +5,10 @@
 //--------------------------------------------------------------
 
 // Susy
-@import "../vendor/susy/sass/susy";
+@import "../../node_modules/susy/sass/susy";
 
 // Normalize.css
-@import "../vendor/normalize-scss/normalize";
+@import "../../node_modules/normalize.scss/normalize";
 
 // Variables
 @import "variables";

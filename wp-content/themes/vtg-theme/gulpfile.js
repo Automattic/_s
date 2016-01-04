@@ -12,8 +12,10 @@ var gulp = require('gulp'),
 	jsHint = require('gulp-jshint'),
 	notify = require('gulp-notify'),
 	livereload = require('gulp-livereload'),
-	imageOptim = require('gulp-imageoptim'),
+	imagemin = require('gulp-imagemin'),
 	bower = require('gulp-bower'),
+	browserify = require('gulp-browserify'),
+	isDevMode = true,
 	path = {
 		WATCH_JS: [
 			'assets/js/*.js',
@@ -34,23 +36,12 @@ var gulp = require('gulp'),
 
 
 /**
- * Install Tasks
- */
-
-// Install Bower components
-gulp.task('install', function() {
-	return bower(path.VENDOR)
-		.pipe(gulp.dest(path.VENDOR));
-});
-
-
-/**
  * Development Tasks
  */
 
 // Compile Sass files
 gulp.task('sass', function() {
-	gulp.src([path.CSS + '*.scss', path.CSS + '**/*.scss'])
+	gulp.src(path.WATCH_CSS)
 		.pipe(sass()
 			.on('error', notify.onError({
 				message: 'Sass failed. Check console for errors'
@@ -64,7 +55,7 @@ gulp.task('sass', function() {
 
 // Lint JS
 gulp.task('lint', function() {
-	gulp.src([path.JS + '*.js', path.JS + '**/*.js'])
+	gulp.src(path.WATCH_JS)
 		.pipe(jsHint())
 		.pipe(jsHint.reporter('default'))
 			.on('error', notify.onError(function(file) {
@@ -74,24 +65,33 @@ gulp.task('lint', function() {
 			}));
 });
 
+// Minify, move script files
+gulp.task('browserifyJs', ['lint'], function() {
+	gulp.src(path.JS + 'entry.js')
+		.pipe(browserify({
+			insertGlobals: true,
+			debug: isDevMode
+		}))
+		.pipe(rename('scripts.js'))
+		.pipe(gulp.dest(path.BUILD));
+});
+
 // Compile JS
 gulp.task('js', ['lint'], function() {
-	gulp.src(path.WATCH_JS)
-		.pipe(concat('scripts.js'))
-		.pipe(livereload())
+	gulp.src(['!assets/js/entry.js'].concat(path.WATCH_JS))
 		.pipe(gulp.dest(path.BUILD));
 });
 
 // Watch
 gulp.task('watch', function() {
-	gulp.watch(path.WATCH_JS, ['js']);
+	gulp.watch(path.WATCH_JS, ['js', 'browserifyJs']);
 	gulp.watch(path.WATCH_CSS, ['sass']);
 
 	livereload.listen();
 });
 
 // Default
-gulp.task('default', ['sass', 'js']);
+gulp.task('default', ['sass', 'js', 'browserifyJs']);
 
 
 /**
@@ -106,9 +106,20 @@ gulp.task('buildCss', function() {
 		.pipe(gulp.dest(path.DIST));
 });
 
-// Concatenate, minify, move script files
-gulp.task('buildJs', function() {
-	gulp.src([path.BUILD + '/*.js', path.BUILD + '/**/*.js'])
+// Minify, move script files
+gulp.task('buildBrowserifyJs', ['lint'], function() {
+	gulp.src(path.JS + 'entry.js')
+		.pipe(browserify({
+			insertGlobals: true,
+			debug: !isDevMode
+		}))
+		.pipe(rename('scripts.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(path.DIST));
+});
+
+gulp.task('buildJs', ['lint', 'buildBrowserifyJs'], function() {
+	gulp.src(['!assets/js/entry.js'].concat(path.WATCH_JS))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(uglify())
 		.pipe(gulp.dest(path.DIST));
@@ -117,8 +128,8 @@ gulp.task('buildJs', function() {
 // Optimize images
 gulp.task('compressImgs', function() {
 	return gulp.src([path.IMG + '*.*', path.IMG + '**/*.*'])
-		.pipe(imageOptim.optimize())
-		.pipe(gulp.dest(path.IMG));
+        .pipe(imagemin({ progressive: true }))
+        .pipe(gulp.dest(path.IMG));
 });
 
 // Build

@@ -10,19 +10,27 @@ $space: 20px;
 
 
 
+
+
 // ------
 // Colors
 // ------
 
 $white: #FFF;
 $black: #000;
-
 $color-primary: $black; 
+
+
+
 
 
 // -----
 // Fonts
 // -----
+
+$font-default: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
 
 
 
@@ -34,8 +42,10 @@ $break-small: 480px;
 $break-medium: 720px;
 $break-large: 960px;
 $break-xl: 1800px;
-
 $max-width: 1200px;
+
+
+
 
 
 // ----
@@ -47,3 +57,7 @@ $susy: (
 	container: $max-width,
 	gutters: 1/2
 );
+
+
+
+
