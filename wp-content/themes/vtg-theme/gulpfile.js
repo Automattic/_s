@@ -13,7 +13,6 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify'),
 	livereload = require('gulp-livereload'),
 	imagemin = require('gulp-imagemin'),
-	bower = require('gulp-bower'),
 	browserify = require('gulp-browserify'),
 	isDevMode = true,
 	path = {

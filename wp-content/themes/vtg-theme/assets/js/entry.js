@@ -40,7 +40,7 @@ var Site = {
 
 		Site.context = states[index] || 'desktop';
 	},
-	
+
 	/**
 	 * Throttle/debounce helper
 	 * Modified from http://remysharp.com/2010/07/21/throttling-function-calls/
@@ -53,7 +53,7 @@ var Site = {
 				args = arguments;
 
 			clearTimeout(timer);
-			
+
 			timer = setTimeout(function() {
 				fn.apply(context, args);
 			}, delay);

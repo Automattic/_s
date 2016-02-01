@@ -29,9 +29,10 @@ wp-content/mu-plugins/
 /wp-content/upgrade/
 /wp-content/wp-cache-config.php
 /wp-config.php
-wp-content/themes/twentyfourteen/
-wp-content/themes/twentythirteen/
+/wp-content/themes/twentyfourteen/
+/wp-content/themes/twentythirteen/
 /wp-content/themes/twentyfifteen/
+/wp-content/themes/twentysixteen/
 wp-content/themes/orange-herd/Gemfile.lock
 
 /index.php
