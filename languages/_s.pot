@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-09-16 19:02:07+00:00\n"
+"POT-Creation-Date: 2016-02-14 21:43:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,13 +22,13 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#: 404.php:29
+#: 404.php:33
 #@ _s
 msgid "Most Used Categories"
 msgstr ""
 
 #. translators: %1$s: smiley
-#: 404.php:46
+#: 404.php:51
 #, php-format
 #@ _s
 msgid "Try looking in the monthly archives. %1$s"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:77
+#: comments.php:78
 #@ _s
 msgid "Comments are closed."
 msgstr ""
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:38
+#: header.php:45
 #@ _s
 msgid "Primary Menu"
 msgstr ""
@@ -147,20 +147,19 @@ msgid "1 Comment"
 msgstr ""
 
 #: inc/template-tags.php:64
-#, php-format
 #@ _s
 msgid "% Comments"
 msgstr ""
 
 #. translators: %s: Name of current post
 #: inc/template-tags.php:71
-#: template-parts/content-page.php:32
+#: template-parts/content-page.php:33
 #, php-format
 #@ _s
 msgid "Edit %s"
 msgstr ""
 
-#: search.php:18
+#: search.php:19
 #, php-format
 #@ _s
 msgid "Search Results for: %s"
@@ -171,35 +170,35 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#: template-parts/content-none.php:21
 #, php-format
 #@ _s
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:25
 #@ _s
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
+#: template-parts/content-none.php:31
 #@ _s
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:21
-#: template-parts/content-single.php:25
-#: template-parts/content.php:34
+#: template-parts/content-page.php:22
+#: template-parts/content.php:38
 #@ _s
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post.
-#: template-parts/content.php:27
+#. translators: %s: Name of current post. 
+#: template-parts/content.php:33
 #, php-format
 #@ _s
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "_s"
 msgstr ""
