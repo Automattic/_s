@@ -1,0 +1,91 @@
+# Travis CI (MIT License) configuration file for the Underscores WordPress theme.
+# @link https://travis-ci.org/
+
+# For use with the Underscores WordPress theme.
+# @link https://github.com/Automattic/_s
+
+# Ditch sudo and use containers.
+# @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
+# @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
+sudo: false
+
+# Declare project language.
+# @link http://about.travis-ci.org/docs/user/languages/php/
+language: php
+
+# Declare versions of PHP to use. Use one decimal max.
+# @link http://docs.travis-ci.com/user/build-configuration/
+matrix:
+    fast_finish: true
+
+    include:
+        # Current $required_php_version for WordPress: 5.2.4
+        # aliased to 5.2.17
+        - php: '5.2'
+        # aliased to a recent 5.6.x version
+        - php: '5.6'
+          env: SNIFF=1
+        # aliased to a recent 7.x version
+        - php: '7.0'
+        # aliased to a recent hhvm version
+        - php: 'hhvm'
+
+    allow_failures:
+        - php: 'hhvm'
+
+# Use this to prepare the system to install prerequisites or dependencies.
+# e.g. sudo apt-get update.
+# Failures in this section will result in build status 'errored'.
+# before_install:
+
+# Use this to prepare your build for testing.
+# e.g. copy database configurations, environment variables, etc.
+# Failures in this section will result in build status 'errored'.
+before_script:
+    - export PHPCS_DIR=/tmp/phpcs
+    - export SNIFFS_DIR=/tmp/sniffs
+    # Install CodeSniffer for WordPress Coding Standards checks.
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
+    # Install WordPress Coding Standards.
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR; fi
+    # Install PHP Compatibility sniffs.
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $SNIFFS_DIR/PHPCompatibility; fi
+    # Set install path for PHPCS sniffs.
+    # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
+    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs --config-set installed_paths $SNIFFS_DIR; fi
+    # After CodeSniffer install you should refresh your path.
+    - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
+    # Install JSCS: JavaScript Code Style checker.
+    # @link http://jscs.info/
+    - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
+    # Install JSHint, a JavaScript Code Quality Tool.
+    # @link http://jshint.com/docs/
+    - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
+    # Pull in the WP Core jshint rules.
+    - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
+
+# Run test script commands.
+# Default is specific to project language.
+# All commands must exit with code 0 on success. Anything else is considered failure.
+script:
+    # Search for PHP syntax errors.
+    - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+    # Run the theme through JSHint.
+    - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
+    # Run the theme through JavaScript Code Style checker.
+    - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
+    # WordPress Coding Standards.
+    # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
+    # @link http://pear.php.net/package/PHP_CodeSniffer/
+    # -p flag: Show progress of the run.
+    # -s flag: Show sniff codes in all reports.
+    # -v flag: Print verbose output.
+    # -n flag: Do not print warnings. (shortcut for --warning-severity=0)
+    # --standard: Use WordPress as the standard.
+    # --extensions: Only sniff PHP files.
+    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php; fi
+
+# Receive notifications for build results.
+# @link http://docs.travis-ci.com/user/notifications/#Email-notifications
+notifications:
+    email: false
