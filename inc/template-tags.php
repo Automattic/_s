@@ -119,3 +119,19 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
+
+if ( ! function_exists( '_s_the_site_logo' ) ) :
+/**
+ * Displays the optional site logo.
+ *
+ * Returns early if the site logo is not available.
+ *
+ */
+function _s_the_site_logo() {
+	if ( ! function_exists( 'the_site_logo' ) ) {
+		return;
+	} else {
+		the_site_logo();
+	}
+}
+endif;

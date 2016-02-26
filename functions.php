@@ -36,6 +36,12 @@ function _s_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
+	 * Enable support for site logo.
+	 */
+	add_image_size( '_s-logo', 500, 500 );
+	add_theme_support( 'site-logo', array( 'size' => '_s-logo' ) );
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
