@@ -125,6 +125,8 @@ if ( ! function_exists( '_s_the_site_logo' ) ) :
  * Displays the optional site logo.
  *
  * Returns early if the site logo is not available.
+ * 
+ * @todo: Remove this function when WordPress 4.7 is released.
  *
  */
 function _s_the_site_logo() {
