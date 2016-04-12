@@ -99,10 +99,6 @@ a:hover {
 	outline: 0;
 }
 
-abbr[title] {
-	border-bottom: 1px dotted;
-}
-
 b,
 strong {
 	font-weight: bold;
@@ -159,13 +155,8 @@ hr {
 	height: 0;
 }
 
-pre {
-	overflow: auto;
-}
-
 code,
 kbd,
-pre,
 samp {
 	font-family: monospace, monospace;
 	font-size: 1em;
@@ -324,6 +315,7 @@ var {
 
 abbr,
 acronym {
+	text-decoration: none;
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
