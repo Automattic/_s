@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: _bem
 Theme URI: http://underscores.me/
@@ -42,6 +43,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/*
+see gutenberg-config
+if custom fonts used, define it here
+*/
+/* see gutenberg-config */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -220,6 +226,372 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+/*! Gutenberg reset — adapted from Normalize */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary,
+cite,
+code,
+small {
+  display: block; }
+
+body,
+article,
+section,
+footer,
+header,
+div,
+input,
+nav,
+article ol,
+article ul,
+blockquote,
+figure {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+a {
+  background: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+abbr {
+  letter-spacing: 0.1em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 70%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+em,
+i {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* Embedded content
+   ========================================================================== */
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; }
+
+/* Tables
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/* Images
+   ========================================================================== */
+img {
+  max-width: 100%;
+  display: block;
+  margin: inherit auto; }
+
+/* Configuration
+   ========================================================================== */
+/* Calculations
+   ========================================================================== */
+/* Mixins
+   ========================================================================== */
+/* Font themes
+   ========================================================================== */
+/* Defaults
+   ========================================================================== */
+html {
+  font-size: 16px;
+  font-size: 100%;
+  color: #1c1c1c; }
+
+* {
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin: 0px 0px 26px;
+  margin: 0rem 0rem 1.625rem; }
+
+/* Paragraph
+   ========================================================================== */
+/* Headings
+   ========================================================================== */
+h1 {
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 52px;
+  line-height: 3.25rem;
+  margin-top: 104px;
+  margin-top: 6.5rem;
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem; }
+
+h2 {
+  font-size: 27px;
+  font-size: 1.6875rem;
+  line-height: 39px;
+  line-height: 2.4375rem;
+  margin-top: 65px;
+  margin-top: 4.0625rem;
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem; }
+
+h3 {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin-top: 52px;
+  margin-top: 3.25rem;
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem; }
+
+h4 {
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin-top: 39px;
+  margin-top: 2.4375rem;
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem; }
+
+h5 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin-top: 65px;
+  margin-top: 4.0625rem;
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem; }
+
+h6 {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 26px;
+  line-height: 1.625rem;
+  margin-top: 65px;
+  margin-top: 4.0625rem;
+  margin-bottom: 13px;
+  margin-bottom: 0.8125rem; }
+
+h1 + h2 {
+  margin-top: 26px;
+  margin-top: 1.625rem; }
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+  margin-top: 13px;
+  margin-top: 0.8125rem; }
+
+h5 + h6 {
+  margin-top: -13px;
+  margin-top: -0.8125rem; }
+
+h6 {
+  font-style: italic;
+  font-weight: normal; }
+
+/* Links
+   ========================================================================== */
+a {
+  color: #1c1c1c;
+  transition: all .3s; }
+  a:hover {
+    color: #1c1c1c; }
+  a:visited {
+    color: #6c6c6c; }
+    a:visited:hover {
+      color: #1c1c1c; }
+  a:active {
+    color: #30f; }
+
+/* Figures & other elements
+   ========================================================================== */
+figcaption {
+  line-height: 26px;
+  line-height: 1.625rem;
+  color: #1c1c1c;
+  font-size: .8125rem;
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: center; }
+
+blockquote {
+  font-style: italic;
+  padding-left: 1.4375rem; }
+
+cite {
+  font-style: normal; }
+
+figure blockquote {
+  padding: 26px 0px;
+  padding: 1.625rem 0rem; }
+  figure blockquote p {
+    font-size: 27px;
+    font-size: 1.6875rem;
+    line-height: 39px;
+    line-height: 2.4375rem; }
+
+ul li,
+ol li {
+  margin-bottom: 0; }
+
+hr {
+  margin-top: 52px;
+  margin-top: 3.25rem;
+  margin-bottom: 52px;
+  margin-bottom: 3.25rem;
+  border: 0;
+  color: #1c1c1c;
+  display: block;
+  height: 26px;
+  height: 1.625rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-size: 100% 26px;
+  background-size: 100% 1.625rem;
+  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, #1c1c1c 11px, #1c1c1c 15px, transparent 15px, transparent 26px);
+  width: 100px; }
+
+small {
+  line-height: 13px;
+  line-height: 0.8125rem; }
+
+code {
+  padding: 26px;
+  padding: 1.625rem; }
+
+.attention-grabber {
+  font-size: 19.2px;
+  font-size: 1.2rem; }
+
+/* Grid
+   ========================================================================== */
+.grid, .grid-double {
+  background-image: linear-gradient(to bottom, rgba(0, 170, 255, 0.3) 1px, transparent 1px);
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 100% 26px;
+  background-size: 100% 1.625rem; }
+
+.grid-double {
+  background-image: linear-gradient(to bottom, rgba(0, 170, 255, 0.3) 1px, transparent 1px, transparent 13px, rgba(0, 170, 255, 0.2) 13px, transparent 14px, transparent 26px); }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both; }
+
+dfn, cite, em, i {
+  font-style: italic; }
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  max-width: 100%;
+  overflow: auto; }
+
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+big {
+  font-size: 125%; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -243,6 +615,14 @@ th {
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Infinite scroll

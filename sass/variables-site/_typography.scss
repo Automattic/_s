@@ -1,5 +1,11 @@
-$font__main: sans-serif;
-$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+/*
+see gutenberg-config
+if custom fonts used, define it here
+*/
+$theme: custom;
+$custom-font-body: Georgia, serif;
+$custom-font-headings: Georgia, serif;
+
+/* see gutenberg-config */
 $font__pre: "Courier 10 Pitch", Courier, monospace;
-$font__line-height-body: 1.5;
-$font__line-height-pre: 1.6;
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;

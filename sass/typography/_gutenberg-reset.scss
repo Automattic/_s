@@ -1,0 +1,212 @@
+/*! Gutenberg reset — adapted from Normalize */
+
+// Prevent iOS text size adjust after orientation change, without disabling
+// user zoom.
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// Remove default margin.
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+// Correct `block` display not defined for any HTML5 element in IE 8/9.
+// Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+// Correct `block` display not defined for `main` in IE 11.
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary,
+cite,
+code,
+small {
+  display: block;
+}
+
+// Border Box
+body,
+article,
+section,
+footer,
+header,
+div,
+input,
+nav,
+article ol,
+article ul,
+blockquote,
+figure {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// 1. Correct `inline-block` display not defined in IE 8/9.
+// 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+// Prevent modern browsers from displaying `audio` without controls.
+// Remove excess height in iOS 5 devices.
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+// Address `[hidden]` styling not present in IE 8/9/10.
+// Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+// Remove the gray background color from active links in IE 10.
+a {
+  background: transparent;
+}
+
+// Improve readability when focused and also mouse hovered in all browsers.
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+// Enable small caps if available & fix letter spacing
+abbr {
+  letter-spacing: 0.1em;
+}
+
+// Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+// Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+b,
+strong {
+  font-weight: bold;
+}
+
+// Address styling not present in Safari and Chrome.
+dfn {
+  font-style: italic;
+}
+
+// Address styling not present in IE 8/9.
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+  font-size: 70%;
+}
+
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// Prevent `em` and `i` affecting `line-height` in all browsers.
+em,
+i {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+// Remove border when inside `a` element in IE 8/9/10.
+img {
+  border: 0;
+}
+
+// Correct overflow not hidden in IE 9/10/11.
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+// Address differences between Firefox and other browsers.
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+// Contain overflow in all browsers.
+pre {
+  overflow: auto;
+}
+
+// Address odd `em`-unit font size rendering in all browsers.
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+}
+
+/* Tables
+   ========================================================================== */
+
+// Remove most spacing between table cells.
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* Images
+   ========================================================================== */
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: inherit auto;
+}

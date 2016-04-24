@@ -1,0 +1,65 @@
+/* Configuration
+   ========================================================================== */
+
+$edit-mode: false; // [ true / false ] - Enables/disables the grid toggle button.
+
+// Theme / Fonts
+$theme: theme; // [ Merriweather / OpenSans / custom ]
+$custom-font-body: $font__body !default; // [ "Libre Baskerville", Georgia, serif ]
+$custom-font-headings: $font__headings !default;
+
+// Paragraph indenting
+$paragraph-indent: false; // [ true / false ]
+
+// Base sizes
+$base-font-size: 100 !default; // In %. Also used for mobile. Number only, no units.
+$base-font-size-desktop: 112.5 !default; // In %. Used to calculate the desktop font size. Number only, no units.
+$line-height: 1.625;
+$line-height-desktop: 1.7;
+$max-width: 35; // Number only, no units. Gets converted to REMs and pixels.
+
+// Modular Scale
+$modular-scale: (
+  xxxl: 4.3,
+  xxl: 3.5,
+  xl: 3,
+  l: 2.5,
+  m: 2,
+  s: 1.6875,
+  xs: 1.4375,
+  xxs: 1.2,
+  xxxs: 1,
+  xxxxs: .8125
+) !default;
+
+// Headings Options
+// [ h1: size (in rem), line height (* leading), margin top (* leading), margin bottom (* leading) ]
+$headings: (
+  h1: (2.5, 2, 4, 1),
+  h2: (1.6875, 1.5, 2.5, .5),
+  h3: (1.375, 1, 2, .5),
+  h4: (1.2, 1, 1.5, .5),
+  h5: (1, 1, 2.5, .5),
+  h6: (1, 1, 2.5, .5)
+) !default;
+
+// Colors
+$color-font-body: #1c1c1c;
+$color-font-headings: $color-font-body;
+$color-font-light: #6c6c6c;
+$color-font-figcaption: $color-font-body;
+
+$color-link-normal: $color-font-body;
+$color-link-hover: $color-font-body;
+$color-link-active: #30f;
+$color-link-visited: $color-font-light;
+
+// Horizontal rule
+$hr-style: line; // [ line / type ]
+$hr-type-content: '***'; // [ '***' ]
+$hr-type-char-spacing: .2em; // [ .2em ]
+$hr-margin: 2;
+$hr-margin-desktop: $hr-margin;
+$hr-color: $color-font-body;
+$hr-width: 100; // [ 100 ] — In pixels, only for line style
+$hr-height: 4; // [ 2 ] — In pixels, only for line style
