@@ -44,15 +44,15 @@ $headings: (
 ) !default;
 
 // Colors
-$color-font-body: #1c1c1c;
+$color-font-body: $color__text-screen;
 $color-font-headings: $color-font-body;
-$color-font-light: #6c6c6c;
+$color-font-light: $color__text-screen-light;
 $color-font-figcaption: $color-font-body;
 
-$color-link-normal: $color-font-body;
-$color-link-hover: $color-font-body;
-$color-link-active: #30f;
-$color-link-visited: $color-font-light;
+$color-link-normal: $color__link;
+$color-link-hover: $color__link-hover;
+$color-link-active: $color__link-active;
+$color-link-visited: $color__link-visited;
 
 // Horizontal rule
 $hr-style: line; // [ line / type ]
