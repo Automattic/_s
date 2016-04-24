@@ -4,7 +4,7 @@
 $edit-mode: false; // [ true / false ] - Enables/disables the grid toggle button.
 
 // Theme / Fonts
-$theme: theme; // [ Merriweather / OpenSans / custom ]
+$theme: $font__theme; // [ Merriweather / OpenSans / custom ]
 $custom-font-body: $font__body !default; // [ "Libre Baskerville", Georgia, serif ]
 $custom-font-headings: $font__headings !default;
 
