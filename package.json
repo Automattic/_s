@@ -1,0 +1,31 @@
+{
+  "name": "underscores-bem",
+  "version": "0.1.0",
+  "description": "BEMified underscores theme template.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maliMirkec/_bem.git"
+  },
+  "keywords": [
+    "bem",
+    "underscores",
+    "wordpress"
+  ],
+  "author": "maliMirkec <\u001b[D<>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maliMirkec/_bem/issues"
+  },
+  "homepage": "https://github.com/maliMirkec/_bem#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.1",
+    "require-dir": "^0.3.0"
+  }
+}
