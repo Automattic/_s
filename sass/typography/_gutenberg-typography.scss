@@ -1,0 +1,258 @@
+/* Calculations
+   ========================================================================== */
+
+// Mobile base & leading
+$base: 16 * ($base-font-size / 100);
+$leading: round($base * $line-height);
+$leading-rem: $leading / $base;
+
+// Desktop base & leading
+$base-desktop: 16 * ($base-font-size-desktop / 100);
+$leading-desktop: round($base-desktop * $line-height-desktop);
+$leading-rem-desktop: $leading-desktop / $base-desktop;
+
+@import 'gutenberg-mixins';
+
+/* Font themes
+   ========================================================================== */
+
+$font-body: null;
+$font-headings: null;
+
+@if $theme == Merriweather {
+
+  // Import Merriweather
+  @import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,400italic);
+
+  // Set body font
+  $font-body: Merriweather, Georgia, serif;
+
+} @else if $theme == OpenSans {
+
+  // Import Open Sans
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
+
+  // Set body font
+  $font-body: Open Sans, Arial, Helvetica, Sans-serif;
+
+} @else if $theme == custom {
+
+  // Set custom body font
+  $font-body: $custom-font-body;
+
+  // Set custom headings font
+  @if $custom-font-headings != $custom-font-body {
+    $font-headings: $custom-font-headings;
+  }
+}
+
+
+/* Defaults
+   ========================================================================== */
+
+// Font defaults
+html {
+  font-size: #{$base + 'px'};
+  font-size: #{$base-font-size + '%'};
+  font-family: $font-body;
+  color: $color-font-body;
+}
+
+// Line-height & margin reset
+* {
+  @include line-height(1);
+  @include margin(0, 0, 1);
+}
+
+
+/* Paragraph
+   ========================================================================== */
+
+@if $paragraph-indent == true {
+
+  p + p {
+    @include margin-top(-1);
+    text-indent: #{ $leading + 'px'};
+    text-indent: #{ $leading-rem + 'rem'};
+  }
+
+  .attention-grabber + p {
+    margin-top: 0;
+    text-indent: 0;
+  }
+}
+
+/* Headings
+   ========================================================================== */
+
+// Set headings sizes, line-heights and margins
+@each $heading, $properties in $headings {
+  #{$heading} {
+    @include font-size(nth($properties, 1));
+    @include line-height(nth($properties, 2));
+    @include margin-top(nth($properties, 3));
+    @include margin-bottom(nth($properties, 4));
+  }
+}
+
+// Set margins between headings
+h1 + h2 {
+  @include margin-top(1);
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+  @include margin-top(.5);
+}
+
+h5 + h6 {
+  @include margin-top(-.5);
+}
+
+h6 {
+  font-style: italic;
+  font-weight: normal;
+}
+
+// Change headings font if a heading font is set
+@if $font-headings != null {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-headings;
+  }
+}
+
+/* Links
+   ========================================================================== */
+
+a {
+  color: $color-link-normal;
+  transition: all .3s;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+  &:visited {
+    color: $color-link-visited;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  &:active {
+    color: $color-link-active;
+  }
+}
+
+/* Figures & other elements
+   ========================================================================== */
+
+figcaption {
+  @include line-height(1);
+  color: $color-font-figcaption;
+  font-size: .8125rem;
+  font-style: italic;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+blockquote {
+  font-style: italic;
+  padding-left: 1.4375rem;
+  // font-size: 95%;
+}
+
+cite {
+  font-style: normal;
+}
+
+// Quotes
+figure blockquote {
+  @include padding(1, 0);
+
+  p {
+    @include font-size(1.6875);
+    @include line-height(1.5);
+  }
+}
+
+// Lists
+ul,
+ol {
+  li {
+    margin-bottom: 0;
+  }
+}
+
+// Horizontal rule
+hr {
+  @include margin-top($hr-margin);
+  @include margin-bottom($hr-margin);
+  border: 0;
+  color: $hr-color;
+  display: block;
+  height: #{$leading + 'px'};
+  height: #{$leading-rem + 'rem'};
+  margin-right: auto;
+  margin-left: auto;
+
+  @if $hr-style == 'line' {
+    background-size: 100% #{$leading + 'px'};
+    background-size: 100% #{$leading-rem + 'rem'};
+    background-image: linear-gradient(to bottom, transparent 1px, transparent #{ 0.5 * $leading - (0.5 * $hr-height) + 'px'},  $hr-color #{ 0.5 * $leading - (0.5 * $hr-height) + 'px'}, $hr-color #{ (0.5 * $leading  - (0.5 * $hr-height)) + $hr-height + 'px'}, transparent #{ (0.5 * $leading  - (0.5 * $hr-height)) + $hr-height + 'px'}, transparent #{$leading + 'px'});
+
+    @if $hr-width == null {
+      width: 100%;
+    } @else {
+      width: #{$hr-width + 'px'};
+    }
+  }
+
+  @if $hr-style == 'type' {
+    text-align: center;
+
+    &:before {
+      content: $hr-type-content;
+      letter-spacing: $hr-type-char-spacing;
+    }
+  }
+}
+
+small {
+  @include line-height(.5);
+}
+
+code {
+  @include padding-equal(1);
+}
+
+// Attention grabber
+.attention-grabber {
+  @include font-size(1.2);
+}
+
+
+/* Grid
+   ========================================================================== */
+
+// Grid background
+.grid {
+  background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, .3) 1px, transparent 1px);
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 100% #{$leading + 'px'};
+  background-size: 100% #{$leading-rem + 'rem'};
+}
+
+// Double grid background
+.grid-double {
+  @extend .grid;
+  background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, .3) 1px, transparent 1px, transparent #{ .5 * $leading + 'px'}, hsla(200, 100%, 50%, .2) #{ .5 * $leading + 'px'}, transparent #{ .5 * $leading + 1 + 'px'}, transparent #{$leading + 'px'});
+}
