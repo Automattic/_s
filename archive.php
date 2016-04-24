@@ -4,21 +4,21 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package _bem
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area _content__wrapper _content__wrapper--category">
+		<main id="main" class="site-main _content__main _content__main--category" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
+			<header class="page-header _content__header _content__header--category">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					the_archive_title( '<h1 class="page-title _content__title _content__title--category">', '</h1>' );
+					the_archive_description( '<div class="taxonomy-description _content__description _content__description--category">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 

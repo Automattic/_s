@@ -4,19 +4,19 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package _s
+ * @package _bem
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<section id="primary" class="content-area _content__wrapper _content__wrapper--search">
+		<main id="main" class="site-main _content__main _content__main--search" role="main">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<header class="page-header _content__header _content__header--search">
+				<h1 class="page-title _content__title _content__title--search"><?php printf( esc_html__( 'Search Results for: %s', '_bem' ), '<span class="_content__title-query">' . get_search_query() . '</span>' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php

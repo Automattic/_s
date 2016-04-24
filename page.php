@@ -9,13 +9,13 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package _bem
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area _content__wrapper _content__wrapper--page">
+		<main id="main" class="site-main _content__main _content__main--page" role="main">
 
 			<?php
 			while ( have_posts() ) : the_post();
