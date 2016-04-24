@@ -2,9 +2,9 @@
 see gutenberg-config
 if custom fonts used, define it here
 */
-$theme: custom;
-$custom-font-body: Georgia, serif;
-$custom-font-headings: Georgia, serif;
+$font__theme: custom;
+$font__body: Georgia, serif;
+$font__headings: Georgia, serif;
 
 /* see gutenberg-config */
 $font__pre: "Courier 10 Pitch", Courier, monospace;
