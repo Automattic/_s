@@ -25,6 +25,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 ----------------------------------------------------------------
 # Variables
 # Normalize
+# Grid
 # Typography
 # Elements
 # Forms
@@ -51,6 +52,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 @import "./bower_components/normalize-css/normalize.css";
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+@import "./bower_components/cita-flex/css/src/_cita-flex-mixins.scss";
 
 /*--------------------------------------------------------------
 # Typography
