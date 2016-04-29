@@ -23,6 +23,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Variables
 # Normalize
 # Typography
 # Elements
@@ -49,7 +50,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import "normalize";
+@import "./bower_components/normalize-css/normalize.css";
 
 /*--------------------------------------------------------------
 # Typography

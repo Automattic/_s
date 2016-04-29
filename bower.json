@@ -21,6 +21,7 @@
   ],
   "devDependencies": {
     "font-awesome": "^4.6.1",
-    "cita-flex": "^1.1.0"
+    "cita-flex": "^1.1.0",
+    "normalize-css": "^4.1.1"
   }
 }
