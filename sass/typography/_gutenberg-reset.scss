@@ -97,7 +97,7 @@ a:hover {
    ========================================================================== */
 // Enable small caps if available & fix letter spacing
 abbr {
-  letter-spacing: 0.1em;
+  letter-spacing: $letter-spacing;
 }
 
 // Address styling not present in IE 8/9/10/11, Safari, and Chrome.
@@ -137,11 +137,11 @@ sup {
 }
 
 sup {
-  top: -0.5em;
+  top: $sup-position;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: $sub-position;
 }
 
 // Prevent `em` and `i` affecting `line-height` in all browsers.

@@ -51,10 +51,13 @@ see gutenberg-config
 if custom fonts used, define it here
 */
 /* see gutenberg-config */
+@import url(./bower_components/normalize-css/normalize.css);
+.skip-link {
+  display: none; }
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import url(./bower_components/normalize-css/normalize.css);
 /*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
@@ -127,6 +130,31 @@ if custom fonts used, define it here
 /*--------------------------------------------------------------
 # Media queries
 --------------------------------------------------------------*/
+body:before {
+  background-color: #FCF8E3;
+  border-bottom: 1px solid #FBEED5;
+  border-left: 1px solid #FBEED5;
+  color: #C09853;
+  font: small-caption;
+  padding: 3px 6px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100; }
+  @media (min-width: 20em) {
+    body:before {
+      content: "mobile ≥ 20em (20em)"; } }
+  @media (min-width: 48.75em) {
+    body:before {
+      content: "tablet ≥ 48.75em (48.75em)"; } }
+  @media (min-width: 61.25em) {
+    body:before {
+      content: "desktop ≥ 61.25em (61.25em)"; } }
+  @media (min-width: 75em) {
+    body:before {
+      content: "wide ≥ 75em (75em)"; } }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -523,15 +551,71 @@ a {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+._header__navigation {
+  position: relative; }
+
+._header__navigation-checkbox,
+._header__navigation-toggler {
+  display: none; }
+  @media (max-width: 61.24em) {
+    ._header__navigation-checkbox,
+    ._header__navigation-toggler {
+      display: inline-block; } }
+
+._header__navigation-checkbox {
+  position: absolute;
+  left: -9999px; }
+
+._header__menu {
+  display: none; }
+  @media (min-width: 61.25em) {
+    ._header__menu {
+      display: block; } }
+
+._header__navigation-checkbox:checked ~ ._header__menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0; }
+
 ._header__menu-list,
 ._header__submenu-list {
-  display: flex;
-  justify-content: space-around;
+  background-color: #fff;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  list-style: none; }
+  @media (min-width: 61.25em) {
+    ._header__menu-list,
+    ._header__submenu-list {
+      display: flex;
+      justify-content: space-around; } }
 
 ._header__submenu-list {
   flex-direction: column; }
+  @media (min-width: 61.25em) {
+    ._header__submenu-list {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0; } }
+
+._header__menu-item,
+._header__submenu-item {
+  flex: 1;
+  position: relative; }
+
+._header__menu-link,
+._header__submenu-link {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin: 0; }
+
+._header__menu-item:hover > ._header__submenu-list {
+  display: block; }
 
 /*--------------------------------------------------------------
 # Accessibility
