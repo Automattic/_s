@@ -1,107 +1,77 @@
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+._header__navigation {
+	position: relative;
+}
 
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
-	}
+._header__navigation-checkbox,
+._header__navigation-toggler {
+	display: none;
 	
-	li {
-		float: left;
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-	
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
+	@include mq($until: desktop) {
+		display: inline-block;
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
+._header__navigation-checkbox {
+	position: absolute;
+	left: -9999px;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
+._header__menu {
+	display: none;
+	
+	@include mq($from: desktop) {
 		display: block;
 	}
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
+._header__navigation-checkbox:checked ~ ._header__menu {
+	@include flex;
+	@include direction(column);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+}
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
+._header__menu-list,
+._header__submenu-list {
+	background-color: $color__header-menu;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	
+	@include mq($from: desktop) {
+		@include flex;
+		@include flex-justify--space-around;
 	}
+}
 
-	.nav-previous {
-		float: left;
-		width: 50%;
+._header__submenu-list {
+	@include flex-container--column;
+	
+	@include mq($from: desktop) {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
 	}
+}
 
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
+._header__menu-item,
+._header__submenu-item {
+	@include flexbox(1);
+	position: relative;
+}
+
+._header__menu-link,
+._header__submenu-link {
+	@include flex;
+	@include flexbox(1);
+	@include flex-justify--center;
+	margin: 0;
+}
+
+._header__menu-item:hover > ._header__submenu-list {
+	display: block;
 }

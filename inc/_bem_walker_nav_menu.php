@@ -6,7 +6,7 @@ class Bem_Walker_Nav_Menu extends Walker_Nav_Menu
 {
 	function start_lvl(&$output, $depth) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"_header__submenu\">\n";
+    $output .= "\n$indent<ul class=\"_header__submenu-list\">\n";
   }
 	
 	function start_el(&$output, $item, $depth, $args)
