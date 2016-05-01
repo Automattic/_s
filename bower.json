@@ -21,6 +21,7 @@
   ],
   "devDependencies": {
     "cita-flex": "^1.2.0",
-    "normalize-css": "^4.1.1"
+    "normalize-css": "^4.1.1",
+    "sass-mq": "^3.2.9"
   }
 }

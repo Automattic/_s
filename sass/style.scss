@@ -26,6 +26,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Variables
 # Normalize
 # Grid
+# Media queries
 # Typography
 # Elements
 # Forms
@@ -46,7 +47,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 @import "variables-site/variables-site";
-// @import "mixins/mixins-master";
+@import "mixins/mixins-master";
+@import "hidden/hidden";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -57,6 +59,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Grid
 --------------------------------------------------------------*/
 @import "./bower_components/cita-flex/css/src/_cita-flex-mixins.scss";
+
+/*--------------------------------------------------------------
+# Media queries
+--------------------------------------------------------------*/
+@import "./bower_components/sass-mq/_mq.scss";
 
 /*--------------------------------------------------------------
 # Typography
@@ -76,7 +83,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-// @import "navigation/navigation";
+@import "navigation/navigation";
 
 /*--------------------------------------------------------------
 # Accessibility
