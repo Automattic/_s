@@ -46,9 +46,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
-@import "hidden/hidden";
+@import "_variables-site/variables-site";
+@import "_mixins/mixins-master";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -68,7 +67,22 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "typography/typography";
+@import "_typography/typography";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "_modules/accessibility";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "_header/header";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "_navigation/navigation";
 
 /*--------------------------------------------------------------
 # Elements
@@ -79,16 +93,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Forms
 --------------------------------------------------------------*/
 // @import "forms/forms";
-
-/*--------------------------------------------------------------
-# Navigation
---------------------------------------------------------------*/
-@import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-// @import "modules/accessibility";
 
 /*--------------------------------------------------------------
 # Alignments

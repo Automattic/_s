@@ -16,6 +16,10 @@
 	left: -9999px;
 }
 
+._header__navigation-toggler {
+	margin: $spacing-regular--half;
+}
+
 ._header__menu {
 	display: none;
 	
@@ -36,7 +40,6 @@
 ._header__menu-list,
 ._header__submenu-list {
 	background-color: $color__header-menu;
-	margin: 0;
 	padding: 0;
 	list-style: none;
 	
@@ -66,10 +69,16 @@
 
 ._header__menu-link,
 ._header__submenu-link {
+	@include mq($from: desktop) {
+		padding: $spacing-regular--half;
+	}
+}
+
+._header__menu-link,
+._header__submenu-link {
 	@include flex;
 	@include flexbox(1);
 	@include flex-justify--center;
-	margin: 0;
 }
 
 ._header__menu-item:hover > ._header__submenu-list {

@@ -51,13 +51,10 @@ see gutenberg-config
 if custom fonts used, define it here
 */
 /* see gutenberg-config */
-@import url(./bower_components/normalize-css/normalize.css);
-.skip-link {
-  display: none; }
-
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+@import url(./bower_components/normalize-css/normalize.css);
 /*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
@@ -328,8 +325,8 @@ html {
 * {
   line-height: 26px;
   line-height: 1.625rem;
-  margin: 0px 0px 26px;
-  margin: 0rem 0rem 1.625rem; }
+  margin: 0px 0px;
+  margin: 0rem 0rem; }
 
 /* Paragraph
    ========================================================================== */
@@ -526,11 +523,48 @@ big {
   font-size: 125%; }
 
 /*--------------------------------------------------------------
-# Elements
+# Accessibility
 --------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #1c1c1c;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0; }
+
 /*--------------------------------------------------------------
-# Forms
+# Header
 --------------------------------------------------------------*/
+._header__branding {
+  padding: calc(1rem / 2); }
+
+._header__title {
+  margin: 0; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -566,6 +600,9 @@ a {
   position: absolute;
   left: -9999px; }
 
+._header__navigation-toggler {
+  margin: calc(1rem / 2); }
+
 ._header__menu {
   display: none; }
   @media (min-width: 61.25em) {
@@ -583,7 +620,6 @@ a {
 ._header__menu-list,
 ._header__submenu-list {
   background-color: #fff;
-  margin: 0;
   padding: 0;
   list-style: none; }
   @media (min-width: 61.25em) {
@@ -607,18 +643,25 @@ a {
   flex: 1;
   position: relative; }
 
+@media (min-width: 61.25em) {
+  ._header__menu-link,
+  ._header__submenu-link {
+    padding: calc(1rem / 2); } }
+
 ._header__menu-link,
 ._header__submenu-link {
   display: flex;
   flex: 1;
-  justify-content: center;
-  margin: 0; }
+  justify-content: center; }
 
 ._header__menu-item:hover > ._header__submenu-list {
   display: block; }
 
 /*--------------------------------------------------------------
-# Accessibility
+# Elements
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Forms
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Alignments
