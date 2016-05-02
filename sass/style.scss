@@ -75,6 +75,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "_modules/accessibility";
 
 /*--------------------------------------------------------------
+# Sticky footer
+--------------------------------------------------------------*/
+@import "_modules/sticky-footer";
+
+/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 @import "_header/header";
@@ -88,6 +93,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Navigation
 --------------------------------------------------------------*/
 @import "_navigation/navigation";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "_content/content";
 
 /*--------------------------------------------------------------
 # Elements

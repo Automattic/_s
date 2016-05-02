@@ -35,12 +35,12 @@ $modular-scale: (
 // Headings Options
 // [ h1: size (in rem), line height (* leading), margin top (* leading), margin bottom (* leading) ]
 $headings: (
-  h1: (2.5, 2, 4, 1),
-  h2: (1.6875, 1.5, 2.5, .5),
-  h3: (1.375, 1, 2, .5),
-  h4: (1.2, 1, 1.5, .5),
-  h5: (1, 1, 2.5, .5),
-  h6: (1, 1, 2.5, .5)
+  h1: (2.5, 2, 1, 1),
+  h2: (1.6875, 1.5, 1, .5),
+  h3: (1.375, 1, 1, .5),
+  h4: (1.2, 1, 1, .5),
+  h5: (1, 1, 1, .5),
+  h6: (1, 1, 1, .5)
 ) !default;
 
 // Colors

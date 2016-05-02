@@ -330,6 +330,10 @@ html {
 
 /* Paragraph
    ========================================================================== */
+p + p {
+  margin-top: 26px;
+  margin-top: 1.625rem; }
+
 /* Headings
    ========================================================================== */
 h1 {
@@ -337,8 +341,8 @@ h1 {
   font-size: 2.5rem;
   line-height: 52px;
   line-height: 3.25rem;
-  margin-top: 104px;
-  margin-top: 6.5rem;
+  margin-top: 26px;
+  margin-top: 1.625rem;
   margin-bottom: 26px;
   margin-bottom: 1.625rem; }
 
@@ -347,8 +351,8 @@ h2 {
   font-size: 1.6875rem;
   line-height: 39px;
   line-height: 2.4375rem;
-  margin-top: 65px;
-  margin-top: 4.0625rem;
+  margin-top: 26px;
+  margin-top: 1.625rem;
   margin-bottom: 13px;
   margin-bottom: 0.8125rem; }
 
@@ -357,8 +361,8 @@ h3 {
   font-size: 1.375rem;
   line-height: 26px;
   line-height: 1.625rem;
-  margin-top: 52px;
-  margin-top: 3.25rem;
+  margin-top: 26px;
+  margin-top: 1.625rem;
   margin-bottom: 13px;
   margin-bottom: 0.8125rem; }
 
@@ -367,8 +371,8 @@ h4 {
   font-size: 1.2rem;
   line-height: 26px;
   line-height: 1.625rem;
-  margin-top: 39px;
-  margin-top: 2.4375rem;
+  margin-top: 26px;
+  margin-top: 1.625rem;
   margin-bottom: 13px;
   margin-bottom: 0.8125rem; }
 
@@ -377,8 +381,8 @@ h5 {
   font-size: 1rem;
   line-height: 26px;
   line-height: 1.625rem;
-  margin-top: 65px;
-  margin-top: 4.0625rem;
+  margin-top: 26px;
+  margin-top: 1.625rem;
   margin-bottom: 13px;
   margin-bottom: 0.8125rem; }
 
@@ -387,8 +391,8 @@ h6 {
   font-size: 1rem;
   line-height: 26px;
   line-height: 1.625rem;
-  margin-top: 65px;
-  margin-top: 4.0625rem;
+  margin-top: 26px;
+  margin-top: 1.625rem;
   margin-bottom: 13px;
   margin-bottom: 0.8125rem; }
 
@@ -557,6 +561,17 @@ big {
   outline: 0; }
 
 /*--------------------------------------------------------------
+# Sticky footer
+--------------------------------------------------------------*/
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 32px); }
+
+._content {
+  flex: 1; }
+
+/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 ._header__branding {
@@ -662,6 +677,26 @@ a {
 
 ._header__menu-item:hover > ._header__submenu-list {
   display: block; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+._content {
+  padding: calc(1rem / 2); }
+  ._content blockquote {
+    padding-top: calc(1rem / 2);
+    padding-bottom: calc(1rem / 2); }
+  ._content img {
+    height: 100%; }
+
+._content__footer {
+  margin-top: calc(1rem / 2); }
+
+._content__comments-link + ._content__edit-item {
+  margin-left: calc(1rem / 2); }
+
+._post-navigation__item:empty {
+  display: none; }
 
 /*--------------------------------------------------------------
 # Elements

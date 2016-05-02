@@ -1,0 +1,24 @@
+._content {
+	padding: $spacing-regular--half;
+	
+	blockquote {
+		padding-top: $spacing-regular--half;
+		padding-bottom: $spacing-regular--half;
+	}
+	
+	img {
+		height: 100%;
+	}
+}
+
+._content__footer {
+	margin-top: $spacing-regular--half;
+}
+
+._content__comments-link + ._content__edit-item {
+	margin-left: $spacing-regular--half
+}
+
+._post-navigation__item:empty {
+	display: none;
+}
