@@ -8,23 +8,25 @@ function _bem_comments( $comment, $args, $depth ) {
 	      $tag = 'div';
 	      $add_below = 'comment';
 	    } else {
-	      $tag = 'li';
+	      $tag = 'div';
 	      $add_below = 'div-comment';
 	    }
 		  ?>
-		  <li <?php comment_class('_comments__list-item'); ?> id="comment-<?php comment_ID(); ?>">
+		  <div <?php comment_class('_comments__list-item'); ?> id="comment-<?php comment_ID(); ?>">
 		    <p><?php _e( 'Pingback:', 'pietergoosen' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'pietergoosen' ), '<span class="edit-link">', '</span>' ); ?></p>
 		  <?php
     	break;
     default :
       global $post;
   		?>
-  		<li <?php comment_class('_comments__list-item'); ?> id="li-comment-<?php comment_ID(); ?>">
+  		<div <?php comment_class('_comments__list-item'); ?> id="li-comment-<?php comment_ID(); ?>">
       	<article id="div-comment-<?php comment_ID(); ?>" class="comment-body _comments__article">
           <footer class="comment-meta __comments__footer">
             <div class="comment-author vcard _comments__author">
               <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'], null, null, array('class' => '_comments__avatar') ); ?>
-              <?php printf( __( '%s <span class="says _comments__author-says">says:</span>' ), sprintf( '<b class="fn _comments__author-name">%s</b>', get_comment_author_link() ) ); ?>
+              <p class="_comments__author-text">
+                <?php printf( __( '%s <span class="says _comments__author-says">says:</span>' ), sprintf( '<b class="fn _comments__author-name">%s</b> ', get_comment_author_link() ) ); ?>
+              </p>
             </div><!-- .comment-author -->
 
             <div class="comment-metadata _comments__metadata">

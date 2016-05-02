@@ -698,6 +698,41 @@ a {
 ._post-navigation__item:empty {
   display: none; }
 
+._comments__list {
+  padding: 0;
+  list-style: none; }
+
+._comments__list-item > ._comments__list-item {
+  padding-left: 1rem; }
+
+._comments__article {
+  margin-bottom: 1rem; }
+
+._comments__avatar {
+  display: inline-block;
+  border-radius: 16px; }
+
+._comments__author {
+  display: flex;
+  align-items: center; }
+
+._comments__author-text {
+  margin-left: calc(1rem / 2); }
+
+._comments__content {
+  padding-left: 1rem;
+  margin-top: 1rem; }
+
+._comments__reply-item {
+  padding-left: 1rem; }
+
+._comments__content,
+._comments__reply-item {
+  border-left: 1px dotted #ccc; }
+
+._comments__awaiting-moderation {
+  color: Gold; }
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
