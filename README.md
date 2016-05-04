@@ -53,7 +53,7 @@ ToDo
 	- [ ] COMMENTS
 	  - [x] edit_comment_link
 	  - [x] comment_reply_link
-	  - [ ] comment_form
+	  - [x] comment_form
 	- [ ] 404
 	  - [ ] widget recent-entries
 	  - [ ] widget archive
