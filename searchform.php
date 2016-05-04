@@ -4,6 +4,7 @@
  *
  * @package _bem
  */
+
 ?>
 <form role="search" method="get" id="searchform" class="_search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
   <label class="screen-reader-text _search-form__label" for="s"><?php _x( 'Search for:', 'label' ); ?></label>

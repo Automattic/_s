@@ -2,7 +2,7 @@
 
 var gulp = require( 'gulp' );
 var autoprefixer = require( 'gulp-autoprefixer' );
- 
+
 gulp.task( 'autoprefix', function( ) {
 	return gulp.src( './style.css' )
 		.pipe( autoprefixer( {
