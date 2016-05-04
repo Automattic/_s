@@ -89,3 +89,10 @@ script:
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
     email: false
+
+# Build only when new release is used
+deploy:
+  provider: releases
+  skip_cleanup: true
+  on:
+    tags: true

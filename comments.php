@@ -52,7 +52,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'div',
 					'short_ping' => true,
-					'callback'   => '_bem_comments'
+					'callback'	 => '_bem_comments',
 				) );
 			?>
 		</ol><!-- .comment-list -->

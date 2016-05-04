@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class("_content__article _content__article--post"); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( '_content__article _content__article--post' ); ?>>
 	<header class="entry-header _content__header _content__header--post">
 		<?php
 			if ( is_single() ) {
@@ -21,14 +21,14 @@
 			if ( has_post_thumbnail() ) {
 				?>
 				<div class="_post-thumbnail">
-					<?php the_post_thumbnail('full', array('class' => '_post-thumbnail__image')); ?>
+					<?php the_post_thumbnail( 'full', array( 'class' => '_post-thumbnail__image' ) ); ?>
 				</div>
 				<?php
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
 		<div class="entry-meta _content__meta _content__meta--post">
-			<?php _bem_posted_on("post"); ?>
+			<?php _bem_posted_on( 'post' ); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
@@ -44,12 +44,12 @@
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_bem' ),
-				'after'  => '</div>',
+				'after'	=> '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer _content__footer _content__footer--post">
-		<?php _bem_entry_footer("post"); ?>
+		<?php _bem_entry_footer( 'post' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
