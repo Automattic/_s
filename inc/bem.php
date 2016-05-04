@@ -8,16 +8,16 @@
 /**
  * Load nav walker.
  */
-require get_template_directory(  ) . '/inc/bem_walker_nav_menu.php';
+require get_template_directory( ) . '/inc/bem-walker-nav-menu.php';
 /**
  * Load comments callback.
  */
-require get_template_directory(  ) . '/inc/bem_comments.php';
+require get_template_directory( ) . '/inc/bem-comments.php';
 /**
  * Load bem post links.
  */
-require get_template_directory(  ) . '/inc/bem_post_links.php';
+require get_template_directory( ) . '/inc/bem-post-links.php';
 /**
  * Load bem post edit link.
  */
-require get_template_directory(  ) . '/inc/bem_post_edit_link.php';
+require get_template_directory( ) . '/inc/bem-post-edit-link.php';
