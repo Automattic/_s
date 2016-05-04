@@ -11,6 +11,8 @@
 class Bem_Walker_Nav_Menu extends Walker_Nav_Menu {
 	/**
 	 * start level
+	 * @param $output
+	 * @param $depth
 	 */
 	function start_lvl( &$output, $depth ) {
 		$indent = str_repeat( "\t", $depth );
@@ -19,6 +21,10 @@ class Bem_Walker_Nav_Menu extends Walker_Nav_Menu {
 	
 	/**
 	* start element
+	* @param $output
+	* @param $item
+	* @param $depth
+	* @param $args
 	*/
 	function start_el( &$output, $item, $depth, $args )	{
 		global $wp_query;

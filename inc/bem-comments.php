@@ -6,19 +6,20 @@
  */
 
 /**
- * custom comments
+ * Custom comments
+ * @param $comment
+ * @param $args
+ * @param $depth
  */
 function _bem_comments( $comment, $args, $depth ) {
 	$GLOBALS[ 'comment' ] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
-			if ( 'div' == $args[ 'style' ] )
-			{
+			if ( 'div' == $args[ 'style' ] ) {
 				$tag = 'div';
 				$add_below = 'comment';
-			} else
-			{
+			} else {
 				$tag = 'li';
 				$add_below = 'div-comment';
 			}
@@ -66,7 +67,8 @@ function _bem_comments( $comment, $args, $depth ) {
 add_filter( 'edit_comment_link', '_bem_edit_comment_link' );
 
 /**
- * custom comment edit link
+ * Custom comment edit link
+ * @param $output string
  */
 function _bem_edit_comment_link($output) {
 	return str_replace( 'comment-edit-link', 'comment-edit-link _comments__edit-link', $output);
@@ -75,8 +77,9 @@ function _bem_edit_comment_link($output) {
 add_filter( 'comment_reply_link', '_bem_comment_reply_link' );
 
 /**
-* custom comment reply link
-*/
+ * Custom comment reply link
+ * @param $output string
+ */
 function _bem_comment_reply_link($output) {
 	return str_replace( 'comment-reply-link', 'comment-reply-link _comments__reply-link', $output);
 }
