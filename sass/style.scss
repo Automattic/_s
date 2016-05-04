@@ -60,11 +60,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "./bower_components/cita-flex/css/src/_cita-flex-mixins.scss";
 
 /*--------------------------------------------------------------
-# Media queries
---------------------------------------------------------------*/
-@import "./bower_components/sass-mq/_mq.scss";
-
-/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 @import "_typography/typography";
@@ -98,12 +93,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Content
 --------------------------------------------------------------*/
 @import "_content/content";
-@import "_content/comments";
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+@import "_comments/comments";
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 @import "_forms/forms";
+
+/*--------------------------------------------------------------
+# Shame
+--------------------------------------------------------------*/
+@import "_shame/shame";
 
 /*--------------------------------------------------------------
 # Elements

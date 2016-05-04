@@ -52,6 +52,9 @@ if custom fonts used, define it here
 */
 /* see gutenberg-config */
 /*--------------------------------------------------------------
+# Media queries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 @import url(./bower_components/normalize-css/normalize.css);
@@ -123,34 +126,6 @@ if custom fonts used, define it here
 .flex-container--1 > .flex-box {
   width: 100%;
   flex-basis: 100%; }
-
-/*--------------------------------------------------------------
-# Media queries
---------------------------------------------------------------*/
-body:before {
-  background-color: #FCF8E3;
-  border-bottom: 1px solid #FBEED5;
-  border-left: 1px solid #FBEED5;
-  color: #C09853;
-  font: small-caption;
-  padding: 3px 6px;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 100; }
-  @media (min-width: 20em) {
-    body:before {
-      content: "mobile ≥ 20em (20em)"; } }
-  @media (min-width: 48.75em) {
-    body:before {
-      content: "tablet ≥ 48.75em (48.75em)"; } }
-  @media (min-width: 61.25em) {
-    body:before {
-      content: "desktop ≥ 61.25em (61.25em)"; } }
-  @media (min-width: 75em) {
-    body:before {
-      content: "wide ≥ 75em (75em)"; } }
 
 /*--------------------------------------------------------------
 # Typography
@@ -331,8 +306,8 @@ html {
 /* Paragraph
    ========================================================================== */
 p + p {
-  margin-top: 26px;
-  margin-top: 1.625rem; }
+  margin-top: 13px;
+  margin-top: 0.8125rem; }
 
 /* Headings
    ========================================================================== */
@@ -698,6 +673,9 @@ a {
 ._post-navigation__item:empty {
   display: none; }
 
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
 ._comments__list {
   padding: 0;
   list-style: none; }
@@ -740,23 +718,21 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  border: 1px solid;
+  height: calc(1rem * 2.5);
+  border-color: #ccc #ccc #bbb;
+  background: #e6e6e6;
+  color: #111;
+  padding: calc(1rem / 2); }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
+    cursor: pointer;
+    border-color: #ccc #bbb #aaa; }
   button:active, button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
@@ -764,8 +740,10 @@ input[type="submit"] {
   input[type="reset"]:focus,
   input[type="submit"]:active,
   input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb;
-    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+    border-color: #aaa #bbb #bbb; }
+
+label {
+  display: block; }
 
 input[type="text"],
 input[type="email"],
@@ -782,10 +760,35 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-textarea {
+textarea,
+select {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.3;
   color: #6c6c6c;
   border: 1px solid #ccc;
-  border-radius: 3px; }
+  padding: calc(1rem / 2);
+  width: 100%;
+  display: block;
+  box-sizing: border-box; }
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="url"]:hover,
+  input[type="password"]:hover,
+  input[type="search"]:hover,
+  input[type="number"]:hover,
+  input[type="tel"]:hover,
+  input[type="range"]:hover,
+  input[type="date"]:hover,
+  input[type="month"]:hover,
+  input[type="week"]:hover,
+  input[type="time"]:hover,
+  input[type="datetime"]:hover,
+  input[type="datetime-local"]:hover,
+  input[type="color"]:hover,
+  textarea:hover,
+  select:hover {
+    color: #151515; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -801,11 +804,9 @@ textarea {
   input[type="datetime"]:focus,
   input[type="datetime-local"]:focus,
   input[type="color"]:focus,
-  textarea:focus {
+  textarea:focus,
+  select:focus {
     color: #111; }
-
-select {
-  border: 1px solid #ccc; }
 
 input[type="text"],
 input[type="email"],
@@ -821,12 +822,18 @@ input[type="week"],
 input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
-input[type="color"] {
-  padding: 3px; }
+input[type="color"],
+select {
+  height: calc(1rem * 2.5); }
 
 textarea {
-  padding-left: 3px;
-  width: 100%; }
+  height: calc(1rem * 2.5 * 2); }
+
+/*--------------------------------------------------------------
+# Shame
+--------------------------------------------------------------*/
+.comment-respond {
+  margin-bottom: 1rem; }
 
 /*--------------------------------------------------------------
 # Elements
