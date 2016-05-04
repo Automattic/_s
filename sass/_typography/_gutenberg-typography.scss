@@ -83,7 +83,7 @@ html {
 }
 
 p + p {
-  @include margin-top(1);
+  @include margin-top(.5);
 }
 
 /* Headings

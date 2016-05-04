@@ -5,3 +5,6 @@ $sub-position: -0.25em;
 
 $spacing-regular: 1rem;
 $spacing-regular--half: calc(#{$spacing-regular} / 2);
+
+$input-height: calc(1rem * 2.5);
+$input-height--double: calc(1rem * 2.5 * 2);
