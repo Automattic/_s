@@ -9,9 +9,11 @@
 
 if ( ! function_exists( '_bem_posted_on' ) ) :
 /**
-	* Prints HTML with meta information for the current post-date/time and author.
-	* @param $modifier string
+ * Prints HTML with meta information for the current post-date/time and author.
+ *
+ * @param string $modifier
  */
+
 function _bem_posted_on( $modifier = '' ) {
 	$modifier_time = '';
 	$modifier_time_updated = '';

@@ -7,10 +7,12 @@
 
 /**
  * Custom comments
- * @param $comment
- * @param $args
- * @param $depth
+ *
+ * @param object $comment
+ * @param array  arguments
+ * @param int    $depth
  */
+
 function _bem_comments( $comment, $args, $depth ) {
 	$GLOBALS[ 'comment' ] = $comment;
 	switch ( $comment->comment_type ) :
@@ -68,8 +70,10 @@ add_filter( 'edit_comment_link', '_bem_edit_comment_link' );
 
 /**
  * Custom comment edit link
- * @param $output string
+ *
+ * @param obj $output
  */
+
 function _bem_edit_comment_link($output) {
 	return str_replace( 'comment-edit-link', 'comment-edit-link _comments__edit-link', $output);
 }
@@ -78,8 +82,10 @@ add_filter( 'comment_reply_link', '_bem_comment_reply_link' );
 
 /**
  * Custom comment reply link
- * @param $output string
+ *
+ * @param obj $output
  */
+
 function _bem_comment_reply_link($output) {
 	return str_replace( 'comment-reply-link', 'comment-reply-link _comments__reply-link', $output);
 }

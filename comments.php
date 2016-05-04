@@ -81,7 +81,7 @@ if ( post_password_required() ) {
 
 	comment_form(array(
 		'class_form' => '_comments__form',
-		'class_submit' => '_comments__form-submit'
+		'class_submit' => '_comments__form-submit',
 	));
 	?>
 
