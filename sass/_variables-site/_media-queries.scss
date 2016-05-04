@@ -22,4 +22,9 @@ $mq-static-breakpoint: desktop;
 // If you want to display the currently active breakpoint in the top
 // right corner of your site during development, add the breakpoints
 // to this list, ordered by width, e.g. (mobile, tablet, desktop).
-$mq-show-breakpoints: (mobile, tablet, desktop, wide);
+// $mq-show-breakpoints: (mobile, tablet, desktop, wide);
+
+/*--------------------------------------------------------------
+# Media queries
+--------------------------------------------------------------*/
+@import "./bower_components/sass-mq/_mq.scss";

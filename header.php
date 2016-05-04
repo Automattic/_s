@@ -30,7 +30,7 @@
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="_header__title"><a class="_header__title-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
-				<p class="_header__title"><a class="_header__title-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<h2 class="_header__title"><a class="_header__title-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 			<?php
 			endif;
 

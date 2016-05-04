@@ -50,7 +50,7 @@ if ( post_password_required() ) {
 		<ol class="comment-list _comments__list">
 			<?php
 				wp_list_comments( array(
-					'style'			=> 'ol',
+					'style'      => 'div',
 					'short_ping' => true,
 					'callback'	 => '_bem_comments',
 				) );
@@ -79,7 +79,10 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	comment_form(array(
+		'class_form' => '_comments__form',
+		'class_submit' => '_comments__form-submit'
+	));
 	?>
 
 </div><!-- #comments -->

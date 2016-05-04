@@ -1,0 +1,9 @@
+.site {
+	@include flex;
+	@include direction(column);
+	min-height: calc(100vh - 32px);
+}
+
+._content {
+	@include flexbox(1);
+}

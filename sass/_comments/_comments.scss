@@ -1,0 +1,44 @@
+._comments__list {
+	padding: 0;
+	list-style: none;
+}
+
+._comments__list-item > ._comments__list-item {
+	padding-left: $spacing-regular;
+}
+
+._comments__article {
+	margin-bottom: $spacing-regular;
+}
+
+._comments__avatar {
+	display: inline-block;
+	border-radius: 16px;
+}
+
+._comments__author {
+	@include flex;
+	@include flex-item--center;
+}
+
+._comments__author-text {
+	margin-left: $spacing-regular--half;
+}
+
+._comments__content {
+	padding-left: $spacing-regular;
+	margin-top: $spacing-regular;
+}
+
+._comments__reply-item {
+	padding-left: $spacing-regular;
+}
+
+._comments__content,
+._comments__reply-item {
+	border-left: 1px dotted $color__border-comment;
+}
+
+._comments__awaiting-moderation {
+	color: $color__text-warning;
+}
