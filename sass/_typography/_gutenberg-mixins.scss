@@ -1,0 +1,69 @@
+
+/* Mixins
+   ========================================================================== */
+
+// Font-size
+@mixin font-size($number) {
+  font-size: #{ $number * $base + 'px'};
+  font-size: #{ $number + 'rem'};
+}
+
+// Margin-top
+@mixin margin-top($number) {
+  margin-top: #{ $number * $leading + 'px'};
+  margin-top: #{ $number * $leading-rem + 'rem'};
+}
+
+// Margin-bottom
+@mixin margin-bottom($number) {
+  margin-bottom: #{ $number * $leading + 'px'};
+  margin-bottom: #{ $number * $leading-rem + 'rem'};
+}
+
+// Margin
+@mixin margin($top, $right, $bottom:null, $left:null) {
+  @if $left == null and $bottom == null {
+    margin: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'};
+    margin: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'};
+  } @else if $left == null or $left == $right {
+    margin: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'} #{ $bottom * $leading + 'px'};
+    margin: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'} #{ $bottom * $leading-rem + 'rem'};
+  } @else {
+    margin: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'} #{ $bottom * $leading + 'px'} #{ $left * $leading + 'px'};
+    margin: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'} #{ $bottom * $leading-rem + 'rem'} #{ $left * $leading-rem + 'rem'};
+  }
+}
+
+// padding
+@mixin padding($top, $right, $bottom:null, $left:null) {
+  @if $left == null and $bottom == null {
+    padding: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'};
+    padding: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'};
+  } @else if $left == null or $left == $right {
+    padding: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'} #{ $bottom * $leading + 'px'};
+    padding: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'} #{ $bottom * $leading-rem + 'rem'};
+  } @else {
+    padding: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'} #{ $bottom * $leading + 'px'} #{ $left * $leading + 'px'};
+    padding: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'} #{ $bottom * $leading-rem + 'rem'} #{ $left * $leading-rem + 'rem'};
+  }
+
+  // padding-top: #{ $top * $leading + 'px'};
+ //    padding-top: #{ $top * $leading-rem + 'rem'};
+ //    padding-right: #{ $right * $leading + 'px'};
+ //    padding-right: #{ $right * $leading-rem + 'rem'};
+  // padding-bottom: #{ $bottom * $leading + 'px'};
+ //    padding-bottom: #{ $bottom * $leading-rem + 'rem'};
+ //    padding-left: #{ $left * $leading + 'px'};
+ //    padding-left: #{ $left * $leading-rem + 'rem'};
+}
+
+@mixin padding-equal($number) {
+  padding: #{ $number * $leading + 'px'};
+  padding: #{ $number * $leading-rem + 'rem'};
+}
+
+// Line-height
+@mixin line-height($number) {
+  line-height: #{ $number * $leading + 'px'};
+  line-height: #{ $number * $leading-rem + 'rem'};
+}

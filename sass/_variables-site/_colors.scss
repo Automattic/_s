@@ -5,16 +5,26 @@ $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
+$color__text-screen: #1c1c1c;
+$color__text-screen-light: #6c6c6c;
+$color__text-input: $color__text-screen-light;
+$color__text-input-hover: #151515;
 $color__text-input-focus: #111;
+$color__text-button: #111;
+$color__text-main: #404040;
+$color__text-warning: Gold;
+$color__text-error: Tomato;
+
 $color__link: royalblue;
 $color__link-visited: purple;
 $color__link-hover: midnightblue;
-$color__text-main: #404040;
+$color__link-active: $color__link-hover;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+$color__border-comment: #ccc;
+
+$color__header-menu: #fff;

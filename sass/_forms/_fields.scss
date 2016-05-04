@@ -1,3 +1,7 @@
+label {
+	display: block;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -13,18 +17,24 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-textarea {
+textarea,
+select {
+	@include font-size(1);
+	line-height: 1.3;
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
+	padding: $spacing-regular--half;
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
 
+	&:hover {
+		color: $color__text-input-hover;
+	}
+	
 	&:focus {
 		color: $color__text-input-focus;
 	}
-}
-
-select {
-	border: 1px solid $color__border-input;
 }
 
 input[type="text"],
@@ -41,11 +51,11 @@ input[type="week"],
 input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
-input[type="color"] {
-	padding: 3px;
+input[type="color"],
+select {
+	height: $input-height;
 }
 
 textarea {
-	padding-left: 3px;
-	width: 100%;
+	height: $input-height--double;
 }

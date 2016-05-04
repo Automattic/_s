@@ -1,0 +1,27 @@
+{
+  "name": "underscores-bem",
+  "description": "BEMified underscores theme template.",
+  "main": "index.js",
+  "authors": [
+    "maliMirkec <malimirkeccita@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bem",
+    "underscores",
+    "wordpress"
+  ],
+  "homepage": "https://github.com/maliMirkec/_bem",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "cita-flex": "^1.2.0",
+    "normalize-css": "^4.1.1",
+    "sass-mq": "^3.2.9"
+  }
+}
