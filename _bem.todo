@@ -1,20 +1,13 @@
-COMMENTS
-
-+ edit_comment_link
-+ comment_reply_link
-- comment_form
-
-404
-
-- widget recent-entries
-- widget archive
-
-SEARCH
-
-+ post-edit-link
-
-POST
-
-+ post-navigation
-- gallery
-- featured image
+- [ ] COMMENTS
+  - [x] edit_comment_link
+  - [x] comment_reply_link
+  - [ ] comment_form
+- [ ] 404
+  - [ ] widget recent-entries
+  - [ ] widget archive
+- [x] SEARCH
+  - [x] post-edit-link
+- [ ] SEARCH
+  - [x] post-navigation
+  - [ ] gallery
+  - [ ] featured image
