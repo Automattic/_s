@@ -119,4 +119,4 @@ function _s_category_transient_flusher() {
 	delete_transient( '_s_categories' );
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
-add_action( 'save_post_post',     '_s_category_transient_flusher' );
+add_action( 'save_post_post', '_s_category_transient_flusher' );
