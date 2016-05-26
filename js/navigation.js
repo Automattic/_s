@@ -82,17 +82,17 @@
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
-	( function ( container ) {
-		var touchStartFn,
+	( function( container ) {
+		var touchStartFn, i,
 			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
 		if ( 'ontouchstart' in window ) {
 			touchStartFn = function( e ) {
-				var menuItem = this.parentNode;
+				var menuItem = this.parentNode, i;
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
-					for( var i = 0; i < menuItem.parentNode.children.length; ++i ) {
+					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
 						if ( menuItem === menuItem.parentNode.children[i] ) {
 							continue;
 						}
@@ -104,9 +104,9 @@
 				}
 			};
 
-			for ( var i = 0; i < parentLink.length; ++i ) {
+			for ( i = 0; i < parentLink.length; ++i ) {
 				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
 			}
 		}
-	} ( container ) );
+	}( container ) );
 } )();
