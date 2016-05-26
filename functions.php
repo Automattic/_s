@@ -64,6 +64,16 @@ function _s_setup() {
 		'gallery',
 		'caption',
 	) );
+	
+	/*
+	 * Enable support for custom logo.
+	 */
+	add_theme_support( 'custom-logo', array(
+		'height'      => 250,
+		'width'       => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
+	) );
 
 	/*
 	 * Enable support for Post Formats.

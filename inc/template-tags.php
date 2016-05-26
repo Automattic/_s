@@ -120,7 +120,6 @@ function _s_category_transient_flusher() {
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
 
-
 if ( ! function_exists( '_s_the_custom_logo' ) ) :
 /**
  * Displays the optional custom logo.
