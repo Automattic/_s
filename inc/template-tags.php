@@ -120,20 +120,19 @@ function _s_category_transient_flusher() {
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
 
-if ( ! function_exists( '_s_the_site_logo' ) ) :
+
+if ( ! function_exists( '_s_the_custom_logo' ) ) :
 /**
- * Displays the optional site logo.
+ * Displays the optional custom logo.
  *
- * Returns early if the site logo is not available.
- * 
+ * Does nothing if the custom logo is not available.
+ *
  * @todo: Remove this function when WordPress 4.7 is released.
  *
  */
-function _s_the_site_logo() {
-	if ( ! function_exists( 'the_site_logo' ) ) {
-		return;
-	} else {
-		the_site_logo();
+function _s_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
 	}
 }
 endif;
