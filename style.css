@@ -532,6 +532,9 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+/*
+ * .main-navigation Target the menu
+*/
 .main-navigation {
 	clear: both;
 	display: block;
@@ -551,19 +554,54 @@ a:active {
 	position: relative;
 }
 
+/*
+ * .main-navigation a Target the link items
+*/
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
+/*
+ * .main-navigation li:hover > a Target the hover state for items
+*/
+.main-navigation li:hover > a {
 }
+
+/*
+ * .main-navigation ul ul a:hover Target the hover state for level 2 items
+*/
+.main-navigation ul ul a:hover {
+}
+
+/*
+ * .main-navigation ul ul Target level 2. Affects level 3 dropdown
+*/
+.main-navigation ul ul {
+}
+
+/*
+ * Targets the active/current link
+*/
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current-menu-item > a:hover {
+}
+
+/*
+ * Targets the active/current link's parent
+*/
+.main-navigation .current_page_ancestor {
+}
+
+/*
+ * Targets the active/current link in sub menus
+*/
+.main-navigation ul ul .current_page_parent,
+.main-navigation .current_page_parent .current_page_item > a {
+}
+
 
 .main-navigation ul ul ul {
 	left: -999em;
@@ -574,43 +612,67 @@ a:active {
 	width: 200px;
 }
 
-.main-navigation ul ul li {
-
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
+.main-navigation ul li:hover > ul,.main-navigation ul li.focus > ul {
 	left: auto;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li:hover > ul,.main-navigation ul ul li.focus > ul {
 	left: 100%;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.menu-toggle,.main-navigation.toggled ul {
 	display: block;
 }
+
+/** Small menu **/
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+	}
+        
+	.main-navigation.toggled .nav-menu {
+	}
+
+	.main-navigation ul {
+	}
+        
+	.main-navigation li { 
+	}
+
+	.main-navigation li a { 
+	}
+
+	.main-navigation li li a {
+	}
+
+	.main-navigation li li li a {
+	}
+
+	.main-navigation li:hover > a {
+	}
+	
+	.main-navigation ul ul,
+	.main-navigation ul ul ul {
+	}
+	
+	.main-navigation ul ul a {}
+
+	.main-navigation ul a:hover,
+	.main-navigation ul ul a:hover {
+	}
+
+	.main-navigation .current_page_ancestor {}
+
+	.main-navigation ul ul .current_page_parent {
+	}
+
+	.main-navigation .current_page_item > a,
+	.main-navigation .current_page_item > a:hover,
+	.main-navigation .current_page_item li:hover,
+	.main-navigation .current_page_parent .current_page_item > a  {
+	}
+} 
+
+/** End Small menu **/
 
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
