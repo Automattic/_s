@@ -554,6 +554,9 @@ a:active {
 	position: relative;
 }
 
+.main-navigation ul ul {
+}
+
 /*
  * .main-navigation a Target the link items
 */
@@ -577,8 +580,7 @@ a:active {
 /*
  * .main-navigation ul ul Target level 2. Affects level 3 dropdown
 */
-.main-navigation ul ul {
-}
+
 
 /*
  * Targets the active/current link
