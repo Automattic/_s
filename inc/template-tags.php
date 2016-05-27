@@ -127,7 +127,6 @@ if ( ! function_exists( '_s_the_custom_logo' ) ) :
  * Does nothing if the custom logo is not available.
  *
  * @todo: Remove this function when WordPress 4.7 is released.
- *
  */
 function _s_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {

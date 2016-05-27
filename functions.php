@@ -64,7 +64,7 @@ function _s_setup() {
 		'gallery',
 		'caption',
 	) );
-	
+
 	/*
 	 * Enable support for custom logo.
 	 */
