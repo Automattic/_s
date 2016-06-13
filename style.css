@@ -36,7 +36,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Widgets
 # Content
 	## Posts and pages
-	## Asides
 	## Comments
 # Infinite scroll
 # Media
@@ -776,14 +775,6 @@ a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
-
-/*--------------------------------------------------------------
-## Asides
---------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
 }
 
 /*--------------------------------------------------------------
