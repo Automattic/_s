@@ -1,42 +1,38 @@
 === _s ===
 
+Contributors: automattic
+Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+
+Requires at least: 4.0
+Tested up to: 4.4.2
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+A starter theme called _s, or underscores.
+
+== Description ==
+
 Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here ...
+== Installation ==
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in inc/custom-header.php that can be activated by uncommenting one line in functions.php and adding the code snippet found the comments of inc/custom-header.php to your header.php template.
-* Custom template tags in inc/template-tags that keep your templates clean and neat and prevent code duplication.
-* Sample theme options in /inc/theme-options/ that can be activated by uncommenting one line in functions.php.
-* Some small tweaks in /inc/tweaks.php that can improve your theming experience. They can be activated by uncommenting one line in functions.php.
-* Keyboard navigation for image attachment templates. The script can be found in js/keyboard-navigation.js. It’s enqueued in functions.php.
-* A script at js/small-menu.js that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It’s enqueued in functions.php.
-* 5 sample CSS layouts in /layouts: Two sidebars on the left, two sidebars on the right, a sidebar on either side of your content, and two-column layouts with sidebars on either side.
-* Smartly organized starter CSS in style.css that will help you to quickly get your design off the ground.
-* The GPL license in license.txt. :) Use it to make something cool.
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-=== Getting Started ===
+== Frequently Asked Questions ==
 
-If you want to keep it simple, head over to http://underscores.me and generate your _s based theme from there. You just input the name of the theme you want to create and click the "Generate" button and you get your ready-to-awesomize starter theme.
+= Does this theme support any plugins? =
 
-If you wanna do set things up manually, download _s from github. The first thing you want to do is copy the _s directory and change the name to something else. Like, say, megatherium. Then you'll need to do a three-step find and replace on the name in all the templates.
+_s includes support for Infinite Scroll in Jetpack.
 
-1. Search for _s inside single quotations to capture the text domain.
-2. Search for _s_ for to capture all the function names
-3. Search for _s with a space before it to replace all the occurrences of it in comments. (You'd replace this with the capitalized version of your theme name.)
+== Changelog ==
 
-or ...
+= 1.0 - May 12 2015 =
+* Initial release
 
-Search for:'_s'
-Replace with:'megatherium'
-Search for:_s_
-Replace with:megatherium_
-Search for: _s
-Replace with: Megatherium
+== Credits ==
 
-Then, update the stylesheet header in style.css and the links in footer.php with your own information. Next, update or delete this readme.
-
-Now you're ready to go! The next step is easy to say but harder to do: make an awesome WordPress theme. :)
-
-Good luck!
+* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
