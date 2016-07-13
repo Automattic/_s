@@ -120,3 +120,16 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
+
+/**
+ * Render the title based on conditions
+ * @uses   the_title()
+ * @return string
+ */
+function _s_entry_title() {
+	if ( is_single() || is_page() ) {
+		the_title( '<h1 class="entry-title">', '</h1>' );
+	} else {
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+	}
+}
