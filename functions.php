@@ -120,11 +120,6 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Implement the Custom Background feature.
- */
-require get_template_directory() . '/inc/custom-background.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
