@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+## Mobile first approach, so no files for mobile screens
+--------------------------------------------------------------*/
+
+
+/* Small devices (tablets and up) */
+@media (min-width: $screen__small-break) { 
+	@import "small";
+}
+
+/* Medium devices (desktops and up) */
+@media (min-width: $screen__medium-break) {
+	@import "medium";
+}
+
+/* Large devices (large desktops and up) */
+@media (min-width: $screen__large-break) {
+	@import "large";
+}
