@@ -120,3 +120,12 @@ function _s_category_transient_flusher() {
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
 add_action( 'save_post',     '_s_category_transient_flusher' );
+
+/**
+ * Enqueue Font Awesome for use in WP Admin and Template
+ */
+function _s_load_fa_icons() {
+	wp_enqueue_style( '_s_fa_icons', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
+}
+add_action( 'admin_enqueue_scripts', '_s_load_fa_icons' );
+add_action( 'wp_enqueue_scripts', '_s_load_fa_icons' );
