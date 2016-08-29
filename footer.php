@@ -15,9 +15,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'skorpius' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'skorpius' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'skorpius' ), 'skorpius', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+			<p class="source-org copyright"><i class="fa fa-copyright fa-lg" aria-hidden="true"></i> <?php echo date('Y'); ?> <a href="<?php echo bloginfo('url');?>" class="footerlink"><?php bloginfo('title'); ?></a> &#124; Skorpius by <a href="<?php echo esc_url('http://threefivetwo.me');?>" class="footerlink" target="_blank" title="<?php _e('ThreeFivetwo','skorpius');?>"><?php _e('ThreeFiveTwo','skorpius');?></a> &#124; Powered by <a href="http://wordpress.org" target="_blank" title="<?php _e('Powered by WordPress','skorpius');?>" class="footerlink"><?php _e('WordPress','skorpius');?></a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

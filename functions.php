@@ -102,11 +102,19 @@ add_action( 'widgets_init', 'skorpius_widgets_init' );
  * Enqueue scripts and styles.
  */
 function skorpius_scripts() {
-	wp_enqueue_style( 'skorpius-style', get_stylesheet_uri() );
+    // JavaScript Files
+    wp_enqueue_script( 'skorpius-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+    wp_enqueue_script( 'skorpius-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+    wp_enqueue_script( 'skorpius-jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '', true );
+    wp_enqueue_script( 'skorpius-input', get_template_directory_uri() . '/js/vendor/what-input.js', array(), '', true );
+    wp_enqueue_script( 'skorpius-foundation', get_template_directory_uri() . '/js/vendor/foundation.js', array(), '', true );
+    wp_enqueue_script( 'skorpius-app', get_template_directory_uri() . '/js/app.js', array(), '', true );
 
-	wp_enqueue_script( 'skorpius-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'skorpius-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+    // CSS
+    wp_enqueue_style( 'skorpius-normalize', get_template_directory_uri() . '/css/normalize.css' );                   // Normalize
+    wp_enqueue_style( 'skorpius-foundation', get_template_directory_uri() . '/css/foundation.css' );             // Foundation
+    wp_enqueue_style( 'skorpius-font-awesome', get_template_directory_uri() . '/font-awesome/css/font-awesome.css' );         // Font Awesome
+    wp_enqueue_style( 'skorpius-style', get_stylesheet_uri() );                                                         // Main CSS Stylesheet
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
