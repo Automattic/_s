@@ -23,7 +23,7 @@ get_header(); ?>
 					<?php
 						get_search_form();
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+						the_widget( 'WP_Widget_Recent_Posts', '', 'before_title=<h2 class="widget-title">' );
 
 						// Only show the widget if site has multiple categories.
 						if ( _s_categorized_blog() ) :
@@ -49,9 +49,9 @@ get_header(); ?>
 
 						/* translators: %1$s: smiley */
 						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "before_title=<h2 class='widget-title'>&after_title=</h2>$archive_content" );
 
-						the_widget( 'WP_Widget_Tag_Cloud' );
+						the_widget( 'WP_Widget_Tag_Cloud', '', 'before_title=<h2 class="widget-title">' );
 					?>
 
 				</div><!-- .page-content -->
