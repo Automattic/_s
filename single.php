@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package _svbkvbk
+ * @package _s
  */
 
 get_header(); ?>
@@ -31,5 +31,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_svbkidebar();
+get_sidebar();
 get_footer();

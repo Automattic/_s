@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package _svbkvbk
+ * @package _s
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function _svbkvbk_wpcom_svbketup() {
+function _s_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -26,4 +26,4 @@ function _svbkvbk_wpcom_svbketup() {
 		);
 	}
 }
-add_action( 'after_svbketup_theme', '_svbk_wpcom_svbketup' );
+add_action( 'after_setup_theme', '_s_wpcom_setup' );

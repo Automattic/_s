@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package _svbkvbk
+ * @package _s
  */
 
 /**
@@ -13,26 +13,26 @@
  * See: https://jetpack.com/support/infinite-scroll/
  * See: https://jetpack.com/support/responsive-videos/
  */
-function _svbkvbk_jetpack_svbketup() {
+function _s_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_svbkupport( 'infinite-scroll', array(
+	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => '_svbk_infinite_svbkcroll_render',
+		'render'    => '_s_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
 
 	// Add theme support for Responsive Videos.
-	add_theme_svbkupport( 'jetpack-responsive-videos' );
+	add_theme_support( 'jetpack-responsive-videos' );
 }
-add_action( 'after_svbketup_theme', '_svbk_jetpack_svbketup' );
+add_action( 'after_setup_theme', '_s_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function _svbkvbk_infinite_svbkcroll_render() {
+function _s_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		if ( is_svbkearch() ) :
+		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		else :
 			get_template_part( 'template-parts/content', get_post_format() );
