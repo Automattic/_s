@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package _svbkvbk
  */
 
 get_header(); ?>
@@ -34,5 +34,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+get_svbkidebar();
 get_footer();
