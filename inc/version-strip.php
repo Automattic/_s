@@ -12,7 +12,6 @@
 /**
  * Setup function to query version attachements to scripts and style
  *
- * @package _s
  */
 
 function _s_remove_wp_version_strings( $src ) {
@@ -31,10 +30,8 @@ function _s_remove_wp_version_strings( $src ) {
     return $src; //Return the clean file
 }
 
-//Filter for footer scripts files
+//Filter for footer scripts and styles files using the same function
 add_filter( 'script_loader_src', '_s_remove_wp_version_strings' );
-    
-//Filter for styles files
 add_filter( 'style_loader_src', '_s_remove_wp_version_strings' );
 
 //Strip meta data generator WordPress version in <head>
