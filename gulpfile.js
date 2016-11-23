@@ -20,7 +20,7 @@ gulp.task('serve', ['compile-sass'], function() {
 gulp.task('sass', ['compile-sass'], function() {
 
     gulp.watch("sass/**/*.scss", ['compile-sass']);
-    
+
 });
 
 /**
@@ -28,19 +28,21 @@ gulp.task('sass', ['compile-sass'], function() {
  */
 gulp.task('compile-sass', function () {
 
-    return sass('sass/**/*.scss', {sourcemap: true})
+    return sass('sass/style.scss', {sourcemap: true})
         .on('error', function (err) {
             console.error('Error!', err.message);
         })
-        .pipe( postcss([ require('postcss-object-fit-images') ]) )
-        .pipe(gulp.dest("./"))
+        // for inline sourcemaps
+        .pipe(sourcemaps.write())
+        // for file sourcemaps
         .pipe(sourcemaps.write('./', {
             includeContent: false,
-            sourceRoot: './'
+            sourceRoot: 'sass'
         }))
+        .pipe(gulp.dest('./'))
         .pipe(browserSync.stream({match: '**/*.css'}));
+
 });
 
 
 gulp.task('default', ['serve']);
-
