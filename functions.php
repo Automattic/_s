@@ -36,6 +36,12 @@ function _svbk_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
+	 * Enable support for site logo.
+	 */
+	add_image_size( '_s-logo', 500, 500 );
+	add_theme_support( 'site-logo', array( 'size' => '_s-logo' ) );
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
@@ -57,6 +63,16 @@ function _svbk_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+	) );
+
+	/*
+	 * Enable support for custom logo.
+	 */
+	add_theme_support( 'custom-logo', array(
+		'height'      => 250,
+		'width'       => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
 	) );
 
 	// Set up the WordPress core custom background feature.

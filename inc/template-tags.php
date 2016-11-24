@@ -120,3 +120,18 @@ function _svbk_category_transient_flusher() {
 }
 add_action( 'edit_category', '_svbk_category_transient_flusher' );
 add_action( 'save_post',     '_svbk_category_transient_flusher' );
+
+if ( ! function_exists( '_svbk_the_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ * @todo: Remove this function when WordPress 4.7 is released.
+ */
+function _svbk_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;
