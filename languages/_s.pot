@@ -93,6 +93,11 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
+#: header.php:38
+#@ _s
+msgid "Primary Menu"
+msgstr ""
+
 #: header.php:25
 #@ _s
 msgid "Skip to content"
