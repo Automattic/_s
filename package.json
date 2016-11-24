@@ -1,7 +1,7 @@
 {
-  "name": "_svbk",
+  "name": "_svbktheme",
   "version": "1.0.0",
-  "description": "",
+  "description": "Silverback Starter Theme",
   "main": "index.php",
   "scripts": {
     "sass": "sass --watch ./sass:./"

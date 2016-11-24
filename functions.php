@@ -7,6 +7,14 @@
  * @package _svbk
  */
 
+if(file_exists(__DIR__.'/vendor/autoload.php')){
+	require_once __DIR__.'/vendor/autoload.php';
+}
+
+if(class_exists('\Svbk\WP\Helpers\Theme')){
+	\Svbk\WP\Helpers\Theme::init()->all();
+}
+
 if ( ! function_exists( '_svbk_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -130,6 +138,26 @@ function _svbk_scripts() {
 }
 add_action( 'wp_enqueue_scripts', '_svbk_scripts' );
 
+
+function _svbk_max_srcset_image_width($size){
+	return 2900;
+}
+add_filter( 'max_srcset_image_width', '_svbk_max_srcset_image_width');
+
+function _svbk_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+
+	if ( ('post-thumbnail' === $size) || ('thumbnail' === $size) ) {
+		$attr['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';
+	} else if( 'page-header' === $size) {
+		$attr['sizes'] = '(max-width: 910px) 100vw, 90vw';
+	} else if( 'content-full' === $size) {
+		$attr['sizes'] = ' (max-width: 1320px) 100vw,  1320px';
+	}
+
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', '_svbk_post_thumbnail_sizes_attr', 10 , 3 );
+
 /**
  * Implement the Custom Header feature.
  */
@@ -144,6 +172,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Shortcode UI
+ */
+require get_template_directory() . '/inc/shortcode-ui.php';
 
 /**
  * Customizer additions.

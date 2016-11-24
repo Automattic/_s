@@ -1,0 +1,34 @@
+{
+    "name": "svbk/_svbk",
+    "description": "Silverback Starter Theme",
+    "type": "wordpress-theme",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Brando Meniconi",
+            "email": "b.meniconi@silverbackstudio.io"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@gitlab.com:silverbackstudio/wp-shortcakes.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.com:silverbackstudio/wp-themehelper.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.com:silverbackstudio/wp-widgets.git"
+        }
+    ],
+    "require": {
+        "silverbackstudio/wp-shortcakes": "dev-master",
+        "silverbackstudio/wp-themehelper": "dev-master",
+        "silverbackstudio/wp-widgets": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {"Svbk\\WP\\Themes\\_svbk\\": "inc/"}
+    }
+}
