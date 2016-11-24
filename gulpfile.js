@@ -28,7 +28,7 @@ gulp.task('sass', ['compile-sass'], function() {
  */
 gulp.task('compile-sass', function () {
 
-    return sass('sass/style.scss', {sourcemap: true})
+    return sass('sass/*.scss', {sourcemap: true})
         .on('error', function (err) {
             console.error('Error!', err.message);
         })

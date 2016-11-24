@@ -88,6 +88,8 @@ function _svbk_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	add_editor_style();	
 }
 endif;
 add_action( 'after_setup_theme', '_svbk_setup' );

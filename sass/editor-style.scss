@@ -1,0 +1,113 @@
+@import "variables-site/variables-site";
+
+@import "mixins/mixins-master";
+
+@import "site/primary/posts-and-pages";
+
+h4 {
+	display: inline-block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	border-bottom: 1px solid $color__corporate;
+}
+
+.dropcap {
+	color: $color__corporate;
+	font-size: 1.5em;
+	font-weight: 400;
+}
+
+.highlited-text {
+	border-left: 3px solid $color__corporate;
+	padding-left: 0.5em;
+	font-style: italic;
+}
+
+blockquote {
+	text-align: center;
+	font-size: 1.2em;
+	font-style: italic;
+	max-width: 80%;
+	margin-bottom: 1em;
+
+	p {
+		margin: 0;
+		color: #888;
+	}
+}
+
+blockquote:before {
+	content: '"';
+	color: #888;
+}
+
+.image-placeholder {
+	height: 200px;
+	background: #CCC;
+}
+
+.doorway-card a {
+	text-decoration: none;
+	color: black;
+	font-family: "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.doorway-card {
+	display: block;
+	width: 100%;
+  background: $color__corporate;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.doorway-card .card-content {
+	padding: 0em 2em 1em 2em;
+}
+
+a.action-button {
+	background: #FFF;
+    padding: 0.5em 1em;
+}
+
+section {
+	padding: 0.5em;
+	border: 1px dashed #CCC;
+	margin-bottom: 2em;
+}
+
+section  header {
+	background: #EFEFEF;
+    padding: 0.5em 1em;
+}
+
+.wpview-wrap[data-wpview-type^="doorway"] {
+	display:inline-block;
+	width: $size__card;
+	clear: none;
+	margin: 1em 1% ;
+	+ h1,
+	+ h2,
+	+ h3 {
+		margin-top: 2em;
+		clear: both;
+	}
+}
+
+.subtitle {}
+
+.map-container {
+	background: #CCC;
+	border: 1px dashed #CCC;
+	padding: 1em;
+}
+
+.map-container:after {
+	content: "Google Maps";
+	display: block;
+	text-align: center;
+}
+
+.cards-wrapper {
+	text-align: center;
+}
