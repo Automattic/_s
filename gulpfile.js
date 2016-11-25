@@ -1,8 +1,8 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require("gulp-ruby-sass");
-var sourcemaps = require('gulp-sourcemaps');
-var postcss    = require('gulp-postcss');
+var sourcemaps  = require('gulp-sourcemaps');
+var postcss     = require('gulp-postcss');
 
 gulp.task('serve', ['compile-sass'], function() {
 
@@ -14,13 +14,11 @@ gulp.task('serve', ['compile-sass'], function() {
     });
 
     gulp.watch("sass/**/*.scss", ['compile-sass']);
-    //gulp.watch("wp-content/themes/turini/**/*.php").on('change', browserSync.reload);
+    //gulp.watch("wp-content/themes/_svbk/**/*.php").on('change', browserSync.reload);
 });
 
 gulp.task('sass', ['compile-sass'], function() {
-
     gulp.watch("sass/**/*.scss", ['compile-sass']);
-
 });
 
 /**
@@ -32,6 +30,7 @@ gulp.task('compile-sass', function () {
         .on('error', function (err) {
             console.error('Error!', err.message);
         })
+        .pipe(postcss([ require('postcss-object-fit-images') ]))
         // for inline sourcemaps
         .pipe(sourcemaps.write())
         // for file sourcemaps
@@ -43,6 +42,5 @@ gulp.task('compile-sass', function () {
         .pipe(browserSync.stream({match: '**/*.css'}));
 
 });
-
 
 gulp.task('default', ['serve']);
