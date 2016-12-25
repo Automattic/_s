@@ -818,7 +818,12 @@ a:active {
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
-object {
+object,
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
 	max-width: 100%;
 }
 
