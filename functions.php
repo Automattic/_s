@@ -102,6 +102,11 @@ function _s_widgets_init() {
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
+ * Implement WordPres version stripping from theme styles & scripts.
+ */
+//require get_template_directory() . '/inc/version-strip.php';
+
+/**
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
