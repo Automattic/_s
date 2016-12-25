@@ -118,6 +118,31 @@ function _s_scripts() {
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
 /**
+ * Load User Stylesheets Last (reorder so base  css doesnt overwrite theme css).
+ */
+function adjust_css() {
+        global $wp_styles;
+
+        $keys=[];
+        #$keys[] = 'place-css-key-to-load-2nd-to-last';
+	#$keys[] = 'place-css-key-to-load-last';
+
+
+        foreach($keys as $currentKey) {
+            $keyToSplice = array_search($currentKey,$wp_styles->queue);
+
+            if ($keyToSplice!==false && !is_null($keyToSplice)) {
+                $elementToMove = array_splice($wp_styles->queue,$keyToSplice,1);
+                $wp_styles->queue[] = $elementToMove[0];
+            }
+
+        }
+
+        return;
+}
+
+add_action( 'wp_print_styles', 'adjust_css',99);
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
