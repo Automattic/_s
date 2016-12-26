@@ -1,7 +1,12 @@
+.site-content {
+	direction: rtl; /* Swap the positioning of .content-area and .widget-area without affecting the source order */
+}
+
 .content-area {
-	float: right;
+	display: inline-block;
 	margin: 0 0 0 (-$size__site-sidebar);
 	width: $size__site-main;
+	direction: ltr;
 }
 
 .site-main {
@@ -9,9 +14,12 @@
 }
 
 .site-content .widget-area {
-	float: left;
+	display: inline-block;
+	margin-left: $margin__offset-inline-block-spacing;
+	padding-left: $margin__offset-inline-block-spacing * -1;
 	overflow: hidden;
 	width: $size__site-sidebar;
+	direction: ltr;
 }
 
 .site-footer {

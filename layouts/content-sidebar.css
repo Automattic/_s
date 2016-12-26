@@ -7,15 +7,16 @@
 */
 
 .content-area {
-	float: left;
-	margin: 0 -25% 0 0;
+	display: inline-block;
+	margin: 0 -25% 0 -6px;	/* left margin offsets the inline-block spacing, see http://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
+	padding-left: 6px;
 	width: 100%;
 }
 .site-main {
 	margin: 0 25% 0 0;
 }
 .site-content .widget-area {
-	float: right;
+	display: inline-block;
 	overflow: hidden;
 	width: 25%;
 }

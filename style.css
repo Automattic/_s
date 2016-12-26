@@ -346,8 +346,9 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+*:after {
+	box-sizing: inherit;  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	vertical-align: top;
 }
 
 body {
@@ -713,8 +714,6 @@ a:active {
 .comment-content:after,
 .site-header:before,
 .site-header:after,
-.site-content:before,
-.site-content:after,
 .site-footer:before,
 .site-footer:after {
 	content: "";
@@ -726,7 +725,6 @@ a:active {
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
-.site-content:after,
 .site-footer:after {
 	clear: both;
 }

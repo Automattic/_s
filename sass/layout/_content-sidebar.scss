@@ -1,6 +1,7 @@
 .content-area {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
+	display: inline-block;
+	margin: 0 (-$size__site-sidebar) 0 $margin__offset-inline-block-spacing;
+	padding-left: $margin__offset-inline-block-spacing * -1;
 	width: $size__site-main;
 }
 
@@ -9,7 +10,7 @@
 }
 
 .site-content .widget-area {
-	float: right;
+	display: inline-block;
 	overflow: hidden;
 	width: $size__site-sidebar;
 }
