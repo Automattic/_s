@@ -9,11 +9,7 @@ a {
 	&:active {
 		color: $color__link-hover;
 	}
-	&:focus {
+	&:focus { /* the :focus state is important for keyboard accessibility: http://24ways.org/2009/dont-lose-your-focus/ */
 		outline: thin dotted;
-	}
-	&:hover,
-	&:active {
-		outline: 0;
 	}
 }
