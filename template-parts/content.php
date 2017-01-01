@@ -9,11 +9,11 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
+			the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -26,7 +26,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content" itemprop="text">
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
