@@ -30,7 +30,7 @@
 			<?php
 				edit_post_link(
 					sprintf(
-						/* translators: %s: Name of current post */
+						/* translators: %s: Name of current post. Only visible to screen readers */
 						__( 'Edit <span class="screen-reader-text">%s</span>', '_s' ),
 						get_the_title()
 					),
