@@ -141,3 +141,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Fix admin menu rollover issue w/ WordPress 4.3 in Chrome 45/46
+ */
+function chrome_fix() {
+	if( strpos( $_SERVER['HTTP_USER_AGENT'], 'Chrome' ) !== false )
+		wp_add_inline_style( 'wp-admin', '#adminmenu{transform:translateZ(0);}' );
+}
+add_action( 'admin_enqueue_scripts', 'chrome_fix' );
