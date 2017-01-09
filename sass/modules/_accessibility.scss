@@ -5,6 +5,7 @@
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
+	word-wrap: normal !important;
 
 	&:focus {
 		background-color: $color__background-screen;
