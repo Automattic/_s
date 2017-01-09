@@ -50,7 +50,7 @@
 	}
 
 	li {
-		float: left;
+		display: inline-block;
 		position: relative;
 
 		&:hover > a,
