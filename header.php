@@ -20,6 +20,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php do_action('after_body_tag'); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', _svbk ); ?></a>
 
