@@ -47,8 +47,13 @@
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
-		links[i].addEventListener( 'focus', toggleFocus, true );
-		links[i].addEventListener( 'blur', toggleFocus, true );
+		if (!links[i].addEventListener) {
+			links[i].attachEvent( 'onfocus', toggleFocus);
+			links[i].attachEvent( 'onblur', toggleFocus);
+		} else {
+			links[i].addEventListener( 'focus', toggleFocus, true );
+			links[i].addEventListener( 'blur', toggleFocus, true );
+		}
 	}
 
 	/**
