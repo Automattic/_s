@@ -34,3 +34,7 @@ Want to have your avatar listed as one of the `_s` contributors [here](http://un
 * [@sixhours](https://github.com/sixhours) 
 * [@laurelfulford](https://github.com/laurelfulford)
 * [@alaczek](https://github.com/alaczek)
+* [@lancewillett](https://github.com/lancewillett)
+* [@obenland](https://github.com/obenland)
+* [@ianstewart](https://github.com/ianstewart)
+* [@mfields](https://github.com/mfields)
