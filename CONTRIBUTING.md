@@ -26,3 +26,16 @@ If your issue is specific to the [Underscores.me](http://underscores.me) website
 The preferred method of generating a new theme based on `_s` is the [Underscores.me](http://underscores.me) website. If you have an alternative method, such as a shell script, write a blog post about it or host it in a separate repo -- and make sure to mention [@underscoresme](https://twitter.com/underscoresme) in your tweets!
 
 Want to have your avatar listed as one of the `_s` contributors [here](http://underscores.me/#contribute)? Just make sure you have an email address added to both GitHub and your local Git installation.
+
+## Official Maintainers
+* [@karmatosed](https://github.com/karmatosed)
+* [@davidakennedy](https://github.com/davidakennedy)
+* [@kovshenin](https://github.com/kovshenin) 
+* [@sixhours](https://github.com/sixhours) 
+* [@laurelfulford](https://github.com/laurelfulford)
+* [@alaczek](https://github.com/alaczek)
+* [@lancewillett](https://github.com/lancewillett)
+* [@obenland](https://github.com/obenland)
+* [@ianstewart](https://github.com/ianstewart)
+* [@mfields](https://github.com/mfields)
+* [@philiparthurmoore](https://github.com/philiparthurmoore)
