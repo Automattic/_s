@@ -38,3 +38,4 @@ Want to have your avatar listed as one of the `_s` contributors [here](http://un
 * [@obenland](https://github.com/obenland)
 * [@ianstewart](https://github.com/ianstewart)
 * [@mfields](https://github.com/mfields)
+* [@philiparthurmoore](https://github.com/philiparthurmoore)
