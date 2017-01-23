@@ -1,6 +1,6 @@
 <?php
 /**
- * _svbk Theme Customizer.
+ * _svbk Theme Customizer
  *
  * @package _svbk
  */

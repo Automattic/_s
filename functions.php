@@ -1,6 +1,6 @@
 <?php
 /**
- * _svbk functions and definitions.
+ * _svbk functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -58,7 +58,7 @@ function _svbk_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', _svbk ),
+		'menu-1' => esc_html__( 'Primary', '_svbk' ),
 	) );
 
 	/*
@@ -89,7 +89,10 @@ function _svbk_setup() {
 		'default-image' => '',
 	) ) );
 
-	add_editor_style();	
+	add_editor_style();
+	
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif;
 add_action( 'after_setup_theme', '_svbk_setup' );
