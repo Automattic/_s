@@ -46,8 +46,8 @@ function _svbk_setup() {
 	/*
 	 * Enable support for site logo.
 	 */
-	add_image_size( '_s-logo', 500, 500 );
-	add_theme_support( 'site-logo', array( 'size' => '_s-logo' ) );
+	add_image_size( '_svbk-logo', 500, 500 );
+	add_theme_support( 'site-logo', array( 'size' => '_svbk-logo' ) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
