@@ -76,7 +76,13 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+@media screen and (min-width: 48em) {
 	.menu-toggle {
 		display: none;
 	}
