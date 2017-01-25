@@ -12,6 +12,53 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+.site-header {
+	
+	.site-branding {
+		max-width: 200px;
+		margin: 0 auto;
+	}
+	
+	@media screen and (min-width: 48em) {
+		
+		.site-branding {
+			max-width: 400px;
+		}
+	}
+}
+
+.site-footer {
+	text-align: center;
+	width: 100%;
+	background: #f8f8f8;
+	
+	.footer-area {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+	
+	#legal {
+		background: #eee;
+		clear: both;
+		width: 100%;
+		text-align: center;
+		max-width: none;
+	}
+	
+	@media screen and (min-width: 48em) {
+		text-align: left;
+		
+		.footer-area {
+			width: 50%;
+			float: left;
+		}
+		
+		img {
+			max-width: 300px;
+		}
+	}
+}
+
 blockquote, q {
 	quotes: "" "";
 

@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php if($footer_logo = get_theme_mod( 'footer_logo', '' )): ?>
 		<div class="footer-area">
-			<?php echo wp_get_attachment_image( get_theme_mod( 'footer_logo', '' ) ); ?>
+			<?php echo wp_get_attachment_image( get_theme_mod( 'footer_logo', '' ), 'large' ); ?>
 		</div>
 		<?php endif ?>
 		

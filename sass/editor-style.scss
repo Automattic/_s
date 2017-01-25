@@ -81,19 +81,6 @@ section  header {
     padding: 0.5em 1em;
 }
 
-.wpview-wrap[data-wpview-type^="doorway"] {
-	display:inline-block;
-	width: $size__card;
-	clear: none;
-	margin: 1em 1% ;
-	+ h1,
-	+ h2,
-	+ h3 {
-		margin-top: 2em;
-		clear: both;
-	}
-}
-
 .subtitle {}
 
 .map-container {
