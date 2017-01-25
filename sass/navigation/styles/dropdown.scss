@@ -16,13 +16,17 @@
 			}
 
 			li {
-				position: relative;
 				
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
+        }
+        
+        li {
+        	position: relative;
+        	float: left;
         }
     }
 }
