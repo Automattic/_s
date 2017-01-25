@@ -16,6 +16,8 @@
 			}
 
 			li {
+				position: relative;
+				
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
