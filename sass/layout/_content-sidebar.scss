@@ -9,9 +9,12 @@
 }
 
 .site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: $size__site-sidebar;
+	
+	@media screen and (min-width: 48em) {
+		float: right;
+		overflow: hidden;
+		width: $size__site-sidebar;
+	}
 }
 
 .site-footer {
