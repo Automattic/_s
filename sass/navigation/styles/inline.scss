@@ -1,8 +1,10 @@
 .main-navigation {
     
     .menu-main-menu-container {
-        position: absolute;
+        position: fixed;
         background: #fff;
+        left: 0;
+        right: 0;
     }
     
     ul {
