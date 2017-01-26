@@ -13,6 +13,10 @@ body {
 }
 
 .site-header {
+	position: fixed;
+	background: #eee;
+	width: 100%;
+	z-index: 999;
 	
 	.site-branding {
 		max-width: 200px;
@@ -20,41 +24,10 @@ body {
 	}
 	
 	@media screen and (min-width: 48em) {
+		position: static;
 		
 		.site-branding {
 			max-width: 400px;
-		}
-	}
-}
-
-.site-footer {
-	text-align: center;
-	width: 100%;
-	background: #f8f8f8;
-	
-	.footer-area {
-		max-width: 80%;
-		margin: 0 auto;
-	}
-	
-	#legal {
-		background: #eee;
-		clear: both;
-		width: 100%;
-		text-align: center;
-		max-width: none;
-	}
-	
-	@media screen and (min-width: 48em) {
-		text-align: left;
-		
-		.footer-area {
-			width: 50%;
-			float: left;
-		}
-		
-		img {
-			max-width: 300px;
 		}
 	}
 }
