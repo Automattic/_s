@@ -3,6 +3,8 @@ var browserSync = require('browser-sync').create();
 var sass        = require("gulp-ruby-sass");
 var sourcemaps  = require('gulp-sourcemaps');
 var postcss     = require('gulp-postcss');
+var autoprefixer     = require('autoprefixer');
+var objectFitImages = require('postcss-object-fit-images');
 
 gulp.task('serve', ['compile-sass'], function() {
 
@@ -30,7 +32,8 @@ gulp.task('compile-sass', function () {
         .on('error', function (err) {
             console.error('Error!', err.message);
         })
-        .pipe(postcss([ require('postcss-object-fit-images') ]))
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ objectFitImages, autoprefixer() ]))
         // for inline sourcemaps
         .pipe(sourcemaps.write())
         // for file sourcemaps

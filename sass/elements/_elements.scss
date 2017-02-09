@@ -12,6 +12,26 @@ body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
+.site-header {
+	position: fixed;
+	background: #eee;
+	width: 100%;
+	z-index: 999;
+	
+	.site-branding {
+		max-width: 200px;
+		margin: 0 auto;
+	}
+	
+	@media screen and (min-width: 48em) {
+		position: static;
+		
+		.site-branding {
+			max-width: 400px;
+		}
+	}
+}
+
 blockquote, q {
 	quotes: "" "";
 

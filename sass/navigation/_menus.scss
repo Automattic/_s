@@ -11,22 +11,10 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
 
 			li {
 				&:hover > ul,
 				&.focus > ul {
-					left: 100%;
 				}
 			}
 
@@ -50,8 +38,6 @@
 	}
 
 	li {
-		float: left;
-		position: relative;
 
 		&:hover > a,
 		&.focus > a {
@@ -70,13 +56,28 @@
 	}
 }
 
+/*--------------------------------------------------------------
+## Inline menu
+--------------------------------------------------------------*/
+@import "styles/inline";
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	&:before {
+		content: "Menu";
+	}
+}
+
+@media screen and (min-width: 48em) {
 	.menu-toggle {
 		display: none;
 	}

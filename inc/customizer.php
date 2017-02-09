@@ -14,6 +14,21 @@ function _svbk_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	$wp_customize->add_setting( 'footer_logo' );
+	
+	$wp_customize->add_section( 'footer', array(
+	  'title' => __( 'Footer', '_svbk' ),
+	  'description' => __( 'Footer Settings', '_svbk' ),
+	  'priority' => 160,
+	) );	
+	
+	$wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'footer_logo', array(
+	  'label' => __( 'Footer Logo', '_svbk' ),
+	  'section' => 'footer',
+	  'mime_type' => 'image',
+	) ) );	
+	
 }
 add_action( 'customize_register', '_svbk_customize_register' );
 

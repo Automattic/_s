@@ -46,8 +46,8 @@ function _svbk_setup() {
 	/*
 	 * Enable support for site logo.
 	 */
-	add_image_size( '_s-logo', 500, 500 );
-	add_theme_support( 'site-logo', array( 'size' => '_s-logo' ) );
+	add_image_size( '_svbk-logo', 500, 500 );
+	add_theme_support( 'site-logo', array( 'size' => '_svbk-logo' ) );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -134,8 +134,8 @@ function _svbk_scripts() {
 	wp_enqueue_style( '_svbk-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( '_svbk-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'ufficiobrevetti-theme', get_template_directory_uri() . '/js/theme.js', array(), '20170120', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

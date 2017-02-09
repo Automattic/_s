@@ -2,6 +2,11 @@
 	float: left;
 	margin: 0 (-$size__site-sidebar) 0 0;
 	width: $size__site-main;
+	margin-top: 3.4em;
+	
+	@media screen and (min-width: 48em) {
+		margin-top: 0;
+	}
 }
 
 .site-main {
@@ -9,12 +14,48 @@
 }
 
 .site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: $size__site-sidebar;
+	
+	@media screen and (min-width: 48em) {
+		float: right;
+		overflow: hidden;
+		width: $size__site-sidebar;
+	}
 }
 
+/*--------------------------------------------------------------
+## mobile lateral sliding sidebar
+--------------------------------------------------------------*/
+@import "styles/sliding-sidebar";
+
 .site-footer {
+	text-align: center;
+	width: 100%;
+	background: #f8f8f8;
 	clear: both;
-	width: $size__site-main;
+	
+	.footer-area {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+	
+	#legal {
+		background: #eee;
+		clear: both;
+		width: 100%;
+		text-align: center;
+		max-width: none;
+	}
+	
+	@media screen and (min-width: 48em) {
+		text-align: left;
+		
+		.footer-area {
+			width: 50%;
+			float: left;
+		}
+		
+		img {
+			max-width: 300px;
+		}
+	}
 }

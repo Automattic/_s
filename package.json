@@ -14,7 +14,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-ruby-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
-    "postcss": "^5.2.4",
-    "postcss-object-fit-images": "^1.1.2"
+    "postcss-object-fit-images": "^1.1.2",
+    "autoprefixer": "^6.7.0"
   }
 }
