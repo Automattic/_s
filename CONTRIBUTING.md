@@ -1,6 +1,11 @@
 Thanks for contributing to `_s` (Underscores) — you rock!
 
+## Maintainers
+
+`_s` is maintained by the [Automattic Theme Team](https://themeshaper.com/about/).
+
 ## Submitting issues
+
 Before submitting your issue, make sure it has not been discussed earlier. You can search for existing tickets [here](https://github.com/Automattic/_s/search).
 
 Here are some tips to consider and to help you write a great report:
@@ -21,6 +26,7 @@ Found a bug you can fix? Fantastic! Patches are always welcome. Here's a few tip
 By contributing code to `_s`, you grant its use under the [GNU General Public License v2 (or later)](LICENSE).
 
 ## Underscores.me
+
 If your issue is specific to the [Underscores.me](http://underscores.me) website, the [Underscores.me GitHub repo](https://github.com/Automattic/underscores.me) is the right place for you.
 
 The preferred method of generating a new theme based on `_s` is the [Underscores.me](http://underscores.me) website. If you have an alternative method, such as a shell script, write a blog post about it or host it in a separate repo -- and make sure to mention [@underscoresme](https://twitter.com/underscoresme) in your tweets!
