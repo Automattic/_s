@@ -1,6 +1,6 @@
 <?php
 /**
- * _svbk functions and definitions
+ *'_svbk'functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -28,7 +28,7 @@ function _svbk_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _svbk, use a find and replace
-	 * to change _svbk to the name of your theme in all the template files.
+	 * to change'_svbk'to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( _svbk, get_template_directory() . '/languages' );
 
@@ -116,9 +116,9 @@ add_action( 'after_setup_theme', '_svbk_content_width', 0 );
  */
 function _svbk_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', _svbk ),
+		'name'          => esc_html__( 'Sidebar','_svbk'),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', _svbk ),
+		'description'   => esc_html__( 'Add widgets here.','_svbk'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
