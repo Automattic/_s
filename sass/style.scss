@@ -25,13 +25,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 ----------------------------------------------------------------
 # Normalize
 # Typography
-# Elements
 # Forms
 # Navigation
 	## Links
 	## Menus
-# Accessibility
-# Alignments
 # Clearings
 # Widgets
 # Content
@@ -42,8 +39,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "variables";
+
+/*--------------------------------------------------------------
+# Helpers
+--------------------------------------------------------------*/
+@import "helpers/mixins";
+@import "helpers/alignments";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -56,11 +63,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "typography/typography";
 
 /*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 @import "forms/forms";
@@ -69,16 +71,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
 
 /*--------------------------------------------------------------
 # Clearings
