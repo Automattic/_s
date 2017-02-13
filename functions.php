@@ -7,12 +7,16 @@
  * @package _svbk
  */
 
+use \Svbk\WP\Helpers\Theme as ThemeHelper;
+use \Svbk\WP\Helpers\CdnScripts;
+use \Svbk\WP\Helpers\AMP;
+
 if(file_exists(__DIR__.'/vendor/autoload.php')){
 	require_once __DIR__.'/vendor/autoload.php';
 }
 
-if(class_exists('\Svbk\WP\Helpers\Theme')){
-	\Svbk\WP\Helpers\Theme::init()->all();
+if(class_exists('ThemeHelper')){
+	ThemeHelper::init()->all();
 }
 
 if ( ! function_exists( '_svbk_setup' ) ) :
@@ -94,6 +98,10 @@ function _svbk_setup() {
 	
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+	
+	if(class_exists('AMP')){
+		AMP::init();
+	}
 }
 endif;
 add_action( 'after_setup_theme', '_svbk_setup' );
