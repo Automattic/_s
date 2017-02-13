@@ -59,6 +59,7 @@ function _svbk_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', '_svbk' ),
+		'menu-404' => esc_html__( 'Not Found (404) Page', '_svbk' ),
 	) );
 
 	/*
