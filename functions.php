@@ -184,6 +184,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/shortcode-ui.php';
 
 /**
+ * Editor Custom Styles
+ */
+require get_template_directory() . '/inc/editor.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
