@@ -11,6 +11,8 @@ sed -i "s/Theme Name: _svbk/Theme Name: $THEME_NAME/g" sass/style.scss
 find ./ -type f -name "*.json"  -exec sed -i "s/_svbk/$THEME_HANDLE/g" {} \;
 find ./ -type f -name "*.json"  -exec sed -i "s/Silverback Starter/Silverback $THEME_NAME/g" {} \;
 
+mv languages/_s.pot languages/$THEME_HANDLE.pot
+
 npm install -g gulp
 npm update
 gulp compile-sass

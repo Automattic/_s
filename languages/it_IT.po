@@ -1,0 +1,207 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2017-02-13 11:59+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-02-13 11:59+0000\n"
+"Last-Translator: SilverbackStudio <webmaster@silverbackstudio.it>\n"
+"Language-Team: Italian\n"
+"Language: it-IT\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: footer.php:24
+msgid "Headquarters"
+msgstr "Sede operativa"
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Risultati Ricerca per: %s"
+
+#: comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un commento su &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commenti su &ldquo;%2$s&rdquo;"
+
+#: comments.php:40 comments.php:61
+msgid "Comment navigation"
+msgstr "Navigazione commenti"
+
+#: comments.php:43 comments.php:64
+msgid "Older Comments"
+msgstr "Commenti precedenti"
+
+#: comments.php:44 comments.php:65
+msgid "Newer Comments"
+msgstr "Commenti più recenti"
+
+#: comments.php:78
+msgid "Comments are closed."
+msgstr "I commenti sono disabilitati"
+
+#: functions.php:65
+msgid "Primary"
+msgstr "Principale"
+
+#: functions.php:66
+msgid "Not Found (404) Page"
+msgstr "Pagina 404"
+
+#: functions.php:128
+msgid "Sidebar"
+msgstr "Colonna laterale"
+
+#: functions.php:130
+msgid "Add widgets here."
+msgstr "Aggiungi qui gli Widget"
+
+#: footer.php:34
+#, php-format
+msgid "Made with passion by %s"
+msgstr "Realizzato da %s"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "Vai la contenuto"
+
+#: header.php:45
+msgid "Primary Menu"
+msgstr "Menu principale"
+
+#: template-parts/content-page.php:22 template-parts/content.php:38
+msgid "Pages:"
+msgstr "Pagine:"
+
+#. translators: %s: Name of current post
+#: template-parts/content-page.php:34 inc/template-tags.php:72
+#, php-format
+msgid "Edit %s"
+msgstr "Modifica %s"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Nessun risultato trovato"
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto a pubblicare il tuo primo post? <a href=\"%1$s\">Inizia adesso</a>."
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Siamo spiacenti, ma nessun risultato corrisponde alla tua ricerca. Ti "
+"consigliamo di ritentare con parole chiave differenti."
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Non siamo riusciti a trovare quello che cercavi. Ti consigliamo di "
+"utilizzare il campo di ricerca."
+
+#. translators: %s: Name of current post.
+#: template-parts/content.php:33
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Prosegui la lettura %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: inc/template-tags.php:28
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Redatto il %s"
+
+#: inc/template-tags.php:33
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "di %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:50 inc/template-tags.php:56
+msgid ", "
+msgstr ","
+
+#: inc/template-tags.php:52
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Scritto in %1$s"
+
+#: inc/template-tags.php:58
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Taggato in %1$s"
+
+#: inc/template-tags.php:65
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Scrivi un commento su %s"
+
+#: inc/shortcode-ui.php:17
+msgid ""
+"Shortcode UI plugin must be active for Shortcode UI Example plugin to "
+"function."
+msgstr ""
+"Il plugin Shortcode UI deve essere presente e attivato per abilitare "
+"l'interfaccia grafica"
+
+#: inc/editor.php:9
+msgid "Dropcap"
+msgstr "Capolettera"
+
+#: inc/editor.php:21
+msgid "Collapse"
+msgstr "Collapse"
+
+#: inc/editor.php:28
+msgid "Accordion"
+msgstr "Accordion"
+
+#: inc/editor.php:35
+msgid "Subtitle"
+msgstr "Sottotitolo"
+
+#: inc/editor.php:41
+msgid "Callout / Pull Quote"
+msgstr "Citazione Interna"
+
+#: inc/editor.php:47
+msgid "Highlighted Paragraph"
+msgstr "Paragrafo Evidenziato"
+
+#: inc/customizer.php:21
+msgid "Footer"
+msgstr "Footer"
+
+#: inc/customizer.php:22
+msgid "Footer Settings"
+msgstr "Impostazioni Footer"
+
+#: inc/customizer.php:27
+msgid "Footer Logo"
+msgstr "Logo nel footer"
+
+#. Name of the theme
+msgid "_svbk"
+msgstr "_svbk"
+
+#. Author of the theme
+msgid "Silverback Studio"
+msgstr "Silverback Studio"
+
+#. Author URI of the theme
+msgid "http://www.silverbackstudio.it"
+msgstr "http://www.silverbackstudio.it"

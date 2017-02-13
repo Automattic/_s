@@ -21,7 +21,7 @@
 		<?php endif ?>
 
 		<div id="company-info" class="footer-area">
-			<h3><?php _e('Sede operativa', '_svbk'); ?></h3>
+			<h3><?php _e('Headquarters', '_svbk'); ?></h3>
 			<span class="contact-address"><?php bloginfo('contact_address'); ?></span><br/>
 			<span class="contact-cap"><?php bloginfo('contact_cap'); ?></span>
 			<span class="contact-city"><?php bloginfo('contact_city'); ?></span><br/>
