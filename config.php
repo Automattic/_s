@@ -30,8 +30,13 @@ return array(
     //    'key' => '',
     //    'callback' => 'initGMaps',
     //    'libraries' => 'places',
-    //    'zoom' => '14',
-    //    'styles' => ''
+    //    'mapOptions' => [ 
+    //      'zoom' => '14',
+    //      'styles' => ''
+    //    ],
+    //    'markerOptions' => [
+    //      'icon' => get_stylesheet_directory_uri().'/media/pin.png',
+    //    ]    
     //],
 
     'icons' => [
@@ -48,9 +53,9 @@ return array(
     //    'privacyPolicyId' => '',
     //    'banner' => [
     //        'slideDown'=> false,
-		//        'applyStyles' => false,
-		//        'content'=> ''
-		//    ]
+    //        'applyStyles' => false,
+    //        'content'=> ''
+    //    ]
     //]
 
     # generate access token @ https://www.maestrooo.com/instagram || http://instagram.pixelunion.net/
