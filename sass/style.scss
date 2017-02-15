@@ -1,9 +1,9 @@
 /*!
 Theme Name: _svbk
-Theme URI: 
+Theme URI:
 Author: Silverback Studio
 Author URI: http://www.silverbackstudio.it
-Description: 
+Description:
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -87,6 +87,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /*--------------------------------------------------------------
 # Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Iubenda Cookie Policy
 --------------------------------------------------------------*/
 @import "modules/clearings";
 
