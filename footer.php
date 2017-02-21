@@ -36,6 +36,12 @@
 
 	</footer><!-- #colophon -->
 
+	<?php if(get_theme_mod( 'fixed_footer_bar' )): ?>
+	<div class="footer-fixed-bar">
+		<?php echo do_shortcode( get_theme_mod( 'fixed_footer_bar_content', __('Customize this text in Theme Customizer', '_svbk') ) ); ?>
+	</div>
+	<?php endif ?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
