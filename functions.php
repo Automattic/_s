@@ -34,7 +34,7 @@ function _svbk_setup() {
 	 * If you're building a theme based on _svbk, use a find and replace
 	 * to change'_svbk'to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( _svbk, get_template_directory() . '/languages' );
+	load_theme_textdomain( '_svbk', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -95,10 +95,10 @@ function _svbk_setup() {
 	) ) );
 
 	add_editor_style();
-	
+
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-	
+
 	if(class_exists('AMP')){
 		AMP::init();
 	}
