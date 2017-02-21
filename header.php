@@ -34,6 +34,10 @@
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
+			
+			<button class="search-toggle"><span class="screen-reader-text"><?php _e( 'Toggle Search', 'cavatorta' ) ?></span></button>
+			<?php echo get_search_form(); ?>
+
 		</div>
 	</header><!-- #masthead -->
 
