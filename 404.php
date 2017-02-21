@@ -14,16 +14,16 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'That page can&rsquo;t be found.', 'ufficiobrevetti' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'That page can&rsquo;t be found.', '_svbk' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'ufficiobrevetti' ); ?></p>
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_svbk' ); ?></p>
 
 					<?php get_search_form(); ?>
-					
+
 					<?php wp_nav_menu( array( 'theme_location' => 'menu-404', 'menu_id' => 'sitemap-menu' ) ); ?>
-					
+
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
