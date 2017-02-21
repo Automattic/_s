@@ -15,6 +15,19 @@ function _svbk_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+  // Menu
+	$wp_customize->add_setting( 'sticky_main_menu', array(
+	  'default' => false,
+	));
+
+	$wp_customize->add_control( 'sticky_main_menu', array(
+	  'label' => __( 'Sticky Main Menu', '_svbk' ),
+	  'description' => __( 'Makes the main menu sticky on scroll', '_svbk' ),
+	  'section' => 'menu_locations',
+	  'type' => 'checkbox',
+	));
+
+	//Archives
 	$wp_customize->add_section( 'archives', array(
 	  'title' => __( 'Archives', 'studiolegalemauro' ),
 	  'description' => __( 'Archive Customizations', 'studiolegalemauro' ),
@@ -47,7 +60,9 @@ function _svbk_customize_register( $wp_customize ) {
 
 	}
 
-	//
+
+
+	//Footer setings
 	$wp_customize->add_setting( 'footer_logo' );
 	$wp_customize->add_section( 'footer', array(
 	  'title' => __( 'Footer', '_svbk' ),
