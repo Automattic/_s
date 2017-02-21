@@ -15,22 +15,35 @@ function _svbk_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-  // Menu
-	$wp_customize->add_setting( 'sticky_main_menu', array(
+	//Header
+	$wp_customize->get_section( 'header_image' )->title = __('Header', '_svbk');
+
+	$wp_customize->add_setting( 'sticky_header', array(
 	  'default' => false,
 	));
 
-	$wp_customize->add_control( 'sticky_main_menu', array(
-	  'label' => __( 'Sticky Main Menu', '_svbk' ),
-	  'description' => __( 'Makes the main menu sticky on scroll', '_svbk' ),
-	  'section' => 'menu_locations',
+	$wp_customize->add_control( 'sticky_header', array(
+	  'label' => __( 'Sticky Header', '_svbk' ),
+	  'description' => __( 'Makes the header stay on top of page after scroll', '_svbk' ),
+	  'section' => 'header_image',
+	  'type' => 'checkbox',
+	));
+
+	$wp_customize->add_setting( 'header_cycle_images', array(
+	  'default' => false,
+	));
+
+	$wp_customize->add_control( 'header_cycle_images', array(
+	  'label' => __( 'Fade header images', '_svbk' ),
+	  'description' => __( 'Cycle through all header images with a CSS fade effect', '_svbk' ),
+	  'section' => 'header_image',
 	  'type' => 'checkbox',
 	));
 
 	//Archives
 	$wp_customize->add_section( 'archives', array(
-	  'title' => __( 'Archives', 'studiolegalemauro' ),
-	  'description' => __( 'Archive Customizations', 'studiolegalemauro' ),
+	  'title' => __( 'Archives', '_svbk' ),
+	  'description' => __( 'Archive Customizations', '_svbk' ),
 	  'priority' => 160,
 	) );
 

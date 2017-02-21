@@ -18,6 +18,7 @@
  */
 function _svbk_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( '_svbk_custom_header_args', array(
+		'video' => true,
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1980,

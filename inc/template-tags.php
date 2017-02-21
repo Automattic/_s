@@ -129,12 +129,6 @@ if ( ! function_exists( '_svbk_the_custom_logo' ) ) :
  *
  * @todo: Remove this function when WordPress 4.7 is released.
  */
-function _svbk_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-}
-endif;
 
 //ACF functions fallbacks
 if(!function_exists('get_field')){
