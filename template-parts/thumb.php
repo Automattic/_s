@@ -11,7 +11,9 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(array('post-thumb')); ?>>
 
-	<a href="<?php the_permalink() ?>" ><?php the_post_thumbnail(); ?></a>
+	<?php if (has_post_thumbnail()): ?>
+	<a href="<?php the_permalink() ?>" rel="bookmark" ><?php the_post_thumbnail(); ?></a>
+	<?php endif; ?>
 
 	<div class="entry-header">
 		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
