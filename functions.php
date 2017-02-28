@@ -53,6 +53,8 @@ function _svbk_setup() {
 	add_image_size( '_svbk-logo', 500, 500 );
 	add_theme_support( 'site-logo', array( 'size' => '_svbk-logo' ) );
 
+	set_post_thumbnail_size( 600, 400, true );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
