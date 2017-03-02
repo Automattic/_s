@@ -18,7 +18,7 @@
 	<div class="entry-header">
 		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 		<div class="entry-excerpt"><?php the_excerpt(); ?></div>
-		<a class="readmore" href="<?php the_permalink() ?>" ><?php _e('View More', '_svbk'); ?></a>
+		<a class="readmore" href="<?php the_permalink() ?>" ><?php _e('Read More', '_svbk'); ?></a>
 	</div><!-- .entry-header -->
 
 </div><!-- #post-## -->
