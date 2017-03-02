@@ -139,6 +139,14 @@ if(!function_exists('the_field')){
 	}
 }
 
+if(!function_exists('the_field_template')){
+	function the_field_template($field, $before='', $after='' ){
+		if($value = get_field($field)){
+			echo $before.$value.$after;
+		}
+	}
+}
+
 add_filter('get_the_archive_title', function($title){
 	return str_replace( sprintf(__( 'Archives: %s' ), ''), '', $title );
 });
