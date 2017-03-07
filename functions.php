@@ -15,7 +15,7 @@ if(file_exists(__DIR__.'/vendor/autoload.php')){
 	require_once __DIR__.'/vendor/autoload.php';
 }
 
-if(class_exists('ThemeHelper')){
+if(class_exists('\Svbk\WP\Helpers\Theme')){
 	ThemeHelper::init()->all();
 }
 
@@ -101,7 +101,7 @@ function _svbk_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	if(class_exists('AMP')){
+	if(class_exists('\Svbk\WP\Helpers\AMP')){
 		AMP::init();
 	}
 }
