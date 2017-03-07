@@ -16,7 +16,7 @@ gulp.task('serve', ['compile-sass'], function() {
     });
 
     gulp.watch("sass/**/*.scss", ['compile-sass']);
-    //gulp.watch("wp-content/themes/_svbk/**/*.php").on('change', browserSync.reload);
+    //gulp.watch("**/*.php").on('change', browserSync.reload);
 });
 
 gulp.task('sass', ['compile-sass'], function() {
