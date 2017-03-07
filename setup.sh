@@ -19,3 +19,7 @@ npm install -g gulp
 npm update
 gulp compile-sass
 composer install
+
+git add .
+git commit -m"$THEME_HANDLE theme config"
+git remote set-url --push origin no-pushing
