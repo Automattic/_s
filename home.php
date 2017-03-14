@@ -32,7 +32,6 @@ get_header(); ?>
 
 					<div class="posts-list post-thumbs ajax-content">
 					<?php
-					endif;
 
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
