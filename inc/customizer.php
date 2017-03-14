@@ -95,14 +95,14 @@ function _svbk_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_control( 'fixed_footer_bar_content', array(
-	  'label' => __( 'Fixed Footer Bar', 'studiolegalemauro' ),
-	  'description' => __( 'Fixed Footer Bar Content (supports HTML and shortcode)', 'studiolegalemauro' ),
+	  'label' => __( 'Fixed Footer Bar', '_svbk' ),
+	  'description' => __( 'Fixed Footer Bar Content (supports HTML and shortcode)', '_svbk' ),
 	  'section' => 'footer',
 	  'type' => 'textarea',
 	));
 
 	$wp_customize->add_control( 'fixed_footer_bar', array(
-	  'label' => __( 'Show Fixed Footer Bar', 'studiolegalemauro' ),
+	  'label' => __( 'Show Fixed Footer Bar', '_svbk' ),
 	  'section' => 'footer',
 	  'type' => 'checkbox',
 
