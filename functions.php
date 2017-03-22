@@ -47,13 +47,10 @@ function _svbk_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for site logo.
-	 */
-	add_image_size( '_svbk-logo', 500, 500 );
-	add_theme_support( 'site-logo', array( 'size' => '_svbk-logo' ) );
+	add_image_size( 'content-half', 768, 999 );
+	add_image_size( 'content-full', 1320, 999 );
 
-	set_post_thumbnail_size( 600, 400, true );
+	set_post_thumbnail_size( 768, 560, true );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -84,8 +81,8 @@ function _svbk_setup() {
 	 * Enable support for custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 250,
-		'width'       => 250,
+		'height'      => 400,
+		'width'       => 100,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -161,18 +158,23 @@ add_action( 'wp_enqueue_scripts', '_svbk_scripts' );
 
 
 function _svbk_max_srcset_image_width($size){
-	return 2900;
+	return 2560;
 }
 add_filter( 'max_srcset_image_width', '_svbk_max_srcset_image_width');
 
 function _svbk_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
-	if ( ('post-thumbnail' === $size) || ('thumbnail' === $size) ) {
-		$attr['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';
-	} else if( 'page-header' === $size) {
-		$attr['sizes'] = '(max-width: 910px) 100vw, 90vw';
-	} else if( 'content-full' === $size) {
-		$attr['sizes'] = ' (max-width: 1320px) 100vw,  1320px';
+	switch($size){
+		case 'post-thumbnail':
+			$attr['sizes'] = '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1320px) 35vw, 600px';	break;
+		case 'thumbnail':
+			$attr['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';	break;
+		case 'header':
+			$attr['sizes'] = '100vw'; break;
+		case 'content-full':
+			$attr['sizes'] = ' (max-width: 1320px) 100vw,  1320px'; break;
+		case 'content-half':
+			$attr['sizes'] = ' (max-width: 1024px) 100vw, (max-width: 1320px) 50vw, 660px'; break;
 	}
 
 	return $attr;
