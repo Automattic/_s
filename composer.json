@@ -12,19 +12,19 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@gitlab.com:silverbackstudio/wp-shortcakes.git"
+            "url": "https://github.com/silverbackstudio/wp-widgets.git"
         },
         {
             "type": "vcs",
-            "url": "git@gitlab.com:silverbackstudio/wp-themehelper.git"
+            "url": "https://github.com/silverbackstudio/wp-themehelper.git"
         },
         {
             "type": "vcs",
-            "url": "git@gitlab.com:silverbackstudio/wp-widgets.git"
+            "url": "https://github.com/silverbackstudio/wp-widgets.git"
         }
     ],
     "require": {
-        "silverbackstudio/wp-shortcakes": "dev-master",
+        "silverbackstudio/wp-shortcakes": "v2.x-dev",
         "silverbackstudio/wp-themehelper": "dev-master",
         "silverbackstudio/wp-widgets": "dev-master"
     },
