@@ -170,3 +170,17 @@ function _svbk_custom_post_type_archive_image($prefix='', $suffix='', $size='con
 			echo $prefix.wp_get_attachment_image($image, $size).$suffix;
 	}
 }
+
+function _svbk_archive_taxonomy_filter($args, $all_label='', $id='category-filter'){
+	$args = wp_parse_args( $args, array('title_li'=>'', 'show_option_all'=>false, 'echo'=>0 ));
+	if( $categories  = wp_list_categories ($args) ): ?>
+	<div class="filter-container">
+	<ul id="<?php echo $id; ?>" class="ajax-filter filter-list">
+		<?php if(!$args['show_option_all']): ?>
+		<li class="cat-item-all<?php echo is_post_type_archive()?' current-cat':''; ?>"><a href="<?php get_post_type_archive_link(get_post_type()) ?>"><?php echo $all_label ?></a></li>
+		<?php endif; ?>
+		<?php echo $categories; ?>
+	</ul>
+	</div>
+	<?php endif; ?>
+}
