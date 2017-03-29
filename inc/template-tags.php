@@ -182,5 +182,5 @@ function _svbk_archive_taxonomy_filter($args, $all_label='', $id='category-filte
 		<?php echo $categories; ?>
 	</ul>
 	</div>
-	<?php endif; ?>
+	<?php endif;
 }
