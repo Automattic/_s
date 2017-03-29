@@ -12,7 +12,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/silverbackstudio/wp-widgets.git"
+            "url": "https://github.com/silverbackstudio/wp-shortcakes.git"
         },
         {
             "type": "vcs",
