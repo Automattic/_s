@@ -31,7 +31,7 @@
 
         var marker = new google.maps.Marker({
             position: mapsOptions.center,
-            icon: $mapContainer.data('mapMarker') || googleMapsOptions.marker || '',
+            icon: $mapContainer.data('mapMarker') ||  googleMapsMarkerOptions.icon || '',
             map: map,
             title: $mapContainer.data('mapTitle') || ''
         });
