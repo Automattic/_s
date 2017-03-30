@@ -47,8 +47,10 @@ function _svbk_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	add_image_size( 'content-half', 768, 999 );
-	add_image_size( 'content-full', 1320, 999 );
+	add_image_size( 'header', 2560, 2000 );
+	add_image_size( 'content-full', 1320, 9999 );
+	add_image_size( 'content-half', 768,  9999 );
+	add_image_size( 'content-third', 440, 9999 );
 
 	set_post_thumbnail_size( 768, 560, true );
 
@@ -175,6 +177,9 @@ function _svbk_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 			$attr['sizes'] = ' (max-width: 1320px) 100vw,  1320px'; break;
 		case 'content-half':
 			$attr['sizes'] = ' (max-width: 1024px) 100vw, (max-width: 1320px) 50vw, 660px'; break;
+		case 'content-third':
+				$attr['sizes'] = is_home() ? '(max-width: 1024px) 100vw, (max-width: 1320px) 50vw, 660px' : ' (max-width: 480px) 100vw, (max-width: 768px) 50vw, 440px';
+				break;
 	}
 
 	return $attr;
