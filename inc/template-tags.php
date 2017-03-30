@@ -189,6 +189,6 @@ function _svbk_load_more_button($label=''){
 	if(get_previous_posts_link()) {
 		return;
 	} ?>
-	<button class="load-more"><?php echo $label ?: __('Load more', '_svbk'); ?></button><
+	<button class="load-more"><?php echo $label ?: __('Load more', '_svbk'); ?></button>
 	<?php
 }
