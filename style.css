@@ -266,7 +266,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Comic Sans MS', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
