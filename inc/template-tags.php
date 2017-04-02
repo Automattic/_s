@@ -84,7 +84,8 @@ endif;
  * @return bool
  */
 function _s_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( '_s_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( '_s_categories' );
+	if ( false === $all_the_cool_cats ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
