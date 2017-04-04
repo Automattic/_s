@@ -188,3 +188,11 @@ function _svbk_archive_taxonomy_filter($args, $all_label='', $id='category-filte
 	</div>
 	<?php endif;
 }
+
+function _svbk_load_more_button($label=''){
+	if(get_previous_posts_link()) {
+		return;
+	} ?>
+	<button class="load-more"><?php echo $label ?: __('Load more', '_svbk'); ?></button>
+	<?php
+}
