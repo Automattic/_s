@@ -45,4 +45,4 @@
       $( document.body ).removeClass('lightbox-open');
   });
 
-})(jQuery)
+})(jQuery);
