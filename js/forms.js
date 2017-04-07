@@ -20,7 +20,7 @@
         $.ajax(
         {
             dataType: "json",
-            url: $(this).attr('action'),
+            url: $form.attr('action'),
             type: "POST",
             data: data,
             success: function(response){
