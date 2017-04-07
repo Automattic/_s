@@ -70,6 +70,17 @@
         }
     });
 
+    $( document.body ).on('click','.ajax-content .pagination a', function(e){
+
+        var nextPostLink = $(this).attr('href');
+
+        if ( ! History.pushState({page: nextPostLink, append: false}, document.title, nextPostLink) ) {
+            ajaxNavigate( nextPostLink, false, function(data){ e.preventDefault(); } );
+        } else {
+            e.preventDefault();
+        }
+    });    
+
     $( document.body ).on('click', '.ajax-filter a', function(e){
         var link = $(this).attr('href');
 

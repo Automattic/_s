@@ -23,4 +23,26 @@
   $(document).ready( smoothScroll );
   $(document.body).on( 'post-load', smoothScroll );
 
+  $('.svbk-show-content').on('click', function(e){
+      e.preventDefault();
+
+      $( $(this).attr('href') ).addClass('open');
+  });
+
+  $('.svbk-hide-content').on('click', function(e){
+      e.preventDefault();
+
+      $( $(this).attr('href') ).removeClass('open');
+  });
+
+  $('.svbk-lightbox-open').on('click', function(e){
+      e.stopPropagation();
+      $( document.body ).addClass('lightbox-open');
+  });
+
+  $('.svbk-lightbox-close').on('click', function(e){
+      e.stopPropagation();
+      $( document.body ).removeClass('lightbox-open');
+  });
+
 })(jQuery)
