@@ -15,6 +15,8 @@
 
         $form.addClass('loading');
 
+        data += '&ajax=1';
+
         $.ajax(
         {
             dataType: "json",
@@ -79,5 +81,5 @@
         }
 
     });
-    
+
 })(jQuery);
