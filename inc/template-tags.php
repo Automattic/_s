@@ -122,22 +122,25 @@ add_action( 'edit_category', '_svbk_category_transient_flusher' );
 add_action( 'save_post',     '_svbk_category_transient_flusher' );
 
 
-//ACF functions fallbacks
-if(!function_exists('get_field')){
-	function get_field($key, $post_id=null){
+function _svbk_acf_fallbacks(){
+	//ACF functions fallbacks
+	if(!function_exists('get_field')){
+		function get_field($key, $post_id=null){
 
-		if($post_id === null){
-			$post_id = get_the_ID();
+			if($post_id === null){
+				$post_id = get_the_ID();
+			}
+
+			return get_post_meta( $post_id, $key, true );
 		}
-
-		return get_post_meta( $post_id, $key, true );
+	}
+	if(!function_exists('the_field')){
+		function the_field($key, $post_id=null){
+			echo get_field( $key, $post_id );
+		}
 	}
 }
-if(!function_exists('the_field')){
-	function the_field($key, $post_id=null){
-		echo get_field( $key, $post_id );
-	}
-}
+add_action('wp', '_svbk_acf_fallbacks');
 
 if(!function_exists('the_field_template')){
 	function the_field_template($field, $before='', $after='' ){
@@ -146,6 +149,7 @@ if(!function_exists('the_field_template')){
 		}
 	}
 }
+
 
 add_filter('get_the_archive_title', function($title){
 	return str_replace( sprintf(__( 'Archives: %s' ), ''), '', $title );
