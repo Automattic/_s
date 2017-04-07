@@ -141,6 +141,10 @@ function _svbk_acf_fallbacks(){
 	}
 }
 add_action('wp', '_svbk_acf_fallbacks');
+if( wp_doing_ajax() ){
+	add_action('admin_init', '_svbk_acf_fallbacks');
+}
+
 
 if(!function_exists('the_field_template')){
 	function the_field_template($field, $before='', $after='' ){
