@@ -37,7 +37,7 @@
 			</nav><!-- #site-navigation -->
 			<?php endif; ?>
 
-			<button class="search-toggle"><span class="screen-reader-text"><?php _e( 'Toggle Search', 'cavatorta' ) ?></span></button>
+			<button class="search-toggle"><span class="screen-reader-text"><?php _e( 'Toggle Search', '_svbk' ) ?></span></button>
 			<?php echo get_search_form(); ?>
 
 		</div>
