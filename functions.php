@@ -58,6 +58,16 @@ function _s_setup() {
 		'gallery',
 		'caption',
 	) );
+	
+	/*
+	 * Remove margin from HTML/BODY added by Admin Bar
+	 * Useful if absolute positioning used in header area
+	 */
+	 /*
+	 add_theme_support( 'admin-bar', array(
+		'callback' => '__return_false'
+	) );
+	*/
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
