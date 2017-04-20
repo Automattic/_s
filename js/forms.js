@@ -47,6 +47,8 @@
                     $form.trigger("reset");
                     dataLayer.push({'event': 'formEvent',  'formEvent': 'success', 'formTitle': formTitle});
                 }
+
+                $form.removeClass('loading');
             },
             error: function(response){
                 e.preventDefault();
@@ -54,6 +56,8 @@
                 $form.addClass('response-error');
                 $messages.append('<li class="error">Request Error</li>');
                 dataLayer.push({'event': 'formEvent',  'formEvent': 'requestError', 'formTitle': formTitle});
+
+                $form.removeClass('loading');
             }
         }
         );
