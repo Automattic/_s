@@ -9,24 +9,10 @@
             "email": "b.meniconi@silverbackstudio.io"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/silverbackstudio/wp-shortcakes.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/silverbackstudio/wp-themehelpers.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/silverbackstudio/wp-widgets.git"
-        }
-    ],
     "require": {
-        "silverbackstudio/wp-shortcakes": "v2.x-dev",
-        "silverbackstudio/wp-themehelper": "dev-master",
-        "silverbackstudio/wp-widgets": "dev-master"
+        "silverbackstudio/wp-shortcakes": "^3.0",
+        "silverbackstudio/wp-themehelper": "^1.1",
+        "silverbackstudio/wp-widgets": "^2.1"
     },
     "autoload": {
         "psr-4": {"Svbk\\WP\\Themes\\_svbk\\": "inc/"}

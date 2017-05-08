@@ -13,8 +13,8 @@ if(file_exists(__DIR__.'/vendor/autoload.php')){
 	require_once __DIR__.'/vendor/autoload.php';
 }
 
-if(class_exists('\Svbk\WP\Helpers\Theme')){
-	Helpers\Theme::init()->all();
+if(class_exists('\Svbk\WP\Helpers\Theme\Theme')){
+	Helpers\Theme\Theme::init()->all();
 }
 
 if ( ! function_exists( '_svbk_setup' ) ) :
@@ -98,8 +98,8 @@ function _svbk_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	if(class_exists('\Svbk\WP\Helpers\AMP')){
-		Helpers\AMP::init();
+	if(class_exists('\Svbk\WP\Helpers\Theme\AMP')){
+		Helpers\Theme\AMP::init();
 	}
 }
 endif;
