@@ -2,25 +2,115 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-02-13 11:59+0000\n"
+"POT-Creation-Date: 2017-05-08 07:12+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-02-13 11:59+0000\n"
+"PO-Revision-Date: 2017-05-08 07:19+0000\n"
 "Last-Translator: SilverbackStudio <webmaster@silverbackstudio.it>\n"
 "Language-Team: Italian\n"
 "Language: it-IT\n"
 "Plural-Forms: nplurals=2; plural=n != 1\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: footer.php:24
-msgid "Headquarters"
-msgstr "Sede operativa"
+#: 404.php:17
+msgid "That page can&rsquo;t be found."
+msgstr "Questa pagina non è stata trovata"
 
-#: search.php:19
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"A questo indirizzo non corrisponde nessuna pagina. Puoi provare con i "
+"collegamenti sottostanti o con il campo ricerca. "
+
+#: home.php:27
+msgid "All categories"
+msgstr "Tutte le categorie"
+
+#: header.php:40
+msgid "Toggle Search"
+msgstr "Mostra/Nascondi Cerca"
+
+# uesto testo nel
+#: footer.php:41
+msgid "Customize this text in Theme Customizer"
+msgstr "Modifica questo testo nel personalizzazione del tema"
+
+#: inc/template-tags.php:200
+msgid "Load more"
+msgstr "Carica altri"
+
+#: inc/customizer.php:19
+msgid "Header"
+msgstr "Intestazione"
+
+#: inc/customizer.php:26
+msgid "Sticky Header"
+msgstr "Intestazione bloccata in alto"
+
+#: inc/customizer.php:27
+msgid "Makes the header stay on top of page after scroll"
+msgstr "Lascia la testata bloccata in alto quando scorri la pagina"
+
+#: inc/customizer.php:37
+msgid "Fade header images"
+msgstr "Mostra in dissolvenza tutte le immagini di testata"
+
+#: inc/customizer.php:38
+msgid "Cycle through all header images with a CSS fade effect"
+msgstr "Scorri tutte le immagini di testata con un effetto dissolvenza CSS"
+
+#: inc/customizer.php:45
+msgid "Archives"
+msgstr "Archivi"
+
+#: inc/customizer.php:46
+msgid "Archive Customizations"
+msgstr "Personalizzazione archivi"
+
+#: inc/customizer.php:63
 #, php-format
-msgid "Search Results for: %s"
-msgstr "Risultati Ricerca per: %s"
+msgid "%s Archive Image"
+msgstr "Immagine Archivio %s"
+
+#: inc/customizer.php:69
+#, php-format
+msgid "%s Archive Description"
+msgstr "Descrizione Archivio %s"
+
+#: inc/customizer.php:98
+msgid "Fixed Footer Bar"
+msgstr "Barra bloccata nel pié di pagina"
+
+#: inc/customizer.php:99
+msgid "Fixed Footer Bar Content (supports HTML and shortcode)"
+msgstr "Contenuto barra bloccata nel pié di pagina (supporta HTML e shortcode)"
+
+#: inc/customizer.php:105
+msgid "Show Fixed Footer Bar"
+msgstr "Mostra la barra fissa nel pié di pagina"
+
+#: template-parts/thumb.php:21
+msgid "Read More"
+msgstr "Leggi di piú"
+
+#: functions.php:64
+msgid "Primary"
+msgstr "Principale"
+
+#: functions.php:65
+msgid "Not Found (404) Page"
+msgstr "Pagina 404"
+
+#: functions.php:127
+msgid "Sidebar"
+msgstr "Colonna laterale"
+
+#: functions.php:129
+msgid "Add widgets here."
+msgstr "Aggiungi qui gli Widget"
 
 #: comments.php:31
 #, php-format
@@ -46,77 +136,27 @@ msgstr "Commenti più recenti"
 msgid "Comments are closed."
 msgstr "I commenti sono disabilitati"
 
-#: functions.php:65
-msgid "Primary"
-msgstr "Principale"
-
-#: functions.php:66
-msgid "Not Found (404) Page"
-msgstr "Pagina 404"
-
-#: functions.php:128
-msgid "Sidebar"
-msgstr "Colonna laterale"
-
-#: functions.php:130
-msgid "Add widgets here."
-msgstr "Aggiungi qui gli Widget"
-
-#: footer.php:34
+#: search.php:19
 #, php-format
-msgid "Made with passion by %s"
-msgstr "Realizzato da %s"
+msgid "Search Results for: %s"
+msgstr "Risultati Ricerca per: %s"
 
 #: header.php:25
 msgid "Skip to content"
 msgstr "Vai la contenuto"
 
-#: header.php:45
+#: header.php:35
 msgid "Primary Menu"
 msgstr "Menu principale"
 
-#: template-parts/content-page.php:22 template-parts/content.php:38
-msgid "Pages:"
-msgstr "Pagine:"
+#: footer.php:24
+msgid "Headquarters"
+msgstr "Sede operativa"
 
-#. translators: %s: Name of current post
-#: template-parts/content-page.php:34 inc/template-tags.php:72
+#: footer.php:34
 #, php-format
-msgid "Edit %s"
-msgstr "Modifica %s"
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr "Nessun risultato trovato"
-
-#: template-parts/content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-"Pronto a pubblicare il tuo primo post? <a href=\"%1$s\">Inizia adesso</a>."
-
-#: template-parts/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Siamo spiacenti, ma nessun risultato corrisponde alla tua ricerca. Ti "
-"consigliamo di ritentare con parole chiave differenti."
-
-#: template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Non siamo riusciti a trovare quello che cercavi. Ti consigliamo di "
-"utilizzare il campo di ricerca."
-
-#. translators: %s: Name of current post.
-#: template-parts/content.php:33
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Prosegui la lettura %s <span class=\"meta-nav\">&rarr;</span>"
+msgid "Made with passion by %s"
+msgstr "Realizzato da %s"
 
 #: inc/template-tags.php:28
 #, php-format
@@ -150,13 +190,23 @@ msgstr "Taggato in %1$s"
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Scrivi un commento su %s"
 
-#: inc/shortcode-ui.php:17
-msgid ""
-"Shortcode UI plugin must be active for Shortcode UI Example plugin to "
-"function."
-msgstr ""
-"Il plugin Shortcode UI deve essere presente e attivato per abilitare "
-"l'interfaccia grafica"
+#. translators: %s: Name of current post
+#: inc/template-tags.php:72 template-parts/content-page.php:34
+#, php-format
+msgid "Edit %s"
+msgstr "Modifica %s"
+
+#: inc/customizer.php:79
+msgid "Footer"
+msgstr "Footer"
+
+#: inc/customizer.php:80
+msgid "Footer Settings"
+msgstr "Impostazioni Footer"
+
+#: inc/customizer.php:85
+msgid "Footer Logo"
+msgstr "Logo nel footer"
 
 #: inc/editor.php:9
 msgid "Dropcap"
@@ -182,17 +232,50 @@ msgstr "Citazione Interna"
 msgid "Highlighted Paragraph"
 msgstr "Paragrafo Evidenziato"
 
-#: inc/customizer.php:21
-msgid "Footer"
-msgstr "Footer"
+#: inc/shortcode-ui.php:17
+msgid ""
+"Shortcode UI plugin must be active for Shortcode UI Example plugin to "
+"function."
+msgstr ""
+"Il plugin Shortcode UI deve essere presente e attivato per abilitare "
+"l'interfaccia grafica"
 
-#: inc/customizer.php:22
-msgid "Footer Settings"
-msgstr "Impostazioni Footer"
+#. translators: %s: Name of current post.
+#: template-parts/content.php:33
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Prosegui la lettura %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: inc/customizer.php:27
-msgid "Footer Logo"
-msgstr "Logo nel footer"
+#: template-parts/content.php:38 template-parts/content-page.php:22
+msgid "Pages:"
+msgstr "Pagine:"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Nessun risultato trovato"
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto a pubblicare il tuo primo post? <a href=\"%1$s\">Inizia adesso</a>."
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Siamo spiacenti, ma nessun risultato corrisponde alla tua ricerca. Ti "
+"consigliamo di ritentare con parole chiave differenti."
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Non siamo riusciti a trovare quello che cercavi. Ti consigliamo di "
+"utilizzare il campo di ricerca."
 
 #. Name of the theme
 msgid "_svbk"
