@@ -49,6 +49,10 @@
                 }
 
                 $form.removeClass('loading');
+
+                if(response.redirect){
+                    window.location.href = response.redirect;
+                }
             },
             error: function(response){
                 e.preventDefault();
