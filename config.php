@@ -30,13 +30,13 @@ return array(
     //    'key' => '',
     //    'callback' => 'initGMaps',
     //    'libraries' => 'places',
-    //    'mapOptions' => [ 
+    //    'mapOptions' => [
     //      'zoom' => '14',
     //      'styles' => ''
     //    ],
     //    'markerOptions' => [
     //      'icon' => get_stylesheet_directory_uri().'/media/pin.png',
-    //    ]    
+    //    ]
     //],
 
     'icons' => [
@@ -46,6 +46,33 @@ return array(
     //'fonts_com' => [
     //    'api_key' => '',
     //],
+
+    // 'mailing' => [
+    //     'recipientEmail' => '',
+    //     'mc_apikey' => '',
+    //     'mc_list_id' => '',
+    //     'md_apikey' => '',
+    //     'template_new_supporter' => '',
+    //     'template_new_member' => '',
+    // ],
+    //
+    // 'paypal' => [
+    //     'clientId' => '',
+    //     'clientSecret' => '',
+    //     'receiver_email' => '',
+    //     'currency' => 'EUR',
+    //     'mode' => 'sandbox',
+    //     'config' => array(
+    //         'mode' => 'sandbox',
+    //         'log.LogEnabled' => true,
+    //         'log.FileName' => '../PayPal.log',
+    //         'log.LogLevel' => 'DEBUG', // PLEASE USE `INFO` LEVEL FOR LOGGING IN LIVE ENVIRONMENTS
+    //         'cache.enabled' => true,
+    //         // 'http.CURLOPT_CONNECTTIMEOUT' => 30
+    //         // 'http.headers.PayPal-Partner-Attribution-Id' => '123123123'
+    //         //'log.AdapterFactory' => '\PayPal\Log\DefaultLogFactory' // Factory class implementing \PayPal\Log\PayPalLogFactory
+    //     )
+    // ],
 
     //'iubenda' => [
     //    'siteId' => '',
