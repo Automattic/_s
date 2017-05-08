@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-02-13 11:59+0000\n"
+"POT-Creation-Date: 2017-05-08 07:12+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,9 +14,34 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: search.php:19
-#, php-format
-msgid "Search Results for: %s"
+#: 404.php:17
+msgid "That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: home.php:27
+msgid "All categories"
+msgstr ""
+
+#: functions.php:64
+msgid "Primary"
+msgstr ""
+
+#: functions.php:65
+msgid "Not Found (404) Page"
+msgstr ""
+
+#: functions.php:127
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:129
+msgid "Add widgets here."
 msgstr ""
 
 #: comments.php:31
@@ -43,20 +68,21 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:65
-msgid "Primary"
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
-#: functions.php:66
-msgid "Not Found (404) Page"
+#: header.php:25
+msgid "Skip to content"
 msgstr ""
 
-#: functions.php:128
-msgid "Sidebar"
+#: header.php:35
+msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:130
-msgid "Add widgets here."
+#: header.php:40
+msgid "Toggle Search"
 msgstr ""
 
 #: footer.php:24
@@ -68,50 +94,8 @@ msgstr ""
 msgid "Made with passion by %s"
 msgstr ""
 
-#: header.php:25
-msgid "Skip to content"
-msgstr ""
-
-#: header.php:45
-msgid "Primary Menu"
-msgstr ""
-
-#: template-parts/content-page.php:22 template-parts/content.php:38
-msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post
-#: template-parts/content-page.php:34 inc/template-tags.php:72
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-
-#. translators: %s: Name of current post.
-#: template-parts/content.php:33
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+#: footer.php:41
+msgid "Customize this text in Theme Customizer"
 msgstr ""
 
 #: inc/template-tags.php:28
@@ -146,10 +130,76 @@ msgstr ""
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/shortcode-ui.php:17
-msgid ""
-"Shortcode UI plugin must be active for Shortcode UI Example plugin to "
-"function."
+#. translators: %s: Name of current post
+#: inc/template-tags.php:72 template-parts/content-page.php:34
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: inc/template-tags.php:200
+msgid "Load more"
+msgstr ""
+
+#: inc/customizer.php:19
+msgid "Header"
+msgstr ""
+
+#: inc/customizer.php:26
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/customizer.php:27
+msgid "Makes the header stay on top of page after scroll"
+msgstr ""
+
+#: inc/customizer.php:37
+msgid "Fade header images"
+msgstr ""
+
+#: inc/customizer.php:38
+msgid "Cycle through all header images with a CSS fade effect"
+msgstr ""
+
+#: inc/customizer.php:45
+msgid "Archives"
+msgstr ""
+
+#: inc/customizer.php:46
+msgid "Archive Customizations"
+msgstr ""
+
+#: inc/customizer.php:63
+#, php-format
+msgid "%s Archive Image"
+msgstr ""
+
+#: inc/customizer.php:69
+#, php-format
+msgid "%s Archive Description"
+msgstr ""
+
+#: inc/customizer.php:79
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer.php:80
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer.php:85
+msgid "Footer Logo"
+msgstr ""
+
+#: inc/customizer.php:98
+msgid "Fixed Footer Bar"
+msgstr ""
+
+#: inc/customizer.php:99
+msgid "Fixed Footer Bar Content (supports HTML and shortcode)"
+msgstr ""
+
+#: inc/customizer.php:105
+msgid "Show Fixed Footer Bar"
 msgstr ""
 
 #: inc/editor.php:9
@@ -176,16 +226,46 @@ msgstr ""
 msgid "Highlighted Paragraph"
 msgstr ""
 
-#: inc/customizer.php:21
-msgid "Footer"
+#: inc/shortcode-ui.php:17
+msgid ""
+"Shortcode UI plugin must be active for Shortcode UI Example plugin to "
+"function."
 msgstr ""
 
-#: inc/customizer.php:22
-msgid "Footer Settings"
+#: template-parts/thumb.php:21
+msgid "Read More"
 msgstr ""
 
-#: inc/customizer.php:27
-msgid "Footer Logo"
+#. translators: %s: Name of current post.
+#: template-parts/content.php:33
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/content.php:38 template-parts/content-page.php:22
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
 msgstr ""
 
 #. Name of the theme
