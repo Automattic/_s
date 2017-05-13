@@ -108,6 +108,21 @@ function _s_categorized_blog() {
 	}
 }
 
+if ( ! function_exists( '_s_the_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ * @since Twenty Sixteen 1.2
+ */
+function _s_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;
+
 /**
  * Flush out the transients used in _s_categorized_blog.
  */

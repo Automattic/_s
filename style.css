@@ -1,23 +1,14 @@
 /*
-Theme Name: _s
-Theme URI: http://underscores.me/
-Author: Automattic
-Author URI: http://automattic.com/
-Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Theme Name: Dart theme
+Theme URI: http://dimakrivenko.ru/
+Author: Dmitriy Krivenko
+Author URI: http://dimakrivenko.ru/
+Description: Dart theme
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: _s
-Tags:
+Text Domain: dart-theme
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-_s is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -746,6 +737,56 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+#masthead {
+	border-bottom: 1px solid #333;
+	padding-bottom: 30px;
+}
+
+#page {
+	width: 1200px;
+	margin: auto;
+	padding: 0 15px;
+
+}
+#content {
+	overflow: hidden;
+}
+#primary {
+	width: 70%;
+	padding-right: 5%;
+	float: left;
+	margin: 50px 0;
+}
+#primary #main .post {
+	border-bottom: 1px solid #ccc;
+}
+#secondary {
+	width: 30%;
+	float: left;
+	padding-left: 30px;
+	border-left: 1px solid #333;
+}
+#colophon {
+	border-top: 1px solid #333;
+	padding: 15px 0;
+}
+
+/*.load-more-posts {
+	margin: 30px 0;
+}
+.load-more-posts #true_loadmore {
+	display: block;
+	margin: auto;
+	width: 200px;
+	text-align: center;
+	padding: 5px 20px;
+	background-color: #ccc;
+	border: 1px solid #333;
+	border-radius: 5px;
+	cursor: pointer;
+}*/
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
