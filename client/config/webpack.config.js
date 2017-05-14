@@ -1,5 +1,6 @@
 // For config
 var path = require('path');
+const webpack = require('webpack');
 
 // Plugins
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -22,13 +23,23 @@ module.exports = (env) => {
     },
   ];
 
+  // Plugins
+  const plugins = [];
+  if (env.production) {
+    plugins.push(new ExtractTextPlugin('[name].min.css'));
+  }
+
+  if (env.dev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+  }
+
   return {
     entry: {
       global : './client/js/global.js'
     },
 
     output: {
-      filename: '[name].bundle.js',
+      filename: '[name].min.js',
       path: path.resolve(__dirname, '../../static'),
     },
 
@@ -51,8 +62,16 @@ module.exports = (env) => {
       ]
     },
 
-    plugins: [
-      new ExtractTextPlugin('[name].css'),
-    ]
+    plugins,
+
+    // For hot reloading.
+    devServer: {
+      hot: true,
+      quiet: false,
+      noInfo: false,
+      contentBase: '/static/',
+      headers: { 'Access-Control-Allow-Origin': '*' },
+      stats: { colors: true },
+    },
   };
 };

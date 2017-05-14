@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config client/config/webpack.config.js -p --env.production",
+    "dev": "webpack-dev-server --config client/config/webpack.config.js --env.dev",
     "huron": "huron -w client/config/webpack.config.js -c client/config/huron.config.js --env.huron"
   },
   "repository": {
