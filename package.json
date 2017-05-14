@@ -1,0 +1,33 @@
+{
+  "name": "huronforwp",
+  "version": "1.0.0",
+  "description": "An example of a WordPress theme that uses Huron for prototying.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config client/config/webpack.config.js -p --env.production",
+    "dev": "webpack-dev-server --config client/config/webpack.config.js --env.dev",
+    "huron": "huron -w client/config/webpack.config.js -c client/config/huron.config.js --env.huron"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pattiereaves/huronforwp.git"
+  },
+  "keywords": [
+    "huron",
+    "prototyping"
+  ],
+  "author": "Alley Interactive",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pattiereaves/huronforwp/issues"
+  },
+  "homepage": "https://github.com/pattiereaves/huronforwp#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "huron": "^2.1.5",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.5",
+    "webpack": "^2.5.1"
+  }
+}
