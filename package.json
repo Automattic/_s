@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config client/config/webpack.config.js -p --env.production",
     "dev": "webpack-dev-server --config client/config/webpack.config.js --env.dev",
-    "huron": "huron -w client/config/webpack.config.js -c client/config/huron.config.js --env.huron"
+    "huron": "huron -w client/config/webpack.config.js -c client/config/huron.config.js --env.huron",
+    "huron-build": "huron -w client/config/webpack.config.js -c client/config/huron.config.js -p --env.huron"
   },
   "repository": {
     "type": "git",
