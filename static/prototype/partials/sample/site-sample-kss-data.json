@@ -1,0 +1,14 @@
+{
+	"first" : {
+		"title" : "First sample partial",
+		"description" : "Contents of the first sample."
+	},
+	"second" : {
+		"title" : "Second sample partial 😘",
+		"description" : "Contents of the second sample."
+	},
+	"third" : {
+		"title" : "Third sample partial",
+		"description" : "Contents of the third sample."
+	}
+}
