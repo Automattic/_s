@@ -147,7 +147,7 @@ function _svbk_scripts() {
 
 	if(get_theme_mod('sticky_header')){
 		wp_enqueue_script( 'waypoints' );
-		wp_add_inline_script( 'waypoints', 'var sticky = new Waypoint.Sticky({ element: document.getElementById(\'site-header-content\') })' );
+		wp_add_inline_script( 'waypoints', 'var stickyHeaderContent = document.getElementById(\'site-header-content\'); if (stickyHeaderContent != null) { var sticky = new Waypoint.Sticky({ element: stickyHeaderContent }) }' );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
