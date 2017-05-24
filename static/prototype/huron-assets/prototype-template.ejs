@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="" <% if(htmlWebpackPlugin.files.manifest) { %> manifest="<%= htmlWebpackPlugin.files.manifest %>"<% } %>> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title || 'Huron' %> prototype</title>
+  <% if (htmlWebpackPlugin.files.favicon) { %>
+    <link rel="shortcut icon" href="<%= htmlWebpackPlugin.files.favicon%>">
+  <% } %>
+  <% for (var script in htmlWebpackPlugin.options.js) { %>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.options.js[script] %>"></script>
+  <% } %>
+  <% for (var stylesheet in htmlWebpackPlugin.options.css) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.css[stylesheet] %>" type="text/css" />
+  <% } %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+  <% } %>
+  <% if (htmlWebpackPlugin.options.window) { %>
+    <script>
+      <% for (var varName in htmlWebpackPlugin.options.window) { %>
+        window['<%=varName%>'] = <%= JSON.stringify(htmlWebpackPlugin.options.window[varName]) %>;
+      <% } %>
+    </script>
+  <% } %>
+</head>
+<body class="prototype prototype-<%= htmlWebpackPlugin.options.title %> <%= htmlWebpackPlugin.options.bodyClasses %>">
+<% if (htmlWebpackPlugin.options.unsupportedBrowser) { %>
+<style>.unsupported-browser { display: none; }</style>
+<div class="unsupported-browser">
+  Sorry, your browser is not supported.  Please upgrade to
+  the latest version or switch your browser to use this site.
+  See <a href="http://outdatedbrowser.com/">outdatedbrowser.com</a>
+  for options.
+</div>
+<% } %>
+<% if (htmlWebpackPlugin.options.appMountId) { %>
+  <div id="<%= htmlWebpackPlugin.options.appMountId%>"></div>
+<% } %>
+<% if (htmlWebpackPlugin.options.appMountIds && htmlWebpackPlugin.options.appMountIds.length > 0) { %>
+  <% for (var index in htmlWebpackPlugin.options.appMountIds) { %>
+    <div id="<%= htmlWebpackPlugin.options.appMountIds[index]%>"></div>
+  <% } %>
+<% } %>
+<div data-huron-id="prototype-<%= htmlWebpackPlugin.options.title %>" data-huron-type="prototype"></div>
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+  <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
+</body>
+</html>
