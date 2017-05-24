@@ -23,8 +23,15 @@ module.exports = {
   },
   output: 'partials',
   port: 8080,
-  prototypes: ['sample'],
+  prototypes: [
+    'sample',
+    {
+      title: 'styleguide',
+      css: ['static/styleguide.min.css'],
+    },
+  ],
   root: 'static/prototype',
+  sectionTemplate: path.join(__dirname, '../../node_modules/huron/templates/section.hbs'),
   templates: {
     rule: {
       test: /\.(hbs|handlebars)$/,

@@ -35,7 +35,8 @@ module.exports = (env) => {
 
   return {
     entry: {
-      global : './client/js/global.js'
+      global : './client/js/global.js',
+      styleguide: './client/sass/styleguide.scss',
     },
 
     output: {

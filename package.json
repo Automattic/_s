@@ -26,7 +26,7 @@
   "devDependencies": {
     "css-loader": "^0.28.1",
     "extract-text-webpack-plugin": "^2.1.0",
-    "huron": "^2.1.5",
+    "huron": "^2.1.6",
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.5",
     "webpack": "^2.5.1"

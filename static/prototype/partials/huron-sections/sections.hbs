@@ -1,0 +1,55 @@
+<dom-module>
+<template id="undefined">
+<section class="section section-name-{{ referenceURI }}" id="styleguide-section-{{ referenceURI }}">
+	<h2 class="section__header">{{ header }}</h2>
+
+	<!-- description -->
+	<div class="section__meta">
+		<h3 class="section__field-title section__reference">Reference: <span>{{ reference }}</span></h3>
+		{{#if description}}
+			<h3 class="section__field-title section__description-header">Description:</h3>
+			<div class="section__description">
+				<div data-huron-id="{{ referenceURI }}" data-huron-type="description"></div>
+			</div>
+		{{/if}}
+	</div>
+
+	<!-- markup -->
+	{{#if markup}}
+		<div class="section__markup">
+			<h3 class="section__field-title section__markup-header">Markup:</h3>
+			{{#if modifiers}}
+				{{#each modifiers}}
+					<div class="section__modifier">
+						<h4 class="section__modifier-header">Modifier:
+							<span class="section__modifier-name">{{ this.name }}</span> -
+							<span class="section__modifier-description">{{ this.description }}</span>
+						</h4>
+						<div class="section__modifier-content">
+							<div data-huron-id="{{ ../referenceURI }}"
+								data-huron-type="template"
+								data-huron-modifier="{{ this.name }}"
+								class="{{ this.className }}">
+							</div>
+						</div>
+					</div>
+				{{/each}}
+			{{else}}
+				<div class="section__markup-content">
+					<div data-huron-id="{{ this.referenceURI }}"
+						data-huron-type="template"
+						class="{{ this.className }}">
+					</div>
+				</div>
+			{{/if}}
+
+			{{#if templateContent}}
+				<div class="section__markup-illustrated">
+					<pre>{{ templateContent }}</pre>
+				</div>
+			{{/if}}
+		</div>
+	{{/if}}
+</section>
+</template>
+</dom-module>
