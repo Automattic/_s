@@ -55,7 +55,7 @@
                 }
             },
             error: function(response){
-                $form.addClass('response-error');
+                $form.addClass('response-request-error');
                 $messages.append('<li class="error">Request Error</li>');
                 dataLayer.push({'event': 'formEvent',  'formEvent': 'requestError', 'formTitle': formTitle});
 
