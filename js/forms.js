@@ -1,10 +1,12 @@
 (function($){
 
+    window.dataLayer = window.dataLayer || [];
+
     $('.svbk-form').on('submit.svbk', function(e){
 
         var $form = $(this);
         var data = $form.serialize();
-        var $messages = $('.messages', $form);
+        var $messages = $('.messages ul', $form);
         var formTitle = $form.find('.form-title').text();
 
         //reset
@@ -24,8 +26,6 @@
             type: "POST",
             data: data,
             success: function(response){
-                e.preventDefault();
-
                 $form.addClass('response-' + response.status);
 
                 if(response.status === 'error'){
@@ -55,8 +55,6 @@
                 }
             },
             error: function(response){
-                e.preventDefault();
-
                 $form.addClass('response-error');
                 $messages.append('<li class="error">Request Error</li>');
                 dataLayer.push({'event': 'formEvent',  'formEvent': 'requestError', 'formTitle': formTitle});
@@ -65,10 +63,8 @@
             }
         }
         );
-
-        dataLayer.push({'event': 'formEvent',  'formEvent': 'submit', 'formTitle': formTitle});
-
         e.preventDefault();
+        dataLayer.push({'event': 'formEvent',  'formEvent': 'submit', 'formTitle': formTitle});
     });
 
     $('.policy-flags-open').on('click', function(e){
@@ -88,6 +84,10 @@
             group.prop('checked', false);
         }
 
+    });
+
+    $('.svbk-form .messages').on('click', '.close', function(){
+        $(this).closest('.svbk-form').removeClass('response-success response-error');
     });
 
 })(jQuery);
