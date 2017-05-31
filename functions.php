@@ -144,6 +144,9 @@ function _svbk_scripts() {
 	wp_enqueue_script( '_svbk-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( '_svbk-theme', get_template_directory_uri() . '/js/theme.js', array('jquery'), '20170120', true );
+	// wp_enqueue_script( '_svbk-maps', get_template_directory_uri() . '/js/maps.js', array('jquery'), '20170121', true );
+	// wp_enqueue_script( '_svbk-forms', get_template_directory_uri() . '/js/forms.js', array('jquery'), '20170530', true );
+	// wp_enqueue_script( '_svbk-filter', get_template_directory_uri() . '/js/filter.js', array('jquery', 'jquery-ui-widget'), '20170530', true );
 
 	if(get_theme_mod('sticky_header')){
 		wp_enqueue_script( 'waypoints' );

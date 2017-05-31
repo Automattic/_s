@@ -1,94 +1,134 @@
-(function($){
+(function( $ ) {
 
-    function updateNextPostLink(link){
-        if(link){
-            $('.posts-navigation .nav-previous a').attr('href', link);
-            $('.load-more').removeClass('no-more');
-        } else {
-            $('.load-more').addClass('no-more');
-        }
-    }
+    $.widget( "silverbackstudio.ajaxArchive", {
 
-    function ajaxNavigate(newUrl, append, callback){
+        options: {
+            nextPageElement: '.posts-navigation .nav-previous a',
+            loadMoreButton: '.load-more',
+            paginationLinks: '.pagination a',
+            filterElement: '.ajax-filter',
+            postContainer: '.ajax-content',
+            itemSelector: '.ajax-content .hentry',
+            loadingClass: 'loading',
+            noMoreClass: 'no-more',
+        },
 
-        var postContainer = $('.ajax-content');
-        var filterContainer = $('.ajax-filter');
+        _create: function() {
+            this.element.addClass("ajax-archive");
+            this._update();
+        },
 
-        filterContainer.addClass('loading');
-        postContainer.addClass('loading');
+        _setOption: function( key, value ) {
+            this.options[ key ] = value;
+            this._update();
+        },
 
-        $.get( newUrl, function(data){
+        _update: function() {
 
-            var page = $(data);
-            var contents = page.find(".ajax-content").contents();
-            var filterItems = page.find(".ajax-filter").contents();
+            var self = this;
 
-            filterContainer.empty().append(filterItems);
+            if( this.options.loadMoreButton ) {
+                $( this.element ).on('click.ajaxArchive', this.options.loadMoreButton, function(){
+                    var nextPageLink = $( self.options.nextPageElement, self.element ).attr('href');
 
-            updateNextPostLink(page.find(".posts-navigation .nav-previous a").attr('href'));
-
-            if(!append){
-                if(postContainer.hasClass('masonry')){
-                    postContainer.masonry( 'remove', postContainer.contents() ).masonry('layout');
-                } else {
-                    postContainer.empty();
-                }
-            }
-
-            postContainer.append(contents);
-
-            if(postContainer.hasClass('masonry')){
-                postContainer.imagesLoaded( function() {
-                    postContainer.masonry( 'appended', contents );
+                    if( nextPageLink ) {
+                        self._navigate( {url: nextPageLink, append: true}, this._preventDefault );
+                    }
                 });
             }
 
-            filterContainer.removeClass('loading');
-            postContainer.removeClass('loading');
+            if( this.options.paginationLinks ) {
+                $( this.element ).on('click.ajaxArchive', this.options.paginationLinks, function(e){
+                    var nextPageLink = $(this).attr('href');
 
-            $( document.body ).trigger( 'post-load' );
-
-            if(typeof callback === 'function'){
-                callback(data);
+                    self._navigate( {url: nextPageLink, append: false}, this._preventDefault );
+                });
             }
 
-        });
+            if( this.options.filterElement ) {
+                $( this.element ).on('click.ajaxArchive', this.options.filterElement + ' a', function(e){
+                    var link = $(this).attr('href');
 
-    }
+                    self._navigate( {url: link, append: false}, this.preventDefault );
+                });
+            }
 
-    History.Adapter.bind(window,'statechange',function(){
-        var State = History.getState();
-        ajaxNavigate(State.url, State.data.append);
-    });
+        },
 
+        _updateNext: function( link ) {
+            link = link || '';
 
-    $( document.body ).on('click','.load-more', function(){
-        var nextPostLink = $('.posts-navigation .nav-previous a').attr('href');
+            console.log( link );
 
-        if ( ! History.pushState({page: nextPostLink, append: true}, document.title, nextPostLink) ) {
-            ajaxNavigate( nextPostLink, true );
-        }
-    });
+            this.element.find( this.options.nextPageElement ).attr('href', link);
+            this.element.find( this.options.loadMoreButton ).toggleClass( this.options.noMoreClass, !link);
+        },
 
-    $( document.body ).on('click','.ajax-content .pagination a', function(e){
-
-        var nextPostLink = $(this).attr('href');
-
-        if ( ! History.pushState({page: nextPostLink, append: false}, document.title, nextPostLink) ) {
-            ajaxNavigate( nextPostLink, false, function(data){ e.preventDefault(); } );
-        } else {
+        _preventDefault : function(e){
             e.preventDefault();
-        }
-    });    
+        },
 
-    $( document.body ).on('click', '.ajax-filter a', function(e){
-        var link = $(this).attr('href');
+        _hashUrl : function ( url ) {
+            var hash = 0, i, chr;
+            if (url.length === 0) return hash;
+            for (i = 0; i < url.length; i++) {
+                chr   = url.charCodeAt(i);
+                hash  = ((hash << 5) - hash) + chr;
+                hash |= 0; // Convert to 32bit integer
+            }
+            return hash;
+        },
 
-        if ( ! History.pushState({page: link, append: false }, document.title, link) ) {
-            ajaxNavigate( link, false, function(data){ e.preventDefault(); } );
-        } else {
-            e.preventDefault();
+        _navigate: function (request, callback){
+
+            var self = this;
+
+            this.element.addClass( this.options.loadingClass );
+
+            $.get( request.url, function(data){
+
+                var page = $(data);
+                var contents = page.find( self.options.itemSelector );
+
+                if( self.options.filterElement ) {
+                    var filterContainer = $( self.options.filterElement, self.element );
+                    var filterItems = page.find(self.options.filterElement).contents();
+                    filterContainer.empty().append( filterItems );
+                    self._trigger( "filterUpdate", null, { items: filterItems, container: filterContainer, target: self } );
+                }
+
+                var nextPage = page.find( self.options.nextPageElement ).attr('href');
+                self._updateNext( nextPage );
+                self._trigger( "updateNext", null, { url: nextPage, target: self } );
+
+                var postContainer = $( self.options.postContainer, self.element );
+
+                if( !request.append ){
+                    self._trigger( "empty", null, { items: contents, container: postContainer, target: self } );
+                    postContainer.empty();
+                }
+
+                self._trigger( "append", null, { items: contents, container: postContainer, target: self  } );
+                postContainer.append(contents);
+                self._trigger( "appended", null, { items: contents, container: postContainer, target: self } );
+
+                self.element.removeClass( self.options.loadingClass );
+
+                $( document.body ).trigger( 'post-load' );
+
+                if(typeof callback === 'function'){
+                    callback(data, contents, filterItems);
+                }
+
+            });
+
+        },
+
+        _destroy: function() {
+            this.element
+                .removeClass( "ajax-archive" );
         }
+
     });
 
-})(jQuery);
+}( jQuery ));
