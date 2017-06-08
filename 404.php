@@ -10,14 +10,14 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main" itemscope="itemscope" itemprop="mainContentOfPage">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
+					<h1 class="page-title" itemprop="headline"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
 				</header><!-- .page-header -->
 
-				<div class="page-content">
+				<div class="page-content" itemprop="text">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ); ?></p>
 
 					<?php
