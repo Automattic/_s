@@ -20,7 +20,7 @@ function _s_body_classes( $classes ) {
 	}
 
 	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
+	if ( ! is_singular() && ! is_404() ) {
 		$classes[] = 'hfeed';
 	}
 
