@@ -30,8 +30,15 @@
 			<?php
 				edit_post_link(
 					sprintf(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', '_s' ), array( 'span' => array( 'class' => array() ) ) ),
+						wp_kses(
+							/* translators: %s: Name of current post. Only visible to screen readers */
+							__( 'Edit <span class="screen-reader-text">%s</span>', '_s' ),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						),
 						get_the_title()
 					),
 					'<span class="edit-link">',
