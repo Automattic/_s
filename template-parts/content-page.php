@@ -35,8 +35,8 @@
 							__( 'Edit <span class="screen-reader-text">%s</span>', '_s' ),
 							array(
 								'span' => array(
-									'class' => array()
-								)
+									'class' => array(),
+								),
 							)
 						),
 						get_the_title()
