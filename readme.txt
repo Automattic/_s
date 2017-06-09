@@ -1,7 +1,6 @@
 === _s ===
 
 Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments
 
 Requires at least: 4.0
 Tested up to: 4.8
