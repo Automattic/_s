@@ -115,14 +115,9 @@ function _s_categorized_blog() {
 
 		set_transient( '_s_categories', $all_the_cool_cats );
 	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so _s_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so _s_categorized_blog should return false.
-		return false;
-	}
+	
+	// If this blog has more than 1 category the function returns true, otherwise false.
+	return ( $all_the_cool_cats > 1 );
 }
 
 /**
