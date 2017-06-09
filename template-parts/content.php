@@ -26,6 +26,14 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
+	<!-- Вывод рейтинга - НАЧАЛО -->
+	<?php if (get_post_meta($post->ID, 'page_rating', true)) : ?>
+		<div class="rating">
+			<p><strong>Рейтинг страницы</strong> - <?php echo get_post_meta($post->ID, 'page_rating', true); ?></p>
+		</div>
+	<?php endif; ?>
+	<!-- Вывод рейтинга - КОНЕЦ -->
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(

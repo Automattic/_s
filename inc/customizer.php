@@ -24,3 +24,15 @@ function _s_customize_preview_js() {
 	wp_enqueue_script( '_s_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', '_s_customize_preview_js' );
+
+
+// Кастомный css из настройки темы
+function customizer_css() {
+    ?>
+    <style type="text/css">
+        a { color: <?php echo get_theme_mod( 'custom_link_color' ); ?>; }
+        article { color: <?php echo get_theme_mod( 'custom_article_color' ); ?>; }
+    </style>
+    <?php
+}
+add_action( 'wp_head', 'customizer_css' );

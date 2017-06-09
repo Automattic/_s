@@ -38,9 +38,18 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
 
+
 			endwhile;
 
-			the_posts_navigation();
+			if (  $wp_query->max_num_pages > 1 ) :
+				get_template_part( 'template-parts/load-more-posts', 'none' );
+			endif;
+
+			// the_posts_pagination( array(
+			// 	'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
+			// 	'next_text'          => __( 'Next page', 'twentyfifteen' ),
+			// 	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+			// ) );
 
 		else :
 
