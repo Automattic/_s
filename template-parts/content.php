@@ -30,15 +30,15 @@
 		<?php
 			the_content( sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. */
-					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s' ),
 					array(
 						'span' => array(
 							'class' => array(),
 						),
 					)
 				),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				get_the_title()
 			) );
 
 			wp_link_pages( array(
