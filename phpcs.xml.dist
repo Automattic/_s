@@ -45,6 +45,15 @@
 		</properties>
 	</rule>
 
+	<!-- Verify that no WP functions are used which are deprecated or have been removed.
+		 The minimum version set here should be in line with the minimum WP version
+		 as set in the "Requires at least" tag in the readme.txt file. -->
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="4.0" />
+		</properties>
+	</rule>
+
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<config name="testVersion" value="5.2-99.0"/>
 	<rule ref="PHPCompatibility"/>
