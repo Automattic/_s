@@ -7,6 +7,20 @@
 	<!-- Set a description for this ruleset. -->
 	<description>A custom set of code standard rules to check for WordPress themes.</description>
 
+	<!-- Pass some flags to PHPCS:
+		 p flag: Show progress of the run.
+		 s flag: Show sniff codes in all reports.
+		 v flag: Print verbose output.
+		 n flag: Do not print warnings.
+	-->
+	<arg value="psvn"/>
+
+	<!-- Only check the PHP files. JS files are checked separately with JSCS and JSHint. -->
+	<arg name="extensions" value="php"/>
+	
+	<!-- Check all files in this directory and the directories below it. -->
+	<file>.</file>
+
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
