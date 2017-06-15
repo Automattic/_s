@@ -1,4 +1,4 @@
-# Copyright (C) 2016 Automattic
+# Copyright (C) 2017 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -77,13 +77,15 @@ msgstr ""
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:18
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:20
 #, php-format
 #@ _s
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:20
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:25
 #, php-format
 #@ _s
 msgid "Theme: %1$s by %2$s."
@@ -114,14 +116,16 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/template-tags.php:28
+#. translators: %s: post date.
+#: inc/template-tags.php:29
 #, php-format
 #@ _s
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:33
+#. translators: %s: post author.
+#: inc/template-tags.php:35
 #, php-format
 #@ _s
 msgctxt "post author"
@@ -129,38 +133,47 @@ msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:50 inc/template-tags.php:56
+#: inc/template-tags.php:52
 #@ _s
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:52
+#. translators: 1: list of categories.
+#: inc/template-tags.php:55
 #, php-format
 #@ _s
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:58
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:59
 #, php-format
 #@ _s
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:62
 msgid "Tagged %1$s"
 msgstr ""
 
 #. translators: %s: post title
-#: inc/template-tags.php:65
+#: inc/template-tags.php:72
 #, php-format
 #@ _s
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#. translators: %s: Name of current post
-#: inc/template-tags.php:72 template-parts/content-page.php:34
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:89 template-parts/content-page.php:35
 #, php-format
 #@ _s
-msgid "Edit %s"
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: search.php:19
+#. translators: %s: search query.
+#: search.php:21
 #, php-format
 #@ _s
 msgid "Search Results for: %s"
@@ -171,32 +184,33 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:21
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:25
 #, php-format
 #@ _s
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:38
 #@ _s
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:31
+#: template-parts/content-none.php:44
 #@ _s
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:22 template-parts/content.php:38
 #@ _s
+#: template-parts/content-page.php:22 template-parts/content.php:45
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post.
-#: template-parts/content.php:33
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:34
 #, php-format
 #@ _s
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #. Theme Name of the plugin/theme
