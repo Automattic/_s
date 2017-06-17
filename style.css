@@ -264,6 +264,7 @@ body,
 button,
 input,
 select,
+optgroup,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
