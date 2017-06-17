@@ -59,6 +59,18 @@ function _s_setup() {
 		'caption',
 	) );
 
+	/*
+	 * Enable support for custom logo.
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
+	 */
+	 add_theme_support( 'custom-logo', array(
+		 'height'      => 410,
+		 'width'       => 410,
+		 'flex-height' => true,
+		 'flex-width'  => true,
+	 ) );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
 		'default-color' => 'ffffff',
@@ -121,6 +133,11 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Implement the Custom Logo feature.
+ */
+require get_template_directory() . '/inc/custom-logo.php';
 
 /**
  * Custom template tags for this theme.
