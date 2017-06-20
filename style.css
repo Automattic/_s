@@ -862,7 +862,7 @@ object {
 }
 
 .gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+	max-width: 33.33333%;
 }
 
 .gallery-columns-4 .gallery-item {
@@ -874,11 +874,11 @@ object {
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
+	max-width: 16.66667%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
+	max-width: 14.28571%;
 }
 
 .gallery-columns-8 .gallery-item {
@@ -886,7 +886,7 @@ object {
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+	max-width: 11.11111%;
 }
 
 .gallery-caption {
