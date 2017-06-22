@@ -1,0 +1,67 @@
+/*
+Styling the WordPress text editor contents to match the theme improves the user experience.
+Including these styles show editors how their text will look without having to preview it.
+
+This file is loaded in functions.php with add_editor_style(). (Assumes editor-style.css is in theme root directory alongside style.css.)
+
+https://codex.wordpress.org/Editor_Style
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Elements
+# Typography
+# Navigation
+    ## Links
+# Alignments
+# Media
+    ## Captions
+    ## Galleries
+# Custom Editor-only Styles
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/links";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+/*--------------------------------------------------------------
+# Custom Editor Styles
+--------------------------------------------------------------*/
+/*
+body {
+	box-sizing: border-box;
+	max-width: 640px; // match content width
+	margin: 25px auto;
+	padding: 0 20px;
+}
+*/
