@@ -53,4 +53,4 @@ get_header(); ?>
 
 <?php
 get_sidebar();
-get_footer('blog');
+get_footer();
