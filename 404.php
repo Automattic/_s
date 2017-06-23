@@ -24,9 +24,6 @@ get_header(); ?>
 						get_search_form();
 
 						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( _s_categorized_blog() ) :
 					?>
 
 					<div class="widget widget_categories">
@@ -45,7 +42,6 @@ get_header(); ?>
 					</div><!-- .widget -->
 
 					<?php
-						endif;
 
 						/* translators: %1$s: smiley */
 						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';
