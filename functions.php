@@ -221,3 +221,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load Advanced Custom Fields Definitions
+ */
+require get_template_directory() . '/inc/acf.php';
+
+/**
+ * Load Cutoms Post Types Definitions
+ */
+require get_template_directory() . '/inc/post-types.php';
