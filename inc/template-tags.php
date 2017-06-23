@@ -143,4 +143,18 @@ function _s_category_transient_flusher() {
 	delete_transient( '_s_categories' );
 }
 add_action( 'edit_category', '_s_category_transient_flusher' );
-add_action( 'save_post',     '_s_category_transient_flusher' );
+
+/**
+ * Queue the add_action for save_post_{post_type} only if the post type has the 'category' taxonomy
+ */
+function _s_queue_transient_flusher() {
+	$post_types = get_post_types( array( 'public' => true, '_builtin' => true ), 'names' );
+	foreach ( $post_types as $post_type ) {
+		$taxonomies = get_object_taxonomies( $post_type );
+		if ( in_array( 'category', $taxonomies ) ) {
+			add_action( 'save_post_' . $post_type, '_s_category_transient_flusher' );
+		}
+	}	
+}
+// Hooking late on init to let plugins register custom posts types first
+add_action( 'init', '_s_queue_transient_flusher', 9999 );
