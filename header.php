@@ -9,7 +9,7 @@
  * @package _svbk
  */
 
-?><!DOCTYPE html>
+?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -25,15 +25,22 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_svbk' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 
-		<?php	if(is_front_page()){ get_template_part( 'template-parts/header/header', 'image' );	}	?>
+		<?php	if ( is_front_page() ) {
+			get_template_part( 'template-parts/header/header', 'image' );
+	  }	?>
 
 		<div id="site-header-content">
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 
-			<?php if(has_nav_menu('menu-1')): ?>
+			<?php if( has_nav_menu( 'menu-1' ) ) : ?>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					) );
+				?>
 			</nav><!-- #site-navigation -->
 			<?php endif; ?>
 
