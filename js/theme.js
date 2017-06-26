@@ -45,4 +45,20 @@
       $( document.body ).removeClass('lightbox-open');
   });
 
+  // $('.ajax-archive')
+  //   .ajaxArchive()
+  //   .on('ajaxarchiveempty', function(event, data){
+  //     data.container.masonry( 'remove', data.items ).masonry('layout');
+  //   })
+  //   .on('ajaxarchiveappend', function(event, data){
+  //     data.items.hide();
+  //   })
+  //   .on('ajaxarchiveappended', function(event, data){
+  //     data.container.imagesLoaded( function() {
+  //       data.items.show();
+  //       data.container.masonry( 'appended', data.items );
+  //     });
+  //   });
+
+
 })(jQuery);
