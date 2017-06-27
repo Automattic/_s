@@ -59,7 +59,6 @@ function _s_setup() {
 		'caption',
 	) );
 
-
 	/*
 	 * Enable support for custom logo.
 	 *
@@ -71,7 +70,6 @@ function _s_setup() {
 		 'flex-height' => true,
 		 'flex-width'  => true,
 	 ) );
-
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
