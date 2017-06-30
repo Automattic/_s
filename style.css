@@ -264,6 +264,7 @@ body,
 button,
 input,
 select,
+optgroup,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
@@ -559,7 +560,7 @@ a:active {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 100%;
 	left: -999em;
 	z-index: 99999;
 }
@@ -757,14 +758,8 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
-.byline,
 .updated:not(.published) {
 	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
 }
 
 .page-content,
@@ -822,6 +817,11 @@ object {
 	max-width: 100%;
 }
 
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link{
+	display: inline-block;
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -863,7 +863,7 @@ object {
 }
 
 .gallery-columns-3 .gallery-item {
-	max-width: 33.33%;
+	max-width: 33.33333%;
 }
 
 .gallery-columns-4 .gallery-item {
@@ -875,11 +875,11 @@ object {
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 16.66%;
+	max-width: 16.66667%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 14.28%;
+	max-width: 14.28571%;
 }
 
 .gallery-columns-8 .gallery-item {
@@ -887,7 +887,7 @@ object {
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 11.11%;
+	max-width: 11.11111%;
 }
 
 .gallery-caption {
