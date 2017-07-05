@@ -116,6 +116,22 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
+#: single.php:21
+msgid "Previous Post"
+msgstr ""
+
+#: single.php:21
+msgid "Previous"
+msgstr ""
+
+#: single.php:22
+msgid "Next Post"
+msgstr ""
+
+#: single.php:22
+msgid "Next"
+msgstr ""
+
 #. translators: %s: post date.
 #: inc/template-tags.php:29
 #, php-format
