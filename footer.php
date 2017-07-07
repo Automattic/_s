@@ -24,7 +24,7 @@
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="https://automattic.com/">Automattic</a>' );
 			?>
-			<a href="https://www.youtube.com/watch?v=ksQiMhzjpjg"><p class="cesi">Clique ici !</p></a>
+			<a href="https://www.youtube.com/watch?v=ksQiMhzjpjg" style="background-color:orange"><p class="cesi">Clique ici !</p></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
