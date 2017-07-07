@@ -1,0 +1,256 @@
+# Copyright (C) 2017 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2017-07-08 00:37+0800\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-07-08 01:48+0800\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.2\n"
+"Last-Translator: Jingcong Li <malsony@msn.com>\n"
+"Language: zh_CN\n"
+
+# @ _s
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "哎呀，客官访问的页面不存在。"
+
+# @ _s
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr "在这里找不到吗？请看看下面的链接或搜索吧？"
+
+# @ _s
+#: 404.php:33
+msgid "Most Used Categories"
+msgstr "最常用的类别"
+
+# @ _s
+#. translators: %1$s: smiley
+#: 404.php:51
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "不妨查看一下文章月度归档。 %1$s"
+
+# @ _s
+#. translators: 1: title.
+#: comments.php:34
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "&ldquo;%1$s&rdquo;有 1 评论;"
+
+# @ _s
+#. translators: 1: comment count number, 2: title.
+#: comments.php:40
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo;有 %1$s 评论;"
+
+# @ _s
+#: comments.php:50 comments.php:71
+msgid "Comment navigation"
+msgstr "评论导航"
+
+# @ _s
+#: comments.php:53 comments.php:74
+msgid "Older Comments"
+msgstr "较早的评论"
+
+# @ _s
+#: comments.php:54 comments.php:75
+msgid "Newer Comments"
+msgstr "较新的评论"
+
+# @ _s
+#: comments.php:88
+msgid "Comments are closed."
+msgstr "评论已关闭。"
+
+# @ _s
+#: footer.php:18
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+# @ _s
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:20
+#, php-format
+msgid "Proudly powered by %s"
+msgstr "由 %s 强力支撑"
+
+# @ _s
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:25
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr "主題：由 %2$s 制作的 %1$s."
+
+# @ _s
+#: functions.php:47
+msgid "Primary"
+msgstr "主要"
+
+# @ _s
+#: functions.php:93
+msgid "Sidebar"
+msgstr "侧边栏"
+
+# @ _s
+#: functions.php:95
+msgid "Add widgets here."
+msgstr "在这里添加小工具。"
+
+# @ _s
+#: header.php:24
+msgid "Skip to content"
+msgstr "转到正文"
+
+# @ _s
+#: header.php:44
+msgid "Primary Menu"
+msgstr "主菜单"
+
+# @ _s
+#. translators: %s: post date.
+#: inc/template-tags.php:29
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "日期：%s"
+
+# @ _s
+#. translators: %s: post author.
+#: inc/template-tags.php:35
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "作者：%s"
+
+# @ _s
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:52
+msgid ", "
+msgstr ", "
+
+# @ _s
+#. translators: 1: list of categories.
+#: inc/template-tags.php:55
+#, php-format
+msgid "Posted in %1$s"
+msgstr "类别 %1$s"
+
+# @ _s
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:59
+#, php-format
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:62
+msgid "Tagged %1$s"
+msgstr "标签 %1$s"
+
+# @ _s
+#. translators: %s: post title
+#: inc/template-tags.php:72
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "在 <span class=\"screen-reader-text\">%s</span> 上发表评论"
+
+# @ _s
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:89 template-parts/content-page.php:35
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "编辑 <span class=\"screen-reader-text\">%s</span>"
+
+# @ _s
+#. translators: %s: search query.
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr "%s 的搜索结果"
+
+# @ _s
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "啥东东都没有"
+
+# @ _s
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "准备发布你的第一篇文章？ <a href=\"%1$s\">动手吧</a>."
+
+# @ _s
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"对不起，客官搜索条件无法命中任何内容。 请不要灰心，再试不同的关键字吧。"
+
+# @ _s
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "客官，我们真的没找到这个东东，望客户上别处访寻吧。"
+
+# @ _s
+#: template-parts/content-page.php:22 template-parts/content.php:45
+msgid "Pages:"
+msgstr "页数:"
+
+# @ _s
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:34
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "继续阅读<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+# @ _s
+#. Theme Name of the plugin/theme
+msgid "_s"
+msgstr "_s"
+
+# @ _s
+#. Theme URI of the plugin/theme
+msgid "http://underscores.me/"
+msgstr "http://underscores.me/"
+
+# @ _s
+#. Description of the plugin/theme
+msgid ""
+"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
+"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
+"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
+"theme out there. That's what I'm here for."
+msgstr ""
+"客官您好！您没看错，小弟名字就是叫<code>_s</code>，如果你喜欢的话，叫我的中文"
+"名<em>下划线</em>也可以的。我的生命在于折腾，别把我当作一个正儿八经的<em>独立"
+"主题</em>就对了。所以，客官觉得哪个主题长得好看，把我放它旁边就OK了。我只想静"
+"静一个人。"
+
+# @ _s
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr "Automattic"
+
+# @ _s
+#. Author URI of the plugin/theme
+msgid "http://automattic.com/"
+msgstr "http://automattic.com/"
