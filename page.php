@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area cesi">
 		<main id="main" class="site-main">
 
 			<?php
@@ -30,7 +30,13 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
+			<p>
+				Tu vois, si vraiment tu veux te rappeler des souvenirs de ton perroquet, là, j'ai un chien en ce moment à côté de moi et je le caresse, parce que spirituellement, on est tous ensemble, ok ? Tu vas te dire : J'aurais jamais cru que le karaté guy pouvait parler comme ça !
+
+			</p>
+
 		</main><!-- #main -->
+
 	</div><!-- #primary -->
 
 <?php
