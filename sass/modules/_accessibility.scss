@@ -5,7 +5,7 @@
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
 
 	&:focus {
 		background-color: $color__background-screen;
@@ -14,8 +14,10 @@
 		clip: auto !important;
 		color: $color__text-screen;
 		display: block;
+
 		@include font-size(0.875);
-		font-weight: bold;
+
+		font-weight: bolder;
 		height: auto;
 		left: 5px;
 		line-height: normal;
@@ -23,7 +25,7 @@
 		text-decoration: none;
 		top: 5px;
 		width: auto;
-		z-index: 100000; /* Above WP toolbar. */
+		z-index: 100000; // Above WP toolbar.
 	}
 }
 

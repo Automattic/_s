@@ -10,6 +10,7 @@
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
+
 	@include clearfix;
 }
 
@@ -19,5 +20,6 @@
 .site-header:after,
 .site-content:after,
 .site-footer:after {
+
 	@include clearfix-after;
 }

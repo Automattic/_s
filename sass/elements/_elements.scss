@@ -1,18 +1,23 @@
+/* Inherit box-sizing to more easily change it's value on a component level.
+(http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/) */
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* Includes border and padding in the value specified for width and height. */
 html {
 	box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
+/* Fallback for when there is no custom background color defined. */
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $color__background-body;
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 
 	&:before,
@@ -30,13 +35,15 @@ hr {
 
 @import "lists";
 
+/* Make sure images are scaled correctly and adhere to the container width. */
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto;
+	max-width: 100%;
 }
 
+/* Extra wide images within figure tags don't overflow the content area. */
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 1em 0;
 }
 
 @import "tables";

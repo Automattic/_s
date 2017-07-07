@@ -24,6 +24,7 @@
 			}
 
 			li {
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -77,9 +78,11 @@
 }
 
 @media screen and (min-width: 37.5em) {
+
 	.menu-toggle {
 		display: none;
 	}
+
 	.main-navigation ul {
 		display: block;
 	}
