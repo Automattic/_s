@@ -5,6 +5,9 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package _s
+
+
+ 
  */
 
 if ( ! function_exists( '_s_setup' ) ) :
