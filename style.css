@@ -272,6 +272,11 @@ textarea {
 	font-size: 1rem;
 	line-height: 1.5;
 }
+ class.cesi {
+	 font-size: 100px;
+		color: yellow;
+	 background-color: blue;
+	 }
 
 h1,
 h2,
