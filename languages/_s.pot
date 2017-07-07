@@ -117,15 +117,7 @@ msgid "Primary Menu"
 msgstr ""
 
 #: single.php:21
-msgid "Previous Post"
-msgstr ""
-
-#: single.php:21
 msgid "Previous"
-msgstr ""
-
-#: single.php:22
-msgid "Next Post"
 msgstr ""
 
 #: single.php:22
