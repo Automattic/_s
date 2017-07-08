@@ -8,7 +8,6 @@
  *
  * @package _s
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
