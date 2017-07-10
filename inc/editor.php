@@ -94,7 +94,7 @@ function _svbk_register_tinymce_plugins($plugin_array) {
 function _svbk_add_tinymce_button($buttons) {
             //Add the button ID to the $button array
     $buttons[] = "section_button";
-    $buttons[] = "definition";
-    
+    $buttons[] = "split_section_button";
+
     return $buttons;
 }

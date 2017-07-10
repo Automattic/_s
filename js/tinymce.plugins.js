@@ -4,37 +4,42 @@ jQuery(document).ready(function($) {
         init : function(ed, url) {
                 // Register command for when button is clicked
                 ed.addCommand('insert_section_template', function() {
-                    selected = tinyMCE.activeEditor.selection.getContent();
-
-                    if( selected ){
-                        //If text is selected when button is clicked
-                        //Wrap shortcode around it.
-                        content =  '<section class="content-section"><header><h2>Title</h2><p class="subtitle">Subtitle</p></header><p>'+selected+'</p></section><br/>';
-                    }else{
-                        content =  '<section class="content-section"><header><h2>Title</h2><p class="subtitle">Subtitle</p></header><p>Content</p></section><br/>';
-                    }
+                    var selected = tinyMCE.activeEditor.selection.getContent() || 'Content';
+                    var content =
+                      '<section class="content-section">'
+                    + ' <header>'
+                    + '   <h2>Title</h2>'
+                    + '   <p class="subtitle">Subtitle</p>'
+                    + ' </header>'
+                    + ' <p>' + selected + '</p>'
+                    + '</section>'
+                    + '<br/>';
 
                     tinymce.execCommand('mceInsertContent', false, content);
                 });
-                ;             
-                
-                
-                ed.addCommand('insert_definition', function() {
-                    selected = tinyMCE.activeEditor.selection.getContent();
 
-                    if( selected ){
-                        content =  '<div class="definition">'+selected+'<span class="definition-text">Insert text here</span></div>';
-                    }else{
-                        content =  '<div class="definition">Content<span class="definition-text">Insert text here</span></div>';
-                    }
+                ed.addCommand('insert_split_section_template', function() {
+                    var selected = tinyMCE.activeEditor.selection.getContent() || 'Content';
+                    var content =
+                    '<section class="split-section">'
+                    + '  <div class="first-part"></div>'
+                    + '  <div class="second-part">'
+                    + '    <header>'
+                    + '      <p class="pretitle">Pretitle</p>'
+                    + '      <h2>Title</h2>'
+                    + '      <p class="subtitle">Subtitle</p>'
+                    + '    </header>'
+                    + '    <p>' + selected + '</p>'
+                    + '  </div>'
+                    + '</section>';
 
                     tinymce.execCommand('mceInsertContent', false, content);
-                });                  
+                });
 
             // Register buttons - trigger above command when clicked
             ed.addButton('section_button', {title : 'Section', cmd : 'insert_section_template', image: url.replace('js', 'icons') + '/tinymce/section.png' });
-            ed.addButton('definition', {title : 'Definizione', cmd : 'insert_definition', image: url.replace('js', 'icons') + '/tinymce/anchors-index.png' });            
-        },   
+            ed.addButton('split_section_button', {title : 'Split Section', cmd : 'insert_split_section_template', image: url.replace('js', 'icons') + '/tinymce/split-section.png' });
+        }
     });
 
     // Register our TinyMCE plugin
