@@ -49,7 +49,7 @@
                 $( this.element ).on('click.ajaxArchive', this.options.filterElement + ' a', function(e){
                     var link = $(this).attr('href');
 
-                    self._navigate( {url: link, append: false}, this.preventDefault );
+                    self._navigate( {url: link, append: false}, this._preventDefault );
                 });
             }
 
