@@ -67,15 +67,9 @@ function _s_entry_footer() {
 		echo '<span class="comments-link">';
 		comments_popup_link(
 			sprintf(
-				wp_kses(
-					/* translators: %s: post title */
-					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', '_s' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
+				'%1$s <span class="screen-reader-text">%2$s %3$s</span>',
+				__( 'Leave a Comment', '_s' ),
+				__( 'on', '_s' ),
 				get_the_title()
 			)
 		);
@@ -84,15 +78,8 @@ function _s_entry_footer() {
 
 	edit_post_link(
 		sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Edit <span class="screen-reader-text">%s</span>', '_s' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
-			),
+			'%1$s <span class="screen-reader-text">%2$s</span>',
+			__( 'Edit', '_s' ),
 			get_the_title()
 		),
 		'<span class="edit-link">',
