@@ -7,7 +7,7 @@
         var $form = $(this);
         var data = $form.serialize();
         var $messages = $('.messages ul', $form);
-        var formTitle = $form.find('.form-title').text();
+        var formTitle = $form.siblings('.form-title').text();
 
         //reset
         $('.field-group', $form).removeClass('error');
