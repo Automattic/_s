@@ -65,6 +65,14 @@ function _s_setup() {
 		'default-image' => '',
 	) ) );
 
+	/*
+	 * Load the editor-style.css file.
+	 * Put CSS for text editor in editor-style.css.
+	 * 
+	 * @link https://developer.wordpress.org/reference/functions/add_editor_style/
+	 */
+	add_editor_style();
+
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 

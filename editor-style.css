@@ -1,0 +1,23 @@
+/*
+Styling the WordPress text editor contents to match the theme improves the user experience.
+Including these styles show editors how their text will look without having to preview it.
+
+This file is loaded in functions.php with add_editor_style().
+
+https://codex.wordpress.org/Editor_Style
+*/
+
+/*
+body {
+	box-sizing: border-box;
+	max-width: 640px;
+	margin: 25px auto;
+	padding: 0 20px;
+
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+*/
