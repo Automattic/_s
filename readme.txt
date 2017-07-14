@@ -1,7 +1,7 @@
 === _s ===
 
 Contributors: automattic
-Tags:
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.8
