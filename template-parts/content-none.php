@@ -20,15 +20,9 @@
 
 			<p><?php
 				printf(
-					wp_kses(
-						/* translators: 1: link to WP admin new post page. */
-						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s' ),
-						array(
-							'a' => array(
-								'href' => array(),
-							),
-						)
-					),
+					'%1$s <a href="%2$s">%3$s</a>.',
+					__( 'Ready to publish your first post?', '_s' ),
+					__( 'Get started here', '_s' ),
 					esc_url( admin_url( 'post-new.php' ) )
 				);
 			?></p>
