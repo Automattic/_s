@@ -37,6 +37,14 @@
 		</properties>
 	</rule>
 
+	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
+		 Multiple valid prefixes can be provided as a comma-delimited list. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="_s" />
+		</properties>
+	</rule>
+
 	<!-- Allow for theme specific exceptions to the file name rules based
 		 on the theme hierarchy. -->
 	<rule ref="WordPress.Files.FileName">
@@ -45,10 +53,28 @@
 		</properties>
 	</rule>
 
+	<!-- Verify that no WP classes are used which are deprecated or have been removed.
+		 The minimum version set here should be in line with the minimum WP version
+		 as set in the "Requires at least" tag in the readme.txt file. -->
+	<rule ref="WordPress.WP.DeprecatedClasses">
+		<properties>
+			<property name="minimum_supported_version" value="4.0" />
+		</properties>
+	</rule>
+
 	<!-- Verify that no WP functions are used which are deprecated or have been removed.
 		 The minimum version set here should be in line with the minimum WP version
 		 as set in the "Requires at least" tag in the readme.txt file. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="4.0" />
+		</properties>
+	</rule>
+
+	<!-- Verify that no WP function parameters are used which are deprecated or have been removed.
+		 The minimum version set here should be in line with the minimum WP version
+		 as set in the "Requires at least" tag in the readme.txt file. -->
+	<rule ref="WordPress.WP.DeprecatedParameters">
 		<properties>
 			<property name="minimum_supported_version" value="4.0" />
 		</properties>
