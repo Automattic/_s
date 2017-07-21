@@ -36,14 +36,33 @@
   });
 
   $('.svbk-lightbox-open').on('click', function(e){
-      e.stopPropagation();
       $( document.body ).addClass('lightbox-open');
+      dataLayer.push({
+        'event': 'gtm.linkClick',
+        'gtm.element': e.target,
+        'gtm.elementClasses': e.target.className || '',
+        'gtm.elementId': e.target.id || '',
+        'gtm.elementTarget': e.target.target || '',
+        'gtm.elementUrl': e.target.href || e.target.action || '',
+        'gtm.originalEvent': e
+      });
+      e.stopPropagation();
   });
 
   $('.svbk-lightbox-close').on('click', function(e){
-      e.stopPropagation();
       $( document.body ).removeClass('lightbox-open');
+      dataLayer.push({
+        'event': 'gtm.linkClick',
+        'gtm.element': e.target,
+        'gtm.elementClasses': e.target.className || '',
+        'gtm.elementId': e.target.id || '',
+        'gtm.elementTarget': e.target.target || '',
+        'gtm.elementUrl': e.target.href || e.target.action || '',
+        'gtm.originalEvent': e
+      });
+      e.stopPropagation();
   });
+      
 
   // $('.ajax-archive')
   //   .ajaxArchive()
