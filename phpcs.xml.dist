@@ -17,7 +17,7 @@
 	<arg value="psvn"/>
 
 	<!-- Only check the PHP files. JS files are checked separately with JSCS and JSHint. -->
-	<arg name="extensions" value="php"/>
+	<arg name="extensions" value="php,js"/>
 
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>

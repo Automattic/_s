@@ -1,9 +1,9 @@
 /**
- * File customizer.js.
+ * Theme Customizer enhancements for a better user experience. Contains
+ * handlers to make Theme Customizer preview reload changes asynchronously.
  *
- * Theme Customizer enhancements for a better user experience.
- *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ * @requires customize-preview.js
+ * @package _s
  */
 
 ( function( $ ) {

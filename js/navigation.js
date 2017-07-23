@@ -1,9 +1,10 @@
 /**
- * File navigation.js.
- *
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
+ *
+ * @package _s
  */
+
 ( function() {
 	var container, button, menu, links, i, len;
 
@@ -86,7 +87,7 @@
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
-					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
+					for ( var i = 0, len = menuItem.parentNode.children.length; i < len; ++i ) {
 						if ( menuItem === menuItem.parentNode.children[i] ) {
 							continue;
 						}
@@ -98,7 +99,7 @@
 				}
 			};
 
-			for ( i = 0; i < parentLink.length; ++i ) {
+			for ( var i = 0, len = parentLink.length; i < len; ++i ) {
 				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
 			}
 		}
