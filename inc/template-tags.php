@@ -54,7 +54,20 @@ if ( ! function_exists( '_s_paging_nav' ) ) :
 		<nav class="navigation paging-navigation" role="navigation">
 			<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', '_s' ); ?></h1>
 			<div class="pagination loop-pagination">
-				<?php echo esc_html( $links ); ?>
+
+				<?php
+				echo wp_kses(
+					$links,
+					array(
+						'a' => array(
+							'href' => array(),
+							'class' => array(),
+						),
+						'span' => array(),
+					)
+				);
+				?>
+
 			</div><!-- .pagination -->
 		</nav><!-- .navigation -->
 		<?php
