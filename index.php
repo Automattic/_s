@@ -40,7 +40,7 @@ get_header(); ?>
 
 			endwhile;
 
-			// Echo archive pagination in page numbers format.
+			// Previous/next post navigation.
 			_s_paging_nav();
 
 		else :
