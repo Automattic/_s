@@ -20,8 +20,8 @@ if ( ! function_exists( '_s_paging_nav' ) ) :
 		$args = wp_parse_args( $args, array(
 			'end_size' => 2,
 			'mid_size' => 2,
-			'prev_text' => __( '&#171 Previous page', '_s' ),
-			'next_text' => __( 'Next page &#187', '_s' ),
+			'prev_text' => __( '← Previous page', '_s' ),
+			'next_text' => __( 'Next page →', '_s' ),
 			'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', '_s' ) . ' </span>',
 		) );
 		the_posts_pagination( $args );
