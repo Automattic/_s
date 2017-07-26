@@ -8,6 +8,7 @@
 # @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
 # @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
 sudo: false
+dist: trusty
 
 # Declare project language.
 # @link http://about.travis-ci.org/docs/user/languages/php/
@@ -22,6 +23,7 @@ matrix:
         # Current $required_php_version for WordPress: 5.2.4
         # aliased to 5.2.17
         - php: '5.2'
+          dist: precise
         # aliased to a recent 5.6.x version
         - php: '5.6'
           env: SNIFF=1
