@@ -35,7 +35,6 @@ get_header(); ?>
 
 			endwhile;
 
-			// Previous/next post navigation.
 			_s_paging_nav();
 
 		else :
