@@ -37,7 +37,7 @@ add_action( 'wp_enqueue_scripts', '_s_woocommerce_scripts' );
 /**
  * Disable the default WooCommerce stylesheet
  *
- * Removing the default WooCommerce stylesheet and enqueing your own will 
+ * Removing the default WooCommerce stylesheet and enqueing your own will
  * protect you during WooCommerce core updates.
  *
  * See: https://docs.woocommerce.com/document/disable-the-default-stylesheet/
@@ -64,7 +64,7 @@ add_filter( 'body_class', '_s_woocommerce_active_body_class' );
  * @return integer number of products
  */
 function _s_woocommerce_products_per_page() {
-	return intval( apply_filters( '_s_woocommerce_products_per_page', 12 ) );
+	return absint( apply_filters( '_s_woocommerce_products_per_page', 12 ) );
 }
 
 add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
@@ -75,7 +75,7 @@ add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
  * @return integer number of columns
  */
 function _s_woocommerce_thumbnail_columns() {
-	return intval( apply_filters( '_s_woocommerce_product_thumbnail_columns', 4 ) );
+	return absint( apply_filters( '_s_woocommerce_product_thumbnail_columns', 4 ) );
 }
 
 add_filter( 'woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_columns' );
@@ -86,7 +86,7 @@ add_filter( 'woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_
  * @return integer products per row
  */
 function _s_woocommerce_loop_columns() {
-	return intval( apply_filters( '_s_woocommerce_loop_columns', 3 ) );
+	return absint( apply_filters( '_s_woocommerce_loop_columns', 3 ) );
 }
 
 add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
@@ -116,7 +116,7 @@ if ( ! function_exists( '_s_woocommerce_product_columns_wrapper' ) ) {
 	 */
 	function _s_woocommerce_product_columns_wrapper() {
 		$columns = _s_woocommerce_loop_columns();
-		echo '<div class="columns-' . $columns . '">';
+		echo '<div class="columns-' . absint( $columns ) . '">';
 	}
 }
 
@@ -204,9 +204,10 @@ if ( ! function_exists( '_s_woocommerce_cart_link' ) ) {
 	 * @return void
 	 */
 	function _s_woocommerce_cart_link() {
+		/* translators: number of items in the mini cart. */
 		?>
 			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', '_s' ); ?>">
-				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), '_s' ), WC()->cart->get_cart_contents_count() ) );?></span><?php echo _s_get_svg( array( 'icon' => 'expand' ) ); ?>
+				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), '_s' ), WC()->cart->get_cart_contents_count() ) );?></span>
 			</a>
 		<?php
 	}
