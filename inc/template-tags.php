@@ -7,6 +7,27 @@
  * @package _s
  */
 
+if ( ! function_exists( '_s_paging_nav' ) ) :
+	/**
+	 * Displays a paginated navigation to next/previous set of posts, when applicable.
+	 *
+	 * This is shown at the end of archives to get to another page of entries.
+	 *
+	 * @param array $args Optional. See the_posts_pagination() for available arguments.
+	 * @link https://developer.wordpress.org/reference/functions/the_posts_pagination/#parameters
+	 */
+	function _s_paging_nav( $args = array() ) {
+		$args = wp_parse_args( $args, array(
+			'end_size'           => 2,
+			'mid_size'           => 2,
+			'prev_text'          => __( '&larr; Previous page', '_s' ),
+			'next_text'          => __( 'Next page &rarr;', '_s' ),
+			'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', '_s' ) . ' </span>',
+		) );
+		the_posts_pagination( $args );
+	}
+endif;
+
 if ( ! function_exists( '_s_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.

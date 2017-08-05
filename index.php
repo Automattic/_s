@@ -40,7 +40,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			_s_paging_nav();
 
 		else :
 
