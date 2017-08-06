@@ -213,7 +213,7 @@ if ( ! function_exists( '_s_woocommerce_header_cart' ) ) {
 				<?php _s_woocommerce_cart_link(); ?>
 			</li>
 			<li>
-				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+				<?php the_widget( 'WC_Widget_Cart', array( 'title' => '' ) ); ?>
 			</li>
 		</ul>
 		<?php
