@@ -92,11 +92,7 @@ add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
  * @return array $args related products args
  */
 function _s_woocommerce_related_products_args( $args ) {
-	$args = apply_filters( '_s_woocommerce_related_products_args', array(
-		'posts_per_page' => 3,
-		'columns'        => 3,
-	) );
-
+	$args = wp_parse_args( array( 'posts_per_page' => 3, 'columns' => 3 ), $args );
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', '_s_woocommerce_related_products_args' );
