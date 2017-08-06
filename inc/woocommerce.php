@@ -170,8 +170,6 @@ add_action( 'woocommerce_after_main_content', '_s_woocommerce_wrapper_after' );
 			_s_woocommerce_header_cart();
 		}
 	?>
- *
- * @package _s
  */
 
 if ( ! function_exists( '_s_woocommerce_cart_link_fragment' ) ) {
