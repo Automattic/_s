@@ -8,14 +8,6 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * You can add the WooCommerce Mini Cart to header.php like so ...
- *
-	<?php
-		if ( function_exists( '_s_woocommerce_header_cart' ) ) {
-			_s_woocommerce_header_cart();
-		}
-	?>
- *
  * @package _s
  */
 

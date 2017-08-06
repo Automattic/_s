@@ -160,6 +160,20 @@ if ( ! function_exists( '_s_woocommerce_wrapper_after' ) ) {
 }
 add_action( 'woocommerce_after_main_content', '_s_woocommerce_wrapper_after' );
 
+/**
+ * Sample implementation of the WooCommerce Mini Cart
+ *
+ * You can add the WooCommerce Mini Cart to header.php like so ...
+ *
+	<?php
+		if ( function_exists( '_s_woocommerce_header_cart' ) ) {
+			_s_woocommerce_header_cart();
+		}
+	?>
+ *
+ * @package _s
+ */
+
 if ( ! function_exists( '_s_woocommerce_cart_link_fragment' ) ) {
 	/**
 	 * Cart Fragments
