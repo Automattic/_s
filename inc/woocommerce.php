@@ -169,8 +169,6 @@ if ( ! function_exists( '_s_woocommerce_cart_link_fragment' ) ) {
 	 * @return array Fragments to refresh via AJAX
 	 */
 	function _s_woocommerce_cart_link_fragment( $fragments ) {
-		global $woocommerce;
-
 		ob_start();
 		_s_woocommerce_cart_link();
 		$fragments['a.cart-contents'] = ob_get_clean();
