@@ -61,7 +61,7 @@ add_filter( 'body_class', '_s_woocommerce_active_body_class' );
  * @return integer number of products
  */
 function _s_woocommerce_products_per_page() {
-	return absint( apply_filters( '_s_woocommerce_products_per_page', 12 ) );
+	return 12;
 }
 add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
 
@@ -71,7 +71,7 @@ add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
  * @return integer number of columns
  */
 function _s_woocommerce_thumbnail_columns() {
-	return absint( apply_filters( '_s_woocommerce_product_thumbnail_columns', 4 ) );
+	return 4;
 }
 add_filter( 'woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_columns' );
 
@@ -81,7 +81,7 @@ add_filter( 'woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_
  * @return integer products per row
  */
 function _s_woocommerce_loop_columns() {
-	return absint( apply_filters( '_s_woocommerce_loop_columns', 3 ) );
+	return 3;
 }
 add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
 
