@@ -10,7 +10,7 @@
 /**
  * WooCommerce setup function.
  *
- * See: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+ * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
  *
  * @return void
  */
@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', '_s_woocommerce_scripts' );
  * Removing the default WooCommerce stylesheet and enqueing your own will
  * protect you during WooCommerce core updates.
  *
- * See: https://docs.woocommerce.com/document/disable-the-default-stylesheet/
+ * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
  */
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
