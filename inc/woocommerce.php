@@ -95,7 +95,7 @@ add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
 function _s_woocommerce_related_products_args( $args ) {
 	$defaults = array(
 		'posts_per_page' => 3,
-		'columns'        => 3
+		'columns'        => 3,
 	);
 
 	$args = wp_parse_args( $defaults, $args );
@@ -238,7 +238,7 @@ if ( ! function_exists( '_s_woocommerce_header_cart' ) ) {
 			<li>
 				<?php
 					$instance = array(
-						'title' => ''
+						'title' => '',
 					);
 
 					the_widget( 'WC_Widget_Cart', $instance );
