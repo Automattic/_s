@@ -93,7 +93,13 @@ add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
  * @return array $args related products args.
  */
 function _s_woocommerce_related_products_args( $args ) {
-	$args = wp_parse_args( array( 'posts_per_page' => 3, 'columns' => 3 ), $args );
+	$defaults = array(
+		'posts_per_page' => 3,
+		'columns'        => 3
+	);
+
+	$args = wp_parse_args( $defaults, $args );
+
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', '_s_woocommerce_related_products_args' );
@@ -230,7 +236,13 @@ if ( ! function_exists( '_s_woocommerce_header_cart' ) ) {
 				<?php _s_woocommerce_cart_link(); ?>
 			</li>
 			<li>
-				<?php the_widget( 'WC_Widget_Cart', array( 'title' => '' ) ); ?>
+				<?php
+					$instance = array(
+						'title' => ''
+					);
+
+					the_widget( 'WC_Widget_Cart', $instance );
+				?>
 			</li>
 		</ul>
 		<?php
