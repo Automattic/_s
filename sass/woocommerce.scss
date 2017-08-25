@@ -5,6 +5,12 @@ WooCommerce styles override
 */
 
 /**
+ * WooCommerce Plugin path variables
+ */
+$woocommerce__plugin-path: '../../plugins/woocommerce/';
+$woocommerce__plugin-assets-font-path: '#{$woocommerce__plugin-path}assets/fonts/';
+
+/**
  * WooCommerce color variables
  */
 $woocommerce__color-error: #e2401c;
@@ -22,11 +28,11 @@ $woocommerce__color-info: #3D9CD2;
  */
 @font-face {
 	font-family: 'star';
-	src: url('../../plugins/woocommerce/assets/fonts/star.eot');
-	src: url('../../plugins/woocommerce/assets/fonts/star.eot?#iefix') format('embedded-opentype'),
-		url('../../plugins/woocommerce/assets/fonts/star.woff') format('woff'),
-		url('../../plugins/woocommerce/assets/fonts/star.ttf') format('truetype'),
-		url('../../plugins/woocommerce/assets/fonts/star.svg#star') format('svg');
+	src: url('#{$woocommerce__plugin-assets-font-path}star.eot');
+	src: url('#{$woocommerce__plugin-assets-font-path}star.eot?#iefix') format('embedded-opentype'),
+		url('#{$woocommerce__plugin-assets-font-path}star.woff') format('woff'),
+		url('#{$woocommerce__plugin-assets-font-path}star.ttf') format('truetype'),
+		url('#{$woocommerce__plugin-assets-font-path}star.svg#star') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
