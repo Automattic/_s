@@ -12,8 +12,10 @@
  * @package _s
  */
 
-if ( ! defined( 'ABSPATH' ) )
+if ( ! defined( 'ABSPATH' ) ) {
+
 	exit();
+}
 
 get_header(); ?>
 
