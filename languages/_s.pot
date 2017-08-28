@@ -117,11 +117,11 @@ msgid "Primary Menu"
 msgstr ""
 
 #: single.php:21
-msgid "Previous"
+msgid "Previous:"
 msgstr ""
 
 #: single.php:22
-msgid "Next"
+msgid "Next:"
 msgstr ""
 
 #. translators: %s: post date.
