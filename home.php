@@ -39,7 +39,8 @@ get_header(); ?>
 					</ul>
 					<?php endif; ?>
 
-					<div class="posts-list post-thumbs ajax-content">
+					<div class="ajax-content">
+						<div class="posts-list post-thumbs">
 					<?php
 
 					/* Start the Loop */
@@ -53,18 +54,22 @@ get_header(); ?>
 						 */
 						get_template_part( 'template-parts/thumb', get_post_type() );
 
-					endwhile;
-					?>
+					endwhile; ?>
 					</div>
-					<?php
-					the_posts_navigation();
-
-				else :
-
+					<?php the_posts_pagination( array(
+						'prev_text' => '<span class="screen-reader-text">' . _x( 'Previous', 'previous set of posts', '_svbk' ) . '</span>',
+	    				'next_text' => '<span class="screen-reader-text">' . _x( 'Next', 'next set of posts', '_svbk' ) . '</span>',
+					) ); ?>
+				</div>
+				<?php else :
 					get_template_part( 'template-parts/content', 'none' );
+<<<<<<< HEAD
 
 				endif;
 				?>
+=======
+				endif; ?>
+>>>>>>> 65423e7d17cff2d5283ab9059ff3fb4b2bff8784
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
