@@ -22,7 +22,7 @@ function _svbk_jetpack_setup() {
 			 'render'    => '_svbk_infinite_scroll_render',
 			 'footer'    => 'page',
 		 )
-		);
+	);
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );
@@ -39,7 +39,7 @@ function _svbk_jetpack_setup() {
 				 'comment'         => '.comments-link',
 			 ),
 		 )
-		);
+	);
 }
 add_action( 'after_setup_theme', '_svbk_jetpack_setup' );
 

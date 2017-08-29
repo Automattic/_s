@@ -28,12 +28,12 @@
 		<?php
 		if ( is_front_page() ) {
 			get_template_part( 'template-parts/header/header', 'image' );
-	  }
-	  ?>
+		 }
+		?>
 
 		<div id="site-header-content">
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-
+	
 			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span></button>
@@ -47,10 +47,10 @@
 				?>
 			</nav><!-- #site-navigation -->
 			<?php endif; ?>
-
+	
 			<button class="search-toggle"><span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span></button>
 			<?php echo get_search_form(); ?>
-
+	
 		</div>
 	</header><!-- #masthead -->
 

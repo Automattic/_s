@@ -22,7 +22,7 @@ function _svbk_customize_register( $wp_customize ) {
 		 'sticky_header', array(
 			 'default' => false,
 		 )
-		);
+	);
 
 	$wp_customize->add_control(
 		 'sticky_header', array(
@@ -31,13 +31,13 @@ function _svbk_customize_register( $wp_customize ) {
 			 'section' => 'header_image',
 			 'type' => 'checkbox',
 		 )
-		);
+	);
 
 	$wp_customize->add_setting(
 		 'header_cycle_images', array(
 			 'default' => false,
 		 )
-		);
+	);
 
 	$wp_customize->add_control(
 		 'header_cycle_images', array(
@@ -46,7 +46,7 @@ function _svbk_customize_register( $wp_customize ) {
 			 'section' => 'header_image',
 			 'type' => 'checkbox',
 		 )
-		);
+	);
 
 	// Archives.
 	$wp_customize->add_section(
@@ -55,7 +55,7 @@ function _svbk_customize_register( $wp_customize ) {
 			 'description' => __( 'Archive Customizations', '_svbk' ),
 			 'priority' => 160,
 		 )
-		);
+	);
 
 	// Archives descriptions.
 	$custom_post_types = get_post_types(
@@ -63,7 +63,7 @@ function _svbk_customize_register( $wp_customize ) {
 			 'public' => true,
 			 '_builtin' => false,
 		 ) , 'objects'
-		);
+	);
 
 	foreach ( $custom_post_types as $cpt ) {
 
@@ -71,23 +71,24 @@ function _svbk_customize_register( $wp_customize ) {
 			 "archive_{$cpt->name}_image", array(
 				 'sanitize_callback' => 'wp_kses_post',
 			 )
-			);
+		);
+
 		$wp_customize->add_setting(
 			 "archive_{$cpt->name}_description", array(
 				 'sanitize_callback' => 'wp_kses_post',
 			 )
-			);
+		);
 
 		$wp_customize->add_control(
 			 new WP_Customize_Media_Control(
-			 $wp_customize, "archive_{$cpt->name}_image", array(
-				 /* translators: %s represents the post type name */
-				 'label' => sprintf( __( '%s Archive Image', '_svbk' ), $cpt->label ),
-				 'section' => 'archives',
-				 'mime_type' => 'image',
-			 )
+				 $wp_customize, "archive_{$cpt->name}_image", array(
+					 /* translators: %s represents the post type name */
+					 'label' => sprintf( __( '%s Archive Image', '_svbk' ), $cpt->label ),
+					 'section' => 'archives',
+					 'mime_type' => 'image',
+				 )
 			)
-			);
+		);
 
 		$wp_customize->add_control(
 			 "archive_{$cpt->name}_description", array(
@@ -96,7 +97,7 @@ function _svbk_customize_register( $wp_customize ) {
 				 'type' => 'textarea',
 				 'section' => 'archives',
 			 )
-			);
+		);
 
 	}
 
@@ -108,7 +109,7 @@ function _svbk_customize_register( $wp_customize ) {
 			 'description' => __( 'Footer Settings', '_svbk' ),
 			 'priority' => 160,
 		 )
-		);
+	);
 
 	$wp_customize->add_control(
 		 new WP_Customize_Media_Control(
@@ -118,18 +119,19 @@ function _svbk_customize_register( $wp_customize ) {
 			 'mime_type' => 'image',
 		 )
 		)
-		);
+	);
 
 	$wp_customize->add_setting(
-		 'fixed_footer_bar_content', array(
-			 'sanitize_callback' => 'wp_kses_post',
-		 )
-		);
+		'fixed_footer_bar_content', array(
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
 	$wp_customize->add_setting(
 		 'fixed_footer_bar', array(
 			 'default' => false,
 		 )
-		);
+	);
 
 	$wp_customize->add_control(
 		 'fixed_footer_bar_content', array(
@@ -138,7 +140,7 @@ function _svbk_customize_register( $wp_customize ) {
 			 'section' => 'footer',
 			 'type' => 'textarea',
 		 )
-		);
+	);
 
 	$wp_customize->add_control(
 		 'fixed_footer_bar', array(
@@ -147,7 +149,7 @@ function _svbk_customize_register( $wp_customize ) {
 			 'type' => 'checkbox',
 
 		 )
-		);
+	);
 
 }
 add_action( 'customize_register', '_svbk_customize_register' );

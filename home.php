@@ -31,6 +31,7 @@ get_header(); ?>
 							 'echo' => 0,
 						 )
 					);
+
 					if ( $categories ) :
 					?>
 					<ul id="category-filter" class="ajax-filter filter-list">
