@@ -63,13 +63,9 @@ get_header(); ?>
 				</div>
 				<?php else :
 					get_template_part( 'template-parts/content', 'none' );
-<<<<<<< HEAD
 
 				endif;
 				?>
-=======
-				endif; ?>
->>>>>>> 65423e7d17cff2d5283ab9059ff3fb4b2bff8784
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
