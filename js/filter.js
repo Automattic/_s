@@ -28,11 +28,12 @@
             var self = this;
 
             if( this.options.loadMoreButton ) {
-                $( this.element ).on('click.ajaxArchive', this.options.loadMoreButton, function(){
+                $( this.element ).on('click.ajaxArchive', this.options.loadMoreButton, function(e){
                     var nextPageLink = $( self.options.nextPageElement, self.element ).attr('href');
 
-                    if( nextPageLink ) {
+                    if ( nextPageLink ) {
                         self._navigate( {url: nextPageLink, append: true}, this._preventDefault );
+                        e.preventDefault();
                     }
                 });
             }
@@ -41,15 +42,22 @@
                 $( this.element ).on('click.ajaxArchive', this.options.paginationLinks, function(e){
                     var nextPageLink = $(this).attr('href');
 
-                    self._navigate( {url: nextPageLink, append: false}, this._preventDefault );
+                    if ( nextPageLink ){
+                        self._navigate( {url: nextPageLink, append: false}, this._preventDefault );
+                        e.preventDefault();
+                    }
                 });
             }
 
             if( this.options.filterElement ) {
                 $( this.element ).on('click.ajaxArchive', this.options.filterElement + ' a', function(e){
+
                     var link = $(this).attr('href');
 
-                    self._navigate( {url: link, append: false}, this._preventDefault );
+                    if ( link ) {
+                        self._navigate( {url: link, append: false}, this._preventDefault );
+                        e.preventDefault();
+                    }
                 });
             }
 
@@ -88,7 +96,7 @@
             $.get( request.url, function(data){
 
                 var page = $(data);
-                var contents = page.find( self.options.itemSelector );
+                var contents = page.find( self.options.postContainer ).contents();
 
                 if( self.options.filterElement ) {
                     var filterContainer = $( self.options.filterElement, self.element );
