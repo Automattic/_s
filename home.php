@@ -24,7 +24,15 @@ get_header(); ?>
 					</header>
 
 					<?php
-					if( $categories  = wp_list_categories(array('title_li'=>'', 'show_option_all'=>__('All categories', '_svbk'), 'echo'=>0 )) ): ?>
+					$categories  = wp_list_categories(
+						 array(
+							 'title_li' => '',
+							 'show_option_all' => __( 'All categories', '_svbk' ),
+							 'echo' => 0,
+						 )
+					);
+					if ( $categories ) :
+					?>
 					<ul id="category-filter" class="ajax-filter filter-list">
 						<?php echo $categories; ?>
 					</ul>
@@ -34,7 +42,8 @@ get_header(); ?>
 					<?php
 
 					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+					while ( have_posts() ) :
+						the_post();
 
 						/*
 						 * Include the Post-Format-specific template for the content.
@@ -53,7 +62,8 @@ get_header(); ?>
 
 					get_template_part( 'template-parts/content', 'none' );
 
-				endif; ?>
+				endif;
+				?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

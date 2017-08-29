@@ -36,7 +36,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="_s" />
+			<property name="text_domain" type="array" value="_svbk" />
 		</properties>
 	</rule>
 
@@ -58,6 +58,6 @@
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
-	<config name="testVersion" value="5.2-99.0"/>
+	<config name="testVersion" value="5.5-99.0"/>
 	<rule ref="PHPCompatibility"/>
 </ruleset>
