@@ -12,10 +12,10 @@
     "require": {
         "silverbackstudio/wp-shortcakes": "^3.0",
         "silverbackstudio/wp-themehelper": "^2.0",
-        "silverbackstudio/wp-widgets": "^2.1",
-        "wp-coding-standards/wpcs": "^0.13.1"
+        "silverbackstudio/wp-widgets": "^2.1"
     },
     "require-dev": {
+        "wp-coding-standards/wpcs": "^0.13.1",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2",
         "wimg/php-compatibility": "^8.0"
     },
