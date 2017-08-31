@@ -54,14 +54,20 @@ get_header(); ?>
 						 */
 						get_template_part( 'template-parts/thumb', get_post_type() );
 
-					endwhile; ?>
+					endwhile;
+					?>
 					</div>
-					<?php the_posts_pagination( array(
-						'prev_text' => '<span class="screen-reader-text">' . _x( 'Previous', 'previous set of posts', '_svbk' ) . '</span>',
-	    				'next_text' => '<span class="screen-reader-text">' . _x( 'Next', 'next set of posts', '_svbk' ) . '</span>',
-					) ); ?>
+					<?php
+					the_posts_pagination(
+						 array(
+							 'prev_text' => '<span class="screen-reader-text">' . _x( 'Previous', 'previous set of posts', '_svbk' ) . '</span>',
+							 'next_text' => '<span class="screen-reader-text">' . _x( 'Next', 'next set of posts', '_svbk' ) . '</span>',
+						 )
+						);
+					?>
 				</div>
-				<?php else :
+				<?php
+				else :
 					get_template_part( 'template-parts/content', 'none' );
 
 				endif;
