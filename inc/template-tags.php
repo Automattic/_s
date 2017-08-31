@@ -81,7 +81,7 @@ function _svbk_entry_footer() {
 				)
 			);
 			echo '</span>';
-		}
+			}
 
 		edit_post_link(
 			sprintf(
@@ -98,7 +98,7 @@ function _svbk_entry_footer() {
 			),
 			'<span class="edit-link">',
 			'</span>'
-		);
+			);
 }
 endif;
 
@@ -155,11 +155,12 @@ if ( ! function_exists( 'the_field_template' ) ) {
 	 * @param string $field The field name.
 	 * @param string $before Optional. Text to print before the field (if not empty).
 	 * @param string $after Optional. Text to print after the field (if not empty).
+	 * @param string $post_id Optional. The post_id or other reference @see get_field() in ACF.
 	 *
 	 * @return void
 	 */
-	function the_field_template( $field, $before = '', $after = '' ) {
-		$value = get_field( $field );
+	function the_field_template( $field, $before = '', $after = '', $post_id = null ) {
+		$value = get_field( $field, $post_id );
 		if ( $value ) {
 			echo $before . $value . $after;
 		}
