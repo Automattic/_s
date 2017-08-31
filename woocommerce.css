@@ -289,10 +289,6 @@ ul.products li.product .button {
 	text-decoration: none;
 }
 
-.site-header-cart .cart-contents .icon {
-	display: none;
-}
-
 .site-header-cart .widget_shopping_cart {
 	display: none;
 }
@@ -506,13 +502,9 @@ p.no-comments {
 		top: 100%;
 		width: 100%;
 		z-index: 999999;
-		font-size: ms(-1);
 		left: -999em;
 		display: block;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	}
-	.site-header-cart .cart-contents .icon {
-		display: inline;
 	}
 	.site-header-cart:hover .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
 		left: 0;
