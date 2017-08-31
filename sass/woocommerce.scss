@@ -1,0 +1,48 @@
+/*
+Theme Name: _s
+
+WooCommerce styles override
+*/
+
+/**
+ * WooCommerce color variables
+ */
+$woocommerce__color-error: #e2401c;
+$woocommerce__color-success: #0f834d;
+$woocommerce__color-info: #3D9CD2;
+
+/**
+ * Imports
+ */
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/**
+ * Shop tables
+ */
+@import "shop/tables";
+
+/**
+ * Products
+ */
+@import "shop/products";
+
+/**
+ * Single product
+ */
+@import "shop/single-product";
+
+/**
+ * Checkout
+ */
+@import "shop/checkout";
+
+/**
+ * General WooCommerce components
+ */
+@import "shop/components";
+
+/**
+ * WooCommerce widgets
+ */
+@import "shop/widgets";

@@ -1,4 +1,4 @@
-/*
+/*!
 Theme Name: _s
 Theme URI: http://underscores.me/
 Author: Automattic
@@ -19,7 +19,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -42,14 +41,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust:     100%;
+	-ms-text-size-adjust: 100%;
 }
 
 body {
@@ -273,12 +271,7 @@ textarea {
 	line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 
@@ -286,10 +279,7 @@ p {
 	margin-bottom: 1.5em;
 }
 
-dfn,
-cite,
-em,
-i {
+dfn, cite, em, i {
 	font-style: italic;
 }
 
@@ -313,23 +303,18 @@ pre {
 	padding: 1.6em;
 }
 
-code,
-kbd,
-tt,
-var {
+code, kbd, tt, var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
 
-abbr,
-acronym {
+abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
 
-mark,
-ins {
+mark, ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
@@ -347,24 +332,22 @@ html {
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	box-sizing: inherit;
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-blockquote,
-q {
+blockquote, q {
 	quotes: "" "";
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
 }
 
 hr {
@@ -374,8 +357,7 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
-ol {
+ul, ol {
 	margin: 0 0 1.5em 3em;
 }
 
@@ -402,12 +384,15 @@ dd {
 }
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
 table {
@@ -426,7 +411,7 @@ input[type="submit"] {
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
 	background: #e6e6e6;
-	color: rgba(0, 0, 0, .8);
+	color: rgba(0, 0, 0, 0.8);
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -440,14 +425,13 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
 
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
+button:active, button:focus,
 input[type="button"]:active,
+input[type="button"]:focus,
 input[type="reset"]:active,
-input[type="submit"]:active {
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
 	border-color: #aaa #bbb #bbb;
 }
 
@@ -473,10 +457,6 @@ textarea {
 	padding: 3px;
 }
 
-select {
-	border: 1px solid #ccc;
-}
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -494,6 +474,10 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
 }
 
 textarea {
@@ -514,9 +498,7 @@ a:visited {
 	color: purple;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover, a:focus, a:active {
 	color: midnightblue;
 }
 
@@ -524,8 +506,7 @@ a:focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:hover, a:active {
 	outline: 0;
 }
 
@@ -546,16 +527,6 @@ a:active {
 	padding-left: 0;
 }
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -570,24 +541,13 @@ a:active {
 	top: 0;
 }
 
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
 .main-navigation ul ul a {
 	width: 200px;
-}
-
-.main-navigation ul ul li {
-
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
 }
 
 .main-navigation ul li:hover > ul,
@@ -595,15 +555,14 @@ a:active {
 	left: auto;
 }
 
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
+.main-navigation li {
+	float: left;
+	position: relative;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation a {
+	display: block;
+	text-decoration: none;
 }
 
 /* Small menu. */
@@ -621,9 +580,9 @@ a:active {
 	}
 }
 
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
@@ -653,7 +612,8 @@ a:active {
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
@@ -673,7 +633,8 @@ a:active {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
@@ -737,9 +698,9 @@ a:active {
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
 }
 
-/* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
 }
@@ -788,8 +749,9 @@ a:active {
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
 	display: none;
 }
 
@@ -863,7 +825,7 @@ object {
 }
 
 .gallery-columns-3 .gallery-item {
-	max-width: 33.33333%;
+	max-width: 33.33%;
 }
 
 .gallery-columns-4 .gallery-item {
@@ -875,11 +837,11 @@ object {
 }
 
 .gallery-columns-6 .gallery-item {
-	max-width: 16.66667%;
+	max-width: 16.66%;
 }
 
 .gallery-columns-7 .gallery-item {
-	max-width: 14.28571%;
+	max-width: 14.28%;
 }
 
 .gallery-columns-8 .gallery-item {
@@ -887,7 +849,7 @@ object {
 }
 
 .gallery-columns-9 .gallery-item {
-	max-width: 11.11111%;
+	max-width: 11.11%;
 }
 
 .gallery-caption {
