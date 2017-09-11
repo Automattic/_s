@@ -342,14 +342,6 @@ body {
 	/* Fallback for when there is no custom background color defined. */
 }
 
-blockquote, q {
-	quotes: "" "";
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-	content: "";
-}
-
 hr {
 	background-color: #ccc;
 	border: 0;
