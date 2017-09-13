@@ -5,6 +5,7 @@
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 
 	&:focus {
 		background-color: $color__background-screen;
