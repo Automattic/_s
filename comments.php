@@ -27,35 +27,25 @@ if ( post_password_required() ) {
 	if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				$comment_count = get_comments_number();
-				if ( 1 === $comment_count ) {
-					printf(
-						/* translators: 1: title. */
-						esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', '_s' ),
-						'<span>' . get_the_title() . '</span>'
-					);
-				} else {
-					printf( // WPCS: XSS OK.
-						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', '_s' ) ),
-						number_format_i18n( $comment_count ),
-						'<span>' . get_the_title() . '</span>'
-					);
-				}
+			$comment_count = get_comments_number();
+			if ( 1 === $comment_count ) {
+				printf(
+					/* translators: 1: title. */
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', '_s' ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			} else {
+				printf( // WPCS: XSS OK.
+					/* translators: 1: comment count number, 2: title. */
+					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', '_s' ) ),
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			}
 			?>
 		</h2><!-- .comments-title -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', '_s' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', '_s' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', '_s' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
@@ -66,28 +56,15 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', '_s' ); ?></h2>
-			<div class="nav-links">
+		<?php the_comments_navigation();
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', '_s' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', '_s' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() ) : ?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', '_s' ); ?></p>
 		<?php
-		endif; // Check for comment navigation.
+		endif;
 
 	endif; // Check for have_comments().
-
-
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', '_s' ); ?></p>
-	<?php
-	endif;
 
 	comment_form();
 	?>
