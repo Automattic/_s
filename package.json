@@ -8,39 +8,31 @@
     "css-prefix": "postcss style.css -u autoprefixer -o style.css --no-map",
     "css-format": "stylefmt style.css",
     "css-fix": "stylelint style.css --fix",
-    "scss-lint": "stylelint sass/**/*.scss",
-    "js-lint": "eslint js/**",
-    "js-fix": "eslint js/** --fix"
+    "scss-lint": "stylelint sass/**/*.scss --syntax scss"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
-    "browserslist": "^2.1.5",
-    "eslint": "^4.1.1",
-    "eslint-config-wordpress": "^2.0.0",
+    "autoprefixer": "^7.1.4",
+    "browserslist": "^2.4.0",
     "node-sass": "^4.5.3",
-    "postcss-cli": "^4.1.0",
+    "postcss-cli": "^4.1.1",
     "stylefmt": "^6.0.0",
-    "stylelint": "^7.12.0",
-    "stylelint-config-wordpress": "^11.0.0"
+    "stylelint": "^8.1.1",
+    "stylelint-config-wordpress": "^12.0.0"
   },
   "stylelint": {
     "defaultSeverity": "warning",
-    "extends": "stylelint-config-wordpress",
-    "rules": {
-      "max-line-length": [ 80, {
-        "ignorePattern": ["/\b(Description:).*\n/", "/https?:\/\/[0-9,a-z]*.*/"]
-        } ]
-      }
-    },
-    "eslintConfig": {
-      "extends": "wordpress"
-    },
-    "eslintIgnore": [
-      "js/**.min.js"
-    ],
-    "browserslist": [
-      "> 1%",
-      "last 2 versions",
-      "IE 11"
-    ]
-  }
+    "extends": "stylelint-config-wordpress"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 11",
+    "last 1 Android versions",
+    "last 1 ChromeAndroid versions",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions"
+  ]
+}
