@@ -8,7 +8,7 @@
     "css-prefix": "postcss style.css -u autoprefixer -o style.css --no-map",
     "css-format": "stylefmt style.css",
     "css-fix": "stylelint style.css --fix",
-    "scss-lint": "stylelint sass/**/*.scss --syntax scss"
+    "scss-lint": "stylelint 'sass/**/*.scss' --syntax scss --config node_modules/stylelint-config-wordpress/scss.js"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
