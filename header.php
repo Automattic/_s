@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _svbk
+ * @package onofrio
  */
 
 ?><!doctype html>
@@ -22,8 +22,17 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'after_body_tag' ); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_svbk' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'onofrio' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
+		
+		<div class="top-header">
+			<div id="top-header-content">
+				<div class="contact-phone">
+					<?php esc_html_e( 'Call', 'onofrio' ); ?>
+					<a href="tel:<?php bloginfo( 'contact_phone' ); ?>"><?php bloginfo( 'contact_phone' ); ?></a>
+				</div>
+			</div>
+		</div>
 
 		<?php
 		if ( is_front_page() ) {
@@ -34,23 +43,28 @@
 		<div id="site-header-content">
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 	
-			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span></button>
-				<?php
-					wp_nav_menu(
-						 array(
-							 'theme_location' => 'menu-1',
-							 'menu_id'        => 'primary-menu',
-						 )
-						);
-				?>
-			</nav><!-- #site-navigation -->
-			<?php endif; ?>
+			<button class="main-navigation-toggle" aria-controls="main-navigation" aria-expanded="false">
+				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'onofrio' ); ?></span>
+			</button>
+			<div id="main-navigation">
+				<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+				<nav id="site-navigation" role="navigation">
+					<?php
+						wp_nav_menu(
+							 array(
+								 'theme_location' => 'menu-1',
+								 'menu_id'        => 'primary-menu',
+							 )
+							);
+					?>
+				</nav><!-- #site-navigation -->
+				<?php endif; ?>
 	
-			<button class="search-toggle"><span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span></button>
-			<?php echo get_search_form(); ?>
-	
+				<button class="search-toggle">
+					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', 'onofrio' ); ?></span>
+				</button>
+				<?php echo get_search_form(); ?>
+			</div>
 		</div>
 	</header><!-- #masthead -->
 
