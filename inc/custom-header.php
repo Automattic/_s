@@ -11,6 +11,11 @@
  * @package _s
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Set up the WordPress core custom header feature.
  *

@@ -9,6 +9,11 @@
  * @package _s
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

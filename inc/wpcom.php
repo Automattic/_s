@@ -7,6 +7,11 @@
  * @package _s
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Adds support for wp.com-specific theme functions.
  *
