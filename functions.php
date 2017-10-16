@@ -162,3 +162,38 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/* Create custom post types for programs & events*/
+
+function create_custom_post_types() {
+    register_post_type( 'programs',
+        array(
+            'labels' => array(
+                'name' => __( 'Programs' ),
+                'singular_name' => __( 'Program' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'programs' ),
+        )
+    );
+    register_post_type( 'events',
+        array(
+            'labels' => array(
+                'name' => __( 'Events' ),
+                'singular_name' => __( 'Event' )
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'rewrite' => array( 'slug' => 'events' ),
+        )
+    );
+}
+add_action( 'init', 'create_custom_post_types' );
+
+add_filter( 'wp_nav_menu_items','add_search_box', 10, 2 );
+
+function add_search_box( $items, $args ) {
+	$items .= '<li>' . get_search_form( false ) . '</li>';
+	return $items;
+}
