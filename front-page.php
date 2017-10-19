@@ -12,7 +12,11 @@
 get_header(); ?>
 
 <!-- Slider -->
-<section></section>
+<section>
+  <?php
+echo do_shortcode('[smartslider3 slider=2]');
+?>
+</section>
 
 <section>
   <h2>Help Our Youth Become Stable Responsible Adults</h2>
