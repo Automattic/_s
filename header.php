@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package onofrio
+ * @package _svbk
  */
 
 ?><!doctype html>
@@ -22,13 +22,13 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'after_body_tag' ); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'onofrio' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_svbk' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 		
 		<div class="top-header">
 			<div id="top-header-content">
 				<div class="contact-phone">
-					<?php esc_html_e( 'Call', 'onofrio' ); ?>
+					<?php esc_html_e( 'Call', '_svbk' ); ?>
 					<a href="tel:<?php bloginfo( 'contact_phone' ); ?>"><?php bloginfo( 'contact_phone' ); ?></a>
 				</div>
 			</div>
@@ -44,7 +44,7 @@
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 	
 			<button class="main-navigation-toggle" aria-controls="main-navigation" aria-expanded="false">
-				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'onofrio' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span>
 			</button>
 			<div id="main-navigation">
 				<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
