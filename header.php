@@ -16,21 +16,20 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link href="https://fonts.googleapis.com/css?family=Martel" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Martel:300,400,600,700,800" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	<!-- <div class="lt-logo"></div> -->
 
 <div id="page" class="site">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding lt-logo">
-			<a href="<?php echo site_url(); ?>">
-			</a>
+			<a href="<?php echo site_url(); ?>"></a>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
@@ -43,5 +42,4 @@
 			?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
 	<div id="content" class="site-content">

@@ -19,6 +19,82 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
+/* =Reset
+-------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+html {
+    font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+    overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+    -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+    -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+    background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+blockquote, q {
+    quotes: "" "";
+}
+a:focus {
+    outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+    outline: 0;
+}
+a img {
+    border: 0;
+}
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -89,6 +165,7 @@ template {
 
 a {
 	background-color: transparent;
+  text-decoration: none;
 }
 
 a:active,
@@ -255,6 +332,17 @@ th {
 	padding: 0;
 }
 
+.med-padding {
+  padding: 2em;
+}
+
+.flex-wrap-grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -271,17 +359,54 @@ textarea {
 	line-height: 1.5;
 }
 
+p {
+   color: #3b3b3b;
+   font: 17px/1.65 Arial, sans-serif;
+   margin: 1em auto;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	clear: both;
+   font: 400 1em/1.75 'Martel', Arial, sans-serif;
 }
 
-p {
-	margin-bottom: 1.5em;
+h1 {
+   font-size: 24px;
+   font-size: 3em;
+   line-height: 2.25;
+}
+
+h2 {
+   font-size: 20px;
+   font-size: 2.5em;
+   line-height: 2;
+}
+
+h3 {
+   font-size: 18px;
+   font-size: 2em;
+   line-height: 1.75;
+}
+
+h4 {
+	font-size: 16px;
+  font-size: 1.5em;
+}
+
+h5 {
+	 font-size: 16px;
+	 font-size: 1em;
+	 text-transform: uppercase;
+}
+
+h6 {
+	 font-size: 16px;
+	 font-size: .5em;
+	 text-transform: uppercase;
 }
 
 dfn,
@@ -342,6 +467,10 @@ big {
 
 .arial {
 	font-family: Arial;
+}
+
+.font-light {
+	font-weight: 300;
 }
 
 /*--------------------------------------------------------------
@@ -414,6 +543,21 @@ table {
 	width: 100%;
 }
 
+.btn {
+  background: #1d3e53;
+	color: #fff;
+	font: 700 1.125em/3.5 'Martel', Arial, sans-serif;
+	display: flex;
+	height: 3.5em;
+	width: 10em;
+	padding: 0 1.25em;
+	text-align: center;
+	text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
 /* Colors */
 
 .orange {
@@ -430,6 +574,10 @@ table {
 
 .dark-blue {
 	color: #1d3e53;
+}
+
+.dark-blue-background{
+	background-color: #1d3e53;
 }
 
 .gray-blue {
@@ -468,8 +616,45 @@ table {
 	color: #f05c29;
 }
 
+.burnt-orange-background {
+	background-color: #f05c29;
+}
+
 .aqua-marine {
 	color: #10a8b6;
+}
+
+.white {
+	color: white;
+}
+
+/* Social Media icons */
+
+.social-btns a {
+	display: inline-block;
+	width: 3em;
+	height: 3em;
+	margin: .5em;
+	background-color: #799cae;
+	border-radius: 50%;
+	padding: 1em;
+	line-height: 3em;
+}
+
+.tw {
+	background: url(./img/twitter.png) no-repeat center;
+}
+
+.fb {
+	background: url(./img/facebook.png) no-repeat center;
+}
+
+.ln {
+	background: url(./img/linkedin.png) no-repeat center;
+}
+
+.in {
+	background: url(./img/insta.png) no-repeat center;
 }
 
 /*--------------------------------------------------------------
@@ -560,6 +745,12 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+
+.site-header {
+	padding: 1em;
+	background-color: #d9ecf7;
+}
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -731,14 +922,26 @@ a:active {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
-}
+}*/
 
 .aligncenter {
-	clear: both;
-	display: block;
+	text-align: center;
+}
+
+.flex-col-align-center {
+  align-items: center;
+}
+
+.site-info {
+  display: flex;
+  flex-direction: column;
+	padding-top: 1em;
+	padding-bottom: 1em;
 	margin-left: auto;
-	margin-right: auto;
-}*/
+  margin-right: auto;
+  width: 90%;
+	max-width: 980px;
+}
 
 /*--------------------------------------------------------------
 # Clearings
@@ -872,6 +1075,11 @@ object {
 	width: 324px;
 }
 
+.lt-logo-white-image {
+  margin: 0 auto;
+  width: 100%;
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -942,4 +1150,73 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/* Images */
+
+.image {
+  display: block;
+  margin: auto;
+  width: 40%;
+}
+
+.orange-donation-pic {
+  background: url(./img/iStock_000070556817_Full-2-1.png);
+  height: 290px;
+  width: 516px;
+}
+
+.present-icon {
+  background: url(./img/present-icon.png);
+  z-index: 1;
+  width: 122px;
+  height: 130px;
+}
+
+.blue-vol-pic {
+  background: url(./img/Layer-11.png);
+  height: 290px;
+  width: 517px;
+}
+
+.vol-icon {
+  background: url(./img/vol-icon.png);
+  z-index: 1;
+  height: 134px;
+  width: 152px;
+}
+
+.home-page-girl-pic {
+  background: url(./img/iStock-578307742_blue.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*width: 1058px;
+  height: 798px;*/
+  width: 100vw;
+}
+
+.home-page-girl-pic ul li:not(:first-child) {
+  margin-top: 2em;
+}
+
+.home-page-girl-pic ul li {
+  list-style: none;
+}
+
+@media screen and (min-width: 769px) {
+  .home-page-girl-pic {
+    background: url(./img/iStock-578307742_EDITTED.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    /*width: 3500px;
+    height: 1728px;*/
+  }
+
+  .large-scr-top-padding {
+    padding-top: 4em;
+    padding-right: 15em;
+  }
 }
