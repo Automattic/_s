@@ -12,9 +12,6 @@ WooCommerce styles override
 /**
  * Shop tables
  */
-/**
- * Shop tables
- */
 table.shop_table_responsive thead {
 	display: none;
 }
@@ -69,9 +66,6 @@ table.shop_table_responsive tr td.download-actions .button {
 	}
 }
 
-/**
- * Products
- */
 /**
  * Products
  */
@@ -136,9 +130,6 @@ ul.products li.product .button {
 
 /**
  * Single product
- */
-/**
- * Single Product
  */
 .single-product div.product {
 	content: "";
@@ -249,9 +240,6 @@ ul.products li.product .button {
 	color: #e2401c;
 }
 
-/**
- * Checkout
- */
 /**
  * Checkout
  */
