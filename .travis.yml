@@ -5,17 +5,17 @@
 # @link https://github.com/Automattic/_s
 
 # Ditch sudo and use containers.
-# @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
-# @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
+# @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
+# @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
 sudo: false
 dist: trusty
 
 # Declare project language.
-# @link http://about.travis-ci.org/docs/user/languages/php/
+# @link https://about.travis-ci.org/docs/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.
-# @link http://docs.travis-ci.com/user/build-configuration/
+# @link https://docs.travis-ci.com/user/build-configuration/
 matrix:
     fast_finish: true
 
@@ -80,12 +80,12 @@ script:
     - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-    # @link http://pear.php.net/package/PHP_CodeSniffer/
+    # @link https://pear.php.net/package/PHP_CodeSniffer/
     # Uses a custom ruleset based on WordPress. This ruleset is automatically
     # picked up by PHPCS as it's named `phpcs.xml(.dist)`.
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs; fi
 
 # Receive notifications for build results.
-# @link http://docs.travis-ci.com/user/notifications/#Email-notifications
+# @link https://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
     email: false
