@@ -22,37 +22,86 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /* =Reset
 -------------------------------------------------------------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-    border: 0;
-    font-family: inherit;
-    font-size: 100%;
-    font-style: inherit;
-    font-weight: inherit;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
 }
 html {
-    font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-    overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
-    -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-    -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-    background: #fff;
+	background: #fff;
 }
 article,
 aside,
@@ -64,35 +113,43 @@ header,
 hgroup,
 nav,
 section {
-    display: block;
+	display: block;
 }
-ol, ul {
-    list-style: none;
+ol,
+ul {
+	list-style: none;
 }
-table { /* tables still need 'cellspacing="0"' in the markup */
-    border-collapse: separate;
-    border-spacing: 0;
+table {
+	/* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
 }
-caption, th, td {
-    font-weight: normal;
-    text-align: left;
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: "";
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
 }
-blockquote, q {
-    quotes: "" "";
+blockquote,
+q {
+	quotes: '' '';
 }
 a:focus {
-    outline: thin dotted;
+	outline: thin dotted;
 }
 a:hover,
-a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
-    outline: 0;
+a:active {
+	/* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
 }
 a img {
-    border: 0;
+	border: 0;
 }
 
 /*--------------------------------------------------------------
@@ -165,7 +222,7 @@ template {
 
 a {
 	background-color: transparent;
-  text-decoration: none;
+	text-decoration: none;
 }
 
 a:active,
@@ -333,14 +390,18 @@ th {
 }
 
 .med-padding {
-  padding: 2em;
+	padding: 2em;
+}
+
+.large-btm-margin {
+	margin-bottom: 8em;
 }
 
 .flex-wrap-grid {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 /*--------------------------------------------------------------
@@ -360,9 +421,9 @@ textarea {
 }
 
 p {
-   color: #3b3b3b;
-   font: 17px/1.65 Arial, sans-serif;
-   margin: 1em auto;
+	color: #3b3b3b;
+	font: 17px/1.65 Arial, sans-serif;
+	margin: 1em auto;
 }
 
 h1,
@@ -371,42 +432,42 @@ h3,
 h4,
 h5,
 h6 {
-   font: 400 1em/1.75 'Martel', Arial, sans-serif;
+	font: 400 1em/1.75 'Martel', Arial, sans-serif;
 }
 
 h1 {
-   font-size: 24px;
-   font-size: 3em;
-   line-height: 2.25;
+	font-size: 24px;
+	font-size: 3em;
+	line-height: 2.25;
 }
 
 h2 {
-   font-size: 20px;
-   font-size: 2.5em;
-   line-height: 2;
+	font-size: 20px;
+	font-size: 2.5em;
+	line-height: 2;
 }
 
 h3 {
-   font-size: 18px;
-   font-size: 2em;
-   line-height: 1.75;
+	font-size: 18px;
+	font-size: 2em;
+	line-height: 1.75;
 }
 
 h4 {
 	font-size: 16px;
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 h5 {
-	 font-size: 16px;
-	 font-size: 1em;
-	 text-transform: uppercase;
+	font-size: 16px;
+	font-size: 1em;
+	text-transform: uppercase;
 }
 
 h6 {
-	 font-size: 16px;
-	 font-size: .5em;
-	 text-transform: uppercase;
+	font-size: 16px;
+	font-size: 0.5em;
+	text-transform: uppercase;
 }
 
 dfn,
@@ -544,7 +605,7 @@ table {
 }
 
 .btn {
-  background: #1d3e53;
+	background: #1d3e53;
 	color: #fff;
 	font: 700 1.125em/3.5 'Martel', Arial, sans-serif;
 	display: flex;
@@ -553,9 +614,9 @@ table {
 	padding: 0 1.25em;
 	text-align: center;
 	text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 8px;
-  margin: 0 auto;
+	text-transform: uppercase;
+	border-radius: 8px;
+	margin: 0 auto;
 }
 
 /* Colors */
@@ -576,7 +637,7 @@ table {
 	color: #1d3e53;
 }
 
-.dark-blue-background{
+.dark-blue-background {
 	background-color: #1d3e53;
 }
 
@@ -634,7 +695,7 @@ table {
 	display: inline-block;
 	width: 3em;
 	height: 3em;
-	margin: .5em;
+	margin: 0.5em;
 	background-color: #799cae;
 	border-radius: 50%;
 	padding: 1em;
@@ -655,6 +716,46 @@ table {
 
 .in {
 	background: url(./img/insta.png) no-repeat center;
+}
+
+.bio-dropdown {
+	width: 100vw;
+}
+
+.bio-dropdown label {
+	display: block;
+	margin: 20px 0 0;
+}
+
+.bio-dropdown label:hover {
+	text-decoration: underline;
+}
+
+.bio-dropdown input {
+	position: absolute;
+	left: -999em;
+	display: none;
+}
+
+.bio-dropdown .hide {
+	width: 100%;
+	background: #aaaaaa;
+	max-height: 99em;
+	opacity: 1;
+	height: auto;
+	overflow: hidden;
+	transition: opacity 1.5s linear, max-height 1.5s linear;
+}
+
+.bio-dropdown .hide p {
+	padding: 10px;
+	margin: 0;
+}
+
+.bio-dropdown input[type='checkbox']:checked + div {
+	opacity: 0;
+	max-height: 0;
+	border: none;
 }
 
 /*--------------------------------------------------------------
@@ -929,18 +1030,50 @@ a:active {
 }
 
 .flex-col-align-center {
-  align-items: center;
+	align-items: center;
 }
 
 .site-info {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 	padding-top: 1em;
 	padding-bottom: 1em;
 	margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+	margin-right: auto;
+	width: 90%;
 	max-width: 980px;
+}
+
+.page {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.section {
+	width: 100%;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.width-1-3 {
+	width: 24%;
+}
+
+.width-2-3 {
+	width: 74%;
+}
+
+.width-1-2 {
+	width: 49%;
+}
+
+@media screen and (min-width: 769px) {
+	.width-1-4 {
+		width: 24%;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1075,9 +1208,8 @@ object {
 	width: 324px;
 }
 
-.lt-logo-white-image {
-  margin: 0 auto;
-  width: 100%;
+.inline-block-display {
+	display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -1155,68 +1287,99 @@ object {
 /* Images */
 
 .image {
-  display: block;
-  margin: auto;
-  width: 40%;
+	display: block;
+	margin: auto;
+	width: 40%;
 }
 
 .orange-donation-pic {
-  background: url(./img/iStock_000070556817_Full-2-1.png);
-  height: 290px;
-  width: 516px;
+	background: url(./img/iStock_000070556817_Full-2-1.png);
+	height: 290px;
+	width: 516px;
 }
 
 .present-icon {
-  background: url(./img/present-icon.png);
-  z-index: 1;
-  width: 122px;
-  height: 130px;
+	background: url(./img/present-icon.png);
+	z-index: 1;
+	width: 122px;
+	height: 130px;
 }
 
 .blue-vol-pic {
-  background: url(./img/Layer-11.png);
-  height: 290px;
-  width: 517px;
+	background: url(./img/Layer-11.png);
+	height: 290px;
+	width: 517px;
 }
 
 .vol-icon {
-  background: url(./img/vol-icon.png);
-  z-index: 1;
-  height: 134px;
-  width: 152px;
+	background: url(./img/vol-icon.png);
+	z-index: 1;
+	height: 134px;
+	width: 152px;
 }
 
 .home-page-girl-pic {
-  background: url(./img/iStock-578307742_blue.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*width: 1058px;
+	background: url(./img/iStock-578307742_blue.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*width: 1058px;
   height: 798px;*/
-  width: 100vw;
+	width: 100vw;
 }
 
 .home-page-girl-pic ul li:not(:first-child) {
-  margin-top: 2em;
+	margin-top: 2em;
 }
 
 .home-page-girl-pic ul li {
-  list-style: none;
+	list-style: none;
 }
 
 @media screen and (min-width: 769px) {
-  .home-page-girl-pic {
-    background: url(./img/iStock-578307742_EDITTED.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    /*width: 3500px;
+	.home-page-girl-pic {
+		background: url(./img/iStock-578307742_EDITTED.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100vw;
+		/*width: 3500px;
     height: 1728px;*/
-  }
+	}
 
-  .large-scr-top-padding {
-    padding-top: 4em;
-    padding-right: 15em;
-  }
+	.large-scr-top-padding {
+		padding-top: 4em;
+		padding-right: 15em;
+	}
+}
+
+.banner-container {
+	width: 100vw;
+}
+
+#wall-teens-pic {
+	display: inline-block;
+	width: 100%;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle;
+	background-size: 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-image: url(./img/wall-teens.jpg);
+}
+
+#image-inner {
+	display: block;
+	height: 0;
+	padding-top: 36.7%; /* height/width of image x 100 */
+}
+
+.yellow-house-pic {
+	background: url(./img/Rectangle-867.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 1366px;
+	height: 491px;
 }

@@ -23,7 +23,10 @@
 			</div>
 			<div>
 				<!-- LifeTies logo -->
-				<div class="lt-logo-white .lt-logo-white-image"></div>
+				<div class="aligncenter">
+					<div class="lt-logo-white inline-block-display"></div>
+				</div>
+
 				<div class="social-btns aligncenter">
 					<a href="http://twitter.com/lifeties" class="soc-icon tw"></a>
 					<a href="http://www.facebook.com/Lifeties" class="soc-icon fb"></a>
