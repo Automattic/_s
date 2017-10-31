@@ -601,9 +601,6 @@ a:active {
 	float: left;
 	position: relative;
 }
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
 .main-navigation a {
 	display: block;
 	text-decoration: none;
