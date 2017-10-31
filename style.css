@@ -1,4 +1,4 @@
-/*!
+/*
 Theme Name: _s
 Theme URI: http://underscores.me/
 Author: Automattic
@@ -13,7 +13,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-_s is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+_s is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -360,15 +360,16 @@ body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
 }
 
-blockquote,
-q {
-	quotes: "" "";
-}
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
 	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
 }
 
 hr {
@@ -427,7 +428,7 @@ input[type="submit"] {
 	border-radius: 3px;
 	background: #e6e6e6;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, 0.8);
+	color: rgba(0, 0, 0, .8);
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
@@ -442,14 +443,15 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
-button:active,
+
 button:focus,
-input[type="button"]:active,
 input[type="button"]:focus,
-input[type="reset"]:active,
 input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
+input[type="submit"]:focus,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
@@ -474,6 +476,11 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
+
+select {
+	border: 1px solid #ccc;
+}
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -491,10 +498,6 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	color: #111;
-}
-
-select {
-	border: 1px solid #ccc;
 }
 
 input[type="text"],
@@ -565,6 +568,17 @@ a:active {
 	margin: 0;
 	padding-left: 0;
 }
+
+.main-navigation li {
+	float: left;
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -578,24 +592,41 @@ a:active {
 	left: -999em;
 	top: 0;
 }
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
+
 .main-navigation ul ul a {
 	width: 200px;
 }
+
+.main-navigation ul ul li {
+
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+}
+
+.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
+}
+
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
+}
+
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
 }
-.main-navigation li {
-	float: left;
-	position: relative;
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
 }
-.main-navigation a {
-	display: block;
-	text-decoration: none;
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
 }
 
 /* Small menu. */
@@ -730,9 +761,9 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+/* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
-	/* Make sure select elements fit in widgets. */
 }
 
 /*--------------------------------------------------------------
