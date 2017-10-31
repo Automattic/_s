@@ -578,20 +578,12 @@ a:active {
 	left: -999em;
 	top: 0;
 }
-.main-navigation ul ul li {
-}
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	left: 100%;
 }
 .main-navigation ul ul a {
 	width: 200px;
-}
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
