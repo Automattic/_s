@@ -1,8 +1,8 @@
 <?php
 /**
- * Template part for displaying results in search pages.
+ * Template part for displaying results in search pages
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package _s
  */
@@ -27,4 +27,4 @@
 	<footer class="entry-footer">
 		<?php _s_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->

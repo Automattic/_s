@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying 404 pages (not found).
+ * The template for displaying 404 pages (not found)
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -24,9 +24,6 @@ get_header(); ?>
 						get_search_form();
 
 						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( _s_categorized_blog() ) :
 					?>
 
 					<div class="widget widget_categories">
@@ -45,7 +42,6 @@ get_header(); ?>
 					</div><!-- .widget -->
 
 					<?php
-						endif;
 
 						/* translators: %1$s: smiley */
 						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', '_s' ), convert_smilies( ':)' ) ) . '</p>';

@@ -5,16 +5,17 @@
 # @link https://github.com/Automattic/_s
 
 # Ditch sudo and use containers.
-# @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
-# @link http://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
+# @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
+# @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
 sudo: false
+dist: trusty
 
 # Declare project language.
-# @link http://about.travis-ci.org/docs/user/languages/php/
+# @link https://about.travis-ci.org/docs/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.
-# @link http://docs.travis-ci.com/user/build-configuration/
+# @link https://docs.travis-ci.com/user/build-configuration/
 matrix:
     fast_finish: true
 
@@ -22,11 +23,14 @@ matrix:
         # Current $required_php_version for WordPress: 5.2.4
         # aliased to 5.2.17
         - php: '5.2'
+          dist: precise
         # aliased to a recent 5.6.x version
         - php: '5.6'
           env: SNIFF=1
-        # aliased to a recent 7.x version
+        # aliased to a recent 7.0.x version
         - php: '7.0'
+        # aliased to a recent 7.2.x version
+        - php: '7.2'
         # aliased to a recent hhvm version
         - php: 'hhvm'
 
@@ -45,11 +49,11 @@ before_script:
     - export PHPCS_DIR=/tmp/phpcs
     - export SNIFFS_DIR=/tmp/sniffs
     # Install CodeSniffer for WordPress Coding Standards checks.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b 2.9.1 --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b 0.11.0 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $SNIFFS_DIR; fi
     # Install PHP Compatibility sniffs.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $SNIFFS_DIR/PHPCompatibility; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b 7.1.5 --depth 1 https://github.com/wimg/PHPCompatibility.git $SNIFFS_DIR/PHPCompatibility; fi
     # Set install path for PHPCS sniffs.
     # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs --config-set installed_paths $SNIFFS_DIR; fi
@@ -76,16 +80,12 @@ script:
     - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-    # @link http://pear.php.net/package/PHP_CodeSniffer/
-    # -p flag: Show progress of the run.
-    # -s flag: Show sniff codes in all reports.
-    # -v flag: Print verbose output.
-    # -n flag: Do not print warnings. (shortcut for --warning-severity=0)
-    # --standard: Use WordPress as the standard.
-    # --extensions: Only sniff PHP files.
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php; fi
+    # @link https://pear.php.net/package/PHP_CodeSniffer/
+    # Uses a custom ruleset based on WordPress. This ruleset is automatically
+    # picked up by PHPCS as it's named `phpcs.xml(.dist)`.
+    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/scripts/phpcs; fi
 
 # Receive notifications for build results.
-# @link http://docs.travis-ci.com/user/notifications/#Email-notifications
+# @link https://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
     email: false

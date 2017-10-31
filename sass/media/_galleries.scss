@@ -8,36 +8,11 @@
 	vertical-align: top;
 	width: 100%;
 
-	.gallery-columns-2 & {
-		max-width: 50%;
-	}
-
-	.gallery-columns-3 & {
-		max-width: 33.33%;
-	}
-
-	.gallery-columns-4 & {
-		max-width: 25%;
-	}
-
-	.gallery-columns-5 & {
-		max-width: 20%;
-	}
-
-	.gallery-columns-6 & {
-		max-width: 16.66%;
-	}
-
-	.gallery-columns-7 & {
-		max-width: 14.28%;
-	}
-
-	.gallery-columns-8 & {
-		max-width: 12.5%;
-	}
-
-	.gallery-columns-9 & {
-		max-width: 11.11%;
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			max-width: map-get( $columns, $i );
+		}
 	}
 }
 
