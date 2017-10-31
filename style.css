@@ -1,4 +1,4 @@
-/*
+/*!
 Theme Name: _s
 Theme URI: http://underscores.me/
 Author: Automattic
@@ -364,7 +364,6 @@ blockquote,
 q {
 	quotes: "" "";
 }
-
 blockquote:before,
 blockquote:after,
 q:before,
@@ -443,7 +442,6 @@ input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
-
 button:active,
 button:focus,
 input[type="button"]:active,
@@ -476,7 +474,6 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 }
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -568,7 +565,6 @@ a:active {
 	margin: 0;
 	padding-left: 0;
 }
-
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -582,46 +578,36 @@ a:active {
 	left: -999em;
 	top: 0;
 }
-
 .main-navigation ul ul li {
 }
-
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	left: 100%;
 }
-
 .main-navigation ul ul a {
 	width: 200px;
 }
-
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
 }
-
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
 }
-
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
 }
-
 .main-navigation li {
 	float: left;
 	position: relative;
 }
-
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
 }
-
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
-
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
