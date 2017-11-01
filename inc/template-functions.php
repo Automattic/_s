@@ -22,7 +22,7 @@ function _s_body_classes( $classes ) {
 add_filter( 'body_class', '_s_body_classes' );
 
 /**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function _s_pingback_header() {
 	if ( is_singular() && pings_open() ) {
