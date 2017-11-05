@@ -14,8 +14,8 @@ $woocommerce__color-info: #3D9CD2;
 /**
  * Imports
  */
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "global/variables/variables";
+@import "global/mixins/mixins-master";
 
 /**
  * Shop tables
