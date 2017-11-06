@@ -34,6 +34,7 @@
 		<div id="legal" class="footer-area sub-footer">
 			<span class="copyright-notice">&copy; 2017</span>
 			<span id="privacy-policy" class="privacy-link"><?php echo do_shortcode( '[privacy-link]Privacy Policy[/privacy-link]' ); ?></span>
+			<span id="cookie-policy" class="privacy-link"><?php echo do_shortcode( '[cookie-policy-link]Cookie Policy[/cookie-policy-link]' ); ?></span>
 			<?php ;/* translators: the first %s contains the target link */ ?>
 			<span id="credits" class="made-by"><?php printf( esc_html__( 'Made with passion by %s', '_svbk' ), '<a target="_blank" href="http://www.silverbackstudio.it">Silverback Studio</a>' ); ?></span>
 		</div>
