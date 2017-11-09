@@ -23,21 +23,25 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
+# Generic
+	## Normalize
+	## Box sizing
 # Elements
 # Layouts
 	## Posts and pages
 	## Comments
 	## Widgets
-# Infinite scroll
-# Navigation
-# Media
-	## Captions
-	## Galleries
-# Accessibility
-# Alignments
-# Clearings
+# Vendors
+	## Infinite scroll
+# Components
+	## Navigation
+	## Media
+		## Captions
+		## Galleries
+# Utilities
+	## Accessibility
+	## Alignments
+	## Clearings
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -51,22 +55,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "tools/mixins";
 
 /*--------------------------------------------------------------
-# Normalize
+# Generic - Ground-zero styles (resets, box-sizing, etc.).
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Normalize
 --------------------------------------------------------------*/
 @import "generic/normalize";
 
 /*--------------------------------------------------------------
-# Typography
+## Box sizing
 --------------------------------------------------------------*/
-@import "elements/typography/typography";
+@import "generic/box-sizing";
 
 /*--------------------------------------------------------------
-# Elements
+# Elements - Unclassed HTML elements.
 --------------------------------------------------------------*/
+@import "elements/typography/typography";
 @import "elements/elements";
 
 /*--------------------------------------------------------------
-# Layouts
+# Layouts - class-based undecorated design patterns.
 --------------------------------------------------------------*/
 // @import "layouts/content-sidebar";
 // @import "layouts/sidebar-content";
@@ -87,31 +95,40 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "layouts/widgets";
 
 /*--------------------------------------------------------------
-# Infinite scroll
+## Vendors - Third-party plugins styles.
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Infinite scroll
 --------------------------------------------------------------*/
 @import "vendors/infinite-scroll";
 
 /*--------------------------------------------------------------
-# Navigation
+# Components - specific UI components.
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Navigation
 --------------------------------------------------------------*/
 @import "components/navigation";
 
 /*--------------------------------------------------------------
-# Media
+## Media
 --------------------------------------------------------------*/
 @import "components/media";
 
 /*--------------------------------------------------------------
-# Accessibility
+# Utilities - Helpers and overrides.
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Accessibility
 --------------------------------------------------------------*/
 @import "utilities/accessibility";
 
 /*--------------------------------------------------------------
-# Alignments
+## Alignments
 --------------------------------------------------------------*/
 @import "utilities/alignments";
 
 /*--------------------------------------------------------------
-# Clearings
+## Clearings
 --------------------------------------------------------------*/
 @import "utilities/clearings";
