@@ -20,29 +20,29 @@ $woocommerce__color-info: #3D9CD2;
 /**
  * Shop tables
  */
-@import "vendors/woocommerce/tables";
+@import "plugins/woocommerce/tables";
 
 /**
  * Products
  */
-@import "vendors/woocommerce/products";
+@import "plugins/woocommerce/products";
 
 /**
  * Single product
  */
-@import "vendors/woocommerce/single-product";
+@import "plugins/woocommerce/single-product";
 
 /**
  * Checkout
  */
-@import "vendors/woocommerce/checkout";
+@import "plugins/woocommerce/checkout";
 
 /**
  * General WooCommerce components
  */
-@import "vendors/woocommerce/components";
+@import "plugins/woocommerce/components";
 
 /**
  * WooCommerce widgets
  */
-@import "vendors/woocommerce/widgets";
+@import "plugins/woocommerce/widgets";

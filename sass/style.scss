@@ -31,7 +31,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Posts and pages
 	## Comments
 	## Widgets
-# Vendors
+# Plugins
 	## Infinite scroll
 # Components
 	## Navigation
@@ -91,12 +91,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "layouts/widgets";
 
 /*--------------------------------------------------------------
-## Vendors - Third-party plugins styles.
+## Plugins - Third-party plugins styles.
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Infinite scroll
 --------------------------------------------------------------*/
-@import "vendors/infinite-scroll";
+@import "plugins/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Components - specific UI components.
