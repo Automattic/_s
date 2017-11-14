@@ -1,22 +1,23 @@
 {
   "name": "_s",
   "version": "1.0.0",
+  "license": "GPL-2.0+",
   "scripts": {
-    "css-build": "npm run css-lint && npm run css-compile && npm run css-prefix && npm run css-format && npm run css-fix",
-    "css-lint": "stylelint style.css",
-    "css-compile": "node-sass sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1",
-    "css-prefix": "postcss style.css -u autoprefixer -o style.css --no-map",
-    "css-format": "stylefmt style.css",
-    "css-fix": "stylelint style.css --fix",
-    "scss-lint": "stylelint 'sass/**/*.scss' --syntax scss --config node_modules/stylelint-config-wordpress/scss.js"
+    "build:css": "npm run css-compile && npm run css-prefix && npm run css-format && npm run css-fix",
+    "compile:css": "node-sass sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1",
+    "prefix:css": "postcss style.css -u autoprefixer -o style.css --no-map",
+    "lint:css": "stylelint style.css",
+    "lint:css": "stylelint 'sass/**/*.scss' --syntax scss --config node_modules/stylelint-config-wordpress/scss.js",
+    "format:css": "stylefmt style.css",
+    "fix:css": "stylelint style.css --fix"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
-    "browserslist": "^2.4.0",
-    "node-sass": "^4.5.3",
+    "autoprefixer": "^7.1.6",
+    "browserslist": "^2.9.0",
+    "node-sass": "^4.6.1",
     "postcss-cli": "^4.1.1",
     "stylefmt": "^6.0.0",
-    "stylelint": "^8.1.1",
+    "stylelint": "^8.2.0",
     "stylelint-config-wordpress": "^12.0.0"
   },
   "stylelint": {
