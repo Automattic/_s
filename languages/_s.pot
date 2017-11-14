@@ -140,7 +140,7 @@ msgid "_s"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
+msgid "https://underscores.me/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -156,7 +156,7 @@ msgid "Automattic"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://automattic.com/"
+msgid "https://automattic.com/"
 msgstr ""
 
 #: comments.php:40
