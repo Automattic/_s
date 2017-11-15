@@ -10,6 +10,8 @@
  */
 
 get_header(); ?>
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
 
 <!-- Slider -->
 <section>
@@ -55,8 +57,8 @@ echo do_shortcode('[smartslider3 slider=2]');
     <div class="home-page-girl-pic med-padding">
 
     <p class="aligncenter large-scr-top-padding">LifeTies, Inc. is a supportive network of professional staff and trained volunteers dedicated to creating programs for youth to overcome the effects of abuse, neglect or homelessness. Our programs offer a nuturing, safe environment to heal, learn and become equipped with the tools to work towards a brigher future.</p>
-    <ul>
-  			<?php query_posts('posts_per_page=5&post_type=programs&orderby=date&order=ASC'); ?>
+    <ul class="listing">
+  			<?php query_posts('posts_per_page=6&post_type=programs&orderby=date&order=ASC'); ?>
   				<?php while ( have_posts() ) : the_post();
   				$homepage_blurb = get_field("homepage_blurb");
   				?>
@@ -79,9 +81,6 @@ echo do_shortcode('[smartslider3 slider=2]');
     <div>
       <?php echo do_shortcode("[custom-facebook-feed]"); ?>
     </div>
-    <div>
-      <?php echo do_shortcode("[custom-twitter-feeds]") ?>
-    </div>
   </section>
   <h2>A big thanks to our supporters!</h2>
 </div>
@@ -91,4 +90,6 @@ echo do_shortcode('[smartslider3 slider=2]');
   <?php echo do_shortcode("[logoshowcase]"); ?>
   </div>
 </section>
+</main><!-- #main -->
+</div><!-- #primary -->
 <?php get_footer(); ?>

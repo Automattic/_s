@@ -13,34 +13,73 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div class="main-content" role="main">
-      <?php query_posts('posts_per_page=5&post_type=case_studies&orderby=date&order=ASC'); ?>
-			<?php while ( have_posts() ) : the_post();
-      $services = get_field('services');
-      $image_1 = get_field("image_1");
-      $size = "medium";
-      ?>
+			<div class = "banner-background" >
+				<div id="shoes-pic-2">
+  				<h1>Support. Structure. Stability</h1>
+				</div>
+			</div>
 
-      <article class="case-study">
-        <aside class="case-study-sidebar">
-          <p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-          <p class="lighter gray"><?php echo $services; ?></p>
+			<div class="site-info">
+      <h1 class="aligncenter">Our Programs</h1>
+			<p>Creating programs that offer youths a nurturing, safe environment to heal, learn and grow towards a brighter future. Our youth face numerous challenges. LifeTies works with adolescents to manage and overcome the effects of physical, emotional and sexual abuse.</p>
+			<ul class="listing">
+	  			<?php query_posts('posts_per_page=6&post_type=programs&orderby=date&order=ASC'); ?>
+	  				<?php while ( have_posts() ) : the_post();
+	  				$programs_page_blurb = get_field("programs_page_blurb");
+	  				?>
+	  				<li class="large-btm-margin">
+	  					<h2 class="aligncenter"><?php the_title(); ?></h2>
+	            <p class="aligncenter"><?php echo $programs_page_blurb; ?></p>
+	            <a href="<?php the_permalink(); ?>" class="btn">Learn More</a>
+	  				</li>
+	  				<?php endwhile; ?>
+	  			<?php wp_reset_query(); ?>
+	  		</ul>
+				</div>
+				<div class="light-blue-background aligncenter">
+					<div class="site-info">
 
-          <?php the_excerpt(); ?>
+					<div class="">
+						<h2>Want to make a Youth Referral?</h2>
+						<h3>(Triad & Rainbow Houses are accepting referrals!)</h3>
+					</div>
 
-          <h6 class="bold green-text"><a href="<?php the_permalink(); ?>">View Project &rsaquo;</a></h6>
-        </aside>
+					<div class="grid-wrapper">
+					<div class="left-section">
+						<p>All referrals will go through PerformCare's YouthLink. You can contact PerformCare to gain access to YouthLink via the number below.</p>
+						<div class="aligncenter">
+							<div class="perform-care-logo inline-block-display"></div>
+						</div>
 
-        <div class="case-study-images">
-          <a href="<?php the_permalink(); ?>">
-          <?php if($image_1) {
-            echo wp_get_attachment_image( $image_1, $size );
-          } ?>
-          </a>
-        </div>
-      </article>
-
-			<?php endwhile; // end of the loop. ?>
-      <?php wp_reset_query(); ?>
+						<h1>(877) 652-7624</h1>
+						<h5>
+							<a href="http://www.performcarenj.org">www.performcarenj.org</a>
+						</h5>
+					</div>
+					<div class="right-section">
+						<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting the following:</p>
+						<div class="grid-wrapper">
+						<div class="left-section">
+							<h3>Vivian Harmon</h3>
+							<h4>Triad: (609) 771-4221</h4>
+							<h4>Rainbow: (609) 394-6747</h4>
+							<h5>
+								<a href="mailto:vharmon@lifeties.org">vharmon@lifeties.org</a>
+								</h5>
+						</div>
+						<div class="right-section">
+							<h3>Emily Mattek</h3>
+							<h4>Clinical Services</h4>
+							<h4>Phone: (609) 882-4485</h4>
+							<h5>
+								<a href="mailto:emattek@lifeties.org">emattek@lifeties.org</a>
+								</h5>
+						</div>
+						</div>
+						</div>
+					</div>
+					</div>
+				</div> <!-- referral -->
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

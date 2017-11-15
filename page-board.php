@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the Staff page.
+ * The template for displaying the Board page.
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -22,7 +22,7 @@ get_header(); ?>
         </span>
       </div>
 
-      <h1 class="aligncenter">LifeTies Staff</h1>
+      <h1 class="aligncenter">Board Members</h1>
 			<?php
 			while ( have_posts() ) : the_post();
       $updated = get_field("updated");
@@ -30,62 +30,62 @@ get_header(); ?>
       $name = get_field("name");
       $image = get_field("image");
       $position = get_field("position");
-      $email = get_field("email");
+      $board_member_since = get_field("board_member_since");
       $bio = get_field("bio");
       $name_2 = get_field("name_2");
       $image_2 = get_field("image_2");
       $position_2 = get_field("position_2");
-      $email_2 = get_field("email_2");
+      $board_member_since_2 = get_field("board_member_since_2");
       $bio_2 = get_field("bio_2");
       $name_3 = get_field("name_3");
       $image_3 = get_field("image_3");
       $position_3 = get_field("position_3");
-      $email_3 = get_field("email_3");
+      $board_member_since_3 = get_field("board_member_since_3");
       $bio_3 = get_field("bio_3");
       $name_4 = get_field("name_4");
       $image_4 = get_field("image_4");
       $position_4 = get_field("position_4");
-      $email_4 = get_field("email_4");
+      $board_member_since_4 = get_field("board_member_since_4");
       $bio_4 = get_field("bio_4");
       $name_5 = get_field("name_5");
       $image_5 = get_field("image_5");
       $position_5 = get_field("position_5");
-      $email_5 = get_field("email_5");
+      $board_member_since_5 = get_field("board_member_since_5");
       $bio_5 = get_field("bio_5");
       $name_6 = get_field("name_6");
       $image_6 = get_field("image_6");
       $position_6 = get_field("position_6");
-      $email_6 = get_field("email_6");
+      $board_member_since_6 = get_field("board_member_since_6");
       $bio_6 = get_field("bio_6");
       $name_7 = get_field("name_7");
       $image_7 = get_field("image_7");
       $position_7 = get_field("position_7");
-      $email_7 = get_field("email_7");
+      $board_member_since_7 = get_field("board_member_since_7");
       $bio_7 = get_field("bio_7");
       $name_8 = get_field("name_8");
       $image_8 = get_field("image_8");
       $position_8 = get_field("position_8");
-      $email_8 = get_field("email_8");
+      $board_member_since_8 = get_field("board_member_since_8");
       $bio_8 = get_field("bio_8");
       $name_9 = get_field("name_9");
       $image_9 = get_field("image_9");
       $position_9 = get_field("position_9");
-      $email_9 = get_field("email_9");
+      $board_member_since_9 = get_field("board_member_since_9");
       $bio_9 = get_field("bio_9");
       $name_10 = get_field("name_10");
       $image_10 = get_field("image_10");
       $position_10 = get_field("position_10");
-      $email_10 = get_field("email_10");
+      $board_member_since_10 = get_field("board_member_since_10");
       $bio_10 = get_field("bio_10");
       $name_11 = get_field("name_11");
       $image_11 = get_field("image_11");
       $position_11 = get_field("position_11");
-      $email_11 = get_field("email_11");
+      $board_member_since_11 = get_field("board_member_since_11");
       $bio_11 = get_field("bio_11");
       $name_12 = get_field("name_12");
       $image_12 = get_field("image_12");
       $position_12 = get_field("position_12");
-      $email_12 = get_field("email_12");
+      $board_member_since_12 = get_field("board_member_since_12");
       $bio_12 = get_field("bio_12");
       ?>
       <p class="aligncenter"><?php echo $updated ?></p>
@@ -101,7 +101,7 @@ get_header(); ?>
 				<div class="">
 					<h4><?php echo $name ?></h4>
 	        <p><?php echo $position ?></p>
-	        <h5><?php echo $email ?></h5>
+	        <h5><?php echo $board_member_since ?></h5>
 	        <?php if($bio) : ?>
 	        <div class="bio-dropdown">
 	          <a class="staff-bio">See full bio</a>
@@ -124,7 +124,7 @@ get_header(); ?>
 				<div class="">
         <h4><?php echo $name_2 ?></h4>
         <p><?php echo $position_2 ?></p>
-        <h5><?php echo $email_2 ?></h5>
+        <h5><?php echo $board_member_since_2 ?></h5>
 
         <?php if($bio_2) : ?>
 					<div class="bio-dropdown">
@@ -148,7 +148,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_3 ?></h4>
 	        <p><?php echo $position_3 ?></p>
-	        <h5><?php echo $email_3 ?></h5>
+	        <h5><?php echo $board_member_since_3 ?></h5>
 	        <?php if($bio_3) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -172,7 +172,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_4 ?></h4>
 	        <p><?php echo $position_4 ?></p>
-	        <h5><?php echo $email_4 ?></h5>
+	        <h5><?php echo $board_member_since_4 ?></h5>
 	        <?php if($bio_4) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -196,7 +196,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_5 ?></h4>
 	        <p><?php echo $position_5 ?></p>
-	        <h5><?php echo $email_5 ?></h5>
+	        <h5><?php echo $board_member_since_5 ?></h5>
 	        <?php if($bio_5) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -220,7 +220,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_6 ?></h4>
 	        <p><?php echo $position_6 ?></p>
-	        <h5><?php echo $email_6 ?></h5>
+	        <h5><?php echo $board_member_since_6 ?></h5>
 	        <?php if($bio_6) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -244,7 +244,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_7 ?></h4>
 	        <p><?php echo $position_7 ?></p>
-	        <h5><?php echo $email_7 ?></h5>
+	        <h5><?php echo $board_member_since_7 ?></h5>
 	        <?php if($bio_7) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -268,7 +268,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_8 ?></h4>
 	        <p><?php echo $position_8 ?></p>
-	        <h5><?php echo $email_8 ?></h5>
+	        <h5><?php echo $board_member_since_8 ?></h5>
 	        <?php if($bio_8) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -283,7 +283,7 @@ get_header(); ?>
 
       </div>
 
-      <div class="section width-1-2 width-1-4 grid-two-eq-rows aligncenter">
+      <!-- <div class="section width-1-2 width-1-4 grid-two-eq-rows aligncenter">
 				<div class="">
 					<?php if($image_9) {
 	            echo wp_get_attachment_image( $image_9, $size );
@@ -292,7 +292,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_9 ?></h4>
 	        <p><?php echo $position_9 ?></p>
-	        <h5><?php echo $email_9 ?></h5>
+	        <h5><?php echo $board_member_since_9 ?></h5>
 
 	        <?php if($bio_9) : ?>
 						<div class="bio-dropdown">
@@ -307,7 +307,7 @@ get_header(); ?>
         </div>
       </div>
 
-      <div class="section width-1-2 width-1-4 grid-two-eq-rows aligncenter">
+      <div class="section width-1-2 width-1-4 fgrid-two-eq-rows aligncenter">
 				<div class="">
 					<?php if($image_10) {
 	            echo wp_get_attachment_image( $image_10, $size );
@@ -316,7 +316,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_10 ?></h4>
 	        <p><?php echo $position_10 ?></p>
-	        <h5><?php echo $email_10 ?></h5>
+	        <h5><?php echo $board_member_since_10 ?></h5>
 	        <?php if($bio_10) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -340,7 +340,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_11 ?></h4>
 	        <p><?php echo $position_11 ?></p>
-	        <h5><?php echo $email_11 ?></h5>
+	        <h5><?php echo $board_member_since_11 ?></h5>
 	        <?php if($bio_11) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -364,7 +364,7 @@ get_header(); ?>
         <div class="">
 					<h4><?php echo $name_12 ?></h4>
 	        <p><?php echo $position_12 ?></p>
-	        <h5><?php echo $email_12 ?></h5>
+	        <h5><?php echo $board_member_since_12 ?></h5>
 	        <?php if($bio_12) : ?>
 						<div class="bio-dropdown">
 							<a class="staff-bio">See full bio</a>
@@ -377,7 +377,7 @@ get_header(); ?>
 	        <?php endif; ?>
         </div>
 
-      </div>
+      </div> -->
 		</div>
 			<?php endwhile; ?>
 

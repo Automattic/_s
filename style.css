@@ -19,8 +19,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
+
 /* =Reset
 -------------------------------------------------------------- */
+
 * {
 	margin: 0;
 	padding: 0;
@@ -94,15 +96,22 @@ td {
 	padding: 0;
 	vertical-align: baseline;
 }
+
 html {
-	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
-	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+	font-size: 62.5%;
+	/* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll;
+	/* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%;
+	/* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%;
+	/* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
+
 body {
 	background: #fff;
 }
+
 article,
 aside,
 details,
@@ -115,39 +124,47 @@ nav,
 section {
 	display: block;
 }
+
 ol,
 ul {
 	list-style: none;
 }
+
 table {
 	/* tables still need 'cellspacing="0"' in the markup */
 	border-collapse: separate;
 	border-spacing: 0;
 }
+
 caption,
 th,
 td {
 	font-weight: normal;
 	text-align: left;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
 	content: '';
 }
+
 blockquote,
 q {
 	quotes: '' '';
 }
+
 a:focus {
 	outline: thin dotted;
 }
+
 a:hover,
 a:active {
 	/* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
 	outline: 0;
 }
+
 a img {
 	border: 0;
 }
@@ -174,9 +191,11 @@ a img {
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -407,6 +426,7 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+
 body,
 button,
 input,
@@ -537,6 +557,7 @@ big {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+
 html {
 	box-sizing: border-box;
 }
@@ -629,6 +650,10 @@ table {
 	color: #d9ecf7;
 }
 
+.light-blue-background {
+	background-color: #d9ecf7;
+}
+
 .sea-blue {
 	color: #2484c6;
 }
@@ -718,49 +743,37 @@ table {
 	background: url(./img/insta.png) no-repeat center;
 }
 
-.bio-dropdown {
-	width: 100vw;
+ul.no-bullet {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
 }
 
-.bio-dropdown label {
-	display: block;
-	margin: 20px 0 0;
-}
-
-.bio-dropdown label:hover {
-	text-decoration: underline;
-}
-
-.bio-dropdown input {
-	position: absolute;
-	left: -999em;
-	display: none;
+ul li.check-blue {
+	padding-left: 2.5rem;
+	background-image: url(./img/Check-blue.png);
+	background-position: 0 0;
+	background-size: 1.6rem 1.6rem;
+	background-repeat: no-repeat;
+	padding-bottom: 1em;
 }
 
 .bio-dropdown .hide {
-	width: 100%;
-	background: #aaaaaa;
-	max-height: 99em;
-	opacity: 1;
-	height: auto;
-	overflow: hidden;
-	transition: opacity 1.5s linear, max-height 1.5s linear;
+	display: none;
 }
 
-.bio-dropdown .hide p {
-	padding: 10px;
-	margin: 0;
-}
-
-.bio-dropdown input[type='checkbox']:checked + div {
-	opacity: 0;
-	max-height: 0;
-	border: none;
+.listing {
+	list-style: none;
+	margin: 2em;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+
 button,
 input[type='button'],
 input[type='reset'],
@@ -855,6 +868,7 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
+
 a {
 	color: royalblue;
 }
@@ -881,6 +895,7 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -934,6 +949,7 @@ a:active {
 }
 
 /* Small menu. */
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -973,7 +989,9 @@ a:active {
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+
 /* Text meant only for screen readers. */
+
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -1006,6 +1024,7 @@ a:active {
 }
 
 /* Do not show the outline on the skip link target. */
+
 #content[tabindex='-1']:focus {
 	outline: 0;
 }
@@ -1013,6 +1032,7 @@ a:active {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
+
 /*.alignleft {
 	display: inline;
 	float: left;
@@ -1076,9 +1096,85 @@ a:active {
 	}
 }
 
+.grid-two-eq-rows {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+
+.pdf-section {
+	grid-area: pdf;
+	margin: auto;
+}
+
+.graph-section {
+	grid-area: graph;
+}
+
+.financial-wrapper {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas: 'graph' 'pdf';
+}
+
+@media screen and (min-width: 769px) {
+	.financial-wrapper {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 'pdf graph';
+	}
+}
+
+.pdf-indiv {
+	display: flex;
+	justify-content: flex-start;
+	padding: 0.5em;
+}
+
+.pdf-img {
+	margin: auto;
+}
+
+.left-section {
+	grid-area: left;
+}
+
+.right-section {
+	grid-area: right;
+}
+
+.second-row {
+	grid-area: second-row;
+}
+
+.grid-wrapper {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas: 'left' 'second-row' 'right';
+}
+
+@media screen and (min-width: 769px) {
+	.grid-wrapper {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 'left right' 'second-row second-row';
+	}
+}
+
+.grid-wrapper-thirds {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas: 'left' 'right';
+}
+
+@media screen and (min-width: 769px) {
+	.grid-wrapper-thirds {
+		grid-template-columns: 2fr 1fr;
+		grid-template-areas: 'left right';
+	}
+}
+
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+
 /*.clear:before,
 .clear:after,
 .entry-content:before,
@@ -1108,6 +1204,7 @@ a:active {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+
 .widget {
 	margin: 0 0 1.5em;
 	/* Make sure select elements fit in widgets. */
@@ -1120,9 +1217,11 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+
 .sticky {
 	display: block;
 }
@@ -1149,6 +1248,7 @@ a:active {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1160,7 +1260,9 @@ a:active {
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
+
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
+
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
 	/* Theme Footer (when set to scrolling) */
@@ -1168,6 +1270,7 @@ a:active {
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+
 .infinity-end.neverending .site-footer {
 	display: block;
 }
@@ -1175,6 +1278,7 @@ a:active {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -1185,6 +1289,7 @@ a:active {
 }
 
 /* Make sure embeds and iframes fit their containers. */
+
 embed,
 iframe,
 object {
@@ -1192,6 +1297,7 @@ object {
 }
 
 /* Make sure logo link wraps around logo image. */
+
 .custom-logo-link {
 	display: inline-block;
 }
@@ -1212,9 +1318,16 @@ object {
 	display: inline-block;
 }
 
+.perform-care-logo {
+	background-image: url(./img/Layer-1526.png);
+	height: 28px;
+	width: 221px;
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
+
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -1237,6 +1350,7 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
+
 .gallery {
 	margin-bottom: 1.5em;
 }
@@ -1346,7 +1460,6 @@ object {
 		/*width: 3500px;
     height: 1728px;*/
 	}
-
 	.large-scr-top-padding {
 		padding-top: 4em;
 		padding-right: 15em;
@@ -1372,7 +1485,8 @@ object {
 #image-inner {
 	display: block;
 	height: 0;
-	padding-top: 36.7%; /* height/width of image x 100 */
+	padding-top: 36.7%;
+	/* height/width of image x 100 */
 }
 
 .yellow-house-pic {
@@ -1382,4 +1496,43 @@ object {
 	background-size: cover;
 	width: 1366px;
 	height: 491px;
+}
+
+.banner-background {
+	height: 32em;
+	text-align: center;
+	background-size: cover;
+	background-position: center;
+}
+
+.banner-background h1 {
+	color: white;
+	font-weight: bold;
+	/*font-size: 3em;*/
+	margin: 0 auto;
+	line-height: 10em;
+	/* container height / 2 */
+}
+
+#shoes-pic-2 {
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-image: url(./img/iStock-510012853.jpg);
+}
+
+.desktop-only-img {
+	display: none;
+}
+
+@media screen and (min-width: 769px) {
+	.desktop-only-img {
+		display: block;
+	}
+}
+
+.raise-hand-pic {
+	background: url(./img/iStock-506616602.jpg);
+	width: 1464px;
+	height: 975px;
 }
