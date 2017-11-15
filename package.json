@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "license": "GPL-2.0+",
   "scripts": {
-    "build:css": "npm run css-compile && npm run css-prefix && npm run css-format && npm run css-fix",
+    "build:css": "npm run compile:css && npm run prefix:css && npm run format:css && npm run fix:css",
     "compile:css": "node-sass sass/style.scss style.css --output-style expanded --indent-type tab --indent-width 1",
     "prefix:css": "postcss style.css -u autoprefixer -o style.css --no-map",
+    "lint:scss": "stylelint 'sass/**/*.scss' --syntax scss --config node_modules/stylelint-config-wordpress/scss.js",
     "lint:css": "stylelint style.css",
-    "lint:css": "stylelint 'sass/**/*.scss' --syntax scss --config node_modules/stylelint-config-wordpress/scss.js",
-    "format:css": "stylefmt style.css",
-    "fix:css": "stylelint style.css --fix"
+    "fix:scss": "stylelint 'sass/**/*.scss' --syntax scss --fix --config node_modules/stylelint-config-wordpress/scss.js",
+    "fix:css": "stylelint style.css --fix",
+    "format:css": "stylefmt style.css"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
