@@ -629,15 +629,12 @@ table {
 	background: #1d3e53;
 	color: #fff;
 	font: 700 1.125em/3.5 'Martel', Arial, sans-serif;
-	display: flex;
-	height: 3.5em;
-	width: 10em;
 	padding: 0 1.25em;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
 	border-radius: 8px;
-	margin: 0 auto;
+	display: inline-block;
 }
 
 /* Colors */
@@ -770,6 +767,16 @@ ul li.check-blue {
 	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
+.sponsor-carousel {
+	display: none;
+}
+
+@media screen and (min-width: 769px) {
+	.sponsor-carousel {
+		display: block;
+	}
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -873,9 +880,9 @@ a {
 	color: royalblue;
 }
 
-a:visited {
-	color: purple;
-}
+/*a:visited {
+	color: #aaaaaa;
+}*/
 
 a:hover,
 a:focus,
@@ -1324,6 +1331,12 @@ object {
 	width: 221px;
 }
 
+.amazon-smile-logo {
+	background-image: url(./img/amazon-smile-logo.png);
+	height: 49px;
+	width: 223px;
+}
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -1510,7 +1523,7 @@ object {
 	font-weight: bold;
 	/*font-size: 3em;*/
 	margin: 0 auto;
-	line-height: 10em;
+	/*line-height: 10em;*/
 	/* container height / 2 */
 }
 
@@ -1533,6 +1546,32 @@ object {
 
 .raise-hand-pic {
 	background: url(./img/iStock-506616602.jpg);
-	width: 1464px;
-	height: 975px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 460px;
+	height: 310px;
+	overflow: hidden;
+}
+
+#donation-banner {
+	background: url('./img/Rectangle-1-donation.png') no-repeat scroll left center /
+		cover rgba(0, 0, 0, 0);
+	padding: 3em 0;
+}
+
+#volunteer-banner {
+	background: url('./img/Rectangle-1-copy-3.png') no-repeat scroll left center /
+		cover rgba(0, 0, 0, 0);
+	padding: 3em 0;
+}
+
+.center-in-banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.center-in-banner > h1 {
+	margin: 0;
 }

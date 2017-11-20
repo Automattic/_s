@@ -20,14 +20,14 @@ get_header(); ?>
 			</div>
 
 			<div class="site-info">
-      <h1 class="aligncenter">Our Programs</h1>
-			<p>Creating programs that offer youths a nurturing, safe environment to heal, learn and grow towards a brighter future. Our youth face numerous challenges. LifeTies works with adolescents to manage and overcome the effects of physical, emotional and sexual abuse.</p>
-			<ul class="listing">
+	      <h1 class="aligncenter">Our Programs</h1>
+				<p>Creating programs that offer youths a nurturing, safe environment to heal, learn and grow towards a brighter future. Our youth face numerous challenges. LifeTies works with adolescents to manage and overcome the effects of physical, emotional and sexual abuse.</p>
+				<ul class="listing">
 	  			<?php query_posts('posts_per_page=6&post_type=programs&orderby=date&order=ASC'); ?>
 	  				<?php while ( have_posts() ) : the_post();
 	  				$programs_page_blurb = get_field("programs_page_blurb");
 	  				?>
-	  				<li class="large-btm-margin">
+	  				<li class="large-btm-margin aligncenter">
 	  					<h2 class="aligncenter"><?php the_title(); ?></h2>
 	            <p class="aligncenter"><?php echo $programs_page_blurb; ?></p>
 	            <a href="<?php the_permalink(); ?>" class="btn">Learn More</a>
@@ -78,8 +78,8 @@ get_header(); ?>
 						</div>
 						</div>
 					</div>
-					</div>
-				</div> <!-- referral -->
+				</div>
+			</div> <!-- referral -->
 		</div><!-- #content -->
 	</div><!-- #primary -->
 

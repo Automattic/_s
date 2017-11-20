@@ -123,19 +123,22 @@ get_header(); ?>
 				</div>
 			</div>
 		</div> <!-- referral -->
-		<?php if($upcoming_mentoring) :?>
-		<section class="site-info">
-			<div class="image">
-				<div class="raise-hand-pic">
 
-				</div>
+		<!-- mentoring info section -->
+		<?php if($upcoming_mentoring) :?>
+		<section class="site-info grid-wrapper">
+			<div class="desktop-only-img left-section">
+				<div class="raise-hand-pic"></div>
 			</div>
-			<h3>Interested in becoming a mentor?</h3>
-			<p><?php echo $upcoming_mentoring; ?></p>
-			<p>
-				<strong>Mentors must be at least 21 and pass all background checks.</strong>
-				Join our newsletter in the footer below or follow us on <a href="http://www.facebook.com/Lifeties">Facebook</a> and <a href="http://twitter.com/lifeties">Twitter</a> to keep informed of upcoming information sessions.
-			</p>
+			<div class="right-section">
+				<h3>Interested in becoming a mentor?</h3>
+				<p><?php echo $upcoming_mentoring; ?></p>
+				<p>
+					<strong>Mentors must be at least 21 and pass all background checks.</strong>
+					Join our newsletter in the footer below or follow us on <a href="http://www.facebook.com/Lifeties">Facebook</a> and <a href="http://twitter.com/lifeties">Twitter</a> to keep informed of upcoming information sessions.
+				</p>
+				<a href="<?php echo home_url(); ?>/volunteer" class="btn">Volunteer Signup</a>
+			</div>
 		</section>
 		<?php endif; ?>
 		<?php endwhile; // End of the loop.?>

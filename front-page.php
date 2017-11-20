@@ -62,7 +62,7 @@ echo do_shortcode('[smartslider3 slider=2]');
   				<?php while ( have_posts() ) : the_post();
   				$homepage_blurb = get_field("homepage_blurb");
   				?>
-  				<li>
+  				<li class="aligncenter">
   					<h2 class="aligncenter"><?php the_title(); ?></h2>
             <p class="aligncenter"><?php echo $homepage_blurb; ?></p>
             <a href="<?php the_permalink(); ?>" class="btn">Learn More</a>
@@ -82,12 +82,13 @@ echo do_shortcode('[smartslider3 slider=2]');
       <?php echo do_shortcode("[custom-facebook-feed]"); ?>
     </div>
   </section>
-  <h2>A big thanks to our supporters!</h2>
+
 </div>
 <!-- Sponsors -->
-<section>
+<section class="sponsor-carousel">
+  <h2 class="aligncenter">A big thanks to our supporters!</h2>
   <div>
-  <?php echo do_shortcode("[logoshowcase]"); ?>
+  <?php echo do_shortcode('[logoshowcase dots="false"]'); ?>
   </div>
 </section>
 </main><!-- #main -->
