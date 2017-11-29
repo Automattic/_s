@@ -683,6 +683,10 @@ table {
 	color: #aaaaaa;
 }
 
+.light-gray-background {
+	background-color: #f7f7f7;
+}
+
 .turquoise {
 	color: #018191;
 }
@@ -774,7 +778,18 @@ ul li.check-blue {
 @media screen and (min-width: 769px) {
 	.sponsor-carousel {
 		display: block;
+		height: 20em;
 	}
+}
+
+.border-bottom:not(:last-child) {
+	border-bottom: 1px solid #666666;
+	padding: 1em 0;
+}
+
+.border-top {
+	border-top: 1px solid #666666;
+	padding: 1em 0;
 }
 
 /*--------------------------------------------------------------
@@ -863,10 +878,23 @@ textarea {
 	width: 100%;
 }
 
+#nf-field-18,
+#nf-field-14,
+#nf-field-4 {
+	background: #2484c6;
+	color: #fff;
+	font: 700 1.125em/3.5 'Martel', Arial, sans-serif;
+	padding: 0 1.25em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 8px;
+	display: inline-block;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-
 .site-header {
 	padding: 1em;
 	background-color: #d9ecf7;
@@ -1072,6 +1100,11 @@ a:active {
 	max-width: 980px;
 }
 
+.page-width {
+	width: 80%;
+	margin: 2em auto;
+}
+
 .page {
 	display: flex;
 	flex-wrap: wrap;
@@ -1175,6 +1208,66 @@ a:active {
 	.grid-wrapper-thirds {
 		grid-template-columns: 2fr 1fr;
 		grid-template-areas: 'left right';
+	}
+}
+
+.title {
+	grid-area: title;
+}
+
+.pic {
+	grid-area: pic;
+}
+
+.content {
+	grid-area: content;
+}
+
+.button {
+	grid-area: button;
+}
+
+.wrapper {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas: 'title' 'pic' 'content' 'button';
+}
+
+@media screen and (min-width: 769px) {
+	.wrapper {
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas: 'pic title' 'pic content' 'pic button';
+	}
+}
+
+.alt-wrapper {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas: 'title' 'pic' 'content' 'button';
+}
+
+@media screen and (min-width: 769px) {
+	.alt-wrapper {
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas: 'pic title' 'pic content' 'button content'
+			'....... content' '....... content' '....... content' '....... content'
+			'....... content' '....... content' '....... content' '....... content'
+			'....... content' '....... content' '....... content' '....... content'
+			'....... content' '....... content' '....... content' '....... content'
+			'....... content' '....... content' '....... content' '....... content';
+	}
+}
+
+.quarter-wrapper {
+	display: grid;
+	grid-gap: 1em;
+}
+
+@media screen and (min-width: 769px) {
+	.quarter-wrapper {
+		display: grid;
+		grid-gap: 1em;
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
@@ -1445,7 +1538,14 @@ object {
 	width: 152px;
 }
 
-.home-page-girl-pic {
+.team-icon {
+	background: url(./img/Shape-3030.png);
+	z-index: 1;
+	height: 152px;
+	width: 223px;
+}
+
+.team-icon .home-page-girl-pic {
 	background: url(./img/iStock-578307742_blue.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1503,12 +1603,13 @@ object {
 }
 
 .yellow-house-pic {
-	background: url(./img/Rectangle-867.png);
-	background-position: center;
+	background: url(./img/Rectangle-867.png)no-repeat scroll left center / cover rgba(0, 0, 0, 0);
+	padding: 6em 0;
+	/*background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 1366px;
-	height: 491px;
+	height: 491px;*/
 }
 
 .banner-background {
@@ -1565,6 +1666,18 @@ object {
 	padding: 3em 0;
 }
 
+#career-banner {
+	background: url('./img/Rectangle-1-career.png') no-repeat scroll left center /
+		cover rgba(0, 0, 0, 0);
+	padding: 3em 0;
+}
+
+#events-banner {
+	background: url('./img/pexels-photo-442540.png') no-repeat scroll left center /
+		cover rgba(0, 0, 0, 0);
+	padding: 3em 0;
+}
+
 .center-in-banner {
 	display: flex;
 	align-items: center;
@@ -1574,4 +1687,9 @@ object {
 
 .center-in-banner > h1 {
 	margin: 0;
+}
+
+#map-canvas {
+	width: 100vw;
+	height: 300px;
 }

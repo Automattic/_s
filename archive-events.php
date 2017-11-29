@@ -1,10 +1,8 @@
 <?php
 /**
+ * Template Name: Events
  * The template for displaying archive of events
  *
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
  *
  * @package _s
  */
@@ -13,32 +11,42 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div class="main-content" role="main">
-      <?php query_posts('posts_per_page=5&post_type=case_studies&orderby=date&order=ASC'); ?>
+			<div id="events-banner">
+				<div class="center-in-banner">
+					<h1 class="white">Events & Fundraisers</h1>
+				</div>
+			</div>
+
+      <?php query_posts('posts_per_page=10&post_type=events&orderby=date&order=ASC'); ?>
 			<?php while ( have_posts() ) : the_post();
-      $services = get_field('services');
-      $image_1 = get_field("image_1");
+      $date = get_field('date');
+		 	$location= get_field('location');
+      $image = get_field('image');
       $size = "medium";
       ?>
+			<ul class="border-bottom page-width">
+				<li class="aligncenter wrapper">
+					<div class="title">
+						<h3 class=""><?php the_title(); ?></h3>
+			      <h3 class=""><?php echo $date; ?></h3>
+						<h4 class=""><?php echo $location; ?></h4>
+					</div>
 
-      <article class="case-study">
-        <aside class="case-study-sidebar">
-          <p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-          <p class="lighter gray"><?php echo $services; ?></p>
+					<div class="pic">
+						<?php if($image) {
+						 echo wp_get_attachment_image( $image, $size );
+					 } ?>
+					</div>
 
-          <?php the_excerpt(); ?>
-
-          <h6 class="bold green-text"><a href="<?php the_permalink(); ?>">View Project &rsaquo;</a></h6>
-        </aside>
-
-        <div class="case-study-images">
-          <a href="<?php the_permalink(); ?>">
-          <?php if($image_1) {
-            echo wp_get_attachment_image( $image_1, $size );
-          } ?>
-          </a>
-        </div>
-      </article>
-
+					<div class="content">
+						<p><?php the_excerpt(); ?></p>
+					</div>
+					
+					<div class="button">
+						 <a href="<?php the_permalink(); ?>" class="btn">See Event Details</a>
+					</div>
+				</li>
+			</ul>
 			<?php endwhile; // end of the loop. ?>
       <?php wp_reset_query(); ?>
 		</div><!-- #content -->

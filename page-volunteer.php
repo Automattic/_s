@@ -58,13 +58,16 @@ get_header(); ?>
 			 </div>
 		 </section>
 
-		 <section>
-		 	<h1>We're looking for volunteers like you!</h1>
-			<h3>
-				<strong>Interested in becoming a volunteer?</strong> Complete the brief online form below or email us at <a href="mailto:info@lifeties.org">info@lifeties.org</a> and someone will reach out to you.
-			</h3>
-			<p>(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
-			<div class="">
+		 <section class="page-width">
+			 <div class="aligncenter">
+				 <h1>We're looking for volunteers like you!</h1>
+ 				<h3>
+ 					<strong>Interested in becoming a volunteer?</strong> Complete the brief online form below or email us at <a href="mailto:info@lifeties.org">info@lifeties.org</a> and someone will reach out to you.
+ 				</h3>
+ 				<p>(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
+			 </div>
+
+			<div>
 				<?php echo do_shortcode('[ninja_form id=3]') ?>
 			</div>
 		 </section>
@@ -72,9 +75,10 @@ get_header(); ?>
 		<?php endwhile; // End of the loop.?>
 
 		<!-- Sponsors -->
-		<section class="sponsor-carousel">
+		<section class="sponsor-carousel light-gray-background">
+			<h2 class="aligncenter">A big thanks to our supporters!</h2>
 			<div>
-			<?php echo do_shortcode('[logoshowcase dots="false"]'); ?>
+			<?php echo do_shortcode('[logoshowcase cat_id="3" dots="false"]'); ?>
 			</div>
 		</section>
 

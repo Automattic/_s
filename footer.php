@@ -15,7 +15,6 @@
 
 	<footer id="colophon" class="site-footer dark-blue-background">
 		<div class="site-info">
-
 			<div>
 				<h3 class="gray-blue aligncenter">Contact LifeTies</h3>
 				<h2 class="white aligncenter">Call: (609) 771-1600</h2>
@@ -31,7 +30,7 @@
 					<a href="http://twitter.com/lifeties" class="soc-icon tw"></a>
 					<a href="http://www.facebook.com/Lifeties" class="soc-icon fb"></a>
 					<a href="https://www.linkedin.com/company/6526433/" class="soc-icon ln"></a>
-					<a href="#" class="soc-icon in"></a>
+					<a href="http://www.instagram.com" class="soc-icon in"></a>
 				</div>
 			</div>
 

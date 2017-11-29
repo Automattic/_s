@@ -60,7 +60,7 @@ get_header(); ?>
 							</div>
 
 							<div class="right-section">
-								<a href="http://www.amazon.com" class="btn">Start Shopping</a>
+								<a href="https://smile.amazon.com/ch/22-2417627" class="btn">Start Shopping</a>
 							</div>
 						</div>
   				</li>
