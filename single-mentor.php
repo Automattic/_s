@@ -35,7 +35,8 @@ get_header(); ?>
 		$program_services_11 = get_field('program_services_11');
 		$upcoming_mentoring = get_field('upcoming_mentoring');
 		?>
-		<div class="grid-wrapper site-info">
+		<div class="page-width">
+		<div class="grid-wrapper">
 			<div class="left-section">
 				<h1><?php the_title(); ?></h1>
 				<p><?php the_content(); ?></p>
@@ -92,7 +93,6 @@ get_header(); ?>
 					</li>
 				<?php endif; ?>
 				</ul>
-
 			</div>
 
 			<div class="desktop-only-img right-section">
@@ -100,6 +100,7 @@ get_header(); ?>
 									echo wp_get_attachment_image( $image, $size );
 								} ?>
 			</div>
+		</div>
 		</div>
 
 		<div class="light-blue-background aligncenter">
@@ -113,7 +114,7 @@ get_header(); ?>
 					<div class="left">
 						<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting Robin Wilkins</p>
 					</div>
-					<div class="right" style="margin: 1em auto; padding: 1em;">
+					<div class="right-section" style="margin: 1em auto; padding: 1em;">
 						<h3>Robin Wilkins</h3>
 						<h4>(609) 671-0040</h4>
 						<h5>
@@ -142,6 +143,7 @@ get_header(); ?>
 		</section>
 		<?php endif; ?>
 		<?php endwhile; // End of the loop.?>
+
 	</main><!-- #main -->
 </div><!-- #primary -->
 

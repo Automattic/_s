@@ -14,13 +14,13 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer dark-blue-background">
-		<div class="site-info">
-			<div>
+		<div class="content-width footer-grid">
+			<div class="contact">
 				<h3 class="gray-blue aligncenter">Contact LifeTies</h3>
 				<h2 class="white aligncenter">Call: (609) 771-1600</h2>
 				<h2 class="white aligncenter">Fax: (609) 530-1648</h2>
 			</div>
-			<div>
+			<div class="logo">
 				<!-- LifeTies logo -->
 				<div class="aligncenter">
 					<div class="lt-logo-white inline-block-display"></div>
@@ -34,12 +34,19 @@
 				</div>
 			</div>
 
-			<div class="aligncenter">
-				<h1 class="white">STAY UPDATED</h1>
-				<h2 class="white">Subscribe to our newsletter</h2>
-				<input type="text" name="" value="" placeholder="Enter your email address"><button type="submit" name="" value="" class="white burnt-orange-background">&#8250;</button>
+			<div class="aligncenter newsletter">
+				<h1 class="white" style="margin-bottom: 0;">STAY UPDATED</h1>
+				<h2 class="white" style="line-height: 1.5em;">Subscribe to our newsletter</h2>
+				<section>
+					<?php
+				echo do_shortcode('[ctct form="175"]');
+				?>
+				</section>
 			</div>
-			<h6 class="white aligncenter arial">&#9400; LifeTies. All Rights Reserved.</h6>
+
+			<div class="corp">
+				<h5 class="white aligncenter arial">&#9400; LifeTies. All Rights Reserved.</h5>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

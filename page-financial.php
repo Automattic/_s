@@ -16,11 +16,9 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-      <div class="banner-container">
-        <span id="wall-teens-pic">
-          <span id="image-inner"></span>
-        </span>
-      </div>
+			<div class="banner-background">
+				<div id="wall-teens-pic"></div>
+			</div>
 
       <h1 class="aligncenter">Financial Documents</h1>
 			<?php
@@ -39,52 +37,53 @@ get_header(); ?>
 				echo do_shortcode(' [visualizer id="139"] ');
 				?>
 				</section>
+
 				<section class="pdf-section">
-				<div class="pdf-indiv">
-					<?php if($pdf_1) :?>
-						<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
+					<div class="pdf-indiv">
+						<?php if($pdf_1) :?>
+							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
+							<a href="<?php echo $pdf_1['url']; ?>">
+								<h3>  -  <?php echo $pdf_1['title']; ?>
+								</h3>
+							</a>
+						<?php endif; ?>
+					</div>
 
-					<a href="<?php echo $pdf_1['url']; ?>">
-						<h3><?php echo $pdf_1['title']; ?></h3></a>
-					<?php endif; ?>
-				</div>
-				<div class="pdf-indiv">
-					<?php if($pdf_2) :?>
-						<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
+					<div class="pdf-indiv">
+						<?php if($pdf_2) :?>
+							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
-					<a href="<?php echo $pdf_2['url']; ?>">
-						<h3><?php echo $pdf_2['title']; ?></h3></a>
-					<?php endif; ?>
-				</div>
-				<div class="pdf-indiv">
-					<?php if($pdf_3) :?>
-						<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
+						<a href="<?php echo $pdf_2['url']; ?>">
+							<h3>  -  <?php echo $pdf_2['title']; ?></h3></a>
+						<?php endif; ?>
+					</div>
+					<div class="pdf-indiv">
+						<?php if($pdf_3) :?>
+							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
-					<a href="<?php echo $pdf_3['url']; ?>">
-						<h3><?php echo $pdf_3['title']; ?></h3></a>
-					<?php endif; ?>
-				</div>
-				<div class="pdf-indiv">
-					<?php if($pdf_4) :?>
-						<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
+						<a href="<?php echo $pdf_3['url']; ?>">
+							<h3>  -  <?php echo $pdf_3['title']; ?></h3></a>
+						<?php endif; ?>
+					</div>
+					<div class="pdf-indiv">
+						<?php if($pdf_4) :?>
+							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
-					<a href="<?php echo $pdf_4['url']; ?>">
-						<h3><?php echo $pdf_4['title']; ?></h3></a>
-					<?php endif; ?>
-				</div>
-				<div class="pdf-indiv">
-					<?php if($pdf_5) :?>
-						<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
+						<a href="<?php echo $pdf_4['url']; ?>">
+							<h3>  -  <?php echo $pdf_4['title']; ?></h3></a>
+						<?php endif; ?>
+					</div>
+					<div class="pdf-indiv">
+						<?php if($pdf_5) :?>
+							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
-					<a href="<?php echo $pdf_5['url']; ?>">
-						<h3><?php echo $pdf_5['title']; ?></h3></a>
-					<?php endif; ?>
-				</div>
-			</section>
-
+						<a href="<?php echo $pdf_5['url']; ?>">
+							<h3>  -  <?php echo $pdf_5['title']; ?></h3></a>
+						<?php endif; ?>
+					</div>
+				</section>
 			</div>
 			<?php endwhile; ?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

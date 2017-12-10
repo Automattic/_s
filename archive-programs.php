@@ -13,16 +13,16 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div class="main-content" role="main">
-			<div class = "banner-background" >
-				<div id="shoes-pic-2">
-  				<h1>Support. Structure. Stability</h1>
+			<div id="shoes-pic-2">
+				<div class="center-in-banner">
+					<h1 class="white">Support. Structure. Stability</h1>
 				</div>
 			</div>
 
 			<div class="site-info">
 	      <h1 class="aligncenter">Our Programs</h1>
-				<p>Creating programs that offer youths a nurturing, safe environment to heal, learn and grow towards a brighter future. Our youth face numerous challenges. LifeTies works with adolescents to manage and overcome the effects of physical, emotional and sexual abuse.</p>
-				<ul class="listing">
+				<p class="aligncenter">Creating programs that offer youths a nurturing, safe environment to heal, learn and grow towards a brighter future. Our youth face numerous challenges. LifeTies works with adolescents to manage and overcome the effects of physical, emotional and sexual abuse.</p>
+				<ul class="fp-grid no-bullet">
 	  			<?php query_posts('posts_per_page=6&post_type=programs&orderby=date&order=ASC'); ?>
 	  				<?php while ( have_posts() ) : the_post();
 	  				$programs_page_blurb = get_field("programs_page_blurb");
@@ -30,7 +30,7 @@ get_header(); ?>
 	  				<li class="large-btm-margin aligncenter">
 	  					<h2 class="aligncenter"><?php the_title(); ?></h2>
 	            <p class="aligncenter"><?php echo $programs_page_blurb; ?></p>
-	            <a href="<?php the_permalink(); ?>" class="btn">Learn More</a>
+	            <a href="<?php the_permalink(); ?>" class="btn">More Info</a>
 	  				</li>
 	  				<?php endwhile; ?>
 	  			<?php wp_reset_query(); ?>
