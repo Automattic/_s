@@ -21,23 +21,25 @@ get_header(); ?>
 
       <?php while ( have_posts() ) : the_post(); ?>
 
-				<section class="page-width">
-					<h1>Contact Details</h1>
-					<div class="">
-						<h3>Location</h3>
-						<p>Administrative Office <br>
-							John S. Watson Sr. Buiding <br>
-							2205 Pennington Rd. <br>
-							Ewing, NJ 08638
-						</p>
-					</div>
-					<div class="">
-						<h3>Contact</h3>
-						<p>
-							Phone: (609) 771-1600 <br>
-							Fax: 609-530-1648 <br>
-							<a href="mailto:info@lifeties.org">info@lifeties.org</a>
-						</p>
+				<section class="page-width simple-grid">
+					<div>
+						<h1 class="dark-blue font-boldest xx-large">Contact Details</h1>
+						<div>
+							<h3 class="gray">Location</h3>
+							<p class="gray">Administrative Office <br>
+								John S. Watson Sr. Buiding <br>
+								2205 Pennington Rd. <br>
+								Ewing, NJ 08638
+							</p>
+						</div>
+						<div>
+							<h3 class="gray">Contact</h3>
+							<p class="gray underline">
+								Phone: (609) 771-1600 <br>
+								Fax: 609-530-1648 <br>
+								<a href="mailto:info@lifeties.org" class="orange font-bolder martel">info@lifeties.org</a>
+							</p>
+						</div>
 					</div>
 
 					<div>
@@ -46,8 +48,8 @@ get_header(); ?>
 				</section>
 
 				<section>
-					<div class="yellow-house-pic">
-						<div class="aligncenter">
+					<div class="yellow-house-pic med-padding">
+						<div class="site-info aligncenter">
 							<h1>Our Mission</h1>
 							<h2><?php the_content(); ?></h2>
 						</div>

@@ -16,9 +16,9 @@
 	<footer id="colophon" class="site-footer dark-blue-background">
 		<div class="content-width footer-grid">
 			<div class="contact">
-				<h3 class="gray-blue aligncenter">Contact LifeTies</h3>
-				<h2 class="white aligncenter">Call: (609) 771-1600</h2>
-				<h2 class="white aligncenter">Fax: (609) 530-1648</h2>
+				<h3 class="gray-blue aligncenter font-wgt-normal">Contact LifeTies</h3>
+				<h2 class="white aligncenter font-boldest">Call: (609) 771-1600</h2>
+				<h2 class="white aligncenter font-boldest">Fax: (609) 530-1648</h2>
 			</div>
 			<div class="logo">
 				<!-- LifeTies logo -->
@@ -35,8 +35,8 @@
 			</div>
 
 			<div class="aligncenter newsletter">
-				<h1 class="white" style="margin-bottom: 0;">STAY UPDATED</h1>
-				<h2 class="white" style="line-height: 1.5em;">Subscribe to our newsletter</h2>
+				<h1 class="white font-boldest" style="margin-bottom: 0;">STAY UPDATED</h1>
+				<h3 class="white font-bolder" style="line-height: 1.5em;">Subscribe to our newsletter</h3>
 				<section>
 					<?php
 				echo do_shortcode('[ctct form="175"]');

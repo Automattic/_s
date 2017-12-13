@@ -15,7 +15,7 @@ get_header(); ?>
 			<div id="career-banner">
 				<div class="center-in-banner">
 					<div class="team-icon"></div>
-					<h1 class="white">Join Our Team</h1>
+					<h1 class="white font-boldest threex-font">Join Our Team</h1>
 				</div>
 			</div>
 
@@ -25,9 +25,9 @@ get_header(); ?>
 		<div class="aligncenter page-width">
 
 		<div>
-			<h1>Our Youth Need You!</h1>
-			<h1>Be a part of an inspiring journey to empower youth with support, skills and tools for a brighter future.</h1>
-			<p>(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
+			<h1 class="uppercase dark-blue font-boldest xx-large" style="margin-bottom: 0;">Our Youth Need You!</h1>
+			<h1 class="gray font-bolder" style="margin-top: 0; line-height: 1.25;">Be a part of an inspiring journey to empower youth with support, skills and tools for a brighter future.</h1>
+			<p class="orange font-bolder">(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
 		</div>
 
 		 <section>
@@ -38,8 +38,8 @@ get_header(); ?>
 
 		 <section class="large-btm-margin">
 			 <hr>
-		 	<h1>Interested in Volunteering</h1>
-			<h4><a href="<?php echo home_url(); ?>/volunteer">Check out the volunteer page!</a> Take a look and see what volunteer category you fit in and apply!</h4>
+		 	<h1 class="uppercase dark-blue font-boldest xx-large" style="margin-bottom: 0;">Interested in Volunteering</h1>
+			<h4 class="underline arial"><a href="<?php echo home_url(); ?>/volunteer" class="orange font-bolder">Check out the volunteer page!</a> <span class="gray">Take a look and see what volunteer category you fit in and apply!</span></h4>
 		 </section>
 	</div>
 		<?php endwhile; // End of the loop.?>

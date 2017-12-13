@@ -13,7 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 			<div id="events-banner">
 				<div class="center-in-banner">
-					<h1 class="white">Events & Fundraisers</h1>
+					<h1 class="white font-boldest threex-font">Events & Fundraisers</h1>
 				</div>
 			</div>
 
@@ -28,9 +28,9 @@ get_header(); ?>
 		?>
 		<section class="page-width aligncenter alt-wrapper border-bottom">
 			<div class="title">
-				<h3 class=""><?php the_title(); ?></h3>
-				<h3 class=""><?php echo $date; ?></h3>
-				<h4 class=""><?php echo $location; ?></h4>
+				<h3 class="dark-blue font-boldest xx-large"><?php the_title(); ?></h3>
+				<h3 class="orange font-boldest xx-large"><?php echo $date; ?></h3>
+				<h4 class="gray font-bolder"><?php echo $location; ?></h4>
 			</div>
 
 			<div class="content">

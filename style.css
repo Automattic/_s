@@ -482,13 +482,11 @@ h4 {
 h5 {
 	font-size: 16px;
 	font-size: 1em;
-	text-transform: uppercase;
 }
 
 h6 {
 	font-size: 16px;
 	font-size: 0.5em;
-	text-transform: uppercase;
 }
 
 dfn,
@@ -552,7 +550,47 @@ big {
 }
 
 .font-light {
-	font-weight: 300;
+	font-weight: lighter;
+}
+
+.font-wgt-normal {
+	font-weight: normal;
+}
+
+.font-bolder {
+	font-weight: bolder;
+}
+
+.font-boldest {
+	font-weight: 900;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.larger-font {
+	font-size: larger;
+}
+
+.x-large {
+	font-size: x-large;
+}
+
+.xx-large {
+	font-size: xx-large;
+}
+
+.twox-font {
+	font-size: 2em;
+}
+
+.threex-font {
+	font-size: 5em;
+}
+
+.fivex-font {
+	font-size: 7em;
 }
 
 /*--------------------------------------------------------------
@@ -584,7 +622,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	/*margin: 0 0 1.5em 3em;*/
 }
 
 ul {
@@ -818,6 +856,7 @@ ul li.check-blue {
 	position: absolute;
 	overflow: hidden;
 	width: 90%;
+	z-index: 1;
 	transition: all 0.1s ease;
 	-webkit-transition: all 0.1s ease;
 	-moz-transition: all 0.1s ease;
@@ -883,6 +922,10 @@ ul li.check-blue {
 .border-top {
 	border-top: 1px solid #666666;
 	padding: 1em 0;
+}
+
+.link-border {
+	border-bottom: 1px solid;
 }
 
 /*--------------------------------------------------------------
@@ -1366,6 +1409,10 @@ a:active {
 	align-items: center;
 }
 
+.mission h1 {
+	margin: 0;
+}
+
 @media screen and (min-width: 769px) {
 	.donation-btn,
 	.vol-btn {
@@ -1419,6 +1466,10 @@ a:active {
 	}
 }
 
+.financial-wrapper a {
+	text-decoration: underline solid black;
+}
+
 .pdf-indiv {
 	display: flex;
 	justify-content: flex-start;
@@ -1453,6 +1504,17 @@ a:active {
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 'left right' 'second-row second-row';
 	}
+}
+
+.perform-care h1 {
+	margin: 0;
+}
+
+.perform-care a,
+.social-media a,
+.donate-options a,
+.underline a {
+	text-decoration: underline;
 }
 
 .grid-wrapper-thirds {
@@ -1577,9 +1639,29 @@ a:active {
 	grid-template-columns: repeat(2, 1fr);
 }
 
+.staff-wrapper a {
+	text-decoration: underline;
+}
+
 @media screen and (min-width: 769px) {
 	.staff-wrapper {
 		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.simple-grid {
+		display: grid;
+		grid-gap: 1em;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (min-width: 769px) {
+	.two-column {
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+		-moz-column-count: 2; /* Firefox */
+		column-count: 2;
 	}
 }
 
@@ -1869,12 +1951,13 @@ object {
 	width: 100vw;
 }
 
-.home-page-girl-pic ul li:not(:first-child) {
+/*.home-page-girl-pic ul li:not(:first-child) {
 	margin-top: 2em;
-}
+}*/
 
 .home-page-girl-pic ul li {
 	list-style: none;
+	margin-top: 1em;
 }
 
 @media screen and (min-width: 769px) {
@@ -1888,11 +1971,12 @@ object {
 	}
 	.large-scr-top-padding {
 		padding-top: 4em;
-		padding-right: 20em;
+		padding-right: 15em;
 	}
 
 	.fp-girl-right-padding {
-		padding-right: 34em;
+		padding-right: 24em;
+		margin-left: 0;
 	}
 }
 
@@ -1990,7 +2074,7 @@ object {
 #events-banner {
 	background: url('./img/pexels-photo-442540.png') no-repeat scroll left center /
 		cover rgba(0, 0, 0, 0);
-	padding: 3em 0;
+	padding: 10em 0;
 }
 
 .center-in-banner {

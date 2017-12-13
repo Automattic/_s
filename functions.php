@@ -197,8 +197,3 @@ function add_search_box( $items, $args ) {
 	$items .= '<li>' . get_search_form( false ) . '</li>';
 	return $items;
 }
-
-function lt_custom_scripts() {
-    wp_enqueue_script( 'lt-custom-scripts', get_template_directory_uri() . '/js/lt-custom-scripts.js', array( 'jquery' ), '1.0.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'lt_custom_scripts' );

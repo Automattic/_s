@@ -13,7 +13,7 @@ get_header(); ?>
 		<div class="main-content" role="main">
 			<div id="events-banner">
 				<div class="center-in-banner">
-					<h1 class="white">Events & Fundraisers</h1>
+					<h1 class="white font-boldest threex-font">Events & Fundraisers</h1>
 				</div>
 			</div>
 
@@ -27,9 +27,9 @@ get_header(); ?>
 			<ul class="border-bottom page-width">
 				<li class="aligncenter wrapper">
 					<div class="title">
-						<h3 class=""><?php the_title(); ?></h3>
-			      <h3 class=""><?php echo $date; ?></h3>
-						<h4 class=""><?php echo $location; ?></h4>
+						<h3 class="dark-blue font-boldest xx-large"><?php the_title(); ?></h3>
+			      <h3 class="orange font-boldest xx-large"><?php echo $date; ?></h3>
+						<h4 class="gray font-bolder"><?php echo $location; ?></h4>
 					</div>
 
 					<div class="pic">
@@ -41,7 +41,7 @@ get_header(); ?>
 					<div class="content">
 						<p><?php the_excerpt(); ?></p>
 					</div>
-					
+
 					<div class="button">
 						 <a href="<?php the_permalink(); ?>" class="btn">See Event Details</a>
 					</div>

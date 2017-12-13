@@ -36,57 +36,56 @@ get_header(); ?>
 				$our_history = get_field('our_history');
 				$our_history_text = get_field('our_history_text');
 				?>
-				<section class="aligncenter site-info large-btm-margin">
+				<section class="aligncenter site-info large-btm-margin mission">
 					<div>
-						<h1><?php echo $impact ?></h1>
-						<p><?php echo $impact_explanation ?></p>
+						<h1 class="dark-blue font-boldest xx-large"><?php echo $impact ?></h1>
+						<p class="gray"><?php echo $impact_explanation ?></p>
 					</div>
 
 					<div class="mission-section">
-						<h1 class="width-1-3 turquoise"><?php echo $impact_stat_1 ?></h1>
-						<h2 class="width-2-3 turquoise"><?php echo $impact_stat_1_explanation ?></h2>
+						<h1 class="width-1-3 turquoise fivex-font font-boldest"><?php echo $impact_stat_1 ?></h1>
+						<h2 class="width-2-3 turquoise font-bolder"><?php echo $impact_stat_1_explanation ?></h2>
 					</div>
 
 					<div class="mission-section">
-						<h1 class="width-1-3 gold"><?php echo $impact_stat_2 ?></h1>
-						<h2 class="width-2-3 gold"><?php echo $impact_stat_2_explanation ?></h2>
+						<h1 class="width-1-3 gold fivex-font font-boldest"><?php echo $impact_stat_2 ?></h1>
+						<h2 class="width-2-3 gold font-bolder"><?php echo $impact_stat_2_explanation ?></h2>
 					</div>
 
 					<div class="mission-section">
-						<h1 class="width-1-3 grass-green"><?php echo $impact_stat_3 ?></h1>
-						<h2 class="width-2-3 grass-green"><?php echo $impact_stat_3_explanation ?></h2>
+						<h1 class="width-1-3 grass-green fivex-font font-boldest"><?php echo $impact_stat_3 ?></h1>
+						<h2 class="width-2-3 grass-green font-bolder"><?php echo $impact_stat_3_explanation ?></h2>
 					</div>
 
 					<div class="mission-section">
-						<h1 class="width-1-3 burnt-orange"><?php echo $impact_stat_4 ?></h1>
-						<h2 class="width-2-3 burnt-orange"><?php echo $impact_stat_4_explanation ?></h2>
+						<h1 class="width-1-3 burnt-orange fivex-font font-boldest"><?php echo $impact_stat_4 ?></h1>
+						<h2 class="width-2-3 burnt-orange font-bolder"><?php echo $impact_stat_4_explanation ?></h2>
 					</div>
 
 					<div class="mission-section">
-						<h1 class="width-1-3 aqua-marine"><?php echo $impact_stat_5 ?></h1>
-						<h2 class="width-2-3 aqua-marine"><?php echo $impact_stat_5_explanation ?></h2>
+						<h1 class="width-1-3 aqua-marine fivex-font font-boldest"><?php echo $impact_stat_5 ?></h1>
+						<h2 class="width-2-3 aqua-marine font-bolder"><?php echo $impact_stat_5_explanation ?></h2>
 					</div>
 				</section>
 
-				<section class="">
+				<section>
 					<div class="yellow-house-pic med-padding">
 						<div class="site-info aligncenter">
-							<h1><?php echo $our_mission ?></h1>
-							<h2><?php echo $our_mission_text ?></h2>
+							<h1 class="font-boldest"><?php echo $our_mission ?></h1>
+							<h2 class="font-bolder"><?php echo $our_mission_text ?></h2>
 						</div>
 					</div>
 				</section>
 
 				<section class="site-info">
-					<h1 class="aligncenter"><?php echo $our_history ?></h1>
-					<p><?php echo $our_history_text ?></p>
+					<h1 class="aligncenter dark-blue font-boldest"><?php echo $our_history ?></h1>
+					<p class="two-column"><?php echo $our_history_text ?></p>
 				</section>
-
 			<?php endwhile; ?>
 
 			<!-- Sponsors -->
 	    <section class="sponsor-carousel">
-	      <h2 class="aligncenter">A big thanks to our supporters!</h2>
+	      <h2 class="aligncenter dark-blue">A big thanks to our supporters!</h2>
 	      <div>
 	      <?php echo do_shortcode('[logoshowcase dots="false"]'); ?>
 	      </div>

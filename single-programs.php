@@ -25,7 +25,7 @@ get_header(); ?>
 		?>
 		<div class="grid-wrapper site-info">
 			<div class="left-section">
-				<h1><?php the_title(); ?></h1>
+				<h1 class="dark-blue font-boldest xx-large"><?php the_title(); ?></h1>
 				<p><?php the_content(); ?></p>
 			</div>
 
@@ -36,26 +36,25 @@ get_header(); ?>
 			</div>
 
 			<div class="second-row">
-				<h3>Youth can access a variety of services:</h3>
+				<h3 class="sea-blue font-boldest x-large">Youth can access a variety of services:</h3>
 				<ul class="no-bullet">
 					<?php if($program_services_1) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_1; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_1; ?></h4>
 					</li>
 					<?php endif; ?>
 					<?php if($program_services_2) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_2; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_2; ?></h4>
 					</li>
 					<?php endif; ?>
 					<?php if($program_services_3) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_3; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_3; ?></h4>
 					</li>
 					<?php endif; ?>
 				</ul>
 			</div>
-
 		</div>
 
 		<?php endwhile; // End of the loop.?>

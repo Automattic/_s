@@ -38,58 +38,58 @@ get_header(); ?>
 		<div class="page-width">
 		<div class="grid-wrapper">
 			<div class="left-section">
-				<h1><?php the_title(); ?></h1>
+				<h1 class="dark-blue font-boldest xx-large"><?php the_title(); ?></h1>
 				<p><?php the_content(); ?></p>
 			</div>
 
 			<div class="second-row">
-				<h3>Program Services</h3>
+				<h3 class="dark-blue font-boldest xx-large">Program Services</h3>
 				<ul class="listing">
 					<li class="check-blue">
-						<h4><?php echo $program_services_1; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_1; ?></h4>
 					</li>
 					<li class="check-blue">
-						<h4><?php echo $program_services_2; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_2; ?></h4>
 					</li>
 					<li class="check-blue">
-						<h4><?php echo $program_services_3; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_3; ?></h4>
 					</li>
 					<li class="check-blue">
-						<h4><?php echo $program_services_4; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_4; ?></h4>
 					</li>
 					<?php if($program_services_5) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_5; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_5; ?></h4>
 					</li>
 					<?php endif; ?>
 					<?php if($program_services_6) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_6; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_6; ?></h4>
 					</li>
 				<?php endif; ?>
 					<?php if($program_services_7) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_7; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_7; ?></h4>
 					</li>
 					<?php endif; ?>
 					<?php if($program_services_8) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_8; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_8; ?></h4>
 					</li>
 				<?php endif; ?>
 					<?php if($program_services_9) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_9; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_9; ?></h4>
 					</li>
 				<?php endif; ?>
 					<?php if($program_services_10) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_10; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_10; ?></h4>
 					</li>
 				<?php endif; ?>
 					<?php if($program_services_11) : ?>
 					<li class="check-blue">
-						<h4><?php echo $program_services_11; ?></h4>
+						<h4 class="arial gray twox-font"><?php echo $program_services_11; ?></h4>
 					</li>
 				<?php endif; ?>
 				</ul>
@@ -106,19 +106,19 @@ get_header(); ?>
 		<div class="light-blue-background aligncenter">
 			<div class="site-info">
 
-				<div class="">
-					<h2>Want to make a Youth Referral?</h2>
+				<div>
+					<h2 class="dark-blue font-boldest xx-large">Want to make a Youth Referral?</h2>
 				</div>
 
 				<div class="grid-wrapper-thirds">
 					<div class="left">
-						<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting Robin Wilkins</p>
+						<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting Robin Wilkins.</p>
 					</div>
 					<div class="right-section" style="margin: 1em auto; padding: 1em;">
-						<h3>Robin Wilkins</h3>
-						<h4>(609) 671-0040</h4>
-						<h5>
-							<a href="mailto:twilkins@lifeties.org">twilkins@lifeties.org</a>
+						<h3 class="dark-blue font-boldest">Robin Wilkins</h3>
+						<h4 class="gray">(609) 671-0040</h4>
+						<h5 class="perform-care">
+							<a href="mailto:twilkins@lifeties.org" class="font-boldest orange ">twilkins@lifeties.org</a>
 						</h5>
 					</div>
 				</div>
@@ -132,11 +132,11 @@ get_header(); ?>
 				<div class="raise-hand-pic"></div>
 			</div>
 			<div class="right-section">
-				<h3>Interested in becoming a mentor?</h3>
+				<h3 class="font-bolder sea-blue">Interested in becoming a mentor?</h3>
 				<p><?php echo $upcoming_mentoring; ?></p>
-				<p>
+				<p class="social-media">
 					<strong>Mentors must be at least 21 and pass all background checks.</strong>
-					Join our newsletter in the footer below or follow us on <a href="http://www.facebook.com/Lifeties">Facebook</a> and <a href="http://twitter.com/lifeties">Twitter</a> to keep informed of upcoming information sessions.
+					Join our newsletter in the footer below or follow us on <a href="http://www.facebook.com/Lifeties" class="orange font-bolder">Facebook</a> and <a href="http://twitter.com/lifeties"class="orange font-bolder">Twitter</a> to keep informed of upcoming information sessions.
 				</p>
 				<a href="<?php echo home_url(); ?>/volunteer" class="btn">Volunteer Signup</a>
 			</div>

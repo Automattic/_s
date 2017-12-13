@@ -20,7 +20,7 @@ get_header(); ?>
 				<div id="wall-teens-pic"></div>
 			</div>
 
-      <h1 class="aligncenter">Financial Documents</h1>
+      <h1 class="aligncenter dark-blue font-boldest xx-large">Financial Documents</h1>
 			<?php
 			while ( have_posts() ) : the_post();
 				$pdf_1 = get_field('pdf_1');
@@ -43,7 +43,7 @@ get_header(); ?>
 						<?php if($pdf_1) :?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 							<a href="<?php echo $pdf_1['url']; ?>">
-								<h3>  -  <?php echo $pdf_1['title']; ?>
+								<h3 class="arial black font-bolder">  -  <?php echo $pdf_1['title']; ?>
 								</h3>
 							</a>
 						<?php endif; ?>
@@ -54,7 +54,7 @@ get_header(); ?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
 						<a href="<?php echo $pdf_2['url']; ?>">
-							<h3>  -  <?php echo $pdf_2['title']; ?></h3></a>
+							<h3 class="arial black font-bolder">  -  <?php echo $pdf_2['title']; ?></h3></a>
 						<?php endif; ?>
 					</div>
 					<div class="pdf-indiv">
@@ -62,7 +62,7 @@ get_header(); ?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
 						<a href="<?php echo $pdf_3['url']; ?>">
-							<h3>  -  <?php echo $pdf_3['title']; ?></h3></a>
+							<h3 class="arial black font-bolder">  -  <?php echo $pdf_3['title']; ?></h3></a>
 						<?php endif; ?>
 					</div>
 					<div class="pdf-indiv">
@@ -70,7 +70,7 @@ get_header(); ?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
 						<a href="<?php echo $pdf_4['url']; ?>">
-							<h3>  -  <?php echo $pdf_4['title']; ?></h3></a>
+							<h3 class="arial black font-bolder">  -  <?php echo $pdf_4['title']; ?></h3></a>
 						<?php endif; ?>
 					</div>
 					<div class="pdf-indiv">
@@ -78,7 +78,7 @@ get_header(); ?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
 
 						<a href="<?php echo $pdf_5['url']; ?>">
-							<h3>  -  <?php echo $pdf_5['title']; ?></h3></a>
+							<h3 class="arial black font-bolder">  -  <?php echo $pdf_5['title']; ?></h3></a>
 						<?php endif; ?>
 					</div>
 				</section>

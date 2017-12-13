@@ -15,7 +15,7 @@ get_header(); ?>
 			<div id="donation-banner">
 				<div class="center-in-banner">
 					<div class="present-icon"></div>
-					<h1 class="white">Make a Donation</h1>
+					<h1 class="white font-boldest threex-font">Make a Donation</h1>
 				</div>
 			</div>
 
@@ -23,32 +23,32 @@ get_header(); ?>
 			while ( have_posts() ) : the_post();
 			?>
 			<div class="aligncenter page-width">
-				<h1>YOUR GIFT MATTERS!</h1>
-				<h2>Consider giving a monetary gift that will help transform the life of a child in need.</h2>
+				<h1 class="dark-blue font-boldest xx-large">YOUR GIFT MATTERS!</h1>
+				<h2 class="gray">Consider giving a monetary gift that will help transform the life of a child in need.</h2>
 				<script formId="e13eb1c600e03fb27974" src="https://checkout.paymentspring.com/js/paymentspring.js"></script>
 			</div>
 
 			<div class="light-blue-background">
 				<div class="content-width">
 
-				<h1 class="aligncenter">Other donation options</h1>
+				<h1 class="aligncenter dark-blue font-boldest xx-large">Other donation options</h1>
 
 				<ul class="fp-grid no-bullet">
-					<li class=" aligncenter">
-  					<h2 class="aligncenter">Match your Gift</h2>
-            <p class="aligncenter">
-							<strong>MANY COMPANIES OFFER MATCHING GIFTS.</strong> So, as an employee when you make a donation you can submit a form and your company may match it. If you need help filling out your form, we will be glad to help you. Contact <a href="mailto:info@lifeties.org">info@lifeties.org</a> for any questions. Keep in mind that companies have different policies for Matching Gifts requests, some accept them until the end of the calendar year and others have shorter deadlines, so check with your company for specific details.</p>
+					<li class="aligncenter">
+  					<h2 class="aligncenter font-boldest xx-large sea-blue">Match your Gift</h2>
+            <p class="aligncenter donate-options">
+							<strong>MANY COMPANIES OFFER MATCHING GIFTS.</strong> So, as an employee when you make a donation you can submit a form and your company may match it. If you need help filling out your form, we will be glad to help you. Contact <a href="mailto:info@lifeties.org" class="orange font-bolder">info@lifeties.org</a> for any questions. Keep in mind that companies have different policies for Matching Gifts requests, some accept them until the end of the calendar year and others have shorter deadlines, so check with your company for specific details.</p>
   				</li>
 					<li class="aligncenter">
-  					<h2 class="aligncenter">Tribute Gifts</h2>
+  					<h2 class="aligncenter font-boldest xx-large sea-blue">Tribute Gifts</h2>
             <p class="aligncenter">You can give a gift to someone and also help LifeTies. Just call or email our office, and we will send a beautiful card to the recipient of your choice saying how you gave a gift to LifeTies in their name. Any amount can be given. This is a great idea for friends and family in your life that you know appreciate the work of LifeTies, or perhaps for someone that you think would be interested in learning more.</p>
   				</li>
 					<li class="aligncenter">
-  					<h2 class="aligncenter">Share Stocks</h2>
-            <p class="aligncenter">If you would like to contribute shares of stocks, please call our office at 609.771.1600 or send us an email <a href="mailto:info@lifeties.org">info@lifeties.org</a>, and we will provide you with the information to easily make a transfer.</p>
+  					<h2 class="aligncenter font-boldest xx-large sea-blue">Share Stocks</h2>
+            <p class="aligncenter donate-options">If you would like to contribute shares of stocks, please call our office at <span class="orange font-bolder">609.771.1600</span> or send us an email <a href="mailto:info@lifeties.org" class="orange font-bolder">info@lifeties.org</a>, and we will provide you with the information to easily make a transfer.</p>
   				</li>
   				<li class="aligncenter">
-  					<h2 class="aligncenter">You Shop, Amazon Gives</h2>
+  					<h2 class="aligncenter font-boldest xx-large sea-blue">You Shop, Amazon Gives</h2>
             <p class="aligncenter">Amazon will donate 0.5% of the price of your eligible AmazonSmile purchases to LifetTies whenever you shop on AmazonSmile.</p>
 						<div class="grid-wrapper">
 							<div class="left-section center-in-banner">
@@ -61,63 +61,63 @@ get_header(); ?>
 						</div>
   				</li>
 					<li>
-						<h2 class="aligncenter">In-Kind Donations and Services</h2>
-						<p class="aligncenter">Please feel free to contact <a href="mailto:info@lifeties.org">info@lifeties.org</a> for more information on how you can help with supplies and other needs. Below we have provided a list of some common ongoing needs.</p>
+						<h2 class="aligncenter font-boldest xx-large sea-blue">In-Kind Donations and Services</h2>
+						<p class="aligncenter donate-options">Please feel free to contact <a href="mailto:info@lifeties.org" class="orange font-bolder">info@lifeties.org</a> for more information on how you can help with supplies and other needs. Below we have provided a list of some common ongoing needs.</p>
 						<ul class="listing-marg-btm">
 							<li class="check-blue">
-								<h4>Printing Services for holiday appeal and newsletter</h4>
+								<h4 class="arial gray twox-font">Printing Services for holiday appeal and newsletter</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Up to Date College SAT and ACT Prep Books</h4>
+								<h4 class="arial gray twox-font">Up to Date College SAT and ACT Prep Books</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>College Books describing Colleges such as Fiske Guide to Colleges</h4>
+								<h4 class="arial gray twox-font">College Books describing Colleges such as Fiske Guide to Colleges</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Personal Care Items for our Youth in Supportive Housing Units</h4>
+								<h4 class="arial gray twox-font">Personal Care Items for our Youth in Supportive Housing Units</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Bed-in-a Bag</h4>
+								<h4 class="arial gray twox-font">Bed-in-a Bag</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>New Towels and Washcloths</h4>
+								<h4 class="arial gray twox-font">New Towels and Washcloths</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Utensils</h4>
+								<h4 class="arial gray twox-font">Utensils</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Holiday Gifts</h4>
+								<h4 class="arial gray twox-font">Holiday Gifts</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Gift Cards for our Youth</h4>
+								<h4 class="arial gray twox-font">Gift Cards for our Youth</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Window treatments for Group Homes and Apartments</h4>
+								<h4 class="arial gray twox-font">Window treatments for Group Homes and Apartments</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Lamps</h4>
+								<h4 class="arial gray twox-font">Lamps</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Lap Desks</h4>
+								<h4 class="arial gray twox-font">Lap Desks</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Stove for Rainbow House</h4>
+								<h4 class="arial gray twox-font">Stove for Rainbow House</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4>Dishes</h4>
+								<h4 class="arial gray twox-font">Dishes</h4>
 							</li>
 						</ul>
 					</li>

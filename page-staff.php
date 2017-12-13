@@ -16,7 +16,7 @@ get_header(); ?>
 			</div>
 			<div class="page-width">
 
-      <h1 class="aligncenter">LifeTies Staff</h1>
+      <h1 class="aligncenter dark-blue font-boldest xx-large">LifeTies Staff</h1>
 			<?php
 			while ( have_posts() ) : the_post();
       $updated = get_field("updated");
@@ -87,15 +87,15 @@ get_header(); ?>
       <div class="staff-wrapper">
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image) {
 	            echo wp_get_attachment_image( $image, $size );
 	          } ?>
 				</div>
-				<div class="">
-					<h4><?php echo $name ?></h4>
-	        <p><?php echo $position ?></p>
-	        <h5><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></h5>
+				<div>
+					<h4 class="dark-blue font-boldest"><?php echo $name ?></h4>
+	        <h4 class="gray arial"><?php echo $position ?></h4>
+	        <h5><a href="mailto:<?php echo $email ?>" class="orange font-bolder"><?php echo $email ?></a></h5>
 	        <?php if($bio) : ?>
 					<div class="accordion">
 		        <!-- span to target fix closing accordion -->
@@ -107,14 +107,14 @@ get_header(); ?>
 	            <span class="target-fix" id="accordion1"></span>
 
 	            <!-- Link to open accordion, hidden when open -->
-	            <a href="#accordion1" id="open-accordion1" title="open">See full bio  &or;</a>
+	            <a href="#accordion1" id="open-accordion1" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 	            <!-- Link to close accordion, hidden when closed -->
 	            <a href="#accordion" id="close-accordion1" title="close">See full bio &and;</a>
 
 	            <!-- Accorion content goes in this div -->
 	            <div class="accordion-content">
-								<h5><?php echo $name ?></h5>
+								<h4 class="dark-blue font-boldest"><?php echo $name ?></h4>
 								<p><?php echo $bio ?></p>
 	            </div>
 	        	</div>
@@ -124,15 +124,15 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_2) {
 	            echo wp_get_attachment_image( $image_2, $size );
 	          } ?>
 				</div>
-				<div class="">
-        <h4><?php echo $name_2 ?></h4>
-        <p><?php echo $position_2 ?></p>
-        <h5><a href="mailto:<?php echo $email_2 ?>"><?php echo $email_2 ?></a></h5>
+				<div>
+        <h4 class="dark-blue font-boldest"><?php echo $name_2 ?></h4>
+        <h4 class="gray arial"><?php echo $position_2 ?></h4>
+        <h5><a href="mailto:<?php echo $email_2 ?>" class="orange font-bolder"><?php echo $email_2 ?></a></h5>
 
         <?php if($bio_2) : ?>
 					<div class="accordion">
@@ -140,12 +140,12 @@ get_header(); ?>
 		        <div>
 	            <span class="target-fix" id="accordion2"></span>
 
-	            <a href="#accordion2" id="open-accordion2" title="open">See full bio  &or;</a>
+	            <a href="#accordion2" id="open-accordion2" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 	            <a href="#accordion" id="close-accordion2" title="close">See full bio &and;</a>
 
 	            <div class="accordion-content">
-								<h5><?php echo $name_2 ?></h5>
+								<h4 class="dark-blue font-boldest"><?php echo $name_2 ?></h4>
 								<p><?php echo $bio_2 ?></p>
 	            </div>
 	        	</div>
@@ -155,58 +155,57 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_3) {
 	            echo wp_get_attachment_image( $image_3, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_3 ?></h4>
-	        <p><?php echo $position_3 ?></p>
-	        <h5><a href="mailto:<?php echo $email_3 ?>"><?php echo $email_3 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_3 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_3 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_3 ?>" class="orange font-bolder"><?php echo $email_3 ?></a></h5>
 	        <?php if($bio_3) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion3"></span>
 
-		            <a href="#accordion3" id="open-accordion3" title="open">See full bio  &or;</a>
+		            <a href="#accordion3" id="open-accordion3" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion3" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_3 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_3 ?></h4>
 									<p><?php echo $bio_3 ?></p>
 		            </div>
 		        	</div>
 						</div>
 	      <?php endif; ?>
         </div>
-
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_4) {
 	            echo wp_get_attachment_image( $image_4, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_4 ?></h4>
-	        <p><?php echo $position_4 ?></p>
-	        <h5><a href="mailto:<?php echo $email_4 ?>"><?php echo $email_4 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_4 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_4 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_4 ?>" class="orange font-bolder"><?php echo $email_4 ?></a></h5>
 	        <?php if($bio_4) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion4"></span>
 
-		            <a href="#accordion4" id="open-accordion4" title="open">See full bio  &or;</a>
+		            <a href="#accordion4" id="open-accordion4" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion4" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_4 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_4 ?></h4>
 									<p><?php echo $bio_4 ?></p>
 		            </div>
 		        	</div>
@@ -217,58 +216,57 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_5) {
 	            echo wp_get_attachment_image( $image_5, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_5 ?></h4>
-	        <p><?php echo $position_5 ?></p>
-	        <h5><a href="mailto:<?php echo $email_5 ?>"><?php echo $email_5 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_5 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_5 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_5 ?>" class="orange font-bolder"><?php echo $email_5 ?></a></h5>
 	        <?php if($bio_5) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion5"></span>
 
-		            <a href="#accordion5" id="open-accordion5" title="open">See full bio  &or;</a>
+		            <a href="#accordion5" id="open-accordion5" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion5" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_5 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_5 ?></h4>
 									<p><?php echo $bio_5 ?></p>
 		            </div>
 		        	</div>
 						</div>
 	      <?php endif; ?>
         </div>
-
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_6) {
 	            echo wp_get_attachment_image( $image_6, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_6 ?></h4>
-	        <p><?php echo $position_6 ?></p>
-	        <h5><a href="mailto:<?php echo $email_6 ?>"><?php echo $email_6 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_6 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_6 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_6 ?>" class="orange font-bolder"><?php echo $email_6 ?></a></h5>
 	        <?php if($bio_6) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion6"></span>
 
-		            <a href="#accordion6" id="open-accordion6" title="open">See full bio  &or;</a>
+		            <a href="#accordion6" id="open-accordion6" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion6" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_6 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_6 ?></h4>
 									<p><?php echo $bio_6 ?></p>
 		            </div>
 		        	</div>
@@ -278,27 +276,27 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_7) {
 	            echo wp_get_attachment_image( $image_7, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_7 ?></h4>
-	        <p><?php echo $position_7 ?></p>
-	        <h5><a href="mailto:<?php echo $email_7 ?>"><?php echo $email_7 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_7 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_7 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_7 ?>" class="orange font-bolder"><?php echo $email_7 ?></a></h5>
 	        <?php if($bio_7) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion7"></span>
 
-		            <a href="#accordion7" id="open-accordion7" title="open">See full bio  &or;</a>
+		            <a href="#accordion7" id="open-accordion7" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion7" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_7 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_7 ?></h4>
 									<p><?php echo $bio_7 ?></p>
 		            </div>
 		        	</div>
@@ -308,27 +306,27 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_8) {
 	            echo wp_get_attachment_image( $image_8, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_8 ?></h4>
-	        <p><?php echo $position_8 ?></p>
-	        <h5><a href="mailto:<?php echo $email_8 ?>"><?php echo $email_8 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_8 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_8 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_8 ?>" class="orange font-bolder"><?php echo $email_8 ?></a></h5>
 	        <?php if($bio_8) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion8"></span>
 
-		            <a href="#accordion8" id="open-accordion8" title="open">See full bio  &or;</a>
+		            <a href="#accordion8" id="open-accordion8" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion8" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_8 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_8 ?></h4>
 									<p><?php echo $bio_8 ?></p>
 		            </div>
 		        	</div>
@@ -338,27 +336,27 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_9) {
 	            echo wp_get_attachment_image( $image_9, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_9 ?></h4>
-	        <p><?php echo $position_9 ?></p>
-	        <h5><a href="mailto:<?php echo $email_9 ?>"><?php echo $email_9 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_9 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_9 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_9 ?>" class="orange font-bolder"><?php echo $email_9 ?></a></h5>
 	        <?php if($bio_9) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion9"></span>
 
-		            <a href="#accordion9" id="open-accordion9" title="open">See full bio  &or;</a>
+		            <a href="#accordion9" id="open-accordion9" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion9" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_9 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_9 ?></h4>
 									<p><?php echo $bio_9 ?></p>
 		            </div>
 		        	</div>
@@ -368,27 +366,27 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_10) {
 	            echo wp_get_attachment_image( $image_10, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_10 ?></h4>
-	        <p><?php echo $position_10 ?></p>
-	        <h5><a href="mailto:<?php echo $email_10 ?>"><?php echo $email_10 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_10 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_10 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_10 ?>" class="orange font-bolder"><?php echo $email_10 ?></a></h5>
 	        <?php if($bio_10) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion10"></span>
 
-		            <a href="#accordion10" id="open-accordion10" title="open">See full bio  &or;</a>
+		            <a href="#accordion10" id="open-accordion10" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion10" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_10 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_10 ?></h4>
 									<p><?php echo $bio_10 ?></p>
 		            </div>
 		        	</div>
@@ -398,27 +396,27 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_11) {
 	            echo wp_get_attachment_image( $image_11, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_11 ?></h4>
-	        <p><?php echo $position_11 ?></p>
-	        <h5><a href="mailto:<?php echo $email_11 ?>"><?php echo $email_11 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_11 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_11 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_11 ?>" class="orange font-bolder"><?php echo $email_11 ?></a></h5>
 	        <?php if($bio_11) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion11"></span>
 
-		            <a href="#accordion11" id="open-accordion11" title="open">See full bio  &or;</a>
+		            <a href="#accordion11" id="open-accordion11" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion11" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_11 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_11 ?></h4>
 									<p><?php echo $bio_11 ?></p>
 		            </div>
 		        	</div>
@@ -428,27 +426,27 @@ get_header(); ?>
       </div>
 
       <div class="grid-two-eq-rows aligncenter">
-				<div class="">
+				<div>
 					<?php if($image_12) {
 	            echo wp_get_attachment_image( $image_12, $size );
 	          } ?>
 				</div>
-        <div class="">
-					<h4><?php echo $name_12 ?></h4>
-	        <p><?php echo $position_12 ?></p>
-	        <h5><a href="mailto:<?php echo $email_12 ?>"><?php echo $email_12 ?></a></h5>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_12 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_12 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_12 ?>" class="orange font-bolder"><?php echo $email_12 ?></a></h5>
 	        <?php if($bio_12) : ?>
 						<div class="accordion">
 			        <span class="target-fix" id="accordion"></span>
 			        <div>
 		            <span class="target-fix" id="accordion12"></span>
 
-		            <a href="#accordion12" id="open-accordion12" title="open">See full bio  &or;</a>
+		            <a href="#accordion12" id="open-accordion12" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
 
 		            <a href="#accordion" id="close-accordion12" title="close">See full bio &and;</a>
 
 		            <div class="accordion-content">
-									<h5><?php echo $name_12 ?></h5>
+									<h4 class="dark-blue font-boldest"><?php echo $name_12 ?></h4>
 									<p><?php echo $bio_12 ?></p>
 		            </div>
 		        	</div>

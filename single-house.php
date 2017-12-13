@@ -36,45 +36,45 @@ get_header(); ?>
 			?>
 			<div class="grid-wrapper">
 				<div class="left-section">
-					<h1><?php the_title(); ?></h1>
+					<h1 class="dark-blue font-boldest xx-large"><?php the_title(); ?></h1>
 					<p><?php the_content(); ?></p>
 				</div>
 
 				<div class="second-row">
-					<h3>Program Services</h3>
+					<h3 class="dark-blue font-boldest xx-large">Program Services</h3>
 					<ul class="listing">
 						<li class="check-blue">
-							<h4><?php echo $program_services_1; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_1; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_2; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_2; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_3; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_3; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_4; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_4; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_5; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_5; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_6; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_6; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_7; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_7; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_8; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_8; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_9; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_9; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_10; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_10; ?></h4>
 						</li>
 						<li class="check-blue">
-							<h4><?php echo $program_services_11; ?></h4>
+							<h4 class="arial gray twox-font"><?php echo $program_services_11; ?></h4>
 						</li>
 					</ul>
 				</div>
@@ -89,45 +89,45 @@ get_header(); ?>
 		</div>
 		<div class="light-blue-background aligncenter">
 			<div class="site-info">
-				<div class="">
-					<h2>Want to make a Youth Referral?</h2>
-					<h3>(Triad & Rainbow Houses are accepting referrals!)</h3>
+				<div>
+					<h2 class="dark-blue font-boldest xx-large">Want to make a Youth Referral?</h2>
+					<h3 class="gray">(Triad & Rainbow Houses are accepting referrals!)</h3>
 				</div>
 
-			<div class="grid-wrapper">
-				<div class="left-section">
+				<div class="grid-wrapper">
+				<div class="left-section perform-care">
 					<p>All referrals will go through PerformCare's YouthLink. You can contact PerformCare to gain access to YouthLink via the number below.</p>
 					<div class="aligncenter">
 						<div class="perform-care-logo inline-block-display"></div>
 					</div>
 
-					<h1>(877) 652-7624</h1>
+					<h1 class="aligncenter font-boldest xx-large sea-blue">(877) 652-7624</h1>
 					<h5>
-						<a href="http://www.performcarenj.org">www.performcarenj.org</a>
+						<a href="http://www.performcarenj.org" class="orange font-boldest">www.performcarenj.org</a>
 					</h5>
 				</div>
-			<div class="right-section">
-				<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting the following:</p>
-				<div class="grid-wrapper">
-				<div class="left-section">
-					<h3>Vivian Harmon</h3>
-					<h4>Triad: (609) 771-4221</h4>
-					<h4>Rainbow: (609) 394-6747</h4>
-					<h5>
-						<a href="mailto:vharmon@lifeties.org">vharmon@lifeties.org</a>
-						</h5>
-				</div>
 				<div class="right-section">
-					<h3>Emily Mattek</h3>
-					<h4>Clinical Services</h4>
-					<h4>Phone: (609) 882-4485</h4>
-					<h5>
-						<a href="mailto:emattek@lifeties.org">emattek@lifeties.org</a>
-						</h5>
+					<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting the following:</p>
+					<div class="grid-wrapper">
+					<div class="left-section">
+						<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
+						<h4> <span class="font-boldest sea-blue">Triad:</span> <span class="gray">(609) 771-4221</span></h4>
+						<h4><span class="font-boldest sea-blue">Rainbow:</span><span class="gray">(609) 394-6747</span> </h4>
+						<h5 class="perform-care">
+							<a href="mailto:vharmon@lifeties.org" class="font-boldest orange ">vharmon@lifeties.org</a>
+							</h5>
+					</div>
+					<div class="right-section">
+						<h3 class="dark-blue font-boldest">Emily Mattek</h3>
+						<h4 class="font-boldest sea-blue">Clinical Services</h4>
+						<h4 class="gray">Phone: (609) 882-4485</h4>
+						<h5 class="perform-care">
+							<a href="mailto:emattek@lifeties.org" class="font-boldest orange ">emattek@lifeties.org</a>
+							</h5>
+					</div>
+					</div>
+					</div>
 				</div>
-				</div>
-				</div>
-			</div>
 			</div>
 		</div> <!-- referral -->
 		</main><!-- #main -->

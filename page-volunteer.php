@@ -15,7 +15,7 @@ get_header(); ?>
 			<div id="volunteer-banner">
 				<div class="center-in-banner">
 					<div class="vol-icon"></div>
-					<h1 class="white">Become a Volunteer</h1>
+					<h1 class="white font-boldest threex-font">Become a Volunteer</h1>
 				</div>
 			</div>
 
@@ -23,34 +23,34 @@ get_header(); ?>
 		while ( have_posts() ) : the_post();
 		?>
 		<div class="site-info aligncenter">
-			<h1>Make an Impact:</h1>
-			<h1>Guidance. Direction. Connection.</h1>
-			<h4>Get involved in one of our amazing programs to help young people who need you the most.</h4>
+			<h1 class="uppercase dark-blue font-boldest xx-large" style="margin-bottom: 0;">Make an Impact:</h1>
+			<h1 class="gray" style="margin: 0;">Guidance. Direction. Connection.</h1>
+			<h3 class="gray arial">Get involved in one of our amazing programs to help young people who need you the most.</h3>
 		</div>
 		 <section class="light-blue-background">
 			 <div class="site-info">
 				 <ul class="listing">
  			 		<li class="aligncenter">
- 			 			<h1>BE A MENTOR</h1>
- 						<h4>SHARE POSITIVE INFLUENCE</h4>
- 						<p>Join our Teenage Independent living training (T.I.L.T.) mentoring program. Our mentors provide guidance and direction to youth ages 14-21. They meet with their mentees at least 4 hours a month. <strong>All mentees must be at least 21 and pass all background checks.</strong> Learn more about <a href="<?php echo home_url(); ?>/t-i-l-t-mentoring">T.I.L.T. here.</a></p>
+ 			 			<h1 class="sea-blue uppercase xx-large font-boldest" style="margin-bottom: 0; line-height: 1.25;">BE A MENTOR</h1>
+ 						<h4 class="arial font-boldest twox-font">SHARE POSITIVE INFLUENCE</h4>
+ 						<p class="underline">Join our Teenage Independent living training (T.I.L.T.) mentoring program. Our mentors provide guidance and direction to youth ages 14-21. They meet with their mentees at least 4 hours a month. <strong>All mentees must be at least 21 and pass all background checks.</strong> Learn more about <a href="<?php echo home_url(); ?>/t-i-l-t-mentoring" class="orange font-bolder">T.I.L.T. here.</a></p>
  			 		</li>
  					<li class="aligncenter">
- 			 			<h1>BE A LIFELINK</h1>
- 						<h4>TEACH LIFE SKILLS</h4>
+ 			 			<h1 class="sea-blue uppercase xx-large font-boldest" style="margin-bottom: 0; line-height: 1.25;">BE A LIFELINK</h1>
+ 						<h4 class="arial font-boldest twox-font">TEACH LIFE SKILLS</h4>
  						<p>Lifelink Volunteers help our youth attain additional life skills through presentations, activities and talks. Share your knowledge to provide lessons on budgeting, career/college counseling, job interviewing, fitness & wellbeing, meditation, yoga and more! <strong>All volunteers must be at least 25 and pass all background checks.</strong>
  						</p>
  			 		</li>
  					<li class="aligncenter">
- 			 			<h1>BE A CORPORATE VOLUNTEER</h1>
- 						<h4>DEDICATE YOUR TALENTS</h4>
+ 			 			<h1 class="sea-blue uppercase xx-large font-boldest" style="margin-bottom: 0; line-height: 1.25;">BE A CORPORATE VOLUNTEER</h1>
+ 						<h4 class="arial font-boldest twox-font">DEDICATE YOUR TALENTS</h4>
  						<p>Looking for a corporate volunteer initiative? LifeTies has one-day community service projects that need you!
  						Our homes get quite a work out! We need a group of volunteers to helps us maintain the facilities for our youth, including exterior/interior painting, weeding and simple landscaping. We are seeking corporate partners to help with gifts for our youth during holiday drives, birthdays and other special events.
  						</p>
  			 		</li>
  					<li class="aligncenter">
- 			 			<h1>BE A COMMITTEE VOLUNTEER</h1>
- 						<h4>JOIN THE CAUSE</h4>
+ 			 			<h1 class="sea-blue uppercase xx-large font-boldest" style="margin-bottom: 0; line-height: 1.25;">BE A COMMITTEE VOLUNTEER</h1>
+ 						<h4 class="arial font-boldest twox-font">JOIN THE CAUSE</h4>
  						<p>We are seeking volunteers from corporations and the community to serve on our special events committee. Come join us as we plan a tremendous event for a fabulous cause. The annual signature event will be our primary fundraiser to assist us in serving our youth and is critical to cover our operational costs.
  						</p>
  			 		</li>
@@ -60,11 +60,11 @@ get_header(); ?>
 
 		 <section class="page-width">
 			 <div class="aligncenter">
-				 <h1>We're looking for volunteers like you!</h1>
- 				<h3>
- 					<strong>Interested in becoming a volunteer?</strong> Complete the brief online form below or email us at <a href="mailto:info@lifeties.org">info@lifeties.org</a> and someone will reach out to you.
+				 <h1 class="orange font-boldest xx-large">We're looking for volunteers like you!</h1>
+ 				<h3 class="arial gray underline">
+ 					<strong>Interested in becoming a volunteer?</strong> Complete the brief online form below or email us at <a href="mailto:info@lifeties.org" class="orange font-bolder">info@lifeties.org</a> and someone will reach out to you.
  				</h3>
- 				<p>(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
+ 				<p class="orange font-bolder">(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
 			 </div>
 
 			<div>
