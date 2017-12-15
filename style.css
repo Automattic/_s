@@ -413,8 +413,16 @@ th {
 	padding: 2em;
 }
 
+.med-btm-margin {
+	margin-bottom: 4em;
+}
+
 .large-btm-margin {
 	margin-bottom: 8em;
+}
+
+.zero-margin {
+	margin: 0;
 }
 
 .flex-wrap-grid {
@@ -1108,6 +1116,7 @@ form .ctct-form-175 {
 	.page-header {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 
 	.page-header .top-nav {
@@ -1115,6 +1124,7 @@ form .ctct-form-175 {
 		display: block;
 		width: auto;
 		text-align: center;
+		margin-right: 1em;
 	}
 
 	.page-header .top-nav ul li {
@@ -1658,6 +1668,16 @@ a:active {
 }
 
 @media screen and (min-width: 769px) {
+	.contact-grid {
+		display: grid;
+		grid-gap: 1em;
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: start;
+		align-items: start;
+	}
+}
+
+@media screen and (min-width: 769px) {
 	.two-column {
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
 		-moz-column-count: 2; /* Firefox */
@@ -1810,6 +1830,10 @@ object {
 
 .inline-block-display {
 	display: inline-block;
+}
+
+.inline-flex-display {
+	display: inline-flex;
 }
 
 .perform-care-logo {

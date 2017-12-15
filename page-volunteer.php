@@ -61,10 +61,8 @@ get_header(); ?>
 		 <section class="page-width">
 			 <div class="aligncenter">
 				 <h1 class="orange font-boldest xx-large">We're looking for volunteers like you!</h1>
- 				<h3 class="arial gray underline">
- 					<strong>Interested in becoming a volunteer?</strong> Complete the brief online form below or email us at <a href="mailto:info@lifeties.org" class="orange font-bolder">info@lifeties.org</a> and someone will reach out to you.
- 				</h3>
- 				<p class="orange font-bolder">(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
+ 			
+				<?php the_content(); ?>
 			 </div>
 
 			<div>

@@ -81,6 +81,46 @@ get_header(); ?>
       $position_12 = get_field("position_12");
       $email_12 = get_field("email_12");
       $bio_12 = get_field("bio_12");
+			$name_13 = get_field("name_13");
+      $image_13 = get_field("image_13");
+      $position_13 = get_field("position_13");
+      $email_13 = get_field("email_13");
+      $bio_13 = get_field("bio_13");
+			$name_14 = get_field("name_14");
+      $image_14 = get_field("image_14");
+      $position_14 = get_field("position_14");
+      $email_14 = get_field("email_14");
+      $bio_14 = get_field("bio_14");
+			$name_15 = get_field("name_15");
+      $image_15 = get_field("image_15");
+      $position_15 = get_field("position_15");
+      $email_15 = get_field("email_15");
+      $bio_15 = get_field("bio_15");
+			$name_16 = get_field("name_16");
+      $image_16 = get_field("image_16");
+      $position_16 = get_field("position_16");
+      $email_16 = get_field("email_16");
+      $bio_16 = get_field("bio_16");
+			$name_17 = get_field("name_17");
+      $image_17 = get_field("image_17");
+      $position_17 = get_field("position_17");
+      $email_17 = get_field("email_17");
+      $bio_17 = get_field("bio_17");
+			$name_18 = get_field("name_18");
+      $image_18 = get_field("image_18");
+      $position_18 = get_field("position_18");
+      $email_18 = get_field("email_18");
+      $bio_18 = get_field("bio_18");
+			$name_19 = get_field("name_19");
+      $image_19 = get_field("image_19");
+      $position_19 = get_field("position_19");
+      $email_19 = get_field("email_19");
+      $bio_19 = get_field("bio_19");
+			$name_20 = get_field("name_20");
+      $image_20 = get_field("image_20");
+      $position_20 = get_field("position_20");
+      $email_20 = get_field("email_20");
+      $bio_20 = get_field("bio_20");
       ?>
       <p class="aligncenter"><?php echo $updated ?></p>
 
@@ -448,6 +488,246 @@ get_header(); ?>
 		            <div class="accordion-content">
 									<h4 class="dark-blue font-boldest"><?php echo $name_12 ?></h4>
 									<p><?php echo $bio_12 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+      </div>
+
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_13) {
+	            echo wp_get_attachment_image( $image_13, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_13 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_13 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_13 ?>" class="orange font-bolder"><?php echo $email_13 ?></a></h5>
+	        <?php if($bio_13) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion13"></span>
+
+		            <a href="#accordion13" id="open-accordion13" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion13" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_13 ?></h4>
+									<p><?php echo $bio_13 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+
+      </div>
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_14) {
+	            echo wp_get_attachment_image( $image_14, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_14 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_14 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_14 ?>" class="orange font-bolder"><?php echo $email_14 ?></a></h5>
+	        <?php if($bio_14) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion14"></span>
+
+		            <a href="#accordion14" id="open-accordion14" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion14" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_14 ?></h4>
+									<p><?php echo $bio_14 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+
+      </div>
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_15) {
+	            echo wp_get_attachment_image( $image_15, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_15 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_15 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_15 ?>" class="orange font-bolder"><?php echo $email_15 ?></a></h5>
+	        <?php if($bio_15) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion15"></span>
+
+		            <a href="#accordion15" id="open-accordion15" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion15" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_15 ?></h4>
+									<p><?php echo $bio_15 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+
+      </div>
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_16) {
+	            echo wp_get_attachment_image( $image_16, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_16 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_16 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_16 ?>" class="orange font-bolder"><?php echo $email_16 ?></a></h5>
+	        <?php if($bio_16) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion16"></span>
+
+		            <a href="#accordion16" id="open-accordion16" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion16" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_16 ?></h4>
+									<p><?php echo $bio_16 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+
+      </div>
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_17) {
+	            echo wp_get_attachment_image( $image_17, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_17 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_17 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_17 ?>" class="orange font-bolder"><?php echo $email_17 ?></a></h5>
+	        <?php if($bio_17) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion17"></span>
+
+		            <a href="#accordion17" id="open-accordion17" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion17" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_17 ?></h4>
+									<p><?php echo $bio_17 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+
+      </div>
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_18) {
+	            echo wp_get_attachment_image( $image_18, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_18 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_18 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_18 ?>" class="orange font-bolder"><?php echo $email_18 ?></a></h5>
+	        <?php if($bio_18) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion18"></span>
+
+		            <a href="#accordion18" id="open-accordion18" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion18" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_18 ?></h4>
+									<p><?php echo $bio_18 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+
+      </div>
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_19) {
+	            echo wp_get_attachment_image( $image_19, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_19 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_19 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_19 ?>" class="orange font-bolder"><?php echo $email_19 ?></a></h5>
+	        <?php if($bio_19) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion19"></span>
+
+		            <a href="#accordion19" id="open-accordion19" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion19" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_19 ?></h4>
+									<p><?php echo $bio_19 ?></p>
+		            </div>
+		        	</div>
+						</div>
+	        <?php endif; ?>
+        </div>
+
+      </div>
+      <div class="grid-two-eq-rows aligncenter">
+				<div>
+					<?php if($image_20) {
+	            echo wp_get_attachment_image( $image_20, $size );
+	          } ?>
+				</div>
+        <div>
+					<h4 class="dark-blue font-boldest"><?php echo $name_20 ?></h4>
+	        <h4 class="gray arial"><?php echo $position_20 ?></h4>
+	        <h5><a href="mailto:<?php echo $email_20 ?>" class="orange font-bolder"><?php echo $email_20 ?></a></h5>
+	        <?php if($bio_20) : ?>
+						<div class="accordion">
+			        <span class="target-fix" id="accordion"></span>
+			        <div>
+		            <span class="target-fix" id="accordion20"></span>
+
+		            <a href="#accordion20" id="open-accordion20" title="open" class="dark-blue font-bolder">See full bio  &or;</a>
+
+		            <a href="#accordion" id="close-accordion20" title="close">See full bio &and;</a>
+
+		            <div class="accordion-content">
+									<h4 class="dark-blue font-boldest"><?php echo $name_20 ?></h4>
+									<p><?php echo $bio_20 ?></p>
 		            </div>
 		        	</div>
 						</div>

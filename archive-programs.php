@@ -27,7 +27,7 @@ get_header(); ?>
 	  				<?php while ( have_posts() ) : the_post();
 	  				$programs_page_blurb = get_field("programs_page_blurb");
 	  				?>
-	  				<li class="large-btm-margin aligncenter">
+	  				<li class="med-btm-margin aligncenter">
 	  					<h2 class="aligncenter font-boldest xx-large sea-blue"><?php the_title(); ?></h2>
 	            <p class="aligncenter gray"><?php echo $programs_page_blurb; ?></p>
 	            <a href="<?php the_permalink(); ?>" class="btn">More Info</a>
@@ -61,6 +61,7 @@ get_header(); ?>
 						<div class="grid-wrapper">
 						<div class="left-section">
 							<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
+							<p class="zero-margin gray">Program Director, Triad House & Rainbow House</p>
 							<h4> <span class="font-boldest sea-blue">Triad:</span> <span class="gray">(609) 771-4221</span></h4>
 							<h4><span class="font-boldest sea-blue">Rainbow:</span><span class="gray">(609) 394-6747</span> </h4>
 							<h5 class="perform-care">
@@ -69,6 +70,7 @@ get_header(); ?>
 						</div>
 						<div class="right-section">
 							<h3 class="dark-blue font-boldest">Emily Mattek</h3>
+							<p class="zero-margin gray">Clinical Services Director</p>
 							<h4 class="font-boldest sea-blue">Clinical Services</h4>
 							<h4 class="gray">Phone: (609) 882-4485</h4>
 							<h5 class="perform-care">

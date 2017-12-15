@@ -24,21 +24,31 @@ get_header(); ?>
 				<section class="page-width simple-grid">
 					<div>
 						<h1 class="dark-blue font-boldest xx-large">Contact Details</h1>
-						<div>
-							<h3 class="gray">Location</h3>
-							<p class="gray">Administrative Office <br>
-								John S. Watson Sr. Buiding <br>
-								2205 Pennington Rd. <br>
-								Ewing, NJ 08638
-							</p>
+
+						<div class="contact-grid">
+							<div>
+								<h3 class="gray">Location</h3>
+							</div>
+							<div>
+								<p class="gray" style="margin-top: 0;">Administrative Office <br>
+									John S. Watson Sr. Buiding <br>
+									2205 Pennington Rd. <br>
+									Ewing, NJ 08638
+								</p>
+							</div>
 						</div>
-						<div>
-							<h3 class="gray">Contact</h3>
-							<p class="gray underline">
-								Phone: (609) 771-1600 <br>
-								Fax: 609-530-1648 <br>
-								<a href="mailto:info@lifeties.org" class="orange font-bolder martel">info@lifeties.org</a>
-							</p>
+
+						<div class="contact-grid">
+							<div>
+								<h3 class="gray">Contact</h3>
+							</div>
+							<div>
+								<p class="gray underline" style="margin-top: 0;">
+									Phone: (609) 771-1600 <br>
+									Fax: 609-530-1648 <br>
+									<a href="mailto:info@lifeties.org" class="orange font-bolder martel">info@lifeties.org</a>
+								</p>
+							</div>
 						</div>
 					</div>
 
@@ -50,42 +60,50 @@ get_header(); ?>
 				<section>
 					<div class="yellow-house-pic med-padding">
 						<div class="site-info aligncenter">
-							<h1>Our Mission</h1>
-							<h2><?php the_content(); ?></h2>
+							<h1 class="font-boldest xx-large">Our Mission</h1>
+							<h2 class="font-boldest xx-large martel"><?php the_content(); ?></h2>
 						</div>
 					</div>
 				</section>
 
 				<section class="page-width">
-					<h1 class="aligncenter">Programs and Services Contacts</h1>
+					<h1 class="aligncenter dark-blue font-boldest xx-large">Programs and Services Contacts</h1>
 					<div class="aligncenter">
 						<ul class="no-bullet quarter-wrapper">
 							<li>
-								<h3>Triad House</h3>
-								<p>Phone: (609) 771-4221 <br>
+								<h3 class="sea-blue x-large font-boldest">Triad House</h3>
+								<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
+								<p class="zero-margin gray">Program Director</p>
+								<p class="gray martel  underline">Phone: (609) 771-4221 <br>
 									Fax: (609) 538-0106 <br>
-									<a href="mailto:vharmon@lifeties.org">vharmon@lifeties.org</a>
+									<a href="mailto:vharmon@lifeties.org" class="orange font-bolder">vharmon@lifeties.org</a>
 								</p>
 							</li>
 							<li>
-								<h3>Rainbow House</h3>
-								<p>Phone: (609) 394-6747 <br>
+								<h3 class="sea-blue x-large font-boldest">Rainbow House</h3>
+								<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
+								<p class="zero-margin gray">Program Director</p>
+								<p class="gray martel  underline">Phone: (609) 394-6747 <br>
 									Fax: (609) 396-5848 <br>
-									<a href="mailto:vharmon@lifeties.org">vharmon@lifeties.org</a>
+									<a href="mailto:vharmon@lifeties.org" class="orange font-bolder">vharmon@lifeties.org</a>
 								</p>
 							</li>
 							<li>
-								<h3>Mary's Place & T.I.L.T.</h3>
-								<p>Phone: (609) 671-0040 <br>
+								<h3 class="sea-blue x-large font-boldest">Mary's Place & T.I.L.T.</h3>
+								<h3 class="dark-blue font-boldest">Robin Wilkins</h3>
+								<p class="zero-margin gray">Program Director</p>
+								<p class="gray martel  underline">Phone: (609) 671-0040 <br>
 									Fax: (609) 671-1500 <br>
-									<a href="mailto:twilkins@lifeties.org">twilkins@lifeties.org</a>
+									<a href="mailto:twilkins@lifeties.org" class="orange font-bolder">twilkins@lifeties.org</a>
 								</p>
 							</li>
 							<li>
-								<h3>Clinical Services</h3>
-								<p>Phone: (609) 882-4485 <br>
+								<h3 class="sea-blue x-large font-boldest">Clinical Services</h3>
+								<h3 class="dark-blue font-boldest">Emily Mattek</h3>
+								<p class="zero-margin gray">Program Director</p>
+								<p class="gray martel  underline">Phone: (609) 882-4485 <br>
 									Fax: (609) 882-4661 <br>
-									<a href="mailto:emattek@lifeties.org">emattek@lifeties.org</a>
+									<a href="mailto:emattek@lifeties.org" class="orange font-bolder">emattek@lifeties.org</a>
 								</p>
 							</li>
 						</ul>

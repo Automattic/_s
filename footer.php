@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer dark-blue-background">
-		<div class="content-width footer-grid">
+		<div class="content-width footer-grid" style="padding: 1em 0;">
 			<div class="contact">
 				<h3 class="gray-blue aligncenter font-wgt-normal">Contact LifeTies</h3>
 				<h2 class="white aligncenter font-boldest">Call: (609) 771-1600</h2>

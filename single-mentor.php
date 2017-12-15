@@ -116,9 +116,10 @@ get_header(); ?>
 					</div>
 					<div class="right-section" style="margin: 1em auto; padding: 1em;">
 						<h3 class="dark-blue font-boldest">Robin Wilkins</h3>
+						<p class="zero-margin gray">Director of T.I.L.T. & Mary’s Place</p>
 						<h4 class="gray">(609) 671-0040</h4>
 						<h5 class="perform-care">
-							<a href="mailto:twilkins@lifeties.org" class="font-boldest orange ">twilkins@lifeties.org</a>
+							<a href="mailto:rwilkins@lifeties.org" class="font-boldest orange ">rwilkins@lifeties.org</a>
 						</h5>
 					</div>
 				</div>

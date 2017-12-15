@@ -25,10 +25,10 @@
 <div>
 	<header class="site-header">
 		<div class="page-header">
-			<div class="lt-logo">
-				<a href="<?php echo site_url(); ?>" ></a>
-			</div>
-
+			<a href="<?php echo home_url(); ?>" >
+				<div class="lt-logo"></div>
+			</a>
+			
 			<nav class="top-nav">
 				<?php
 					wp_nav_menu( array(
@@ -36,7 +36,7 @@
 						'menu_id'        => 'primary-menu',
 					) );
 				?>
-			</nav>		
+			</nav>
 		</div><!-- page-header -->
 	</header><!-- site-header -->
 	<div id="content" class="site-content">
