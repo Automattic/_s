@@ -52,33 +52,40 @@ get_header(); ?>
 					<div class="pdf-indiv">
 						<?php if($pdf_2) :?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
-
-						<a href="<?php echo $pdf_2['url']; ?>">
-							<h3 class="arial black font-bolder">  -  <?php echo $pdf_2['title']; ?></h3></a>
+							<a href="<?php echo $pdf_2['url']; ?>">
+								<h3 class="arial black font-bolder">  -  <?php echo $pdf_2['title']; ?>
+								</h3>
+							</a>
 						<?php endif; ?>
 					</div>
+
 					<div class="pdf-indiv">
 						<?php if($pdf_3) :?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
-
-						<a href="<?php echo $pdf_3['url']; ?>">
-							<h3 class="arial black font-bolder">  -  <?php echo $pdf_3['title']; ?></h3></a>
+							<a href="<?php echo $pdf_3['url']; ?>">
+								<h3 class="arial black font-bolder">  -  <?php echo $pdf_3['title']; ?>
+								</h3>
+							</a>
 						<?php endif; ?>
 					</div>
+
 					<div class="pdf-indiv">
 						<?php if($pdf_4) :?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
-
-						<a href="<?php echo $pdf_4['url']; ?>">
-							<h3 class="arial black font-bolder">  -  <?php echo $pdf_4['title']; ?></h3></a>
+							<a href="<?php echo $pdf_4['url']; ?>">
+								<h3 class="arial black font-bolder">  -  <?php echo $pdf_4['title']; ?>
+								</h3>
+							</a>
 						<?php endif; ?>
 					</div>
+
 					<div class="pdf-indiv">
 						<?php if($pdf_5) :?>
 							<i class="fa fa-file-pdf-o fa-2x pdf-img" aria-hidden="true"></i>
-
-						<a href="<?php echo $pdf_5['url']; ?>">
-							<h3 class="arial black font-bolder">  -  <?php echo $pdf_5['title']; ?></h3></a>
+							<a href="<?php echo $pdf_5['url']; ?>">
+								<h3 class="arial black font-bolder">  -  <?php echo $pdf_5['title']; ?>
+								</h3>
+							</a>
 						<?php endif; ?>
 					</div>
 				</section>

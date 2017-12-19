@@ -13,7 +13,7 @@ get_header(); ?>
 		<div class="main-content" role="main">
 			<div id="events-banner">
 				<div class="center-in-banner">
-					<h1 class="white font-boldest threex-font">Events & Fundraisers</h1>
+					<h1 class="white font-boldest threex-font aligncenter h2-line-ht">Events & Fundraisers</h1>
 				</div>
 			</div>
 

@@ -17,7 +17,7 @@ get_header(); ?>
 			<div class = "banner-background" >
 				<div id="shoes-pic-2"></div>
 			</div>
-			<div class="page-width">
+
 			<?php
 			while ( have_posts() ) : the_post();
 			$size = 'medium_large';
@@ -34,7 +34,7 @@ get_header(); ?>
 			$program_services_10 = get_field('program_services_10');
 			$program_services_11 = get_field('program_services_11');
 			?>
-			<div class="grid-wrapper">
+			<div class="grid-wrapper site-info">
 				<div class="left-section">
 					<h1 class="dark-blue font-boldest xx-large"><?php the_title(); ?></h1>
 					<p><?php the_content(); ?></p>
@@ -86,7 +86,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<?php endwhile; // End of the loop.?>
-		</div>
+
 		<div class="light-blue-background aligncenter">
 			<div class="site-info">
 				<div>

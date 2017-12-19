@@ -27,7 +27,7 @@ get_header(); ?>
         <div class="orange-donation-pic center-in-banner med-padding section donation-btn">
           <a href="<?php echo home_url(); ?>/donate">
             <div class="present-icon image"></div>
-            <h2 class="white aligncenter uppercase font-boldest">Make a Donation</h2>
+            <h2 class="white aligncenter uppercase font-boldest h2-line-ht sm-margin-top">Make a Donation</h2>
             <h4 class="white aligncenter">Please consider giving a gift that will help transform the future of our youth.</h4>
           </a>
         </div>
@@ -35,7 +35,7 @@ get_header(); ?>
         <div class="blue-vol-pic center-in-banner med-padding section vol-btn">
           <a href="<?php echo home_url(); ?>/volunteer">
             <div class="vol-icon image"></div>
-            <h2 class="white aligncenter uppercase font-boldest">Volunteer Your Time</h2>
+            <h2 class="white aligncenter uppercase font-boldest h2-line-ht sm-margin-top">Volunteer Your Time</h2>
             <h4 class="white aligncenter">Make an impact in a youth's journey to adulthood by volunteering at our events and programs.</h4>
           </a>
         </div>
@@ -59,8 +59,8 @@ get_header(); ?>
     				$homepage_blurb = get_field("homepage_blurb");
     				?>
     				<li class="aligncenter">
-    					<h2 class="aligncenter dark-blue font-boldest"><?php the_title(); ?></h2>
-              <p class="aligncenter dark-gray"><?php echo $homepage_blurb; ?></p>
+    					<h2 class="aligncenter dark-blue font-boldest h2-line-ht"><?php the_title(); ?></h2>
+              <p class="aligncenter dark-gray" style="margin-top: 0; margin-bottom: .5em"><?php echo $homepage_blurb; ?></p>
               <a href="<?php the_permalink(); ?>" class="btn">Learn More</a>
     				</li>
     				<?php endwhile; ?>

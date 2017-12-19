@@ -67,7 +67,7 @@ get_header(); ?>
 				</section>
 
 				<section class="page-width">
-					<h1 class="aligncenter dark-blue font-boldest xx-large">Programs and Services Contacts</h1>
+					<h1 class="aligncenter dark-blue font-boldest xx-large h2-line-ht">Programs and Services Contacts</h1>
 					<div class="aligncenter">
 						<ul class="no-bullet quarter-wrapper">
 							<li>
@@ -89,12 +89,12 @@ get_header(); ?>
 								</p>
 							</li>
 							<li>
-								<h3 class="sea-blue x-large font-boldest">Mary's Place & T.I.L.T.</h3>
+								<h3 class="sea-blue x-large font-boldest h2-line-ht">Mary's Place & T.I.L.T.</h3>
 								<h3 class="dark-blue font-boldest">Robin Wilkins</h3>
 								<p class="zero-margin gray">Program Director</p>
 								<p class="gray martel  underline">Phone: (609) 671-0040 <br>
 									Fax: (609) 671-1500 <br>
-									<a href="mailto:twilkins@lifeties.org" class="orange font-bolder">twilkins@lifeties.org</a>
+									<a href="mailto:rwilkins@lifeties.org" class="orange font-bolder">rwilkins@lifeties.org</a>
 								</p>
 							</li>
 							<li>

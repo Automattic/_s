@@ -15,7 +15,7 @@ get_header(); ?>
 		<div class="main-content" role="main">
 			<div id="shoes-pic-2">
 				<div class="center-in-banner">
-					<h1 class="white font-boldest threex-font">Support. Structure. Stability</h1>
+					<h1 class="white font-boldest threex-font aligncenter">Support. Structure. Stability</h1>
 				</div>
 			</div>
 

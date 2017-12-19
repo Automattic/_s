@@ -14,17 +14,18 @@ get_header(); ?>
 
 			<div id="volunteer-banner">
 				<div class="center-in-banner">
-					<div class="vol-icon"></div>
-					<h1 class="white font-boldest threex-font">Become a Volunteer</h1>
+					<div class="vol-icon sm-btm-margin"></div>
+					<h1 class="white font-boldest threex-font aligncenter h2-line-ht">Become a Volunteer</h1>
 				</div>
 			</div>
 
 		<?php
 		while ( have_posts() ) : the_post();
+		$volunteer_signup = get_field('volunteer_signup');
 		?>
 		<div class="site-info aligncenter">
-			<h1 class="uppercase dark-blue font-boldest xx-large" style="margin-bottom: 0;">Make an Impact:</h1>
-			<h1 class="gray" style="margin: 0;">Guidance. Direction. Connection.</h1>
+			<h1 class="uppercase dark-blue font-boldest xx-large h2-line-ht ">Make an Impact:</h1>
+			<h1 class="gray h2-line-ht" style="margin: 0;">Guidance. Direction. Connection.</h1>
 			<h3 class="gray arial">Get involved in one of our amazing programs to help young people who need you the most.</h3>
 		</div>
 		 <section class="light-blue-background">
@@ -60,16 +61,16 @@ get_header(); ?>
 
 		 <section class="page-width">
 			 <div class="aligncenter">
-				 <h1 class="orange font-boldest xx-large">We're looking for volunteers like you!</h1>
- 			
-				<?php the_content(); ?>
+				 <h1 class="orange font-boldest xx-large h2-line-ht">We're looking for volunteers like you!</h1>
+
+				 <h3 class="arial gray underline"><strong>Interested in becoming a volunteer?</strong> Complete the brief online form below or email us at <a class="orange font-bolder" href="mailto:info@lifeties.org">info@lifeties.org</a> and someone will reach out to you.</h3>
+				 <h3><?php echo $volunteer_signup ?></h3>
+				 <p class="orange font-bolder">(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
 			 </div>
-
-			<div>
-				<?php echo do_shortcode('[ninja_form id=3]') ?>
-			</div>
+			 <div>
+			 	<?php echo do_shortcode('[ninja_form id=3]') ?>
+			 </div>
 		 </section>
-
 		<?php endwhile; // End of the loop.?>
 
 		<!-- Sponsors -->

@@ -409,22 +409,6 @@ th {
 	padding: 0;
 }
 
-.med-padding {
-	padding: 2em;
-}
-
-.med-btm-margin {
-	margin-bottom: 4em;
-}
-
-.large-btm-margin {
-	margin-bottom: 8em;
-}
-
-.zero-margin {
-	margin: 0;
-}
-
 .flex-wrap-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -599,6 +583,10 @@ big {
 
 .fivex-font {
 	font-size: 7em;
+}
+
+.h2-line-ht {
+	line-height: 1.25em;
 }
 
 /*--------------------------------------------------------------
@@ -898,7 +886,12 @@ ul li.check-blue {
 	margin: 2em;
 	display: grid;
 	grid-gap: 20px;
-	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+@media screen and (min-width: 769px) {
+	.listing {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
 }
 
 .listing-marg-btm {
@@ -906,7 +899,12 @@ ul li.check-blue {
 	margin: 2em 2em 0 2em;
 	display: grid;
 	grid-gap: 20px;
-	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+@media screen and (min-width: 769px) {
+	.listing-marg-btm {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
 }
 
 .sponsor-carousel {
@@ -936,10 +934,44 @@ ul li.check-blue {
 	border-bottom: 1px solid;
 }
 
+.sm-margin-top {
+	margin-top: 1em;
+}
+
+.med-margin-top {
+	margin-top: 3em;
+}
+
+.sm-padding-top {
+	padding-top: 1em;
+}
+
+.med-padding {
+	padding: 2em;
+}
+
+.sm-btm-margin {
+	margin-bottom: 1em;
+}
+
+.med-btm-margin {
+	margin-bottom: 4em;
+}
+
+.large-btm-margin {
+	margin-bottom: 8em;
+}
+
+.zero-margin {
+	margin: 0;
+}
+
+/*.sm-padding-bottom {
+	padding-bottom: 1em;
+}*/
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-
 button,
 input[type='button'],
 input[type='reset'],
@@ -1193,7 +1225,7 @@ form .ctct-form-175 {
 --------------------------------------------------------------*/
 
 a {
-	color: royalblue;
+	color: #f05c29;
 }
 
 /*a:visited {
@@ -1203,7 +1235,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #f05c29;
 }
 
 a:focus {
@@ -1398,6 +1430,10 @@ a:active {
 	margin: 0 auto;
 }
 
+.max-width {
+	max-width: 90vw;
+}
+
 .page {
 	display: flex;
 	flex-wrap: wrap;
@@ -1537,6 +1573,20 @@ a:active {
 	.grid-wrapper-thirds {
 		grid-template-columns: 2fr 1fr;
 		grid-template-areas: 'left right';
+	}
+}
+
+.grid-wrapper-one-third {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-areas: 'left' 'right';
+}
+
+@media screen and (min-width: 769px) {
+	.grid-wrapper-one-third {
+		grid-template-columns: 1fr 2fr;
+		grid-template-areas: 'left right';
+		align-items: center;
 	}
 }
 
@@ -1940,8 +1990,16 @@ object {
 .present-icon {
 	background: url(./img/present-icon.png);
 	z-index: 1;
-	width: 122px;
-	height: 130px;
+	width: 61px;
+	height: 65px;
+	background-size: 100%;
+}
+
+@media screen and (min-width: 769px) {
+	.present-icon {
+		width: 122px;
+		height: 130px;
+	}
 }
 
 .blue-vol-pic {
@@ -1954,8 +2012,16 @@ object {
 .vol-icon {
 	background: url(./img/vol-icon.png);
 	z-index: 1;
-	height: 134px;
-	width: 152px;
+	height: 67px;
+	width: 76px;
+	background-size: 100%;
+}
+
+@media screen and (min-width: 769px) {
+	.vol-icon {
+		height: 134px;
+		width: 152px;
+	}
 }
 
 .team-icon {
@@ -2081,6 +2147,11 @@ object {
 	background: url('./img/Rectangle-1-donation.png') no-repeat scroll left center /
 		cover rgba(0, 0, 0, 0);
 	padding: 3em 0;
+	/*background: url('./img/Rectangle-1-donation.png');
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	padding: 12em 0;*/
 }
 
 #volunteer-banner {

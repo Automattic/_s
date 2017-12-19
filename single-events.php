@@ -13,7 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 			<div id="events-banner">
 				<div class="center-in-banner">
-					<h1 class="white font-boldest threex-font">Events & Fundraisers</h1>
+					<h1 class="white font-boldest threex-font aligncenter h2-line-ht">Events & Fundraisers</h1>
 				</div>
 			</div>
 
@@ -26,7 +26,8 @@ get_header(); ?>
 		$tickets_link = get_field('tickets_link');
 		$size = "medium";
 		?>
-		<section class="page-width aligncenter alt-wrapper border-bottom">
+
+		<section class="alt-wrapper site-info aligncenter">
 			<div class="title">
 				<h3 class="dark-blue font-boldest xx-large"><?php the_title(); ?></h3>
 				<h3 class="orange font-boldest xx-large"><?php echo $date; ?></h3>
@@ -34,7 +35,7 @@ get_header(); ?>
 			</div>
 
 			<div class="content">
-				<p><?php the_content(); ?></p>
+				<div class="max-width"><?php the_content(); ?></div>
 
 				<?php if($attachment) :?>
 					<h3>Download Attachment:
@@ -51,10 +52,11 @@ get_header(); ?>
 				} ?>
 			</div>
 
-			<a href="<?php echo $tickets_link; ?>" class="btn button">Order Tickets Now</a>
+			<?php if($tickets_link) : ?>
+				<a href="<?php echo $tickets_link; ?>" class="btn button">Order Tickets Now</a>
+			<?php endif; ?>
 		</section>
-
-		<?php endwhile; // End of the loop.?>
+		<?php endwhile; ?>
 
 		<!-- Sponsors -->
 		<section class="sponsor-carousel">

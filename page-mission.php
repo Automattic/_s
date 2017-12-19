@@ -39,32 +39,32 @@ get_header(); ?>
 				<section class="aligncenter site-info large-btm-margin mission">
 					<div>
 						<h1 class="dark-blue font-boldest xx-large"><?php echo $impact ?></h1>
-						<p class="gray"><?php echo $impact_explanation ?></p>
+						<p class="gray "><?php echo $impact_explanation ?></p>
 					</div>
 
-					<div class="mission-section">
-						<h1 class="width-1-3 turquoise fivex-font font-boldest"><?php echo $impact_stat_1 ?></h1>
-						<h2 class="width-2-3 turquoise font-bolder"><?php echo $impact_stat_1_explanation ?></h2>
+					<div class="grid-wrapper-one-third">
+						<h1 class="turquoise fivex-font font-boldest left-section"><?php echo $impact_stat_1 ?></h1>
+						<h2 class="turquoise font-bolder right-section"><?php echo $impact_stat_1_explanation ?></h2>
 					</div>
 
-					<div class="mission-section">
-						<h1 class="width-1-3 gold fivex-font font-boldest"><?php echo $impact_stat_2 ?></h1>
-						<h2 class="width-2-3 gold font-bolder"><?php echo $impact_stat_2_explanation ?></h2>
+					<div class="grid-wrapper-one-third">
+						<h1 class="left-section gold fivex-font font-boldest"><?php echo $impact_stat_2 ?></h1>
+						<h2 class="right-section gold font-bolder"><?php echo $impact_stat_2_explanation ?></h2>
 					</div>
 
-					<div class="mission-section">
-						<h1 class="width-1-3 grass-green fivex-font font-boldest"><?php echo $impact_stat_3 ?></h1>
-						<h2 class="width-2-3 grass-green font-bolder"><?php echo $impact_stat_3_explanation ?></h2>
+					<div class="grid-wrapper-one-third">
+						<h1 class="left-section grass-green fivex-font font-boldest"><?php echo $impact_stat_3 ?></h1>
+						<h2 class="right-section grass-green font-bolder"><?php echo $impact_stat_3_explanation ?></h2>
 					</div>
 
-					<div class="mission-section">
-						<h1 class="width-1-3 burnt-orange fivex-font font-boldest"><?php echo $impact_stat_4 ?></h1>
-						<h2 class="width-2-3 burnt-orange font-bolder"><?php echo $impact_stat_4_explanation ?></h2>
+					<div class="grid-wrapper-one-third">
+						<h1 class="left-section burnt-orange fivex-font font-boldest"><?php echo $impact_stat_4 ?></h1>
+						<h2 class="right-section burnt-orange font-bolder"><?php echo $impact_stat_4_explanation ?></h2>
 					</div>
 
-					<div class="mission-section">
-						<h1 class="width-1-3 aqua-marine fivex-font font-boldest"><?php echo $impact_stat_5 ?></h1>
-						<h2 class="width-2-3 aqua-marine font-bolder"><?php echo $impact_stat_5_explanation ?></h2>
+					<div class="grid-wrapper-one-third">
+						<h1 class="left-section aqua-marine fivex-font font-boldest"><?php echo $impact_stat_5 ?></h1>
+						<h2 class="right-section aqua-marine font-bolder"><?php echo $impact_stat_5_explanation ?></h2>
 					</div>
 				</section>
 

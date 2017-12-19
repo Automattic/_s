@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-			<div class = "banner-background" >
+			<div class="banner-background">
 				<div id="shoes-pic-2"></div>
 			</div>
 
@@ -56,9 +56,7 @@ get_header(); ?>
 				</ul>
 			</div>
 		</div>
-
 		<?php endwhile; // End of the loop.?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
