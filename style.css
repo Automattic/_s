@@ -32,7 +32,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Menus
 # Accessibility
 # Alignments
-# Clearings
 # Widgets
 # Content
 	## Posts and pages
@@ -626,9 +625,7 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
 }
 
@@ -655,7 +652,8 @@ a:active {
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-	left: 100%;
+	display: block;
+	left: auto;
 }
 
 .main-navigation ul ul a {
@@ -668,7 +666,6 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
 	position: relative;
 }
 
@@ -690,7 +687,7 @@ a:active {
 	}
 
 	.main-navigation ul {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -700,22 +697,25 @@ a:active {
 .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
-	overflow: hidden;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+	flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+	text-align: end;
+	flex: 1 0 50%;
 }
 
 /*--------------------------------------------------------------
@@ -758,7 +758,7 @@ a:active {
 }
 
 /* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
+#primary[tabindex="-1"]:focus {
 	outline: 0;
 }
 
@@ -785,35 +785,6 @@ a:active {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
-}
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear::before,
-.clear::after,
-.entry-content::before,
-.entry-content::after,
-.comment-content::before,
-.comment-content::after,
-.site-header::before,
-.site-header::after,
-.site-content::before,
-.site-content::after,
-.site-footer::before,
-.site-footer::after {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-.clear::after,
-.entry-content::after,
-.comment-content::after,
-.site-header::after,
-.site-content::after,
-.site-footer::after {
-	clear: both;
 }
 
 /*--------------------------------------------------------------

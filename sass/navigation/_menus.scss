@@ -1,7 +1,5 @@
 .main-navigation {
-	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
 
 	ul {
@@ -27,7 +25,8 @@
 
 				&:hover > ul,
 				&.focus > ul {
-					left: 100%;
+					display: block;
+					left: auto;
 				}
 			}
 
@@ -51,7 +50,6 @@
 	}
 
 	li {
-		float: left;
 		position: relative;
 
 		&:hover > a,
@@ -84,7 +82,7 @@
 	}
 
 	.main-navigation ul {
-		display: block;
+		display: flex;
 	}
 }
 
@@ -94,17 +92,18 @@
 
 	.site-main & {
 		margin: 0 0 1.5em;
-		overflow: hidden;
+	}
+
+	.nav-links {
+		display: flex;
 	}
 
 	.nav-previous {
-		float: left;
-		width: 50%;
+		flex: 1 0 50%;
 	}
 
 	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+		text-align: end;
+		flex: 1 0 50%;
 	}
 }
