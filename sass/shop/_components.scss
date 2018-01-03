@@ -5,7 +5,6 @@
 	position: relative;
 	margin: 0;
 	padding: 0;
-	@include clearfix;
 
 	.cart-contents {
 		text-decoration: none;
@@ -212,7 +211,6 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	@include clearfix;
 	background-color: $woocommerce__color-success;
 	clear: both;
 }

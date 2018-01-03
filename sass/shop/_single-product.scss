@@ -3,7 +3,6 @@
  */
 .single-product {
 	div.product {
-		@include clearfix;
 		position: relative;
 
 		.woocommerce-product-gallery {
@@ -22,7 +21,6 @@
 			}
 
 			.flex-control-thumbs {
-				@include clearfix;
 				margin: 0;
 				padding: 0;
 
