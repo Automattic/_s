@@ -16,7 +16,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="stylesheet" id="_s-style-css" href="http://underscores.local:8888/wp-content/themes/underscores/layouts/content-sidebar.css" type="text/css" media="all">
 
 	<?php wp_head(); ?>
 </head>
