@@ -30,7 +30,7 @@
 					<a href="http://twitter.com/lifeties" class="soc-icon tw"></a>
 					<a href="http://www.facebook.com/Lifeties" class="soc-icon fb"></a>
 					<a href="https://www.linkedin.com/company/6526433/" class="soc-icon ln"></a>
-					<a href="http://www.instagram.com" class="soc-icon in"></a>
+					<a href="https://www.instagram.com/lifeties_" class="soc-icon in"></a>
 				</div>
 			</div>
 

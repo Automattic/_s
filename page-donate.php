@@ -62,22 +62,22 @@ get_header(); ?>
   				</li>
 					<li class="sm-padding-top">
 						<h2 class="aligncenter font-boldest xx-large sea-blue h2-line-ht ">In-Kind Donations and Services</h2>
-						<p class="aligncenter donate-options">Please feel free to contact <a href="mailto:info@lifeties.org" class="orange font-bolder">info@lifeties.org</a> for more information on how you can help with supplies and other needs. Below we have provided a list of some common ongoing needs.</p>
+						<p class="aligncenter donate-options">Please feel free to contact <a href="mailto:info@lifeties.org" class="orange font-bolder">info@lifeties.org</a> for more information on how you can help with supplies and other needs. Below we have provided a list of some common ongoing needs.</p>
 						<ul class="listing-marg-btm">
 							<li class="check-blue">
-								<h4 class="arial gray twox-font">Printing Services for holiday appeal and newsletter</h4>
+								<h4 class="arial gray twox-font">Printing Services for holiday appeal and newsletter</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4 class="arial gray twox-font">Up to Date College SAT and ACT Prep Books</h4>
+								<h4 class="arial gray twox-font">Up to Date College SAT and ACT Prep Books</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4 class="arial gray twox-font">College Books describing Colleges such as Fiske Guide to Colleges</h4>
+								<h4 class="arial gray twox-font">College Books describing Colleges such as Fiske Guide to Colleges</h4>
 							</li>
 
 							<li class="check-blue">
-								<h4 class="arial gray twox-font">Personal Care Items for our Youth in Supportive Housing Units</h4>
+								<h4 class="arial gray twox-font">Personal Care Items for our Youth in Supportive Housing Units</h4>
 							</li>
 
 							<li class="check-blue">
@@ -101,7 +101,7 @@ get_header(); ?>
 							</li>
 
 							<li class="check-blue">
-								<h4 class="arial gray twox-font">Window treatments for Group Homes and Apartments</h4>
+								<h4 class="arial gray twox-font">Window treatments for Group Homes and Apartments</h4>
 							</li>
 
 							<li class="check-blue">
@@ -127,12 +127,12 @@ get_header(); ?>
 		<?php endwhile; // End of the loop.?>
 
 		<!-- Sponsors -->
-		<section class="sponsor-carousel">
-			<h2 class="aligncenter">A big thanks to our supporters!</h2>
-		  <div>
-		  <?php echo do_shortcode('[logoshowcase dots="false"]'); ?>
-		  </div>
-		</section>
+    <section class="sponsor-carousel">
+      <h2 class="aligncenter dark-blue sm-padding-bottom h2-line-ht">A big thanks to our supporters!</h2>
+      <div>
+        <?php echo do_shortcode('[gs_logo]'); ?>
+      </div>
+    </section>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -60,7 +60,7 @@ get_header(); ?>
 
 		<!-- Sponsors -->
 		<section class="sponsor-carousel">
-			<h2 class="aligncenter ">Event Sponsors</h2>
+			<h2 class="aligncenter">Event Sponsors</h2>
 			<div>
 			<?php echo do_shortcode('[logoshowcase cat_id="4" dots="false"]'); ?>
 			</div>

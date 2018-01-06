@@ -908,16 +908,9 @@ ul li.check-blue {
 }
 
 .sponsor-carousel {
-	display: none;
-}
-
-@media screen and (min-width: 769px) {
-	.sponsor-carousel {
-		display: block;
-		height: 20em;
-		background: #f0efef;
-		padding-top: 2em;
-	}
+	display: block;
+	background: #f0efef;
+	padding: 2em 0;
 }
 
 .border-bottom:not(:last-child) {
@@ -966,9 +959,14 @@ ul li.check-blue {
 	margin: 0;
 }
 
-/*.sm-padding-bottom {
+.sm-padding-bottom {
 	padding-bottom: 1em;
-}*/
+}
+
+.test-border {
+	border: 1px solid black;
+}
+/*-----*/
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -1439,6 +1437,23 @@ a:active {
 	flex-wrap: wrap;
 }
 
+.fp-btn-wrapper {
+	display: flex;
+
+	justify-content: center;
+}
+
+/*@media screen and (min-width: 769px) {
+	.fp-btn-wrapper {
+		flex-direction: row;
+	}
+}*/
+
+.blah {
+	display: flex;
+	justify-content: space-around;
+}
+
 .section {
 	width: 100%;
 	height: 300px;
@@ -1459,13 +1474,20 @@ a:active {
 	margin: 0;
 }
 
-@media screen and (min-width: 769px) {
+.donation-btn,
+.vol-btn {
+	margin: 1em;
+	flex: 1;
+	/*max-width: 44em;
+	width: 100%;*/
+}
+
+/*@media screen and (min-width: 769px) {
 	.donation-btn,
 	.vol-btn {
 		width: 48%;
-		margin: 1em;
 	}
-}
+}*/
 
 .width-1-3 {
 	width: 24%;
@@ -1644,8 +1666,6 @@ a:active {
 
 @media screen and (min-width: 769px) {
 	.quarter-wrapper {
-		display: grid;
-		grid-gap: 1em;
 		grid-template-columns: repeat(4, 1fr);
 	}
 }
@@ -1709,6 +1729,11 @@ a:active {
 	}
 }
 
+.simple-grid {
+	display: grid;
+	grid-gap: 1em;
+}
+
 @media screen and (min-width: 769px) {
 	.simple-grid {
 		display: grid;
@@ -1732,6 +1757,18 @@ a:active {
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
 		-moz-column-count: 2; /* Firefox */
 		column-count: 2;
+	}
+}
+
+.triple-grid {
+	display: grid;
+	/*grid-gap: 1em;*/
+	/*align-items: flex-start;*/
+}
+
+@media screen and (min-width: 769px) {
+	.triple-grid {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 
@@ -1995,7 +2032,7 @@ object {
 	background-size: 100%;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1000px) {
 	.present-icon {
 		width: 122px;
 		height: 130px;
@@ -2017,7 +2054,7 @@ object {
 	background-size: 100%;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1000px) {
 	.vol-icon {
 		height: 134px;
 		width: 152px;

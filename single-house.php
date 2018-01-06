@@ -110,8 +110,8 @@ get_header(); ?>
 					<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting the following:</p>
 					<div class="grid-wrapper">
 					<div class="left-section">
-						<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
-						<p class="zero-margin gray">Program Director, Triad House & Rainbow House</p>
+						<h3 class="dark-blue font-boldest">Vivian Harmon, LSW</h3>
+						<p class="zero-margin gray">Director of Group Home Services</p>
 						<h4> <span class="font-boldest sea-blue">Triad:</span> <span class="gray">(609) 771-4221</span></h4>
 						<h4><span class="font-boldest sea-blue">Rainbow:</span><span class="gray">(609) 394-6747</span> </h4>
 						<h5 class="perform-care">
@@ -119,7 +119,7 @@ get_header(); ?>
 							</h5>
 					</div>
 					<div class="right-section">
-						<h3 class="dark-blue font-boldest">Emily Mattek</h3>
+						<h3 class="dark-blue font-boldest">Emily Mattek, LCSW</h3>
 						<p class="zero-margin gray">Clinical Services Director</p>
 						<h4 class="font-boldest sea-blue">Clinical Services</h4>
 						<h4 class="gray">Phone: (609) 882-4485</h4>

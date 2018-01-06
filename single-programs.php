@@ -57,6 +57,28 @@ get_header(); ?>
 			</div>
 		</div>
 		<?php endwhile; // End of the loop.?>
+		<div class="light-blue-background aligncenter">
+			<div class="site-info">
+
+				<div>
+					<h2 class="dark-blue font-boldest xx-large">Want to make a Referral?</h2>
+				</div>
+
+				<div class="grid-wrapper-thirds">
+					<div class="left">
+						<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting Emily Mattek.</p>
+					</div>
+					<div class="right-section" style="margin: 1em auto; padding: 1em;">
+						<h3 class="dark-blue font-boldest">Emily Mattek, LCSW</h3>
+						<p class="zero-margin gray">Clinical Services Director</p>
+						<h4 class="gray"> (609)  882-4485</h4>
+						<h5 class="perform-care">
+							<a href="mailto:emattek@lifeties.org" class="font-boldest orange ">emattek@lifeties.org</a>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div> <!-- referral -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -85,9 +85,9 @@ get_header(); ?>
 
 			<!-- Sponsors -->
 	    <section class="sponsor-carousel">
-	      <h2 class="aligncenter dark-blue">A big thanks to our supporters!</h2>
+	      <h2 class="aligncenter dark-blue sm-padding-bottom h2-line-ht test-border">A big thanks to our supporters!</h2>
 	      <div>
-	      <?php echo do_shortcode('[logoshowcase dots="false"]'); ?>
+	        <?php echo do_shortcode('[gs_logo]'); ?>
 	      </div>
 	    </section>
 		</main><!-- #main -->

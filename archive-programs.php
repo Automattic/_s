@@ -44,7 +44,7 @@ get_header(); ?>
 						<h3 class="gray">(Triad & Rainbow Houses are accepting referrals!)</h3>
 					</div>
 
-					<div class="grid-wrapper">
+					<div class="grid-wrapper-one-third">
 					<div class="left-section perform-care">
 						<p>All referrals will go through PerformCare's YouthLink. You can contact PerformCare to gain access to YouthLink via the number below.</p>
 						<div class="aligncenter">
@@ -58,26 +58,34 @@ get_header(); ?>
 					</div>
 					<div class="right-section">
 						<p><b>Questions?</b> We would gladly accept questions regarding referrals, additional information and requests for presentation of services provided by LifeTies, Inc. by contacting the following:</p>
-						<div class="grid-wrapper">
-						<div class="left-section">
-							<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
-							<p class="zero-margin gray">Program Director, Triad House & Rainbow House</p>
+						<ul class="fp-grid no-bullet">
+						<li>
+							<h3 class="dark-blue font-boldest">Vivian Harmon, LSW</h3>
+							<p class="zero-margin gray">Director of Group Home Services</p>
 							<h4> <span class="font-boldest sea-blue">Triad:</span> <span class="gray">(609) 771-4221</span></h4>
 							<h4><span class="font-boldest sea-blue">Rainbow:</span><span class="gray">(609) 394-6747</span> </h4>
 							<h5 class="perform-care">
 								<a href="mailto:vharmon@lifeties.org" class="font-boldest orange ">vharmon@lifeties.org</a>
 								</h5>
-						</div>
-						<div class="right-section">
-							<h3 class="dark-blue font-boldest">Emily Mattek</h3>
+						</li>
+						<li>
+							<h3 class="dark-blue font-boldest">Emily Mattek, LCSW</h3>
 							<p class="zero-margin gray">Clinical Services Director</p>
 							<h4 class="font-boldest sea-blue">Clinical Services</h4>
 							<h4 class="gray">Phone: (609) 882-4485</h4>
 							<h5 class="perform-care">
 								<a href="mailto:emattek@lifeties.org" class="font-boldest orange ">emattek@lifeties.org</a>
 								</h5>
-						</div>
-						</div>
+						</li>
+						<li>
+							<h3 class="dark-blue font-boldest">Robin Wilkins, MSW</h3>
+							<p class="zero-margin gray">Director of T.I.L.T. & Mary’s Place</p>
+							<h4 class="gray">(609) 671-0040</h4>
+							<h5 class="perform-care">
+								<a href="mailto:rwilkins@lifeties.org" class="font-boldest orange ">rwilkins@lifeties.org</a>
+							</h5>
+						</li>
+					</ul>
 						</div>
 					</div>
 				</div>

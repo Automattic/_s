@@ -26,15 +26,23 @@ get_header(); ?>
 		$form_3 = get_field('form_3');
 		$employment_blurb = get_field('employment_blurb');
 		$form_blurb = get_field('form_blurb');
+		$job_opening_title = get_field('job_opening_title');
+		$job_opening_field = get_field('job_opening_field');
 		?>
-		<div class="aligncenter page-width">
+		<div class="page-width">
 
-		<div>
+		<div class="aligncenter">
 			<h1 class="uppercase dark-blue font-boldest xx-large h2-line-ht">Our Youth Need You!</h1>
 			<h1 class="gray font-bolder" style="margin-top: 0; line-height: 1.25;">Be a part of an inspiring journey to empower youth with support, skills and tools for a brighter future.</h1>
-
-			<p class="orange font-bolder">(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
 		</div>
+		<div class="med-btm-margin">
+			<h2 class="aligncenter"><?php echo $job_opening_title ?></h2>
+			<h3>
+				<?php echo $job_opening_field ?>
+			</h3>
+		</div>
+		<hr>
+		<p class="orange font-bolder aligncenter">(All fields marked with an asterick(*) are REQUIRED to complete submission)</p>
 
 		 <section>
 			<div>
@@ -73,18 +81,18 @@ get_header(); ?>
 
 		 <section class="large-btm-margin">
 			 <hr>
-		 	<h1 class="uppercase dark-blue font-boldest xx-large h2-line-ht">Interested in Volunteering</h1>
-			<h4 class="underline arial"><a href="<?php echo home_url(); ?>/volunteer" class="orange font-bolder">Check out the volunteer page!</a> <span class="gray">Take a look and see what volunteer category you fit in and apply!</span></h4>
+		 	<h1 class="uppercase dark-blue font-boldest xx-large h2-line-ht aligncenter">Interested in Volunteering</h1>
+			<h4 class="underline arial aligncenter"><a href="<?php echo home_url(); ?>/volunteer" class="orange font-bolder">Check out the volunteer page!</a> <span class="gray">Take a look and see what volunteer category you fit in and apply!</span></h4>
 		 </section>
 		</div>
 
 		<!-- Sponsors -->
-		<section class="sponsor-carousel light-gray-background">
-			<h2 class="aligncenter">A big thanks to our supporters!</h2>
-			<div>
-			<?php echo do_shortcode('[logoshowcase cat_id="3" dots="false"]'); ?>
-			</div>
-		</section>
+    <section class="sponsor-carousel">
+      <h2 class="aligncenter dark-blue sm-padding-bottom h2-line-ht">A big thanks to our supporters!</h2>
+      <div>
+        <?php echo do_shortcode('[gs_logo]'); ?>
+      </div>
+    </section>
 		<?php endwhile; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -72,7 +72,7 @@ get_header(); ?>
 						<ul class="no-bullet quarter-wrapper">
 							<li>
 								<h3 class="sea-blue x-large font-boldest">Triad House</h3>
-								<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
+								<h3 class="dark-blue font-boldest">Vivian Harmon, LSW</h3>
 								<p class="zero-margin gray">Program Director</p>
 								<p class="gray martel  underline">Phone: (609) 771-4221 <br>
 									Fax: (609) 538-0106 <br>
@@ -81,7 +81,7 @@ get_header(); ?>
 							</li>
 							<li>
 								<h3 class="sea-blue x-large font-boldest">Rainbow House</h3>
-								<h3 class="dark-blue font-boldest">Vivian Harmon</h3>
+								<h3 class="dark-blue font-boldest">Vivian Harmon, LSW</h3>
 								<p class="zero-margin gray">Program Director</p>
 								<p class="gray martel  underline">Phone: (609) 394-6747 <br>
 									Fax: (609) 396-5848 <br>
@@ -90,7 +90,7 @@ get_header(); ?>
 							</li>
 							<li>
 								<h3 class="sea-blue x-large font-boldest h2-line-ht">Mary's Place & T.I.L.T.</h3>
-								<h3 class="dark-blue font-boldest">Robin Wilkins</h3>
+								<h3 class="dark-blue font-boldest">Robin Wilkins, MSW</h3>
 								<p class="zero-margin gray">Program Director</p>
 								<p class="gray martel  underline">Phone: (609) 671-0040 <br>
 									Fax: (609) 671-1500 <br>
@@ -99,7 +99,7 @@ get_header(); ?>
 							</li>
 							<li>
 								<h3 class="sea-blue x-large font-boldest">Clinical Services</h3>
-								<h3 class="dark-blue font-boldest">Emily Mattek</h3>
+								<h3 class="dark-blue font-boldest">Emily Mattek, LCSW</h3>
 								<p class="zero-margin gray">Program Director</p>
 								<p class="gray martel  underline">Phone: (609) 882-4485 <br>
 									Fax: (609) 882-4661 <br>

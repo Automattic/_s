@@ -20,19 +20,27 @@ get_header(); ?>
     ?>
     </section>
 
+    <?php
+		while ( have_posts() ) : the_post();
+		$top_title = get_field('top_title');
+		$second_title = get_field('second_title');
+    $second_title_blurb = get_field('second_title_blurb');
+    $programs_blurb = get_field('programs_blurb');
+    ?>
+
     <section class="page-width">
-      <h2 class="dark-blue font-boldest aligncenter">Help Our Youth Become Stable Responsible Adults</h2>
+      <h2 class="dark-blue font-boldest aligncenter"><?php echo $top_title; ?></h2>
 
       <div class="page">
-        <div class="orange-donation-pic center-in-banner med-padding section donation-btn">
-          <a href="<?php echo home_url(); ?>/donate">
+        <div class="orange-donation-pic center-in-banner med-padding donation-btn">
+          <a href="<?php echo home_url(); ?>/donate" >
             <div class="present-icon image"></div>
             <h2 class="white aligncenter uppercase font-boldest h2-line-ht sm-margin-top">Make a Donation</h2>
             <h4 class="white aligncenter">Please consider giving a gift that will help transform the future of our youth.</h4>
           </a>
         </div>
 
-        <div class="blue-vol-pic center-in-banner med-padding section vol-btn">
+        <div class="blue-vol-pic center-in-banner med-padding  vol-btn">
           <a href="<?php echo home_url(); ?>/volunteer">
             <div class="vol-icon image"></div>
             <h2 class="white aligncenter uppercase font-boldest h2-line-ht sm-margin-top">Volunteer Your Time</h2>
@@ -44,15 +52,15 @@ get_header(); ?>
       <div class="med-padding"></div>
 
       <div class="aligncenter">
-        <h3 class="dark-blue font-bolder">Why LifeTies?</h3>
-        <p class="gray">Help struggling adolescents and young adults successfully transition into adulthood. <br>We give our youth the groundwork for a bright future through safe housing, clinical services and life skills.</p>
+        <h3 class="dark-blue font-bolder"><?php echo $second_title; ?></h3>
+        <p class="gray"><?php echo $second_title_blurb; ?></p>
       </div>
     </section>
 
     <!-- Programs -->
     <section class="home-page-girl-pic med-padding">
       <div class="content-width">
-        <p class="aligncenter large-scr-top-padding">LifeTies, Inc. is a supportive network of professional staff and trained volunteers dedicated to creating programs for youth to overcome the effects of abuse, neglect or homelessness. Our programs offer a nuturing, safe environment to heal, learn and become equipped with the tools to work towards a brigher future.</p>
+        <p class="aligncenter large-scr-top-padding"><?php echo $programs_blurb; ?></p>
         <ul class="fp-girl-right-padding fp-grid">
     			<?php query_posts('posts_per_page=6&post_type=programs&orderby=date&order=ASC'); ?>
     				<?php while ( have_posts() ) : the_post();
@@ -83,11 +91,14 @@ get_header(); ?>
 
     <!-- Sponsors -->
     <section class="sponsor-carousel">
-      <h2 class="aligncenter dark-blue">A big thanks to our supporters!</h2>
+      <h2 class="aligncenter dark-blue sm-padding-bottom h2-line-ht">A big thanks to our supporters!</h2>
       <div>
-      <?php echo do_shortcode('[logoshowcase dots="false"]'); ?>
+        <?php echo do_shortcode('[gs_logo]'); ?>
       </div>
     </section>
+  <?php endwhile; ?>
+
   </main><!-- #main -->
 </div><!-- #primary -->
+
 <?php get_footer(); ?>
