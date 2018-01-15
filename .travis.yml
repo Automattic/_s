@@ -31,11 +31,11 @@ matrix:
         - php: '7.0'
         # aliased to a recent 7.2.x version
         - php: '7.2'
-        # aliased to a recent hhvm version
-        - php: 'hhvm'
+        # bleeding edge PHP
+        - php: 'nightly'
 
     allow_failures:
-        - php: 'hhvm'
+        - php: 'nightly'
 
 # Use this to prepare the system to install prerequisites or dependencies.
 # e.g. sudo apt-get update.
