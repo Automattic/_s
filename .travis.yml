@@ -46,6 +46,9 @@ matrix:
 # e.g. copy database configurations, environment variables, etc.
 # Failures in this section will result in build status 'errored'.
 before_script:
+    # Speed up build time by disabling Xdebug.
+    - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+    # Set up temporary paths.
     - export PHPCS_DIR=/tmp/phpcs
     - export SNIFFS_DIR=/tmp/sniffs
     # Install CodeSniffer for WordPress Coding Standards checks.
