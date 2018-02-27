@@ -124,24 +124,25 @@ function _s_post_thumbnail() {
 	}
 
 	if ( is_singular() ) :
-	?>
+		?>
 
-	<div class="post-thumbnail">
-		<?php the_post_thumbnail(); ?>
-	</div><!-- .post-thumbnail -->
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 		<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
+		the_post_thumbnail( 'post-thumbnail', array(
+			'alt' => the_title_attribute( array(
+				'echo' => false,
+			) ),
+		) );
 		?>
 	</a>
 
-	<?php endif; // End is_singular().
+	<?php
+	endif; // End is_singular().
 }
 endif;

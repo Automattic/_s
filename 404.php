@@ -22,9 +22,9 @@ get_header();
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s' ); ?></p>
 
 					<?php
-						get_search_form();
+					get_search_form();
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
 					<div class="widget widget_categories">
