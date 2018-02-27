@@ -8,6 +8,14 @@
 	<!-- Set a description for this ruleset. -->
 	<description>A custom set of code standard rules to check for WordPress themes.</description>
 
+
+	<!--
+	#############################################################################
+	COMMAND LINE ARGUMENTS
+	https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
+	#############################################################################
+	-->
+
 	<!-- Pass some flags to PHPCS:
 		 p flag: Show progress of the run.
 		 s flag: Show sniff codes in all reports.
@@ -22,12 +30,25 @@
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
 
-	<!-- Include the WordPress ruleset, with exclusions. -->
+
+	<!--
+	#############################################################################
+	USE THE WordPress RULESET
+	#############################################################################
+	-->
+
 	<rule ref="WordPress">
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
 	</rule>
+
+
+	<!--
+	#############################################################################
+	SNIFF SPECIFIC CONFIGURATION
+	#############################################################################
+	-->
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
@@ -54,7 +75,13 @@
 		</properties>
 	</rule>
 
-	<!-- Include sniffs for PHP cross-version compatibility. -->
+
+	<!--
+	#############################################################################
+	USE THE PHPCompatibility RULESET
+	#############################################################################
+	-->
+
 	<config name="testVersion" value="5.2-99.0"/>
 	<rule ref="PHPCompatibility"/>
 </ruleset>
