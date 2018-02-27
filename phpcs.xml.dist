@@ -25,6 +25,9 @@
 	<!-- Strip the filepaths down to the relevant bit. -->
 	<arg name="basepath" value="./"/>
 
+	<!-- Check up to 8 files simultanously. -->
+	<arg name="parallel" value="8"/>
+
 	<!-- Only check the PHP, CSS and SCSS files. JS files are checked separately with JSCS and JSHint. -->
 	<arg name="extensions" value="php,css,scss/css"/>
 
