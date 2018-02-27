@@ -24,16 +24,16 @@
 
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact"/>
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+		<exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
 	</rule>
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="_s" />
+			<property name="text_domain" type="array" value="_s"/>
 		</properties>
 	</rule>
 
@@ -41,7 +41,7 @@
 		 on the theme hierarchy. -->
 	<rule ref="WordPress.Files.FileName">
 		<properties>
-			<property name="is_theme" value="true" />
+			<property name="is_theme" value="true"/>
 		</properties>
 	</rule>
 
@@ -50,7 +50,7 @@
 		 as set in the "Requires at least" tag in the readme.txt file. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
 		<properties>
-			<property name="minimum_supported_version" value="4.0" />
+			<property name="minimum_supported_version" value="4.0"/>
 		</properties>
 	</rule>
 
