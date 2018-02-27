@@ -37,10 +37,10 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) :
+			$_s_description = get_bloginfo( 'description', 'display' );
+			if ( $_s_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
