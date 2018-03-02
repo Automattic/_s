@@ -50,3 +50,18 @@ function _svbk_archive_title($title) {
 
     return $title;
 }
+
+function _svbk_post_has_more() {
+	global $post;
+	
+	return boolval( strpos( $post->post_content, '<!--more-->') );
+}
+
+function _svbk_the_whole_content() {
+	global $more;
+
+	$real_more = $more;
+	$more = 1;
+	the_content(null, true);
+	$more = $real_more;	
+}
