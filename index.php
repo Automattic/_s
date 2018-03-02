@@ -12,7 +12,8 @@
  * @package _s
  */
 
-get_header(); ?>
+get_header();
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -20,16 +21,17 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) : ?>
+			if ( is_home() && ! is_front_page() ) :
+				?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
-
-			<?php
+				<?php
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				the_post();
 
 				/*
 				 * Include the Post-Type-specific template for the content.
@@ -46,7 +48,8 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif;
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
