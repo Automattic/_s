@@ -71,12 +71,57 @@ function _s_woocommerce_active_body_class( $classes ) {
 add_filter( 'body_class', '_s_woocommerce_active_body_class' );
 
 /**
+ * Select products per page and products per row via Theme Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function _s_woocommerce_customize_register( $wp_customize ) {
+	$items = [ 2, 3, 4, 5, 6 ];
+	foreach ( $items as $item ) {
+		$products_per_row[$item] = $item;
+	}
+
+	$wp_customize->add_setting( 'woocommerce_products_per_row', array(
+		'default'       => 3,
+		'type'          => 'option',
+        array(
+	        'sanitize_callback' => 'absint'
+        )
+	));
+
+	$wp_customize->add_control( 'woocommerce_products_per_row', array(
+		'label'         => __('Products per row', '_s'),
+		'description'   => 'Choose how many products to display per row.',
+		'section'       => 'woocommerce_product_catalog',
+		'type'          => 'select',
+		'choices'       => $products_per_row,
+	));
+
+	$wp_customize->add_setting( 'woocommerce_products_per_page', array(
+		'default'       => 12,
+		'type'          => 'option',
+		array(
+		    'sanitize_callback' => 'absint'
+		)
+	));
+
+	$wp_customize->add_control( 'woocommerce_products_per_page', array(
+		'label'         => __( 'Products per page', '_s' ),
+		'description'   => 'Choose how many products to display per page.',
+		'section'       => 'woocommerce_product_catalog',
+		'type'          => 'text',
+	));
+}
+
+add_action( 'customize_register', '_s_woocommerce_customize_register' );
+
+/**
  * Products per page.
  *
  * @return integer number of products.
  */
 function _s_woocommerce_products_per_page() {
-	return 12;
+	return ( ! empty ( get_option('woocommerce_products_per_page') ) ) ? get_option('woocommerce_products_per_page') : 6;
 }
 add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
 
@@ -96,7 +141,7 @@ add_filter( 'woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_
  * @return integer products per row.
  */
 function _s_woocommerce_loop_columns() {
-	return 3;
+	return ( ! empty ( get_option('woocommerce_products_per_row') ) ) ? get_option('woocommerce_products_per_row') : 6;
 }
 add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
 
