@@ -161,7 +161,7 @@ if ( ! function_exists( '_s_woocommerce_wrapper_before' ) ) {
 		?>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
-		<?php
+			<?php
 	}
 }
 add_action( 'woocommerce_before_main_content', '_s_woocommerce_wrapper_before' );
@@ -175,7 +175,7 @@ if ( ! function_exists( '_s_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function _s_woocommerce_wrapper_after() {
-		?>
+			?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php
@@ -224,10 +224,16 @@ if ( ! function_exists( '_s_woocommerce_cart_link' ) ) {
 	 */
 	function _s_woocommerce_cart_link() {
 		?>
-			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', '_s' ); ?>">
-				<?php /* translators: number of items in the mini cart. */ ?>
-				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), '_s' ), WC()->cart->get_cart_contents_count() ) );?></span>
-			</a>
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', '_s' ); ?>">
+			<?php
+			$item_count_text = sprintf(
+				/* translators: number of items in the mini cart. */
+				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), '_s' ),
+				WC()->cart->get_cart_contents_count()
+			);
+			?>
+			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
+		</a>
 		<?php
 	}
 }
@@ -251,11 +257,11 @@ if ( ! function_exists( '_s_woocommerce_header_cart' ) ) {
 			</li>
 			<li>
 				<?php
-					$instance = array(
-						'title' => '',
-					);
+				$instance = array(
+					'title' => '',
+				);
 
-					the_widget( 'WC_Widget_Cart', $instance );
+				the_widget( 'WC_Widget_Cart', $instance );
 				?>
 			</li>
 		</ul>

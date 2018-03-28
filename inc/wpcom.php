@@ -17,6 +17,8 @@ function _s_wpcom_setup() {
 
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
+		// Whitelist wpcom specific variable intended to be overruled.
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 		$themecolors = array(
 			'bg'     => '',
 			'border' => '',
