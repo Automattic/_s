@@ -26,9 +26,9 @@ if ( ! function_exists( '_s_posted_on_by' ) ) :
 		);
 
 		printf(
-		    /* translators: %1$s: post date, %2$s: post author . */
-			__( '<span class="posted-on">Posted on %1$s</span> <span class="byline">by %2%s</span>', '_s' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>',
+			/* translators: %1$s: post date, %2$s: post author . */
+			__( '<span class="posted-on">Posted on %1$s</span> <span class="byline">by %2$s</span>', '_s' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>',  // WPCS: XSS OK.
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 	}
