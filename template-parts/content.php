@@ -22,8 +22,7 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				_s_posted_on();
-				_s_posted_by();
+				_s_posted_on_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
