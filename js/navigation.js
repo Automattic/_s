@@ -5,21 +5,23 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var page, container, button, menu, links, i, len;
+	var page, container, button, menu, menuContainer, links, i, len;
 
 	page = document.getElementById( 'page' );
 
-	container = document.getElementById( 'site-navigation' );
+	container = document.getElementById( 'main-navigation' );
+	
 	if ( ! container ) {
 		return;
 	}
 
-	button = container.getElementsByTagName( 'button' )[0];
+	button = document.getElementsByClassName( 'main-navigation-toggle' )[0];
 	if ( 'undefined' === typeof button ) {
 		return;
 	}
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+	menuContainer = document.getElementById( 'site-navigation' );
+	menu = menuContainer.getElementsByTagName( 'ul' )[0];
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {

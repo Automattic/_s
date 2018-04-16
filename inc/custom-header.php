@@ -17,16 +17,20 @@
  * @uses _svbk_header_style()
  */
 function _svbk_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( '_svbk_custom_header_args', array(
-		'video' => true,
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1980,
-		'height'                 => 1200,
-		'flex-height'            => true,
-		'flex-width'            =>	true,
-		'wp-head-callback'       => '_svbk_header_style',
-	) ) );
+	add_theme_support(
+		 'custom-header', apply_filters(
+		 '_svbk_custom_header_args', array(
+			 'video' => true,
+			 'default-image'          => '',
+			 'default-text-color'     => '000000',
+			 'width'                  => 1980,
+			 'height'                 => 1200,
+			 'flex-height'            => true,
+			 'flex-width'            => true,
+			 'wp-head-callback'       => '_svbk_header_style',
+		 )
+		)
+		);
 }
 add_action( 'after_setup_theme', '_svbk_custom_header_setup' );
 
@@ -37,20 +41,20 @@ if ( ! function_exists( '_svbk_header_style' ) ) :
  * @see _svbk_custom_header_setup().
  */
 function _svbk_header_style() {
-	$header_text_color = get_header_textcolor();
+		$header_text_color = get_header_textcolor();
 
-	/*
-	 * If no custom options for text are set, let's bail.
-	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
-	 */
-	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-		return;
-	}
+		/*
+		 * If no custom options for text are set, let's bail.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		 */
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
+			}
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 	?>
