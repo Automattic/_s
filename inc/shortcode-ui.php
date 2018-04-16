@@ -7,7 +7,11 @@
  * @package _svbk
  */
 
-namespace Svbk\WP\Shortcakes;
+namespace Svbk\WP;
+
+use Svbk\WP\Shortcakes;
+use Svbk\WP\Email;
+use Svbk\WP\Forms;
 
 add_action( 'init', __NAMESPACE__ . '\\shortcode_ui_detection' );
 
@@ -39,10 +43,17 @@ function shortcode_ui_notices() {
 
 /**
  * Register Shortcodes here.
- *
+ * 
+ * ```php
+ * 	Shortcakes\Images\Responsive::register( [ 
+ *		'attach_to' => [ 'page', 'post' ]
+ *	] );
+ * ```
+ * 
  * @return void
  */
 function register_shortcodes() {
+
 
 }
 
