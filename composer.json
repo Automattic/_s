@@ -22,7 +22,7 @@
         "wimg/php-compatibility": "^8.0"
     },
     "autoload": {
-        "psr-4": {"Svbk\\WP\\Themes\\_svbk\\": "inc/"}
+        "psr-4": {"Svbk\\WP\\Theme\\": "inc/"}
     },    
     "scripts": {
         "test": [
