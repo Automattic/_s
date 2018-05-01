@@ -35,3 +35,17 @@ function _s_pingback_header() {
 	}
 }
 add_action( 'wp_head', '_s_pingback_header' );
+
+/**
+ * Add pagination reference point attribute for amp-live-list when theme supports AMP.
+ *
+ * This is used by the navigation_markup_template filter in the comments template.
+ *
+ * @link https://www.ampproject.org/docs/reference/components/amp-live-list#pagination
+ *
+ * @param string $markup Navigation markup.
+ * @return string Markup.
+ */
+function _s_add_amp_live_list_pagination_attribute( $markup ) {
+	return preg_replace( '/(\s*<[a-z0-9_-]+)/i', '$1 pagination ', $markup, 1 );
+}

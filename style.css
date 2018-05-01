@@ -196,6 +196,7 @@ img {
  */
 
 button,
+[role=button],
 input,
 optgroup,
 select,
@@ -212,6 +213,7 @@ textarea {
  */
 
 button,
+[role=button],
 input { /* 1 */
 	overflow: visible;
 }
@@ -222,6 +224,7 @@ input { /* 1 */
  */
 
 button,
+[role=button],
 select { /* 1 */
 	text-transform: none;
 }
@@ -231,6 +234,7 @@ select { /* 1 */
  */
 
 button,
+[role=button],
 [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -242,6 +246,7 @@ button,
  */
 
 button::-moz-focus-inner,
+[role=button]::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
@@ -254,6 +259,7 @@ button::-moz-focus-inner,
  */
 
 button:-moz-focusring,
+[role=button]:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
@@ -391,6 +397,7 @@ template {
 --------------------------------------------------------------*/
 body,
 button,
+[role=button],
 input,
 select,
 optgroup,
@@ -527,6 +534,7 @@ table {
 # Forms
 --------------------------------------------------------------*/
 button,
+[role=button],
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -542,6 +550,7 @@ input[type="submit"] {
 }
 
 button:hover,
+[role=button]:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -549,6 +558,7 @@ input[type="submit"]:hover {
 }
 
 button:active, button:focus,
+[role=button]:active, [role=button]:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -664,18 +674,31 @@ a:hover, a:active {
 	top: 0;
 }
 
+/* The focus class is added by navigation.js */
 .main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li.focus > ul
+{
 	left: 100%;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
+}
+
+/*
+ * Alternatives to focus class for supporting browsers (all but IE/Edge) for no-JS context (e.g. AMP)
+ * See https://caniuse.com/#feat=css-focus-within
+ */
+.main-navigation ul ul li:focus-within > ul {
+	left: 100%;
+}
+.main-navigation ul li:focus-within > ul {
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
 }
 
 .main-navigation li {
@@ -689,7 +712,10 @@ a:hover, a:active {
 }
 
 /* Small menu. */
-.menu-toggle,
+.menu-toggle {
+	display: inline-block;
+	user-select: none; /* when label[role=button] in AMP */
+}
 .main-navigation.toggled ul {
 	display: block;
 }

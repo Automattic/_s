@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -44,8 +44,39 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
+		<nav id="site-navigation" class="main-navigation"
+			<?php if ( _s_is_amp() ) : ?>
+				[class]=" siteNavigationMenu.expanded ? 'main-navigation toggled' : 'main-navigation' "
+			<?php endif; ?>
+		>
+			<?php if ( _s_is_amp() ) : ?>
+				<amp-state id="siteNavigationMenu">
+					<script type="application/json">
+						{
+							"expanded": false
+						}
+					</script>
+				</amp-state>
+				<input
+					id="site-navigation-expanded"
+					type="checkbox"
+					hidden
+					on="change:AMP.setState( { siteNavigationMenu: { expanded: event.checked } } )"
+				>
+				<label
+					class="menu-toggle"
+					for="site-navigation-expanded"
+					tabindex="0"
+					role="button"
+					aria-controls="primary-menu"
+					aria-expanded="false"
+					[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
+				>
+				<?php esc_html_e( 'Primary Menu', '_s' ); ?>
+			</label>
+			<?php else : ?>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
+			<?php endif; ?>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',

@@ -24,6 +24,10 @@ if ( ! function_exists( '_s_setup' ) ) :
 		 */
 		load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
+		add_theme_support( 'amp', array(
+			'comments_live_list' => true,
+		) );
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -117,10 +121,56 @@ function _s_widgets_init() {
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Determine whether this is an AMP response.
+ *
+ * Note that this must only be called after the parse_query action.
+ *
+ * @link https://github.com/Automattic/amp-wp
+ */
+function _s_is_amp() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}
+
+/**
+ * Detemrine whether amp-live-list should be used for the comment list.
+ *
+ * @return bool Whether to use amp-live-list.
+ */
+function _s_using_amp_live_list_comments() {
+	if ( ! _s_is_amp() ) {
+		return false;
+	}
+	$amp_theme_support = get_theme_support( 'amp' );
+	return ! empty( $amp_theme_support[0]['comments_live_list'] );
+}
+
+/**
+ * Enqueue styles.
+ */
+function _s_styles() {
+	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', '_s_styles' );
+
+/**
+ * Enqueue scripts.
+ *
+ * This short-circuits in AMP because custom scripts are not allowed. There is are AMP equivalents provided elsewhere.
+ *
+ * navigation:
+ *     In AMP the :focus-within selector is used to keep submenus displayed while tabbing,
+ *     and amp-bind is used to managed the toggled state of the nav menu on small screens.
+ *
+ * skip-link-focus-fix:
+ *     This is not implemented in AMP because it only relates to IE11, a browser which now has a very small market share.
+ *
+ * comment-reply:
+ *     Support for comment replies is provided by the AMP plugin.
  */
 function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	if ( _s_is_amp() ) {
+		return;
+	}
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
