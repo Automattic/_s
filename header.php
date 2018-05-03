@@ -44,7 +44,9 @@
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation"
+		<nav
+			id="site-navigation"
+			class="main-navigation"
 			<?php if ( _s_is_amp() ) : ?>
 				[class]=" siteNavigationMenu.expanded ? 'main-navigation toggled' : 'main-navigation' "
 			<?php endif; ?>
@@ -57,26 +59,19 @@
 						}
 					</script>
 				</amp-state>
-				<input
-					id="site-navigation-expanded"
-					type="checkbox"
-					hidden
-					on="change:AMP.setState( { siteNavigationMenu: { expanded: event.checked } } )"
-				>
-				<label
-					class="menu-toggle"
-					for="site-navigation-expanded"
-					tabindex="0"
-					role="button"
-					aria-controls="primary-menu"
-					aria-expanded="false"
-					[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
-				>
-				<?php esc_html_e( 'Primary Menu', '_s' ); ?>
-			</label>
-			<?php else : ?>
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
 			<?php endif; ?>
+
+			<button
+				class="menu-toggle"
+				aria-controls="primary-menu"
+				aria-expanded="false"
+				<?php if ( _s_is_amp() ) : ?>
+					on="tap:AMP.setState( { siteNavigationMenu: { expanded: ! siteNavigationMenu.expanded } } )"
+					[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
+				<?php endif; ?>
+			>
+				<?php esc_html_e( 'Primary Menu', '_s' ); ?>
+			</button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',

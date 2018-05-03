@@ -126,13 +126,14 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Note that this must only be called after the parse_query action.
  *
  * @link https://github.com/Automattic/amp-wp
+ * @return bool Is AMP endpoint (and AMP plugin is active).
  */
 function _s_is_amp() {
 	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
 }
 
 /**
- * Detemrine whether amp-live-list should be used for the comment list.
+ * Determine whether amp-live-list should be used for the comment list.
  *
  * @return bool Whether to use amp-live-list.
  */
@@ -155,7 +156,7 @@ add_action( 'wp_enqueue_scripts', '_s_styles' );
 /**
  * Enqueue scripts.
  *
- * This short-circuits in AMP because custom scripts are not allowed. There is are AMP equivalents provided elsewhere.
+ * This short-circuits in AMP because custom scripts are not allowed. There are AMP equivalents provided elsewhere.
  *
  * navigation:
  *     In AMP the :focus-within selector is used to keep submenus displayed while tabbing,

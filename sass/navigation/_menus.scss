@@ -84,10 +84,7 @@
 }
 
 /* Small menu. */
-.menu-toggle {
-	display: inline-block;
-	user-select: none; /* when label[role=button] in AMP */
-}
+.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }

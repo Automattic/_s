@@ -196,7 +196,6 @@ img {
  */
 
 button,
-[role=button],
 input,
 optgroup,
 select,
@@ -213,7 +212,6 @@ textarea {
  */
 
 button,
-[role=button],
 input { /* 1 */
 	overflow: visible;
 }
@@ -224,7 +222,6 @@ input { /* 1 */
  */
 
 button,
-[role=button],
 select { /* 1 */
 	text-transform: none;
 }
@@ -234,7 +231,6 @@ select { /* 1 */
  */
 
 button,
-[role=button],
 [type="button"],
 [type="reset"],
 [type="submit"] {
@@ -246,7 +242,6 @@ button,
  */
 
 button::-moz-focus-inner,
-[role=button]::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
@@ -259,7 +254,6 @@ button::-moz-focus-inner,
  */
 
 button:-moz-focusring,
-[role=button]:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
@@ -397,7 +391,6 @@ template {
 --------------------------------------------------------------*/
 body,
 button,
-[role=button],
 input,
 select,
 optgroup,
@@ -534,7 +527,6 @@ table {
 # Forms
 --------------------------------------------------------------*/
 button,
-[role=button],
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -550,7 +542,6 @@ input[type="submit"] {
 }
 
 button:hover,
-[role=button]:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -558,7 +549,6 @@ input[type="submit"]:hover {
 }
 
 button:active, button:focus,
-[role=button]:active, [role=button]:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -712,10 +702,7 @@ a:hover, a:active {
 }
 
 /* Small menu. */
-.menu-toggle {
-	display: inline-block;
-	user-select: none; /* when label[role=button] in AMP */
-}
+.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
