@@ -1,0 +1,22 @@
+.content-area {
+	float: right;
+	margin: 0 0 0 calc(var(--size__site-sidebar) * -1);
+	width: var(--size__site-main);
+}
+
+.site-main {
+	margin: 0 0 0 var(--size__site-sidebar);
+}
+
+.site-content .widget-area {
+	float: left;
+	overflow: hidden;
+	width: var(--size__site-sidebar);
+}
+
+.site-footer {
+	clear: both;
+	width: var(--size__site-main);
+}
+
+@import "no-sidebar";
