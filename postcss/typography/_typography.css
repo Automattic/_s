@@ -1,0 +1,15 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: var(--color__text-main);
+	font-family: var(--font__main);
+	font-size: 1rem;
+	line-height: var(--font__line-height-body);
+}
+
+@import "headings";
+
+@import "copy";
