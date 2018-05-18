@@ -5,7 +5,7 @@
 	position: relative;
 	margin: 0;
 	padding: 0;
-	@include clearfix;
+	@apply --clearfix;
 
 	.cart-contents {
 		text-decoration: none;
@@ -57,7 +57,7 @@
 		top: 0;
 		position: absolute;
 		left: 0;
-		color: $color__link;
+		color: var(--color__link);
 	}
 }
 
@@ -82,7 +82,7 @@ p.stars {
 			line-height: 1;
 			font-family: "star";
 			content: "\53";
-			color: $color__text-main;
+			color: var(--color__text-main);
 			text-indent: 0;
 			opacity: .25;
 		}
@@ -90,7 +90,7 @@ p.stars {
 		&:hover {
 			~ a:before {
 				content: "\53";
-				color: $color__text-main;
+				color: var(--color__text-main);
 				opacity: .25;
 			}
 		}
@@ -100,7 +100,7 @@ p.stars {
 		a {
 			&:before {
 				content: "\53";
-				color: $color__link;
+				color: var(--color__link);
 				opacity: 1;
 			}
 		}
@@ -110,13 +110,13 @@ p.stars {
 		a.active {
 			&:before {
 				content: "\53";
-				color: $color__link;
+				color: var(--color__link);
 				opacity: 1;
 			}
 
 			~ a:before {
 				content: "\53";
-				color: $color__text-main;
+				color: var(--color__text-main);
 				opacity: .25;
 			}
 		}
@@ -124,7 +124,7 @@ p.stars {
 		a:not(.active) {
 			&:before {
 				content: "\53";
-				color: $color__link;
+				color: var(--color__link);
 				opacity: 1;
 			}
 		}
@@ -167,19 +167,19 @@ p.stars {
 	text-align: right;
 
 	&.strong {
-		color: $woocommerce__color-success;
+		color: var(--woocommerce__color-success);
 	}
 
 	&.short {
-		color: $woocommerce__color-error;
+		color: var(--woocommerce__color-error);
 	}
 
 	&.bad {
-		color: $woocommerce__color-error;
+		color: var(--woocommerce__color-error);
 	}
 
 	&.good {
-		color: $woocommerce__color-info;
+		color: var(--woocommerce__color-info);
 	}
 }
 
@@ -189,13 +189,13 @@ p.stars {
 .form-row {
 	&.woocommerce-validated {
 		input.input-text {
-			box-shadow: inset 2px 0 0 $woocommerce__color-success;
+			box-shadow: inset 2px 0 0 var(--woocommerce__color-success);
 		}
 	}
 
 	&.woocommerce-invalid {
 		input.input-text {
-			box-shadow: inset 2px 0 0 $woocommerce__color-error;
+			box-shadow: inset 2px 0 0 var(--woocommerce__color-error);
 		}
 	}
 }
@@ -212,19 +212,19 @@ p.stars {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	@include clearfix;
-	background-color: $woocommerce__color-success;
+	@apply --clearfix;
+	background-color: var(--woocommerce__color-success);
 	clear: both;
 }
 
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $woocommerce__color-info;
+	background-color: var(--woocommerce__color-info);
 }
 
 .woocommerce-error {
-	background-color: $woocommerce__color-error;
+	background-color: var(--woocommerce__color-error);
 }
 
 .demo_store {
@@ -234,7 +234,7 @@ p.no-comments {
 	right: 0;
 	margin: 0;
 	padding: 1em;
-	background-color: $woocommerce__color-info;
+	background-color: var(--woocommerce__color-info);
 	z-index: 9999;
 }
 

@@ -23,7 +23,7 @@ table.shop_table_responsive {
 				float: left;
 			}
 
-			&.product-remove {
+			& .product-remove {
 				a {
 					text-align: left;
 				}
@@ -33,14 +33,14 @@ table.shop_table_responsive {
 				}
 			}
 
-			&.actions,
-			&.download-actions {
+			& .actions,
+			& .download-actions {
 				&:before {
 					display: none;
 				}
 			}
 
-			&.download-actions {
+			& .download-actions {
 				.button {
 					display: block;
 					text-align: center;

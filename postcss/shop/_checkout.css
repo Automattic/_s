@@ -5,7 +5,7 @@
 	.col2-set {
 		.form-row-first {
 			float: left;
-			margin-right: $columns__margin;
+			margin-right: var(--columns__margin);
 		}
 
 		.form-row-last {
@@ -15,7 +15,7 @@
 
 		.form-row-first,
 		.form-row-last {
-			@include column-width(2);
+			max-width: var(--columns-2);
 		}
 	}
 }
