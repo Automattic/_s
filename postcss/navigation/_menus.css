@@ -25,7 +25,7 @@
 
 			li {
 				&:hover > ul,
-				&.focus > ul {
+				& .focus > ul {
 					left: 100%;
 				}
 			}
@@ -54,7 +54,7 @@
 		position: relative;
 
 		&:hover > a,
-		&.focus > a {
+		& .focus > a {
 		}
 	}
 

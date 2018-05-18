@@ -2,7 +2,7 @@
  * Products
  */
 ul.products {
-	@include clearfix;
+	@apply --clearfix;
 	margin: 0;
 	padding: 0;
 
@@ -28,15 +28,15 @@ ul.products {
 @media screen and (min-width: 48em) {
 	ul.products {
 		li.product {
-			@include column-width(3);
+			max-width: var(--columns-3);
 			float: left;
-			margin-right: $columns__margin;
+			margin-right: var(--columns__margin);
 
-			&.first {
+			& .first {
 				clear: both;
 			}
 
-			&.last {
+			& .last {
 				margin-right: 0;
 			}
 		}

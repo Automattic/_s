@@ -106,7 +106,7 @@ p.stars {
 		}
 	}
 
-	&.selected {
+	& .selected {
 		a.active {
 			&:before {
 				content: "\53";
@@ -166,19 +166,19 @@ p.stars {
 .woocommerce-password-strength {
 	text-align: right;
 
-	&.strong {
+	& .strong {
 		color: var(--woocommerce__color-success);
 	}
 
-	&.short {
+	& .short {
 		color: var(--woocommerce__color-error);
 	}
 
-	&.bad {
+	& .bad {
 		color: var(--woocommerce__color-error);
 	}
 
-	&.good {
+	& .good {
 		color: var(--woocommerce__color-info);
 	}
 }
@@ -187,13 +187,13 @@ p.stars {
  * Forms
  */
 .form-row {
-	&.woocommerce-validated {
+	& .woocommerce-validated {
 		input.input-text {
 			box-shadow: inset 2px 0 0 var(--woocommerce__color-success);
 		}
 	}
 
-	&.woocommerce-invalid {
+	& .woocommerce-invalid {
 		input.input-text {
 			box-shadow: inset 2px 0 0 var(--woocommerce__color-error);
 		}
@@ -254,7 +254,7 @@ p.no-comments {
 		}
 
 		&:hover,
-		&.focus {
+		& .focus {
 			.widget_shopping_cart {
 				left: 0;
 				display: block;
