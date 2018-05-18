@@ -1,0 +1,13 @@
+:root {
+	--columns-1: 100%;
+	--columns-2: 50%;
+	--columns-3: 33.33%;
+	--columns-4: 25%;
+	--columns-5: 20%;
+	--columns-6: 16.66%;
+	--columns-7: 14.28%;
+	--columns-8: 12.5%;
+	--columns-9: 11.11%;
+
+	--columns__margin: 3.8%;
+}
