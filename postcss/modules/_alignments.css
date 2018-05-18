@@ -12,5 +12,5 @@
 
 .aligncenter {
 	clear: both;
-	@include center-block;
+	@apply --center-block;
 }
