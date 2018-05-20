@@ -49,12 +49,9 @@ before_script:
     # Speed up build time by disabling Xdebug.
     - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
     # Install WordPress Coding Standards & PHP Compatibility sniffs.
-    - if [[ "$SNIFF" == "1" ]]; then composer global require wp-coding-standards/wpcs:~0.14.1 wimg/php-compatibility:dev-master --prefer-stable --no-interaction --no-suggest; fi
+    - if [[ "$SNIFF" == "1" ]]; then composer global require wp-coding-standards/wpcs:~0.14.1 wimg/php-compatibility:dev-master dealerdirect/phpcodesniffer-composer-installer:^0.4.3 --prefer-stable --no-interaction --no-suggest; fi
     # Set composer PATH.
     - if [[ "$SNIFF" == "1" ]]; then export PATH=$HOME/.composer/vendor/bin:$PATH; fi
-    # Set install path for PHPCS sniffs.
-    # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-    - if [[ "$SNIFF" == "1" ]]; then phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs,$HOME/.composer/vendor/wimg/php-compatibility; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
     # Install JSCS: JavaScript Code Style checker.
