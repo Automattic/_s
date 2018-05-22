@@ -1,3 +1,10 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/b20759af65501f7b261f/maintainability)](https://codeclimate.com/github/craigiswayne/moon-boy/maintainability)
+
+
+----
+
+> Below is straight from the original repo
+
 [![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
 _s
