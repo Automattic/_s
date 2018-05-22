@@ -1,5 +1,6 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/b20759af65501f7b261f/maintainability)](https://codeclimate.com/github/craigiswayne/moon-boy/maintainability)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/87d773f7cdba4560b5fdabef5a2cfd4b)](https://www.codacy.com/app/craigiswayne/moon-boy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=craigiswayne/moon-boy&amp;utm_campaign=Badge_Grade)
 
 ----
 
