@@ -1,4 +1,11 @@
 <?php
+
+if( defined( 'ABSPATH') && file_exists( ABSPATH.'/vendor/autoload.php' ) ){
+	require_once( ABSPATH.'/vendor/autoload.php' );
+}
+
+
+
 /**
  * _s functions and definitions
  *
@@ -132,6 +139,8 @@ function _s_scripts() {
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
 
+require get_template_directory() . '/inc/moon-boy.php';
+
 /**
  * Implement the Custom Header feature.
  */
@@ -151,6 +160,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/kirki.php';
 
 /**
  * Load Jetpack compatibility file.
