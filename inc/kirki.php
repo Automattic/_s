@@ -5,7 +5,7 @@ if( !class_exists( 'Kirki') ){
 }
 
 $field_defaults = [
-	'fixed_background_image' => get_theme_file_uri( 'assets/images/fixed_background.png' )
+	'fixed_background_image' => get_theme_file_uri( 'assets/images/defaults/fixed_background.png' )
 ];
 
 /**
