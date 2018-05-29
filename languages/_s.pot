@@ -83,14 +83,6 @@ msgstr ""
 msgid "Next:"
 msgstr ""
 
-#. translators: %s: post date.
-#: inc/template-tags.php:29
-#, php-format
-#@ _s
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr ""
-
 #: inc/template-tags.php:52
 #. translators: used between list items, there is a space after the comma
 msgid ", "
