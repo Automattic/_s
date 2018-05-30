@@ -9,7 +9,8 @@
  * @package _s
  */
 
-$fixed_background = get_theme_mod( 'fixed_background_image' );
+$fixed_background = is_front_page() ? get_theme_mod( 'fixed_background_image' ) : null;
+$body_tag_styles = $fixed_background ? "style='background-image:url({$fixed_background})'" : null;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -42,4 +43,4 @@ $fixed_background = get_theme_mod( 'fixed_background_image' );
     </script>
 </head>
 
-<body <?php body_class( 'landing-page' ); ?> style="background-image:url(<?php echo $fixed_background; ?> ">
+<body <?php body_class( 'landing-page' ); ?> <?php echo $body_tag_styles; ?>>

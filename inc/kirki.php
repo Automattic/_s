@@ -1,12 +1,43 @@
 <?php
 
+$theme_mod_defaults = [
+	'fixed_background_image' => get_theme_file_uri( 'assets/images/defaults/fixed_background.png' ),
+];
+
+/**
+ * Ensure that theme mods serve back the default value if none was ever set
+ * ...independent of whether kirki is active or not
+ */
+foreach ( $theme_mod_defaults as $setting_name => $default_value ) {
+	add_filter( "theme_mod_{$setting_name}", function ( $value ) use ($theme_mod_defaults, $setting_name) {
+		return false === $value ? ( $theme_mod_defaults[$setting_name] ?? $value ) : $value;
+	}, MoonBoy\DEFAULT_FILTER_PRIORITY );
+}
+
+$filter_defaults = [
+	'get_custom_logo' => sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url"><img class="custom-logo" src="%2$s" itemprop="logo" /></a>',
+		esc_url( home_url( '/' ) ),
+		get_theme_file_uri( 'assets/images/defaults/logo-netnuus.png' ) )
+];
+
+
+/**
+ * Set a default custom logo if none is set
+ * ... allows for setting this via the customizer as well :)
+ */
+add_filter( 'get_custom_logo', function( $html, $blog_id ) use ($filter_defaults) {
+	$result = $html === '' || ( is_customize_preview() && !has_custom_logo() ) ? ( $filter_defaults[ current_filter() ] ?? $html ) : $html;
+	return $result;
+}, MoonBoy\DEFAULT_FILTER_PRIORITY, 2);
+
+
+/**
+ * Guard clause in the event the kirki plugin is inactive or not installed
+ */
 if( !class_exists( 'Kirki') ){
 	return;
 }
 
-$field_defaults = [
-	'fixed_background_image' => get_theme_file_uri( 'assets/images/defaults/fixed_background.png' )
-];
 
 /**
  * @see http://aristath.github.io/kirki/docs/config
@@ -44,14 +75,5 @@ $field_defaults = [
 	'label'       => esc_attr__( 'Fixed Background Image (URL)', 'moon_boy' ),
 	'description' => esc_attr__( 'Configure the fixed background image.', 'moon_boy' ),
 	'section'     => 'moon_boy_front_page',
-	'default'     => $field_defaults['fixed_background_image'],
+	'default'     => $theme_mod_defaults['fixed_background_image'],
 ) );
-
-/**
- * Ensure that theme mods serve back the default value if none was ever set
- */
-foreach ( $field_defaults as $setting_name => $default_value ) {
-	add_filter( "theme_mod_{$setting_name}", function ( $value ) use ($field_defaults, $setting_name) {
-		return false === $value ? ( $field_defaults[$setting_name] ?? $value ) : $value;
-	}, MoonBoy\DEFAULT_FILTER_PRIORITY );
-}
