@@ -37,6 +37,6 @@
     },
     "require-dev": {
         "wpackagist-plugin/health-check": "1.0.1",
-        "craigiswayne/moon-boy-wiki": "dev-master"
+        "craigiswayne/moon-boy-wiki": "1.*"
     }
 }
