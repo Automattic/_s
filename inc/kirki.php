@@ -1,4 +1,9 @@
 <?php
+/**
+ * Moon Boy Theme Customizer via Kirki
+ *
+ * @package moon-boy
+ */
 
 $theme_mod_defaults = [
 	'fixed_background_image' => 'https://github.com/craigiswayne/moon-boy/wiki/assets/images/fixed-background-netnuus.png',
