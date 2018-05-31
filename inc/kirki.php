@@ -1,7 +1,7 @@
 <?php
 
 $theme_mod_defaults = [
-	'fixed_background_image' => get_theme_file_uri( 'assets/images/defaults/fixed_background.png' ),
+	'fixed_background_image' => 'https://github.com/craigiswayne/moon-boy/wiki/assets/images/fixed-background-netnuus.png',
 ];
 
 /**
@@ -17,7 +17,7 @@ foreach ( $theme_mod_defaults as $setting_name => $default_value ) {
 $filter_defaults = [
 	'get_custom_logo' => sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url"><img class="custom-logo" src="%2$s" itemprop="logo" /></a>',
 		esc_url( home_url( '/' ) ),
-		get_theme_file_uri( 'assets/images/defaults/logo-netnuus.png' ) )
+		'https://github.com/craigiswayne/moon-boy/wiki/assets/images/logo-netnuus.png' )
 ];
 
 
