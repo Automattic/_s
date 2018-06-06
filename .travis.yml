@@ -64,7 +64,7 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
     # Pull in the WP Core jshint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
-    - npm test
+    - npm i;
 
 # Run test script commands.
 # Default is specific to project language.
@@ -82,6 +82,7 @@ script:
     # Uses a custom ruleset based on WordPress. This ruleset is automatically
     # picked up by PHPCS as it's named `phpcs.xml(.dist)`.
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
+    - npm test;
 
 # Receive notifications for build results.
 # @link https://docs.travis-ci.com/user/notifications/#Email-notifications
