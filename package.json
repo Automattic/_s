@@ -4,8 +4,8 @@
   "description": "App Landing Page Theme built using underscores",
   "main": "index.js",
   "scripts": {
-    "lint-js": "./node_modules/.bin/eslint --ext .jsx,.js --debug js/*.js",
-    "lint-js-fix": "./node_modules/.bin/eslint --ext .jsx,.js --debug js/*.js --fix",
+    "lint-js": "./node_modules/.bin/eslint --ext .jsx,.js --debug js/",
+    "lint-js-fix": "./node_modules/.bin/eslint --ext .jsx,.js --debug js/ --fix",
     "test": "npm i && npm run-script lint-js"
   },
   "repository": {
