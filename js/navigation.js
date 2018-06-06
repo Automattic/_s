@@ -82,12 +82,13 @@
 
 		if ( 'ontouchstart' in window ) {
 			touchStartFn = function( e ) {
-				var menuItem = this.parentNode, i;
+				var menuItem = this.parentNode,
+i;
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
 					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
-						if ( menuItem === menuItem.parentNode.children[i] ) {
+						if ( menuItem === menuItem.parentNode.children[i]) {
 							continue;
 						}
 						menuItem.parentNode.children[i].classList.remove( 'focus' );
@@ -103,4 +104,4 @@
 			}
 		}
 	}( container ) );
-} )();
+}() );

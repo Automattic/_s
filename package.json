@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint-js": "./node_modules/.bin/eslint --ext .jsx,.js --debug js/*.js",
+    "lint-js-fix": "./node_modules/.bin/eslint --ext .jsx,.js --debug js/*.js --fix",
     "test": "npm i && npm run-script lint-js"
   },
   "repository": {
