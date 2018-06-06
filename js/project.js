@@ -43,9 +43,31 @@ var MoonBoy = {
   }
 };
 ( function( $ ) {
+
+  /**
+   * Hide irrelevant os buttonn when on mobile
+   */
   if ( MoonBoy.util.device.isAndroid() ) {
     $( '.buttons .ios' ).hide();
   } else if ( MoonBoy.util.device.isiOS() ) {
     $( '.buttons .android' ).hide();
   }
+
+  /**
+   * Scroll indicator hide / show logic
+   */
+  window.scrollInidicatorTimeout;
+  $( '.feed-container .mouse' ).on( 'touchstart', function() {
+    clearTimeout( window.scrollInidicatorTimeout );
+    $( '.feed-container .mouse' ).hide();
+  });
+
+  $( '.feed-container .mouse' ).on( 'touchend', function() {
+    window.scrollInidicatorTimeout = setTimeout( function() {
+      $( '.feed-container .mouse' ).show();
+    }, 3000 );
+  });
+
 }( jQuery ) );
+
+
