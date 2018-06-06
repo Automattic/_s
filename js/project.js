@@ -42,11 +42,10 @@ var MoonBoy = {
     }
   }
 };
-(function($){
-  if( MoonBoy.util.device.isAndroid() ) {
-    $('.buttons .ios').hide();
+( function( $ ) {
+  if ( MoonBoy.util.device.isAndroid() ) {
+    $( '.buttons .ios' ).hide();
+  } else if ( MoonBoy.util.device.isiOS() ) {
+    $( '.buttons .android' ).hide();
   }
-  else if( MoonBoy.util.device.isiOS() ) {
-    $('.buttons .android').hide();
-  }
-})(jQuery);
+}( jQuery ) );
