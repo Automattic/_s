@@ -1,0 +1,42 @@
+{
+    "name": "craigiswayne/moon-boy",
+    "description": "App Landing Page Theme built using underscores",
+    "type": "wordpress-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Craig Wayne",
+            "email": "craigiswayne@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "repositories":[
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "craigiswayne/moon-boy-wiki",
+                "version": "1.0.0",
+                "type": "library",
+                "source": {
+                    "url": "https://github.com/craigiswayne/moon-boy.wiki",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "composer/installers": "~1.0",
+        "johnpbloch/wordpress": "^4.9",
+        "wpackagist-plugin/kirki":"3.*"
+    },
+    "require-dev": {
+        "wpackagist-plugin/health-check": "1.0.1",
+        "craigiswayne/moon-boy-wiki": "1.*"
+    }
+}
