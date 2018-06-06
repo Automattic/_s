@@ -1,0 +1,24 @@
+{
+  "name": "moon-boy",
+  "version": "1.0.0",
+  "description": "App Landing Page Theme built using underscores",
+  "main": "index.js",
+  "scripts": {
+    "lint-js": "./node_modules/.bin/eslint --ext .jsx,.js --debug js/*.js",
+    "test": "npm i && npm run-script lint-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigiswayne/moon-boy.git"
+  },
+  "author": "craigiswayne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craigiswayne/moon-boy/issues"
+  },
+  "homepage": "https://github.com/craigiswayne/moon-boy#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-wordpress": "^2.0.0"
+  }
+}
