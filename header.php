@@ -48,16 +48,12 @@
 			id="site-navigation"
 			class="main-navigation"
 			<?php if ( _s_is_amp() ) : ?>
-				[class]=" siteNavigationMenu.expanded ? 'main-navigation toggled' : 'main-navigation' "
+				[class]=" siteNavigationMenuExpanded ? 'main-navigation toggled' : 'main-navigation' "
 			<?php endif; ?>
 		>
 			<?php if ( _s_is_amp() ) : ?>
-				<amp-state id="siteNavigationMenu">
-					<script type="application/json">
-						{
-							"expanded": false
-						}
-					</script>
+				<amp-state id="siteNavigationMenuExpanded">
+					<script type="application/json">false</script>
 				</amp-state>
 			<?php endif; ?>
 
@@ -66,8 +62,8 @@
 				aria-controls="primary-menu"
 				aria-expanded="false"
 				<?php if ( _s_is_amp() ) : ?>
-					on="tap:AMP.setState( { siteNavigationMenu: { expanded: ! siteNavigationMenu.expanded } } )"
-					[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
+					on="tap:AMP.setState( { siteNavigationMenuExpanded: ! siteNavigationMenuExpanded } )"
+					[aria-expanded]="siteNavigationMenuExpanded ? 'true' : 'false'"
 				<?php endif; ?>
 			>
 				<?php esc_html_e( 'Primary Menu', '_s' ); ?>
