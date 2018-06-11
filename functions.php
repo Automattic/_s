@@ -24,10 +24,6 @@ if ( ! function_exists( '_s_setup' ) ) :
 		 */
 		load_theme_textdomain( '_s', get_template_directory() . '/languages' );
 
-		add_theme_support( 'amp', array(
-			'comments_live_list' => true,
-		) );
-
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -83,6 +79,23 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/*
+		 * If you intend your theme to be used with the AMP plugin and make use of AMP components in your templates,
+		 * then you should make sure your site is served in native/canonical AMP via:
+		 *
+		 *   add_theme_support( 'amp' );
+		 *
+		 * If you implement <amp-live-list> in your comments.php then you should do:
+		 *
+		 *   add_theme_support( 'amp', array(
+		 *       'comments_live_list' => true,
+		 *   );
+		 *
+		 * Otherwise, a user of the AMP plugin can decide via an admin screen for whether or not they want to serve
+		 * your theme's templates in AMP responses, either in native AMP (canonical URLs) or paired AMP modes
+		 * (separate AMP-specific URLs).
+		 */
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
