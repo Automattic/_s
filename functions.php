@@ -146,19 +146,6 @@ function _s_is_amp() {
 }
 
 /**
- * Determine whether amp-live-list should be used for the comment list.
- *
- * @return bool Whether to use amp-live-list.
- */
-function _s_using_amp_live_list_comments() {
-	if ( ! _s_is_amp() ) {
-		return false;
-	}
-	$amp_theme_support = get_theme_support( 'amp' );
-	return ! empty( $amp_theme_support[0]['comments_live_list'] );
-}
-
-/**
  * Enqueue styles.
  */
 function _s_styles() {
