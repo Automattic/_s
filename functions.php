@@ -14,6 +14,11 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 Helpers\Theme\Setup::run();
+Helpers\Compliance\Iubenda::setConfig( Helpers\Theme\Config::get( 'iubenda' ) );
+
+if( env('SENDINBLUE_APIKEY') ) {
+	SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey( 'api-key', env('SENDINBLUE_APIKEY') );
+}
 
 add_action( 'after_setup_theme', '_svbk_setup' );
 
@@ -26,93 +31,95 @@ if ( ! function_exists( '_svbk_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function _svbk_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on _svbk, use a find and replace
-		 * to change'_svbk'to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( '_svbk', get_template_directory() . '/languages' );
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 * If you're building a theme based on _svbk, use a find and replace
+	 * to change'_svbk'to the name of your theme in all the template files.
+	 */
+	load_theme_textdomain( '_svbk', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'woocommerce' );
 
-		add_image_size( 'header', 2560, 2000 );
-		add_image_size( 'content-full', 1320, 9999 );
-		add_image_size( 'content-half', 768,  9999 );
-		add_image_size( 'content-third', 440, 9999 );
+	add_image_size( 'header', 2560, 2000 );
+	add_image_size( 'content-full', 1320, 9999 );
+	add_image_size( 'content-half', 768,  9999 );
+	add_image_size( 'content-third', 440, 9999 );
 
-		set_post_thumbnail_size( 768, 560, true );
+	set_post_thumbnail_size( 768, 560, true );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
+			'menu-1' => esc_html__( 'Primary', '_svbk' ),
+			'menu-404' => esc_html__( 'Not Found (404) Page', '_svbk' ),
+			'legal-menu' => esc_html__( 'Legal Menu', 'tatap' ),
+		)
+	);
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support(
+		'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		)
+	);
+
+	/*
+	 * Enable support for custom logo.
+	 */
+	add_theme_support(
+		'custom-logo', array(
+			'height'      => 400,
+			'width'       => 100,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support(
+		'custom-background',
+		apply_filters(
+			'_svbk_custom_background_args',
 			array(
-				'menu-1' => esc_html__( 'Primary', '_svbk' ),
-				'menu-404' => esc_html__( 'Not Found (404) Page', '_svbk' ),
+				'default-color' => 'ffffff',
+				'default-image' => '',
 			)
-			);
+		)
+	);
 
-			/*
-			 * Switch default core markup for search form, comment form, and comments
-			 * to output valid HTML5.
-			 */
-			add_theme_support(
-			'html5', array(
-				'search-form',
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-			)
-			);
+	// Load Editor Style CSS.
+	add_editor_style();
 
-			/*
-			 * Enable support for custom logo.
-			 */
-			add_theme_support(
-			'custom-logo', array(
-				'height'      => 400,
-				'width'       => 100,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-			);
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
-			// Set up the WordPress core custom background feature.
-			add_theme_support(
-			'custom-background',
-			apply_filters(
-				'_svbk_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-			);
-
-			// Load Editor Style CSS.
-			add_editor_style();
-
-			// Add theme support for selective refresh for widgets.
-			add_theme_support( 'customize-selective-refresh-widgets' );
-
-			// Load AMP overrides.
-			Helpers\Theme\AMP::init();
+	// Load AMP overrides.
+	Helpers\Theme\AMP::init();
 }
 endif;
 
@@ -158,7 +165,6 @@ function _svbk_scripts() {
 	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( '_svbk-theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), '20170120', true );
 	wp_enqueue_script( '_svbk-maps', get_template_directory_uri() . '/js/maps.js', array( 'jquery' ), '20170121', true );
-	wp_enqueue_script( '_svbk-forms', get_template_directory_uri() . '/js/forms.js', array( 'jquery' ), '20170530', true );
 	wp_enqueue_script( '_svbk-filter', get_template_directory_uri() . '/js/filter.js', array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
 
 	if ( get_theme_mod( 'sticky_header' ) ) {

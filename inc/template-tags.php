@@ -258,3 +258,96 @@ function _svbk_load_more_button( $label = '' ) {
 	<button class="load-more"><?php echo $label ?: esc_html__( 'Load more', '_svbk' ); ?></button>
 	<?php
 }
+
+if( ! function_exists( 'get_the_cookie_policy_link' ) ) {
+	
+	/**
+	 * Returns the privacy policy link with formatting, when applicable.
+	 *
+	 * @since 4.9.6
+	 *
+	 * @param string $before Optional. Display before privacy policy link. Default empty.
+	 * @param string $after  Optional. Display after privacy policy link. Default empty.
+	 *
+	 * @return string Markup for the link and surrounding elements. Empty string if it
+	 *                doesn't exist.
+	 */
+	function get_the_cookie_policy_link( $before = '', $after = '' ) {
+		$link               = '';
+		$privacy_policy_url = get_cookie_policy_url();
+	
+		if ( $privacy_policy_url ) {
+			$link = sprintf(
+				'<a class="cookie-policy-link" href="%s">%s</a>',
+				esc_url( $privacy_policy_url ),
+				__( 'Cookie Policy' )
+			);
+		}
+	
+		/**
+		 * Filters the privacy policy link.
+		 *
+		 * @since 4.9.6
+		 *
+		 * @param string $link               The privacy policy link. Empty string if it
+		 *                                   doesn't exist.
+		 * @param string $privacy_policy_url The URL of the privacy policy. Empty string
+		 *                                   if it doesn't exist.
+		 */
+		$link = apply_filters( 'the_cookie_policy_link', $link, $privacy_policy_url );
+	
+		if ( $link ) {
+			return $before . $link . $after;
+		}
+	
+		return '';
+	}	
+	
+}
+
+if( ! function_exists( 'get_cookie_policy_url' ) ) {
+
+	/**
+	 * Retrieves the URL to the privacy policy page.
+	 *
+	 * @since 4.9.6
+	 *
+	 * @return string The URL to the privacy policy page. Empty string if it doesn't exist.
+	 */
+	function get_cookie_policy_url() {
+		$url            = '';
+		$policy_page_id = (int) get_option( 'wp_page_for_cookie_policy' );
+	
+		if ( ! empty( $policy_page_id ) && get_post_status( $policy_page_id ) === 'publish' ) {
+			$url = (string) get_permalink( $policy_page_id );
+		}
+	
+		/**
+		 * Filters the URL of the privacy policy page.
+		 *
+		 * @since 4.9.6
+		 *
+		 * @param string $url            The URL to the privacy policy page. Empty string
+		 *                               if it doesn't exist.
+		 * @param int    $policy_page_id The ID of privacy policy page.
+		 */
+		return apply_filters( 'cookie_policy_url', $url, $policy_page_id );
+	}
+	
+}
+
+if( ! function_exists( 'the_cookie_policy_link' ) ) {
+
+	/**
+	 * Displays the privacy policy link with formatting, when applicable.
+	 *
+	 * @since 4.9.6
+	 *
+	 * @param string $before Optional. Display before privacy policy link. Default empty.
+	 * @param string $after  Optional. Display after privacy policy link. Default empty.
+	 */
+	function the_cookie_policy_link( $before = '', $after = '' ) {
+		echo get_the_cookie_policy_link( $before, $after );
+	}
+
+}
