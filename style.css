@@ -963,10 +963,6 @@ ul li.check-blue {
 	padding-bottom: 1em;
 }
 
-.test-border {
-	border: 1px solid black;
-}
-/*-----*/
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -1437,21 +1433,16 @@ a:active {
 	flex-wrap: wrap;
 }
 
-.fp-btn-wrapper {
-	display: flex;
-
-	justify-content: center;
-}
-
-/*@media screen and (min-width: 769px) {
-	.fp-btn-wrapper {
-		flex-direction: row;
+/* @media only screen and (min-width: 961px) {
+	.page {
+		width: 960px;
+		margin: 0 auto;
 	}
-}*/
+} */
 
-.blah {
-	display: flex;
-	justify-content: space-around;
+.fp-btn-wrapper {
+	max-width: 800px;
+	margin: 0 auto;
 }
 
 .section {
@@ -1478,16 +1469,14 @@ a:active {
 .vol-btn {
 	margin: 1em;
 	flex: 1;
-	/*max-width: 44em;
-	width: 100%;*/
 }
 
-/*@media screen and (min-width: 769px) {
+@media screen and (min-width: 769px) {
 	.donation-btn,
 	.vol-btn {
 		width: 48%;
 	}
-}*/
+}
 
 .width-1-3 {
 	width: 24%;
@@ -2088,23 +2077,23 @@ object {
 }
 
 @media screen and (min-width: 769px) {
-	.home-page-girl-pic {
+	/* .home-page-girl-pic {
 		background: url(./img/iStock-578307742_EDITTED.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
-		/*width: 2100px;
-		height: 1037px;*/
-	}
-	.large-scr-top-padding {
+		width: 2100px;
+		height: 1037px;
+	} */
+	/* .large-scr-top-padding {
 		padding-top: 4em;
 		padding-right: 15em;
-	}
+	} */
 
-	.fp-girl-right-padding {
+	/* .fp-girl-right-padding {
 		padding-right: 24em;
 		margin-left: 0;
-	}
+	} */
 }
 
 .banner-container {

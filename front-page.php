@@ -31,7 +31,7 @@ get_header(); ?>
     <section class="page-width">
       <h2 class="dark-blue font-boldest aligncenter"><?php echo $top_title; ?></h2>
 
-      <div class="page">
+      <div class="page fp-btn-wrapper">
         <div class="orange-donation-pic center-in-banner med-padding donation-btn">
           <a href="<?php echo home_url(); ?>/donate" >
             <div class="present-icon image"></div>

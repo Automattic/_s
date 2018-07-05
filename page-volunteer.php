@@ -25,11 +25,11 @@ get_header(); ?>
 		?>
 		<div class="site-info aligncenter">
 			<h1 class="uppercase dark-blue font-boldest xx-large h2-line-ht ">Make an Impact:</h1>
-			<h1 class="gray h2-line-ht" style="margin: 0;">Guidance. Direction. Connection.</h1>
+			<h1 class="gray h2-line-ht zero-margin">Guidance. Direction. Connection.</h1>
 			<h3 class="gray arial">Get involved in one of our amazing programs to help young people who need you the most.</h3>
 		</div>
 		 <section class="light-blue-background">
-			 <div class="site-info">
+			 <div class="page-width">
 				 <ul class="listing">
  			 		<li class="aligncenter">
  			 			<h1 class="sea-blue uppercase xx-large font-boldest" style="margin-bottom: 0; line-height: 1.25;">BE A MENTOR</h1>
