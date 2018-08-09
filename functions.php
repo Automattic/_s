@@ -7,6 +7,11 @@
  * @package _s
  */
 
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace #.# with the version number of the theme on each release.
+	define( '_S_VERSION', '#.#' );
+}
+
 if ( ! function_exists( '_s_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -120,11 +125,11 @@ add_action( 'widgets_init', '_s_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	wp_enqueue_style( '_s-style', get_stylesheet_uri(), array(), _S_VERSION );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
