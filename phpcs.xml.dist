@@ -97,36 +97,7 @@
 	#############################################################################
 	-->
 
-
-	<config name="testVersion" value="5.2-99.0"/>
-	<rule ref="PHPCompatibility">
-		<!-- Whitelist PHP native classes, interfaces, functions and constants which
-			 are back-filled by WP.
-
-			 Based on:
-			 * /wp-includes/compat.php
-			 * /wp-includes/random_compat/random.php
-		-->
-		<exclude name="PHPCompatibility.PHP.NewClasses.errorFound"/>
-		<exclude name="PHPCompatibility.PHP.NewClasses.typeerrorFound"/>
-
-		<exclude name="PHPCompatibility.PHP.NewConstants.json_pretty_printFound"/>
-		<exclude name="PHPCompatibility.PHP.NewConstants.php_version_idFound"/>
-
-		<exclude name="PHPCompatibility.PHP.NewFunctions.hash_equalsFound"/>
-		<exclude name="PHPCompatibility.PHP.NewFunctions.json_last_error_msgFound"/>
-		<exclude name="PHPCompatibility.PHP.NewFunctions.random_intFound"/>
-		<exclude name="PHPCompatibility.PHP.NewFunctions.random_bytesFound"/>
-		<exclude name="PHPCompatibility.PHP.NewFunctions.array_replace_recursiveFound"/>
-
-		<exclude name="PHPCompatibility.PHP.NewInterfaces.jsonserializableFound"/>
-	</rule>
-
-	<!-- Whitelist the WP Core mysql_to_rfc3339() function. -->
-	<rule ref="PHPCompatibility.PHP.RemovedExtensions">
-		<properties>
-			<property name="functionWhitelist" type="array" value="mysql_to_rfc3339"/>
-		</properties>
-	</rule>
+	<config name="testVersion" value="5.2-"/>
+	<rule ref="PHPCompatibilityWP"/>
 
 </ruleset>
