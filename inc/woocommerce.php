@@ -103,8 +103,8 @@ add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
 /**
  * Related Products Args.
  *
- * @param array $args related products args.
- * @return array $args related products args.
+ * @param array $args Related products args.
+ * @return array $args Related products args.
  */
 function _s_woocommerce_related_products_args( $args ) {
 	$defaults = array(
@@ -175,7 +175,7 @@ if ( ! function_exists( '_s_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function _s_woocommerce_wrapper_after() {
-			?>
+		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php
@@ -188,11 +188,11 @@ add_action( 'woocommerce_after_main_content', '_s_woocommerce_wrapper_after' );
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...
  *
-	<?php
-		if ( function_exists( '_s_woocommerce_header_cart' ) ) {
-			_s_woocommerce_header_cart();
-		}
-	?>
+ * <?php
+ *     if ( function_exists( '_s_woocommerce_header_cart' ) ) {
+ *         _s_woocommerce_header_cart();
+ *     }
+ * ?>
  */
 
 if ( ! function_exists( '_s_woocommerce_cart_link_fragment' ) ) {
