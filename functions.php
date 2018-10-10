@@ -124,13 +124,26 @@ function _s_scripts() {
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s_scripts' );
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function _s_skip_link_focus_fix() {
+	echo '<script>';
+	echo file_get_contents( get_template_directory() . '/js/skip-link-focus-fix.js' );
+	echo '</script>';
+}
+add_action( 'wp_print_footer_scripts', '_s_skip_link_focus_fix' );
 
 /**
  * Implement the Custom Header feature.
