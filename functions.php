@@ -161,15 +161,15 @@ add_action( 'widgets_init', '_svbk_widgets_init' );
  */
 function _svbk_scripts() {
 	
-	Helpers\Theme\Style::enqueue( '_svbk-bootstrap', get_theme_file_uri( 'assets/css/bootstrap.css'), [ 'source' => false, 'inline' => true ] );
-	Helpers\Theme\Style::enqueue( '_svbk-common', get_theme_file_uri( 'assets/css/common.css'), [ 'deps' => ['_svbk-bootstrap'], 'source' => false, 'preload' => true ] );
+	Helpers\Theme\Style::enqueue( '_svbk-bootstrap', get_theme_file_uri( '/assets/css/bootstrap.css'), [ 'source' => false, 'inline' => true ] );
+	Helpers\Theme\Style::enqueue( '_svbk-common', get_theme_file_uri( '/assets/css/common.css'), [ 'deps' => ['_svbk-bootstrap'], 'source' => false, 'preload' => true ] );
 	
-	if ( is_page() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-pages', get_theme_file_uri( 'assets/css/pages.css'), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
-	}else if ( is_home() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-blog', get_theme_file_uri( 'assets/css/blog.css' ), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
+	if ( is_home() ) {
+		Helpers\Theme\Style::enqueue( '_svbk-blog', get_theme_file_uri( '/assets/css/blog.css' ), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
 	} elseif ( is_front_page() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-home', get_theme_file_uri( 'assets/css/home.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+		Helpers\Theme\Style::enqueue( '_svbk-home', get_theme_file_uri( '/assets/css/home.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+	} if ( is_page() ) {
+		Helpers\Theme\Style::enqueue( '_svbk-pages', get_theme_file_uri( '/assets/css/pages.css'), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
 	}
 
 	Helpers\Theme\Style::enqueue( '_svbk-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
@@ -178,9 +178,10 @@ function _svbk_scripts() {
 	Helpers\Theme\Style::enqueue( '_svbk-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( '_svbk-navigation', get_theme_file_uri( 'assets/js/navigation.min.js'), array(), '20151215', true );
-	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), array(), '20151215', true );
-	wp_enqueue_script( '_svbk-theme', get_theme_file_uri( 'assets/js/theme.min.js'), array( 'jquery' ), '20170120', true );
+	Helpers\Theme\Script::enqueue( '_svbk-navigation', get_theme_file_uri( '/assets/js/navigation.min.js'), [ 'source' => false ] );
+	Helpers\Theme\Script::enqueue( '_svbk-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js'), [ 'source' => false ] );
+	Helpers\Theme\Script::enqueue( '_svbk-theme', get_theme_file_uri( '/assets/js/theme.min.js'), [ 'source' => false ] );
+	
 	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'assets/js/maps.js' ), array( 'jquery' ), '20170121', true );
 	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'assets/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
 
