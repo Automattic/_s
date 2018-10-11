@@ -1,12 +1,27 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
-var sass        = require("gulp-ruby-sass");
+var sass        = require("gulp-sass");
 var sourcemaps  = require('gulp-sourcemaps');
 var postcss     = require('gulp-postcss');
 var autoprefixer     = require('autoprefixer');
 var objectFitImages = require('postcss-object-fit-images');
+var avoidfoit = require('gulp-avoidfoit');
+var rename = require('gulp-rename');
+var csso = require('gulp-csso');
+var minify = require('gulp-minify');
+var imagemin = require('gulp-imagemin');
+var request = require('request'); 
+var fs = require('fs'); 
+var responsive = require('gulp-responsive');
+var _ = require('lodash');
 
-gulp.task('serve', ['compile-sass'], function() {
+
+gulp.task('serve', [
+    'build', 
+    'sass:watch', 
+    'js:watch',
+    'image:watch'
+    ], function() {
 
     browserSync.init({
         port: 8081,
@@ -15,34 +30,131 @@ gulp.task('serve', ['compile-sass'], function() {
         }
     });
 
-    gulp.watch("sass/**/*.scss", ['compile-sass']);
-    //gulp.watch("**/*.php").on('change', browserSync.reload);
+   // gulp.watch("js/**/*.js").on('change', browserSync.reload);
 });
 
-gulp.task('sass', ['compile-sass'], function() {
-    gulp.watch("sass/**/*.scss", ['compile-sass']);
+gulp.task('build', [
+    'sass:compile', 
+    'js:compress', 
+    'js:copy', 
+    'image:minify',
+    //'js:fonts',     
+    ]);
+
+var imageResizes = [ 768, 1600, 2560];
+
+var imageSetOptions = function( imageResizes, options ){
+    
+    var imageOptions = [];
+    
+    for( var size  = 0; size < imageResizes.length; size++  ){
+        
+        imageOptions.push( 
+            _.merge({
+                width: imageResizes[size],
+                rename: {
+                    suffix: '--' + imageResizes[size],
+                },
+            }, options)
+        );
+        
+        imageOptions.push( 
+            _.merge(
+                options,
+                {
+                    width: imageResizes[size],
+                    rename: {
+                        suffix: '--' + imageResizes[size],
+                        extname: '.webp',
+                    },
+                    format: 'webp'
+                }
+            )
+        );        
+    }
+    
+    return imageOptions;
+}
+
+gulp.task('image:minify', function(){
+    gulp.src('./styles/images/*')
+        .pipe(responsive({
+          '*.jpg': imageSetOptions( imageResizes, {
+                withoutEnlargement: true,                
+          } ),
+          '*.png': imageSetOptions( imageResizes, {
+                withoutEnlargement: true,                
+                format: 'png'
+          } )
+        }, {
+          // Global configuration for all images
+          // The output quality for JPEG, WebP and TIFF output formats
+          quality: 70,
+          // Use progressive (interlace) scan for JPEG and PNG output
+          progressive: true,
+          // Zlib compression level of PNG output format
+          compressionLevel: 6,
+          
+          errorOnEnlargement: false,
+          // Strip all metadata
+          withMetadata: false,
+        }))
+        .pipe(gulp.dest('assets/css/images'));
 });
+
+gulp.task('js:copy', function() {
+   gulp.src('./node_modules/fg-loadcss/dist/cssrelpreload.min.js')
+   .pipe(gulp.dest('./assets/js'));
+});
+
+gulp.task('js:watch', function() {
+    gulp.watch("./js/**/*.js", ['js:compress']);
+});
+
+gulp.task('image:watch', function() {
+    gulp.watch("./style/images/**", ['image:minify']);
+});
+
+gulp.task('js:compress', function() {
+  gulp.src(['./js/*.js'])
+    .pipe(minify( {
+        ext:{
+            min:'.min.js'
+        },
+        noSource : true,
+        //exclude: ['tasks'],
+        ignoreFiles: ['.combo.js', '.min.js']
+    }))
+    .pipe(gulp.dest('./assets/js'))
+});
+
+gulp.task('sass:watch', function() {
+    gulp.watch("./styles/**/*.scss", ['sass:compile']);
+});
+
 
 /**
  * Compile with gulp-ruby-sass + source maps
  */
-gulp.task('compile-sass', function () {
+gulp.task('sass:compile', function () {
 
-    return sass('sass/*.scss', {sourcemap: true})
-        .on('error', function (err) {
-            console.error('Error!', err.message);
-        })
+    return gulp.src('./styles/*.scss')
+        .pipe(sass({
+          outputStyle: 'nested',
+          precision: 10,
+          includePaths: ['.'],
+          onError: console.error.bind(console, 'Sass error:')
+        }))
         .pipe(sourcemaps.init())
         .pipe(postcss([ objectFitImages, autoprefixer() ]))
-        // for inline sourcemaps
-        .pipe(sourcemaps.write())
-        // for file sourcemaps
+        .pipe(csso())        
+        //for file sourcemaps
         .pipe(sourcemaps.write('./', {
             includeContent: false,
             sourceRoot: 'sass'
         }))
-        .pipe(gulp.dest('./'))
-        .pipe(browserSync.stream({match: '**/*.css'}));
+        .pipe(gulp.dest('./assets/css'))
+        .pipe(browserSync.stream({match: './assets/css/**/*.css'}));
 
 });
 

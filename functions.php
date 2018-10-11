@@ -159,13 +159,23 @@ add_action( 'widgets_init', '_svbk_widgets_init' );
  * Enqueue scripts and styles.
  */
 function _svbk_scripts() {
-	wp_enqueue_style( '_svbk-style', get_stylesheet_uri() );
+	
+	Helpers\Theme\Style::enqueue( '_svbk-bootstrap', get_theme_file_uri( 'assets/css/bootstrap.css'), [ 'source' => false, 'inline' => true ] );
+	Helpers\Theme\Style::enqueue( '_svbk-common', get_theme_file_uri( 'assets/css/common.css'), [ 'deps' => ['_svbk-bootstrap'], 'source' => false, 'preload' => true ] );
+	
+	if ( is_page() ) {
+		wp_enqueue_style( '_svbk-pages', get_theme_file_uri( 'assets/css/pages.css'), array( '_svbk-common' ) );
+	}else if ( is_home() ) {
+		wp_enqueue_style( '_svbk-blog', get_theme_file_uri( 'assets/css/blog.css' ), array( '_svbk-common' ) );
+	} elseif ( is_front_page() ) {
+		wp_enqueue_style( '_svbk-home', get_theme_file_uri( 'assets/css/home.css' ), array( '_svbk-common' ) );
+	}
 
-	wp_enqueue_script( '_svbk-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( '_svbk-theme', get_template_directory_uri() . '/js/theme.js', array( 'jquery' ), '20170120', true );
-	wp_enqueue_script( '_svbk-maps', get_template_directory_uri() . '/js/maps.js', array( 'jquery' ), '20170121', true );
-	wp_enqueue_script( '_svbk-filter', get_template_directory_uri() . '/js/filter.js', array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
+	wp_enqueue_script( '_svbk-navigation', get_theme_file_uri( 'assets/js/navigation.min.js'), array(), '20151215', true );
+	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), array(), '20151215', true );
+	wp_enqueue_script( '_svbk-theme', get_theme_file_uri( 'assets/js/theme.min.js'), array( 'jquery' ), '20170120', true );
+	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'assets/js/maps.js' ), array( 'jquery' ), '20170121', true );
+	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'assets/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
 
 	if ( get_theme_mod( 'sticky_header' ) ) {
 		wp_enqueue_script( 'waypoints-sticky' );

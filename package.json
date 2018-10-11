@@ -9,12 +9,23 @@
   "author": "Silverback Studio",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.7.0",
     "browser-sync": "^2.16.0",
     "gulp": "^3.9.1",
+    "gulp-avoidfoit": "^0.1.2",
+    "gulp-csso": "^2.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minify": "^3.1.0",
     "gulp-postcss": "^6.2.0",
-    "gulp-ruby-sass": "^2.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-responsive": "^2.11.0",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "lodash": "^4.17.11",
     "postcss-object-fit-images": "^1.1.2",
-    "autoprefixer": "^6.7.0"
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "fg-loadcss": "^2.0.1"
   }
 }
