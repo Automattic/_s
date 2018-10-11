@@ -165,12 +165,18 @@ function _svbk_scripts() {
 	Helpers\Theme\Style::enqueue( '_svbk-common', get_theme_file_uri( 'assets/css/common.css'), [ 'deps' => ['_svbk-bootstrap'], 'source' => false, 'preload' => true ] );
 	
 	if ( is_page() ) {
-		wp_enqueue_style( '_svbk-pages', get_theme_file_uri( 'assets/css/pages.css'), array( '_svbk-common' ) );
+		Helpers\Theme\Style::enqueue( '_svbk-pages', get_theme_file_uri( 'assets/css/pages.css'), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
 	}else if ( is_home() ) {
-		wp_enqueue_style( '_svbk-blog', get_theme_file_uri( 'assets/css/blog.css' ), array( '_svbk-common' ) );
+		Helpers\Theme\Style::enqueue( '_svbk-blog', get_theme_file_uri( 'assets/css/blog.css' ), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
 	} elseif ( is_front_page() ) {
-		wp_enqueue_style( '_svbk-home', get_theme_file_uri( 'assets/css/home.css' ), array( '_svbk-common' ) );
+		Helpers\Theme\Style::enqueue( '_svbk-home', get_theme_file_uri( 'assets/css/home.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
 	}
+
+	Helpers\Theme\Style::enqueue( '_svbk-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
+
+	Helpers\Theme\Style::enqueue( '_svbk-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( '_svbk-navigation', get_theme_file_uri( 'assets/js/navigation.min.js'), array(), '20151215', true );
 	wp_enqueue_script( '_svbk-skip-link-focus-fix', get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ), array(), '20151215', true );
