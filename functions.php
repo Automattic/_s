@@ -50,6 +50,7 @@ function _svbk_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'woocommerce' );
+	add_theme_support( 'align-wide' );
 
 	add_image_size( 'header', 2560, 2000 );
 	add_image_size( 'content-full', 1320, 9999 );
