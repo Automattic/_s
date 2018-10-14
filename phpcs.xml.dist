@@ -123,7 +123,7 @@
 	</rule>
 
 	<!-- Whitelist the WP Core mysql_to_rfc3339() function. -->
-	<rule ref="PHPCompatibility.PHP.RemovedExtensions">
+	<rule ref="PHPCompatibility.Extensions.RemovedExtensions">
 		<properties>
 			<property name="functionWhitelist" type="array" value="mysql_to_rfc3339"/>
 		</properties>
