@@ -12,15 +12,15 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
 function _svbk_woocommerce_scripts() {
 	
 	if ( is_cart() ) {
-		Style::enqueue( '_svbk-wc-cart', get_theme_file_uri( '/assets/css/wc-cart.css' ), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
+		Style::enqueue( '_svbk-wc-cart', '/assets/css/wc-cart.css', [ 'source' => 'theme' ] );
 	} elseif ( is_product() ) {
-		Style::enqueue( '_svbk-wc-product', get_theme_file_uri( '/assets/css/wc-product.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+		Style::enqueue( '_svbk-wc-product', '/assets/css/wc-product.css', [ 'source' => 'theme' ] );
 	} elseif ( is_checkout() ) {
-		Style::enqueue( '_svbk-wc-checkout', get_theme_file_uri( '/assets/css/wc-checkout.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+		Style::enqueue( '_svbk-wc-checkout', '/assets/css/wc-checkout.css', [ 'source' => 'theme' ] );
 	} elseif ( is_account_page() ) {
-		Style::enqueue( '_svbk-wc-account', get_theme_file_uri( '/assets/css/wc-account.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );		
+		Style::enqueue( '_svbk-wc-account', '/assets/css/wc-account.css', [ 'source' => 'theme' ] );		
 	} if ( is_shop() || is_archive('product') ) {
-		Style::enqueue( '_svbk-wc-shop', get_theme_file_uri( '/assets/css/wc-shop.css'), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
+		Style::enqueue( '_svbk-wc-shop', '/assets/css/wc-shop.css', [ 'source' => 'theme' ] );
 	}	
 	
 }

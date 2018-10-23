@@ -161,30 +161,28 @@ add_action( 'widgets_init', '_svbk_widgets_init' );
  */
 function _svbk_scripts() {
 	
-	Helpers\Theme\Style::enqueue( '_svbk-bootstrap', get_theme_file_uri( '/assets/css/bootstrap.css'), [ 'source' => false, 'inline' => true ] );
-	Helpers\Theme\Style::enqueue( '_svbk-common', get_theme_file_uri( '/assets/css/common.css'), [ 'deps' => ['_svbk-bootstrap'], 'source' => false, 'preload' => true ] );
+	Helpers\Theme\Style::enqueue( '_svbk-bootstrap', '/assets/css/bootstrap.css', [ 'source' => 'theme', 'inline' => true ] );
+	Helpers\Theme\Style::enqueue( '_svbk-common',  '/assets/css/common.css', [ 'deps' => ['_svbk-bootstrap'], 'source' => 'theme', 'preload' => true ] );
 	
-	if ( is_home() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-blog', get_theme_file_uri( '/assets/css/blog.css' ), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
-	} elseif ( is_front_page() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-front-page', get_theme_file_uri( '/assets/css/front-page.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+	if ( is_front_page() ) {
+		Helpers\Theme\Style::enqueue( '_svbk-front-page', '/assets/css/front-page.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
+	} elseif ( is_home() ) {
+		Helpers\Theme\Style::enqueue( '_svbk-blog', '/assets/css/blog.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', ] );
 	} elseif ( is_singular('post') ) {
-		Helpers\Theme\Style::enqueue( '_svbk-single-post', get_theme_file_uri( '/assets/css/single-post.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
-	} elseif ( is_front_page() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-home', get_theme_file_uri( '/assets/css/home.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );		
-	} if ( is_page() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-page', get_theme_file_uri( '/assets/css/page.css'), [ 'deps' => array( '_svbk-common' ), 'source' => false, ] );
+		Helpers\Theme\Style::enqueue( '_svbk-single-post', '/assets/css/single-post.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
+	} elseif ( is_page() ) {
+		Helpers\Theme\Style::enqueue( '_svbk-page', '/assets/css/page.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', ] );
 	}
 	
-	Helpers\Theme\Style::enqueue( '_svbk-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+	Helpers\Theme\Style::enqueue( '_svbk-ie9', '/assets/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
 
-	Helpers\Theme\Style::enqueue( '_svbk-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), [ 'deps' =>  array( '_svbk-common' ), 'source' => false, ] );
+	Helpers\Theme\Style::enqueue( '_svbk-ie8', '/assets/css/ie8.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
 
-	Helpers\Theme\Script::enqueue( '_svbk-navigation', get_theme_file_uri( '/assets/js/navigation.min.js'), [ 'source' => false ] );
-	Helpers\Theme\Script::enqueue( '_svbk-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.min.js'), [ 'source' => false ] );
-	Helpers\Theme\Script::enqueue( '_svbk-theme', get_theme_file_uri( '/assets/js/theme.min.js'), [ 'source' => false ] );
+	Helpers\Theme\Script::enqueue( '_svbk-navigation', '/assets/js/navigation.min.js', [ 'source' => 'theme' ] );
+	Helpers\Theme\Script::enqueue( '_svbk-skip-link-focus-fix', '/assets/js/skip-link-focus-fix.min.js', [ 'source' => 'theme' ] );
+	Helpers\Theme\Script::enqueue( '_svbk-theme', '/assets/js/theme.min.js', [ 'source' => 'theme' ] );
 	
 	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'assets/js/maps.js' ), array( 'jquery' ), '20170121', true );
 	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'assets/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
