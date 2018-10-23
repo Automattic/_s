@@ -77,7 +77,7 @@ var imageSetOptions = function( imageResizes, options ){
 }
 
 gulp.task('image:minify', function(){
-    gulp.src('./styles/images/*')
+    gulp.src('./style/images/*')
         .pipe(responsive({
           '*.jpg': imageSetOptions( imageResizes, {
                 withoutEnlargement: true,                
@@ -129,7 +129,7 @@ gulp.task('js:compress', function() {
 });
 
 gulp.task('sass:watch', function() {
-    gulp.watch("./styles/**/*.scss", ['sass:compile']);
+    gulp.watch("./style/**/*.scss", ['sass:compile']);
 });
 
 
@@ -138,7 +138,7 @@ gulp.task('sass:watch', function() {
  */
 gulp.task('sass:compile', function () {
 
-    return gulp.src('./styles/*.scss')
+    return gulp.src('./style/*.scss')
         .pipe(sass({
           outputStyle: 'nested',
           precision: 10,
@@ -149,9 +149,9 @@ gulp.task('sass:compile', function () {
         .pipe(postcss([ objectFitImages, autoprefixer() ]))
         .pipe(csso())        
         //for file sourcemaps
-        .pipe(sourcemaps.write('./', {
+        .pipe(sourcemaps.write('./map', {
             includeContent: false,
-            sourceRoot: 'sass'
+            sourceRoot: 'style'
         }))
         .pipe(gulp.dest('./assets/css'))
         .pipe(browserSync.stream({match: './assets/css/**/*.css'}));

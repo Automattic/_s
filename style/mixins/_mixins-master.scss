@@ -31,3 +31,9 @@
     width: 1px;
     overflow: hidden;
 }
+
+//Icons
+@mixin icon($hex) {
+	font-family: $font__icons;
+	content: "#{$hex}";
+}
