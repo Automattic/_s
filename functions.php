@@ -8,12 +8,15 @@
  */
 
 use \Svbk\WP\Helpers;
+use \Svbk\WP\Helpers\Assets\Style;
+use \Svbk\WP\Helpers\Assets\Script;
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
 Helpers\Theme\Setup::run();
+
 // Helpers\Compliance\Iubenda::setConfig( Helpers\Theme\Config::get( 'iubenda' ) );
 
 if( env('SENDINBLUE_APIKEY') ) {
@@ -49,31 +52,12 @@ function _svbk_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+	
+	// Add WooCommerce Support
 	add_theme_support( 'woocommerce' );
+	
+	// Add Gutenberg full-screen alignments support
 	add_theme_support( 'align-wide' );
-
-	add_image_size( 'header', 2560, 2000 );
-	add_image_size( 'content-full', 1320, 9999 );
-	add_image_size( 'content-half', 768,  9999 );
-	add_image_size( 'content-third', 440, 9999 );
-
-	set_post_thumbnail_size( 768, 560, true );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'menu-1' => esc_html__( 'Primary', '_svbk' ),
-			'menu-404' => esc_html__( 'Not Found (404) Page', '_svbk' ),
-			'legal-menu' => esc_html__( 'Legal Menu', 'tatap' ),
-		)
-	);
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -112,12 +96,45 @@ function _svbk_setup() {
 			)
 		)
 	);
-
-	// Load Editor Style CSS.
-	add_editor_style();
+	
+	add_theme_support( 'styles-management', array(
+			'default-async' => true,
+		) 
+	);
+	
+	add_theme_support( 'scripts-management', array(
+			'default-defer' => true,
+		) 
+	);
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 */
+	add_theme_support( 'post-thumbnails' );
+
+	add_image_size( 'header', 2560, 2000 );
+	add_image_size( 'content-full', 1320, 9999 );
+	add_image_size( 'content-half', 768,  9999 );
+	add_image_size( 'content-third', 440, 9999 );
+
+	set_post_thumbnail_size( 768, 560, true );
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
+			'menu-1' => esc_html__( 'Primary', '_svbk' ),
+			'menu-404' => esc_html__( 'Not Found (404) Page', '_svbk' ),
+			'legal-menu' => esc_html__( 'Legal Menu', 'tatap' ),
+		)
+	);
+
+	// Load Editor Style CSS.
+	add_editor_style();
 
 	// Load AMP overrides.
 	Helpers\Theme\AMP::init();
@@ -161,28 +178,25 @@ add_action( 'widgets_init', '_svbk_widgets_init' );
  */
 function _svbk_scripts() {
 	
-	Helpers\Theme\Style::enqueue( '_svbk-bootstrap', '/assets/css/bootstrap.css', [ 'source' => 'theme', 'inline' => true ] );
-	Helpers\Theme\Style::enqueue( '_svbk-common',  '/assets/css/common.css', [ 'deps' => ['_svbk-bootstrap'], 'source' => 'theme', 'preload' => true ] );
+	Script::enqueue( 'cssrelpreload', '/assets/js/cssrelpreload.min.js', [ 'inline' => true, 'source' => 'theme', 'in_footer' => false ] );
 	
-	if ( is_front_page() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-front-page', '/assets/css/front-page.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
-	} elseif ( is_home() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-blog', '/assets/css/blog.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', ] );
-	} elseif ( is_singular('post') ) {
-		Helpers\Theme\Style::enqueue( '_svbk-single-post', '/assets/css/single-post.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
-	} elseif ( is_page() ) {
-		Helpers\Theme\Style::enqueue( '_svbk-page', '/assets/css/page.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', ] );
-	}
+	Style::enqueue( '_svbk-bootstrap', '/assets/css/bootstrap.css', [ 'source' => 'theme', 'inline' => true ] );
+	Style::enqueue( '_svbk-common',  '/assets/css/common.css', [ 'deps' => ['_svbk-bootstrap'], 'source' => 'theme', 'preload' => true ] );
 	
-	Helpers\Theme\Style::enqueue( '_svbk-ie9', '/assets/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
+	Style::enqueue( '_svbk-front-page', '/assets/css/front-page.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
+	Style::enqueue( '_svbk-blog', '/assets/css/blog.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
+	Style::enqueue( '_svbk-single-post', '/assets/css/single-post.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
+	Style::enqueue( '_svbk-page', '/assets/css/page.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() ] );
+	
+	Style::enqueue( '_svbk-ie9', '/assets/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
 
-	Helpers\Theme\Style::enqueue( '_svbk-ie8', '/assets/css/ie8.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
+	Style::enqueue( '_svbk-ie8', '/assets/css/ie8.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
 
-	Helpers\Theme\Script::enqueue( '_svbk-navigation', '/assets/js/navigation.min.js', [ 'source' => 'theme' ] );
-	Helpers\Theme\Script::enqueue( '_svbk-skip-link-focus-fix', '/assets/js/skip-link-focus-fix.min.js', [ 'source' => 'theme' ] );
-	Helpers\Theme\Script::enqueue( '_svbk-theme', '/assets/js/theme.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue( '_svbk-navigation', '/assets/js/navigation.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue( '_svbk-skip-link-focus-fix', '/assets/js/skip-link-focus-fix.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue( '_svbk-theme', '/assets/js/theme.min.js', [ 'source' => 'theme' ] );
 	
 	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'assets/js/maps.js' ), array( 'jquery' ), '20170121', true );
 	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'assets/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
