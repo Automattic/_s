@@ -1,5 +1,6 @@
 {
   "name": "_svbktheme",
+  "repository": "github:silverbackstudio/_svbk",
   "version": "1.0.0",
   "description": "Silverback Starter Theme",
   "main": "index.php",
@@ -11,6 +12,7 @@
   "devDependencies": {
     "autoprefixer": "^6.7.0",
     "browser-sync": "^2.16.0",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-avoidfoit": "^0.1.2",
     "gulp-csso": "^2.0.0",
@@ -22,6 +24,8 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^1.6.0",
     "lodash": "^4.17.11",
+    "node-sass": "^4.9.4",
+    "node-sass-json-importer": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
     "run-sequence": "^1.2.2"
   },

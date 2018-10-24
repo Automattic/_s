@@ -14,7 +14,10 @@ var request = require('request');
 var fs = require('fs'); 
 var responsive = require('gulp-responsive');
 var _ = require('lodash');
+var jsonImporter = require('node-sass-json-importer');
+var del = require('del');
 
+var config = require('./config.json');
 
 gulp.task('serve', [
     'build', 
@@ -33,15 +36,21 @@ gulp.task('serve', [
    // gulp.watch("js/**/*.js").on('change', browserSync.reload);
 });
 
+gulp.task('clean', function () {
+  return del([
+    'assets/css/images/*',
+    'assets/css/*',
+    'assets/css/maps/*',
+  ]);
+});
+
 gulp.task('build', [
     'sass:compile', 
     'js:compress', 
     'js:copy', 
     'image:minify',
     //'js:fonts',     
-    ]);
-
-var imageResizes = [ 768, 1600, 2560];
+]);
 
 var imageSetOptions = function( imageResizes, options ){
     
@@ -79,10 +88,10 @@ var imageSetOptions = function( imageResizes, options ){
 gulp.task('image:minify', function(){
     gulp.src('./style/images/*')
         .pipe(responsive({
-          '*.jpg': imageSetOptions( imageResizes, {
+          '*.jpg': imageSetOptions( config.main_breakpoints, {
                 withoutEnlargement: true,                
           } ),
-          '*.png': imageSetOptions( imageResizes, {
+          '*.png': imageSetOptions( config.main_breakpoints, {
                 withoutEnlargement: true,                
                 format: 'png'
           } )
@@ -141,6 +150,7 @@ gulp.task('sass:compile', function () {
     return gulp.src('./style/*.scss')
         .pipe(sass({
           outputStyle: 'nested',
+          importer: [jsonImporter()],
           precision: 10,
           includePaths: ['.'],
           onError: console.error.bind(console, 'Sass error:')
@@ -149,13 +159,13 @@ gulp.task('sass:compile', function () {
         .pipe(postcss([ objectFitImages, autoprefixer() ]))
         .pipe(csso())        
         //for file sourcemaps
-        .pipe(sourcemaps.write('./map', {
+        .pipe(sourcemaps.write('./maps', {
             includeContent: false,
             sourceRoot: 'style'
         }))
         .pipe(gulp.dest('./assets/css'))
         .pipe(browserSync.stream({match: './assets/css/**/*.css'}));
-
+        
 });
 
 gulp.task('default', ['serve']);

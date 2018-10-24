@@ -2,3 +2,4 @@ node_modules
 vendor
 *.map
 composer.lock
+/assets/css/images

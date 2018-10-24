@@ -1,0 +1,12 @@
+{
+    "version":  "1.2",
+	"textdomain": "_svbk",
+	
+	"content_width": 1100,
+	
+	"main_breakpoints" : [
+	    600,
+	    900,
+	    1200
+	]
+}
