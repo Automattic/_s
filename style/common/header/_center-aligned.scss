@@ -1,0 +1,15 @@
+.site-header {
+    
+    @media all and (min-width: $breakpoint__tablet-landscape) {
+        
+        .site-branding {
+            float: none;
+            display: block;
+            
+            img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}

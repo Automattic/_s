@@ -1,0 +1,14 @@
+.site-header {
+    
+    @media all and (min-width: $breakpoint__tablet-landscape) {
+        position: static;
+        
+        #main-navigation {
+            float: right;
+            
+           a {
+               line-height: $size__header-height-desktop;
+           }
+        }
+    }
+}

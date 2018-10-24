@@ -22,4 +22,41 @@
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
-@import "common/header";
+@import "common/header/header";
+@import "common/footer";
+
+
+.site-header {
+    
+    .search-toggle,
+    .search-form {
+        display: none;
+    }
+    
+    #main-navigation {
+        position: fixed;
+        right: -100%;
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        @media all and (min-width: $breakpoint__tablet-landscape) {
+            position: static;
+        }
+    }
+}
+
+.site-content,
+.wrap {
+    padding: 0 $padding__content-mobile;
+    max-width: $size__content-max;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media all and (min-width: $breakpoint__content-max) {
+        padding: 0;
+    }
+}
