@@ -1,2 +1,11 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+$size__content-max: 68.75em; /* 1100px */
+
+$padding__content-mobile: 1.25em; /* 20px */
+
+$breakpoint__tablet-portrait: 37.5em; /* 600px */
+$breakpoint__tablet-landscape: 56.25em; /* 900px */
+$breakpoint__desktop: 75em; /* 1200px */
+$breakpoint__content-max: $size__content-max + $padding__content-mobile * 2;
