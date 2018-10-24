@@ -2,6 +2,10 @@
     
     @media all and (min-width: $breakpoint__tablet-landscape) {
         
+        #site-navigation {
+            display: inline-block;
+        }
+        
         .site-branding {
             float: none;
             display: block;

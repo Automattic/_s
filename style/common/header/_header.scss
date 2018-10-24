@@ -64,7 +64,7 @@
         }
         
         #site-navigation {
-            display: inline-block;
+            display: block;
         }
         
         .main-navigation-toggle {
@@ -73,6 +73,6 @@
     }
 }
     
-//@import 'center-aligned';
-@import 'left-aligned';
+@import 'center-aligned';
+//@import 'left-aligned';
 @import 'top-header';

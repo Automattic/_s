@@ -44,6 +44,12 @@ img {
             list-style: none;
             padding: 0;
             margin: 0;
+            
+            li a {
+                color: $color__text-main;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
         }
         
         @media all and (min-width: $breakpoint__tablet-landscape) {
