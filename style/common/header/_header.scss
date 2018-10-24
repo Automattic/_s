@@ -1,7 +1,7 @@
 .site-header {
     background: $color__background-header;
     
-    #site-header-content {
+    .wrap {
         
         &:after {
             @include clearfix();
@@ -35,7 +35,7 @@
     
     @media all and (min-width: $breakpoint__tablet-landscape) {
         
-        .site-branding a {
+        .site-branding {
             
             img {
                 height: 58px;
@@ -47,10 +47,6 @@
         #main-navigation {
             right: 0;
             text-align: center;
-            
-            #site-navigation {
-                display: inline-block;
-            }
             
             ul:after {
                 @include clearfix();
@@ -65,6 +61,10 @@
                    margin-right: 0;
                }
             }
+        }
+        
+        #site-navigation {
+            display: inline-block;
         }
         
         .main-navigation-toggle {
