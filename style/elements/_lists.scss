@@ -1,13 +1,46 @@
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 15px 0;
+	list-style: none;
+	
+	li {
+		margin-bottom: 8px;
+		
+		&:before {
+			line-height: 1em;
+		}
+	}
 }
 
 ul {
-	list-style: disc;
+	padding-left: 15px;
+	
+	li:before {
+		content: "\2022";
+		display: inline-block;
+		width: .8em;
+		margin-left: -.8em;
+		@include font-size(1);
+		vertical-align: middle;
+	}
 }
 
 ol {
-	list-style: decimal;
+	counter-reset: li;
+	padding-left: 1.5em;
+	
+	li {
+		counter-increment: li;
+		
+		&:before {
+			content: "." counter(li);
+			display: inline-block;
+			width: 1em;
+			margin-left: -1.5em;
+    		margin-right: 0.5em;
+    		text-align: right;
+    		direction: rtl;
+		}
+	}
 }
 
 li > ul,

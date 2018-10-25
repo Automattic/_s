@@ -4,6 +4,11 @@
 		
 		li {
 			padding: 8px $padding__content-mobile;
+			margin-bottom: 0;
+			
+			&:before {
+				display: none;
+			}
 		}
 	}
 	
