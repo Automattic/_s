@@ -1,6 +1,6 @@
 .site-header {
     
-    @media all and (min-width: $breakpoint__tablet-landscape) {
+    @media all and (min-width: breakpoint(2)) {
         position: static;
         
         #main-navigation {

@@ -38,7 +38,7 @@
         padding-bottom: 15px;
     }
     
-    @media all and (min-width: $breakpoint__tablet-landscape) {
+    @media all and (min-width: breakpoint(2)) {
         text-align: left;
         
         img {

@@ -22,8 +22,8 @@
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
-@import "common/header/header";
-@import "common/footer";
+@import "site/header/header";
+@import "site/footer";
 
 img {
     max-width: 100%;
@@ -52,7 +52,7 @@ img {
             }
         }
         
-        @media all and (min-width: $breakpoint__tablet-landscape) {
+        @media all and (min-width: breakpoint(2)) {
             position: static;
         }
     }
@@ -61,11 +61,11 @@ img {
 .site-content,
 .wrap {
     padding: 0 $padding__content-mobile;
-    max-width: $size__content-max;
+    max-width: $size__content-width;
     margin-left: auto;
     margin-right: auto;
     
-    @media all and (min-width: $breakpoint__content-max) {
+    @media all and (min-width: $breakpoint__content-max-width) {
         padding: 0;
     }
 }

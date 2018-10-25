@@ -33,7 +33,7 @@
         }
     }
     
-    @media all and (min-width: $breakpoint__tablet-landscape) {
+    @media all and (min-width: breakpoint(2)) {
         
         .site-branding {
             
@@ -73,6 +73,6 @@
     }
 }
     
-@import 'center-aligned';
-//@import 'left-aligned';
+//@import 'center-aligned';
+@import 'left-aligned';
 @import 'top-header';
