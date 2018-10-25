@@ -26,7 +26,7 @@
 	<header id="masthead" class="site-header" role="banner">
 		
 		<div class="top-header">
-			<div id="top-header-content">
+			<div class="wrap">
 				<div class="contact-phone">
 					<?php esc_html_e( 'Call', '_svbk' ); ?>
 					<a href="tel:<?php bloginfo( 'contact_phone' ); ?>"><?php bloginfo( 'contact_phone' ); ?></a>
@@ -40,7 +40,7 @@
 		 }
 		?>
 
-		<div id="site-header-content">
+		<div class="wrap">
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 	
 			<button class="main-navigation-toggle" aria-controls="main-navigation" aria-expanded="false">
