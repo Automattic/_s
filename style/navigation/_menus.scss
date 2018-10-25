@@ -1,114 +1,171 @@
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-
+#main-navigation {
+	
 	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
+		
+		li {
+			padding: 8px $padding__content-mobile;
+		}
+	}
+	
+	.menu-item-has-children {
+		background-color: rgba(255,255,255,0);
+		transition: background-color .8s ease;
+		
+		a {
+			display: block;
+			position: relative;
+		}
+		
+		> a:after {
+			@include icon-content("\e90a");
 			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
+			right: 0;
+		}
+		
+		.sub-menu {
+			display: block;
+			overflow: hidden;
+			max-height: 0;
+			transition: max-height .8s ease;
+		}
+		
+		&.expanded {
+			background-color: $color__background-sub-menu;
+			
+			a:after {
+				@include icon("\e909");
 			}
-
+			
+			.sub-menu {
+				max-height: 500px;
+			}
+		}
+	}
+	
+	@media all and (min-width: breakpoint(2)) {
+		
+		ul {
+			
 			li {
-				&:hover > ul,
-				&.focus > ul {
+				padding: 0;
+			}
+		}
+		
+		.menu-item-has-children {
+			
+			.sub-menu {
+				display: none;
+				overflow: visible;
+				background-color: $color__background-sub-menu;
+			    position: absolute;
+			    z-index: 10;
+			    padding: 15px;
+			    margin: -25px 0 0 0;
+			    width: 190px;
+			    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+			    text-align: left;
+			    
+				li {
+					float: none;
+					margin-bottom: 10px;
+					
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+					
+					a {
+						line-height: normal;
+					}
+				}
+			    
+				&:before {
+				    content: "";
+				    display: block;
+				    width: 0;
+				    height: 0;
+				    position: absolute;
+				    border-left: 6px solid transparent;
+				    border-right: 6px solid transparent;
+				    border-bottom: 6px solid $color__background-sub-menu;
+				    top: -6px;
+				    left: 50px;
 				}
 			}
-
-			a {
-				width: 200px;
+			
+			&:hover {
+				
+				.sub-menu {
+					max-height: none;
+					display: block;
+				}
 			}
-
-			:hover > a,
-			.focus > a {
+			
+			&.expanded {
+				background-color: rgba(255,255,255,0);
 			}
-
-			a:hover,
-			a.focus {
+			
+			> a:after {
+				@include icon-content("\e90b");
+				position: static;
+				margin-left: 8px;
+			}
+			
+			.sub-menu {
+				position: absolute;
 			}
 		}
+	}
+}
 
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
+#page {
+	position: relative;
+	right: 0;
+	transition: right .5s ease-in-out;
+	
+	#main-navigation {
+		position: fixed;
+		width: 250px;
+		right: -250px;
+		top: 0;
+		bottom: 0;
+		overflow: auto;
+		box-shadow: 0 0 3px rgba(0,0,0,.0);
+		transition: right .5s ease-in-out, box-shadow .5s ease-in-out;
+		
+	}
+	
+	&.menu-toggled-on {
+	    right: 250px;
+		
+		#main-navigation {
+			right: 0;
+			box-shadow: 0 0 3px rgba(0,0,0,.2);
 		}
 	}
+	
+	@media all and (min-width: breakpoint(1)) {
 
-	li {
-
-		&:hover > a,
-		&.focus > a {
+		#main-navigation {
+			width: 300px;
+			right: -300px;
+		}
+		
+		&.menu-toggled-on {
+			right: 300px;
 		}
 	}
-
-	a {
-		display: block;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-.menu-toggle {
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	&:before {
-		content: "Menu";
-	}
-}
-
-@media screen and (min-width: 48em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
-
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+	
+	@media all and (min-width: breakpoint(2)) {
+		
+		&.menu-toggled-on {
+			right: 0;
+		}
+		
+		&.menu-toggled-on #main-navigation,
+		#main-navigation {
+			position: static;
+			width: auto;
+			box-shadow: none;
+		}
 	}
 }

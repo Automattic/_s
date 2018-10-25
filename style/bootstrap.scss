@@ -52,6 +52,10 @@ img {
             }
         }
         
+        .sub-menu {
+            display: none;
+        }
+        
         @media all and (min-width: breakpoint(2)) {
             position: static;
         }

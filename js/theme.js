@@ -62,8 +62,11 @@
       });
       e.stopPropagation();
   });
-      
 
+  $('.menu-item-has-children > a').on('click', function() {
+    $(this).parent('li').toggleClass('expanded');
+  });
+      
   // $('.ajax-archive')
   //   .ajaxArchive()
   //   .on('ajaxarchiveempty', function(event, data){

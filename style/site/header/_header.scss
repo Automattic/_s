@@ -29,7 +29,7 @@
         border: none;
         
         &:before {
-            @include icon("\e908");
+            @include icon-content("\e908");
         }
     }
     
@@ -56,6 +56,10 @@
             li {
                margin-right: 10px;
                float: left;
+               
+                a {
+                    line-height: $size__header-height-desktop;
+                }
                
                &:last-of-type {
                    margin-right: 0;
