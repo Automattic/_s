@@ -1,12 +1,29 @@
 {
-    "version":  "1.2",
-	"textdomain": "_svbk",
-	
+    "config_version":  "1.2",
+    
 	"content_width": 1100,
 	
 	"main_breakpoints" : [
 	    600,
 	    900,
 	    1200
-	]
+	],
+	
+	"fonts": {
+		"main" : {
+			"source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700'",
+			"font-family": "'Open Sans'"
+		},
+		"headings" : {
+			"source": "'//fast.fonts.net/jsapi/eea284e2-584f-48d8-9d24-e593813d05d7.js'",
+			"font-family": "'Adobe Caslon W01'"
+		}
+	},
+	
+	"icons": {
+		"theme" : {
+			"source": "'/icons/style.css'",
+			"font-family": "'theme-icons'"
+		}
+	}	
 }

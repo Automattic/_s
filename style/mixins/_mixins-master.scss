@@ -32,8 +32,53 @@
     overflow: hidden;
 }
 
-//Icons
-@mixin icon($hex) {
-	font-family: $font__icons;
+@mixin font($font) {
+
+	@if type-of($font) == 'map' {
+		
+			$font: map-remove( $font, 'source' );
+		
+			@each $font-prop, $font-value in $font {
+		    #{$font-prop}: $font-value;
+			}		
+	}	@else if type-of($font) == 'string' {			
+		
+			@if variable-exists( 'fonts' ) and map-has-key($fonts, $font) {
+					@include font( map-get($fonts, $font) );
+			} @else {
+				font-family: $font;
+			}
+	}	
+}
+
+@mixin icon($icon) {
+
+	@if type-of($icon) == 'map' {
+		@include font($icon);	
+	}	@else if type-of($icon) == 'string' {			
+		
+	@if variable-exists( 'icons' ) and map-has-key($icons, $icon) {
+		@include font( map-get($icons, $icon) );
+	} @else {
+			font-family: $icon;
+		}
+	}	
+}
+
+@mixin icon-content($hex) {
+	@include icon('theme');
 	content: "#{$hex}";
+}
+
+
+@function breakpoint( $index ) {
+		@return #{nth($main_breakpoints, $index)}px
+}
+
+@function map-deep-get($map, $keys...) {
+  $value: $map;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+  @return $value;
 }
