@@ -7,7 +7,7 @@ textarea {
 	color: $color__text-main;
 	@include font( 'main' );
 	@include font-size(1);
-	line-height: $font__line-height-body;
+	line-height: 1.5em;
 }
 
 @import "headings";
