@@ -1,0 +1,17 @@
+.site-content {
+    
+    @media screen and (min-width: breakpoint(2)) {
+        display: flex;
+        flex-wrap: wrap;
+        
+        #primary {
+            width: $size__site-primary;
+            padding-right: 25px;
+        }
+        
+        #secondary {
+            width: $size__site-secondary;
+            padding-left: 25px;
+        }
+    }
+}

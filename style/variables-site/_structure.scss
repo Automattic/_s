@@ -1,5 +1,6 @@
 $size__site-main: 100%;
-$size__site-sidebar: 25%;
+$size__site-secondary: 25%;
+$size__site-primary: 100% - $size__site-secondary;
 $size__content-width: $content_width * 1px;
 $size__header-height-mobile: 48px;
 $size__header-height-desktop: 88px;
@@ -10,5 +11,3 @@ $breakpoint__tablet-portrait: 600px;
 $breakpoint__tablet-landscape: 900px;
 $breakpoint__desktop: 1200px;
 $breakpoint__content-max-width: $size__content-width + $padding__content-mobile * 2;
-
-@debug $breakpoint__content-max-width;

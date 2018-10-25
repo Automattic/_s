@@ -1,6 +1,120 @@
 .comment-content a {
 	word-wrap: break-word;
 }
+
 .bypostauthor {
 	display: block;
+}
+
+.comments-area {
+	
+	.comments-title {
+		@include font-size (1.3);
+		text-transform: uppercase;
+		font-weight: 600;
+		
+		span {
+			text-transform: none;
+		}
+	}
+	
+	.comment-meta {
+		
+		img {
+			vertical-align: middle;
+		}
+		
+		.comment-metadata {
+			@include font-size(.9);
+			
+			a {
+				float: left;
+				font-weight: 200;
+			}
+			
+			.edit-link {
+				float: right;
+			}
+		}
+	}
+	
+	.reply {
+		text-align: right;
+		border-top: 1px solid #dfdfdf;
+		padding-top: 5px;
+	}
+	
+	.children {
+		
+		li {
+			margin-bottom: 0;
+			
+			p {
+				margin-bottom: 10px;
+			}
+		}	
+	}
+	
+	.comment-content {
+		clear: both;
+	}
+	
+	ol.comment-list {
+		padding: 0;
+		
+		.comment {
+			background: #f8f8f8;
+			margin-bottom: 15px;
+			padding: 15px 25px;
+		}
+		
+		li:before {
+			display: none;
+		}
+	}
+}
+
+.comment-respond {
+	margin-top: 30px;
+	
+	.comment-reply-title {
+		@include font-size (1.3);
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 0;
+	}
+
+    form {
+        
+        p {
+            margin: 0;
+            margin-top: 10px;
+        }
+        
+        textarea {
+        	height: 150px;
+        }
+    }
+    
+    .form-submit {
+        text-align: center;
+        margin-top: 25px;
+    }
+    
+    @media screen and (min-width: 48em) {
+        
+        .comment-form-author,
+        .comment-form-email {
+            width: 49%;
+            float: left;
+        }
+        
+        .comment-form-email {
+            margin-left: 2%;
+        }
+        
+        .comment-form-url {
+            clear: both;
+        }
+    }
 }

@@ -4,3 +4,25 @@
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/content-sidebar";
+
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+@import "site/site";
+
+.posts-list {
+    
+    @media screen and (min-width: breakpoint(1)) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        .post-thumb {
+            width: 48%;
+        }
+    }
+}

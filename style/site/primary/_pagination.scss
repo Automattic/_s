@@ -1,0 +1,47 @@
+.pagination {
+	clear: both;
+	text-align: center;
+	margin: 50px 0 30px;
+	vertical-align: middle;
+	
+	a {
+		text-decoration: none;
+	}
+	
+	.page-numbers {
+		color: $color__corporate;
+	    width: 25px;
+	    height: 25px;
+	    display: inline-block;
+	    line-height: 26px;
+	    font-weight: 350;
+	    vertical-align: middle;
+		
+		&.next,
+		&.prev {
+			width: 25px;
+			height: 25px;
+			display: inline-block;
+			font-size: 22px;
+			
+			&:before {
+				color: $color__corporate-secondary;
+			}
+		}
+		
+		&.next:before {
+			@include icon("\e90e");
+		}
+		
+		&.prev:before {
+			@include icon("\e90d");	
+		}
+		
+		&.current {
+			background: $color__corporate;
+			color: #fff;
+			border-radius: 50%;
+			font-weight: 600;
+		}
+	}
+}
