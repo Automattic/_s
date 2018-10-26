@@ -67,6 +67,10 @@ img {
     }
 }
 
+#page {
+    background: $color__background-page;
+}
+
 .site-content,
 .wrap {
     padding: 0 $padding__content-mobile;

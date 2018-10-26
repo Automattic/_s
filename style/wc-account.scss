@@ -1,0 +1,384 @@
+/*--------------------------------------------------------------
+# Functions and vars
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Shop
+--------------------------------------------------------------*/
+@import "shop/components";
+
+.woocommerce-form-login {
+    background: #fff;
+    
+    > p {
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    button[type="submit"] {
+        display: block;
+        width: 100%;
+    }
+    
+    .woocommerce-form__label-for-checkbox {
+        margin: 20px 0;
+        cursor: pointer;
+        
+        input,
+        span {
+            vertical-align: middle;
+        }
+        
+        input {
+            border-width: 1px;
+        }
+    }
+    
+    .lost_password {
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+.woocommerce-account {
+    background: $color__background-body;
+    
+    #page {
+        background: rgba(255,255,255,0);
+    }
+    
+    #primary {
+        background: $color__background-page;
+        margin: 30px 0;
+        padding: 0 20px 50px;
+        box-shadow: 0 0 3px rgba(0,0,0,.2);
+    }
+    
+    .woocommerce-MyAccount-navigation {
+        text-align: center;
+        margin: 30px 0 20px;
+        
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            display: inline-block;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            
+            &:before {
+                display: none;
+            }
+            
+            a {
+                text-decoration: none;
+                line-height: normal;
+                border-right: 2px solid #ddd;
+                padding: 0 10px;
+                color: #777;
+                font-weight: 200;
+            }
+            
+            &.is-active a {
+                color: $color__corporate;
+                font-weight: 600;
+            }
+            
+            a:before {
+                margin-right: 10px;
+                @include font-size(1.1);
+                vertical-align: text-top;
+            }
+            
+            &:last-of-type a {
+                border-right: none;
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--dashboard a:before {
+                @include icon-content("\e915");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--orders a:before {
+                @include icon-content("\e918");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--downloads a:before {
+                @include icon-content("\e916");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--edit-address a:before {
+                @include icon-content("\e914");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--edit-account a:before {
+               @include icon-content("\e913");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--payment-methods a:before {
+               @include icon-content("\e919");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--customer-logout a:before {
+                @include icon-content("\e917");
+            }
+        }
+    }
+    
+    @media screen and (min-width: 48em) {
+        
+        #primary {
+            background: rgba(255,255,255,0);
+            box-shadow: none;
+            padding: 0 0 50px;
+            
+            &:after {
+                @include clearfix();
+                @include clearfix-after();
+            }
+        }
+        
+        .woocommerce-MyAccount-navigation,
+        .woocommerce-MyAccount-content {
+            background: $color__background-page;
+            box-shadow: 0 0 3px rgba(0,0,0,.2);
+            padding: 20px;
+            float: left;
+        }
+        
+        .woocommerce-MyAccount-navigation {
+            width: 29%;
+            margin: 0 2% 0 0;
+            
+            li {
+                display: block;
+                text-align: left;
+                margin: 0;
+                
+                a {
+                    border: none;
+                    display: block;
+                    border-bottom: 1px solid #eee;
+                    padding: 15px 0;
+                }
+                
+                &:last-of-type a {
+                    border: none;
+                }
+            }
+        }
+        
+        .woocommerce-MyAccount-content {
+            width: 69%;
+        }
+    }
+}
+
+.woocommerce-account .shop_table {
+    border: 1px solid #f0f0f0;
+    
+    a, td {
+        text-align: left;
+    }
+    
+    thead {
+        background: #f5f5f5;
+        
+        th {
+            padding: 15px;
+            text-align: left;
+        }
+    }
+    
+    tr {
+        border-top: 1px solid #f0f0f0;
+    }
+    
+    td {
+        padding: 10px 15px;
+        border-right: 1px solid #f0f0f0;
+    }
+    
+    a {
+        background: none;
+        text-transform: none;
+        border: none;
+        color: $color__corporate;
+        box-shadow: none;
+        padding: 0;
+        display: block;
+        line-height: 1.3em;
+    }
+    
+    .button {
+        
+        &:before {
+            margin-right: 5px;
+            @include font-size(.9);
+            vertical-align: middle;
+            font-weight: 200;
+        }
+        
+        &.pay:before {
+            @include icon("\e921");
+        }
+        
+        &.view:before {
+            @include icon("\e920");
+        }
+        
+        &.download:before {
+            @include icon("\e917");
+        }
+        
+        &.cancel {
+            color: $color__error;
+            
+            &:before {
+                @include icon("\e905");
+                @include font-size(.6);
+            }
+        }
+    }
+    
+    @media screen and (max-width: 64em) {
+        
+        a {
+            text-align: right;
+        }
+        
+        thead {
+            display: none;
+        }
+        
+        tr {
+            border-top: 1px solid #eee;
+            
+            &:first-of-type {
+                border: none;
+            }
+            
+            &:nth-of-type(even) {
+                background: #fbfbfb;
+            }
+        }
+        
+        td {
+            display: block;
+            position: relative;
+            border-top: 1px solid #f5f5f5;
+            padding: 10px 15px 10px calc(40% + 10px);
+            text-align: right;
+            line-height: 1.2em;
+            
+            &:first-of-type {
+                border-top: none;
+            }
+            
+            &:before {
+                content: attr(data-title);
+                width: 40%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                background: #f5f5f5;
+                padding: 10px 15px;
+                display: block;
+                font-weight: 600;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.woocommerce-account .woocommerce-table--order-details {
+    
+    tfoot th {
+        background: #f5f5f5;
+        text-align: left;
+        padding: 10px 15px;
+    }
+    
+    @media screen and (max-width: 64em) {
+        
+        td, th, a {
+            text-align: left;
+        }
+        
+        thead {
+            display: table-header-group;
+        }
+        
+        tr:first-of-type {
+            display: table-row;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th, td {
+            padding: 10px 15px;
+        }
+        
+        th {
+            background: #f5f5f5;
+        }
+        
+        td {
+            display: table-cell;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+
+.addresses {
+    
+    .title h3 {
+        margin: 0;
+    }
+    
+    address {
+        font-style: normal;
+    }
+}
+
+.woocommerce-account .edit-account {
+    
+    fieldset {
+        border: none;
+        background: #f5f5f5;
+        
+        legend {
+            display: none;
+        }
+    }
+    
+    p:last-of-type {
+        margin-bottom: 10px;
+    }
+}
+
+body.woocommerce-order-pay article.page #order_review {
+    padding: 20px;
+    
+    @media screen and (min-width: 48em) {
+        margin: 0 auto;
+        float: none;   
+    }
+}

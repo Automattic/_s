@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'theme-icons';
-  src:  url('fonts/theme-icons.eot?9ztm2v');
-  src:  url('fonts/theme-icons.eot?9ztm2v#iefix') format('embedded-opentype'),
-    url('fonts/theme-icons.ttf?9ztm2v') format('truetype'),
-    url('fonts/theme-icons.woff?9ztm2v') format('woff'),
-    url('fonts/theme-icons.svg?9ztm2v#theme-icons') format('svg');
+  src:  url('fonts/theme-icons.eot?xg2rlw');
+  src:  url('fonts/theme-icons.eot?xg2rlw#iefix') format('embedded-opentype'),
+    url('fonts/theme-icons.ttf?xg2rlw') format('truetype'),
+    url('fonts/theme-icons.woff?xg2rlw') format('woff'),
+    url('fonts/theme-icons.svg?xg2rlw#theme-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,8 +24,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-search:before {
-  content: "\e912";
+.icon-pa-account:before {
+  content: "\e913";
+  color: #8d784c;
+}
+.icon-pa-addresses:before {
+  content: "\e914";
+  color: #838383;
+}
+.icon-pa-dashboard:before {
+  content: "\e915";
+  color: #838383;
+}
+.icon-pa-download:before {
+  content: "\e916";
+  color: #838383;
+}
+.icon-pa-logout:before {
+  content: "\e917";
+  color: #838383;
+}
+.icon-pa-orders:before {
+  content: "\e918";
+  color: #838383;
+}
+.icon-pa-payment-methods:before {
+  content: "\e919";
+  color: #838383;
 }
 .icon-cart:before {
   content: "\e900";
@@ -87,4 +112,7 @@
 }
 .icon-twitter:before {
   content: "\e911";
+}
+.icon-search:before {
+  content: "\e912";
 }
