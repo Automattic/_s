@@ -89,8 +89,10 @@ function _svbk_setup() {
 		)
 	);
 
-	/*
-	 * Enable support for custom logo.
+	/**
+	 * Add support for core custom logo.
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
 	 */
 	add_theme_support(
 		'custom-logo', array(
@@ -102,16 +104,10 @@ function _svbk_setup() {
 	);
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'_svbk_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
+	add_theme_support( 'custom-background',	apply_filters( '_svbk_custom_background_args',	array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) )	);
 
 	// Load Editor Style CSS.
 	add_editor_style();
@@ -132,6 +128,9 @@ endif;
  * @global int $content_width
  */
 function _svbk_content_width() {
+	// This variable is intended to be overruled from themes.
+	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', 640 );
 }
 add_action( 'after_setup_theme', '_svbk_content_width', 0 );
@@ -238,7 +237,7 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Additional features to allow styling of the templates.
+ * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
 
@@ -260,7 +259,9 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
 
 /**
  * Load Advanced Custom Fields Definitions
@@ -271,3 +272,10 @@ require get_template_directory() . '/inc/acf.php';
  * Load Cutoms Post Types Definitions
  */
 require get_template_directory() . '/inc/post-types.php';
+
+/**
+ * Load WooCommerce compatibility file.
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/woocommerce.php';
+}

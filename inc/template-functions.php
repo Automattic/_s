@@ -22,12 +22,17 @@ function _svbk_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Adds a class of no-sidebar when there is no sidebar present.
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', '_svbk_body_classes' );
 
 /**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
 function _svbk_pingback_header() {
 	if ( is_singular() && pings_open() ) {
