@@ -32,7 +32,10 @@ h2 {
 	}
 }
 
-h3 {
+h3,
+.widget-title,
+.comments-title,
+.comment-reply-title {
 	@include font-size(1.375);
 	line-height: 1.136em;
 	

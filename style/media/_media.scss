@@ -28,3 +28,18 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 @import "galleries";
+
+.wp-has-aspect-ratio .wp-block-embed__wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+	
+	iframe {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+	}
+}
+

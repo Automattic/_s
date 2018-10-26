@@ -9,9 +9,6 @@
 .comments-area {
 	
 	.comments-title {
-		@include font-size (1.3);
-		text-transform: uppercase;
-		font-weight: 600;
 		
 		span {
 			text-transform: none;
@@ -20,8 +17,21 @@
 	
 	.comment-meta {
 		
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+		
 		img {
 			vertical-align: middle;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+		
+		.comment-author {
+			margin-bottom: 5px;
 		}
 		
 		.comment-metadata {
@@ -41,25 +51,10 @@
 	.reply {
 		text-align: right;
 		border-top: 1px solid #dfdfdf;
-		padding-top: 5px;
+		padding-top: 8px;
 	}
 	
-	.children {
-		
-		li {
-			margin-bottom: 0;
-			
-			p {
-				margin-bottom: 10px;
-			}
-		}	
-	}
-	
-	.comment-content {
-		clear: both;
-	}
-	
-	ol.comment-list {
+	.comment-list {
 		padding: 0;
 		
 		.comment {
@@ -72,15 +67,29 @@
 			display: none;
 		}
 	}
+	
+	.children {
+		
+		.comment {
+			margin-bottom: 0;
+			padding: 0;
+			
+			p {
+				margin-bottom: 10px;
+			}
+		}	
+	}
+	
+	.children .children .children {
+		padding-left: 0;
+		margin-left: 0;
+	}
 }
 
 .comment-respond {
-	margin-top: 30px;
+	margin: 30px 0;
 	
 	.comment-reply-title {
-		@include font-size (1.3);
-		text-transform: uppercase;
-		font-weight: 600;
 		margin-bottom: 0;
 	}
 
@@ -90,15 +99,15 @@
             margin: 0;
             margin-top: 10px;
         }
-        
-        textarea {
-        	height: 150px;
-        }
     }
     
     .form-submit {
         text-align: center;
         margin-top: 25px;
+    }
+    
+    .comment-reply-title small a {
+    	@include font-size(.9);
     }
     
     @media screen and (min-width: 48em) {

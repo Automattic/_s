@@ -95,3 +95,9 @@ input[type="radio"] {
 		background-color: $color__corporate;
 	}
 }
+
+textarea {
+	max-width: 100%;
+	min-height: 100px;
+	height: 150px;
+}
