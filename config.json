@@ -22,7 +22,7 @@
 	
 	"icons": {
 		"theme" : {
-			"source": "'/icons/style.css'",
+			"source": "'style/icons/style.css'",
 			"font-family": "'theme-icons'"
 		}
 	}	
