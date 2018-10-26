@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------
+# Functions and vars
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+.error404 {
+	text-align: center;
+	
+	#primary {
+        padding: 30px 0 50px;
+        
+		p {
+			max-width: 40em;
+			margin: 1em auto 1.5em;
+		}
+        
+		header {
+			
+    		h1 {
+    			margin-bottom: 0;
+    		}
+		}
+		
+		.button {
+			display: inline-block;
+		}
+	}
+}
