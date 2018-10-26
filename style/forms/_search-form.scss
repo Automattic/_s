@@ -1,0 +1,36 @@
+form.search-form {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0 0;
+	
+	input {
+	  border: 1px solid #ccc;
+	  padding: 8px 35px 8px 10px;
+	}
+	
+	button {
+	  position: absolute;
+	  right: 10px;
+	  top: 2px;
+	  padding: 0;
+	  background: none;
+	  color: $color__corporate-secondary;
+	  box-shadow: none;
+	  margin: 0;
+	  border: none;
+	
+	  span {
+	    display: none;
+	  }
+	  
+	  &:after {
+	    @include icon("\e912");
+	    line-height: 38px;
+	  }
+	  
+	  &:hover {
+	  	color: $color__link-hover;
+	  }
+	}
+}
