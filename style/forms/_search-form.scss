@@ -2,7 +2,8 @@ form.search-form {
   position: relative;
   display: inline-block;
   width: 100%;
-  margin: 10px 0 0;
+  max-width: 300px;
+  margin: 10px auto 0;
 	
 	input {
 	  border: 1px solid #ccc;
