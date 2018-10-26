@@ -1,8 +1,32 @@
-.post-thumb {
+.post--preview {
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    position: relative;
+    padding-bottom: 40px;
     
-    .entry-title a {
-        text-decoration: none;
-        color: $color__text-main;
+    > a {
+        display: block;
+    }
+    
+    .post__meta,
+    .post__title,
+    .post__excerpt {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .post__title {
+        margin: 0;
+        
+        a {
+            text-decoration: none;
+            color: $color__text-main;
+        }
+    }
+    
+    .readmore {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
     }
 }
     

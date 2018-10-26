@@ -1,0 +1,38 @@
+div.sharedaddy,
+#content div.sharedaddy,
+#main div.sharedaddy {
+	text-align: center;
+	margin: 50px 0 30px;
+    
+    .sd-title {
+    	@include font-size(1);
+    	padding: 0 0.8em;
+    	margin-bottom: 10px;
+    	text-transform: uppercase;
+    	
+    	&:before {
+    		display: none;
+    	}
+    }
+    
+    ul, li {
+    	margin: 0;
+    }
+    
+    li {
+    	text-indent: 0;
+    	margin-right: 10px;
+
+		&:before {
+			display: none;
+		}
+    	
+    	a {
+	    	
+	    	&:before {
+	    		font-weight: normal;
+	    		border-radius: 50%;
+	    	}
+    	}
+    }
+}

@@ -15,7 +15,6 @@ form.search-form {
 	  top: 2px;
 	  padding: 0;
 	  background: none;
-	  color: $color__corporate-secondary;
 	  box-shadow: none;
 	  margin: 0;
 	  border: none;
@@ -25,12 +24,8 @@ form.search-form {
 	  }
 	  
 	  &:after {
-	    @include icon("\e912");
+	    @include icon-content("\e912");
 	    line-height: 38px;
-	  }
-	  
-	  &:hover {
-	  	color: $color__link-hover;
 	  }
 	}
 }
