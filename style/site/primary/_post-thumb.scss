@@ -11,7 +11,15 @@
     .post__title,
     .post__excerpt {
         padding-left: 20px;
+    }
+    
+    .post__title,
+    .post__excerpt {
         padding-right: 20px;
+    }
+    
+    .post__meta .reading-time {
+        right: 20px;
     }
     
     .post__title {
