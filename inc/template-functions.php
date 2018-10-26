@@ -70,3 +70,23 @@ function _svbk_the_whole_content() {
 	the_content(null, true);
 	$more = $real_more;	
 }
+
+function _svbk_update_word_count( $post_ID, $post, $update ){
+	$content = apply_filters( 'the_content', $post->post_content );
+	$words = str_word_count( strip_tags( $content ) );
+
+	update_post_meta( $post_ID, 'word_count', $words );
+}
+
+add_action( 'save_post_post', '_svbk_update_word_count', 10, 3 );
+
+function _svbk_get_post_reading_time( $words_per_minute = 200 ) {
+	
+	$word_count = get_post_meta( get_the_ID(), 'word_count', true );
+	
+	if ( ! $word_count ) {
+		return;
+	}
+
+	return ceil( $word_count / $words_per_minute );
+}

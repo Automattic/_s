@@ -26,7 +26,7 @@ if ( ! function_exists( '_svbk_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', '_svbk' ),
+			_x( '<span class="screen-reader-text" >Posted on </span>%s', 'post date', '_svbk' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -53,25 +53,9 @@ endif;
 
 if ( ! function_exists( '_svbk_entry_footer' ) ) :
 	/**
-	 * Prints HTML with meta information for the categories, tags and comments.
+	 * Prints HTML with meta information about comments.
 	 */
 	function _svbk_entry_footer() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', '_svbk' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_svbk' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_svbk' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_svbk' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
-		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
@@ -92,22 +76,32 @@ if ( ! function_exists( '_svbk_entry_footer' ) ) :
 			echo '</span>';
 		}
 
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', '_svbk' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
+	}
+endif;
+
+if ( ! function_exists( '_svbk_entry_terms' ) ) :
+	/**
+	 * Prints HTML with meta information for the categories and tags.
+	 */
+	function _svbk_entry_terms() {
+		
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', '_svbk' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_svbk' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_svbk' ) );
+			if ( $tags_list ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_svbk' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
+		}
+
 	}
 endif;
 
@@ -395,4 +389,26 @@ if( ! function_exists( 'the_cookie_policy_link' ) ) {
 		echo get_the_cookie_policy_link( $before, $after );
 	}
 
+}
+
+
+function _svbk_post_reading_time( $words_per_minute = 200 ) { 
+
+		$word_count = get_post_meta( get_the_ID(), 'word_count', true );
+		
+		if ( ! $word_count ) {
+			return;
+		}
+
+		$minutes = ceil( $word_count / $words_per_minute );
+
+		$minutes = _svbk_get_post_reading_time( $words_per_minute );
+
+		$est = sprintf( _n('%s min', '%s mins', $minutes, '_svbk'), $minutes ) ; ?>
+		
+		<span class="reading-time" data-wpm="<?php esc_attr_e($words_per_minute); ?>" data-wc="<?php esc_attr_e($word_count); ?>">
+			<span  class="readind-time__label"><?php _ex('Reading', 'post reading time label', '_svbk') ?>: </span>
+			<span class="reading-time__value"><?php echo $est ?></span>
+		</span>
+		<?php
 }
