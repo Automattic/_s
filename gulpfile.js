@@ -16,6 +16,7 @@ var responsive = require('gulp-responsive');
 var _ = require('lodash');
 var jsonImporter = require('node-sass-json-importer');
 var del = require('del');
+var path = require('path');
 
 var config = require('./config.json');
 
@@ -148,6 +149,7 @@ gulp.task('sass:watch', function() {
 gulp.task('sass:compile', function () {
 
     return gulp.src('./style/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass({
           outputStyle: 'nested',
           importer: [jsonImporter()],
@@ -155,13 +157,12 @@ gulp.task('sass:compile', function () {
           includePaths: ['.'],
           onError: console.error.bind(console, 'Sass error:')
         }))
-        .pipe(sourcemaps.init())
         .pipe(postcss([ objectFitImages, autoprefixer() ]))
         .pipe(csso())        
         //for file sourcemaps
         .pipe(sourcemaps.write('./maps', {
             includeContent: false,
-            sourceRoot: 'style'
+            sourceRoot: '/' + path.dirname(__filename).split(path.sep).slice(-3).join( '/' ) + '/style'
         }))
         .pipe(gulp.dest('./dist/css'))
         .pipe(browserSync.stream({match: './dist/css/**/*.css'}));
