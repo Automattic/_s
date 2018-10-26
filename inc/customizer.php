@@ -150,6 +150,94 @@ function _svbk_customize_register( $wp_customize ) {
 
 		 )
 	);
+	
+	// Contacts.
+	$wp_customize->add_section(
+		 'contacts', array(
+			 'title' => __( 'Contacts', '_svbk' ),
+			 'description' => __( 'Contact informations', '_svbk' ),
+			 'priority' => 180,
+		 )
+	);	
+	
+	$wp_customize->add_setting(
+		 "company_name", array(
+			 'sanitize_callback' => 'wp_kses_post',
+		 )
+	);	
+	
+	$wp_customize->add_setting(
+		 "address", array(
+			 'sanitize_callback' => 'wp_kses_post',
+		 )
+	);	
+	
+	$wp_customize->add_setting(
+		 "phone", array(
+			 'sanitize_callback' => 'wp_kses_post',
+		 )
+	);
+	
+	$wp_customize->add_setting(
+		 "email", array(
+			 'sanitize_callback' => 'sanitize_email',
+		 )
+	);	
+	
+	$wp_customize->add_control(
+		 "company_name", array(
+			 'label' =>  __( 'Company Name', '_svbk' ),
+			 'type' => 'text',
+			 'section' => 'contacts',
+		 )
+	);	
+
+	$wp_customize->add_control(
+		 "address", array(
+			 'label' =>  __( 'Address', '_svbk' ),
+			 'type' => 'textarea',
+			 'section' => 'contacts',
+		 )
+	);	
+	
+	$wp_customize->add_control(
+		 "phone", array(
+			 'label' =>  __( 'Phone', '_svbk' ),
+			 'type' => 'text',
+			 'section' => 'contacts',
+		 )
+	);
+	
+	$wp_customize->add_control(
+		 "email", array(
+			 'label' =>  __( 'Email', '_svbk' ),
+			 'type' => 'email',
+			 'section' => 'contacts',
+		 )
+	);	
+	
+	// Contacts.
+	$wp_customize->add_section(
+		 'analytics', array(
+			 'title' => __( 'Analytics', '_svbk' ),
+			 'description' => __( 'Analytics', '_svbk' ),
+			 'priority' => 180,
+		 )
+	);	
+	
+	$wp_customize->add_setting(
+		 "google_tag_manager_id", array(
+			 'sanitize_callback' => 'wp_kses_post',
+		 )
+	);		
+	
+	$wp_customize->add_control(
+		 "google_tag_manager_id", array(
+			 'label' =>  __( 'Google Tag Manader ID', '_svbk' ),
+			 'type' => 'text',
+			 'section' => 'analytics',
+		 )
+	);	
 
 }
 add_action( 'customize_register', '_svbk_customize_register' );
