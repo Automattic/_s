@@ -15,7 +15,8 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
-Helpers\Theme\Setup::run();
+//Helpers\Theme\Setup::run();
+Helpers\Theme\Config::load( 'config.json');
 
 // Helpers\Compliance\Iubenda::setConfig( Helpers\Theme\Config::get( 'iubenda' ) );
 
@@ -41,6 +42,9 @@ function _svbk_setup() {
 	 * to change'_svbk'to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( '_svbk', get_template_directory() . '/languages' );
+
+
+		
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
