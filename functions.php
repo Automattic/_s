@@ -184,28 +184,28 @@ add_action( 'widgets_init', '_svbk_widgets_init' );
  */
 function _svbk_scripts() {
 	
-	Script::enqueue( 'cssrelpreload', '/assets/js/cssrelpreload.min.js', [ 'inline' => true, 'source' => 'theme', 'in_footer' => false ] );
+	Script::enqueue( 'cssrelpreload', '/dist/js/cssrelpreload.min.js', [ 'inline' => true, 'source' => 'theme', 'in_footer' => false ] );
 	
-	Style::enqueue( '_svbk-bootstrap', '/assets/css/bootstrap.css', [ 'source' => 'theme', 'inline' => true ] );
-	Style::enqueue( '_svbk-common',  '/assets/css/common.css', [ 'deps' => ['_svbk-bootstrap'], 'source' => 'theme', 'preload' => true ] );
+	Style::enqueue( '_svbk-bootstrap', '/dist/css/bootstrap.css', [ 'source' => 'theme', 'inline' => true ] );
+	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'deps' => ['_svbk-bootstrap'], 'source' => 'theme', 'preload' => true ] );
 	
-	Style::enqueue( '_svbk-front-page', '/assets/css/front-page.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
-	Style::enqueue( '_svbk-blog', '/assets/css/blog.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
-	Style::enqueue( '_svbk-single-post', '/assets/css/single-post.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
-	Style::enqueue( '_svbk-page', '/assets/css/page.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() ] );
+	Style::enqueue( '_svbk-front-page', '/dist/css/front-page.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
+	Style::enqueue( '_svbk-blog', '/dist/css/blog.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
+	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
+	Style::enqueue( '_svbk-page', '/dist/css/page.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() ] );
 	
-	Style::enqueue( '_svbk-ie9', '/assets/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
+	Style::enqueue( '_svbk-ie9', '/dist/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
 
-	Style::enqueue( '_svbk-ie8', '/assets/css/ie8.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
+	Style::enqueue( '_svbk-ie8', '/dist/css/ie8.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
 
-	Script::enqueue( '_svbk-navigation', '/assets/js/navigation.min.js', [ 'source' => 'theme' ] );
-	Script::enqueue( '_svbk-skip-link-focus-fix', '/assets/js/skip-link-focus-fix.min.js', [ 'source' => 'theme' ] );
-	Script::enqueue( '_svbk-theme', '/assets/js/theme.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue( '_svbk-navigation', '/dist/js/navigation.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue( '_svbk-skip-link-focus-fix', '/dist/js/skip-link-focus-fix.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue( '_svbk-theme', '/dist/js/theme.min.js', [ 'source' => 'theme' ] );
 	
-	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'assets/js/maps.js' ), array( 'jquery' ), '20170121', true );
-	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'assets/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
+	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'dist/js/maps.js' ), array( 'jquery' ), '20170121', true );
+	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'dist/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
 
 	if ( get_theme_mod( 'sticky_header' ) ) {
 		wp_enqueue_script( 'waypoints-sticky' );

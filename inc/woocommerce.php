@@ -32,11 +32,11 @@ add_action( 'after_setup_theme', '_svbk_woocommerce_setup' );
  */
 function _svbk_woocommerce_scripts() {
 	
-	Style::enqueue( '_svbk-wc-cart', '/assets/css/wc-cart.css', [ 'source' => 'theme', 'condition' => is_cart() ] );
-	Style::enqueue( '_svbk-wc-product', '/assets/css/wc-product.css', [ 'source' => 'theme', 'condition' => is_product() ] );
-	Style::enqueue( '_svbk-wc-checkout', '/assets/css/wc-checkout.css', [ 'source' => 'theme', 'condition' => is_checkout() ] );
-	Style::enqueue( '_svbk-wc-account', '/assets/css/wc-account.css', [ 'source' => 'theme', 'condition' => is_account_page() ] );		
-	Style::enqueue( '_svbk-wc-shop', '/assets/css/wc-shop.css', [ 'source' => 'theme', 'condition' => is_shop() || is_archive('product') ] );
+	Style::enqueue( '_svbk-wc-cart', '/dist/css/wc-cart.css', [ 'source' => 'theme', 'condition' => is_cart() ] );
+	Style::enqueue( '_svbk-wc-product', '/dist/css/wc-product.css', [ 'source' => 'theme', 'condition' => is_product() ] );
+	Style::enqueue( '_svbk-wc-checkout', '/dist/css/wc-checkout.css', [ 'source' => 'theme', 'condition' => is_checkout() ] );
+	Style::enqueue( '_svbk-wc-account', '/dist/css/wc-account.css', [ 'source' => 'theme', 'condition' => is_account_page() ] );		
+	Style::enqueue( '_svbk-wc-shop', '/dist/css/wc-shop.css', [ 'source' => 'theme', 'condition' => is_shop() || is_archive('product') ] );
 	
 	Script::enqueue( 'wc-add-to-cart', null, [ 'condition' => is_woocommerce() ] );
 	Script::enqueue( 'wc-cart-fragments', null, [ 'condition' => is_woocommerce() ] );

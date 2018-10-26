@@ -38,9 +38,9 @@ gulp.task('serve', [
 
 gulp.task('clean', function () {
   return del([
-    'assets/css/images/*',
-    'assets/css/*',
-    'assets/css/maps/*',
+    'dist/css/images/*',
+    'dist/css/*',
+    'dist/css/maps/*',
   ]);
 });
 
@@ -108,12 +108,12 @@ gulp.task('image:minify', function(){
           // Strip all metadata
           withMetadata: false,
         }))
-        .pipe(gulp.dest('assets/css/images'));
+        .pipe(gulp.dest('dist/css/images'));
 });
 
 gulp.task('js:copy', function() {
    gulp.src('./node_modules/fg-loadcss/dist/cssrelpreload.min.js')
-   .pipe(gulp.dest('./assets/js'));
+   .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('js:watch', function() {
@@ -134,7 +134,7 @@ gulp.task('js:compress', function() {
         //exclude: ['tasks'],
         ignoreFiles: ['.combo.js', '.min.js']
     }))
-    .pipe(gulp.dest('./assets/js'))
+    .pipe(gulp.dest('./dist/js'))
 });
 
 gulp.task('sass:watch', function() {
@@ -163,8 +163,8 @@ gulp.task('sass:compile', function () {
             includeContent: false,
             sourceRoot: 'style'
         }))
-        .pipe(gulp.dest('./assets/css'))
-        .pipe(browserSync.stream({match: './assets/css/**/*.css'}));
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(browserSync.stream({match: './dist/css/**/*.css'}));
         
 });
 
