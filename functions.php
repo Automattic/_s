@@ -10,13 +10,15 @@
 use \Svbk\WP\Helpers;
 use \Svbk\WP\Helpers\Assets\Style;
 use \Svbk\WP\Helpers\Assets\Script;
+use \Svbk\WP\Helpers\Theme\Config;
+use \Svbk\WP\Helpers\CDN\JsDelivr;
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
 //Helpers\Theme\Setup::run();
-Helpers\Theme\Config::load( 'config.json');
+Config::load( 'config.json');
 
 // Helpers\Compliance\Iubenda::setConfig( Helpers\Theme\Config::get( 'iubenda' ) );
 
@@ -35,6 +37,9 @@ if ( ! function_exists( '_svbk_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function _svbk_setup() {
+	
+	global $content_width;
+	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -42,9 +47,6 @@ function _svbk_setup() {
 	 * to change'_svbk'to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( '_svbk', get_template_directory() . '/languages' );
-
-
-		
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -120,12 +122,22 @@ function _svbk_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'header', 2560, 2000 );
-	add_image_size( 'content-full', 1320, 9999 );
-	add_image_size( 'content-half', 768,  9999 );
-	add_image_size( 'content-third', 440, 9999 );
+	$max_page_width = Config::get('page_max_width');
+	$image_height_ratio = 1 / (4/3);
+	
+	add_image_size( 'content-third', $content_width / 3, 9999 );
+	add_image_size( 'content-half',  $content_width / 2, 9999 );
+	add_image_size( 'content-full',  $content_width / 1, 9999 );
+	
+	$breakpoints = Config::get('main_breakpoints');
+	
+	foreach( $breakpoints as $key => $breakpoint ) {
+		add_image_size( 'content-' . $key,  $breakpoint, 9999 );		
+	}
+	
+	add_image_size( 'header', $max_page_width, $max_page_width * $image_height_ratio );
 
-	set_post_thumbnail_size( 768, 560, true );
+	set_post_thumbnail_size( $content_width / 2, $content_width / 2 * $image_height_ratio, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -151,13 +163,13 @@ endif;
  *
  * @global int $content_width
  */
-function _svbk_content_width() {
+function _svbk_set_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', Config::get('content_width') );
 }
-add_action( 'after_setup_theme', '_svbk_content_width', 0 );
+add_action( 'after_setup_theme', '_svbk_set_content_width', 0 );
 
 /**
  * Register widget area.
@@ -217,8 +229,57 @@ function _svbk_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
+
+	Script::enqueue( 'fontfaceobserver', 'fontfaceobserver.js', [ 'source' => JsDelivr::class, 'defer' => true ] );
+
+	_svbk_enqueue_config_fonts();
+	_svbk_enqueue_config_fonts('icons');
+} 
 add_action( 'wp_enqueue_scripts', '_svbk_scripts' );
+
+/**
+ * Enqueue fonts from config file
+ *
+ * @param int $config_key The config key containing the fonts definitions.
+ * @param int $prefix The script handle prefix
+ *
+ * @return void
+ */
+function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
+	
+	$font_config = Config::get( $config_key );
+	
+	if ( ! $font_config ) {
+		return;
+	} 
+	
+	$fonts = array_column( $font_config, 'font-family', '_source' );
+	$prefix = $prefix ?: ($config_key . '-');
+	
+	$observerCode = '(function(){ ';
+	$observerCode .= '	var fontObservers = []; ';
+	
+	foreach( $fonts as $font_url => $font_familiy ) {
+		$font_url = trim($font_url, "'");
+		$font_familiy = trim($font_familiy, "'");
+		$font_handle = sanitize_title($font_familiy);
+		$is_absolute = preg_match( '|^(https?:)?//|', $font_url);
+		
+		Style::enqueue( $prefix . $font_handle, $font_url, ['source' => $is_absolute ? false : 'theme' ] );
+		
+		$observerCode .= 'fontObservers.push( (new FontFaceObserver(\'' . $font_familiy . '\')).load() ); ';
+	}
+	
+	$observerCode .= 'Promise.all(fontObservers).then(function () {' .
+				 'document.documentElement.className += " ' . $config_key . '-loaded";'	.
+	'}); ';
+	
+	$observerCode .= ' })();';
+	
+	wp_add_inline_script('fontfaceobserver', $observerCode);
+	
+}
+
 
 /**
  * Customize the max srcset image width to 2560px
