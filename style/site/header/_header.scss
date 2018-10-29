@@ -11,13 +11,14 @@
     }
     
     .site-branding {
+        display: inline-block;
         
         img {
             display: block;
             height: 38px;
             width: auto;
-            margin-top: 5px;
-            margin-bottom: 5px;
+            margin-top: 7px;
+            margin-bottom: 2px;
         }    
     }
     
@@ -52,7 +53,7 @@
             img {
                 height: 58px;
                 margin-top: 15px;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
             }
         }
         
