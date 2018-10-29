@@ -78,6 +78,11 @@
 					<?php endif; ?>
 					
 				</div><!-- .site-branding -->
+				
+				<button class="search-toggle">
+					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
+				</button>
+				<?php echo get_search_form(); ?>
 	
 				<button class="main-navigation-toggle" aria-controls="main-navigation" aria-expanded="false">
 					<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span>
@@ -94,11 +99,6 @@
 						?>
 					</nav><!-- #site-navigation -->
 					<?php endif; ?>
-		
-					<button class="search-toggle">
-						<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', 'onofrio' ); ?></span>
-					</button>
-					<?php echo get_search_form(); ?>
 				</div>
 			
 			</div>
