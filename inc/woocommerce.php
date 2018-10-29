@@ -42,9 +42,9 @@ function _svbk_woocommerce_scripts() {
 	Script::enqueue( 'wc-cart-fragments', null, [ 'condition' => is_woocommerce() ] );
 	Script::enqueue( 'woocommerce', null, [ 'condition' => is_woocommerce() ] );
 	
-	Style::enqueue( 'woocommerce-layout', null, [ 'condition' => is_woocommerce() ] );
-	Style::enqueue( 'woocommerce-smallscreen', null, [ 'condition' => is_woocommerce() ] );
-	Style::enqueue( 'woocommerce-general', null, [ 'condition' => is_woocommerce() ] );
+	// Style::enqueue( 'woocommerce-layout', null, [ 'condition' => is_woocommerce() ] );
+	// Style::enqueue( 'woocommerce-smallscreen', null, [ 'condition' => is_woocommerce() ] );
+	// Style::enqueue( 'woocommerce-general', null, [ 'condition' => is_woocommerce() ] );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -58,7 +58,8 @@ function _svbk_woocommerce_scripts() {
 			font-style: normal;
 		}';
 
-	wp_add_inline_style( '_svbk-woocommerce-style', $inline_font );
+	wp_add_inline_style( '_svbk-wc-product', $inline_font );
+	wp_add_inline_style( '_svbk-wc-shop', $inline_font );
 }
 add_action( 'wp_enqueue_scripts', '_svbk_woocommerce_scripts', 30 );
 
