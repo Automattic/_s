@@ -189,10 +189,12 @@ function _svbk_scripts() {
 	Style::enqueue( '_svbk-bootstrap', '/dist/css/bootstrap.css', [ 'source' => 'theme', 'inline' => true ] );
 	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'deps' => ['_svbk-bootstrap'], 'source' => 'theme', 'preload' => true ] );
 	
-	Style::enqueue( '_svbk-front-page', '/dist/css/front-page.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
-	Style::enqueue( '_svbk-blog', '/dist/css/blog.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
-	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
-	Style::enqueue( '_svbk-page', '/dist/css/page.css', [ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() ] );
+	Style::enqueue( '_svbk-front-page',	 '/dist/css/front-page.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
+	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
+	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
+	Style::enqueue( '_svbk-page',		 '/dist/css/page.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() ] );
+	Style::enqueue( '_svbk-search',		 '/dist/css/search.css',		[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_search()] );
+	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );
 	
 	Style::enqueue( '_svbk-ie9', '/dist/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
