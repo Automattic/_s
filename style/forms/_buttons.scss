@@ -11,6 +11,7 @@ input[type="submit"],
 	text-transform: uppercase;
 	line-height: 1;
 	padding: .6em 1em .4em;
+	text-decoration: none;
 
 	&:hover {
 		border-color: $color__border-button-hover;
@@ -19,5 +20,6 @@ input[type="submit"],
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
+		outline: none;
 	}
 }

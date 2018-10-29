@@ -1,5 +1,6 @@
 .site-header {
     background: $color__background-header;
+    width: 100%;
     
     .wrap {
         
@@ -10,7 +11,6 @@
     }
     
     .site-branding {
-        float: left;
         
         img {
             display: block;
@@ -22,7 +22,8 @@
     }
     
     .main-navigation-toggle {
-        float: right;
+        position: absolute;
+        top: 0;
         padding: 0;
         height: $size__header-height-mobile;
         background: none;
@@ -33,15 +34,31 @@
         }
     }
     
+    .search-toggle:before,
+    .site-header-cart li a:before {
+        display: block;
+        line-height: $size__header-height-mobile;
+    }
+    
     @media all and (min-width: breakpoint(2)) {
         
+        .wrap {
+            position: relative;
+        }
+        
         .site-branding {
+            display: inline-block;
             
             img {
                 height: 58px;
                 margin-top: 15px;
                 margin-bottom: 15px;
             }
+        }
+        
+        .search-toggle:before,
+        .site-header-cart li a:before {
+            line-height: $size__header-height-desktop;
         }
         
         #main-navigation {
@@ -80,3 +97,6 @@
 //@import 'center-aligned';
 @import 'left-aligned';
 @import 'top-header';
+
+@import "left-mobile-nav";
+//@import "right-mobile-nav";

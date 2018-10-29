@@ -5,6 +5,11 @@
 		li {
 			padding: 8px $padding__content-mobile;
 			margin-bottom: 0;
+			margin: 0;
+			
+			a {
+				@include font-size(.9);
+			}
 			
 			&:before {
 				display: none;
@@ -23,6 +28,7 @@
 		
 		> a:after {
 			@include icon-content("\e90a");
+			@include font-size(.5);
 			position: absolute;
 			right: 0;
 		}
@@ -37,8 +43,8 @@
 		&.expanded {
 			background-color: $color__background-sub-menu;
 			
-			a:after {
-				@include icon("\e909");
+			> a:after {
+				@include icon-content("\e909");
 			}
 			
 			.sub-menu {
@@ -112,7 +118,7 @@
 			> a:after {
 				@include icon-content("\e90b");
 				position: static;
-				margin-left: 8px;
+				margin-left: 5px;
 			}
 			
 			.sub-menu {
@@ -124,26 +130,19 @@
 
 #page {
 	position: relative;
-	right: 0;
-	transition: right .5s ease-in-out;
 	
 	#main-navigation {
 		position: fixed;
 		width: 250px;
-		right: -250px;
 		top: 0;
 		bottom: 0;
 		overflow: auto;
 		box-shadow: 0 0 3px rgba(0,0,0,.0);
-		transition: right .5s ease-in-out, box-shadow .5s ease-in-out;
-		
 	}
 	
 	&.menu-toggled-on {
-	    right: 250px;
 		
 		#main-navigation {
-			right: 0;
 			box-shadow: 0 0 3px rgba(0,0,0,.2);
 		}
 	}
@@ -152,19 +151,10 @@
 
 		#main-navigation {
 			width: 300px;
-			right: -300px;
-		}
-		
-		&.menu-toggled-on {
-			right: 300px;
 		}
 	}
 	
 	@media all and (min-width: breakpoint(2)) {
-		
-		&.menu-toggled-on {
-			right: 0;
-		}
 		
 		&.menu-toggled-on #main-navigation,
 		#main-navigation {

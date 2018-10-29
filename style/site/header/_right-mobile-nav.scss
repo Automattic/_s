@@ -1,0 +1,44 @@
+.site-header {
+	float: left;
+	
+	.main-navigation-toggle {
+		right: $padding__content-mobile;
+	}
+}
+
+#page {
+	right: 0;
+	transition: right .5s ease-in-out;
+	
+	#main-navigation {
+		right: -250px;
+		transition: right .5s ease-in-out, box-shadow .5s ease-in-out;
+		
+	}
+	
+	&.menu-toggled-on {
+	    right: 250px;
+		
+		#main-navigation {
+			right: 0;
+		}
+	}
+	
+	@media all and (min-width: breakpoint(1)) {
+
+		#main-navigation {
+			right: -300px;
+		}
+		
+		&.menu-toggled-on {
+			right: 300px;
+		}
+	}
+	
+	@media all and (min-width: breakpoint(2)) {
+		
+		&.menu-toggled-on {
+			right: 0;
+		}
+	}
+}

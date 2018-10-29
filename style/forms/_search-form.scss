@@ -1,3 +1,119 @@
+.search-toggle {
+	background: none;
+	padding: 0;
+	border: none;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    cursor: pointer;
+	
+	&:before {
+		@include icon-content("\e912");
+	}
+}
+
+.site-header .search-form {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: none;
+    background: #555;
+    max-width: none;
+    color: #fff;
+    margin-top: 0;
+    
+    &:after {
+        @include clearfix();
+        @include clearfix-after();
+    }
+    
+    input {
+        background: #555;
+        border-radius: 0;
+        border: none;
+        width: 100%;
+        height: 50px;
+        padding: 0 120px 0 $padding__content-mobile;
+        color: #fff;
+        position: relative;
+        
+        &::-webkit-input-placeholder {
+          color: #999;
+        }
+        
+        &::-moz-placeholder {
+          color: #999;
+        }
+        
+        &:-ms-input-placeholder {
+          color: #999;
+        }
+        
+        &:-moz-placeholder {
+          color: #999;
+        }
+    }
+    
+    button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        line-height: 30px;
+        background: none;
+        border: none;
+        padding: 0 $padding__content-mobile;
+        box-shadow: none;
+        border-left: 1px solid rgba(255,255,255,.6);
+        border-radius: 0;
+        margin: 10px 0;
+        color: #fff;
+        
+        span {
+        	display: block;
+        }
+        
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0; 
+            height: 0; 
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #555;
+            top: -15px;
+            right: 50px;
+        }
+        
+        &:after {
+        	display: none;
+        }
+    }
+    
+    &.visible {
+        display: block;
+        height: 50px;
+    }
+    
+    @media screen and (min-width: 52em) {
+        top: 87px;
+        
+	    &:before {
+	    	content: "";
+	    	background: #555;
+	    	position: absolute;
+			width: calc(100vw - 15px);
+	    	top: 0;
+	    	bottom: 0;
+	    	height: 100%;
+	    	left: 50%;
+	    	transform: translateX(-50%);
+	    }
+    }
+}
+
 form.search-form {
   position: relative;
   display: inline-block;
