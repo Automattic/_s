@@ -95,21 +95,24 @@
 //Breakpoint shorthand function
 @function breakpoint( $breakpoint ) {
 	
-	@each $breakpointKey, $breakpointValue in $main_breakpoints {
-		
-		@if $breakpoint == $breakpointKey {
-			@return #{map-get($main_breakpoints, $breakpointKey)}px;
-		}
+	@if map-has-key($main_breakpoints, $breakpoint) {
+		@return #{map-get($main_breakpoints, $breakpoint)}px;
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
 	}
+	
+	@return 480px;
 }
 
 //Responsive background images
-@mixin background($fileName, $fileType) {
+@mixin background-image($fileName, $fileType) {
+	
+	background-image: url("images/backgrounds/#{$fileName}.#{$fileType}");
 	
 	@each $breakpointKey, $breakpointValue in $main_breakpoints {
 		
 		@media screen and (min-width: #{$breakpointValue}px) {
-			background-image: url("images/#{$fileName}--#{$breakpointValue}.#{$fileType}");
+			background-image: url("images/backgrounds/#{$breakpointValue}/#{$fileName}.#{$fileType}");
 		}
 	}
 }
