@@ -7,11 +7,13 @@ input[type="submit"],
 	border: 1px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
+	color: $color__text-button;
 	@include font-size(.9);
 	text-transform: uppercase;
 	line-height: 1;
 	padding: .6em 1em .4em;
 	text-decoration: none;
+	text-align: center;
 
 	&:hover {
 		border-color: $color__border-button-hover;

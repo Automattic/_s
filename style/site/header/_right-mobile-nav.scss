@@ -24,7 +24,7 @@
 		}
 	}
 	
-	@media all and (min-width: breakpoint(1)) {
+	@media screen and (min-width: breakpoint(1)) {
 
 		#main-navigation {
 			right: -300px;
@@ -35,7 +35,7 @@
 		}
 	}
 	
-	@media all and (min-width: breakpoint(2)) {
+	@media screen and (min-width: breakpoint(2)) {
 		
 		&.menu-toggled-on {
 			right: 0;

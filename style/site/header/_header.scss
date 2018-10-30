@@ -41,7 +41,7 @@
         line-height: $size__header-height-mobile;
     }
     
-    @media all and (min-width: breakpoint(2)) {
+    @media screen and (min-width: breakpoint(2)) {
         
         .wrap {
             position: relative;

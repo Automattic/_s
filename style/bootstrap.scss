@@ -61,7 +61,7 @@ img {
             display: none;
         }
         
-        @media all and (min-width: breakpoint(2)) {
+        @media screen and (min-width: breakpoint(2)) {
             position: static;
         }
     }
@@ -78,7 +78,7 @@ img {
     margin-left: auto;
     margin-right: auto;
     
-    @media all and (min-width: $breakpoint__content-max-width) {
+    @media screen and (min-width: $breakpoint__content-max-width) {
         padding: 0;
     }
 }

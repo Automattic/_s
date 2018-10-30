@@ -53,7 +53,7 @@
 		}
 	}
 	
-	@media all and (min-width: breakpoint(2)) {
+	@media screen and (min-width: breakpoint(2)) {
 		
 		ul {
 			
@@ -147,14 +147,14 @@
 		}
 	}
 	
-	@media all and (min-width: breakpoint(1)) {
+	@media screen and (min-width: breakpoint(1)) {
 
 		#main-navigation {
 			width: 300px;
 		}
 	}
 	
-	@media all and (min-width: breakpoint(2)) {
+	@media screen and (min-width: breakpoint(2)) {
 		
 		&.menu-toggled-on #main-navigation,
 		#main-navigation {
