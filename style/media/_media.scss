@@ -39,3 +39,6 @@ object {
 	}
 }
 
+.background {
+	@include background('pattern', 'jpg');
+}

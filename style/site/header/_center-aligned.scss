@@ -1,6 +1,6 @@
 .site-header {
     
-    @media screen and (min-width: breakpoint(2)) {
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
         
         #site-navigation {
             display: inline-block;

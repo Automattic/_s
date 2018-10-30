@@ -2,16 +2,16 @@
 @import "mixins/mixins-master";
 
 body {
-    width: breakpoint(3);
+    width: breakpoint('desktop');
     @include font( 'main' );
 }
 
 h1 {
-    max-width: breakpoint(3);
+    max-width: breakpoint('desktop');
     @include icon('theme');
 }
 
-@media (min-width: breakpoint(3)) {
+@media (min-width: breakpoint('desktop')) {
 
     #content {
         width: #{$content_width}px;

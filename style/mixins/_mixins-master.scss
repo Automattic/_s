@@ -92,9 +92,26 @@
 	content: "#{$hex}";
 }
 
+//Breakpoint shorthand function
+@function breakpoint( $breakpoint ) {
+	
+	@each $breakpointKey, $breakpointValue in $main_breakpoints {
+		
+		@if $breakpoint == $breakpointKey {
+			@return #{map-get($main_breakpoints, $breakpointKey)}px;
+		}
+	}
+}
 
-@function breakpoint( $index ) {
-		@return #{nth($main_breakpoints, $index)}px
+//Responsive background images
+@mixin background($fileName, $fileType) {
+	
+	@each $breakpointKey, $breakpointValue in $main_breakpoints {
+		
+		@media screen and (min-width: #{$breakpointValue}px) {
+			background-image: url("images/#{$fileName}--#{$breakpointValue}.#{$fileType}");
+		}
+	}
 }
 
 // @function config( $keys... ) {

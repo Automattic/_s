@@ -38,7 +38,7 @@
         padding-bottom: 15px;
     }
     
-    @media screen and (min-width: breakpoint(2)) {
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
         text-align: left;
         
         img {

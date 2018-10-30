@@ -22,7 +22,7 @@
 		}
 	}
 	
-	@media screen and (min-width: breakpoint(2)) {
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		
 		#main-navigation {
 			margin-right: 70px;
@@ -52,7 +52,7 @@
 		}
 	}
 	
-	@media screen and (min-width: breakpoint(1)) {
+	@media screen and (min-width: breakpoint('phone')) {
 
 		#main-navigation {
 			left: -300px;
@@ -63,7 +63,7 @@
 		}
 	}
 	
-	@media screen and (min-width: breakpoint(2)) {
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		
 		&.menu-toggled-on {
 			left: 0;

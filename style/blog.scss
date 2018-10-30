@@ -16,7 +16,7 @@
 
 .posts-list {
     
-    @media screen and (min-width: breakpoint(1)) {
+    @media screen and (min-width: breakpoint('phone')) {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
