@@ -244,11 +244,13 @@ if ( ! function_exists( '_svbk_woocommerce_cart_link' ) ) {
 			<?php
 			$item_count_text = sprintf(
 				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), '_svbk' ),
-				WC()->cart->get_cart_contents_count()
+				__( '%d %s', '_svbk' ),
+				WC()->cart->get_cart_contents_count(),
+				/* translators: number of items in the mini cart. */
+				'<span class="screen-reader-text">' . _n( 'item', 'items', WC()->cart->get_cart_contents_count(), '_svbk' ) . '</span>'
 			);
 			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
+			<span class="count"><?php echo $item_count_text; ?></span>
 		</a>
 		<?php
 	}
@@ -284,3 +286,4 @@ if ( ! function_exists( '_svbk_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
