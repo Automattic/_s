@@ -39,7 +39,6 @@ h2 {
 }
 
 #page {
-    background: #eee;
     
     .woocommerce-cart-form,
     .cart-collaterals {
@@ -95,7 +94,7 @@ h2 {
             border: 1px solid;
             display: inline-block;
             text-align: center;
-            line-height: 11px;
+            line-height: 15px;
             @include font-size(1);
             border-radius: 50%;
             font-weight: normal;

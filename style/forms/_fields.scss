@@ -101,3 +101,30 @@ textarea {
 	min-height: 100px;
 	height: 150px;
 }
+
+.select2-selection:focus {
+	outline: none;
+}
+
+.select2-container--default .select2-selection--single {
+	border-radius: 0;
+	height: 36px;
+	border: 1px solid $color__border-input;
+	
+	.select2-selection__rendered {
+		line-height: 36px;
+	}
+	
+	.select2-selection__arrow {
+		height: 34px;
+	}
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted[data-selected] {
+	background-color: $color__corporate;
+}
+
+.select2-container--default li:focus {
+	outline: none;
+}

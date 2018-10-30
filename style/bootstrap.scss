@@ -32,6 +32,22 @@
 
 img {
     max-width: 100%;
+    height: auto;
+}
+
+.domready--show {
+    display: none;
+}
+
+.domready {
+    
+    .domready--show {
+        display: block;
+    }
+    
+    .domready--hide {
+        display: none;
+    }
 }
 
 .site-header {
