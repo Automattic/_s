@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 # Functions and vars
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
+@import "shop/shop-variables";
 @import "mixins/mixins-master";
 
 /*--------------------------------------------------------------
@@ -139,7 +139,7 @@
         }
     }
     
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
         
         #primary {
             background: rgba(255,255,255,0);
@@ -189,28 +189,17 @@
 }
 
 .woocommerce-account .shop_table {
-    border: 1px solid #f0f0f0;
     
     a, td {
         text-align: left;
     }
     
-    thead {
-        background: #f5f5f5;
-        
-        th {
-            padding: 15px;
-            text-align: left;
-        }
-    }
-    
-    tr {
-        border-top: 1px solid #f0f0f0;
+    th {
+        padding: 15px;
     }
     
     td {
         padding: 10px 15px;
-        border-right: 1px solid #f0f0f0;
     }
     
     a {
@@ -234,22 +223,22 @@
         }
         
         &.pay:before {
-            @include icon("\e921");
+            @include icon-content("\e91e");
         }
         
         &.view:before {
-            @include icon("\e920");
+            @include icon-content("\e91c");
         }
         
         &.download:before {
-            @include icon("\e917");
+            @include icon-content("\e91c");
         }
         
         &.cancel {
             color: $color__error;
             
             &:before {
-                @include icon("\e905");
+                @include icon-content("\e91a");
                 @include font-size(.6);
             }
         }
@@ -266,7 +255,6 @@
         }
         
         tr {
-            border-top: 1px solid #eee;
             
             &:first-of-type {
                 border: none;
@@ -280,7 +268,7 @@
         td {
             display: block;
             position: relative;
-            border-top: 1px solid #f5f5f5;
+            border-top: 1px solid #f0f0f0;
             padding: 10px 15px 10px calc(40% + 10px);
             text-align: right;
             line-height: 1.2em;
@@ -314,7 +302,7 @@
         padding: 10px 15px;
     }
     
-    @media screen and (max-width: 64em) {
+    @media screen and (max-width: breakpoint('tablet-landscape')) {
         
         td, th, a {
             text-align: left;
@@ -377,7 +365,7 @@
 body.woocommerce-order-pay article.page #order_review {
     padding: 20px;
     
-    @media screen and (min-width: 48em) {
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
         margin: 0 auto;
         float: none;   
     }

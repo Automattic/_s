@@ -1,8 +1,8 @@
 /*--------------------------------------------------------------
 # Functions and vars
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
 @import "mixins/mixins-master";
+@import "shop/shop-variables";
 
 /**
  * Header cart
@@ -42,6 +42,42 @@
 			position: absolute;
 		}
 	}
+}
+
+/**
+ * Tables
+ */
+
+table {
+    border: 1px solid #f0f0f0;
+    background: #fff;
+    @include font-size(.9);
+    
+    .product-thumbnail img {
+    	max-width: 100px;
+    	min-width: 50px;
+    }
+    
+    input[type="number"] {
+    	max-width: 100px;
+    }
+    
+    thead {
+        background: $woocommerce_color-secondary;
+    }
+    
+    tr {
+        border-top: 1px solid #f0f0f0;
+    }
+    
+    th, td {
+    	border-right: 1px solid #f0f0f0;
+    	padding: 10px 15px;
+    }
+    
+    th {
+        text-align: left;
+    }
 }
 
 /**
