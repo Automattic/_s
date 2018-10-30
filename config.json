@@ -4,37 +4,38 @@
 	"content_width": 1320,
 	"page_max_width": 2560,	
 	
-	"main_breakpoints" : [
-	    480,
-	    768,
-	    1320
-	],
+	"main_breakpoints" : {
+	    "phone":			480,
+	    "tablet-portrait":	600,
+	    "tablet-landscape": 900,
+	    "desktop":			1200,
+	    "desktop-large":	1800
+	},
 	
 	"fonts": {
 		"main" : {
 			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700'",
-			"font-family": "'Open Sans'",
-			"font-size": "14",
 			"_fallback": {
-				"font-family": "'Verdana'",
-				"font-size": "20px"
-			}
-		},
-		"roboto" : {
-			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700'",
-			"_fallback": {
-				"font-family": "'Verdana'",	
-				"font-size": "20px"
+				"font-family": "'Arial'",
+				"letter-spacing": "0.5px",
+				"word-spacing": "-0.45px"
 			},
-			"font-family": "'Roboto'"
+			"font-family": "'Open Sans'"
+		},
+		"headings" : {
+			"_source": "'https://fast.fonts.net/cssapi/eea284e2-584f-48d8-9d24-e593813d05d7.css'",
+			"_fallback": {
+				"font-family": "'Palatino'"
+			},
+			"font-family": "'Adobe Caslon W01'"
 		}
 	},
 	
 	"icons": {
 		"theme" : {
 			"_source": "'style/icons/style.css'",
-			"font-family": "'theme-icons'",
-			"font-size": "10"
+			"font-family": "'theme-icons'"
 		}
 	}	
+	
 }

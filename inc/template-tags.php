@@ -120,7 +120,7 @@ if ( ! function_exists( '_svbk_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
+			<div class="post-thumbnail domready--show">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
 

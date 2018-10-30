@@ -19,6 +19,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 
 //Helpers\Theme\Setup::run();
 Config::load( 'config.json');
+Helpers\Theme\Setup::disable_emojis();
 
 // Helpers\Compliance\Iubenda::setConfig( Helpers\Theme\Config::get( 'iubenda' ) );
 
@@ -132,7 +133,7 @@ function _svbk_setup() {
 	$breakpoints = Config::get('main_breakpoints');
 	
 	foreach( $breakpoints as $key => $breakpoint ) {
-		add_image_size( 'content-' . $key,  $breakpoint, 9999 );		
+		add_image_size( 'breakpoint-' . $key,  $breakpoint, 9999 );		
 	}
 	
 	add_image_size( 'header', $max_page_width, $max_page_width * $image_height_ratio );
@@ -196,15 +197,17 @@ add_action( 'widgets_init', '_svbk_widgets_init' );
  */
 function _svbk_scripts() {
 	
-	Script::enqueue( 'cssrelpreload', '/dist/js/cssrelpreload.min.js', [ 'inline' => true, 'source' => 'theme', 'in_footer' => false ] );
+	Script::enqueue( 'cssrelpreload', '/dist/js/cssrelpreload.min.js', [ 'async' => true, 'source' => 'theme',  ] );
 	
-	Style::enqueue( '_svbk-bootstrap', '/dist/css/bootstrap.css', [ 'source' => 'theme', 'inline' => true ] );
-	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'deps' => ['_svbk-bootstrap'], 'source' => 'theme', 'preload' => true ] );
+	//Style::enqueue( '_svbk-bootstrap', '/dist/css/bootstrap.css', [ 'source' => 'theme', 'inline' => false, 'async' => false ] );
+	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'source' => 'theme', 'preload' => true ] );
+	
+	wp_add_inline_style( '_svbk-common', file_get_contents( get_theme_file_path( '/dist/css/bootstrap.css' ) ) );
 	
 	Style::enqueue( '_svbk-front-page',	 '/dist/css/front-page.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
 	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
 	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
-	Style::enqueue( '_svbk-page',		 '/dist/css/page.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() ] );
+	Style::enqueue( '_svbk-page',		 '/dist/css/page.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() && ! (is_front_page() || is_home()) ] );
 	Style::enqueue( '_svbk-search',		 '/dist/css/search.css',		[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_search()] );
 	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );
 	
@@ -214,9 +217,13 @@ function _svbk_scripts() {
 	Style::enqueue( '_svbk-ie8', '/dist/css/ie8.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
 
-	Script::enqueue( '_svbk-navigation', '/dist/js/navigation.min.js', [ 'source' => 'theme' ] );
-	Script::enqueue( '_svbk-skip-link-focus-fix', '/dist/js/skip-link-focus-fix.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue( '_svbk-navigation', '/dist/js/navigation.min.js', [ 'source' => 'theme', 'async' => true, 'defer' => false ] );
+	Script::enqueue( '_svbk-skip-link-focus-fix', '/dist/js/skip-link-focus-fix.min.js', [ 'source' => 'theme', 'async' => true ] );
 	Script::enqueue( '_svbk-theme', '/dist/js/theme.min.js', [ 'source' => 'theme' ] );
+	
+	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );	
+	
+	Script::set_async( 'wp-embed', true );
 	
 	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'dist/js/maps.js' ), array( 'jquery' ), '20170121', true );
 	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'dist/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
@@ -230,18 +237,23 @@ function _svbk_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	wp_dequeue_script( 'jquery-migrate' );
+
 	Script::enqueue( 'fontfaceobserver', 'fontfaceobserver.js', [ 'source' => JsDelivr::class, 'defer' => true ] );
 
 	_svbk_enqueue_config_fonts();
 	_svbk_enqueue_config_fonts('icons');
+	
 } 
-add_action( 'wp_enqueue_scripts', '_svbk_scripts' );
+add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
+
+
 
 /**
  * Enqueue fonts from config file
  *
- * @param int $config_key The config key containing the fonts definitions.
- * @param int $prefix The script handle prefix
+ * @param string $config_key The config key containing the fonts definitions.
+ * @param string $prefix The script handle prefix
  *
  * @return void
  */
@@ -279,6 +291,27 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
 	wp_add_inline_script('fontfaceobserver', $observerCode);
 	
 }
+
+
+/**
+ * Add resource hints
+ *
+ * @param array  $urls URLs to print for resource hints.
+ * @param string $relation_type The relation type the URLs are printed for, 
+ * e.g. 'preconnect' or 'prerender'.
+ *
+ * @return array
+ */
+function _svbk_add_resource_hints( $urls, $relation_type ) {
+	
+	if ( 'preconnect' == $relation_type ) {
+		$urls[] = '//cdn.jsdelivr.net';
+		$urls[] = '//fonts.googleapis.com';
+	}
+	
+	return $urls;
+}
+add_filter( 'wp_resource_hints', '_svbk_add_resource_hints', 10, 2 );
 
 
 /**
@@ -328,6 +361,32 @@ function _svbk_post_thumbnail_sizes_attr( $attrs, $attachment, $size ) {
 	return $attrs;
 }
 add_filter( 'wp_get_attachment_image_attributes', '_svbk_post_thumbnail_sizes_attr', 10 , 3 );
+
+add_action( 'wp_footer', '_svbk_domready_loader', 100 );
+
+function _svbk_domready_loader(){ ?>
+  <script type="text/javascript" >
+  
+	var loaderTimeout = setTimeout( function(){
+		document.documentElement.classList.remove('domloading');
+	}, 900 );
+	
+	var domReadyClass = function(){
+		document.documentElement.classList.add('domready');
+		document.documentElement.classList.remove('domloading');
+	}
+  
+	var tm = setTimeout( domReadyClass, 2000 );
+	document.addEventListener("DOMContentLoaded", function(){
+		clearTimeout(tm);
+		clearTimeout(loaderTimeout);
+		domReadyClass();
+	});
+   	
+ </script>
+ <?php
+}
+
 
 /**
  * Implement the Custom Header feature.

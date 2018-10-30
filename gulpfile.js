@@ -16,12 +16,11 @@ var responsive = require('gulp-responsive');
 var _ = require('lodash');
 var jsonImporter = require('node-sass-json-importer');
 var del = require('del');
-var path = require('path');
+const path = require('path');
 
 var config = require('./config.json');
 
 gulp.task('serve', [
-    'build', 
     'sass:watch', 
     'js:watch',
     'image:watch'
@@ -57,59 +56,69 @@ var imageSetOptions = function( imageResizes, options ){
     
     var imageOptions = [];
     
-    for( var size  = 0; size < imageResizes.length; size++  ){
-        
-        imageOptions.push( 
-            _.merge({
-                width: imageResizes[size],
-                rename: {
-                    suffix: '--' + imageResizes[size],
-                },
-            }, options)
-        );
+    for(let sizeName in imageResizes){
         
         imageOptions.push( 
             _.merge(
-                options,
                 {
-                    width: imageResizes[size],
-                    rename: {
-                        suffix: '--' + imageResizes[size],
-                        extname: '.webp',
-                    },
-                    format: 'webp'
-                }
+                    width: imageResizes[sizeName],
+                    rename: function (filepath) {
+                        filepath.dirname += path.sep + imageResizes[sizeName];
+                        
+                        if ( options.extname ) {
+                            filepath.extname = '.' + options.extname;
+                        }
+    
+                        return filepath;
+                    }
+                },
+                options
             )
-        );        
+        );
+    
     }
     
     return imageOptions;
 }
 
+var resizeConfig = function( options = {} ){
+    
+    var breakpoints = config.main_breakpoints;
+    breakpoints.page_max_width = config.page_max_width;    
+    
+    return {
+      'backgrounds/*.jpg': imageSetOptions( breakpoints, options ),
+      'backgrounds/*.png': imageSetOptions( breakpoints, options ),
+      '*.jpg':  [ options ],
+      '*.png':  [ options ],         
+    }
+}
+
 gulp.task('image:minify', function(){
-    gulp.src('./style/images/*')
-        .pipe(responsive({
-          '*.jpg': imageSetOptions( config.main_breakpoints, {
-                withoutEnlargement: true,                
-          } ),
-          '*.png': imageSetOptions( config.main_breakpoints, {
-                withoutEnlargement: true,                
-                format: 'png'
-          } )
-        }, {
-          // Global configuration for all images
-          // The output quality for JPEG, WebP and TIFF output formats
-          quality: 70,
-          // Use progressive (interlace) scan for JPEG and PNG output
-          progressive: true,
-          // Zlib compression level of PNG output format
-          compressionLevel: 6,
-          
-          errorOnEnlargement: false,
-          // Strip all metadata
-          withMetadata: false,
-        }))
+    
+    var globalConfig = {
+      // The output quality for JPEG, WebP and TIFF output formats
+      quality: 70,
+      // Use progressive (interlace) scan for JPEG and PNG output
+      progressive: true,
+      // Zlib compression level of PNG output format
+      compressionLevel: 6,
+      errorOnUnusedConfig: false,
+      errorOnEnlargement: false,
+      withoutEnlargement: true, 
+      withMetadata: false,
+    };
+
+    // Normal conversion
+    gulp.src('./style/images/**/*')
+        .pipe(responsive( resizeConfig(), globalConfig ))
         .pipe(gulp.dest('dist/css/images'));
+    
+    // WEBP conversion
+    gulp.src('./style/images/**/*')
+        .pipe(responsive( resizeConfig( { format: 'webp', rename: { extname: '.webp' } } ), globalConfig))
+        .pipe(gulp.dest('dist/css/images'));        
+        
 });
 
 gulp.task('js:copy', function() {
@@ -122,7 +131,7 @@ gulp.task('js:watch', function() {
 });
 
 gulp.task('image:watch', function() {
-    gulp.watch("./style/images/**", ['image:minify']);
+    gulp.watch("./style/images/**/*", ['image:minify']);
 });
 
 gulp.task('js:compress', function() {
@@ -140,8 +149,8 @@ gulp.task('js:compress', function() {
 
 gulp.task('sass:watch', function() {
     gulp.watch("./style/**/*.scss", ['sass:compile']);
+    gulp.watch("./config.json", ['sass:compile']);
 });
-
 
 /**
  * Compile with gulp-ruby-sass + source maps

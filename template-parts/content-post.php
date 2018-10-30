@@ -18,9 +18,23 @@
 			the_title( '<h2 class="post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
+		
+		<div class="post__meta entry-meta">
+			<?php
+			_svbk_entry_terms();
+			_svbk_posted_on();
+			_svbk_posted_by();
+			_svbk_post_reading_time();
+			?>
+		</div><!-- .entry-meta -->
+		
+		<?php _svbk_post_thumbnail(); ?>
+		
+		<?php the_excerpt(); ?>
+
 	</header><!-- .entry-header -->
 
-	<div class="post__content entry-content">
+	<div class="post__content entry-content domready--show">
 		<?php
 		the_content( sprintf(
 			wp_kses(
@@ -42,7 +56,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="post__footer entry-footer">
+	<footer class="post__footer entry-footer domready--show">
 		<?php _svbk_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
