@@ -284,7 +284,7 @@
                 top: 0;
                 bottom: 0;
                 left: 0;
-                background: #f5f5f5;
+                background: $woocommerce__color-secondary;
                 padding: 10px 15px;
                 display: block;
                 font-weight: 600;
@@ -297,7 +297,7 @@
 .woocommerce-account .woocommerce-table--order-details {
     
     tfoot th {
-        background: #f5f5f5;
+        background: $woocommerce__color-secondary;
         text-align: left;
         padding: 10px 15px;
     }
@@ -322,7 +322,7 @@
         }
         
         th {
-            background: #f5f5f5;
+            background: $woocommerce__color-secondary;
         }
         
         td {
@@ -350,7 +350,7 @@
     
     fieldset {
         border: none;
-        background: #f5f5f5;
+        background: $woocommerce__color-secondary;
         
         legend {
             display: none;

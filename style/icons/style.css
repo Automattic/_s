@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'theme-icons';
-  src:  url('fonts/theme-icons.eot?r5929a');
-  src:  url('fonts/theme-icons.eot?r5929a#iefix') format('embedded-opentype'),
-    url('fonts/theme-icons.ttf?r5929a') format('truetype'),
-    url('fonts/theme-icons.woff?r5929a') format('woff'),
-    url('fonts/theme-icons.svg?r5929a#theme-icons') format('svg');
+  src:  url('fonts/theme-icons.eot?kefi63');
+  src:  url('fonts/theme-icons.eot?kefi63#iefix') format('embedded-opentype'),
+    url('fonts/theme-icons.ttf?kefi63') format('truetype'),
+    url('fonts/theme-icons.woff?kefi63') format('woff'),
+    url('fonts/theme-icons.svg?kefi63#theme-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cross:before {
+  content: "\e91f";
+}
 .icon-pa-account:before {
   content: "\e913";
   color: #8d784c;

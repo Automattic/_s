@@ -4,6 +4,18 @@
 @import "mixins/mixins-master";
 @import "shop/shop-variables";
 
+#page {
+	background: $color__background-body;
+	
+	.site-content {
+		
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+	}
+}
+
 /**
  * Header cart
  */

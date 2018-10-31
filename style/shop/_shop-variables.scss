@@ -2,7 +2,7 @@
 @import "mixins/mixins-master";
 
 //Color for generic elements such table headers, tabs etc.
-$woocommerce_color-secondary: #f5f5f5;
+$woocommerce__color-secondary: #f5f5f5;
 
 @mixin column-width($i) {
     width: (100 - 2  * ($i - 1)) / $i * 1%;
