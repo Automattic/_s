@@ -1,12 +1,15 @@
 div.sharedaddy,
 #content div.sharedaddy,
 #main div.sharedaddy {
-	text-align: center;
-	margin: 50px 0 30px;
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    z-index: 99;
     
     .sd-title {
     	@include font-size(1);
-    	padding: 0 0.8em;
     	margin-bottom: 10px;
     	text-transform: uppercase;
     	
@@ -14,25 +17,79 @@ div.sharedaddy,
     		display: none;
     	}
     }
-    
-    ul, li {
-    	margin: 0;
-    }
-    
-    li {
-    	text-indent: 0;
-    	margin-right: 10px;
-
-		&:before {
-			display: none;
+	
+	.sd-content {
+		
+		ul {
+			margin: 0 !important;
+			width: 100%;
+			
+			&:after {
+				@include clearfix();
+				@include clearfix-after();
+			}
+			
+			li {
+				margin: 0;
+				text-align: center;
+				float: left;
+				width: 20%;
+				display: block;
+				
+				&:before {
+					display: none;
+				}
+				
+				a {
+					padding: 13px 0;
+					border-radius: 0;
+					margin: 0;
+					top: 0;
+					display: block;
+				}
+				
+				&.share-facebook {
+					background: #3b5998;
+				}
+				
+				&.share-twitter {
+					background: #00acee;
+				}
+				
+				&.share-google-plus-1 {
+					background: #dd4b39;
+				}
+				
+				&.share-linkedin {
+					background: #0077b5;
+				}
+				
+				&.share-jetpack-whatsapp {
+					background: #43d854;
+				}
+			}
 		}
-    	
-    	a {
-	    	
-	    	&:before {
-	    		font-weight: normal;
-	    		border-radius: 50%;
-	    	}
-    	}
-    }
+	}
+	
+	@media screen and (max-width: breakpoint('tablet-portrait')) {
+
+		.sd-title {
+			@include screen-reader-text();
+		}
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		position: static;
+		border-top: 1px solid #f0f0f0;
+		padding-top: 10px;
+		
+		.sd-content ul li {
+			width: 60px;
+			margin-right: 5px;
+			
+			a {
+				padding: 8px 0;
+			}
+		}
+	}
 }
