@@ -424,6 +424,12 @@ function _svbk_domready_loader(){ ?>
 }
 
 
+function _svbk_jetpack_remove_share() {
+    remove_filter( 'the_excerpt', 'sharing_display', 19 );
+}
+ 
+add_action( 'loop_start', '_svbk_jetpack_remove_share' );
+
 /**
  * Implement the Custom Header feature.
  */
