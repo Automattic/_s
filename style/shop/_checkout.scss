@@ -21,6 +21,7 @@ body.woocommerce-checkout {
     
     .woocommerce-form-coupon-toggle {
         background: rgba(0,0,0,.5);
+        color: #fff;
         
         .woocommerce-info {
             padding: 20px 15px;
@@ -87,6 +88,10 @@ body.woocommerce-checkout {
                 clear: right;
                 margin: 0 0 0 2%;
             }
+            
+            #order_review_heading {
+                margin-top: 20px;
+            }
         }
     }
 }
@@ -94,6 +99,10 @@ body.woocommerce-checkout {
 /* Left column */
 
 #customer_details {
+    
+	h3 {
+	    margin-top: 0;
+	}
 	
 	#ship-to-different-address span {
 		@include font-size(1);

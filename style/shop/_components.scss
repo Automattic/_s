@@ -64,6 +64,7 @@ table {
     border: 1px solid #f0f0f0;
     background: #fff;
     @include font-size(.9);
+    border-spacing: 0;
     
     .product-thumbnail img {
     	max-width: 100px;
@@ -74,8 +75,12 @@ table {
     	max-width: 100px;
     }
     
-    thead {
-        background: $woocommerce_color-secondary;
+    thead, tfoot {
+        background: $woocommerce__color-secondary;
+    }
+    
+    th {
+        text-align: left;
     }
     
     tr {
@@ -87,8 +92,12 @@ table {
     	padding: 10px 15px;
     }
     
-    th {
-        text-align: left;
+    ul {
+    	padding: 0;
+    	
+    	li:before {
+    		display: none;
+    	}
     }
 }
 
@@ -288,14 +297,15 @@ p.no-comments {
 	clear: both;
 	width: 100%;
 	padding: 10px 15px;
+	@include font-size(.9);
 	
 	.button {
-		@include font-size(.9);
 		text-transform: uppercase;
 		margin-right: 10px;
 		border: none;
 		background: none;
 		padding: 0;
+		text-decoration: underline;
 	}
 }
 
@@ -307,4 +317,16 @@ p.no-comments {
 
 .woocommerce-error {
 	background-color: $color__error;
+	
+	li {
+		color: #fff;
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		
+		&:before {
+			margin-left: 0;
+		}
+	}
 }

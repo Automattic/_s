@@ -52,6 +52,7 @@ label {
 	font-weight: 600;
 	display: block;
 	margin-bottom: 3px;
+	@include font-size(.9);
 	
 	.required {
 		color: $color__error;
@@ -100,6 +101,10 @@ textarea {
 	max-width: 100%;
 	min-height: 100px;
 	height: 150px;
+}
+
+select {
+	max-width: 100%;
 }
 
 .select2-selection:focus {
