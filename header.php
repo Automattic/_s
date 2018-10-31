@@ -9,9 +9,11 @@
  * @package _svbk
  */
 
+use \Svbk\WP\Helpers;
+
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?> class="domloading" >
+<html <?php language_attributes(); ?><?php echo Helpers\Html\Element::attributes( apply_filters('_svbk_html_attributes', array() ) ); ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

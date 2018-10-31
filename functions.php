@@ -154,6 +154,9 @@ function _svbk_setup() {
 
 	// Load AMP overrides.
 	Helpers\Theme\AMP::init();
+	
+	add_filter( '_svbk_html_attributes', '_svbk_preapply_html_font_class' );
+	
 }
 endif;
 
@@ -199,10 +202,13 @@ function _svbk_scripts() {
 	
 	Script::enqueue( 'cssrelpreload', '/dist/js/cssrelpreload.min.js', [ 'async' => true, 'source' => 'theme',  ] );
 	
-	//Style::enqueue( '_svbk-bootstrap', '/dist/css/bootstrap.css', [ 'source' => 'theme', 'inline' => false, 'async' => false ] );
-	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'source' => 'theme', 'preload' => true ] );
+	Style::enqueue( '_svbk-bootstrap', get_theme_file_path('/dist/css/bootstrap.css'), [ 
+		'source' => 'theme', 
+		'inline' => true, 
+		'async' => false, 
+	] );
 	
-	wp_add_inline_style( '_svbk-common', file_get_contents( get_theme_file_path( '/dist/css/bootstrap.css' ) ) );
+	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'source' => 'theme', 'preload' => true ] );
 	
 	Style::enqueue( '_svbk-front-page',	 '/dist/css/front-page.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
 	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
@@ -248,7 +254,6 @@ function _svbk_scripts() {
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
 
 
-
 /**
  * Enqueue fonts from config file
  *
@@ -282,9 +287,16 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
 		$observerCode .= 'fontObservers.push( (new FontFaceObserver(\'' . $font_familiy . '\')).load() ); ';
 	}
 	
-	$observerCode .= 'Promise.all(fontObservers).then(function () {' .
-				 'document.documentElement.className += " ' . $config_key . '-loaded";'	.
-	'}); ';
+	$cookie_name = $config_key . '_loaded';
+	$class_name = $config_key . '-loaded';
+	
+	$observerCode .=
+		'Promise.all(fontObservers).then(function () {' .
+		'	var date = new Date();' . 
+        '	date.setTime( date.getTime() + (30*24*60*60*1000) );' . 
+		'	document.cookie = "' . $cookie_name . '=1; expires=" + date.toUTCString() + "; path=/";' .
+		'	document.documentElement.classList.add("'. $class_name .'");'	.
+		'}); ';
 	
 	$observerCode .= ' })();';
 	
@@ -292,6 +304,30 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
 	
 }
 
+
+/**
+ * Apply font classe
+ *
+ * @param string $config_key The config key containing the fonts definitions.
+ *
+ * @return void
+ */
+function _svbk_preapply_html_font_class( $attributes = 'fonts' ){
+	
+	if ( !array_key_exists( 'class', $attributes ) ) {
+		$attributes['class'] = array();
+	}
+	
+	if ( filter_input( INPUT_COOKIE, 'fonts_loaded', FILTER_VALIDATE_BOOLEAN ) ) {
+		$attributes['class'][] = 'fonts-loaded'; 
+	}
+	
+	if ( filter_input( INPUT_COOKIE, 'icons_loaded', FILTER_VALIDATE_BOOLEAN ) ) {
+		$attributes['class'][] = 'icons-loaded'; 
+	}
+	
+	return $attributes;
+}
 
 /**
  * Add resource hints
@@ -377,7 +413,7 @@ function _svbk_domready_loader(){ ?>
 	}
   
 	var tm = setTimeout( domReadyClass, 2000 );
-	document.addEventListener("DOMContentLoaded", function(){
+	document.addEventListener("load", function(){
 		clearTimeout(tm);
 		clearTimeout(loaderTimeout);
 		domReadyClass();

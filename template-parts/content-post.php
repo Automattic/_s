@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( ['post'] ); ?>>
-	<header class="post__header entry-header">
+	<header class="post__header entry-header first-paint">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="post__title entry-title">', '</h1>' );
@@ -30,7 +30,9 @@
 		
 		<?php _svbk_post_thumbnail(); ?>
 		
-		<?php the_excerpt(); ?>
+		<div class="post__summary entry-summary domready--hide">
+			<?php the_excerpt(); ?>
+		</div>
 
 	</header><!-- .entry-header -->
 
