@@ -154,9 +154,6 @@ function _svbk_setup() {
 
 	// Load AMP overrides.
 	Helpers\Theme\AMP::init();
-	
-	add_filter( '_svbk_html_attributes', '_svbk_preapply_html_font_class' );
-	
 }
 endif;
 
@@ -304,15 +301,14 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
 	
 }
 
-
 /**
- * Apply font classe
+ * Apply font classes to the <html> element to prevent FOUT
  *
- * @param string $config_key The config key containing the fonts definitions.
+ * @param array $attributes The input attributes of the filter
  *
  * @return void
  */
-function _svbk_preapply_html_font_class( $attributes = 'fonts' ){
+function _svbk_preapply_html_font_class( $attributes ){
 	
 	if ( !array_key_exists( 'class', $attributes ) ) {
 		$attributes['class'] = array();
@@ -328,6 +324,7 @@ function _svbk_preapply_html_font_class( $attributes = 'fonts' ){
 	
 	return $attributes;
 }
+add_filter( '_svbk_html_attributes', '_svbk_preapply_html_font_class' );
 
 /**
  * Add resource hints
@@ -398,8 +395,11 @@ function _svbk_post_thumbnail_sizes_attr( $attrs, $attachment, $size ) {
 }
 add_filter( 'wp_get_attachment_image_attributes', '_svbk_post_thumbnail_sizes_attr', 10 , 3 );
 
-add_action( 'wp_footer', '_svbk_domready_loader', 100 );
-
+/**
+ * Add classes to the document based on loading state
+ *
+ * @return void
+ */
 function _svbk_domready_loader(){ ?>
   <script type="text/javascript" >
   
@@ -422,13 +422,19 @@ function _svbk_domready_loader(){ ?>
  </script>
  <?php
 }
+add_action( 'wp_footer', '_svbk_domready_loader', 100 );
 
-
+/**
+ * Removes the Jetpack Share icons from the excerpt
+ *
+ * @return void
+ */
 function _svbk_jetpack_remove_share() {
     remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
  
 add_action( 'loop_start', '_svbk_jetpack_remove_share' );
+
 
 /**
  * Implement the Custom Header feature.
