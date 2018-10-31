@@ -435,6 +435,19 @@ function _svbk_jetpack_remove_share() {
  
 add_action( 'loop_start', '_svbk_jetpack_remove_share' );
 
+/**
+ * Added Suppport to DuracellTomi's Google Tag Manager for Wordpress
+ *
+ * @return void
+ */
+function _svbk_after_body_tag() {
+	
+	if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) {
+		gtm4wp_the_gtm_tag(); 
+	}
+	
+}
+add_action( 'after_body_tag', '_svbk_after_body_tag' );
 
 /**
  * Implement the Custom Header feature.
