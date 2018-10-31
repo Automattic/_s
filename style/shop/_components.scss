@@ -16,6 +16,12 @@
 	}
 }
 
+.onsale {
+	display: block;
+	margin: 20px 0;
+	text-decoration: none;
+}
+
 /**
  * Header cart
  */
@@ -54,6 +60,40 @@
 			position: absolute;
 		}
 	}
+}
+
+/**
+ * Price
+ */
+
+.price {
+    margin: 10px 0;
+    
+    del {
+        padding: 0;
+        opacity: 1;
+        margin-right: 5px;
+        
+        &:before {
+            transform: translateY(-50%);
+            top: 50%;
+            left: 0;
+            background: $color__text-main;
+        }
+    }
+    
+    ins {
+        color: $color__error;
+        background: none;
+    }
+}
+
+/**
+ * Breadcrumbs
+ */
+
+.woocommerce-breadcrumb {
+	margin: 30px 0 15px;
 }
 
 /**
@@ -104,18 +144,17 @@ table {
 /**
  * Star rating
  */
-/*.star-rating {
+.star-rating {
 	overflow: hidden;
 	position: relative;
 	height: 1.618em;
 	line-height: 1.618;
 	font-size: 1em;
 	width: 5.3em;
-	font-family: 'star';
 	font-weight: 400;
 
 	&:before {
-		content: "\53\53\53\53\53";
+		@include icon-content("\e910\e910\e910\e910\e910");
 		opacity: .25;
 		float: left;
 		top: 0;
@@ -133,7 +172,7 @@ table {
 	}
 
 	span:before {
-		content: "\53\53\53\53\53";
+		@include icon-content("\e910\e910\e910\e910\e910");
 		top: 0;
 		position: absolute;
 		left: 0;
@@ -160,8 +199,7 @@ p.stars {
 			width: 1em;
 			height: 1em;
 			line-height: 1;
-			font-family: "star";
-			content: "\53";
+			@include icon-content("\e910");
 			color: $color__text-main;
 			text-indent: 0;
 			opacity: .25;
@@ -169,7 +207,7 @@ p.stars {
 
 		&:hover {
 			~ a:before {
-				content: "\53";
+				@include icon-content("\e910");
 				color: $color__text-main;
 				opacity: .25;
 			}
@@ -179,7 +217,7 @@ p.stars {
 	&:hover {
 		a {
 			&:before {
-				content: "\53";
+				@include icon-content("\e910");
 				color: $color__link;
 				opacity: 1;
 			}
@@ -189,13 +227,13 @@ p.stars {
 	&.selected {
 		a.active {
 			&:before {
-				content: "\53";
+				@include icon-content("\e910");
 				color: $color__link;
 				opacity: 1;
 			}
 
 			~ a:before {
-				content: "\53";
+				@include icon-content("\e910");
 				color: $color__text-main;
 				opacity: .25;
 			}
@@ -203,20 +241,22 @@ p.stars {
 
 		a:not(.active) {
 			&:before {
-				content: "\53";
+				@include icon-content("\e910");
 				color: $color__link;
 				opacity: 1;
 			}
 		}
 	}
-}*/
+}
 
 /**
  * Tabs
  */
-/*.woocommerce-tabs {
+.woocommerce-tabs {
+	clear: both;
+	margin-top: 30px;
+
 	ul.tabs {
-		list-style: none;
 		margin: 0;
 		padding: 0;
 		text-align: left;
@@ -225,20 +265,31 @@ p.stars {
 			display: block;
 			margin: 0;
 			position: relative;
+			border: 1px solid #f0f0f0;
+			border-bottom: none;
+		    
+		    &:before {
+		    	display: none;
+		    }
+			
+			&:last-of-type {
+				border-bottom: 1px solid #f0f0f0;
+			}
+			
+			&.active {
+				background: $woocommerce__color-secondary;
+			}
 
 			a {
-				padding: 1em 0;
 				display: block;
+				text-decoration: none;
+				padding: 15px;
+				color: $color__text-main;
+				font-weight: 600;
 			}
 		}
 	}
-
-	.panel {
-		h2:first-of-type {
-			margin-bottom: 1em;
-		}
-	}
-}*/
+}
 
 /**
  * Password strength meter
@@ -262,27 +313,6 @@ p.stars {
 		color: $color__success;
 	}
 }
-
-/**
- * Forms
- */
-/*.form-row {
-	&.woocommerce-validated {
-		input.input-text {
-			box-shadow: inset 2px 0 0 $color__success;
-		}
-	}
-
-	&.woocommerce-invalid {
-		input.input-text {
-			box-shadow: inset 2px 0 0 $color__error;
-		}
-	}
-}
-
-.required {
-	color: red;
-}*/
 
 /**
  * Notices

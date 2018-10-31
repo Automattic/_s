@@ -10,12 +10,18 @@ ul.products {
 		margin-bottom: 2em;
 		width: 100%;
 		
+		a {
+			text-decoration: none;
+			color: $color__text-main;
+		}
+		
 		&:before {
 			display: none;
 		}
 
 		.woocommerce-loop-product__title {
-			@include font-size(1);
+			@include font-size(1.2);
+			margin-bottom: 5px;
 		}
 
 		img {
@@ -30,7 +36,7 @@ ul.products {
 	}
 }
 
-@media screen and (min-width: 32em) and (max-width: 64em) {
+@media screen and (min-width: breakpoint('phone')) and (max-width: breakpoint('tablet-landscape')) {
 	
 	ul.products {
 		
@@ -40,7 +46,7 @@ ul.products {
 	}
 }
 
-@media screen and (min-width: 64em) {
+@media screen and (min-width: breakpoint('tablet-landscape')) {
 	
 	ul.products {
 		
