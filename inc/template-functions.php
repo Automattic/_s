@@ -90,3 +90,41 @@ function _svbk_get_post_reading_time( $words_per_minute = 200 ) {
 
 	return ceil( $word_count / $words_per_minute );
 }
+
+function _svbk_preview_navigation_link( $output, $format, $link, $adjacent_post, $adjacent ) {
+	
+	global $post;
+	
+	$current_post = $post;
+	$post = $adjacent_post;		
+	setup_postdata( $adjacent_post ); 
+    
+    ob_start();
+    
+	get_template_part( 'template-parts/pagination', get_post_type() );
+    
+    $html = ob_get_contents();
+    ob_end_clean();
+    
+    if ( $html ) {
+    	$output = '<div class="nav-' . $adjacent . ' nav-preview">' . $html . '</div>';
+    }
+    
+	$post = $current_post;       
+    wp_reset_postdata();
+    
+    return $output;
+}
+
+add_filter( 'next_post_link', '_svbk_preview_navigation_link', 10, 5 );
+add_filter( 'previous_post_link', '_svbk_preview_navigation_link', 10, 5 );
+
+
+function _svbk_navigation_markup_template($template, $class){
+	
+	$template = str_replace( 'class="navigation', 'class="navigation domready--show', $template );
+	
+	return $template;
+}
+
+add_filter( 'navigation_markup_template', '_svbk_navigation_markup_template', 10, 2 );

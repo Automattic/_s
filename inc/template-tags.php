@@ -391,7 +391,16 @@ if( ! function_exists( 'the_cookie_policy_link' ) ) {
 
 }
 
-
+/**
+ * Prints post reading time
+ *
+ * @since 2.0.0
+ *
+ * @param int $words_per_minute Optional. The words per minute that will be used
+ *								in calculus
+ *
+ * @return string The HTML representing the post reading time
+ */
 function _svbk_post_reading_time( $words_per_minute = 200 ) { 
 
 		$word_count = get_post_meta( get_the_ID(), 'word_count', true );
@@ -411,4 +420,16 @@ function _svbk_post_reading_time( $words_per_minute = 200 ) {
 			<span class="reading-time__value"><?php echo $est ?></span>
 		</span>
 		<?php
+}
+
+function _svbk_contact_info( $info, $link = false ) {
+
+	$value = get_theme_mod( $info, false );
+	
+	if ( !$value ) {
+		return ;
+	}
+	?>
+	<span class="<?php esc_attr_e( $info ); ?>"><?php echo $value; ?></span>
+	<?php
 }

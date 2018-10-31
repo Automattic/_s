@@ -25,12 +25,15 @@
 			<?php endif ?>
 	
 			<div id="company-info" class="footer-area">
-				<h3><?php esc_html_e( 'Headquarters', '_svbk' ); ?></h3>
-				<span class="contact-address"><?php bloginfo( 'contact_address' ); ?></span><br/>
-				<span class="contact-cap"><?php bloginfo( 'contact_cap' ); ?></span>
-				<span class="contact-city"><?php bloginfo( 'contact_city' ); ?></span><br/>
-				<span class="contact-phone">Tel: <a href="tel:<?php bloginfo( 'contact_phone' ); ?>"><?php bloginfo( 'contact_phone' ); ?></a></span>
-				<span class="contact-fax">Fax: <a href="tel:<?php bloginfo( 'contact_fax' ); ?>"><?php bloginfo( 'contact_fax' ); ?></a></span>
+				<?php if ( get_theme_mod( 'company_address', false ) ) : ?>
+				<span class="company-name"><?php echo get_theme_mod( 'company_address' ) ; ?></span><br/>
+				<?php endif; ?>
+				<?php if ( get_theme_mod( 'company_address', false ) ) : ?>
+				<span class="company-address"><?php echo get_theme_mod( 'company_address' ) ; ?></span><br/>
+				<?php endif; ?>
+				<?php if ( get_theme_mod( 'company_phone', false ) ) : ?>
+				<span class="company-phone">Tel: <a href="tel:<?php echo get_theme_mod( 'company_phone' ); ?>"><?php echo get_theme_mod( 'company_phone' ); ?></a></span>
+				<?php endif; ?>				
 			</div>
 		</div>
 	

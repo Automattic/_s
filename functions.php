@@ -10,18 +10,21 @@
 use \Svbk\WP\Helpers;
 use \Svbk\WP\Helpers\Assets\Style;
 use \Svbk\WP\Helpers\Assets\Script;
-use \Svbk\WP\Helpers\Theme\Config;
 use \Svbk\WP\Helpers\CDN\JsDelivr;
+use \Svbk\WP\Helpers\Compliance;
+use \Svbk\WP\Helpers\Menu;
+use \Svbk\WP\Helpers\Config;
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
-//Helpers\Theme\Setup::run();
-Config::load( 'config.json');
-Helpers\Theme\Setup::disable_emojis();
+Config::load( get_theme_file_path( '/config.json' ));
+Compliance\Privacy::register_shortcodes();
 
-// Helpers\Compliance\Iubenda::setConfig( Helpers\Theme\Config::get( 'iubenda' ) );
+if ( Config::get( 'iubenda' ) ) {
+	Compliance\Iubenda::setConfig( Config::get( 'iubenda' ) );
+}
 
 if( env('SENDINBLUE_APIKEY') ) {
 	SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey( 'api-key', env('SENDINBLUE_APIKEY') );
@@ -188,7 +191,19 @@ function _svbk_widgets_init() {
 			 'before_title'  => '<h2 class="widget-title">',
 			 'after_title'   => '</h2>',
 		 )
-		);
+	);
+	
+	register_sidebar(
+		 array(
+			 'name'          => esc_html__( 'Shop Sidebar','_svbk' ),
+			 'id'            => 'shop',
+			 'description'   => esc_html__( 'This widgets will be shown in the shop sidebar','_svbk' ),
+			 'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			 'after_widget'  => '</section>',
+			 'before_title'  => '<h2 class="widget-title">',
+			 'after_title'   => '</h2>',
+		 )
+	);	
 }
 add_action( 'widgets_init', '_svbk_widgets_init' );
 
@@ -197,52 +212,64 @@ add_action( 'widgets_init', '_svbk_widgets_init' );
  */
 function _svbk_scripts() {
 	
+	Script::common();
+	Style::common();
+	
 	Script::enqueue( 'cssrelpreload', '/dist/js/cssrelpreload.min.js', [ 'async' => true, 'source' => 'theme',  ] );
 	
+	// Critical CSS
 	Style::enqueue( '_svbk-bootstrap', get_theme_file_path('/dist/css/bootstrap.css'), [ 
 		'source' => 'theme', 
 		'inline' => true, 
 		'async' => false, 
 	] );
 	
+	// Styles common to all pages
 	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'source' => 'theme', 'preload' => true ] );
 	
+	// Page-specific styles
 	Style::enqueue( '_svbk-front-page',	 '/dist/css/front-page.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
 	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
 	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
 	Style::enqueue( '_svbk-page',		 '/dist/css/page.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() && ! (is_front_page() || is_home()) ] );
 	Style::enqueue( '_svbk-search',		 '/dist/css/search.css',		[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_search()] );
 	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );
+	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );	
 	
+	// IE compatibility
 	Style::enqueue( '_svbk-ie9', '/dist/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
 
 	Style::enqueue( '_svbk-ie8', '/dist/css/ie8.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
-
+	
+	// Sub menu toggling class
 	Script::enqueue( '_svbk-navigation', '/dist/js/navigation.min.js', [ 'source' => 'theme', 'async' => true, 'defer' => false ] );
+	
+	// Skip Link Focus Fix
 	Script::enqueue( '_svbk-skip-link-focus-fix', '/dist/js/skip-link-focus-fix.min.js', [ 'source' => 'theme', 'async' => true ] );
+	
+	// Main Theme JS file
 	Script::enqueue( '_svbk-theme', '/dist/js/theme.min.js', [ 'source' => 'theme' ] );
 	
-	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );	
+	// Google Maps Managment script, enable this if you use Google Maps shortcodes in your theme
+	Script::enqueue( '_svbk-maps', '/dist/js/maps.min.js', [ 'deps' => array( 'jquery' ), 'source' => 'theme' ] );
 	
-	Script::set_async( 'wp-embed', true );
-	
-	//wp_enqueue_script( '_svbk-maps', get_theme_file_uri( 'dist/js/maps.js' ), array( 'jquery' ), '20170121', true );
-	//wp_enqueue_script( '_svbk-filter', get_theme_file_uri( 'dist/js/filter.min.js' ), array( 'jquery', 'jquery-ui-widget' ), '20170530', true );
+	// CSS object-fit polyfill
+	Script::enqueue( 'object-fit-images', 'dist/ofi.js' , [ 'version' => '3', 'defer' => true ] );
+	wp_add_inline_script( 'object-fit-images', 'objectFitImages();' );	
 
 	if ( get_theme_mod( 'sticky_header' ) ) {
 		wp_enqueue_script( 'waypoints-sticky' );
 		wp_add_inline_script( 'waypoints-sticky', 'var stickyHeaderContent = document.getElementById(\'site-header-content\'); if (stickyHeaderContent != null) { var sticky = new Waypoint.Sticky({ element: stickyHeaderContent }) }' );
 	}
-
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	wp_dequeue_script( 'jquery-migrate' );
-
-	Script::enqueue( 'fontfaceobserver', 'fontfaceobserver.js', [ 'source' => JsDelivr::class, 'defer' => true ] );
+	Script::set_async( 'wp-embed', true );
 
 	_svbk_enqueue_config_fonts();
 	_svbk_enqueue_config_fonts('icons');
@@ -266,6 +293,9 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
 	if ( ! $font_config ) {
 		return;
 	} 
+	
+	// Fontface Observer
+	Script::enqueue( 'fontfaceobserver', 'fontfaceobserver.js', [ 'source' => JsDelivr::class, 'defer' => true ] );
 	
 	$fonts = array_column( $font_config, 'font-family', '_source' );
 	$prefix = $prefix ?: ($config_key . '-');
@@ -302,17 +332,15 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
 }
 
 /**
- * Apply font classes to the <html> element to prevent FOUT
+ * Apply custom attributes to <html> element
  *
  * @param array $attributes The input attributes of the filter
  *
  * @return void
  */
-function _svbk_preapply_html_font_class( $attributes ){
+function _svbk_html_attributes( $attributes ){
 	
-	if ( !array_key_exists( 'class', $attributes ) ) {
-		$attributes['class'] = array();
-	}
+	$attributes['class'][] = 'domloading';
 	
 	if ( filter_input( INPUT_COOKIE, 'fonts_loaded', FILTER_VALIDATE_BOOLEAN ) ) {
 		$attributes['class'][] = 'fonts-loaded'; 
@@ -320,11 +348,11 @@ function _svbk_preapply_html_font_class( $attributes ){
 	
 	if ( filter_input( INPUT_COOKIE, 'icons_loaded', FILTER_VALIDATE_BOOLEAN ) ) {
 		$attributes['class'][] = 'icons-loaded'; 
-	}
+	}	
 	
 	return $attributes;
 }
-add_filter( '_svbk_html_attributes', '_svbk_preapply_html_font_class' );
+add_filter( '_svbk_html_attributes', '_svbk_html_attributes' );
 
 /**
  * Add resource hints
@@ -448,6 +476,74 @@ function _svbk_after_body_tag() {
 	
 }
 add_action( 'after_body_tag', '_svbk_after_body_tag' );
+
+
+/**
+ * Disable the emoji's callback
+ */
+function _svbk_disable_emojis_callback() {
+	 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	 remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
+	 remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	 remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
+	 remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+}
+add_action( 'init', '_svbk_disable_emojis_callback' );	
+
+/**
+ * Register special Menu items for policy compliance
+ */
+function _svbk_register_compliance_menu_items(){
+	
+	new Menu\ItemGroup( 
+		'compliance', 
+		__( 'Compliance', '_svbk' ), 
+		array(
+			new Menu\Item( 
+				'privacypolicy', 
+				__( 'Privacy Policy', '_svbk' ), 
+				array( 
+					'target' => '_blank',
+					'frontend_url' => get_privacy_policy_url() 
+				)
+			),
+			new Menu\Item( 
+				'cookiepolicy', 
+				__( 'Cookie Policy', '_svbk' ), 
+				array( 
+					'target' => '_blank',
+					'frontend_url' => apply_filters( 'cookie_policy_url', '' ) 
+				) 
+			),
+		)
+	);
+	
+}
+add_action( 'init', '_svbk_register_compliance_menu_items', 10, 2 );
+
+/**
+ * Allow to get company info via `get_bloginfo('contact_company_address');`
+ */
+function _svbk_extend_bloginfo( $output, $show ) {
+
+	if ( substr( $show, 0, 8 ) == 'contact_' ) {
+		$show = substr( $show, 8 );
+		$output = get_theme_mod( $show ) ?: $output;
+	}
+
+	return $output;
+}
+add_filter( 'bloginfo', '_svbk_extend_bloginfo' , 9, 2 );
+
+/**
+ * Allow to get bloginfo data via [bloginfo value=".." /] shortcode
+ */
+function _svbk_bloginfo_shortcode( $attrs ) {
+	return get_bloginfo( $attrs['value'], 'display' );
+}
+add_shortcode( 'bloginfo', '_svbk_bloginfo_shortcode' );
 
 /**
  * Implement the Custom Header feature.

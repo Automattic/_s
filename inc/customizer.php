@@ -167,19 +167,19 @@ function _svbk_customize_register( $wp_customize ) {
 	);	
 	
 	$wp_customize->add_setting(
-		 "address", array(
+		 "company_address", array(
 			 'sanitize_callback' => 'wp_kses_post',
 		 )
 	);	
 	
 	$wp_customize->add_setting(
-		 "phone", array(
+		 "company_phone", array(
 			 'sanitize_callback' => 'wp_kses_post',
 		 )
 	);
 	
 	$wp_customize->add_setting(
-		 "email", array(
+		 "company_email", array(
 			 'sanitize_callback' => 'sanitize_email',
 		 )
 	);	
@@ -193,7 +193,7 @@ function _svbk_customize_register( $wp_customize ) {
 	);	
 
 	$wp_customize->add_control(
-		 "address", array(
+		 "company_address", array(
 			 'label' =>  __( 'Address', '_svbk' ),
 			 'type' => 'textarea',
 			 'section' => 'contacts',
@@ -201,7 +201,7 @@ function _svbk_customize_register( $wp_customize ) {
 	);	
 	
 	$wp_customize->add_control(
-		 "phone", array(
+		 "company_phone", array(
 			 'label' =>  __( 'Phone', '_svbk' ),
 			 'type' => 'text',
 			 'section' => 'contacts',
@@ -209,33 +209,10 @@ function _svbk_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_control(
-		 "email", array(
+		 "company_email", array(
 			 'label' =>  __( 'Email', '_svbk' ),
 			 'type' => 'email',
 			 'section' => 'contacts',
-		 )
-	);	
-	
-	// Contacts.
-	$wp_customize->add_section(
-		 'analytics', array(
-			 'title' => __( 'Analytics', '_svbk' ),
-			 'description' => __( 'Analytics', '_svbk' ),
-			 'priority' => 180,
-		 )
-	);	
-	
-	$wp_customize->add_setting(
-		 "google_tag_manager_id", array(
-			 'sanitize_callback' => 'wp_kses_post',
-		 )
-	);		
-	
-	$wp_customize->add_control(
-		 "google_tag_manager_id", array(
-			 'label' =>  __( 'Google Tag Manader ID', '_svbk' ),
-			 'type' => 'text',
-			 'section' => 'analytics',
 		 )
 	);	
 

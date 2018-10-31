@@ -13,7 +13,7 @@ use \Svbk\WP\Helpers;
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?><?php echo Helpers\Html\Element::attributes( apply_filters('_svbk_html_attributes', array() ) ); ?> >
+<html <?php language_attributes(); ?><?php echo Helpers\Html\Element::attributes( apply_filters('_svbk_html_attributes', [ 'class' => [] ] ) ); ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,6 +80,12 @@ use \Svbk\WP\Helpers;
 					<?php endif; ?>
 					
 				</div><!-- .site-branding -->
+				
+				<?php
+					if ( function_exists( '_svbk_woocommerce_header_cart' ) ) {
+						_svbk_woocommerce_header_cart();
+					}
+				?>				
 				
 				<button class="search-toggle">
 					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
