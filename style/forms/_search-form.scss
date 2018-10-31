@@ -1,3 +1,42 @@
+form.search-form {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0;
+  display: flex;
+	
+	input {
+	  border: 1px solid #ccc;
+	  padding: 8px 10px;
+	  display: inline-block;
+	}
+	
+	button {
+	  padding: 0;
+	  box-shadow: none;
+	  margin: 0;
+	  border: none;
+	  width: 42px;
+	  height: 42px;
+	  text-indent: -999px;
+	  position: relative;
+	  overflow: hidden;
+	  margin-left: 5px;
+	  display: inline-block;
+	  
+        &:after {
+            @include icon-content("\e912");
+            line-height: 42px;
+            width: 42px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-indent: 0;
+        }
+	}
+}
+
 .search-toggle {
 	background: none;
 	padding: 0;
@@ -112,37 +151,4 @@
 	    	transform: translateX(-50%);
 	    }
     }
-}
-
-form.search-form {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  max-width: 300px;
-  margin: 10px auto 0;
-	
-	input {
-	  border: 1px solid #ccc;
-	  padding: 8px 35px 8px 10px;
-	}
-	
-	button {
-	  position: absolute;
-	  right: 10px;
-	  top: 2px;
-	  padding: 0;
-	  background: none;
-	  box-shadow: none;
-	  margin: 0;
-	  border: none;
-	
-	  span {
-	    display: none;
-	  }
-	  
-	  &:after {
-	    @include icon-content("\e912");
-	    line-height: 38px;
-	  }
-	}
 }
