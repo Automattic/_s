@@ -18,6 +18,10 @@
 			the_title( '<h2 class="post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
+
+		<div class="post__summary entry-summary">
+			<?php the_excerpt(); ?>
+		</div>
 		
 		<div class="post__meta entry-meta">
 			<?php
@@ -28,12 +32,8 @@
 			?>
 		</div><!-- .entry-meta -->
 		
-		<?php _svbk_post_thumbnail(); ?>
+		<?php _svbk_post_thumbnail( null, array( 'class' => 'skip-lazy' ) ); ?>
 		
-		<div class="post__summary entry-summary domready--hide">
-			<?php the_excerpt(); ?>
-		</div>
-
 	</header><!-- .entry-header -->
 
 	<div class="post__content entry-content domready--show">
