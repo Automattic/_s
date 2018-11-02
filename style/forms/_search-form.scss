@@ -37,7 +37,7 @@ form.search-form {
 	}
 }
 
-.search-toggle {
+.site-header .search-toggle {
 	background: none;
 	padding: 0;
 	border: none;
@@ -45,6 +45,9 @@ form.search-form {
     top: 0;
     right: 50px;
     cursor: pointer;
+    display: block;
+    text-indent: 0;
+    width: auto;
 	
 	&:before {
 		@include icon-content("\e912");
@@ -106,8 +109,11 @@ form.search-form {
         box-shadow: none;
         border-left: 1px solid rgba(255,255,255,.6);
         border-radius: 0;
-        margin: 10px 0;
+        margin: 4px 0;
         color: #fff;
+        width: auto;
+        text-indent: 0;
+        overflow: visible;
         
         span {
         	display: block;
@@ -122,7 +128,7 @@ form.search-form {
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
             border-bottom: 5px solid #555;
-            top: -15px;
+            top: -9px;
             right: 50px;
         }
         
