@@ -219,24 +219,23 @@ function _svbk_scripts() {
 	Script::enqueue( 'cssrelpreload', '/dist/js/cssrelpreload.min.js', [ 'async' => true, 'source' => 'theme',  ] );
 	
 	// Critical CSS
-	Style::enqueue( '_svbk-bootstrap', get_theme_file_path('/dist/css/bootstrap.css'), [ 
+	Style::enqueue( '_svbk-bootstrap', '/dist/css/bootstrap.css', [ 
 		'source' => 'theme', 
 		'inline' => true, 
 		'async' => false, 
 	] );
 	
 	// Styles common to all pages
-	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'source' => 'theme', 'preload' => true ] );
+	Style::enqueue( '_svbk-common',  '/dist/css/common.css', [ 'source' => 'theme' ] );
 	
 	// Page-specific styles
-	Style::enqueue( '_svbk-front-page',	 '/dist/css/front-page.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page() ] );
-	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() ] );
-	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post') ] );
-	Style::enqueue( '_svbk-page',		 '/dist/css/page.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() && ! (is_front_page() || is_home()) ] );
-	Style::enqueue( '_svbk-search',		 '/dist/css/search.css',		[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_search()] );
+	Style::enqueue( '_svbk-front-page',	 '/dist/css/front-page.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page(), 'prefetch' => !is_front_page() ] );
+	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home(), 'prefetch' => !is_home() ] );
+	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post'), 'prefetch' => is_home() ] );
+	Style::enqueue( '_svbk-page',		 '/dist/css/page.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() && ! (is_front_page() || is_home()), 'prefetch' => is_page() ] );
+	Style::enqueue( '_svbk-search',		 '/dist/css/search.css',		[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_search() ] );
 	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );
-	Style::enqueue( '_svbk-404',		 '/dist/css/404.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_404() ] );	
-	
+
 	// IE compatibility
 	Style::enqueue( '_svbk-ie9', '/dist/css/ie9.css', [ 'deps' =>  array( '_svbk-common' ), 'source' => 'theme' ] );
 	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
@@ -275,19 +274,17 @@ function _svbk_scripts() {
 	_svbk_enqueue_config_fonts();
 	_svbk_enqueue_config_fonts('icons');
 	
+	Asset::hint( 'preconnect', '//cdn.jsdelivr.net' );
+	Asset::hint( 'preconnect', '//fonts.googleapis.com' );
+	
 } 
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
 
-
 function _svbk_server_push(){
-	
-	if ( is_singular('post') && has_post_thumbnail() ) {
-		Style::serverPush( get_the_post_thumbnail_url(null) );
-	}
 	
 }
 
-add_action( 'template_redirect', '_svbk_server_push', 15 );
+add_action( 'wp', '_svbk_server_push', 15 );
 
 
 /**
@@ -365,26 +362,6 @@ function _svbk_html_attributes( $attributes ){
 	return $attributes;
 }
 add_filter( '_svbk_html_attributes', '_svbk_html_attributes' );
-
-/**
- * Add resource hints
- *
- * @param array  $urls URLs to print for resource hints.
- * @param string $relation_type The relation type the URLs are printed for, 
- * e.g. 'preconnect' or 'prerender'.
- *
- * @return array
- */
-function _svbk_add_resource_hints( $urls, $relation_type ) {
-	
-	if ( 'preconnect' == $relation_type ) {
-		$urls[] = '//cdn.jsdelivr.net';
-		$urls[] = '//fonts.googleapis.com';
-	}
-	
-	return $urls;
-}
-add_filter( 'wp_resource_hints', '_svbk_add_resource_hints', 10, 2 );
 
 
 /**
@@ -605,3 +582,5 @@ require get_template_directory() . '/inc/post-types.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+

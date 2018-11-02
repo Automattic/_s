@@ -107,6 +107,13 @@ use \Svbk\WP\Helpers;
 						?>
 					</nav><!-- #site-navigation -->
 					<?php endif; ?>
+					
+					<?php 
+					if ( function_exists( '_svbk_myaccount_sidebar_profile' ) ) {
+						_svbk_myaccount_sidebar_profile(); 
+					}
+					?>
+					
 				</div>
 			
 			</div>

@@ -32,10 +32,10 @@ add_action( 'after_setup_theme', '_svbk_woocommerce_setup' );
  */
 function _svbk_woocommerce_scripts() {
 	
-	Style::enqueue( '_svbk-wc-cart', '/dist/css/wc-cart.css', [ 'source' => 'theme', 'condition' => is_cart() ] );
-	Style::enqueue( '_svbk-wc-product', '/dist/css/wc-product.css', [ 'source' => 'theme', 'condition' => is_product() ] );
-	Style::enqueue( '_svbk-wc-checkout', '/dist/css/wc-checkout.css', [ 'source' => 'theme', 'condition' => is_checkout() ] );
-	Style::enqueue( '_svbk-wc-account', '/dist/css/wc-account.css', [ 'source' => 'theme', 'condition' => is_account_page() ] );		
+	Style::enqueue( '_svbk-wc-product', '/dist/css/wc-product.css', [ 'source' => 'theme', 'condition' => is_product(), 'prefetch' =>  is_shop() || is_archive('product')  ] );
+	Style::enqueue( '_svbk-wc-cart', '/dist/css/wc-cart.css', [ 'source' => 'theme', 'condition' => is_cart(), 'prefetch' => is_product() ] );
+	Style::enqueue( '_svbk-wc-checkout', '/dist/css/wc-checkout.css', [ 'source' => 'theme', 'condition' => is_checkout(), 'prefetch' => is_cart() ] );
+	Style::enqueue( '_svbk-wc-account', '/dist/css/wc-account.css', [ 'source' => 'theme', 'condition' => is_account_page(),  ] );		
 	Style::enqueue( '_svbk-wc-shop', '/dist/css/wc-shop.css', [ 'source' => 'theme', 'condition' => is_shop() || is_archive('product') ] );
 	
 	Script::enqueue( 'wc-add-to-cart', null, [ 'condition' => is_woocommerce() ] );
@@ -287,3 +287,35 @@ if ( ! function_exists( '_svbk_woocommerce_header_cart' ) ) {
 	}
 }
 
+
+function _svbk_activate_gutenberg_products($can_edit, $post_type){
+	
+	if ( 'product' == $post_type ){
+		$can_edit = true;
+	}
+	
+	return $can_edit;
+}
+add_filter('gutenberg_can_edit_post_type', '_svbk_activate_gutenberg_products', 10, 2);
+
+
+function _svbk_myaccount_sidebar_profile() {
+?>
+
+<nav class="profile-nav" >
+	<ul class="menu">
+		<?php
+		if ( is_user_logged_in() ) : $member = wp_get_current_user(); ?>
+		<li class="menu-item logout">
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Go to My Account','_svbk'); ?>">
+				<?php echo get_avatar( $member->ID, 'thumbnail' ); ?>
+				<span class="user-name"><?php echo esc_html( $member->user_firstname . '&nbsp;' . substr($member->user_lastname, 0, 1) . '.'); ?></span>
+			</a>
+		</li>
+		<?php else: ?>
+		<li class="menu-item login"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login','_svbk'); ?>"><?php _e('Login','_svbk'); ?></a></li>
+		<?php endif; ?>
+	</ul>
+</nav>
+<?php
+}

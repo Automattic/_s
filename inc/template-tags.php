@@ -112,7 +112,7 @@ if ( ! function_exists( '_svbk_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function _svbk_post_thumbnail() {
+	function _svbk_post_thumbnail( $size = null, $attr = array() ) {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -121,18 +121,18 @@ if ( ! function_exists( '_svbk_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail domready--show">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail($size, $attr); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
+			the_post_thumbnail( $size, array_merge ( array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
-				) ),
-			) );
+				)),
+			), $merge) );
 			?>
 		</a>
 
