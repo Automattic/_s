@@ -8,12 +8,34 @@
 
 .woocommerce-product-gallery {
 	position: relative;
+    margin-bottom: 50px;
 	
 	.woocommerce-product-gallery__trigger {
 		position: absolute;
 		z-index: 1;
 		text-decoration: none;
 		padding: 5px;
+		background: $color__corporate;
+		right: 10px;
+		top: 10px;
+		border-radius: 3px;
+		color: #fff;
+		text-indent: -999px;
+		overflow: hidden;
+		width: 30px;
+		height: 30px;
+		
+		&:before {
+		    @include icon-content("\e912");
+		    text-indent: 0;
+		    line-height: 30px;
+		    width: 30px;
+		    height: 30px;
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    text-align: center;
+		}
 	}
 	
 	figure {
@@ -36,6 +58,7 @@
         li {
            float: left;
            width: 18%;
+           position: relative;
            margin-right: 2.5%;
            
            &:last-of-type {
@@ -46,7 +69,7 @@
         li:before {
             display: none;
         }
-    }
+    }   
     
     @media screen and (min-width: breakpoint('tablet-portrait')) {
     	float: left;
@@ -62,6 +85,7 @@
 
 .summary {
     margin: 0;
+    margin-bottom: 50px;
     
 	.product_title {
 		margin: 30px 0 20px;

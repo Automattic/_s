@@ -20,7 +20,6 @@
 @import "shop/components";
 
 .woocommerce-form-login {
-    background: #fff;
     
     > p {
         max-width: 450px;
@@ -54,18 +53,6 @@
 }
 
 .woocommerce-account {
-    background: $color__background-body;
-    
-    #page {
-        background: rgba(255,255,255,0);
-    }
-    
-    #primary {
-        background: $color__background-page;
-        margin: 30px 0;
-        padding: 0 20px 50px;
-        box-shadow: 0 0 3px rgba(0,0,0,.2);
-    }
     
     .woocommerce-MyAccount-navigation {
         text-align: center;
@@ -142,8 +129,6 @@
     @media screen and (min-width: breakpoint('tablet-landscape')) {
         
         #primary {
-            background: rgba(255,255,255,0);
-            box-shadow: none;
             padding: 0 0 50px;
             
             &:after {
@@ -154,9 +139,6 @@
         
         .woocommerce-MyAccount-navigation,
         .woocommerce-MyAccount-content {
-            background: $color__background-page;
-            box-shadow: 0 0 3px rgba(0,0,0,.2);
-            padding: 20px;
             float: left;
         }
         

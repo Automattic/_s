@@ -8,6 +8,7 @@
  */
 
 use \Svbk\WP\Helpers;
+use \Svbk\WP\Helpers\Assets\Asset;
 use \Svbk\WP\Helpers\Assets\Style;
 use \Svbk\WP\Helpers\Assets\Script;
 use \Svbk\WP\Helpers\CDN\JsDelivr;
@@ -278,6 +279,17 @@ function _svbk_scripts() {
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
 
 
+function _svbk_server_push(){
+	
+	if ( is_singular('post') && has_post_thumbnail() ) {
+		Style::serverPush( get_the_post_thumbnail_url(null) );
+	}
+	
+}
+
+add_action( 'template_redirect', '_svbk_server_push', 15 );
+
+
 /**
  * Enqueue fonts from config file
  *
@@ -431,9 +443,9 @@ add_filter( 'wp_get_attachment_image_attributes', '_svbk_post_thumbnail_sizes_at
 function _svbk_domready_loader(){ ?>
   <script type="text/javascript" >
   
-	var loaderTimeout = setTimeout( function(){
-		document.documentElement.classList.remove('domloading');
-	}, 900 );
+	// var loaderTimeout = setTimeout( function(){
+	// 	document.documentElement.classList.remove('domloading');
+	// }, 10 );
 	
 	var domReadyClass = function(){
 		document.documentElement.classList.add('domready');
@@ -443,7 +455,7 @@ function _svbk_domready_loader(){ ?>
 	var tm = setTimeout( domReadyClass, 2000 );
 	document.addEventListener("load", function(){
 		clearTimeout(tm);
-		clearTimeout(loaderTimeout);
+		//clearTimeout(loaderTimeout);
 		domReadyClass();
 	});
    	
