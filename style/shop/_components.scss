@@ -63,12 +63,12 @@
 	.widget_shopping_cart {
 	    position: absolute;
 	    right: -10px;
-	    width: 200px;
+	    width: 230px;
 	    background: #fff;
-	    padding: 15px 15px 0;
 	    z-index: 9;
 	    box-shadow: 0 0 3px rgba(0,0,0,.1);
 	    @include font-size(.8);
+	    display: none;
 	    
 		&:before {
 		    content: "";
@@ -90,22 +90,24 @@
 	    
 	    .mini_cart_item {
 	    	border-bottom: 1px solid #f5f5f5;
-	    	padding-top: 20px;
+    		padding: 15px;
 	    	position: relative;
-	    	padding: 15px 15px 10px 40px;
 	    	
-	    	a {
+	    	> a {
 	    		position: static;
+	    		display: block;
+	    		line-height: 20px;
 	    	}
 	    	
 	    	.remove {
-	    		position: absolute;
-	    		top: 0;
-	    		right: 0;
+	    		position: relative;
 	    		text-indent: -999px;
 	    		width: 20px;
 	    		height: 20px;
 	    		text-decoration: none;
+	    		overflow: hidden;
+	    		display: block;
+	    		float: left;
 	    		
 	    		&:after {
 	    			@include icon-content("\e91f");
@@ -117,6 +119,7 @@
 	    			position: absolute;
 	    			top: 0;
 	    			right: 0;
+	    			line-height: 20px;
 	    		}
 	    	}
 	    	
@@ -124,16 +127,21 @@
 	    		max-width: 30px;
 	    		max-height: 30px;
 	    		display: block;
-	    		position: absolute;
-	    		left: 0;
-	    		top: 25px;
+				float: right;
+				border-radius: 5px;
 	    	}
 	    	
 	    	.quantity {
 	    		display: block;
 	    		line-height: normal;
+	    		margin-top: 5px;
 	    	}
 	    }
+	    
+		.buttons,
+		.total {
+			padding: 0 15px;
+		}
 	    
 	    .total {
 	    	margin: 10px 0;
@@ -151,6 +159,10 @@
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		
+		&:hover .widget_shopping_cart {
+			display: block;
+		}
 		
 		 .widget_shopping_cart {
 		 	margin-top: -20px;	
@@ -190,6 +202,18 @@
 
 .woocommerce-breadcrumb {
 	margin: 30px 0 15px;
+	@include font-size(.9);
+	
+	a {
+		text-decoration: none;
+	}
+	
+	a:first-of-type:before {
+		@include icon-content("\e920");
+		@include font-size(.8);
+		vertical-align: bottom;
+		margin-right: 5px;
+	}
 }
 
 /**
