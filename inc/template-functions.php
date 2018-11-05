@@ -93,7 +93,7 @@ function _svbk_get_post_reading_time( $words_per_minute = 200 ) {
 
 function _svbk_preview_navigation_link( $output, $format, $link, $adjacent_post, $adjacent ) {
 	
-	global $post;
+	global $post, $wp_query;
 	
 	$current_post = $post;
 	$post = $adjacent_post;		
@@ -101,7 +101,11 @@ function _svbk_preview_navigation_link( $output, $format, $link, $adjacent_post,
     
     ob_start();
     
+    $wp_query->query_vars['navigation_adjacent'] = $adjacent;
+    
 	get_template_part( 'template-parts/pagination', get_post_type() );
+    
+    unset($wp_query->query_vars['navigation_adjacent']);
     
     $html = ob_get_contents();
     ob_end_clean();
