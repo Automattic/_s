@@ -47,13 +47,15 @@ a {
     		object-fit: cover;
     	}
     	
-    	> h3 {
+    	.nav-preview__adjacent {
 			margin: 0;
 			background: #f3f3f3;
 			text-transform: uppercase;
 			@include font-size(.9);
 			position: relative;
 			font-weight: 600;
+			display: block;
+			padding: 3px 0;
 			
 			&:after {
 				position: absolute;
@@ -68,30 +70,30 @@ a {
 		margin-bottom: 25px;
 	}
 	
-	.nav-next > h3 {
-		padding-right: 30px;
+	.nav-next .nav-preview__adjacent {
+		padding-left: 10px;
 		text-align: left;
 		
 		&:after {
-			@include icon("\e90d");
+			@include icon-content("\e90e");
 			right: 10px;
 		}
 	}
 	
-	.nav-previous > h3 {
-		padding-right: 30px;
+	.nav-previous .nav-preview__adjacent {
+		padding-right: 10px;
 		text-align: right;
 		
 		&:after {
-			@include icon("\e90e");
+			@include icon-content("\e90d");
 			left: 10px;
 		}
 	}
     
     .entry-title {
     	padding: 0 15px;
-    	margin: 10px 0 15px;
-    	@include font-size(1.2);
+    	margin: 10px 0;
+    	@include font-size(1.3);
     	text-align: left;
         
         a {
