@@ -230,7 +230,7 @@ function _svbk_scripts() {
 	
 	// Page-specific styles
 	Style::enqueue( '_svbk-front-page',	 '/dist/css/front-page.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_front_page(), 'prefetch' => !is_front_page() ] );
-	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home(), 'prefetch' => !is_home() ] );
+	Style::enqueue( '_svbk-blog',		 '/dist/css/blog.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_home() || is_archive('post'), 'prefetch' => !is_home() && !is_archive('post') ] );
 	Style::enqueue( '_svbk-single-post', '/dist/css/single-post.css',	[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_singular('post'), 'prefetch' => is_home() ] );
 	Style::enqueue( '_svbk-page',		 '/dist/css/page.css',			[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_page() && ! (is_front_page() || is_home()), 'prefetch' => is_page() ] );
 	Style::enqueue( '_svbk-search',		 '/dist/css/search.css',		[ 'deps' => array( '_svbk-common' ), 'source' => 'theme', 'condition' => is_search() ] );
@@ -261,7 +261,12 @@ function _svbk_scripts() {
 
 	if ( get_theme_mod( 'sticky_header' ) ) {
 		wp_enqueue_script( 'waypoints-sticky' );
-		wp_add_inline_script( 'waypoints-sticky', 'var stickyHeaderContent = document.getElementById(\'site-header-content\'); if (stickyHeaderContent != null) { var sticky = new Waypoint.Sticky({ element: stickyHeaderContent }) }' );
+		wp_add_inline_script( 'waypoints-sticky', '
+			var stickyHeaderContent = document.getElementById(\'masthead\'); 
+			if (stickyHeaderContent != null) { 
+				var sticky = new Waypoint.Sticky({ element: stickyHeaderContent, offset: -100 });
+			};
+		' );
 	}
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -349,7 +354,7 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ){
  */
 function _svbk_html_attributes( $attributes ){
 	
-	$attributes['class'][] = 'domloading';
+	//$attributes['class'][] = 'domloading';
 	
 	if ( filter_input( INPUT_COOKIE, 'fonts_loaded', FILTER_VALIDATE_BOOLEAN ) ) {
 		$attributes['class'][] = 'fonts-loaded'; 
