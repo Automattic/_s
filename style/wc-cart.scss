@@ -83,12 +83,12 @@ h2 {
 
     td:first-of-type {
         border-right: none;
-        border-left: 1px solid #f0f0f0;
+        border-left: 1px solid $color__background-hr;
     }
     
     tr {
-        border-top: 1px solid #f0f0f0;
-        border-bottom: 1px solid #f0f0f0;
+        border-top: 1px solid $color__background-hr;
+        border-bottom: 1px solid $color__background-hr;
         
         &:first-of-type {
             border-top: none;

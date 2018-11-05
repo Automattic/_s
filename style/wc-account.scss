@@ -126,7 +126,7 @@
         }
     }
     
-    @media screen and (min-width: breakpoint('tablet-desktop')) {
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
         
         #primary {
             padding: 0 0 50px;
@@ -250,7 +250,7 @@
         td {
             display: block;
             position: relative;
-            border-top: 1px solid #f0f0f0;
+            border-top: 1px solid $color__background-hr;
             padding: 10px 15px 10px calc(40% + 10px);
             text-align: right;
             line-height: 1.2em;

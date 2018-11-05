@@ -175,7 +175,7 @@
  */
  
 .menu-item.login {
-	border-top: 1px solid #f0f0f0;
+	border-top: 1px solid $color__background-hr;
 
 	a {
     	text-transform: none;
@@ -247,7 +247,7 @@
  */
 
 table {
-    border: 1px solid #f0f0f0;
+    border: 1px solid $color__background-hr;
     background: #fff;
     @include font-size(.9);
     border-spacing: 0;
@@ -270,11 +270,11 @@ table {
     }
     
     tr {
-        border-top: 1px solid #f0f0f0;
+        border-top: 1px solid $color__background-hr;
     }
     
     th, td {
-    	border-right: 1px solid #f0f0f0;
+    	border-right: 1px solid $color__background-hr;
     	padding: 10px 15px;
     }
     
@@ -410,7 +410,7 @@ p.stars {
 			display: block;
 			margin: 0;
 			position: relative;
-			border: 1px solid #f0f0f0;
+			border: 1px solid $color__background-hr;
 			border-bottom: none;
 		    
 		    &:before {
@@ -418,7 +418,7 @@ p.stars {
 		    }
 			
 			&:last-of-type {
-				border-bottom: 1px solid #f0f0f0;
+				border-bottom: 1px solid $color__background-hr;
 			}
 			
 			&.active {
@@ -446,7 +446,7 @@ p.stars {
 			
 			li {
 				float: left;
-				border-bottom: 1px solid #f0f0f0;
+				border-bottom: 1px solid $color__background-hr;
 			}
 		}
 	}
