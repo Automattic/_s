@@ -116,7 +116,8 @@
 				background-color: rgba(255,255,255,0);
 			}
 			
-			> a:after {
+			> a:after,
+			&.expanded > a:after {
 				@include icon-content("\e90b");
 				position: static;
 				margin-left: 5px;
@@ -163,5 +164,20 @@
 			width: auto;
 			box-shadow: none;
 		}
+	}
+}
+
+.menu-item.login,
+.menu-item.logout {
+	
+	img {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	a, span {
+		text-transform: none;
 	}
 }

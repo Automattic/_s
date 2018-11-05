@@ -5,6 +5,11 @@
         
         #main-navigation {
             float: right;
+            
+            nav {
+                float: left;
+                margin-left: 15px;
+            }
         }
     }
 }

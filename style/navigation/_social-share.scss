@@ -1,12 +1,8 @@
 div.sharedaddy,
 #content div.sharedaddy,
 #main div.sharedaddy {
-	position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    z-index: 99;
+	border-top: 1px solid #f0f0f0;
+	padding-top: 10px;
     
     .sd-title {
     	@include font-size(1);
@@ -33,7 +29,7 @@ div.sharedaddy,
 				margin: 0;
 				text-align: center;
 				float: left;
-				width: 20%;
+				width: 60px;
 				display: block;
 				
 				&:before {
@@ -67,28 +63,6 @@ div.sharedaddy,
 				&.share-jetpack-whatsapp {
 					background: #43d854;
 				}
-			}
-		}
-	}
-	
-	@media screen and (max-width: breakpoint('tablet-portrait')) {
-
-		.sd-title {
-			@include screen-reader-text();
-		}
-	}
-	
-	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		position: static;
-		border-top: 1px solid #f0f0f0;
-		padding-top: 10px;
-		
-		.sd-content ul li {
-			width: 60px;
-			margin-right: 5px;
-			
-			a {
-				padding: 8px 0;
 			}
 		}
 	}

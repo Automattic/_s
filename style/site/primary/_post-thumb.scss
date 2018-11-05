@@ -3,6 +3,10 @@
     position: relative;
     padding-bottom: 40px;
     
+    img {
+        width: 100%;
+    }
+    
     > a {
         display: block;
     }
@@ -18,8 +22,13 @@
         padding-right: 20px;
     }
     
-    .post__meta .reading-time {
-        right: 20px;
+    .post__meta {
+        @include font-size(.8);
+        line-height: normal;
+        
+        .reading-time {
+            right: 20px;
+        }
     }
     
     .post__title {
@@ -28,6 +37,16 @@
         a {
             text-decoration: none;
             color: $color__text-main;
+            line-height: normal;
+            display: block;
+        }
+    }
+    
+    .post__excerpt {
+        margin: 0;
+        
+        p {
+            margin-top: 0;
         }
     }
     

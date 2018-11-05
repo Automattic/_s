@@ -41,6 +41,10 @@
         line-height: $size__header-height-mobile;
     }
     
+    #main-navigation {
+        background: #fff;
+    }
+    
     @media screen and (min-width: breakpoint('tablet-landscape')) {
         
         .wrap {
@@ -64,6 +68,7 @@
         #main-navigation {
             right: 0;
             text-align: center;
+            background: none;
             
             ul:after {
                 @include clearfix();
@@ -71,7 +76,7 @@
             }
             
             li {
-               margin-right: 10px;
+               margin-right: 15px;
                float: left;
                
                 a {
@@ -96,7 +101,7 @@
     
 //@import 'center-aligned';
 @import 'left-aligned';
-@import 'top-header';
+//@import 'top-header';
 
 @import "left-mobile-nav";
 //@import "right-mobile-nav";

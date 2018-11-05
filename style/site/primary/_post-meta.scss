@@ -1,7 +1,7 @@
 .post__meta {
     width: 100%;
     position: relative;
-    padding-right: 80px;
+    padding-right: 90px;
     margin-bottom: 15px;
     
     .cat-links {
@@ -25,8 +25,8 @@
             display: inline-block;
             vertical-align: middle;
             text-indent: -999px;
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             position: relative;
             overflow: hidden;
             
@@ -35,8 +35,9 @@
                 text-indent: 0;
                 right: 0;
                 top: 0;
-                line-height: 25px;
-                width: 25px;
+                line-height: 20px;
+                width: 20px;
+                height: 20px;
                 text-align: center;
                 @include icon-content("\e902");
             }
