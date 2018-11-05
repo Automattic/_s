@@ -171,6 +171,32 @@
 }
 
 /**
+ * Login link
+ */
+ 
+.menu-item.login {
+	border-top: 1px solid #f0f0f0;
+
+	a {
+    	text-transform: none;
+	}
+	
+	a:before {
+		@include icon-content("\e913");
+		background: $color__text-main;
+		margin-right: 5px;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+    	font-size: 12px;
+	}
+}
+
+/**
  * Price
  */
 
@@ -429,7 +455,7 @@ p.stars {
 /**
  * Password strength meter
  */
- .woocommerce-password-strength {
+.woocommerce-password-strength {
 	text-align: right;
 
 	&.strong {

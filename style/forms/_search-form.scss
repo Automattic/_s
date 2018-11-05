@@ -23,6 +23,7 @@ form.search-form {
 	  overflow: hidden;
 	  margin-left: 5px;
 	  display: inline-block;
+	  cursor: pointer;
 	  
         &:after {
             @include icon-content("\e912");
@@ -56,7 +57,7 @@ form.search-form {
 
 .site-header .search-form {
     position: absolute;
-    top: 48px;
+    top: $size__header-height-mobile;
     left: 0;
     right: 0;
     width: 100%;
@@ -142,8 +143,8 @@ form.search-form {
         height: 50px;
     }
     
-    @media screen and (min-width: 52em) {
-        top: 87px;
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        top: $size__header-height-desktop;
         
 	    &:before {
 	    	content: "";
