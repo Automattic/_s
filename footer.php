@@ -25,8 +25,8 @@
 			<?php endif ?>
 	
 			<div id="company-info" class="footer-area">
-				<?php if ( get_theme_mod( 'company_address', false ) ) : ?>
-				<span class="company-name"><?php echo get_theme_mod( 'company_address' ) ; ?></span><br/>
+				<?php if ( get_theme_mod( 'company_name', false ) ) : ?>
+				<span class="company-name"><?php echo get_theme_mod( 'company_name' ) ; ?></span><br/>
 				<?php endif; ?>
 				<?php if ( get_theme_mod( 'company_address', false ) ) : ?>
 				<span class="company-address"><?php echo get_theme_mod( 'company_address' ) ; ?></span><br/>

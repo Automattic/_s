@@ -37,6 +37,23 @@
     .sub-footer {
         padding-top: 15px;
         padding-bottom: 15px;
+        
+        .menu-legal-menu-container {
+            display: inline-block;
+            
+            ul {
+                padding: 0;
+            }
+            
+            li {
+                float: left;
+                margin: 0 5px;
+                
+                &:before {
+                    display: none;
+                }   
+            }
+        }
     }
     
     @media screen and (min-width: breakpoint('tablet-landscape')) {
