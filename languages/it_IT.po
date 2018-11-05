@@ -2,22 +2,117 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-05-08 07:12+0000\n"
+"POT-Creation-Date: 2018-11-05 11:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-05-08 07:19+0000\n"
-"Last-Translator: SilverbackStudio <webmaster@silverbackstudio.it>\n"
-"Language-Team: Italian\n"
-"Language: it-IT\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
-"X-Generator: Loco - https://localise.biz/"
+"PO-Revision-Date: 2018-11-05 11:31+0000\n"
+"Last-Translator: silverbackstudio <webmaster@silverbackstudio.it>\n"
+"Language-Team: Italiano\n"
+"Language: it_IT\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Loco https://localise.biz/"
 
-#: 404.php:17
+#: functions.php:150
+msgid "Primary"
+msgstr "Principale"
+
+#: functions.php:151
+msgid "Not Found (404) Page"
+msgstr "Pagina 404"
+
+#: functions.php:187
+msgid "Sidebar"
+msgstr "Colonna laterale"
+
+#: functions.php:189
+msgid "Add widgets here."
+msgstr "Aggiungi qui gli Widget"
+
+#: functions.php:199
+msgid "Shop Sidebar"
+msgstr "Barra laterale negozio"
+
+#: functions.php:201
+msgid "This widgets will be shown in the shop sidebar"
+msgstr "Questi widget verranno mostrati accanto ai prodotti nel negozio"
+
+#: functions.php:496
+msgid "Compliance"
+msgstr "Conformità"
+
+#: functions.php:500
+msgid "Privacy Policy"
+msgstr "Informativa sulla privacy"
+
+#: functions.php:508
+msgid "Cookie Policy"
+msgstr "Informativa sui cookie"
+
+#: header.php:29
+msgid "Skip to content"
+msgstr "Vai la contenuto"
+
+#: header.php:35 footer.php:63
+msgid "Customize this text in Theme Customizer"
+msgstr "Modifica questo testo nel personalizzazione del tema"
+
+#: header.php:91
+msgid "Toggle Search"
+msgstr "Mostra/Nascondi Cerca"
+
+#: header.php:96
+msgid "Primary Menu"
+msgstr "Menu principale"
+
+#: footer.php:57
+#, php-format
+msgid "Made with passion by %s"
+msgstr "Realizzato da %s"
+
+#: home.php:30 category.php:30
+msgid "All categories"
+msgstr "Tutte le categorie"
+
+#: home.php:63 category.php:53
+msgctxt "previous set of posts"
+msgid "Previous"
+msgstr "Precedenti"
+
+#: home.php:64 category.php:54
+msgctxt "next set of posts"
+msgid "Next"
+msgstr "Successivi"
+
+#: search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Risultati Ricerca per: %s"
+
+#. 1: title.
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "Un commento su &ldquo;%1$s&rdquo;"
+
+#. 1: comment count number, 2: title.
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s commento su &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commento su &ldquo;%2$s&rdquo;"
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "I commenti sono disabilitati"
+
+#: 404.php:18
 msgid "That page can&rsquo;t be found."
 msgstr "Questa pagina non è stata trovata"
 
-#: 404.php:21
+#: 404.php:22
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -25,214 +120,66 @@ msgstr ""
 "A questo indirizzo non corrisponde nessuna pagina. Puoi provare con i "
 "collegamenti sottostanti o con il campo ricerca. "
 
-#: home.php:27
-msgid "All categories"
-msgstr "Tutte le categorie"
+#: 404.php:23
+msgid "Back to home"
+msgstr "Torna alla home"
 
-#: header.php:40
-msgid "Toggle Search"
-msgstr "Mostra/Nascondi Cerca"
-
-# uesto testo nel
-#: footer.php:41
-msgid "Customize this text in Theme Customizer"
-msgstr "Modifica questo testo nel personalizzazione del tema"
-
-#: inc/template-tags.php:200
-msgid "Load more"
-msgstr "Carica altri"
-
-#: inc/customizer.php:19
-msgid "Header"
-msgstr "Intestazione"
-
-#: inc/customizer.php:26
-msgid "Sticky Header"
-msgstr "Intestazione bloccata in alto"
-
-#: inc/customizer.php:27
-msgid "Makes the header stay on top of page after scroll"
-msgstr "Lascia la testata bloccata in alto quando scorri la pagina"
-
-#: inc/customizer.php:37
-msgid "Fade header images"
-msgstr "Mostra in dissolvenza tutte le immagini di testata"
-
-#: inc/customizer.php:38
-msgid "Cycle through all header images with a CSS fade effect"
-msgstr "Scorri tutte le immagini di testata con un effetto dissolvenza CSS"
-
-#: inc/customizer.php:45
-msgid "Archives"
-msgstr "Archivi"
-
-#: inc/customizer.php:46
-msgid "Archive Customizations"
-msgstr "Personalizzazione archivi"
-
-#: inc/customizer.php:63
-#, php-format
-msgid "%s Archive Image"
-msgstr "Immagine Archivio %s"
-
-#: inc/customizer.php:69
-#, php-format
-msgid "%s Archive Description"
-msgstr "Descrizione Archivio %s"
-
-#: inc/customizer.php:98
-msgid "Fixed Footer Bar"
-msgstr "Barra bloccata nel pié di pagina"
-
-#: inc/customizer.php:99
-msgid "Fixed Footer Bar Content (supports HTML and shortcode)"
-msgstr "Contenuto barra bloccata nel pié di pagina (supporta HTML e shortcode)"
-
-#: inc/customizer.php:105
-msgid "Show Fixed Footer Bar"
-msgstr "Mostra la barra fissa nel pié di pagina"
-
-#: template-parts/thumb.php:21
-msgid "Read More"
-msgstr "Leggi di piú"
-
-#: functions.php:64
-msgid "Primary"
-msgstr "Principale"
-
-#: functions.php:65
-msgid "Not Found (404) Page"
-msgstr "Pagina 404"
-
-#: functions.php:127
-msgid "Sidebar"
-msgstr "Colonna laterale"
-
-#: functions.php:129
-msgid "Add widgets here."
-msgstr "Aggiungi qui gli Widget"
-
-#: comments.php:31
-#, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un commento su &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s commenti su &ldquo;%2$s&rdquo;"
-
-#: comments.php:40 comments.php:61
-msgid "Comment navigation"
-msgstr "Navigazione commenti"
-
-#: comments.php:43 comments.php:64
-msgid "Older Comments"
-msgstr "Commenti precedenti"
-
-#: comments.php:44 comments.php:65
-msgid "Newer Comments"
-msgstr "Commenti più recenti"
-
-#: comments.php:78
-msgid "Comments are closed."
-msgstr "I commenti sono disabilitati"
-
-#: search.php:19
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Risultati Ricerca per: %s"
-
-#: header.php:25
-msgid "Skip to content"
-msgstr "Vai la contenuto"
-
-#: header.php:35
-msgid "Primary Menu"
-msgstr "Menu principale"
-
-#: footer.php:24
-msgid "Headquarters"
-msgstr "Sede operativa"
-
-#: footer.php:34
-#, php-format
-msgid "Made with passion by %s"
-msgstr "Realizzato da %s"
-
-#: inc/template-tags.php:28
+#. %s: post date.
+#: inc/template-tags.php:29
 #, php-format
 msgctxt "post date"
-msgid "Posted on %s"
-msgstr "Redatto il %s"
+msgid "<span class=\"screen-reader-text\" >Posted on </span>%s"
+msgstr "<span class=\"screen-reader-text\" >Pubblicato il </span>%s"
 
-#: inc/template-tags.php:33
+#: inc/template-tags.php:45
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr "di %s"
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:50 inc/template-tags.php:56
-msgid ", "
-msgstr ","
-
-#: inc/template-tags.php:52
-#, php-format
-msgid "Posted in %1$s"
-msgstr "Scritto in %1$s"
-
-#: inc/template-tags.php:58
-#, php-format
-msgid "Tagged %1$s"
-msgstr "Taggato in %1$s"
-
-#: inc/template-tags.php:65
+#: inc/template-tags.php:66
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "Scrivi un commento su %s"
 
-#. translators: %s: Name of current post
-#: inc/template-tags.php:72 template-parts/content-page.php:34
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:91
+msgid ", "
+msgstr ","
+
+#: inc/template-tags.php:94
 #, php-format
-msgid "Edit %s"
-msgstr "Modifica %s"
+msgid "Posted in %1$s"
+msgstr "Scritto in %1$s"
 
-#: inc/customizer.php:79
-msgid "Footer"
-msgstr "Footer"
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:98
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
 
-#: inc/customizer.php:80
-msgid "Footer Settings"
-msgstr "Impostazioni Footer"
+#: inc/template-tags.php:101
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Taggato in %1$s"
 
-#: inc/customizer.php:85
-msgid "Footer Logo"
-msgstr "Logo nel footer"
+#: inc/template-tags.php:297
+msgid "Load more"
+msgstr "Carica altri"
 
-#: inc/editor.php:9
-msgid "Dropcap"
-msgstr "Capolettera"
+#: inc/template-tags.php:416
+#, php-format
+msgid "%s min"
+msgid_plural "%s mins"
+msgstr[0] "%s min"
+msgstr[1] "%s min"
 
-#: inc/editor.php:21
-msgid "Collapse"
-msgstr "Collapse"
+#: inc/template-tags.php:419
+msgctxt "post reading time label"
+msgid "Reading"
+msgstr "Tempo di lettura"
 
-#: inc/editor.php:28
-msgid "Accordion"
-msgstr "Accordion"
-
-#: inc/editor.php:35
-msgid "Subtitle"
-msgstr "Sottotitolo"
-
-#: inc/editor.php:41
-msgid "Callout / Pull Quote"
-msgstr "Citazione Interna"
-
-#: inc/editor.php:47
-msgid "Highlighted Paragraph"
-msgstr "Paragrafo Evidenziato"
-
-#: inc/shortcode-ui.php:17
+#: inc/shortcode-ui.php:38
 msgid ""
 "Shortcode UI plugin must be active for Shortcode UI Example plugin to "
 "function."
@@ -240,28 +187,146 @@ msgstr ""
 "Il plugin Shortcode UI deve essere presente e attivato per abilitare "
 "l'interfaccia grafica"
 
-#. translators: %s: Name of current post.
-#: template-parts/content.php:33
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Prosegui la lettura %s <span class=\"meta-nav\">&rarr;</span>"
+#: inc/woocommerce.php:243
+msgid "View your shopping cart"
+msgstr "Visualizza il tuo carrello"
 
-#: template-parts/content.php:38 template-parts/content-page.php:22
+#. %d number of items in the mini cart
+#: inc/woocommerce.php:247
+#, php-format
+msgid "%d <span class=\"screen-reader-text\">item</span>"
+msgid_plural "%d <span class=\"screen-reader-text\">items</span>"
+msgstr[0] "%d <span class=\"screen-reader-text\">prodotto</span>"
+msgstr[1] "%d <span class=\"screen-reader-text\">prodotti</span>"
+
+#: inc/woocommerce.php:308
+msgid "Go to My Account"
+msgstr "Vai alla tua area riservata"
+
+#: inc/woocommerce.php:314
+msgid "Login"
+msgstr "Accedi"
+
+#: inc/customizer.php:19
+msgid "Header"
+msgstr "Intestazione"
+
+#: inc/customizer.php:29
+msgid "Sticky Header"
+msgstr "Intestazione bloccata in alto"
+
+#: inc/customizer.php:30
+msgid "Makes the header stay on top of page after scroll"
+msgstr "Lascia la testata bloccata in alto quando scorri la pagina"
+
+#: inc/customizer.php:44
+msgid "Fade header images"
+msgstr "Mostra in dissolvenza tutte le immagini di testata"
+
+#: inc/customizer.php:45
+msgid "Cycle through all header images with a CSS fade effect"
+msgstr "Scorri tutte le immagini di testata con un effetto dissolvenza CSS"
+
+#: inc/customizer.php:54
+msgid "Archives"
+msgstr "Archivi"
+
+#: inc/customizer.php:55
+msgid "Archive Customizations"
+msgstr "Personalizzazione archivi"
+
+#: inc/customizer.php:86
+#, php-format
+msgid "%s Archive Image"
+msgstr "Immagine Archivio %s"
+
+#: inc/customizer.php:96
+#, php-format
+msgid "%s Archive Description"
+msgstr "Descrizione Archivio %s"
+
+#: inc/customizer.php:108
+msgid "Footer"
+msgstr "Footer"
+
+#: inc/customizer.php:109
+msgid "Footer Settings"
+msgstr "Impostazioni Footer"
+
+#: inc/customizer.php:117
+msgid "Footer Logo"
+msgstr "Logo nel footer"
+
+#: inc/customizer.php:138
+msgid "Fixed Footer Bar"
+msgstr "Barra bloccata nel pié di pagina"
+
+#: inc/customizer.php:139
+msgid "Fixed Footer Bar Content (supports HTML and shortcode)"
+msgstr "Contenuto barra bloccata nel pié di pagina (supporta HTML e shortcode)"
+
+#: inc/customizer.php:147
+msgid "Show Fixed Footer Bar"
+msgstr "Mostra la barra fissa nel pié di pagina"
+
+#: inc/customizer.php:157
+msgid "Contacts"
+msgstr "Contatti"
+
+#: inc/customizer.php:158
+msgid "Contact informations"
+msgstr "Informazioni di contatto"
+
+#: inc/customizer.php:189
+msgid "Company Name"
+msgstr "Nome Azienda"
+
+#: inc/customizer.php:197
+msgid "Address"
+msgstr "Indirizzo"
+
+#: inc/customizer.php:205
+msgid "Phone"
+msgstr "Telefono"
+
+#: inc/customizer.php:213
+msgid "Email"
+msgstr "Indirizzo E-mail"
+
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:28 template-parts/content-post.php:44
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Leggi <span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content.php:39 template-parts/content-post.php:55
 msgid "Pages:"
 msgstr "Pagine:"
+
+#: template-parts/pagination-post.php:10
+msgid "Previous"
+msgstr "Precedente"
+
+#: template-parts/pagination-post.php:10
+msgid "Next"
+msgstr "Successivo"
+
+#: template-parts/preview.php:34
+msgid "Read More"
+msgstr "Leggi di piú"
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr "Nessun risultato trovato"
 
-#: template-parts/content-none.php:21
+#: template-parts/content-none.php:24
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Pronto a pubblicare il tuo primo post? <a href=\"%1$s\">Inizia adesso</a>."
 
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:37
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -269,13 +334,17 @@ msgstr ""
 "Siamo spiacenti, ma nessun risultato corrisponde alla tua ricerca. Ti "
 "consigliamo di ritentare con parole chiave differenti."
 
-#: template-parts/content-none.php:31
+#: template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 "Non siamo riusciti a trovare quello che cercavi. Ti consigliamo di "
 "utilizzare il campo di ricerca."
+
+#: amp/footer.php:12
+msgid "Back to top"
+msgstr "Torna su"
 
 #. Name of the theme
 msgid "_svbk"

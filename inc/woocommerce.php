@@ -243,11 +243,9 @@ if ( ! function_exists( '_svbk_woocommerce_cart_link' ) ) {
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', '_svbk' ); ?>">
 			<?php
 			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				__( '%d %s', '_svbk' ),
-				WC()->cart->get_cart_contents_count(),
-				/* translators: number of items in the mini cart. */
-				'<span class="screen-reader-text">' . _n( 'item', 'items', WC()->cart->get_cart_contents_count(), '_svbk' ) . '</span>'
+				/* translators: %d number of items in the mini cart */
+				_n( '%d <span class="screen-reader-text">item</span>', '%d <span class="screen-reader-text">items</span>', WC()->cart->get_cart_contents_count(), '_svbk' ),
+				WC()->cart->get_cart_contents_count()
 			);
 			?>
 			<span class="count"><?php echo $item_count_text; ?></span>
