@@ -18,9 +18,6 @@
 	<?php if ( 'post' === get_post_type() ) : ?>
 		<div class="post__meta entry-meta">
 			<?php
-			_svbk_entry_terms();
-			_svbk_posted_on();
-			_svbk_posted_by();
 			_svbk_post_reading_time();
 			?>
 		</div><!-- .entry-meta -->
