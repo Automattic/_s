@@ -88,22 +88,23 @@ if ( ! function_exists( '_svbk_entry_terms' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', '_svbk' ) );
+			$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', '_svbk' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_svbk' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="post__categories cat-links">' . esc_html__( 'Posted in %1$s', '_svbk' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_svbk' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', '_svbk' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="post__tags tags-links">' . esc_html__( 'Tagged %1$s', '_svbk' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
 	}
 endif;
+
 
 if ( ! function_exists( '_svbk_post_thumbnail' ) ) :
 	/**

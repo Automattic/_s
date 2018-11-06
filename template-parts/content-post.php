@@ -21,7 +21,13 @@
 		
 		<div class="post__meta entry-meta">
 			<?php
-			_svbk_entry_terms();
+			
+			$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', '_svbk' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="post__categories cat-links">' . esc_html__( 'Posted in %1$s', '_svbk' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+			
 			_svbk_posted_on();
 			_svbk_posted_by();
 			_svbk_post_reading_time();
@@ -60,5 +66,13 @@
 
 	<footer class="post__footer entry-footer domready--show">
 		<?php _svbk_entry_footer(); ?>
+		<?php 
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', '_svbk' ) );
+			if ( $tags_list ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="post__tags tags-links">' . esc_html__( 'Tagged %1$s', '_svbk' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			}
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
