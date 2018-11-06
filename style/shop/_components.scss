@@ -459,19 +459,19 @@ p.stars {
 	text-align: right;
 
 	&.strong {
-		color: $color__success;
+		color: $woocommerce__color-pw-strong;
 	}
 
 	&.short {
-		color: $color__error;
+		color: $woocommerce__color-error;
 	}
 
 	&.bad {
-		color: $color__error;
+		color: $woocommerce__color-error;
 	}
 
 	&.good {
-		color: $color__success;
+		color: $woocommerce__color-pw-good;
 	}
 }
 
@@ -484,7 +484,7 @@ p.stars {
 .woocommerce-noreviews,
 p.no-comments {
 	@include clearfix;
-	background-color: $color__success;
+	background-color: $woocommerce__color-success;
 	clear: both;
 	width: 100%;
 	padding: 10px 15px;
@@ -503,11 +503,11 @@ p.no-comments {
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: $color__info;
+	background-color: $woocommerce__color-info;
 }
 
 .woocommerce-error {
-	background-color: $color__error;
+	background-color: $woocommerce__color-error;
 	
 	li {
 		color: #fff;

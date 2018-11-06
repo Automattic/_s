@@ -9,10 +9,7 @@
 .comments-area {
 	
 	.comments-title {
-		
-		span {
-			text-transform: none;
-		}
+		@include font-size(1.2);
 	}
 	
 	.comment-meta {

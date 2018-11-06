@@ -10,9 +10,19 @@
 	display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
+.post__summary {
+	@include font-size(1.15);
+	font-style: italic;
+	color: #888;
+}
+
+.post__meta {
+    padding-bottom: 10px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.post__content,
+.post__summary {
 	margin: 1.5em 0 0;
 }
 
@@ -27,9 +37,4 @@
 	img {
 		width: 100%;
 	}
-}
-
-.post__summary {
-	font-style: italic;
-	color: #888;
 }

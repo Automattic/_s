@@ -1,8 +1,8 @@
 div.sharedaddy,
 #content div.sharedaddy,
 #main div.sharedaddy {
-	border-top: 1px solid $color__background-hr;
 	padding-top: 10px;
+	text-align: center;
     
     .sd-title {
     	@include font-size(1);
@@ -26,42 +26,27 @@ div.sharedaddy,
 			}
 			
 			li {
-				margin: 0;
+				margin: 0 5px 0;
 				text-align: center;
-				float: left;
-				width: 60px;
-				display: block;
+				display: inline-block;
 				
 				&:before {
 					display: none;
 				}
 				
 				a {
-					padding: 13px 0;
-					border-radius: 0;
+					padding: 0;
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
 					margin: 0;
 					top: 0;
 					display: block;
-				}
-				
-				&.share-facebook {
-					background: #3b5998;
-				}
-				
-				&.share-twitter {
-					background: #00acee;
-				}
-				
-				&.share-google-plus-1 {
-					background: #dd4b39;
-				}
-				
-				&.share-linkedin {
-					background: #0077b5;
-				}
-				
-				&.share-jetpack-whatsapp {
-					background: #43d854;
+					border-radius: 50%;
+					
+					&:before {
+						line-height: 40px;
+					}
 				}
 			}
 		}
