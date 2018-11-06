@@ -16,6 +16,9 @@ use \Svbk\WP\Helpers\Compliance;
 use \Svbk\WP\Helpers\Menu;
 use \Svbk\WP\Helpers\Config;
 
+use Svbk\WP\Widgets;
+use Svbk\WP\Theme\_svbk;
+
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
@@ -140,6 +143,9 @@ function _svbk_setup() {
 		add_image_size( 'breakpoint-' . $key,  $breakpoint, 9999 );		
 	}
 	
+	$sidebar_width_ratio = Config::get('sidebar_width_ratio') ?: 0.3;
+	
+	add_image_size( 'main-sidebar', $content_width * $sidebar_width_ratio, 9999 );		
 	add_image_size( 'header', $max_page_width, $max_page_width * $image_height_ratio );
 
 	set_post_thumbnail_size( $content_width / 2, $content_width / 2 * $image_height_ratio, true );
@@ -205,6 +211,10 @@ function _svbk_widgets_init() {
 			 'after_title'   => '</h2>',
 		 )
 	);	
+	
+	Widgets\Post\Archives::register();
+	_svbk\Widgets\LeadMagnet::register();
+	_svbk\Widgets\About::register();
 }
 add_action( 'widgets_init', '_svbk_widgets_init' );
 
@@ -284,12 +294,6 @@ function _svbk_scripts() {
 	
 } 
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
-
-function _svbk_server_push(){
-	
-}
-
-add_action( 'wp', '_svbk_server_push', 15 );
 
 
 /**
@@ -600,5 +604,3 @@ require get_template_directory() . '/inc/post-types.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
-
-

@@ -3,6 +3,7 @@
     
 	"content_width": 1320,
 	"page_max_width": 2560,	
+	"sidebar_width_ratio": 0.3,
 	
 	"main_breakpoints" : {
 	    "phone":			480,
@@ -23,11 +24,11 @@
 			"font-family": "'Open Sans'"
 		},
 		"headings" : {
-			"_source": "'https://fast.fonts.net/cssapi/eea284e2-584f-48d8-9d24-e593813d05d7.css'",
+			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700'",
 			"_fallback": {
-				"font-family": "'Palatino'"
+				"font-family": ["Arial", "Helvetica", "sans-serif"]
 			},
-			"font-family": "'Adobe Caslon W01'"
+			"font-family": "'Open Sans'"
 		}
 	},
 	
