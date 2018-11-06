@@ -33,8 +33,7 @@ get_header(); ?>
 					</ul>
 					<?php endif; ?>
 
-					<div class="ajax-content">
-						<div class="posts-list post-thumbs">
+					<div class="posts-list post-thumbs">
 							<?php
 		
 							/* Start the Loop */
@@ -48,12 +47,13 @@ get_header(); ?>
 								get_template_part( 'template-parts/preview', get_post_type() );
 		
 							endwhile; ?>
-						</div>
-						<?php the_posts_pagination( array(
-							'prev_text' => '<span class="screen-reader-text">' . _x( 'Previous', 'previous set of posts', '_svbk' ) . '</span>',
-		    				'next_text' => '<span class="screen-reader-text">' . _x( 'Next', 'next set of posts', '_svbk' ) . '</span>',
-						) ); ?>
 					</div>
+					
+					<?php the_posts_pagination( array(
+						'prev_text' => '<span class="screen-reader-text">' . _x( 'Previous', 'previous set of posts', '_svbk' ) . '</span>',
+	    				'next_text' => '<span class="screen-reader-text">' . _x( 'Next', 'next set of posts', '_svbk' ) . '</span>',
+					) ); ?>
+					
 				<?php else :
 					get_template_part( 'template-parts/content', 'none' );
 				endif; ?>
