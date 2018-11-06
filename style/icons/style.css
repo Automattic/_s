@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'theme-icons';
-  src:  url('fonts/theme-icons.eot?k48nof');
-  src:  url('fonts/theme-icons.eot?k48nof#iefix') format('embedded-opentype'),
-    url('fonts/theme-icons.ttf?k48nof') format('truetype'),
-    url('fonts/theme-icons.woff?k48nof') format('woff'),
-    url('fonts/theme-icons.svg?k48nof#theme-icons') format('svg');
+  src:  url('fonts/theme-icons.eot?ykx7x3');
+  src:  url('fonts/theme-icons.eot?ykx7x3#iefix') format('embedded-opentype'),
+    url('fonts/theme-icons.ttf?ykx7x3') format('truetype'),
+    url('fonts/theme-icons.woff?ykx7x3') format('woff'),
+    url('fonts/theme-icons.svg?ykx7x3#theme-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,15 @@
 
 .icon-cross:before {
   content: "\e91f";
+}
+.icon-down-arrow:before {
+  content: "\e921";
+}
+.icon-right-arrow:before {
+  content: "\e922";
+}
+.icon-up-arrow:before {
+  content: "\e923";
 }
 .icon-pa-account:before {
   content: "\e913";
