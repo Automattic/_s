@@ -540,6 +540,19 @@ function _svbk_bloginfo_shortcode( $attrs ) {
 add_shortcode( 'bloginfo', '_svbk_bloginfo_shortcode' );
 
 /**
+ * Set the right excerpt lenght
+ */
+function _svbk_excerpt_length( $lenght ){
+	
+	if ( !is_singular( 'post' ) && 'post' == get_post_type() ) {
+		return 25;
+	}
+	
+	return $lenght;
+}
+add_filter( 'excerpt_length', '_svbk_excerpt_length', 10 );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
