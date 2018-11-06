@@ -25,9 +25,15 @@
   $(document).ready( smoothScroll );
   $(document.body).on( 'post-load', smoothScroll );
 
-  /* Open closes menu sub-items */
+  /* Open menu sub-items */
   $('.menu-item-has-children > a').on('click', function() {
     $(this).parent('li').toggleClass('expanded');
+  });
+  
+  /* Archive year toggle */
+  $('.archive-year .month-name').on('click', function() {
+    $(this).next('ul').slideToggle()
+    .parent('.archive-year').toggleClass('expanded');
   });
   
 })(jQuery);
