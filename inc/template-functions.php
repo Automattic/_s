@@ -132,3 +132,14 @@ function _svbk_navigation_markup_template($template, $class){
 }
 
 add_filter( 'navigation_markup_template', '_svbk_navigation_markup_template', 10, 2 );
+
+function _svbk_bem_categories_list( $htmllist, $separator ){
+	
+	if ( !$separator ) {
+		$htmllist = str_replace('"post-categories"', '"post__categories post-categories"', $htmllist);
+	}
+
+	return $htmllist;	
+}
+
+add_filter( 'the_category', '_svbk_bem_categories_list', 10, 2 );
