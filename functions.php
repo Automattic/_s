@@ -604,3 +604,8 @@ require get_template_directory() . '/inc/post-types.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load Theme Gutenberg Blocks
+ */
+require get_template_directory() . '/blocks/init.php';
