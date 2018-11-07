@@ -136,6 +136,7 @@
   @return $value;
 }
 
+//Only visible on desktop
 @mixin desktop-only($display-value) {
 	display: none;
 	

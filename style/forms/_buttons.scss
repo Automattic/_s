@@ -27,3 +27,11 @@ input[type="submit"],
 		color: $color__text-button;
 	}
 }
+
+.wp-block-button {
+	text-align: center;
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		float: left;
+	}
+}
