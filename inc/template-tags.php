@@ -26,7 +26,7 @@ if ( ! function_exists( '_svbk_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			_x( '<span class="screen-reader-text" >Posted on </span>%s', 'post date', '_svbk' ),
+			_x( 'Posted on %s', 'post date', '_svbk' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 

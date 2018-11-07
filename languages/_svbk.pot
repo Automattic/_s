@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2018-11-05 11:31+0000\n"
+"POT-Creation-Date: 2018-11-06 16:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,39 +14,39 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Loco https://localise.biz/"
 
-#: functions.php:150
+#: functions.php:156
 msgid "Primary"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:157
 msgid "Not Found (404) Page"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:193
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:189
+#: functions.php:195
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:199
+#: functions.php:205
 msgid "Shop Sidebar"
 msgstr ""
 
-#: functions.php:201
+#: functions.php:207
 msgid "This widgets will be shown in the shop sidebar"
 msgstr ""
 
-#: functions.php:496
+#: functions.php:500
 msgid "Compliance"
 msgstr ""
 
-#: functions.php:500
+#: functions.php:504
 msgid "Privacy Policy"
 msgstr ""
 
-#: functions.php:508
+#: functions.php:512
 msgid "Cookie Policy"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr ""
 #: inc/template-tags.php:29
 #, php-format
 msgctxt "post date"
-msgid "<span class=\"screen-reader-text\" >Posted on </span>%s"
+msgid "Posted on %s"
 msgstr ""
 
 #: inc/template-tags.php:45
@@ -141,8 +141,10 @@ msgstr ""
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:91
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:91 inc/template-tags.php:98
+#: template-parts/content-post.php:17 template-parts/content-post.php:75
+msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
@@ -151,29 +153,23 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#. used between list items, there is a space after the comma
-#: inc/template-tags.php:98
-msgctxt "list item separator"
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:101
+#: inc/template-tags.php:101 template-parts/content-post.php:78
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:297
+#: inc/template-tags.php:298
 msgid "Load more"
 msgstr ""
 
-#: inc/template-tags.php:416
+#: inc/template-tags.php:417
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:419
+#: inc/template-tags.php:420
 msgctxt "post reading time label"
 msgid "Reading"
 msgstr ""
@@ -291,12 +287,12 @@ msgid "Email"
 msgstr ""
 
 #. %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:28 template-parts/content-post.php:44
+#: template-parts/content.php:28 template-parts/content-post.php:54
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content.php:39 template-parts/content-post.php:55
+#: template-parts/content.php:39 template-parts/content-post.php:65
 msgid "Pages:"
 msgstr ""
 
@@ -308,7 +304,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: template-parts/preview.php:34
+#: template-parts/preview.php:32
 msgid "Read More"
 msgstr ""
 
@@ -336,6 +332,70 @@ msgstr ""
 
 #: amp/footer.php:12
 msgid "Back to top"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:12
+msgid "Lead Magnet"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:17
+msgid "Shows a title, image and a call to action"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:32 inc/Widgets/About.php:32
+msgid "New title"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:32 inc/Widgets/About.php:32
+msgid "Title:"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:33
+msgid "New subtitle"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:33
+msgid "Subtitle:"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:34 inc/Widgets/About.php:33
+msgid "Image:"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:35 inc/Widgets/About.php:34
+msgid "New description"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:35 inc/Widgets/About.php:34
+msgid "Description:"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:36
+msgid "Button Link:"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:37
+msgid "Button Link to page:"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:37
+msgid "Use custom link above"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:38
+msgid "Click here"
+msgstr ""
+
+#: inc/Widgets/LeadMagnet.php:38
+msgid "Button Label:"
+msgstr ""
+
+#: inc/Widgets/About.php:12 inc/Widgets/About.php:17
+msgid "About"
+msgstr ""
+
+#: inc/Widgets/About.php:36
+msgid "Menu:"
 msgstr ""
 
 #. Name of the theme
