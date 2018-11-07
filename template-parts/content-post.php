@@ -11,6 +11,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( ['post'] ); ?>>
 	<header class="post__header entry-header first-paint">
+		
+		<div class="post__meta entry-meta">
+			<?php
+			$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', '_svbk' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				echo '<span class="post__categories cat-links">' . $categories_list . '</span>'; // WPCS: XSS OK.
+			}
+			?>
+		</div><!-- .entry-meta -->		
+		
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="post__title entry-title">', '</h1>' );
@@ -21,13 +32,6 @@
 		
 		<div class="post__meta entry-meta">
 			<?php
-			
-			$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', '_svbk' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="post__categories cat-links">' . esc_html__( 'Posted in %1$s', '_svbk' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
-			
 			_svbk_posted_on();
 			_svbk_posted_by();
 			_svbk_post_reading_time();
