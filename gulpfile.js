@@ -89,8 +89,8 @@ var resizeConfig = function( options = {} ){
     return {
       'backgrounds/*.jpg': imageSetOptions( breakpoints, options ),
       'backgrounds/*.png': imageSetOptions( breakpoints, options ),
-      '*.jpg':  [ options ],
-      '*.png':  [ options ],         
+      '**/*.jpg':  [ options ],
+      '**/*.png':  [ options ],         
     }
 }
 
