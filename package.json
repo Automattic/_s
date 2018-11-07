@@ -5,7 +5,10 @@
   "description": "Silverback Starter Theme",
   "main": "index.php",
   "scripts": {
-    "sass": "sass --watch ./sass:./"
+    "sass": "sass --watch ./sass:./",
+    "blocks": "cgb-scripts start",
+    "blocks-build": "cgb-scripts build",
+    "blocks-eject": "cgb-scripts eject"
   },
   "author": "Silverback Studio",
   "license": "ISC",
@@ -30,6 +33,7 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
+    "cgb-scripts": "^1.11.0",
     "fg-loadcss": "^2.0.1"
   }
 }
