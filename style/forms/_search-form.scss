@@ -52,6 +52,7 @@ form.search-form {
 	
 	&:before {
 		@include icon-content("\e912");
+		color: $color__text-main;
 	}
 }
 

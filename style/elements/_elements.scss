@@ -42,23 +42,51 @@ figure {
 @import "tables";
 
 .wp-block-media-text {
-	margin-top: 0;
 	display: block;
+	margin: 0px -#{$padding__content-mobile};
+	padding: 0 0 30px;
 	
-	.has-large-font-size {
-		margin-bottom: 10px;
-	}
-	
-	.subtitle {
-		@include font-size(1.5);
+	.wp-block-media-text__content {
+		padding: 0 $padding__content-mobile;
+		
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+		
+		.has-large-font-size {
+			margin-bottom: 15px;
+		}
+		
+		.subtitle {
+			@include font-size(1.5);
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		display: grid;
 		align-items: start;
+		padding: 50px $padding__content-mobile;
 		
-		.has-large-font-size {
-			margin-top: 0;
+		.wp-block-media-text__content {
+			padding-right: 0;
+			padding-left: 8%;
+			
+			.has-large-font-size {
+				margin-top: 0;
+			}
+		}
+		
+		&.has-media-on-the-right .wp-block-media-text__content {
+			padding-right: 8%;
+			padding-left: 0;
 		}
 	}
+}
+
+.is-style-dark-background {
+	background: #555;
+	color: #fff;
 }

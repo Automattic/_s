@@ -1,28 +1,36 @@
 button,
 .button,
+.button:visited,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.wp-block-button__link {
-	border: 1px solid;
+.wp-block-button .wp-block-button__link,
+.wp-block-button__link:visited {
+	border: 2px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
 	color: $color__text-button;
 	@include font-size(.9);
 	text-transform: uppercase;
 	line-height: 1;
-	padding: .6em 1em;
+	padding: .7em 1em;
 	text-decoration: none;
 	text-align: center;
+	border-radius: 8px;
+	font-weight: bold;
+	transition: background .15s ease-in-out, 
+				border .15s ease-in-out,
+				color .15s ease-in-out;
 
 	&:hover {
+		background: $color__background-button-hover;
 		border-color: $color__border-button-hover;
 	}
 
 	&:active,
-	&:focus,
-	&:visited {
+	&:focus {
 		border-color: $color__border-button-focus;
+		background-color: $color__background-button-focus;
 		outline: none;
 		color: $color__text-button;
 	}
@@ -33,5 +41,29 @@ input[type="submit"],
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 		float: left;
+	}
+	
+	+ .wp-block-button {
+		margin-left: 10px;
+	}
+	
+	&.is-style-outline .wp-block-button__link,
+	&.is-style-outline .wp-block-button__link:visited {
+		color: $color__border-button;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			background: none;
+		}
+		
+		&:hover {
+			color: $color__border-button-hover;
+		}
+
+		&:active,
+		&:focus {
+			color: $color__border-button-focus;
+		}
 	}
 }
