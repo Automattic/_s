@@ -1,7 +1,39 @@
+$size__header-height-stuck: 81px;
+
 .site-header.stuck {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
+    background: $color__background-header;
+    z-index: 1;
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    animation-name: sticky-header;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    
+    .top-header {
+        display: none;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+         
+         .site-branding img {
+             height: 50px;
+         }
+         
+         #main-navigation li a {
+             line-height: $size__header-height-stuck;
+         }
+    }
+}
+
+@keyframes sticky-header {
+	from {
+		top: -50px;
+	}
+	to {
+		top: 0;	
+	}
 }
