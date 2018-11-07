@@ -4,4 +4,4 @@ vendor
 composer.lock
 /assets/css/images
 /src
-/dist/blocks.build.js
+/dist
