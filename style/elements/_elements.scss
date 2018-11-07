@@ -41,6 +41,8 @@ figure {
 
 @import "tables";
 
+/*Gutenberg blocks*/
+
 .wp-block-media-text {
 	display: block;
 	margin: 0px -#{$padding__content-mobile};
@@ -89,4 +91,8 @@ figure {
 .is-style-dark-background {
 	background: #555;
 	color: #fff;
+}
+
+.is-style-guide {
+	background: rgba($color__corporate, .1);
 }
