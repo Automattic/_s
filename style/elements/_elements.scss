@@ -40,3 +40,25 @@ figure {
 }
 
 @import "tables";
+
+.wp-block-media-text {
+	margin-top: 0;
+	display: block;
+	
+	.has-large-font-size {
+		margin-bottom: 10px;
+	}
+	
+	.subtitle {
+		@include font-size(1.5);
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		display: grid;
+		align-items: start;
+		
+		.has-large-font-size {
+			margin-top: 0;
+		}
+	}
+}

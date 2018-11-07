@@ -135,3 +135,11 @@
   }
   @return $value;
 }
+
+@mixin desktop-only($display-value) {
+	display: none;
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		display: $display-value;
+	}
+}
