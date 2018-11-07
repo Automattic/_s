@@ -23,7 +23,6 @@ nvm use 8
 npm install -g gulp
 npm install
 gulp build
-composer install
 
 git add .
 git commit -m"$THEME_HANDLE theme config"
