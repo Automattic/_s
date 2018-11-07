@@ -168,6 +168,14 @@
             width: 69%;
         }
     }
+    
+    @media screen and (min-width: breakpoint('desktop')) {
+
+        .woocommerce-MyAccount-navigation {
+            width: 27%;
+            margin: 0 4% 0 0;
+        }
+    }
 }
 
 .woocommerce-account .shop_table {
@@ -226,7 +234,7 @@
         }
     }
     
-    @media screen and (max-width: 64em) {
+    @media screen and (max-width: 'tablet-landscape') {
         
         a {
             text-align: right;

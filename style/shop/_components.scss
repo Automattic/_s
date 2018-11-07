@@ -478,46 +478,88 @@ p.stars {
 /**
  * Notices
  */
-.woocommerce-message,
-.woocommerce-info,
+ 
 .woocommerce-error,
+.woocommerce-info,
+.woocommerce-message,
 .woocommerce-noreviews,
 p.no-comments {
-	@include clearfix;
-	background-color: $woocommerce__color-success;
-	clear: both;
-	width: 100%;
-	padding: 10px 15px;
-	@include font-size(.9);
+    padding: 1em 1.618em;
+    margin-bottom: 2.617924em;
+    background-color: #0f834d;
+    margin-left: 0;
+    border-radius: 2px;
+    color: #fff;
+    clear: both;
+    border-left: .6180469716em solid rgba(0,0,0,.15);
+    
+    &:after,
+    &:before {
+    	@include clearfix();
+    }
+    
+    &:after {
+    	@include clearfix-after();
+    }
 	
-	.button {
-		text-transform: uppercase;
-		margin-right: 10px;
-		border: none;
-		background: none;
-		padding: 0;
-		text-decoration: underline;
+	a,
+	a.button {
+    	color: #fff;
+    	
+    	&:hover {
+		    color: #fff;
+		    opacity: .7;
+    	}
+	}
+	
+	a.button {
+	    float: right;
+	    padding: 0;
+	    background: 0 0;
+	    color: #fff;
+	    box-shadow: none;
+	    line-height: 1.618;
+	    padding-left: 1em;
+	    border-width: 0;
+	    border-left-width: 1px;
+	    border-left-style: solid;
+	    border-left-color: rgba(255,255,255,.25)!important;
+	    border-radius: 0;
+	    
+	    &:hover {
+		    background: 0 0;
+		    color: #fff;
+		    opacity: .7;
+	    }
+	    
+	    .pre {
+			background-color: rgba(0,0,0,.1);
+	    }
 	}
 }
 
-.woocommerce-info,
-.woocommerce-noreviews,
-p.no-comments {
-	background-color: $woocommerce__color-info;
+.site-content>.col-full>.woocommerce {
+	
+		>.woocommerce-error,
+		>.woocommerce-info,
+		>.woocommerce-message {
+			
+		&.first-child {
+    		margin-top: 2.617924em;
+		}
+	}
 }
 
 .woocommerce-error {
-	background-color: $woocommerce__color-error;
-	
-	li {
-		color: #fff;
-		
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-		
-		&:before {
-			margin-left: 0;
-		}
-	}
+    list-style: none;
+}
+
+.woocommerce-info,
+.woocommerce-noreviews,
+p.no-comments {
+    background-color: $woocommerce__color-info;
+}
+
+.woocommerce-error {
+    background-color: $woocommerce__color-error;
 }
