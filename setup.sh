@@ -19,9 +19,10 @@ find ./ -type f -name "*.json"  -exec sed -i "s/Silverback Starter/Silverback $T
 
 mv languages/_svbk.pot languages/$THEME_HANDLE.pot
 
+nvm use 8
 npm install -g gulp
-npm update
-gulp compile-sass
+npm install
+gulp build
 composer install
 
 git add .
