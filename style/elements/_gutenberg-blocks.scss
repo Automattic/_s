@@ -1,0 +1,113 @@
+.wp-block-media-text {
+	display: block;
+	margin: 0px -#{$padding__content-mobile};
+	padding: 0 0 30px;
+	
+	.wp-block-media-text__content {
+		padding: 0 $padding__content-mobile;
+		
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+		
+		.has-large-font-size {
+			margin-bottom: 15px;
+		}
+		
+		.subtitle {
+			@include font-size(1.5);
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		display: grid;
+		align-items: start;
+		padding: 50px $padding__content-mobile;
+		
+		.wp-block-media-text__content {
+			padding-right: 0;
+			padding-left: 8%;
+			
+			.has-large-font-size {
+				margin-top: 0;
+			}
+		}
+		
+		&.has-media-on-the-right .wp-block-media-text__content {
+			padding-right: 8%;
+			padding-left: 0;
+		}
+	}
+}
+
+/**
+*    Dark background/light
+*/
+
+.wp-block--dark {
+	background: #555;
+	color: #fff;
+}
+
+/**
+*    Guide download
+*/
+
+.is-style-guide {
+	background: rgba($color__corporate, .1);
+}
+
+/**
+*    Blog banner
+*/
+
+.is-style-banner {
+    @include background-image('blog-banner__background', 'jpg');
+    color: #fff;
+    margin: 30px 0;
+    text-align: center;
+    padding: 20px 20px 25px;
+    
+    .wp-block-column {
+        margin: 0;
+    }
+    
+    h3 {
+        @include font-size(1.5);
+        font-weight: normal;
+        margin: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color__corporate;
+        
+        strong {
+            @include font-size(2);
+            line-height: normal;
+        }
+    }
+    
+    .wp-block-button {
+        margin: 20px 0 0;
+        float: none;
+        
+        .wp-block-button__link {
+            display: block;
+            width: 100%;
+        }
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        text-align: left;
+        padding: 20px 30px 25px;
+        
+        .wp-block-column {
+           flex-basis: 40%; 
+        }
+        
+        .wp-block-column:first-of-type {
+            flex-basis: 60%;
+        }
+    }
+}

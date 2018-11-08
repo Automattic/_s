@@ -95,10 +95,10 @@ a {
     	margin: 10px 0;
     	@include font-size(1.3);
     	text-align: left;
-    	color: $color__text-main;
         
         a {
             text-decoration: none;
+    		color: $color__text-main;
         }
     }
     

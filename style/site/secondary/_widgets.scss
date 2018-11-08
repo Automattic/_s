@@ -14,7 +14,7 @@
 	}
 	
 	.widget-description {
-		line-height: normal;	
+		line-height: normal;
 	}
 	
 	select {
@@ -152,6 +152,7 @@
 	
 	.menu {
 		padding: 0;
+		margin-bottom: 0;
 		
 		&:after {
 			@include clearfix();
