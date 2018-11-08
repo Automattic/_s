@@ -66,15 +66,19 @@
 
 .is-style-banner {
     @include background-image('blog-banner__background', 'jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
     margin: 30px 0;
     padding: 20px 20px 25px;
     
     h3 {
         margin: 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid $color__corporate;
         @include font-size(1.8);
+    }
+    
+    p {
+        margin: 0 0 10px;
     }
     
     .wp-block-button {
@@ -87,12 +91,14 @@
         }
     }
     
-    &.wp-block-columns {
+    &.is-style-banner--small {
         text-align: center;
         
         h3 {
             font-weight: normal;
             @include font-size(1.5);
+            border-bottom: 1px solid $color__corporate;
+            padding-bottom: 10px;
             
             strong {
                 @include font-size(2);
@@ -108,16 +114,16 @@
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         padding: 20px 30px 25px;
         
-        &.wp-block-columns {
+        .wp-block-column {
+           flex-basis: 40%; 
+        }
+        
+        .wp-block-column:first-of-type {
+            flex-basis: 60%;
+        }
+        
+        &.is-style-banner--small {
             text-align: left;
-            
-            .wp-block-column {
-               flex-basis: 40%; 
-            }
-            
-            .wp-block-column:first-of-type {
-                flex-basis: 60%;
-            }
         }
     }
 }
