@@ -107,13 +107,11 @@
 //Responsive background images
 @mixin background-image($fileName, $fileType) {
 	
-	$breakpoint_values: map-values($main_breakpoints);
-	$min_breakpoint: nth($breakpoint_values, 1);
-	background-image: url("images/backgrounds/#{$min_breakpoint}/#{$fileName}.#{$fileType}");
+	background-image: url("images/backgrounds/#{$fileName}.#{$fileType}");
 	
 	@each $breakpointKey, $breakpointValue in $main_breakpoints {
 		
-		@media screen and (min-width: #{$breakpointValue}px) {
+		@media screen and (min-width: breakpoint( $breakpointKey )) {
 			background-image: url("images/backgrounds/#{$breakpointValue}/#{$fileName}.#{$fileType}");
 		}
 	}

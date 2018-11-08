@@ -91,26 +91,6 @@
         }
     }
     
-    &.is-style-banner--small {
-        text-align: center;
-        
-        h3 {
-            font-weight: normal;
-            @include font-size(1.5);
-            border-bottom: 1px solid $color__corporate;
-            padding-bottom: 10px;
-            
-            strong {
-                @include font-size(2);
-                line-height: normal;
-            }
-        }
-        
-        .wp-block-column {
-            margin: 0;
-        }
-    }
-    
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         padding: 20px 30px 25px;
         
@@ -121,9 +101,30 @@
         .wp-block-column:first-of-type {
             flex-basis: 60%;
         }
+    }
+}
+
+.is-style-small-banner {
+    @extend .is-style-banner;
+    text-align: center;
+    
+    h3 {
+        font-weight: normal;
+        @include font-size(1.5);
+        border-bottom: 1px solid $color__corporate;
+        padding-bottom: 10px;
         
-        &.is-style-banner--small {
-            text-align: left;
+        strong {
+            @include font-size(2);
+            line-height: normal;
         }
+    }
+    
+    .wp-block-column {
+        margin: 0;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        text-align: left;
     }
 }
