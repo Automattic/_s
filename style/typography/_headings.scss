@@ -1,6 +1,13 @@
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.is-style-subtitle {
 	clear: both;
 	@include font( 'headings' );
+}
+
+.is-style-subtitle {
+	@include font-size(1.5);
+	margin-top: 0;
+	margin-bottom: 20px;
 }
 
 h1 {
