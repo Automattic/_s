@@ -1,21 +1,43 @@
+/**
+ * WordPress dependencies
+ */
+const { __ } =  wp.i18n;
+const { 
+	toggleFormat,
+	registerFormatType
+} = wp.richText;
+const { Fragment } = wp.element;
 
-wp.richText.registerFormatType( 'svbk/link', {
-	title: 'Svbk Custom Link',
-	tagName: 'a',
-	attributes: {
-		url: 'href',
+const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
+const { SVG, Path } = wp.components;
+
+const settings = {
+	name: 'svbk/highlight',
+	title: __( 'Highlight' ),
+	tagName: 'em',
+	className: 'highlight',
+	edit( { isActive, value, onChange } ) {
+		const onToggle = () => onChange( toggleFormat( value, { type: 'svbk/highlight' } ) );
+
+		return (
+			<Fragment>
+				<RichTextShortcut
+					type="access"
+					character="m"
+					onUse={ onToggle }
+				/>
+				<RichTextToolbarButton
+					name="highlight"
+					icon="warning"
+					title={ __( 'Highlight' ) }
+					onClick={ onToggle }
+					isActive={ isActive }
+					shortcutType="access"
+					shortcutCharacter="m"
+				/>			
+			</Fragment>
+		);
 	},
-	className: 'svbk-link-format',
-	edit: function( props ) {
-		return wp.element.createElement( props.ToolbarButton, {
-			icon: 'editor-strikethrough',
-			title: 'Svbk Custom Link',
-			onClick: function() {
-				props.onChange( wp.richText.toggleFormat( props.value, { type: 'svbk/link', attributes: {
-					url: '#test',
-				} } ) );
-			},
-			isActive: props.isActive,
-		} );
-	},
-} )
+}
+
+wp.richText.registerFormatType( 'svbk/highlight', settings );

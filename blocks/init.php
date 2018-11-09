@@ -30,7 +30,7 @@ function _svbk_blocks_assets() {
 } // End function _svbk_block_assets().
 
 // Hook: Frontend assets.
-add_action( 'enqueue_block_assets', '_svbk_blocks_assets' );
+//add_action( 'enqueue_block_assets', '_svbk_blocks_assets' );
 
 /**
  * Enqueue Gutenberg block assets for backend editor.
@@ -52,11 +52,18 @@ function _svbk_blocks_editor_assets() {
 	);
 
 	// Styles.
+	// wp_enqueue_style(
+	// 	'_svbk-blocks-editor', // Handle.
+	// 	get_theme_file_uri( '/dist/css/blocks.editor.build.css'), // Block editor CSS.
+	// 	array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
+	// );
+	
+	// Styles.
 	wp_enqueue_style(
 		'_svbk-blocks-editor', // Handle.
-		get_theme_file_uri( '/dist/css/blocks.editor.build.css'), // Block editor CSS.
+		get_theme_file_uri( '/dist/css/block-editor.css'), // Block editor CSS.
 		array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
-	);
+	);	
 } // End function _svbk_blocks_editor_assets().
 
 // Hook: Editor assets.

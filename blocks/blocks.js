@@ -9,4 +9,5 @@
  * Webpack is compiling as the input file.
  */
 
-//import './mods/formats.js';
+import './mods/formats.js';
+import './mods/styles.js';
