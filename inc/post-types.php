@@ -1,5 +1,8 @@
 <?php 
 
+/**
+ * Register here custom post types
+ */
 function _svbk_register_post_types() {
     
 }
