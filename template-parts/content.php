@@ -6,21 +6,20 @@
  *
  * @package _svbk
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( ['post'] ); ?>>
-	<header class="post__header entry-header">
+	<header class="<?php the_post_type(); ?>__header post__header entry-header">
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="post__title entry-title">', '</h1>' );
+			the_title( '<h1 class="' . esc_attr(get_post_type()) . '__title post__title entry-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="' . esc_attr(get_post_type()) . '__title post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
 	</header><!-- .entry-header -->
 
-	<div class="post__content entry-content">
+	<div class="<?php the_post_type(); ?>__content post__content entry-content">
 		<?php
 		the_content( sprintf(
 			wp_kses(
@@ -42,7 +41,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="post__footer entry-footer">
+	<footer class="<?php the_post_type(); ?>__footer post__footer entry-footer">
 		<?php _svbk_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

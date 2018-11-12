@@ -423,7 +423,17 @@ function _svbk_post_reading_time( $words_per_minute = 200 ) {
 		<?php
 }
 
-function _svbk_contact_info( $info, $link = false ) {
+/**
+ * Prints the selected contact info wrapped in a span tag
+ *
+ * @since 2.0.0
+ *
+ * @param string $info The field name to print (ex. phone, address)
+ * @param string $link The URL to link the field to
+ *
+ * @return string 
+ */
+function _svbk_contact_info( $info, $link = '' ) {
 
 	$value = get_theme_mod( $info, false );
 	
@@ -433,4 +443,20 @@ function _svbk_contact_info( $info, $link = false ) {
 	?>
 	<span class="<?php esc_attr_e( $info ); ?>"><?php echo $value; ?></span>
 	<?php
+}
+
+
+if ( ! function_exists('the_post_type') ) {
+
+	/**
+	 * Prints the post type of the current post or of a given post.
+	 *
+	 *
+	 * @param int|WP_Post|null $post Optional. Post ID or post object. Default is global $post.
+	 * @return void
+	 */
+	function the_post_type( $post = null ) {
+		echo esc_attr( get_post_type( $post ) );
+	}
+
 }
