@@ -297,6 +297,26 @@ function _svbk_activate_gutenberg_products($can_edit, $post_type){
 add_filter('gutenberg_can_edit_post_type', '_svbk_activate_gutenberg_products', 10, 2);
 
 
+/**
+ * Sorting wrapper
+ *
+ * @since   1.4.3
+ * @return  void
+ */
+function _svbk_wc_sorting_wrapper() {
+	echo '<div class="storefront-sorting">';
+}
+
+/**
+ * Sorting wrapper close
+ *
+ * @since   1.4.3
+ * @return  void
+ */
+function _svbk_wc_sorting_wrapper_close() {
+	echo '</div>';
+}
+
 function _svbk_myaccount_sidebar_profile() {
 ?>
 
