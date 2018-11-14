@@ -9,7 +9,7 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class( [ 'post', 'post--preview', 'post-thumb' ] ); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class( [ 'post', 'post--preview', get_post_type() . '--preview', 'post-thumb' ] ); ?>>
 
 	<?php if ( has_post_thumbnail() ) : ?>
 	<a class="<?php the_post_type(); ?>__thumbnail post__thumbnail" href="<?php the_permalink(); ?>" rel="bookmark" ><?php the_post_thumbnail(); ?></a>
