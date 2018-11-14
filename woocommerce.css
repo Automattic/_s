@@ -113,23 +113,23 @@ ul.products li.product .button {
 	ul.products li.product.last {
 		margin-right: 0;
 	}
-	.columns-1 ul.products li.product {
+	ul.products.columns-1 li.product {
 		float: none;
 		width: 100%;
 	}
-	.columns-2 ul.products li.product {
+	ul.products.columns-2 li.product {
 		width: 48.1%;
 	}
-	.columns-3 ul.products li.product {
+	ul.products.columns-3 li.product {
 		width: 30.7966666667%;
 	}
-	.columns-4 ul.products li.product {
+	ul.products.columns-4 li.product {
 		width: 22.15%;
 	}
-	.columns-5 ul.products li.product {
+	ul.products.columns-5 li.product {
 		width: 16.96%;
 	}
-	.columns-6 ul.products li.product {
+	ul.products.columns-6 li.product {
 		width: 13.4933333333%;
 	}
 }
