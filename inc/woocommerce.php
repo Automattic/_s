@@ -304,7 +304,7 @@ add_filter('gutenberg_can_edit_post_type', '_svbk_activate_gutenberg_products', 
  * @return  void
  */
 function _svbk_wc_sorting_wrapper() {
-	echo '<div class="storefront-sorting">';
+	echo '<div class="woocommerce-shop__controls">';
 }
 
 /**
@@ -316,6 +316,15 @@ function _svbk_wc_sorting_wrapper() {
 function _svbk_wc_sorting_wrapper_close() {
 	echo '</div>';
 }
+
+// Before Product List
+add_action( 'woocommerce_before_shop_loop',       '_svbk_wc_sorting_wrapper',               10 );
+add_action( 'woocommerce_before_shop_loop',       '_svbk_wc_sorting_wrapper_close',         31 );
+
+// After Product List
+add_action( 'woocommerce_after_shop_loop',        '_svbk_wc_sorting_wrapper',               9 );
+add_action( 'woocommerce_after_shop_loop',        '_svbk_wc_sorting_wrapper_close',         31 );
+
 
 function _svbk_myaccount_sidebar_profile() {
 ?>
