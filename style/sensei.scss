@@ -1,0 +1,164 @@
+/*--------------------------------------------------------------
+# Functions and vars
+--------------------------------------------------------------*/
+@import "shop/shop-variables";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Sensei
+--------------------------------------------------------------*/
+@import "course/components";
+@import "course/course-preview";
+@import "course/lesson-preview";
+@import "course/course-meta";
+@import "course/single-course";
+
+.site-main > article {
+    
+    #content {
+        width: 100%;
+    }
+    
+    #secondary {
+        width: 100%;
+        clear: both;
+    }
+    
+    .secondary-navigation {
+        text-align: center;
+        margin: 30px 0 20px;
+        
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        
+        li {
+            display: inline-block;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            
+            &:before {
+                display: none;
+            }
+            
+            a {
+                text-decoration: none;
+                line-height: normal;
+                border-right: 2px solid #ddd;
+                padding: 0 10px;
+                color: #777;
+                font-weight: 200;
+            }
+            
+            &.is-active a {
+                color: $color__corporate;
+                font-weight: 600;
+            }
+            
+            a:before {
+                margin-right: 10px;
+                @include font-size(1.1);
+                vertical-align: text-top;
+            }
+            
+            &:last-of-type a {
+                border-right: none;
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--dashboard a:before {
+                @include icon-content("\e915");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--orders a:before {
+                @include icon-content("\e918");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--downloads a:before {
+                @include icon-content("\e916");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--edit-address a:before {
+                @include icon-content("\e914");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--edit-account a:before {
+               @include icon-content("\e913");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--payment-methods a:before {
+               @include icon-content("\e919");
+            }
+            
+            &.woocommerce-MyAccount-navigation-link--customer-logout a:before {
+                @include icon-content("\e917");
+            }
+        }
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        
+        #main {
+            
+            &:after {
+                @include clearfix();
+                @include clearfix-after();
+            }
+        }
+        
+        #secondary {
+            padding: 0;
+        }
+        
+        .secondary-navigation,
+        .sensei__content,
+        #sensei-user-courses {
+            float: left;
+        }
+        
+        .sensei__content,
+        #sensei-user-courses {
+            width: 68%;
+        }
+        
+        .secondary-navigation {
+            width: 29%;
+            margin: 30px 2% 0;
+            
+            li {
+                display: block;
+                text-align: left;
+                margin: 0;
+                
+                a {
+                    border: none;
+                    display: block;
+                    border-bottom: 1px solid #eee;
+                    padding: 15px 0;
+                }
+                
+                &:last-of-type a {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: breakpoint('desktop')) {
+    
+        .secondary-navigation {
+            width: 27%;
+            margin: 30px 4% 0 0;
+        }
+    }
+}

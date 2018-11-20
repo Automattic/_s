@@ -1,0 +1,129 @@
+.course-container {
+    padding: 0;
+    margin: 0;
+    
+    li:before {
+        display: none;
+    }
+}
+
+li.course,
+#my-courses .course{
+    border-bottom: 1px solid $color__background-hr;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    
+    .entry > a {
+        position: relative;
+        display: block;
+    }
+    
+    &:before {
+        display: none;
+    }
+    
+    .course-title {
+        margin: 0;
+        
+        a {
+            color: $color__text-main;
+            text-decoration: none;
+        }
+    }
+    
+    .sensei-course-meta {
+        @include font-size(.9);
+        margin-bottom: 0;
+        
+        .course-author, .course-lesson-count {
+           width: 50%;
+           float: left;
+        }
+        
+        .course-lesson-count {
+            text-align: right;
+        }
+        
+        .course-lesson-progress {
+            color: $color__corporate;
+            display: block;
+            clear: both;
+        }  
+    }
+    
+    img {
+        width: 100%;
+    }
+    
+    .button {
+        display: block;
+    }
+    
+    .entry-actions {
+        @include font-size(.9);
+        text-align: right;
+        
+        input {
+            background: none;
+            border: none;
+            color: $color__link;
+            text-transform: none;
+            text-decoration: underline;
+            padding: 0;
+            border-radius: 0;
+            margin-top: 10px;
+            line-height: normal;
+        }
+    }
+    
+    &.user-status-completed {
+        
+        .entry > a {
+            
+            &:before {
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 60px 60px 0 0;
+                border-color: $color__success transparent transparent transparent;
+                position: absolute;
+            }
+            
+            &:after {
+                @include icon-content('\e90c');
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: #fff;
+                text-decoration: none;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+            }
+        }
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        padding-left: 30%;
+        position: relative;
+        
+        &:after {
+            @include clearfix();
+            @include clearfix-after();
+        }
+        
+        .entry > a {
+            position: absolute;
+            width: 28%;
+            left: 0;
+            top: 0;
+        }
+        
+        .button {
+            float: right;
+        }
+    }
+}

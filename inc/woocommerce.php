@@ -4,10 +4,11 @@
  *
  * @link https://woocommerce.com/
  *
- * @package _s
+ * @package _svbk
  */
 use \Svbk\WP\Helpers\Assets\Style;
 use \Svbk\WP\Helpers\Assets\Script;
+use \Svbk\WP\Integrations;
 
 /**
  * WooCommerce setup function.
@@ -22,6 +23,9 @@ function _svbk_woocommerce_setup() {
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
+	
+	register_nav_menu( 'woocommerce-myaccount', esc_html__( 'Woocommerce My Account', '_svbk' ) );
+	register_nav_menu( 'woocommerce-profile', esc_html__( 'Woocommerce Profile', '_svbk' ) );
 }
 add_action( 'after_setup_theme', '_svbk_woocommerce_setup' );
 
@@ -41,6 +45,25 @@ function _svbk_woocommerce_scripts() {
 	Script::enqueue( 'wc-add-to-cart', null, [ 'condition' => is_woocommerce() ] );
 	Script::enqueue( 'wc-cart-fragments', null, [ 'condition' => is_woocommerce() ] );
 	Script::enqueue( 'woocommerce', null, [ 'condition' => is_woocommerce() ] );
+	
+	Script::register( 'codice-fiscale-js', '/dist/codice.fiscale.umd.min.js' );
+	Script::enqueue( '_svbk-wc-checkout', '/dist/codice.fiscale.umd.min.js', [ 'source' => 'theme', 'condition' => is_checkout(), 'prefetch' => is_cart(), 'deps' => [ 'jquery', 'codice-fiscale-js' ] ] );
+
+    wp_localize_script( '_svbk-wc-checkout', '_svbk_woocommerce',
+        array( 
+            'cvcInstructions' => array(
+            	'buttonText' => __('Where?', 'woocommerce-funnels'),
+            	'text' => __('If you use Mastercard, Visa and Diners, 
+	            	the security code is shown on the back of your credit card near 
+	            	the space reserved for your signature, and consists of 3 digits. 
+	            	If you use American Express, the secure code is placed on the 
+	            	front of your card and consists of 4 digits.', 
+            	'woocommerce-funnels'),
+            	'imageUrl' => get_theme_file_uri( '/dist/css/images/cvc-instructions.png' ),
+            	'closeText' => __('Close', 'woocommerce-funnels'),
+            ),
+        )
+    );		
 	
 	// Style::enqueue( 'woocommerce-layout', null, [ 'condition' => is_woocommerce() ] );
 	// Style::enqueue( 'woocommerce-smallscreen', null, [ 'condition' => is_woocommerce() ] );
@@ -62,6 +85,71 @@ function _svbk_woocommerce_scripts() {
 	wp_add_inline_style( '_svbk-wc-shop', $inline_font );
 }
 add_action( 'wp_enqueue_scripts', '_svbk_woocommerce_scripts', 30 );
+
+
+/**
+ * Register widgets areas.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function _svbk_woocommerce_widgets_init() {
+
+	register_sidebar(
+		 array(
+			 'name'          => esc_html__( 'Shop Sidebar','_svbk' ),
+			 'id'            => 'shop',
+			 'description'   => esc_html__( 'This widgets will be shown in the shop sidebar','_svbk' ),
+			 'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			 'after_widget'  => '</section>',
+			 'before_title'  => '<h2 class="widget-title">',
+			 'after_title'   => '</h2>',
+		 )
+	);	
+	
+	register_sidebar( array(
+        'name'          => __( 'Woocommerce Account Sidebar', '_svbk' ),
+        'id'            => 'woocommerce-account',
+        'description'   => __( 'Widgets in this area will be shown in all the WooCommerce accounts pages', '_svbk' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );	
+
+}
+add_action( 'widgets_init', '_svbk_woocommerce_widgets_init' );
+
+
+/**
+ * Show my account sidebar in footer
+ */
+function _svbk_myaccount_sidebar( $name ){
+	
+	if ( is_account_page() && is_active_sidebar( 'woocommerce-account' ) ) : ?>
+		<aside id="secondary" class="widget-area domready--show">
+			<?php dynamic_sidebar( 'woocommerce-account' ); ?>
+		</aside><!-- #secondary -->		
+	<?php endif;
+	
+}
+
+add_action( 'get_footer', '_svbk_myaccount_sidebar' );
+
+/**
+ * Add a new integration to WooCommerce.
+ */
+function _svbk_add_woocommerce_integration( $integrations ) {
+	
+	if ( ! class_exists( Integrations\WC_Theme_Integration::class ) ) {
+		include_once get_theme_file_path( '/classes/class-wc-integration-silverback.php' );
+		include_once get_theme_file_path( '/classes/class-affiliatewp.php' );
+	}
+
+	$integrations[] = Integrations\WC_Theme_Integration::class;
+	return $integrations;
+}
+
+add_filter( 'woocommerce_integrations', '_svbk_add_woocommerce_integration' );
 
 /**
  * Disable the default WooCommerce stylesheet.
@@ -333,12 +421,21 @@ function _svbk_myaccount_sidebar_profile() {
 	<ul class="menu">
 		<?php
 		if ( is_user_logged_in() ) : $member = wp_get_current_user(); ?>
-		<li class="menu-item logout">
+		<li class="menu-item my-account<?php echo  has_nav_menu( 'woocommerce-profile' ) ? ' menu-item-has-children' : '' ?><?php echo  is_account_page() ? ' current-menu-item' : '' ?>">
 			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Go to My Account','_svbk'); ?>">
-				<?php echo get_avatar( $member->ID, 'thumbnail' ); ?>
+				<?php echo get_avatar( $member->ID, 32 ); ?>
 				<span class="user-name"><?php echo esc_html( $member->user_firstname . '&nbsp;' . substr($member->user_lastname, 0, 1) . '.'); ?></span>
 			</a>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'woocommerce-profile',
+					'container'		 => false,
+					'menu_id'        => 'woocommerce-profile',
+					'menu_class'	 => 'sub-menu'	
+				) );
+			?>
 		</li>
+
 		<?php else: ?>
 		<li class="menu-item login"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login','_svbk'); ?>"><?php _e('Login','_svbk'); ?></a></li>
 		<?php endif; ?>

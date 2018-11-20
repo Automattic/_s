@@ -1,0 +1,22 @@
+.meter {
+    margin-top: 5px;
+    height: 20px;
+    color: #fff;
+    border-radius: 10px;
+    background: #f5f5f5;
+    line-height: 20px;
+    
+    > span {
+        background: $color__corporate;
+        line-height: 18px;
+        font-size: 12px;
+        border-radius: 10px;
+        padding: 0 10px 0 8px;
+        display: block;
+        min-width: 30px;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        max-width: 280px;
+    }
+}

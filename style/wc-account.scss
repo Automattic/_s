@@ -52,6 +52,13 @@
     }
 }
 
+.secondary-navigation__toggle {
+    
+    &:before {
+        content: icon-content('');
+    }
+}
+
 .woocommerce-account {
     
     .woocommerce-MyAccount-navigation {

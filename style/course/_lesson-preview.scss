@@ -1,0 +1,212 @@
+.lesson-container,
+.lessons-list {
+    
+    .lesson {
+        padding: 25px 0 2.7em;
+        border-bottom: 1px solid $color__background-hr;
+        position: relative;
+        margin-bottom: 0;
+        overflow: hidden;
+        clear: both;
+        
+        .lesson-content {
+            margin: 0;
+        }
+        
+        .lesson-meta {
+            display: none;
+        }
+        
+        &:after {
+            content: "";
+            display: block;
+            background: #f5f5f5;
+            height: 4.5em;
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            right: 0;
+        }
+        
+        .entry > a {
+            width: 100%;
+            display: block;
+            position: relative;
+            
+            img {
+                width: 100%;
+                float: none;
+                display: block;
+            }
+        }
+        
+        header {
+            margin: 10px 0 0 0;
+            padding: 0;
+        }
+        
+        h2 {
+            padding: 0;
+            font-size: 1em;
+            text-align: left;
+            text-indent: -35px;
+            padding-left: 35px;
+            
+            a {
+                color: $color__text-main;
+                font-weight: 400;
+                font-size: 1.2em;
+                line-height: 1.2em;
+                border-bottom: none;
+                background: none;
+                text-decoration: none;
+                
+                .lesson-number {
+                    background: $color__corporate-secondary;
+                    color: #fff;
+                    text-align: center;
+                    font-weight: bold;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 25px;
+                    line-height: 25px;
+                    font-size: 18px;
+                    left: 0;
+                    top: 0;
+                    display: inline-block;
+                    margin-right: 10px;
+                    text-indent: 0;
+                }
+            }
+        }
+
+        .lesson-excerpt {
+            clear: both;
+        }
+        
+        @media screen and (min-width: 56em) {
+            padding-left: 25%;
+            
+            header {
+                margin-top: 0;
+                margin-right: 120px;
+                margin-left: 15px;
+            }
+            
+            .entry > a {
+                width: 25%;
+                position: absolute;
+                left: 0;
+                top: 25px;
+                bottom: 25px;
+                
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            
+            .lesson-excerpt {
+                margin-left: 15px;
+            }
+            
+            &:after {
+                left: 25%;
+                margin-left: 15px;
+            }
+        }
+        
+        &.lesson-locked {
+            
+            a {
+                pointer-events: none;
+            }
+            
+            header h2 a .lesson-number {
+                background: #ddd;
+            }
+            
+            .entry > a {
+                
+                &:before {
+                    content: "";
+                    display: block;
+                    background: rgba(0,0,0,0.5);
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    position: absolute;
+                }
+                
+                &:after {
+                    content: "Locked";
+                }
+            }
+            
+            .button.to-single {
+                background: #bbb;
+                border: #bbb;
+                
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        
+        &.lesson-completed {
+    
+            .entry > a {
+                
+                &:before {
+                    content: "";
+                    display: block;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    border-left: 60px solid $color__success;
+                    border-bottom: 60px solid transparent;
+                    border-right: 60px solid transparent;
+                }
+                
+                &:after {
+                    @include icon-content('\e90c');
+                    text-decoration: none;
+                    position: absolute;
+                    color: #fff;
+                    top: 0;
+                    left: 0;
+                    font-size: 22px;
+                    font-weight: 400;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+    
+    .button.to-single {
+        float: right;
+        padding: .6em 1.5em;
+        position: relative;
+        z-index: 1;
+        margin-right: 15px;
+        
+        &:after {
+            @include icon-content('\e922');
+            font-size: .8em;
+            margin-left: 10px;
+        }
+        
+        &.completed {
+            background: $color__success;
+            border-color: $color__success;
+
+            &:after {
+                @include icon-content('\e90c');
+            }
+        }
+    }
+}
