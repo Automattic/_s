@@ -607,6 +607,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 /**
+ * Load WooCommerce compatibility file.
+ */
+if ( function_exists( 'Sensei' ) ) {
+	require get_template_directory() . '/inc/sensei.php';
+}
+
+
+/**
  * Load Theme Gutenberg Blocks
  */
 require get_template_directory() . '/blocks/init.php';
