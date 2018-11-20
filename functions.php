@@ -46,7 +46,7 @@ if ( ! function_exists( '_svbk_setup' ) ) :
  */
 function _svbk_setup() {
 	
-	global $content_width;
+	global $content_width, $block_width;
 	
 	/*
 	 * Make theme available for translation.
@@ -150,12 +150,16 @@ function _svbk_setup() {
 
 	set_post_thumbnail_size( $content_width / 2, $content_width / 2 * $image_height_ratio, true );
 
+    $block_width['default'] = $content_width;
+    $block_width['wide'] = $content_width * 1.3;
+    $block_width['full'] = $max_page_width;
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', '_svbk' ),
 			'menu-404' => esc_html__( 'Not Found (404) Page', '_svbk' ),
-			'legal-menu' => esc_html__( 'Legal Menu', 'tatap' ),
+			'legal-menu' => esc_html__( 'Legal Menu', '_svbk' ),
 		)
 	);
 
@@ -199,18 +203,6 @@ function _svbk_widgets_init() {
 			 'after_title'   => '</h2>',
 		 )
 	);
-	
-	register_sidebar(
-		 array(
-			 'name'          => esc_html__( 'Shop Sidebar','_svbk' ),
-			 'id'            => 'shop',
-			 'description'   => esc_html__( 'This widgets will be shown in the shop sidebar','_svbk' ),
-			 'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			 'after_widget'  => '</section>',
-			 'before_title'  => '<h2 class="widget-title">',
-			 'after_title'   => '</h2>',
-		 )
-	);	
 	
 	Widgets\Post\Archives::register();
 	_svbk\Widgets\LeadMagnet::register();
@@ -295,6 +287,15 @@ function _svbk_scripts() {
 } 
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
 
+/**
+ * Enqueue admin scripts and styles.
+ */
+function _svbk_admin_scripts() {
+	Script::enqueue( '_svbk-admin', '/dist/js/admin.min.js', [ 'source' => 'theme' ] );
+	Style::enqueue( '_svbk-admin', '/dist/css/admin.css', [ 'source' => 'theme' ] );
+}
+
+add_action( 'admin_enqueue_scripts', '_svbk_admin_scripts' );
 
 /**
  * Enqueue fonts from config file
