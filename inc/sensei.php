@@ -230,3 +230,13 @@ if ( ! function_exists( 'is_learner_profile' ) ){
         return isset( $wp_query->query_vars['learner_profile'] ) ;
     }
 }
+
+function _svbk_sensei_normalize_learner_profile_query( $wp_query ) {
+	
+	if ( isset( $wp_query->query_vars['learner_profile'] ) ) {
+		$wp_query->is_home = false;
+	}
+	
+}
+
+add_filter( 'parse_query', '_svbk_sensei_normalize_learner_profile_query' );
