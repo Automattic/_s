@@ -81,3 +81,16 @@
         margin: 0;
     }
 }
+
+.answer_message {
+    @include font-size(.9);
+    line-height: normal;
+    
+    &.user_wrong {
+        color: $woocommerce__color-error;
+    }
+    
+    &.user_right {
+        color: $woocommerce__color-success;
+    }
+}
