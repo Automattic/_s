@@ -70,6 +70,9 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		// Add WooCommerce Support
 		add_theme_support( 'woocommerce' );
 
+		// Add Sensei Support
+		add_theme_support( 'sensei' );
+
 		// Add Gutenberg full-screen alignments support
 		add_theme_support( 'align-wide' );
 
