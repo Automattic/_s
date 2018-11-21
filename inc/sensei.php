@@ -45,6 +45,10 @@ add_action( 'wp_enqueue_scripts', '_svbk_sensei_scripts', 30 );
  */
 function _svbk_sensei_setup() {
 	register_nav_menu( 'sensei', esc_html__( 'Sensei', '_svbk' ) );
+
+	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
+	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
+
 }
 add_action( 'after_setup_theme', '_svbk_sensei_setup' );
 
@@ -78,7 +82,7 @@ function _svbk_sensei_navigation() {
 		return $output;
 	}
 
-	$output .= '<button class="secondary-navigation__toggle"><span class="screen-reader-text">' . esc_html__( 'Toggle Courses Menu', '_svbk' ) . '</span></button>';
+	$output .= '<button class="secondary-navigation__toggle">' . esc_html__( 'Toggle Courses Menu', '_svbk' ) . '</button>';
 	$output .= '<nav id="sensei-navigation" class="secondary-navigation" role="navigation">';
 	$output .= wp_nav_menu(
 		array(
@@ -212,7 +216,7 @@ function _svbk_lesson_quiz_button_intro( $lesson_id ) {
 	}
 }
 
-add_filter( 'sensei_single_lesson_content_inside_after', '_svbk_lesson_quiz_button_intro', 15 );
+add_filter( 'sensei_single_lesson_content_inside_after', '_svbk_lesson_quiz_button_intro', 9 );
 
 
 function _svbk_register_post_type_course_attr( $args ) {
