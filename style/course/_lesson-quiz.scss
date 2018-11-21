@@ -1,5 +1,35 @@
+.quiz-questions {
+    margin-bottom: 30px;
+    
+    .quiz-submit {
+        cursor: pointer;
+        
+        &.save,
+        &.reset {
+    		color: $color__border-button;
+    		background: none;
+    		
+    		&:hover,
+    		&:active,
+    		&:focus {
+    			background: none;
+    		}
+    		
+    		&:hover {
+    			color: $color__border-button-hover;
+    		}
+    
+    		&:active,
+    		&:focus {
+    			color: $color__border-button-focus;
+    		}
+        }
+    }
+}
+
 #sensei-quiz-list {
     padding: 0;
+    margin-bottom: 30px;
     
     .question-title {
         @include font-size(1.2);
