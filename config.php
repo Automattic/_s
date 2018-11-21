@@ -8,19 +8,19 @@
  **/
 
 return array(
-	'version' => '1.2',
-	'textdomain' => '_svbk',
-	'contact' => [
+	'version'      => '1.2',
+	'textdomain'   => '_svbk',
+	'contact'      => [
 		'company_name' => '[Company Name]',
-		'address' => '[Company Address]',
-		'cap' => '[0000]',
-		'city' => '[city]',
-		'country' => '[Country]',
-		'address2' => '[AD2]',
-		'phone' => '[+00 00000TEL]',
-		'fax' => '[+00 00000FAX]',
-		'email' => '[mail@example.com]',
-		'vat' => '[000000VATID]',
+		'address'      => '[Company Address]',
+		'cap'          => '[0000]',
+		'city'         => '[city]',
+		'country'      => '[Country]',
+		'address2'     => '[AD2]',
+		'phone'        => '[+00 00000TEL]',
+		'fax'          => '[+00 00000FAX]',
+		'email'        => '[mail@example.com]',
+		'vat'          => '[000000VATID]',
 	],
 
 	'google-fonts' => [
@@ -42,7 +42,7 @@ return array(
 	// 'icon' => get_stylesheet_directory_uri().'/media/pin.png',
 	// ]
 	// ],
-	'icons' => [
+	'icons'        => [
 		'path' => 'icons/style.css',
 	],
 

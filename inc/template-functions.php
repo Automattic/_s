@@ -41,39 +41,39 @@ function _svbk_pingback_header() {
 }
 add_action( 'wp_head', '_svbk_pingback_header' );
 
-add_filter( 'get_the_archive_title', '_svbk_archive_title');
+add_filter( 'get_the_archive_title', '_svbk_archive_title' );
 
-function _svbk_archive_title($title) {
+function _svbk_archive_title( $title ) {
 
-    if ( is_category() ) {
-        $title = single_cat_title( '', false ) ;
-    } elseif ( is_tag() ) {
-        $title = single_tag_title( '', false );
-    } elseif ( is_author() ) {
-        $title = '<span class="vcard">' . get_the_author() . '</span>' ;
-    }
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>';
+	}
 
-    return $title;
+	return $title;
 }
 
 function _svbk_post_has_more() {
 	global $post;
-	
-	return boolval( strpos( $post->post_content, '<!--more-->') );
+
+	return boolval( strpos( $post->post_content, '<!--more-->' ) );
 }
 
 function _svbk_the_whole_content() {
 	global $more;
 
 	$real_more = $more;
-	$more = 1;
-	the_content(null, true);
-	$more = $real_more;	
+	$more      = 1;
+	the_content( null, true );
+	$more = $real_more;
 }
 
-function _svbk_update_word_count( $post_ID, $post, $update ){
+function _svbk_update_word_count( $post_ID, $post, $update ) {
 	$content = apply_filters( 'the_content', $post->post_content );
-	$words = str_word_count( strip_tags( $content ) );
+	$words   = str_word_count( strip_tags( $content ) );
 
 	update_post_meta( $post_ID, 'word_count', $words );
 }
@@ -81,9 +81,9 @@ function _svbk_update_word_count( $post_ID, $post, $update ){
 add_action( 'save_post_post', '_svbk_update_word_count', 10, 3 );
 
 function _svbk_get_post_reading_time( $words_per_minute = 200 ) {
-	
+
 	$word_count = get_post_meta( get_the_ID(), 'word_count', true );
-	
+
 	if ( ! $word_count ) {
 		return;
 	}
@@ -92,54 +92,54 @@ function _svbk_get_post_reading_time( $words_per_minute = 200 ) {
 }
 
 function _svbk_preview_navigation_link( $output, $format, $link, $adjacent_post, $adjacent ) {
-	
+
 	global $post, $wp_query;
-	
+
 	$current_post = $post;
-	$post = $adjacent_post;		
-	setup_postdata( $adjacent_post ); 
-    
-    ob_start();
-    
-    $wp_query->query_vars['navigation_adjacent'] = $adjacent;
-    
+	$post         = $adjacent_post;
+	setup_postdata( $adjacent_post );
+
+	ob_start();
+
+	$wp_query->query_vars['navigation_adjacent'] = $adjacent;
+
 	get_template_part( 'template-parts/pagination', get_post_type() );
-    
-    unset($wp_query->query_vars['navigation_adjacent']);
-    
-    $html = ob_get_contents();
-    ob_end_clean();
-    
-    if ( $html ) {
-    	$output = '<div class="nav-' . $adjacent . ' nav-preview">' . $html . '</div>';
-    }
-    
-	$post = $current_post;       
-    wp_reset_postdata();
-    
-    return $output;
+
+	unset( $wp_query->query_vars['navigation_adjacent'] );
+
+	$html = ob_get_contents();
+	ob_end_clean();
+
+	if ( $html ) {
+		$output = '<div class="nav-' . $adjacent . ' nav-preview">' . $html . '</div>';
+	}
+
+	$post = $current_post;
+	wp_reset_postdata();
+
+	return $output;
 }
 
 add_filter( 'next_post_link', '_svbk_preview_navigation_link', 10, 5 );
 add_filter( 'previous_post_link', '_svbk_preview_navigation_link', 10, 5 );
 
 
-function _svbk_navigation_markup_template($template, $class){
-	
+function _svbk_navigation_markup_template( $template, $class ) {
+
 	$template = str_replace( 'class="navigation', 'class="navigation domready--show', $template );
-	
+
 	return $template;
 }
 
 add_filter( 'navigation_markup_template', '_svbk_navigation_markup_template', 10, 2 );
 
-function _svbk_bem_categories_list( $htmllist, $separator ){
-	
-	if ( !$separator ) {
-		$htmllist = str_replace('"post-categories"', '"post__categories post-categories"', $htmllist);
+function _svbk_bem_categories_list( $htmllist, $separator ) {
+
+	if ( ! $separator ) {
+		$htmllist = str_replace( '"post-categories"', '"post__categories post-categories"', $htmllist );
 	}
 
-	return $htmllist;	
+	return $htmllist;
 }
 
 add_filter( 'the_category', '_svbk_bem_categories_list', 10, 2 );

@@ -36,61 +36,65 @@ do_action( 'woocommerce_before_account_dashboard' );
 		$dashboard_query = new WP_Query(
 			array(
 				'post_type' => 'page',
-				'p' => $integrations['_svbk-theme']->dashboard_content_page,
+				'p'         => $integrations['_svbk-theme']->dashboard_content_page,
 			)
 		);
 
-		$orders_url = wc_get_endpoint_url( 'orders' );
+		$orders_url   = wc_get_endpoint_url( 'orders' );
 		$edit_address = wc_get_endpoint_url( 'edit-address' ) . '#edit-address';
 		$edit_account = wc_get_endpoint_url( 'edit-account' );
-		$affiliate = wc_get_endpoint_url( 'affiliate' );
-		$mycourses = wc_get_endpoint_url( 'mycourses' );
+		$affiliate    = wc_get_endpoint_url( 'affiliate' );
+		$mycourses    = wc_get_endpoint_url( 'mycourses' );
 
 		while ( $dashboard_query->have_posts() ) :
 			$dashboard_query->the_post();
-		?>
-		<?php
-		/**
-		 * My Account dashboard.
-		 *
-		 * @since 2.6.0
-		 */
-		do_action( 'woocommerce_account_dashboard' );
+			?>
+			<?php
+			/**
+			 * My Account dashboard.
+			 *
+			 * @since 2.6.0
+			 */
+			do_action( 'woocommerce_account_dashboard' );
 
-		/**
-		 * Deprecated woocommerce_before_my_account action.
-		 *
-		 * @deprecated 2.6.0
-		 */
-		do_action( 'woocommerce_before_my_account' );
-		?>
+			/**
+			 * Deprecated woocommerce_before_my_account action.
+			 *
+			 * @deprecated 2.6.0
+			 */
+			do_action( 'woocommerce_before_my_account' );
+			?>
 
 		<div class="entry-content"><?php the_content(); ?></div>
 
-		<?php
+			<?php
 		endwhile;
 
 		wp_reset_postdata();
-		
+
 	} else {
 		?>
-		<p><?php
+		<p>
+		<?php
 		/* translators: 1: user display name 2: logout url */
 		printf(
 			__( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ),
 			'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
 			esc_url( wc_logout_url( wc_get_page_permalink( 'myaccount' ) ) )
 		);
-		?></p>
+		?>
+		</p>
 	
-		<p><?php
+		<p>
+		<?php
 			printf(
 				__( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">shipping and billing addresses</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' ),
 				esc_url( wc_get_endpoint_url( 'orders' ) ),
 				esc_url( wc_get_endpoint_url( 'edit-address' ) ),
 				esc_url( wc_get_endpoint_url( 'edit-account' ) )
 			);
-		?></p>
+		?>
+		</p>
 	<?php } ?>
 	
 	

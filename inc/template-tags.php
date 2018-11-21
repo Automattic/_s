@@ -17,7 +17,8 @@ if ( ! function_exists( '_svbk_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
@@ -84,7 +85,7 @@ if ( ! function_exists( '_svbk_entry_terms' ) ) :
 	 * Prints HTML with meta information for the categories and tags.
 	 */
 	function _svbk_entry_terms() {
-		
+
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
@@ -122,18 +123,26 @@ if ( ! function_exists( '_svbk_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail domready--show">
-				<?php the_post_thumbnail($size, $attr); ?>
+				<?php the_post_thumbnail( $size, $attr ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			the_post_thumbnail( $size, array_merge ( array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				)),
-			), $merge) );
+			the_post_thumbnail(
+				$size,
+				array_merge(
+					array(
+						'alt' => the_title_attribute(
+							array(
+								'echo' => false,
+							)
+						),
+					),
+					$merge
+				)
+			);
 			?>
 		</a>
 
@@ -260,15 +269,17 @@ function _svbk_custom_post_type_archive_image( $prefix = '', $suffix = '', $size
 function _svbk_archive_taxonomy_filter( $args, $all_label = '', $id = 'category-filter' ) {
 
 	$args = wp_parse_args(
-		 $args, array(
-			 'title_li' => '',
-			 'show_option_all' => false,
-			 'echo' => 0,
-		 )
+		$args,
+		array(
+			'title_li'        => '',
+			'show_option_all' => false,
+			'echo'            => 0,
+		)
 	);
 
 	$categories = wp_list_categories( $args );
-	if ( $categories ) : ?>
+	if ( $categories ) :
+		?>
 	<div class="filter-container">
 	<ul id="<?php echo esc_attr( $id ); ?>" class="ajax-filter filter-list">
 		<?php if ( ! $args['show_option_all'] ) : ?>
@@ -279,7 +290,7 @@ function _svbk_archive_taxonomy_filter( $args, $all_label = '', $id = 'category-
 		<?php echo $categories; ?>
 	</ul>
 	</div>
-	<?php
+		<?php
 	endif;
 }
 
@@ -299,8 +310,8 @@ function _svbk_load_more_button( $label = '' ) {
 	<?php
 }
 
-if( ! function_exists( 'get_the_cookie_policy_link' ) ) {
-	
+if ( ! function_exists( 'get_the_cookie_policy_link' ) ) {
+
 	/**
 	 * Returns the privacy policy link with formatting, when applicable.
 	 *
@@ -315,7 +326,7 @@ if( ! function_exists( 'get_the_cookie_policy_link' ) ) {
 	function get_the_cookie_policy_link( $before = '', $after = '' ) {
 		$link               = '';
 		$privacy_policy_url = get_cookie_policy_url();
-	
+
 		if ( $privacy_policy_url ) {
 			$link = sprintf(
 				'<a class="cookie-policy-link" href="%s">%s</a>',
@@ -323,7 +334,7 @@ if( ! function_exists( 'get_the_cookie_policy_link' ) ) {
 				__( 'Cookie Policy' )
 			);
 		}
-	
+
 		/**
 		 * Filters the privacy policy link.
 		 *
@@ -335,17 +346,16 @@ if( ! function_exists( 'get_the_cookie_policy_link' ) ) {
 		 *                                   if it doesn't exist.
 		 */
 		$link = apply_filters( 'the_cookie_policy_link', $link, $privacy_policy_url );
-	
+
 		if ( $link ) {
 			return $before . $link . $after;
 		}
-	
+
 		return '';
-	}	
-	
+	}
 }
 
-if( ! function_exists( 'get_cookie_policy_url' ) ) {
+if ( ! function_exists( 'get_cookie_policy_url' ) ) {
 
 	/**
 	 * Retrieves the URL to the privacy policy page.
@@ -357,11 +367,11 @@ if( ! function_exists( 'get_cookie_policy_url' ) ) {
 	function get_cookie_policy_url() {
 		$url            = '';
 		$policy_page_id = (int) get_option( 'wp_page_for_cookie_policy' );
-	
+
 		if ( ! empty( $policy_page_id ) && get_post_status( $policy_page_id ) === 'publish' ) {
 			$url = (string) get_permalink( $policy_page_id );
 		}
-	
+
 		/**
 		 * Filters the URL of the privacy policy page.
 		 *
@@ -373,10 +383,9 @@ if( ! function_exists( 'get_cookie_policy_url' ) ) {
 		 */
 		return apply_filters( 'cookie_policy_url', $url, $policy_page_id );
 	}
-	
 }
 
-if( ! function_exists( 'the_cookie_policy_link' ) ) {
+if ( ! function_exists( 'the_cookie_policy_link' ) ) {
 
 	/**
 	 * Displays the privacy policy link with formatting, when applicable.
@@ -389,7 +398,6 @@ if( ! function_exists( 'the_cookie_policy_link' ) ) {
 	function the_cookie_policy_link( $before = '', $after = '' ) {
 		echo get_the_cookie_policy_link( $before, $after );
 	}
-
 }
 
 /**
@@ -398,27 +406,28 @@ if( ! function_exists( 'the_cookie_policy_link' ) ) {
  * @since 2.0.0
  *
  * @param int $words_per_minute Optional. The words per minute that will be used
- *								in calculus
+ *                              in calculus
  *
  * @return string The HTML representing the post reading time
  */
-function _svbk_post_reading_time( $words_per_minute = 200 ) { 
+function _svbk_post_reading_time( $words_per_minute = 200 ) {
 
 		$word_count = get_post_meta( get_the_ID(), 'word_count', true );
-		
-		if ( ! $word_count ) {
-			return;
-		}
+
+	if ( ! $word_count ) {
+		return;
+	}
 
 		$minutes = ceil( $word_count / $words_per_minute );
 
 		$minutes = _svbk_get_post_reading_time( $words_per_minute );
 
-		$est = sprintf( _n('%s min', '%s mins', $minutes, '_svbk'), $minutes ) ; ?>
+		$est = sprintf( _n( '%s min', '%s mins', $minutes, '_svbk' ), $minutes );
+	?>
 		
-		<span class="reading-time" data-wpm="<?php esc_attr_e($words_per_minute); ?>" data-wc="<?php esc_attr_e($word_count); ?>">
-			<span  class="readind-time__label"><?php _ex('Reading', 'post reading time label', '_svbk') ?>: </span>
-			<span class="reading-time__value"><?php echo $est ?></span>
+		<span class="reading-time" data-wpm="<?php esc_attr_e( $words_per_minute ); ?>" data-wc="<?php esc_attr_e( $word_count ); ?>">
+			<span  class="readind-time__label"><?php _ex( 'Reading', 'post reading time label', '_svbk' ); ?>: </span>
+			<span class="reading-time__value"><?php echo $est; ?></span>
 		</span>
 		<?php
 }
@@ -431,14 +440,14 @@ function _svbk_post_reading_time( $words_per_minute = 200 ) {
  * @param string $info The field name to print (ex. phone, address)
  * @param string $link The URL to link the field to
  *
- * @return string 
+ * @return string
  */
 function _svbk_contact_info( $info, $link = '' ) {
 
 	$value = get_theme_mod( $info, false );
-	
-	if ( !$value ) {
-		return ;
+
+	if ( ! $value ) {
+		return;
 	}
 	?>
 	<span class="<?php esc_attr_e( $info ); ?>"><?php echo $value; ?></span>
@@ -446,11 +455,10 @@ function _svbk_contact_info( $info, $link = '' ) {
 }
 
 
-if ( ! function_exists('the_post_type') ) {
+if ( ! function_exists( 'the_post_type' ) ) {
 
 	/**
 	 * Prints the post type of the current post or of a given post.
-	 *
 	 *
 	 * @param int|WP_Post|null $post Optional. Post ID or post object. Default is global $post.
 	 * @return void
@@ -458,5 +466,4 @@ if ( ! function_exists('the_post_type') ) {
 	function the_post_type( $post = null ) {
 		echo esc_attr( get_post_type( $post ) );
 	}
-
 }

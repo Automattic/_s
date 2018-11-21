@@ -9,6 +9,16 @@
             "email": "b.meniconi@silverbackstudio.io"
         }
     ],
+    "repositories": [
+        {
+          "type": "composer",
+          "url": "https://wpackagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packages.svbk.it"
+        }
+    ],    
     "require": {
         "silverbackstudio/wp-shortcakes": "^4.4.1",
         "silverback/wp-helpers": "^5.0.0",
@@ -17,7 +27,7 @@
         "silverbackstudio/wp-forms": "^2.2.6"
     },
     "require-dev": {
-        "wp-coding-standards/wpcs": "^0.13.1",
+        "wp-coding-standards/wpcs": "^1.2",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.4.2",
         "wimg/php-compatibility": "^8.0"
     },

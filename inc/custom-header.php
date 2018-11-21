@@ -18,19 +18,21 @@
  */
 function _svbk_custom_header_setup() {
 	add_theme_support(
-		 'custom-header', apply_filters(
-		 '_svbk_custom_header_args', array(
-			 'video' => true,
-			 'default-image'          => '',
-			 'default-text-color'     => '000000',
-			 'width'                  => 1980,
-			 'height'                 => 1200,
-			 'flex-height'            => true,
-			 'flex-width'            => true,
-			 'wp-head-callback'       => '_svbk_header_style',
-		 )
+		'custom-header',
+		apply_filters(
+			'_svbk_custom_header_args',
+			array(
+				'video'                  => true,
+				'default-image'          => '',
+				'default-text-color'     => '000000',
+				'width'                  => 1980,
+				'height'                 => 1200,
+				'flex-height'            => true,
+				'flex-width'             => true,
+				'wp-head-callback'       => '_svbk_header_style',
+			)
 		)
-		);
+	);
 }
 add_action( 'after_setup_theme', '_svbk_custom_header_setup' );
 
@@ -63,8 +65,8 @@ if ( ! function_exists( '_svbk_header_style' ) ) :
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 			}
-		<?php
-		// If the user has set a custom color for the text use that.
+			<?php
+			// If the user has set a custom color for the text use that.
 		else :
 			?>
 			.site-title a,

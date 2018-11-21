@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$quiz_id = $post->ID;
-$quiz_lesson = absint( get_post_meta( $quiz_id, '_quiz_lesson', true ) );
-$course_id = Sensei()->lesson->get_course_id( $quiz_lesson );
+$quiz_id             = $post->ID;
+$quiz_lesson         = absint( get_post_meta( $quiz_id, '_quiz_lesson', true ) );
+$course_id           = Sensei()->lesson->get_course_id( $quiz_lesson );
 $modules_and_lessons = sensei_get_modules_and_lessons( $course_id );
 
 if ( is_array( $modules_and_lessons ) && count( $modules_and_lessons ) > 0 ) {

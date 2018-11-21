@@ -13,7 +13,7 @@ use \Svbk\WP\Helpers;
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?><?php echo Helpers\Html\Element::attributes( apply_filters('_svbk_html_attributes', [ 'class' => [] ] ) ); ?> >
+<html <?php language_attributes(); ?><?php echo Helpers\Html\Element::attributes( apply_filters( '_svbk_html_attributes', [ 'class' => [] ] ) ); ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,21 +38,21 @@ use \Svbk\WP\Helpers;
 			<?php endif ?>		
 		
 			<?php
-			
+
 			if ( is_front_page() ) :
-				
-			$header_images = get_uploaded_header_images();
-			
-			if ( get_theme_mod( 'header_cycle_images' ) && $header_images ) :
-				echo '<div class="page-featured-image-header css-crossfade">';
-				echo Svbk\WP\Helpers\Gallery\CssEffects::crossfade( '.page-featured-image-header img', count( $header_images ) );
-				foreach ( $header_images as $header_image ) {
-					echo wp_get_attachment_image( $header_image['attachment_id'], 'header' );
-				}
-				echo '</div><!-- .page-featured-image-header -->';
-				return;
+
+				$header_images = get_uploaded_header_images();
+
+				if ( get_theme_mod( 'header_cycle_images' ) && $header_images ) :
+					echo '<div class="page-featured-image-header css-crossfade">';
+					echo Svbk\WP\Helpers\Gallery\CssEffects::crossfade( '.page-featured-image-header img', count( $header_images ) );
+					foreach ( $header_images as $header_image ) {
+						echo wp_get_attachment_image( $header_image['attachment_id'], 'header' );
+					}
+					echo '</div><!-- .page-featured-image-header -->';
+					return;
 			endif;
-			?>
+				?>
 		
 			<div class="custom-header-media">
 				<?php the_custom_header_markup(); ?>
@@ -72,7 +72,7 @@ use \Svbk\WP\Helpers;
 						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 					<?php endif; ?>
 				
-					<?php 
+					<?php
 					$_svbk_description = get_bloginfo( 'description', 'display' );
 					if ( $_svbk_description || is_customize_preview() ) :
 						?>
@@ -82,10 +82,11 @@ use \Svbk\WP\Helpers;
 				</div><!-- .site-branding -->
 				
 				<?php
-					if ( function_exists( '_svbk_woocommerce_header_cart' ) ) {
-						_svbk_woocommerce_header_cart();
-					}
-				?>				
+				if ( function_exists( '_svbk_woocommerce_header_cart' ) ) {
+					_svbk_woocommerce_header_cart();
+				}
+				?>
+								
 				
 				<button class="search-toggle">
 					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
@@ -100,17 +101,19 @@ use \Svbk\WP\Helpers;
 					<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 					<nav id="site-navigation" role="navigation">
 						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-							) );
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-1',
+									'menu_id'        => 'primary-menu',
+								)
+							);
 						?>
 					</nav><!-- #site-navigation -->
 					<?php endif; ?>
 					
-					<?php 
+					<?php
 					if ( function_exists( '_svbk_myaccount_sidebar_profile' ) ) {
-						_svbk_myaccount_sidebar_profile(); 
+						_svbk_myaccount_sidebar_profile();
 					}
 					?>
 					

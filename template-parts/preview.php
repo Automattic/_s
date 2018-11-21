@@ -16,7 +16,7 @@
 	<?php endif; ?>
 
 	<div class="<?php the_post_type(); ?>__header post__header entry-header">
-		<?php the_title( '<h3 class="' . esc_attr(get_post_type()) . '__title post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
+		<?php the_title( '<h3 class="' . esc_attr( get_post_type() ) . '__title post__title entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 	</div><!-- .entry-header -->
 
 	<?php if ( 'post' === get_post_type() ) : ?>

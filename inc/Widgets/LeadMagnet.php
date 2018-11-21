@@ -28,13 +28,13 @@ class LeadMagnet extends Base {
 	public function form( $instance ) {
 
 		parent::form( $instance );
-		
+
 		$this->textField( 'title', $this->fieldValue( $instance, 'title', __( 'New title', '_svbk' ) ), __( 'Title:', '_svbk' ) );
 		$this->textField( 'subtitle', $this->fieldValue( $instance, 'subtitle', __( 'New subtitle', '_svbk' ) ), __( 'Subtitle:', '_svbk' ) );
 		$this->fileField( 'image', $this->fieldValue( $instance, 'image' ), __( 'Image:', '_svbk' ) );
 		$this->textAreaField( 'description', $this->fieldValue( $instance, 'description', __( 'New description', '_svbk' ) ), __( 'Description:', '_svbk' ) );
 		$this->textField( 'link', $this->fieldValue( $instance, 'link' ), __( 'Button Link:', '_svbk' ) );
-		$this->pageSelect( 'link_page', $this->fieldValue( $instance, 'link_page' ), __( 'Button Link to page:', '_svbk' ), array( 'show_option_none' => '- ' . __('Use custom link above', '_svbk') .' -', ) );
+		$this->pageSelect( 'link_page', $this->fieldValue( $instance, 'link_page' ), __( 'Button Link to page:', '_svbk' ), array( 'show_option_none' => '- ' . __( 'Use custom link above', '_svbk' ) . ' -' ) );
 		$this->textField( 'button_label', $this->fieldValue( $instance, 'button_label', __( 'Click here', '_svbk' ) ), __( 'Button Label:', '_svbk' ) );
 	}
 
@@ -52,12 +52,12 @@ class LeadMagnet extends Base {
 
 		$instance = parent::update( $new_instance, $old_instance );
 
-		$instance['title'] = $this->sanitizeField( $new_instance, 'title' );
-		$instance['subtitle'] = $this->sanitizeField( $new_instance, 'subtitle' );
-		$instance['image'] = $this->sanitizeField( $new_instance, 'image' );
-		$instance['description'] = $this->sanitizeField( $new_instance, 'description', 'wp_kses_post' );
-		$instance['link'] = $this->sanitizeField( $new_instance, 'link' );
-		$instance['link_page'] = $this->sanitizeField( $new_instance, 'link_page' );
+		$instance['title']        = $this->sanitizeField( $new_instance, 'title' );
+		$instance['subtitle']     = $this->sanitizeField( $new_instance, 'subtitle' );
+		$instance['image']        = $this->sanitizeField( $new_instance, 'image' );
+		$instance['description']  = $this->sanitizeField( $new_instance, 'description', 'wp_kses_post' );
+		$instance['link']         = $this->sanitizeField( $new_instance, 'link' );
+		$instance['link_page']    = $this->sanitizeField( $new_instance, 'link_page' );
 		$instance['button_label'] = $this->sanitizeField( $new_instance, 'button_label' );
 
 		return $instance;
@@ -76,17 +76,17 @@ class LeadMagnet extends Base {
 		<?php endif; ?>
 		
 		<?php if ( ! empty( $instance['image'] ) ) : ?>
-		<div class="lead-magnet__image"><?php echo wp_get_attachment_image($instance['image'], 'main-sidebar' ); ?></div>
+		<div class="lead-magnet__image"><?php echo wp_get_attachment_image( $instance['image'], 'main-sidebar' ); ?></div>
 		<?php endif; ?>		
 
 		<?php if ( ! empty( $instance['description'] ) ) : ?>
-		<div class="lead-magnet__description widget-description"><?php echo $instance['description'] ?></div>
+		<div class="lead-magnet__description widget-description"><?php echo $instance['description']; ?></div>
 		<?php endif; ?>
 
-		<?php $link = $instance['link_page'] ? get_permalink( $instance['link_page'] ) : esc_url( $instance['link'] ) ;?>
+		<?php $link = $instance['link_page'] ? get_permalink( $instance['link_page'] ) : esc_url( $instance['link'] ); ?>
 		
 		<?php if ( $link ) : ?>
-		<a class="lead-magnet__cta button" href="<?php echo esc_attr( $link ); ?>"><?php echo $instance['button_label'] ?></a>
+		<a class="lead-magnet__cta button" href="<?php echo esc_attr( $link ); ?>"><?php echo $instance['button_label']; ?></a>
 		<?php endif; ?>
 
 		<?php

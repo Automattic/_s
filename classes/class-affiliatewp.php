@@ -36,23 +36,23 @@ class AffiliateWP {
 			'desc_tip'    => true,
 			'default'     => __( 'Affiliate', '_svbk' ),
 		);
-		
+
 		$integration->form_fields['affiliate_url_instructions'] = array(
 			'title'       => __( 'Affiliate URL Instructions', '_svbk' ),
 			'type'        => 'textarea',
 			'description' => __( 'Instructions to print before affiliate URL', '_svbk' ),
-			'desc_tip'    => true
-		);	
-		
+			'desc_tip'    => true,
+		);
+
 		$integration->form_fields['affiliate_url_generator_instructions'] = array(
 			'title'       => __( 'Affiliate URL Generator Instructions', '_svbk' ),
 			'type'        => 'textarea',
 			'description' => __( 'Instructions printed before the url generator', '_svbk' ),
-			'desc_tip'    => true
-		);			
+			'desc_tip'    => true,
+		);
 
-		$this->affiliate_menu_label = $this->integration->get_option( 'affiliate_menu_label' );
-		$this->affiliate_url_instructions = $this->integration->get_option( 'affiliate_url_instructions' );
+		$this->affiliate_menu_label                 = $this->integration->get_option( 'affiliate_menu_label' );
+		$this->affiliate_url_instructions           = $this->integration->get_option( 'affiliate_url_instructions' );
 		$this->affiliate_url_generator_instructions = $this->integration->get_option( 'affiliate_url_generator_instructions' );
 
 		$this->hooks();
@@ -87,12 +87,12 @@ class AffiliateWP {
 	 * Affiliate page in WC Account content
 	 */
 	public function affiliate_page_content() {
-	?>
+		?>
 	<div class="content-wrapper">    
 		<h2><?php esc_html_e( 'Affiliate', '_svbk' ); ?></h2>
 		<?php echo do_shortcode( '[affiliate_area]' ); ?>
 	</div>
-	<?php
+		<?php
 	}
 
 	/**
@@ -108,28 +108,28 @@ class AffiliateWP {
 
 		return $affiliate_area_page_url;
 	}
-	
-	public function print_affiliate_url_instructions(){
-		
-		if( ! $this->affiliate_url_instructions ) {
-			return;
-		}		
-		
-		echo '<div id="url-instructions" class="affiliate-instructions">';
-		echo wpautop( do_shortcode($this->affiliate_url_instructions) );
-		echo '</div>';
-	}
-	
-	public function print_affiliate_url_generator_instructions(){
-		
-		if( ! $this->affiliate_url_generator_instructions ) {
+
+	public function print_affiliate_url_instructions() {
+
+		if ( ! $this->affiliate_url_instructions ) {
 			return;
 		}
-		
+
+		echo '<div id="url-instructions" class="affiliate-instructions">';
+		echo wpautop( do_shortcode( $this->affiliate_url_instructions ) );
+		echo '</div>';
+	}
+
+	public function print_affiliate_url_generator_instructions() {
+
+		if ( ! $this->affiliate_url_generator_instructions ) {
+			return;
+		}
+
 		echo '<div id="generator-instructions" class="affiliate-instructions">';
 		echo wpautop( do_shortcode( $this->affiliate_url_generator_instructions ) );
 		echo '</div>';
-	}	
+	}
 
 
 }

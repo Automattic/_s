@@ -36,6 +36,6 @@ function _svbk_acf_register_fields() {
 		return;
 	}
 
-   /* add fields definitions here */
+	/* add fields definitions here */
 
 }

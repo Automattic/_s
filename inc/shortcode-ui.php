@@ -45,19 +45,18 @@ function shortcode_ui_notices() {
 
 /**
  * Register Shortcodes here.
- * 
+ *
  * ```php
- * 	Shortcakes\Images\Responsive::register( [ 
- *		'attach_to' => [ 'page', 'post' ]
- *	] );
+ *  Shortcakes\Images\Responsive::register( [
+ *      'attach_to' => [ 'page', 'post' ]
+ *  ] );
  * ```
- * 
+ *
  * @return void
  */
 function register_shortcodes() {
 
 	Helpers\Compliance\Privacy::register_shortcodes();
-
 
 }
 

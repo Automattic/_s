@@ -24,16 +24,16 @@ get_header(); ?>
 					</header>
 
 					<?php
-					$categories  = wp_list_categories(
-						 array(
-							 'title_li' => '',
-							 'show_option_all' => __( 'All categories', '_svbk' ),
-							 'echo' => 0,
-						 )
+					$categories = wp_list_categories(
+						array(
+							'title_li'        => '',
+							'show_option_all' => __( 'All categories', '_svbk' ),
+							'echo'            => 0,
+						)
 					);
 
 					if ( $categories ) :
-					?>
+						?>
 					<ul id="category-filter" class="ajax-filter filter-list">
 						<?php echo $categories; ?>
 					</ul>
@@ -59,14 +59,14 @@ get_header(); ?>
 					</div>
 					<?php
 					the_posts_pagination(
-						 array(
-							 'prev_text' => '<span class="screen-reader-text">' . _x( 'Previous', 'previous set of posts', '_svbk' ) . '</span>',
-							 'next_text' => '<span class="screen-reader-text">' . _x( 'Next', 'next set of posts', '_svbk' ) . '</span>',
-						 )
-						);
+						array(
+							'prev_text' => '<span class="screen-reader-text">' . _x( 'Previous', 'previous set of posts', '_svbk' ) . '</span>',
+							'next_text' => '<span class="screen-reader-text">' . _x( 'Next', 'next set of posts', '_svbk' ) . '</span>',
+						)
+					);
 					?>
 				</div>
-				<?php
+					<?php
 				else :
 					get_template_part( 'template-parts/content', 'none' );
 

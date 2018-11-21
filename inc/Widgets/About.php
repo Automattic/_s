@@ -28,11 +28,11 @@ class About extends Base {
 	public function form( $instance ) {
 
 		parent::form( $instance );
-		
+
 		$this->textField( 'title', $this->fieldValue( $instance, 'title', __( 'New title', '_svbk' ) ), __( 'Title:', '_svbk' ) );
 		$this->fileField( 'image', $this->fieldValue( $instance, 'image' ), __( 'Image:', '_svbk' ) );
 		$this->textAreaField( 'description', $this->fieldValue( $instance, 'description', __( 'New description', '_svbk' ) ), __( 'Description:', '_svbk' ) );
-		
+
 		$this->menuSelect( 'nav_menu', $this->fieldValue( $instance, 'nav_menu' ), __( 'Menu:', '_svbk' ) );
 
 	}
@@ -51,12 +51,11 @@ class About extends Base {
 
 		$instance = parent::update( $new_instance, $old_instance );
 
-		$instance['title'] = $this->sanitizeField( $new_instance, 'title' );
-		$instance['subtitle'] = $this->sanitizeField( $new_instance, 'subtitle' );
-		$instance['image'] = $this->sanitizeField( $new_instance, 'image' );
+		$instance['title']       = $this->sanitizeField( $new_instance, 'title' );
+		$instance['subtitle']    = $this->sanitizeField( $new_instance, 'subtitle' );
+		$instance['image']       = $this->sanitizeField( $new_instance, 'image' );
 		$instance['description'] = $this->sanitizeField( $new_instance, 'description', 'wp_kses_post' );
-		$instance['nav_menu'] = $this->sanitizeField( $new_instance, 'nav_menu' );
-
+		$instance['nav_menu']    = $this->sanitizeField( $new_instance, 'nav_menu' );
 
 		return $instance;
 	}
@@ -80,27 +79,27 @@ class About extends Base {
 		} ?>
 		
 		<?php if ( ! empty( $instance['image'] ) ) : ?>
-		<div class="about-widget__image"><?php echo wp_get_attachment_image($instance['image'], 'main-sidebar' ); ?></div>
+		<div class="about-widget__image"><?php echo wp_get_attachment_image( $instance['image'], 'main-sidebar' ); ?></div>
 		<?php endif; ?>		
 
 		<?php if ( ! empty( $instance['description'] ) ) : ?>
-		<div class="about-widget__description widget-description"><?php echo $instance['description'] ?></div>
+		<div class="about-widget__description widget-description"><?php echo $instance['description']; ?></div>
 		<?php endif; ?>
 
 		<?php
 		$nav_menu = ! empty( $instance['nav_menu'] ) ? wp_get_nav_menu_object( $instance['nav_menu'] ) : false;
-		
-		if ( $nav_menu  ) {
-		
+
+		if ( $nav_menu ) {
+
 			$nav_menu_args = array(
 				'fallback_cb' => '',
-				'menu'        => $nav_menu
+				'menu'        => $nav_menu,
 			);
-	
+
 			wp_nav_menu( $nav_menu_args );
-			
+
 		}
-		
+
 		echo $args['after_widget'];
 	}
 

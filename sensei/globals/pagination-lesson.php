@@ -13,8 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$lesson_id = $post->ID;
-$course_id = Sensei()->lesson->get_course_id( $post->ID );
+$lesson_id           = $post->ID;
+$course_id           = Sensei()->lesson->get_course_id( $post->ID );
 $modules_and_lessons = sensei_get_modules_and_lessons( $course_id );
 
 if ( is_array( $modules_and_lessons ) && count( $modules_and_lessons ) > 0 ) {

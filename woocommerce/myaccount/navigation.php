@@ -22,18 +22,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 	<?php do_action( 'woocommerce_before_account_navigation' ); ?>
 	
-	<button class="secondary-navigation__toggle"><span class="screen-reader-text"><?php esc_html_e( 'Toggle Account Menu', '_svbk' ); ?></span></button>
+	<button class="secondary-navigation__toggle"><?php esc_html_e( 'Toggle Account Menu', '_svbk' ); ?></button>
 	<nav class="woocommerce-MyAccount-navigation secondary-navigation">
 		
-		<?php if ( has_nav_menu( 'woocommerce-myaccount' ) ) : 
+		<?php
+		if ( has_nav_menu( 'woocommerce-myaccount' ) ) :
 			wp_nav_menu(
-				 array(
-					 'theme_location' => 'woocommerce-myaccount',
-					 'container'	  => false,
-					 'menu_id'        => 'woocommerce-myaccount-menu',
-				 )
+				array(
+					'theme_location' => 'woocommerce-myaccount',
+					'container'      => false,
+					'menu_id'        => 'woocommerce-myaccount-menu',
+				)
 			);
-		else: ?>
+		else :
+			?>
 			<ul>
 				<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
 					<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
