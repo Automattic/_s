@@ -111,7 +111,7 @@ function _svbk_woocommerce_scripts() {
 	            	the space reserved for your signature, and consists of 3 digits. 
 	            	If you use American Express, the secure code is placed on the 
 	            	front of your card and consists of 4 digits.',
-					_svbk
+					'_svbk'
 				),
 				'imageUrl'   => get_theme_file_uri( '/dist/css/images/cvc-instructions.png' ),
 				'closeText'  => __( 'Close', '_svbk' ),
