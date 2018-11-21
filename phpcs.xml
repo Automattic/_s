@@ -28,10 +28,12 @@
 	<!-- Check up to 8 files simultanously. -->
 	<arg name="parallel" value="8"/>
 
-	<exclude-pattern type="relative">tests/*</exclude-pattern>
-	<exclude-pattern type="relative">vendor/*</exclude-pattern>
+	<exclude-pattern type="relative">tests/</exclude-pattern>
+	<exclude-pattern type="relative">vendor/</exclude-pattern>
+	<exclude-pattern type="relative">wordpress/</exclude-pattern>
+	<exclude-pattern type="relative">wp-content/</exclude-pattern>
 	<exclude-pattern >node_modules/*</exclude-pattern>
-	<exclude-pattern type="relative">dist/*</exclude-pattern>	
+	<exclude-pattern type="relative">dist/*</exclude-pattern>
 
 	<!-- Only check the PHP, CSS and SCSS files. JS files are checked separately with JSCS and JSHint. -->
 	<arg name="extensions" value="php,css,scss/css"/>

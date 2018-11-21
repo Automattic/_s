@@ -104,17 +104,17 @@ function _svbk_woocommerce_scripts() {
 		'_svbk_woocommerce',
 		array(
 			'cvcInstructions' => array(
-				'buttonText' => __( 'Where?', 'woocommerce-funnels' ),
+				'buttonText' => __( 'Where?', '_svbk' ),
 				'text'       => __(
 					'If you use Mastercard, Visa and Diners, 
 	            	the security code is shown on the back of your credit card near 
 	            	the space reserved for your signature, and consists of 3 digits. 
 	            	If you use American Express, the secure code is placed on the 
 	            	front of your card and consists of 4 digits.',
-					'woocommerce-funnels'
+					_svbk
 				),
 				'imageUrl'   => get_theme_file_uri( '/dist/css/images/cvc-instructions.png' ),
-				'closeText'  => __( 'Close', 'woocommerce-funnels' ),
+				'closeText'  => __( 'Close', '_svbk' ),
 			),
 		)
 	);

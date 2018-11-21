@@ -56,9 +56,9 @@ if ( isset( $next ) ) { ?>
 		<div class="nav-next fr">
 			<a href="<?php echo esc_url( sensei_get_navigation_url( $course_id, $next ) ); ?>" rel="prev">
 				<?php echo get_the_post_thumbnail( $next, 'thumbnail' ); ?>
-				<span class="prev-next notice"><?php _e( 'Next Lesson', 'woocommerce-funnels' ); ?>&colon;</span>
+				<span class="prev-next notice"><?php _e( 'Next Lesson', '_svbk' ); ?>&colon;</span>
 				<span class="next-title"><?php echo get_the_title( $next ); ?></span>
-				<span class="goto"><?php _e( 'View next lesson', 'woocommerce-funnels' ); ?></span>    			
+				<span class="goto"><?php _e( 'View next lesson', '_svbk' ); ?></span>    			
 			</a>
 		</div>
 	</nav><!-- #post-entries -->
