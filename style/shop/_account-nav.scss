@@ -1,0 +1,15 @@
+.secondary-navigation__toggle {
+    width: 100%;
+    width: calc(100% + #{$padding__content-mobile * 2});
+    margin: 0 -#{$padding__content-mobile};
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    
+    &:after {
+        @include icon-content('\e90b');
+        @include font-size(.7);
+        margin-left: 10px;
+        font-weight: normal;
+    }
+}

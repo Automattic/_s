@@ -1,0 +1,53 @@
+#sensei-quiz-list {
+    padding: 0;
+    
+    .question-title {
+        @include font-size(1.2);
+        font-weight: bold;
+    }
+    
+    .grade {
+        @include font-size(1);
+        color: $color__corporate;
+        font-weight: normal;
+        margin-left: 10px;
+        
+        &:before {
+            content: "+";
+        }
+    }
+    
+    .answers {
+        padding: 0;
+        margin: 0;
+        
+        li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            
+            &:before {
+                display: none;
+            }
+            
+            input {
+                position: absolute;
+                top: 3px;
+                left: 0;
+            }
+            
+            input + label {
+                display: inline;
+                font-weight: normal;
+                @include font-size(1);
+            }
+        }
+    }
+    
+    > li:before {
+        @include font-size(1.2);
+        color: $color__corporate;
+        font-weight: bold;
+        margin: 0;
+    }
+}

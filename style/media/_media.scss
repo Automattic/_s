@@ -25,7 +25,8 @@ object {
 @import "galleries";
 
 .wp-has-aspect-ratio .wp-block-embed__wrapper,
-.aspect-ratio {
+.aspect-ratio,
+.video {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
 	

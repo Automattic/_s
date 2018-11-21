@@ -1,3 +1,7 @@
+h2 {
+    margin-top: 0;
+}
+
 /**
  * Notices
  */
@@ -133,7 +137,7 @@
  */
 
 .post-entries {
-    padding: 10px;
+    padding: 10px 0;
     margin: 0 0 50px 0;
     clear: both;
     
@@ -143,6 +147,7 @@
     
     a {
         text-decoration: none;
+        color: $color__corporate;
     }
     
     .nav-next {
@@ -168,9 +173,9 @@
     }
     
     .next-title {
+        @include font-size(1.1);
         color: $color__text-main;
         font-weight: normal;
-        font-size: 1.4em;
         line-height: 1.2em;
         margin: 0 15px;
         display: block;
@@ -195,7 +200,7 @@
     }
     
     @media screen and (min-width: breakpoint('tablet-portrait')) {
-        padding: 10px 20px;
+        padding: 10px 0;
         
         .nav-next {
             width: 100%;
@@ -231,6 +236,45 @@
  * Module
  */
 
-.medule {
-    background: #f5f5f5;
+.module {
+    background: #f9f9f9;
+    padding: 20px;
+    
+    h2 {
+        margin-top: 0;
+    }
+}
+
+/**
+ * Pagination
+ */
+
+.sensei-pagination {
+    clear: both;
+    
+    .page-numbers {
+    
+        li {
+            display: inline-block;
+            
+            &:before {
+                display: none;
+            }
+        }   
+    }
+}
+
+/**
+ * Breadcrumbs
+ */
+
+.sensei-breadcrumb {
+    margin: 20px 0;
+    font-weight: bold;
+    background: #f9f9f9;
+    padding: 15px;
+    
+    a {
+        text-decoration: none;
+    }
 }

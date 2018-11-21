@@ -28,7 +28,7 @@ ol {
 	counter-reset: li;
 	padding-left: 1.5em;
 	
-	li {
+	> li {
 		counter-increment: li;
 		
 		&:before {
