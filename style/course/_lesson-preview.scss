@@ -1,212 +1,278 @@
-.lesson-container,
-.lessons-list {
+.lesson--preview {
+    padding: 25px 0 2.7em;
+    border-bottom: 1px solid $color__background-hr;
+    position: relative;
+    margin-bottom: 0;
+    overflow: hidden;
+    clear: both;
     
-    .lesson {
-        padding: 25px 0 2.7em;
-        border-bottom: 1px solid $color__background-hr;
+    .lesson-content {
+        margin: 0;
+    }
+    
+    .lesson-meta {
+        display: none;
+    }
+    
+    &:after {
+        content: "";
+        display: block;
+        background: #f5f5f5;
+        height: 4.5em;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+    }
+    
+    .entry > a {
+        width: 100%;
+        display: block;
         position: relative;
-        margin-bottom: 0;
-        overflow: hidden;
-        clear: both;
         
-        .lesson-content {
-            margin: 0;
-        }
-        
-        .lesson-meta {
-            display: none;
-        }
-        
-        &:after {
-            content: "";
+        img {
+            width: 100%;
+            float: none;
             display: block;
-            background: #f5f5f5;
-            height: 4.5em;
-            position: absolute;
-            bottom: 25px;
-            left: 0;
-            right: 0;
+        }
+    }
+    
+    header {
+        margin: 10px 0 0 0;
+        padding: 0;
+    }
+    
+    h2 {
+        padding: 0;
+        font-size: 1em;
+        text-align: left;
+        text-indent: -35px;
+        padding-left: 35px;
+        
+        a {
+            color: $color__text-main;
+            font-weight: 400;
+            font-size: 1.2em;
+            line-height: 1.2em;
+            border-bottom: none;
+            background: none;
+            text-decoration: none;
+            
+            .lesson-number {
+                background: $color__corporate-secondary;
+                color: #fff;
+                text-align: center;
+                font-weight: bold;
+                width: 25px;
+                height: 25px;
+                border-radius: 25px;
+                line-height: 25px;
+                font-size: 18px;
+                left: 0;
+                top: 0;
+                display: inline-block;
+                margin-right: 10px;
+                text-indent: 0;
+            }
+        }
+    }
+
+    .lesson-excerpt {
+        clear: both;
+    }
+    
+    @media screen and (min-width: 56em) {
+        padding-left: 25%;
+        
+        header {
+            margin-top: 0;
+            margin-right: 120px;
+            margin-left: 15px;
         }
         
         .entry > a {
-            width: 100%;
-            display: block;
-            position: relative;
+            width: 25%;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            bottom: 25px;
             
             img {
-                width: 100%;
-                float: none;
-                display: block;
+                height: 100%;
+                object-fit: cover;
             }
         }
         
-        header {
-            margin: 10px 0 0 0;
-            padding: 0;
-        }
-        
-        h2 {
-            padding: 0;
-            font-size: 1em;
-            text-align: left;
-            text-indent: -35px;
-            padding-left: 35px;
-            
-            a {
-                color: $color__text-main;
-                font-weight: 400;
-                font-size: 1.2em;
-                line-height: 1.2em;
-                border-bottom: none;
-                background: none;
-                text-decoration: none;
-                
-                .lesson-number {
-                    background: $color__corporate-secondary;
-                    color: #fff;
-                    text-align: center;
-                    font-weight: bold;
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 25px;
-                    line-height: 25px;
-                    font-size: 18px;
-                    left: 0;
-                    top: 0;
-                    display: inline-block;
-                    margin-right: 10px;
-                    text-indent: 0;
-                }
-            }
-        }
-
         .lesson-excerpt {
-            clear: both;
+            margin-left: 15px;
         }
         
-        @media screen and (min-width: 56em) {
-            padding-left: 25%;
+        &:after {
+            left: 25%;
+            margin-left: 15px;
+        }
+    }
+    
+    &.lesson-locked {
+        
+        a {
+            pointer-events: none;
+        }
+        
+        header h2 a .lesson-number {
+            background: #ddd;
+        }
+        
+        .entry > a {
             
-            header {
-                margin-top: 0;
-                margin-right: 120px;
-                margin-left: 15px;
-            }
-            
-            .entry > a {
-                width: 25%;
-                position: absolute;
+            &:before {
+                content: "";
+                display: block;
+                background: rgba(0,0,0,0.5);
+                top: 0;
+                bottom: 0;
                 left: 0;
-                top: 25px;
-                bottom: 25px;
-                
-                img {
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-            
-            .lesson-excerpt {
-                margin-left: 15px;
+                right: 0;
+                position: absolute;
             }
             
             &:after {
-                left: 25%;
-                margin-left: 15px;
+                content: "Locked";
             }
         }
         
-        &.lesson-locked {
+        .button.to-single {
+            background: #bbb;
+            border: #bbb;
             
-            a {
-                pointer-events: none;
-            }
-            
-            header h2 a .lesson-number {
-                background: #ddd;
-            }
-            
-            .entry > a {
-                
-                &:before {
-                    content: "";
-                    display: block;
-                    background: rgba(0,0,0,0.5);
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    position: absolute;
-                }
-                
-                &:after {
-                    content: "Locked";
-                }
-            }
-            
-            .button.to-single {
-                background: #bbb;
-                border: #bbb;
-                
-                &:after {
-                    display: none;
-                }
+            &:after {
+                display: none;
             }
         }
-        
-        &.lesson-completed {
+    }
     
-            .entry > a {
-                
-                &:before {
-                    content: "";
-                    display: block;
-                    top: 0;
-                    left: 0;
-                    position: absolute;
-                    border-left: 60px solid $color__success;
-                    border-bottom: 60px solid transparent;
-                    border-right: 60px solid transparent;
-                }
-                
+    .rating {
+        position: relative;
+        padding-left: 15px;
+        
+        &:after {
+            margin-left: 15px;
+        }
+        
+        .rating-value {
+            @include screen-reader-text();
+        }
+        
+        .rating-count {
+            font-size: .9em;
+            color: #cfcfcf;
+            position: relative;
+            bottom: 2px;
+            margin-left: 5px;
+        }
+        
+        &:before,
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 92px;
+            height: 15px;
+            background-size: auto 100%;
+            background-repeat: repeat-x;
+            background-position: left;
+        }
+    
+        &:before {
+            background-image: url("images/reviews/review-star-grey.png");
+        }
+        
+        &:after {
+            background-image: url("images/reviews/review-star.png");
+            position: absolute;
+            top: 3px;
+            left: 0;
+            height: 15px;
+        }
+    
+        @for $i from 0 through 5 {
+            
+            &.rating-#{$i} {
+            
                 &:after {
-                    @include icon-content('\e90c');
-                    text-decoration: none;
-                    position: absolute;
-                    color: #fff;
-                    top: 0;
-                    left: 0;
-                    font-size: 22px;
-                    font-weight: 400;
-                    width: 40px;
-                    height: 40px;
-                    text-align: center;
-                    line-height: 40px;
+                    width: 18px * $i;
                 }
             }
         }
     }
     
-    .button.to-single {
-        float: right;
-        padding: .6em 1.5em;
-        position: relative;
-        z-index: 1;
-        margin-right: 15px;
-        
-        &:after {
-            @include icon-content('\e922');
-            font-size: .8em;
-            margin-left: 10px;
-        }
-        
-        &.completed {
-            background: $color__success;
-            border-color: $color__success;
+    &.lesson-completed {
 
+        .entry > a {
+            
+            &:before {
+                content: "";
+                display: block;
+                top: 0;
+                left: 0;
+                position: absolute;
+                border-left: 60px solid $color__success;
+                border-bottom: 60px solid transparent;
+                border-right: 60px solid transparent;
+            }
+            
             &:after {
                 @include icon-content('\e90c');
+                text-decoration: none;
+                position: absolute;
+                color: #fff;
+                top: 0;
+                left: 0;
+                font-size: 22px;
+                font-weight: 400;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
             }
+        }
+    }
+    
+    &.lesson-locked {
+        
+        .entry > a {
+            
+            &:before {
+                display: none;
+            }
+            
+            &:after {
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%), translateY(-50%);
+            }
+        }
+    }
+}
+
+.button.to-single {
+    float: right;
+    padding: .6em 1.5em;
+    position: relative;
+    z-index: 1;
+    margin-right: 15px;
+    
+    &:after {
+        @include icon-content('\e922');
+        font-size: .8em;
+        margin-left: 10px;
+    }
+    
+    &.completed {
+        background: $color__success;
+        border-color: $color__success;
+
+        &:after {
+            @include icon-content('\e90c');
         }
     }
 }
