@@ -240,9 +240,23 @@ h2 {
 .module {
     background: #f9f9f9;
     padding: 20px;
+    margin-top: 30px;
+    
+    &:first-of-type {
+        margin-top: 0;
+    }
     
     h2 {
         margin-top: 0;
+        
+        a {
+            color: $color__text-main;
+            text-decoration: none;
+        }
+    }
+    
+    h3 {
+        margin-bottom: 0;
     }
 }
 
@@ -270,10 +284,15 @@ h2 {
  */
 
 .sensei-breadcrumb {
-    margin: 20px 0;
+    @include font-size(.8);
+    margin: 0;
     font-weight: bold;
-    background: #f9f9f9;
-    padding: 15px;
+    
+    &:before {
+        @include font-size(.7);
+        @include icon-content('\e920');
+        margin-right: 5px;
+    }
     
     a {
         text-decoration: none;

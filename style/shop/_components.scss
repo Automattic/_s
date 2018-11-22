@@ -7,7 +7,6 @@
 /**
  * Page Structure
  */
-
 #page {
 	
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
@@ -46,6 +45,14 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
         width: 69%;
         margin-top: 50px;
+	}
+}
+
+.sensei__content #sensei-user-courses {
+	margin-top: 0;
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		width: 100%;
 	}
 }
 
@@ -166,7 +173,6 @@
 /**
  * Widgets
  */
- 
 .widget-area {
 	background: none;
 }
@@ -174,7 +180,6 @@
 /**
  * Header cart
  */
- 
 .site-header-cart {
 	margin: 0;
 	padding: 0;
@@ -324,7 +329,6 @@
 /**
  * Login link
  */
- 
 .menu-item.login {
 	border-top: 1px solid $color__background-hr;
 
@@ -350,7 +354,6 @@
 /**
  * Price
  */
-
 .price {
     margin: 10px 0;
     
@@ -376,7 +379,6 @@
 /**
  * Breadcrumbs
  */
-
 .woocommerce-breadcrumb {
 	margin: 30px 0 15px;
 	@include font-size(.9);
@@ -396,7 +398,6 @@
 /**
  * Tables
  */
-
 table {
     border: 1px solid $color__background-hr;
     background: #fff;
@@ -436,6 +437,15 @@ table {
     		display: none;
     	}
     }
+}
+
+/**
+ * Address
+ */
+address {
+	@include font-size(.9);
+	font-style: normal;
+	line-height: normal;
 }
 
 /**
@@ -629,7 +639,6 @@ p.stars {
 /**
  * Notices
  */
- 
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message,
@@ -713,4 +722,72 @@ p.no-comments {
 
 .woocommerce-error {
     background-color: $woocommerce__color-error;
+}
+
+/**
+ * Thank you page
+ */
+.woocommerce-order-received {
+	
+	h2 {
+		@include font-size(1.6);
+	}
+	
+	.entry-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	
+	.woocommerce-notice--success {
+		@include font-size(1.5);
+		color: $color__success;
+		font-weight: 600;
+		line-height: 1.2em;
+		border: 3px solid $color__success;
+		text-align: center;
+		padding: 15px;
+		padding-top: 35px;
+		margin-top: 40px;
+		position: relative;
+		
+		&:before {
+			@include icon-content('\e901');
+			font-size: 50px;
+			position: absolute;
+			top: -15px;
+			left: 50%;
+			transform: translateX(-50%);
+			background: #fff;
+		}
+	}
+	
+	.woocommerce-thankyou-order-details {
+		@include font-size(.8);
+		background: #f9f9f9;
+		padding: 20px;
+		
+		li {
+			text-transform: uppercase;
+			color: #777;
+			line-height: normal;
+			border-bottom: 1px solid #eee;
+			padding-bottom: 10px;
+			
+			&:last-of-type {
+				border-bottom: none;
+				padding: 0;
+				margin: 0;
+			}
+			
+			strong {
+				display: block;
+				@include font-size(.9);
+				color: $color__text-main;
+			}
+			
+			&:before {
+				display: none;
+			}
+		}
+	}
 }
