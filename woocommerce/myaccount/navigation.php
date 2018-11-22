@@ -32,6 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					'theme_location' => 'woocommerce-myaccount',
 					'container'      => false,
 					'menu_id'        => 'woocommerce-myaccount-menu',
+					'depth' 		 => 1
 				)
 			);
 		else :

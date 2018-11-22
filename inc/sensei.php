@@ -88,6 +88,7 @@ function _svbk_sensei_navigation() {
 			'theme_location' => 'sensei',
 			'menu_id'        => 'sensei-menu',
 			'echo'           => false,
+			'depth'			 => 1
 		)
 	);
 	$output .= '</nav><!-- #site-navigation -->';
