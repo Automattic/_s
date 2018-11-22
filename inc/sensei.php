@@ -48,6 +48,9 @@ function _svbk_sensei_setup() {
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
 	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
+	
+	remove_action( 'sensei_pagination', array( Sensei()->frontend, 'sensei_breadcrumb'), 80 );
+	add_action( 'sensei_before_main_content', array( Sensei()->frontend, 'sensei_breadcrumb'), 15 );
 }
 add_action( 'after_setup_theme', '_svbk_sensei_setup' );
 
