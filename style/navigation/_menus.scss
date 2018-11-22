@@ -183,3 +183,42 @@
 		text-transform: none;
 	}
 }
+
+.profile-nav {
+	@include font-size(.8);
+	
+	.my-account {
+		
+		&:before {
+			display: none;
+		}
+		
+		a {
+			color: $color__text-main;
+			text-decoration: none;
+		}
+		
+		img {
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			margin-right: 5px;
+			object-fit: cover;
+			background: #aaa;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		
+		.user-name {
+			text-transform: uppercase;
+		}
+	}
+}
+
+.top-header,
+.site-footer {
+	
+	.sub-menu {
+		display: none;
+	}
+}
