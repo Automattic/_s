@@ -147,12 +147,15 @@ p {
   font-size: 16px;
 }
 .fs1 {
-  font-size: 18px;
-}
-.fs2 {
   font-size: 32px;
 }
+.fs2 {
+  font-size: 18px;
+}
 .fs3 {
+  font-size: 32px;
+}
+.fs4 {
   font-size: 32px;
 }
 

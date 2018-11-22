@@ -113,44 +113,6 @@
         }
     }
     
-    &.lesson-locked {
-        
-        a {
-            pointer-events: none;
-        }
-        
-        header h2 a .lesson-number {
-            background: #ddd;
-        }
-        
-        .entry > a {
-            
-            &:before {
-                content: "";
-                display: block;
-                background: rgba(0,0,0,0.5);
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                position: absolute;
-            }
-            
-            &:after {
-                content: "Locked";
-            }
-        }
-        
-        .button.to-single {
-            background: #bbb;
-            border: #bbb;
-            
-            &:after {
-                display: none;
-            }
-        }
-    }
-    
     .rating {
         position: relative;
         padding-left: 15px;
@@ -239,16 +201,45 @@
     
     &.lesson-locked {
         
+        a {
+            pointer-events: none;
+        }
+        
         .entry > a {
             
             &:before {
-                display: none;
+                border: none;
+                content: "";
+                display: block;
+                background: rgba(0,0,0,0.5);
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                position: absolute;
             }
             
             &:after {
+                @include icon-content('\e929');
+                @include font-size(3);
                 top: 50%;
                 left: 50%;
-                transform: translateX(-50%), translateY(-50%);
+                width: auto;
+                height: auto;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+        
+        header h2 a .lesson-number {
+            background: #ddd;
+        }
+        
+        .button.to-single {
+            background: #bbb;
+            border: #bbb;
+            
+            &:after {
+                display: none;
             }
         }
     }
