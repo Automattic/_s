@@ -6,6 +6,10 @@
     overflow: hidden;
     clear: both;
     
+    &:last-of-type {
+        border-bottom: none;
+    }
+    
     .lesson-content {
         margin: 0;
     }
