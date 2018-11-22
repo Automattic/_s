@@ -48,9 +48,9 @@ function _svbk_sensei_setup() {
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
 	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
-	
-	remove_action( 'sensei_pagination', array( Sensei()->frontend, 'sensei_breadcrumb'), 80 );
-	add_action( 'sensei_before_main_content', array( Sensei()->frontend, 'sensei_breadcrumb'), 15 );
+
+	remove_action( 'sensei_pagination', array( Sensei()->frontend, 'sensei_breadcrumb' ), 80 );
+	add_action( 'sensei_before_main_content', array( Sensei()->frontend, 'sensei_breadcrumb' ), 15 );
 }
 add_action( 'after_setup_theme', '_svbk_sensei_setup' );
 
@@ -91,7 +91,7 @@ function _svbk_sensei_navigation() {
 			'theme_location' => 'sensei',
 			'menu_id'        => 'sensei-menu',
 			'echo'           => false,
-			'depth'			 => 1
+			'depth'          => 1,
 		)
 	);
 	$output .= '</nav><!-- #site-navigation -->';
@@ -268,12 +268,12 @@ add_filter( 'parse_query', '_svbk_sensei_normalize_learner_profile_query' );
   *
   * @return array
   */
-function _svbk_sensei_lesson_classes( $classes, $class, $post_id )  {
-	
-	if ( 'lesson' === get_post_type($post_id) && ! is_singular( 'lesson' ) ) {
+function _svbk_sensei_lesson_classes( $classes, $class, $post_id ) {
+
+	if ( 'lesson' === get_post_type( $post_id ) && ! is_singular( 'lesson' ) ) {
 		$classes[] = 'lesson--preview';
 	}
-	
+
 	return $classes;
 }
 

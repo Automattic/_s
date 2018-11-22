@@ -273,7 +273,7 @@ function _svbk_scripts() {
 		[
 			'deps'      => array( '_svbk-common' ),
 			'source'    => 'theme',
-			'condition' => is_home() || is_category() || is_tag() || is_post_type_archive( 'post' ) ,
+			'condition' => is_home() || is_category() || is_tag() || is_post_type_archive( 'post' ),
 			'prefetch'  => ! is_home() && ! is_archive( 'post' ),
 		]
 	);
