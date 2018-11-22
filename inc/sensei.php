@@ -48,7 +48,6 @@ function _svbk_sensei_setup() {
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
 	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
-
 }
 add_action( 'after_setup_theme', '_svbk_sensei_setup' );
 
@@ -259,3 +258,19 @@ function _svbk_sensei_normalize_learner_profile_query( $wp_query ) {
 }
 
 add_filter( 'parse_query', '_svbk_sensei_normalize_learner_profile_query' );
+
+ /**
+  * Add lesson--preview class when not in single lesson
+  *
+  * @return array
+  */
+function _svbk_sensei_lesson_classes( $classes, $class, $post_id )  {
+	
+	if ( 'lesson' === get_post_type($post_id) && ! is_singular( 'lesson' ) ) {
+		$classes[] = 'lesson--preview';
+	}
+	
+	return $classes;
+}
+
+add_filter( 'post_class', '_svbk_sensei_lesson_classes', 10, 3 );
