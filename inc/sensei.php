@@ -177,15 +177,23 @@ function _svbk_sensei_single_course_meta( $course_id ) {
 	echo '</div><!-- #course-meta --!>';
 }
 
-function _svbk_sensei_teacher() {
+function _svbk_sensei_teacher( $course_id ) {
+	
+	$teacher_id = get_post_field ('post_author', $course_id);
+	
+	if ( isset( Sensei()->settings->settings['course_author'] ) && ( Sensei()->settings->settings['course_author'] ) ) { 
 	?>
-	<div class="author vcard">
-		<?php echo get_avatar( get_the_author_meta( 'ID' ), 64 ); ?>		
+	<div class="course__teacher author vcard">
+		<?php echo get_avatar( $teacher_id, 64 ); ?>		
 		<span class="role"><?php _e( 'Teacher', '_svbk' ); ?>:</span>
-		<span class="fn n" ><?php echo esc_html( get_the_author() ); ?></span>
+		<span class="fn n" ><?php echo esc_html( get_the_author_meta( 'display_name' , $teacher_id ) ); ?></span>
 	</div>
 	<?php
+	}
 }
+
+add_action( 'sensei_single_course_content_inside_before', '_svbk_sensei_teacher', 17 );
+
 
 function _svbk_lesson_quiz_button_intro( $lesson_id ) {
 
