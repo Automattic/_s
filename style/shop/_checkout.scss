@@ -6,10 +6,6 @@ body.woocommerce-checkout {
         padding-top: 20px;
     }
     
-    #order_review_heading {
-        margin-bottom: 0;
-    }
-    
     .woocommerce-form-coupon-toggle {
         background: rgba(0,0,0,.5);
         color: #fff;
@@ -30,7 +26,7 @@ body.woocommerce-checkout {
     
     .woocommerce-form-coupon {
         background: #fff;
-        padding: 10px 15px 30px;
+        padding: 0 15px;
         
         button[type="submit"] {
             display: block;
@@ -82,6 +78,7 @@ body.woocommerce-checkout {
             
             #order_review_heading {
                 margin-top: 20px;
+                margin-bottom: 20px;
             }
         }
     }

@@ -82,7 +82,6 @@
 /**
  * Product summary
  */
- 
 .onsale {
     display: block;
     margin: 20px 0;
@@ -153,4 +152,8 @@
 	        width: auto;
 	    }
     }
+}
+
+.product__section {
+    clear: both;
 }
