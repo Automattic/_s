@@ -19,12 +19,12 @@
 			$footer_logo = get_theme_mod( 'footer_logo', '' );
 			if ( $footer_logo ) :
 				?>
-			<div class="footer-area">
+			<div class="site-footer__section footer-area">
 				<?php echo wp_get_attachment_image( get_theme_mod( 'footer_logo', '' ), 'large' ); ?>
 			</div>
 			<?php endif ?>
 	
-			<div id="company-info" class="footer-area">
+			<div id="company-info" class="site-footer__section footer-area">
 				<?php if ( get_theme_mod( 'company_name', false ) ) : ?>
 				<span class="company-name"><?php echo get_theme_mod( 'company_name' ); ?></span><br/>
 				<?php endif; ?>
@@ -37,7 +37,7 @@
 			</div>
 		</div>
 	
-		<div id="legal" class="sub-footer">
+		<div id="legal" class="site-footer__bar bar sub-footer">
 			<span class="copyright-notice">&copy; 2017</span>
 			<?php
 			if ( has_nav_menu( 'legal-menu' ) ) :
@@ -57,14 +57,15 @@
 			<?php /* translators: the first %s contains the target link */ ?>
 			<span id="credits" class="made-by"><?php printf( esc_html__( 'Made with passion by %s', '_svbk' ), '<a target="_blank" href="http://www.silverbackstudio.it">Silverback Studio</a>' ); ?></span>
 		</div>
+		
+		<?php if ( get_theme_mod( 'fixed_footer_bar' ) ) : ?>
+		<div class="site-footer__bar bar bar--fixed footer-fixed-bar">
+			<?php echo do_shortcode( get_theme_mod( 'fixed_footer_bar_content', __( 'Customize this text in Theme Customizer', '_svbk' ) ) ); ?>
+		</div>
+		<?php endif ?>
+		
+		
 	</footer><!-- #colophon -->
-
-	<?php if ( get_theme_mod( 'fixed_footer_bar' ) ) : ?>
-	<div class="footer-fixed-bar">
-		<?php echo do_shortcode( get_theme_mod( 'fixed_footer_bar_content', __( 'Customize this text in Theme Customizer', '_svbk' ) ) ); ?>
-	</div>
-	<?php endif ?>
-
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
