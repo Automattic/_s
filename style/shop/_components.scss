@@ -94,6 +94,15 @@
         text-transform: uppercase;
         margin: 0;
         
+        &.current-menu-item  a {
+        	color: $color__corporate;
+        	font-weight: bold;
+        	
+        	&:before {
+        		font-weight: normal;
+        	}
+        }
+        
         &:before {
             display: none;
         }
