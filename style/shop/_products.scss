@@ -3,37 +3,6 @@ ul.products {
 	margin: 30px 0;
 	padding: 0;
 	width: 100%;
-
-	li.product {
-		list-style: none;
-		position: relative;
-		margin-bottom: 2em;
-		width: 100%;
-		
-		a {
-			text-decoration: none;
-			color: $color__text-main;
-		}
-		
-		&:before {
-			display: none;
-		}
-
-		.woocommerce-loop-product__title {
-			@include font-size(1.2);
-			margin-bottom: 5px;
-		}
-
-		img {
-			display: block;
-			width: 100%;
-		}
-
-		.button {
-			display: block;
-			margin-top: 15px;
-		}
-	}
 }
 
 @media screen and (min-width: breakpoint('phone')) and (max-width: breakpoint('tablet-landscape')) {
