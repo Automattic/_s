@@ -48,6 +48,11 @@ function _svbk_sensei_setup() {
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
 	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
+	
+	remove_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) );
+	add_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ), 20 );
+	
+	add_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'the_progress_meter' ), 15 );
 
 	remove_action( 'sensei_pagination', array( Sensei()->frontend, 'sensei_breadcrumb' ), 80 );
 	add_action( 'sensei_before_main_content', array( Sensei()->frontend, 'sensei_breadcrumb' ), 15 );
@@ -104,7 +109,6 @@ add_shortcode( 'sensei_navigation', '_svbk_sensei_navigation' );
 add_filter( 'sensei_show_main_header', '__return_true', 11 );
 add_filter( 'sensei_show_main_footer', '__return_true', 11 );
 add_filter( 'sensei_results_links', '__return_empty_string' );
-add_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'the_progress_meter' ), 11 );
 add_filter( 'sensei_show_lesson_numbers', '__return_true' );
 
 
