@@ -13,9 +13,13 @@ li.course,
     padding-bottom: 20px;
     margin: 20px 0;
     
-    .entry > a {
-        position: relative;
-        display: block;
+    .entry {
+        margin-top: 0;
+        
+        > a {
+            position: relative;
+            display: block;    
+        }
     }
     
     &:before {

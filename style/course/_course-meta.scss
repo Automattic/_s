@@ -20,3 +20,37 @@
         max-width: 280px;
     }
 }
+
+.course-completion-rate {
+    @include font-size(.9);
+    color: $color__corporate;
+}
+
+.course__teacher {
+    @include font-size(.9);
+    line-height: normal;
+    position: relative;
+    min-height: 40px;
+    padding-left: 50px;
+    margin: 20px 0;
+    
+    img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: #f0f0f0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .role {
+        display: block;
+        color: #888;
+    }
+    
+    .fn {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}

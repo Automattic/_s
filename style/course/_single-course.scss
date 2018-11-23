@@ -13,4 +13,16 @@
             max-width: 170px;
         }
     }
+    
+    .entry {
+        margin-top: 30px;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+       
+       .course__teacher {
+            float: right;
+            margin-top: -40px;
+       }
+    }
 }
