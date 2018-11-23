@@ -89,6 +89,17 @@ use \Svbk\WP\Helpers;
 							);
 						?>
 					</nav><!-- #site-navigation -->
+					<?php elseif ( has_nav_menu( 'menu-1' ) ) : ?>
+					<nav id="site-navigation" role="navigation">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-1',
+									'menu_id'        => 'primary-menu',
+								)
+							);
+						?>
+					</nav><!-- #site-navigation -->
 					<?php endif; ?>
 					
 					<?php
