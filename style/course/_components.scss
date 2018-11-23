@@ -81,6 +81,11 @@ h2 {
     }
 }
 
+#my-courses > ul li.ui-state-active a {
+    background: $color__corporate;
+    color: #fff;
+}
+
 #my-courses > ul li a,
 #user-course-status-toggle a {
     @include font-size(.9);

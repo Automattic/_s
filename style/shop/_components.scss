@@ -448,6 +448,40 @@ table {
     }
 }
 
+.woocommerce-orders-table  {
+	
+	tr:nth-of-type(even) {
+		background: #fafafa;
+	}
+	
+    @media screen and (max-width: breakpoint('tablet-portrait')) {
+		
+		thead {
+			display: none;
+		}
+		
+		tr, td {
+			display: block;
+		}
+		
+		td {
+			
+	    	a,
+	    	&.woocommerce-orders-table__cell-order-number a {
+	    		display: inline-block;
+	    	}
+			
+			&:before {
+				content: attr(data-title) ":";
+			}
+			
+			&.woocommerce-orders-table__cell-order-actions:before {
+				display: none;
+			}
+		}
+    }
+}
+
 /**
  * Address
  */
