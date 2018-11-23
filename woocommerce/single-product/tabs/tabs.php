@@ -31,7 +31,7 @@ $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
 	<?php foreach ( $tabs as $key => $tab ) : ?>
-		<section class="product__<?php echo esc_attr( $key ); ?>" id="section-<?php echo esc_attr( $key ); ?>"  >
+		<section class="product__section product__<?php echo esc_attr( $key ); ?>" id="section-<?php echo esc_attr( $key ); ?>"  >
 			<?php
 			if ( isset( $tab['callback'] ) ) {
 				call_user_func( $tab['callback'], $key, $tab ); }
