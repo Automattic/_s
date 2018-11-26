@@ -201,7 +201,7 @@ body.woocommerce-checkout {
     
     label {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         margin: 0;
     }
     
@@ -225,10 +225,11 @@ body.woocommerce-checkout {
         float: none !important;
     }
     
-    .payment_method_ppec_paypal {
+    .payment_method_paypal {
         
         img {
             vertical-align: middle;
+            display: block;
         }
     }
     
