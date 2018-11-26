@@ -246,7 +246,7 @@ function _svbk_scripts() {
 	// Critical CSS
 	Style::enqueue(
 		'_svbk-bootstrap',
-		'/dist/css/bootstrap.css',
+		'/dist/css/critical.css',
 		[
 			'source' => 'theme',
 			'inline' => true,
