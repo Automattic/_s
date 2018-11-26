@@ -301,7 +301,7 @@ add_filter( 'post_class', '_svbk_sensei_lesson_classes', 10, 3 );
  */
 function _svbk_sensei_body_class( $classes ) {
 
-	if( is_sensei() && has_nav_menu( 'sensei-secondary' ) ) {
+	if( (is_sensei() || is_learner_profile()) && has_nav_menu( 'sensei-secondary' ) ) {
 		$classes[] = 'has-secondary-nav';
 	}
 
