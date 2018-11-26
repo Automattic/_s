@@ -23,9 +23,6 @@ function _svbk_woocommerce_setup() {
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
-
-	register_nav_menu( 'woocommerce-myaccount', esc_html__( 'Woocommerce My Account', '_svbk' ) );
-	register_nav_menu( 'woocommerce-profile', esc_html__( 'Woocommerce Profile', '_svbk' ) );
 }
 add_action( 'after_setup_theme', '_svbk_woocommerce_setup' );
 
@@ -477,7 +474,7 @@ function _svbk_myaccount_sidebar_profile() {
 		if ( is_user_logged_in() ) :
 			$member = wp_get_current_user();
 			?>
-		<li class="menu-item my-account<?php echo has_nav_menu( 'woocommerce-profile' ) ? ' menu-item-has-children' : ''; ?><?php echo is_account_page() ? ' current-menu-item' : ''; ?>">
+		<li class="menu-item my-account<?php echo has_nav_menu( 'account-profile' ) ? ' menu-item-has-children' : ''; ?><?php echo is_account_page() ? ' current-menu-item' : ''; ?>">
 			<a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" title="<?php _e( 'Go to My Account', '_svbk' ); ?>">
 				<?php echo get_avatar( $member->ID, 32 ); ?>
 				<span class="user-name"><?php echo esc_html( $member->user_firstname . '&nbsp;' . substr( $member->user_lastname, 0, 1 ) . '.' ); ?></span>
@@ -485,9 +482,9 @@ function _svbk_myaccount_sidebar_profile() {
 			<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'woocommerce-profile',
+						'theme_location' => 'account-profile',
 						'container'      => false,
-						'menu_id'        => 'woocommerce-profile',
+						'menu_id'        => 'account-profile',
 						'menu_class'     => 'sub-menu',
 					)
 				);
@@ -501,3 +498,54 @@ function _svbk_myaccount_sidebar_profile() {
 </nav>
 	<?php
 }
+
+/**
+ * Output default WooCommerce my-account menu if there is no account-secondary menu
+ *
+ * @param string|null $menu_html The menu HTML, or null if no override is present
+ * @param object      $args The `wp_nav_menu function args
+ */
+function _svbk_account_menu_default_woocommerce( $menu_html, $args ) {
+
+	remove_filter( 'has_nav_menu', '_svbk_account_menu_always_on', 20, 2 );
+	$has_nav_menu = has_nav_menu( 'account-secondary' );
+	add_filter( 'has_nav_menu', '_svbk_account_menu_always_on', 20, 2 );
+
+	if ( 'account-secondary' !== $args->theme_location || $has_nav_menu ) {
+		return $menu_html;
+	}
+
+	$menu_html = '<nav class="woocommerce-MyAccount-navigation">'
+				. '<ul>';
+
+	foreach ( wc_get_account_menu_items() as $endpoint => $label ) {
+		$menu_html .=
+					  '<li class="' . wc_get_account_menu_item_classes( $endpoint ) . '">'
+					. '<a href="' . esc_url( wc_get_account_endpoint_url( $endpoint ) ) . '">' . esc_html( $label ) . '</a>'
+					. '</li>';
+	}
+
+	$menu_html .= '</ul>';
+	$menu_html .= '</nav>';
+
+	return $menu_html;
+}
+
+add_filter( 'pre_wp_nav_menu', '_svbk_account_menu_default_woocommerce', 10, 2 );
+
+/**
+ * Alway enable account-menu to allow it to default to `_svbk_account_menu_default_woocommerce`
+ *
+ * @param bool   $has_nav_menu If the menu location is empty
+ * @param string $location The current menu location
+ */
+function _svbk_account_menu_always_on( $has_nav_menu, $location ) {
+
+	if ( 'account-secondary' !== $location ) {
+		return $has_nav_menu;
+	}
+
+	return true;
+}
+
+add_filter( 'has_nav_menu', '_svbk_account_menu_always_on', 20, 2 );

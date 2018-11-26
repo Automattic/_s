@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @version     1.9.0
  */
 ?>
-				</div><!-- .sensei__content -->
 		</main><!-- #main.site-main -->
 </div><!-- #primary.content-area -->
 

@@ -22,28 +22,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 	<?php do_action( 'woocommerce_before_account_navigation' ); ?>
 	
-	<button class="secondary-navigation__toggle"><?php esc_html_e( 'Toggle Account Menu', '_svbk' ); ?></button>
-	<nav class="woocommerce-MyAccount-navigation secondary-navigation">
-		
-		<?php
-		if ( has_nav_menu( 'woocommerce-myaccount' ) ) :
-			wp_nav_menu(
-				array(
-					'theme_location' => 'woocommerce-myaccount',
-					'container'      => false,
-					'menu_id'        => 'woocommerce-myaccount-menu',
-					'depth'          => 1,
-				)
-			);
-		else :
-			?>
-			<ul>
-				<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-					<li class="<?php echo wc_get_account_menu_item_classes( $endpoint ); ?>">
-						<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"><?php echo esc_html( $label ); ?></a>
-					</li>
-				<?php endforeach; ?>
-			</ul>	
-		<?php endif; ?>
-	</nav>
-	<?php do_action( 'woocommerce_after_account_navigation' ); ?>
+	<?php
+	do_action( 'woocommerce_after_account_navigation' );

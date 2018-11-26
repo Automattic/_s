@@ -62,12 +62,6 @@ use \Svbk\WP\Helpers;
 					
 				</div><!-- .site-branding -->
 				
-				<?php
-				if ( function_exists( '_svbk_woocommerce_header_cart' ) ) {
-					_svbk_woocommerce_header_cart();
-				}
-				?>
-								
 				<button class="search-toggle">
 					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
 				</button>
@@ -114,3 +108,19 @@ use \Svbk\WP\Helpers;
 		</header><!-- #masthead -->
 
 		<div id="content" class="site-content">
+			
+			<?php if ( has_nav_menu( 'account-secondary' ) ) : ?>			
+			<button class="secondary-navigation__toggle"><?php esc_html_e( 'Toggle Account Menu', '_svbk' ); ?></button>
+			<nav class="secondary-navigation">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'account-secondary',
+							'container'      => false,
+							'menu_id'        => 'account-secondary-menu',
+							'depth'          => 1,
+						)
+					);
+					?>
+			</nav>	
+		<?php endif; ?>
