@@ -38,6 +38,7 @@ li.course,
     .sensei-course-meta {
         @include font-size(.9);
         margin-bottom: 0;
+        margin-top: 10px;
         
         .course-author, .course-lesson-count {
            width: 50%;
@@ -52,7 +53,12 @@ li.course,
             color: $color__corporate;
             display: block;
             clear: both;
+            margin-top: 10px;
         }  
+    }
+    
+    .meter {
+        margin: 0 0 10px;
     }
     
     img {
