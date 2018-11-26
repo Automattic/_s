@@ -234,3 +234,52 @@ body.woocommerce-order-pay article.page #order_review {
         float: none;   
     }
 }
+
+.product-page-list {
+    
+    .post--preview {
+        border-bottom: 1px solid $color__background-hr;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        
+        .post__thumbnail img {
+            display: block;
+        }
+    
+        .post__title {
+            margin: 10px 0;
+        }
+        
+        p {
+            margin-top: 0;
+        }
+        
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        
+        .post--preview {
+            position: relative;
+            padding-left: 220px;
+        
+            .post__thumbnail {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                
+                img {
+                    width: 205px;
+                    height: auto;
+                }
+            }
+            
+            .post__title {
+                margin: 0 0 10px;
+            }
+        }
+    }
+}
