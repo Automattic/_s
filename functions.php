@@ -245,7 +245,7 @@ function _svbk_scripts() {
 
 	// Critical CSS
 	Style::enqueue(
-		'_svbk-bootstrap',
+		'_svbk-critical',
 		'/dist/css/critical.css',
 		[
 			'source' => 'theme',
@@ -255,7 +255,12 @@ function _svbk_scripts() {
 	);
 
 	// Styles common to all pages
-	Style::enqueue( '_svbk-common', '/dist/css/common.css', [ 'source' => 'theme' ] );
+	Style::enqueue( '_svbk-common', '/dist/css/common.css', 
+		[ 
+			'source' => 'theme',
+			'deps'      => array( '_svbk-critical' ),
+		] 
+	);
 
 	// Page-specific styles
 	Style::enqueue(
