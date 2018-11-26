@@ -15,6 +15,11 @@
 @import "typography/typography";
 
 /*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/secondary-nav";
+
+/*--------------------------------------------------------------
 # Sensei
 --------------------------------------------------------------*/
 @import "course/components";
@@ -30,42 +35,3 @@
 --------------------------------------------------------------*/
 @import "media/media";
 @import "site/primary/comments";
-
-/**
- * Page Structure
- */
-#page {
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		
-		.secondary-navigation__toggle {
-            display: none;
-        }
-		
-	    #primary {
-	        padding: 0 0 50px;
-	        
-	        &:after {
-	            @include clearfix();
-	            @include clearfix-after();
-	        }
-	    }
-	}
-}
-
-.secondary-navigation,
-.content-area {
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-    	float: left;
-	}
-}
-
-.content-area {
-    margin-top: 30px;
-    
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-        width: 69%;
-        margin-top: 50px;
-	}
-}

@@ -26,6 +26,10 @@ function _svbk_body_classes( $classes ) {
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
 	}
+	
+	if( is_page_template( 'page-templates/account.php' ) && has_nav_menu( 'sensei-secondary' ) ) {
+		$classes[] = 'has-secondary-nav';
+	}	
 
 	return $classes;
 }

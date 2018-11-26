@@ -44,7 +44,8 @@ add_action( 'wp_enqueue_scripts', '_svbk_sensei_scripts', 30 );
  * @return void
  */
 function _svbk_sensei_setup() {
-	register_nav_menu( 'sensei', esc_html__( 'Sensei', '_svbk' ) );
+	
+	register_nav_menu( 'sensei-secondary', esc_html__( 'Sensei Secondary Menu', '_svbk' ) );
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
 	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
@@ -85,7 +86,7 @@ function _svbk_sensei_navigation() {
 
 	$output = '';
 
-	if ( ! has_nav_menu( 'sensei' ) ) {
+	if ( ! has_nav_menu( 'sensei-secondary' ) ) {
 		return $output;
 	}
 
@@ -93,7 +94,7 @@ function _svbk_sensei_navigation() {
 	$output .= '<nav id="sensei-navigation" class="secondary-navigation" role="navigation">';
 	$output .= wp_nav_menu(
 		array(
-			'theme_location' => 'sensei',
+			'theme_location' => 'sensei-secondary',
 			'menu_id'        => 'sensei-menu',
 			'echo'           => false,
 			'depth'          => 1,
@@ -290,3 +291,20 @@ function _svbk_sensei_lesson_classes( $classes, $class, $post_id ) {
 }
 
 add_filter( 'post_class', '_svbk_sensei_lesson_classes', 10, 3 );
+
+
+/**
+ * Add sensei classes to the body tag.
+ *
+ * @param  array $classes CSS classes applied to the body tag.
+ * @return array $classes modified classes list.
+ */
+function _svbk_sensei_body_class( $classes ) {
+
+	if( is_sensei() && has_nav_menu( 'sensei-secondary' ) ) {
+		$classes[] = 'has-secondary-nav';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', '_svbk_sensei_body_class' );
