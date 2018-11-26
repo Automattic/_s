@@ -84,17 +84,15 @@ function _svbk_woocommerce_scripts() {
 	Script::enqueue( 'wc-cart-fragments', null, [ 'condition' => is_woocommerce() ] );
 	Script::enqueue( 'woocommerce', null, [ 'condition' => is_woocommerce() ] );
 
-	Script::register( 'codice-fiscale-js', '/dist/codice.fiscale.umd.min.js' );
 	Script::enqueue(
 		'_svbk-wc-checkout',
-		'/dist/codice.fiscale.umd.min.js',
+		'/dist/js/wc-checkout.min.js',
 		[
 			'source'    => 'theme',
 			'condition' => is_checkout(),
 			'prefetch'  => is_cart(),
 			'deps'      => [
 				'jquery',
-				'codice-fiscale-js',
 			],
 		]
 	);
