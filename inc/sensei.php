@@ -48,10 +48,10 @@ function _svbk_sensei_setup() {
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
 	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
-	
+
 	remove_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) );
 	add_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ), 20 );
-	
+
 	add_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'the_progress_meter' ), 15 );
 
 	remove_action( 'sensei_pagination', array( Sensei()->frontend, 'sensei_breadcrumb' ), 80 );
@@ -182,17 +182,17 @@ function _svbk_sensei_single_course_meta( $course_id ) {
 }
 
 function _svbk_sensei_teacher( $course_id ) {
-	
-	$teacher_id = get_post_field ('post_author', $course_id);
-	
-	if ( isset( Sensei()->settings->settings['course_author'] ) && ( Sensei()->settings->settings['course_author'] ) ) { 
-	?>
+
+	$teacher_id = get_post_field( 'post_author', $course_id );
+
+	if ( isset( Sensei()->settings->settings['course_author'] ) && ( Sensei()->settings->settings['course_author'] ) ) {
+		?>
 	<div class="course__teacher author vcard">
 		<?php echo get_avatar( $teacher_id, 64 ); ?>		
 		<span class="role"><?php _e( 'Teacher', '_svbk' ); ?>:</span>
-		<span class="fn n" ><?php echo esc_html( get_the_author_meta( 'display_name' , $teacher_id ) ); ?></span>
+		<span class="fn n" ><?php echo esc_html( get_the_author_meta( 'display_name', $teacher_id ) ); ?></span>
 	</div>
-	<?php
+		<?php
 	}
 }
 
