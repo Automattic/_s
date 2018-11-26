@@ -113,6 +113,7 @@ li.course,
                 border-width: 60px 60px 0 0;
                 border-color: $color__success transparent transparent transparent;
                 position: absolute;
+                z-index: 1;
             }
             
             &:after {
@@ -126,6 +127,7 @@ li.course,
                 height: 40px;
                 text-align: center;
                 line-height: 40px;
+                z-index: 1;
             }
         }
     }

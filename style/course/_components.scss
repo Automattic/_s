@@ -303,3 +303,18 @@ h2 {
         text-decoration: none;
     }
 }
+
+.learner-info {
+    
+    h2 {
+        @include font-size(1.5);
+    }
+    
+    .learner-avatar img {
+        background: #f0f0f0;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+}
