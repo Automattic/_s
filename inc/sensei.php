@@ -48,7 +48,6 @@ function _svbk_sensei_setup() {
 	register_nav_menu( 'sensei-secondary', esc_html__( 'Sensei Secondary Menu', '_svbk' ) );
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
-	add_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 50 );
 
 	remove_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ) );
 	add_action( 'sensei_course_content_inside_before', array( Sensei()->course, 'course_image' ), 20 );
