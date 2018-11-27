@@ -245,13 +245,13 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 			unset( $fields['billing_address_2'] );
 
-			$phone_status =  get_option( 'woocommerce_checkout_phone_field', 'required' );
+			$phone_status = get_option( 'woocommerce_checkout_phone_field', 'required' );
 
 			if ( 'required' === $phone_status ) {
 				$fields['billing_phone']['required'] = true;
-				$fields['billing_phone']['priority'] = 30;				
-			} elseif( 'recommended' == $phone_status ) {
-				$fields['billing_phone']['label']    =   __( 'Phone (recommended)', '_svbk' );
+				$fields['billing_phone']['priority'] = 30;
+			} elseif ( 'recommended' == $phone_status ) {
+				$fields['billing_phone']['label'] = __( 'Phone (recommended)', '_svbk' );
 			}
 
 			return $fields;
@@ -315,8 +315,8 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 			}
 
-			// Temporary Fix: 
-			if ( isset( $fields['shipping']['shipping_phone'] ) && !isset( $fields['shipping']['shipping_phone']['priority'] )  ) {
+			// Temporary Fix:
+			if ( isset( $fields['shipping']['shipping_phone'] ) && ! isset( $fields['shipping']['shipping_phone']['priority'] ) ) {
 				$fields['shipping']['shipping_phone']['priority'] = 25;
 			}
 

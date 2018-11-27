@@ -221,7 +221,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 function _svbk_woocommerce_active_body_class( $classes ) {
 	$classes[] = 'woocommerce-active';
 
-	if( is_account_page() && has_nav_menu( 'account-secondary' ) ) {
+	if ( is_account_page() && has_nav_menu( 'account-secondary' ) ) {
 		$classes[] = 'has-secondary-nav';
 	}
 

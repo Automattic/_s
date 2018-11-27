@@ -44,7 +44,7 @@ add_action( 'wp_enqueue_scripts', '_svbk_sensei_scripts', 30 );
  * @return void
  */
 function _svbk_sensei_setup() {
-	
+
 	register_nav_menu( 'sensei-secondary', esc_html__( 'Sensei Secondary Menu', '_svbk' ) );
 
 	remove_action( 'sensei_single_lesson_content_inside_before', array( 'Sensei_Lesson', 'the_lesson_image' ), 17 );
@@ -300,7 +300,7 @@ add_filter( 'post_class', '_svbk_sensei_lesson_classes', 10, 3 );
  */
 function _svbk_sensei_body_class( $classes ) {
 
-	if( (is_sensei() || is_learner_profile()) && has_nav_menu( 'sensei-secondary' ) ) {
+	if ( ( is_sensei() || is_learner_profile() ) && has_nav_menu( 'sensei-secondary' ) ) {
 		$classes[] = 'has-secondary-nav';
 	}
 
