@@ -37,6 +37,9 @@
     "scripts": {
         "test": [
           "vendor/bin/phpcs"
-        ]
+        ],
+        "beautify": [
+          "vendor/bin/phpcbf"
+        ]        
     }        
 }
