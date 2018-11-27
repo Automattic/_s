@@ -249,7 +249,7 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 			if ( 'required' === $phone_status ) {
 				$fields['billing_phone']['required'] = true;
-				$fields['billing_phone']['priority'] = 30;
+				$fields['billing_phone']['priority'] = 26;
 			} elseif ( 'recommended' == $phone_status ) {
 				$fields['billing_phone']['label'] = __( 'Phone (recommended)', '_svbk' );
 			}
