@@ -315,6 +315,11 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 			}
 
+			// Temporary Fix: 
+			if ( isset( $fields['shipping']['shipping_phone'] ) && !isset( $fields['shipping']['shipping_phone']['priority'] )  ) {
+				$fields['shipping']['shipping_phone']['priority'] = 25;
+			}
+
 			return $fields;
 		}
 
