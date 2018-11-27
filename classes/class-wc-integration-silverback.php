@@ -28,7 +28,6 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 		public $order_thankyou_footer;
 		public $disable_order_thankyou_details;
 		public $show_email_validation;
-		public $phone_field;
 
 		public $disable_woocommerce_styles;
 
@@ -58,7 +57,6 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 			$this->order_thankyou_footer          = $this->get_option( 'order_thankyou_footer' );
 			$this->disable_order_thankyou_details = $this->get_option( 'disable_order_thankyou_details' );
 			$this->show_email_validation          = $this->get_option( 'show_email_validation' );
-			$this->phone_field                    = $this->get_option( 'phone_field' );
 
 			add_action( 'init', array( $this, 'init_form_fields' ), 30 );
 			add_action( 'init', array( $this, 'init' ), 50 );
@@ -122,18 +120,6 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 					'description' => __( 'Show the repeat email field in checkout form', '_svbk' ),
 					'desc_tip'    => true,
 					'default'     => true,
-				),
-				'phone_field' => array(
-					'title'       => __( 'Phone field', '_svbk' ),
-					'type'        => 'select',
-					'description' => __( 'Choose if you want to show optional or required phone field in checkout', '_svbk' ),
-					'desc_tip'    => true,
-					'default'     => false,
-					'options'     => array(
-						'hide'    => __( 'Hide', '_svbk' ),
-						'show'    => __( 'Show', '_svbk' ),
-						'require' => __( 'Require', '_svbk' ),
-					),
 				),
 				'debug' => array(
 					'title'       => __( 'Debug Log', '_svbk' ),
@@ -259,18 +245,13 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 			unset( $fields['billing_address_2'] );
 
-			if ( array_key_exists( 'billing_phone', $fields ) ) {
+			$phone_status =  get_option( 'woocommerce_checkout_phone_field', 'required' );
 
-				switch ( $this->phone_field ) {
-					case 'hide':
-						unset( $fields['billing_phone'] );
-						break;
-					case 'require':
-						$fields['billing_phone']['required'] = true;
-					default:
-						$fields['billing_phone']['label']    = __( 'Phone (recommended)', '_svbk' );
-						$fields['billing_phone']['priority'] = 35;
-				}
+			if ( 'required' === $phone_status ) {
+				$fields['billing_phone']['required'] = true;
+				$fields['billing_phone']['priority'] = 30;				
+			} elseif( 'recommended' == $phone_status ) {
+				$fields['billing_phone']['label']    =   __( 'Phone (recommended)', '_svbk' );
 			}
 
 			return $fields;
@@ -327,7 +308,7 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 				$fields['billing']['billing_email_verify'] = array(
 					'label'     => __( 'Repeat your email address', '_svbk' ),
 					'required'  => true,
-					'priority'  => 20,
+					'priority'  => 25,
 					'class'     => array( 'form-row-last' ),
 					'clear'     => true,
 				);
