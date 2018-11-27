@@ -181,7 +181,6 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 			add_filter( 'woocommerce_my_account_my_address_description', array( $this, 'my_account_address_description' ) );
 
-			add_filter( 'woocommerce_thankyou', array( $this, 'order_thankyou_page_text' ), 9 );
 			add_filter( 'woocommerce_thankyou', array( $this, 'order_thankyou_page_footer' ), 11 );
 
 			remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
@@ -360,41 +359,6 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 		public function my_account_address_description() {
 			return __( 'The <b>billing address</b> is used to compose the invoices. The <b>shipping address</b> will be used to send you phisical products that you may purchase. You will be able to change both addresses durig the checkout process.', '_svbk' );
-		}
-
-		public function get_order_thankyou_page( $order ) {
-
-			$items = $order->get_items();
-
-			foreach ( $items as $item ) {
-				$thankyou_page_id = get_post_meta( $item->get_product_id(), '_funnels_thankyou_page', true );
-
-				if ( $thankyou_page_id ) {
-					return $thankyou_page_id;
-				}
-			}
-
-			return false;
-		}
-
-		public function order_thankyou_page_text( $order_id ) {
-
-			$order            = wc_get_order( $order_id );
-			$thankyou_page_id = $this->get_order_thankyou_page( $order );
-			$thankyou_page    = null;
-
-			if ( $thankyou_page_id ) {
-				$thankyou_page = get_post( $thankyou_page_id, 'OBJECT' );
-			}
-
-			if ( ! $thankyou_page instanceof \WP_Post ) {
-				return;
-			}
-
-			$thankyou_page = get_post( $thankyou_page_id );
-
-			echo apply_filters( 'the_content', do_shortcode( $thankyou_page->post_content ) );
-
 		}
 
 		public function order_thankyou_page_footer() {
