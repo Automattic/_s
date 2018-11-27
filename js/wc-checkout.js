@@ -39,6 +39,6 @@
 		$('#stripe-cvc-element')
 			.after( cvcTooltip )
 			.after( cvcTooltipButton );
-	} );
+	} ).trigger('updated_checkout');
 
 })( jQuery );
