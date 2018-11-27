@@ -27,7 +27,7 @@ function _svbk_body_classes( $classes ) {
 		$classes[] = 'no-sidebar';
 	}
 
-	if ( is_page_template( 'page-templates/account.php' ) && has_nav_menu( 'sensei-secondary' ) ) {
+	if ( is_page_template( 'page-templates/account.php' ) && is_user_logged_in() && has_nav_menu( 'sensei-secondary' ) ) {
 		$classes[] = 'has-secondary-nav';
 	}
 

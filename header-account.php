@@ -109,7 +109,7 @@ use \Svbk\WP\Helpers;
 
 		<div id="content" class="site-content">
 			
-			<?php if ( has_nav_menu( 'account-secondary' ) ) : ?>			
+			<?php if ( is_user_logged_in() && has_nav_menu( 'account-secondary' ) ) : ?>			
 			<button class="secondary-navigation__toggle"><?php esc_html_e( 'Toggle Account Menu', '_svbk' ); ?></button>
 			<nav class="secondary-navigation">
 					<?php
