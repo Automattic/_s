@@ -4,8 +4,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.wp-block-button .wp-block-button__link,
-.wp-block-button__link:visited {
+.wp-block-button .wp-block-button__link {
 	border: 2px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
@@ -47,23 +46,27 @@ input[type="submit"],
 		margin-left: 10px;
 	}
 	
-	&.is-style-outline .wp-block-button__link,
-	&.is-style-outline .wp-block-button__link:visited {
+	&.is-style-outline .wp-block-button__link {
 		color: $color__border-button;
+		border-color: $color__border-button;
+		background: rgba(255,255,255,0);
 		
 		&:hover,
 		&:active,
-		&:focus {
-			background: none;
+		&:focus,
+		&:visited {
+			background: rgba(255,255,255,0);
 		}
 		
 		&:hover {
 			color: $color__border-button-hover;
+			border-color: $color__border-hover;
 		}
 
 		&:active,
 		&:focus {
-			color: $color__border-button-focus;
+			color: $color__border-button-focus
+			border-color: $color__border-focus;
 		}
 	}
 }
