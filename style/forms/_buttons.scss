@@ -12,7 +12,7 @@ input[type="submit"],
 	@include font-size(.9);
 	text-transform: uppercase;
 	line-height: 1;
-	padding: .7em 1em;
+	padding: .7em 1.2em;
 	text-decoration: none;
 	text-align: center;
 	border-radius: 8px;
@@ -40,10 +40,10 @@ input[type="submit"],
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 		float: left;
-	}
-	
-	+ .wp-block-button {
-		margin-left: 10px;
+		
+		+ .wp-block-button {
+			margin-left: 10px;
+		}
 	}
 	
 	&.is-style-outline .wp-block-button__link {
@@ -60,13 +60,13 @@ input[type="submit"],
 		
 		&:hover {
 			color: $color__border-button-hover;
-			border-color: $color__border-hover;
+			border-color: $color__border-button-hover;
 		}
 
 		&:active,
 		&:focus {
-			color: $color__border-button-focus
-			border-color: $color__border-focus;
+			color: $color__border-button-focus;
+			border-color: $color__border-button-focus;
 		}
 	}
 }
