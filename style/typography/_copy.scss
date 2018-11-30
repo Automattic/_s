@@ -67,9 +67,18 @@ p.has-drop-cap:not(:focus):first-letter {
 	}
 }
 
+.highlight,
+.standout {
+	font-style: normal;
+}
+
 .highlight {
 	background: $color__background-highlight;
-	font-style: normal;
+}
+
+.standout {
+	background: $color__corporate;
+	color: #fff;
 }
 
 blockquote,
