@@ -1,53 +1,56 @@
 .wp-block-media-text {
-	display: block;
-	margin: 0px -#{$padding__content-mobile};
-	padding: 0 0 30px;
+	align-items: start;
+	
+	h1, h2 {
+		margin-top: 0;
+	}
+	
+	.wp-block-button {
+		margin-bottom: 15px;
+		
+		.wp-block-button__link {
+			min-width: 80%;
+		}
+	}
 	
 	.wp-block-media-text__content {
-		padding: 0 $padding__content-mobile;
+		padding: 0;
+	}
+	
+	@media screen and (max-width: breakpoint('tablet-portrait')) {
 		
-		&:after {
-			@include clearfix();
-			@include clearfix-after();
-		}
-		
-		h1, h2 {
-			margin-bottom: 15px;
-			margin-top: 1em;
+		&.is-stacked-on-mobile {
+			display: block;
+			padding-bottom: 30px;
+			
+			.wp-block-media-text__content {
+				
+				&:after {
+					@include clearfix();
+					@include clearfix-after();
+				}
+				
+				h1, h2 {
+					margin-top: 20px;
+					margin-bottom: 15px;
+				}
+			}
 		}
 	}
 	
-	.wp-block-media-text__media img {
-	    margin: 0 auto;
-	    display: block;
-	}
-	
-    .wp-block-button {
-        float: left;
-        width: 49%;
-        
-        .wp-block-button__link {
-            width: 100%;  
-        }
-        
-        + .wp-block-button {
-            float: left;
-            margin-left: 2%;
-        }
-    }
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		display: grid;
-		align-items: start;
-		padding: 50px $padding__content-mobile;
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		padding: 30px $padding__content-mobile;
+		
+		.wp-block-button {
+			min-width: 40%;
+			
+			.wp-block-button__link {
+				width: 100%;
+			}
+		}
 		
 		.wp-block-media-text__content {
-			padding-right: 0;
 			padding-left: 8%;
-			
-			h2, h1 {
-				margin-top: 0;
-			}
 		}
 		
 		&.has-media-on-the-right .wp-block-media-text__content {
@@ -55,128 +58,16 @@
 			padding-left: 0;
 		}
 	}
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding: 30px $padding__content-desktop;
+	}
 }
 
 /**
 *    Dark background/light text
 */
 
-.has-very-dark-gray-background-color {
+.is-style-dark {
 	color: #fff;
-}
-
-/**
-*    Guide download
-*/
-
-.is-style-guide {
-    overflow: hidden;
-    
-    .wp-block-media-text__media {
-        position: relative;
-        z-index: 1;
-        
-        img {
-            max-width: 350px;
-        }
-    }
-
-    .is-style-standout {
-        position: relative;
-        z-index: 0;
-        margin: 30px -600rem;
-        padding: 30px 600rem;
-        
-        &:before {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            bottom: 0;
-            left: 598.5rem;
-            right: 598.5rem;
-            background: #eaf2f4;
-        }
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-landscape')) {
-        margin: 0;
-        
-        .wp-block-media-text__media img {
-            max-width: 400px;
-        }
-    }
-}
-
-/**
-*    Blog banner
-*/
-
-.is-style-banner {
-    @include background-image('blog-banner__background', 'jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #fff;
-    margin: 30px 0;
-    padding: 20px 20px 25px;
-    
-    .wp-block-column {
-        margin-bottom: 0;
-    }
-    
-    h3 {
-        margin: 0;
-        @include font-size(1.8);
-    }
-    
-    p {
-        margin: 0 0 10px;
-    }
-    
-    .wp-block-button {
-        margin: 20px 0 0;
-        float: none;
-        
-        .wp-block-button__link {
-            display: block;
-            width: 100%;
-        }
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        padding: 20px 30px 25px;
-        
-        .wp-block-column {
-           flex-basis: 40%; 
-        }
-        
-        .wp-block-column:first-of-type {
-            flex-basis: 60%;
-        }
-    }
-}
-
-.is-style-small-banner {
-    @extend .is-style-banner;
-    text-align: center;
-    
-    h3 {
-        font-weight: normal;
-        @include font-size(1.5);
-        border-bottom: 1px solid $color__corporate;
-        padding-bottom: 10px;
-        
-        strong {
-            @include font-size(2);
-            line-height: normal;
-        }
-    }
-    
-    .wp-block-column {
-        margin: 0;
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        text-align: left;
-    }
 }
