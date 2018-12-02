@@ -18,6 +18,26 @@ $size__header-height-stuck: 81px;
     }
     
     @media screen and (min-width: breakpoint('tablet-landscape')) {
+        
+        #main-navigation li.cta-item {
+            height: $size__header-height-stuck;
+            animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+            
+            a {
+                display: block;
+                line-height: normal;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .home & a {
+				background: $color__background-button;
+				padding: .5em .8em;
+				border-radius: 8px;
+				color: #fff;
+            }
+        }
          
          .site-branding img {
              height: 50px;
@@ -36,4 +56,22 @@ $size__header-height-stuck: 81px;
 	to {
 		top: 0;	
 	}
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: rotate(-1deg);
+  }
+  
+  20%, 80% {
+    transform: rotate(2deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-4deg);
+  }
+
+  40%, 60% {
+    transform: rotate(4deg);
+  }
 }

@@ -60,6 +60,23 @@
 			
 			li {
 				padding: 0;
+				
+				&.cta-item {
+				
+					a {
+						background: $color__background-button;
+						padding: .5em .8em;
+						border-radius: 8px;
+						color: #fff;
+					}
+					
+					.home & a {
+						background: none;
+						padding: 0;
+						border-radius: 0;
+						color: $color__text-main;
+					}
+				}
 			}
 		}
 		
