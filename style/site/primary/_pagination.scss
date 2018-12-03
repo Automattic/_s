@@ -3,40 +3,40 @@
 	text-align: center;
 	margin: 30px 0 50px;
 	vertical-align: middle;
-	
+
 	a {
 		text-decoration: none;
 	}
-	
+
 	.page-numbers {
 		color: $color__corporate;
-	    width: 25px;
-	    height: 25px;
-	    display: inline-block;
-	    line-height: 26px;
-	    font-weight: 350;
-	    vertical-align: middle;
-		
+		width: 25px;
+		height: 25px;
+		display: inline-block;
+		line-height: 26px;
+		font-weight: 350;
+		vertical-align: middle;
+
 		&.next,
 		&.prev {
 			width: 25px;
 			height: 25px;
 			display: inline-block;
 			font-size: 22px;
-			
+
 			&:before {
 				color: $color__corporate-secondary;
 			}
 		}
-		
+
 		&.next:before {
 			@include icon("\e90e");
 		}
-		
+
 		&.prev:before {
-			@include icon("\e90d");	
+			@include icon("\e90d");
 		}
-		
+
 		&.current {
 			background: $color__corporate;
 			color: #fff;

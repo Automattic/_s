@@ -13,13 +13,13 @@ $woocommerce__color-pw-good: #e87f00;
 $woocommerce__color-pw-bad: #b81a2c;
 
 @mixin column-width($i) {
-    width: (100 - 2  * ($i - 1)) / $i * 1%;
-    
-    &:nth-of-type(#{$i}n + #{$i}) {
-        margin-right: 0;
-    }
-    
-    &:nth-of-type(#{$i}n + 1) {
-        clear: left;
-    }
+	width: (100 - 2  * ($i - 1)) / $i * 1%;
+
+	&:nth-of-type(#{$i}n + #{$i}) {
+		margin-right: 0;
+	}
+
+	&:nth-of-type(#{$i}n + 1) {
+		clear: left;
+	}
 }

@@ -1,66 +1,66 @@
 .site-footer {
-    background: $color__background-footer;
-    text-align: center;
-    clear: both;
-    
-    img {
-        display: block;
-        height: 50px;
-        margin: 0 auto;
-        width: auto;
-    }
-    
-    .sub-footer {
-        background: $color__background-sub-footer;
-        @include font-size(.9);
-        text-align: center;
-        
-        span, .menu {
-            display: inline;
-            
-            &:after {
-                content: "|";
-                margin: 0 8px;
-            }
-        }
-        
-        .made-by:after {
-            display: none;
-        }
-    }
+	background: $color__background-footer;
+	text-align: center;
+	clear: both;
 
-    .wrap {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
+	img {
+		display: block;
+		height: 50px;
+		margin: 0 auto;
+		width: auto;
+	}
 
-    .sub-footer {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        
-        .menu-legal-menu-container {
-            display: inline-block;
-            
-            ul {
-                padding: 0;
-            }
-            
-            li {
-                float: left;
-                margin: 0 5px;
-                
-                &:before {
-                    display: none;
-                }   
-            }
-        }
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-landscape')) {
-        text-align: left;
-        
-        img {
-            margin: 0;
-        }
-    }
+	.sub-footer {
+		background: $color__background-sub-footer;
+		@include font-size(.9);
+		text-align: center;
+
+		span, .menu {
+			display: inline;
+
+			&:after {
+				content: "|";
+				margin: 0 8px;
+			}
+		}
+
+		.made-by:after {
+			display: none;
+		}
+	}
+
+	.wrap {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.sub-footer {
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		.menu-legal-menu-container {
+			display: inline-block;
+
+			ul {
+				padding: 0;
+			}
+
+			li {
+				float: left;
+				margin: 0 5px;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		text-align: left;
+
+		img {
+			margin: 0;
+		}
+	}
 }

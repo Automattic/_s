@@ -8,7 +8,7 @@ textarea {
 	@include font( 'main' );
 	@include font-size(1);
 	line-height: 1.5em;
-	
+
 	b, strong {
 		font-weight: bold;
 	}

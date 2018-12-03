@@ -3,37 +3,37 @@ div.sharedaddy,
 #main div.sharedaddy {
 	padding-top: 10px;
 	text-align: center;
-    
-    .sd-title {
-    	@include font-size(1);
-    	margin-bottom: 10px;
-    	text-transform: uppercase;
-    	
-    	&:before {
-    		display: none;
-    	}
-    }
-	
+
+	.sd-title {
+		@include font-size(1);
+		margin-bottom: 10px;
+		text-transform: uppercase;
+
+		&:before {
+			display: none;
+		}
+	}
+
 	.sd-content {
-		
+
 		ul {
 			margin: 0 !important;
 			width: 100%;
-			
+
 			&:after {
 				@include clearfix();
 				@include clearfix-after();
 			}
-			
+
 			li {
 				margin: 0 5px 0;
 				text-align: center;
 				display: inline-block;
-				
+
 				&:before {
 					display: none;
 				}
-				
+
 				a {
 					padding: 0;
 					width: 40px;
@@ -43,7 +43,7 @@ div.sharedaddy,
 					top: 0;
 					display: block;
 					border-radius: 50%;
-					
+
 					&:before {
 						line-height: 40px;
 					}

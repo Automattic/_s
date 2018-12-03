@@ -1,5 +1,5 @@
 h2 {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 /**
@@ -7,64 +7,64 @@ h2 {
  */
 
 .sensei-message {
-    padding: 1em 1.618em;
-    margin-bottom: 2.617924em;
-    background-color: #0f834d;
-    margin-left: 0;
-    border-radius: 2px;
-    color: #fff;
-    clear: both;
-    border-left: .6em solid rgba(0,0,0,.15);
-    margin-top: 30px;
-    
-    &:after,
-    &:before {
-    	@include clearfix();
-    }
-    
-    &:after {
-    	@include clearfix-after();
-    }
-    
-	a {
-	    float: right;
-	    padding: 0;
-	    background: 0 0;
-	    color: #fff;
-	    box-shadow: none;
-	    line-height: 1.618;
-	    padding-left: 1em;
-	    border-width: 0;
-	    border-left-width: 1px;
-	    border-left-style: solid;
-	    border-left-color: rgba(255,255,255,.25)!important;
-	    border-radius: 0;
-    	
-	    &:hover {
-		    background: 0 0;
-		    color: #fff;
-		    opacity: .7;
-	    }
+	padding: 1em 1.618em;
+	margin-bottom: 2.617924em;
+	background-color: #0f834d;
+	margin-left: 0;
+	border-radius: 2px;
+	color: #fff;
+	clear: both;
+	border-left: .6em solid rgba(0,0,0,.15);
+	margin-top: 30px;
+
+	&:after,
+	&:before {
+		@include clearfix();
 	}
-	
+
+	&:after {
+		@include clearfix-after();
+	}
+
+	a {
+		float: right;
+		padding: 0;
+		background: 0 0;
+		color: #fff;
+		box-shadow: none;
+		line-height: 1.618;
+		padding-left: 1em;
+		border-width: 0;
+		border-left-width: 1px;
+		border-left-style: solid;
+		border-left-color: rgba(255,255,255,.25)!important;
+		border-radius: 0;
+
+		&:hover {
+			background: 0 0;
+			color: #fff;
+			opacity: .7;
+		}
+	}
+
 	&.info {
-        background-color: $woocommerce__color-info;
+		background-color: $woocommerce__color-info;
 	}
 }
 
 #my-courses > ul {
-    padding: 0;
-    
-        li {
-        
-        &:before {
-            display: none;
-        }
-        
-        a {
-            display: block;
-        }
-    }
+	padding: 0;
+
+		li {
+
+		&:before {
+			display: none;
+		}
+
+		a {
+			display: block;
+		}
+	}
 }
 
 /**
@@ -73,34 +73,34 @@ h2 {
 
 #my-courses > ul li,
 #user-course-status-toggle a {
-    display: block;
-    margin-bottom: 2px;
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        display: inline-block;
-    }
+	display: block;
+	margin-bottom: 2px;
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		display: inline-block;
+	}
 }
 
 #my-courses > ul li.ui-state-active a {
-    background: $color__corporate;
-    color: #fff;
+	background: $color__corporate;
+	color: #fff;
 }
 
 #my-courses > ul li a,
 #user-course-status-toggle a {
-    @include font-size(.9);
-    background: $color__background-hr;
-    padding: 5px 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: $color__text-main;
-    white-space: nowrap;
-    
-    &.active {
-        background: $color__corporate;
-        color: #fff;
-    }
+	@include font-size(.9);
+	background: $color__background-hr;
+	padding: 5px 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: $color__text-main;
+	white-space: nowrap;
+
+	&.active {
+		background: $color__corporate;
+		color: #fff;
+	}
 }
 
 /**
@@ -108,34 +108,34 @@ h2 {
  */
 
 .status {
-    @include font-size(.9);
-    background: #888;
-    border-radius: 2px;
-    display: inline-block;
-    padding: 7px 15px 7px 55px;
-    color: #fff;
-    position: relative;
-    box-shadow: 0 1px 3px rgba(0,0,0,.2);
-    margin: 0;
-    
-    &:before {
-        @include icon-content('\e926');
-        background: rgba(0,0,0,.2);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 40px;
-        line-height: 38px;
-        text-align: center;
-    }
-    
-    &.completed {
-        background: $color__success;
-        
-        &:before {
-            @include icon-content('\e90c');
-        }
-    }
+	@include font-size(.9);
+	background: #888;
+	border-radius: 2px;
+	display: inline-block;
+	padding: 7px 15px 7px 55px;
+	color: #fff;
+	position: relative;
+	box-shadow: 0 1px 3px rgba(0,0,0,.2);
+	margin: 0;
+
+	&:before {
+		@include icon-content('\e926');
+		background: rgba(0,0,0,.2);
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 40px;
+		line-height: 38px;
+		text-align: center;
+	}
+
+	&.completed {
+		background: $color__success;
+
+		&:before {
+			@include icon-content('\e90c');
+		}
+	}
 }
 
 /**
@@ -143,99 +143,99 @@ h2 {
  */
 
 .post-entries {
-    padding: 10px 0;
-    margin: 0 0 50px 0;
-    clear: both;
-    
-    .notice {
-        margin-left: 15px;
-    }
-    
-    a {
-        text-decoration: none;
-        color: $color__corporate;
-    }
-    
-    .nav-next {
-        background: #f9f9f9;
-        position: relative;
-        padding-bottom: 3.5em;
-        width: 100%;
-        text-align: center;
-    }
-        
-    img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-    
-    .motivation {
-        display: block;
-        color: #888;
-        font-weight: 200;
-        font-size: 1em;
-        margin: 5px 15px 2px;
-    }
-    
-    .next-title {
-        @include font-size(1.1);
-        color: $color__text-main;
-        font-weight: normal;
-        line-height: 1.2em;
-        margin: 0 15px;
-        display: block;
-        margin-top: 10px;
-    }
-    
-    .goto {
-        position: absolute;
-        text-align: center;
-        bottom: 15px;
-        left: 15px;
-        right: 15px;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 5px;
-        
-        &:after {
-            @include icon-content('\e922');
-            font-size: .8em;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        padding: 10px 0;
-        
-        .nav-next {
-            width: 100%;
-            padding-left: 0;
-            padding-left: 25%;
-            position: relative;
-            text-align: left;
-            padding-top: 15px;
-            min-height: 120px;
-            
-            .next-title {
-                margin-top: 0;
-            }
-            
-            img {
-                width: 25%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                max-height: 100%;
-            }
-            
-            .goto {
-                text-align: right;
-                left: 25%;
-                margin-left: 15px;
-            }
-        }
-    }
+	padding: 10px 0;
+	margin: 0 0 50px 0;
+	clear: both;
+
+	.notice {
+		margin-left: 15px;
+	}
+
+	a {
+		text-decoration: none;
+		color: $color__corporate;
+	}
+
+	.nav-next {
+		background: #f9f9f9;
+		position: relative;
+		padding-bottom: 3.5em;
+		width: 100%;
+		text-align: center;
+	}
+
+	img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+
+	.motivation {
+		display: block;
+		color: #888;
+		font-weight: 200;
+		font-size: 1em;
+		margin: 5px 15px 2px;
+	}
+
+	.next-title {
+		@include font-size(1.1);
+		color: $color__text-main;
+		font-weight: normal;
+		line-height: 1.2em;
+		margin: 0 15px;
+		display: block;
+		margin-top: 10px;
+	}
+
+	.goto {
+		position: absolute;
+		text-align: center;
+		bottom: 15px;
+		left: 15px;
+		right: 15px;
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 5px;
+
+		&:after {
+			@include icon-content('\e922');
+			font-size: .8em;
+			margin-left: 5px;
+			vertical-align: middle;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		padding: 10px 0;
+
+		.nav-next {
+			width: 100%;
+			padding-left: 0;
+			padding-left: 25%;
+			position: relative;
+			text-align: left;
+			padding-top: 15px;
+			min-height: 120px;
+
+			.next-title {
+				margin-top: 0;
+			}
+
+			img {
+				width: 25%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				max-height: 100%;
+			}
+
+			.goto {
+				text-align: right;
+				left: 25%;
+				margin-left: 15px;
+			}
+		}
+	}
 }
 
 /**
@@ -243,26 +243,26 @@ h2 {
  */
 
 .module {
-    background: #f9f9f9;
-    padding: 20px;
-    margin-top: 30px;
-    
-    &:first-of-type {
-        margin-top: 0;
-    }
-    
-    h2 {
-        margin-top: 0;
-        
-        a {
-            color: $color__text-main;
-            text-decoration: none;
-        }
-    }
-    
-    h3 {
-        margin-bottom: 0;
-    }
+	background: #f9f9f9;
+	padding: 20px;
+	margin-top: 30px;
+
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	h2 {
+		margin-top: 0;
+
+		a {
+			color: $color__text-main;
+			text-decoration: none;
+		}
+	}
+
+	h3 {
+		margin-bottom: 0;
+	}
 }
 
 /**
@@ -270,18 +270,18 @@ h2 {
  */
 
 .sensei-pagination {
-    clear: both;
-    
-    .page-numbers {
-    
-        li {
-            display: inline-block;
-            
-            &:before {
-                display: none;
-            }
-        }   
-    }
+	clear: both;
+
+	.page-numbers {
+
+		li {
+			display: inline-block;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
 }
 
 /**
@@ -289,32 +289,32 @@ h2 {
  */
 
 .sensei-breadcrumb {
-    @include font-size(.8);
-    margin: 0;
-    font-weight: bold;
-    
-    &:before {
-        @include font-size(.7);
-        @include icon-content('\e920');
-        margin-right: 5px;
-    }
-    
-    a {
-        text-decoration: none;
-    }
+	@include font-size(.8);
+	margin: 0;
+	font-weight: bold;
+
+	&:before {
+		@include font-size(.7);
+		@include icon-content('\e920');
+		margin-right: 5px;
+	}
+
+	a {
+		text-decoration: none;
+	}
 }
 
 .learner-info {
-    
-    h2 {
-        @include font-size(1.5);
-    }
-    
-    .learner-avatar img {
-        background: #f0f0f0;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin-right: 15px;
-    }
+
+	h2 {
+		@include font-size(1.5);
+	}
+
+	.learner-avatar img {
+		background: #f0f0f0;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		margin-right: 15px;
+	}
 }

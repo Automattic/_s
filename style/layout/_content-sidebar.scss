@@ -1,19 +1,19 @@
 .site-content {
-    clear: both;
-    
-    @media screen and (min-width: breakpoint('tablet-landscape')) {
-        display: flex;
-        flex-wrap: wrap;
-        
-        #primary {
-            width: $size__site-primary;
-            padding-right: 25px;
-        }
-        
-        #secondary {
-            width: $size__site-secondary;
-            padding-left: 25px;
-            padding-top: 30px;
-        }
-    }
+	clear: both;
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		display: flex;
+		flex-wrap: wrap;
+
+		#primary {
+			width: $size__site-primary;
+			padding-right: 25px;
+		}
+
+		#secondary {
+			width: $size__site-secondary;
+			padding-left: 25px;
+			padding-top: 30px;
+		}
+	}
 }

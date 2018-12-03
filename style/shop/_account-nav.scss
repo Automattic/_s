@@ -1,115 +1,115 @@
 .secondary-navigation__toggle {
-    width: 100%;
-    width: calc(100% + #{$padding__content-mobile * 2});
-    margin: 0 -#{$padding__content-mobile};
-    border-radius: 0;
-    color: #fff;
-    cursor: pointer;
-    
-    &:after {
-        @include icon-content('\e90b');
-        @include font-size(.7);
-        margin-left: 10px;
-        font-weight: normal;
-    }
+	width: 100%;
+	width: calc(100% + #{$padding__content-mobile * 2});
+	margin: 0 -#{$padding__content-mobile};
+	border-radius: 0;
+	color: #fff;
+	cursor: pointer;
+
+	&:after {
+		@include icon-content('\e90b');
+		@include font-size(.7);
+		margin-left: 10px;
+		font-weight: normal;
+	}
 }
 
 .secondary-navigation {
-    margin: 0 -#{$padding__content-mobile} 20px;
-    padding: 0 $padding__content-mobile;
-    background: #f5f5f5;
-    display: none;
-    
-    ul {
-        padding: 0;
-        margin: 0;
-    }
-    
-    li {
-        text-transform: uppercase;
-        margin: 0;
-        
-        &.current-menu-item  a {
-        	color: $color__corporate;
-        	font-weight: bold;
-        	
-        	&:before {
-        		font-weight: normal;
-        	}
-        }
-        
-        &:before {
-            display: none;
-        }
-        
-        a {
-            text-decoration: none;
-            line-height: normal;
-            color: #777;
-            font-weight: 200;
-            display: block;
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
-        }
-        
-        &:last-of-type a {
-            border: none;
-        }
-        
-        &.is-active a,
-        &.current-menu-item {
-            color: $color__corporate;
-            font-weight: 600;
-        }
-        
-        a:before {
-            margin-right: 10px;
-            @include font-size(1.1);
-            vertical-align: text-top;
-        }
-        
-        &:last-of-type a {
-            border-right: none;
-        }
-        
-        &.woocommerce-MyAccount-navigation-link--dashboard a:before {
-            @include icon-content("\e915");
-        }
-        
-        &.woocommerce-MyAccount-navigation-link--orders a:before {
-            @include icon-content("\e918");
-        }
-        
-        &.woocommerce-MyAccount-navigation-link--downloads a:before {
-            @include icon-content("\e916");
-        }
-        
-        &.woocommerce-MyAccount-navigation-link--edit-address a:before {
-            @include icon-content("\e914");
-        }
-        
-        &.woocommerce-MyAccount-navigation-link--edit-account a:before {
-           @include icon-content("\e913");
-        }
-        
-        &.woocommerce-MyAccount-navigation-link--payment-methods a:before {
-           @include icon-content("\e919");
-        }
-        
-        &.woocommerce-MyAccount-navigation-link--customer-logout a:before {
-            @include icon-content("\e917");
-        }
-    }
-    
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-	    display: block;
-	    width: 29%;
-	    margin: 50px 2% 0 0;
-	    background: none;
+	margin: 0 -#{$padding__content-mobile} 20px;
+	padding: 0 $padding__content-mobile;
+	background: #f5f5f5;
+	display: none;
+
+	ul {
+		padding: 0;
+		margin: 0;
 	}
-	
+
+	li {
+		text-transform: uppercase;
+		margin: 0;
+
+		&.current-menu-item  a {
+			color: $color__corporate;
+			font-weight: bold;
+
+			&:before {
+				font-weight: normal;
+			}
+		}
+
+		&:before {
+			display: none;
+		}
+
+		a {
+			text-decoration: none;
+			line-height: normal;
+			color: #777;
+			font-weight: 200;
+			display: block;
+			border-bottom: 1px solid #eee;
+			padding: 15px 0;
+		}
+
+		&:last-of-type a {
+			border: none;
+		}
+
+		&.is-active a,
+		&.current-menu-item {
+			color: $color__corporate;
+			font-weight: 600;
+		}
+
+		a:before {
+			margin-right: 10px;
+			@include font-size(1.1);
+			vertical-align: text-top;
+		}
+
+		&:last-of-type a {
+			border-right: none;
+		}
+
+		&.woocommerce-MyAccount-navigation-link--dashboard a:before {
+			@include icon-content("\e915");
+		}
+
+		&.woocommerce-MyAccount-navigation-link--orders a:before {
+			@include icon-content("\e918");
+		}
+
+		&.woocommerce-MyAccount-navigation-link--downloads a:before {
+			@include icon-content("\e916");
+		}
+
+		&.woocommerce-MyAccount-navigation-link--edit-address a:before {
+			@include icon-content("\e914");
+		}
+
+		&.woocommerce-MyAccount-navigation-link--edit-account a:before {
+			@include icon-content("\e913");
+		}
+
+		&.woocommerce-MyAccount-navigation-link--payment-methods a:before {
+			@include icon-content("\e919");
+		}
+
+		&.woocommerce-MyAccount-navigation-link--customer-logout a:before {
+			@include icon-content("\e917");
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		display: block;
+		width: 29%;
+		margin: 50px 2% 0 0;
+		background: none;
+	}
+
 	@media screen and (min-width: breakpoint('desktop')) {
 		width: 27%;
-	   	margin: 50px 4% 0 0;
+		margin: 50px 4% 0 0;
 	}
 }

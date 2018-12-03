@@ -7,18 +7,18 @@
 }
 
 .comments-area {
-	
+
 	.comments-title {
 		@include font-size(1.2);
 	}
-	
+
 	.comment-meta {
-		
+
 		&:after {
 			@include clearfix();
 			@include clearfix-after();
 		}
-		
+
 		img {
 			vertical-align: middle;
 			width: 32px;
@@ -27,57 +27,57 @@
 			margin-right: 5px;
 			background: #eee;
 		}
-		
+
 		.comment-author {
 			margin-bottom: 5px;
 		}
-		
+
 		.comment-metadata {
 			@include font-size(.9);
-			
+
 			a {
 				float: left;
 				font-weight: 200;
 			}
-			
+
 			.edit-link {
 				float: right;
 			}
 		}
 	}
-	
+
 	.reply {
 		text-align: right;
 		border-top: 1px solid #dfdfdf;
 		padding-top: 8px;
 	}
-	
+
 	.comment-list {
 		padding: 0;
-		
+
 		.comment {
 			background: #f8f8f8;
 			margin-bottom: 15px;
 			padding: 15px 25px;
 		}
-		
+
 		li:before {
 			display: none;
 		}
 	}
-	
+
 	.children {
-		
+
 		.comment {
 			margin-bottom: 0;
 			padding: 0;
-			
+
 			p {
 				margin-bottom: 10px;
 			}
-		}	
+		}
 	}
-	
+
 	.children .children .children {
 		padding-left: 0;
 		margin-left: 0;
@@ -86,42 +86,42 @@
 
 .comment-respond {
 	margin: 30px 0;
-	
+
 	.comment-reply-title {
 		margin-bottom: 0;
 	}
 
-    form {
-        
-        p {
-            margin: 0;
-            margin-top: 10px;
-        }
-    }
-    
-    .form-submit {
-        text-align: center;
-        margin-top: 25px;
-    }
-    
-    .comment-reply-title small a {
-    	@include font-size(.9);
-    }
-    
-    @media screen and (min-width: 48em) {
-        
-        .comment-form-author,
-        .comment-form-email {
-            width: 49%;
-            float: left;
-        }
-        
-        .comment-form-email {
-            margin-left: 2%;
-        }
-        
-        .comment-form-url {
-            clear: both;
-        }
-    }
+	form {
+
+		p {
+			margin: 0;
+			margin-top: 10px;
+		}
+	}
+
+	.form-submit {
+		text-align: center;
+		margin-top: 25px;
+	}
+
+	.comment-reply-title small a {
+		@include font-size(.9);
+	}
+
+	@media screen and (min-width: 48em) {
+
+		.comment-form-author,
+		.comment-form-email {
+			width: 49%;
+			float: left;
+		}
+
+		.comment-form-email {
+			margin-left: 2%;
+		}
+
+		.comment-form-url {
+			clear: both;
+		}
+	}
 }

@@ -1,96 +1,96 @@
 .quiz-questions {
-    margin-bottom: 30px;
-    
-    .quiz-submit {
-        cursor: pointer;
-        
-        &.save,
-        &.reset {
-    		color: $color__border-button;
-    		background: none;
-    		
-    		&:hover,
-    		&:active,
-    		&:focus {
-    			background: none;
-    		}
-    		
-    		&:hover {
-    			color: $color__border-button-hover;
-    		}
-    
-    		&:active,
-    		&:focus {
-    			color: $color__border-button-focus;
-    		}
-        }
-    }
+	margin-bottom: 30px;
+
+	.quiz-submit {
+		cursor: pointer;
+
+		&.save,
+		&.reset {
+			color: $color__border-button;
+			background: none;
+
+			&:hover,
+			&:active,
+			&:focus {
+				background: none;
+			}
+
+			&:hover {
+				color: $color__border-button-hover;
+			}
+
+			&:active,
+			&:focus {
+				color: $color__border-button-focus;
+			}
+		}
+	}
 }
 
 #sensei-quiz-list {
-    padding: 0;
-    margin-bottom: 30px;
-    
-    .question-title {
-        @include font-size(1.2);
-        font-weight: bold;
-    }
-    
-    .grade {
-        @include font-size(1);
-        color: $color__corporate;
-        font-weight: normal;
-        margin-left: 10px;
-        
-        &:before {
-            content: "+";
-        }
-    }
-    
-    .answers {
-        padding: 0;
-        margin: 0;
-        
-        li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            
-            &:before {
-                display: none;
-            }
-            
-            input {
-                position: absolute;
-                top: 3px;
-                left: 0;
-            }
-            
-            input + label {
-                display: inline;
-                font-weight: normal;
-                @include font-size(1);
-            }
-        }
-    }
-    
-    > li:before {
-        @include font-size(1.2);
-        color: $color__corporate;
-        font-weight: bold;
-        margin: 0;
-    }
+	padding: 0;
+	margin-bottom: 30px;
+
+	.question-title {
+		@include font-size(1.2);
+		font-weight: bold;
+	}
+
+	.grade {
+		@include font-size(1);
+		color: $color__corporate;
+		font-weight: normal;
+		margin-left: 10px;
+
+		&:before {
+			content: "+";
+		}
+	}
+
+	.answers {
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 15px;
+			padding-left: 30px;
+			position: relative;
+
+			&:before {
+				display: none;
+			}
+
+			input {
+				position: absolute;
+				top: 3px;
+				left: 0;
+			}
+
+			input + label {
+				display: inline;
+				font-weight: normal;
+				@include font-size(1);
+			}
+		}
+	}
+
+	> li:before {
+		@include font-size(1.2);
+		color: $color__corporate;
+		font-weight: bold;
+		margin: 0;
+	}
 }
 
 .answer_message {
-    @include font-size(.9);
-    line-height: normal;
-    
-    &.user_wrong {
-        color: $woocommerce__color-error;
-    }
-    
-    &.user_right {
-        color: $woocommerce__color-success;
-    }
+	@include font-size(.9);
+	line-height: normal;
+
+	&.user_wrong {
+		color: $woocommerce__color-error;
+	}
+
+	&.user_right {
+		color: $woocommerce__color-success;
+	}
 }

@@ -8,8 +8,8 @@
 
 .woocommerce-product-gallery {
 	position: relative;
-    margin-bottom: 50px;
-	
+	margin-bottom: 50px;
+
 	.woocommerce-product-gallery__trigger {
 		position: absolute;
 		z-index: 1;
@@ -24,136 +24,136 @@
 		overflow: hidden;
 		width: 30px;
 		height: 30px;
-		
+
 		&:before {
-		    @include icon-content("\e912");
-		    text-indent: 0;
-		    line-height: 30px;
-		    width: 30px;
-		    height: 30px;
-		    position: absolute;
-		    top: 0;
-		    right: 0;
-		    text-align: center;
+			@include icon-content("\e912");
+			text-indent: 0;
+			line-height: 30px;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			text-align: center;
 		}
 	}
-	
+
 	figure {
 		margin: 0;
 	}
-    
-    img {
-        width: 100%;
-        display: block;
-    }
-    
-    ol {
-        padding: 0;
-        
-        &:after {
-            @include clearfix();
-            @include clearfix-after();
-        }
-        
-        li {
-           float: left;
-           width: 18%;
-           position: relative;
-           margin-right: 2.5%;
-           
-           &:last-of-type {
-               margin-right: 0;
-           }
-        }
-        
-        li:before {
-            display: none;
-        }
-    }   
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-    	float: left;
-        width: 50%;
-        position: relative;
-        z-index: 1;
-    }
+
+	img {
+		width: 100%;
+		display: block;
+	}
+
+	ol {
+		padding: 0;
+
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+
+		li {
+			float: left;
+			width: 18%;
+			position: relative;
+			margin-right: 2.5%;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+
+		li:before {
+			display: none;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		float: left;
+		width: 50%;
+		position: relative;
+		z-index: 1;
+	}
 }
 
 /**
  * Product summary
  */
 .onsale {
-    display: block;
-    margin: 20px 0;
-    text-decoration: none;
+	display: block;
+	margin: 20px 0;
+	text-decoration: none;
 }
 
 .summary {
-    margin: 0;
-    margin-bottom: 50px;
-    
+	margin: 0;
+	margin-bottom: 50px;
+
 	.product_title {
 		margin: 30px 0 20px;
 	}
-    
-    table {
-        border: none;
-        
-        tr th,
-        tr td {
-            width: 50%;
-            padding: 0 0 8px;
-            border: none;
-        }
-        
-        tr {
-            padding: 0;
-            border: none;
-            
-            p {
-                margin: 0;
-            }
-        }
-        
-        tr:nth-of-type(even) {
-            background: none;
-        }
-    }
-    
-    .product_title {
-        margin-bottom: 20px;
-    }
-    
-    .single_add_to_cart_button {
-        font-size: 1em;
-        display: block;
-        width: 100%;
-        margin: 20px 0;
-    }
-    
-    .quantity input[type="number"] {
-        max-width: 150px;
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
+
+	table {
+		border: none;
+
+		tr th,
+		tr td {
+			width: 50%;
+			padding: 0 0 8px;
+			border: none;
+		}
+
+		tr {
+			padding: 0;
+			border: none;
+
+			p {
+				margin: 0;
+			}
+		}
+
+		tr:nth-of-type(even) {
+			background: none;
+		}
+	}
+
+	.product_title {
+		margin-bottom: 20px;
+	}
+
+	.single_add_to_cart_button {
+		font-size: 1em;
+		display: block;
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	.quantity input[type="number"] {
+		max-width: 150px;
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
 		padding-left: 40px;
-        float: left;
-	    width: 50%;
-	    position: relative;
-	    clear: right;
-	    padding-left: 20px;
-		
+		float: left;
+		width: 50%;
+		position: relative;
+		clear: right;
+		padding-left: 20px;
+
 		.product_title {
 			margin-top: 0;
 		}
-		    
-	    .single_add_to_cart_button {
-	        display: inline-block;
-	        width: auto;
-	    }
-    }
+
+		.single_add_to_cart_button {
+			display: inline-block;
+			width: auto;
+		}
+	}
 }
 
 .product__section {
-    clear: both;
+	clear: both;
 }

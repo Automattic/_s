@@ -17,7 +17,7 @@ input[type="submit"],
 	text-align: center;
 	border-radius: 8px;
 	font-weight: bold;
-	transition: background .15s ease-in-out, 
+	transition: background .15s ease-in-out,
 				border .15s ease-in-out,
 				color .15s ease-in-out;
 
@@ -37,27 +37,27 @@ input[type="submit"],
 
 .wp-block-button {
 	text-align: center;
-	
+
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 		float: left;
-		
+
 		+ .wp-block-button {
 			margin-left: 10px;
 		}
 	}
-	
+
 	&.is-style-outline .wp-block-button__link {
 		color: $color__border-button;
 		border-color: $color__border-button;
 		background: rgba(255,255,255,0);
-		
+
 		&:hover,
 		&:active,
 		&:focus,
 		&:visited {
 			background: rgba(255,255,255,0);
 		}
-		
+
 		&:hover {
 			color: $color__border-button-hover;
 			border-color: $color__border-button-hover;

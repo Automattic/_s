@@ -369,12 +369,12 @@ function _svbk_scripts() {
 	);
 
 	// Main Theme JS file
-	Script::enqueue( 
+	Script::enqueue(
 		'_svbk-theme',
 		'/dist/js/theme.min.js',
 		[
-			'deps' => array( 'waypoints' ),
-			'source' => 'theme'
+			'deps'   => array( 'waypoints' ),
+			'source' => 'theme',
 		]
 	);
 

@@ -45,7 +45,7 @@ big {
 	margin-top: 0;
 	margin-bottom: 20px;
 	line-height: 1.2;
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		@include font-size(1.5);
 	}
@@ -61,7 +61,7 @@ big {
 p.has-drop-cap:not(:focus):first-letter {
 	@include font-size(5);
 	padding: 0 0 10px;
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		@include font-size(7);
 	}
@@ -97,11 +97,11 @@ blockquote,
 	padding: 0 15px 0 1.8em;
 	position: relative;
 	font-style: italic;
-	
+
 	p {
 		margin-bottom: 15px;
 	}
-	
+
 	&:before {
 		@include icon-content('\e925');
 		position: absolute;
@@ -111,16 +111,16 @@ blockquote,
 		opacity: .5;
 		font-style: normal;
 	}
-	
+
 	cite {
 		@include font-size(.9);
 		color: #888;
 		font-style: normal;
 	}
-	
+
 	&.is-style-large {
 		padding: 0 0 0 2.2em;
-		
+
 		&:before {
 			@include font-size(1.3);
 		}
@@ -129,15 +129,15 @@ blockquote,
 
 .wp-block-pullquote {
 	text-align: left;
-	
+
 	blockquote {
 		padding: 0 25px;
 	}
-	
+
 	p {
 		position: relative;
-		
-	
+
+
 		&:before,
 		&:after {
 			@include font-size(1.5);
@@ -145,51 +145,51 @@ blockquote,
 			font-style: normal;
 			position: absolute;
 		}
-		
+
 		&:before {
 			@include icon-content('\e925');
 			left: -15px;
 			top: -10px;
 		}
-		
+
 		&:after {
 			@include icon-content('\e924');
 			right: -15px;
 			bottom: -10px;
 		}
 	}
-	
+
 	&.is-style-solid-color {
 		padding: 15px;
-		
+
 		blockquote {
 			max-width: none;
 		}
 	}
-	
+
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 		text-align: center;
-		
+
 		p:after {
 			bottom: auto;
 			top: -10px;
 		}
-		
+
 		&.is-style-solid-color {
 			text-align: left;
 			padding: 30px 15px;
-			
+
 			blockquote {
 				max-width: 60%;
 			}
-			
+
 			p {
-				
+
 				&:before,
 				&:after {
 					display: inline;
 					position: static;
-				}	
+				}
 			}
 		}
 	}
