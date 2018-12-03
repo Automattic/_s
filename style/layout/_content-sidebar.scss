@@ -1,4 +1,5 @@
 .site-content {
+    clear: both;
     
     @media screen and (min-width: breakpoint('tablet-landscape')) {
         display: flex;
