@@ -15,6 +15,8 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
+			<?php do_action('in_post_top');?>
+			
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -38,6 +40,7 @@ get_header();
 
 			the_posts_navigation();
 
+			do_action('in_post_bottom');
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
