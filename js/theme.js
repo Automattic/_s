@@ -41,4 +41,16 @@
     $('.secondary-navigation').slideToggle();
   });
   
+  /* Highlight animation */
+  var waypoints = $('.highlight').waypoint({
+    handler: function() {
+      var highlightTime = $(this.element).text().length / 80;
+      $(this.element)
+      .addClass('animated')
+      .css('transition-duration', highlightTime.toFixed(2) + 's');
+    },
+    offset: '70%',
+    triggerOnce: true
+  });
+  
 })(jQuery);

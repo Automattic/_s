@@ -73,7 +73,17 @@ p.has-drop-cap:not(:focus):first-letter {
 }
 
 .highlight {
+	padding: 0 3px;
 	background: $color__background-highlight;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, $color__background-highlight 50%);
+	background-size: 200% auto;
+	background-position: -0% 0;
+	transition: background-position;
+	transition-timing-function: linear;
+
+	&.animated {
+		background-position: -99.99%;
+	}
 }
 
 .standout {
