@@ -1,0 +1,99 @@
+.wp-block-svbk-banner {
+	@include background-image('post_banner-background', 'jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: right;
+	color: #fff;
+	margin: 30px 0;
+	padding: 20px 20px 25px;
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(to right, rgba(0,0,0,.9), rgba(0,0,0,0));
+	}
+
+	.wp-block-column {
+		margin-bottom: 0;
+	}
+
+	h3, p, .wp-block-button {
+		position: relative;
+		z-index: 1;
+	}
+
+	h3 {
+		margin: 0;
+		@include font-size(1.8);
+		color: #fff;
+
+		strong {
+			@include font-size(2);
+			line-height: normal;
+		}
+	}
+
+	p {
+		margin: 0 0 10px;
+	}
+
+	.wp-block-button {
+		margin: 20px 0 0;
+		float: none;
+
+		.wp-block-button__link {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		@include background-image('post_banner-background-large', 'jpg');
+		padding: 20px 30px 25px;
+
+		.wp-block-column {
+			flex-basis: 40%;
+		}
+
+		.wp-block-column:first-of-type {
+			flex-basis: 60%;
+		}
+	}
+
+	&.is-style-small {
+		text-align: center;
+
+		h3 {
+			font-weight: normal;
+			@include font-size(1.5);
+			border-bottom: 1px solid $color__corporate-secondary;
+			padding-bottom: 10px;
+
+			strong {
+				@include font-size(2);
+				line-height: normal;
+			}
+		}
+
+		.wp-block-column {
+			margin: 0;
+		}
+
+		@media screen and (min-width: breakpoint('tablet-portrait')) {
+			text-align: left;
+			@include background-image('post_banner-background', 'jpg');
+
+			.wp-block-column:last-of-type {
+				padding-left: 50px;
+			}
+		}
+	}
+}
