@@ -27,6 +27,7 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="https://automattic.com/">Automattic</a>' );
 				?>
 		</div><!-- .site-info -->
+		<?php do_action('in_footer');?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
