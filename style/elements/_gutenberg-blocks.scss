@@ -1,5 +1,10 @@
+.is-style-dark {
+	color: #fff;
+}
+
 .wp-block-media-text {
 	align-items: start;
+	clear: both;
 	
 	h1, h2 {
 		margin-top: 0;
@@ -15,6 +20,11 @@
 	
 	.wp-block-media-text__content {
 		padding: 0;
+		
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
 	}
 	
 	@media screen and (max-width: breakpoint('tablet-portrait')) {
@@ -25,11 +35,6 @@
 			
 			.wp-block-media-text__content {
 				
-				&:after {
-					@include clearfix();
-					@include clearfix-after();
-				}
-				
 				h1, h2 {
 					margin-top: 20px;
 					margin-bottom: 15px;
@@ -39,7 +44,7 @@
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		padding: 30px $padding__content-mobile;
+		padding: 30px 0;
 		
 		.wp-block-button {
 			min-width: 40%;
@@ -58,16 +63,96 @@
 			padding-left: 0;
 		}
 	}
+}
+
+.is-style-bg-img,
+.has-solid-color-background {
+	margin-right: -#{$padding__content-mobile};
+	margin-left: -#{$padding__content-mobile};
 	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding: 30px $padding__content-desktop;
+	.wp-block-media-text__content {
+		padding-right: $padding__content-mobile;
+		padding-left: $padding__content-mobile;
+	}
+	
+	@media screen and (min-width: $breakpoint__content-max-width) {
+		margin-right: 0;
+		margin-left: 0;
 	}
 }
 
-/**
-*    Dark background/light text
-*/
-
-.is-style-dark {
-	color: #fff;
+.has-solid-color-background {
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		padding: 30px $padding__content-mobile;
+	}
+		
+	&.alignfull {
+		
+			@media screen and (min-width: $breakpoint__content-max-width) {
+				grid-template-areas: ". media-text-media media-text-content .";
+				grid-template-columns: auto $size__content-width/2 $size__content-width/2 auto;
+				
+			&.has-media-on-the-right {
+				grid-template-areas: ". media-text-content media-text-media .";
+	    		grid-template-columns: auto $size__content-width/2 $size__content-width/2 auto;
+			}
+		}
+	}
 }
+	
+.is-style-bg-img {
+	display: block;
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		padding: 30px $padding__content-mobile;
+		position: relative;
+		
+		.wp-block-media-text__content {
+			position: relative;
+			z-index: 1;
+			width: 50%;
+			padding: 20px;
+			background: rgba(0,0,0,.6);
+			color: #fff;
+		}
+		
+		.wp-block-media-text__media {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		
+		&.has-media-on-the-right .wp-block-media-text__content {
+			margin-left: 50%;
+			padding: 20px;
+		}
+	}
+	
+	&.alignfull {
+		
+		@media screen and (min-width: $breakpoint__content-max-width) {
+			
+			.wp-block-media-text__content {
+				width: $size__content-width/2;
+				left: 50%;
+			}
+				
+			&.has-media-on-the-right .wp-block-media-text__content {
+				transform: translateX(-100%);
+				left: auto;
+			}
+		}
+	}
+}
+
