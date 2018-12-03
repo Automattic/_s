@@ -1,128 +1,145 @@
 #main-navigation {
-	
+
 	ul {
-		
+
 		li {
 			padding: 8px $padding__content-mobile;
 			margin-bottom: 0;
 			margin: 0;
-			
+
 			a {
 				@include font-size(.9);
 			}
-			
+
 			&:before {
 				display: none;
 			}
 		}
 	}
-	
+
 	.menu-item-has-children {
 		background-color: rgba(255,255,255,0);
 		transition: background-color .8s ease;
-		
+
 		a {
 			display: block;
 			position: relative;
 		}
-		
+
 		> a:after {
 			@include icon-content("\e90a");
 			@include font-size(.5);
 			position: absolute;
 			right: 0;
 		}
-		
+
 		.sub-menu {
 			display: block;
 			overflow: hidden;
 			max-height: 0;
 			transition: max-height .8s ease;
 		}
-		
+
 		&.expanded {
 			background-color: $color__background-sub-menu;
-			
+
 			> a:after {
 				@include icon-content("\e909");
 			}
-			
+
 			.sub-menu {
 				max-height: 300px;
 				display: block;
 			}
 		}
 	}
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		
+
 		ul {
-			
+
 			li {
 				padding: 0;
+
+				&.cta-item {
+
+					a {
+						background: $color__background-button;
+						padding: .5em .8em;
+						border-radius: 8px;
+						color: #fff;
+					}
+
+					.home & a {
+						background: none;
+						padding: 0;
+						border-radius: 0;
+						color: $color__text-main;
+					}
+				}
 			}
 		}
-		
+
 		.menu-item-has-children {
-			
+
 			.sub-menu {
 				display: none;
 				overflow: visible;
 				background-color: $color__background-sub-menu;
-			    position: absolute;
-			    z-index: 10;
-			    padding: 15px;
-			    margin: -25px 0 0 0;
-			    width: 190px;
-			    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-			    text-align: left;
-			    
+				position: absolute;
+				z-index: 10;
+				padding: 15px;
+				margin: -25px 0 0 0;
+				width: 190px;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+				text-align: left;
+
 				li {
 					float: none;
 					margin-bottom: 10px;
-					
+
 					&:last-of-type {
 						margin-bottom: 0;
 					}
-					
+
 					a {
 						line-height: normal;
 					}
 				}
-			    
+
 				&:before {
-				    content: "";
-				    display: block;
-				    width: 0;
-				    height: 0;
-				    position: absolute;
-				    border-left: 6px solid transparent;
-				    border-right: 6px solid transparent;
-				    border-bottom: 6px solid $color__background-sub-menu;
-				    top: -6px;
-				    left: 50px;
+					content: "";
+					display: block;
+					width: 0;
+					height: 0;
+					position: absolute;
+					border-left: 6px solid transparent;
+					border-right: 6px solid transparent;
+					border-bottom: 6px solid $color__background-sub-menu;
+					top: -6px;
+					left: 50px;
 				}
 			}
-			
+
 			&:hover {
-				
+
 				.sub-menu {
 					max-height: none;
 					display: block;
 				}
 			}
-			
+
 			&.expanded {
 				background-color: rgba(255,255,255,0);
 			}
-			
+
 			> a:after,
 			&.expanded > a:after {
 				@include icon-content("\e90b");
 				position: static;
 				margin-left: 5px;
 			}
-			
+
 			.sub-menu {
 				position: absolute;
 			}
@@ -132,7 +149,7 @@
 
 #page {
 	position: relative;
-	
+
 	#main-navigation {
 		position: fixed;
 		width: 250px;
@@ -141,23 +158,23 @@
 		overflow: auto;
 		box-shadow: 0 0 3px rgba(0,0,0,.0);
 	}
-	
+
 	&.menu-toggled-on {
-		
+
 		#main-navigation {
 			box-shadow: 0 0 3px rgba(0,0,0,.2);
 		}
 	}
-	
+
 	@media screen and (min-width: breakpoint('phone')) {
 
 		#main-navigation {
 			width: 300px;
 		}
 	}
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		
+
 		&.menu-toggled-on #main-navigation,
 		#main-navigation {
 			position: static;
@@ -169,7 +186,7 @@
 
 .menu-item.login,
 .menu-item.logout {
-	
+
 	img {
 		width: 20px;
 		height: 20px;
@@ -178,7 +195,7 @@
 		background: #ccc;
 		border-radius: 50%;
 	}
-	
+
 	a, span {
 		text-transform: none;
 	}
@@ -186,18 +203,18 @@
 
 .profile-nav {
 	@include font-size(.8);
-	
+
 	.my-account {
-		
+
 		&:before {
 			display: none;
 		}
-		
+
 		a {
 			color: $color__text-main;
 			text-decoration: none;
 		}
-		
+
 		img {
 			border-radius: 50%;
 			width: 20px;
@@ -208,7 +225,7 @@
 			display: inline-block;
 			vertical-align: middle;
 		}
-		
+
 		.user-name {
 			text-transform: uppercase;
 		}
@@ -217,7 +234,7 @@
 
 .top-header,
 .site-footer {
-	
+
 	.sub-menu {
 		display: none;
 	}

@@ -15,33 +15,33 @@
 @import "site/site";
 
 .posts-list {
-    
-    @media screen and (min-width: breakpoint('phone')) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        
-        .post-thumb {
-            width: 48%;
-        }
-    }
+
+	@media screen and (min-width: breakpoint('phone')) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.post-thumb {
+			width: 48%;
+		}
+	}
 }
 
 .filter-list {
-    padding: 0;
-    margin: 0;
-    margin-bottom: 20px;
-    
-    li {
-        display: inline-block;
-        margin-right: 10px;
-        
-        &:last-of-type {
-            margin-right: 0;
-        }
-        
-        &:before {
-            display: none;
-        }
-    }
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+
+	li {
+		display: inline-block;
+		margin-right: 10px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
 }

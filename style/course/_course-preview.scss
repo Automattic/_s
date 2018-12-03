@@ -1,147 +1,147 @@
 .course-container {
-    padding: 0;
-    margin: 0;
-    
-    li:before {
-        display: none;
-    }
+	padding: 0;
+	margin: 0;
+
+	li:before {
+		display: none;
+	}
 }
 
 li.course,
 #my-courses .course {
-    border-bottom: 1px solid $color__background-hr;
-    padding-bottom: 20px;
-    margin: 20px 0;
-    
-    .entry {
-        margin-top: 0;
-        
-        > a {
-            position: relative;
-            display: block;
-            width: 100%;
-            padding-bottom: 56.25%;
-            
-            img {
-                object-fit: cover;
-                display: block;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        }
-    }
-    
-    &:before {
-        display: none;
-    }
-    
-    .course-title {
-        margin: 0;
-        
-        a {
-            color: $color__text-main;
-            text-decoration: none;
-        }
-    }
-    
-    .sensei-course-meta {
-        @include font-size(.9);
-        margin-bottom: 0;
-        margin-top: 10px;
-        
-        .course-author, .course-lesson-count {
-           width: 50%;
-        }
-        
-        .course-lesson-count {
-            text-align: right;
-            float: right;
-        }
-        
-        .course-lesson-progress {
-            color: $color__corporate;
-            display: block;
-            clear: both;
-            margin-top: 10px;
-        }  
-    }
-    
-    .meter {
-        margin: 0 0 10px;
-    }
-    
-    img {
-        width: 100%;
-    }
-    
-    .button {
-        display: block;
-    }
-    
-    .entry-actions {
-        @include font-size(.9);
-        text-align: right;
-        
-        input {
-            background: none;
-            border: none;
-            color: $color__link;
-            text-transform: none;
-            text-decoration: underline;
-            padding: 0;
-            border-radius: 0;
-            margin-top: 10px;
-            line-height: normal;
-        }
-    }
-    
-    &.user-status-completed {
-        
-        .entry > a {
-            
-            &:before {
-                content: "";
-                display: block;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 60px 60px 0 0;
-                border-color: $color__success transparent transparent transparent;
-                position: absolute;
-                z-index: 1;
-            }
-            
-            &:after {
-                @include icon-content('\e90c');
-                position: absolute;
-                top: 0;
-                left: 0;
-                color: #fff;
-                text-decoration: none;
-                width: 40px;
-                height: 40px;
-                text-align: center;
-                line-height: 40px;
-                z-index: 1;
-            }
-        }
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        width: 49%;
-        float: left;
-        
-        &:nth-of-type(odd) {
-            margin-right: 2%;
-        }
-        
-        &:nth-of-type(2n + 1) {
-            clear: left;
-        }
-    }
+	border-bottom: 1px solid $color__background-hr;
+	padding-bottom: 20px;
+	margin: 20px 0;
+
+	.entry {
+		margin-top: 0;
+
+		> a {
+			position: relative;
+			display: block;
+			width: 100%;
+			padding-bottom: 56.25%;
+
+			img {
+				object-fit: cover;
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	&:before {
+		display: none;
+	}
+
+	.course-title {
+		margin: 0;
+
+		a {
+			color: $color__text-main;
+			text-decoration: none;
+		}
+	}
+
+	.sensei-course-meta {
+		@include font-size(.9);
+		margin-bottom: 0;
+		margin-top: 10px;
+
+		.course-author, .course-lesson-count {
+			width: 50%;
+		}
+
+		.course-lesson-count {
+			text-align: right;
+			float: right;
+		}
+
+		.course-lesson-progress {
+			color: $color__corporate;
+			display: block;
+			clear: both;
+			margin-top: 10px;
+		}
+	}
+
+	.meter {
+		margin: 0 0 10px;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.button {
+		display: block;
+	}
+
+	.entry-actions {
+		@include font-size(.9);
+		text-align: right;
+
+		input {
+			background: none;
+			border: none;
+			color: $color__link;
+			text-transform: none;
+			text-decoration: underline;
+			padding: 0;
+			border-radius: 0;
+			margin-top: 10px;
+			line-height: normal;
+		}
+	}
+
+	&.user-status-completed {
+
+		.entry > a {
+
+			&:before {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 60px 60px 0 0;
+				border-color: $color__success transparent transparent transparent;
+				position: absolute;
+				z-index: 1;
+			}
+
+			&:after {
+				@include icon-content('\e90c');
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: #fff;
+				text-decoration: none;
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				z-index: 1;
+			}
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		width: 49%;
+		float: left;
+
+		&:nth-of-type(odd) {
+			margin-right: 2%;
+		}
+
+		&:nth-of-type(2n + 1) {
+			clear: left;
+		}
+	}
 }

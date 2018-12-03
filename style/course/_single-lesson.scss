@@ -1,31 +1,31 @@
 .lesson .thumbnail {
-    width: 100%;
-    height: auto;
+	width: 100%;
+	height: auto;
 }
 
 .lesson footer {
-    margin-bottom: 30px;
-    
-    > p, > form {
-        display: inline-block;
-        margin: 0;
-    }
-    
-    > p a {
-        border: none;
-    }
-    
-    .lesson-reset,
-    .quiz-submit {
+	margin-bottom: 30px;
+
+	> p, > form {
+		display: inline-block;
+		margin: 0;
+	}
+
+	> p a {
+		border: none;
+	}
+
+	.lesson-reset,
+	.quiz-submit {
 		color: $color__border-button;
 		background: none;
-		
+
 		&:hover,
 		&:active,
 		&:focus {
 			background: none;
 		}
-		
+
 		&:hover {
 			color: $color__border-button-hover;
 		}
@@ -34,5 +34,5 @@
 		&:focus {
 			color: $color__border-button-focus;
 		}
-    }
+	}
 }

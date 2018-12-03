@@ -20,255 +20,255 @@
 @import "shop/components";
 
 #page {
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        
-        .woocommerce-cart-form {
-            float: left;
-            width: 59%;
-        }
-        
-        .cart-collaterals {
-            width: 39%;
-            float: right;
-            clear: right;
-            margin-top: 0;
-            
-            h2 {
-                margin-top: 0;
-            }
-        }
-    }
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+
+		.woocommerce-cart-form {
+			float: left;
+			width: 59%;
+		}
+
+		.cart-collaterals {
+			width: 39%;
+			float: right;
+			clear: right;
+			margin-top: 0;
+
+			h2 {
+				margin-top: 0;
+			}
+		}
+	}
 }
 
 .cart-empty {
-    margin: 30px 0;
+	margin: 30px 0;
 }
 
 .return-to-shop a {
-    color: #fff;
-    
-    &:visited,
-    &:hover {
-        color: #fff;
-    }
+	color: #fff;
+
+	&:visited,
+	&:hover {
+		color: #fff;
+	}
 }
 
 h2 {
-    @include font-size(1.4);
-    font-weight: 600;
-    font-style: normal;
+	@include font-size(1.4);
+	font-weight: 600;
+	font-style: normal;
 }
 
 .site-content {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 0 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 0 15px;
 }
 
 .shop_table.cart {
-    @include font-size(.9);
-    margin: 0;
-    border: none;
-    
-    .quantity input {
-        background: #f0f0f0;
-        border: none;
-    }
-    
-    th {
-        text-align: left;
-        border: none;
-    }
+	@include font-size(.9);
+	margin: 0;
+	border: none;
 
-    td:first-of-type {
-        border-right: none;
-        border-left: 1px solid $color__background-hr;
-    }
-    
-    tr {
-        border-top: 1px solid $color__background-hr;
-        border-bottom: 1px solid $color__background-hr;
-        
-        &:first-of-type {
-            border-top: none;
-        }
-        
-        &:last-of-type td:first-of-type {
-            border-left: none;
-        }
-    }
-    
-    a {
-        text-decoration: none;
-    }
-    
-    .product-name {
-        font-weight: 600;
-    }
-    
-    .product-remove {
-        
-        a {
-            width: 1rem;
-            height: 1rem;
-            display: inline-block;
-            text-align: center;
-            @include font-size(1);
-            font-weight: normal;
-            text-indent: -999px;
-            overflow: hidden;
-            position: relative;
-            
-            &:before {
-                @include icon-content('\e91f');
-                text-indent: 0;
-                width: 1rem;
-                height: 1rem;
-                line-height: 1rem;
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
-        }
-    }
-    
-    .actions {
-        padding: 0;
-        text-align: center;
-        
-        button[type="submit"] {
-            margin: 20px 0;
-            display: block;
-            width: 100%;
-            padding: .75em 1em .6em;
-        }
-    }
-    
-    .coupon {
-        background: $woocommerce__color-secondary;
-        padding: 20px 20px 10px;
-        
-        label {
-            font-weight: 600;
-            display: block;
-            text-align: left;
-            @include font-size(1);
-        }
-        
-        input {
-            width: 100%;
-        }
-    }
-    
-    .actions > button[type="submit"] {
-        max-width: 400px;
-        margin: 20px auto;
-        
-        &:disabled {
-            background: #aaa;
-            border-color: #aaa;
-        }
-    }
-    
-    @media screen and (max-width: breakpoint('tablet-landscape')) {
-            
-        thead {
-            display: none;
-        }
-        
-        .product-thumbnail {
-            position: absolute;
-            width: 120px;
-            top: 0;
-            left: 20px;
-            max-height: 100%;
-            
-            a {
-                display: block;
-            }
-        }
-        
-        .product-remove {
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-        .product-quantity,
-        .product-subtotal {
-            
-            &:before {
-                content: attr(data-title) ":";
-            }
-        }
-    
-        tr {
-            display: block;
-            padding-left: 150px;
-            position: relative;
-            min-height: 160px;
-            padding: 0 0 20px 150px;
+	.quantity input {
+		background: #f0f0f0;
+		border: none;
+	}
 
-            td {
-                display: block;
-                margin-bottom: 5px;
-                border: none;
-                padding: 0;
-                
-                &:first-of-type {
-                    border: none;
-                }
-            }
-            
-            &:last-of-type {
-                padding: 0;
-            }
-        }
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-landscape')) {
-        
-        .actions .coupon {
-            padding: 20px 20px 30px;
-            
-            &:after {
-                @include clearfix();
-                @include clearfix-after();
-            }
-            
-            input,
-            button {
-                float: left;
-            }
-            
-            input {
-                width: 59%;
-                margin-right: 2%;
-            }
-            
-            button {
-                width: 39%;
-                margin: 0;
-                height: 40px;
-                line-height: 40px;
-                padding: 0;
-            }
-        }
-    }
+	th {
+		text-align: left;
+		border: none;
+	}
+
+	td:first-of-type {
+		border-right: none;
+		border-left: 1px solid $color__background-hr;
+	}
+
+	tr {
+		border-top: 1px solid $color__background-hr;
+		border-bottom: 1px solid $color__background-hr;
+
+		&:first-of-type {
+			border-top: none;
+		}
+
+		&:last-of-type td:first-of-type {
+			border-left: none;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.product-name {
+		font-weight: 600;
+	}
+
+	.product-remove {
+
+		a {
+			width: 1rem;
+			height: 1rem;
+			display: inline-block;
+			text-align: center;
+			@include font-size(1);
+			font-weight: normal;
+			text-indent: -999px;
+			overflow: hidden;
+			position: relative;
+
+			&:before {
+				@include icon-content('\e91f');
+				text-indent: 0;
+				width: 1rem;
+				height: 1rem;
+				line-height: 1rem;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+	}
+
+	.actions {
+		padding: 0;
+		text-align: center;
+
+		button[type="submit"] {
+			margin: 20px 0;
+			display: block;
+			width: 100%;
+			padding: .75em 1em .6em;
+		}
+	}
+
+	.coupon {
+		background: $woocommerce__color-secondary;
+		padding: 20px 20px 10px;
+
+		label {
+			font-weight: 600;
+			display: block;
+			text-align: left;
+			@include font-size(1);
+		}
+
+		input {
+			width: 100%;
+		}
+	}
+
+	.actions > button[type="submit"] {
+		max-width: 400px;
+		margin: 20px auto;
+
+		&:disabled {
+			background: #aaa;
+			border-color: #aaa;
+		}
+	}
+
+	@media screen and (max-width: breakpoint('tablet-landscape')) {
+
+		thead {
+			display: none;
+		}
+
+		.product-thumbnail {
+			position: absolute;
+			width: 120px;
+			top: 0;
+			left: 20px;
+			max-height: 100%;
+
+			a {
+				display: block;
+			}
+		}
+
+		.product-remove {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.product-quantity,
+		.product-subtotal {
+
+			&:before {
+				content: attr(data-title) ":";
+			}
+		}
+
+		tr {
+			display: block;
+			padding-left: 150px;
+			position: relative;
+			min-height: 160px;
+			padding: 0 0 20px 150px;
+
+			td {
+				display: block;
+				margin-bottom: 5px;
+				border: none;
+				padding: 0;
+
+				&:first-of-type {
+					border: none;
+				}
+			}
+
+			&:last-of-type {
+				padding: 0;
+			}
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		.actions .coupon {
+			padding: 20px 20px 30px;
+
+			&:after {
+				@include clearfix();
+				@include clearfix-after();
+			}
+
+			input,
+			button {
+				float: left;
+			}
+
+			input {
+				width: 59%;
+				margin-right: 2%;
+			}
+
+			button {
+				width: 39%;
+				margin: 0;
+				height: 40px;
+				line-height: 40px;
+				padding: 0;
+			}
+		}
+	}
 }
 
 .cart-collaterals table {
-    
-    th {
-        background: $woocommerce__color-secondary;
-    }
+
+	th {
+		background: $woocommerce__color-secondary;
+	}
 }
 
 .checkout-button {
-    display: block;
-    width: 100%;
-    margin: 15px 0;
-    color: #fff;
-    text-align: center;
+	display: block;
+	width: 100%;
+	margin: 15px 0;
+	color: #fff;
+	text-align: center;
 }

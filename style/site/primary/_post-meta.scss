@@ -1,37 +1,37 @@
 .post__meta {
-    width: 100%;
-    position: relative;
-    padding-right: 90px;
-    
-    .byline {
-        margin-left: 3px;
-    }
-    
-    .reading-time {
-        position: absolute;
-        right: 0;
-        top: 0;
-        
-        .readind-time__label {
-            display: inline-block;
-            vertical-align: middle;
-            text-indent: -999px;
-            width: 20px;
-            height: 20px;
-            position: relative;
-            overflow: hidden;
-            
-            &:before {
-                position: absolute;
-                text-indent: 0;
-                right: 0;
-                top: 0;
-                line-height: 20px;
-                width: 20px;
-                height: 20px;
-                text-align: center;
-                @include icon-content("\e902");
-            }
-        }
-    }
+	width: 100%;
+	position: relative;
+	padding-right: 90px;
+
+	.byline {
+		margin-left: 3px;
+	}
+
+	.reading-time {
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		.readind-time__label {
+			display: inline-block;
+			vertical-align: middle;
+			text-indent: -999px;
+			width: 20px;
+			height: 20px;
+			position: relative;
+			overflow: hidden;
+
+			&:before {
+				position: absolute;
+				text-indent: 0;
+				right: 0;
+				top: 0;
+				line-height: 20px;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+				@include icon-content("\e902");
+			}
+		}
+	}
 }

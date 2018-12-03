@@ -6,9 +6,9 @@ ul.products {
 }
 
 @media screen and (min-width: breakpoint('phone')) and (max-width: breakpoint('tablet-landscape')) {
-	
+
 	ul.products {
-		
+
 		li.product {
 			@include column-width( 2 );
 		}
@@ -16,9 +16,9 @@ ul.products {
 }
 
 @media screen and (min-width: breakpoint('tablet-landscape')) {
-	
+
 	ul.products {
-		
+
 		li.product {
 			margin-right: 2%;
 			float: left;
@@ -35,9 +35,9 @@ ul.products {
 	}
 
 	@for $i from 2 through 6 {
-		
+
 		.columns-#{$i} {
-			
+
 			li.product {
 				@include column-width( $i );
 			}

@@ -1,56 +1,56 @@
 .meter {
-    margin-top: 5px;
-    height: 20px;
-    color: #fff;
-    border-radius: 10px;
-    background: #f5f5f5;
-    line-height: 20px;
-    
-    > span {
-        background: $color__corporate;
-        line-height: 18px;
-        font-size: 12px;
-        border-radius: 10px;
-        padding: 0 10px 0 8px;
-        display: block;
-        min-width: 30px;
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        max-width: 280px;
-    }
+	margin-top: 5px;
+	height: 20px;
+	color: #fff;
+	border-radius: 10px;
+	background: #f5f5f5;
+	line-height: 20px;
+
+	> span {
+		background: $color__corporate;
+		line-height: 18px;
+		font-size: 12px;
+		border-radius: 10px;
+		padding: 0 10px 0 8px;
+		display: block;
+		min-width: 30px;
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		max-width: 280px;
+	}
 }
 
 .course-completion-rate {
-    @include font-size(.9);
-    color: $color__corporate;
+	@include font-size(.9);
+	color: $color__corporate;
 }
 
 .course__teacher {
-    @include font-size(.9);
-    line-height: normal;
-    position: relative;
-    min-height: 40px;
-    padding-left: 50px;
-    margin: 20px 0;
-    
-    img {
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        background: #f0f0f0;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    
-    .role {
-        display: block;
-        color: #888;
-    }
-    
-    .fn {
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+	@include font-size(.9);
+	line-height: normal;
+	position: relative;
+	min-height: 40px;
+	padding-left: 50px;
+	margin: 20px 0;
+
+	img {
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		background: #f0f0f0;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.role {
+		display: block;
+		color: #888;
+	}
+
+	.fn {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }

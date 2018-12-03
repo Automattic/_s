@@ -26,65 +26,65 @@
 //Hidden text (screen-reader readable only)
 @mixin screen-reader-text() {
 	clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
 }
 
 @mixin font($font, $loaded-class: 'fonts-loaded') {
 
 	@if type-of($font) == 'map' {
-		
+
 		/* Get Fallback */
 		$fallback: map-get($font, '_fallback');
-		
+
 		/* Remove all private keys starting with _ */
 		@each $font-prop, $font-value in $font {
-		    @if str-index( $font-prop, '_' ) == 1 {
-		    	$font: map-remove( $font, $font-prop );
-		    }
+			@if str-index( $font-prop, '_' ) == 1 {
+				$font: map-remove( $font, $font-prop );
+			}
 		}
 
 		/* Print out fallback values to CSS */
 		@each $font-prop, $font-value in $fallback {
-	    	#{$font-prop}: $font-value;
+			#{$font-prop}: $font-value;
 		}
-	
+
 		/* Print out final font values to CSS */
 		html.#{$loaded-class} & {
 			@each $font-prop, $font-value in $font {
-		    	#{$font-prop}: $font-value;
+				#{$font-prop}: $font-value;
 			}
 		}
-			
-	}	@else if type-of($font) == 'string' {			
-		
+
+	}	@else if type-of($font) == 'string' {
+
 		/* Load font specs from config, if any */
 		@if variable-exists( 'fonts' ) and map-has-key($fonts, $font) {
 				@include font( map-get($fonts, $font) );
 		} @else {
 			font-family: $font;
 		}
-	}	
+	}
 }
 
 @mixin icon($icon) {
 
 	@if type-of($icon) == 'map' {
-		
+
 		/* Include the font specs in CSS */
 		@include font($icon, 'icons-loaded');
-		
-	}	@else if type-of($icon) == 'string' {			
-		
+
+	}	@else if type-of($icon) == 'string' {
+
 		@if variable-exists( 'icons' ) and map-has-key($icons, $icon) {
 			@include font( map-get($icons, $icon), 'icons-loaded');
 		} @else {
 			font-family: $icon;
 		}
-			
-	}	
+
+	}
 }
 
 @mixin icon-content($hex) {
@@ -94,23 +94,23 @@
 
 //Breakpoint shorthand function
 @function breakpoint( $breakpoint ) {
-	
+
 	@if map-has-key($main_breakpoints, $breakpoint) {
 		@return #{map-get($main_breakpoints, $breakpoint)}px;
 	} @else {
 		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
 	}
-	
+
 	@return 480px;
 }
 
 //Responsive background images
 @mixin background-image($fileName, $fileType) {
-	
+
 	background-image: url("images/backgrounds/#{$fileName}.#{$fileType}");
-	
+
 	@each $breakpointKey, $breakpointValue in $main_breakpoints {
-		
+
 		@media screen and (min-width: breakpoint( $breakpointKey )) {
 			background-image: url("images/backgrounds/#{$breakpointValue}/#{$fileName}.#{$fileType}");
 		}
@@ -118,28 +118,28 @@
 }
 
 // @function config( $keys... ) {
-	
+
 // 	$value = map-get( $value, $key[0]);
-	
+
 // 	@each $key in $keys {
 //     $value: map-get( $value, $key);
 //   }
-	
+
 // 	@return #{$key};
 //}
 
 @function map-deep-get($map, $keys...) {
-  $value: $map;
-  @each $key in $keys {
-    $value: map-get($value, $key);
-  }
-  @return $value;
+	$value: $map;
+	@each $key in $keys {
+		$value: map-get($value, $key);
+	}
+	@return $value;
 }
 
 //Only visible on desktop
 @mixin desktop-only($display-value) {
 	display: none;
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		display: $display-value;
 	}

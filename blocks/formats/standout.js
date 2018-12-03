@@ -18,13 +18,13 @@ const {
 	RichTextShortcut 
 } = wp.editor;
 
-const name = 'svbk/highlight';
+const name = 'svbk/standout';
 
-export const highlight = {
+export const standout = {
 	name,
-	title: __( 'Highlight' ),
+	title: __( 'Standout' ),
 	tagName: 'em',
-	className: 'highlight',
+	className: 'standout',
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => onChange( toggleFormat( value, { type: name } ) );
 
@@ -32,16 +32,16 @@ export const highlight = {
 			<Fragment>
 				<RichTextShortcut
 					type="primary"
-					character="h"
+					character="s"
 					onUse={ onToggle }
 				/>
 				<RichTextToolbarButton
-					icon= { <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><Path  d="M6,5 L2,9 L3,10 L0,13 L4,13 L5,12 L5,12 L6,13 L10,9 L6,5 L6,5 Z M10.2937851,0.706214905 C10.6838168,0.316183183 11.3138733,0.313873291 11.7059121,0.705912054 L14.2940879,3.29408795 C14.6839524,3.68395241 14.6796852,4.32031476 14.2937851,4.7062149 L11,8 L7,4 L10.2937851,0.706214905 Z"/></SVG> }
-					title={ __( 'Highlight' ) }
+					icon= { <svg baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M9.93 13.5h4.14L12 7.98zM20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-4.05 16.5l-1.14-3H9.17l-1.12 3H5.96l5.11-13h1.86l5.11 13h-2.09z"/></svg> }
+					title={ __( 'Standout' ) }
 					onClick={ onToggle }
 					isActive={ isActive }
 					shortcutType="primary"
-					shortcutCharacter="h"
+					shortcutCharacter="s"
 					className="toolbar-button-with-text toolbar-button__advanced-mark"
 				/>			
 			</Fragment>

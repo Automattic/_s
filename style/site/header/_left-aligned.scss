@@ -1,15 +1,15 @@
 .site-header {
-    
-    @media screen and (min-width: breakpoint('tablet-landscape')) {
-        position: static;
-        
-        #main-navigation {
-            float: right;
-            
-            nav {
-                float: left;
-                margin-left: 15px;
-            }
-        }
-    }
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		position: static;
+
+		#main-navigation {
+			float: right;
+
+			nav {
+				float: left;
+				margin-left: 15px;
+			}
+		}
+	}
 }

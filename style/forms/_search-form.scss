@@ -1,40 +1,40 @@
 form.search-form {
-  position: relative;
-  width: 100%;
-  max-width: 300px;
-  margin: 0;
-  display: flex;
-	
+	position: relative;
+	width: 100%;
+	max-width: 300px;
+	margin: 0;
+	display: flex;
+
 	input {
-	  border: 1px solid #ccc;
-	  padding: 8px 10px;
-	  display: inline-block;
+		border: 1px solid #ccc;
+		padding: 8px 10px;
+		display: inline-block;
 	}
-	
+
 	button {
-	  padding: 0;
-	  box-shadow: none;
-	  margin: 0;
-	  border: none;
-	  width: 42px;
-	  height: 42px;
-	  text-indent: -999px;
-	  position: relative;
-	  overflow: hidden;
-	  margin-left: 5px;
-	  display: inline-block;
-	  cursor: pointer;
-	  
-        &:after {
-            @include icon-content("\e912");
-            line-height: 42px;
-            width: 42px;
-            text-align: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            text-indent: 0;
-        }
+		padding: 0;
+		box-shadow: none;
+		margin: 0;
+		border: none;
+		width: 42px;
+		height: 42px;
+		text-indent: -999px;
+		position: relative;
+		overflow: hidden;
+		margin-left: 5px;
+		display: inline-block;
+		cursor: pointer;
+
+		&:after {
+			@include icon-content("\e912");
+			line-height: 42px;
+			width: 42px;
+			text-align: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-indent: 0;
+		}
 	}
 }
 
@@ -42,14 +42,14 @@ form.search-form {
 	background: none;
 	padding: 0;
 	border: none;
-    position: absolute;
-    top: 0;
-    right: 50px;
-    cursor: pointer;
-    display: block;
-    text-indent: 0;
-    width: auto;
-	
+	position: absolute;
+	top: 0;
+	right: 50px;
+	cursor: pointer;
+	display: block;
+	text-indent: 0;
+	width: auto;
+
 	&:before {
 		@include icon-content("\e912");
 		color: $color__text-main;
@@ -57,106 +57,106 @@ form.search-form {
 }
 
 .site-header .search-form {
-    position: absolute;
-    top: $size__header-height-mobile;
-    left: 0;
-    right: 0;
-    width: 100%;
-    display: none;
-    background: #555;
-    max-width: none;
-    color: #fff;
-    margin-top: 0;
-    
-    &:after {
-        @include clearfix();
-        @include clearfix-after();
-    }
-    
-    input {
-        background: #555;
-        border-radius: 0;
-        border: none;
-        width: 100%;
-        height: 50px;
-        padding: 0 120px 0 $padding__content-mobile;
-        color: #fff;
-        position: relative;
-        
-        &::-webkit-input-placeholder {
-          color: #999;
-        }
-        
-        &::-moz-placeholder {
-          color: #999;
-        }
-        
-        &:-ms-input-placeholder {
-          color: #999;
-        }
-        
-        &:-moz-placeholder {
-          color: #999;
-        }
-    }
-    
-    button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        line-height: 30px;
-        background: none;
-        border: none;
-        padding: 0 $padding__content-mobile;
-        box-shadow: none;
-        border-left: 1px solid rgba(255,255,255,.6);
-        border-radius: 0;
-        margin: 4px 0;
-        color: #fff;
-        width: auto;
-        text-indent: 0;
-        overflow: visible;
-        
-        span {
-        	display: block;
-        }
-        
-        &:before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 0; 
-            height: 0; 
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-bottom: 5px solid #555;
-            top: -9px;
-            right: 50px;
-        }
-        
-        &:after {
-        	display: none;
-        }
-    }
-    
-    &.visible {
-        display: block;
-        height: 50px;
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-landscape')) {
-        top: $size__header-height-desktop;
-        
-	    &:before {
-	    	content: "";
-	    	background: #555;
-	    	position: absolute;
+	position: absolute;
+	top: $size__header-height-mobile;
+	left: 0;
+	right: 0;
+	width: 100%;
+	display: none;
+	background: #555;
+	max-width: none;
+	color: #fff;
+	margin-top: 0;
+
+	&:after {
+		@include clearfix();
+		@include clearfix-after();
+	}
+
+	input {
+		background: #555;
+		border-radius: 0;
+		border: none;
+		width: 100%;
+		height: 50px;
+		padding: 0 120px 0 $padding__content-mobile;
+		color: #fff;
+		position: relative;
+
+		&::-webkit-input-placeholder {
+			color: #999;
+		}
+
+		&::-moz-placeholder {
+			color: #999;
+		}
+
+		&:-ms-input-placeholder {
+			color: #999;
+		}
+
+		&:-moz-placeholder {
+			color: #999;
+		}
+	}
+
+	button {
+		position: absolute;
+		right: 0;
+		top: 0;
+		line-height: 30px;
+		background: none;
+		border: none;
+		padding: 0 $padding__content-mobile;
+		box-shadow: none;
+		border-left: 1px solid rgba(255,255,255,.6);
+		border-radius: 0;
+		margin: 4px 0;
+		color: #fff;
+		width: auto;
+		text-indent: 0;
+		overflow: visible;
+
+		span {
+			display: block;
+		}
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 5px solid #555;
+			top: -9px;
+			right: 50px;
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+
+	&.visible {
+		display: block;
+		height: 50px;
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		top: $size__header-height-desktop;
+
+		&:before {
+			content: "";
+			background: #555;
+			position: absolute;
 			width: calc(100vw - 15px);
-	    	top: 0;
-	    	bottom: 0;
-	    	height: 100%;
-	    	left: 50%;
-	    	transform: translateX(-50%);
-	    }
-    }
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
 }

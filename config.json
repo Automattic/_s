@@ -1,7 +1,7 @@
 {
     "config_version":  "1.2",
     
-	"content_width": 1320,
+	"content_width": 1160,
 	"page_max_width": 2560,	
 	"sidebar_width_ratio": 0.3,
 	
@@ -37,6 +37,12 @@
 			"_source": "'style/icons/style.css'",
 			"font-family": "'theme-icons'"
 		}
+	},
+	
+	"iubenda": {
+		"siteId": "00000001",
+		"cookiePolicyId": "00000001",
+		"privacyPolicyId": "000000001"
 	}	
 	
 }

@@ -28,106 +28,106 @@
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-//@import "layout/in-grid";
+/* @import "layout/in-grid"; */
 
 img {
-    max-width: 100%;
-    height: auto;
+	max-width: 100%;
+	height: auto;
 }
 
 .domloading .site-content {
-    display: none;
+	display: none;
 }
 
 .domready--show {
-    display: none;
+	display: none;
 }
 
 .domready {
-    
-    .domready--show {
-        display: block;
-    }
-    
-    .domready--hide {
-        display: none;
-    }
+
+	.domready--show {
+		display: block;
+	}
+
+	.domready--hide {
+		display: none;
+	}
 }
 
 .site-header {
-    
-    .search-toggle,
-    .search-form,
-    .sub-menu {
-        display: none;
-    }
-    
-    #main-navigation {
-        position: fixed;
-        right: -100%;
-        
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            
-            li a {
-                color: $color__text-main;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-        }
-        
-        @media screen and (min-width: breakpoint('tablet-landscape')) {
-            position: static;
-        }
-    }
+
+	.search-toggle,
+	.search-form,
+	.sub-menu {
+		display: none;
+	}
+
+	#main-navigation {
+		position: fixed;
+		right: -100%;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li a {
+				color: $color__text-main;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+		}
+
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			position: static;
+		}
+	}
 }
 
 #page {
-    background: $color__background-page;
-    overflow-x: hidden;
+	background: $color__background-page;
+	overflow-x: hidden;
 }
 
 .site-content,
 .wrap {
-    padding: 0 $padding__content-mobile;
-    max-width: $size__content-width;
-    margin-left: auto;
-    margin-right: auto;
-    
-    @media screen and (min-width: $breakpoint__content-max-width) {
-        padding: 0;
-    }
+	padding: 0 $padding__content-mobile;
+	max-width: $size__content-width;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (min-width: $breakpoint__content-max-width) {
+		padding: 0;
+	}
 }
 
 .entry-content {
-    
-    h2 {
-    	margin-top: 50px;
-    }
-    
-    h3 {
-        margin-top: 30px;
-    }
-    
-    > .alignfull,
-    > .alignwide {
-    	width: 100vw;
-    	max-width: 100vw;
-    	margin-left: calc(50% - 50vw);
-    }
-    
-    > .alignfull img {
-        width: 100%;
-    }
-    
-    @media screen and (min-width: $size__content-width + $margin__alignwide * 2) {
-    
-        > .alignwide {
-            margin-left: -$margin__alignwide;
-            margin-right: -$margin__alignwide;
-            width: auto;
-        }
-    }
+
+	h2 {
+		margin-top: 50px;
+	}
+
+	h3 {
+		margin-top: 30px;
+	}
+
+	> .alignfull,
+	> .alignwide {
+		width: 100vw;
+		max-width: 100vw;
+		margin-left: calc(50% - 50vw);
+	}
+
+	> .alignfull img {
+		width: 100%;
+	}
+
+	@media screen and (min-width: $size__content-width + $margin__alignwide * 2) {
+
+		> .alignwide {
+			margin-left: -$margin__alignwide;
+			margin-right: -$margin__alignwide;
+			width: auto;
+		}
+	}
 }

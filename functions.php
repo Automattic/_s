@@ -369,7 +369,14 @@ function _svbk_scripts() {
 	);
 
 	// Main Theme JS file
-	Script::enqueue( '_svbk-theme', '/dist/js/theme.min.js', [ 'source' => 'theme' ] );
+	Script::enqueue(
+		'_svbk-theme',
+		'/dist/js/theme.min.js',
+		[
+			'deps'   => array( 'waypoints' ),
+			'source' => 'theme',
+		]
+	);
 
 	// Google Maps Managment script, enable this if you use Google Maps shortcodes in your theme
 	Script::enqueue(

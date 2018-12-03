@@ -4,21 +4,15 @@ h1, h2, h3, h4, h5, h6,
 	@include font( 'headings' );
 }
 
-.is-style-subtitle {
-	@include font-size(1.5);
-	margin-top: 0;
-	margin-bottom: 20px;
-}
-
 h1 {
 	@include font-size(2);
 	line-height: 1.25em;
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		@include font-size(2.5);
 		line-height: 1.125em;
 	}
-	
+
 	@media screen and (min-width: breakpoint('desktop')) {
 		@include font-size(3);
 		line-height: 1.05em;
@@ -28,12 +22,12 @@ h1 {
 h2 {
 	@include font-size(1.625);
 	line-height: 1.154em;
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		@include font-size(2);
 		line-height: 1.25em;
 	}
-	
+
 	@media screen and (min-width: breakpoint('desktop')) {
 		@include font-size(2.25);
 	}
@@ -45,12 +39,12 @@ h3,
 .comment-reply-title {
 	@include font-size(1.375);
 	line-height: 1.136em;
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		@include font-size(1.5);
 		line-height: 1.25em;
 	}
-	
+
 	@media screen and (min-width: breakpoint('desktop')) {
 		@include font-size(1.75);
 	}
@@ -59,10 +53,8 @@ h3,
 h4 {
 	@include font-size(1.125);
 	line-height: 1.111em;
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		line-height: 1.222em;
 	}
 }
-
-

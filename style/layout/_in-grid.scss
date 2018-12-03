@@ -1,13 +1,13 @@
 #page {
-    
-    @media screen and (min-width: 1200px) {
-        max-width: $size__content-width;
-        margin: 0 auto;
-        box-shadow: 0 0 3px rgba(0,0,0,.1);
-        
-        .site-content,
-        .wrap {
-            padding: 0 $padding__content-mobile;
-        }
-    }
+
+	@media screen and (min-width: 1200px) {
+		max-width: $size__content-width;
+		margin: 0 auto;
+		box-shadow: 0 0 3px rgba(0,0,0,.1);
+
+		.site-content,
+		.wrap {
+			padding: 0 $padding__content-mobile;
+		}
+	}
 }
