@@ -7,14 +7,13 @@
  * @package _svbk
  */
 
-use \Svbk\WP\Helpers;
-use \Svbk\WP\Helpers\Assets\Asset;
-use \Svbk\WP\Helpers\Assets\Style;
-use \Svbk\WP\Helpers\Assets\Script;
-use \Svbk\WP\Helpers\CDN\JsDelivr;
-use \Svbk\WP\Helpers\Compliance;
-use \Svbk\WP\Helpers\Menu;
-use \Svbk\WP\Helpers\Config;
+use Svbk\WP\Helpers;
+use Svbk\WP\Helpers\Assets\Asset;
+use Svbk\WP\Helpers\Assets\Style;
+use Svbk\WP\Helpers\Assets\Script;
+use Svbk\WP\Helpers\CDN\JsDelivr;
+use Svbk\WP\Helpers\Menu;
+use Svbk\WP\Helpers\Config;
 
 use Svbk\WP\Widgets;
 use Svbk\WP\Theme\_svbk;
@@ -23,16 +22,7 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';
 }
 
-Config::load( get_theme_file_path( '/config.json' ) );
-Compliance\Privacy::register_shortcodes();
-
-if ( Config::get( 'iubenda' ) ) {
-	Compliance\Iubenda::setConfig( Config::get( 'iubenda' ) );
-}
-
-if ( env( 'SENDINBLUE_APIKEY' ) ) {
-	SendinBlue\Client\Configuration::getDefaultConfiguration()->setApiKey( 'api-key', env( 'SENDINBLUE_APIKEY' ) );
-}
+Config::load( get_theme_file_path( '/config.json' ), '_svbk' );
 
 add_action( 'after_setup_theme', '_svbk_setup' );
 
@@ -145,20 +135,20 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		$max_page_width     = Config::get( 'page_max_width' );
+		$max_page_width     = Config::get( 'page_max_width', '_svbk' );
 		$image_height_ratio = 1 / ( 4 / 3 );
 
 		add_image_size( 'content-third', $content_width / 3, 9999 );
 		add_image_size( 'content-half', $content_width / 2, 9999 );
 		add_image_size( 'content-full', $content_width / 1, 9999 );
 
-		$breakpoints = Config::get( 'main_breakpoints' );
+		$breakpoints = Config::get( 'main_breakpoints', '_svbk' );
 
 		foreach ( $breakpoints as $key => $breakpoint ) {
 			add_image_size( 'breakpoint-' . $key, $breakpoint, 9999 );
 		}
 
-		$sidebar_width_ratio = Config::get( 'sidebar_width_ratio' ) ?: 0.3;
+		$sidebar_width_ratio = Config::get( 'sidebar_width_ratio', '_svbk' ) ?: 0.3;
 
 		add_image_size( 'main-sidebar', $content_width * $sidebar_width_ratio, 9999 );
 		add_image_size( 'header', $max_page_width, $max_page_width * $image_height_ratio );
@@ -186,6 +176,12 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 
 		// Load AMP overrides.
 		Helpers\Theme\AMP::init();
+
+		// Load Google Maps
+		( new Helpers\Maps\GoogleMaps( Config::get( array(), 'googlemaps' ) ) )->setDefault();
+
+		// Load Iubenda
+		( new Helpers\Compliance\Iubenda( Helpers\Config::get( array(), 'iubenda' ) ) )->setDefault();
 	}
 endif;
 
@@ -200,7 +196,7 @@ function _svbk_set_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', Config::get( 'content_width' ) );
+	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', Config::get( 'content_width', '_svbk' ) );
 }
 add_action( 'after_setup_theme', '_svbk_set_content_width', 0 );
 
@@ -448,7 +444,7 @@ add_action( 'admin_enqueue_scripts', '_svbk_admin_scripts' );
  */
 function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ) {
 
-	$font_config = Config::get( $config_key );
+	$font_config = Config::get( $config_key, '_svbk' );
 
 	if ( ! $font_config ) {
 		return;

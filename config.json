@@ -37,12 +37,6 @@
 			"_source": "'style/icons/style.css'",
 			"font-family": "'theme-icons'"
 		}
-	},
-	
-	"iubenda": {
-		"siteId": "00000001",
-		"cookiePolicyId": "00000001",
-		"privacyPolicyId": "000000001"
-	}	
+	}
 	
 }
