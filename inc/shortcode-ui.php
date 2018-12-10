@@ -55,23 +55,7 @@ function shortcode_ui_notices() {
  * @return void
  */
 function register_shortcodes() {
-
 	Helpers\Compliance\Privacy::register_shortcodes();
-	
-	Forms\Manager::create(
-		'download',
-		Forms\Download::class,
-		[
-			'recaptchaKey' => 'ABC',
-			'recaptchaSecret' => 'CDE',
-			'recipient' => new Email\Contact( [	'email' => env('RECIPIENT_EMAIL') ]	),  
-		]
-	);	
-	
-	Shortcakes\Forms\Download::register([
-		'shortcode_id' => 'svbk-download'
-	])->setForm( 'download' );
-
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\register_shortcodes', 11 );
