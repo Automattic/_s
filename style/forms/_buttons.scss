@@ -60,13 +60,13 @@ input[type="submit"],
 		
 		&:hover {
 			color: $color__border-button-hover;
-			border-color: $color__border-hover;
+			border-color: $color__border-button-hover;
 		}
 
 		&:active,
 		&:focus {
 			color: $color__border-button-focus;
-			border-color: $color__border-focus;
+			border-color: $color__border-button-focus;
 		}
 	}
 }
