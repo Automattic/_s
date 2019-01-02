@@ -428,8 +428,12 @@ if ( ! function_exists( '_svbk_woocommerce_header_cart' ) ) {
 	}
 }
 
-
-function _svbk_activate_gutenberg_products( $can_edit, $post_type ) {
+/**
+ * Enable Block Editor in WooCommerce Products
+ *
+ * @return  void
+ */
+function _svbk_activate_products_block_editor( $can_edit, $post_type ) {
 
 	if ( 'product' == $post_type ) {
 		$can_edit = true;
@@ -437,7 +441,7 @@ function _svbk_activate_gutenberg_products( $can_edit, $post_type ) {
 
 	return $can_edit;
 }
-add_filter( 'gutenberg_can_edit_post_type', '_svbk_activate_gutenberg_products', 10, 2 );
+add_filter( 'use_block_editor_for_post_type', '_svbk_activate_products_block_editor', 10, 2 );
 
 
 /**
@@ -554,8 +558,18 @@ function _svbk_account_menu_always_on( $has_nav_menu, $location ) {
 
 add_filter( 'has_nav_menu', '_svbk_account_menu_always_on', 20, 2 );
 
-
 /**
  * Defer all inline WooCommerce code to be dompatible with deferred jQuery lib
  */
 add_filter( 'woocommerce_queued_js', array( Script::class, 'defer_inline_code' ) );
+
+/**
+ * Remove Jetpack publicize support for Products to patch an issue with Jetpack 6.8
+ * 
+ * See: https://github.com/Automattic/jetpack/issues/10727
+ */
+function _svbk_rm_jetpack_publicize_woocommerce() {
+    remove_post_type_support( 'product', 'publicize' );
+}
+ 
+add_action( 'init', '_svbk_rm_jetpack_publicize_woocommerce' );
