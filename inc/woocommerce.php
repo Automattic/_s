@@ -561,7 +561,7 @@ add_filter( 'has_nav_menu', '_svbk_account_menu_always_on', 20, 2 );
 /**
  * Defer all inline WooCommerce code to be dompatible with deferred jQuery lib
  */
-add_filter( 'woocommerce_queued_js', array( Script::class, 'defer_inline_code' ) );
+add_filter( 'woocommerce_queued_js', array( Script::class, 'defer_inline_script' ) );
 
 /**
  * Remove Jetpack publicize support for Products to patch an issue with Jetpack 6.8
