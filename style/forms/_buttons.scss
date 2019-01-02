@@ -65,7 +65,7 @@ input[type="submit"],
 
 		&:active,
 		&:focus {
-			color: $color__border-button-focus
+			color: $color__border-button-focus;
 			border-color: $color__border-focus;
 		}
 	}
