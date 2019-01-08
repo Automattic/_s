@@ -22,16 +22,10 @@
 /*--------------------------------------------------------------
 # Sensei
 --------------------------------------------------------------*/
-@import "course/components";
-@import "course/course-preview";
-@import "course/lesson-preview";
-@import "course/course-meta";
-@import "course/single-course";
-@import "course/single-lesson";
-@import "course/lesson-quiz";
+@import "course/course";
 
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
 @import "media/media";
-@import "site/primary/comments";
+@import "blog/primary/comments";
