@@ -1,0 +1,39 @@
+.site-content,
+.wrap {
+	max-width: $size__content-width;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.site-content {
+
+	.alignfull,
+	.alignwide {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		width: auto;
+		max-width: 1000%;
+		padding-left: $padding__content-mobile;
+		padding-right: $padding__content-mobile;
+
+		&.wp-block-image {
+			padding: 0;
+			max-width: none;
+		}
+
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			padding-left: $padding__content-desktop;
+			padding-right: $padding__content-desktop;
+		}
+
+		@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
+			padding-left: calc((100vw - #{$size__content-width}) /2);
+			padding-right: calc((100vw - #{$size__content-width}) /2);
+		}
+	}
+}

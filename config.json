@@ -1,8 +1,8 @@
 {
     "config_version":  "1.2",
     
-	"content_width": 1160,
-	"page_max_width": 2560,	
+	"content_width": 1120,
+	"page_max_width": 1366,	
 	"sidebar_width_ratio": 0.3,
 	
 	"main_breakpoints" : {

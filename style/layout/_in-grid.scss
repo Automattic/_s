@@ -1,27 +1,39 @@
+$size__page-width: 1250px;
+
 #page {
 
-	@media screen and (min-width: breakpoint('desktop')) {
-		max-width: $size__content-width;
-		margin: 0 auto;
-		box-shadow: 0 0 3px rgba(0,0,0,.1);
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
 
 		.site-content,
 		.wrap {
-			padding: 0 $padding__content-mobile;
+			padding: 0 $padding__content-desktop;
 		}
 	}
 
-	.wp-block-media-text {
+	@media screen and (min-width: 85.375em) {
+		max-width: $size__page-width;
+		margin: 0 auto;
+		box-shadow: 0 0 3px rgba(0,0,0,.1);
+	}
 
-		&.alignfull,
-		&.alignwide {
-			width: auto;
-			margin-left: -#{$padding__content-mobile};
-			margin-right: -#{$padding__content-mobile};
+	.alignfull,
+	.alignwide {
+		width: auto;
+		margin-left: -#{$padding__content-mobile};
+		margin-right: -#{$padding__content-mobile};
+		padding-left: $padding__content-mobile;
+		padding-right: $padding__content-mobile;
 
-			@media screen and (min-width: $breakpoint__content-max-width) {
-				grid-template-columns: auto;
-			}
+		&.wp-block-image {
+			padding: 0;
+			max-width: none;
+		}
+
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			padding-left: $padding__content-desktop;
+			padding-right: $padding__content-desktop;
+			margin-left: -#{$padding__content-desktop};
+			margin-right: -#{$padding__content-desktop};
 		}
 	}
 }

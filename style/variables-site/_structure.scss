@@ -1,4 +1,3 @@
-$size__site-main: 100%;
 $size__site-secondary: 30%;
 $size__site-primary: 100% - $size__site-secondary;
 $size__content-width: $content_width * 1px;
@@ -6,10 +5,6 @@ $size__header-height-mobile: 53px;
 $size__header-height-desktop: 88px;
 
 $padding__content-mobile: 20px;
-$padding__content-desktop: 70px;
-$margin__alignwide: 80px;
+$padding__content-desktop: 65px;
 
-$breakpoint__tablet-portrait: 600px;
-$breakpoint__tablet-landscape: 900px;
-$breakpoint__desktop: 1200px;
 $breakpoint__content-max-width: $size__content-width + $padding__content-mobile * 2;
