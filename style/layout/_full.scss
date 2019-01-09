@@ -14,8 +14,8 @@
 
 	.alignfull,
 	.alignwide {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
+		margin-left: -#{$padding__content-mobile};
+		margin-right: -#{$padding__content-mobile};
 		width: auto;
 		max-width: 1000%;
 		padding-left: $padding__content-mobile;
@@ -29,9 +29,13 @@
 		@media screen and (min-width: breakpoint('tablet-landscape')) {
 			padding-left: $padding__content-desktop;
 			padding-right: $padding__content-desktop;
+			margin-left: calc(50% - 50vw);
+			margin-right: calc(50% - 50vw);
 		}
 
 		@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
+			margin-left: calc(50% - 50vw);
+			margin-right: calc(50% - 50vw);
 			padding-left: calc((100vw - #{$size__content-width}) /2);
 			padding-right: calc((100vw - #{$size__content-width}) /2);
 		}
