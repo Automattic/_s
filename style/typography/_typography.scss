@@ -6,11 +6,19 @@ optgroup,
 textarea {
 	color: $color__text-main;
 	@include font( 'main' );
-	@include font-size(1);
+	@include font-size(.85);
 	line-height: 1.5em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
 	b, strong {
 		font-weight: bold;
+	}
+
+	@media
+	(-webkit-min-device-pixel-ratio: 2),
+	(min-resolution: 192dpi) {
+		@include font-size(1);
 	}
 }
 

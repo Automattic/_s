@@ -5,56 +5,34 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 {
-	@include font-size(2);
-	line-height: 1.25em;
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		@include font-size(2.5);
-		line-height: 1.125em;
-	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-		@include font-size(3);
-		line-height: 1.05em;
-	}
+	@include font-size(2.5);
+	line-height: .85em;
 }
 
 h2 {
-	@include font-size(1.625);
-	line-height: 1.154em;
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		@include font-size(2);
-		line-height: 1.25em;
-	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-		@include font-size(2.25);
-	}
+	@include font-size(2.125);
+	line-height: 1em;
 }
 
 h3,
 .widget-title,
 .comments-title,
 .comment-reply-title {
-	@include font-size(1.375);
-	line-height: 1.136em;
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		@include font-size(1.5);
-		line-height: 1.25em;
-	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-		@include font-size(1.75);
-	}
+	@include font-size(1.625);
+	line-height: .8em;
 }
 
 h4 {
-	@include font-size(1.125);
-	line-height: 1.111em;
+	@include font-size(1.25);
+	line-height: .75em;
+}
 
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		line-height: 1.222em;
-	}
+h5 {
+	@include font-size(1.125);
+	line-height: .75em;
+}
+
+h6 {
+	@include font-size(1);
+	line-height: .75em;
 }
