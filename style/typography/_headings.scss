@@ -19,20 +19,20 @@ h3,
 .comments-title,
 .comment-reply-title {
 	@include font-size(1.625);
-	line-height: .8em;
+	line-height: 1em;
 }
 
 h4 {
 	@include font-size(1.25);
-	line-height: .75em;
+	line-height: 1em;
 }
 
 h5 {
 	@include font-size(1.125);
-	line-height: .75em;
+	line-height: 1em;
 }
 
 h6 {
 	@include font-size(1);
-	line-height: .75em;
+	line-height: 1em;
 }

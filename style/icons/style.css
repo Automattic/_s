@@ -1,16 +1,15 @@
 @font-face {
 	font-family: 'theme-icons';
-	src: url('fonts/theme-icons.eot?w1zi4a');
-	src: url('fonts/theme-icons.eot?w1zi4a#iefix') format('embedded-opentype'),
-	url('fonts/theme-icons.ttf?w1zi4a') format('truetype'),
-	url('fonts/theme-icons.woff?w1zi4a') format('woff'),
-	url('fonts/theme-icons.svg?w1zi4a#theme-icons') format('svg');
+	src:  url('fonts/theme-icons.eot?k580pg');
+	src:  url('fonts/theme-icons.eot?k580pg#iefix') format('embedded-opentype'),
+	url('fonts/theme-icons.ttf?k580pg') format('truetype'),
+	url('fonts/theme-icons.woff?k580pg') format('woff'),
+	url('fonts/theme-icons.svg?k580pg#theme-icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'theme-icons' !important;
 	speak: none;
@@ -25,12 +24,26 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-user-solid-circle:before {
+	content: "\e92c";
+}
+
 .icon-lock:before {
 	content: "\e929";
 }
 
 .icon-cross:before {
 	content: "\e91f";
+}
+
+.icon-courses:before {
+	content: "\e92a";
+	color: #1f456e;
+}
+
+.icon-affiliate:before {
+	content: "\e92b";
+	color: #1f456e;
 }
 
 .icon-down-arrow:before {
@@ -80,6 +93,14 @@
 	color: #838383;
 }
 
+.icon-Senza-titolo-2-10:before {
+	content: "\e92d";
+}
+
+.icon-Senza-titolo-2-11:before {
+	content: "\e92e";
+}
+
 .icon-question-mark:before {
 	content: "\e928";
 }
@@ -106,10 +127,6 @@
 
 .icon-cart:before {
 	content: "\e900";
-}
-
-.icon-check-circle:before {
-	content: "\e901";
 }
 
 .icon-clock:before {
