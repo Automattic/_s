@@ -51,19 +51,18 @@ big {
 	}
 }
 
-.is-style-standout {
+p.is-style-standout {
 	@include font-size(1.2);
-	color: $color__corporate;
-	border-left: 3px solid $color__corporate-secondary;
+	border-left: 3px solid $color__corporate;
 	padding-left: 15px;
 }
 
 p.has-drop-cap:not(:focus):first-letter {
-	@include font-size(5);
+	@include font-size(6);
 	padding: 0 0 10px;
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		@include font-size(7);
+		@include font-size(8);
 	}
 }
 
