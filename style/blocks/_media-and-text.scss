@@ -1,6 +1,15 @@
 .wp-block-media-text {
 	align-items: start;
 	clear: both;
+	padding-top: 20px;
+
+	&.has-dark-background,
+	&.has-light-background {
+		margin-right: -#{$padding__content-mobile};
+		margin-left: -#{$padding__content-mobile};
+		padding-right: $padding__content-mobile;
+		padding-left: $padding__content-mobile;
+	}
 
 	h1, h2 {
 		margin-top: 0;
@@ -57,6 +66,15 @@
 		&.has-media-on-the-right .wp-block-media-text__content {
 			padding-right: 8%;
 			padding-left: 0;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		&.has-dark-background,
+		&.has-light-background {
+			margin: 30px -30px;
+			padding: 30px;
 		}
 	}
 }

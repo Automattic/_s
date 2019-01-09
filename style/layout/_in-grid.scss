@@ -27,6 +27,12 @@ $size__page-width: 1250px;
 		&.wp-block-image {
 			padding: 0;
 			max-width: none;
+			margin-top: 0;
+			margin-bottom: 0;
+
+			img {
+				display: block;
+			}
 		}
 
 		@media screen and (min-width: breakpoint('tablet-landscape')) {

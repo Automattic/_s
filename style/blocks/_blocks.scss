@@ -1,3 +1,30 @@
+.has-dark-background {
+	background: $color__background-dark;
+	color: #fff;
+
+	.wp-block-button.is-style-outline .wp-block-button__link {
+		color: #fff;
+		border-color: #fff;
+
+		&:hover {
+			color: #fff;
+			box-shadow: 0 0 0 1px #fff;
+			border-color: #fff;
+		}
+
+		&:active,
+		&:focus {
+			background: rgba(255,255,255,.15);
+			color: #fff;
+			border-color: #fff;
+		}
+	}
+}
+
+.has-light-background {
+	background: $color__background-light;
+}
+
 /*--------------------------------------------------------------
 # Block types
 --------------------------------------------------------------*/
