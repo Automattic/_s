@@ -24,6 +24,7 @@ form.search-form {
 		margin-left: 5px;
 		display: inline-block;
 		cursor: pointer;
+		box-shadow: none;
 
 		&:after {
 			@include icon-content("\e912");
@@ -49,6 +50,7 @@ form.search-form {
 	display: block;
 	text-indent: 0;
 	width: auto;
+	box-shadow: none;
 
 	&:before {
 		@include icon-content("\e912");

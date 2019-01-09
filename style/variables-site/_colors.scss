@@ -1,9 +1,21 @@
+//Corporate
 $color__corporate: #0091b2;
 $color__corporate-secondary: #b200a6;
+$color__corporate-tertiary: #b200a6;
+$color__corporate-gradient: #b200a6;
 
+//Text
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__text-button: #fff;
+$color__text-main: #404040;
+
+//Error/Success
 $color__success: #8dcf00;
 $color__error: #b81a2c;
 
+//Elements backgrounds
 $color__background-body: #f5f5f5;
 $color__background-page: #ffffff;
 $color__background-screen: #f1f1f1;
@@ -14,24 +26,30 @@ $color__background-footer: #f0f0f0;
 $color__background-sub-footer: #dbdbdb;
 
 $color__background-hr: #f0f0f0;
-$color__background-button: #478dff;
-$color__background-button-hover: #356cc6;
-$color__background-button-focus: #2a58a3;
 $color__background-pre: #eee;
 $color__background-highlight: rgba(0, 145, 178, .2);
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__text-button: #fff;
-$color__text-main: #404040;
-
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-
-$color__border-button: #478dff;
-$color__border-button-hover: #356cc6;
-$color__border-button-focus: #2a58a3;
+//Elements borders
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+//Buttons and links
+$color__background-button: #E94B4B;
+$color__background-button-hover: #FF5F5F;
+$color__background-button-focus: #CC4444;
+$color__background-button--light: #fff;
+$color__background-button-hover--light: #fff;
+$color__background-button-focus--light: #fff;
+
+$color__border-button: $color__background-button;
+$color__border-button-hover: $color__background-button-hover;
+$color__border-button-focus: $color__background-button-focus;
+
+$color__border-button--light: $color__background-button--light;
+$color__border-button-hover--light: $color__background-button-hover--light;
+$color__border-button-focus--light: $color__background-button-focus--light;
+
+$color__link: #E94B4B;
+$color__link-hover: #FF5F5F;
+$color__link-focus: #CC4444;
+$color__link-visited: #CC4444;

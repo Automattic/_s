@@ -30,6 +30,8 @@
 		height: $size__header-height-mobile;
 		background: none;
 		border: none;
+		box-shadow: none;
+		color: $color__text-main;
 
 		&:before {
 			@include icon-content("\e908");
