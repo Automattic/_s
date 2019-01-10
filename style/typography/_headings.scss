@@ -2,16 +2,15 @@ h1, h2, h3, h4, h5, h6,
 .is-style-subtitle {
 	clear: both;
 	@include font( 'headings' );
+	line-height: 1.2em;
 }
 
 h1 {
 	@include font-size(2.5);
-	line-height: .85em;
 }
 
 h2 {
 	@include font-size(2.125);
-	line-height: 1em;
 }
 
 h3,
@@ -19,20 +18,16 @@ h3,
 .comments-title,
 .comment-reply-title {
 	@include font-size(1.625);
-	line-height: 1em;
 }
 
 h4 {
 	@include font-size(1.25);
-	line-height: 1em;
 }
 
 h5 {
 	@include font-size(1.125);
-	line-height: 1em;
 }
 
 h6 {
 	@include font-size(1);
-	line-height: 1em;
 }
