@@ -14,10 +14,11 @@
 
 get_header();
 ?>
-	<?php do_action( "_s_index_head" );?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+			
+		<?php do_action( "_s_index_start" );?>
 
 		<?php
 		if ( have_posts() ) :
@@ -54,12 +55,10 @@ get_header();
 		endif;
 		?>
 
-		<?php do_action( "_s_index_postend" );?>
+		<?php do_action( "_s_index_end" );?>
 			
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<?php do_action( "_s_index_foot" );?>
 
 <?php
 get_sidebar();
