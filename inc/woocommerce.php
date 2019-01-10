@@ -175,7 +175,7 @@ if ( ! function_exists( '_bb_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function _bb_woocommerce_wrapper_after() {
-			?>
+		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php
