@@ -73,6 +73,8 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 	
+	do_action( "_s_comments_before_form" );
+	
 	comment_form();
 	?>
 
