@@ -66,12 +66,12 @@ p.has-drop-cap:not(:focus):first-letter {
 	}
 }
 
-.highlight,
-.standout {
+em.highlight,
+em.standout {
 	font-style: normal;
 }
 
-.highlight {
+em.highlight {
 	padding: 0 3px;
 	background: $color__background-highlight;
 	background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, $color__background-highlight 50%);
@@ -85,7 +85,7 @@ p.has-drop-cap:not(:focus):first-letter {
 	}
 }
 
-.standout {
+em.standout {
 	background: $color__corporate;
 	color: #fff;
 }

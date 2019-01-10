@@ -44,7 +44,7 @@
   /* Highlight animation */
   var waypoints = $('.highlight').waypoint({
     handler: function() {
-      var highlightTime = $(this.element).text().length / 80;
+      var highlightTime = $(this.element).text().length / 70;
       $(this.element)
       .addClass('animated')
       .css('transition-duration', highlightTime.toFixed(2) + 's');
