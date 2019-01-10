@@ -22,6 +22,8 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
+			do_action( "_s_page_middle" );
+			
 			get_template_part( 'template-parts/content', 'page' );
 
 			// If comments are open or we have at least one comment, load up the comment template.
@@ -32,6 +34,8 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		<?php do_action( "_s_page_postend" );?>
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
