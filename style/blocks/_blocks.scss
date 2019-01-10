@@ -1,5 +1,5 @@
-.has-dark-background {
-	background: $color__background-dark;
+.has-dark-background,
+.has-gradient-background {
 	color: #fff;
 
 	.wp-block-button.is-style-outline .wp-block-button__link {
@@ -21,11 +21,42 @@
 	}
 }
 
+.has-dark-background {
+	background: $color__background-dark;
+}
+
 .has-light-background {
 	background: $color__background-light;
+}
+
+.has-gradient-background {
+	background: $color__corporate-gradient;
+}
+
+.wp-block-media-text,
+.wp-block-columns {
+
+	&.has-dark-background,
+	&.has-light-background,
+	&.has-gradient-background {
+		margin-right: -#{$padding__content-mobile};
+		margin-left: -#{$padding__content-mobile};
+		padding-right: $padding__content-mobile;
+		padding-left: $padding__content-mobile;
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		&.has-dark-background,
+		&.has-light-background {
+			margin: 30px -30px;
+			padding: 30px;
+		}
+	}
 }
 
 /*--------------------------------------------------------------
 # Block types
 --------------------------------------------------------------*/
 @import "media-and-text";
+@import "columns";

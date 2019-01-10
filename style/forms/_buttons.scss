@@ -40,15 +40,6 @@ input[type="submit"],
 }
 
 .wp-block-button {
-	text-align: center;
-
-	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		float: left;
-
-		+ .wp-block-button {
-			margin-left: 10px;
-		}
-	}
 
 	&.is-style-outline .wp-block-button__link {
 		color: $color__border-button;
@@ -73,6 +64,37 @@ input[type="submit"],
 		&:active {
 			color: $color__border-button-focus;
 			border-color: $color__border-button-focus;
+		}
+	}
+}
+
+/* Multiple buttons group */
+.buttons-wrap {
+	width: 100%;
+	@include clearfix();
+
+	.wp-block-button {
+		margin-bottom: 15px;
+		display: block;
+
+		.wp-block-button__link {
+			width: 100%;
+		}
+	}
+
+	@media screen and (min-width: 335px) {
+
+		.wp-block-button {
+			float: left;
+			margin-right: 10px;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			.wp-block-button__link {
+				width: auto;
+			}
 		}
 	}
 }

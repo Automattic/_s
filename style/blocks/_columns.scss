@@ -1,0 +1,48 @@
+.wp-block-columns {
+
+	&.wp-columns-full {
+		display: block;
+		padding-top: 20px;
+		padding-bottom: 20px
+	}
+
+	@media screen and (min-width: 600px) {
+
+		.wp-block-column {
+			margin: 0;
+			padding-right: 4%;
+
+			&:last-of-type {
+				padding-right: 0;
+			}
+		}
+
+		&.wp-columns-full {
+
+			.wp-block-column {
+				display: block;
+				flex-basis: 100%;
+
+
+				@media screen and (min-width: 600px) {
+					padding-right: 0;
+				}
+			}
+		}
+
+		&.has-3-columns {
+
+			.wp-block-column {
+				flex-basis: 33.33%
+			}
+		}
+	}
+}
+
+.entry-content > .wp-columns-full {
+
+	@media screen and (min-width: 1120px) {
+		padding-left: 285px;
+		padding-right: 285px;
+	}
+}
