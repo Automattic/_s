@@ -10,6 +10,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	<?php do_action( "_s_content_section_start" ); ?>
+	
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -18,6 +21,8 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
+		do_action( "_s_content_in_header" );
+		
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
@@ -31,6 +36,8 @@
 
 	<?php _s_post_thumbnail(); ?>
 
+	<?php do_action( "_s_content_after_thumbnail" ); ?> 
+	
 	<div class="entry-content">
 		<?php
 		the_content( sprintf(
@@ -53,7 +60,12 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<?php do_action( "_s_content_after_content" ); ?> 
+	
 	<footer class="entry-footer">
 		<?php _s_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	
+	<?php do_action( "_s_content_section_end" ); ?>
+	
 </article><!-- #post-<?php the_ID(); ?> -->
