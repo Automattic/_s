@@ -79,9 +79,41 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		add_theme_support( 'fl-theme-builder-headers' );
+		add_theme_support( 'fl-theme-builder-footers' );
+		
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
+
+add_action( 'wp', '_bb_themer_header_footer' );
+function _bb_themer_header_footer() {
+	$header_ids = FLThemeBuilderLayoutData::get_current_page_header_ids();
+	
+	// If we have a header, remove the theme header and hook in Theme Builder's.
+  if ( ! empty( $header_ids ) ) {
+    remove_action( '_bb_header', '_bb_header' );
+    add_action( '_bb_header', 'FLThemeBuilderLayoutRenderer::render_header' );
+	}
+
+	$footer_ids = FLThemeBuilderLayoutData::get_current_page_footer_ids();
+	
+	if ( ! empty( $footer_ids ) ) {
+		remove_action( '_bb_footer', '_bb_footer' );
+		add_action( '_bb_footer', 'FLThemeBuilderLayoutRenderer::render_footer' );
+	}
+
+}
+add_action( '_bb_header', '_bb_header' );
+function _bb_header() {
+	get_template_part( 'template-parts/header' );
+}
+
+add_action( '_bb_footer', '_bb_footer' );
+function _bb_footer() {
+	get_template_part( 'template-parts/footer' );
+}
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
