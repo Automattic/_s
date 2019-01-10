@@ -14,6 +14,7 @@
 
 get_header();
 ?>
+	<?php do_action( "_s_index_head" );?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -29,6 +30,8 @@ get_header();
 				<?php
 			endif;
 
+			do_action( "_s_index_middle" );
+			
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -51,8 +54,12 @@ get_header();
 		endif;
 		?>
 
+		<?php do_action( "_s_index_postend" );?>
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+	<?php do_action( "_s_index_foot" );?>
 
 <?php
 get_sidebar();
