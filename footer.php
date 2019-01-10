@@ -10,6 +10,7 @@
  */
 
 ?>
+	<?php do_action( "_s_content_foot" );?>
 
 	</div><!-- #content -->
 
