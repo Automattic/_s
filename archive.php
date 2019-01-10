@@ -9,12 +9,10 @@
 
 get_header();
 ?>
-	<?php do_action( "_s_archive_head" );?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php do_action( "_s_archive_in_primary" );?>
+		<?php do_action( "_s_archive_head" );?>
 			
 		<?php if ( have_posts() ) : ?>
 
@@ -50,10 +48,10 @@ get_header();
 		endif;
 		?>
 
+		<?php do_action( "_s_archive_foot" );?>
+			
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<?php do_action( "_s_archive_foot" );?>
 
 <?php
 get_sidebar();
