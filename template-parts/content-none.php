@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	
-	<?php do_action( "_s_content_page_section_start" ); ?> 
+	<?php do_action( "_s_content_none_section_start" ); ?> 
 	
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', '_s' ); ?></h1>
@@ -57,5 +57,7 @@
 		<?php do_action( "_s_content_none_foot" );?>
 		
 	</div><!-- .page-content -->
+	
+	<?php do_action( "_s_content_none_section_end" ); ?> 
 	
 </section><!-- .no-results -->
