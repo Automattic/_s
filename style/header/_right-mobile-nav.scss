@@ -4,6 +4,23 @@
 	.main-navigation-toggle {
 		right: $padding__content-mobile;
 	}
+	
+	&.stuck {
+		transition: right .5s ease-in-out;
+		
+		.menu-toggled-on & {
+			right: 250px;
+			left: auto;
+			
+			@media screen and (min-width: breakpoint('phone')) {
+				right: 300px;
+			}
+			
+			@media screen and (min-width: breakpoint('tablet-landscape')) {
+				right: 0;
+			}
+		}
+	}
 }
 
 #page {

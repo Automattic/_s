@@ -1,7 +1,3 @@
-/**
-*	Left opening mobile menu
-*/
-
 .site-header {
 
 	.site-branding {
@@ -52,6 +48,22 @@
 
 		.site-branding {
 			margin-left: 0;
+		}
+	}
+	
+	&.stuck {
+		transition: left .5s ease-in-out;
+		
+		.menu-toggled-on & {
+			left: 250px;
+			
+			@media screen and (min-width: breakpoint('phone')) {
+				left: 300px;
+			}
+			
+			@media screen and (min-width: breakpoint('tablet-landscape')) {
+				left: 0;
+			}
 		}
 	}
 }

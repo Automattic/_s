@@ -7,16 +7,24 @@ Import in critical.scss either in-grid or full layout style.
 
 ## Header
 ### Mobile Menu
-Import in header/header.scss the center or left aligned style for desktop menu.
+Import either center or left aligned style in header/header.scss.
 * [Mobile right aligned menu](header/_right-mobile-nav.scss):
     use as default.
 * [Mobile left aligned menu](header/_left-mobile-nav.scss):
-    use when both search toggle and cart icon exist in header.
+    use when both search toggle and cart icon coexist in header.
 
 ### Desktop Menu
-Import in header/header.scss the center or left aligned style for desktop menu.
+Import either center or left aligned style in header/header.scss.
 * [Desktop left aligned menu](header/_left-aligned.scss)
 * [Desktop center aligned menu](header/_center-aligned.scss)
+
+### Top Header
+If top header is present, import the style in header/header.scss.
+* [Top header style](header/_top-header.scss)
+
+### Sticky Header
+If sticky header animation is used, import the stuck style in header/header.scss.
+* [Stuck header style](header/_header-stuck.scss)
 
 ## Background images
 When setting images as background, use the mixin `background-image($fileName, $fileType)`,
