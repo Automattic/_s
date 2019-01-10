@@ -36,7 +36,7 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
-	<?php do_action( "_s_content_search_between_extras" ); ?> 
+	<?php do_action( "_s_content_search_after_content" ); ?> 
 	
 	<footer class="entry-footer">
 		<?php _s_entry_footer(); ?>
