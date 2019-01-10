@@ -13,9 +13,11 @@
 
 	</div><!-- #content -->
 
+	<?php do_action( "_s_footer_head" );?>
+
 	<footer id="colophon" class="site-footer">
 		
-		<?php do_action("_s_footer_middle");?>
+		<?php do_action( "_s_footer_middle" );?>
 		
 		<div class="site-info"> 
 			
@@ -33,6 +35,9 @@
 		</div><!-- .site-info --> 
 		
 	</footer><!-- #colophon -->
+
+	<?php do_action( "_s_footer_foot" );?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
