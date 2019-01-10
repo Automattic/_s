@@ -23,14 +23,14 @@ input[type="submit"],
 				color .15s ease-in-out,
 				box-shadow .15s ease-in-out;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background: $color__background-button-hover;
 		border-color: $color__border-button-hover;
 		box-shadow: 0 2px 4px rgba(0,0,0,0.35);
 	}
 
-	&:active,
-	&:focus {
+	&:active {
 		border-color: $color__border-button-focus;
 		background-color: $color__background-button-focus;
 		outline: none;
@@ -63,14 +63,14 @@ input[type="submit"],
 			background: rgba(255,255,255,0);
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: $color__border-button-hover;
 			box-shadow: 0 0 0 1px $color__border-button-hover;
 			border-color: $color__border-button-hover;
 		}
 
-		&:active,
-		&:focus {
+		&:active {
 			color: $color__border-button-focus;
 			border-color: $color__border-button-focus;
 		}
