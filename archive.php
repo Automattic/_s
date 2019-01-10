@@ -9,12 +9,12 @@
 
 get_header();
 ?>
-	<?php do_action("_s_archive_head");?>
+	<?php do_action( "_s_archive_head" );?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php do_action("_s_archive_in_primary");?>
+		<?php do_action( "_s_archive_in_primary" );?>
 			
 		<?php if ( have_posts() ) : ?>
 
@@ -25,7 +25,7 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
-			<?php do_action("_s_archive_middle");?>
+			<?php do_action( "_s_archive_middle" );?>
 			
 			<?php
 			/* Start the Loop */
@@ -53,7 +53,7 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php do_action("_s_archive_foot");?>
+	<?php do_action( "_s_archive_foot" );?>
 
 <?php
 get_sidebar();
