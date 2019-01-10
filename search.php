@@ -13,6 +13,8 @@ get_header();
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+		<?php do_action( "_s_search_start" ); ?>
+			
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
@@ -24,6 +26,8 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 
+			<?php do_action( "_s_search_middle" ); ?>
+			
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -47,6 +51,8 @@ get_header();
 		endif;
 		?>
 
+		<?php do_action( "_s_search_end" ); ?>
+			
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
