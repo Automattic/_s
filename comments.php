@@ -22,7 +22,7 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php do_action( "_s_comment_head" );?>
+	<?php do_action( "_s_comments_head" );?>
 	
 	<?php
 	// You can start editing here -- including this comment!
@@ -50,7 +50,7 @@ if ( post_password_required() ) {
 	
 		<?php the_comments_navigation(); ?>
 
-		<?php do_action( "_s_comment_middle" );?>
+		<?php do_action( "_s_comments_middle" );?>
 
 		<ol class="comment-list">
 			<?php
@@ -76,6 +76,6 @@ if ( post_password_required() ) {
 	comment_form();
 	?>
 
-	<?php do_action( "_s_comment_foot" );?>
+	<?php do_action( "_s_comments_foot" );?>
 	
 </div><!-- #comments -->
