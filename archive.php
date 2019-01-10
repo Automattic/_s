@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-	<?php do_action("_s_archive_top");?>
+	<?php do_action("_s_archive_head");?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -53,7 +53,7 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php do_action("_s_archive_bottom");?>
+	<?php do_action("_s_archive_foot");?>
 
 <?php
 get_sidebar();
