@@ -10,13 +10,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	<?php do_action( "_s_content_page_section_start" ); ?> 
+	
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php _s_post_thumbnail(); ?>
-
+	
+	<?php do_action( "_s_content_page_after_thumbnail" ); ?> 
+	
 	<div class="entry-content">
+		
+		<?php do_action( "_s_content_page_head" );?> 
+		
 		<?php
 		the_content();
 
@@ -25,6 +33,9 @@
 			'after'  => '</div>',
 		) );
 		?>
+		
+		<?php do_action( "_s_content_page_foot" );?> 
+		
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
@@ -49,4 +60,7 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+	
+	<?php do_action( "_s_content_page_section_end" ); ?> 
+	
 </article><!-- #post-<?php the_ID(); ?> -->
