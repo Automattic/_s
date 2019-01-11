@@ -71,7 +71,12 @@ input[type="submit"],
 /* Multiple buttons group */
 .buttons-wrap {
 	width: 100%;
-	@include clearfix();
+	padding: 0;
+
+	.wp-block-column:after {
+		@include clearfix();
+		@include clearfix-after();
+	}
 
 	.wp-block-button {
 		margin-bottom: 15px;
@@ -82,7 +87,9 @@ input[type="submit"],
 		}
 	}
 
-	@media screen and (min-width: 335px) {
+	@media screen and (min-width: 480px) {
+		@include clearfix();
+		@include clearfix-after();
 
 		.wp-block-button {
 			float: left;

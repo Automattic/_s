@@ -40,17 +40,6 @@ big {
 	font-size: 125%;
 }
 
-.is-style-subtitle {
-	@include font-size(1.2);
-	margin-top: 0;
-	margin-bottom: 20px;
-	line-height: 1.2;
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		@include font-size(1.5);
-	}
-}
-
 p.is-style-standout {
 	@include font-size(1.2);
 	border-left: 3px solid $color__corporate;

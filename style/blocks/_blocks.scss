@@ -1,5 +1,6 @@
 .has-dark-background,
-.has-gradient-background {
+.has-gradient-background,
+.has-alpha-dark-background {
 	color: #fff;
 
 	.wp-block-button.is-style-outline .wp-block-button__link {
@@ -33,6 +34,18 @@
 	background: $color__corporate-gradient;
 }
 
+.has-alpha-dark-background {
+	background: $color__background-alpha-dark;
+}
+
+.has-alpha-light-background {
+	background: $color__background-alpha-light;
+}
+
+.has-white-background {
+	background: #fff;
+}
+
 .wp-block-media-text,
 .wp-block-columns {
 
@@ -60,3 +73,4 @@
 --------------------------------------------------------------*/
 @import "media-and-text";
 @import "columns";
+@import "hero-block";

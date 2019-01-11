@@ -1,8 +1,10 @@
 h1, h2, h3, h4, h5, h6,
-.is-style-subtitle {
+.is-style-subtitle,
+.is-style-pretitle {
 	clear: both;
 	@include font( 'headings' );
 	line-height: 1.2em;
+	margin-bottom: 20px;
 }
 
 h1 {
@@ -30,4 +32,24 @@ h5 {
 
 h6 {
 	@include font-size(1);
+}
+
+.is-style-pretitle,
+.is-style-subtitle {
+	margin-top: 0;
+	margin-bottom: 20px;
+	line-height: 1.2;
+}
+
+.is-style-pretitle {
+	@include font-size(1.1);
+}
+
+.is-style-subtitle {
+	@include font-size(1.2);
+	font-weight: bold;
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		@include font-size(1.5);
+	}
 }
