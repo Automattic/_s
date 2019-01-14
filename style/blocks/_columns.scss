@@ -8,15 +8,6 @@
 
 	@media screen and (min-width: 600px) {
 
-		.wp-block-column {
-			margin: 0;
-			padding-right: 4%;
-
-			&:last-of-type {
-				padding-right: 0;
-			}
-		}
-
 		&.wp-columns-full {
 
 			.wp-block-column {
@@ -28,11 +19,22 @@
 				}
 			}
 		}
-
-		&.has-3-columns {
-
+	}
+	
+	@for $i from 2 through 6 {
+		
+		&.has-#{$i}-columns {
+			$columns-gap: 2%;
+			
 			.wp-block-column {
-				flex-basis: 33.33%
+				padding: 0 15px;
+				flex-basis: 100% - ($columns-gap * ($i - 1)) / $i;
+				margin-left: 0;
+				margin-right: $columns-gap;
+				
+				&:nth-of-type(#{$i}n + #{$i}) {
+					margin-right: 0;
+				}
 			}
 		}
 	}

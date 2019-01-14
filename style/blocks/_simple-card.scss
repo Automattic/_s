@@ -1,0 +1,37 @@
+.is-style-simple-cards {
+    
+    .wp-block-column {
+        background: $color__background-light;
+        margin-top: 50px;
+        
+        h2 {
+            @include font-size(1.3);
+            background: $color__corporate;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 15px;
+            margin: -10px 0 0;
+            max-width: calc(100% - 30px);
+        }
+    
+        .wp-block-image {
+            text-align: center;
+            margin: -40px auto 0;
+            border: 2px solid $color__corporate;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            padding: 15px;
+            background: #fff;
+            
+            img {
+                height: 50px;
+                width: 50px;
+                object-fit: contain;
+            }
+        }
+    }
+}
