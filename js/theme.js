@@ -41,6 +41,12 @@
     $('.secondary-navigation').slideToggle();
   });
   
+  /* FAQ toggle */
+  $('.schema-faq-question').on('click', function() {
+    $(this).toggleClass('open');
+    $(this).next('.schema-faq-answer').slideToggle();
+  });
+  
   /* Highlight animation */
   var waypoints = $('.highlight').waypoint({
     handler: function() {
