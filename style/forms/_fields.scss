@@ -13,15 +13,42 @@ input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
-textarea {
+textarea,
+input[type="radio"],
+input[type="checkbox"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea,
+select {
+	display: block;
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	padding: 7px 10px;
-	width: 100%;
+	border-radius: 3px;
 	transition: border-color 0.1s linear;
-	-webkit-appearance: none;
-	-moz-appearance:	 none;
-	appearance: none;
+	width: 100%;
+	padding: 9px 10px;
+	height: 40px;
+	text-align: left;
+	vertical-align: middle;
+	background: #fff;
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -33,103 +60,122 @@ textarea {
 	&:hover {
 		outline: none;
 	}
+
+	&.error {
+		border-color: $color__error;
+	}
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
 	color: #bbb;
 }
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
 	color: #bbb;
 }
-:-ms-input-placeholder { /* IE 10+ */
+:-ms-input-placeholder {
 	color: #bbb;
 }
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
 	color: #bbb;
+}
+
+textarea {
+	height: auto;
+	min-height: 60px;
+	max-width: 100%;
 }
 
 label {
-	font-weight: 600;
+	font-weight: bold;
 	display: block;
-	margin-bottom: 3px;
+	padding: 8px 12px 4px 0;
 	@include font-size(.9);
-
-	.required {
-		color: $color__error;
-	}
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	width: 20px;
-	height: 20px;
-	appearance: none;
-	cursor: pointer;
+	overflow-wrap: break-word;
+	display: inline-block;
 	vertical-align: middle;
-	margin-right: 5px;
 }
 
-input[type="checkbox"] {
-	border: 2px solid $color__text-main;
-	background-color: #fff;
-	background-image: url("images/check.png");
-	background-position: -9999px center;
-	background-repeat: no-repeat;
-	background-size: 80%;
-	text-align: center;
+legend {
+	@include font-size(.8);
+}
 
-	&:checked {
-		background-position: center center;
-	}
+input[type="radio"],
+input[type="checkbox"] {
+	vertical-align: middle;
 
 	+ span {
 		font-weight: normal;
+		padding-left: 9px;
+		vertical-align: middle;
 	}
 }
 
 input[type="radio"] {
 	border-radius: 50%;
 	border: 2px solid #fff;
-	box-shadow: 0 0 0 1px $color__corporate;
+	box-shadow: 0 0 0 2px $color__border-input;
+	position: relative;
+	margin-right: 5px;
+	height: 1em;
+	width: 1em;
 
 	&:checked {
+		box-shadow: 0 0 0 2px $color__corporate;
 		background-color: $color__corporate;
 	}
 }
 
-textarea {
-	max-width: 100%;
-	min-height: 100px;
-	height: 150px;
+input[type="checkbox"] {
+	border: 2px solid $color__border-input;
+	height: 1.25em;
+	width: 1.25em;
+	border-radius: 3px;
+	border-color: $color__corporate;
+	background-image: url("images/icons/check.png");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: -999px;
+	overflow: hidden;
+
+	&:checked {
+		background-position: center;
+	}
 }
 
 select {
-	max-width: 100%;
+	position: relative;
+	padding-right: 50px;
 }
 
-.select2-selection:focus {
-	outline: none;
+input[type="submit"] {
+   margin-bottom: 18px;
 }
 
-.select2-container--default .select2-selection--single {
-	border-radius: 0;
-	height: 36px;
-	border: 1px solid $color__border-input;
+.fn-date-picker .pika-lendar {
 
-	.select2-selection__rendered {
-		line-height: 36px;
+	.pika-prev,
+	.pika-next {
+		box-shadow: none;
+		border-radius: 0;
 	}
 
-	.select2-selection__arrow {
-		height: 34px;
+	.pika-button {
+		border-radius: 0;
+		box-shadow: none !important;
+		background: none !important;
+
+		&:hover {
+			background: $color__background-light !important;
+			color: #666 !important;
+		}
 	}
-}
 
-.select2-container--default .select2-results__option--highlighted[aria-selected],
-.select2-container--default .select2-results__option--highlighted[data-selected] {
-	background-color: $color__corporate;
-}
+	.is-selected .pika-button {
+		background: $color__corporate !important;
+		box-shadow: none !important;
+	}
 
-.select2-container--default li:focus {
-	outline: none;
+	.is-today .pika-button {
+		color: $color__corporate !important;
+	}
 }

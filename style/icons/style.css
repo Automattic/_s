@@ -1,15 +1,16 @@
 @font-face {
 	font-family: 'theme-icons';
-	src:  url('fonts/theme-icons.eot?k580pg');
-	src:  url('fonts/theme-icons.eot?k580pg#iefix') format('embedded-opentype'),
-	url('fonts/theme-icons.ttf?k580pg') format('truetype'),
-	url('fonts/theme-icons.woff?k580pg') format('woff'),
-	url('fonts/theme-icons.svg?k580pg#theme-icons') format('svg');
+	src: url('fonts/theme-icons.eot?1hxmsv');
+	src: url('fonts/theme-icons.eot?1hxmsv#iefix') format('embedded-opentype'),
+	url('fonts/theme-icons.ttf?1hxmsv') format('truetype'),
+	url('fonts/theme-icons.woff?1hxmsv') format('woff'),
+	url('fonts/theme-icons.svg?1hxmsv#theme-icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'theme-icons' !important;
 	speak: none;
@@ -22,6 +23,10 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-select-arrows:before {
+	content: "\e901";
 }
 
 .icon-user-solid-circle:before {

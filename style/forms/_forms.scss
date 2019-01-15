@@ -1,3 +1,45 @@
 @import "buttons";
 @import "fields";
 @import "search-form";
+
+form {
+	max-width: 640px;
+}
+
+.field {
+	margin-top: 15px;
+}
+
+.inputs-list {
+	padding: 0;
+
+	li {
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+.hs-form-required,
+.hs-error-msgs li {
+	color: $color__error;
+}
+
+.hs-error-msgs {
+	margin: 0;
+
+	li label {
+		font-weight: normal;
+		padding: 0;
+	}
+}
+
+.legal-consent-container ~ .hs_recaptcha {
+	margin-bottom: 15px;
+}
+
+.legal-consent-container {
+	@include font-size(.85);
+	margin: 18px 0;
+}

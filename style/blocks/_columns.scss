@@ -20,21 +20,21 @@
 			}
 		}
 	}
-	
-	@for $i from 2 through 6 {
-		
-		&.has-#{$i}-columns {
-			$columns-gap: 2%;
-			
-			.wp-block-column {
-				padding: 0 15px;
-				flex-basis: 100% - ($columns-gap * ($i - 1)) / $i;
-				margin-left: 0;
-				margin-right: $columns-gap;
-				
-				&:nth-of-type(#{$i}n + #{$i}) {
-					margin-right: 0;
-				}
+}
+
+@for $i from 2 through 6 {
+
+	.has-#{$i}-columns {
+		$columns-gap: 2%;
+
+		> .wp-block-column {
+			padding: 0 15px;
+			flex-basis: 100% - ($columns-gap * ($i - 1)) / $i;
+			margin-left: 0;
+			margin-right: $columns-gap;
+
+			&:nth-of-type(#{$i}n + #{$i}) {
+				margin-right: 0;
 			}
 		}
 	}
