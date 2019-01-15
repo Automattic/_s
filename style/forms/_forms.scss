@@ -40,6 +40,15 @@ form {
 }
 
 .legal-consent-container {
-	@include font-size(.85);
+	@include font-size(.75);
 	margin: 18px 0;
+	line-height: 1.3em;
+
+	p, .inputs-list {
+		margin: 15px 0;
+	}
+
+	label {
+		@include font-size(.75);
+	}
 }

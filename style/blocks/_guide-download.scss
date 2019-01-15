@@ -1,0 +1,58 @@
+#page .is-style-download.has-media-on-the-right {
+	background: $color__background-light;
+	padding: 20px 0 0 0;
+
+	.wp-block-media-text__content {
+		background: $color__corporate-gradient;
+		padding: 80px $padding__content-mobile 20px;
+		color: #fff;
+
+		input[type=checkbox] {
+			background-color: #fff;
+			border: none;
+			box-shadow: 0 0 0 2px rgba(255,255,255,.4);
+		}
+	}
+
+	.wp-block-media-text__media {
+		margin-bottom: -80px;
+	}
+
+	@media screen and (min-width: 600px) {
+		padding: 0;
+		position: relative;
+		margin-top: 50px;
+		margin-bottom: 50px;
+
+		.wp-block-media-text__content {
+			padding-top: 30px;
+			padding-left: $padding__content-mobile;
+		}
+
+		.wp-block-media-text__media {
+			position: absolute;
+			top: 20px;
+			right: 0;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		.wp-block-media-text__content {
+			padding-left: $padding__content-desktop;
+			padding-right: 8%;
+		}
+
+		.wp-block-media-text__media {
+			top: -20px;
+			bottom: -20px;
+			margin-bottom: 0;
+			width: 100%;
+
+			img {
+				height: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+}

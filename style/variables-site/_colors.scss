@@ -40,15 +40,21 @@ $color__border-abbr: #666;
 
 //Buttons and links
 $color__background-button: #E94B4B;
+$color__background-button-secondary: #2b53af;
 $color__background-button-hover: #FF5F5F;
+$color__background-button-hover-secondary: #3465d3;
 $color__background-button-focus: #CC4444;
+$color__background-button-focus-secondary: #254896;
 $color__background-button--light: #fff;
 $color__background-button-hover--light: #fff;
 $color__background-button-focus--light: #fff;
 
 $color__border-button: $color__background-button;
+$color__border-button-secondary: $color__background-button-secondary;
 $color__border-button-hover: $color__background-button-hover;
+$color__border-button-hover-secondary: $color__background-button-hover-secondary;
 $color__border-button-focus: $color__background-button-focus;
+$color__border-button-focus-secondary: $color__background-button-focus-secondary;
 
 $color__border-button--light: $color__background-button--light;
 $color__border-button-hover--light: $color__background-button-hover--light;

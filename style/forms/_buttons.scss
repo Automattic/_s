@@ -68,6 +68,23 @@ input[type="submit"],
 	}
 }
 
+.wp-block-button.is-style-secondary,
+.is-style-download input[type="submit"] {
+	background: $color__background-button-secondary;
+	border-color: $color__border-button-secondary;
+
+	&:hover,
+	&:focus {
+		background: $color__background-button-hover-secondary;
+		border-color: $color__border-button-hover-secondary;
+	}
+
+	&:active {
+		border-color: $color__border-button-focus-secondary;
+		background-color: $color__background-button-focus-secondary;
+	}
+}
+
 /* Multiple buttons group */
 .buttons-wrap {
 	width: 100%;

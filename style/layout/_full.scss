@@ -40,4 +40,42 @@
 			padding-right: calc((100vw - #{$size__content-width}) /2);
 		}
 	}
+
+	.is-style-download.has-media-on-the-right.alignfull {
+
+		@media screen and (min-width: breakpoint('desktop')) {
+			margin-left: 0;
+			margin-right: 0;
+
+			.wp-block-media-text__media,
+			.wp-block-media-text__content {
+				z-index: 1;
+			}
+
+			.wp-block-media-text__content {
+				background: none;
+			}
+
+			&:before,
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				width: 50vw;
+				z-index: 0;
+			}
+
+			&:before {
+				right: 50%;
+				background: $color__corporate-gradient;
+			}
+
+			&:after {
+				right: -50vw;
+				background: $color__background-light;
+			}
+		}
+	}
 }

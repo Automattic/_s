@@ -118,6 +118,7 @@ input[type="radio"] {
 	margin-right: 5px;
 	height: 1em;
 	width: 1em;
+	cursor: pointer;
 
 	&:checked {
 		box-shadow: 0 0 0 2px $color__corporate;
@@ -136,6 +137,7 @@ input[type="checkbox"] {
 	background-size: 80%;
 	background-position: -999px;
 	overflow: hidden;
+	cursor: pointer;
 
 	&:checked {
 		background-position: center;
@@ -149,6 +151,8 @@ select {
 
 input[type="submit"] {
    margin-bottom: 18px;
+   width: 100%;
+   cursor: pointer;
 }
 
 .fn-date-picker .pika-lendar {
