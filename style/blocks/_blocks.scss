@@ -3,6 +3,13 @@
 .has-alpha-dark-background {
 	color: #fff;
 
+	ol, ul {
+
+		li:before {
+			color: #fff;
+		}
+	}
+
 	.wp-block-button.is-style-outline .wp-block-button__link {
 		color: #fff;
 		border-color: #fff;
@@ -77,3 +84,4 @@
 @import "faq";
 @import "cards";
 @import "guide-download";
+@import "offer-block";

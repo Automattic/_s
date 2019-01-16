@@ -41,19 +41,30 @@
 		}
 	}
 
-	.is-style-download.has-media-on-the-right.alignfull {
+	.is-style-download.has-media-on-the-right.alignfull,
+	.wp-block-columns.is-style-offer.alignfull {
 
 		@media screen and (min-width: breakpoint('desktop')) {
 			margin-left: 0;
 			margin-right: 0;
+			position: relative;
 
 			.wp-block-media-text__media,
-			.wp-block-media-text__content {
+			.wp-block-media-text__content,
+			.wp-block-column {
 				z-index: 1;
 			}
 
-			.wp-block-media-text__content {
+			.wp-block-media-text__content,
+			.wp-block-column:first-of-type {
 				background: none;
+				padding-left: 0;
+				padding-right: $padding__content-desktop;
+			}
+
+			.wp-block-media-text__media,
+			.wp-block-column:last-of-type {
+				padding-left: $padding__content-desktop;
 			}
 
 			&:before,
