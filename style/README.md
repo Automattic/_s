@@ -1,31 +1,61 @@
 # Style Guide
 
 ## Site Main Layout
-Import in critical.scss either in-grid or full layout style.
-* [In-grid (boxed) layout](layout/_in-grid.scss)
-* [Full layout](layout/_full.scss)
+Import either in-grid or full layout style in critical.scss.
+* [In-grid (boxed) layout](layout/_in-grid.scss)\
+    `@import 'layout/in-grid';`
+* [Full layout](layout/_full.scss)\
+    `@import 'layout/full';`
 
-## Header
-### Mobile Menu
-Import either center or left aligned style in header/header.scss.
-* [Mobile right aligned menu](header/_right-mobile-nav.scss):
-    use as default.
-* [Mobile left aligned menu](header/_left-mobile-nav.scss):
-    use when both search toggle and cart icon coexist in header.
-
-### Desktop Menu
-Import either center or left aligned style in header/header.scss.
-* [Desktop left aligned menu](header/_left-aligned.scss)
-* [Desktop center aligned menu](header/_center-aligned.scss)
-
+## Header/Nav
 ### Top Header
 If top header is present, import the style in header/header.scss.
-* [Top header style](header/_top-header.scss)
+* [Top header style](header/_top-header.scss)\
+    `@import 'top-header';`
 
 ### Sticky Header
 If sticky header animation is used, import the stuck style in header/header.scss.
 * [Stuck header style](header/_header-stuck.scss)
 
+### Mobile Menu
+Import either right or left aligned style in header/header.scss.
+* [Mobile right aligned menu](header/_right-mobile-nav.scss) : 
+    use it as default.\
+    `@import 'right-mobile-nav';`
+* [Mobile left aligned menu](header/_left-mobile-nav.scss):
+    use it when both search toggle and cart icon exist in header.\
+    `@import 'left-mobile-nav';`
+
+### Desktop Menu
+Import either center or left aligned style in header/header.scss.
+* [Desktop left aligned menu](header/_left-aligned.scss)\
+    `@import 'left-aligned';`
+* [Desktop center aligned menu](header/_center-aligned.scss)\
+    `@import 'center-aligned';`
+
+## Blocks
+### Full Width blocks
+* **Solid background or no background**\
+    Use Wordpress 2-columns block with `wp-columns-full` class.
+* **Background image**\
+    Use Wordpress Media and Text block with `has-dark-image-background` or 
+    `has-light-image-background` classes. The media component will be set as block background.
+
+### Guide Download block
+Use Wordpress Media and Text block with `is-style-download` class.
+
+### Cards
+* **Icon card (suitable for bullets/company services)**\
+    Use Wordpress columns block with `is-style-icon-cards` class.\
+    Structure: image (icon) + title (either h2 or h3) + text content (p, ul, ol, etc).
+* **Image card (suitable for company services/area of competence)**\
+    Use Wordpress columns block with `is-style-image-cards` class.\
+    Structure: image + title (either h2 or h3) + (p, ul, ol, etc).
+* **Data card (suitable for company data and stats)**\
+    Use Wordpress columns block with `is-style-stats-cards` class.\
+    Structure: wrap numbers in an `<em>` tag to output the card correctly. 
+    Assign icons through CSS pseudo-elements.
+
 ## Background images
-When setting images as background, use the mixin `background-image($fileName, $fileType)`,
+When setting images as background through CSS, use the mixin `background-image($fileName, $fileType)`,
 where `$fileType` is the file extension ('jpg', 'png', etc).

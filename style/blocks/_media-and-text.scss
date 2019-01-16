@@ -45,3 +45,45 @@
 		}
 	}
 }
+
+.wp-block-media-text {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	&.has-light-image-background,
+	&.has-dark-image-background {
+		display: block;
+		position: relative;
+		padding-left: $padding__content-mobile;
+		padding-right: $padding__content-mobile;
+
+		.wp-block-media-text__media,
+		.wp-block-media-text__content {
+			display: block;
+		}
+
+		.wp-block-media-text__content {
+			position: relative;
+			z-index: 1;
+			padding: 0;
+		}
+
+		.wp-block-media-text__media {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&.has-dark-image-background {
+		color: #fff;
+	}
+}

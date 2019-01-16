@@ -2,12 +2,23 @@
 @import "fields";
 @import "search-form";
 
-form {
-	max-width: 640px;
-}
+fieldset {
+	max-width: none !important;
 
-.field {
-	margin-top: 15px;
+	&.form-columns-1 {
+
+		.hs-input {
+			width: 100% !important;
+		}
+
+		input[type="checkbox"] {
+			width: 1.25em !important;
+		}
+
+		input[type="radop"] {
+			width: 1em !important;
+		}
+	}
 }
 
 .inputs-list {
