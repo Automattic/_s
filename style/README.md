@@ -1,5 +1,16 @@
 # Style Guide
 
+## Background images
+When setting images as background through CSS, use the mixin `background-image($fileName, $fileType)`,
+where `$fileType` is the file extension ('jpg', 'png', etc).
+
+## Responsive Video
+Wrap the iframe in a div with `aspect-ratio` class to maintain video ratio through all devices.
+
+## Buttons Group
+Obtain two aligned buttons using a Multiple Columns (2 columns) block with 
+`buttons-wrap` class. Insert a button block in each column.
+
 ## Site Main Layout
 Import either in-grid or full layout style in critical.scss.
 * [In-grid (boxed) layout](layout/_in-grid.scss)\
@@ -36,13 +47,18 @@ Import either center or left aligned style in header/header.scss.
 ## Blocks
 ### Full Width blocks
 * **Solid background or no background**\
-    Use Wordpress 2-columns block with `wp-columns-full` class.
+    Use Wordpress multiple columns (2 columns) block with `wp-columns-full` class.
 * **Background image**\
     Use Wordpress Media and Text block with `has-dark-image-background` or 
     `has-light-image-background` classes. The media component will be set as block background.
 
 ### Guide Download block
 Use Wordpress Media and Text block with `is-style-download` class.
+
+### Offer block
+Use Wordpress multiple columns (2 columns) block with `is-style-offer` class.
+Suitable for offer presentation. The first column contains either an embedded
+video or an image of the product.
 
 ### Cards
 * **Icon card (suitable for bullets/company services)**\
@@ -55,7 +71,3 @@ Use Wordpress Media and Text block with `is-style-download` class.
     Use Wordpress columns block with `is-style-stats-cards` class.\
     Structure: wrap numbers in an `<em>` tag to output the card correctly. 
     Assign icons through CSS pseudo-elements.
-
-## Background images
-When setting images as background through CSS, use the mixin `background-image($fileName, $fileType)`,
-where `$fileType` is the file extension ('jpg', 'png', etc).
