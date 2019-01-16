@@ -7,6 +7,7 @@
 
 	.wp-block-column {
 		margin: 0;
+		padding: 0;
 	}
 
 	.wp-block-column--media {
@@ -21,7 +22,7 @@
 		padding: 20px;
 
 		h1, h2, .is-style-pretitle {
-		  margin-top: 0;
+			margin-top: 0;
 		}
 	}
 
@@ -75,16 +76,15 @@
 		}
 	}
 
-	.buttons-wrap {
+	.buttons-group {
 		padding-top: 0;
 		padding-bottom: 0;
 		text-align: center;
 
-		.wp-block-button {
+		.wp-block-column {
 			max-width: 335px;
 			margin-right: auto;
 			margin-left: auto;
-			width: 100%;
 
 			.wp-block-button__link {
 				width: 100%;
@@ -93,19 +93,16 @@
 
 		@media screen and (min-width: 480px) and (max-width: 559px), (min-width: 768px) {
 
-			.wp-block-button {
+			.wp-block-column {
 				float: none;
 				width: 100%;
 			}
 		}
 
 		@media screen and (min-width: 560px) and (max-width: 767px), (min-width: 1100px) {
+			text-align: center;
 
 			.wp-block-column {
-				text-align: center;
-			}
-
-			.wp-block-button {
 				display: inline-block;
 				max-width: none;
 				width: 45%;

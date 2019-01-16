@@ -7,10 +7,6 @@ where `$fileType` is the file extension ('jpg', 'png', etc).
 ## Responsive Video
 Wrap the iframe in a div with `aspect-ratio` class to maintain video ratio through all devices.
 
-## Buttons Group
-Obtain two aligned buttons using a Multiple Columns (2 columns) block with 
-`buttons-wrap` class. Insert a button block in each column.
-
 ## Site Main Layout
 Import either in-grid or full layout style in critical.scss.
 * [In-grid (boxed) layout](layout/_in-grid.scss)\
@@ -45,12 +41,23 @@ Import either center or left aligned style in header/header.scss.
     `@import 'center-aligned';`
 
 ## Blocks
+
 ### Full Width blocks
 * **Solid background or no background**\
     Use Wordpress multiple columns (2 columns) block with `wp-columns-full` class.
 * **Background image**\
     Use Wordpress Media and Text block with `has-dark-image-background` or 
     `has-light-image-background` classes. The media component will be set as block background.
+
+## Buttons Group
+Obtain two aligned buttons using a Multiple Columns (2 columns) block with
+`buttons-wrap` class. Insert a button block in each column.
+
+## Clients'logos gallery
+Use to display a simple inline gallery of logos.\
+Use a Multiple Columns block with `is-style-clients` class.\
+Fill the first column with the label text (h3) and the second column with 
+a gallery block.
 
 ### Guide Download block
 Use Wordpress Media and Text block with `is-style-download` class.

@@ -86,18 +86,14 @@ input[type="submit"],
 }
 
 /* Multiple buttons group */
-.has-2-columns.buttons-group {
+.buttons-group {
+	display: block;
 	width: 100%;
 	padding: 0;
 
 	.wp-block-column {
 		padding: 0;
 		margin: 0;
-	}
-
-	.wp-block-column:after {
-		@include clearfix();
-		@include clearfix-after();
 	}
 
 	.wp-block-button {
@@ -110,10 +106,14 @@ input[type="submit"],
 	}
 
 	@media screen and (min-width: 480px) {
-		@include clearfix();
-		@include clearfix-after();
 
-		.wp-block-column {
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+
+		div.wp-block-column {
+			padding: 0;
 			float: left;
 			margin-right: 10px;
 
