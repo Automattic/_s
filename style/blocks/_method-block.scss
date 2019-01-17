@@ -1,0 +1,149 @@
+.is-style-method {
+	text-align: center;
+	background-color: $color__background-light;
+	background-image: url("images/steps-bar.png");
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size: 13px auto;
+	padding-right: $padding__content-mobile;
+	padding-left: $padding__content-mobile;
+	display: block;
+
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		background-size: 13px auto;
+		background-repeat: no-repeat;
+		height: 97px;
+		width: 100%;
+	}
+
+	&:before {
+		background-image: url("images/steps-bar-start.png");
+		background-position: center top;
+	}
+
+	&:after {
+		background-image: url("images/steps-bar-end.png");
+		background-position: center bottom;
+	}
+
+	.single-step {
+		box-shadow: 0 0 3px rgba(0,0,0,.2);
+		background: #fff;
+		text-align: center;
+		border-radius: 8px;
+		padding: 50px 20px 1px;
+		position: relative;
+		margin: 70px auto 0 !important;
+		max-width: 500px;
+
+		&:first-of-type {
+			margin-top: 48px;
+		}
+
+		.picture {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: -50px;
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 0;
+			background: #b4babc;
+			padding-top: 10px;
+			border-radius: 50%;
+
+			img {
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+			}
+		}
+
+		.title {
+			font-weight: normal;
+			margin-bottom: 10px;
+		}
+
+		.label {
+			background: $color__corporate;
+			border-radius: 5px;
+			color: #fff;
+			position: absolute;
+			z-index: 1;
+			top: 50px;
+			padding: 3px 20px;
+			font-weight: normal;
+			top: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-weight: bold;
+		}
+
+		.content {
+			text-align: left;
+			margin-top: 10px;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		display: block;
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding-left: $padding__content-mobile + 300px;
+		background-position: $padding__content-mobile + 208px center;
+		padding: 10px $padding__content-mobile 50px $padding__content-mobile + 300px;
+		position: relative;
+		margin: 50px 0 0;
+
+		&:before,
+		&:after {
+			position: absolute;
+			left: 0;
+		}
+
+		&:before {
+			top: 0;
+			background-position: $padding__content-mobile + 208px top;
+		}
+
+		&:after {
+			bottom: 0;
+			background-position: $padding__content-mobile + 208px bottom;
+		}
+
+		.single-step {
+			width: 100%;
+			flex-basis: 100%;
+			max-width: none;
+			margin-top: 30px;
+			padding-top: 1px;
+			z-index: 1;
+
+			.picture,
+			.label {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			.picture {
+				left: -135px;
+			}
+
+			.label {
+				@include font-size(1.2);
+				left: -300px;
+				margin: 0;
+				padding: 5px 30px;
+			}
+
+			.title {
+				text-align: left;
+			}
+		}
+	}
+}

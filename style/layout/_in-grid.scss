@@ -42,4 +42,22 @@ $size__page-width: 1250px;
 			margin-right: -#{$padding__content-desktop};
 		}
 	}
+
+	.is-style-method.alignfull,
+	.is-style-method.alignwide {
+
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			padding-left: $padding__content-desktop + 300px;
+			padding-right: $padding__content-desktop;
+			background-position: $padding__content-desktop + 208px center;
+
+			&:before {
+				background-position: $padding__content-desktop + 208px top;
+			}
+
+			&:after {
+				background-position: $padding__content-desktop + 208px bottom;
+			}
+		}
+	}
 }

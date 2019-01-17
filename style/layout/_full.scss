@@ -89,4 +89,36 @@
 			}
 		}
 	}
+
+	.is-style-method.alignfull,
+	.is-style-method.alignwide {
+
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			padding-left: $padding__content-desktop + 300px;
+			padding-right: $padding__content-desktop;
+			background-position: $padding__content-desktop + 208px center;
+
+			&:before {
+				background-position: $padding__content-desktop + 208px top;
+			}
+
+			&:after {
+				background-position: $padding__content-desktop + 208px bottom;
+			}
+		}
+
+		@media screen and (min-width: breakpoint('desktop')) {
+			padding-left: calc(((100vw - #{$size__content-width}) / 2) + 300px);
+			padding-right: calc((100vw - #{$size__content-width}) / 2);
+			background-position: calc(((100vw - #{$size__content-width}) / 2) + 208px) center;
+
+			&:before {
+				background-position: calc(((100vw - #{$size__content-width}) / 2) + 208px) top;
+			}
+
+			&:after {
+				background-position: calc(((100vw - #{$size__content-width}) / 2) + 208px) bottom;
+			}
+		}
+	}
 }
