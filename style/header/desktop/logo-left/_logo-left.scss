@@ -3,6 +3,10 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		position: static;
 
+		.site-branding {
+			margin-left: 0;
+		}
+
 		#main-navigation {
 			float: right;
 
@@ -10,6 +14,14 @@
 				float: left;
 				margin-left: 15px;
 			}
+
+			li a {
+				line-height: $size__header-height-desktop;
+			}
 		}
 	}
 }
+
+//@import "has-search";
+//@import "has-cart";
+@import "has-search-and-cart";

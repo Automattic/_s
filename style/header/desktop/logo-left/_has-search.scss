@@ -1,0 +1,14 @@
+.site-header {
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		button.search-toggle {
+			right: $padding__content-desktop;
+			height: $size__header-height-desktop;
+		}
+
+		#main-navigation {
+			margin-right: 55px;
+		}
+	}
+}

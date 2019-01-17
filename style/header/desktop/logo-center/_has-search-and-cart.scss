@@ -1,0 +1,22 @@
+.site-header {
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		.site-header-cart,
+		button.search-toggle {
+			top: $size__logo-height-desktop - 30px;
+		}
+
+		.site-header-cart {
+			right: $padding__content-desktop;
+		}
+
+		button.search-toggle {
+			right: $padding__content-desktop + 45px;
+		}
+
+		.search-form.visible {
+			top: $size__centered-header-height;
+		}
+	}
+}

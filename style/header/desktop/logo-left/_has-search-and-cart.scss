@@ -1,0 +1,28 @@
+.site-header {
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		button.search-toggle {
+			right: $padding__content-desktop + 45px;
+			height: $size__header-height-desktop;
+		}
+
+		.site-header-cart {
+			position: absolute;
+		}
+
+		.site-header-cart {
+			top: 0;
+			right: $padding__content-desktop;
+			position: absolute;
+
+			li {
+				line-height: $size__header-height-desktop;
+			}
+		}
+
+		#main-navigation {
+			margin-right: 105px;
+		}
+	}
+}

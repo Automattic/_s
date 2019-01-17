@@ -2,10 +2,8 @@
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 
-		ul.site-header-cart,
-		button.search-toggle {
-			top: auto;
-			bottom: 0;
+		#site-navigation a {
+			line-height: 45px;
 		}
 
 		div#main-navigation {
@@ -13,14 +11,14 @@
 		}
 
 		#site-navigation {
-			display: inline-block;
+			display: block;
 
 			li {
-				margin-bottom: -5px;
+				display: inline-block;
+				float: none;
 
 				a {
 					display: block;
-					line-height: $size__header-height-desktop;
 				}
 			}
 		}
@@ -28,16 +26,17 @@
 		.site-branding {
 			float: none;
 			display: block;
-			padding-top: 1px;
+			padding: 15px;
+			margin: 0;
+			border-bottom: 1px solid #ddd;
 
 			img {
-				margin-left: auto;
-				margin-right: auto;
+				margin: 0 auto;
 			}
-		}
-
-		.profile-nav {
-			display: inline-block;
 		}
 	}
 }
+
+//@import "has-search";
+//@import "has-cart";
+@import "has-search-and-cart";
