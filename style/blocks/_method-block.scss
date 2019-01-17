@@ -43,7 +43,7 @@
 			margin-top: 48px;
 		}
 
-		.picture {
+		.single-step__picture {
 			position: absolute;
 			width: 100px;
 			height: 100px;
@@ -63,12 +63,12 @@
 			}
 		}
 
-		.title {
+		.single-step__title {
 			font-weight: normal;
 			margin-bottom: 10px;
 		}
 
-		.label {
+		.single-step__label {
 			background: $color__corporate;
 			border-radius: 5px;
 			color: #fff;
@@ -83,7 +83,7 @@
 			font-weight: bold;
 		}
 
-		.content {
+		.single-step__content {
 			text-align: left;
 			margin-top: 10px;
 		}
@@ -124,24 +124,24 @@
 			padding-top: 1px;
 			z-index: 1;
 
-			.picture,
-			.label {
+			.single-step__picture,
+			.single-step__label {
 				top: 50%;
 				transform: translateY(-50%);
 			}
 
-			.picture {
+			.single-step__picture {
 				left: -135px;
 			}
 
-			.label {
+			.single-step__label {
 				@include font-size(1.2);
 				left: -300px;
 				margin: 0;
 				padding: 5px 30px;
 			}
 
-			.title {
+			.single-step__title {
 				text-align: left;
 			}
 		}
