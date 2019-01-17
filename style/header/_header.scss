@@ -102,11 +102,11 @@
 	}
 }
 
-@import "left-mobile-nav";
-//@import "right-mobile-nav";
+@import "mobile/left-nav/left-nav";
+//@import "mobile/right-nav/right-nav";
 
-//@import 'center-aligned';
-@import 'left-aligned';
+//@import 'desktop/logo-center/logo-center';
+@import 'desktop/logo-left/logo-left';
 
 //@import 'top-header';
 @import "header-stuck";

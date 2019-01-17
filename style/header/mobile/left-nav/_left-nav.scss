@@ -8,49 +8,6 @@
 		left: $padding__content-mobile;
 	}
 
-	.site-header-cart {
-		position: absolute;
-		top: 0;
-		right: $padding__content-mobile;
-
-		a {
-			position: relative;
-
-			a:before {
-				line-height: $size__header-height-mobile;
-			}
-		}
-
-		.count {
-			@include font-size(.5);
-			position: absolute;
-			top: 10px;
-			right: -5px;
-			width: 12px;
-			height: 12px;
-			text-align: center;
-			line-height: 10px;
-			background: #fff;
-			border-radius: 50%;
-			border: 1px solid;
-		}
-	}
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-
-		.site-header-cart li {
-			padding-top: 17px;
-		}
-
-		#main-navigation {
-			margin-right: 70px;
-		}
-
-		.site-branding {
-			margin-left: 0;
-		}
-	}
-
 	&.stuck {
 		transition: left .5s ease-in-out;
 
@@ -59,10 +16,6 @@
 
 			@media screen and (min-width: breakpoint('phone')) {
 				left: 300px;
-			}
-
-			@media screen and (min-width: breakpoint('tablet-landscape')) {
-				left: 0;
 			}
 		}
 	}
@@ -104,3 +57,5 @@
 		}
 	}
 }
+
+//@import "has-cart";

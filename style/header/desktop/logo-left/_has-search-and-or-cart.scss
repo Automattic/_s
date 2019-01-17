@@ -1,0 +1,17 @@
+.site-header {
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		.site-header-cart li {
+			padding-top: 17px;
+		}
+
+		#main-navigation {
+			margin-right: 70px;
+		}
+
+		.site-branding {
+			margin-left: 0;
+		}
+	}
+}

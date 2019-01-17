@@ -5,6 +5,10 @@ form.search-form {
 	margin: 0;
 	display: flex;
 
+	label {
+		padding: 0;
+	}
+
 	input {
 		border: 1px solid #ccc;
 		padding: 8px 10px;
@@ -45,7 +49,7 @@ form.search-form {
 	border: none;
 	position: absolute;
 	top: 0;
-	right: 50px;
+	right: $padding__content-mobile;
 	cursor: pointer;
 	display: block;
 	text-indent: 0;

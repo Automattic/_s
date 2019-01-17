@@ -32,17 +32,18 @@ header/header.scss.
 Import either right or left aligned style in header/header.scss.
 * [Mobile right aligned menu](header/_right-mobile-nav.scss): 
     use it as default.\
-    `@import 'right-mobile-nav';`
+    `@import 'mobile/right-nav/right-nav';`
 * [Mobile left aligned menu](header/_left-mobile-nav.scss):
-    use it when both search toggle and cart icon exist in header.\
-    `@import 'left-mobile-nav';`
+    use it when either search toggle or cart icon or both are present.\
+    `@import 'mobile/left-nav/left-nav';`\
+    Note: import has-cart.scss (`@import 'has-cart';`) in left-nav.scss if cart icon is present.
 
 ### Desktop Menu
 Import either center or left aligned style in header/header.scss.
 * [Desktop left aligned menu](header/_left-aligned.scss)\
-    `@import 'left-aligned';`
+    `@import 'desktop/logo-left';`
 * [Desktop center aligned menu](header/_center-aligned.scss)\
-    `@import 'center-aligned';`
+    `@import 'desktop/logo-center';`
 
 ## Blocks
 
