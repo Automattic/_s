@@ -7,6 +7,10 @@
 			margin-bottom: 0;
 			margin: 0;
 
+			&.current-menu-item a {
+				border-bottom: 3px solid $color__corporate;
+			}
+
 			a {
 				@include font-size(.9);
 			}
