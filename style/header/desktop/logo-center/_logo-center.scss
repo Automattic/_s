@@ -34,6 +34,17 @@
 				margin: 0 auto;
 			}
 		}
+
+		&.stuck div#main-navigation li {
+
+			a {
+				line-height: 45px;
+			}
+
+			&.cta-item {
+				height: 33px;
+			}
+		}
 	}
 }
 
