@@ -46,6 +46,10 @@ $size__header-height-stuck: 81px;
 		#main-navigation li a {
 			line-height: $size__header-height-stuck;
 		}
+
+		.search-form.visible {
+			margin-top: -4px;
+		}
 	}
 }
 

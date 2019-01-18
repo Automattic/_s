@@ -24,5 +24,9 @@
 		#main-navigation {
 			margin-right: 105px;
 		}
+
+		form.search-form button:before {
+			right: $padding__content-desktop + 57px;
+		}
 	}
 }

@@ -20,6 +20,10 @@
 			}
 		}
 	}
+
+	form.search-form button:before {
+		right: $padding__content-desktop + 14px;
+	}
 }
 
 //@import "has-search";
