@@ -2,6 +2,7 @@
 	box-shadow: 0 0 3px rgba(0,0,0,.2);
 	position: relative;
 	padding-bottom: 40px;
+	margin-bottom: 30px;
 	background: #fff;
 
 	img {
@@ -22,6 +23,10 @@
 	.post__excerpt {
 		margin-left: 15px;
 		margin-right: 15px;
+	}
+
+	.post__header {
+		margin-top: 15px;
 	}
 
 	.post__meta {

@@ -10,38 +10,55 @@
 
 	.page-numbers {
 		color: $color__corporate;
-		width: 25px;
-		height: 25px;
+		width: 30px;
+		height: 30px;
 		display: inline-block;
 		line-height: 26px;
 		font-weight: 350;
 		vertical-align: middle;
+		border: 2px solid rgba(255,255,255,0);
+		color: $color__text-main;
+		border-radius: 8px;
+		margin: 0 5px;
 
 		&.next,
 		&.prev {
-			width: 25px;
-			height: 25px;
+			width: 30px;
+			height: 30px;
 			display: inline-block;
 			font-size: 22px;
+			background: $color__background-button;
+			box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
 
 			&:before {
-				color: $color__corporate-secondary;
+				@include font-size(.9);
+				color: $color__text-button;
+				line-height: 26px;
+				display: block;
+			}
+
+			&:hover {
+				background: $color__background-button-hover;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.35);
+			}
+
+			&:focus {
+				background-color: $color__background-button-focus;
 			}
 		}
 
 		&.next:before {
-			@include icon("\e90e");
+			@include icon-content('\e90e');
 		}
 
 		&.prev:before {
-			@include icon("\e90d");
+			@include icon-content('\e90d');
 		}
 
 		&.current {
-			background: $color__corporate;
-			color: #fff;
-			border-radius: 50%;
+			border: 2px solid $color__corporate-secondary;
 			font-weight: 600;
+			color: $color__corporate-secondary;
 		}
 	}
 }
