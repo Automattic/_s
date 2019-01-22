@@ -4,12 +4,12 @@
 		display: block;
 		padding-top: 20px;
 		padding-bottom: 20px;
-		
+
 		hr {
 			margin-left: auto;
 			margin-right: auto;
 		}
-		
+
 		> .wp-block-column:nth-of-type(2) {
 			padding-left: 0;
 			padding-right: 0;
@@ -30,13 +30,13 @@
 			}
 		}
 	}
-	
+
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		
+
 		&.wp-columns-full .alignwide {
-		    margin-right: 0;
-		    margin-left: 0;
-			
+			margin-right: 0;
+			margin-left: 0;
+
 			.wp-block-media-text__content {
 				padding-left: 8%;
 			}
