@@ -68,7 +68,7 @@ input[type="submit"],
 	}
 }
 
-.wp-block-button.is-style-secondary,
+.wp-block-button.is-style-secondary .wp-block-button__link,
 .is-style-download input[type="submit"] {
 	background: $color__background-button-secondary;
 	border-color: $color__border-button-secondary;
@@ -102,6 +102,8 @@ input[type="submit"],
 
 		.wp-block-button__link {
 			width: 100%;
+			padding-left: .5em;
+			padding-right: .5em;
 		}
 	}
 

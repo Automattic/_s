@@ -3,11 +3,12 @@
 .has-alpha-dark-background {
 	color: #fff;
 
-	ol, ul {
-
-		li:before {
-			color: #fff;
-		}
+	ol li:before,
+	ul li:before,
+	h1, h2, h3, h4, h5, h6,
+	.is-style-subtitle,
+	.is-style-pretitle {
+		color: #fff;
 	}
 
 	.wp-block-button.is-style-outline .wp-block-button__link {
@@ -27,6 +28,18 @@
 			border-color: #fff;
 		}
 	}
+}
+
+.has-primary-background {
+	background: $color__corporate;
+}
+
+.has-secondary-background {
+	background: $color__corporate-secondary;
+}
+
+.has-tertiary-background {
+	background: $color__corporate-tertiary;
 }
 
 .has-dark-background {
@@ -69,8 +82,8 @@
 
 		&.has-dark-background,
 		&.has-light-background {
-			margin: 30px -30px;
-			padding: 30px;
+			margin: 0 -30px;
+			padding: 50px 30px;
 		}
 	}
 }
