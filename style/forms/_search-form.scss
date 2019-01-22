@@ -13,6 +13,7 @@ form.search-form {
 		border: 1px solid #ccc;
 		padding: 8px 10px;
 		display: inline-block;
+		border-radius: 8px 0 0 8px;
 	}
 
 	button {
@@ -20,15 +21,16 @@ form.search-form {
 		box-shadow: none;
 		margin: 0;
 		border: none;
-		width: 42px;
-		height: 42px;
+		width: 40px;
+		height: 40px;
 		text-indent: -999px;
 		position: relative;
 		overflow: hidden;
-		margin-left: 5px;
 		display: inline-block;
 		cursor: pointer;
 		box-shadow: none;
+		border-radius: 0 8px 8px 0;
+		margin-left: -1px;
 
 		&:after {
 			@include icon-content("\e912");
