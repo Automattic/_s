@@ -171,9 +171,6 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 			)
 		);
 
-		// Load Editor Style CSS.
-		add_editor_style();
-
 		// Load AMP overrides.
 		Helpers\Theme\AMP::init();
 
@@ -182,6 +179,12 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 
 		// Load Iubenda
 		( new Helpers\Compliance\Iubenda( Helpers\Config::get( array(), 'iubenda' ) ) )->setDefault();
+
+		// Load Feedback
+		add_theme_support( 'post-formats', array( 'video', 'image', 'link' ) );
+
+		// Load Testimanial CPT
+		_svbk\Feedback::register( 'testimonial', [ 'name' => __( 'Testimonials', '_svbk' ) ] );
 	}
 endif;
 

@@ -67,3 +67,5 @@ function _svbk_blocks_editor_assets() {
 
 // Hook: Editor assets.
 add_action( 'enqueue_block_editor_assets', '_svbk_blocks_editor_assets' );
+
+require 'testimonials/index.php';

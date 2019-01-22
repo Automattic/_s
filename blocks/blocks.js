@@ -8,6 +8,37 @@
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+/**
+ * WordPress dependencies
+ */
+const {
+	registerBlockType,
+	setDefaultBlockName,
+	setFreeformContentHandlerName,
+	setUnregisteredTypeHandlerName,
+} = wp.blocks;
 
+
+/**
+ * Internal dependencies
+ */
 import './formats';
 import './styles';
+
+import * as testimonials from './testimonials';
+import * as author from './testimonials/author';
+import * as rating from './testimonials/rating';
+
+[
+	// Common blocks are grouped at the top to prioritize their display
+	// in various contexts — like the inserter and auto-complete components.
+	testimonials,
+	rating,
+	author
+].forEach( ( block ) => {
+	if ( ! block ) {
+		return;
+	}
+	const { name, settings } = block;
+	registerBlockType( name, settings );
+} );
