@@ -1,4 +1,4 @@
-.wp-block-svbk-banner {
+.has-2-columns.wp-block-svbk-banner {
 	@include background-image('post_banner-background', 'jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -23,6 +23,7 @@
 
 	.wp-block-column {
 		margin-bottom: 0;
+		padding: 0;
 	}
 
 	h3, p, .wp-block-button {
@@ -57,7 +58,6 @@
 
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 		@include background-image('post_banner-background-large', 'jpg');
-		padding: 20px 30px 25px;
 
 		.wp-block-column {
 			flex-basis: 40%;
