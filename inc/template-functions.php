@@ -17,8 +17,11 @@ function _svbk_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
+	if ( is_singular() ) {
+		// Adds `singular` to singular pages.
+		$classes[] = 'singular';
+	} else {
+		// Adds `hfeed` to non singular pages.
 		$classes[] = 'hfeed';
 	}
 
