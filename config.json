@@ -32,11 +32,56 @@
 		}
 	},
 	
+	"font_sizes": {
+		"small":{
+			"name":"Small",
+			"shortName":"S",
+			"size":19.5
+		},
+		"normal": {
+			"name":"Normal",
+			"shortName":"M",
+			"size":22
+		},
+		"large": {
+			"name":"Large",
+			"shortName":"L",
+			"size":36.5
+		},
+		"huge": {
+			"name":"Huge",
+			"shortName":"XL",
+			"size":49.5
+		}		
+	},
+	
 	"icons": {
 		"theme" : {
 			"_source": "'style/icons/style.css'",
 			"font-family": "'theme-icons'"
 		}
-	}
+	},
 	
+	"color_palette": {
+		"primary" : {
+			"name":"Principale",
+			"color":"#000"
+		},
+		"secondary": {
+			"name":"Secondary",
+			"color":"#555"
+		},
+		"dark-gray":{
+			"name":"Dark Gray",
+			"color":"#111"
+		},
+		"light-gray": {
+			"name":"Light Gray",
+			"color":"#767676"
+		},
+		"white": {
+			"name":"White",
+			"color":"#FFF"
+		}		
+	}
 }

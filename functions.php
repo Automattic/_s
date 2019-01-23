@@ -57,14 +57,17 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
-		// Add WooCommerce Support
-		add_theme_support( 'woocommerce' );
-
-		// Add Sensei Support
-		add_theme_support( 'sensei' );
-
-		// Add Gutenberg full-screen alignments support
-		add_theme_support( 'align-wide' );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'menu-1'            => esc_html__( 'Primary', '_svbk' ),
+				'menu-404'          => esc_html__( 'Not Found (404) Page', '_svbk' ),
+				'legal-menu'        => esc_html__( 'Legal Menu', '_svbk' ),
+				'account-primary'   => esc_html__( 'Account Pages Primary Menu', '_svbk' ),
+				'account-secondary' => esc_html__( 'Account Pages Secondary Menu', '_svbk' ),
+				'account-profile'   => esc_html__( 'Profile Menu', '_svbk' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -96,19 +99,8 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 			)
 		);
 
-		add_theme_support(
-			'styles-management',
-			array(
-				'default-async' => true,
-			)
-		);
-
-		add_theme_support(
-			'scripts-management',
-			array(
-				'default-defer' => true,
-			)
-		);
+		// Load Feedback
+		add_theme_support( 'post-formats', array( 'video', 'image', 'link' ) );
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
@@ -122,19 +114,71 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 			)
 		);
 
-		// Load Editor Style CSS.
-		add_editor_style();
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
 
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		add_editor_style( 'style-editor.css' );
+
+		$font_sizes = Config::get( 'font_sizes', '_svbk' );
+
+		if ( $font_sizes ) {
+			array_walk( $font_sizes, '_svbk_add_key_as_slug' );
+
+			// Add custom editor font sizes.
+			add_theme_support(
+				'editor-font-sizes',
+				$font_sizes
+			);
+		}
+
+		$palette_colors = Config::get( 'color_palette', '_svbk' );
+
+		if ( $palette_colors ) {
+			array_walk( $palette_colors, '_svbk_add_key_as_slug' );
+
+			// Editor color palette.
+			add_theme_support(
+				'editor-color-palette',
+				$palette_colors
+			);
+		}
+
+		// Add support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add support for style management
+		add_theme_support(
+			'styles-management',
+			array(
+				'default-async' => true,
+			)
+		);
+
+		// Add support for script management
+		add_theme_support(
+			'scripts-management',
+			array(
+				'default-defer' => true,
+			)
+		);
+
+		// Add WooCommerce Support
+		add_theme_support( 'woocommerce' );
+
+		// Add Sensei Support
+		add_theme_support( 'sensei' );
+
+		// Load image sizes from config file
 		$max_page_width     = Config::get( 'page_max_width', '_svbk' );
 		$image_height_ratio = 1 / ( 4 / 3 );
 
@@ -159,18 +203,6 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		$block_width['wide']    = $content_width * 1.3;
 		$block_width['full']    = $max_page_width;
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'menu-1'            => esc_html__( 'Primary', '_svbk' ),
-				'menu-404'          => esc_html__( 'Not Found (404) Page', '_svbk' ),
-				'legal-menu'        => esc_html__( 'Legal Menu', '_svbk' ),
-				'account-primary'   => esc_html__( 'Account Pages Primary Menu', '_svbk' ),
-				'account-secondary' => esc_html__( 'Account Pages Secondary Menu', '_svbk' ),
-				'account-profile'   => esc_html__( 'Profile Menu', '_svbk' ),
-			)
-		);
-
 		// Load AMP overrides.
 		Helpers\Theme\AMP::init();
 
@@ -180,28 +212,14 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		// Load Iubenda
 		( new Helpers\Compliance\Iubenda( Helpers\Config::get( array(), 'iubenda' ) ) )->setDefault();
 
-		// Load Feedback
-		add_theme_support( 'post-formats', array( 'video', 'image', 'link' ) );
-
 		// Load Testimanial CPT
 		_svbk\Feedback::register( 'testimonial', [ 'name' => __( 'Testimonials', '_svbk' ) ] );
 	}
 endif;
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function _svbk_set_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', Config::get( 'content_width', '_svbk' ) );
+function _svbk_add_key_as_slug( &$value, $slug ) {
+	$value['slug'] = $slug;
 }
-add_action( 'after_setup_theme', '_svbk_set_content_width', 0 );
 
 /**
  * Register widget area.
@@ -226,6 +244,21 @@ function _svbk_widgets_init() {
 	_svbk\Widgets\About::register();
 }
 add_action( 'widgets_init', '_svbk_widgets_init' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function _svbk_set_content_width() {
+	// This variable is intended to be overruled from themes.
+	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', Config::get( 'content_width', '_svbk' ) );
+}
+add_action( 'after_setup_theme', '_svbk_set_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -357,16 +390,6 @@ function _svbk_scripts() {
 		]
 	);
 
-	// Skip Link Focus Fix
-	Script::enqueue(
-		'_svbk-skip-link-focus-fix',
-		'/dist/js/skip-link-focus-fix.min.js',
-		[
-			'source' => 'theme',
-			'async'  => true,
-		]
-	);
-
 	// Main Theme JS file
 	Script::enqueue(
 		'_svbk-theme',
@@ -426,6 +449,24 @@ function _svbk_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function _svbk_skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', '_svbk_skip_link_focus_fix' );
 
 /**
  * Enqueue admin scripts and styles.
@@ -573,7 +614,8 @@ add_filter( 'wp_get_attachment_image_attributes', '_svbk_post_thumbnail_sizes_at
  *
  * @return void
  */
-function _svbk_domready_loader(){ ?>
+function _svbk_domready_loader() {
+	?>
   <script type="text/javascript" >
   
 	// var loaderTimeout = setTimeout( function(){
@@ -595,7 +637,7 @@ function _svbk_domready_loader(){ ?>
  </script>
 	<?php
 }
-add_action( 'wp_footer', '_svbk_domready_loader', 100 );
+add_action( 'wp_print_footer_scripts', '_svbk_domready_loader', 100 );
 
 /**
  * Removes the Jetpack Share icons from the excerpt
