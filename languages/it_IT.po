@@ -2,72 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2018-11-22 16:55+0000\n"
+"POT-Creation-Date: 2019-01-22 15:40+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-11-22 17:03+0000\n"
+"PO-Revision-Date: 2019-01-22 15:41+0000\n"
 "Last-Translator: silverbackstudio <webmaster@silverbackstudio.it>\n"
 "Language-Team: Italiano\n"
 "Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.0; wp-4.9.8"
-
-#. 1: title.
-#: comments.php:35
-#, php-format
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr "Un commento su &ldquo;%1$s&rdquo;"
-
-#. 1: comment count number, 2: title.
-#: comments.php:41
-#, php-format
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "%1$s commento su &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s commento su &ldquo;%2$s&rdquo;"
-
-#: comments.php:68
-msgid "Comments are closed."
-msgstr "I commenti sono disabilitati"
-
-#: functions.php:175
-msgid "Primary"
-msgstr "Principale"
-
-#: functions.php:176
-msgid "Not Found (404) Page"
-msgstr "Pagina 404"
-
-#: functions.php:177
-msgid "Legal Menu"
-msgstr ""
-
-#: functions.php:178
-msgid "Account Pages Primary Menu"
-msgstr ""
-
-#: functions.php:213
-msgid "Sidebar"
-msgstr "Colonna laterale"
-
-#: functions.php:215
-msgid "Add widgets here."
-msgstr "Aggiungi qui gli Widget"
-
-#: functions.php:632
-msgid "Compliance"
-msgstr "Conformità"
-
-#: functions.php:636
-msgid "Privacy Policy"
-msgstr "Informativa sulla privacy"
-
-#: functions.php:644
-msgid "Cookie Policy"
-msgstr "Informativa sui cookie"
+"X-Loco-Version: 2.2.0; wp-5.0.3"
 
 #: home.php:30 category.php:33
 msgid "All categories"
@@ -88,6 +33,93 @@ msgstr "Successivi"
 msgid "Search Results for: %s"
 msgstr "Risultati Ricerca per: %s"
 
+#: header-account.php:29 header.php:29
+msgid "Skip to content"
+msgstr "Vai la contenuto"
+
+#: header-account.php:35 header.php:35 footer.php:63
+msgid "Customize this text in Theme Customizer"
+msgstr "Modifica questo testo nel personalizzazione del tema"
+
+#: header-account.php:66 header.php:92
+msgid "Toggle Search"
+msgstr "Mostra/Nascondi Cerca"
+
+#: header-account.php:71 header.php:97
+msgid "Primary Menu"
+msgstr "Menu principale"
+
+#: header-account.php:113
+msgid "Toggle Account Menu"
+msgstr ""
+
+#: functions.php:165
+msgid "Primary"
+msgstr "Principale"
+
+#: functions.php:166
+msgid "Not Found (404) Page"
+msgstr "Pagina 404"
+
+#: functions.php:167
+msgid "Legal Menu"
+msgstr ""
+
+#: functions.php:168
+msgid "Account Pages Primary Menu"
+msgstr ""
+
+#: functions.php:169
+msgid "Account Pages Secondary Menu"
+msgstr ""
+
+#: functions.php:170
+msgid "Profile Menu"
+msgstr ""
+
+#: functions.php:188
+msgid "Testimonials"
+msgstr "Testimonianze"
+
+#: functions.php:215
+msgid "Sidebar"
+msgstr "Colonna laterale"
+
+#: functions.php:217
+msgid "Add widgets here."
+msgstr "Aggiungi qui gli Widget"
+
+#: functions.php:648
+msgid "Compliance"
+msgstr "Conformità"
+
+#: functions.php:652
+msgid "Privacy Policy"
+msgstr "Informativa sulla privacy"
+
+#: functions.php:660
+msgid "Cookie Policy"
+msgstr "Informativa sui cookie"
+
+#. 1: title.
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "Un commento su &ldquo;%1$s&rdquo;"
+
+#. 1: comment count number, 2: title.
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s commento su &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s commento su &ldquo;%2$s&rdquo;"
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr "I commenti sono disabilitati"
+
 #: 404.php:18
 msgid "That page can&rsquo;t be found."
 msgstr "Questa pagina non è stata trovata"
@@ -104,22 +136,6 @@ msgstr ""
 msgid "Back to home"
 msgstr "Torna alla home"
 
-#: header-account.php:29 header.php:29
-msgid "Skip to content"
-msgstr "Vai la contenuto"
-
-#: header-account.php:35 header.php:35 footer.php:64
-msgid "Customize this text in Theme Customizer"
-msgstr "Modifica questo testo nel personalizzazione del tema"
-
-#: header-account.php:72 header.php:92
-msgid "Toggle Search"
-msgstr "Mostra/Nascondi Cerca"
-
-#: header-account.php:77 header.php:97
-msgid "Primary Menu"
-msgstr "Menu principale"
-
 #: footer.php:58
 #, php-format
 msgid "Made with passion by %s"
@@ -129,19 +145,9 @@ msgstr "Realizzato da %s"
 msgid "Account"
 msgstr ""
 
-#. %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:28 template-parts/content-post.php:55
-#, php-format
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "Leggi <span class=\"screen-reader-text\"> \"%s\"</span>"
-
-#: template-parts/content.php:41 template-parts/content-post.php:68
-msgid "Pages:"
-msgstr "Pagine:"
-
-#: template-parts/preview.php:32
-msgid "Read More"
-msgstr "Leggi di piú"
+#: amp/footer.php:12
+msgid "Back to top"
+msgstr "Torna su"
 
 #. used between list items, there is a space after the comma
 #: template-parts/content-post.php:17 template-parts/content-post.php:79
@@ -150,10 +156,39 @@ msgctxt "list item separator"
 msgid ", "
 msgstr ", "
 
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content-post.php:55
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Leggi <span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content-post.php:68
+msgid "Pages:"
+msgstr "Pagine:"
+
 #: template-parts/content-post.php:82 inc/template-tags.php:102
 #, php-format
 msgid "Tagged %1$s"
 msgstr "Taggato in %1$s"
+
+#: template-parts/content.php:36
+#: template-parts/testimonials/preview-testimonial--video.php:42
+#: template-parts/testimonials/content-testimonial--link.php:37
+#: template-parts/testimonials/content-testimonial--video.php:39
+#: template-parts/testimonials/preview-testimonial--image.php:35
+#: template-parts/testimonials/content-testimonial--image.php:35
+#: template-parts/testimonials/preview-testimonial.php:35
+#: template-parts/testimonials/preview-testimonial--link.php:37
+msgid "Rating"
+msgstr ""
+
+#: template-parts/content.php:48
+msgid "Show all"
+msgstr ""
+
+#: template-parts/content.php:49
+msgid "Hide all"
+msgstr ""
 
 #: template-parts/pagination-post.php:10
 msgid "Previous"
@@ -190,6 +225,10 @@ msgstr ""
 "Non siamo riusciti a trovare quello che cercavi. Ti consigliamo di "
 "utilizzare il campo di ricerca."
 
+#: template-parts/preview.php:32
+msgid "Read More"
+msgstr "Leggi di piú"
+
 #: sensei/learner-profile.php:63
 msgid "Active Courses"
 msgstr "Corsi Attivi"
@@ -198,135 +237,138 @@ msgstr "Corsi Attivi"
 msgid "Completed Courses"
 msgstr "Corsi Completati"
 
-#: amp/footer.php:12
-msgid "Back to top"
-msgstr "Torna su"
+#: classes/class-affiliatewp.php:33
+msgid "Affiliate Menu Label"
+msgstr ""
 
-#: inc/woocommerce.php:27
-msgid "Woocommerce My Account"
-msgstr "Account WooCommerce"
+#: classes/class-affiliatewp.php:35
+msgid "The label for Courses in account menu"
+msgstr ""
 
-#: inc/woocommerce.php:28
-msgid "Woocommerce Profile"
-msgstr "Profilo WooCommerce"
+#: classes/class-affiliatewp.php:37 classes/class-affiliatewp.php:75
+#: classes/class-affiliatewp.php:92
+msgid "Affiliate"
+msgstr ""
 
-#: inc/woocommerce.php:107
-msgid "Where?"
-msgstr "Dove?"
+#: classes/class-affiliatewp.php:41
+msgid "Affiliate URL Instructions"
+msgstr ""
 
-#: inc/woocommerce.php:108
+#: classes/class-affiliatewp.php:43
+msgid "Instructions to print before affiliate URL"
+msgstr ""
+
+#: classes/class-affiliatewp.php:48
+msgid "Affiliate URL Generator Instructions"
+msgstr ""
+
+#: classes/class-affiliatewp.php:50
+msgid "Instructions printed before the url generator"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:48
+msgid "Theme Integration"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:49
+msgid "Theme options for woocommerce"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:85
+msgid "Not set"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:89
+msgid "Dashboard Content Page"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:91
 msgid ""
-"If you use Mastercard, Visa and Diners, \n"
-"\t            \tthe security code is shown on the back of your credit card "
-"near \n"
-"\t            \tthe space reserved for your signature, and consists of 3 "
-"digits. \n"
-"\t            \tIf you use American Express, the secure code is placed on "
-"the \n"
-"\t            \tfront of your card and consists of 4 digits."
-msgstr ""
-"Se utilizzi Mastercard, Visa and Diners, il codice di sicurezza è mostrato "
-"nel retro della tua carta di credito vicino allo spazio per la firma ed è "
-"formato da 3 caratteri. Se utilizzi l'American Express, il codice di "
-"sicurezza è situato sul davanti della tua carta ed è formato da 4 cifre."
-
-#: inc/woocommerce.php:117
-msgid "Close"
-msgstr "Chiudi"
-
-#: inc/woocommerce.php:152
-msgid "Shop Sidebar"
-msgstr "Barra laterale negozio"
-
-#: inc/woocommerce.php:154
-msgid "This widgets will be shown in the shop sidebar"
-msgstr "Questi widget verranno mostrati accanto ai prodotti nel negozio"
-
-#: inc/woocommerce.php:164
-msgid "Woocommerce Account Sidebar"
+"Select the page with the content to be shown in MyAccount Dashboard page"
 msgstr ""
 
-#: inc/woocommerce.php:166
+#: classes/class-wc-integration-silverback.php:97
+msgid "Checkout Warranty Text"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:99
+msgid "The content for the checkout warranty box"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:104
+msgid "Order Thankyou Footer"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:106
+msgid "A text shown after the order details in the order thankyou page"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:111
+msgid "Disable Details in Order Thankyou"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:113
+msgid "Hide the order details table in order thankyou page"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:118
+msgid "Show checkout e-mail validation field"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:120
+msgid "Show the repeat email field in checkout form"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:125
+msgid "Debug Log"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:127
+msgid "Enable logging"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:129
+msgid "Log events such as API requests"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:196
+msgid "Free"
+msgstr "Gratis"
+
+#: classes/class-wc-integration-silverback.php:200
+msgctxt "original value"
+msgid "Value"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:253
+msgid "Phone (recommended)"
+msgstr "Telefono (consigliato)"
+
+#: classes/class-wc-integration-silverback.php:278
+msgid "Profile Image"
+msgstr "Immagine del profilo"
+
+#: classes/class-wc-integration-silverback.php:291
+msgid "Safe Payments"
+msgstr "Pagamenti Sicuri"
+
+#: classes/class-wc-integration-silverback.php:297
+msgid "Choose payment method"
+msgstr "Scegli il metodo di pagamento"
+
+#: classes/class-wc-integration-silverback.php:308
+msgid "Repeat your email address"
+msgstr "Ripeti il tuo indirizzo e-mail"
+
+#: classes/class-wc-integration-silverback.php:331
+msgid "The email addresses you entered are not equal"
+msgstr "Gli indirizzi email che hai inserito non sono uguali"
+
+#: classes/class-wc-integration-silverback.php:361
 msgid ""
-"Widgets in this area will be shown in all the WooCommerce accounts pages"
-msgstr ""
-
-#: inc/woocommerce.php:387
-msgid "View your shopping cart"
-msgstr "Visualizza il tuo carrello"
-
-#. %d number of items in the mini cart
-#: inc/woocommerce.php:391
-#, php-format
-msgid "%d <span class=\"screen-reader-text\">item</span>"
-msgid_plural "%d <span class=\"screen-reader-text\">items</span>"
-msgstr[0] "%d <span class=\"screen-reader-text\">prodotto</span>"
-msgstr[1] "%d <span class=\"screen-reader-text\">prodotti</span>"
-
-#: inc/woocommerce.php:483
-msgid "Go to My Account"
-msgstr "Vai alla tua area riservata"
-
-#: inc/woocommerce.php:500
-msgid "Login"
-msgstr "Accedi"
-
-#: inc/sensei.php:47
-msgid "Sensei"
-msgstr ""
-
-#: inc/sensei.php:66
-msgid "Sensei Sidebar"
-msgstr ""
-
-#: inc/sensei.php:68
-msgid "This widgets will be shown in all LMS pages"
-msgstr ""
-
-#: inc/sensei.php:87
-msgid "Toggle Courses Menu"
-msgstr "Mostra il menu dei corsi"
-
-#: inc/sensei.php:126
-msgid "View Course"
-msgstr "Visualizza Corso"
-
-#: inc/sensei.php:157
-msgid "Completed"
-msgstr "Completato"
-
-#: inc/sensei.php:159
-msgid "Lesson Locked"
-msgstr "Lezione Bloccata"
-
-#: inc/sensei.php:161
-msgid "Go to Lesson"
-msgstr "Vai alla lezione"
-
-#: inc/sensei.php:184
-msgid "Teacher"
-msgstr "Docente"
-
-#: inc/sensei.php:214
-msgid "Take the quiz to complete the lesson"
-msgstr "Fail il questionario per completare la lezione"
-
-#: inc/sensei.php:215
-msgid ""
-"To check the skills you have acquired and complete the lesson, click on the "
-"button and immediately access the quiz."
-msgstr ""
-"Per verificare le competenze che hai acquisito e completare la lezione, "
-"clicca sul pulsante e accedi immediatamente al quiz."
-
-#: inc/sensei.php:237
-msgctxt "lesson comment submit label"
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/sensei.php:241
-msgctxt "course comment submit label"
-msgid "Leave a comment"
+"The <b>billing address</b> is used to compose the invoices. The <b>shipping "
+"address</b> will be used to send you phisical products that you may purchase."
+" You will be able to change both addresses durig the checkout process."
 msgstr ""
 
 #: inc/customizer.php:19
@@ -415,6 +457,20 @@ msgstr "Telefono"
 msgid "Email"
 msgstr "Indirizzo E-mail"
 
+#: inc/Feedback.php:24
+msgid "Feedback"
+msgstr ""
+
+#: inc/Feedback.php:83
+#, php-format
+msgid "%s Categories"
+msgstr ""
+
+#: inc/Feedback.php:84
+#, php-format
+msgid "%s Category"
+msgstr ""
+
 #: inc/shortcode-ui.php:40
 msgid ""
 "Shortcode UI plugin must be active for Shortcode UI Example plugin to "
@@ -462,201 +518,150 @@ msgctxt "post reading time label"
 msgid "Reading"
 msgstr "Tempo di lettura"
 
-#: classes/class-affiliatewp.php:33
-msgid "Affiliate Menu Label"
+#: inc/sensei.php:48
+msgid "Sensei Secondary Menu"
 msgstr ""
 
-#: classes/class-affiliatewp.php:35
-msgid "The label for Courses in account menu"
+#: inc/sensei.php:71
+msgid "Sensei Sidebar"
 msgstr ""
 
-#: classes/class-affiliatewp.php:37 classes/class-affiliatewp.php:75
-#: classes/class-affiliatewp.php:92
-msgid "Affiliate"
+#: inc/sensei.php:73
+msgid "This widgets will be shown in all LMS pages"
 msgstr ""
 
-#: classes/class-affiliatewp.php:41
-msgid "Affiliate URL Instructions"
-msgstr ""
+#: inc/sensei.php:92
+msgid "Toggle Courses Menu"
+msgstr "Mostra il menu dei corsi"
 
-#: classes/class-affiliatewp.php:43
-msgid "Instructions to print before affiliate URL"
-msgstr ""
+#: inc/sensei.php:130
+msgid "View Course"
+msgstr "Visualizza Corso"
 
-#: classes/class-affiliatewp.php:48
-msgid "Affiliate URL Generator Instructions"
-msgstr ""
+#: inc/sensei.php:161
+msgid "Completed"
+msgstr "Completato"
 
-#: classes/class-affiliatewp.php:50
-msgid "Instructions printed before the url generator"
-msgstr ""
+#: inc/sensei.php:163
+msgid "Lesson Locked"
+msgstr "Lezione Bloccata"
 
-#: classes/class-wc-integration-silverback.php:49
-msgid "Theme Integration"
-msgstr ""
+#: inc/sensei.php:165
+msgid "Go to Lesson"
+msgstr "Vai alla lezione"
 
-#: classes/class-wc-integration-silverback.php:50
-msgid "Theme options for woocommerce"
-msgstr ""
+#: inc/sensei.php:192
+msgid "Teacher"
+msgstr "Docente"
 
-#: classes/class-wc-integration-silverback.php:87
-msgid "Not set"
-msgstr ""
+#: inc/sensei.php:226
+msgid "Take the quiz to complete the lesson"
+msgstr "Fail il questionario per completare la lezione"
 
-#: classes/class-wc-integration-silverback.php:91
-msgid "Dashboard Content Page"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:93
+#: inc/sensei.php:227
 msgid ""
-"Select the page with the content to be shown in MyAccount Dashboard page"
+"To check the skills you have acquired and complete the lesson, click on the "
+"button and immediately access the quiz."
+msgstr ""
+"Per verificare le competenze che hai acquisito e completare la lezione, "
+"clicca sul pulsante e accedi immediatamente al quiz."
+
+#: inc/sensei.php:249
+msgctxt "lesson comment submit label"
+msgid "Leave a comment"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:99
-msgid "Checkout Warranty Text"
+#: inc/sensei.php:253
+msgctxt "course comment submit label"
+msgid "Leave a comment"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:101
-msgid "The content for the checkout warranty box"
-msgstr ""
+#: inc/woocommerce.php:102
+msgid "Where?"
+msgstr "Dove?"
 
-#: classes/class-wc-integration-silverback.php:106
-msgid "Order Thankyou Footer"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:108
-msgid "A text shown after the order details in the order thankyou page"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:113
-msgid "Disable Details in Order Thankyou"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:115
-msgid "Hide the order details table in order thankyou page"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:120
-msgid "Show checkout e-mail validation field"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:122
-msgid "Show the repeat email field in checkout form"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:127
-msgid "Phone field"
-msgstr "Campo Telefono"
-
-#: classes/class-wc-integration-silverback.php:129
-msgid "Choose if you want to show optional or required phone field in checkout"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:133
-msgid "Hide"
-msgstr "Nascondi"
-
-#: classes/class-wc-integration-silverback.php:134
-msgid "Show"
-msgstr "Mostra"
-
-#: classes/class-wc-integration-silverback.php:135
-msgid "Require"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:139
-msgid "Debug Log"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:141
-msgid "Enable logging"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:143
-msgid "Log events such as API requests"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:211
-msgid "Free"
-msgstr "Gratis"
-
-#: classes/class-wc-integration-silverback.php:215
-msgctxt "original value"
-msgid "Value"
-msgstr ""
-
-#: classes/class-wc-integration-silverback.php:271
-msgid "Phone (recommended)"
-msgstr "Telefono (consigliato)"
-
-#: classes/class-wc-integration-silverback.php:298
-msgid "Profile Image"
-msgstr "Immagine del profilo"
-
-#: classes/class-wc-integration-silverback.php:311
-msgid "Safe Payments"
-msgstr "Pagamenti Sicuri"
-
-#: classes/class-wc-integration-silverback.php:317
-msgid "Choose payment method"
-msgstr "Scegli il metodo di pagamento"
-
-#: classes/class-wc-integration-silverback.php:328
-msgid "Repeat your email address"
-msgstr "Ripeti il tuo indirizzo e-mail"
-
-#: classes/class-wc-integration-silverback.php:346
-msgid "The email addresses you entered are not equal"
-msgstr "Gli indirizzi email che hai inserito non sono uguali"
-
-#: classes/class-wc-integration-silverback.php:376
+#: inc/woocommerce.php:103
 msgid ""
-"The <b>billing address</b> is used to compose the invoices. The <b>shipping "
-"address</b> will be used to send you phisical products that you may purchase."
-" You will be able to change both addresses durig the checkout process."
+"If you use Mastercard, Visa and Diners, \n"
+"\t            \tthe security code is shown on the back of your credit card "
+"near \n"
+"\t            \tthe space reserved for your signature, and consists of 3 "
+"digits. \n"
+"\t            \tIf you use American Express, the secure code is placed on "
+"the \n"
+"\t            \tfront of your card and consists of 4 digits."
+msgstr ""
+"Se utilizzi Mastercard, Visa and Diners, il codice di sicurezza è mostrato "
+"nel retro della tua carta di credito vicino allo spazio per la firma ed è "
+"formato da 3 caratteri. Se utilizzi l'American Express, il codice di "
+"sicurezza è situato sul davanti della tua carta ed è formato da 4 cifre."
+
+#: inc/woocommerce.php:112
+msgid "Close"
+msgstr "Chiudi"
+
+#: inc/woocommerce.php:147
+msgid "Shop Sidebar"
+msgstr "Barra laterale negozio"
+
+#: inc/woocommerce.php:149
+msgid "This widgets will be shown in the shop sidebar"
+msgstr "Questi widget verranno mostrati accanto ai prodotti nel negozio"
+
+#: inc/woocommerce.php:159
+msgid "Woocommerce Account Sidebar"
 msgstr ""
 
-#: woocommerce/myaccount/navigation.php:25
-msgid "Toggle Account Menu"
+#: inc/woocommerce.php:161
+msgid ""
+"Widgets in this area will be shown in all the WooCommerce accounts pages"
 msgstr ""
 
-#: sensei/globals/pagination-lesson.php:59
+#: inc/woocommerce.php:386
+msgid "View your shopping cart"
+msgstr "Visualizza il tuo carrello"
+
+#. %d number of items in the mini cart
+#: inc/woocommerce.php:390
+#, php-format
+msgid "%d <span class=\"screen-reader-text\">item</span>"
+msgid_plural "%d <span class=\"screen-reader-text\">items</span>"
+msgstr[0] "%d <span class=\"screen-reader-text\">prodotto</span>"
+msgstr[1] "%d <span class=\"screen-reader-text\">prodotti</span>"
+
+#: inc/woocommerce.php:486
+msgid "Go to My Account"
+msgstr "Vai alla tua area riservata"
+
+#: inc/woocommerce.php:503
+msgid "Login"
+msgstr "Accedi"
+
+#: blocks/testimonials/index.php:92 blocks/testimonials/index.php:226
+msgid "Testimonial content"
+msgstr ""
+
+#: blocks/testimonials/index.php:164
+msgid "Testimonials Abstract"
+msgstr ""
+
+#: blocks/testimonials/index.php:177
+msgid "Link to external resource"
+msgstr ""
+
+#: blocks/testimonials/index.php:332
+msgid "Show more testimonials"
+msgstr ""
+
 #: sensei/globals/pagination-quiz.php:58
+#: sensei/globals/pagination-lesson.php:59
 msgid "Next Lesson"
 msgstr "Prossima Lezione"
 
-#: sensei/globals/pagination-lesson.php:61
 #: sensei/globals/pagination-quiz.php:60
+#: sensei/globals/pagination-lesson.php:61
 msgid "View next lesson"
 msgstr "Vedi prossima lezione"
-
-#: inc/Widgets/About.php:12 inc/Widgets/About.php:17
-msgid "About"
-msgstr ""
-
-#: inc/Widgets/About.php:32 inc/Widgets/LeadMagnet.php:32
-msgid "New title"
-msgstr ""
-
-#: inc/Widgets/About.php:32 inc/Widgets/LeadMagnet.php:32
-msgid "Title:"
-msgstr ""
-
-#: inc/Widgets/About.php:33 inc/Widgets/LeadMagnet.php:34
-msgid "Image:"
-msgstr ""
-
-#: inc/Widgets/About.php:34 inc/Widgets/LeadMagnet.php:35
-msgid "New description"
-msgstr ""
-
-#: inc/Widgets/About.php:34 inc/Widgets/LeadMagnet.php:35
-msgid "Description:"
-msgstr ""
-
-#: inc/Widgets/About.php:36
-msgid "Menu:"
-msgstr ""
 
 #: inc/Widgets/LeadMagnet.php:12
 msgid "Lead Magnet"
@@ -666,13 +671,33 @@ msgstr "Lead Magnet"
 msgid "Shows a title, image and a call to action"
 msgstr ""
 
+#: inc/Widgets/LeadMagnet.php:32 inc/Widgets/About.php:32
+msgid "New title"
+msgstr "Nuovo titolo"
+
+#: inc/Widgets/LeadMagnet.php:32 inc/Widgets/About.php:32
+msgid "Title:"
+msgstr "Titolo:"
+
 #: inc/Widgets/LeadMagnet.php:33
 msgid "New subtitle"
-msgstr ""
+msgstr "Nuovo Sottotitolo"
 
 #: inc/Widgets/LeadMagnet.php:33
 msgid "Subtitle:"
-msgstr ""
+msgstr "Sottotitolo:"
+
+#: inc/Widgets/LeadMagnet.php:34 inc/Widgets/About.php:33
+msgid "Image:"
+msgstr "Immagine:"
+
+#: inc/Widgets/LeadMagnet.php:35 inc/Widgets/About.php:34
+msgid "New description"
+msgstr "Nuova descrizione"
+
+#: inc/Widgets/LeadMagnet.php:35 inc/Widgets/About.php:34
+msgid "Description:"
+msgstr "Descrizione:"
 
 #: inc/Widgets/LeadMagnet.php:36
 msgid "Button Link:"
@@ -688,19 +713,19 @@ msgstr ""
 
 #: inc/Widgets/LeadMagnet.php:38
 msgid "Click here"
-msgstr ""
+msgstr "Clicca qui"
 
 #: inc/Widgets/LeadMagnet.php:38
 msgid "Button Label:"
 msgstr ""
 
-#: vendor/silverbackstudio/wp-widgets/src/Base.php:220
-msgid "&mdash; Select &mdash;"
+#: inc/Widgets/About.php:12 inc/Widgets/About.php:17
+msgid "About"
 msgstr ""
 
-#: vendor/silverbackstudio/wp-widgets/src/Base.php:230
-msgid "Edit Menu"
-msgstr ""
+#: inc/Widgets/About.php:36
+msgid "Menu:"
+msgstr "Menu:"
 
 #. Name of the theme
 msgid "_svbk"
