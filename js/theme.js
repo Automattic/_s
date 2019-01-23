@@ -47,6 +47,15 @@
     $(this).next('.schema-faq-answer').slideToggle();
   });
   
+  /* Animations */
+  var waypoints = $('.animate').waypoint({
+    handler: function() {
+      $(this.element).addClass('animated');
+    },
+    offset: '70%',
+    triggerOnce: true
+  });
+  
   /* Highlight animation */
   var waypoints = $('.highlight').waypoint({
     handler: function() {
