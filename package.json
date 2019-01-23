@@ -13,8 +13,12 @@
   "author": "Silverback Studio",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/preset-env": "^7.2.3",
     "autoprefixer": "^6.7.0",
+    "babel-plugin-lodash": "^3.3.4",
     "browser-sync": "^2.16.0",
+    "classnames": "^2.2.6",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-avoidfoit": "^0.1.2",
@@ -23,17 +27,17 @@
     "gulp-minify": "^3.1.0",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.4.0",
-    "gulp-responsive": "^2.11.0",
+    "gulp-responsive": "^2.12.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^1.6.0",
-    "lodash": "^4.17.11",
-    "node-sass": "^4.9.4",
+    "lodash": "4.17.10",
+    "node-sass": "^4.11.0",
     "node-sass-json-importer": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "cgb-scripts": "^1.11.0",
-    "fg-loadcss": "^2.0.1"
+    "cgb-scripts": "^1.14.0",
+    "fg-loadcss": "^2.1.0"
   }
 }
