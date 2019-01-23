@@ -565,11 +565,11 @@ add_filter( 'woocommerce_queued_js', array( Script::class, 'defer_inline_script'
 
 /**
  * Remove Jetpack publicize support for Products to patch an issue with Jetpack 6.8
- * 
+ *
  * See: https://github.com/Automattic/jetpack/issues/10727
  */
 function _svbk_rm_jetpack_publicize_woocommerce() {
-    remove_post_type_support( 'product', 'publicize' );
+	remove_post_type_support( 'product', 'publicize' );
 }
- 
+
 add_action( 'init', '_svbk_rm_jetpack_publicize_woocommerce' );
