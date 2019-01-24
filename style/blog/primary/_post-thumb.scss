@@ -95,18 +95,27 @@
 
 	.readmore {
 		position: absolute;
-		background: $color__corporate;
-		color: #fff;
 		bottom: 0;
 		right: 0;
-		padding: .4em 1em;
+		padding: .8em 1em;
 		font-weight: bold;
+		text-transform: uppercase;
+		border-radius: 8px 0 0 0;
+		transition: background .15s ease-in-out;
 
 		&:after {
 			@include icon-content("\e922");
 			@include font-size(.8);
 			font-weight: normal;
 			margin-left: 10px;
+		}
+		
+		&:hover {
+			background: rgba(2,99,173,.08);
+		}
+		
+		&:focus {
+			background: rgba(2,99,173,.15);
 		}
 	}
 }

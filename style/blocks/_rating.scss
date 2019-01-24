@@ -1,0 +1,35 @@
+.wp-block-svbk-rating {
+    display: inline-block;
+    width: 95px;
+    height: 18px;
+    text-indent: -999px;
+    overflow: hidden;
+    position: relative;
+    letter-spacing: 3px;
+    
+    &:before,
+    &:after {
+        text-indent: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 18px;
+    }
+    
+    &:before {
+        @include icon-content('\e910 \e910 \e910 \e910 \e910');
+        color: #ccc;
+    }
+    
+    &:after {
+        color: #f4df42;
+    }
+    
+    @for $i from 1 through 5 {
+        
+        &.rating-#{$i}:after {
+            @include font( 'icons' );
+            @include repeat('\e910', $i);
+        }
+    }
+}

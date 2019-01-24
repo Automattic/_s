@@ -4,7 +4,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.wp-block-button .wp-block-button__link {
+.wp-block-button .wp-block-button__link,
+.loadmore__button {
 	border: 1px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;

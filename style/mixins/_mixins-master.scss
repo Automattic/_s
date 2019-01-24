@@ -92,6 +92,14 @@
 	content: "#{$hex}";
 }
 
+@mixin repeat($character, $n) {
+	$c:"";
+	@for $i from 1 through $n {
+		$c: $c + $character;
+	}
+	content: $c;
+}
+
 //Breakpoint shorthand function
 @function breakpoint( $breakpoint ) {
 
