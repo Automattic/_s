@@ -31,9 +31,12 @@ class Feedback {
 		Utils\ObjectUtils::configure( $this, $properties );
 
 		add_action( 'init', array( $this, 'init' ), 10 );
-		add_filter( 'query_vars', array( static::class, 'public_query_vars' ) );
-		add_filter( 'request', array( $this, 'query_vars' ) );
-
+		
+		if ( ! is_admin() ) {
+			add_filter( 'query_vars', array( static::class, 'public_query_vars' ) );
+			add_filter( 'request', array( $this, 'query_vars' ) );
+		}
+		
 		// Main render hook
 		add_filter( "feedback_render_{$this->post_type}", array( $this, 'render' ), 10, 2 );
 	}
