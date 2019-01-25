@@ -1,4 +1,7 @@
 .wp-block-svbk-testimonials {
+	margin-left: -$padding__content-mobile;
+	margin-right: -$padding__content-mobile;
+	padding: 30px $padding__content-mobile;
 	
 	&.loadmore > p {
 		text-align: center;
@@ -14,9 +17,89 @@
 		@include clearfix-after();
 	}
 	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		margin-left: -$padding__content-desktop;
+		margin-right: -$padding__content-desktop;
+		padding: 30px $padding__content-desktop;
+	}
+	
+	.testimonial {
+		color: $color__text-main;
+	}
+	
 	&.is-style-full {
+		padding-bottom: 0;
 	
 		.testimonial {
+			
+			&.format-standard {
+				background: none;
+				box-shadow: none;
+				margin-top: 0;
+				margin-bottom: 0;
+				padding: 30px 0;
+				
+				.testimonial__author-image {
+					position: relative;
+					display: inline-block;
+					
+					img {
+						margin-top: 0;
+					}
+					
+					&:before,
+					&:after {
+						@include font-size(1.8);
+						position: absolute;
+						z-index: 1;
+						color: $color__corporate-secondary;
+					}
+					
+					&:before {
+						@include icon-content('\e925');
+						top: 10px;
+						left: 10px;
+					}
+					
+					&:after {
+						@include icon-content('\e924');
+						bottom: 10px;
+						right: 10px;
+					}
+				}
+				
+				.testimonial__content {
+					background: #fff;
+					box-shadow: 0 1px 5px rgba(0,0,0,.2);
+					border-radius: 8px;
+					padding: 20px;
+					position: relative;
+					margin-top: 20px;
+					
+					&:before {
+						content: "";
+						display: block;
+						height: 40px;
+						width: 70px;
+						background-image: url("images/testimonial-bubble-arrow-top.png");
+						background-size: contain;
+						background-position: bottom;
+						background-repeat: no-repeat;
+						position: absolute;
+						top: -40px;
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+				
+				&:nth-of-type(even) {
+					background: rgba(0,0,0,.05);
+					border-radius: 0;
+					padding: 30px $padding__content-mobile;
+					margin-left: -$padding__content-mobile;
+					margin-right: -$padding__content-mobile;
+				}
+			}
 			
 			@media screen and (min-width: 600px) {
 				padding: 0;
@@ -26,27 +109,23 @@
 					background: none;
 					margin-top: 0;
 					
-					.testimonial__author-image {
-						position: relative;
+					&:nth-of-type(even) {
 						
-						&:before,
-						&:after {
-							@include font-size(1.8);
-							position: absolute;
-							z-index: 1;
-							color: $color__corporate-secondary;
+						.testimonial__meta {
+							order: 1;
+							padding-right: 0;
+							padding-left: 50px;
 						}
 						
-						&:before {
-							@include icon-content('\e925');
-							top: 10px;
-							left: 10px;
-						}
-						
-						&:after {
-							@include icon-content('\e924');
-							bottom: 10px;
-							right: 10px;
+						.testimonial__content {
+							order: 0;
+							
+							&:before {
+								right: -40px;
+								left: auto;
+								background-position: center left;
+								background-image: url("images/testimonial-bubble-arrow-right.png");
+							}
 						}
 					}
 					
@@ -66,22 +145,13 @@
 					}
 					
 					.testimonial__content {
-						background: #fff;
-						box-shadow: 0 1px 5px rgba(0,0,0,.2);
-						border-radius: 8px;
 						padding: 20px 30px;
-						position: relative;
 						
 						&:before {
-							content: "";
-							display: block;
+							background-image: url("images/testimonial-bubble-arrow-left.png");
 							width: 40px;
 							height: 70px;
-							background-image: url("images/testimonial-bubble-arrow.png");
-							background-size: contain;
 							background-position: right center;
-							background-repeat: no-repeat;
-							position: absolute;
 							left: -40px;
 							top: 50%;
 							transform: translateY(-50%);
@@ -153,9 +223,16 @@
 						flex-basis: 75%;
 						padding: 30px 40px;
 					}
+					
+					&:nth-of-type(even) {
+						margin-left: -$padding__content-desktop;
+						margin-right: -$padding__content-desktop;
+						padding-left: $padding__content-desktop;
+						padding-right: $padding__content-desktop;
+					}
 				}
 			}
-		}	
+		}
 	}
 	
 	&.is-style-small {
@@ -423,6 +500,11 @@
 .testimonial {
 	padding: 0;
 	line-height: 1.5em;
+	font-style: normal;
+	
+	p {
+		font-style: normal;
+	}
 
 	figure {
 		margin: 0;
