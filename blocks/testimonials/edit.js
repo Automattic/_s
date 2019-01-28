@@ -188,7 +188,6 @@ class TestimonialsEdit extends Component {
 								`type-${ post.type }`,
 								`format-${ post.format }`,
 							]) } >
-							{ console.log(post) }
 							<a href={ post.link } target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
 						</div>
 					) }
