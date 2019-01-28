@@ -21,7 +21,7 @@
 				"letter-spacing": "0.5px",
 				"word-spacing": "-0.45px"
 			},
-			"font-family": "'Open Sans'"
+			"font-family": "Roboto"
 		},
 		"headings" : {
 			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700'",
@@ -69,11 +69,11 @@
 		},
 		"secondary": {
 			"name":"Secondary",
-			"color":"#555"
+			"color":"#777"
 		},
 		"dark-gray":{
 			"name":"Dark Gray",
-			"color":"#111"
+			"color":"#444"
 		},
 		"light-gray": {
 			"name":"Light Gray",

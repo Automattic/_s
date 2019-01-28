@@ -129,27 +129,24 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
+		// Add custom editor font sizes.
 		$font_sizes = Config::get( 'font_sizes', '_svbk' );
 
 		if ( $font_sizes ) {
-			array_walk( $font_sizes, '_svbk_add_key_as_slug' );
-
-			// Add custom editor font sizes.
 			add_theme_support(
 				'editor-font-sizes',
-				$font_sizes
+				_svbk_editor_support_from_config($font_sizes)
 			);
 		}
 
+		// Editor color palette.
 		$palette_colors = Config::get( 'color_palette', '_svbk' );
 
 		if ( $palette_colors ) {
-			array_walk( $palette_colors, '_svbk_add_key_as_slug' );
-
-			// Editor color palette.
+			
 			add_theme_support(
 				'editor-color-palette',
-				$palette_colors
+				_svbk_editor_support_from_config( $palette_colors )
 			);
 		}
 
@@ -217,8 +214,39 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 	}
 endif;
 
-function _svbk_add_key_as_slug( &$value, $slug ) {
-	$value['slug'] = $slug;
+/**
+ * Converts the config array to be used with add_theme_support options for 
+ * blocks editor parameters
+ * 
+ * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/
+ *
+ * @param array $options The associative array to convert with format:
+ *  {
+ *		"slug1" : {
+ *			"param1":"Param 1",
+ *			"param2":"Param 2"
+ *		},
+ *	...
+ *	}* 
+ * @return array The converted format 
+ *	[
+ *		{
+ *			"param1":"Param 1",
+ *			"param2":"Param 2"
+ *			"slug": "slug1",
+ *		},
+ *	...
+ *	] 
+ */
+function _svbk_editor_support_from_config( $options ) {
+	
+	$supports = array();
+	
+	foreach( $options as $slug => $option ){
+		$supports[] = array_merge( array('slug' => $slug ), $option ) ;
+	}
+	
+	return $supports;
 }
 
 /**
