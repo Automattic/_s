@@ -774,6 +774,20 @@ function _svbk_excerpt_length( $lenght ) {
 add_filter( 'excerpt_length', '_svbk_excerpt_length', 10 );
 
 /**
+ * Disable blocks wpautop() reinit. Messes with dynamic blocks
+ */
+function _svbk_disable_blocks_wpautop_restore( $content ) {
+	$priority = has_filter( 'the_content', '_restore_wpautop_hook' );
+	if( false !== $priority ) {
+		remove_filter( 'the_content', '_restore_wpautop_hook', $priority );
+	}
+	
+	return $content;
+}
+
+add_action( 'the_content', '_svbk_disable_blocks_wpautop_restore' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
