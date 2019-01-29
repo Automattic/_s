@@ -7,6 +7,52 @@ function _svbk_register_testimonials_blocks() {
 	register_block_type(
 		'svbk/testimonials',
 		array(
+			'attributes' => array(
+				'align'      => array(
+					'type' => 'string',
+				),
+				'categories'      => array(
+					'type' => 'string',
+				),
+				'className'       => array(
+					'type' => 'string',
+				),
+				'postsToShow'     => array(
+					'type'    => 'number',
+					'default' => 5,
+				),
+				'displayPostDate' => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),
+				'postLayout'      => array(
+					'type'    => 'string',
+					'default' => 'list',
+				),
+				'columns'         => array(
+					'type'    => 'number',
+					'default' => 3,
+				),
+				'align'           => array(
+					'type' => 'string',
+				),
+				'order'           => array(
+					'type'    => 'string',
+					'default' => 'desc',
+				),
+				'orderBy'         => array(
+					'type'    => 'string',
+					'default' => 'date',
+				),
+				'offset'         => array(
+					'type'    => 'number',
+					'default' => 3,
+				),	
+				'loadMore'         => array(
+					'type'    => 'boolean',
+					'default' => false,
+				),					
+			),			
 			'render_callback' => '_svbk_render_testimonials_block',
 			'editor_script'   => '_svbk-blocks',
 		)

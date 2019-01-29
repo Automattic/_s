@@ -60,7 +60,6 @@ export const settings = {
 		columns: {
 			type: "number", 
 			default: 3
-			
 		},
 		order: {
 			type: "string", 

@@ -164,6 +164,8 @@ class Feedback {
 			$feedback_query->the_post();
 			get_template_part( 'template-parts/content', get_post_type( $feedback_query->post ) );
 		endwhile;
+		
+		wp_reset_postdata(); 
 
 		$output .= ob_get_contents();
 		ob_end_clean();
