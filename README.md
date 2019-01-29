@@ -5,7 +5,6 @@ Hi. I'm a starter theme called `_svbk`, a superset of the popular [`_s`](https:/
 
 On top of the standard `_s` I feature:
 * `Gulp` for real-time SASS compiling
-* `BrowserSync` for fast multi-device debugging
 * `Composer` for dependancy management
 * An installer script
 * Few extras and customizations that makes me less raw
@@ -24,28 +23,41 @@ Note: `.no-sidebar` styles are not automatically loaded.
 * Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 
-Getting Started
+Install
 ---------------
 
-Download `_svbk` from GitHub. The first thing you want to do is copy the `_svbk` directory and change the name to something else (like, say, `megatherium-is-awesome`),and then all you need to do it's run the `setup.sh` script that performs a search and replace on the name in all the templates and installs all the necessary dependancies via NPM and Composer.
+## Install Dependencies
 
-If you want to set things up manually: 
+```bash
+nvm use 8
+npm install -g gulp`
+npm install
+```
 
-1. Search for `'_svbk'` (inside single quotations) to capture the text domain.
-2. Search for `_svbk_` to capture all the function names.
-3. Search for `Text Domain: _svbk` in `style.css`.
-4. Search for <code>&nbsp;_svbk</code> (with a space before it) to capture DocBlocks.
-5. Search for `_svbk-` to capture prefixed handles.
+## Configure the Theme Name and Theme Handle
 
-OR
+Edit the `config.json` file and customize the `theme_name` and `theme_handle` parameters.
 
-1. Search for: `'_svbk'` and replace with: `'megatherium-is-awesome'`
-2. Search for: `_svbk_` and replace with: `megatherium_is_awesome_`
-3. Search for: `Text Domain: _svbk` and replace with: `Text Domain: megatherium-is-awesome` in `style.css`.
-4. Search for: <code>&nbsp;_svbk</code> and replace with: <code>&nbsp;Megatherium_is_Awesome</code>
-5. Search for: `_svbk-` and replace with: `megatherium-is-awesome-`
+## Install the theme 
 
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_svbk.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+Run `gulp install`, this builds all the files and customizes all the functions names with your theme prefix.
+
+## Commit
+
+Commit all the customized files and disable push to the original repository
+
+```bash
+git add .
+git commit -m"$THEME_HANDLE theme config"
+git remote set-url --push origin no-pushing
+```
+## Add Create Guten Block Compatibility
+If you want to develop custom blocks you should add Create Guten Block Compatibility Symlinks
+
+```bash
+ln -s $PWD/dist/blocks.build.js $PWD/dist/js/blocks.build.js 
+ln -s $PWD/blocks src 
+```
 
 Now you're ready to go! Just use `gulp serve` to compile SASS in real time. The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
