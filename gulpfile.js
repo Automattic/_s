@@ -14,14 +14,15 @@ const path              = require('path');
 const readlineSync      = require('readline-sync');
 const replace           = require('gulp-replace');
 const rename            = require("gulp-rename");
+const fs                = require('fs');
 
 var config = require('./config.json');
 
 function clean(){
     return del([
-        'dist/css/images/*',
-        'dist/css/*',
-        'dist/css/maps/*',
+        'dist/*',
+        '!dist/blocks.build.js',
+        '!dist/.gitkeep'
     ]);
 }
 
@@ -225,7 +226,7 @@ function renameLanguages(){
 exports.renameLanguages = renameLanguages;
 
 function cgbCompatJS(){
-    return src([ './dist/blocks.build.js' ])
+    return src([ './dist/blocks.build.js' ], {allowEmpty: true })
         .pipe(symlink('./dist/js/'));
 }
 
@@ -237,8 +238,9 @@ function cgbCompatSrc(){
 exports.cgbCompatJS = cgbCompatJS;
 exports.cgbCompatSrc = cgbCompatSrc;
 
-const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP );
+const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, cgbCompatJS );
 
+exports.refresh = series( clean, build);
 exports.build = build;
 exports.install = parallel(replaceConfigs, replaceNames, replaceMarkers, renameLanguages, series(build, cgbCompatJS) );
 
