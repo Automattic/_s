@@ -28,6 +28,9 @@ import './styles';
 import * as testimonials from './testimonials';
 import * as author from './testimonials/author';
 import * as rating from './testimonials/rating';
+import * as price from './product/price';
+import * as addtocart from './product/addtocart';
+import * as stock from './product/stock';
 import * as countdown from './countdown';
 
 
@@ -37,6 +40,9 @@ import * as countdown from './countdown';
 	testimonials,
 	rating,
 	author,
+	price,
+	addtocart,
+	stock,
 	countdown	
 ].forEach( ( block ) => {
 	if ( ! block ) {
