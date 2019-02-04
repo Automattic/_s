@@ -34,8 +34,6 @@ export const settings = {
 		html: false,
 	},
 
-	multiple: false,
-
 	attributes: {
 		rating: {
 			type: 'number',

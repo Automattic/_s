@@ -187,7 +187,6 @@ class Feedback {
 			}
 
 			$output .= '<a href="' . add_query_arg( $loadmore_args, get_post_type_archive_link( $this->post_type ) ) . '" class="loadmore__button' . ( $this->loadmore_class ? ( ' ' . esc_attr( $this->loadmore_class ) ) : '' ) . '">' . $this->loadmore_label . '</a>';
-			add_action( 'wp_footer', array( static::class, 'print_loadmore_script' ), 99 );
 		}
 
 		$output .= '</div>';
@@ -219,42 +218,5 @@ class Feedback {
 
 		return $query_vars;
 	}
-
-	public static function print_loadmore_script(){  ?>
-		<script>
-		document.addEventListener("DOMContentLoaded", function(){
-			(function($){
-				$('.loadmore').on('click', '.loadmore__button', function(event){
-					event.preventDefault();
-					var loadmore = $(this);
-					var container = loadmore.closest('.loadmore');
-					  container.addClass('loading');
-
-					$.get( loadmore.attr('href') + ' #main', function( response ){
-						var loader = $( response );
-						
-						  container
-							  .append(loader.find('.hentry'))
-							  .removeClass('loading');
-						
-						  var nextPage = loader.find('.navigation .nav-previous a');
-						
-						  if( nextPage.length ){
-							  loadmore.attr('href', nextPage.attr('href') );
-							  container
-								  .append(loadmore)
-						  } 
-						
-						$(document.body).trigger( 'post-load' );
-					} );
-					
-					loadmore.detach();
-				});		
-			})(jQuery);
-		});
-		</script>
-		<?php
-	}
-
 
 }

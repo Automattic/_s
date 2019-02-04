@@ -67,6 +67,34 @@
     offset: '70%',
     triggerOnce: true
   });
+
+
+	$('.loadmore').on('click', '.loadmore__button', function(event){
+		event.preventDefault();
+		var loadmore = $(this);
+		var container = loadmore.closest('.loadmore');
+		  container.addClass('loading');
+
+		$.get( loadmore.attr('href') + ' #main', function( response ){
+			var loader = $( response );
+			
+			  container
+				  .append(loader.find('.hentry'))
+				  .removeClass('loading');
+			
+			  var nextPage = loader.find('.navigation .nav-previous a');
+			
+			  if( nextPage.length ){
+				  loadmore.attr('href', nextPage.attr('href') );
+				  container
+					  .append(loadmore)
+			  } 
+			
+			$(document.body).trigger( 'post-load' );
+		} );
+		
+		loadmore.detach();
+	});		
 		
 	function getCookie(name) {
 	  var value = "; " + document.cookie;
