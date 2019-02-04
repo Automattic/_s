@@ -67,5 +67,55 @@
     offset: '70%',
     triggerOnce: true
   });
+		
+	function getCookie(name) {
+	  var value = "; " + document.cookie;
+	  var parts = value.split("; " + name + "=");
+	  if (parts.length == 2) return parts.pop().split(";").shift();
+	}
+
+  $(document).ready(function(){
+      $(".wp-block-svbk-countdown").each(function(){
+      	var countdown_expires =  $(this).data('expires');
+      	
+      	if( $.isNumeric( countdown_expires ) ) {
+      		countdown_expires += new Date().getTime();
+      	} else if ( countdown_expires )  {
+      	  countdown_expires = new Date( countdown_expires );
+      	} else {
+      	  return;
+      	}
+      	
+      	var countdown_persist = parseInt($(this).data('persist'));
+      	
+      	if( countdown_persist ) {
+ 	        var cookie_name = $(this).attr("id") + "_expires";
+      		var countdown_cookie = getCookie(cookie_name);
+      		
+      		if (countdown_cookie) {
+      			countdown_expires = countdown_cookie;
+      		} else {
+      			var cookie_expire = new Date();
+      			cookie_expire.setTime(cookie_expire.getTime() + (countdown_persist*60*60*1000));
+	          document.cookie = cookie_name + "=" + countdown_expires + "; expires=" + cookie_expire;                    		
+      		}   
+      	}
+      	
+      	var date_format = $(this).html();
+      	
+      	$(this).countdown( countdown_expires, function(event) {
+      	    
+      	    $(this).addClass('countdown--running');
+      	    
+            if (event.elapsed) { 
+                $(this).addClass('countdown--elapsed');
+                $(this).removeClass('countdown--running');
+            } else {
+          	  $(this).html( event.strftime( date_format ) );
+            }      	  
+      	 
+      	});
+  	});
+  });                	  
   
 })(jQuery);

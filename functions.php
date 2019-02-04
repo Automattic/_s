@@ -418,12 +418,20 @@ function _svbk_scripts() {
 		]
 	);
 
+	Script::enqueue(
+		'jquery-countdown',
+		'dist/jquery.countdown.min.js',
+		[
+			'deps'   => array( 'jquery' )
+		]
+	);
+
 	// Main Theme JS file
 	Script::enqueue(
 		'_svbk-theme',
 		'/dist/js/theme.min.js',
 		[
-			'deps'   => array( 'waypoints' ),
+			'deps'   => array( 'waypoints', 'jquery-countdown' ),
 			'source' => 'theme',
 		]
 	);

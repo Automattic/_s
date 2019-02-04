@@ -32,7 +32,9 @@
     "node-sass-json-importer": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
     "readline-sync": "^1.4.9",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"    
   },
   "dependencies": {
     "cgb-scripts": "^1.14.0",

@@ -1,0 +1,1 @@
+/home/ubuntu/workspace/web/app/themes/theme_svbk/dist/blocks.build.js

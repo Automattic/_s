@@ -28,13 +28,16 @@ import './styles';
 import * as testimonials from './testimonials';
 import * as author from './testimonials/author';
 import * as rating from './testimonials/rating';
+import * as countdown from './countdown';
+
 
 [
 	// Common blocks are grouped at the top to prioritize their display
 	// in various contexts — like the inserter and auto-complete components.
 	testimonials,
 	rating,
-	author
+	author,
+	countdown	
 ].forEach( ( block ) => {
 	if ( ! block ) {
 		return;
