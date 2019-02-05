@@ -152,18 +152,18 @@ function _svbk_bem_categories_list( $htmllist, $separator ) {
 add_filter( 'the_category', '_svbk_bem_categories_list', 10, 2 );
 
 
-if ( !function_exists( 'the_post_meta' ) ) {
-	function the_post_meta($post_id, $meta, $before = '', $after = '', $echo = true ){
+if ( ! function_exists( 'the_post_meta' ) ) {
+	function the_post_meta( $post_id, $meta, $before = '', $after = '', $echo = true ) {
 		$post_meta = get_post_meta( $post_id, $meta, true );
-		$output = '';
+		$output    = '';
 		if ( $post_meta ) {
 			$output .= $before . $post_meta . $after;
 		}
-		
-		if ( !$echo ) {
+
+		if ( ! $echo ) {
 			return $output;
 		}
-		
+
 		echo $output;
 	}
 }

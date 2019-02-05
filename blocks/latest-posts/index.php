@@ -8,11 +8,11 @@
  * @return string Returns the post content with latest posts added.
  */
 function _svbk_override_block_core_latest_posts() {
-	$latest_posts_block = WP_Block_Type_Registry::get_instance()->get_registered( 'core/latest-posts' );
+	$latest_posts_block                  = WP_Block_Type_Registry::get_instance()->get_registered( 'core/latest-posts' );
 	$latest_posts_block->render_callback = '_svbk_render_block_core_latest_posts';
 }
 
-add_action('init', '_svbk_override_block_core_latest_posts', 11 );
+add_action( 'init', '_svbk_override_block_core_latest_posts', 11 );
 
 /**
  * Renders the `core/latest-posts` block on server.
@@ -24,9 +24,9 @@ add_action('init', '_svbk_override_block_core_latest_posts', 11 );
 function _svbk_render_block_core_latest_posts( $attributes ) {
 	$args = array(
 		'posts_per_page' => $attributes['postsToShow'],
-		'post_status' => 'publish',
-		'order'       => $attributes['order'],
-		'orderby'     => $attributes['orderBy'],
+		'post_status'    => 'publish',
+		'order'          => $attributes['order'],
+		'orderby'        => $attributes['orderBy'],
 	);
 
 	if ( isset( $attributes['categories'] ) ) {
@@ -35,19 +35,19 @@ function _svbk_render_block_core_latest_posts( $attributes ) {
 
 	$posts_query = new WP_Query( $args );
 
-    ob_start();
-	
+	ob_start();
+
 	while ( $posts_query->have_posts() ) :
-	    $posts_query->the_post();
-        get_template_part( 'template-parts/preview', get_post_type() );
+		$posts_query->the_post();
+		get_template_part( 'template-parts/preview', get_post_type() );
 	endwhile;
-	
+
 	wp_reset_postdata();
 
-    $items_markup = ob_get_contents();
-    ob_end_clean();
+	$items_markup = ob_get_contents();
+	ob_end_clean();
 
-    $classes = array('wp-block-latest-posts');
+	$classes = array( 'wp-block-latest-posts' );
 
 	if ( isset( $attributes['align'] ) ) {
 		$classes[] = 'align' . $attributes['align'];
@@ -68,7 +68,7 @@ function _svbk_render_block_core_latest_posts( $attributes ) {
 	if ( isset( $attributes['className'] ) ) {
 		$classes[] = $attributes['className'];
 	}
-    
+
 	$block_content = sprintf(
 		'<div class="%1$s">%2$s</div>',
 		esc_attr( join( $classes, ' ' ) ),

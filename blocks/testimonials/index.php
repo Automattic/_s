@@ -7,17 +7,17 @@ function _svbk_register_testimonials_blocks() {
 	register_block_type(
 		'svbk/testimonials',
 		array(
-			'attributes' => array(
-				'align'      => array(
+			'attributes'                  => array(
+				'align' => array(
 					'type' => 'string',
 				),
-				'categories'      => array(
+				'categories' => array(
 					'type' => 'string',
 				),
-				'className'       => array(
+				'className' => array(
 					'type' => 'string',
 				),
-				'postsToShow'     => array(
+				'postsToShow' => array(
 					'type'    => 'number',
 					'default' => 5,
 				),
@@ -25,36 +25,36 @@ function _svbk_register_testimonials_blocks() {
 					'type'    => 'boolean',
 					'default' => false,
 				),
-				'postLayout'      => array(
+				'postLayout' => array(
 					'type'    => 'string',
 					'default' => 'list',
 				),
-				'columns'         => array(
+				'columns' => array(
 					'type'    => 'number',
 					'default' => 3,
 				),
-				'align'           => array(
+				'align' => array(
 					'type' => 'string',
 				),
-				'order'           => array(
+				'order' => array(
 					'type'    => 'string',
 					'default' => 'desc',
 				),
-				'orderBy'         => array(
+				'orderBy' => array(
 					'type'    => 'string',
 					'default' => 'date',
 				),
-				'offset'         => array(
+				'offset' => array(
 					'type'    => 'number',
 					'default' => 3,
-				),	
-				'loadMore'         => array(
+				),
+				'loadMore' => array(
 					'type'    => 'boolean',
 					'default' => false,
-				),					
-			),			
-			'render_callback' => '_svbk_render_testimonials_block',
-			'editor_script'   => '_svbk-blocks',
+				),
+			),
+			'render_callback'             => '_svbk_render_testimonials_block',
+			'editor_script'               => '_svbk-blocks',
 		)
 	);
 

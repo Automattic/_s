@@ -135,7 +135,7 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		if ( $font_sizes ) {
 			add_theme_support(
 				'editor-font-sizes',
-				_svbk_editor_support_from_config($font_sizes)
+				_svbk_editor_support_from_config( $font_sizes )
 			);
 		}
 
@@ -143,7 +143,7 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		$palette_colors = Config::get( 'color_palette', '_svbk' );
 
 		if ( $palette_colors ) {
-			
+
 			add_theme_support(
 				'editor-color-palette',
 				_svbk_editor_support_from_config( $palette_colors )
@@ -215,37 +215,37 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 endif;
 
 /**
- * Converts the config array to be used with add_theme_support options for 
+ * Converts the config array to be used with add_theme_support options for
  * blocks editor parameters
- * 
+ *
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/
  *
  * @param array $options The associative array to convert with format:
  *  {
- *		"slug1" : {
- *			"param1":"Param 1",
- *			"param2":"Param 2"
- *		},
- *	...
- *	}* 
- * @return array The converted format 
- *	[
- *		{
- *			"param1":"Param 1",
- *			"param2":"Param 2"
- *			"slug": "slug1",
- *		},
- *	...
- *	] 
+ *      "slug1" : {
+ *          "param1":"Param 1",
+ *          "param2":"Param 2"
+ *      },
+ *  ...
+ *  }*
+ * @return array The converted format
+ *  [
+ *      {
+ *          "param1":"Param 1",
+ *          "param2":"Param 2"
+ *          "slug": "slug1",
+ *      },
+ *  ...
+ *  ]
  */
 function _svbk_editor_support_from_config( $options ) {
-	
+
 	$supports = array();
-	
-	foreach( $options as $slug => $option ){
-		$supports[] = array_merge( array('slug' => $slug ), $option ) ;
+
+	foreach ( $options as $slug => $option ) {
+		$supports[] = array_merge( array( 'slug' => $slug ), $option );
 	}
-	
+
 	return $supports;
 }
 
@@ -422,7 +422,7 @@ function _svbk_scripts() {
 		'jquery-countdown',
 		'dist/jquery.countdown.min.js',
 		[
-			'deps'   => array( 'jquery' )
+			'deps' => array( 'jquery' ),
 		]
 	);
 
@@ -786,10 +786,10 @@ add_filter( 'excerpt_length', '_svbk_excerpt_length', 10 );
  */
 function _svbk_disable_blocks_wpautop_restore( $content ) {
 	$priority = has_filter( 'the_content', '_restore_wpautop_hook' );
-	if( false !== $priority ) {
+	if ( false !== $priority ) {
 		remove_filter( 'the_content', '_restore_wpautop_hook', $priority );
 	}
-	
+
 	return $content;
 }
 
