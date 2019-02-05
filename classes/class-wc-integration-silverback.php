@@ -227,12 +227,25 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 				remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 				add_filter( 'woocommerce_product_description_heading', '__return_empty_string' );
+				add_filter( 'woocommerce_after_single_product_summary', array( $this, 'woocommerce_print_reviews' ) );
 			} else {
 				add_filter( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
 			}
 
 		}
 
+		/**
+		 * Print reviews and form
+		 */
+		public function woocommerce_print_reviews() {
+			global $product;
+
+			if ( ! comments_open() || ! $product ) {
+				return;
+			}
+
+			comments_template();
+		}
 
 		/**
 		 * Change billing fields position, remove some
