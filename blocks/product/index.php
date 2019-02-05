@@ -61,10 +61,6 @@ function _svbk_render_product_stock( $attributes, $content ) {
     return wc_get_stock_html($product);
 }
 
-function _svbk_render_travel_meta(){
-    return _svbk_travel_meta();
-}
-
 function _svbk_register_product_blocks() {
 
 	register_block_type(
