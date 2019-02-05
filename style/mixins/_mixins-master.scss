@@ -115,12 +115,21 @@
 //Responsive background images
 @mixin background-image($fileName, $fileType) {
 
-	background-image: url("images/backgrounds/#{$fileName}.#{$fileType}");
+	.no-webp & {
+		background-image: url("images/backgrounds/#{$fileName}.#{$fileType}");
+	}
+
+	background-image: url("images/backgrounds/#{$fileName}.webp");
 
 	@each $breakpointKey, $breakpointValue in $main_breakpoints {
 
 		@media screen and (min-width: breakpoint( $breakpointKey )) {
-			background-image: url("images/backgrounds/#{$breakpointValue}/#{$fileName}.#{$fileType}");
+
+			.no-webp & {
+				background-image: url("images/backgrounds/#{$breakpointValue}/#{$fileName}.#{$fileType}");
+			}
+
+			background-image: url("images/backgrounds/#{$breakpointValue}/#{$fileName}.webp");
 		}
 	}
 }

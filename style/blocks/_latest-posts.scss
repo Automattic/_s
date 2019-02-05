@@ -5,34 +5,34 @@
 @import "../blog/primary/post-thumb";
 
 .wp-block-latest-posts {
-    
-    br {
-        display: none;
-    }
-    
-    p {
-        margin: 0;
-    }
-    
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
-        
-        .post--preview {
-            width: 32%;
-            float: left;
-            margin-right: 2%;
-            
-            &:nth-of-type(3n + 1) {
-                float: left;
-            }
-            
-            &:nth-of-type(3n + 3) {
-                margin-right: 0;
-            }
-        }
-        
-        &:after {
-            @include clearfix();
-            @include clearfix-after();
-        }
-    }
+
+	br {
+		display: none;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+
+		.post--preview {
+			width: 32%;
+			float: left;
+			margin-right: 2%;
+
+			&:nth-of-type(3n + 1) {
+				float: left;
+			}
+
+			&:nth-of-type(3n + 3) {
+				margin-right: 0;
+			}
+		}
+
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+	}
 }

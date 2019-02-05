@@ -3,16 +3,16 @@
 @import "mixins/mixins-master";
 
 .wp-block-svbk-countdown {
-    
-    .countdown__segment {
-        background: #CCC;
-        border-radius: 2px;
-        padding: 2px 4px 2px 2px;
-    }
 
-    .countdown__expires {
-        font-size: small;
-        color: #AAA;
-    }
+	.countdown__segment {
+		background: #CCC;
+		border-radius: 2px;
+		padding: 2px 4px 2px 2px;
+	}
+
+	.countdown__expires {
+		font-size: small;
+		color: #AAA;
+	}
 
 }
