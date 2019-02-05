@@ -23,14 +23,15 @@ function _svbk_render_product_add_to_cart( $attributes, $content ) {
 	$product_id = '';
 
 	if ( ! empty( $attributes['product_id'] ) ) {
-		$product_id = wc_get_product( intval( $attributes['product_id'] ) );
+		$product_id = intval( $attributes['product_id'] );
+		unset($attributes['product_id']);
 	} elseif ( $product ) {
 		$product_id = $product->get_id();
 	}
 
 	$attributes = array_replace(
 		array(
-			'id'         => '',
+			'id'         => $product_id,
 			'class'      => '',
 			'quantity'   => '1',
 			'sku'        => '',
@@ -39,8 +40,6 @@ function _svbk_render_product_add_to_cart( $attributes, $content ) {
 		),
 		$attributes
 	);
-
-	$attributes['id'] = $product_id;
 
 	if ( ! empty( $attributes['className'] ) ) {
 		$attributes['class'] = $attributes['className'];
