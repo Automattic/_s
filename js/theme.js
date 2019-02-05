@@ -103,7 +103,7 @@
 	}
 
   $(document).ready(function(){
-      $(".wp-block-svbk-countdown").each(function(){
+      $(".countdown").each(function(){
       	var countdown_expires =  $(this).data('expires');
       	
       	if( $.isNumeric( countdown_expires ) ) {
