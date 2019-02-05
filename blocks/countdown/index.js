@@ -39,11 +39,10 @@ const attributes = {
 	}		
 }; 
 
-
 const formatterTemplate = option => (
-    <span
-    	className={ 'countdown__segment countdown__segment--' + option.className  } 
-    >%{ option.formatter }</span>
+    <span className={ 'countdown__segment countdown__segment--' + option.className  } >
+    	<span className={ 'countdown__digit' }>%{ option.formatter }</span>
+    </span>
 );
 
 const autocompleters = [
