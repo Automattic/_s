@@ -41,7 +41,7 @@ const attributes = {
 
 const formatterTemplate = option => (
     <span className={ 'countdown__segment countdown__segment--' + option.className  } >
-    	<span className={ 'countdown__digit' }>%{ option.formatter }</span>
+    	<em className={ 'countdown__digit' }>%{ option.formatter }</em>
     </span>
 );
 
