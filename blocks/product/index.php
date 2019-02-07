@@ -48,6 +48,27 @@ function _svbk_render_product_add_to_cart( $attributes, $content ) {
 	return WC_Shortcodes::product_add_to_cart( $attributes );
 }
 
+function guidomarzucchi_render_product_rating( $attributes, $content ) {
+
+	global $product;
+
+	if ( ! empty( $attributes['product_id'] ) ) {
+		$product = wc_get_product( intval( $attributes['product_id'] ) );
+	}
+
+	if ( ! $product ) {
+		return '';
+	}
+
+	ob_start();
+	woocommerce_template_loop_rating();
+	$output = ob_get_contents();
+	
+	ob_end_clean();
+	
+	return $output;
+}
+
 function _svbk_render_product_stock( $attributes, $content ) {
 
 	global $product;
@@ -88,6 +109,14 @@ function _svbk_register_product_blocks() {
 			'render_callback' => '_svbk_render_product_stock',
 		)
 	);
+	
+	register_block_type(
+		'svbk/product-rating',
+		array(
+			'editor_script'   => '_svbk-blocks',
+			'render_callback' => '_svbk_render_product_rating',
+		)
+	);	
 
 }
 

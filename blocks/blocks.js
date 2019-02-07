@@ -31,6 +31,7 @@ import * as rating from './testimonials/rating';
 import * as price from './product/price';
 import * as addtocart from './product/addtocart';
 import * as stock from './product/stock';
+import * as productRating from './product/rating';
 import * as countdown from './countdown';
 
 
@@ -42,6 +43,7 @@ import * as countdown from './countdown';
 	author,
 	price,
 	addtocart,
+	productRating,
 	stock,
 	countdown	
 ].forEach( ( block ) => {
