@@ -123,4 +123,6 @@ use \Svbk\WP\Helpers;
 					);
 					?>
 			</nav>	
+		<?php else: ?>
+		<?php woocommerce_account_navigation(); ?>
 		<?php endif; ?>
