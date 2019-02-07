@@ -48,7 +48,7 @@ function _svbk_render_product_add_to_cart( $attributes, $content ) {
 	return WC_Shortcodes::product_add_to_cart( $attributes );
 }
 
-function guidomarzucchi_render_product_rating( $attributes, $content ) {
+function _svbk_render_product_rating( $attributes, $content ) {
 
 	global $product;
 
