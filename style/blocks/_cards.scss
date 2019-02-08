@@ -71,6 +71,10 @@
 
 .is-style-image-cards {
 
+	.wp-block-column {
+		padding: 0 15px;
+	}
+
 	.wp-block-image,
 	h2, h3 {
 		margin-left: -15px;
