@@ -15,6 +15,8 @@ const readlineSync      = require('readline-sync');
 const replace           = require('gulp-replace');
 const rename            = require("gulp-rename");
 const fs                = require('fs');
+const svgmin            = require('gulp-svgmin');
+
 
 var config = require('./config.json');
 
@@ -120,7 +122,14 @@ function imageMinifyWebP (){
         .pipe(dest('dist/css/images'));        
 }
 
-exports.imageMinify = imageMinify;
+function svgMinify (){
+    return src(['./style/images/**/*.svg'])
+        .pipe(svgmin())
+        .pipe(dest('./dist/css/images'));
+}
+
+exports.svgMinify = svgMinify;
+exports.imageMinify = parallel(imageMinify, imageMinifyWebP, svgMinify);
 
 function jsWatch() {
     return watch("./js/**/*.js", jsCompress );
@@ -129,7 +138,7 @@ function jsWatch() {
 exports.jsWatch = jsWatch;
 
 function imageWatch() {
-    watch("./style/images/**/*", imageMinify);
+    watch("./style/images/**/*", exports.imageMinify);
 }
 
 exports.imageWatch = imageWatch;
@@ -238,7 +247,7 @@ function cgbCompatSrc(){
 exports.cgbCompatJS = cgbCompatJS;
 exports.cgbCompatSrc = cgbCompatSrc;
 
-const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, cgbCompatJS );
+const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJS );
 
 exports.refresh = series( clean, build);
 exports.build = build;

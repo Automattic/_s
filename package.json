@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "cgb-scripts": "^1.14.0",
-    "fg-loadcss": "^2.1.0"
+    "fg-loadcss": "^2.1.0",
+    "gulp-svgmin": "^2.1.0"
   }
 }
