@@ -37,82 +37,85 @@ body {
 	color: $color__error;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea,
-select {
-	background: #fff !important;
-	max-width: none !important;
-	width: 100% !important;
-	border: 1px solid $color__border-input !important;
-
-	&:focus {
-		border: 1px solid $color__corporate !important;
+.wp-block-hubspot-form {
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	textarea,
+	select {
+		background: #fff;
+		max-width: none;
+		width: 100%;
+		border: 1px solid $color__border-input;
+	
+		&:focus {
+			border: 1px solid $color__corporate;
+		}
 	}
-}
-
-textarea {
-	min-height: 100px !important;
-}
-
-input[type="radio"].hs-input {
-	border: 2px solid #fff !important;
-	box-shadow: 0 0 0 2px $color__corporate !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin-left: 2px;
-
-	&:checked {
-		box-shadow: 0 0 0 2px $color__corporate !important;
+	
+	textarea {
+		min-height: 100px;
 	}
-}
-
-input[type="checkbox"] {
-	border: 2px solid $color__corporate !important;
-	height: 1.25em !important;
-	width: 1.25em !important;
-	border-radius: 3px !important;
-}
-
-.legal-consent-container .hs-richtext {
-	font-size: 12px !important;
-	font-size: .75rem !important;
-}
-
-.field {
-	margin-bottom: 10px !important;
-}
-
-fieldset.form-columns-1 .input,
-fieldset.form-columns-2 > div:last-of-type .input {
-	margin-right: 0 !important;
-}
-
-.wp-block-hubspot-form.is-style-dark {
-
-	label,
-	.hs-richtext {
-		color: #fff !important;
+	
+	input[type="radio"].hs-input {
+		border: 2px solid #fff;
+		box-shadow: 0 0 0 2px $color__corporate;
+		height: 1em !important;
+		width: 1em !important;
+		margin-left: 2px;
+	
+		&:checked {
+			box-shadow: 0 0 0 2px $color__corporate;
+		}
 	}
-
+	
 	input[type="checkbox"] {
-		border-color: #aaa !important;
+		border: 2px solid $color__corporate;
+		height: 1.25em;
+		width: 1.25em;
+		border-radius: 3px;
 	}
-
-	input[type="radio"] {
-		box-shadow: 0 0 0 2px #aaa !important;
+	
+	.legal-consent-container .hs-richtext {
+		font-size: 12px;
+		font-size: .75rem;
+		line-height: 1.3em;
+	}
+	
+	.field {
+		margin-bottom: 10px;
+	}
+	
+	fieldset.form-columns-1 .input,
+	fieldset.form-columns-2 > div:last-of-type .input {
+		margin-right: 0;
+	}
+	
+	&.is-style-dark {
+	
+		label,
+		.hs-richtext {
+			color: #fff;
+		}
+	
+		input[type="checkbox"] {
+			border-color: #aaa;
+		}
+	
+		input[type="radio"] {
+			box-shadow: 0 0 0 2px #aaa;
+		}
 	}
 }
