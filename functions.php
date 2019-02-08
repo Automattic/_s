@@ -169,6 +169,14 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 			)
 		);
 
+		// Add support SVBK hubspot forms
+		add_theme_support(
+			'hubspot-forms',
+			array(
+				'style' => get_theme_file_uri( 'dist/css/form-standalone.css' ),
+			)
+		);
+
 		// Add WooCommerce Support
 		add_theme_support( 'woocommerce' );
 
