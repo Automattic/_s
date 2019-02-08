@@ -24,7 +24,7 @@ function _svbk_render_product_add_to_cart( $attributes, $content ) {
 
 	if ( ! empty( $attributes['product_id'] ) ) {
 		$product_id = intval( $attributes['product_id'] );
-		unset($attributes['product_id']);
+		unset( $attributes['product_id'] );
 	} elseif ( $product ) {
 		$product_id = $product->get_id();
 	}
@@ -63,9 +63,9 @@ function _svbk_render_product_rating( $attributes, $content ) {
 	ob_start();
 	woocommerce_template_loop_rating();
 	$output = ob_get_contents();
-	
+
 	ob_end_clean();
-	
+
 	return $output;
 }
 
@@ -109,14 +109,14 @@ function _svbk_register_product_blocks() {
 			'render_callback' => '_svbk_render_product_stock',
 		)
 	);
-	
+
 	register_block_type(
 		'svbk/product-rating',
 		array(
 			'editor_script'   => '_svbk-blocks',
 			'render_callback' => '_svbk_render_product_rating',
 		)
-	);	
+	);
 
 }
 
