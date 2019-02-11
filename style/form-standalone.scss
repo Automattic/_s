@@ -57,63 +57,66 @@ body {
 	select {
 		background: #fff;
 		max-width: none;
-		width: 100%;
 		border: 1px solid $color__border-input;
-	
+
 		&:focus {
 			border: 1px solid $color__corporate;
 		}
 	}
-	
+
+	label {
+		color: $color__text-main;
+	}
+
 	textarea {
 		min-height: 100px;
 	}
-	
+
 	input[type="radio"].hs-input {
 		border: 2px solid #fff;
 		box-shadow: 0 0 0 2px $color__corporate;
 		height: 1em !important;
 		width: 1em !important;
 		margin-left: 2px;
-	
+
 		&:checked {
 			box-shadow: 0 0 0 2px $color__corporate;
 		}
 	}
-	
+
 	input[type="checkbox"] {
 		border: 2px solid $color__corporate;
-		height: 1.25em;
-		width: 1.25em;
+		height: 1.25em !important;
+		width: 1.25em !important;
 		border-radius: 3px;
 	}
-	
+
 	.legal-consent-container .hs-richtext {
 		font-size: 12px;
 		font-size: .75rem;
 		line-height: 1.3em;
 	}
-	
+
 	.field {
 		margin-bottom: 10px;
 	}
-	
+
 	fieldset.form-columns-1 .input,
 	fieldset.form-columns-2 > div:last-of-type .input {
 		margin-right: 0;
 	}
-	
+
 	&.is-style-dark {
-	
+
 		label,
 		.hs-richtext {
 			color: #fff;
 		}
-	
+
 		input[type="checkbox"] {
 			border-color: #aaa;
 		}
-	
+
 		input[type="radio"] {
 			box-shadow: 0 0 0 2px #aaa;
 		}

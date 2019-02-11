@@ -2,25 +2,6 @@
 @import "fields";
 @import "search-form";
 
-fieldset {
-	max-width: none !important;
-
-	&.form-columns-1 {
-
-		.hs-input {
-			width: 100% !important;
-		}
-
-		input[type="checkbox"] {
-			width: 1.25em !important;
-		}
-
-		input[type="radop"] {
-			width: 1em !important;
-		}
-	}
-}
-
 .inputs-list {
 	padding: 0;
 
