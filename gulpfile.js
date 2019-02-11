@@ -251,6 +251,6 @@ const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinify
 
 exports.refresh = series( clean, build);
 exports.build = build;
-exports.install = parallel(replaceConfigs, replaceNames, replaceMarkers, renameLanguages, series(build, cgbCompatJS) );
+exports.setup = parallel(replaceConfigs, replaceNames, replaceMarkers, renameLanguages, series(build, cgbCompatJS) );
 
 exports.serve = parallel(sassWatch, jsWatch, imageWatch );
