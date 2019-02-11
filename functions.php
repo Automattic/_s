@@ -495,6 +495,18 @@ function _svbk_scripts() {
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
 
 /**
+ * Manage support for WebP images
+ */
+function _svbk_manage_support_for_webp() {
+	?>
+	<script>
+	function e(){var n=document.createElement("canvas");return!(!n.getContext||!n.getContext("2d"))&&0==n.toDataURL("image/webp").indexOf("data:image/webp")}!function(){var n;-1!=(n=document.body).className.split(" ").indexOf("no-webp")||e()||(n.className+=" no-webp")}();
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', '_svbk_manage_support_for_webp' );
+
+/**
  * Fix skip link focus in IE11.
  *
  * This does not enqueue the script because it is tiny and because it is only for IE11,
