@@ -61,6 +61,7 @@
 	"icons": {
 		"theme" : {
 			"_source": "'style/icons/style.css'",
+			"_chars": "B",
 			"font-family": "'theme-icons'"
 		}
 	},

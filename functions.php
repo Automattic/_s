@@ -542,11 +542,11 @@ add_action( 'admin_enqueue_scripts', '_svbk_admin_scripts' );
  *
  * @return void
  */
-function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ) {
+function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null, $check_chars = '' ) {
 
-	$font_config = Config::get( $config_key, '_svbk' );
+	$font_configs = Config::get( $config_key, '_svbk' );
 
-	if ( ! $font_config ) {
+	if ( ! $font_configs ) {
 		return;
 	}
 
@@ -560,32 +560,57 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null ) {
 		]
 	);
 
-	$fonts  = array_column( $font_config, 'font-family', '_source' );
 	$prefix = $prefix ?: ( $config_key . '-' );
 
-	$observerCode  = '(function(){ ';
-	$observerCode .= '	var fontObservers = []; ';
+	$font_families = [];
+	$font_sources  = [];
 
-	foreach ( $fonts as $font_url => $font_familiy ) {
-		$font_url     = trim( $font_url, "'" );
-		$font_familiy = trim( $font_familiy, "'" );
-		$font_handle  = sanitize_title( $font_familiy );
+	foreach ( $font_configs as $font_handle => $font_config ) {
+		$font_url     = trim( $font_config['_source'], "'" );
+		$font_familiy = trim( $font_config['font-family'], "'" );
 		$is_absolute  = preg_match( '|^(https?:)?//|', $font_url );
 
-		Style::enqueue( $prefix . $font_handle, $font_url, [ 'source' => $is_absolute ? false : 'theme' ] );
+		$font_sources[ $font_url ] = $font_handle;
+		$font_families[]           = $font_familiy;
 
-		$observerCode .= 'fontObservers.push( (new FontFaceObserver(\'' . $font_familiy . '\')).load() ); ';
+		if ( ! empty( $font_config['_chars'] ) ) {
+			$check_chars .= $font_config['_chars'];
+		}
+	}
+
+	foreach ( $font_sources as $font_url => $font_handle ) {
+		$is_absolute = preg_match( '|^(https?:)?//|', $font_url );
+		Style::enqueue( $prefix . $font_handle, $font_url, [ 'source' => $is_absolute ? false : 'theme' ] );
+	}
+
+	$observerCode = '(function(){ ';
+
+	$font_families = array_unique( $font_families );
+
+	if ( $check_chars ) {
+		$check_chars = "'" . html_entity_decode( $check_chars ) . "'";
+	}
+
+	if ( count( $font_families ) > 1 ) {
+		$observerCode .= 'var fontObservers = []; ';
+		foreach ( $font_families as $font_familiy ) {
+			$observerCode .= 'fontObservers.push( (new FontFaceObserver(\'' . $font_familiy . '\')).load(' . $check_chars . ') ); ';
+		}
+		$observerCode .= 'Promise.all(fontObservers)';
+	} else {
+		$observerCode .= 'var fontObs = new FontFaceObserver(\'' . $font_families[0] . '\').load(' . $check_chars . '); ';
+		$observerCode .= 'fontObs';
 	}
 
 	$cookie_name = $config_key . '_loaded';
 	$class_name  = $config_key . '-loaded';
 
 	$observerCode .=
-		'Promise.all(fontObservers).then(function () {' .
+		'.then(function () {' .
 		'	var date = new Date();' .
 		'	date.setTime( date.getTime() + (30*24*60*60*1000) );' .
 		'	document.cookie = "' . $cookie_name . '=1; expires=" + date.toUTCString() + "; path=/";' .
-		'	document.documentElement.classList.add("' . $class_name . '");' .
+		'	document.documentElement.className += " ' . $class_name . '";' .
 		'}); ';
 
 	$observerCode .= ' })();';
