@@ -1,22 +1,22 @@
 .content-area {
 	float: right;
-	margin: 0 0 0 (-$size__site-sidebar);
-	width: $size__site-main;
+	margin: 0 0 0 (-$size_hello-worldite-sidebar);
+	width: $size_hello-worldite-main;
 }
 
 .site-main {
-	margin: 0 0 0 $size__site-sidebar;
+	margin: 0 0 0 $size_hello-worldite-sidebar;
 }
 
 .site-content .widget-area {
 	float: left;
 	overflow: hidden;
-	width: $size__site-sidebar;
+	width: $size_hello-worldite-sidebar;
 }
 
 .site-footer {
 	clear: both;
-	width: $size__site-main;
+	width: $size_hello-worldite-main;
 }
 
 @import "no-sidebar";

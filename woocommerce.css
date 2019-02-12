@@ -1,5 +1,5 @@
 /*
-Theme Name: _s
+Theme Name: hello-world
 
 WooCommerce styles override
 */
@@ -289,7 +289,7 @@ ul.products li.product .button {
 	text-decoration: none;
 }
 
-.site-header-cart .widget_shopping_cart {
+.site-header-cart .widgethello-worldhopping_cart {
 	display: none;
 }
 
@@ -482,7 +482,7 @@ p.no-comments {
 	background-color: #e2401c;
 }
 
-.demo_store {
+.demohello-worldtore {
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -497,7 +497,7 @@ p.no-comments {
 	/**
 	 * Header cart
 	 */
-	.site-header-cart .widget_shopping_cart {
+	.site-header-cart .widgethello-worldhopping_cart {
 		position: absolute;
 		top: 100%;
 		width: 100%;
@@ -506,7 +506,7 @@ p.no-comments {
 		display: block;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	}
-	.site-header-cart:hover .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
+	.site-header-cart:hover .widgethello-worldhopping_cart, .site-header-cart.focus .widgethello-worldhopping_cart {
 		left: 0;
 		display: block;
 	}
@@ -518,16 +518,16 @@ p.no-comments {
 /**
  * WooCommerce Price Filter
  */
-.widget_price_filter .price_slider {
+.widget_price_filter .pricehello-worldlider {
 	margin-bottom: 1.5em;
 }
 
-.widget_price_filter .price_slider_amount {
+.widget_price_filter .pricehello-worldlider_amount {
 	text-align: right;
 	line-height: 2.4em;
 }
 
-.widget_price_filter .price_slider_amount .button {
+.widget_price_filter .pricehello-worldlider_amount .button {
 	float: left;
 }
 
@@ -565,7 +565,7 @@ p.no-comments {
 	background: royalblue;
 }
 
-.widget_price_filter .price_slider_wrapper .ui-widget-content {
+.widget_price_filter .pricehello-worldlider_wrapper .ui-widget-content {
 	background: rgba(0, 0, 0, 0.1);
 }
 

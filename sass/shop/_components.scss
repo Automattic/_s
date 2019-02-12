@@ -11,7 +11,7 @@
 		text-decoration: none;
 	}
 
-	.widget_shopping_cart {
+	.widgethello-worldhopping_cart {
 		display: none;
 	}
 
@@ -227,7 +227,7 @@ p.no-comments {
 	background-color: $woocommerce__color-error;
 }
 
-.demo_store {
+.demohello-worldtore {
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -243,7 +243,7 @@ p.no-comments {
 	 * Header cart
 	 */
 	.site-header-cart {
-		.widget_shopping_cart {
+		.widgethello-worldhopping_cart {
 			position: absolute;
 			top: 100%;
 			width: 100%;
@@ -255,7 +255,7 @@ p.no-comments {
 
 		&:hover,
 		&.focus {
-			.widget_shopping_cart {
+			.widgethello-worldhopping_cart {
 				left: 0;
 				display: block;
 			}

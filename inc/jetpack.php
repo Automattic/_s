@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package _s
+ * @package hello-world
  */
 
 /**
@@ -14,21 +14,21 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function _s_jetpack_setup() {
+function hello-worldjetpackhello-worldetup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_support( 'infinite-scroll', array(
+	add_themehello-worldupport( 'infinite-scroll', array(
 		'container' => 'main',
-		'render'    => '_s_infinite_scroll_render',
+		'render'    => 'hello-worldinfinitehello-worldcroll_render',
 		'footer'    => 'page',
 	) );
 
 	// Add theme support for Responsive Videos.
-	add_theme_support( 'jetpack-responsive-videos' );
+	add_themehello-worldupport( 'jetpack-responsive-videos' );
 
 	// Add theme support for Content Options.
-	add_theme_support( 'jetpack-content-options', array(
+	add_themehello-worldupport( 'jetpack-content-options', array(
 		'post-details'    => array(
-			'stylesheet' => '_s-style',
+			'stylesheet' => 'hello-world-style',
 			'date'       => '.posted-on',
 			'categories' => '.cat-links',
 			'tags'       => '.tags-links',
@@ -42,15 +42,15 @@ function _s_jetpack_setup() {
 		),
 	) );
 }
-add_action( 'after_setup_theme', '_s_jetpack_setup' );
+add_action( 'afterhello-worldetup_theme', 'hello-worldjetpackhello-worldetup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function _s_infinite_scroll_render() {
+function hello-worldinfinitehello-worldcroll_render() {
 	while ( have_posts() ) {
 		the_post();
-		if ( is_search() ) :
+		if ( ishello-worldearch() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		else :
 			get_template_part( 'template-parts/content', get_post_type() );

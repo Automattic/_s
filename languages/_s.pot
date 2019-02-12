@@ -2,8 +2,8 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"Project-Id-Version: hello-world 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/hello-world\n"
 "POT-Creation-Date: 2016-12-23 16:00+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -136,7 +136,7 @@ msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "_s"
+msgid "hello-world"
 msgstr ""
 
 #. Theme URI of the plugin/theme
@@ -145,7 +145,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
+"Hi. I'm a starter theme called <code>hello-world</code>, or <em>underscores</em>, if "
 "you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
 "Theme</em>. Instead try turning me into the next, most awesome, WordPress "
 "theme out there. That's what I'm here for."

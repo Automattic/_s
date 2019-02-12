@@ -54,7 +54,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="_s"/>
+			<property name="text_domain" type="array" value="hello-world"/>
 		</properties>
 	</rule>
 
@@ -69,7 +69,7 @@
 	<!-- Set the minimum supported WP version. This is used by several sniffs.
 		 The minimum version set here should be in line with the minimum WP version
 		 as set in the "Requires at least" tag in the readme.txt file. -->
-	<config name="minimum_supported_wp_version" value="4.5"/>
+	<config name="minimumhello-worldupported_wp_version" value="4.5"/>
 
 	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
 		<properties>
@@ -86,7 +86,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="_s" />
+			<property name="prefixes" type="array" value="hello-world" />
 		</properties>
 	</rule>
 
