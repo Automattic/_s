@@ -33,11 +33,20 @@ body {
 	background: rgba(255,255,255,0);
 }
 
-.hs-error-msgs label {
-	color: $color__error;
-}
-
 .wp-block-hubspot-form {
+
+	.hs-form-iframe {
+		height: auto !important;
+	}
+
+	form {
+		margin: 0;
+	}
+
+	a {
+		color: $color__link;
+	}
+
 	input[type="text"],
 	input[type="email"],
 	input[type="url"],
@@ -58,14 +67,47 @@ body {
 		background: #fff;
 		max-width: none;
 		border: 1px solid $color__border-input;
+		width: 100% !important;
 
 		&:focus {
 			border: 1px solid $color__corporate;
 		}
 	}
 
+	.hs-submit {
+		margin-top: 15px;
+	}
+
+	.form-columns-1 .hs-form-field .input {
+		margin-right: 0;
+	}
+
+	fieldset.form-columns-2 {
+
+		.hs-form-field {
+			width: 100%;
+		}
+
+		.input {
+			margin-right: 0;
+		}
+
+		@media screen and (min-width: 440px) {
+
+			.hs-form-field {
+				width: 49% !important;
+
+				&:first-of-type {
+					margin-right: 2%;
+				}
+			}
+		}
+	}
+
 	label {
 		color: $color__text-main;
+		margin-bottom: 0;
+		padding-top: 0;
 	}
 
 	textarea {
@@ -91,25 +133,53 @@ body {
 		border-radius: 3px;
 	}
 
-	.legal-consent-container .hs-richtext {
-		font-size: 12px;
-		font-size: .75rem;
-		line-height: 1.3em;
+	.legal-consent-container {
+		margin: 20px 0 10px;
+		background: rgba(0,0,0,.08);
+		padding: 1px 15px 10px;
+		border-radius: 8px;
+
+		.hs-richtext,
+		label {
+			@include font-size(.75);
+			line-height: 1.3em;
+		}
+
+		.inputs-list {
+			margin: 0;
+		}
 	}
 
 	.field {
 		margin-bottom: 10px;
 	}
 
-	fieldset.form-columns-1 .input,
-	fieldset.form-columns-2 > div:last-of-type .input {
-		margin-right: 0;
+	.hs-error-msgs {
+		margin-top: 3px;
+
+		label {
+			color: $color__error;
+		}
+	}
+
+	.actions {
+		margin: 0;
+		padding: 0;
+	}
+
+	.hubspot-link__container {
+		display: none;
 	}
 
 	&.is-style-dark {
 
+		.hs-error-msgs label {
+			color: $color__corporate;
+		}
+
 		label,
-		.hs-richtext {
+		.hs-richtext,
+		a {
 			color: #fff;
 		}
 
