@@ -10,7 +10,6 @@
 namespace Svbk\WP;
 
 use Svbk\WP\Shortcakes;
-use Svbk\WP\Email;
 use Svbk\WP\Forms;
 
 use Svbk\WP\Helpers;
