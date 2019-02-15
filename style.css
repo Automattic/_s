@@ -63,11 +63,14 @@ html {
 	 ========================================================================== */
 
 /**
- * Remove the margin in all browsers.
+ * 1. Remove the margin in all browsers.
+ * 2. Improving font rendering on OS X
  */
 
 body {
-	margin: 0;
+	margin: 0; /* 1 */
+	-webkit-font-smoothing: antialiased; /* 2 */
+	-moz-osx-font-smoothing: grayscale; /* 2 */
 }
 
 /**
