@@ -21,13 +21,13 @@ blockquote, q {
 	}
 }
 
-hr {
+hr,
+.wp-block-separator {
 	background-color: $color__background-hr;
 	border: 0;
 	height: 2px;
 	width: 50px;
-	margin-bottom: 1.5em;
-	margin-left: 0;
+	margin: 17px auto;
 
 	&.is-style-wide {
 		height: 1px;
