@@ -135,8 +135,8 @@ body {
 
 	.legal-consent-container {
 		margin: 20px 0 10px;
-		background: rgba(0,0,0,.08);
-		padding: 1px 15px 10px;
+		background: #f5f5f5;
+		padding: 15px 15px 10px;
 		border-radius: 8px;
 
 		.hs-richtext,
@@ -172,7 +172,11 @@ body {
 	}
 
 	&.is-style-dark {
-
+		
+		.legal-consent-container { 
+			background: rgba(0,0,0,.08);
+		}
+		
 		.hs-error-msgs label {
 			color: $color__corporate;
 		}
