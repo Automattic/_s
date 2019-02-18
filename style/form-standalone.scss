@@ -141,12 +141,17 @@ body {
 
 		.hs-richtext,
 		label {
-			@include font-size(.75);
+			@include font-size(.7);
 			line-height: 1.3em;
 		}
 
 		.inputs-list {
 			margin: 0;
+			padding: 0;
+			
+			li {
+				margin: 0;
+			}
 		}
 	}
 
