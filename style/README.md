@@ -48,7 +48,7 @@ Import either center or left aligned style in header/header.scss.
 ## Blocks
 
 ### Full Width blocks
-* **Solid background or no background**\
+* **Solid or no background**\
     Use a Wordpress multiple columns (2 columns) block with 
     `wp-columns-full` class.
 * **Background image**\
@@ -62,13 +62,13 @@ Obtain two aligned buttons using a Multiple Columns (2 columns) block with
 
 ### Cards
 * **Icon card** (suitable for bullets/company services)\
-    Use Wordpress columns block with `is-style-icon-cards` class.\
+    Use Wordpress Multiple Columns block with `is-style-icon-cards` class.\
     Structure: image (icon) + title (either h2 or h3) + text content (p, ul, ol, etc).
 * **Image card** (suitable for company services/area of competence)\
-    Use Wordpress columns block with `is-style-image-cards` class.\
+    Use Wordpress Multiple Columns block with `is-style-image-cards` class.\
     Structure: image + title (either h2 or h3) + (p, ul, ol, etc).
 * **Data card** (suitable for company data and stats)\
-    Use Wordpress columns block with `is-style-stats-cards` class.\
+    Use Wordpress Multiple Columns block with `is-style-stats-cards` class.\
     Structure: wrap numbers in an `<em>` tag to output the card correctly. 
     Assign icons through CSS pseudo-elements.
 
@@ -78,21 +78,25 @@ Use a Multiple Columns block with `is-style-clients` class.\
 Fill the first column with the label text (h3) and the second column with 
 a gallery block.
 
-### Guide Download block
-Use Wordpress Media and Text block with `is-style-download` class.
+### Form and image
+Suitable for Guide Donwload blocks or contact form blocks. \
+Use Wordpress Multiple Columns (2 columns) block with `is-style-form` class. \
+To display a standard Guide Download block (where the guide png is allowed to 
+slightly excedes the block vertically) add the `has-overflow-image` class.\
+To add an overlay caption to the image content add `is-style-overlay-caption` 
+class to the specific element.
 
 ### Offer block
-Use Wordpress multiple columns (2 columns) block with `is-style-offer` class.
 Suitable for offer presentation. The first column contains either an embedded
-video or an image of the product.
+video or an image of the product. \
+Use Wordpress Multiple Columns (2 columns) block with `is-style-offer` class.
 
 ### Method block
 Suitable for process presentation.\
-Structure: a Wordpress multiple columns block (variable columns number) with 
+Structure: a Wordpress Multiple Columns block (variable columns number) with 
 `is-style-method` class. Assign the `single-step` class to every inner column.
 Fill every column with the following blocks:
 * an image with `single-step__picture` class;
 * a paragraph with `single-step__label` class;
 * an heading with `single-step__title` class;
 * a paragraph with `single-step__content` class.
-

@@ -4,7 +4,8 @@
 	margin-left: -$padding__content-mobile;
 	margin-right: -$padding__content-mobile;
 
-	h2 {
+	h2, h3 {
+		@include font-size(1.5);
 		margin-top: 0;
 		color: #fff;
 	}
