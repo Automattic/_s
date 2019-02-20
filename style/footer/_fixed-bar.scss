@@ -1,0 +1,137 @@
+.footer-fixed-bar {
+	position: fixed;
+	bottom: -50px;
+	left: 0;
+	right: 0;
+	padding: 5px $padding__content-mobile;
+	background: #fff;
+	text-align: center;
+	border-top: 1px solid #ccc;
+	box-shadow: 1px 1px rgba(0,0,0,.2);
+	z-index: 9;
+	transition: bottom .5s ease-in-out;
+
+	&:before {
+		display: none;
+		content: "";
+		background: rgba(0,0,0,.5);
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 99;
+	}
+
+	.button,
+	button {
+		@include font-size(.9);
+		display: inline-block;
+		vertical-align: middle;
+
+		&:visited {
+			color: $color__text-main;
+		}
+	}
+
+	.button {
+		color: $color__text-main;
+		width: calc(100% - 50px);
+	}
+
+	.fixed-bar__toggle {
+		background: #f5f5f5;
+		border: 1px solid #ccc;
+		color: $color__text-main;
+		text-indent: -999px;
+		width: 36px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+
+		&:before {
+			@include icon-content('\e92f');
+			@include font-size(1.2);
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-weight: normal;
+			line-height: 36px;
+			width: 36px;
+			height: 36px;
+			text-indent: 0;
+		}
+	}
+
+	.fixed-bar__actions {
+		@include font-size(.85);
+		display: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #fff;
+		margin: 0;
+		padding: 0;
+		z-index: 999;
+		text-align: left;
+		padding: 10px;
+		box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+	}
+
+	.fixed-bar__action {
+		color: $color__text-main;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		a {
+			color: $color__text-main;
+			text-decoration: none;
+			font-weight: normal;
+
+			&:before {
+				margin-right: 10px;
+			}
+		}
+
+		&:before {
+			display: none;
+		}
+
+		&.action--phone a:before {
+			@include icon-content('\e930');
+		}
+
+		&.action--email a:before {
+			@include icon-content('\e931');
+		}
+	}
+
+	&.visible {
+		bottom: 0;
+	}
+
+	&.expanded {
+
+		&:before {
+			display: block;
+		}
+
+		.fixed-bar__actions {
+			display: block;
+		}
+	}
+
+	@media screen and (min-width: 500px) {
+
+		.button {
+			max-width: 300px;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		display: none;
+	}
+}

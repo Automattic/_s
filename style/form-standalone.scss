@@ -148,7 +148,7 @@ body {
 		.inputs-list {
 			margin: 0;
 			padding: 0;
-			
+
 			li {
 				margin: 0;
 			}
@@ -177,11 +177,11 @@ body {
 	}
 
 	&.is-style-dark {
-		
-		.legal-consent-container { 
+
+		.legal-consent-container {
 			background: rgba(0,0,0,.08);
 		}
-		
+
 		.hs-error-msgs label {
 			color: $color__corporate;
 		}
