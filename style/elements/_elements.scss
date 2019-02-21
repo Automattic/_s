@@ -21,18 +21,12 @@ blockquote, q {
 	}
 }
 
-hr,
-.wp-block-separator {
+hr {
 	background-color: $color__background-hr;
 	border: 0;
 	height: 2px;
 	width: 50px;
 	margin: 17px auto;
-
-	&.is-style-wide {
-		height: 1px;
-		width: 100%;
-	}
 }
 
 @import "lists";

@@ -1,0 +1,24 @@
+.wp-block-separator {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 2px;
+	width: 50px;
+	margin: 17px auto;
+	
+	&.alignleft {
+	    margin-left: 0;
+	}
+	
+	&.is-style-wide {
+		height: 1px;
+		width: 100%;
+	}
+	
+    &.is-style-dots {
+        width: 180px;
+        
+        &:before {
+            color: $color__background-hr;
+        }
+    }
+}
