@@ -1,3 +1,4 @@
+.is-stile-simple-cards,
 .is-style-icon-cards,
 .is-style-image-cards,
 .is-style-stats-cards {
@@ -33,14 +34,38 @@
 	}
 }
 
+.is-style-simple-cards,
+.is-style-icon-cards {
+
+	h2, h3 {
+		@include font-size(1.3);
+	}
+
+	.wp-block-image {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.is-style-simple-cards {
+
+	.wp-block-image {
+		width: 60px;
+		height: 60px;
+	}
+}
+
 .is-style-icon-cards {
 
 	.wp-block-column {
 		background: $color__background-light;
 		margin-top: 50px;
 
+		&:first-of-type {
+			padding: 0 20px;
+		}
+
 		h2, h3 {
-			@include font-size(1.3);
 			padding: 5px 15px;
 			position: relative;
 			display: inline-block;
@@ -51,11 +76,11 @@
 		}
 
 		.wp-block-image {
+			height: 80px;
+			width: 80px;
 			text-align: center;
 			margin: -40px auto 0;
 			border: 2px solid $color__corporate;
-			height: 80px;
-			width: 80px;
 			border-radius: 50%;
 			padding: 15px;
 			background: #fff;

@@ -66,3 +66,13 @@ $size__page-width: 1250px;
 		}
 	}
 }
+
+#page .wp-block-columns.wp-block-atf {
+
+	@media screen and (min-width: breakpoint('desktop')) {
+
+		.wp-block-column--content {
+			padding: 60px $padding__content-desktop;
+		}
+	}
+}

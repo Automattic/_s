@@ -50,11 +50,12 @@ Import either center or left aligned style in header/header.scss.
 ### Full Width blocks
 * **Solid or no background**\
     Use a Wordpress multiple columns (2 columns) block with 
-    `wp-columns-full` class.
+    `wp-block-container` class.
+    Use `is-style-full` class to obtain an inner content with a maximum width of
+    600px on desktop;
 * **Background image**\
-    Use a Wordpress Media and Text block with `has-dark-image-background` or 
-    `has-light-image-background` classes. 
-    The media component will be set as block background.
+    Use a Wordpress Media and Text block with `has-image-background` class. 
+    The media component will be set as the block background.
 
 ## Buttons Group
 Obtain two aligned buttons using a Multiple Columns (2 columns) block with

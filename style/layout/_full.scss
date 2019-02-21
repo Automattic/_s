@@ -90,6 +90,18 @@
 		}
 	}
 
+	.wp-block-columns.wp-block-atf {
+
+		@media screen and (min-width: $size__content-width ) {
+
+			.wp-block-column--media {
+				margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
+				width: auto;
+			}
+		}
+	}
+
 	.is-style-method.alignfull,
 	.is-style-method.alignwide {
 

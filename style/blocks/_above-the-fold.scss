@@ -1,4 +1,4 @@
-#page .is-style-hero {
+#page .wp-block-atf {
 	display: block;
 	padding-left: 0;
 	padding-right: 0;
@@ -19,21 +19,24 @@
 	}
 
 	.wp-block-column--content {
-		padding: 20px;
+		padding: 20px $padding__content-mobile;
 
 		h1, h2, .is-style-pretitle {
 			margin-top: 0;
 		}
 	}
 
+	@media screen and (min-width: breakpoint('phone')) {
+
+		.wp-block-column--content {
+			padding: 20px 40px;
+		}
+	}
+
 	@media screen and (min-width: 600px) {
 
-		.wp-block-column {
-			padding-right: 0;
-
-			&.wp-block-column--content {
-				padding-right: 20px;
-			}
+		.wp-block-column--content {
+			padding: 20px $padding__content-mobile;
 		}
 	}
 
@@ -59,21 +62,13 @@
 			position: relative;
 			z-index: 1;
 			width: 50%;
-			padding: 20px $padding__content-mobile;
+			padding: 40px;
 		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		margin-left: -#{$padding__content-desktop};
 		margin-right: -#{$padding__content-desktop};
-	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-
-		.wp-block-column--content {
-			padding: 60px $padding__content-desktop;
-			padding-right: 40px !important;
-		}
 	}
 
 	.buttons-group {
@@ -117,7 +112,7 @@
 	}
 }
 
-#page .is-style-hero--left-margin {
+#page .is-style-left-margin {
 
 	@media screen and (min-width: 768px) {
 
@@ -136,16 +131,9 @@
 			margin-left: $padding__content-desktop;
 		}
 	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-
-		.wp-block-column--content {
-			padding-left: 40px;
-		}
-	}
 }
 
-#page .is-style-hero--boxed {
+#page .is-style-boxed {
 
 	@media screen and (min-width: 768px) {
 		padding: $padding__content-mobile;
@@ -158,12 +146,5 @@
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		padding: $padding__content-desktop;
-	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-
-		.wp-block-column--content {
-			padding-left: 40px;
-		}
 	}
 }
