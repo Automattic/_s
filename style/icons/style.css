@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'theme-icons';
-	src:  url('fonts/theme-icons.eot?kockls');
-	src:  url('fonts/theme-icons.eot?kockls#iefix') format('embedded-opentype'),
-	url('fonts/theme-icons.ttf?kockls') format('truetype'),
-	url('fonts/theme-icons.woff?kockls') format('woff'),
-	url('fonts/theme-icons.svg?kockls#theme-icons') format('svg');
+	src:  url('fonts/theme-icons.eot?vjot7g');
+	src:  url('fonts/theme-icons.eot?vjot7g#iefix') format('embedded-opentype'),
+	url('fonts/theme-icons.ttf?vjot7g') format('truetype'),
+	url('fonts/theme-icons.woff?vjot7g') format('woff'),
+	url('fonts/theme-icons.svg?vjot7g#theme-icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -24,6 +24,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-Risorsa-6:before {
+	content: "\e932";
+	color: #0263ad;
+}
 .icon-envelope:before {
 	content: "\e931";
 }
