@@ -164,6 +164,12 @@
           container.parent('.footer-fixed-bar').removeClass('expanded');
         }
     });
+    
+    $('.wp-block-flickity').flickity({
+      cellAlign: 'left',
+      contain: true
+    });
+    
   });
   
 })(jQuery);

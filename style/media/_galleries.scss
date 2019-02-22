@@ -3,8 +3,169 @@
 	.blocks-gallery-item:before {
 		display: none;
 	}
+
+	.blocks-gallery-item figcaption {
+		padding: 15px $padding__content-mobile;
+		background: rgba(0,0,0,.5);
+	}
 }
 
-.carousel {
+.wp-block-gallery.wp-block-flickity {
+	display: block;
+	position: relative;
+	margin-left: -#{$padding__content-mobile};
+	margin-right: -#{$padding__content-mobile};
 
+	.blocks-gallery-item {
+		width: 100%;
+		margin: 0;
+
+		img {
+			display: block;
+			max-width: none;
+			width: 100%;
+		}
+
+		figcaption {
+			display: none;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&.flickity--carousel {
+
+		.flickity-page-dots {
+			position: static;
+			background: none;
+
+			li {
+
+				&:before {
+					border-color: $color__text-main;
+				}
+
+				&.is-selected:before {
+					background: $color__text-main;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: 600px) {
+
+		.blocks-gallery-item {
+			width: 100%;
+			margin-right: 0;
+		}
+
+		&.flickity--carousel {
+			margin-right: 0;
+			margin-left: 0;
+
+			.blocks-gallery-item {
+				width: 49%;
+				margin-right: 20px;
+
+				img {
+					display: block;
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		margin-right: -#{$padding__content-desktop};
+		margin-left: -#{$padding__content-desktop};
+
+		.blocks-gallery-item {
+
+			figcaption {
+				display: block;
+			}
+		}
+
+		&.flickity--carousel {
+
+			.blocks-gallery-item {
+				width: 32%;
+			}
+		}
+	}
+}
+
+.flickity-page-dots {
+	position: absolute;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+	left: 0;
+	right: 0;
+	margin: 0;
+	color: #fff;
+	text-align: center;
+	padding: 0;
+	height: 40px;
+
+	li {
+		margin: 0 10px 0 0;
+		display: inline-block;
+		line-height: 40px;
+
+		&:before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			border: 1px solid #fff;
+			border-radius: 10px;
+			margin: 0;
+			position: relative;
+			bottom: 2px;
+		}
+
+		&.is-selected:before {
+			background: #fff;
+		}
+	}
+}
+
+.flickity-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	box-shadow: none;
+
+	svg {
+		display: none;
+	}
+
+	&:before {
+		color: #fff;
+	}
+
+	&.previous {
+		left: 0;
+
+		&:before {
+			@include icon-content('\e90d');
+		}
+
+	}
+
+	&.next {
+		right: 0;
+
+		&:before {
+			@include icon-content('\e90e');
+		}
+	}
+
+	&:hover {
+		background: none;
+		border: none;
+		box-shadow: none;
+	}
 }
