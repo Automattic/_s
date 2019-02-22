@@ -1,5 +1,10 @@
 #page .wp-block-columns {
 
+	.wp-block-gallery {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
 	&.wp-block-container {
 		display: block;
 		padding-top: 20px;

@@ -9,15 +9,20 @@
     * [Sticky header](#sticky-header)
     * [Mobile menu](#mobile-menu)
     * [Desktop menu](#desktop-menu)
+* [Footer](#footer)
+    * [Footer fixed bar](#footer-fixed-bar)
 * [Blocks](#blocks)
     * [Separator](#separator)
     * [Full width block](#full-width-block)
     * [Buttons group](#buttons-group)
     * [Cards](#cards)
-    * [Clients logos gallery](#clients-logos-gallery)
     * [Form and image](#form-and-image)
     * [Offer block](#offer-block)
     * [Method block](#method-block)
+* [Gallery](#gallery)
+    * [Clients logos gallery](#clients-logos-gallery)
+    * [Full slider](#full-slider)
+    * [Carousel](#carousel)
 
 ## <a name="background-image">Background image</a> [#](#index)
 When setting images as background through CSS, use the mixin 
@@ -64,6 +69,25 @@ Import either center or left aligned style in header/header.scss.
 * [Desktop center aligned menu](header/_center-aligned.scss)\
     `@import 'desktop/logo-center';`
 
+## <a name="footer">Footer</a> [#](#index)
+
+### <a name="footer-fixed-bar">Footer fixed bar</a>
+To show a mobile fixed bar with a main call-to-action and a togglable list
+of secondary actions, enable it through Wordpress customizer panel.\
+Here some html code to display it correctly (add it in customizer textarea).
+
+```html
+<a class="button">[MAIN CTA]</a>
+<button class="fixed-bar__toggle">Contact us</button>
+<ul class="fixed-bar__actions">
+<li class="fixed-bar__action action--phone">
+<a href="tel:[PHONE NUMBER]">[PHONE NUMBER]</a>
+</li>
+<li class="fixed-bar__action action--email">
+<a href="mailto:[EMAIL ADDRESS]">[EMAIL ADDRESS]</a></li>
+</ul>
+```
+
 ## <a name="blocks">Blocks</a> [#](#index)
 
 ### <a name="separator">Separator</a>
@@ -96,12 +120,6 @@ Obtain two aligned buttons using a Multiple Columns (2 columns) block with
     Structure: wrap numbers in an `<em>` tag to output the card correctly. 
     Assign icons through CSS pseudo-elements.
 
-### <a name="clients-logos-gallery">Clients logos gallery</a>
-Suitable to display a simple gallery of aligned logos.\
-Use a Multiple Columns block with `is-style-clients` class.\
-Fill the first column with the label text (h3) and the second column with 
-a gallery block.
-
 ### <a name="form-and-image">Form and image</a>
 Suitable for Guide Download blocks or contact form blocks.\
 Use Wordpress Multiple Columns (2 columns) block with `is-style-form` class.\
@@ -128,3 +146,21 @@ Fill every column with the following blocks:
 * a paragraph with `single-step__label` class;
 * an heading with `single-step__title` class;
 * a paragraph with `single-step__content` class.
+
+## Gallery
+
+### <a name="clients-logos-gallery">Clients logos gallery</a>
+Suitable to display a simple gallery of vertically aligned logos.\
+Use a Multiple Columns block with `is-style-clients` class.\
+Fill the first column with the label text (h3) and the second column with 
+a gallery block.
+
+### <a name="full-slider">Full slider</a>
+Use a standard Wordpress gallery block with `wp-block-flickity` class.\
+To include in a block witha a media and text appearance, use a standard
+Wordpress columns block (2 columns) and simply fill the first column with the
+gallery.
+
+### <a name="carousel">Carousel</a>
+Use a standard Wordpress gallery block with `wp-block-flickity` and 
+`flickity--carousel` class.
