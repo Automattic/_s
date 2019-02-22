@@ -70,13 +70,13 @@
 
 
 	$('.loadmore').on('click', '.loadmore__button', function(event){
-		event.preventDefault();
-		var loadmore = $(this);
-		var container = loadmore.closest('.loadmore');
-		  container.addClass('loading');
+    event.preventDefault();
+    var loadmore = $(this);
+    var container = loadmore.closest('.loadmore');
+      container.addClass('loading');
 
 		$.get( loadmore.attr('href') + ' #main', function( response ){
-			var loader = $( response );
+		  var loader = $( response );
 			
 			  container
 				  .append(loader.find('.hentry'))
@@ -96,11 +96,11 @@
 		loadmore.detach();
 	});		
 		
-	function getCookie(name) {
-	  var value = "; " + document.cookie;
-	  var parts = value.split("; " + name + "=");
-	  if (parts.length == 2) return parts.pop().split(";").shift();
-	}
+  function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
+  }
 
   $(document).ready(function(){
       $(".countdown").each(function(){
@@ -133,17 +133,37 @@
       	
       	$(this).countdown( countdown_expires, function(event) {
       	    
-      	    $(this).addClass('countdown--running');
-      	    
-            if (event.elapsed) { 
-                $(this).addClass('countdown--elapsed');
-                $(this).removeClass('countdown--running');
-            } else {
-          	  $(this).html( event.strftime( date_format ) );
-            }      	  
+        $(this).addClass('countdown--running');
+        
+        if (event.elapsed) { 
+            $(this).addClass('countdown--elapsed');
+            $(this).removeClass('countdown--running');
+        } else {
+          $(this).html( event.strftime( date_format ) );
+        }      	  
       	 
-      	});
+      });
   	});
-  });                	  
+  	
+    /* Fixed bar showing animation*/
+    var waypoints = new Waypoint({
+      element: $('#page'),
+      handler: function(direction) {
+        $('.footer-fixed-bar').toggleClass('visible');
+      },
+      offset: "-500"
+    });
+    
+    $('.fixed-bar__toggle').on('click', function(){
+      $(this).parent('.footer-fixed-bar').addClass('expanded');
+    });
+    
+    $(document).mouseup(function(e) {
+        var container = $('.expanded .fixed-bar__actions');
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+          container.parent('.footer-fixed-bar').removeClass('expanded');
+        }
+    });
+  });
   
 })(jQuery);

@@ -103,13 +103,17 @@ Fill the first column with the label text (h3) and the second column with
 a gallery block.
 
 ### <a name="form-and-image">Form and image</a>
-Suitable for Guide Donwload blocks or contact form blocks. \
-Use Wordpress Multiple Columns (2 columns) block with `is-style-form` class. \
+Suitable for Guide Download blocks or contact form blocks.\
+Use Wordpress Multiple Columns (2 columns) block with `is-style-form` class.\
 To display a standard Guide Download block (where the guide png is allowed to 
 slightly excedes the block vertically) add the `has-overflow-image` class.\
-To add an overlay caption to the image content add `is-style-overlay-caption` 
-class to the specific element.
-
+Add this caption
+```html
+<strong>Preferisci parlarne a voce?</strong>
+Chiamaci al numero
+<a href="tel:00393921414546">(+39) 392 1414546&#65279;</a>
+```
+to get a fancy contact call-to-action.
 ### <a name="offer-block">Offer block</a>
 Suitable for offer presentation. The first column contains either an embedded
 video or an image of the product. \

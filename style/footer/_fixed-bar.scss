@@ -114,6 +114,7 @@
 	}
 
 	&.expanded {
+		bottom: 0;
 
 		&:before {
 			display: block;
