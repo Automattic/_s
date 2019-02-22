@@ -15,6 +15,7 @@
 	position: relative;
 	margin-left: -#{$padding__content-mobile};
 	margin-right: -#{$padding__content-mobile};
+	overflow: hidden;
 
 	.blocks-gallery-item {
 		width: 100%;

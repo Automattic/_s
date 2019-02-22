@@ -42,6 +42,11 @@
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 
+		.wp-block-gallery {
+			margin-right: 0;
+			margin-left: 0;
+		}
+
 		&.wp-block-container .alignwide {
 			margin-right: 0;
 			margin-left: 0;
