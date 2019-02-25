@@ -1,4 +1,4 @@
-.is-style-method {
+#page .wp-block-columns.is-style-method {
 	text-align: center;
 	background-color: $color__background-light;
 	background-image: url("images/steps-bar.png");
@@ -8,6 +8,10 @@
 	padding-right: $padding__content-mobile;
 	padding-left: $padding__content-mobile;
 	display: block;
+	
+	h3 {
+		@include font-size(1.4);
+	}
 
 	&:before,
 	&:after {
@@ -15,7 +19,7 @@
 		display: block;
 		background-size: 13px auto;
 		background-repeat: no-repeat;
-		height: 97px;
+		height: 70px;
 		width: 100%;
 	}
 
@@ -95,10 +99,11 @@
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		padding-left: $padding__content-mobile + 300px;
-		background-position: $padding__content-mobile + 208px center;
+		background-position: $padding__content-mobile + 154px center;
 		padding: 10px $padding__content-mobile 50px $padding__content-mobile + 300px;
 		position: relative;
 		margin: 50px 0 0;
+		max-width: 1100px;
 
 		&:before,
 		&:after {
@@ -108,12 +113,12 @@
 
 		&:before {
 			top: 0;
-			background-position: $padding__content-mobile + 208px top;
+			background-position: $padding__content-mobile + 154px top;
 		}
 
 		&:after {
 			bottom: 0;
-			background-position: $padding__content-mobile + 208px bottom;
+			background-position: $padding__content-mobile + 154px bottom;
 		}
 
 		.single-step {
@@ -121,22 +126,21 @@
 			flex-basis: 100%;
 			max-width: none;
 			margin-top: 30px;
-			padding-top: 1px;
+			padding-top: 10px;
 			z-index: 1;
-
-			.single-step__picture,
-			.single-step__label {
-				top: 50%;
-				transform: translateY(-50%);
-			}
+			position: relative;
 
 			.single-step__picture {
-				left: -135px;
+				top: 50%;
+				left: -190px;
+				transform: translateY(-50%);
 			}
-
+			
 			.single-step__label {
 				@include font-size(1.2);
-				left: -300px;
+				top: -18px;
+				left: 20px;
+				transform: none;
 				margin: 0;
 				padding: 5px 30px;
 			}
