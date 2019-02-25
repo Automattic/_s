@@ -77,7 +77,6 @@
 		text-align: center;
 
 		.wp-block-column {
-			max-width: 335px;
 			margin-right: auto;
 			margin-left: auto;
 
@@ -89,7 +88,6 @@
 		@media screen and (min-width: 480px) and (max-width: 559px), (min-width: 768px) {
 
 			.wp-block-column {
-				float: none;
 				width: 100%;
 			}
 		}
@@ -98,11 +96,9 @@
 			text-align: center;
 
 			.wp-block-column {
-				display: inline-block;
 				max-width: none;
-				width: 45%;
+				width: 49%;
 				margin-right: 2%;
-				float: none;
 
 				&:last-of-type {
 					margin-right: 0;

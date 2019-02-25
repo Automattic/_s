@@ -14,6 +14,7 @@
 * [Blocks](#blocks)
     * [Separator](#separator)
     * [Full width block](#full-width-block)
+    * [Media and text](#media-and-text)
     * [Buttons group](#buttons-group)
     * [Cards](#cards)
     * [Form and image](#form-and-image)
@@ -104,9 +105,15 @@ Add `leftalign` class to get a left-aligned separator instead.
     Use a Wordpress Media and Text block with `has-image-background` class. 
     The media component will be set as the block background.
 
+### <a name="media-and-text">Media and text</a>
+Use a standard Wordpress Media and text block.
+If the media is a gallery or a `<picture>`, use a columns block instead: add
+`wp-block-column--media` class to that column containing the media element and 
+`wp-block-column--content` to the other.
+
 ### <a name="buttons-group">Buttons Group</a>
 Obtain two aligned buttons using a Multiple Columns (2 columns) block with
-`buttons-wrap` class. Insert a button block in each column.
+`buttons-group` class. Insert a button block in each column.
 
 ### <a name="cards">Cards</a>
 * **Icon card** (suitable for bullets/company services)\
