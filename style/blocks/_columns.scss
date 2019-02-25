@@ -1,4 +1,16 @@
 #page .wp-block-columns {
+	
+	.wp-block-column--media {
+		padding-top: 50px;
+	}
+	
+	.wp-block-column--content {
+		padding-bottom: 50px;
+		
+		h2 {
+			margin-top: 0;
+		}
+	}
 
 	.wp-block-gallery {
 		margin-top: 0;
@@ -44,8 +56,22 @@
 			}
 		}
 	}
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		
+		.wp-block-column--media,
+		.wp-block-column--content {
+			padding-top: 70px;
+			padding-bottom: 70px;
+		}
+	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		
+		.wp-block-column--media {
+			padding-left: 0;
+			padding-right: 0;
+		}
 
 		.wp-block-gallery {
 			margin-right: 0;

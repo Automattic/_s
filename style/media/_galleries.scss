@@ -39,6 +39,10 @@
 	}
 
 	&.flickity--carousel {
+		
+		.flickity-button {
+			top: calc(50% - 20px);
+		}
 
 		.flickity-page-dots {
 			position: static;
@@ -115,6 +119,7 @@
 		margin: 0 10px 0 0;
 		display: inline-block;
 		line-height: 40px;
+		cursor: pointer;
 
 		&:before {
 			content: "";
@@ -140,6 +145,7 @@
 	background: none;
 	border: none;
 	box-shadow: none;
+	cursor: pointer;
 
 	svg {
 		display: none;
@@ -147,6 +153,7 @@
 
 	&:before {
 		color: #fff;
+    	text-shadow: 0 0 5px rgba(0,0,0,.2);
 	}
 
 	&.previous {
@@ -166,7 +173,9 @@
 		}
 	}
 
-	&:hover {
+	&:hover,
+	&:focus,
+	&:active {
 		background: none;
 		border: none;
 		box-shadow: none;
