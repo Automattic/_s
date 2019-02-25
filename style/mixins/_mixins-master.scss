@@ -92,7 +92,7 @@
 	content: "#{$hex}";
 }
 
-@mixin repeat($character, $n) {
+@mixin content-repeat($character, $n) {
 	$c:"";
 	@for $i from 1 through $n {
 		$c: $c + $character;
