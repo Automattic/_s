@@ -22,6 +22,11 @@
 	.testimonial {
 		color: $color__text-main;
 		
+		.wp-block-column {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		
 		.testimonial__wrapper {
 			padding-top: 0;
 			padding-bottom: 0;
@@ -434,7 +439,8 @@
 
 				.wp-block-column {
 					display: block;
-					margin: 0;
+					margin-right: 0;
+					margin-left: 0;
 				}
 			}
 		}
@@ -567,6 +573,11 @@
 	&.format-standard {
 		padding: 0 20px 20px;
 		margin-top: 100px;
+		
+		.testimonial__content {
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
 
 		img {
 			width: 160px;
