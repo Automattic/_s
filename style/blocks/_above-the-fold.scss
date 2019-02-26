@@ -1,4 +1,4 @@
-#page .wp-block-columns.wp-block-atf {
+.wp-block-columns.wp-block-atf {
 	display: block;
 	padding-left: 0;
 	padding-right: 0;
@@ -110,7 +110,7 @@
 	}
 }
 
-#page .wp-block-columns.is-style-left-margin {
+.wp-block-columns.is-style-left-margin {
 
 	@media screen and (min-width: 768px) {
 
@@ -131,7 +131,7 @@
 	}
 }
 
-#page .wp-block-columns.is-style-boxed {
+.wp-block-columns.is-style-boxed {
 
 	@media screen and (min-width: 768px) {
 		padding: $padding__content-mobile;

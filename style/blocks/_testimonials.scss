@@ -8,17 +8,6 @@
 		padding-bottom: 0;
 	}
 
-	&.loadmore > p {
-		text-align: center;
-		padding: 40px 0 15px;
-		margin-bottom: 0;
-		clear: both;
-
-		a {
-			display: inline-block;
-		}
-	}
-
 	&:after {
 		@include clearfix();
 		@include clearfix-after();
@@ -32,6 +21,11 @@
 
 	.testimonial {
 		color: $color__text-main;
+		
+		.testimonial__wrapper {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
 	}
 
 	&.is-style-full {
@@ -741,4 +735,12 @@
 			margin-right: 0;
 		}
 	}
+}
+
+.loadmore__button {
+	display: block;
+    clear: both;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }

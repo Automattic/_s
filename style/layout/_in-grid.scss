@@ -1,26 +1,28 @@
 $size__page-width: 1250px;
 
-#page {
-
+.site-content,
+.wrap {
+	
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-
-		.site-content,
-		.wrap {
-			padding: 0 $padding__content-desktop;
-		}
+		padding: 0 $padding__content-desktop;
 	}
+}
 
+#page {
 	@media screen and (min-width: 85.375em) {
 		max-width: $size__page-width;
 		margin: 0 auto;
 		box-shadow: 0 0 3px rgba(0,0,0,.1);
-
+	
 		.site-header.stuck .wrap {
 			max-width: $size__page-width;
 			margin: 0 auto;
 		}
 	}
+}
 
+.site-content {
+	
 	.alignfull,
 	.alignwide {
 		width: auto;
@@ -28,18 +30,18 @@ $size__page-width: 1250px;
 		margin-right: -#{$padding__content-mobile};
 		padding-left: $padding__content-mobile;
 		padding-right: $padding__content-mobile;
-
+	
 		&.wp-block-image {
 			padding: 0;
 			max-width: none;
 			margin-top: 0;
 			margin-bottom: 0;
-
+	
 			img {
 				display: block;
 			}
 		}
-
+	
 		@media screen and (min-width: breakpoint('tablet-landscape')) {
 			padding-left: $padding__content-desktop;
 			padding-right: $padding__content-desktop;
@@ -47,27 +49,27 @@ $size__page-width: 1250px;
 			margin-right: -#{$padding__content-desktop};
 		}
 	}
+}
 
-	.is-style-method.alignfull,
-	.is-style-method.alignwide {
+.is-style-method.alignfull,
+.is-style-method.alignwide {
 
-		@media screen and (min-width: breakpoint('tablet-landscape')) {
-			padding-left: $padding__content-desktop + 300px;
-			padding-right: $padding__content-desktop;
-			background-position: $padding__content-desktop + 208px center;
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding-left: $padding__content-desktop + 300px;
+		padding-right: $padding__content-desktop;
+		background-position: $padding__content-desktop + 208px center;
 
-			&:before {
-				background-position: $padding__content-desktop + 208px top;
-			}
+		&:before {
+			background-position: $padding__content-desktop + 208px top;
+		}
 
-			&:after {
-				background-position: $padding__content-desktop + 208px bottom;
-			}
+		&:after {
+			background-position: $padding__content-desktop + 208px bottom;
 		}
 	}
 }
 
-#page .wp-block-columns.wp-block-atf {
+.wp-block-columns.wp-block-atf {
 
 	@media screen and (min-width: breakpoint('desktop')) {
 

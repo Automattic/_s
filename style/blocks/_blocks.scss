@@ -66,19 +66,6 @@
 	background: #fff;
 }
 
-.wp-block-media-text,
-.wp-block-columns {
-
-	&.has-dark-background,
-	&.has-light-background,
-	&.has-gradient-background {
-		margin-right: -#{$padding__content-mobile};
-		margin-left: -#{$padding__content-mobile};
-		padding-right: $padding__content-mobile;
-		padding-left: $padding__content-mobile;
-	}
-}
-
 /*--------------------------------------------------------------
 # Block types
 --------------------------------------------------------------*/
