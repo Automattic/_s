@@ -19,8 +19,6 @@
 	}
 
 	@media screen and (max-width: breakpoint('tablet-portrait')) {
-		padding-top: 70px;
-		padding-bottom: 70px;
 
 		&.is-stacked-on-mobile {
 			display: block;
@@ -46,6 +44,11 @@
 			padding-right: 8%;
 			padding-left: 0;
 		}
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding-top: 70px;
+		padding-bottom: 70px;
 	}
 }
 

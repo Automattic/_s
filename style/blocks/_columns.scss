@@ -1,4 +1,6 @@
 #page .wp-block-columns {
+	padding-top: 50px;
+	padding-bottom: 50px;
 	
 	.wp-block-column--content {
 		
@@ -53,6 +55,8 @@
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding-top: 70px;
+		padding-bottom: 70px;
 		
 		.wp-block-column--media {
 			padding-left: 0;

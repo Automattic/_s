@@ -1,9 +1,11 @@
-#page .wp-block-atf {
+#page .wp-block-columns.wp-block-atf {
 	display: block;
 	padding-left: 0;
 	padding-right: 0;
 	margin-left: -#{$padding__content-mobile};
 	margin-right: -#{$padding__content-mobile};
+	padding-top: 0;
+	padding-bottom: 0;
 
 	.wp-block-column {
 		margin: 0;
@@ -108,7 +110,7 @@
 	}
 }
 
-#page .is-style-left-margin {
+#page .wp-block-columns.is-style-left-margin {
 
 	@media screen and (min-width: 768px) {
 
@@ -129,7 +131,7 @@
 	}
 }
 
-#page .is-style-boxed {
+#page .wp-block-columns.is-style-boxed {
 
 	@media screen and (min-width: 768px) {
 		padding: $padding__content-mobile;

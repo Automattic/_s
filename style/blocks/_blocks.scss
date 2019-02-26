@@ -77,15 +77,6 @@
 		padding-right: $padding__content-mobile;
 		padding-left: $padding__content-mobile;
 	}
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-
-		&.has-dark-background,
-		&.has-light-background {
-			margin: 0 -30px;
-			padding: 50px 30px;
-		}
-	}
 }
 
 /*--------------------------------------------------------------
