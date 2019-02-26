@@ -42,7 +42,7 @@
 	.fixed-bar__toggle {
 		background: #f5f5f5;
 		border: 1px solid #ccc;
-		color: $color__text-main;
+		color: #777;
 		text-indent: -999px;
 		width: 36px;
 		position: relative;
@@ -50,7 +50,7 @@
 		cursor: pointer;
 
 		&:before {
-			@include icon-content('\e92f');
+			@include icon-content('\e933');
 			@include font-size(1.2);
 			position: absolute;
 			right: 0;
