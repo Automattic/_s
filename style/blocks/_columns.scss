@@ -10,8 +10,7 @@
 	}
 
 	.wp-block-gallery {
-		margin-top: 0;
-		margin-bottom: 0;
+		margin: 0;
 	}
 
 	&.wp-block-container {
@@ -61,11 +60,6 @@
 		.wp-block-column--media {
 			padding-left: 0;
 			padding-right: 0;
-		}
-
-		.wp-block-gallery {
-			margin-right: 0;
-			margin-left: 0;
 		}
 
 		&.wp-block-container .alignwide {
