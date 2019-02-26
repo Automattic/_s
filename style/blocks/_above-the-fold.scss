@@ -127,6 +127,8 @@
 		.wp-block-column--content {
 			width: calc(50% - #{$padding__content-desktop});
 			margin-left: $padding__content-desktop;
+			padding-right: 40px;
+			padding-left: 40px;
 		}
 	}
 }
@@ -144,5 +146,10 @@
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		padding: $padding__content-desktop;
+
+		.wp-block-column--content {
+			padding-right: 40px;
+			padding-left: 40px;
+		}
 	}
 }
