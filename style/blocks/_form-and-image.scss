@@ -107,6 +107,11 @@
 		&.wp-block-columns {
 			display: block;
 
+			&:after {
+				@include clearfix();
+				@include clearfix-after();
+			}
+
 			.wp-block-column {
 				width: 50%;
 			}
