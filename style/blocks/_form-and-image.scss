@@ -27,7 +27,7 @@
 		background: $color__background-light;
 		border-radius: 8px;
 		box-shadow: 0 0 5px rgba(0,0,0,.2);
-		margin: 15px 20px;
+		margin: 15px 20px 20px;
 		padding: 20px;
 		text-align: center;
 		font-weight: 700;
@@ -57,8 +57,10 @@
 				position: absolute;
 				top: -8px;
 				bottom: -8px;
-				left: -8px;
+				left: -25px;
 				line-height: 70px;
+				font-size: 70px;
+				padding: 0 10px 0 0;
 			}
 		}
 
@@ -102,19 +104,26 @@
 		margin-top: 50px;
 		margin-bottom: 50px;
 
-		.wp-block-column {
-			flex-basis: 50%;
+		&.wp-block-columns {
+			display: block;
+
+			.wp-block-column {
+				width: 50%;
+			}
+
+			.wp-block-column:nth-of-type(1) {
+				float: right;
+			}
+
+			.wp-block-column:nth-of-type(2) {
+				float: left;
+			}
 		}
 
-		.wp-block-column:nth-of-type(1),
 		.wp-block-media-text__media {
 			order: 1;
 			padding-right: 0;
 			padding-left: 15px;
-		}
-
-		.wp-block-column:nth-of-type(2) {
-			order: 0;
 		}
 
 		.wp-block-media-text__content,
