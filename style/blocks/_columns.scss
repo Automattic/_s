@@ -41,6 +41,19 @@
 
 	@media screen and (min-width: 600px) {
 
+		&.has-media-on-the-right {
+
+			.wp-block-column--media {
+				order: 1;
+				margin-right: 0;
+				margin-left: 2%;
+			}
+
+			.wp-block-column--content {
+				order: 0;
+			}
+		}
+
 		&.wp-block-container {
 
 			.wp-block-column {
