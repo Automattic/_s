@@ -7,7 +7,7 @@
 	background-size: 13px auto;
 	padding: 0 $padding__content-mobile;
 	display: block;
-	
+
 	h3 {
 		@include font-size(1.4);
 	}
@@ -134,7 +134,7 @@
 				left: -190px;
 				transform: translateY(-50%);
 			}
-			
+
 			.single-step__label {
 				@include font-size(1.2);
 				top: -18px;

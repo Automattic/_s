@@ -21,12 +21,12 @@
 
 	.testimonial {
 		color: $color__text-main;
-		
+
 		.wp-block-column {
 			padding-left: 0;
 			padding-right: 0;
 		}
-		
+
 		.testimonial__wrapper {
 			padding-top: 0;
 			padding-bottom: 0;
@@ -573,7 +573,7 @@
 	&.format-standard {
 		padding: 0 20px 20px;
 		margin-top: 100px;
-		
+
 		.testimonial__content {
 			margin-top: 10px;
 			margin-bottom: 5px;
@@ -750,8 +750,8 @@
 
 .loadmore__button {
 	display: block;
-    clear: both;
-    max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
+	clear: both;
+	max-width: 250px;
+	margin-left: auto;
+	margin-right: auto;
 }
