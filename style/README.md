@@ -61,7 +61,8 @@ Import either right or left aligned style in header/header.scss.
 * [Mobile left aligned menu](header/_left-mobile-nav.scss):
     use it when either search toggle or cart icon or both are present.\
     `@import 'mobile/left-nav/left-nav';`\
-    Note: import has-cart.scss (`@import 'has-cart';`) in left-nav.scss if cart icon is present.
+    Note: import has-cart.scss (`@import 'has-cart';`) in left-nav.scss if cart 
+    icon is present.
 
 ### <a name="desktop-menu">Desktop Menu</a>
 Import either center or left aligned style in header/header.scss.
@@ -99,8 +100,7 @@ Add `leftalign` class to get a left-aligned separator instead.
 * **Solid or no background**\
     Use a Wordpress multiple columns (2 columns) block with 
     `wp-block-container` class.
-    Use `is-style-full` class to obtain an inner content with a maximum width of
-    600px on desktop;
+    Add `container__header` class to the set a max-width of 700px for header elements.
 * **Background image**\
     Use a Wordpress Media and Text block with `has-image-background` class. 
     The media component will be set as the block background.
