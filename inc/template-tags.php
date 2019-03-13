@@ -146,7 +146,7 @@ if ( ! function_exists( '_svbk_post_thumbnail' ) ) :
 			?>
 		</a>
 
-		<?php
+			<?php
 		endif; // End is_singular().
 	}
 endif;

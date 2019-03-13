@@ -163,7 +163,7 @@ function _svbk_sensei_lesson_button( $lesson_id ) {
 		<a class="button to-single locked" href="<?php the_permalink(); ?>"><?php _e( 'Lesson Locked', '_svbk' ); ?></a>
 	<?php else : ?>
 		<a class="button to-single" href="<?php the_permalink(); ?>"><?php _e( 'Go to Lesson', '_svbk' ); ?></a>
-	<?php
+		<?php
 	endif;
 }
 
