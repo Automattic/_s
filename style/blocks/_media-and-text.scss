@@ -17,6 +17,26 @@
 			@include clearfix-after();
 		}
 	}
+	
+	@media screen and (min-width: 600px) {
+		display: flex;
+		
+		.wp-block-media-text__media,
+		.wp-block-media-text__content {
+			flex-basis: 50%;
+		}
+		
+		&.has-media-on-the-right {
+			
+			.wp-block-media-text__content {
+				order: 0;
+			}
+			
+			.wp-block-media-text__media {
+				order: 1;
+			}
+		}
+	}
 
 	@media screen and (max-width: breakpoint('tablet-portrait')) {
 
@@ -49,14 +69,6 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		padding-top: 70px;
 		padding-bottom: 70px;
-
-		.wp-block-media-text__content {
-			padding-left: 15%;
-		}
-
-		&.has-media-on-the-right .wp-block-media-text__content {
-			padding-right: 15%;
-		}
 	}
 }
 
