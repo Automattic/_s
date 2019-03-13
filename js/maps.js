@@ -114,4 +114,8 @@
         $(this).parents('.map-locker').toggleClass('locked').toggleClass('unlocked');
     });
 
+    if ( typeof google.maps !== undefined ){
+        $('.gmap-container').trigger('gmaps-ready');
+    }
+
 })(jQuery);
