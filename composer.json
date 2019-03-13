@@ -20,7 +20,9 @@
         }
     ],    
     "require": {
-        "silverback/wp-helpers": "^5.2.0"
+        "silverbackstudio/wp-shortcakes": "^4.4.1",
+        "silverback/wp-helpers": "^5.2.0",
+        "silverbackstudio/wp-widgets": "^3.4.0"
     },
     "require-dev": {
         "wp-coding-standards/wpcs": "^1.2",
