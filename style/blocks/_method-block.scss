@@ -107,10 +107,10 @@
 			z-index: 1;
 			position: relative;
 			text-align: left;
-			
+
 			&:first-of-type {
 				margin-top: 0;
-				
+
 				figure:before {
 					content: '';
 					display: block;
@@ -142,7 +142,7 @@
 				display: inline-block;
 				top: 0;
 				left: 0;
-				
+
 				&:after {
 					content: '';
 					display: block;

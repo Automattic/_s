@@ -1,20 +1,20 @@
 .wp-block-columns {
 	padding-top: 50px;
 	padding-bottom: 50px;
-	
+
 	.wp-block-columns &,
 	.wp-block-media-text & {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	
+
 	.wp-block-column--media {
-		
+
 		figure {
 			margin: 0;
 		}
 	}
-	
+
 	.wp-block-column--content {
 		margin-bottom: 0;
 
@@ -32,10 +32,10 @@
 		padding-top: 20px;
 		padding-bottom: 20px;
 		clear: both;
-		
+
 		.container__header {
 			text-align: left;
-			
+
 			hr {
 				margin-left: 0;
 			}
@@ -48,16 +48,16 @@
 	}
 
 	@media screen and (min-width: 600px) {
-		
+
 		.wp-block-column.wp-block-column--media,
 		.wp-block-column.wp-block-column--content {
 			padding: 0;
 		}
-		
+
 		.wp-block-column.wp-block-column--media {
 			margin-right: 0;
 		}
-		
+
 		.wp-block-column.wp-block-column--content {
 			padding-left: 4%;
 		}
@@ -89,33 +89,33 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		padding-top: 70px;
 		padding-bottom: 70px;
-		
+
 		.wp-block-column.wp-block-column--content {
 			padding-left: 8.5%;
 		}
-		
+
 		&.has-media-on-the-right {
-			
+
 			.wp-block-column--content {
 				padding-left: 0;
 				padding-right: 8.5%;
 			}
 		}
-		
+
 		&.wp-block-container {
-			
+
 			.container__header {
 				text-align: center;
 				max-width: 700px;
 				margin-left: auto;
 				margin-right: auto;
-				
+
 				.wp-block-separator {
 					margin-right: auto;
 					margin-left: auto;
 				}
 			}
-			
+
 			.alignwide {
 				margin-right: 0;
 				margin-left: 0;

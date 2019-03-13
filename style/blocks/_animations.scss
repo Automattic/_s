@@ -1,0 +1,53 @@
+.wp-block-media-text.animate {
+
+	.wp-block-media-text__media,
+	.wp-block-media-text__content {
+		opacity: 0;
+	}
+
+	.wp-block-media-text__media {
+		transition: opacity .6s ease-in-out;
+	}
+
+	.wp-block-media-text__content {
+		position: relative;
+		top: 30px;
+		transition: opacity .6s ease-in-out, top .8s ease-in-out;
+	}
+
+	&.animated {
+
+		.wp-block-media-text__media,
+		.wp-block-media-text__content {
+			opacity: 1;
+		}
+
+		.wp-block-media-text__content {
+			top: 0;
+		}
+	}
+}
+
+.is-style-icon-cards,
+.is-style-image-cards,
+.is-style-stats-cards {
+
+	.wp-block-column.animate {
+		opacity: 0;
+		transition: opacity .8s ease-in-out;
+
+		&.animated {
+			opacity: 1;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		@for $i from 2 through 3 {
+
+			.wp-block-column.animate:nth-of-type(#{$i}) {
+				transition-delay: 0.2 * $i * 1s;
+			}
+		}
+	}
+}
