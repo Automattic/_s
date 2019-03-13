@@ -8,13 +8,24 @@
 	display: block;
 	margin-top: 100px;
 
+	&:before,
 	&:after {
-		content: "";
+		content: '';
 		display: block;
 		background-size: 13px auto;
 		background-repeat: no-repeat;
 		height: 70px;
 		width: 100%;
+		background-image: url('images/steps-bar-end.png');
+		background-position: 50% bottom;
+	}
+	
+	&:before {
+		background-image: url('images/steps-bar-start.png');
+		background-position: 50% top;
+	}
+
+	&:after {
 		background-image: url('images/steps-bar-end.png');
 		background-position: 50% bottom;
 	}
@@ -90,10 +101,19 @@
 		max-width: 1100px;
 		overflow: hidden;
 		margin-top: 50px;
-
+		
+		&:before,
 		&:after {
 			position: absolute;
 			left: 0;
+		}
+
+		&:before {
+			top: 0;
+			background-position: 174px top;
+		}
+		
+		&:after {
 			bottom: 0;
 			background-position: 174px bottom;
 		}
