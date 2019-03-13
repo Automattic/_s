@@ -1,18 +1,13 @@
 .wp-block-columns.is-style-method {
 	text-align: center;
-	background-color: $color__background-light;
 	background-image: url("images/steps-bar.png");
 	background-position: center;
 	background-repeat: repeat-y;
 	background-size: 13px auto;
 	padding: 0 $padding__content-mobile;
 	display: block;
+	margin-top: 100px;
 
-	h3 {
-		@include font-size(1.4);
-	}
-
-	&:before,
 	&:after {
 		content: "";
 		display: block;
@@ -20,16 +15,8 @@
 		background-repeat: no-repeat;
 		height: 70px;
 		width: 100%;
-	}
-
-	&:before {
-		background-image: url("images/steps-bar-start.png");
-		background-position: center top;
-	}
-
-	&:after {
-		background-image: url("images/steps-bar-end.png");
-		background-position: center bottom;
+		background-image: url('images/steps-bar-end.png');
+		background-position: 50% bottom;
 	}
 
 	.single-step {
@@ -39,7 +26,7 @@
 		border-radius: 8px;
 		padding: 50px 20px 1px;
 		position: relative;
-		margin: 70px auto 0 !important;
+		margin: 70px auto 0;
 		max-width: 500px;
 
 		&:first-of-type {
@@ -54,26 +41,25 @@
 			left: 50%;
 			transform: translateX(-50%);
 			margin: 0;
-			background: #b4babc;
-			padding-top: 10px;
+			background: #fff;
+			border: 10px solid #b4babc;
+			padding: 15px;
 			border-radius: 50%;
 
 			img {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-				box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
 			}
 		}
 
 		.single-step__title {
-			font-weight: normal;
+			@include font-size(1.4);
 			margin-bottom: 10px;
 		}
 
 		.single-step__label {
 			background: $color__corporate;
-			border-radius: 5px;
 			color: #fff;
 			position: absolute;
 			z-index: 1;
@@ -101,23 +87,15 @@
 		background-position: $padding__content-mobile + 154px center;
 		padding: 10px $padding__content-mobile 50px $padding__content-mobile + 300px;
 		position: relative;
-		margin: 50px 0 0;
 		max-width: 1100px;
+		overflow: hidden;
+		margin-top: 50px;
 
-		&:before,
 		&:after {
 			position: absolute;
 			left: 0;
-		}
-
-		&:before {
-			top: 0;
-			background-position: $padding__content-mobile + 154px top;
-		}
-
-		&:after {
 			bottom: 0;
-			background-position: $padding__content-mobile + 154px bottom;
+			background-position: 174px bottom;
 		}
 
 		.single-step {
@@ -128,24 +106,61 @@
 			padding-top: 10px;
 			z-index: 1;
 			position: relative;
+			text-align: left;
+			
+			&:first-of-type {
+				margin-top: 0;
+				
+				figure:before {
+					content: '';
+					display: block;
+					background: $color__background-light;
+					height: 250px;
+					width: 100px;
+					position: absolute;
+					top: -260px;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
 
 			.single-step__picture {
 				top: 50%;
-				left: -190px;
+				left: -195px;
 				transform: translateY(-50%);
+				width: 115px;
+				height: 115px;
+				padding: 20px;
 			}
 
 			.single-step__label {
 				@include font-size(1.2);
-				top: -18px;
-				left: 20px;
+				position: relative;
 				transform: none;
-				margin: 0;
-				padding: 5px 30px;
+				margin: 0 34px 0 0;
+				padding: 5px 20px;
+				display: inline-block;
+				top: 0;
+				left: 0;
+				
+				&:after {
+					content: '';
+					display: block;
+					width: 0;
+					height: 0;
+					border-top: 17px solid transparent;
+					border-bottom: 17px solid transparent;
+					border-left: 17px solid $color__corporate;
+					position: absolute;
+					right: -17px;
+					top: 0;
+				}
 			}
 
 			.single-step__title {
 				text-align: left;
+				display: inline-block;
+				margin-top: 10px;
 			}
 		}
 	}
