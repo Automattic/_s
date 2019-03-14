@@ -72,3 +72,4 @@ require 'testimonials/index.php';
 require 'latest-posts/index.php';
 require 'countdown/index.php';
 require 'product/index.php';
+require 'flickity/index.php';

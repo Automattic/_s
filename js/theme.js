@@ -165,11 +165,6 @@
         }
     });
     
-    $('.wp-block-flickity').flickity({
-      cellAlign: 'left',
-      contain: true
-    });
-    
   });
   
 })(jQuery);

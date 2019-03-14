@@ -25,6 +25,8 @@ const {
 import './formats';
 import './styles';
 
+import './flickity';
+
 import * as testimonials from './testimonials';
 import * as author from './testimonials/author';
 import * as rating from './testimonials/rating';
@@ -33,7 +35,6 @@ import * as addtocart from './product/addtocart';
 import * as stock from './product/stock';
 import * as productRating from './product/rating';
 import * as countdown from './countdown';
-
 
 [
 	// Common blocks are grouped at the top to prioritize their display
@@ -45,7 +46,7 @@ import * as countdown from './countdown';
 	addtocart,
 	productRating,
 	stock,
-	countdown	
+	countdown,
 ].forEach( ( block ) => {
 	if ( ! block ) {
 		return;
