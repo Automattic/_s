@@ -24,13 +24,13 @@ function _svbk_blocks_assets() {
 	// Styles.
 	wp_enqueue_style(
 		'_svbk-blocks', // Handle.
-		get_theme_file_uri( '/dist/css/blocks.style.build.css' ), // Block style CSS.
+		get_theme_file_uri( '/dist/css/block-style.css' ), // Block style CSS.
 		array( 'wp-blocks' ) // Dependency to include the CSS after it.
 	);
 } // End function _svbk_block_assets().
 
 // Hook: Frontend assets.
-// add_action( 'enqueue_block_assets', '_svbk_blocks_assets' );
+add_action( 'enqueue_block_assets', '_svbk_blocks_assets' );
 
 /**
  * Enqueue Gutenberg block assets for backend editor.
@@ -51,12 +51,6 @@ function _svbk_blocks_editor_assets() {
 		true // Enqueue the script in the footer.
 	);
 
-	// Styles.
-	// wp_enqueue_style(
-	// '_svbk-blocks-editor', // Handle.
-	// get_theme_file_uri( '/dist/css/blocks.editor.build.css'), // Block editor CSS.
-	// array( 'wp-edit-blocks' ) // Dependency to include the CSS after it.
-	// );
 	// Styles.
 	wp_enqueue_style(
 		'_svbk-blocks-editor', // Handle.

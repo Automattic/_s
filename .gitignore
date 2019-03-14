@@ -4,5 +4,9 @@ vendor
 composer.lock
 /assets/css/images
 /src
-/dist/blocks.build.js
-/dist
+
+/dist/*
+!/dist/js/blocks.build.js
+!/dist/css/blocks-editor.css
+!/dist/css/blocks-style.css
+
