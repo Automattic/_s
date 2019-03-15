@@ -17,21 +17,21 @@
 			@include clearfix-after();
 		}
 	}
-	
+
 	@media screen and (min-width: 600px) {
 		display: flex;
-		
+
 		.wp-block-media-text__media,
 		.wp-block-media-text__content {
 			flex-basis: 50%;
 		}
-		
+
 		&.has-media-on-the-right {
-			
+
 			.wp-block-media-text__content {
 				order: 0;
 			}
-			
+
 			.wp-block-media-text__media {
 				order: 1;
 			}

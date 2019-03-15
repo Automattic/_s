@@ -19,7 +19,7 @@
 		background-image: url('images/steps-bar-end.png');
 		background-position: 50% bottom;
 	}
-	
+
 	&:before {
 		background-image: url('images/steps-bar-start.png');
 		background-position: 50% top;
@@ -101,7 +101,7 @@
 		max-width: 1100px;
 		overflow: hidden;
 		margin-top: 50px;
-		
+
 		&:before,
 		&:after {
 			position: absolute;
@@ -112,7 +112,7 @@
 			top: 0;
 			background-position: 174px top;
 		}
-		
+
 		&:after {
 			bottom: 0;
 			background-position: 174px bottom;

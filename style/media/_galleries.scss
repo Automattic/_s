@@ -12,7 +12,7 @@
 	}
 }
 
-.wp-block-gallery.wp-block-flickity {
+.wp-block-gallery.flickity-enabled {
 	display: block;
 	position: relative;
 	margin-left: -#{$padding__content-mobile};
@@ -20,7 +20,7 @@
 	overflow: hidden;
 
 	.blocks-gallery-item {
-		width: 100%;
+		//width: 100%;
 		margin: 0;
 
 		img {
@@ -64,7 +64,7 @@
 	@media screen and (min-width: 600px) {
 
 		.blocks-gallery-item {
-			width: 100%;
+			//width: 100%;
 			margin-right: 0;
 		}
 

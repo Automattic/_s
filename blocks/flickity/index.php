@@ -41,10 +41,10 @@ add_action( 'wp_enqueue_scripts', '_svbk_conditionally_load_blocks_deps', 10 );
 
 // Disable Jetpack LazyLoad on Galleries
 function _svbk_exclude_flickity_from_lazyload( $classes ) {
-	
+
 	$classes[] = 'flickity-image';
-	
+
 	return $classes;
 }
 
-add_filter( 'jetpack_lazy_images_blacklisted_classes', '_svbk_exclude_flickity_from_lazyload');
+add_filter( 'jetpack_lazy_images_blacklisted_classes', '_svbk_exclude_flickity_from_lazyload' );
