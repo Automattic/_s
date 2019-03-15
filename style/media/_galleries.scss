@@ -12,19 +12,16 @@
 	}
 }
 
-.wp-block-gallery.flickity-enabled {
+.wp-block-gallery.is-style-flickity,
+.wp-block-gallery.is-style-flickity-slider {
 	display: block;
 	position: relative;
-	margin-left: -#{$padding__content-mobile};
-	margin-right: -#{$padding__content-mobile};
 	overflow: hidden;
 
 	.blocks-gallery-item {
-		//width: 100%;
 		margin: 0;
-
+		
 		img {
-			display: block;
 			max-width: none;
 			width: 100%;
 		}
@@ -64,7 +61,6 @@
 	@media screen and (min-width: 600px) {
 
 		.blocks-gallery-item {
-			//width: 100%;
 			margin-right: 0;
 		}
 
@@ -103,37 +99,45 @@
 	}
 }
 
-.flickity-page-dots {
-	position: absolute;
-	bottom: 0;
-	background: rgba(0,0,0,.5);
-	left: 0;
-	right: 0;
-	margin: 0;
-	color: #fff;
-	text-align: center;
-	padding: 0;
-	height: 40px;
-
-	li {
-		margin: 0 10px 0 0;
-		display: inline-block;
-		line-height: 40px;
-		cursor: pointer;
-
-		&:before {
-			content: "";
-			width: 10px;
-			height: 10px;
-			border: 1px solid #fff;
-			border-radius: 10px;
+.wp-block-gallery 	{
+	
+	&.is-style-flickity,
+	&.is-style-flickity-slider {
+		
+		.flickity-page-dots {
+			position: absolute;
+			display: block;
+			bottom: 0;
+			left: 0;
+			right: 0;
 			margin: 0;
-			position: relative;
-			bottom: 2px;
-		}
-
-		&.is-selected:before {
-			background: #fff;
+			color: #fff;
+			text-align: center;
+			padding: 0;
+			height: 40px;
+			background: rgba(0,0,0,.5);
+		
+			li {
+				margin: 0 10px 0 0;
+				display: inline-block;
+				line-height: 40px;
+				cursor: pointer;
+		
+				&:before {
+					content: "";
+					width: 10px;
+					height: 10px;
+					border: 1px solid #fff;
+					border-radius: 10px;
+					margin: 0;
+					position: relative;
+					bottom: 2px;
+				}
+		
+				&.is-selected:before {
+					background: #fff;
+				}
+			}
 		}
 	}
 }

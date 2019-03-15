@@ -24,15 +24,19 @@ function _svbk_conditionally_load_blocks_deps() {
 		]
 	);
 
-	Style::enqueue(
-		'flickity',
-		'/dist/flickity.min.css',
-		[
-			'version'   => '2',
-			'defer'     => true,
-			'condition' => $has_gallery,
-		]
-	);
+	// Retrigger resize/reposition after all CSS files has been loaded (fixes firefox bugs)
+	wp_add_inline_script( 'flickity', "
+	  window.addEventListener('load', function(event) {
+		var flickityElements = document.querySelectorAll( '.flickity-enabled' );
+		
+		for (var i = 0; i < flickityElements.length; i++) {
+		    var flickityInstance = Flickity.data( document.querySelectorAll( '[data-flickity]' )[i] );
+		    if ( flickityInstance  ){ 
+		    	flickityInstance.resize(); 
+		    	flickityInstance.reposition(); 
+		    }
+		}
+	});" );
 
 }
 
