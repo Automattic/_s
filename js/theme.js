@@ -42,9 +42,10 @@
   });
   
   /* FAQ toggle */
-  $('.schema-faq-question').on('click', function() {
-    $(this).toggleClass('open');
-    $(this).next('.schema-faq-answer').slideToggle();
+  $('.faq__question').on('click', function() {
+    var questionWrap = $(this).closest('.wp-block-faq');
+    questionWrap.toggleClass('open');
+    questionWrap.find('.faq__answer').slideToggle();
   });
   
   /* Animations */
