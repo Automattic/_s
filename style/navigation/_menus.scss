@@ -68,11 +68,38 @@
 				&.cta-item {
 
 					a {
-						border: 1px solid $color__background-button;
 						background: rgba(255,255,255,0);
-						color: $color__text-main;
+						color: $color__corporate;
 						padding: .5em .8em;
 						border-radius: 8px;
+						color: $color__border-button;
+						border: 1px solid;
+						border-color: $color__border-button;
+						background: rgba(255,255,255,0);
+						box-shadow: 0 0 0 1px transparent;
+						transition: background .15s ease-in-out,
+									border .15s ease-in-out,
+									color .15s ease-in-out,
+									box-shadow .15s ease-in-out;
+						
+						&:hover,
+						&:active,
+						&:focus,
+						&:visited {
+							background: rgba(255,255,255,0);
+						}
+				
+						&:hover,
+						&:focus {
+							color: $color__border-button-hover;
+							box-shadow: 0 0 0 1px $color__border-button-hover;
+							border-color: $color__border-button-hover;
+						}
+				
+						&:active {
+							color: $color__border-button-focus;
+							border-color: $color__border-button-focus;
+						}
 					}
 				}
 			}
