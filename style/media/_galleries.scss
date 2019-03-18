@@ -105,17 +105,12 @@
 	&.is-style-flickity-slider {
 		
 		.flickity-page-dots {
-			position: absolute;
 			display: block;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			margin: 0;
 			color: #fff;
 			text-align: center;
 			padding: 0;
 			height: 40px;
-			background: rgba(0,0,0,.5);
+			margin: 0;
 		
 			li {
 				margin: 0 10px 0 0;
@@ -127,7 +122,7 @@
 					content: "";
 					width: 10px;
 					height: 10px;
-					border: 1px solid #fff;
+					border: 1px solid $color__text-main;
 					border-radius: 10px;
 					margin: 0;
 					position: relative;
@@ -135,7 +130,7 @@
 				}
 		
 				&.is-selected:before {
-					background: #fff;
+					background: $color__text-main;
 				}
 			}
 		}
