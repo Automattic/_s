@@ -1,0 +1,34 @@
+/* Block Editor Styles */
+
+@import "variables-site/variables-site";
+
+@import "mixins/mixins-master";
+
+.has-light-background {
+    background: $color__background-light;
+    padding: 20px;
+}
+
+.wp-block-container .editor-block-list__layout {
+    display: block !important;
+    
+    .container__header {
+        border: 2px dotted #ddd;
+    }
+}
+
+.faq-wrapper {
+    
+    .wp-block-faq {
+        
+        h3 {
+            background: #f5f5f5;
+            padding: 10px 15px;
+        }
+    }
+    
+    .editor-inner-blocks {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
