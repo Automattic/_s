@@ -49,8 +49,8 @@ input[type="submit"],
 .wp-block-button {
 
 	&.is-style-outline .wp-block-button__link {
-		color: $color__border-button;
-		border-color: $color__border-button;
+		color: $color__border-button-secondary;
+		border-color: $color__border-button-secondary;
 		background: rgba(255,255,255,0);
 		box-shadow: 0 0 0 1px transparent;
 
@@ -63,14 +63,14 @@ input[type="submit"],
 
 		&:hover,
 		&:focus {
-			color: $color__border-button-hover;
-			box-shadow: 0 0 0 1px $color__border-button-hover;
-			border-color: $color__border-button-hover;
+			color: $color__border-button-hover-secondary;
+			box-shadow: 0 0 0 1px $color__border-button-hover-secondary;
+			border-color: $color__border-button-hover-secondary;
 		}
 
 		&:active {
-			color: $color__border-button-focus;
-			border-color: $color__border-button-focus;
+			color: $color__border-button-focus-secondary;
+			border-color: $color__border-button-focus-secondary;
 		}
 	}
 }
