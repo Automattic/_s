@@ -20,10 +20,10 @@
     * [Form and image](#form-and-image)
     * [Offer block](#offer-block)
     * [Method block](#method-block)
+    * [Warranty](#warranty)
 * [Gallery](#gallery)
     * [Clients logos gallery](#clients-logos-gallery)
-    * [Full slider](#full-slider)
-    * [Carousel](#carousel)
+    * [Slider/Carousel](#carousel)
 
 ## <a name="background-image">Background image</a> [#](#index)
 When setting images as background through CSS, use the mixin 
@@ -154,6 +154,12 @@ Fill every column with the following blocks:
 * an heading with `single-step__title` class;
 * a paragraph with `single-step__content` class.
 
+### <a name="warranty">Warranty</a>
+Use a Media and Text block. The image loaded in the media section will turn in
+background, while the content part will be the warranty card content. Add here a
+seal image, a title (either H2 or H3), optionally a subtitle and eventually the
+warranty description.
+
 ## Gallery
 
 ### <a name="clients-logos-gallery">Clients logos gallery</a>
@@ -162,12 +168,6 @@ Use a Multiple Columns block with `is-style-clients` class.\
 Fill the first column with the label text (h3) and the second column with 
 a gallery block.
 
-### <a name="full-slider">Full slider</a>
-Use a standard Wordpress gallery block with `wp-block-flickity` class.\
-To include in a block witha a media and text appearance, use a standard
-Wordpress columns block (2 columns) and simply fill the first column with the
-gallery.
-
-### <a name="carousel">Carousel</a>
-Use a standard Wordpress gallery block with `wp-block-flickity` and 
-`flickity--carousel` class.
+### <a name="carousel">Slider/carousel</a>
+Use a standard Gallery block and switch to Flickity style to get access to all
+the main Flickity options through the block controls interface.
