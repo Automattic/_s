@@ -20,7 +20,7 @@
 
 	.blocks-gallery-item {
 		margin: 0;
-		
+
 		img {
 			max-width: none;
 			width: 100%;
@@ -100,10 +100,10 @@
 }
 
 .wp-block-gallery 	{
-	
+
 	&.is-style-flickity,
 	&.is-style-flickity-slider {
-		
+
 		.flickity-page-dots {
 			display: block;
 			color: #fff;
@@ -111,13 +111,13 @@
 			padding: 0;
 			height: 40px;
 			margin: 0;
-		
+
 			li {
 				margin: 0 10px 0 0;
 				display: inline-block;
 				line-height: 40px;
 				cursor: pointer;
-		
+
 				&:before {
 					content: "";
 					width: 10px;
@@ -128,7 +128,7 @@
 					position: relative;
 					bottom: 2px;
 				}
-		
+
 				&.is-selected:before {
 					background: $color__text-main;
 				}

@@ -81,21 +81,21 @@
 									border .15s ease-in-out,
 									color .15s ease-in-out,
 									box-shadow .15s ease-in-out;
-						
+
 						&:hover,
 						&:active,
 						&:focus,
 						&:visited {
 							background: rgba(255,255,255,0);
 						}
-				
+
 						&:hover,
 						&:focus {
 							color: $color__border-button-hover;
 							box-shadow: 0 0 0 1px $color__border-button-hover;
 							border-color: $color__border-button-hover;
 						}
-				
+
 						&:active {
 							color: $color__border-button-focus;
 							border-color: $color__border-button-focus;
