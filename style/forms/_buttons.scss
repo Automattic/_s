@@ -136,3 +136,157 @@ input[type="submit"],
 		}
 	}
 }
+
+.is-style-call-us a.wp-block-button__link {
+	width: 100%;
+	
+	&:before {
+		@include icon-content('\e936');
+		font-weight: normal;
+		margin-right: 8px;
+		vertical-align: middle;
+		position: relative;
+		bottom: 1px;
+		line-height: 1em;
+		@include font-size(1.1);
+	}
+	
+	@media screen and (max-width: breakpoint('phone')) {
+		
+		strong {
+			@include screen-reader-text();
+		}
+	}
+	
+	@media screen and (min-width: breakpoint('phone')) {
+		@include font-size(1.6);
+		display: inline-block;
+		background: $color__corporate;
+		color: #fff;
+		border-radius: 5px;
+		padding: 15px 15px 15px 25px;
+		text-decoration: none;
+		position: relative;
+		max-width: 290px;
+		margin-top: 10px;
+		
+		em {
+			@include screen-reader-text();
+		}
+		
+		&:before,
+		&:after {
+			position: absolute;
+			line-height: 80px;
+			top: -15px;
+			left: -25px;
+			font-size: 70px;
+			height: 85px;
+			width: 50px;
+			text-align: center;
+			line-height: 85px;
+		}
+		
+		&:before {
+			@include icon-content('\e934');
+			color: #fff;
+			font-size: 80px;
+		}
+		
+		&:after {
+			@include icon-content('\e935');
+			font-size: 70px;
+			color: $color__corporate-secondary;
+		}
+		
+		&:hover:before,
+		&:hover:after {
+			animation: button-shake 1s cubic-bezier(.36,.07,.19,.97) both;
+		}
+	}
+}
+
+.is-style-call-us a {
+	@include font-size(1.6);
+	display: block;
+	background: $color__corporate;
+	color: #fff;
+	border-radius: 5px;
+	padding: 15px 15px 15px 25px;
+	text-decoration: none;
+	position: relative;
+	max-width: 290px;
+	margin: 13px auto 0;
+
+	&:before,
+	&:after {
+		position: absolute;
+		left: -25px;
+		font-size: 70px;
+		height: 85px;
+		width: 50px;
+		line-height: 85px;
+		text-align: center;
+		top: -15px;
+	}
+	
+	&:before {
+		@include icon-content('\e934');
+		color: #fff;
+		font-size: 80px;
+	}
+	
+	&:after {
+		@include icon-content('\e935');
+		color: $color__corporate-secondary;
+		font-size: 70px;
+	}
+}
+
+@keyframes button-shake {
+	10%, 90% {
+		transform: rotate(-5deg);
+	}
+
+	20%, 80% {
+		transform: rotate(6deg);
+	}
+
+	30%, 50%, 70% {
+		transform: rotate(-8deg);
+	}
+
+	40%, 60% {
+		transform: rotate(8deg);
+	}
+}
+
+.has-secondary-background {
+	
+	&.is-style-call-us a,
+	.is-style-call-us a.wp-block-button__link {
+		
+		&:before {
+			color: $color__corporate-secondary;
+		}
+		
+		&:after {
+			color: #fff;
+		}
+	}
+}
+
+.has-light-background {
+
+	&.is-style-call-us a,
+	.is-style-call-us a.wp-block-button__link {
+		
+		&:before {
+			color: $color__background-light;
+		}
+		
+		&:after {
+			color: $color__corporate-secondary;
+		}
+	}
+}

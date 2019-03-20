@@ -29,48 +29,20 @@
 		box-shadow: 0 0 5px rgba(0,0,0,.2);
 	}
 
-	figcaption {
+	.is-style-call-us {
 		@include font-size(1.2);
-		background: $color__background-light;
+		width: 100%;
 		border-radius: 8px;
 		box-shadow: 0 0 5px rgba(0,0,0,.2);
 		margin: 15px 0 20px;
 		padding: 20px;
 		text-align: center;
-		font-weight: 700;
-		color: #888;
+		color: #fff;
 
 		strong {
-			color: $color__corporate;
 			text-transform: uppercase;
 			margin-bottom: 8px;
 			display: block;
-		}
-
-		a {
-			@include font-size(1.6);
-			display: block;
-			border-top: 2px solid $color__corporate;
-			border-bottom: 2px solid $color__corporate;
-			border-right: 2px solid $color__corporate;
-			border-radius: 5px;
-			padding: 15px;
-			text-decoration: none;
-			position: relative;
-			max-width: 290px;
-			margin: 13px auto 0;
-
-			&:before {
-				@include icon-content('\e932');
-				background: $color__background-light;
-				position: absolute;
-				top: -8px;
-				bottom: -8px;
-				left: -25px;
-				line-height: 70px;
-				font-size: 70px;
-				padding: 0 10px 0 0;
-			}
 		}
 
 		@media screen and (min-width: 600px) {
