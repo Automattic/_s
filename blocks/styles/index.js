@@ -23,3 +23,8 @@ wp.blocks.registerBlockStyle( 'core/button', {
     name: 'secondary',
     label: 'Secondary'
 } );
+
+wp.blocks.registerBlockStyle( 'core/button', {
+    name: 'call-us',
+    label: 'Call us'
+} );

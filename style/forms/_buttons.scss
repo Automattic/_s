@@ -139,7 +139,7 @@ input[type="submit"],
 
 .is-style-call-us a.wp-block-button__link {
 	width: 100%;
-	
+
 	&:before {
 		@include icon-content('\e936');
 		font-weight: normal;
@@ -150,14 +150,14 @@ input[type="submit"],
 		line-height: 1em;
 		@include font-size(1.1);
 	}
-	
+
 	@media screen and (max-width: breakpoint('phone')) {
-		
+
 		strong {
 			@include screen-reader-text();
 		}
 	}
-	
+
 	@media screen and (min-width: breakpoint('phone')) {
 		@include font-size(1.6);
 		display: inline-block;
@@ -169,11 +169,11 @@ input[type="submit"],
 		position: relative;
 		max-width: 290px;
 		margin-top: 10px;
-		
+
 		em {
 			@include screen-reader-text();
 		}
-		
+
 		&:before,
 		&:after {
 			position: absolute;
@@ -186,19 +186,19 @@ input[type="submit"],
 			text-align: center;
 			line-height: 85px;
 		}
-		
+
 		&:before {
 			@include icon-content('\e934');
 			color: #fff;
 			font-size: 80px;
 		}
-		
+
 		&:after {
 			@include icon-content('\e935');
 			font-size: 70px;
 			color: $color__corporate-secondary;
 		}
-		
+
 		&:hover:before,
 		&:hover:after {
 			animation: button-shake 1s cubic-bezier(.36,.07,.19,.97) both;
@@ -229,13 +229,13 @@ input[type="submit"],
 		text-align: center;
 		top: -15px;
 	}
-	
+
 	&:before {
 		@include icon-content('\e934');
 		color: #fff;
 		font-size: 80px;
 	}
-	
+
 	&:after {
 		@include icon-content('\e935');
 		color: $color__corporate-secondary;
@@ -262,14 +262,14 @@ input[type="submit"],
 }
 
 .has-secondary-background {
-	
+
 	&.is-style-call-us a,
 	.is-style-call-us a.wp-block-button__link {
-		
+
 		&:before {
 			color: $color__corporate-secondary;
 		}
-		
+
 		&:after {
 			color: #fff;
 		}
@@ -280,11 +280,11 @@ input[type="submit"],
 
 	&.is-style-call-us a,
 	.is-style-call-us a.wp-block-button__link {
-		
+
 		&:before {
 			color: $color__background-light;
 		}
-		
+
 		&:after {
 			color: $color__corporate-secondary;
 		}

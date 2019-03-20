@@ -155,7 +155,7 @@ Fill every column with the following blocks:
 * a paragraph with `single-step__content` class.
 
 ### <a name="warranty">Warranty</a>
-Use a Media and Text block. The image loaded in the media section will turn in
+Use a Media and Text block with `is-style-warranty` class. The image loaded in the media section will turn in
 background, while the content part will be the warranty card content. Add here a
 seal image, a title (either H2 or H3), optionally a subtitle and eventually the
 warranty description.
