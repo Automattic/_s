@@ -137,6 +137,88 @@ input[type="submit"],
 	}
 }
 
+.wp-block-svbk-call-us {
+	@include font-size(1.2);
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+	margin: 15px 0 20px;
+	padding: 20px 20px 25px;
+	text-align: center;
+
+	.callus__title {
+		text-transform: uppercase;
+		margin-bottom: 8px;
+		display: block;
+	}
+
+	.callus__text {
+		margin: 10px 0;
+	}
+
+	a {
+		@include font-size(1.6);
+		display: block;
+		background: $color__corporate;
+		color: #fff;
+		border-radius: 5px;
+		padding: 15px 15px 15px 25px;
+		text-decoration: none;
+		position: relative;
+		max-width: 290px;
+		margin: 13px auto 0;
+
+		&:before,
+		&:after {
+			position: absolute;
+			left: -25px;
+			font-size: 70px;
+			height: 85px;
+			width: 50px;
+			line-height: 85px;
+			text-align: center;
+			top: -15px;
+		}
+
+		&:before {
+			@include icon-content('\e934');
+			font-size: 80px;
+			color: #fff;
+		}
+
+		&:after {
+			@include icon-content('\e935');
+			font-size: 70px;
+			color: $color__corporate-secondary;
+		}
+	}
+
+	&.has-light-background a:before {
+		color: $color__background-light;
+	}
+
+	&.has-dark-background,
+	&.has-secondary-background {
+		color: #fff;
+
+		a:after {
+			color: #fff;
+		}
+	}
+
+	&.has-secondary-background a:before {
+		color: $color__corporate-secondary;
+	}
+
+	&.has-dark-background a:before {
+		color: $color__background-dark;
+	}
+
+	@media screen and (min-width: 600px) {
+		margin: 15px 0;
+	}
+}
+
 .is-style-call-us a.wp-block-button__link {
 	width: 100%;
 
@@ -206,43 +288,6 @@ input[type="submit"],
 	}
 }
 
-.is-style-call-us a {
-	@include font-size(1.6);
-	display: block;
-	background: $color__corporate;
-	color: #fff;
-	border-radius: 5px;
-	padding: 15px 15px 15px 25px;
-	text-decoration: none;
-	position: relative;
-	max-width: 290px;
-	margin: 13px auto 0;
-
-	&:before,
-	&:after {
-		position: absolute;
-		left: -25px;
-		font-size: 70px;
-		height: 85px;
-		width: 50px;
-		line-height: 85px;
-		text-align: center;
-		top: -15px;
-	}
-
-	&:before {
-		@include icon-content('\e934');
-		color: #fff;
-		font-size: 80px;
-	}
-
-	&:after {
-		@include icon-content('\e935');
-		color: $color__corporate-secondary;
-		font-size: 70px;
-	}
-}
-
 @keyframes button-shake {
 	10%, 90% {
 		transform: rotate(-5deg);
@@ -263,7 +308,6 @@ input[type="submit"],
 
 .has-secondary-background {
 
-	&.is-style-call-us a,
 	.is-style-call-us a.wp-block-button__link {
 
 		&:before {
@@ -278,7 +322,6 @@ input[type="submit"],
 
 .has-light-background {
 
-	&.is-style-call-us a,
 	.is-style-call-us a.wp-block-button__link {
 
 		&:before {

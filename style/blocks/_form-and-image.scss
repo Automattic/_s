@@ -29,27 +29,6 @@
 		box-shadow: 0 0 5px rgba(0,0,0,.2);
 	}
 
-	.is-style-call-us {
-		@include font-size(1.2);
-		width: 100%;
-		border-radius: 8px;
-		box-shadow: 0 0 5px rgba(0,0,0,.2);
-		margin: 15px 0 20px;
-		padding: 20px;
-		text-align: center;
-		color: #fff;
-
-		strong {
-			text-transform: uppercase;
-			margin-bottom: 8px;
-			display: block;
-		}
-
-		@media screen and (min-width: 600px) {
-			margin: 15px 0;
-		}
-	}
-
 	.wp-block-media-text__content,
 	.wp-block-column:nth-of-type(2) {
 		padding: 30px $padding__content-mobile 20px;
