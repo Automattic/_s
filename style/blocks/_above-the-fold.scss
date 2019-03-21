@@ -66,6 +66,13 @@
 			width: 50%;
 			padding: 40px;
 		}
+
+		&.has-text-on-the-right {
+
+			.wp-block-column--content {
+				margin-left: 50%;
+			}
+		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
