@@ -219,26 +219,44 @@ input[type="submit"],
 	}
 }
 
-.is-style-call-us a.wp-block-button__link {
-	width: 100%;
+.is-style-phone,
+.is-style-call-us {
 
-	&:before {
-		@include icon-content('\e936');
-		font-weight: normal;
-		margin-right: 8px;
-		vertical-align: middle;
-		position: relative;
-		bottom: 1px;
-		line-height: 1em;
-		@include font-size(1.1);
-	}
+	.wp-block-button__link {
 
-	@media screen and (max-width: breakpoint('phone')) {
+		&:before {
+			@include icon-content('\e936');
+			font-weight: normal;
+			margin-right: 8px;
+			vertical-align: middle;
+			position: relative;
+			bottom: 1px;
+			line-height: 1em;
+			@include font-size(1.1);
+		}
 
-		strong {
-			@include screen-reader-text();
+		em {
+			font-style: normal;
+		}
+
+		@media screen and (max-width: breakpoint('phone')) {
+
+			strong {
+				@include screen-reader-text();
+			}
+		}
+
+		@media screen and (min-width: breakpoint('phone')) {
+
+			em {
+				@include screen-reader-text();
+			}
 		}
 	}
+}
+
+.is-style-call-us a.wp-block-button__link {
+	width: 100%;
 
 	@media screen and (min-width: breakpoint('phone')) {
 		@include font-size(1.6);
@@ -251,10 +269,6 @@ input[type="submit"],
 		position: relative;
 		max-width: 290px;
 		margin-top: 10px;
-
-		em {
-			@include screen-reader-text();
-		}
 
 		&:before,
 		&:after {
