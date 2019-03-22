@@ -12,6 +12,8 @@
 * [Footer](#footer)
     * [Footer fixed bar](#footer-fixed-bar)
 * [Blocks](#blocks)
+    * [Above the fold](#above-the-fold)
+    * [Closing CTA block](#closing-cta-block)
     * [Separator](#separator)
     * [Full width block](#full-width-block)
     * [Media and text](#media-and-text)
@@ -92,14 +94,31 @@ Here some html code to display it correctly (add it in customizer textarea).
 
 ## <a name="blocks">Blocks</a> [#](#index)
 
+### <a name="above-the-fold">Above the fold (ATF)</a>
+Use a Wordpress multiple columns (2 columns) block with `wp-block-atf` class to
+get a standard above the fold content.\
+Fill the left column with the media content, either a `<picture>` or a 
+[slider](#carousel), and the right one with text content.
+* **Text content on the right**\
+    Add `has-text-on-the-right` class.
+* **Text content appearance on desktop**\
+    Add either `is-style-left-margin` or `is-style-boxed` class to change
+    text content appearance on desktop.\
+P.S.: Don't forget to give text content column a background through either 
+`has-light-background`, `has-dark-background`, `has-alpha-light-background` or 
+`has-alpha-dark-background` class.
+
+### <a name="closing-cta-block">Closing CTA block</a>
+Very similar to Above the fold block, but usually used to close the page content.
+All the ATF rules are applicable.
+
 ### <a name="separator">Separator</a>
 The standard Wordpress separator comes with a center alignment.
 Add `leftalign` class to get a left-aligned separator instead.
 
 ### <a name="full-width-block">Full Width block</a>
 * **Solid or no background**\
-    Use a Wordpress multiple columns (2 columns) block with 
-    `wp-block-container` class.
+    Use a Wordpress multiple columns (2 columns) block with `wp-block-container` class.
     Add `container__header` class to the set a max-width of 700px for header elements.
 * **Background image**\
     Use a Wordpress Media and Text block with `has-image-background` class. 
@@ -140,7 +159,8 @@ Chiamaci al numero
 ```
 to get a fancy contact call-to-action.
 ### <a name="offer-block">Offer block</a>
-Suitable for offer presentation. The first column contains either an embedded
+Suitable for offer presentation.\
+The first column contains either an embedded
 video or an image of the product. \
 Use Wordpress Multiple Columns (2 columns) block with `is-style-offer` class.
 
