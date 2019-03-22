@@ -161,3 +161,48 @@
 		}
 	}
 }
+
+.wp-block-atf.has-gallery {
+
+	@media screen and (min-width: 768px) {
+
+		&.is-style-boxed {
+			padding: 0;
+		}
+
+		.wp-block-column--media {
+			position: relative;
+		}
+
+		.wp-block-column--content {
+			position: absolute;
+			top: 50%;
+			right: $padding__content-mobile;
+			transform: translateY(-50%);
+			width: calc(50% - #{$padding__content-mobile});
+		}
+
+		.flickity-button {
+			display: none;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+		.wp-block-column--content {
+			right: $padding__content-desktop;
+			width: calc(50% - #{$padding__content-desktop});
+		}
+
+		.flickity-button {
+			display: block;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+
+		.blocks-gallery-item img {
+			height: 700px;
+		}
+	}
+}
