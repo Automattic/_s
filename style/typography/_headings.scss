@@ -50,6 +50,6 @@ h6 {
 	font-weight: bold;
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		@include font-size(1.5);
+		@include font-size(1.3);
 	}
 }
