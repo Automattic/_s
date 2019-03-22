@@ -42,13 +42,13 @@
 			overflow: hidden;
 			max-height: 0;
 			transition: max-height .8s ease;
-			
+
 			li {
 				padding-bottom: 0;
-				
+
 				a {
 					text-transform: none;
-				
+
 					&:before {
 						content: "\2022";
 						display: inline-block;

@@ -1,0 +1,81 @@
+.wp-block-columns.wp-block-team {
+	padding-top: 0;
+
+	p {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.team-member {
+		background: #fff;
+		border-radius: 8px;
+		box-shadow: 0 0 3px rgba(0,0,0,.2);
+		text-align: center;
+		padding: 0;
+		margin-top: 80px;
+	}
+
+	.team-member__picture {
+		margin: 0;
+
+		img {
+			display: block;
+			width: 140px;
+			height: 140px;
+			margin: -70px auto -13px;
+			border-radius: 50%;
+			border: 3px solid $color__corporate;
+		}
+	}
+
+	.team-member__name {
+		@include font-size(1.2);
+		display: inline-block;
+		color: #fff;
+		text-transform: uppercase;
+		padding: 5px 10px;
+		margin-top: -40px;
+		background: $color__corporate;
+		margin-bottom: 10px;
+	}
+
+	.team-member__role {
+		font-weight: bold;
+		color: #888;
+		margin: 0;
+	}
+
+	.team-member__desc {
+		text-align: left;
+		margin-top: 5px;
+	}
+
+	@media screen and (min-width: 600px) {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.team-member {
+			flex-basis: 49%;
+			margin-right: 2%;
+		}
+	}
+
+	@media screen and (min-width: 600px) and (max-width: 768px) {
+
+		.team-member:nth-of-type(2n + 2) {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+
+		.team-member {
+			flex-basis: 31%;
+
+			.team-member:nth-of-type(3n + 3) {
+				margin-right: 0;
+			}
+		}
+	}
+}
