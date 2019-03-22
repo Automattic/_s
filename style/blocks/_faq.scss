@@ -71,6 +71,7 @@
 		position: relative;
 		margin: 0;
 		background: $color__background-light;
+		font-style: italic;
 
 		&:after {
 			@include font-size(.9);
