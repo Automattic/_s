@@ -89,7 +89,7 @@
 						padding: .5em .8em;
 						border-radius: 8px;
 						color: $color__border-button;
-						border: 1px solid;
+						border: 2px solid;
 						border-color: $color__border-button;
 						background: rgba(255,255,255,0);
 						box-shadow: 0 0 0 1px transparent;
@@ -108,7 +108,6 @@
 						&:hover,
 						&:focus {
 							color: $color__border-button-hover;
-							box-shadow: 0 0 0 1px $color__border-button-hover;
 							border-color: $color__border-button-hover;
 						}
 
