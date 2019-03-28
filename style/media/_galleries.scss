@@ -35,29 +35,6 @@
 		outline: none;
 	}
 
-	&.flickity--carousel {
-
-		.flickity-button {
-			top: calc(50% - 20px);
-		}
-
-		.flickity-page-dots {
-			position: static;
-			background: none;
-
-			li {
-
-				&:before {
-					border-color: $color__text-main;
-				}
-
-				&.is-selected:before {
-					background: $color__text-main;
-				}
-			}
-		}
-	}
-
 	@media screen and (min-width: 600px) {
 
 		.blocks-gallery-item {
@@ -87,13 +64,6 @@
 
 			figcaption {
 				display: block;
-			}
-		}
-
-		&.flickity--carousel {
-
-			.blocks-gallery-item {
-				width: 32%;
 			}
 		}
 	}
@@ -139,8 +109,6 @@
 
 .flickity-button {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
 	background: none;
 	border: none;
 	box-shadow: none;
@@ -159,6 +127,7 @@
 		left: 0;
 
 		&:before {
+			@include font-size(1.2);
 			@include icon-content('\e90d');
 		}
 

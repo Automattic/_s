@@ -117,7 +117,8 @@ img {
 
 		.flickity-button {
 			position: absolute;
-			top: 50%;
+			top: 0;
+			bottom: 40px;
 
 			&.next {
 				right: 0;
