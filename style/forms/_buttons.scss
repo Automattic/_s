@@ -349,9 +349,9 @@ input[type="submit"],
 }
 
 .has-arrow-icon {
-	
+
 	.wp-block-button__link {
-		
+
 		&:after {
 			@include icon-content('\e922');
 			@include font-size(.9);

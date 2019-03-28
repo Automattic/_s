@@ -158,7 +158,8 @@
 				position: relative;
 				transform: none;
 				margin: 0 34px 0 0;
-				padding: 5px 20px;
+				padding: .6rem 1.3rem .7rem;
+				line-height: 1rem;
 				display: inline-block;
 				top: 0;
 				left: 0;
@@ -168,11 +169,11 @@
 					display: block;
 					width: 0;
 					height: 0;
-					border-top: 17px solid transparent;
-					border-bottom: 17px solid transparent;
-					border-left: 17px solid $color__corporate;
+					border-top: 1.16rem solid transparent;
+					border-bottom: 1.16rem solid transparent;
+					border-left: 1.16rem solid $color__corporate;
 					position: absolute;
-					right: -17px;
+					right: -1.16rem;
 					top: 0;
 				}
 			}
