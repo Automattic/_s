@@ -23,8 +23,9 @@ var config = require('./config.json');
 function clean(){
     return del([
         'dist/*',
+        'src',
         '!dist/blocks.build.js',
-        '!dist/.gitkeep'
+        '!dist/.gitkeep',
     ]);
 }
 
@@ -235,13 +236,13 @@ function renameLanguages(){
 exports.renameLanguages = renameLanguages;
 
 function cgbCompatJS(){
-    return src([ './dist/js/blocks.build.js' ])
+    return src([ './dist/js/blocks.build.js' ], { allowEmpty: true })
         .pipe(symlink('./dist/', { relativeSymlinks: true }));
 }
 
 function cgbCompatSrc(){
-    return src([ './blocks/*' ])
-        .pipe(symlink('./src'))
+    return src([ './blocks/*' ], { allowEmpty: true })
+        .pipe(symlink('./src', { relativeSymlinks: true }))
 }
 
 exports.cgbCompatJS = cgbCompatJS;
