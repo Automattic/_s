@@ -2,6 +2,10 @@
 /* global lodash */
 import classnames from 'classnames';
 
+//  Import CSS.
+import './style.scss';
+import './editor.scss';
+
 /**
  * WordPress dependencies
  */
