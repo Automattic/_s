@@ -206,6 +206,13 @@ function _svbk_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_email',
 		)
 	);
+	
+	$wp_customize->add_setting(
+		'company_vat',
+		array(
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);	
 
 	$wp_customize->add_control(
 		'company_name',
@@ -239,6 +246,15 @@ function _svbk_customize_register( $wp_customize ) {
 		array(
 			'label'   => __( 'Email', '_svbk' ),
 			'type'    => 'email',
+			'section' => 'contacts',
+		)
+	);
+
+	$wp_customize->add_control(
+		'company_vat',
+		array(
+			'label'   => __( 'VAT ID', '_svbk' ),
+			'type'    => 'text',
 			'section' => 'contacts',
 		)
 	);

@@ -274,6 +274,18 @@ function _svbk_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer', '_svbk' ),
+			'id'            => 'footer',
+			'description'   => esc_html__( 'Widgets in here goes into footer', '_svbk' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);	
 
 	Widgets\Post\Archives::register();
 	_svbk\Widgets\LeadMagnet::register();

@@ -24,21 +24,30 @@
 			</div>
 			<?php endif ?>
 	
+		</div>
+	
+		<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+		<div class="widget-area domready--show">
+			<?php dynamic_sidebar( 'footer' ); ?>
+		</div>
+		<?php endif; ?>
+	
+		<div id="legal" class="site-footer__bar bar sub-footer">
+			<span class="copyright-notice">&copy; 2017-<?php echo date( 'Y' ); ?></span>
 			<div id="company-info" class="site-footer__section footer-area">
 				<?php if ( get_theme_mod( 'company_name', false ) ) : ?>
-				<span class="company-name"><?php echo get_theme_mod( 'company_name' ); ?></span><br/>
+				<span class="company-name"><?php echo get_theme_mod( 'company_name' ); ?></span>
 				<?php endif; ?>
 				<?php if ( get_theme_mod( 'company_address', false ) ) : ?>
-				<span class="company-address"><?php echo get_theme_mod( 'company_address' ); ?></span><br/>
+				<span class="company-address"><?php echo get_theme_mod( 'company_address' ); ?></span>
 				<?php endif; ?>
+				<?php if ( get_theme_mod( 'company_vat', false ) ) : ?>
+				<span class="company-vat"><?php _e('VAT ID', '_svbk') ?>:&nbsp;<?php echo get_theme_mod( 'company_vat' ); ?></span>
+				<?php endif; ?>				
 				<?php if ( get_theme_mod( 'company_phone', false ) ) : ?>
 				<span class="company-phone">Tel: <a href="tel:<?php echo get_theme_mod( 'company_phone' ); ?>"><?php echo get_theme_mod( 'company_phone' ); ?></a></span>
 				<?php endif; ?>				
 			</div>
-		</div>
-	
-		<div id="legal" class="site-footer__bar bar sub-footer">
-			<span class="copyright-notice">&copy; 2017-<?php echo date( 'Y' ); ?></span>
 			<?php
 			if ( has_nav_menu( 'legal-menu' ) ) :
 				wp_nav_menu(

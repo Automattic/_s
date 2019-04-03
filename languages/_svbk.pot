@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-01-22 15:40+0000\n"
+"POT-Creation-Date: 2019-04-03 10:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,12 +18,12 @@ msgstr ""
 msgid "All categories"
 msgstr ""
 
-#: home.php:63 category.php:64
+#: home.php:62 category.php:64
 msgctxt "previous set of posts"
 msgid "Previous"
 msgstr ""
 
-#: home.php:64 category.php:65
+#: home.php:63 category.php:65
 msgctxt "next set of posts"
 msgid "Next"
 msgstr ""
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header-account.php:35 header.php:35 footer.php:63
+#: header-account.php:35 header.php:35 footer.php:72
 msgid "Customize this text in Theme Customizer"
 msgstr ""
 
@@ -53,51 +53,59 @@ msgstr ""
 msgid "Toggle Account Menu"
 msgstr ""
 
-#: functions.php:165
+#: functions.php:63
 msgid "Primary"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:64
 msgid "Not Found (404) Page"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:65
 msgid "Legal Menu"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:66
 msgid "Account Pages Primary Menu"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:67
 msgid "Account Pages Secondary Menu"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:68
 msgid "Profile Menu"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:221
 msgid "Testimonials"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:268
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:217
+#: functions.php:270
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:648
+#: functions.php:280 inc/customizer.php:120
+msgid "Footer"
+msgstr ""
+
+#: functions.php:282
+msgid "Widgets in here goes into footer"
+msgstr ""
+
+#: functions.php:803
 msgid "Compliance"
 msgstr ""
 
-#: functions.php:652
+#: functions.php:807
 msgid "Privacy Policy"
 msgstr ""
 
-#: functions.php:660
+#: functions.php:815
 msgid "Cookie Policy"
 msgstr ""
 
@@ -134,7 +142,11 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
-#: footer.php:58
+#: footer.php:45 inc/customizer.php:256
+msgid "VAT ID"
+msgstr ""
+
+#: footer.php:67
 #, php-format
 msgid "Made with passion by %s"
 msgstr ""
@@ -155,37 +167,18 @@ msgid ", "
 msgstr ""
 
 #. %s: Name of current post. Only visible to screen readers
-#: template-parts/content-post.php:55
+#: template-parts/content-post.php:55 template-parts/content.php:28
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-post.php:68
+#: template-parts/content-post.php:68 template-parts/content.php:41
 msgid "Pages:"
 msgstr ""
 
 #: template-parts/content-post.php:82 inc/template-tags.php:102
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
-
-#: template-parts/content.php:36
-#: template-parts/testimonials/preview-testimonial--video.php:42
-#: template-parts/testimonials/content-testimonial--link.php:37
-#: template-parts/testimonials/content-testimonial--video.php:39
-#: template-parts/testimonials/preview-testimonial--image.php:35
-#: template-parts/testimonials/content-testimonial--image.php:35
-#: template-parts/testimonials/preview-testimonial.php:35
-#: template-parts/testimonials/preview-testimonial--link.php:37
-msgid "Rating"
-msgstr ""
-
-#: template-parts/content.php:48
-msgid "Show all"
-msgstr ""
-
-#: template-parts/content.php:49
-msgid "Hide all"
 msgstr ""
 
 #: template-parts/pagination-post.php:10
@@ -333,31 +326,31 @@ msgctxt "original value"
 msgid "Value"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:253
+#: classes/class-wc-integration-silverback.php:266
 msgid "Phone (recommended)"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:278
+#: classes/class-wc-integration-silverback.php:291
 msgid "Profile Image"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:291
+#: classes/class-wc-integration-silverback.php:304
 msgid "Safe Payments"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:297
+#: classes/class-wc-integration-silverback.php:310
 msgid "Choose payment method"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:308
+#: classes/class-wc-integration-silverback.php:321
 msgid "Repeat your email address"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:331
+#: classes/class-wc-integration-silverback.php:344
 msgid "The email addresses you entered are not equal"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:361
+#: classes/class-wc-integration-silverback.php:374
 msgid ""
 "The <b>billing address</b> is used to compose the invoices. The <b>shipping "
 "address</b> will be used to send you phisical products that you may purchase."
@@ -402,10 +395,6 @@ msgstr ""
 msgid "%s Archive Description"
 msgstr ""
 
-#: inc/customizer.php:120
-msgid "Footer"
-msgstr ""
-
 #: inc/customizer.php:121
 msgid "Footer Settings"
 msgstr ""
@@ -434,37 +423,41 @@ msgstr ""
 msgid "Contact informations"
 msgstr ""
 
-#: inc/customizer.php:213
+#: inc/customizer.php:220
 msgid "Company Name"
 msgstr ""
 
-#: inc/customizer.php:222
+#: inc/customizer.php:229
 msgid "Address"
 msgstr ""
 
-#: inc/customizer.php:231
+#: inc/customizer.php:238
 msgid "Phone"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:247
 msgid "Email"
 msgstr ""
 
-#: inc/Feedback.php:24
+#: inc/Feedback.php:25
+msgid "Show more"
+msgstr ""
+
+#: inc/Feedback.php:29
 msgid "Feedback"
 msgstr ""
 
-#: inc/Feedback.php:83
+#: inc/Feedback.php:95
 #, php-format
 msgid "%s Categories"
 msgstr ""
 
-#: inc/Feedback.php:84
+#: inc/Feedback.php:96
 #, php-format
 msgid "%s Category"
 msgstr ""
 
-#: inc/shortcode-ui.php:40
+#: inc/shortcode-ui.php:39
 msgid ""
 "Shortcode UI plugin must be active for Shortcode UI Example plugin to "
 "function."
@@ -565,11 +558,11 @@ msgctxt "course comment submit label"
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/woocommerce.php:102
+#: inc/woocommerce.php:105
 msgid "Where?"
 msgstr ""
 
-#: inc/woocommerce.php:103
+#: inc/woocommerce.php:106
 msgid ""
 "If you use Mastercard, Visa and Diners, \n"
 "\t            \tthe security code is shown on the back of your credit card "
@@ -581,61 +574,57 @@ msgid ""
 "\t            \tfront of your card and consists of 4 digits."
 msgstr ""
 
-#: inc/woocommerce.php:112
+#: inc/woocommerce.php:115
 msgid "Close"
 msgstr ""
 
-#: inc/woocommerce.php:147
+#: inc/woocommerce.php:150
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/woocommerce.php:149
+#: inc/woocommerce.php:152
 msgid "This widgets will be shown in the shop sidebar"
 msgstr ""
 
-#: inc/woocommerce.php:159
+#: inc/woocommerce.php:162
 msgid "Woocommerce Account Sidebar"
 msgstr ""
 
-#: inc/woocommerce.php:161
+#: inc/woocommerce.php:164
 msgid ""
 "Widgets in this area will be shown in all the WooCommerce accounts pages"
 msgstr ""
 
-#: inc/woocommerce.php:386
+#: inc/woocommerce.php:389
 msgid "View your shopping cart"
 msgstr ""
 
 #. %d number of items in the mini cart
-#: inc/woocommerce.php:390
+#: inc/woocommerce.php:393
 #, php-format
 msgid "%d <span class=\"screen-reader-text\">item</span>"
 msgid_plural "%d <span class=\"screen-reader-text\">items</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/woocommerce.php:486
+#: inc/woocommerce.php:489
 msgid "Go to My Account"
 msgstr ""
 
-#: inc/woocommerce.php:503
+#: inc/woocommerce.php:506
 msgid "Login"
 msgstr ""
 
-#: blocks/testimonials/index.php:92 blocks/testimonials/index.php:226
+#: blocks/testimonials/index.php:138 blocks/testimonials/index.php:272
 msgid "Testimonial content"
 msgstr ""
 
-#: blocks/testimonials/index.php:164
+#: blocks/testimonials/index.php:210
 msgid "Testimonials Abstract"
 msgstr ""
 
-#: blocks/testimonials/index.php:177
+#: blocks/testimonials/index.php:223
 msgid "Link to external resource"
-msgstr ""
-
-#: blocks/testimonials/index.php:332
-msgid "Show more testimonials"
 msgstr ""
 
 #: sensei/globals/pagination-quiz.php:58
