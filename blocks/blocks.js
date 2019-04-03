@@ -35,6 +35,7 @@ import * as addtocart from './product/addtocart';
 import * as stock from './product/stock';
 import * as productRating from './product/rating';
 import * as countdown from './countdown';
+import * as callus from './call-us';
 
 [
 	// Common blocks are grouped at the top to prioritize their display
@@ -47,6 +48,7 @@ import * as countdown from './countdown';
 	productRating,
 	stock,
 	countdown,
+	callus
 ].forEach( ( block ) => {
 	if ( ! block ) {
 		return;
