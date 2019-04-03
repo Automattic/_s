@@ -495,6 +495,27 @@ function _svbk_scripts() {
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
 
 /**
+ * Enqueue Gutenberg block assets for backend editor.
+ *
+ * `wp-blocks`: includes block type registration and related functions.
+ * `wp-element`: includes the WordPress Element abstraction for describing the structure of your blocks.
+ * `wp-i18n`: To internationalize the block's text.
+ *
+ * @since 1.0.0
+ */
+function _svbk_blocks_editor_custom_assets() {
+	wp_enqueue_style(
+		'_svbk-blocks-editor-custom',
+		get_theme_file_uri( '/dist/css/block-editor.css' ), 
+		array( 'wp-edit-blocks' )
+	);
+} 
+
+
+add_action( 'enqueue_block_editor_assets', '_svbk_blocks_editor_custom_assets' );
+
+
+/**
  * Manage support for WebP images
  */
 function _svbk_manage_support_for_webp() {
