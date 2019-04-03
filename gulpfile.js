@@ -240,17 +240,17 @@ function cgbCompatJS(){
 }
 
 function cgbCompatSrc(){
-    return src([ './blocks' ])
-        .pipe(symlink('./tmp'));
+    return src([ './blocks/*' ])
+        .pipe(symlink('./src'))
 }
 
 exports.cgbCompatJS = cgbCompatJS;
 exports.cgbCompatSrc = cgbCompatSrc;
 
-const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJS );
+const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJS, cgbCompatSrc );
 
 exports.refresh = series( clean, build);
 exports.build = build;
-exports.setup = parallel(replaceConfigs, replaceNames, replaceMarkers, renameLanguages, series(build, cgbCompatJS) );
+exports.setup = parallel(replaceConfigs, replaceNames, replaceMarkers, renameLanguages, build );
 
 exports.serve = parallel(sassWatch, jsWatch, imageWatch );
