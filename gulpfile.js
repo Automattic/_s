@@ -52,8 +52,8 @@ var imageSetOptions = function( imageResizes, options ){
                     rename: function (filepath) {
                         filepath.dirname += path.sep + imageResizes[sizeName];
                         
-                        if ( options.extname ) {
-                            filepath.extname = '.' + options.extname;
+                        if ( options.rename && options.rename.extname ) {
+                            filepath.extname = options.rename.extname;
                         }
     
                         return filepath;
