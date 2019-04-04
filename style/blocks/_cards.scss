@@ -23,7 +23,7 @@
 
 		@media screen and (max-width: breakpoint('tablet-landscape')) {
 
-			&:nth-of-type(even) {
+			> .wp-block-column:nth-of-type(even) {
 				margin-right: 0;
 			}
 		}
