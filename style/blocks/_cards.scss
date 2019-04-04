@@ -1,9 +1,61 @@
-.is-stile-simple-cards,
+.is-style-simple-cards,
 .is-style-icon-cards,
 .is-style-image-cards,
 .is-style-stats-cards {
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+
+.wp-block-columns {
+
+	&.is-style-simple-cards,
+	&.is-style-icon-cards,
+	&.is-style-stats-cards {
+
+		@media screen and (min-width: 600px) {
+			justify-content: center;
+			flex-wrap: wrap;
+
+			> .wp-block-column {
+				flex-basis: 49%;
+			}
+		}
+
+		@media screen and (max-width: breakpoint('tablet-landscape')) {
+
+			&:nth-of-type(even) {
+				margin-right: 0;
+			}
+		}
+
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+			&.has-3-columns,
+			&.has-5-columns,
+			&.has-6-columns,
+			&.has-7-columns {
+
+				> .wp-block-column {
+					flex-basis: 32%;
+
+					&:nth-of-type(even) {
+						margin-right: 2%;
+					}
+
+					&:nth-of-type(3n + 3) {
+						margin-right: 0;
+					}
+				}
+			}
+
+			&.has-4-columns {
+
+				> .wp-block-column {
+					flex-basis: 23%;
+				}
+			}
+		}
+	}
 }
 
 .is-style-icon-cards,
