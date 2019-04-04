@@ -9,11 +9,11 @@
 	padding: 20px;
 }
 
-.wp-block-container .editor-block-list__layout {
+.wp-block-container > .editor-inner-blocks > .editor-block-list__layout {
 	display: block !important;
-
-	.container__header {
-		border: 2px dotted #ddd;
+	
+	> .wp-block:first-of-type {
+		border: 2px dotted #ddd;	
 	}
 }
 
