@@ -111,11 +111,11 @@
 		}
 
 		&:hover {
-			background: rgba(2,99,173,.08);
+			background: rgba( $color__corporate, .08 )
 		}
 
 		&:focus {
-			background: rgba(2,99,173,.15);
+			background: rgba( $color__corporate, .15 )
 		}
 	}
 }

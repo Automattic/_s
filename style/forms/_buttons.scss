@@ -73,6 +73,25 @@ input[type="submit"],
 			border-color: $color__border-button-focus-secondary;
 		}
 	}
+
+	&.is-style-plain-link .wp-block-button__link {
+		background: none;
+		color: $color__corporate;
+		padding: .8em 1em;
+		font-weight: bold;
+		text-transform: uppercase;
+		transition: background .15s ease-in-out;
+		box-shadow: none;
+		border: none;
+
+		&:hover {
+			background: rgba( $color__corporate, .08 )
+		}
+
+		&:focus {
+			background: rgba( $color__corporate, .15 )
+		}
+	}
 }
 
 .wp-block-button.is-style-secondary .wp-block-button__link,

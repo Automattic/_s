@@ -25,6 +25,11 @@ wp.blocks.registerBlockStyle( 'core/button', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/button', {
+    name: 'plain-link',
+    label: 'Plain Link'
+} );
+
+wp.blocks.registerBlockStyle( 'core/button', {
     name: 'call-us',
     label: 'Call us'
 } );
