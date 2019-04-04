@@ -78,7 +78,7 @@
 
 		&.wp-block-container {
 
-			.wp-block-column {
+			> .wp-block-column {
 				display: block;
 				flex-basis: 100%;
 
