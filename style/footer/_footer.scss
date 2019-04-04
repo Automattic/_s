@@ -1,43 +1,108 @@
 .site-footer {
 	background: $color__background-footer;
-	text-align: center;
 	clear: both;
+	@include font-size(.9);
+	margin-bottom: 47px;
+	color: #fff;
+	
+	.site-footer__section {
+		margin-bottom: 30px;
+	}
+	
+	.wrap {
+		padding-top: 50px;
+		padding-bottom: 30px;
+	}
 
 	img {
 		display: block;
 		height: 50px;
-		margin: 0 auto;
 		width: auto;
+		margin-bottom: 15px;
 	}
-
+	
+	a {
+		text-decoration: none;
+		color: #fff;
+			
+		&:hover {
+			color: #f0f0f0;
+		}
+		
+		&:visited {
+			color: #fff;
+		}
+	}
+	
+	.widget-title {
+		@include font-size(1.1);
+		border-bottom: 1px solid $color__corporate;
+		margin: 0 0 15px;
+		padding: 0 0 15px 30px;
+		text-transform: uppercase;
+		position: relative;
+		
+		&:before {
+			@include font-size(1.2);
+			color: #fff;
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-weight: normal;
+		}
+	}
+	
+	.widget {
+		margin-bottom: 30px;
+		
+		&:nth-of-type(1) .widget-title:before {
+			@include icon-content('\e936');
+		}
+		
+		&:nth-of-type(2) .widget-title:before {
+			@include icon-content('\e902');
+		}
+		
+		&:nth-of-type(3) .widget-title:before {
+			@include icon-content('\e914');
+		}
+	}
+	
 	.sub-footer {
 		background: $color__background-sub-footer;
 		@include font-size(.9);
 		text-align: center;
-
-		span, .menu {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		line-height: 1em;
+		
+		div {
 			display: inline;
+		}
+		
+		.copyright-notice:after {
+			content: "-";
+			margin-left: 5px;
+		}
+		
+		.company-name:after,
+		.company-address:after {
+			content: ",";
+		}
 
+		.menu {
+
+			&:before,
 			&:after {
 				content: "|";
-				margin: 0 8px;
+				margin: 0 3px;
 			}
 		}
 
 		.made-by:after {
 			display: none;
 		}
-	}
-
-	.wrap {
-		padding-top: 30px;
-		padding-bottom: 30px;
-	}
-
-	.sub-footer {
-		padding-top: 15px;
-		padding-bottom: 15px;
-
+		
 		.menu-legal-menu-container {
 			display: inline-block;
 
@@ -46,7 +111,7 @@
 			}
 
 			li {
-				float: left;
+				display: inline;
 				margin: 0 5px;
 
 				&:before {
@@ -55,12 +120,39 @@
 			}
 		}
 	}
+	
+	@media screen and (min-width: 600px) {
+		margin-bottom: 0;
+		
+		.site-footer__section {
+			float: left;
+		}
+		
+		.widget-area {
+			display: flex !important;
+			
+			.widget {
+				flex-basis: 33.33%;
+				padding-left: 20px;
+			}
+		}
+	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		text-align: left;
-
-		img {
-			margin: 0;
+		
+		.site-footer__section {
+			width: 25%;
+		}
+		
+		.widget-area {
+			width: 75%;
+		}
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		
+		.widget-area .widget {
+			padding-left: 40px;
 		}
 	}
 }

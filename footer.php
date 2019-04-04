@@ -17,24 +17,29 @@
 		<div class="wrap">
 			<?php
 			$footer_logo = get_theme_mod( 'footer_logo', '' );
-			if ( $footer_logo ) :
+			$company_name = get_theme_mod( 'company_name', '' );
+			if ( $footer_logo || $company_name ) :
 				?>
 			<div class="site-footer__section footer-area">
+				<?php if ( $footer_logo ) : ?>
 				<?php echo wp_get_attachment_image( get_theme_mod( 'footer_logo', '' ), 'large' ); ?>
+				<?php endif; ?>
+				<?php if ( $company_name ) : ?>
+				<span class="company-name"><?php echo get_theme_mod( 'company_name' ); ?></span>
+				<?php endif; ?>
 			</div>
 			<?php endif ?>
-	
+			
+			<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+			<div class="widget-area domready--show">
+				<?php dynamic_sidebar( 'footer' ); ?>
+			</div>
+			<?php endif; ?>
 		</div>
-	
-		<?php if ( is_active_sidebar( 'footer' ) ) : ?>
-		<div class="widget-area domready--show">
-			<?php dynamic_sidebar( 'footer' ); ?>
-		</div>
-		<?php endif; ?>
 	
 		<div id="legal" class="site-footer__bar bar sub-footer">
 			<span class="copyright-notice">&copy; 2017-<?php echo date( 'Y' ); ?></span>
-			<div id="company-info" class="site-footer__section footer-area">
+			<div id="company-info">
 				<?php if ( get_theme_mod( 'company_name', false ) ) : ?>
 				<span class="company-name"><?php echo get_theme_mod( 'company_name' ); ?></span>
 				<?php endif; ?>
@@ -43,10 +48,7 @@
 				<?php endif; ?>
 				<?php if ( get_theme_mod( 'company_vat', false ) ) : ?>
 				<span class="company-vat"><?php _e('VAT ID', '_svbk') ?>:&nbsp;<?php echo get_theme_mod( 'company_vat' ); ?></span>
-				<?php endif; ?>				
-				<?php if ( get_theme_mod( 'company_phone', false ) ) : ?>
-				<span class="company-phone">Tel: <a href="tel:<?php echo get_theme_mod( 'company_phone' ); ?>"><?php echo get_theme_mod( 'company_phone' ); ?></a></span>
-				<?php endif; ?>				
+				<?php endif; ?>
 			</div>
 			<?php
 			if ( has_nav_menu( 'legal-menu' ) ) :
