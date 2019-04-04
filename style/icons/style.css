@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'theme-icons';
-	src: url('fonts/theme-icons.eot?h7pplt');
-	src: url('fonts/theme-icons.eot?h7pplt#iefix') format('embedded-opentype'),
-	url('fonts/theme-icons.ttf?h7pplt') format('truetype'),
-	url('fonts/theme-icons.woff?h7pplt') format('woff'),
-	url('fonts/theme-icons.svg?h7pplt#theme-icons') format('svg');
+	src: url('fonts/theme-icons.eot?ge14i7');
+	src: url('fonts/theme-icons.eot?ge14i7#iefix') format('embedded-opentype'),
+	url('fonts/theme-icons.ttf?ge14i7') format('truetype'),
+	url('fonts/theme-icons.woff?ge14i7') format('woff'),
+	url('fonts/theme-icons.svg?ge14i7#theme-icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,10 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-envelope-o:before {
+	content: "\e93b";
 }
 
 .icon-net_icon:before {
@@ -59,10 +63,6 @@
 .icon-Risorsa-6:before {
 	content: "\e932";
 	color: #0263ad;
-}
-
-.icon-envelope:before {
-	content: "\e931";
 }
 
 .icon-phone:before {

@@ -1,5 +1,63 @@
 .top-header {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	background: $color__background-top-header;
+	background: $color__corporate;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	color: #fff;
+
+	a {
+		color: #fff;
+
+		&:hover {
+			color: #eee;
+		}
+	}
+
+	.company-phone,
+	.company-opening-hours,
+	.company-email {
+		display: inline-block;
+
+		&:before {
+			margin-right: 8px;
+			position: relative;
+			top: 1px;
+		}
+	}
+
+	.company-phone,
+	.company-email {
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.company-phone {
+		float: left;
+
+		&:before {
+			@include icon-content('\e936');
+		}
+	}
+
+	.company-email {
+		float: left;
+		margin-left: 20px;
+
+		&:before {
+			@include icon-content('\e93b');
+		}
+	}
+
+	.company-opening-hours {
+		float: right;
+
+		&:before {
+			@include icon-content('\e902');
+		}
+	}
+
+	@media screen and (max-width: breakpoint('tablet-landscape')) {
+		display: none;
+	}
 }

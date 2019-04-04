@@ -32,10 +32,18 @@ use \Svbk\WP\Helpers;
 			<?php if ( get_theme_mod( 'header_top_bar' ) ) : ?>
 			<div class="top-header">
 				<div class="wrap">
-				<?php echo do_shortcode( get_theme_mod( 'header_top_bar_content', __( 'Customize this text in Theme Customizer', '_svbk' ) ) ); ?>
+					<?php if ( get_theme_mod( 'company_phone', false ) ) : ?>
+					<span class="company-phone"><a href="tel:<?php echo get_theme_mod( 'company_phone' ); ?>"><?php echo get_theme_mod( 'company_phone' ); ?></a></span>
+					<?php endif; ?>
+					<?php if ( get_theme_mod( 'company_email', false ) ) : ?>
+					<span class="company-email"><a href="mailto:<?php echo get_theme_mod( 'company_email' ); ?>"><?php echo get_theme_mod( 'company_email' ); ?></a></span>
+					<?php endif; ?>
+					<?php if ( get_theme_mod( 'company_opening_hours', false ) ) : ?>
+					<span class="company-opening-hours"><?php echo get_theme_mod( 'company_opening_hours' ); ?></span>
+					<?php endif; ?>	
 				</div>
-			</div>			
-			<?php endif ?>		
+			</div>
+			<?php endif ?>
 		
 			<?php
 

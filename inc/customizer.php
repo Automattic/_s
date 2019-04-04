@@ -51,6 +51,23 @@ function _svbk_customize_register( $wp_customize ) {
 			'type'        => 'checkbox',
 		)
 	);
+	
+	$wp_customize->add_setting(
+		'header_top_bar',
+		array(
+			'default' => false,
+		)
+	);
+	
+	$wp_customize->add_control(
+		'header_top_bar',
+		array(
+			'label'       => __( 'Show Top Header', '_svbk' ),
+			'description' => __( 'Show either company phone number and/or opening hours in a top header bar', '_svbk' ),
+			'section'     => 'header_image',
+			'type'        => 'checkbox',
+		)
+	);
 
 	// Archives.
 	$wp_customize->add_section(
@@ -208,6 +225,13 @@ function _svbk_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
+		'company_opening_hours',
+		array(
+			'sanitize_callback' => 'sanitize_post',
+		)
+	);
+	
+	$wp_customize->add_setting(
 		'company_vat',
 		array(
 			'sanitize_callback' => 'wp_kses_post',
@@ -246,6 +270,15 @@ function _svbk_customize_register( $wp_customize ) {
 		array(
 			'label'   => __( 'Email', '_svbk' ),
 			'type'    => 'email',
+			'section' => 'contacts',
+		)
+	);
+	
+	$wp_customize->add_control(
+		'company_opening_hours',
+		array(
+			'label'   => __( 'Opening Hours', '_svbk' ),
+			'type'    => 'textarea',
 			'section' => 'contacts',
 		)
 	);
