@@ -153,14 +153,6 @@
 					}
 				}
 
-				&.format-video {
-
-					.testimonial__content {
-						text-align: left;
-						padding-left: 30px;
-					}
-				}
-
 				&.format-link {
 
 					.testimonial__meta {
@@ -208,6 +200,67 @@
 						padding-left: $padding__content-desktop;
 						padding-right: $padding__content-desktop;
 					}
+				}
+			}
+		}
+	}
+	
+	&.is-style-full,
+	&.is-style-small {
+
+		.format-video {
+			background: $color__background-light;
+			padding-bottom: 20px;
+			
+			.testimonial__author-name,
+			.testimonial__content {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			
+			.testimonial__rating {
+				margin-right: 20px;
+				margin-left: 20px;
+			}
+		}
+		
+		@media screen and (min-width: 600px) {
+
+			.format-video {
+				padding: 20px 0 20px 250px;
+				position: relative;
+				min-height: 169px;
+				
+				.is-type-video {
+					position: absolute;
+					top: 20px;
+					left: 20px;
+					right: auto;
+					width: 230px;
+				}
+				
+				.wp-block-columns {
+					display: block;
+				}
+				
+				.author__name {
+					margin-top: 0;
+				}
+
+				.testimonial__content {
+					text-align: left;
+				}
+			}	
+		}
+		
+		@media screen and (min-width: breakpoint('desktop')) {
+			
+			.format-video {
+				padding-left: 480px;
+				min-height: 298px;
+				
+				.is-type-video {
+					width: 460px;
 				}
 			}
 		}
@@ -318,6 +371,21 @@
 				}
 			}
 		}
+		
+		.format-video {
+			
+			@media screen and (min-width: 600px) {
+				padding-left: 250px;
+			}
+			
+			@media screen and (min-width: breakpoint('tablet-landscape')) {
+				min-height: 129px;
+				
+				.is-type-video {
+					width: 230px;
+				}
+			}
+		}
 
 		.format-link {
 			padding-bottom: 50px;
@@ -382,30 +450,6 @@
 					top: 20px;
 					left: 20px;
 					width: 120px;
-				}
-			}
-		}
-
-		.format-video {
-			text-align: left;
-
-			.wp-has-aspect-ratio:before {
-				display: none;
-			}
-
-			@media screen and (min-width: 600px) {
-				padding-left: 290px;
-				position: relative;
-
-				.wp-has-aspect-ratio {
-					width: 250px;
-					position: absolute;
-					top: 20px;
-					left: 20px;
-				}
-
-				.author__name {
-					margin-top: 0;
 				}
 			}
 		}
