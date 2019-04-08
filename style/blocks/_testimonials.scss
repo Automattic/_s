@@ -94,6 +94,7 @@
 				box-shadow: none;
 				background: none;
 				margin-top: 0;
+				padding: 30px 0;
 
 				.wp-block-columns {
 					align-items: flex-start;
@@ -489,6 +490,10 @@
 				width: 49%;
 				float: left;
 				margin-right: 2%;
+			}
+			
+			.format-standard:first-of-type {
+				margin-top: 120px;
 			}
 		}
 
