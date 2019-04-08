@@ -101,13 +101,20 @@ blockquote,
 }
 
 .wp-block-pullquote {
-	padding: 0;
 	margin: 30px auto;
+	border: none;
+	
+	&.has-light-background {
+		background: $color__background-light;
+	}
 
 	blockquote {
 		text-align: left;
 		background: none;
 		padding: 0 25px;
+		max-width: 900px;
+		margin-left: auto;
+		margin-right: auto;
 
 		p {
 			position: relative;

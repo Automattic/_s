@@ -30,10 +30,10 @@
 	
 	.wp-block-image {
 		display: inline-block;
-		margin: 5px 15px;
+		margin: 5px;
 		
 		img {
-			height: 40px;
+			height: 35px;
 		}
 	}
 
@@ -48,6 +48,7 @@
 		}
 		
 		.wp-block-image {
+			margin: 5px 15px;
 			
 			img {
 				height: 50px;
