@@ -51,26 +51,6 @@
 					img {
 						margin-top: 0;
 					}
-
-					&:before,
-					&:after {
-						@include font-size(1.8);
-						position: absolute;
-						z-index: 1;
-						color: $color__corporate-secondary;
-					}
-
-					&:before {
-						@include icon-content('\e925');
-						top: 10px;
-						left: 10px;
-					}
-
-					&:after {
-						@include icon-content('\e924');
-						bottom: 10px;
-						right: 10px;
-					}
 				}
 
 				.testimonial__content {
@@ -235,6 +215,14 @@
 
 	&.is-style-small {
 		max-width: 800px;
+		
+		.format-standard .testimonial__author-image {
+			
+			&:before,
+			&:after {
+				display: none;
+			}
+		}
 
 		.format-video,
 		.format-link,
@@ -288,6 +276,7 @@
 
 			.author__name:after {
 				content: ",";
+				margin-right: 3px;
 			}
 
 			.testimonial__meta {
@@ -309,6 +298,11 @@
 					border: none;
 					margin: 0;
 				}
+			}
+			
+			.wp-block-svbk-rating {
+				top: 2px;
+				left: 5px;
 			}
 
 			@media screen and (min-width: 600px) {
@@ -439,6 +433,10 @@
 	}
 
 	&.is-style-grid {
+		
+		.format-standard .testimonial__author-image {
+			margin-top: -80px;
+		}
 
 		@media screen and (min-width: 600px) {
 
@@ -564,11 +562,40 @@
 
 	&.format-standard {
 		padding: 0 20px 20px;
-		margin-top: 100px;
+		margin-top: 120px;
+		
+		&:first-of-type {
+			margin-top: 100px;
+		}
 
 		.testimonial__content {
 			margin-top: 10px;
 			margin-bottom: 5px;
+		}
+		
+		.testimonial__author-image {
+			position: relative;
+			display: inline-block;
+			
+			&:before,
+			&:after {
+				@include font-size(1.8);
+				position: absolute;
+				z-index: 1;
+				color: $color__corporate-secondary;
+			}
+
+			&:before {
+				@include icon-content('\e925');
+				top: 10px;
+				left: 10px;
+			}
+
+			&:after {
+				@include icon-content('\e924');
+				bottom: 10px;
+				right: 10px;
+			}
 		}
 
 		img {
@@ -577,7 +604,6 @@
 			border-radius: 50%;
 			border: 2px solid $color__corporate;
 			object-fit: cover;
-			margin-top: -80px;
 		}
 	}
 
@@ -706,7 +732,10 @@
 
 	&.format-video {
 		background: none;
-		text-align: center;
+		
+		.testimonial__meta {
+			text-align: left;
+		}
 
 		.wp-has-aspect-ratio {
 			position: relative;
