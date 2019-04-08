@@ -409,7 +409,7 @@
 			.testimonial__meta {
 				@include font-size(.9);
 				padding-bottom: 0;
-				margin-bottom: 0;
+				margin-bottom: 10px;
 				border: none;
 
 				figcaption,
@@ -434,6 +434,7 @@
 
 				.author__name:after {
 					content: ",";
+					margin-right: 3px;
 				}
 			}
 
@@ -442,7 +443,7 @@
 			}
 
 			@media screen and (min-width: 600px) {
-				padding-left: 145px;
+				padding-left: 155px;
 				position: relative;
 
 				.testimonial__company-logo img {
@@ -764,8 +765,6 @@
 			margin-top: 15px;
 			@include font-size(.85);
 			line-height: 1.2em;
-			border-left: 2px solid #eee;
-			padding-left: 8px;
 
 			.author__name {
 				font-weight: bold;
