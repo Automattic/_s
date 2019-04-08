@@ -32,7 +32,7 @@
 			padding-bottom: 0;
 		}
 	}
-
+	
 	&.is-style-full {
 
 		.testimonial {
@@ -84,16 +84,16 @@
 					&:before {
 						content: "";
 						display: block;
-						height: 40px;
-						width: 70px;
-						background-image: url("images/testimonial-bubble-arrow-top.png");
+						height: 70px;
+						width: 40px;
+						background-image: url("images/testimonial-bubble-arrow.png");
 						background-size: contain;
 						background-position: bottom;
 						background-repeat: no-repeat;
 						position: absolute;
-						top: -40px;
+						top: -49px;
 						left: 50%;
-						transform: translateX(-50%);
+						transform: rotate(90deg) translateY(20px);
 					}
 				}
 
@@ -114,26 +114,6 @@
 					background: none;
 					margin-top: 0;
 
-					&:nth-of-type(even) {
-
-						.testimonial__meta {
-							order: 1;
-							padding-right: 0;
-							padding-left: 50px;
-						}
-
-						.testimonial__content {
-							order: 0;
-
-							&:before {
-								right: -40px;
-								left: auto;
-								background-position: center left;
-								background-image: url("images/testimonial-bubble-arrow-right.png");
-							}
-						}
-					}
-
 					.wp-block-columns {
 						align-items: flex-start;
 					}
@@ -147,19 +127,12 @@
 
 					.testimonial__content {
 						flex-basis: 66%;
-					}
-
-					.testimonial__content {
 						padding: 20px 30px;
-
+						
 						&:before {
-							background-image: url("images/testimonial-bubble-arrow-left.png");
-							width: 40px;
-							height: 70px;
-							background-position: right center;
-							left: -40px;
-							top: 50%;
-							transform: translateY(-50%);
+							transform: none;
+							top: 30px;
+							left: -34px;
 						}
 					}
 
@@ -177,6 +150,25 @@
 							right: 0;
 							bottom: 0;
 							margin-top: 0;
+						}
+					}
+					
+					&:nth-of-type(even) {
+
+						.testimonial__meta {
+							order: 1;
+							padding-right: 0;
+							padding-left: 50px;
+						}
+
+						.testimonial__content {
+							order: 0;
+
+							&:before {
+								transform: rotate(-180deg);
+								right: -34px;
+								left: auto;
+							}
 						}
 					}
 				}
