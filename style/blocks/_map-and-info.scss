@@ -1,0 +1,80 @@
+.is-style-map-and-info {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    padding-top: 0;
+
+	.wp-block-column:first-of-type {
+		background: #f0f0f0;
+		padding: 0;
+
+		iframe {
+			width: 100%;
+		}
+	}
+
+	.wp-block-column:last-of-type {
+		padding-left: 20px;
+		padding-right: 20px;
+		border-radius: 8px;
+		
+		&.has-dark-background,
+		&.has-primary-background {
+			color: #fff;
+			
+			> p:before {
+				color: #fff;
+			}
+		}
+	}
+	
+	.company-info__address,
+	.company-info__contacts {
+	    padding-bottom: 20px;
+	    border-bottom: 1px solid #ddd;
+	}
+	
+	.company-info__address,
+	.company-info__contacts,
+	.company-info__opening-hours {
+		padding-left: 30px;
+		position: relative;
+		
+		&:before {
+			@include font-size(1.4);
+			position: absolute;
+			top: 3px;
+			left: 0;
+			color: $color__corporate-secondary;
+		}
+	}
+	
+	.company-info__address:before {
+		@include icon-content('\e939');
+	}
+	
+	.company-info__contacts:before {
+		@include icon-content('\e938');
+	}
+	
+	.company-info__opening-hours:before {
+		@include font-size(1.3);
+		@include icon-content('\e902');
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+
+		.wp-block-column:first-of-type {
+			flex-basis: 65.6%;
+		}
+
+		.wp-block-column:last-of-type {
+			flex-basis: 32.3%;
+		}
+	}
+}
+
+#map {
+	width: 300px;
+	height: 300px;
+} 
