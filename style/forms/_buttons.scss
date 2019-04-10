@@ -27,7 +27,7 @@ input[type="submit"],
 
 	&:hover,
 	&:focus {
-		background: $color__background-button-hover;
+		background-color: $color__background-button-hover;
 		border-color: $color__border-button-hover;
 		box-shadow: 0 2px 4px rgba(0,0,0,0.35);
 		color: $color__text-button;
@@ -43,6 +43,7 @@ input[type="submit"],
 	}
 
 	&:visited {
+		border-color: $color__border-button;
 		color: $color__text-button;
 	}
 }

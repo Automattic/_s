@@ -27,18 +27,15 @@
 			margin-top: 0;
 		}
 	}
-
-	@media screen and (min-width: breakpoint('phone')) {
-
-		.wp-block-column--content {
-			padding: 20px 40px;
-		}
+	
+	h1, h2 {
+		@include font-size(2.3);
 	}
 
 	@media screen and (min-width: 600px) {
 
 		.wp-block-column--content {
-			padding: 20px $padding__content-mobile;
+			padding: 20px 40px;
 		}
 	}
 
@@ -78,6 +75,10 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		margin-left: -#{$padding__content-desktop};
 		margin-right: -#{$padding__content-desktop};
+		
+		h1, h2 {
+			@include font-size(2.5);
+		}
 	}
 
 	.buttons-group {
