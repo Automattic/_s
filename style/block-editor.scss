@@ -32,3 +32,44 @@
 		padding-right: 0 !important;
 	}
 }
+
+.wp-block-svbk-card {
+
+	.card__image-controls {
+		display: none;
+		border: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	.card__picture {
+		margin: 0;
+	}
+	
+	.card__title {
+		margin-bottom: 0;
+	}
+	
+	.card__subtitle {
+		@include font-size(1.1);
+		font-style: italic;
+		margin: 10px 0;
+	}
+	
+	.card__link {
+		background-color: $color__text-main;
+		color: #fff;
+		display: inline-block;
+		padding: 8px 20px;
+		border-radius: 30px;
+		margin-top: 15px;
+	}
+	
+	&.is-selected {
+	
+		.card__image-controls {
+			display: block;
+		}	
+	}
+}

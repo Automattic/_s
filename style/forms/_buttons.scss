@@ -5,7 +5,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .wp-block-button .wp-block-button__link,
-.loadmore__button {
+.loadmore__button,
+.wp-block-svbk-card .wp-block-svbk-card__link {
 	border: 1px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
@@ -46,51 +47,49 @@ input[type="submit"],
 	}
 }
 
-.wp-block-button {
+.is-style-outline .wp-block-button__link,
+.wp-block-svbk-card .wp-block-svbk-card__link {
+	color: $color__border-button-secondary;
+	border-color: $color__border-button-secondary;
+	background: rgba(255,255,255,0);
+	box-shadow: 0 0 0 1px transparent;
 
-	&.is-style-outline .wp-block-button__link {
-		color: $color__border-button-secondary;
-		border-color: $color__border-button-secondary;
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
 		background: rgba(255,255,255,0);
-		box-shadow: 0 0 0 1px transparent;
-
-		&:hover,
-		&:active,
-		&:focus,
-		&:visited {
-			background: rgba(255,255,255,0);
-		}
-
-		&:hover,
-		&:focus {
-			color: $color__border-button-hover-secondary;
-			box-shadow: 0 0 0 1px $color__border-button-hover-secondary;
-			border-color: $color__border-button-hover-secondary;
-		}
-
-		&:active {
-			color: $color__border-button-focus-secondary;
-			border-color: $color__border-button-focus-secondary;
-		}
 	}
 
-	&.is-style-plain-link .wp-block-button__link {
-		background: none;
-		color: $color__corporate;
-		padding: .8em 1em;
-		font-weight: bold;
-		text-transform: uppercase;
-		transition: background .15s ease-in-out;
-		box-shadow: none;
-		border: none;
+	&:hover,
+	&:focus {
+		color: $color__border-button-hover-secondary;
+		box-shadow: 0 0 0 1px $color__border-button-hover-secondary;
+		border-color: $color__border-button-hover-secondary;
+	}
 
-		&:hover {
-			background: rgba( $color__corporate, .08 )
-		}
+	&:active {
+		color: $color__border-button-focus-secondary;
+		border-color: $color__border-button-focus-secondary;
+	}
+}
 
-		&:focus {
-			background: rgba( $color__corporate, .15 )
-		}
+.is-style-plain-link .wp-block-button__link {
+	background: none;
+	color: $color__corporate;
+	padding: .8em 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	transition: background .15s ease-in-out;
+	box-shadow: none;
+	border: none;
+
+	&:hover {
+		background: rgba( $color__corporate, .08 )
+	}
+
+	&:focus {
+		background: rgba( $color__corporate, .15 )
 	}
 }
 
