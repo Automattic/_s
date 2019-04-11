@@ -164,6 +164,7 @@ input[type="submit"],
 	margin: 15px 0 20px;
 	padding: 20px 20px 25px;
 	text-align: center;
+	background: $color__background-light;
 
 	.callus__title {
 		text-transform: uppercase;
@@ -202,7 +203,7 @@ input[type="submit"],
 		&:before {
 			@include icon-content('\e934');
 			font-size: 80px;
-			color: #fff;
+			color: $color__background-light;
 		}
 
 		&:after {
