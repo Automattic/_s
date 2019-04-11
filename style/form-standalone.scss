@@ -76,6 +76,10 @@ body {
 
 	.hs-submit {
 		margin-top: 15px;
+		
+		input {
+			border-color: $color__corporate;
+		}
 	}
 
 	.form-columns-1 .hs-form-field .input {
