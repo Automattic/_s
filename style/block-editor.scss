@@ -73,3 +73,30 @@
 		}	
 	}
 }
+
+.wp-block-svbk-warranty {
+	padding-top: 130px;
+	padding-bottom: 70px;
+	
+	.block-editor-block-list__block,
+	.wp-block-cover__inner-container {
+		color: $color__text-main !important;
+	}
+	
+	.wp-block-cover__inner-container {
+		background: #fff;
+		padding: 20px;
+	}
+	
+	img {
+		margin: 0 auto;
+		display: block;
+		width: 240px;
+		height: 160px;
+		object-fit: contain;
+	}
+	
+	.has-small-font-size {
+		font-size: 12px !important;
+	}
+}
