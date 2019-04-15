@@ -143,6 +143,14 @@ blockquote,
 
 		cite {
 			color: #888;
+			text-align: right;
+			display: block;
+			text-transform: none;
+			
+			&:before {
+				content: "-";
+				margin-right: 5px;
+			}
 		}
 
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
