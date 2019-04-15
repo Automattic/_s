@@ -3,7 +3,7 @@
 	margin-right: -$padding__content-mobile;
 	padding: 50px $padding__content-mobile;
 
-	.wp-columns-full & {
+	.wp-block-container & {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
