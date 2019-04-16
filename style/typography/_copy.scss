@@ -55,6 +55,7 @@ p.has-drop-cap:not(:focus):first-letter {
 	}
 }
 
+em.underline-stroke,
 em.highlight,
 em.standout {
 	font-style: normal;
@@ -77,6 +78,19 @@ em.highlight {
 em.standout {
 	background: $color__corporate;
 	color: #fff;
+}
+
+em.underline-stroke {
+	display: inline-block;
+	margin-right: 3px;
+
+	&:after {
+		content: '';
+		background: url('images/svg/brush-line.svg');
+		display: block;
+		height: 8px;
+		width: 100%;
+	}
 }
 
 blockquote,

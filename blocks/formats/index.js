@@ -9,9 +9,11 @@ const { registerFormatType } = wp.richText;
  */
 import { highlight } from './highlight';
 import { standout } from './standout';
+import { underlineStroke } from './underline-stroke';
 
 
 [
 	highlight,
 	standout,
+	underlineStroke,
 ].forEach( ( { name, ...settings } ) => registerFormatType( name, settings ) );
