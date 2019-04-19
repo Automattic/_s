@@ -8,8 +8,11 @@
  * @return string Returns the post content with latest posts added.
  */
 function _svbk_override_block_core_latest_posts() {
-	$latest_posts_block                  = WP_Block_Type_Registry::get_instance()->get_registered( 'core/latest-posts' );
-	$latest_posts_block->render_callback = '_svbk_render_block_core_latest_posts';
+	$latest_posts_block = WP_Block_Type_Registry::get_instance()->get_registered( 'core/latest-posts' );
+	
+	if ( $latest_posts_block ) {
+		$latest_posts_block->render_callback = '_svbk_render_block_core_latest_posts';
+	}		
 }
 
 add_action( 'init', '_svbk_override_block_core_latest_posts', 11 );
