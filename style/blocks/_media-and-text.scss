@@ -57,11 +57,11 @@
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 
 		.wp-block-media-text__content {
-			padding-left: 8%;
+			padding-left: 3%;
 		}
 
 		&.has-media-on-the-right .wp-block-media-text__content {
-			padding-right: 8%;
+			padding-right: 3%;
 			padding-left: 0;
 		}
 	}
@@ -69,6 +69,14 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		padding-top: 70px;
 		padding-bottom: 70px;
+		
+		.wp-block-media-text__content {
+			padding-left: 8%;
+		}
+
+		&.has-media-on-the-right .wp-block-media-text__content {
+			padding-right: 8%;
+		}
 	}
 }
 
