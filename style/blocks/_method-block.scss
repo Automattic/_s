@@ -52,17 +52,16 @@
 	}
 	
 	.wp-block-svbk-iter__step-name {
-		background: $color__corporate;
-		color: #fff;
 		position: absolute;
-		z-index: 1;
-		top: 50px;
-		padding: 3px 20px;
-		font-weight: normal;
 		top: 20px;
 		left: 50%;
 		transform: translateX(-50%);
+		z-index: 1;
+		background: $color__corporate;
+		color: #fff;
+		padding: 3px 20px;
 		font-weight: bold;
+		text-transform: uppercase;
 	}
 	
 	.wp-block-svbk-iter__step-icon {
@@ -121,6 +120,7 @@
 			max-width: none;
 			margin-top: 30px;
 			padding-top: 10px;
+			padding-bottom: 15px;
 			z-index: 1;
 			position: relative;
 			text-align: left;
@@ -142,11 +142,11 @@
 				display: block;
 				width: 0;
 				height: 0;
-				border-top: 1.16rem solid transparent;
-				border-bottom: 1.16rem solid transparent;
-				border-left: 1.16rem solid $color__corporate;
+				border-top: 1.15rem solid transparent;
+				border-bottom: 1.15rem solid transparent;
+				border-left: 1.15rem solid $color__corporate;
 				position: absolute;
-				right: -1.16rem;
+				right: -1.15rem;
 				top: 0;
 			}
 		}
@@ -162,6 +162,10 @@
 		
 		.wp-block-svbk-iter__step-title {
 			display: inline-block;
+			margin-top: 10px;
+		}
+		
+		.wp-block-svbk-iter__step-content {
 			margin-top: 10px;
 		}
 	}
