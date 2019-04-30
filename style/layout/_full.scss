@@ -1,37 +1,5 @@
-.site-content,
-.wrap {
-	max-width: $size__content-width;
-	margin-left: auto;
-	margin-right: auto;
-
-	@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-
-
 .alignfull,
 .alignwide {
-	margin-left: -#{$padding__content-mobile};
-	margin-right: -#{$padding__content-mobile};
-	width: auto;
-	max-width: 1000%;
-	padding-left: $padding__content-mobile;
-	padding-right: $padding__content-mobile;
-
-	&.wp-block-image {
-		padding: 0;
-		max-width: none;
-	}
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-left: $padding__content-desktop;
-		padding-right: $padding__content-desktop;
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-	}
 
 	@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
 		margin-left: calc(50% - 50vw);
@@ -98,38 +66,6 @@
 			margin-left: calc(50% - 50vw);
 			margin-right: calc(50% - 50vw);
 			width: auto;
-		}
-	}
-}
-
-.is-style-method.alignfull,
-.is-style-method.alignwide {
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-left: $padding__content-desktop + 300px;
-		padding-right: $padding__content-desktop;
-		background-position: $padding__content-desktop + 208px center;
-
-		&:before {
-			background-position: $padding__content-desktop + 208px top;
-		}
-
-		&:after {
-			background-position: $padding__content-desktop + 208px bottom;
-		}
-	}
-
-	@media screen and (min-width: breakpoint('desktop')) {
-		padding-left: calc(((100vw - #{$size__content-width}) / 2) + 300px);
-		padding-right: calc((100vw - #{$size__content-width}) / 2);
-		background-position: calc(((100vw - #{$size__content-width}) / 2) + 208px) center;
-
-		&:before {
-			background-position: calc(((100vw - #{$size__content-width}) / 2) + 208px) top;
-		}
-
-		&:after {
-			background-position: calc(((100vw - #{$size__content-width}) / 2) + 208px) bottom;
 		}
 	}
 }

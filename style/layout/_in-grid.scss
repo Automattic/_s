@@ -1,22 +1,32 @@
-$size__page-width: 1250px;
+$size__page-width: $size__content-width + $padding__content-desktop;
 
 .site-content,
 .wrap {
-
+	
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding: 0 $padding__content-desktop;
+		padding-left: $padding__content-tablet;
+		padding-right: $padding__content-tablet;
+		max-width: $size__page-width;
+	}
+	
+	@media screen and (min-width: breakpoint('desktop')) {
+		padding-left: $padding__content-desktop;
+		padding-right: $padding__content-desktop;
 	}
 }
 
 #page {
-	@media screen and (min-width: 85.375em) {
-		max-width: $size__page-width;
-		margin: 0 auto;
+	
+	@media screen and (min-width: 1366px) {
+		margin-left: auto;
+		margin-right: auto;
 		box-shadow: 0 0 3px rgba(0,0,0,.1);
-
+		max-width: $size__page-width;
+		
 		.site-header.stuck .wrap {
 			max-width: $size__page-width;
-			margin: 0 auto;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 }
@@ -25,33 +35,25 @@ $size__page-width: 1250px;
 
 	.alignfull,
 	.alignwide {
-		width: auto;
-		margin-left: -#{$padding__content-mobile};
-		margin-right: -#{$padding__content-mobile};
-		padding-left: $padding__content-mobile;
-		padding-right: $padding__content-mobile;
-
-		&.wp-block-image {
-			padding: 0;
-			max-width: none;
-			margin-top: 0;
-			margin-bottom: 0;
-
-			img {
-				display: block;
-			}
-		}
-
+		
 		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			padding-left: $padding__content-tablet;
+			padding-right: $padding__content-tablet;
+		}
+		
+		@media screen and (min-width: breakpoint('desktop')) {
 			padding-left: $padding__content-desktop;
 			padding-right: $padding__content-desktop;
+		}
+		
+		@media screen and (min-width: 1366px) {
 			margin-left: -#{$padding__content-desktop};
 			margin-right: -#{$padding__content-desktop};
 		}
 	}
 }
 
-.is-style-method.alignfull,
+/*.is-style-method.alignfull,
 .is-style-method.alignwide {
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
@@ -67,7 +69,7 @@ $size__page-width: 1250px;
 			background-position: $padding__content-desktop + 208px bottom;
 		}
 	}
-}
+}*/
 
 .wp-block-columns.wp-block-atf {
 

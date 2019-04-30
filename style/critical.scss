@@ -19,18 +19,6 @@
 --------------------------------------------------------------*/
 @import "modules/accessibility";
 
-/*--------------------------------------------------------------
-# Common layout elements
---------------------------------------------------------------*/
-@import "header/header";
-@import "footer/footer";
-
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-@import "layout/in-grid";
-//@import "layout/full";
-
 img {
 	max-width: 100%;
 	height: auto;
@@ -93,10 +81,42 @@ img {
 
 .site-content,
 .wrap {
-	padding: 0 $padding__content-mobile;
-
+	padding-left: $padding__content-mobile;
+	padding-right: $padding__content-mobile;
+	max-width: $size__content-width;
+	margin-left: auto;
+	margin-right: auto;
+	
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding: 0 $padding__content-desktop;
+		padding-left: $padding__content-tablet;
+		padding-right: $padding__content-tablet;
+	}
+	
+	@media screen and (min-width: $size__tablet-content-width) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.alignfull,
+.alignwide {
+	margin-left: -#{$padding__content-mobile};
+	margin-right: -#{$padding__content-mobile};
+	width: auto;
+	max-width: 1000%;
+	padding-left: $padding__content-mobile;
+	padding-right: $padding__content-mobile;
+	
+	&.wp-block-image {
+		padding: 0;
+		max-width: none;
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding-left: $padding__content-tablet;
+		padding-right: $padding__content-tablet;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
 	}
 }
 
@@ -162,3 +182,15 @@ img {
 		width: 100%;
 	}
 }
+
+/*--------------------------------------------------------------
+# Common layout elements
+--------------------------------------------------------------*/
+@import "header/header";
+@import "footer/footer";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/in-grid";
+//@import "layout/full";
