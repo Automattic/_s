@@ -3,7 +3,7 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 
 		button.search-toggle {
-			right: $padding__content-desktop + 45px;
+			right: $padding__content-tablet + 45px;
 			height: $size__header-height-desktop;
 		}
 
@@ -13,7 +13,7 @@
 
 		.site-header-cart {
 			top: 0;
-			right: $padding__content-desktop;
+			right: $padding__content-tablet;
 			position: absolute;
 
 			li {
@@ -26,7 +26,7 @@
 		}
 
 		form.search-form button:before {
-			right: $padding__content-desktop + 57px;
+			right: $padding__content-tablet + 57px;
 		}
 	}
 }
