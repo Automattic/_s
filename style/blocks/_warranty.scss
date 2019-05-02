@@ -2,39 +2,101 @@
 	padding-top: 130px;
 	padding-bottom: 70px;
 	background-size: cover;
+	color: $color__text-main;
+	position: relative;
+	margin-left: -$padding__content-mobile;
+	margin-right: -$padding__content-mobile;
+	padding-left: $padding__content-mobile;
+	padding-right: $padding__content-mobile;
 	
-	.wp-block-cover__inner-container {
+	figure {
+		margin-top: -81px;
+		text-align: center;
+
+		img {
+			margin: 0 auto;
+			display: block;
+			width: 240px;
+			height: 160px;
+			object-fit: contain;
+		}
+	}
+	
+	> img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	
+	> .wp-block-svbk-warranty__content {
 		background: #fff;
 		border: 2px solid #d0a83a;
 		box-shadow: 0 0 0 10px rgba(255,255,255,1), 1px 1px 4px rgba(0,0,0,.1);
-		padding: 0 20px 10px;
+		padding: 0 20px 30px;
 		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
 		color: $color__text-main;
-
-		h2 {
-			margin-top: -97px;
-			max-width: none;
-			padding-top: 0;
+		position: relative;
+		z-index: 1;
+		
+		.wp-block-svbk-warranty__header {
+			text-align: center;
+			
+			&:after {
+				content: '';
+				display: block;
+				height: 2px;
+				width: 50px;
+				margin: 17px auto;
+				background-color: $color__background-light;
+			}
 		}
 
-		figure {
-			position: relative;
-			top: -97px;
-
-			img {
-				margin: 0 auto;
-				display: block;
-				width: 240px;
-				height: 160px;
-				object-fit: contain;
-			}
+		.wp-block-svbk-warranty__title {
+			max-width: none;
+			padding-top: 0;
+			color: $color__text-main;
+			margin: 10px 0;
+		}
+		
+		.wp-block-svbk-warranty__subtitle {
+			margin: 10px 0;
+		}
+		
+		ul {
+			
+			li:before {
+				color: $color__corporate;
+			}	
+		}
+		
+		@media screen and (min-width: breakpoint('tablet-portrait')) {
+			padding-left: 35px;
+			padding-right: 35px;
 		}
 	}
 	
-	.has-small-font-size {
-		@include font-size(.7);
-		line-height: 1.3em;
+	.wp-block-svbk-warranty__footer {
+		@include font-size(.8);	
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		margin-left: -$padding__content-tablet;
+		margin-right: -$padding__content-tablet;
+		padding-left: $padding__content-tablet;
+		padding-right: $padding__content-tablet;
+	}
+	
+	@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+		padding-left: calc((100vw - #{$size__content-width}) /2);
+		padding-right: calc((100vw - #{$size__content-width}) /2);
 	}
 }
