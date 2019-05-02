@@ -31,6 +31,16 @@ $size__page-width: $size__content-width + $padding__content-desktop;
 	}
 }
 
+aside.wp-block-svbk-warranty {
+	
+	@media screen and (min-width: 1366px) {
+		margin-left: -$padding__content-desktop;
+		margin-right: -$padding__content-desktop;
+		padding-left: $padding__content-desktop;
+		padding-right: $padding__content-desktop;
+	}
+}
+
 .site-content {
 
 	.alignfull,
@@ -49,16 +59,6 @@ $size__page-width: $size__content-width + $padding__content-desktop;
 		@media screen and (min-width: 1366px) {
 			margin-left: -#{$padding__content-desktop};
 			margin-right: -#{$padding__content-desktop};
-		}
-	}
-}
-
-.wp-block-columns.wp-block-atf {
-
-	@media screen and (min-width: breakpoint('desktop')) {
-
-		.wp-block-column--content {
-			padding: 60px $padding__content-desktop;
 		}
 	}
 }
