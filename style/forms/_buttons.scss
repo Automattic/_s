@@ -49,7 +49,7 @@ input[type="submit"],
 }
 
 .is-style-outline .wp-block-button__link,
-.wp-block-svbk-card .wp-block-svbk-card__link {
+.wp-block-svbk-profile .wp-block-button__link {
 	color: $color__border-button-secondary;
 	border-color: $color__border-button-secondary;
 	background: rgba(255,255,255,0);
@@ -75,7 +75,8 @@ input[type="submit"],
 	}
 }
 
-.is-style-text-button .wp-block-button__link {
+.is-style-text-button .wp-block-button__link,
+.wp-block-svbk-card .wp-block-button__link {
 	background: none;
 	color: $color__corporate;
 	padding: .8em 1em;
@@ -86,11 +87,15 @@ input[type="submit"],
 	border: none;
 
 	&:hover {
-		background: rgba( $color__corporate, .08 )
+		background: rgba( $color__corporate, .08 );
+		box-shadow: none;
+		color: $color__corporate;
 	}
 
 	&:focus {
-		background: rgba( $color__corporate, .15 )
+		background: rgba( $color__corporate, .15 );
+		box-shadow: none;
+		color: $color__corporate;
 	}
 }
 
@@ -289,13 +294,15 @@ input[type="submit"],
 	}
 }
 
-.has-arrow-icon {
+.has-arrow-icon,
+.wp-block-svbk-card__button,
+.wp-block-svbk-profile__button {
 
 	.wp-block-button__link {
 
 		&:after {
 			@include icon-content('\e922');
-			@include font-size(.9);
+			@include font-size(.8);
 			margin-left: 8px;
 		}
 	}

@@ -1,0 +1,140 @@
+.wp-block-svbk-card {
+	padding: 0 20px 15px;
+	background: #fff;
+	box-shadow: 1px 1px 4px rgba(0,0,0,.1);
+	color: $color__text-main;
+	
+	ul {
+		background: $color__background-light;
+		padding: 10px 10px 10px 24px;
+		
+		li {
+			margin-bottom: 5px;
+		}
+		
+		&.is-style-pros {
+			padding-left: 35px;
+		}
+	}
+	
+	.wp-block-svbk-card__title {
+		color: $color__text-main;
+	}
+		
+	.wp-block-svbk-card__picture {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	
+	.wp-block-svbk-card__title {
+		margin: 20px 0 10px;
+	}
+	
+	&.is-style-featured {
+		
+		.wp-block-svbk-card__title {
+			margin: 0 -20px;
+		}
+	}
+	
+	&.has-icon {
+		
+		.has-background & svg {
+			fill: $color__text-main;
+		}
+		
+		.wp-block-svbk-card__title,
+		.wp-block-svbk-card__subtitle {
+			text-align: center;
+			margin: 10px 0;
+		}
+		
+		.has-primary-background-color & .wp-block-svbk-card__ribbon {
+			
+			&:before {
+				border-left-color: $color__corporate;
+			}
+			
+			&:after {
+				border-right-color: $color__corporate;
+			}
+		}
+		
+		.has-secondary-background-color & .wp-block-svbk-card__ribbon {
+			
+			&:before {
+				border-left-color: $color__corporate-secondary;
+			}
+			
+			&:after {
+				border-right-color: $color__corporate-secondary;
+			}
+		}
+		
+		.has-light-gray-background-color & .wp-block-svbk-card__ribbon {
+			
+			&:before {
+				border-left-color: $color__background-light;
+			}
+			
+			&:after {
+				border-right-color: $color__background-light;
+			}
+		}
+		
+		.has-dark-gray-background-color & .wp-block-svbk-card__ribbon {
+			
+			&:before {
+				border-left-color: $color__background-dark;
+			}
+			
+			&:after {
+				border-right-color: $color__background-dark;
+			}
+		}
+	}
+	
+	.wp-block-svbk-card__ribbon {
+		position: absolute;
+		top: 30px;
+		right: -32px;
+		background: $color__success;
+		color: #fff;
+		transform: rotate(45deg);
+		padding: 3px 20px;
+		text-align: center;
+		width: 155px;
+		white-space: nowrap;
+		
+		&:before,
+		&:after {
+		    content: "";
+		    position: absolute;
+		    top: -3px;
+		    width: 0;
+		    height: 0;
+		    border-bottom: 32px solid transparent;
+		}
+	
+		&:before {
+			left: -2px;
+			border-left: 32px solid white;
+			border-right: 32px solid transparent;
+		}
+		
+		&:after {
+			right: -2px;
+			border-left: 32px solid transparent;
+			border-right: 32px solid white;
+		}
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		padding: 0 20px 60px;
+		
+		.wp-block-button {
+			left: 20px;
+			right: 20px;
+		}
+	}
+}

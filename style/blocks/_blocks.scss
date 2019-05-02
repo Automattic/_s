@@ -1,4 +1,4 @@
-.has-dark-background-color,
+.has-dark-gray-background-color,
 .has-gradient-background-color,
 .has-alpha-dark-background-color,
 .has-primary-background-color,
@@ -13,7 +13,8 @@
 		color: #fff;
 	}
 
-	.wp-block-button.is-style-outline .wp-block-button__link {
+	.wp-block-button.is-style-outline .wp-block-button__link,
+	.wp-block-svbk-profile:not(.has-background) .wp-block-button__link {
 		color: #fff;
 		border-color: #fff;
 
@@ -44,7 +45,7 @@
 	background: $color__corporate-tertiary;
 }
 
-.has-dark-background-color {
+.has-dark-gray-background-color {
 	background: $color__background-dark;
 }
 
@@ -79,6 +80,7 @@
 @import "columns";
 @import "faq";
 @import "form-and-image";
+@import "group";
 @import "latest-posts";
 @import "map";
 @import "map-and-info";

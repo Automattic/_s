@@ -1,0 +1,113 @@
+.wp-block-svbk-bullet,
+.wp-block-svbk-card,
+.wp-block-svbk-profile,
+.wp-block-svbk-stats {
+	width: 100%;
+	margin-top: 30px;
+	padding-bottom: 15px;
+	
+	figure img {
+		display: block;
+	}
+	
+	h2, h3 {
+		@include font-size(1.4);
+	}
+	
+	.wp-block-svbk-card__subtitle,
+	.wp-block-svbk-profile__role {
+		font-weight: bold;
+		@include font-size(1.1);
+	}
+	
+	.wp-block-button__link {
+		display: block;
+	}
+	
+	&[class$="background-color"] {
+		padding-left: 20px;
+		padding-right: 20px;
+		box-shadow: 1px 1px 4px rgba(0,0,0,.1);
+	}
+	
+	&.is-style-featured {
+		
+		.wp-block-svbk-profile__name,
+		.wp-block-svbk-card__title {
+			background: $color__corporate;
+			color: #fff;
+			padding: 5px 15px;
+		}
+	}
+	
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        width: 48%;
+        margin-right: 2%;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) 
+    and (max-width: breakpoint('tablet-landscape')) {
+        
+        &:nth-of-type(2n + 2) {
+            margin-right: 0;
+        }
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        width: 32%;
+        
+        &:nth-of-type(3n + 3) {
+            margin-right: 0;
+        }
+    }
+
+}
+
+.wp-block-svbk-card,
+.wp-block-svbk-profile {
+	
+	.wp-block-svbk-card__picture {
+		margin: 0;
+	}
+	
+	.wp-block-svbk-card__subtitle {
+		margin: 10px 0;
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		padding-bottom: 60px;
+		position: relative;
+		
+		.wp-block-button {
+			position: absolute;
+			bottom: 15px;
+		}
+	}
+}
+
+.wp-block-svbk-bullet[class$="background-color"],
+.wp-block-svbk-bullet.is-style-offset,
+.wp-block-svbk-card.has-icon {
+	margin-top: 80px;
+	padding-top: 50px;
+	position: relative;
+	
+	.wp-block-svbk-bullet__icon,
+	.wp-block-svbk-card__icon {
+		width: 100px;
+		height: 100px;
+		background: #fff;
+		border: 4px solid #eee;
+		border-radius: 50%;
+		position: absolute;
+		top: -50px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 10px;
+	}
+}
+
+@import "bullet";
+@import "profile";
+@import "service";
+@import "stat";

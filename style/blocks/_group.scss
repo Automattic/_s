@@ -1,0 +1,24 @@
+.wp-block-group {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        
+        &.is-style-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    
+    &.has-background {
+        
+        svg {
+            fill: #fff;
+        }
+        
+        .wp-block-svbk-stats .wp-block-svbk-stats__description {
+            border-color: rgba(255,255,255,.5);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.wp-block-svbk-bullet {
+	
+	.wp-block-svbk-bullet__icon {
+		margin: 0 auto;
+		width: 100px;
+		height: 100px;
+		padding: 10px;
+
+		.card__icon {
+			width: 100%;
+			height: 100%;
+		}	
+	}
+	
+	.wp-block-svbk-bullet__title {
+		margin: 10px 0;
+		text-align: center;
+	}
+	
+	.wp-block-svbk-bullet__content {
+		margin-top: 10px;
+	}
+}
