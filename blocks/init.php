@@ -61,7 +61,7 @@ function _svbk_blocks_editor_assets() {
 
 add_action( 'enqueue_block_editor_assets', '_svbk_blocks_editor_assets' );
 
-require 'testimonials/index.php';
+require 'testimonial/index.php';
 require 'latest-posts/index.php';
 require 'countdown/index.php';
 require 'product/index.php';

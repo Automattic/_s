@@ -37,8 +37,11 @@
     "react-dom": "^16.7.0"
   },
   "dependencies": {
+    "@react-google-maps/api": "^1.2.3-alpha.4",
+    "@wordpress/block-library": "^2.4.2",
     "cgb-scripts": "^1.14.0",
     "fg-loadcss": "^2.1.0",
-    "gulp-svgmin": "^2.1.0"
+    "gulp-svgmin": "^2.1.0",
+    "svgo": "^1.2.2"
   }
 }

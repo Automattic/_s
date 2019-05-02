@@ -32,6 +32,8 @@ const {
 	TextControl,
 	SelectControl,
 	PanelBody,
+	Button,
+	ButtonGroup
 } = wp.components;
 
 const { 
@@ -137,7 +139,6 @@ class MapEdit extends Component {
 	}
 	
 	addMarker( marker ) {
-		
 		const {
 			attributes,
 			setAttributes,
@@ -154,6 +155,24 @@ class MapEdit extends Component {
 		markers.push( marker );
 		setAttributes( { markers } );
 		this.forceUpdate();
+	}
+	
+	removeMarker( index ) {
+		const {
+			attributes,
+			setAttributes,
+		} = this.props;
+
+		let { 
+			markers
+		} = attributes;		
+	
+		if ( !markers ) {
+			return;
+		}
+		
+		markers.splice(index, 1);
+		setAttributes( { markers: markers.slice(0) } );	
 	}
 	
 	onEditMarker( index ) {
@@ -242,10 +261,12 @@ class MapEdit extends Component {
 						    />			 							
 						) ) }
 					</GoogleMap>
-					<button 
-						className={ 'wp-block-svbk-map__add-marker-intent' } 
-						onClick={ this.onAddMarkerClick }
-					>{ __( 'Add Marker', '_svbk' ) }</button>					
+				    <ButtonGroup>
+						<Button isPrimary
+							className={ 'wp-block-svbk-map__add-marker' } 
+							onClick={ this.onAddMarkerClick }
+						>{ __( 'Add new Marker', '_svbk' ) }</Button>					
+				    </ButtonGroup>
 				<InspectorControls>
 					<PanelBody title={ __( 'Map Settings', '_svbk') }>
 					    <TextControl
@@ -295,9 +316,24 @@ class MapEdit extends Component {
 								setAttributes={ ( update ) => { markerIconUpdate( this.state.editingMarker, update ) } }
 								url={ editableMarker.iconUrl }
 						    />
+						    <ButtonGroup>
+								<Button isDefault isDestructive
+									className={ 'wp-block-svbk-map__remove-marker' } 
+									onClick={ () => { 
+										this.setState( { editingMarker: false } );
+										this.removeMarker( this.state.editingMarker ) 
+									} }
+								>{ __( 'Remove Marker', '_svbk' ) }</Button>
+							</ButtonGroup>
 					    </Fragment>
 						) : (
-							<p>{ __('Please click on a marker to edit', '_svbk' ) }</p>
+							<div>
+								<p>{ __('Please click on a marker to edit or', '_svbk' ) }</p>
+								<Button isPrimary
+									className={ 'wp-block-svbk-map__add-marker' } 
+									onClick={ this.onAddMarkerClick }
+								>{ __( 'Add new Marker', '_svbk' ) }</Button>									
+							</div>
 						) }
 					</PanelBody>	
 				</InspectorControls>

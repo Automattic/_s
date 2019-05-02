@@ -90,6 +90,8 @@ function _svbk_rating_templates( $editor_settings ) {
 			$post_format = $post->post_format;
 		}
 
+		$editor_settings['template_lock'] = 'all';
+
 		switch ( $post_format ) {
 			case 'video':
 				$editor_settings['template'] = array(
@@ -169,6 +171,62 @@ function _svbk_rating_templates( $editor_settings ) {
 				break;
 
 			case 'link':
+				$editor_settings['template'] = array(
+					array(
+						'core/columns',
+						array(
+							'className' => 'testimonial__wrapper',
+							'columns'   => 2,
+						),
+						array(
+							array(
+								'core/column',
+								array(
+									'className' => 'testimonial__meta',
+								),
+								array(
+									array(
+										'core/image',
+										array(
+											'className' => 'testimonial__author-image',
+										),
+									),
+									array(
+										'svbk/author',
+										array(),
+									),
+									array(
+										'svbk/rating',
+										array(),
+									),
+								),
+							),
+							array(
+								'core/column',
+								array(
+									'className' => 'testimonial__content',
+								),
+								array(
+									array(
+										'core/paragraph',
+										array(
+											'placeholder' => __( 'Testimonial content', '_svbk' ),
+										),
+									),
+									array(
+										'core/button',
+										array(
+											'className'   => 'testimonial__link',
+											'placeholder' => __( 'Link to external resource', '_svbk' ),
+										),
+									),									
+								),
+							),
+						),
+					),
+				);
+				break;
+			case 'quote':
 				$editor_settings['template'] = array(
 					array(
 						'core/columns',

@@ -1,3 +1,9 @@
+/**
+ * BLOCK: call-us
+ *
+ * Shows a phone call button with number
+ * @author: Costanza Focardi <c.focardi@silverbackstudio.it>
+ */
 import classnames from 'classnames';
 
 /**

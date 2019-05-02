@@ -13,11 +13,9 @@
  */
 const {
 	registerBlockType,
-	setDefaultBlockName,
-	setFreeformContentHandlerName,
-	setUnregisteredTypeHandlerName,
 } = wp.blocks;
 
+const { includes } = lodash;
 
 /**
  * Internal dependencies
@@ -27,15 +25,32 @@ import './styles';
 
 import './flickity';
 
-import * as testimonials from './testimonials';
-import * as author from './testimonials/author';
-import * as rating from './testimonials/rating';
+import * as testimonials from './testimonial';
+import * as author from './testimonial/author';
+import * as rating from './testimonial/rating';
 import * as price from './product/price';
 import * as addtocart from './product/addtocart';
 import * as stock from './product/stock';
 import * as productRating from './product/rating';
-import * as countdown from './countdown';
 import * as callus from './call-us';
+import * as card from './card';
+import * as countdown from './countdown';
+import * as icon from './icon';
+import * as bullet from './bullet';
+import * as profile from './profile';
+import * as stats from './stats';
+import * as collapse from './collapse';
+import * as map from './map';
+import * as iter from './iter';
+import * as warranty from './warranty';
+import * as hero from './hero';
+
+const disablePreviewBlocks = [
+	'core/columns',
+	'svbk/card',
+	'svbk/collapse',
+	'svbk/warranty',
+];
 
 [
 	// Common blocks are grouped at the top to prioritize their display
@@ -47,8 +62,18 @@ import * as callus from './call-us';
 	addtocart,
 	productRating,
 	stock,
+	callus,
+	card,
 	countdown,
-	callus
+	icon,
+	bullet,
+	profile,
+	stats,
+	collapse,
+	map,
+	iter,
+	warranty,
+	hero
 ].forEach( ( block ) => {
 	if ( ! block ) {
 		return;
@@ -56,3 +81,21 @@ import * as callus from './call-us';
 	const { name, settings } = block;
 	registerBlockType( name, settings );
 } );
+
+//Fix styles for blocks witn InnerBlocks, by disabling preview. @see: https://github.com/WordPress/gutenberg/issues/9897
+var el = wp.element.createElement;
+var withDisabledPreviews = wp.compose.createHigherOrderComponent( function( BlockEdit ) {
+return function( props ) {
+  var content = el( BlockEdit, props );
+  
+  if( includes(disablePreviewBlocks, props.name) && typeof props.insertBlocksAfter === 'undefined' ) {
+    content = el( 'div', {} );
+  }
+
+  return el(
+    wp.element.Fragment, {}, content
+  );
+};
+}, 'withDisabledPreviews' );
+
+wp.hooks.addFilter( 'editor.BlockEdit', 'svbk/fixstyles', withDisabledPreviews );

@@ -79,7 +79,11 @@ const stringToFormat = ( formatString ) => formatString.replace(formatters_place
 	let formatter = formatters_placeholders[placeholder];
 	
 	if ( typeof formatter !== 'undefined' ) {
-		return ReactDOMServer.renderToStaticMarkup( formatterTemplate(formatter) );
+		try {
+			return ReactDOMServer.renderToStaticMarkup( formatterTemplate(formatter) );
+		} catch( err ) {
+			console.error(err);
+		}
 	}
 	
 	return match;

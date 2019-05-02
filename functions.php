@@ -212,7 +212,11 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		Helpers\Theme\AMP::init();
 
 		// Load Google Maps
-		( new Helpers\Maps\GoogleMaps( Config::get( array(), 'googlemaps' ) ) )->setDefault();
+		(new Helpers\Maps\GoogleMaps( Config::get( array(), 'googlemaps' ) ) )->setDefault();
+		
+		$admin_maps = new Helpers\Maps\GoogleMaps( Config::get( array(), 'googlemaps' ) );
+		$admin_maps->libraries = ['places'];
+		add_action( 'enqueue_block_editor_assets', array( $admin_maps, 'enqueue_script' ) );
 
 		// Load Iubenda
 		( new Helpers\Compliance\Iubenda( Helpers\Config::get( array(), 'iubenda' ) ) )->setDefault();
@@ -459,7 +463,7 @@ function _svbk_scripts() {
 	// Google Maps Managment script, enable this if you use Google Maps shortcodes in your theme
 	Script::enqueue(
 		'_svbk-maps',
-		'/dist/js/maps.min.js',
+		'/dist/js/map-block.min.js',
 		[
 			'deps'   => array( 'jquery' ),
 			'source' => 'theme',
@@ -891,7 +895,7 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Shortcode UI
  */
-require get_template_directory() . '/inc/shortcode-ui.php';
+require get_template_directory() . '/inc/shortcodes.php';
 
 /**
  * Customizer additions.

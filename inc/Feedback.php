@@ -31,7 +31,13 @@ class Feedback {
 		Utils\ObjectUtils::configure( $this, $properties );
 
 		add_action( 'init', array( $this, 'init' ), 10 );
-
+		
+		if ( ! did_action( 'after_setup_theme' ) ) {
+			add_action( 'after_setup_theme', array( $this, 'register_shortcodes' ), 20 );
+		} else {
+			$this->register_shortcodes();
+		}
+		
 		if ( ! is_admin() ) {
 			add_filter( 'query_vars', array( static::class, 'public_query_vars' ) );
 			add_filter( 'request', array( $this, 'query_vars' ) );
@@ -44,11 +50,15 @@ class Feedback {
 	public static function register( $post_type = 'feedback', $properties = array() ) {
 		return new static( $post_type, $properties );
 	}
-
+	
 	public function init() {
 		$this->register_post_types();
 	}
 
+	public function register_shortcodes(){
+		add_shortcode( "feedback-{$this->post_type}-count", array( $this, 'count_shortcode' ) );
+	}
+	
 	public function register_post_types() {
 
 		if ( ! $this->post_type ) {
@@ -122,16 +132,16 @@ class Feedback {
 
 	public function getQueryArgs( $attributes ) {
 
-		$query_args = array(
+		$query_args = shortcode_atts( array(
 			'post_type'      => $this->post_type,
 			'post_status'    => 'publish',
-			'orderby'        => $attributes['orderby'] ?: 'menu_order date',
-			'order'          => $attributes['order'] ?: 'desc',
-			'posts_per_page' => $attributes['posts_per_page'],
-			'paged'          => $attributes['paged'] ?: 1,
-			'offset'         => $attributes['offset'],
+			'orderby'        => 'menu_order date',
+			'order'          => 'desc',
+			'posts_per_page' => null,
+			'paged'          => 1,
+			'offset'         => null,
 			'tax_query'      => [],
-		);
+		), $attributes);
 
 		if ( $this->taxonomy && ! empty( $attributes['categories'] ) ) {
 			$query_args['tax_query'][] = array(
@@ -217,6 +227,19 @@ class Feedback {
 		}
 
 		return $query_vars;
+	}
+
+	public function count_shortcode($atts){
+		
+	     $params = shortcode_atts( array(
+		      'categories' => [],
+	     ), $atts );		
+		
+		$query_args     = $this->getQueryArgs( $params );
+		$query_args['fields'] = 'ids';
+		$feedback_query = new WP_Query( $query_args );		
+		
+		return $feedback_query->found_posts;
 	}
 
 }

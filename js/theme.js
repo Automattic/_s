@@ -104,6 +104,7 @@
   }
 
   $(document).ready(function(){
+    
       $(".countdown").each(function(){
       	var countdown_expires =  $(this).data('expires');
       	
@@ -166,6 +167,17 @@
         }
     });
     
+    $( '.wp-block-svbk-collapse__trigger').on( 'click', function(){
+      var $button = $(this);
+      var $collapse = $button.closest('.wp-block-svbk-collapse');
+      
+      $collapse.find('.wp-block-svbk-collapse__content').slideToggle(500, function(){
+          $collapse.toggleClass('wp-block-svbk-collapse--open');
+      });
+      
+    } );
+    
   });
-  
+
+
 })(jQuery);

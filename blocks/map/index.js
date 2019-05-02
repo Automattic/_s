@@ -92,6 +92,7 @@ export const settings = {
 	        type: 'array',
 	        source: 'query',
 	        selector: '.wp-block-svbk-map__marker',
+	        default: [],
 	        query: {
 				lat: {
 					type: 'string',

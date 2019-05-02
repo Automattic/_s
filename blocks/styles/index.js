@@ -1,4 +1,4 @@
-
+// Register Custom Styles
 wp.blocks.registerBlockStyle( 'core/paragraph', {
     name: 'subtitle',
     label: 'Subtitle'
@@ -33,3 +33,9 @@ wp.blocks.registerBlockStyle( 'core/button', {
     name: 'call-us',
     label: 'Call us'
 } );
+
+wp.blocks.registerBlockStyle( 'core/group', {
+    name: 'layout-grid',
+    label: 'Grid Layout'
+} );
+
