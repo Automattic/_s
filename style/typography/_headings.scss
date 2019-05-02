@@ -18,7 +18,8 @@ h2 {
 h3,
 .widget-title,
 .comments-title,
-.comment-reply-title {
+.comment-reply-title,
+.wp-block-svbk-warranty__title {
 	@include font-size(1.625);
 }
 
@@ -45,7 +46,8 @@ h6 {
 	@include font-size(1.1);
 }
 
-.is-style-subtitle {
+.is-style-subtitle,
+.wp-block-svbk-warranty__subtitle {
 	@include font-size(1.2);
 	font-weight: bold;
 
