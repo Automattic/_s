@@ -1,212 +1,253 @@
 /* global wp */
 /* global lodash */
+
+const { Fragment, Component } = wp.element;
 /**
  * External dependencies
  */
-const { isUndefined, pickBy } = lodash;
 import classnames from 'classnames';
+
+const { 
+    pick,
+    mapKeys,
+    capitalize
+} = lodash;
 
 /**
  * WordPress dependencies
  */
-const { Component, Fragment } = wp.element;
-const {
-	PanelBody,
-	Placeholder,
-	QueryControls,
-	RangeControl,
-	Spinner,
-	ToggleControl,
-	Toolbar,
-	SandBox
-} = wp.components;
-const apiFetch = wp.apiFetch;
-const { addQueryArgs } = wp.url;
-const { __ } = wp.i18n;
-const { dateI18n, format, __experimentalGetSettings } = wp.date;
-const { decodeEntities } = wp.htmlEntities;
-const {
+const { __ } = wp.i18n; // Import __() from wp.i18n
+const { 
+	RichText,
+	PlainText,
 	InspectorControls,
-	BlockAlignmentToolbar,
-	BlockControls,
+	ContrastChecker,
+	PanelColorSettings,	
+	withColors,
+	InnerBlocks
 } = wp.editor;
-const { withSelect } = wp.data;
+
+const { compose } = wp.compose;
+
+const { 
+	RangeControl,
+	ButtonGroup,
+	IconButton,
+	PanelBody,
+	TextControl
+} = wp.components;
 
 /**
- * Module Constants
+ * Internal dependencies
  */
-const CATEGORIES_LIST_QUERY = {
-	per_page: -1,
-};
-const MAX_POSTS_COLUMNS = 6;
+import ImageEdit from '../common/image';
 
-class TestimonialsEdit extends Component {
-	constructor() {
-		super( ...arguments );
-		this.state = {
-			categoriesList: [],
-		};
-		this.toggleDisplayPostDate = this.toggleDisplayPostDate.bind( this );
-	}
 
-	componentWillMount() {
-		this.isStillMounted = true;
-		this.fetchRequest = apiFetch( {
-			path: addQueryArgs( `/wp/v2/testimonial_category`, CATEGORIES_LIST_QUERY ),
-		} ).then(
-			( categoriesList ) => {
-				if ( this.isStillMounted ) {
-					this.setState( { categoriesList } );
-				}
-			}
-		).catch(
-			() => {
-				if ( this.isStillMounted ) {
-					this.setState( { categoriesList: [] } );
-				}
-			}
-		);
-	}
+/**
+ * Allowed blocks constant is passed to InnerBlocks precisely as specified here.
+ * The contents of the array should never change.
+ * The array should contain the name of each block that is allowed.
+ * In columns block, the only block we allow is 'core/column'.
+ *
+ * @constant
+ * @type {string[]}
+*/
+const ALLOWED_BLOCKS = [ 
+	'core/paragraph', 
+	'core/list', 
+	'core/more', 
+	'core-embed/youtube',
+	'core/button'
+];
 
-	componentWillUnmount() {
-		this.isStillMounted = false;
-	}
+/**
+ * Default block template
+ * 
+ * @constant
+ * @type {string[]}
+*/
+const TEMPLATE = [ 
+	[ 'core/paragraph', {
+		content: 'Lorem ipsum sit amet...',
+	} ],
+	[ 'core/more', { } ]	
+];
 
-	toggleDisplayPostDate() {
-		const { displayPostDate } = this.props.attributes;
-		const { setAttributes } = this.props;
+class TestimonialEdit extends Component {
 
-		setAttributes( { displayPostDate: ! displayPostDate } );
-	}
+    render() {
+    	
+		const {
+			attributes,
+			setAttributes,
+			className,
+			isSelected,
+			backgroundColor,
+			textColor,
+			setBackgroundColor,
+			setTextColor,			
+		} = this.props;
 
-	render() {
-		const { attributes, setAttributes, latestPosts } = this.props;
-		const { categoriesList } = this.state;
-		const { displayPostDate, align, postLayout, columns, order, orderBy, categories, postsToShow, offset, loadMore } = attributes;
+		const { 
+			avatarUrl,
+			avatarId,
+			authorName,
+			authorRole,
+			rating,
+			companyLogoUrl,
+			companyLogoId,			
+			source,
+			date,
+		} = attributes;
+		
+		const avatarUpdate = ( update ) => {
+			
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ), function(value, key) {
+				return 'avatar' + capitalize(key);
+			});
 
-		const inspectorControls = (
-			<InspectorControls>
-				<PanelBody title={ __( 'Filter testimonials', '_svbk' ) }>
-					<QueryControls
-						{ ...{ order, orderBy } }
-						numberOfItems={ postsToShow }
-						categoriesList={ categoriesList }
-						selectedCategoryId={ categories }
-						onOrderChange={ ( value ) => setAttributes( { order: value } ) }
-						onOrderByChange={ ( value ) => setAttributes( { orderBy: value } ) }
-						onCategoryChange={ ( value ) => setAttributes( { categories: '' !== value ? value : undefined } ) }
-						onNumberOfItemsChange={ ( value ) => setAttributes( { postsToShow: value } ) }
-					/>
-					<RangeControl
-						label={ __( 'Offset', '_svbk' ) }
-						value={ offset }
-						onChange={ ( value ) => setAttributes( { offset: value } ) }
-						min={ 0 }
-						max={ 10 }
-					/>					
-					{ postLayout === 'grid' &&
-						<RangeControl
-							label={ __( 'Columns', '_svbk' ) }
-							value={ columns }
-							onChange={ ( value ) => setAttributes( { columns: value } ) }
-							min={ 2 }
-							max={ ! hasPosts ? MAX_POSTS_COLUMNS : Math.min( MAX_POSTS_COLUMNS, latestPosts.length ) }
-						/>
-					}
-					<ToggleControl
-						label={ __( 'Show Load More', '_svbk' ) }
-						checked={ loadMore }
-						onChange={ ( value ) => setAttributes( { loadMore: Boolean( value ) } ) }
-					/>					
-				</PanelBody>
-			</InspectorControls>
-		);
+			setAttributes( localUpdate );
+		}		
 
-		const hasPosts = Array.isArray( latestPosts ) && latestPosts.length;
-		if ( ! hasPosts ) {
-			return (
-				<Fragment>
-					{ inspectorControls }
-					<Placeholder
-						icon="admin-post"
-						label={ __( 'Testimonials', '_svbk' ) }
-					>
-						{ ! Array.isArray( latestPosts ) ?
-							<Spinner /> :
-							__( 'No posts found.' )
-						}
-					</Placeholder>
-				</Fragment>
-			);
-		}
+		const companyLogoUpdate = ( update ) => {
+			
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ), function(value, key) {
+				return 'companyLogo' + capitalize(key);
+			});
 
-		// Removing posts from display should be instant.
-		const displayPosts = latestPosts.length > postsToShow ?
-			latestPosts.slice( 0, postsToShow ) :
-			latestPosts;
-
-		const layoutControls = [
-			{
-				icon: 'list-view',
-				title: __( 'List View' ),
-				onClick: () => setAttributes( { postLayout: 'list' } ),
-				isActive: postLayout === 'list',
-			},
-			{
-				icon: 'grid-view',
-				title: __( 'Grid View' ),
-				onClick: () => setAttributes( { postLayout: 'grid' } ),
-				isActive: postLayout === 'grid',
-			},
-		];
-
-		const dateFormat = __experimentalGetSettings().formats.date;
-
+			setAttributes( localUpdate );
+		}		
+		
+		const classNames = classnames( className, {
+			'is-selected': isSelected,
+			[ backgroundColor.class ]: backgroundColor.class,
+			[ textColor.class ]: textColor.class,
+		} );		
+		
+		const style = {
+			backgroundColor: backgroundColor.color,
+			color: textColor.color,
+		};		
+		
+		const isStyle = RegExp(/is-style-/)
+		const styleName = isStyle.test(attributes.className)
+			? attributes.className.replace(isStyle, '')
+			: null		
+		
 		return (
-			<Fragment>
-				{ inspectorControls }
-				<BlockControls>
-					<BlockAlignmentToolbar
-						value={ align }
-						onChange={ ( nextAlign ) => {
-							setAttributes( { align: nextAlign } );
-						} }
-						controls={ [ 'center', 'wide', 'full' ] }
+			<div className={ classNames } style={ style } >
+				
+				<div className={ 'wp-block-svbk-testimonial__header' } >
+			
+					<ImageEdit
+						setAttributes={ avatarUpdate }
+						url={ avatarUrl }
+						id={ avatarId }
+						className={ 'wp-block-svbk-testimonial__author' }
+						labels={ { title: __( 'Author Avatar', '_svbk' ) } }
+					/> 
+					<PlainText
+						value={ authorName }
+						onChange={ ( value ) => setAttributes( { authorName: value } ) }
+						placeholder={ __( 'Name Surname..', '_svbk' ) }
+						className={ 'wp-block-svbk-testimonial__author-name' }
 					/>
-					<Toolbar controls={ layoutControls } />
-				</BlockControls>
-				<div
-					className={ classnames( this.props.className, {
-						'is-grid': postLayout === 'grid',
-						'has-dates': displayPostDate,
-						[ `columns-${ columns }` ]: postLayout === 'grid',
-					} ) }
-				>
-					{ displayPosts.map( ( post, i ) =>
-						<div key={ i } className={ classnames( 
-							[ 
-								`type-${ post.type }`,
-								`format-${ post.format }`,
-							]) } >
-							<a href={ post.link } target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
-						</div>
-					) }
+					<PlainText
+						value={ authorRole }
+						onChange={ ( value ) => setAttributes( { authorRole: value } ) }
+						placeholder={ __( 'Role..', '_svbk' ) }
+						className={ 'wp-block-svbk-testimonial__role-name' }
+					/>
+					
+					<div className={ classnames( 'block-editor-rating',  { [ `rating-${rating}` ] : rating }  ) }>
+						<ButtonGroup className={ 'block-editor-rating__stars' }>
+						{
+							[1, 2, 3, 4, 5].map( (rate) => (
+								<IconButton
+									key={ rate }
+									icon={ ( rating >= rate ) ? 'star-filled' : 'star-empty' }
+									onClick={ () => { setAttributes( { rating: rate } ) } }
+								    label={ rate }
+								/>
+							) )
+						}				
+						</ButtonGroup>
+					</div>
+	
+					<div className={ 'wp-block-svbk-testimonial__meta' } >
+						<PlainText
+							value={ date }
+							onChange={ ( value ) => setAttributes( { date: value } ) }
+							placeholder={ __( 'Date..', '_svbk' ) }
+							className={ 'wp-block-svbk-testimonial__date' }
+						/>
+						<PlainText
+							value={ source }
+							onChange={ ( value ) => setAttributes( { source: value } ) }
+							placeholder={ __( 'Source..', '_svbk' ) }
+							className={ 'wp-block-svbk-testimonial__source' }
+						/>				
+					</div>
+				
+					<ImageEdit
+						setAttributes={ companyLogoUpdate }
+						url={ companyLogoUrl }
+						id={ companyLogoId }
+						className={ 'wp-block-svbk-testimonial__company-logo' }
+						labels={ { title: __( 'Company Logo', '_svbk' ) } }
+					/>
+					
 				</div>
-			</Fragment>
+	
+				<div className={ 'wp-block-svbk-testimonial__content' } >
+					<InnerBlocks 
+						templateLock={ false }
+						allowedBlocks={ ALLOWED_BLOCKS }
+						template={ TEMPLATE }
+					/>
+				</div>						
+				
+				<InspectorControls>
+					<PanelBody title={ __( 'Testimonial Settings', '_svbk' ) }>
+						<RangeControl
+							label={ __( 'Rating', '_svbk' ) }
+							value={ rating }
+							onChange={ ( value ) => {
+								setAttributes( { rating: Number( value ) } ) }
+							}
+							min={ 0 }
+							max={ 5 }
+						/>	
+					</PanelBody>
+					<PanelColorSettings
+						title={ __( 'Color Settings' ) }
+						initialOpen={ false }
+                        colorSettings={ [
+							{
+								value: backgroundColor.color,
+								onChange: setBackgroundColor,
+								label: __( 'Background Color' ),
+							},
+							{
+								value: textColor.color,
+								onChange: setTextColor,
+								label: __( 'Text Color' ),
+							},
+						] }
+					/>
+					<ContrastChecker
+						{ ...{
+							textColor: textColor.color,
+							backgroundColor: backgroundColor.color,
+						} }
+					/>					
+				</InspectorControls>				
+			</div>
 		);
 	}
+    
 }
 
-export default withSelect( ( select, props ) => {
-	const { postsToShow, order, orderBy, categories } = props.attributes;
-	const { getEntityRecords } = select( 'core' );
-	const latestPostsQuery = pickBy( {
-		categories,
-		order,
-		orderby: orderBy,
-		per_page: postsToShow,
-	}, ( value ) => ! isUndefined( value ) );
-	return {
-		latestPosts: getEntityRecords( 'postType', 'testimonial', latestPostsQuery ),
-	};
-} )( TestimonialsEdit );
+export default compose( [
+	withColors( 'backgroundColor', { textColor: 'color' } ),
+] )( TestimonialEdit );

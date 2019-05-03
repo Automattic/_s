@@ -84,7 +84,7 @@ export const settings = {
 		pictureStackedUrl: {
 			type: 'string',
 			source: 'attribute',
-			attribute: 'src',
+			attribute: 'srcset',
 			selector: '.wp-block-svbk-hero__picture source',
 		},	
 		pictureStackedId: {
@@ -141,9 +141,6 @@ export const settings = {
 		align: {
 			type: 'string',
 		},
-		contentAlign: {
-			type: 'string',
-		},		
 	},	
 
 	edit,
@@ -161,7 +158,6 @@ export const settings = {
 			subtitle,
 			text,
 			align,
-			contentAlign,
 			primaryButtonUrl, 
 			primaryButtonText,			
 			secondaryButtonUrl, 
@@ -172,11 +168,7 @@ export const settings = {
 			[`has-align-${align}`]: align,
 		} );		
 		
-		const style = {};		
-
-		const contentStyle = {
-			textAlign: contentAlign
-		};
+		const style = {};
 		
 		return (
 			<div className={ classNames } style={ style } >
@@ -185,7 +177,11 @@ export const settings = {
 						{ pictureStackedUrl && (
 							<source media="(max-width: 465px)" srcSet={ pictureStackedUrl } />
 						) }
-						<img src={ pictureUrl } alt={ pictureAlt } className={ pictureId ? `wp-image-${ pictureId }` : null } />
+						<img 
+							src={ pictureUrl } 
+							alt={ pictureAlt } 
+							className={ pictureId ? `wp-image-${ pictureId }` : null } 
+						/>
 					</picture> 
 				) }
 				<div className={ 'wp-block-svbk-hero__content' } >

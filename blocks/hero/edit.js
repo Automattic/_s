@@ -29,10 +29,7 @@ const {
 	IconButton,
 	PanelBody,
 	ToggleControl,
-	FocalPointPicker
 } = wp.components;
-
-const { compose } = wp.compose;
 
 /**
  * Internal dependencies
@@ -46,7 +43,7 @@ class HeroEdit extends Component {
 		super(...arguments);
 		
 		this.state = {
-			customStackedImage: false,
+			customStackedImage: Boolean(this.props.attributes.pictureStackedUrl),
 		}		
 		
 	}
@@ -66,14 +63,11 @@ class HeroEdit extends Component {
 			pictureStackedUrl,
 			pictureStackedId,
 			pictureAlt,
-			focalPoint,
-			focalPointStacked,
 			pretitle,
 			title, 
 			subtitle,
 			text,
 			align,
-			contentAlign,
 			primaryButtonUrl, 
 			primaryButtonText,			
 			secondaryButtonUrl, 
@@ -203,12 +197,12 @@ class HeroEdit extends Component {
 						<ToggleControl
 							label={ __( 'Use custom image when stacked', '_svbk' ) }
 							checked={ this.state.customStackedImage }
-							onChange={ ( value ) => {
-								this.setState( { customStackedImage: Boolean( value )  } ) }
+							onChange={ ( useCustom ) => {
+								this.setState( { customStackedImage: Boolean( useCustom )  } ) }
 							}
 							help = { __( 'Choose another image when the image is above the text', '_svbk') }
 						/>
-						{ this.state.customStackedImage ? (
+						{ this.state.customStackedImage && (
 						<Fragment>
 							<label className="components-base-control__label" >{ 'Immagine sopra-sotto' }</label>
 							<ImageEdit
@@ -217,21 +211,6 @@ class HeroEdit extends Component {
 								id={ pictureStackedId }
 								inInspector={true}
 							/> 						
-						</Fragment>
-					    ) :(
-					    <Fragment>
-						    <FocalPointPicker
-								label={ __( 'Focal Point Picker' ) }
-								url={ pictureUrl }
-								value={ focalPoint }
-								onChange={ ( value ) => setAttributes( { focalPoint: value } ) }
-							/>	
-							<FocalPointPicker
-								label={ __( 'Stacked Focal Point Picker' ) }
-								url={ pictureUrl }
-								value={ focalPointStacked }
-								onChange={ ( value ) => setAttributes( { focalPointStacked: value } ) }
-							/>
 						</Fragment>
 					    ) }
 					</PanelBody>				

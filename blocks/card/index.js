@@ -93,7 +93,7 @@ export const settings = {
 		imageType: {
 			type: 'string',
 		},	
-		iconContent: {
+		icon: {
 			type: 'string',
 			source: 'html',
             selector: '.wp-block-svbk-card__icon',
@@ -169,7 +169,7 @@ export const settings = {
 			pictureUrl,
 			pictureAlt,
 			pictureId, 
-			iconContent,
+			icon,
 			title, 
 			titleLevel,
 			subtitle, 
@@ -235,9 +235,9 @@ export const settings = {
 					</figure> 
 					) 
 				}
-				{ ( 'icon' == imageType ) && iconContent && ( 
+				{ ( 'icon' == imageType ) && icon && ( 
 					<div className={ 'wp-block-svbk-card__icon' } >
-						<RawHTML>{ iconContent }</RawHTML>
+						<RawHTML>{ icon }</RawHTML>
 					</div> 
 				) }
 				{ title && ( 

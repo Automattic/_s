@@ -1,3 +1,5 @@
+/* global wp */
+/* global lodash */
 /**
  * Gutenberg Blocks
  *
@@ -25,7 +27,8 @@ import './styles';
 
 import './flickity';
 
-import * as testimonials from './testimonial';
+import * as testimonial from './testimonial';
+import * as testimonials from './testimonial/list/index';
 import * as author from './testimonial/author';
 import * as rating from './testimonial/rating';
 import * as price from './product/price';
@@ -44,18 +47,21 @@ import * as map from './map';
 import * as iter from './iter';
 import * as warranty from './warranty';
 import * as hero from './hero';
+import * as publication from './publication';
 
 const disablePreviewBlocks = [
-	'core/columns',
 	'svbk/card',
 	'svbk/collapse',
 	'svbk/warranty',
+	'svbk/testimonial',
 ];
 
 [
 	// Common blocks are grouped at the top to prioritize their display
 	// in various contexts — like the inserter and auto-complete components.
+	testimonial,
 	testimonials,
+	//inlineTestimonial,
 	rating,
 	author,
 	price,
@@ -73,14 +79,16 @@ const disablePreviewBlocks = [
 	map,
 	iter,
 	warranty,
-	hero
+	hero,
+	publication	
 ].forEach( ( block ) => {
-	if ( ! block ) {
-		return;
-	}
+	if ( ! block ) { return; }
+	
 	const { name, settings } = block;
+	
 	registerBlockType( name, settings );
 } );
+
 
 //Fix styles for blocks witn InnerBlocks, by disabling preview. @see: https://github.com/WordPress/gutenberg/issues/9897
 var el = wp.element.createElement;

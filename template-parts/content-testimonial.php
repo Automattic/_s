@@ -6,7 +6,6 @@
  *
  * @package _svbk
  */
-global $more, $post;
 
 $rating = get_post_meta( get_the_ID(), 'rating', true );
 
@@ -19,6 +18,7 @@ if ( $rating ) {
 }
 
 ?>
-<blockquote id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?>>
-	<?php the_content(); ?>
-</blockquote>
+<div id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> >
+	<?php echo force_balance_tags( apply_filters( 'the_content', get_the_content(false, false) ) ); ?>
+</div>
+

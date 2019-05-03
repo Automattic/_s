@@ -62,7 +62,7 @@ export const settings = {
 		return (
 			<Fragment>
 				<RichText
-					identifier="content"
+					identifier="author-name"
 					wrapperClassName="wp-feedback-author-name"
 					tagName={ 'div' }
 					value={ author_name }
@@ -71,7 +71,7 @@ export const settings = {
 					placeholder={ __( 'Author Name…', '_svbk' ) }
 				/>
 				<RichText
-					identifier="content"
+					identifier="author-role"
 					wrapperClassName="wp-feedback-author-role"
 					tagName={ 'cite' }
 					value={ author_role }

@@ -89,8 +89,9 @@ function _svbk_rating_templates( $editor_settings ) {
 		if ( ! $post_format ) {
 			$post_format = $post->post_format;
 		}
-
-		$editor_settings['template_lock'] = 'all';
+	
+		$templateLock = false;
+		$editor_settings['templateLock'] = $templateLock;
 
 		switch ( $post_format ) {
 			case 'video':
@@ -100,20 +101,16 @@ function _svbk_rating_templates( $editor_settings ) {
 						array(
 							'className' => 'testimonial__wrapper',
 							'columns'   => 2,
+							'templateLock' => $templateLock
 						),
 						array(
 							array(
 								'core/column',
 								array(
 									'className' => 'testimonial__meta',
+									'templateLock' => $templateLock
 								),
 								array(
-									array(
-										'core/video',
-										array(
-											'className' => 'testimonial__video',
-										),
-									),
 									array(
 										'svbk/author',
 										array(
@@ -132,8 +129,15 @@ function _svbk_rating_templates( $editor_settings ) {
 								'core/column',
 								array(
 									'className' => 'testimonial__content',
+									'templateLock' => $templateLock
 								),
 								array(
+									array(
+										'core/video',
+										array(
+											'className' => 'testimonial__video',
+										),
+									),									
 									array(
 										'core/paragraph',
 										array(
@@ -177,12 +181,14 @@ function _svbk_rating_templates( $editor_settings ) {
 						array(
 							'className' => 'testimonial__wrapper',
 							'columns'   => 2,
+							'templateLock' => $templateLock
 						),
 						array(
 							array(
 								'core/column',
 								array(
 									'className' => 'testimonial__meta',
+									'templateLock' => $templateLock
 								),
 								array(
 									array(
@@ -205,6 +211,7 @@ function _svbk_rating_templates( $editor_settings ) {
 								'core/column',
 								array(
 									'className' => 'testimonial__content',
+									'templateLock' => $templateLock
 								),
 								array(
 									array(
@@ -233,12 +240,14 @@ function _svbk_rating_templates( $editor_settings ) {
 						array(
 							'className' => 'testimonial__wrapper',
 							'columns'   => 2,
+							'templateLock' => $templateLock
 						),
 						array(
 							array(
 								'core/column',
 								array(
 									'className' => 'testimonial__meta',
+									'templateLock' => $templateLock
 								),
 								array(
 									array(
@@ -259,6 +268,7 @@ function _svbk_rating_templates( $editor_settings ) {
 								'core/column',
 								array(
 									'className' => 'testimonial__content',
+									'templateLock' => $templateLock
 								),
 								array(
 									array(
@@ -294,12 +304,14 @@ function _svbk_rating_templates( $editor_settings ) {
 						array(
 							'className' => 'testimonial__wrapper',
 							'columns'   => 2,
+							'templateLock' => $templateLock
 						),
 						array(
 							array(
 								'core/column',
 								array(
 									'className' => 'testimonial__meta',
+									'templateLock' => $templateLock
 								),
 								array(
 									array(
@@ -322,6 +334,7 @@ function _svbk_rating_templates( $editor_settings ) {
 								'core/column',
 								array(
 									'className' => 'testimonial__content',
+									'templateLock' => $templateLock
 								),
 								array(
 									array(
@@ -337,6 +350,16 @@ function _svbk_rating_templates( $editor_settings ) {
 				);
 		}
 	}
+	
+	$editor_settings['template'] = array(
+		array(
+			'svbk/testimonial',
+			array(
+				'className' => 'testimonial',
+			),
+		),
+	);	
+
 
 	return $editor_settings;
 }
@@ -346,28 +369,28 @@ function _svbk_render_testimonials_block( $attributes, $content ) {
 	$attributes = filter_var_array(
 		$attributes,
 		array(
-			'loadMore'              => FILTER_VALIDATE_BOOLEAN,
-			'postsToShow'           => array(
+			'loadMore'		=> FILTER_VALIDATE_BOOLEAN,
+			'postsToShow' => array(
 				'filter'    => FILTER_VALIDATE_INT,
 				'options'   => array( 'min_range' => 1 ),
 			),
-			'paged'                 => array(
+			'paged' => array(
 				'filter'    => FILTER_VALIDATE_INT,
 				'options'   => array( 'min_range' => 1 ),
 			),
-			'offset'                => array(
+			'offset' => array(
 				'filter'    => FILTER_VALIDATE_INT,
 				'options'   => array( 'min_range' => 1 ),
 			),
-			'categories'            => array(
+			'categories' => array(
 				'filter'    => FILTER_VALIDATE_INT,
 				'options'   => array( 'min_range' => 1 ),
 			),
-			'order'                 => array(
+			'order' => array(
 				'filter'    => FILTER_SANITIZE_STRING,
 				'options'   => FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK,
 			),
-			'orderBy'               => array(
+			'orderBy' => array(
 				'filter'    => FILTER_SANITIZE_STRING,
 				'options'   => FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK,
 			),
