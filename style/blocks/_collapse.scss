@@ -1,0 +1,145 @@
+.wp-block-svbk-collapse {
+    margin-bottom: 15px;
+    clear: both;
+    display: block;
+    
+    .wp-block-svbk-collapse__trigger {
+        cursor: pointer;
+        @include font-size(1);
+        font-weight: normal;
+        margin: 0;
+        padding: 15px 0;
+        text-decoration: underline;
+        
+        &:after {
+            @include icon-content('\e931');
+            @include font-size(1.1);
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+    }
+    
+    .wp-block-svbk-collapse__title {
+        color: $color__link;
+    }
+    
+    .wp-block-svbk-collapse__content {
+        background: $color__background-light;
+        padding: 10px 20px;
+
+        p {
+            
+            &:first-of-type {
+                margin-top: 0;
+            }
+            
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .wp-block-svbk-collapse__button {
+        cursor: pointer;
+        padding: .7em 1.2em;
+        text-decoration: none;
+        margin-top: 5px;
+        display: inline-block;
+        
+        .wp-block-svbk-collapse__label {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .wp-block-svbk-collapse__label--close {
+            display: none;
+        }
+    }
+    
+    &.wp-block-svbk-collapse--open {
+        
+        .wp-block-svbk-collapse__button {
+            
+            .wp-block-svbk-collapse__label--open {
+                display: none;
+            }
+    
+            .wp-block-svbk-collapse__label--close {
+                display: inline-block;
+            }   
+        }
+    }
+    
+    &.is-style-faq {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 3px rgba(0,0,0,.2);
+        margin-top: 20px;
+        
+        .wp-block-svbk-collapse__trigger {
+            @include font-size(1.2);
+            background: $color__background-light;
+            padding: 15px 50px 15px 15px;
+            display: block;
+            border-radius: 8px;
+            position: relative;
+            text-decoration: none;
+            font-weight: bold;
+            
+            &:after {
+                @include icon-content('\e90a');
+                @include font-size(.9);
+                background: $color__corporate-secondary;
+                color: #fff;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                border-radius: 50%;
+                box-shadow: 0 1px 4px rgba(0,0,0,.2);
+            }
+        }
+        
+        .wp-block-svbk-collapse__content {
+            background: none;
+        }
+        
+        &.wp-block-svbk-collapse--open {
+            
+            .wp-block-svbk-collapse__trigger {
+                border-radius: 8px 8px 0 0;
+            }
+        }
+        
+        @media screen and (min-width: breakpoint('tablet-portrait')) {
+            
+            .wp-block-svbk-collapse__trigger {
+                padding: 15px 50px;
+            
+                &:before {
+                    @include icon-content('\e928');
+                    @include font-size(1.7);
+                    font-weight: normal;
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    color: $color__corporate-secondary;
+                }
+            }
+        }
+    }
+    
+    &.is-style-button {
+        
+        .wp-block-svbk-collapse__content {
+            background: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+    }
+}
