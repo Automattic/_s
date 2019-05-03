@@ -131,4 +131,11 @@
             margin-top: 15px;
         }
     }
+    
+    &.is-style-padded {
+        
+        @media screen and (min-width: breakpoint('tablet-portrait')) {
+            padding-bottom: 100px;
+        }
+    }
 }
