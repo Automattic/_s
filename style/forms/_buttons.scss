@@ -50,7 +50,6 @@ input[type="submit"],
 }
 
 .is-style-outline .wp-block-button__link,
-.wp-block-svbk-profile .wp-block-button__link,
 .wp-block-svbk-collapse__button,
 .wp-block-svbk-hero__button--secondary .wp-block-svbk-hero__link {
 	color: $color__border-button-secondary;
@@ -79,7 +78,8 @@ input[type="submit"],
 }
 
 .is-style-text-button .wp-block-button__link,
-.wp-block-svbk-card .wp-block-button__link {
+.wp-block-svbk-card .wp-block-button__link,
+.wp-block-svbk-profile .wp-block-button__link {
 	background: none;
 	color: $color__corporate;
 	padding: .8em 1em;

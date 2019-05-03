@@ -9,7 +9,11 @@
 		.card__icon {
 			width: 100%;
 			height: 100%;
-		}	
+		}
+		
+		.has-background & svg {
+			fill: $color__corporate;
+		}
 	}
 	
 	.wp-block-svbk-bullet__title {
@@ -21,5 +25,18 @@
 	
 	.wp-block-svbk-bullet__content {
 		margin-top: 10px;
+	}
+	
+	&.is-style-offset {
+		
+		@media screen and (min-width: breakpoint('tablet-portrait')) {
+			margin-top: -20px;
+			width: 31.5%;
+			margin-right: 2.5%;
+			
+			&:nth-of-type(3n + 3) {
+				margin-right: 0;
+			}
+		}
 	}
 }

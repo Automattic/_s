@@ -1,4 +1,5 @@
 .wp-block-svbk-profile {
+	position: relative;
 	
 	.wp-block-svbk-profile__picture {
 		width: 170px;
@@ -60,6 +61,7 @@
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		margin-top: 50px;
 		
 		.wp-block-button {
 			left: 0;
