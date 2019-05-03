@@ -27,6 +27,20 @@
 		margin-top: 10px;
 	}
 	
+	.has-background & {
+		
+		&.has-background {
+			color: $color__text-main;
+			padding-left: 20px;
+			padding-right: 20px;
+		    box-shadow: 1px 1px 4px rgba(0,0,0,.1);
+			
+			.wp-block-svbk-bullet__title {
+				color: $color__text-main;
+			}
+		}
+	}
+	
 	&.is-style-offset {
 		
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
