@@ -13,7 +13,9 @@
 	}
 	
 	.wp-block-svbk-bullet__title {
+		border-bottom: 1px solid $color__background-light;
 		margin: 10px 0;
+		padding-bottom: 10px;
 		text-align: center;
 	}
 	
