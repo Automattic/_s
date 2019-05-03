@@ -6,7 +6,8 @@ input[type="reset"],
 input[type="submit"],
 .wp-block-button .wp-block-button__link,
 .loadmore__button,
-.wp-block-svbk-card .wp-block-svbk-card__link {
+.wp-block-svbk-card .wp-block-svbk-card__link,
+.wp-block-svbk-hero__link {
 	border: 1px solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
@@ -50,7 +51,8 @@ input[type="submit"],
 
 .is-style-outline .wp-block-button__link,
 .wp-block-svbk-profile .wp-block-button__link,
-.wp-block-svbk-collapse__button {
+.wp-block-svbk-collapse__button,
+.wp-block-svbk-hero__button--secondary .wp-block-svbk-hero__link {
 	color: $color__border-button-secondary;
 	border-color: $color__border-button-secondary;
 	background: rgba(255,255,255,0);
