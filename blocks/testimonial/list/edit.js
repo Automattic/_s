@@ -171,8 +171,6 @@ class TestimonialsEdit extends Component {
 			},
 		];
 
-		console.log(displayPosts);
-
 		return (
 			<Fragment>
 				{ inspectorControls }
