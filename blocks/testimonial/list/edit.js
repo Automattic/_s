@@ -18,8 +18,11 @@ const {
 	Spinner,
 	ToggleControl,
 	Toolbar,
-	SandBox
+	SVG,
+	Rect,
+	Circle,
 } = wp.components;
+
 const apiFetch = wp.apiFetch;
 const { addQueryArgs } = wp.url;
 const { __ } = wp.i18n;
@@ -196,7 +199,14 @@ class TestimonialsEdit extends Component {
 								`type-${ post.type }`,
 								`format-${ post.format }`,
 							]) } >
+								<SVG viewBox="0 0 100 24" xmlns="http://www.w3.org/2000/svg">
+									<Circle cx="12" cy="12" r="12" fill="grey" />
+									<Rect x="30" y="5" width="60" height="5" fill="grey" />
+									<Rect x="30" y="15" width="60" height="3" fill="grey" />
+								</SVG>
 							<a href={ post.link } target="_blank">{ decodeEntities( post.title.rendered.trim() ) || __( '(Untitled)' ) }</a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duo Reges: constructio interrete. Et certamen honestum et disputatio splendida! omnis est enim de virtutis dignitate contentio. Expectoque quid ad id, quod quaerebam, respondeas.
+							</p>
 						</div>
 					) ) }
 				{ loadMore && ( 

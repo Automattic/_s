@@ -5,11 +5,12 @@
  * which makes it higher in priority.
  */
 
-.wp-block-cgb-block-blocks  {
-  background: $green;
-  border: 0.2rem solid $black;
-  color: $black;
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 2rem;
+.wp-block-svbk-testimonials {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wp-block-svbk-testimonials div.type-testimonial {
+   flex: 1 0 30%;
+   min-height: 200px;
 }
