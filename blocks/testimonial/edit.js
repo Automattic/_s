@@ -68,9 +68,12 @@ const ALLOWED_BLOCKS = [
 */
 const TEMPLATE = [ 
 	[ 'core/paragraph', {
-		content: 'Lorem ipsum sit amet...',
+		content: 'This text should be shown in the preview..',
 	} ],
-	[ 'core/more', { } ]	
+	[ 'core/more', { } ],	
+	[ 'core/paragraph', {
+		content: 'This text should be shown in the single testimonial..',
+	} ],
 ];
 
 class TestimonialEdit extends Component {
@@ -166,7 +169,7 @@ class TestimonialEdit extends Component {
 								<IconButton
 									key={ rate }
 									icon={ ( rating >= rate ) ? 'star-filled' : 'star-empty' }
-									onClick={ () => { setAttributes( { rating: rate } ) } }
+									onClick={ () => { setAttributes( { rating: rate, ratingMeta: rate } ) } }
 								    label={ rate }
 								/>
 							) )
@@ -217,7 +220,7 @@ class TestimonialEdit extends Component {
 							}
 							min={ 0 }
 							max={ 5 }
-						/>	
+						/>
 					</PanelBody>
 					<PanelColorSettings
 						title={ __( 'Color Settings' ) }

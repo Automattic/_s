@@ -119,9 +119,13 @@ export const settings = {
 		},
 		date: {
 			type: 'string',
+			source: 'text',
+			selector: '.wp-block-svbk-testimonial__date',
 		},	
 		source: {
 			type: 'string',
+			source: 'text',
+			selector: '.wp-block-svbk-testimonial__source',
 		},			
 		backgroundColor: {
 			type: 'string',
@@ -134,7 +138,7 @@ export const settings = {
 		},
 		customTextColor: {
 			type: 'string',
-		},		
+		},
 	},	
 
 	edit,
