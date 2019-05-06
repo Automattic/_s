@@ -15,7 +15,7 @@ function _svbk_override_block_core_latest_posts() {
 	}		
 }
 
-add_action( 'init', '_svbk_override_block_core_latest_posts', 11 );
+add_action( 'init', '_svbk_override_block_core_latest_posts', 21 );
 
 /**
  * Renders the `core/latest-posts` block on server.
