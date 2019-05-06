@@ -15,10 +15,10 @@
   "devDependencies": {
     "autoprefixer": "^6.7.0",
     "babel-plugin-lodash": "^3.3.4",
-    "browser-sync": "^2.16.0",
+    "browser-sync": "^2.26.5",
     "classnames": "^2.2.6",
     "del": "^3.0.0",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.1",
     "gulp-csso": "^2.0.0",
     "gulp-minify": "^3.1.0",
     "gulp-postcss": "^6.2.0",
@@ -27,21 +27,20 @@
     "gulp-responsive": "2.12.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-svgmin": "^2.2.0",
     "lodash": "4.17.10",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "node-sass-json-importer": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "readline-sync": "^1.4.9",
-    "run-sequence": "^1.2.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "@react-google-maps/api": "^1.2.3-alpha.4",
-    "@wordpress/block-library": "^2.4.2",
-    "cgb-scripts": "^1.14.0",
+    "@react-google-maps/api": "^1.2.3-alpha.8",
+    "@wordpress/block-library": "^2.4.4",
+    "cgb-scripts": "^1.17.0",
     "fg-loadcss": "^2.1.0",
-    "gulp-svgmin": "^2.1.0",
-    "svgo": "^1.2.2"
   }
 }
