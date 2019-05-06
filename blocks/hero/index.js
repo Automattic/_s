@@ -98,17 +98,17 @@ export const settings = {
 		},
 		pretitle: {
 			type: 'string',
-			source: 'text',
+			source: 'html',
 			selector: '.wp-block-svbk-hero__pretitle',
 		},
 		title: {
 			type: 'string',
-			source: 'text',
+			source: 'html',
 			selector: '.wp-block-svbk-hero__title',
 		},		
 		subtitle: {
 			type: 'string',
-			source: 'text',
+			source: 'html',
 			selector: '.wp-block-svbk-hero__subtitle',
 		},
 		text: {
