@@ -24,7 +24,6 @@ const { includes } = lodash;
  */
 import './formats';
 import './styles';
-
 import './flickity';
 
 import * as testimonial from './testimonial';
@@ -55,6 +54,7 @@ const disablePreviewBlocks = [
 	'svbk/warranty',
 	'svbk/testimonial',
 	'core/group',
+	'core/columns',
 ];
 
 [

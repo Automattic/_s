@@ -236,7 +236,11 @@ function renameLanguages(){
 exports.renameLanguages = renameLanguages;
 
 function cgbCompatJS(){
-    return src([ './dist/js/blocks.build.js' ], { allowEmpty: true })
+    return src([ 
+        './dist/js/blocks.build.js', 
+        './dist/css/blocks.editor.build.css', 
+        './dist/css/blocks.style.build.css'
+        ], { allowEmpty: true })
         .pipe(symlink('./dist/', { relativeSymlinks: true }));
 }
 
