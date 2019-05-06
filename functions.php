@@ -392,6 +392,16 @@ function _svbk_scripts() {
 		]
 	);
 	Style::enqueue(
+		'_svbk-single-testimonial',
+		'/dist/css/single-testimonial.css',
+		[
+			'deps'      => array( '_svbk-common' ),
+			'source'    => 'theme',
+			'condition' => is_singular( 'testimonial' ),
+			'prefetch'  => is_post_type_archive( 'testimonial' ),
+		]
+	);	
+	Style::enqueue(
 		'_svbk-search',
 		'/dist/css/search.css',
 		[
