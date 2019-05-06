@@ -20,8 +20,7 @@ const {
 	RichText, 
 	URLInput,
 	InspectorControls,
-	BlockControls,
-	AlignmentToolbar,
+	BlockControls
 } = wp.editor;
 
 const {
@@ -29,6 +28,7 @@ const {
 	IconButton,
 	PanelBody,
 	ToggleControl,
+	Toolbar,	
 } = wp.components;
 
 /**
@@ -41,15 +41,14 @@ class HeroEdit extends Component {
 
 	constructor () {
 		super(...arguments);
-		
+
 		this.state = {
 			customStackedImage: Boolean(this.props.attributes.pictureStackedUrl),
-		}		
-		
+		}
 	}
 
     render() {
-    	
+
 		const {
 			attributes,
 			setAttributes,
@@ -79,8 +78,6 @@ class HeroEdit extends Component {
 			[`has-align-${align}`]: align,
 		} );		
 		
-					
-		
 		const pictureUpdate = ( update ) => {
 			
 			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt' ] ) , function(value, key) {
@@ -102,6 +99,21 @@ class HeroEdit extends Component {
 		}		
 		
 		const style = { };
+	
+		const toolbarControls = [ 
+			{
+				icon: 'align-pull-right',
+				title: __( 'Show content on left' ),
+				isActive: align === 'left',
+				onClick: () => setAttributes( { align: 'left' } ),
+			}, 
+			{
+				icon: 'align-pull-left',
+				title: __( 'Show content on right' ),
+				isActive: align === 'right',
+				onClick: () => setAttributes( { align: 'right' } ),
+			}
+		]	
 	
 		return (
 			<Fragment>
@@ -185,12 +197,9 @@ class HeroEdit extends Component {
 					) }					
 				</div> 
                 <BlockControls>
-					<AlignmentToolbar
-						value={ align }
-						onChange={ ( nextAlign ) => {
-							setAttributes( { align: nextAlign } );
-						} }
-					/>				
+					<Toolbar
+						controls={ toolbarControls }
+					/>
 				</BlockControls>
 				<InspectorControls>
 					<PanelBody title={ __( 'Background Settings' ) } >
