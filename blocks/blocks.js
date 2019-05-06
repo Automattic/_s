@@ -54,6 +54,7 @@ const disablePreviewBlocks = [
 	'svbk/collapse',
 	'svbk/warranty',
 	'svbk/testimonial',
+	'core/group',
 ];
 
 [
