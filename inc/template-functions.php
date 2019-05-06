@@ -167,3 +167,18 @@ if ( ! function_exists( 'the_post_meta' ) ) {
 		echo $output;
 	}
 }
+
+// Removes the wp:more block idenfier before piping content to do_blocks. 
+// Patches an error.
+function _svbk_strip_unclosed_more_block( $content ){
+
+	if ( is_admin() ){
+		return $content;
+	}
+	
+	$content = preg_replace('/<!-- wp:more(\s.*?)? -->/', '', $content);
+	$content = str_replace('<!-- /wp:more -->', '', $content);
+
+	return $content;
+}
+add_filter( 'the_content', '_svbk_strip_unclosed_more_block', 8 );

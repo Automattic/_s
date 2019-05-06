@@ -7,10 +7,12 @@
  * @package _svbk
  */
 
+global $wp_filter;
+
 $rating = get_post_meta( get_the_ID(), 'rating', true );
 
 // Force testimonial class, for AJAX requests
-$classes = array( 'testimonial', 'testimonial--' . get_post_format() );
+$classes = array( 'testimonial' );
 
 if ( $rating ) {
 	$classes[] = 'has-rating';
@@ -19,6 +21,6 @@ if ( $rating ) {
 
 ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class( $classes ); ?> >
-	<?php echo force_balance_tags( apply_filters( 'the_content', get_the_content(false, false) ) ); ?>
+	<?php the_content( __( 'Read More', '_svbk' ), false );	?>
 </div>
 
