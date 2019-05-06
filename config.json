@@ -68,24 +68,24 @@
 	
 	"color_palette": {
 		"primary" : {
-			"name":"Principale",
-			"color":"#000"
+			"name":"Primary",
+			"color":"#e94b4b"
 		},
 		"secondary": {
 			"name":"Secondary",
-			"color":"#777"
+			"color":"#2b53af"
 		},
 		"dark-gray":{
 			"name":"Dark Gray",
-			"color":"#444"
+			"color":"#6b6b6b"
 		},
 		"light-gray": {
 			"name":"Light Gray",
-			"color":"#767676"
+			"color":"#F6F7F9"
 		},
 		"white": {
 			"name":"White",
-			"color":"#FFF"
+			"color":"#ffffff"
 		}		
 	}
 }
