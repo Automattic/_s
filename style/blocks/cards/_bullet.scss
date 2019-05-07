@@ -45,6 +45,18 @@
 		}
 	}
 	
+	.wp-block-group.has-primary-background-color &,
+	.wp-block-group.has-dark-gray-background-color & {
+		
+		svg {
+			fill: #fff;
+		}
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		margin-bottom: 0;
+	}
+	
 	&.is-style-offset {
 		
 		@media screen and (min-width: breakpoint('tablet-portrait')) {

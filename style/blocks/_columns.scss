@@ -1,6 +1,11 @@
 .wp-block-columns {
 	padding-top: 50px;
 	padding-bottom: 50px;
+	
+	.wp-block-group & {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
 
 	.wp-block-columns &,
 	.wp-block-media-text & {

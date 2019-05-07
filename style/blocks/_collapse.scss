@@ -117,6 +117,7 @@
         }
         
         @media screen and (min-width: breakpoint('tablet-portrait')) {
+            margin-top: 0;
             
             .wp-block-svbk-collapse__trigger {
                 padding: 15px 50px;
