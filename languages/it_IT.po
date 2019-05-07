@@ -6,13 +6,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-04-03 10:02+0000\n"
+"PO-Revision-Date: 2019-05-07 13:38+0000\n"
 "Last-Translator: silverbackstudio <webmaster@silverbackstudio.it>\n"
 "Language-Team: Italiano\n"
 "Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.1; wp-5.1.1"
+"X-Loco-Version: 2.2.2; wp-5.1.1"
 
 #: home.php:30 category.php:33
 msgid "All categories"
@@ -67,15 +67,15 @@ msgstr "Menu Legale"
 
 #: functions.php:66
 msgid "Account Pages Primary Menu"
-msgstr ""
+msgstr "Menu principale pagine dell'account"
 
 #: functions.php:67
 msgid "Account Pages Secondary Menu"
-msgstr ""
+msgstr "Menu secondario per le pagine dell'account"
 
 #: functions.php:68
 msgid "Profile Menu"
-msgstr ""
+msgstr "Menu Profilo"
 
 #: functions.php:221
 msgid "Testimonials"
@@ -95,7 +95,7 @@ msgstr "Footer"
 
 #: functions.php:282
 msgid "Widgets in here goes into footer"
-msgstr ""
+msgstr "Questi widget verranno mostrati nel piè di pagina"
 
 #: functions.php:803
 msgid "Compliance"
@@ -155,7 +155,7 @@ msgstr "Realizzato da %s"
 
 #. Name of the template
 msgid "Account"
-msgstr ""
+msgstr "Account"
 
 #: amp/footer.php:12
 msgid "Back to top"
@@ -232,97 +232,102 @@ msgstr "Corsi Completati"
 
 #: classes/class-affiliatewp.php:33
 msgid "Affiliate Menu Label"
-msgstr ""
+msgstr "Etichetta menu affiliazione"
 
 #: classes/class-affiliatewp.php:35
 msgid "The label for Courses in account menu"
-msgstr ""
+msgstr "L'etichetta per la voce \"Corsi\" nel menu dell'account"
 
 #: classes/class-affiliatewp.php:37 classes/class-affiliatewp.php:75
 #: classes/class-affiliatewp.php:92
 msgid "Affiliate"
-msgstr ""
+msgstr "Affiliazione"
 
 #: classes/class-affiliatewp.php:41
 msgid "Affiliate URL Instructions"
-msgstr ""
+msgstr "Istruzioni URL di Affiliazione"
 
 #: classes/class-affiliatewp.php:43
 msgid "Instructions to print before affiliate URL"
-msgstr ""
+msgstr "Le istruzioni da mostrare prima della URL di affiliazione"
 
 #: classes/class-affiliatewp.php:48
 msgid "Affiliate URL Generator Instructions"
-msgstr ""
+msgstr "Istruzioni generatore URL di affiliazione"
 
 #: classes/class-affiliatewp.php:50
 msgid "Instructions printed before the url generator"
-msgstr ""
+msgstr "Istruzione mostrate prima del generatore di URL"
 
 #: classes/class-wc-integration-silverback.php:48
 msgid "Theme Integration"
-msgstr ""
+msgstr "Integrazione del tema"
 
 #: classes/class-wc-integration-silverback.php:49
 msgid "Theme options for woocommerce"
-msgstr ""
+msgstr "Impostazioni del tema per WooCommerce"
 
 #: classes/class-wc-integration-silverback.php:85
 msgid "Not set"
-msgstr ""
+msgstr "Non impostato"
 
 #: classes/class-wc-integration-silverback.php:89
 msgid "Dashboard Content Page"
-msgstr ""
+msgstr "Contenuto Pagina Dashboard"
 
 #: classes/class-wc-integration-silverback.php:91
 msgid ""
 "Select the page with the content to be shown in MyAccount Dashboard page"
 msgstr ""
+"Seleziona la pagina il quale contenuto verrà mostrato nella pagina "
+"principale dell'account"
 
 #: classes/class-wc-integration-silverback.php:97
 msgid "Checkout Warranty Text"
-msgstr ""
+msgstr "Testo Garanzia all'acquisto"
 
 #: classes/class-wc-integration-silverback.php:99
 msgid "The content for the checkout warranty box"
-msgstr ""
+msgstr "Il testo per il riquadro garanzia durante l'acquisto"
 
 #: classes/class-wc-integration-silverback.php:104
 msgid "Order Thankyou Footer"
-msgstr ""
+msgstr "Piede di pagina per la pagina di ringraziamento ordine"
 
 #: classes/class-wc-integration-silverback.php:106
 msgid "A text shown after the order details in the order thankyou page"
 msgstr ""
+"Il testo mostrato dopo i dettagli dell'ordine nella pagina di ringraziamento"
 
 #: classes/class-wc-integration-silverback.php:111
 msgid "Disable Details in Order Thankyou"
-msgstr ""
+msgstr "Non mostrare i dettagli dell'ordine nella pagina di ringraziamento"
 
 #: classes/class-wc-integration-silverback.php:113
 msgid "Hide the order details table in order thankyou page"
 msgstr ""
+"Nascondi la tabella dei dettagli dell'ordine nella pagina di ringraziamento "
+"ordine"
 
 #: classes/class-wc-integration-silverback.php:118
 msgid "Show checkout e-mail validation field"
-msgstr ""
+msgstr "Mostra il campo di controllo email all'acquisto"
 
 #: classes/class-wc-integration-silverback.php:120
 msgid "Show the repeat email field in checkout form"
-msgstr ""
+msgstr "Mostra il campo \"ripeti email\" nel form di acquisto"
 
 #: classes/class-wc-integration-silverback.php:125
 msgid "Debug Log"
-msgstr ""
+msgstr "Log di Debug"
 
 #: classes/class-wc-integration-silverback.php:127
 msgid "Enable logging"
-msgstr ""
+msgstr "Abilita monitoraggio"
 
 #: classes/class-wc-integration-silverback.php:129
 msgid "Log events such as API requests"
-msgstr ""
+msgstr "Registra eventi, ad esempio le chiamate API"
 
 #: classes/class-wc-integration-silverback.php:196
 msgid "Free"
@@ -331,7 +336,7 @@ msgstr "Gratis"
 #: classes/class-wc-integration-silverback.php:200
 msgctxt "original value"
 msgid "Value"
-msgstr ""
+msgstr "Valore"
 
 #: classes/class-wc-integration-silverback.php:266
 msgid "Phone (recommended)"
@@ -363,6 +368,10 @@ msgid ""
 "address</b> will be used to send you phisical products that you may purchase."
 " You will be able to change both addresses durig the checkout process."
 msgstr ""
+"L'<b>indirizzo di fatturazione</b> viene utilizzato per realizzare le "
+"fatture.  L'<b>indirizzo di spedizione</b> verrà utilizzato per la "
+"spedizione degli oggetti fisici che comprerai. Potrai comunque "
+"personalizzare entrami gli indirizzi durante il percorso di acquisto."
 
 #: inc/customizer.php:19
 msgid "Header"
@@ -448,21 +457,21 @@ msgstr "Indirizzo E-mail"
 
 #: inc/Feedback.php:25
 msgid "Show more"
-msgstr ""
+msgstr "Mostra altri"
 
 #: inc/Feedback.php:29
 msgid "Feedback"
-msgstr ""
+msgstr "Riscontro"
 
 #: inc/Feedback.php:95
 #, php-format
 msgid "%s Categories"
-msgstr ""
+msgstr "%s Categorie"
 
 #: inc/Feedback.php:96
 #, php-format
 msgid "%s Category"
-msgstr ""
+msgstr "%s Categoria"
 
 #: inc/shortcode-ui.php:39
 msgid ""
@@ -513,15 +522,15 @@ msgstr "Tempo di lettura"
 
 #: inc/sensei.php:48
 msgid "Sensei Secondary Menu"
-msgstr ""
+msgstr "Menu Secondario Sensei"
 
 #: inc/sensei.php:71
 msgid "Sensei Sidebar"
-msgstr ""
+msgstr "Barra laterale Sensei"
 
 #: inc/sensei.php:73
 msgid "This widgets will be shown in all LMS pages"
-msgstr ""
+msgstr "Questi widget verranno mostrati in tutte le pagine dell'LMS"
 
 #: inc/sensei.php:92
 msgid "Toggle Courses Menu"
@@ -562,12 +571,12 @@ msgstr ""
 #: inc/sensei.php:249
 msgctxt "lesson comment submit label"
 msgid "Leave a comment"
-msgstr ""
+msgstr "Scrivi un commento"
 
 #: inc/sensei.php:253
 msgctxt "course comment submit label"
 msgid "Leave a comment"
-msgstr ""
+msgstr "Scrivi un commento"
 
 #: inc/woocommerce.php:105
 msgid "Where?"
@@ -603,12 +612,14 @@ msgstr "Questi widget verranno mostrati accanto ai prodotti nel negozio"
 
 #: inc/woocommerce.php:162
 msgid "Woocommerce Account Sidebar"
-msgstr ""
+msgstr "Barra laterale account WooCommercce"
 
 #: inc/woocommerce.php:164
 msgid ""
 "Widgets in this area will be shown in all the WooCommerce accounts pages"
 msgstr ""
+"Questi widget verranno mostrati in tutte le pagine dell'account di "
+"WooCommerce"
 
 #: inc/woocommerce.php:389
 msgid "View your shopping cart"
@@ -632,15 +643,15 @@ msgstr "Accedi"
 
 #: blocks/testimonials/index.php:138 blocks/testimonials/index.php:272
 msgid "Testimonial content"
-msgstr ""
+msgstr "Contenuto Testimonianza"
 
 #: blocks/testimonials/index.php:210
 msgid "Testimonials Abstract"
-msgstr ""
+msgstr "Riassunto testimonianza"
 
 #: blocks/testimonials/index.php:223
 msgid "Link to external resource"
-msgstr ""
+msgstr "Collegamento ad alla risorsa esterna"
 
 #: sensei/globals/pagination-quiz.php:58
 #: sensei/globals/pagination-lesson.php:59
@@ -658,7 +669,7 @@ msgstr "Lead Magnet"
 
 #: inc/Widgets/LeadMagnet.php:17
 msgid "Shows a title, image and a call to action"
-msgstr ""
+msgstr "Mostra un titolo, una immagine e una Call to Action"
 
 #: inc/Widgets/LeadMagnet.php:32 inc/Widgets/About.php:32
 msgid "New title"
@@ -690,15 +701,15 @@ msgstr "Descrizione:"
 
 #: inc/Widgets/LeadMagnet.php:36
 msgid "Button Link:"
-msgstr ""
+msgstr "Collegamento Pulsante:"
 
 #: inc/Widgets/LeadMagnet.php:37
 msgid "Button Link to page:"
-msgstr ""
+msgstr "Collegamento alla pagina del Pulsante:"
 
 #: inc/Widgets/LeadMagnet.php:37
 msgid "Use custom link above"
-msgstr ""
+msgstr "Utilizza il collegamento personalizzato qui sopra"
 
 #: inc/Widgets/LeadMagnet.php:38
 msgid "Click here"
@@ -706,11 +717,11 @@ msgstr "Clicca qui"
 
 #: inc/Widgets/LeadMagnet.php:38
 msgid "Button Label:"
-msgstr ""
+msgstr "Etichetta Pulsante:"
 
 #: inc/Widgets/About.php:12 inc/Widgets/About.php:17
 msgid "About"
-msgstr ""
+msgstr "About"
 
 #: inc/Widgets/About.php:36
 msgid "Menu:"

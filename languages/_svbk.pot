@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-04-03 10:01+0000\n"
+"POT-Creation-Date: 2019-05-07 13:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,15 +37,15 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header-account.php:35 header.php:35 footer.php:72
+#: header-account.php:35 footer.php:74
 msgid "Customize this text in Theme Customizer"
 msgstr ""
 
-#: header-account.php:66 header.php:92
+#: header-account.php:66 header.php:100
 msgid "Toggle Search"
 msgstr ""
 
-#: header-account.php:71 header.php:97
+#: header-account.php:71 header.php:105
 msgid "Primary Menu"
 msgstr ""
 
@@ -77,35 +77,35 @@ msgstr ""
 msgid "Profile Menu"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:225
 msgid "Testimonials"
 msgstr ""
 
-#: functions.php:268
+#: functions.php:272
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:274
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:280 inc/customizer.php:120
+#: functions.php:284 inc/customizer.php:137
 msgid "Footer"
 msgstr ""
 
-#: functions.php:282
+#: functions.php:286
 msgid "Widgets in here goes into footer"
 msgstr ""
 
-#: functions.php:803
+#: functions.php:817
 msgid "Compliance"
 msgstr ""
 
-#: functions.php:807
+#: functions.php:821
 msgid "Privacy Policy"
 msgstr ""
 
-#: functions.php:815
+#: functions.php:829
 msgid "Cookie Policy"
 msgstr ""
 
@@ -142,11 +142,11 @@ msgstr ""
 msgid "Back to home"
 msgstr ""
 
-#: footer.php:45 inc/customizer.php:256
+#: footer.php:50 inc/customizer.php:289
 msgid "VAT ID"
 msgstr ""
 
-#: footer.php:67
+#: footer.php:69
 #, php-format
 msgid "Made with passion by %s"
 msgstr ""
@@ -181,6 +181,10 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
+#: template-parts/content-testimonial.php:24 template-parts/preview.php:32
+msgid "Read More"
+msgstr ""
+
 #: template-parts/pagination-post.php:10
 msgid "Previous"
 msgstr ""
@@ -209,10 +213,6 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
-
-#: template-parts/preview.php:32
-msgid "Read More"
 msgstr ""
 
 #: sensei/learner-profile.php:63
@@ -377,66 +377,79 @@ msgstr ""
 msgid "Cycle through all header images with a CSS fade effect"
 msgstr ""
 
-#: inc/customizer.php:59
+#: inc/customizer.php:65
+msgid "Show Top Header"
+msgstr ""
+
+#: inc/customizer.php:66
+msgid ""
+"Show either company phone number and/or opening hours in a top header bar"
+msgstr ""
+
+#: inc/customizer.php:76
 msgid "Archives"
 msgstr ""
 
-#: inc/customizer.php:60
+#: inc/customizer.php:77
 msgid "Archive Customizations"
 msgstr ""
 
-#: inc/customizer.php:96
+#: inc/customizer.php:113
 #, php-format
 msgid "%s Archive Image"
 msgstr ""
 
-#: inc/customizer.php:107
+#: inc/customizer.php:124
 #, php-format
 msgid "%s Archive Description"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:138
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/customizer.php:131
+#: inc/customizer.php:148
 msgid "Footer Logo"
 msgstr ""
 
-#: inc/customizer.php:155
+#: inc/customizer.php:172
 msgid "Fixed Footer Bar"
 msgstr ""
 
-#: inc/customizer.php:156
+#: inc/customizer.php:173
 msgid "Fixed Footer Bar Content (supports HTML and shortcode)"
 msgstr ""
 
-#: inc/customizer.php:165
+#: inc/customizer.php:182
 msgid "Show Fixed Footer Bar"
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:193
 msgid "Contacts"
 msgstr ""
 
-#: inc/customizer.php:177
+#: inc/customizer.php:194
 msgid "Contact informations"
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:244
 msgid "Company Name"
 msgstr ""
 
-#: inc/customizer.php:229
+#: inc/customizer.php:253
 msgid "Address"
 msgstr ""
 
-#: inc/customizer.php:238
+#: inc/customizer.php:262
 msgid "Phone"
 msgstr ""
 
-#: inc/customizer.php:247
+#: inc/customizer.php:271
 msgid "Email"
+msgstr ""
+
+#: inc/customizer.php:280
+msgid "Opening Hours"
 msgstr ""
 
 #: inc/Feedback.php:25
@@ -447,20 +460,14 @@ msgstr ""
 msgid "Feedback"
 msgstr ""
 
-#: inc/Feedback.php:95
+#: inc/Feedback.php:105
 #, php-format
 msgid "%s Categories"
 msgstr ""
 
-#: inc/Feedback.php:96
+#: inc/Feedback.php:106
 #, php-format
 msgid "%s Category"
-msgstr ""
-
-#: inc/shortcode-ui.php:39
-msgid ""
-"Shortcode UI plugin must be active for Shortcode UI Example plugin to "
-"function."
 msgstr ""
 
 #. %s: post date.
@@ -486,18 +493,18 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:309
+#: inc/template-tags.php:264
 msgid "Load more"
 msgstr ""
 
-#: inc/template-tags.php:425
+#: inc/template-tags.php:380
 #, php-format
 msgid "%s min"
 msgid_plural "%s mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:429
+#: inc/template-tags.php:384
 msgctxt "post reading time label"
 msgid "Reading"
 msgstr ""
@@ -613,18 +620,6 @@ msgstr ""
 
 #: inc/woocommerce.php:506
 msgid "Login"
-msgstr ""
-
-#: blocks/testimonials/index.php:138 blocks/testimonials/index.php:272
-msgid "Testimonial content"
-msgstr ""
-
-#: blocks/testimonials/index.php:210
-msgid "Testimonials Abstract"
-msgstr ""
-
-#: blocks/testimonials/index.php:223
-msgid "Link to external resource"
 msgstr ""
 
 #: sensei/globals/pagination-quiz.php:58
