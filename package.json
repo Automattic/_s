@@ -40,7 +40,7 @@
   "dependencies": {
     "@react-google-maps/api": "^1.2.3-alpha.8",
     "@wordpress/block-library": "^2.4.4",
-    "cgb-scripts": "^1.17.0",
     "fg-loadcss": "^2.1.0",
+    "cgb-scripts": "^1.17.0"
   }
 }
