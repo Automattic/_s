@@ -61,7 +61,9 @@ import { HeadingToolbar } from '../common/heading';
 */
 const ALLOWED_BLOCKS = [ 
 	'core/paragraph', 
-	'core/list' 
+	'core/list',
+	'core/heading',
+	'core/group'
 ];
 
 /**
