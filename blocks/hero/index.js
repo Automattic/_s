@@ -105,7 +105,11 @@ export const settings = {
 			type: 'string',
 			source: 'html',
 			selector: '.wp-block-svbk-hero__title',
-		},		
+		},
+		titleLevel: {
+			type: 'number',
+			default: 1,
+		},			
 		subtitle: {
 			type: 'string',
 			source: 'html',
@@ -155,6 +159,7 @@ export const settings = {
 			pictureAlt,
 			pretitle,
 			title, 
+			titleLevel,
 			subtitle,
 			text,
 			align,
@@ -169,6 +174,8 @@ export const settings = {
 		} );		
 		
 		const style = {};
+		
+		const titleTag = titleLevel ? ('h' + titleLevel) : 'h1';
 		
 		return (
 			<div className={ classNames } style={ style } >
@@ -189,7 +196,7 @@ export const settings = {
 					<RichText.Content tagName={ 'div' } className={ 'wp-block-svbk-hero__pretitle' } value={ pretitle } />
 					) }
 					{ title && ( 
-					<RichText.Content tagName={ 'h1' } className={ 'wp-block-svbk-hero__title' } value={ title } />
+					<RichText.Content tagName={ titleTag } className={ 'wp-block-svbk-hero__title' } value={ title } />
 					) }
 					{ subtitle && ( 
 					<RichText.Content tagName={ 'div' } className={ 'wp-block-svbk-hero__subtitle' } value={ subtitle } />

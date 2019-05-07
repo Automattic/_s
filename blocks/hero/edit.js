@@ -36,6 +36,7 @@ const {
  */
 
 import ImageEdit from '../common/image';
+import { HeadingToolbar } from '../common/heading';
 
 class HeroEdit extends Component {
 
@@ -63,7 +64,8 @@ class HeroEdit extends Component {
 			pictureStackedId,
 			pictureAlt,
 			pretitle,
-			title, 
+			title,
+			titleLevel,			
 			subtitle,
 			text,
 			align,
@@ -115,6 +117,8 @@ class HeroEdit extends Component {
 			}
 		]	
 	
+        const titleTag = titleLevel ? ( 'h' + titleLevel ) : 'h1';    	
+	
 		return (
 			<Fragment>
 				<div className={ classNames } style={ style } >
@@ -135,7 +139,7 @@ class HeroEdit extends Component {
 							className={ 'wp-block-svbk-hero__subtitle' }
 						/>
 						<RichText
-	    			    	tagName={ 'h1' }
+	    			    	tagName={ titleTag }
 							value={ title }
 							onChange={ ( value ) => setAttributes( { title: value } ) }
 							placeholder={ __( 'This is my title..', '_svbk' ) }
@@ -197,6 +201,7 @@ class HeroEdit extends Component {
 					) }					
 				</div> 
                 <BlockControls>
+                    <HeadingToolbar minLevel={ 1 } maxLevel={ 3 } selectedLevel={ titleLevel } onChange={ ( newLevel ) => { setAttributes( { titleLevel: newLevel } ) } } />
 					<Toolbar
 						controls={ toolbarControls }
 					/>
