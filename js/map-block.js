@@ -46,7 +46,7 @@
     });
 
     //Fallback Trigger
-    if ( typeof google.maps !== undefined ){
+    if ( typeof google !== undefined  && typeof google.maps !== undefined ){
         $(window.body).trigger('gmaps-ready');
     }
 
