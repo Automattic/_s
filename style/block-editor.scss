@@ -4,36 +4,36 @@
 
 @import "mixins/mixins-master";
 
-.has-light-background {
+// Set block editor content width
+.wp-block {
+  max-width: #{$content_width}px;
+  
+  &[data-align="full"] {
+    max-width: none;
+  }
+  
+  &[data-align="wide"] {
+    max-width: calc( #{$content_width}px + 200px );
+  }
+  
+}
+
+.has-light-background-color {
 	background: $color__background-light;
 	padding: 20px;
 }
 
-.wp-block-container > .editor-inner-blocks > .editor-block-list__layout {
-	display: block !important;
-
-	> .wp-block:first-of-type {
-		border: 2px dotted #ddd;
-	}
+.wp-block-svbk-bullet,
+.wp-block-svbk-card,
+.wp-block-svbk-profile,
+.wp-block-svbk-stats {
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.faq-wrapper {
-
-	.wp-block-faq {
-
-		h3 {
-			background: #f5f5f5;
-			padding: 10px 15px;
-		}
-	}
-
-	.editor-inner-blocks {
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-	}
-}
-
-.wp-block-svbk-card {
+.wp-block-svbk-card,
+.wp-block-svbk-bullet {
 
 	.card__image-controls {
 		display: none;
@@ -47,23 +47,27 @@
 		margin: 0;
 	}
 	
-	.card__title {
+	.wp-block-svbk-card__title {
 		margin-bottom: 0;
 	}
 	
-	.card__subtitle {
+	.wp-block-svbk-card__subtitle {
 		@include font-size(1.1);
 		font-style: italic;
 		margin: 10px 0;
 	}
 	
-	.card__link {
+	.wp-block-svbk-card__link {
 		background-color: $color__text-main;
 		color: #fff;
 		display: inline-block;
 		padding: 8px 20px;
 		border-radius: 30px;
 		margin-top: 15px;
+	}
+	
+	&.has-secondary-background-color {
+		padding: 20px;
 	}
 	
 	&.is-selected {

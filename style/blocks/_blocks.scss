@@ -13,8 +13,7 @@
 		color: #fff;
 	}
 
-	.wp-block-button.is-style-outline .wp-block-button__link,
-	.wp-block-svbk-profile:not(.has-background) .wp-block-button__link {
+	.wp-block-button.is-style-outline .wp-block-button__link {
 		color: #fff;
 		border-color: #fff;
 
@@ -29,6 +28,19 @@
 			background: rgba(255,255,255,.15);
 			color: #fff;
 			border-color: #fff;
+		}
+	}
+	
+	.wp-block-svbk-profile:not(.has-background) .wp-block-button__link {
+		color: #fff;
+		
+		&:hover {
+			background: rgba(255,255,255,.15);
+		}
+		
+		&:active,
+		&:focus {
+			background: rgba(255,255,255,.2);
 		}
 	}
 }

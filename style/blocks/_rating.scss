@@ -1,4 +1,5 @@
-.wp-block-svbk-rating {
+.wp-block-svbk-rating,
+.wp-block-svbk-testimonial__rating {
 	display: inline-block;
 	width: 95px;
 	height: 18px;
@@ -27,7 +28,8 @@
 
 	@for $i from 1 through 5 {
 
-		&.rating-#{$i}:after {
+		&.rating-#{$i}:after,
+		&.rating--#{$i}:after {
 			@include icon('theme');
 			@include content-repeat('\e910', $i);
 		}

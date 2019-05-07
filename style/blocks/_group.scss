@@ -2,9 +2,27 @@
     padding-top: 30px;
     padding-bottom: 30px;
     
+    > h2, 
+    > .is-style-subtitle {
+        text-align: left;
+    }
+        
+    > .wp-block-separator {
+        margin-left: 0;
+    }
+    
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         
-        &.is-style-grid {
+        > h2, 
+        > .is-style-subtitle {
+            text-align: center;
+        }
+
+        > .wp-block-separator {
+            margin-left: auto;
+        }
+        
+        &.is-style-layout-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
