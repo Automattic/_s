@@ -7,8 +7,7 @@
 	}
 
 	.blocks-gallery-item figcaption {
-		padding: 15px $padding__content-mobile;
-		background: rgba(0,0,0,.5);
+		padding: 0 $padding__content-mobile;
 	}
 }
 
@@ -17,6 +16,21 @@
 	display: block;
 	position: relative;
 	overflow: hidden;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1000px;
+	
+	.wp-block-group & {
+		margin-top: 40px;
+		margin-bottom: 30px;
+	}
+	
+	&.alignfull {
+		max-width: none;
+		margin-left: -$padding__content-mobile;
+		margin-right: -$padding__content-mobile;
+	}
 
 	.blocks-gallery-item {
 		margin: 0;
@@ -28,42 +42,68 @@
 
 		figcaption {
 			display: none;
+			position: static;
+			background: none;
+			margin-top: 11px;
+			color: $color__text-main;
+		}
+		
+		.has-background & {
+			
+			figcaption {
+				color: #fff;
+			}
 		}
 	}
 
 	&:focus {
 		outline: none;
 	}
-
-	@media screen and (min-width: 600px) {
-
+	
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+		
 		.blocks-gallery-item {
 			margin-right: 0;
 		}
-
+	
 		&.flickity--carousel {
 			margin-right: 0;
 			margin-left: 0;
-
+	
 			.blocks-gallery-item {
 				width: 49%;
 				margin-right: 20px;
-
+	
 				img {
 					display: block;
 				}
 			}
 		}
+			
+		&.alignfull {
+			margin-left: -$padding__content-tablet;
+			margin-right: -$padding__content-tablet;
+		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		margin-right: -#{$padding__content-desktop};
-		margin-left: -#{$padding__content-desktop};
-
+		
 		.blocks-gallery-item {
+			padding-left: 60px;
+			padding-right: 60px;
 
 			figcaption {
 				display: block;
+			}
+		}
+		
+		&.alignfull {
+			margin-left: -$padding__content-desktop;
+			margin-right: -$padding__content-desktop;
+			
+			.blocks-gallery-item {
+				padding-left: 0;
+				padding-right: 0;	
 			}
 		}
 	}
@@ -92,7 +132,7 @@
 					content: "";
 					width: 10px;
 					height: 10px;
-					border: 1px solid $color__text-main;
+					border: 1px solid $color__corporate;
 					border-radius: 10px;
 					margin: 0;
 					position: relative;
@@ -100,7 +140,18 @@
 				}
 
 				&.is-selected:before {
-					background: $color__text-main;
+					background: $color__corporate;
+				}
+				
+				.has-background & {
+					
+					&:before {
+						border-color: #fff;
+					}
+					
+					&.is-selected:before {
+						background: #fff;
+					}
 				}
 			}
 		}
