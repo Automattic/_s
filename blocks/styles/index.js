@@ -43,7 +43,12 @@ wp.blocks.registerBlockStyle( 'core/group', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/columns', {
-    name: 'inverted',
-    label: 'Inverted'
+    name: 'split',
+    label: 'Split'
+} );
+
+wp.blocks.registerBlockStyle( 'core/columns', {
+    name: 'split-inverted',
+    label: 'Split Inverted'
 } );
 
