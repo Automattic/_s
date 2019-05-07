@@ -89,17 +89,22 @@
     .wp-block-svbk-testimonial__author {
         display: inline-block;
         vertical-align: top;
+        line-height: normal;
     }
+    
+    
     
     .wp-block-svbk-testimonial__author-name {
         @include font-size(1.2);
         text-transform: uppercase;
         font-weight: bold;
+        margin-bottom: 3px;
     }
     
     .wp-block-svbk-testimonial__author-role {
         font-weight: bold;
         color: #aaa;
+        margin-bottom: 7px;
     }
     
     .wp-block-svbk-testimonial__rating {
