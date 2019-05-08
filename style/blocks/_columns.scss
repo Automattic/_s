@@ -1,6 +1,11 @@
 .wp-block-columns {
 	padding-top: 50px;
 	padding-bottom: 50px;
+	margin-bottom: 0;
+	
+	figure {
+		margin: 0;
+	}
 	
 	.wp-block-group & {
 		padding-top: 30px;

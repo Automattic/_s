@@ -67,8 +67,12 @@
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-top: 70px;
-		padding-bottom: 70px;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		
+		p:last-of-type {
+			margin-bottom: 0;	
+		}
 		
 		.wp-block-media-text__content {
 			padding-left: 8%;
