@@ -144,8 +144,16 @@
     
     &.is-style-padded {
         
+        .wp-block-svbk-hero__content {
+            padding-bottom: 100px;
+        }
+        
         @media screen and (min-width: breakpoint('tablet-portrait')) {
             padding-bottom: 100px;
+            
+            .wp-block-svbk-hero__content {
+                padding-bottom: 0;   
+            }
         }
     }
 }
