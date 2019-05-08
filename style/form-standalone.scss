@@ -27,10 +27,54 @@
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-@import "forms/forms";
+@import "forms/buttons";
+@import "forms/fields";
 
 body {
 	background: rgba(255,255,255,0);
+}
+
+.inputs-list {
+	padding: 0;
+
+	li {
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+.hs-form-required,
+.hs-error-msgs li {
+	color: $color__error;
+}
+
+.hs-error-msgs {
+	margin: 0;
+
+	li label {
+		font-weight: normal;
+		padding: 0;
+	}
+}
+
+.legal-consent-container ~ .hs_recaptcha {
+	margin-bottom: 15px;
+}
+
+.legal-consent-container {
+	@include font-size(.7);
+	margin: 18px 0;
+	line-height: 1.3em;
+
+	p, .inputs-list {
+		margin: 15px 0;
+	}
+
+	label {
+		@include font-size(.75);
+	}
 }
 
 .wp-block-hubspot-form {
