@@ -789,8 +789,11 @@ function _svbk_after_body_tag() {
 		gtm4wp_the_gtm_tag();
 	}
 
+	//Backward compatibility
+	do_action( 'after_body_tag' );
+
 }
-add_action( 'after_body_tag', '_svbk_after_body_tag' );
+add_action( 'wp_body_open', '_svbk_after_body_tag' );
 
 
 /**
