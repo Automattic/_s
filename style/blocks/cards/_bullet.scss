@@ -31,18 +31,22 @@
 		margin-top: 10px;
 	}
 	
-	.has-background & {
+	&.has-background {
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 15px;
+		box-shadow: 1px 1px 4px rgba(0,0,0,.1);
 		
-		&.has-background {
-			color: $color__text-main;
-			padding-left: 20px;
-			padding-right: 20px;
-		    box-shadow: 1px 1px 4px rgba(0,0,0,.1);
+		.has-background & {
 			
-			.wp-block-svbk-bullet__title {
+			&.has-background {
 				color: $color__text-main;
+				
+				.wp-block-svbk-bullet__title {
+					color: $color__text-main;
+				}
 			}
-		}
+		}	
 	}
 	
 	.wp-block-group.has-primary-background-color &,

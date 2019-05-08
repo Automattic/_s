@@ -4,7 +4,6 @@
 .wp-block-svbk-stats {
 	width: 100%;
 	margin-bottom: 30px;
-	padding-bottom: 15px;
 	
 	figure img {
 		display: block;
@@ -104,6 +103,10 @@
 		left: 50%;
 		transform: translateX(-50%);
 		padding: 10px;
+		
+		svg {
+			fill: $color__corporate;
+		}
 	}
 }
 
