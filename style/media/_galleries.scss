@@ -26,6 +26,17 @@
 		margin-bottom: 30px;
 	}
 	
+	.wp-block-columns & {
+		margin: 0;
+		
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			
+			.blocks-gallery-item {
+				padding: 0;	
+			}
+		}
+	}
+	
 	&.alignfull {
 		max-width: none;
 		margin-left: -$padding__content-mobile;
@@ -143,7 +154,7 @@
 					background: $color__corporate;
 				}
 				
-				.has-background & {
+				.has-background:not(.has-light-gray-background-color) & {
 					
 					&:before {
 						border-color: #fff;
