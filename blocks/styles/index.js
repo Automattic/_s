@@ -52,3 +52,15 @@ wp.blocks.registerBlockStyle( 'core/columns', {
     label: 'Split Inverted'
 } );
 
+wp.blocks.registerBlockStyle( 'core/image', {
+    name: 'rounded',
+    label: 'Rounded'
+} );
+
+wp.blocks.registerBlockStyle( 'core/columns', {
+    name: 'shrink-first',
+    label: 'Shrink First'
+} );
+
+
+
