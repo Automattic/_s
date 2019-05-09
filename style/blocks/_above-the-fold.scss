@@ -27,10 +27,13 @@
     }
     
     .wp-block-svbk-hero__title {
-        @include font-size(2.2);
-        margin: 0 0 10px;
         color: $color__corporate;
-        line-height: 1.2em;
+        margin: 0 0 10px;
+    }
+    
+    h1 {
+        @include font-size(2.2);
+        line-height: 1.1em;
         
         em {
             font-size: .8em;
@@ -38,10 +41,9 @@
             color: $color__text-main;
         }
         
-        
         @media screen and (min-width: breakpoint('tablet-landscape')) {
-            @include font-size(2.8);
-        }
+            @include font-size(2.7);
+        }   
     }
     
     .wp-block-svbk-hero__subtitle {
