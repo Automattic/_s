@@ -87,6 +87,7 @@
             position: relative;
             text-decoration: none;
             font-weight: bold;
+            color: $color__text-main;
             
             &:after {
                 @include icon-content('\e90a');
