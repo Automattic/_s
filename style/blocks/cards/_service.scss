@@ -146,10 +146,13 @@
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 		padding: 0 20px 75px;
+		position: relative;
 		
 		.wp-block-button {
+			position: absolute;
 			left: 20px;
 			right: 20px;
+			bottom: 15px;
 		}
 	}
 }

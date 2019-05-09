@@ -71,16 +71,6 @@
 	.wp-block-svbk-card__subtitle {
 		margin: 10px 0;
 	}
-	
-	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		padding-bottom: 60px;
-		position: relative;
-		
-		.wp-block-button {
-			position: absolute;
-			bottom: 15px;
-		}
-	}
 }
 
 .wp-block-svbk-bullet[class$="background-color"],

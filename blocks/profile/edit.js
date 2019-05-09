@@ -39,7 +39,6 @@ const { compose } = wp.compose;
  * Internal dependencies
  */
 import ImageEdit from '../common/image';
-import { HeadingToolbar } from '../common/heading';
 
 class ProfileEdit extends Component {
 
@@ -62,7 +61,6 @@ class ProfileEdit extends Component {
 			pictureAlt,
 			pictureId,		    
 			name,
-			titleLevel,
 			role,			
 			content, 
 			buttonUrl, 
@@ -81,7 +79,7 @@ class ProfileEdit extends Component {
 			textAlign: align,			
 		};
 		
-        const titleTag = titleLevel ? ( 'h' + titleLevel ) : 'h3';
+        const titleTag = 'h3';
 		
 		const pictureUpdate = ( update ) => {
 			
@@ -146,12 +144,6 @@ class ProfileEdit extends Component {
 					</div>					
 				</div>
                 <BlockControls>
-                    <HeadingToolbar 
-                    	minLevel={ 2 } 
-                    	maxLevel={ 5 } 
-                    	selectedLevel={ titleLevel } 
-                    	onChange={ ( newLevel ) => { setAttributes( { titleLevel: newLevel } ) } }
-                    />
 					<AlignmentToolbar
 						value={ align }
 						onChange={ ( nextAlign ) => {

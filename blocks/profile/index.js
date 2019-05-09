@@ -88,10 +88,6 @@ export const settings = {
 			type: 'string',
 			source: 'text',
 			selector: '.wp-block-svbk-profile__name',
-		},		
-		titleLevel: {
-			type: 'number',
-			default: 3,
 		},
 		role: {
 			type: 'string',
@@ -140,7 +136,6 @@ export const settings = {
 			pictureAlt,
 			pictureId,
 			name, 
-			titleLevel,
 			role,
 			content,
 			buttonUrl, 
@@ -152,7 +147,7 @@ export const settings = {
 			align,
 		} = attributes;		
 		
-		const titleTag = titleLevel ? ('h' + titleLevel) : 'h3';		
+		const titleTag = 'h3';		
 		
 		const backgroundClass = getColorClassName( 'background-color', backgroundColor );
 		const textClass = getColorClassName( 'color', textColor );

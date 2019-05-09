@@ -37,6 +37,7 @@
 		padding-top: 80px;
 		padding-bottom: 20px;
 		color: $color__text-main;
+    	box-shadow: 1px 1px 4px rgba(0,0,0,.1);
 		
 		.wp-block-svbk-profile__picture {
 			position: absolute;
@@ -53,8 +54,6 @@
 		.wp-block-svbk-profile__name {
 			display: inline-block;
 			position: relative;
-			left: 50%;
-			transform: translate(-50%);
 			margin-top: -50px;
 			text-align: center;
 		}
@@ -70,7 +69,6 @@
 		
 		&[class$="background-color"],
 		&.is-style-featured {
-			padding-bottom: 60px;
 			
 			h3 {
 				color: $color__text-main;

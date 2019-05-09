@@ -31,7 +31,8 @@ $size__page-width: $size__content-width + $padding__content-desktop;
 	}
 }
 
-aside.wp-block-svbk-warranty {
+aside.wp-block-svbk-warranty,
+div.wp-block-svbk-hero {
 	
 	@media screen and (min-width: 1366px) {
 		margin-left: -$padding__content-desktop;
@@ -63,12 +64,9 @@ aside.wp-block-svbk-warranty {
 	}
 }
 
-div.wp-block-svbk-hero {
+.page__content > .wp-block-image.alignfull {
 	
-	@media screen and (min-width: 1366px) {
-		margin-left: -$padding__content-desktop;
-		margin-right: -$padding__content-desktop;
-		padding-left: $padding__content-desktop;
-		padding-right: $padding__content-desktop;
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding: 0;
 	}
 }
