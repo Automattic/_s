@@ -3,7 +3,7 @@
 @import "search-form";
 
 .wp-block-hubspot-form {
-	padding: 20px;
+	padding: 30px 20px;
 	
 	.wp-block-hubspot-form__title {
 		@include font-size(1.5);
@@ -24,5 +24,9 @@
 	&.has-background {
 		border-radius: 8px;
 		box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+	}
+	
+	@media screen and (min-width: breakpoint('desktop')) {
+		padding: 30px 20px 40px;
 	}
 }
