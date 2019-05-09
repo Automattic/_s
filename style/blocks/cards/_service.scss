@@ -4,17 +4,24 @@
 	box-shadow: 1px 1px 4px rgba(0,0,0,.1);
 	color: $color__text-main;
 	
-	ul {
-		background: $color__background-light;
-		padding: 10px 10px 10px 24px;
+	p {
+		margin-bottom: 10px;
+	}
+	
+	.wp-block-group {
+		padding: 15px 15px 5px;
 		
-		li {
-			margin-bottom: 5px;
+		p {
+			margin-top: 0;
+			margin-bottom: 10px
 		}
-		
-		&.is-style-pros {
-			padding-left: 35px;
-		}
+
+		ul {
+			
+			li {
+				margin-bottom: 5px;
+			}
+		}	
 	}
 	
 	.wp-block-svbk-card__title {
@@ -32,6 +39,10 @@
 	
 	.wp-block-svbk-card__title {
 		margin: 20px 0 10px;
+	}
+	
+	.wp-block-button {
+		margin-top: 20px;
 	}
 	
 	&.is-style-featured {
@@ -134,7 +145,7 @@
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		padding: 0 20px 60px;
+		padding: 0 20px 75px;
 		
 		.wp-block-button {
 			left: 20px;

@@ -4,7 +4,6 @@
 
 @import "mixins/mixins-master";
 
-// Set block editor content width
 .wp-block {
   max-width: #{$content_width}px;
   
@@ -30,6 +29,15 @@
 	max-width: 300px;
 	margin-left: auto;
 	margin-right: auto;
+	
+	iframe {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.wp-block-group.is-style-grid {
+	display: flex;
 }
 
 .wp-block-svbk-card,
@@ -75,6 +83,17 @@
 		.card__image-controls {
 			display: block;
 		}	
+	}
+}
+
+.wp-block-svbk-card {
+	
+	.block-editor-svbk-picture {
+		margin: 15px 0;
+	}
+	
+	.block-editor-block-list__layout {
+		display: block !important;
 	}
 }
 
