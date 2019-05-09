@@ -65,6 +65,10 @@
 		margin-top: -20px;
 		margin-bottom: 100px;
 		
+		.has-background & svg {
+			fill: $color__corporate;
+		}
+		
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
 			margin-top: -20px;
 			margin-bottom: 0;

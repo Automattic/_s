@@ -181,6 +181,7 @@ class CardEdit extends Component {
 							url={ pictureUrl }
 							id={ pictureId }
 							alt={ pictureAlt }
+							isMain={ true }
 						/> 
 					) }
 				    { 'icon' == imageType && ( 
