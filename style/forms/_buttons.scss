@@ -171,6 +171,7 @@ input[type="submit"],
 .is-style-phone .wp-block-button__link,
 .wp-block-svbk-hero__link[href^='tel:'] {
 	width: 100%;
+	text-decoration: underline !important;
 
 	@media screen and (min-width: breakpoint('phone')) {
 		@include font-size(1.6);
