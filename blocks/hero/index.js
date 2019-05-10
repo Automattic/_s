@@ -142,6 +142,11 @@ export const settings = {
 			source: 'text',
 			selector: '.wp-block-svbk-hero__button--secondary a',
 		},		
+		footer: {
+			type: 'string',
+			source: 'html',
+			selector: '.wp-block-svbk-hero__footer',
+		},		
 		align: {
 			type: 'string',
 		},
@@ -166,7 +171,8 @@ export const settings = {
 			primaryButtonUrl, 
 			primaryButtonText,			
 			secondaryButtonUrl, 
-			secondaryButtonText,			
+			secondaryButtonText,
+			footer,
 		} = attributes;		
 		
 		const classNames = classnames( {
@@ -213,7 +219,10 @@ export const settings = {
 					<div className={ 'wp-block-svbk-hero__button wp-block-svbk-hero__button--secondary wp-block-button '} >
 						<a className={ 'wp-block-svbk-hero__link'} href={ secondaryButtonUrl }>{ secondaryButtonText }</a>
 					</div>
-					) }	
+					) }
+					{ footer && ( 
+					<RichText.Content tagName={ 'div' } className={ 'wp-block-svbk-hero__footer' } value={ footer } />
+					) }					
 				</div>
 			</div>
 		);

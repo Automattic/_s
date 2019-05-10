@@ -68,6 +68,7 @@ class HeroEdit extends Component {
 			titleLevel,			
 			subtitle,
 			text,
+			footer,
 			align,
 			primaryButtonUrl, 
 			primaryButtonText,			
@@ -197,6 +198,13 @@ class HeroEdit extends Component {
 								<IconButton icon="editor-break" label={ __( 'Apply' ) } type="submit" />
 							</form>
 						) }	
+						<RichText
+							tagName={ 'div' }
+							value={ footer }
+							onChange={ ( value ) => setAttributes( { footer: value } ) }
+							placeholder={ 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. De ingenio eius in his disputationibus, non de moribus quaeritur.' }
+							className={ 'wp-block-svbk-hero__footer' }
+						/>						
 					</div>
 					) }					
 				</div> 
