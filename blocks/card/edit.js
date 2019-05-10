@@ -152,7 +152,7 @@ class CardEdit extends Component {
 				    <Placeholder
 				        icon="format-image"
 				        label={ __( 'Image' ) }
-				        instructions={ __( 'Please select if you wnt to use an image or an icon' ) }
+				        instructions={ __( 'Please select if you want to use an image or an icon' ) }
 				    >
 						<Button 
 							isLarge={ true }

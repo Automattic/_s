@@ -36,7 +36,6 @@ import * as stock from './product/stock';
 import * as productRating from './product/rating';
 import * as callus from './call-us';
 import * as card from './card';
-import * as countdown from './countdown';
 import * as icon from './icon';
 import * as bullet from './bullet';
 import * as profile from './profile';
@@ -47,6 +46,8 @@ import * as iter from './iter';
 import * as warranty from './warranty';
 import * as hero from './hero';
 import * as publication from './publication';
+import * as grid from './grid';
+import * as countdown from './countdown';
 
 const disablePreviewBlocks = [
 	'svbk/card',
@@ -62,7 +63,6 @@ const disablePreviewBlocks = [
 	// in various contexts — like the inserter and auto-complete components.
 	testimonial,
 	testimonials,
-	//inlineTestimonial,
 	rating,
 	author,
 	price,
@@ -71,7 +71,6 @@ const disablePreviewBlocks = [
 	stock,
 	callus,
 	card,
-	countdown,
 	icon,
 	bullet,
 	profile,
@@ -81,7 +80,9 @@ const disablePreviewBlocks = [
 	iter,
 	warranty,
 	hero,
-	publication	
+	publication,
+	grid,
+	countdown,	
 ].forEach( ( block ) => {
 	if ( ! block ) { return; }
 	

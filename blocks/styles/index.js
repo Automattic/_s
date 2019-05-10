@@ -38,8 +38,8 @@ wp.blocks.registerBlockStyle( 'core/button', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/group', {
-    name: 'layout-grid',
-    label: 'Grid Layout'
+    name: 'no-padding',
+    label: 'No Padding'
 } );
 
 wp.blocks.registerBlockStyle( 'core/columns', {
@@ -55,6 +55,11 @@ wp.blocks.registerBlockStyle( 'core/columns', {
 wp.blocks.registerBlockStyle( 'core/image', {
     name: 'rounded',
     label: 'Rounded'
+} );
+
+wp.blocks.registerBlockStyle( 'core/image', {
+    name: 'rounded-corners',
+    label: 'Rounded Corners'
 } );
 
 wp.blocks.registerBlockStyle( 'core/columns', {

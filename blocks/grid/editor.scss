@@ -1,0 +1,36 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-svbk-grid {
+  border: 3px #CCC dashed;
+  padding: 1em;
+}
+
+.wp-block-svbk-grid .block-editor-inner-blocks .block-editor-block-list__layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wp-block-svbk-grid.has-2-columns .block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+  flex: 1 0 50%;
+}
+
+.wp-block-svbk-grid.has-3-columns .block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+  flex: 1 0 30%;
+}
+
+.wp-block-svbk-grid.has-4-columns .block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+  flex: 1 0 25%;
+}
+
+.wp-block-svbk-grid.has-5-columns .block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+  flex: 1 0 20%;
+}
+
+.wp-block-svbk-grid.has-6-columns .block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+  flex: 1 0 15%;
+}
