@@ -168,47 +168,8 @@ input[type="submit"],
 	}
 }
 
-.is-style-phone,
-.is-style-call-us {
-
-	.wp-block-button__link {
-
-		&:before {
-			@include icon-content('\e936');
-			font-weight: normal;
-			margin-right: 8px;
-			vertical-align: middle;
-			position: relative;
-			bottom: 1px;
-			line-height: 0.5rem;
-			@include font-size(1.1);
-		}
-
-		em {
-			font-style: normal;
-		}
-		
-		strong {
-			@include screen-reader-text();
-		}
-		
-		@media screen and (min-width: breakpoint('phone')) {
-			
-			strong {
-				position: static !important;
-				clip: auto;
-				height: auto;
-				width: auto;
-			}
-			
-			em {
-				@include screen-reader-text();
-			}
-		}
-	}
-}
-
-.is-style-call-us a.wp-block-button__link {
+.is-style-phone .wp-block-button__link,
+.wp-block-svbk-hero__link[href^='tel:'] {
 	width: 100%;
 
 	@media screen and (min-width: breakpoint('phone')) {
