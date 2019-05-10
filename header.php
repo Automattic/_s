@@ -94,7 +94,6 @@ use \Svbk\WP\Helpers;
 					_svbk_woocommerce_header_cart();
 				}
 				?>
-								
 				
 				<button class="search-toggle">
 					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
@@ -106,12 +105,12 @@ use \Svbk\WP\Helpers;
 				</button>
 			
 				<div id="main-navigation">
-					<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+					<?php if ( has_nav_menu( 'primary' ) ) : ?>
 					<nav id="site-navigation" role="navigation">
 						<?php
 							wp_nav_menu(
 								array(
-									'theme_location' => 'menu-1',
+									'theme_location' => 'primary',
 									'menu_id'        => 'primary-menu',
 								)
 							);
@@ -124,6 +123,19 @@ use \Svbk\WP\Helpers;
 						_svbk_myaccount_sidebar_profile();
 					}
 					?>
+					
+					<?php if ( has_nav_menu( 'language' ) ) : ?>
+					<nav id="language-navigation" role="navigation">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'language',
+									'menu_id'        => 'language-menu',
+								)
+							);
+						?>
+					</nav><!-- #language-navigation -->
+					<?php endif; ?>					
 					
 				</div>
 			

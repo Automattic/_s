@@ -102,6 +102,19 @@ use \Svbk\WP\Helpers;
 					}
 					?>
 					
+					<?php if ( has_nav_menu( 'language' ) ) : ?>
+					<nav id="language-navigation" role="navigation">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'language',
+									'menu_id'        => 'language-menu',
+								)
+							);
+						?>
+					</nav><!-- #language-navigation -->
+					<?php endif; ?>						
+					
 				</div>
 			
 			</div>
