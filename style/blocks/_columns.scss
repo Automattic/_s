@@ -66,6 +66,17 @@
 				padding-right: 4%;
 			}
 		}
+		
+		&.is-style-shrink-first {
+			
+			.wp-block-column:first-of-type {
+				flex-basis: 32%;
+			}
+			
+			.wp-block-column:last-of-type {
+				flex-grow: 1;
+			}
+		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
