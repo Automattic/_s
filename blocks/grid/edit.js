@@ -26,6 +26,25 @@ const {
 
 const { compose } = wp.compose;
 
+/**
+ * Allowed blocks constant is passed to InnerBlocks precisely as specified here.
+ * The contents of the array should never change.
+ * The array should contain the name of each block that is allowed.
+ * In columns block, the only block we allow is 'core/column'.
+ *
+ * @constant
+ * @type {string[]}
+*/
+const ALLOWED_BLOCKS = [ 
+	'svbk/testimonial', 
+	'svbk/bullet',
+	'svbk/profile',
+	'svbk/card',
+	'svbk/stats',
+	'core/group'
+];
+
+
 class GridEdit extends Component {
 
     render() {
@@ -57,7 +76,10 @@ class GridEdit extends Component {
 		return (
 			<Fragment>
 				<div className={ classNames } style={ style } >
-					<InnerBlocks />
+					<InnerBlocks 
+						templateLock={ false }
+						allowedBlocks={ ALLOWED_BLOCKS }
+					/>
 				</div>
 				<InspectorControls>
 					<PanelBody title={ __( 'Grid Settings', '_svbk' ) } >
@@ -75,7 +97,6 @@ class GridEdit extends Component {
         					onChange={ ( value ) => setAttributes( { equalHeight: Boolean(value) } ) }
 					    />					    
 					</PanelBody>
-					
 					<PanelColorSettings
 						title={ __( 'Color Settings' ) }
 						initialOpen={ false }
@@ -87,8 +108,7 @@ class GridEdit extends Component {
 							},
 						] }
 					/>
-					
-				</InspectorControls>				
+				</InspectorControls>
 			</Fragment>
 		);
 	}

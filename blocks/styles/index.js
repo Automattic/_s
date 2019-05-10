@@ -33,8 +33,8 @@ wp.blocks.registerBlockStyle( 'core/button', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/button', {
-    name: 'call-us',
-    label: 'Call us'
+    name: 'phone',
+    label: 'Phone'
 } );
 
 wp.blocks.registerBlockStyle( 'core/group', {
