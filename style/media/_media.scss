@@ -45,3 +45,14 @@ object {
 .wp-block-embed.is-type-video {
 	border: 3px solid #fff;
 }
+
+.wp-block-image {
+	
+	&.is-style-rounded img {
+		border-radius: 50%;
+	}
+	
+	&.is-style-rounded-corners img {
+		border-radius: 8px;
+	}
+}
