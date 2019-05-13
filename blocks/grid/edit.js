@@ -15,13 +15,16 @@ const {
 	InspectorControls,
 	PanelColorSettings,
 	withColors,
-	InnerBlocks
+	InnerBlocks,
+	AlignmentToolbar,
+	BlockControls,
 } = wp.editor;
 
 const {
 	PanelBody,
 	ToggleControl,
 	RangeControl,
+	SelectControl,
 } = wp.components;
 
 const { compose } = wp.compose;
@@ -61,6 +64,7 @@ class GridEdit extends Component {
 		const { 
 			columns,
 		    equalHeight,
+		    align,
 		} = attributes;
 		
 		const classNames = classnames( className,  `has-${ columns }-columns`, {
@@ -96,6 +100,16 @@ class GridEdit extends Component {
         					checked={ equalHeight }
         					onChange={ ( value ) => setAttributes( { equalHeight: Boolean(value) } ) }
 					    />					    
+					    <SelectControl
+					        label={ __('Columns Alignment') }
+					        value={ align }
+					        options={ [
+					            { label: __('Center'), value: 'center' },
+					            { label: __('Left'), value: 'left' },
+					            { label: __('Right'), value: 'right' },
+					        ] }
+					        onChange={ ( value ) => setAttributes( { align: value } ) }
+					    />			    
 					</PanelBody>
 					<PanelColorSettings
 						title={ __( 'Color Settings' ) }
@@ -109,6 +123,14 @@ class GridEdit extends Component {
 						] }
 					/>
 				</InspectorControls>
+                <BlockControls>
+					<AlignmentToolbar
+						value={ align }
+						onChange={ ( nextAlign ) => {
+							setAttributes( { align: nextAlign } );
+						} }
+					/>				
+				</BlockControls>				
 			</Fragment>
 		);
 	}

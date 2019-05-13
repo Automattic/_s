@@ -74,6 +74,9 @@ export const settings = {
 		customBackgroundColor: {
 			type: 'string',
 		},
+		align: {
+			type: 'string',
+		},		
 	},	
 
 	edit,
@@ -85,6 +88,7 @@ export const settings = {
 			equalHeight,
 			backgroundColor,
 			customBackgroundColor,
+			align,
 		} = attributes;		
 		
 		const backgroundClass = getColorClassName( 'background-color', backgroundColor );
@@ -93,6 +97,7 @@ export const settings = {
 			'has-background': backgroundColor || customBackgroundColor,
 			[ backgroundClass ]: backgroundClass,
 			[ 'has-equal-cell-height' ]: equalHeight,
+			[ `has-align-${align}` ]: align,
 		} );
 		
 		const style = {
