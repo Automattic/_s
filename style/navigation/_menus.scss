@@ -80,6 +80,14 @@
 
 			li {
 				padding: 0;
+				
+				a {
+					transition: color .15s ease-in-out;
+					
+					&:hover {
+						color: $color__corporate;
+					}
+				}
 
 				&.cta-item {
 
