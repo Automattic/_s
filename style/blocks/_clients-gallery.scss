@@ -1,16 +1,24 @@
 .is-style-clients-gallery {
 	text-align: center;
+	
+	p {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 
-		img {
-			height: 40px;
-			margin: 10px 5px 0;
-			width: auto;
-		}
+	img {
+		display: block;
+		height: 38px;
+		margin: 20px 8px 0;
+		width: auto !important;
+	}
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
 			
 		img {
-			height: 70px;
+			height: 40px;
+			margin: 15px 15px 0;
 		}
 	}
 }
