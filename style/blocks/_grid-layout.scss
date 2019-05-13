@@ -1,0 +1,51 @@
+.wp-block-svbk-grid {
+    $grid-gutter: 2;
+    
+    @media screen and (min-width: breakpoint('phone')) {
+        
+        &:after {
+            @include clearfix();
+            @include clearfix-after();
+        }
+        
+        > div {
+            width: 49%;
+            float: left;
+            margin-right: 2%;
+            
+            &:nth-of-type(even) {
+                margin-right: 0;
+            }
+        }
+        
+        &.has-equal-cell-height {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            > div {
+                float: none;
+                margin-left: 0;
+            }
+        }
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+
+        @for $i from 2 through 6 {
+    
+        &.has-#{$i}-columns {
+      
+            > div {
+                width: (100% - ($grid-gutter * ($i - 1)))/$i;
+                margin-right: 1% * $grid-gutter;
+                max-width: none;
+                
+                    &:nth-of-type(#{$i}n + #{$i}) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,6 +4,9 @@
 .wp-block-svbk-stats {
 	width: 100%;
 	margin-bottom: 30px;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
 	
 	figure img {
 		display: block;
@@ -39,7 +42,7 @@
 		}
 	}
 	
-    @media screen and (min-width: breakpoint('tablet-portrait')) {
+    /*@media screen and (min-width: breakpoint('tablet-portrait')) {
         width: 48%;
         margin-right: 2%;
     }
@@ -58,7 +61,7 @@
         &:nth-of-type(3n + 3) {
             margin-right: 0;
         }
-    }
+    }*/
 }
 
 .wp-block-svbk-card,

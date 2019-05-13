@@ -72,12 +72,12 @@
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
 			margin-top: -20px;
 			margin-bottom: 0;
-			margin-right: 2.5%;
-			width: 31.5%;
+			//margin-right: 2.5%;
+			//width: 31.5%;
 			
-			&:nth-of-type(3n + 3) {
+			/*&:nth-of-type(3n + 3) {
 				margin-right: 0;
-			}
+			}*/
 		}
 	}
 }
