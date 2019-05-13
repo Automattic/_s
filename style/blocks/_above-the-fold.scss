@@ -102,6 +102,10 @@
             padding: 20px;
             border-radius: 8px;
         }
+        
+        &.has-align-right .wp-block-svbk-hero__content {
+            left: 50%;
+        }
     }
     
     @media screen and (min-width: breakpoint('tablet-landscape')) {
