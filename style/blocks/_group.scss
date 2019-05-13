@@ -11,6 +11,11 @@
         margin-left: 0;
     }
     
+    &.is-style-no-padding {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         
         > h2, 
