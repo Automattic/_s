@@ -47,6 +47,7 @@ import * as warranty from './warranty';
 import * as hero from './hero';
 import * as publication from './publication';
 import * as grid from './grid';
+import * as iconParagraph from './icon-paragraph';
 import * as countdown from './countdown';
 
 const disablePreviewBlocks = [
@@ -82,6 +83,7 @@ const disablePreviewBlocks = [
 	hero,
 	publication,
 	grid,
+	iconParagraph,
 	countdown,	
 ].forEach( ( block ) => {
 	if ( ! block ) { return; }
