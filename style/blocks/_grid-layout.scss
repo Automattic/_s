@@ -1,7 +1,7 @@
 .wp-block-svbk-grid {
     $grid-gutter: 2;
     
-    @media screen and (min-width: breakpoint('phone')) {
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
         
         &:after {
             @include clearfix();

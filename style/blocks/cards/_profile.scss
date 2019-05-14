@@ -1,5 +1,6 @@
 .wp-block-svbk-profile {
 	position: relative;
+	text-align: center;
 	
 	.wp-block-svbk-profile__picture {
 		width: 170px;
@@ -20,6 +21,7 @@
 	}
 	
 	.wp-block-svbk-profile__name {
+		@include font-size(1.25);
 		margin: 15px auto 10px;
 		font-weight: normal;
 	}
@@ -29,7 +31,8 @@
 	}
 	
 	.wp-block-svbk-profile__content {
-		margin-top: 10px;	
+		margin-top: 10px;
+		text-align: left;
 	}
 	
 	&[class$="background-color"],
@@ -48,6 +51,13 @@
 		}
 	}
 	
+	&[class$="background-color"] {
+		
+    	.wp-block-svbk-profile__name {
+    		color: $color__text-main;
+    	}
+	}
+	
 	&.is-style-featured {
 		padding-left: 20px;
 		padding-right: 20px;
@@ -57,8 +67,6 @@
 			position: relative;
 			margin-top: -50px;
 			text-align: center;
-			left: 50%;
-			transform: translateX(-50%);
 		}
 	}
 	
