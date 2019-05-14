@@ -72,6 +72,12 @@
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
 			margin-top: -20px;
 			margin-bottom: 0;
+			width: 32%;
+			margin-right: 2% !important;
+			
+			&:last-of-type {
+				margin-right: 0 !important;
+			}
 		}
 	}
 }
