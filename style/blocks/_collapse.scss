@@ -26,8 +26,6 @@
     }
     
     .wp-block-svbk-collapse__content {
-        background: $color__background-light;
-        padding: 10px 20px;
 
         p {
             
@@ -60,6 +58,10 @@
     
     &.wp-block-svbk-collapse--open {
         
+        .wp-block-svbk-collapse__trigger:after {
+            @include icon-content('\e93c');
+        }
+        
         .wp-block-svbk-collapse__button {
             
             .wp-block-svbk-collapse__label--open {
@@ -68,7 +70,7 @@
     
             .wp-block-svbk-collapse__label--close {
                 display: inline-block;
-            }   
+            }
         }
     }
     
@@ -107,7 +109,7 @@
         }
         
         .wp-block-svbk-collapse__content {
-            background: none;
+            padding: 10px 20px;
         }
         
         &.wp-block-svbk-collapse--open {

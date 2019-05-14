@@ -28,7 +28,6 @@
     
     .wp-block-svbk-publication__title {
         @include font-size(1.2);
-        text-transform: uppercase;
         font-weight: bold;
         border-bottom: 1px solid $color__corporate;
         margin-top: 0;
