@@ -25,6 +25,8 @@ function clean(){
         'dist/*',
         'src',
         '!dist/blocks.build.js',
+        '!/dist/css/blocks.editor.build.css', 
+        '!/dist/css/blocks.style.build.css',
         '!dist/.gitkeep',
     ]);
 }
