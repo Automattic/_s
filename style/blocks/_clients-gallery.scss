@@ -1,15 +1,17 @@
 .is-style-clients-gallery {
 	text-align: center;
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.1);
 	
 	p {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		padding: 0;
 	}
 
 	img {
 		display: block;
-		height: 38px;
+		height: 28px;
 		margin: 20px 8px 0;
 		width: auto !important;
 	}
