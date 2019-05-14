@@ -26,14 +26,10 @@
 		z-index: 99;
 	}
 	
-	p,
-	.button {
-		flex-basis: 50%;
-	}
-	
 	p {
+		flex-basis: 30%;
 		margin: 0;
-		margin-right: 20px;
+		margin-right: 10px;
 		text-align: left;
 		line-height: 1.2em;
 	}
@@ -48,13 +44,6 @@
 
 	&.visible {
 		bottom: 0;
-	}
-
-	@media screen and (min-width: 500px) {
-
-		.button {
-			max-width: 300px;
-		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
