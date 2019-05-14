@@ -1,0 +1,49 @@
+.wp-block-svbk-publication {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    max-width: 800px;
+    
+    p {
+        margin: 0;
+    }
+    
+    .wp-block-svbk-publication__picture {
+        margin: 0 20px 0 0;
+        width: 130px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        
+        img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+        }
+    }
+    
+    .wp-block-svbk-publication__author {
+        @include font-size(.85);
+        font-style: italic;
+    }
+    
+    .wp-block-svbk-publication__title {
+        @include font-size(1.2);
+        text-transform: uppercase;
+        font-weight: bold;
+        border-bottom: 1px solid $color__corporate;
+        margin-top: 0;
+        margin-bottom: 3px;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+
+        .wp-block-svbk-publication__picture {
+            width: 170px;
+            
+            img {
+                width: 170px;
+                height: 170px;
+            }
+        }
+    }
+}
