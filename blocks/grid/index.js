@@ -31,6 +31,9 @@ const {
 	RawHTML
 } = wp.element;
 
+const {
+	createBlock
+} = wp.blocks;
 
 /**
  * Register: Gutenberg Block.
@@ -80,6 +83,18 @@ export const settings = {
 	},	
 
 	edit,
+
+	transforms: {
+	    from: [
+	        {
+	            type: 'block',
+	            blocks: [ 'core/group' ],
+	            transform: function( attributes, innerBlocks ) {
+	                return createBlock( 'svbk/grid', attributes, innerBlocks );
+	            },
+	        },
+	    ],
+	},
 
 	save: function( { attributes } ) {
 		
