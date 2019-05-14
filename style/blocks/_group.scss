@@ -16,6 +16,38 @@
         padding-bottom: 1px;
     }
     
+    &.is-style-green-check {
+        position: relative;
+        max-width: 800px;
+        margin: 100px auto 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        text-align: center;
+        
+        h2 {
+            @include font-size(2.8);
+            text-align: center;
+        }
+        
+        &:before {
+            @include icon-content('\e90c');
+            @include font-size(2.8);
+            display: block;
+            background: $color__success;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -40px;
+        }
+    }
+    
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         
         > h2, 
