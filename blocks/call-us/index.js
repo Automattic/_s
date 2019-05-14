@@ -4,23 +4,22 @@
  * Shows a phone call button with number
  * @author: Costanza Focardi <c.focardi@silverbackstudio.it>
  */
-import classnames from 'classnames';
-
+ 
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Fragment } = wp.element;
-const { 
-    Button,
-} = wp.components;
+
 const {
-    RichText
+    RichText,
 } = wp.editor;
 
 /**
  * Internal dependencies
  */
+import deprecated from './deprecated';
+import edit from './edit';
+
 export const name = 'svbk/call-us';
 
 export const settings = {
@@ -32,7 +31,10 @@ export const settings = {
 
 	category: 'common',
 	
-	keywords: [ __( 'phone', 'contacts', 'contact', '_svbk' ) ],
+	keywords: [ 
+		__( 'phone', '_svbk' ),
+		__( 'contacts', '_svbk' ), 
+	],
 
 	supports: {
 		html: false,
@@ -41,69 +43,51 @@ export const settings = {
 	multiple: false,
 
 	attributes: {
-		callus_title: {
+		title: {
 			type: 'string',
-			source: 'text',
-			selector: '.callus__title',
-			default: __( 'Preferisci parlarne a voce?', '_svbk' )
+			source: 'html',
+			selector: '.wp-block-svbk-call-us__title',
 		},		
-		callus_text: {
+		text: {
 			type: 'string',
-			source: 'text',
-			selector: '.callus__text',
+			source: 'html',
+			selector: '.wp-block-svbk-call-us__text',
 			default: __( 'Chiamaci al numero', '_svbk' )
 		},
-		callus_number: {
+		number: {
 			type: 'string',
-			source: 'text',
-			selector: '.callus__number',
-			default: __( '(+39) 000 00000000', '_svbk' )
+			source: 'html',
+			selector: '.wp-block-svbk-call-us__number',
+		},
+		action: {
+			type: 'string',
+			source: 'html',
+			selector: '.wp-block-svbk-call-us__action',
 		}
 	},
 
-	edit( {
-			attributes,
-			setAttributes,
-			className,
-		} ) {
-		
-		const { callus_title, callus_text, callus_number} = attributes;
-		
-		return (
-			<Fragment>
-				<RichText
-					tagName={ 'h3' }
-					value={ callus_title }
-					onChange={ ( value ) => setAttributes( { callus_title: value } ) }
-					placeholder={ __( 'Vuoi parlarne a voce?', '_svbk' ) }
-				/>
-				<RichText
-					tagName={ 'p' }
-					value={ callus_text }
-					onChange={ ( value ) => setAttributes( { callus_text: value } ) }
-					placeholder={ __( 'Chiamaci al numero', '_svbk' ) }
-				/>
-				<RichText
-					tagName={ 'a' }
-					value={ callus_number }
-					onChange={ ( value ) => setAttributes( { callus_number: value } ) }
-					placeholder={ __( '(+39) 000 00000000', '_svbk' ) }
-				/>
-			</Fragment>
-		);
-	},
+	deprecated,
+
+	edit,
 
 	save({ attributes }){
 		
-		const { callus_title, callus_text, callus_number, className } = attributes;
-		
-		var callus_href = callus_number.replace("+", "00").replace(/[\s\(\)]/g, "");
+		const { 
+			title, 
+			text, 
+			number,
+			action, 
+			className
+		} = attributes;
 		
 		return (
 			<div className={ className }>
-				<h3 className="callus__title">{callus_title}</h3>
-				<p className="callus__text">{callus_text}</p>
-				<a href={"tel:" + callus_href} className="callus__number">{callus_number}</a>
+				<RichText.Content tagName={ 'h3' } className={ 'wp-block-svbk-call-us__title callus__title' } value={ title } />
+				<RichText.Content tagName={ 'p' } className={ 'wp-block-svbk-call-us__text callus__text' } value={ text } />
+				<a href={"tel:" + number } className="wp-block-svbk-call-us__button callus__number">
+					<RichText.Content tagName={ 'span' } className={ 'wp-block-svbk-call-us__action wp-block-button__action' } value={ action } />
+					<span class="wp-block-svbk-call-us__number wp-block-button__value">{ number }</span>
+				</a>
 			</div>
 		);
 	},
