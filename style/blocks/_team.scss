@@ -85,7 +85,7 @@
 	.wp-block-svbk-profile {
 		margin-top: 0;
 		
-		.wp-block-svbk-profile__picture{
+		.wp-block-svbk-profile__picture {
 			width: 200px;
 			height: 200px;
 		
@@ -93,6 +93,11 @@
 				width: 200px;
 				height: 200px;
 			}
+		}
+		
+		.wp-block-svbk-profile__name {
+			@include font-size(1.5);
+			color: $color__corporate;
 		}
 	}
 }
