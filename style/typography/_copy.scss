@@ -41,7 +41,7 @@ big {
 }
 
 p.is-style-standout {
-	@include font-size(1.2);
+	@include font-size(1.1);
 	border-left: 3px solid $color__corporate;
 	padding-left: 15px;
 }
