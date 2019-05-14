@@ -65,6 +65,10 @@
 		margin-top: -20px;
 		margin-bottom: 100px;
 		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		
 		.has-background & svg {
 			fill: $color__corporate;
 		}
