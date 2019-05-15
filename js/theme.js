@@ -6,25 +6,6 @@
     e.preventDefault();
   });
 
-  /* Scroll smoothly betweeen anchors */
-  var smoothScroll = function(){
-      $(document.body).on('click', 'a[href*="#"]:not([href="#"])', function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-              var target = $(this.hash);
-              target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-              if (target.length) {
-                  $('html, body').animate({
-                      scrollTop: target.offset().top
-                  }, 500);
-                  return false;
-              }
-            }
-      });
-  };
-
-  $(document).ready( smoothScroll );
-  $(document.body).on( 'post-load', smoothScroll );
-
   /* Open menu sub-items */
   $('.menu-item-has-children > a').on('click', function() {
     $(this).parent('li').toggleClass('expanded');
@@ -40,35 +21,6 @@
   $('.secondary-navigation__toggle').on('click', function() {
     $('.secondary-navigation').slideToggle();
   });
-  
-  /* FAQ toggle */
-  $('.faq__question').on('click', function() {
-    var questionWrap = $(this).closest('.wp-block-faq');
-    questionWrap.toggleClass('open');
-    questionWrap.find('.faq__answer').slideToggle();
-  });
-  
-  /* Animations */
-  var waypoints = $('.animate').waypoint({
-    handler: function() {
-      $(this.element).addClass('animated');
-    },
-    offset: '70%',
-    triggerOnce: true
-  });
-  
-  /* Highlight animation */
-  var waypoints = $('.highlight').waypoint({
-    handler: function() {
-      var highlightTime = $(this.element).text().length / 70;
-      $(this.element)
-      .addClass('animated')
-      .css('transition-duration', highlightTime.toFixed(2) + 's');
-    },
-    offset: '70%',
-    triggerOnce: true
-  });
-
 
 	$('.loadmore').on('click', '.loadmore__button', function(event){
     event.preventDefault();
@@ -146,26 +98,6 @@
       	 
       });
   	});
-  	
-    /* Fixed bar showing animation*/
-    var waypoints = new Waypoint({
-      element: $('#page'),
-      handler: function(direction) {
-        $('.footer-fixed-bar').toggleClass('visible');
-      },
-      offset: "-500"
-    });
-    
-    $('.fixed-bar__toggle').on('click', function(){
-      $(this).parent('.footer-fixed-bar').addClass('expanded');
-    });
-    
-    $(document).mouseup(function(e) {
-        var container = $('.expanded .fixed-bar__actions');
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-          container.parent('.footer-fixed-bar').removeClass('expanded');
-        }
-    });
     
     $( '.wp-block-svbk-collapse__trigger').on( 'click', function(){
       var $button = $(this);

@@ -453,7 +453,7 @@ function _svbk_scripts() {
 		]
 	);
 
-	Script::enqueue(
+	Script::register(
 		'jquery-countdown',
 		'dist/jquery.countdown.min.js',
 		[
@@ -466,10 +466,20 @@ function _svbk_scripts() {
 		'_svbk-theme',
 		'/dist/js/theme.min.js',
 		[
-			'deps'   => array( 'waypoints', 'jquery-countdown' ),
+			'deps'   => array( 'jquery', 'jquery-countdown' ),
 			'source' => 'theme',
 		]
 	);
+	
+	// Effects / Animations JS File
+	Script::enqueue(
+		'_svbk-theme-fx',
+		'/dist/js/fx.min.js',
+		[
+			'deps'   => array( 'jquery', 'waypoints' ),
+			'source' => 'theme',
+		]
+	);	
 
 	// Google Maps Managment script, enable this if you use Google Maps shortcodes in your theme
 	Script::enqueue(
