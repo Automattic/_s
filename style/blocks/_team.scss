@@ -86,13 +86,8 @@
 		margin-top: 0;
 		
 		.wp-block-svbk-profile__picture {
-			width: 200px;
-			height: 200px;
-		
-			img {
-				width: 200px;
-				height: 200px;
-			}
+			width: 100%;
+			height: auto;
 		}
 		
 		.wp-block-svbk-profile__name {
