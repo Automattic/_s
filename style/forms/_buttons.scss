@@ -169,50 +169,71 @@ input[type="submit"],
 }
 
 .is-style-phone .wp-block-button__link,
-.wp-block-svbk-hero__link[href^='tel:'] {
+.wp-block-svbk-hero__link[href^='tel:'],
+.wp-block-svbk-call-us__button {
+	@include font-size(1.6);
+	display: inline-block;
+	background: $color__corporate;
+	color: #fff;
+	border-radius: 5px;
+	padding: 15px 15px 15px 25px;
+	text-decoration: none;
+	position: relative;
+	max-width: 290px;
+	margin-top: 10px;
 	width: 100%;
-	text-decoration: underline !important;
+	text-decoration: none;
+	
+	span {
+		text-decoration: underline;
+	}
+	
+	span {
+		text-transform: uppercase;
+	}
+	
+	.wp-block-button__value {
+		display: none;
+	}
 
-	@media screen and (min-width: breakpoint('phone')) {
-		@include font-size(1.6);
-		display: inline-block;
-		background: $color__corporate;
+	&:before,
+	&:after {
+		position: absolute;
+		line-height: 80px;
+		top: -15px;
+		left: -25px;
+		font-size: 70px;
+		height: 85px;
+		width: 50px;
+		text-align: center;
+		line-height: 85px;
+	}
+
+	&:before {
+		@include icon-content('\e934');
 		color: #fff;
-		border-radius: 5px;
-		padding: 15px 15px 15px 25px;
-		text-decoration: none;
-		position: relative;
-		max-width: 290px;
-		margin-top: 10px;
+		font-size: 80px;
+	}
 
-		&:before,
-		&:after {
-			position: absolute;
-			line-height: 80px;
-			top: -15px;
-			left: -25px;
-			font-size: 70px;
-			height: 85px;
-			width: 50px;
-			text-align: center;
-			line-height: 85px;
+	&:after {
+		@include icon-content('\e935');
+		font-size: 70px;
+		color: $color__corporate-secondary;
+	}
+
+	&:hover:before,
+	&:hover:after {
+		animation: button-shake 1s cubic-bezier(.36,.07,.19,.97) both;
+	}
+	
+	@media screen and (min-width: breakpoint('phone')) {
+
+		.wp-block-button__value {
+			display: inline;
 		}
-
-		&:before {
-			@include icon-content('\e934');
-			color: #fff;
-			font-size: 80px;
-		}
-
-		&:after {
-			@include icon-content('\e935');
-			font-size: 70px;
-			color: $color__corporate-secondary;
-		}
-
-		&:hover:before,
-		&:hover:after {
-			animation: button-shake 1s cubic-bezier(.36,.07,.19,.97) both;
+		
+		.wp-block-svbk-call-us__action {
+			display: none;
 		}
 	}
 }

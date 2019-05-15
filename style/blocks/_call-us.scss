@@ -21,43 +21,7 @@
 	.callus__text {
 		@include font-size(1);
 		margin: 10px 0;
-	}
-
-	a {
-		@include font-size(1.6);
-		display: block;
-		background: $color__corporate;
-		color: #fff;
-		border-radius: 5px;
-		padding: 15px 15px 15px 25px;
-		text-decoration: none;
-		position: relative;
-		max-width: 290px;
-		margin: 13px auto 0;
-
-		&:before,
-		&:after {
-			position: absolute;
-			left: -25px;
-			font-size: 70px;
-			height: 85px;
-			width: 50px;
-			line-height: 85px;
-			text-align: center;
-			top: -15px;
-		}
-
-		&:before {
-			@include icon-content('\e934');
-			font-size: 80px;
-			color: $color__background-light;
-		}
-
-		&:after {
-			@include icon-content('\e935');
-			font-size: 70px;
-			color: $color__corporate-secondary;
-		}
+		display: none;
 	}
 
 	&.has-light-background a:before {
@@ -83,5 +47,12 @@
 
 	@media screen and (min-width: 600px) {
 		margin: 15px 0;
+	}
+	
+	@media screen and (min-width: breakpoint('phone')) {
+		
+		.callus__text {
+			display: block;
+		}
 	}
 }
