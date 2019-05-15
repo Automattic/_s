@@ -6,6 +6,11 @@
  */
  
 /**
+ * External dependencies
+ */
+import classnames from 'classnames'; 
+ 
+/**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
@@ -13,6 +18,8 @@ const { __ } = wp.i18n;
 const {
     RichText,
 } = wp.editor;
+
+const { Fragment } = wp.element;
 
 /**
  * Internal dependencies
@@ -80,12 +87,22 @@ export const settings = {
 			className
 		} = attributes;
 		
+		const classNames = classnames( className, {
+			[`has-action`]: action,
+		} );			
+		
+		
 		return (
-			<div className={ className }>
+			<div className={ classNames }>
 				<RichText.Content tagName={ 'h3' } className={ 'wp-block-svbk-call-us__title callus__title' } value={ title } />
 				<RichText.Content tagName={ 'p' } className={ 'wp-block-svbk-call-us__text callus__text' } value={ text } />
 				<a href={"tel:" + number } className="wp-block-svbk-call-us__button callus__number">
-					<RichText.Content tagName={ 'span' } className={ 'wp-block-svbk-call-us__action wp-block-button__action' } value={ action } />
+					{ action && ( 
+					<Fragment>
+						<RichText.Content tagName={ 'span' } className={ 'wp-block-svbk-call-us__action wp-block-button__action' } value={ action } />
+						&nbsp;
+					</Fragment>
+					) }
 					<span class="wp-block-svbk-call-us__number wp-block-button__value">{ number }</span>
 				</a>
 			</div>

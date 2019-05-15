@@ -4,10 +4,10 @@
  */
 const { __ } = wp.i18n;
 
-const { 
-    Button,
+const {
+    RichText,
+} = wp.editor;
 
-} = wp.components;
 
 const deprecated = [
     {
@@ -129,7 +129,60 @@ const deprecated = [
 				</div>
 			);
 		},
-    }    
+    },
+	{
+		supports: {
+			html: false,
+		},
+	
+		multiple: false,
+	
+		attributes: {
+			title: {
+				type: 'string',
+				source: 'html',
+				selector: '.wp-block-svbk-call-us__title',
+			},		
+			text: {
+				type: 'string',
+				source: 'html',
+				selector: '.wp-block-svbk-call-us__text',
+				default: __( 'Chiamaci al numero', '_svbk' )
+			},
+			number: {
+				type: 'string',
+				source: 'html',
+				selector: '.wp-block-svbk-call-us__number',
+			},
+			action: {
+				type: 'string',
+				source: 'html',
+				selector: '.wp-block-svbk-call-us__action',
+			}
+		},
+	
+		save({ attributes }){
+			
+			const { 
+				title, 
+				text, 
+				number,
+				action, 
+				className
+			} = attributes;
+			
+			return (
+				<div className={ className }>
+					<RichText.Content tagName={ 'h3' } className={ 'wp-block-svbk-call-us__title callus__title' } value={ title } />
+					<RichText.Content tagName={ 'p' } className={ 'wp-block-svbk-call-us__text callus__text' } value={ text } />
+					<a href={"tel:" + number } className="wp-block-svbk-call-us__button callus__number">
+						<RichText.Content tagName={ 'span' } className={ 'wp-block-svbk-call-us__action wp-block-button__action' } value={ action } />
+						<span class="wp-block-svbk-call-us__number wp-block-button__value">{ number }</span>
+					</a>
+				</div>
+			);
+		}    
+	}
 ];
 
 export default deprecated;
