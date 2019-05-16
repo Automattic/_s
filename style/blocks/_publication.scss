@@ -57,4 +57,9 @@
     &:hover {
         opacity: .7;
     }
+    
+    &:hover,
+    &:focus {
+        color: $color__text-main;
+    }
 }
