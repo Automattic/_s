@@ -22,7 +22,7 @@
   $(document).ready(function(){
  
     /* Animations */
-    $('.animate').waypoint({
+    $('').waypoint({
         handler: function() {
           $(this.element).addClass('animated');
         },
