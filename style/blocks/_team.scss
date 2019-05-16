@@ -88,6 +88,10 @@
 		.wp-block-svbk-profile__picture {
 			width: 100%;
 			height: auto;
+			
+			img {
+				width: 240px;
+			}
 		}
 		
 		.wp-block-svbk-profile__name {
