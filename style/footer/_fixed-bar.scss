@@ -1,6 +1,6 @@
 .footer-fixed-bar {
 	position: fixed;
-	bottom: -50px;
+	bottom: -70px;
 	left: 0;
 	right: 0;
 	padding: 5px $padding__content-mobile;
@@ -26,8 +26,13 @@
 		z-index: 99;
 	}
 	
+	img {
+		border-radius: 50%;
+		margin-bottom: 0;
+		margin-right: 10px;
+	}
+	
 	p {
-		flex-basis: 30%;
 		margin: 0;
 		margin-right: 10px;
 		text-align: left;
@@ -39,6 +44,7 @@
 		margin: 0;
 		display: inline-block;
 		vertical-align: middle;
+		flex-basis: 50%;
 		flex-grow: 1;
 	}
 
