@@ -178,6 +178,10 @@
 			
 			.blocks-gallery-item {
 				width: 100% / $i;
+				
+				figcaption {
+					text-align: left;
+				}
 			}
 		}
 		
