@@ -110,11 +110,10 @@
 		}
 		
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
-			padding-bottom: 0;
+			padding-bottom: 20px;
 			
 			.wp-block-button {
 				position: static;
-				margin-bottom: 20px;
 			}
 		}
 	}
