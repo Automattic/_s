@@ -108,6 +108,15 @@
 				border-right-color: $color__background-dark;
 			}
 		}
+		
+		@media screen and (min-width: breakpoint('tablet-portrait')) {
+			padding-bottom: 0;
+			
+			.wp-block-button {
+				position: static;
+				margin-bottom: 20px;
+			}
+		}
 	}
 	
 	.wp-block-svbk-card__ribbon {
