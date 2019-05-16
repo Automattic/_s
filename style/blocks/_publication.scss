@@ -1,4 +1,5 @@
-.wp-block-svbk-publication {
+.wp-block-svbk-publication,
+.wp-block-svbk-publication > a {
     display: flex;
     align-items: center;
     margin-top: 30px;
@@ -44,5 +45,16 @@
                 height: 170px;
             }
         }
+    }
+}
+
+.wp-block-svbk-publication > a {
+    color: $color__text-main;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+    
+    &:hover {
+        opacity: .7;
     }
 }
