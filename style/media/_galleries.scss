@@ -237,11 +237,4 @@
 		border: none;
 		box-shadow: none;
 	}
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		
-		&:before {
-			color: $color__corporate;
-		}
-	}
 }
