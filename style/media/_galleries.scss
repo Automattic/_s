@@ -15,11 +15,14 @@
 .wp-block-gallery.is-style-flickity-slider {
 	display: block;
 	position: relative;
-	overflow: hidden;
 	padding: 0;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1000px;
+	
+	.flickity-viewport {
+		overflow: hidden;
+	}
 	
 	.wp-block-group & {
 		margin-top: 40px;
@@ -100,8 +103,6 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 		
 		.blocks-gallery-item {
-			padding-left: 60px;
-			padding-right: 60px;
 
 			figcaption {
 				display: block;
@@ -169,6 +170,28 @@
 	}
 }
 
+.wp-block-flickity:not(.is-style-flickity-slider) {
+
+	@for $i from 1 through 5 {
+		
+		&.columns-#{$i} {
+			
+			.blocks-gallery-item {
+				width: 100% / $i;
+			}
+		}
+		
+		@media screen and (min-width: breakpoint('tablet-portrait')) {
+			padding-left: 60px;
+			padding-right: 60px;
+			
+			.flickity-button:before {
+				color: $color__corporate;
+			}
+		}
+	}
+}
+
 .flickity-button {
 	position: absolute;
 	background: none;
@@ -209,5 +232,12 @@
 		background: none;
 		border: none;
 		box-shadow: none;
+	}
+	
+	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		
+		&:before {
+			color: $color__corporate;
+		}
 	}
 }
