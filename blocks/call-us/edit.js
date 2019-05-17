@@ -7,7 +7,7 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
-const { Fragment,Component } = wp.element;
+const { Component } = wp.element;
 const { 
     Dashicon,
 	IconButton,
@@ -15,6 +15,8 @@ const {
 
 const {
     RichText,
+	BlockControls,
+	AlignmentToolbar,
 } = wp.editor;
 
 /**
@@ -34,26 +36,20 @@ class CallUsEdit extends Component {
         } = this.props;
 
 		const { 
-		    title, 
-		    text, 
 		    number, 
-		    action
+		    action,
+		    actionWide,
+		    align,
 		} = attributes;
 		
+		const classNames = classnames( className, {
+			[`has-action`]: action,
+			[`has-action-wide`]: actionWide,
+			[`has-align-${align}`]: align,
+		} );			
+		
 		return (
-			<Fragment>
-				<RichText
-					tagName={ 'h3' }
-					value={ title }
-					onChange={ ( value ) => setAttributes( { title: value } ) }
-					placeholder={ __( 'Vuoi parlarne a voce?', '_svbk' ) }
-				/>
-				<RichText
-					tagName={ 'p' }
-					value={ text }
-					onChange={ ( value ) => setAttributes( { text: value } ) }
-					placeholder={ __( 'Chiamaci al numero', '_svbk' ) }
-				/>
+			<div classNames={ classNames } >
 				<RichText
 					placeholder={ __( 'Action text…' ) }
 					value={ action }
@@ -61,6 +57,13 @@ class CallUsEdit extends Component {
 					formattingControls={ [ 'bold', 'italic', 'strikethrough' ] }
 					className={ 'wp-block-svbk-hero__link block-library-button'}
 				/>
+				<RichText
+					placeholder={ __( 'Wide button action text…' ) }
+					value={ actionWide }
+					onChange={ ( value ) => setAttributes( { actionWide: value } ) }
+					formattingControls={ [ 'bold', 'italic', 'strikethrough' ] }
+					className={ 'wp-block-svbk-hero__link block-library-button'}
+				/>				
 				{ isSelected && (
 					<form
 						className="block-library-button__inline-link"
@@ -80,7 +83,15 @@ class CallUsEdit extends Component {
 						<IconButton icon="editor-break" label={ __( 'Apply' ) } type="submit" />
 					</form>
 				) }	
-			</Fragment>
+                <BlockControls>
+					<AlignmentToolbar
+						value={ align }
+						onChange={ ( nextAlign ) => {
+							setAttributes( { align: nextAlign } );
+						} }
+					/>				
+				</BlockControls>				
+			</div>
 		);
 	}
     

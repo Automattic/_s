@@ -50,27 +50,25 @@ export const settings = {
 	multiple: false,
 
 	attributes: {
-		title: {
+		action: {
 			type: 'string',
 			source: 'html',
-			selector: '.wp-block-svbk-call-us__title',
-		},		
-		text: {
+			selector: '.wp-block-svbk-call-us__action--default',
+		},
+		actionWide: {
 			type: 'string',
 			source: 'html',
-			selector: '.wp-block-svbk-call-us__text',
-			default: __( 'Chiamaci al numero', '_svbk' )
+			selector: '.wp-block-svbk-call-us__action--wide',
+			default: __( 'Chiama il', '_svbk' )
 		},
 		number: {
 			type: 'string',
 			source: 'html',
 			selector: '.wp-block-svbk-call-us__number',
-		},
-		action: {
+		},		
+		align: {
 			type: 'string',
-			source: 'html',
-			selector: '.wp-block-svbk-call-us__action',
-		}
+		},		
 	},
 
 	deprecated,
@@ -80,32 +78,35 @@ export const settings = {
 	save({ attributes }){
 		
 		const { 
-			title, 
-			text, 
 			number,
 			action, 
-			className
+			actionWide, 
+			align
 		} = attributes;
 		
-		const classNames = classnames( className, {
+		const classNames = classnames( {
 			[`has-action`]: action,
+			[`has-action-wide`]: actionWide,
+			[`has-align-${align}`]: align,
 		} );			
 		
+		const normalizedNumber = number.replace("+", "00").replace(/[\s\(\)]/g, "");
 		
 		return (
-			<div className={ classNames }>
-				<RichText.Content tagName={ 'h3' } className={ 'wp-block-svbk-call-us__title callus__title' } value={ title } />
-				<RichText.Content tagName={ 'p' } className={ 'wp-block-svbk-call-us__text callus__text' } value={ text } />
-				<a href={"tel:" + number } className="wp-block-svbk-call-us__button callus__number">
+			<div className={ classNames } >
+				<a href={"tel:" + normalizedNumber } className={ 'wp-block-svbk-call-us__link' }>
 					{ action && ( 
+					<RichText.Content tagName={ 'span' } className={ 'wp-block-svbk-call-us__action wp-block-svbk-call-us__action--default' } value={ action } />
+					) }
+					{ actionWide && ( 
 					<Fragment>
-						<RichText.Content tagName={ 'span' } className={ 'wp-block-svbk-call-us__action wp-block-button__action' } value={ action } />
+						<RichText.Content tagName={ 'span' } className={ ' wp-block-svbk-call-us__action wp-block-svbk-call-us__action--wide' } value={ actionWide } />
 						&nbsp;
+						<span class="wp-block-svbk-call-us__number">{ number }</span>
 					</Fragment>
 					) }
-					<span class="wp-block-svbk-call-us__number wp-block-button__value">{ number }</span>
 				</a>
-			</div>
+			</div>			
 		);
 	},
 };
