@@ -25,6 +25,7 @@ const { includes } = lodash;
 import './formats';
 import './styles';
 import './flickity';
+import withAppearanceSettings from './common/appearance-controls';
 
 import * as testimonial from './testimonial';
 import * as testimonials from './testimonial/list/index';
@@ -58,6 +59,8 @@ const disablePreviewBlocks = [
 	'core/group',
 	'core/columns',
 ];
+
+wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', withAppearanceSettings, 100 );
 
 [
 	// Common blocks are grouped at the top to prioritize their display
