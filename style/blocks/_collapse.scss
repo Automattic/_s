@@ -80,6 +80,13 @@
         box-shadow: 0 0 3px rgba(0,0,0,.2);
         margin-bottom: 20px;
         
+        .wp-block-column & {
+            
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        
         .wp-block-svbk-collapse__trigger {
             @include font-size(1.2);
             background: $color__background-light;
