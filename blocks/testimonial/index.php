@@ -88,9 +88,6 @@ function _svbk_rating_templates( $editor_settings ) {
 		$editor_settings['template'] = array(
 			array(
 				'svbk/testimonial',
-				array(
-					'className' => 'testimonial',
-				),
 			),
 		);			
 
