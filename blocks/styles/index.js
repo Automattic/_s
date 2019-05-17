@@ -47,6 +47,11 @@ wp.blocks.registerBlockStyle( 'core/group', {
     label: 'Green Check'
 } );
 
+wp.blocks.registerBlockStyle( 'core/group', {
+    name: 'raised',
+    label: 'Raised'
+} );
+
 wp.blocks.registerBlockStyle( 'core/columns', {
     name: 'split',
     label: 'Split'
@@ -72,5 +77,9 @@ wp.blocks.registerBlockStyle( 'core/columns', {
     label: 'Shrink First'
 } );
 
+wp.blocks.registerBlockStyle( 'core/columns', {
+    name: 'shrink-last',
+    label: 'Shrink Last'
+} );
 
 

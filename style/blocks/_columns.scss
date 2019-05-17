@@ -81,6 +81,17 @@
 				flex-grow: 1;
 			}
 		}
+		
+		&.is-style-shrink-last {
+			
+			.wp-block-column:last-of-type {
+				flex-basis: 32%;
+			}
+			
+			.wp-block-column:first-of-type {
+				flex-grow: 1;
+			}
+		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
