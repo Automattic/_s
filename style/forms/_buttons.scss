@@ -39,7 +39,6 @@ input[type="submit"],
 		border-color: $color__border-button-focus;
 		background-color: $color__background-button-focus;
 		outline: none;
-		color: $color__text-button;
 		box-shadow: 0 0 2px rgba(0,0,0,0.4);
 		color: $color__text-button;
 	}
@@ -168,91 +167,64 @@ input[type="submit"],
 	}
 }
 
-.is-style-phone .wp-block-button__link,
-.wp-block-svbk-hero__link[href^='tel:'],
-.wp-block-svbk-call-us__button {
-	@include font-size(1.6);
-	display: inline-block;
+.wp-block-svbk-call-us {
+	display: block;
+}
+
+.wp-block-svbk-call-us__link {
 	background: $color__corporate;
 	color: #fff;
-	border-radius: 5px;
-	padding: 15px 15px 15px 25px;
+	display: block;
+	padding: .7rem 1.2rem;
+	border-radius: 8px;
 	text-decoration: none;
-	position: relative;
-	max-width: 290px;
-	margin-top: 10px;
-	width: 100%;
-	text-decoration: none;
+	@include font-size(1);
+	text-transform: uppercase;
+	text-align: center;
 	
-	span {
-		text-decoration: underline;
-	}
-	
-	span {
-		text-transform: uppercase;
-	}
-	
-	.wp-block-button__value {
+	.wp-block-svbk-call-us__action--wide,
+	.wp-block-svbk-call-us__number {
 		display: none;
 	}
-
-	&:before,
-	&:after {
-		position: absolute;
-		line-height: 80px;
-		top: -15px;
-		left: -25px;
-		font-size: 70px;
-		height: 85px;
-		width: 50px;
-		text-align: center;
-		line-height: 85px;
-	}
-
-	&:before {
-		@include icon-content('\e934');
+	
+    &:before {
+        @include icon-content('\e936');
+        @include font-size(1.1);
+        margin-right: 8px;
+        position: relative;
+        bottom: 1px;
+        font-weight: normal;
+        display: inline-block;
+        vertical-align: middle;
+    }
+	
+	&:hover,
+	&:focus,
+	&:active,
+	&:visited {
 		color: #fff;
-		font-size: 80px;
+	}
+	
+	&:hover,
+	&:focus {
+		background-color: $color__background-button-hover;
 	}
 
-	&:after {
-		@include icon-content('\e935');
-		font-size: 70px;
-		color: $color__corporate-secondary;
-	}
-
-	&:hover:before,
-	&:hover:after {
-		animation: button-shake 1s cubic-bezier(.36,.07,.19,.97) both;
+	&:active {
+		background-color: $color__background-button-focus;
 	}
 	
 	@media screen and (min-width: breakpoint('phone')) {
-
-		.wp-block-button__value {
-			display: inline;
-		}
+		display: inline-block;
 		
-		.wp-block-svbk-call-us__action {
+		.wp-block-svbk-call-us__action--default {
 			display: none;
 		}
-	}
-}
-
-@keyframes button-shake {
-	10%, 90% {
-		transform: rotate(-5deg);
-	}
-
-	20%, 80% {
-		transform: rotate(6deg);
-	}
-
-	30%, 50%, 70% {
-		transform: rotate(-8deg);
-	}
-
-	40%, 60% {
-		transform: rotate(8deg);
+		
+		.wp-block-svbk-call-us__action--wide,
+		.wp-block-svbk-call-us__number {
+			display: inline;
+		}
 	}
 }
 
