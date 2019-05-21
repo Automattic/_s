@@ -7,12 +7,13 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		padding: 0;
+		margin: 0;
 	}
 
 	img {
 		display: block;
 		height: 28px;
-		margin: 20px 8px 0;
+		margin: 10px 8px;
 		width: auto !important;
 	}
 	
@@ -20,7 +21,7 @@
 			
 		img {
 			height: 40px;
-			margin: 15px 15px 0;
+			margin: 15px 10px;
 		}
 	}
 }
