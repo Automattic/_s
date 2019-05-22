@@ -139,6 +139,10 @@
 				display: inline-block;
 				line-height: 40px;
 				cursor: pointer;
+				
+				&:last-of-type {
+					margin-right: 0;
+				}
 
 				&:before {
 					content: "";
