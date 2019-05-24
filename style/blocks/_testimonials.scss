@@ -357,14 +357,17 @@
         position: static;
         width: auto;
         height: auto;
-        max-width: 200px;
-        max-height: 50px;
         margin-left: auto;
         margin-right: auto;
 
         img {
             border-radius: 0;
             border: none;
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            max-height: 50px;
+            object-fit: contain;
         }   
     }
     
