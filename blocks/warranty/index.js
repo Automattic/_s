@@ -27,14 +27,11 @@ const {
 	InnerBlocks,
 } = wp.editor;
 
-const {
-	RawHTML
-} = wp.element;
-
 /**
  * Internal dependencies
  */
 import edit from './edit';
+import deprecated from './deprecated';
 
 
 /**
@@ -61,6 +58,21 @@ export const settings = {
 		__( 'guarantee', '_svbk'  ),
 	],
 	
+	styles: [
+	    // Mark style as default.
+	    {
+	        name: 'default',
+	        label: __( 'Default' ),
+	        isDefault: true
+	    },
+	    {
+	        name: 'small',
+	        label: __( 'Small', '_svbk' ),
+	    },
+	],	
+	
+	deprecated,
+	
 	attributes: {
 		sealUrl: {
 			type: 'string',
@@ -84,7 +96,7 @@ export const settings = {
 		content: {
 			type: 'string',
 			source: 'html',
-			selector: '.wp-block-svbk-warranty__content',
+			selector: '.wp-block-svbk-warranty__text',
 		},
 		footer: {
 			type: 'string',
@@ -113,7 +125,7 @@ export const settings = {
 
 	edit,
 
-	save: function( { attributes } ) {
+	save( { attributes } ) {
 		
 		const { 
 			sealUrl,
@@ -163,7 +175,7 @@ export const settings = {
 						) }
 					</header>
 	
-					<div className={ 'wp-block-svbk-warranty__content' }> 
+					<div className={ 'wp-block-svbk-warranty__text' }> 
 						<InnerBlocks.Content />
 					</div>
 					

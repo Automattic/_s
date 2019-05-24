@@ -33,8 +33,7 @@
 		object-fit: cover;
 	}
 	
-	> .wp-block-svbk-warranty__content {
-		background: #fff;
+	.wp-block-svbk-warranty__content {
 		border: 2px solid #d0a83a;
 		box-shadow: 0 0 0 10px rgba(255,255,255,1), 1px 1px 4px rgba(0,0,0,.1);
 		padding: 0 20px 30px;
@@ -84,7 +83,8 @@
 	}
 	
 	.wp-block-svbk-warranty__footer {
-		@include font-size(.8);	
+		@include font-size(.8);
+		line-height: 1.25em;
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
@@ -99,5 +99,94 @@
 		margin-right: calc(50% - 50vw);
 		padding-left: calc((100vw - #{$size__content-width}) /2);
 		padding-right: calc((100vw - #{$size__content-width}) /2);
+	}
+	
+	&.is-style-small {
+		@include font-size(.9);
+		padding-top: 30px;
+		padding-bottom: 30px;
+		
+		.wp-block-svbk-warranty__seal {
+			margin: 0;
+			position: absolute;
+			top: 50%;
+			left: 60px;
+			transform: translateY(-50%) translateX(-50%);
+			
+			img {
+				object-fit: none;
+				width: 80px;
+				height: auto;
+				margin: 0;
+			}
+		}
+		
+		p {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		
+		.wp-block-svbk-warranty__header {
+			text-align: left;
+			
+			&:after {
+				display: none;
+			}
+		}
+		
+		.wp-block-svbk-warranty__title {
+			@include font-size(1.2);
+			margin-top: 0;
+		}
+		
+		.wp-block-svbk-warranty__content {
+			padding: 15px 15px 15px 120px;
+			max-width: none;
+			min-height: 140px;
+			line-height: 1.4em;
+			
+			&.has-primary-background-color,
+			&.has-dark-grey-background-color {
+				color: #fff;
+				
+				.wp-block-svbk-warranty__title,
+				.is-style-subtitle {
+					color: #fff;
+				}
+			}
+			
+			&[class$="background-color"] {
+				border: none;
+				box-shadow: none;
+				border-radius: 0;
+			}
+		}
+		
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
+			
+			.wp-block-svbk-warranty__content {
+				padding: 15px 50px 15px 180px;
+				min-height: 140px;
+			}
+			
+			.wp-block-svbk-warranty__seal {
+				left: 100px;
+				
+				img {
+					width: 100px;
+				}
+			}
+		}
+		
+		@media screen and (min-width: breakpoint('desktop')) {
+			
+			.wp-block-svbk-warranty__content {
+				padding: 50px 150px 47px 280px;
+			}
+			
+			.wp-block-svbk-warranty__seal {
+				left: 185px;
+			}
+		}
 	}
 }
