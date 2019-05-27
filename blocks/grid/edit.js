@@ -44,7 +44,8 @@ const ALLOWED_BLOCKS = [
 	'svbk/profile',
 	'svbk/card',
 	'svbk/stats',
-	'core/group'
+	'core/group',
+	'core/image'
 ];
 
 
