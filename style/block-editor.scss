@@ -17,10 +17,114 @@
   
 }
 
-.has-light-background-color {
-	background: $color__background-light;
-	padding: 20px;
+.wp-block-button__link,
+.wp-block-svbk-hero__link {
+	background: #333;
+	color: #fff;
+	border-radius: 8px;
+    padding: 10px 30px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px 0;
+    
+	&[data-is-placeholder-visible=true] {
+		top: 10px;
+		bottom: 0;
+		height: auto;
+	}
 }
+
+
+/**
+*	Block backgrounds
+*/
+
+.has-primary-background-color {
+	background: $color__background-light;
+}
+
+.has-secondary-background-color {
+	background: $color__background-light;
+}
+
+.has-light-gray-background-color {
+	background: $color__background-light;
+}
+
+.has-dark-gray-background-color {
+	background: $color__background-dark;
+}
+
+.is-mobile-hidden:before{
+	content: "Hidden on mobile";
+	font-family: sans-serif;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9;
+	background: #333;
+	color: #fff;
+	padding: 3px 10px;
+}
+
+
+/**
+*	Hero Block
+*/
+
+.wp-block-svbk-hero {
+	
+	> figure {
+		margin: 0;
+		width: 100%;
+		
+		img {
+			width: 100%;
+		}
+	}
+	
+	@media screen and (min-width: breakpoint('desktop')) {
+		position: relative;
+		padding: 20px;
+	
+		> figure {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			
+			img {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		
+		.wp-block-svbk-hero__content {
+			position: relative;
+			background-color: #fff;
+			width: 50%;
+			padding: 5px 15px 15px;
+		}
+		
+		&.has-align-right .wp-block-svbk-hero__content {
+			margin-left: 50%;
+		}
+	}
+}
+
+/**
+*	Grid
+*/
+
+.wp-block-group.is-style-grid {
+	display: flex;
+}
+
+
+/**
+*	Cards
+*/
 
 .wp-block-svbk-bullet,
 .wp-block-svbk-card,
@@ -34,10 +138,6 @@
 		width: 100px;
 		height: 100px;
 	}
-}
-
-.wp-block-group.is-style-grid {
-	display: flex;
 }
 
 .wp-block-svbk-card,
@@ -96,6 +196,10 @@
 		display: block !important;
 	}
 }
+
+/**
+*	Warranty
+*/
 
 .wp-block-svbk-warranty {
 	padding-top: 130px;
