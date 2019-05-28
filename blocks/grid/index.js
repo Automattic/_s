@@ -36,6 +36,12 @@ const {
 } = wp.blocks;
 
 /**
+ * Internal dependencies
+ */
+import deprecated from './deprecated';
+
+
+/**
  * Register: Gutenberg Block.
  *
  * Registers a new block provided a unique name and an object defining its
@@ -47,9 +53,7 @@ const {
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-/**
- * Internal dependencies
- */
+
 export const name = 'svbk/grid';
 
 export const settings = {
@@ -67,6 +71,10 @@ export const settings = {
 			type: 'number',
 			default: 3
 		},
+		columnsMobile: {
+			type: 'number',
+			default: 1
+		},
 		equalHeight: {
 			type: 'boolean',
 			default: true,
@@ -82,6 +90,8 @@ export const settings = {
 		},		
 	},	
 
+	deprecated,
+
 	edit,
 
 	transforms: {
@@ -96,10 +106,11 @@ export const settings = {
 	    ],
 	},
 
-	save: function( { attributes } ) {
+	save( { attributes } ) {
 		
 		const { 
 			columns,
+			columnsMobile,
 			equalHeight,
 			backgroundColor,
 			customBackgroundColor,
@@ -108,7 +119,7 @@ export const settings = {
 		
 		const backgroundClass = getColorClassName( 'background-color', backgroundColor );
 		
-		const classNames = classnames( `has-${ columns }-columns`, {
+		const classNames = classnames( `has-${ columns }-columns has-${ columnsMobile }-columns-mobile`, {
 			'has-background': backgroundColor || customBackgroundColor,
 			[ backgroundClass ]: backgroundClass,
 			[ 'has-equal-cell-height' ]: equalHeight,

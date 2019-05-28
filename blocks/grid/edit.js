@@ -64,11 +64,12 @@ class GridEdit extends Component {
 
 		const { 
 			columns,
+			columnsMobile,
 		    equalHeight,
 		    align,
 		} = attributes;
 		
-		const classNames = classnames( className,  `has-${ columns }-columns`, {
+		const classNames = classnames( className,  `has-${ columns }-columns has-${ columnsMobile }-columns-mobile`, {
 			'is-selected': isSelected,
 			[ backgroundColor.class ]: backgroundColor.class,
 			[ 'has-equal-cell-height' ]: equalHeight,
@@ -94,6 +95,13 @@ class GridEdit extends Component {
 					        onChange={ ( columns ) => setAttributes( { columns } ) }
 					        min={ 2 }
 					        max={ 6 }
+					    />
+					    <RangeControl
+					        label={ __( 'Mobile Columns', '_svbk' ) }
+					        value={ columnsMobile }
+					        onChange={ ( columnsMobile ) => setAttributes( { columnsMobile } ) }
+					        min={ 1 }
+					        max={ 3 }
 					    />
 					    <ToggleControl
 							label={ __( 'Equal Height', '_svbk' ) }
