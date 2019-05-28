@@ -18,7 +18,8 @@
 }
 
 .wp-block-button__link,
-.wp-block-svbk-hero__link {
+.wp-block-svbk-hero__link,
+.wp-block-svbk-card__link {
 	background: #333;
 	color: #fff;
 	border-radius: 8px;
@@ -117,8 +118,44 @@
 *	Grid
 */
 
-.wp-block-group.is-style-grid {
+.wp-block-svbk-grid {
 	display: flex;
+	flex-wrap: wrap;
+	
+	&.has-2-columns {
+		
+		div.block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+			flex: 0 0 50%;
+		}
+	}
+	
+	&.has-3-columns {
+
+		div.block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+			flex: 0 0 33.33%;
+		}
+	}
+	
+	&.has-4-columns {
+
+		div.block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+			flex: 0 0 25%;
+		}
+	}
+
+	&.has-5-columns {
+
+		div.block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+			flex: 0 0 20%;
+		}
+	}
+	
+	&.has-6-columns {
+
+		div.block-editor-inner-blocks .block-editor-block-list__layout > .wp-block {
+			flex: 0 0 16.6%;
+		}
+	}
 }
 
 
@@ -126,17 +163,24 @@
 *	Cards
 */
 
-.wp-block-svbk-bullet,
-.wp-block-svbk-card,
-.wp-block-svbk-profile,
-.wp-block-svbk-stats {
-	max-width: 300px;
+.wp-block[data-type="svbk/card"] {
+	max-width: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	
 	iframe {
 		width: 100px;
 		height: 100px;
+	}
+}
+
+.wp-block-svbk-card {
+	
+	> .block-editor-svbk-picture {
+		
+		img {
+			width: 100%;
+		}	
 	}
 }
 
@@ -163,15 +207,6 @@
 		@include font-size(1.1);
 		font-style: italic;
 		margin: 10px 0;
-	}
-	
-	.wp-block-svbk-card__link {
-		background-color: $color__text-main;
-		color: #fff;
-		display: inline-block;
-		padding: 8px 20px;
-		border-radius: 30px;
-		margin-top: 15px;
 	}
 	
 	&.has-secondary-background-color {
