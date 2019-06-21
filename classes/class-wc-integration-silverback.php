@@ -167,6 +167,9 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 
 			add_action( 'woocommerce_before_edit_account_form', array( $this, 'woocommerce_edit_account' ) );
 
+			add_filter( 'product_type_options', array( $this, 'disable_wc_product_template_option') );
+			add_action( 'woocommerce_admin_process_product_object', array( $this, 'disable_wc_product_template_option_save') );
+			
 			add_action( 'wp', array( $this, 'woocommerce_product_remove_default_contents' ) );
 
 			/**
@@ -200,11 +203,34 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 			return '<span class="from">' . _x( 'Value', 'original value', '_svbk' ) . ' </span>';
 		}
 
+		/**
+		 * Add Control to disable standard WooCommerce Template
+		 *
+		 * @return  void
+		 */
+		public function disable_wc_product_template_option( $options ) {
+		
+			$options['svbk_custom_template'] = array(
+				'id'            => '_svbk_custom_template',
+				//'wrapper_class' => 'show_if_simple',
+				'label'         => __( 'Custom Template', '_svbk' ),
+				'description'   => __( 'Disable WooCommerce default template. Allows you to build the full product page', '_svbk' ),
+				'default'       => 'no',
+			);
+		
+			return $options;
+		}
+		
+		
+		public function disable_wc_product_template_option_save( $product ){
+		    update_post_meta( $product->get_id(), "_svbk_custom_template", isset( $_POST['_svbk_custom_template'] ) ? "yes" : "no" );
+		}
+
 		public function woocommerce_product_remove_default_contents() {
 
 			remove_filter( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
-			if ( is_product() && function_exists( 'has_blocks' ) && has_blocks() ) {
+			if ( is_product() && ( 'yes' === get_post_meta( get_the_ID(), '_svbk_custom_template', true ) ) ) {
 
 				remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 
