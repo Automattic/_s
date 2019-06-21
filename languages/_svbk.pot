@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-05-07 13:18+0000\n"
+"POT-Creation-Date: 2019-06-21 12:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,15 +41,15 @@ msgstr ""
 msgid "Customize this text in Theme Customizer"
 msgstr ""
 
-#: header-account.php:66 header.php:100
+#: header-account.php:66 header.php:99
 msgid "Toggle Search"
 msgstr ""
 
-#: header-account.php:71 header.php:105
+#: header-account.php:71 header.php:104
 msgid "Primary Menu"
 msgstr ""
 
-#: header-account.php:113
+#: header-account.php:126
 msgid "Toggle Account Menu"
 msgstr ""
 
@@ -58,54 +58,58 @@ msgid "Primary"
 msgstr ""
 
 #: functions.php:64
-msgid "Not Found (404) Page"
+msgid "Languages"
 msgstr ""
 
 #: functions.php:65
-msgid "Legal Menu"
+msgid "Not Found (404) Page"
 msgstr ""
 
 #: functions.php:66
-msgid "Account Pages Primary Menu"
+msgid "Legal Menu"
 msgstr ""
 
 #: functions.php:67
-msgid "Account Pages Secondary Menu"
+msgid "Account Pages Primary Menu"
 msgstr ""
 
 #: functions.php:68
+msgid "Account Pages Secondary Menu"
+msgstr ""
+
+#: functions.php:69
 msgid "Profile Menu"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:226
 msgid "Testimonials"
 msgstr ""
 
-#: functions.php:272
+#: functions.php:273
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:274
+#: functions.php:275
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:284 inc/customizer.php:137
+#: functions.php:285 inc/customizer.php:137
 msgid "Footer"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:287
 msgid "Widgets in here goes into footer"
 msgstr ""
 
-#: functions.php:817
+#: functions.php:831
 msgid "Compliance"
 msgstr ""
 
-#: functions.php:821
+#: functions.php:835
 msgid "Privacy Policy"
 msgstr ""
 
-#: functions.php:829
+#: functions.php:843
 msgid "Cookie Policy"
 msgstr ""
 
@@ -317,40 +321,50 @@ msgstr ""
 msgid "Log events such as API requests"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:196
+#: classes/class-wc-integration-silverback.php:199
 msgid "Free"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:200
+#: classes/class-wc-integration-silverback.php:203
 msgctxt "original value"
 msgid "Value"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:266
+#: classes/class-wc-integration-silverback.php:216
+msgid "Custom Template"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:217
+msgid ""
+"Disable WooCommerce default template. Allows you to build the full product "
+"page"
+msgstr ""
+
+#: classes/class-wc-integration-silverback.php:292
 msgid "Phone (recommended)"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:291
+#: classes/class-wc-integration-silverback.php:317
 msgid "Profile Image"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:304
+#: classes/class-wc-integration-silverback.php:330
 msgid "Safe Payments"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:310
+#: classes/class-wc-integration-silverback.php:336
 msgid "Choose payment method"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:321
+#: classes/class-wc-integration-silverback.php:347
 msgid "Repeat your email address"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:344
+#: classes/class-wc-integration-silverback.php:370
 msgid "The email addresses you entered are not equal"
 msgstr ""
 
-#: classes/class-wc-integration-silverback.php:374
+#: classes/class-wc-integration-silverback.php:400
 msgid ""
 "The <b>billing address</b> is used to compose the invoices. The <b>shipping "
 "address</b> will be used to send you phisical products that you may purchase."
