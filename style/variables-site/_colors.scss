@@ -1,7 +1,7 @@
 //Corporate
-$color__corporate: #e94b4b;
-$color__corporate-secondary: #2b53af;
-$color__corporate-tertiary: #2b53af;
+$color__corporate: #1976d2;
+$color__corporate-secondary: #7edeea;
+$color__corporate-tertiary: #7edeea;
 $color__corporate-gradient: linear-gradient(to right, #e94b4b, #d11f1f);
 
 //Text
@@ -39,12 +39,12 @@ $color__border-input: #ccc;
 $color__border-abbr: #666;
 
 //Buttons and links
-$color__background-button: #E94B4B;
-$color__background-button-secondary: #2b53af;
-$color__background-button-hover: #FF5F5F;
-$color__background-button-hover-secondary: #3465d3;
-$color__background-button-focus: #CC4444;
-$color__background-button-focus-secondary: #254896;
+$color__background-button: #1976d2;
+$color__background-button-secondary: #7edeea;
+$color__background-button-hover: #63a4ff;
+$color__background-button-hover-secondary: #b2ffff;
+$color__background-button-focus: #004ba0;
+$color__background-button-focus-secondary: #48acb8;
 $color__background-button--light: #fff;
 $color__background-button-hover--light: #fff;
 $color__background-button-focus--light: #fff;
@@ -60,7 +60,7 @@ $color__border-button--light: $color__background-button--light;
 $color__border-button-hover--light: $color__background-button-hover--light;
 $color__border-button-focus--light: $color__background-button-focus--light;
 
-$color__link: #E94B4B;
-$color__link-hover: #FF5F5F;
-$color__link-focus: #CC4444;
-$color__link-visited: #CC4444;
+$color__link: $color__background-button;
+$color__link-hover: $color__background-button-hover;
+$color__link-focus: $color__background-button-focus;
+$color__link-visited: $color__background-button-focus;

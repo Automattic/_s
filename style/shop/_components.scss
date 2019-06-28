@@ -661,3 +661,25 @@ p.no-comments {
 		}
 	}
 }
+
+/**
+ * Tag Cloud
+ */
+
+.tagcloud {
+
+	a {
+		@include font-size(.8);
+		background: #eee;
+		color: $color__text-main;
+		text-decoration: none;
+		padding: 3px 10px;
+		position: relative;
+		border-radius: 2px;
+		margin-right: 3px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}

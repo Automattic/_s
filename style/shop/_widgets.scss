@@ -1,5 +1,5 @@
 /**
- * WooCommerce Price Filter
+ * WooCommerce Sidebar Content
  */
  
 #secondary {
@@ -47,6 +47,10 @@
         }
     }
 }
+
+/**
+ * WooCommerce Price Filter
+ */
  
 .widget_price_filter {
 	
@@ -119,6 +123,10 @@
 	}
 }
 
+/**
+ * WooCommerce Search Widget
+ */
+
 .widget_product_search {
 
 	input[type="search"] {
@@ -133,10 +141,23 @@
 	}
 }
 
+/**
+ * WooCommerce Product Categories
+ */
+
 .widget_product_categories {
 	
 	ul {
 		padding-left: 0;
+
+		ul {
+			margin-top: 5px;
+			margin-left: 15px;
+
+			li a {
+				color: #808080;
+			}
+		}
 	}
 	
 	li {
@@ -150,6 +171,45 @@
 			color: $color__text-main;
 			font-weight: normal;
 			text-decoration: none;
+		}
+	}
+
+	.current-cat a {
+		color: $color__corporate;
+		font-weight: bold;
+	}
+}
+
+.widget_layered_nav_filters {
+
+	ul {
+		padding-left: 0;
+
+		li {
+			margin-bottom: 0;
+
+			&:before {
+				display: none;
+			}
+
+			&.chosen {
+
+				a {
+
+					&:after {
+						@include font-size(.6);
+						@include icon-content('\e903');
+						margin-left: 8px;
+						font-weight: normal;
+						color: #bbb;
+					}
+				}
+			}
+
+			a {
+				text-decoration: none;
+				color: $color__text-main;
+			}
 		}
 	}
 }
