@@ -9,7 +9,8 @@ input[type="submit"],
 .wp-block-svbk-card .wp-block-svbk-card__link,
 .wp-block-svbk-hero__link,
 .more-link {
-	border: 1px solid;
+	border-width: 1px;
+	border-style: solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
 	color: $color__text-button;

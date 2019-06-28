@@ -5,13 +5,19 @@ li.product {
 	width: 100%;
 
 	.onsale {
+		@include font-size(.8);
 		position: absolute;
-		top: 15px;
-		left: 15px;
+		top: 0;
+		right: 0;
 		background: #888;
 		color: #fff;
 		margin: 0;
 		padding: 3px 10px;
+		font-weight: normal;
+	}
+	
+	.price {
+		font-weight: normal;
 	}
 
 	a {
@@ -24,8 +30,9 @@ li.product {
 	}
 
 	.woocommerce-loop-product__title {
-		@include font-size(1.2);
+		@include font-size(.8);
 		margin-bottom: 5px;
+		text-transform: uppercase;
 	}
 
 	img {
@@ -34,11 +41,22 @@ li.product {
 	}
 
 	.button {
+		@include font-size(.85);
 		display: block;
 		margin-top: 15px;
 		color: #fff;
 	}
-
+	
+	.add_to_cart_button {
+		background: rgba(255,255,255,0);
+		border: none;
+		box-shadow: none;
+		color: $color__background-button;
+		padding: 0;
+		text-align: left;
+		margin-top: 10px;
+	}
+	
 	.added_to_cart {
 		display: block;
 		margin: 15px 0;

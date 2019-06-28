@@ -1,4 +1,5 @@
-form.search-form {
+form.search-form,
+.woocommerce-product-search {
 	position: relative;
 	width: 100%;
 	max-width: 300px;
@@ -16,7 +17,7 @@ form.search-form {
 		border-radius: 8px 0 0 8px;
 	}
 
-	button {
+	button[type="submit"] {
 		padding: 0;
 		box-shadow: none;
 		margin: 0;
@@ -34,6 +35,7 @@ form.search-form {
 
 		&:after {
 			@include icon-content("\e912");
+			color: #fff;
 			line-height: 42px;
 			width: 42px;
 			text-align: center;

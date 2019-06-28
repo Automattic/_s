@@ -1,7 +1,55 @@
 /**
  * WooCommerce Price Filter
  */
+ 
+#secondary {
+    
+    .widget {
+    	@include font-size(.85);
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+    
+    .widget-title {
+        @include font-size(.9);
+        text-transform: uppercase;
+    }
+    
+    .product_list_widget {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        
+        li {
+            @include font-size(.8);
+            width: 31%;
+            margin-right: 2%;
+            
+            a {
+                text-decoration: none;
+            }
+            
+            .product-title {
+                display: block;
+                line-height: 1.2em;
+                color: $color__text-main;
+            }
+            
+            &:before {
+                display: none;
+            }
+        }
+    }
+}
+ 
 .widget_price_filter {
+	
 	.price_slider {
 		margin-bottom: 1.5em;
 	}
@@ -13,6 +61,11 @@
 		.button {
 			float: left;
 		}
+	}
+	
+	button {
+		@include font-size(.9);
+		padding: 8px 20px;
 	}
 
 	.ui-slider {
@@ -31,9 +84,12 @@
 		box-sizing: border-box;
 		margin-top: -.25em;
 		opacity: 1;
-
-		&:last-child {
-			margin-left: -1em;
+		border-radius: 50%;
+		margin-left: -5px;
+		
+		&:first-child {
+			margin-left: 0;
+			margin-right: -5px;
 		}
 
 		&:hover,
@@ -60,5 +116,40 @@
 
 	.ui-slider-horizontal .ui-slider-range {
 		height: 100%;
+	}
+}
+
+.widget_product_search {
+
+	input[type="search"] {
+		width: calc(100% - 47px);
+	}
+}
+
+.widget {
+	
+	ins {
+		background: rgba(255,255,255,0);
+	}
+}
+
+.widget_product_categories {
+	
+	ul {
+		padding-left: 0;
+	}
+	
+	li {
+		margin-bottom: 5px;
+		
+		&:before {
+			display: none;
+		}
+		
+		a {
+			color: $color__text-main;
+			font-weight: normal;
+			text-decoration: none;
+		}
 	}
 }

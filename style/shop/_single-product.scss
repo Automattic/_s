@@ -157,3 +157,14 @@
 .product__section {
 	clear: both;
 }
+
+/**
+ * Product reviews
+ */
+
+.commentlist {
+	
+	.review:before {
+		display: none;
+	}
+}
