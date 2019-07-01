@@ -5,15 +5,9 @@ li.product {
 	width: 100%;
 
 	.onsale {
-		@include font-size(.8);
 		position: absolute;
 		top: 0;
-		right: 0;
-		background: #888;
-		color: #fff;
-		margin: 0;
-		padding: 3px 10px;
-		font-weight: normal;
+		left: 0;
 	}
 	
 	.price {

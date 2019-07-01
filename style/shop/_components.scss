@@ -13,6 +13,17 @@
 	background: none;
 }
 
+.onsale {
+	@include font-size(.8);
+	background: #888;
+	color: #fff;
+	margin: 0;
+	padding: 3px 10px;
+	font-weight: normal;
+	margin: 0;
+	z-index: 2;
+}
+
 /**
  * Header cart
  */
@@ -197,17 +208,18 @@
 		padding: 0;
 		opacity: 1;
 		margin-right: 5px;
+		color: #999;
 
 		&:before {
 			transform: translateY(-50%);
 			top: 50%;
 			left: 0;
 			background: $color__text-main;
+			color: #999;
 		}
 	}
 
 	ins {
-		color: $color__error;
 		background: none;
 	}
 }
@@ -353,7 +365,7 @@ address {
 		top: 0;
 		position: absolute;
 		left: 0;
-		color: $color__link;
+		color: #f4df42;
 	}
 }
 
