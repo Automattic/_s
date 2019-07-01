@@ -44,17 +44,28 @@ li.product {
 		@include font-size(.85);
 		display: block;
 		margin-top: 15px;
-		color: #fff;
 	}
 	
 	.add_to_cart_button {
 		background: rgba(255,255,255,0);
 		border: none;
 		box-shadow: none;
-		color: $color__background-button;
 		padding: 0;
 		text-align: left;
 		margin-top: 10px;
+		color: $color__background-button;
+
+		&:hover {
+			color: $color__background-button-hover;
+		}
+
+		&:focus {
+			color: $color__background-button-focus;
+		}
+
+		&:visited {
+			color: $color__background-button;
+		}
 	}
 	
 	.added_to_cart {
