@@ -16,9 +16,34 @@
 @import "typography/typography";
 
 /*--------------------------------------------------------------
-# Shop
+# Layout
 --------------------------------------------------------------*/
 @import "layout/sidebar-content";
+
+/*--------------------------------------------------------------
+# Shop
+--------------------------------------------------------------*/
 @import "shop/components";
 @import "shop/products";
 @import "shop/product-thumb";
+
+/*--------------------------------------------------------------
+# Shop specs
+--------------------------------------------------------------*/
+.woocommerce-shop__controls {
+    @include font-size(.9);
+
+    p,
+    .woocommerce-ordering {
+        display: inline-block;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    .orderby {
+        @include font-size(.9);
+        margin-left: 10px;
+    }
+}

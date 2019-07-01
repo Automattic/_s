@@ -149,6 +149,42 @@ select {
 	padding-right: 50px;
 }
 
+.select2-selection:focus {
+	outline: none;
+}
+
+.select2-container .select2-selection.select2-selection--single {
+	height: 40px;
+
+	.select2-selection__rendered,
+	.select2-selection__arrow {
+		line-height: 40px;
+		height: 40px;
+	}
+}
+
+.select2-results__options {
+
+	li {
+		@include font-size(.85);
+		padding-top: 3px;
+		padding-bottom: 3px;
+		margin-bottom: 0;
+
+		&:before {
+			display: none;
+		}
+
+		&.select2-results__option--highlighted[data-selected] {
+			background: $color__corporate;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
 input[type="submit"] {
    margin-bottom: 18px;
    width: 100%;
