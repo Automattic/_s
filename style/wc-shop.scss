@@ -47,3 +47,17 @@
         margin-left: 10px;
     }
 }
+
+.product-category {
+    
+    .woocommerce-loop-category__title {
+        @include font-size(1);
+        text-transform: uppercase;
+    }
+
+    .count {
+        background: rgba(255,255,255,0);
+        font-weight: normal;
+        color: #888;
+    }
+}

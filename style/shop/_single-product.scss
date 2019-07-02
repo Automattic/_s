@@ -117,6 +117,17 @@ h2 {
 		text-decoration: none;
 		text-transform: uppercase;
 		float: right;
+		border: 2px solid #eee;
+		padding: 1px 8px;
+		color: #777;
+		margin-top: 5px;
+
+		&:before {
+			@include icon-content("\e92e");
+			@include font-size(.8);
+			color: $color__error;
+			margin-right: 3px;
+		}
 	}
 }
 
