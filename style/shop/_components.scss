@@ -609,6 +609,14 @@ p.no-comments {
 
 .woocommerce-error {
 	background-color: $woocommerce__color-error;
+
+	li {
+		margin-bottom: 0;
+
+		&:before {
+			display: none;
+		}
+	}
 }
 
 /**
