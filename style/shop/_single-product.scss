@@ -123,7 +123,7 @@ h2 {
 /**
  * Product summary
  */
- 
+
 .product {
 	position: relative;
 
@@ -189,12 +189,16 @@ h2 {
 
 	.product_meta {
 		@include font-size(.85);
-		line-height: 1.3em;
+		line-height: 1.4em;
 		margin-top: 20px;
 
 		> span {
-			margin-right: 8px;
+			display: block;
 			color: #999;
+
+			a {
+				color: #999;
+			}
 		}
 	}
 
@@ -264,6 +268,108 @@ h2 {
 
 		li.active:after {
 			right: 8px;
+		}
+	}
+ }
+
+ #review_form_wrapper {
+	background-color: rgba(0,0,0,.02);
+	padding: 30px;
+
+	.comment-reply-title {
+		@include font-size(1.3);
+	}
+
+	.comment-form-rating {
+		margin-top: 10px;
+	}
+
+	.stars {
+		margin-top: 0;
+	}
+
+	.comment-form-comment {
+		margin-bottom: 10px;
+	}
+
+	.form-submit {
+		margin-bottom: 0;
+
+		input {
+			width: auto;
+		}
+	}
+
+	.comment-form-cookies-consent {
+
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+		
+		label {
+			width: calc(100% - 40px);
+			float: right;
+			padding-top: 0;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+
+		.comment-form-author,
+		.comment-form-email {
+			width: 49%;
+			float: left;
+		}
+
+		.comment-form-author {
+			margin-right: 2%;
+		}
+
+		.comment-form-email + p {
+			clear: both;
+		}
+	}
+ }
+
+ #comments {
+
+	ol {
+		padding-left: 0;
+	}
+
+	li {
+
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+		
+		img {
+			background: rgba(0,0,0,.1);
+			border-radius: 3px;
+			float: left;
+		}
+
+		.comment-text {
+			float: right;
+			width: calc(100% - 100px);
+		}
+
+		.star-rating,
+		.meta {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.meta {
+			margin: 0;
+			color: #777;
+			float: right;
+		}
+
+		time {
+			@include font-size(.9);
 		}
 	}
  }
