@@ -276,6 +276,10 @@ table {
 	th, td {
 		border-right: 1px solid $color__background-hr;
 		padding: 10px 15px;
+
+		p {
+			margin: 0;
+		}
 	}
 
 	ul {
@@ -443,6 +447,7 @@ p.stars {
  */
 .woocommerce-tabs {
 	clear: both;
+	margin-bottom: 50px;
 
 	ul.tabs {
 		margin: 0;
