@@ -21,12 +21,15 @@
 @import "shop/product-thumb";
 @import "shop/products";
 
+.site-content {
+	margin-top: 50px;
+}
+
 h2 {
 	@include font-size(1.5);
 }
 
 .shop_table {
-	margin-top: 30px;
 	border: none;
 
 	tr {
