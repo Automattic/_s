@@ -227,6 +227,14 @@
 		position: relative;
 		width: 100%;
 		margin-bottom: 15px;
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		a {
+			text-decoration: none;
+		}
 
 		> a {
 			position: static;
@@ -279,7 +287,8 @@
 	}
 
 	.total {
-		margin: 10px 0;
+		line-height: normal;
+		margin: 20px 0;
 	}
 
 	.buttons {
@@ -321,7 +330,7 @@
 		background: #fff;
 		z-index: 9;
 		box-shadow: 0 0 3px rgba(0,0,0,.1);
-		@include font-size(.85);
+		@include font-size(.8);
 		padding-left: 15px;
 		padding-right: 15px;
 
