@@ -7,7 +7,7 @@
 			right: $padding__content-desktop;
 			position: absolute;
 
-			li {
+			> li:first-child {
 				line-height: $size__header-height-desktop;
 			}
 		}

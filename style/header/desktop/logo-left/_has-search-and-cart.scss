@@ -16,7 +16,7 @@
 			right: $padding__content-tablet;
 			position: absolute;
 
-			li {
+			> li:first-child {
 				line-height: $size__header-height-desktop;
 			}
 		}
