@@ -186,6 +186,10 @@
 #order_review .shop_table {
 	border: 1px solid #eee;
 
+	ul {
+		margin: 0;
+	}
+
 	tr {
 		border-bottom: 1px solid #eee;
 	}
@@ -225,11 +229,24 @@
 
 	.product-name {
 		position: relative;
+		padding-left: 25px;
 		padding-right: 50px;
 
+		.product-remove,
 		.product-quantity {
 			position: absolute;
-			top: 15px;
+			top: 10px;
+		}
+
+		.product-remove {
+			left: 10px;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		.product-quantity {
 			right: 15px;
 		}
 	}
