@@ -18,13 +18,14 @@
 # Shop
 --------------------------------------------------------------*/
 @import "shop/components";
+@import "shop/account-nav";
 
 /*--------------------------------------------------------------
 # Course
 --------------------------------------------------------------*/
 @import "course/course-preview";
 
-.woocommerce-form-login {
+/*.woocommerce-form-login {
 
 	> p {
 		max-width: 450px;
@@ -288,3 +289,4 @@ body.woocommerce-order-pay article.page #order_review {
 		}
 	}
 }
+*/
