@@ -401,3 +401,17 @@ h2 {
 		 margin-right: 8px;
 	 }
  }
+
+   /*--------------------------------------------------------------
+# Full Screen Gallery
+--------------------------------------------------------------*/
+.pswp__button {
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: rgba(255,255,255,0);
+		box-shadow: none;
+		color: #fff;
+	}
+}
