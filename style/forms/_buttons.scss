@@ -47,6 +47,15 @@ input[type="submit"],
 	&:visited {
 		border-color: $color__border-button;
 		color: $color__text-button;
+
+		&:hover {
+			border-color: $color__border-button-hover;
+		}
+
+		&:focus,
+		&:active {
+			border-color: $color__border-button-focus;
+		}
 	}
 }
 
