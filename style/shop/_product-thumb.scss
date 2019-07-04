@@ -74,30 +74,4 @@ li.product {
 	.add_to_cart_button {
 		color: #fff;
 	}
-
-	.added_to_cart {
-		border-width: 2px;
-		border-style: solid;
-		background: $color__background-button-secondary;
-		border-color: $color__border-button-secondary;
-		color: #fff;
-	
-		&:hover,
-		&:focus {
-			background: $color__background-button-hover-secondary;
-			border-color: $color__border-button-hover-secondary;
-		}
-	
-		&:active {
-			border-color: $color__border-button-focus-secondary;
-			background-color: $color__background-button-focus-secondary;
-		}
-
-		&:after {
-			@include font-size(.6);
-			@include icon-content('\e922');
-			margin-left: 5px;
-			display: inline-block;
-		}
-	}
 }
