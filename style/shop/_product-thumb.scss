@@ -21,7 +21,6 @@ li.product {
 
 	a {
 		text-decoration: none;
-		color: $color__text-main;
 	}
 
 	&:before {
@@ -32,6 +31,11 @@ li.product {
 		@include font-size(.8);
 		margin-bottom: 5px;
 		text-transform: uppercase;
+	}
+
+	.woocommerce-loop-product__title,
+	.price {
+		color: $color__text-main;
 	}
 
 	img {
@@ -72,8 +76,11 @@ li.product {
 	}
 
 	.added_to_cart {
+		border-width: 2px;
+		border-style: solid;
 		background: $color__background-button-secondary;
 		border-color: $color__border-button-secondary;
+		color: #fff;
 	
 		&:hover,
 		&:focus {

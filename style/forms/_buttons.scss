@@ -119,6 +119,7 @@ input[type="submit"],
 .is-style-download input[type="submit"] {
 	background: $color__background-button-secondary;
 	border-color: $color__border-button-secondary;
+	color: #fff;
 
 	&:hover,
 	&:focus {
