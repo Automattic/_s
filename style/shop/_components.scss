@@ -159,7 +159,7 @@ table {
 		font-weight: normal;
 	}
 
-	.button {
+	.woocommerce-orders-table__cell-order-actions .button {
 		@include font-size(.8);
 		padding: 5px 15px;
 		border-radius: 3px;
