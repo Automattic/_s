@@ -388,3 +388,22 @@ i.stripe-pf-visa {
 		position: relative;
 	}
 }
+
+/*--------------------------------------------------------------
+# Payment Form in My Account Section
+--------------------------------------------------------------*/
+.woocommerce-checkout.woocommerce-order-pay  {
+
+	.woocommerce {
+		@include clearfix();
+		@include clearfix-after();
+	}
+
+	@media screen and (min-width: 48em) {
+
+		#order_review {
+			margin: 0 auto;
+			float: none;
+		}
+	}
+}
