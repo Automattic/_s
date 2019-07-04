@@ -154,6 +154,26 @@ table {
 	@include font-size(.9);
 	border-spacing: 0;
 
+	a {
+		text-decoration: none;
+		font-weight: normal;
+	}
+
+	.button {
+		@include font-size(.8);
+		padding: 5px 15px;
+		border-radius: 3px;
+	}
+
+	td .button {
+		margin: 5px 5px 5px 0;
+		display: inline-block;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
 	.product-thumbnail img {
 		max-width: 100px;
 		min-width: 50px;
@@ -169,6 +189,11 @@ table {
 
 	th {
 		text-align: left;
+		
+		span {
+			display: block;
+			line-height: normal;
+		}
 	}
 
 	tr {
@@ -189,6 +214,47 @@ table {
 
 		li:before {
 			display: none;
+		}
+	}
+	
+	.download-file {
+
+		a {
+			background: rgba(255,255,255,0);
+			color: $color__link;
+			border: none;
+			box-shadow: none;
+			text-align: left;
+			line-height: 1.5em;
+			position: relative;
+			padding: 0 0 0 23px;
+			border-radius: 0;
+
+			&:before {
+				@include icon-content('\e916');
+				@include font-size(1);
+				font-weight: normal;
+				position: absolute;
+				top: 2px;
+				left: 0;
+			}
+
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited {
+				background: rgba(255,255,255,0);
+				box-shadow: none;
+			}
+
+			&:hover {
+				color: $color__link-hover;
+			}
+
+			&:focus,
+			&:active {
+				color: $color__link-focus;
+			}
 		}
 	}
 }
@@ -405,8 +471,15 @@ p.stars {
 /*--------------------------------------------------------------
 # Password Strength Meter
 --------------------------------------------------------------*/
+.woocommerce-password-strength,
+.woocommerce-password-hint {
+	max-width: 500px;
+}
+
 .woocommerce-password-strength {
-	text-align: right;
+	@include font-size(.9);
+	margin-top: 3px;
+	font-weight: bold;
 
 	&.strong {
 		color: $woocommerce__color-pw-strong;
@@ -423,6 +496,11 @@ p.stars {
 	&.good {
 		color: $woocommerce__color-pw-good;
 	}
+}
+
+.woocommerce-password-hint {
+	display: block;
+	line-height: 1.2em;
 }
 
 /*--------------------------------------------------------------
