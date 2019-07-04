@@ -103,6 +103,31 @@ table {
 /*--------------------------------------------------------------
 # Addresses
 --------------------------------------------------------------*/
+
+.addresses {
+
+	h3 {
+		margin-bottom: 10px;
+	}
+
+	.edit {
+		@include font-size(.85);
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:before {
+			@include icon-content('\e91d');
+			@include font-size(.8);
+			font-weight: normal;
+			margin-right: 5px;
+		}
+	}
+
+	address {
+		font-style: italic;
+	}
+}
+
 .woocommerce-address-fields {
 
 	@media screen and (max-width: breakpoint('tablet-landscape'))
