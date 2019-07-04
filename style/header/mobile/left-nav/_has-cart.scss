@@ -1,24 +1,27 @@
 .site-header {
 
-	button.search-toggle {
-		right: 65px;
-	}
+	@media screen and (max-width: breakpoint('tablet-landscape')) {
 
-	.site-header-cart {
-		position: absolute;
-		top: 0;
-		right: $padding__content-mobile;
-
-		a {
-			position: relative;
-
-			a:before {
-				line-height: $size__header-height-mobile;
+		button.search-toggle {
+			right: 65px;
+		}
+	
+		.site-header-cart {
+			position: absolute;
+			top: 0;
+			right: $padding__content-mobile;
+	
+			a {
+				position: relative;
+	
+				a:before {
+					line-height: $size__header-height-mobile;
+				}
 			}
 		}
-	}
-
-	form.search-form button:before {
-		right: 79px;
+	
+		form.search-form button:before {
+			right: 79px;
+		}
 	}
 }

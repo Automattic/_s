@@ -3,12 +3,19 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 
 		button.search-toggle {
-			right: $padding__content-desktop;
+			right: $padding__content-tablet;
 			height: $size__header-height-desktop;
 		}
 
 		#main-navigation {
-			margin-right: 55px;
+			margin-right: 45px;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+
+		button.search-toggle {
+			right: 0;
 		}
 	}
 }

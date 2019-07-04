@@ -4,7 +4,8 @@
 
 		.site-header-cart {
 			top: 0;
-			right: $padding__content-desktop;
+			right: 0;
+			right: $padding__content-tablet;
 			position: absolute;
 
 			> li:first-child {
@@ -14,6 +15,13 @@
 
 		#main-navigation {
 			margin-right: 55px;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+
+		.site-header-cart {
+			right: 0;
 		}
 	}
 }
