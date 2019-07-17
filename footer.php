@@ -66,7 +66,7 @@
 				</ul>
 			<?php endif; ?>
 			<?php /* translators: the first %s contains the target link */ ?>
-			<span id="credits" class="made-by"><?php printf( esc_html__( 'Made with passion by %s', '_svbk' ), '<a target="_blank" href="http://www.silverbackstudio.it">Silverback Studio</a>' ); ?></span>
+			<span id="credits" class="made-by"><?php printf( esc_html__( 'Made with passion by %s', '_svbk' ), '<a target="_blank" rel="noopener noreferrer" href="https://www.silverbackstudio.it">Silverback Studio</a>' ); ?></span>
 		</div>
 		
 		<?php if ( get_theme_mod( 'fixed_footer_bar' ) ) : ?>
