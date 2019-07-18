@@ -80,7 +80,6 @@ function _svbk_woocommerce_scripts() {
 	);
 
 	Script::enqueue( 'wc-add-to-cart', null, [ 'condition' => is_woocommerce() ] );
-	Script::enqueue( 'wc-cart-fragments', null, [ 'condition' => is_woocommerce() ] );
 	Script::enqueue( 'woocommerce', null, [ 'condition' => is_woocommerce() ] );
 	Script::enqueue( 'paypal-checkout-js', null, [ 'condition' => is_checkout() || is_cart() ] );
 
