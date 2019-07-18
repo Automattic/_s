@@ -111,7 +111,7 @@ function _svbk_woocommerce_scripts() {
 	            	front of your card and consists of 4 digits.',
 					'_svbk'
 				),
-				'imageUrl'   => get_theme_file_uri( '/dist/css/images/cvc-instructions.png' ),
+				'imageUrl'   => get_theme_file_uri( '/dist/css/images/payment-methods/cvc-instructions.png' ),
 				'closeText'  => __( 'Close', '_svbk' ),
 			),
 		)

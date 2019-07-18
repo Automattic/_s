@@ -16,11 +16,6 @@
     $(this).next('ul').slideToggle()
     .parent('.archive-year').toggleClass('expanded');
   });
-  
-  /* Account toggle menu */
-  $('.secondary-navigation__toggle').on('click', function() {
-    $('.secondary-navigation').slideToggle();
-  });
 
 	$('.loadmore').on('click', '.loadmore__button', function(event){
     event.preventDefault();
