@@ -386,6 +386,7 @@ if ( ! function_exists( '_svbk_woocommerce_cart_link' ) ) {
 	function _svbk_woocommerce_cart_link() {
 		?>
 		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', '_svbk' ); ?>">
+			<?php esc_html_e( 'Cart', '_svbk'); ?>
 			<?php
 			$item_count_text = sprintf(
 				/* translators: %d number of items in the mini cart */
