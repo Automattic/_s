@@ -1,9 +1,11 @@
 <?php
 /**
- * '_svbk'Theme Customizer
+ * '_svbk' Theme Customizer
  *
  * @package _svbk
  */
+
+use Svbk\WP\Helpers\Config;
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -14,6 +16,21 @@ function _svbk_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	// Mobile Logo.
+	$wp_customize->add_setting( 'custom_logo_mobile' );
+
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control(
+			$wp_customize,
+			'custom_logo_mobile',
+			array(
+				'label'     => __( 'Mobile Logo', '_svbk' ),
+				'section'   => 'title_tagline',
+				'mime_type' => 'image',
+			)
+		)
+	);
 
 	// Header.
 	$wp_customize->get_section( 'header_image' )->title = __( 'Header', '_svbk' );
@@ -337,3 +354,83 @@ function _svbk_customize_preview_js() {
 	wp_enqueue_script( '_svbk-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', '_svbk_customize_preview_js' );
+
+/**
+ * Add mobile logo switching via <picture> tag
+ */
+function _svbk_custom_logo_with_mobile( $custom_logo_html, $blog_id ){
+
+    $html          = '';
+    $switched_blog = false;
+	
+	if ( is_multisite() && ! empty( $blog_id ) && (int) $blog_id !== get_current_blog_id() ) {
+        switch_to_blog( $blog_id );
+        $switched_blog = true;
+    }
+
+	$custom_logo_mobile_id = get_theme_mod( 'custom_logo_mobile' );
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+
+	// No mobile log set, use default behavior
+	if ( !$custom_logo_id || !$custom_logo_mobile_id ) {
+		return $custom_logo_html;
+	}
+ 
+	$custom_logo = wp_get_attachment_image_src( $custom_logo_id, 'medium' );
+	$custom_logo_attr = array();
+	$custom_logo_mobile_attr = array();
+
+	if ( ! $custom_logo ) {
+		return $custom_logo_html;
+	}
+
+	list($custom_logo_src, $width, $height) = $custom_logo;
+	
+	// Generate 'srcset' and 'sizes'
+	$image_meta = wp_get_attachment_metadata( $custom_logo_id );
+
+	if ( is_array( $image_meta ) ) {
+		$size_array = array( absint( $width ), absint( $height ) );
+		$custom_logo_attr['srcset'] = wp_calculate_image_srcset( $size_array, $custom_logo_src, $image_meta, $custom_logo_id );
+		if ( $custom_logo_attr['srcset'] ) {
+			$custom_logo_attr['sizes']  = wp_calculate_image_sizes( $size_array, $custom_logo_src, $image_meta, $custom_logo_id );
+		}
+	}
+
+	$breakpoints = Config::get( 'main_breakpoints', '_svbk' );
+	$custom_logo_attr['media'] = sprintf('(min-width: %dpx)', $breakpoints['tablet-landscape']);
+
+	$custom_logo_attr_string = '';
+	foreach ( $custom_logo_attr as $name => $value ) {
+		$custom_logo_attr_string .= " $name=" . '"' . $value . '"';
+	}	
+
+	/*
+	* If the logo alt attribute is empty, get the site title and explicitly
+	* pass it to the attributes used by wp_get_attachment_image().
+	*/
+	$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+	if ( empty( $image_alt ) ) {
+		$custom_logo_mobile_attr['alt'] = get_bloginfo( 'name', 'display' );
+	}
+
+	$image_html = 
+		'<picture class="custom-logo" >' .
+			'<source ' . $custom_logo_attr_string . '/>'.
+			wp_get_attachment_image( $custom_logo_mobile_id, 'medium', false, $custom_logo_mobile_attr) .
+		'</picture>';
+
+	$html = sprintf(
+		'<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
+		esc_url( home_url( '/' ) ),
+		$image_html
+	);
+ 
+    if ( $switched_blog ) {
+		restore_current_blog();
+	}
+
+	return $html;
+}
+
+add_filter( 'get_custom_logo', '_svbk_custom_logo_with_mobile', 10, 2); 
