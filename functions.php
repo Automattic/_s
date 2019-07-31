@@ -227,6 +227,44 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 	}
 endif;
 
+
+/**
+ * Allow <picture> tags in post content
+ * 
+ * @param array $tags An array of tags and allowed attributes
+ *  {
+ *      "tagname" : {
+ *          "param1":true,
+ *          "param2":false
+ *      },
+ *  ...
+ *  }** 
+ * @param string $context The context in which these tags are allowed
+ */
+function _svbk_allow_picture_tag( $tags, $context ){
+	
+	if ( 'post' !== $context ){
+		return $tags;
+	}
+
+	$tags['picture'] = array(
+		'class' => true,
+		'id' => true,
+		'title' => true,
+	);
+
+	$tags['source'] = array(
+		'src' => true,
+		'srcset' => true,
+		'sizes' => true,
+		'type' => true,
+		'media' => true,
+	);
+
+	return $tags;
+}
+add_filter( 'wp_kses_allowed_html', '_svbk_allow_picture_tag', 10, 2 );
+
 /**
  * Converts the config array to be used with add_theme_support options for
  * blocks editor parameters

@@ -52,7 +52,8 @@
 	}
 
 	.search-toggle,
-	.site-header-cart li a {
+	.site-header-cart > li > a {
+		font-weight: normal;
 
 		&:before {
 			width: 40px;
@@ -60,9 +61,14 @@
 			height: 40px;
 			line-height: 40px;
 			text-align: center;
-			background: $color__corporate;
-			color: #fff;
 			border-radius: 50%;
+		}
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:visited {
+			color: $color__text-main;
 		}
 	}
 
@@ -137,4 +143,4 @@
 @import 'desktop/logo-left/logo-left';
 
 @import 'top-header';
-@import "header-stuck";
+@import 'header-stuck';

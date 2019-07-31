@@ -71,6 +71,10 @@ export const settings = {
 	    },
 	],	
 	
+	supports: {
+		anchor: true,
+	},
+	
 	deprecated,
 	
 	attributes: {

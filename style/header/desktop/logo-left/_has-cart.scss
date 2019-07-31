@@ -4,16 +4,24 @@
 
 		.site-header-cart {
 			top: 0;
-			right: $padding__content-desktop;
+			right: 0;
+			right: $padding__content-tablet;
 			position: absolute;
 
-			li {
+			> li:first-child {
 				line-height: $size__header-height-desktop;
 			}
 		}
 
 		#main-navigation {
 			margin-right: 55px;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+
+		.site-header-cart {
+			right: 0;
 		}
 	}
 }

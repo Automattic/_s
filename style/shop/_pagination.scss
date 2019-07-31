@@ -1,0 +1,20 @@
+.woocommerce-pagination {
+
+    .page-numbers {
+        text-align: center;
+        @include font-size(1);
+
+        li {
+            display: inline;
+            margin-right: 5px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

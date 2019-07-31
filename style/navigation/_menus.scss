@@ -250,7 +250,7 @@
 	}
 }
 
-.profile-nav {
+#main-navigation .profile-nav {
 	@include font-size(.8);
 
 	.my-account {
@@ -277,6 +277,17 @@
 
 		.user-name {
 			text-transform: uppercase;
+		}
+
+		&.current-menu-item {
+
+			a {
+				border-bottom: none;
+			}
+
+			.user-name {
+				border-bottom: 3px solid $color__corporate;
+			}
 		}
 	}
 }

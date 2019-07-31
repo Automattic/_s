@@ -1,91 +1,146 @@
-body.woocommerce-checkout {
+.site-content {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
 
-	#customer_details,
-	#order_review_heading {
-		margin-top: 20px;
-		padding-top: 20px;
+#customer_details,
+#order_review_heading {
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+.woocommerce-validated {
+	
+	input[type=checkbox] {
+		width: 1.25em;
+		height: 1.25em;
 	}
+}
 
-	.woocommerce-form-coupon-toggle {
-		background: rgba(0,0,0,.5);
+.woocommerce-form-login-toggle,
+.woocommerce-form-coupon-toggle {
+
+	a {
 		color: #fff;
+		text-decoration: none;
+		font-weight: normal;
+	}
+}
 
-		.woocommerce-info {
-			padding: 20px 15px;
-			text-align: left;
-			margin-top: 15px;
-			background: none;
+.woocommerce-form-login,
+.woocommerce-form-coupon {
+	margin-bottom: 2.617924em;
 
-			a {
-				display: block;
-				color: #fff;
-				font-weight: 600;
-			}
-		}
+	p {
+		margin-top: 0;
+		margin-bottom: 15px;
 	}
 
-	.woocommerce-form-coupon {
-		background: #fff;
-		padding: 0 15px;
+	a {
+		text-decoration: none;
+		font-weight: normal;
+	}
+}
 
-		button[type="submit"] {
-			display: block;
-			width: 100%;
-		}
+.woocommerce-form-coupon-toggle {
+	background: rgba(0,0,0,.5);
+	color: #fff;
 
-		@media screen and (min-width: breakpoint('phone')) {
+	.woocommerce-info {
+		padding: 20px 15px;
+		text-align: left;
+		margin-top: 15px;
+		background: none;
+	}
+}
 
-			p {
-				margin-bottom: 0;
-			}
+.woocommerce-form-coupon {
 
-			input[type="text"] {
-				width: 240px;
-				margin-right: 8px;
-			}
-
-			.form-row {
-				display: inline-block;
-			}
-		}
+	.form-row {
+		width: 100%;
 	}
 
-	.woocommerce-form-login {
-		padding: 20px;
-	}
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
 
-	@media screen and (min-width: 48em) {
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
 
-		article.page {
+		.form-row {
+			width: 49%;
+			float: left;
 
-			form.woocommerce-checkout:after {
-				@include clearfix();
-				@include clearfix-after();
-			}
-
-			#customer_details {
-				width: 49%;
-				float: left;
-			}
-
-			#order_review,
-			#order_review_heading {
-				width: 49%;
-				float: left;
-				clear: right;
-				margin: 0 0 0 2%;
-			}
-
-			#order_review_heading {
-				margin-top: 20px;
-				margin-bottom: 20px;
+			&.form-row-first {
+				margin-right: 2%;
 			}
 		}
 	}
 }
 
-/* Left column */
+.woocommerce-form-login {
 
+	.woocommerce-form-login__rememberme {
+		display: block;
+		margin-bottom: 15px;
+
+		span {
+			margin-left: 5px;
+			margin-right: 10px;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+
+		.form-row-first,
+		.form-row-last {
+			width: 48%;
+			float: left;
+		}
+
+		.form-row-first {
+			margin-right: 4%;
+		}
+	}
+}
+
+@media screen and (min-width: 48em) {
+
+	article.page {
+
+		form.woocommerce-checkout:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
+
+		#customer_details {
+			width: 49%;
+			float: left;
+		}
+
+		#order_review,
+		#order_review_heading {
+			width: 49%;
+			float: left;
+			clear: right;
+			margin: 0 0 0 2%;
+		}
+
+		#order_review_heading {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Left column
+--------------------------------------------------------------*/
 #customer_details {
 
 	h3 {
@@ -133,10 +188,15 @@ body.woocommerce-checkout {
 	}
 }
 
-/* Right column */
-
+/*--------------------------------------------------------------
+# Right Column
+--------------------------------------------------------------*/
 #order_review .shop_table {
 	border: 1px solid #eee;
+
+	ul {
+		margin: 0;
+	}
 
 	tr {
 		border-bottom: 1px solid #eee;
@@ -177,19 +237,80 @@ body.woocommerce-checkout {
 
 	.product-name {
 		position: relative;
+		padding-left: 25px;
 		padding-right: 50px;
 
+		.product-remove,
 		.product-quantity {
 			position: absolute;
-			top: 15px;
+			top: 10px;
+		}
+
+		.product-remove {
+			left: 10px;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		.product-quantity {
 			right: 15px;
 		}
 	}
 }
 
 #order_review #payment {
-	padding: 20px 15px;
-	background: $woocommerce__color-secondary;
+
+	.wc_payment_methods {
+		padding-left: 0;
+	}
+
+	.wc_payment_method {
+		background: #f5f5f5;
+		padding: 20px;
+		margin-bottom: 15px;
+
+		&:before {
+			display: none;
+		}
+
+		label {
+			cursor: pointer;
+
+			img {
+				vertical-align: middle;
+				display: inline-block;
+				margin-left: 10px;
+			}
+	
+			a {
+				margin-left: 10px;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.payment_box {
+		@include font-size(.9);
+		display: block;
+		margin: 20px -20px -20px;
+		padding: 5px 20px 20px;
+		background: #fbfbfb;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	input {
+		border: 2px solid #f5f5f5;
+
+		&:focus {
+			outline: none;
+				border: 2px solid #f0f0f0;
+		}
+	}
 
 	.woocommerce_error {
 		padding: 10px;
@@ -201,45 +322,31 @@ body.woocommerce-checkout {
 
 	label {
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: middle;
 		margin: 0;
-	}
-
-	ul {
 		padding: 0;
-
-		li {
-			margin-bottom: 10px;
-
-			&:before {
-				display: none;
-			}
-		}
 	}
 
 	#payment_method_stripe {
 		margin: 0;
+
+		&:before {
+			display: none;
+		}
 	}
 
 	img.stripe-icon {
 		float: none !important;
 	}
 
-	.payment_method_paypal {
-
-		img {
-			vertical-align: middle;
-			display: block;
-		}
-	}
-
 	fieldset {
 		border: none;
 	}
 
-	button {
+	button[type="submit"] {
 		display: block;
 		width: 100%;
+		padding: 15px;
 	}
 }
 
@@ -288,4 +395,135 @@ i.stripe-pf-visa {
 		margin-top: 10px;
 		position: relative;
 	}
+}
+
+/*--------------------------------------------------------------
+# Payment Form in My Account Section
+--------------------------------------------------------------*/
+.woocommerce-checkout.woocommerce-order-pay  {
+
+	.woocommerce {
+		@include clearfix();
+		@include clearfix-after();
+	}
+
+	@media screen and (min-width: 48em) {
+
+		#order_review {
+			margin: 0 auto;
+			float: none;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Stripe method
+--------------------------------------------------------------*/
+
+.payment_method_stripe {
+
+	label {
+		margin-left: 5px;
+		min-width: 300px;
+	}
+}
+
+/*--------------------------------------------------------------
+# CVC tooltip
+--------------------------------------------------------------*/
+
+.find-your-cvc-show {
+    display: block;
+    text-indent: -9999px;
+    position: absolute;
+    top: 0;
+    right: 0;
+	cursor: pointer;
+	background: $color__corporate;
+	color: #fff;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+    
+    &:before {
+        content: "?";
+        position: absolute;
+        right: 0;
+        text-indent: 0;
+		z-index: 1;
+		width: 22px;
+		height: 22px;
+		text-align: center;
+		line-height: 22px;
+	}
+	
+	&:hover {
+		color: #fff;
+	}
+}
+
+.find-your-cvc {
+    display: none;
+    font-size: .8em;
+    background: #fff;
+    margin-top: 10px;
+    padding: 5px 15px 15px;
+    font-weight: normal;
+	box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.1);
+	line-height: 1.5em;
+    
+    p {
+        margin-top: 5px;
+    }
+    
+    &.tooltip-show {
+        display: block;
+    }
+    
+    .close {
+        display: block;
+        text-indent: -9999px;
+        position: relative;
+        top: 0;
+        right: -8px;
+        padding: 0 15px;
+        cursor: pointer;
+        
+        &:before {
+			@include icon-content('\e92e');
+            content: "\e92e";
+            position: absolute;
+            right: 0;
+            text-indent: 0;
+            z-index: 1;
+            font-size: 1.2em;
+            color: #ccc;
+            font-weight: normal;
+        }
+    }
+    
+    img {
+		width: 100%;
+        display: block;
+        margin: 10px auto 0;
+    }
+    
+    @media screen and (min-width: 32em) {
+        position: absolute;
+        width: 300px;
+        margin-top: 0;
+        right: 0;
+        bottom: 7em;
+        border-radius: 5px;
+        
+        &:after {
+            content: "";
+            border-top: 10px solid #fff;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+        }
+    }
 }

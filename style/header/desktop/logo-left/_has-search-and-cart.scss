@@ -3,7 +3,7 @@
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 
 		button.search-toggle {
-			right: $padding__content-tablet + 45px;
+			right: 65px;
 			height: $size__header-height-desktop;
 		}
 
@@ -16,17 +16,28 @@
 			right: $padding__content-tablet;
 			position: absolute;
 
-			li {
+			> li:first-child {
 				line-height: $size__header-height-desktop;
 			}
 		}
 
 		#main-navigation {
-			margin-right: 105px;
+			margin-right: 75px;
 		}
 
 		form.search-form button:before {
 			right: $padding__content-tablet + 57px;
+		}
+	}
+
+	@media screen and (min-width: breakpoint('desktop')) {
+		
+		.site-header-cart {
+			right: 0;
+		}
+
+		button.search-toggle {
+			right: 30px;
 		}
 	}
 }

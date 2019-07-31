@@ -3,20 +3,24 @@ li.product {
 	position: relative;
 	margin-bottom: 2em;
 	width: 100%;
+	text-align: center;
+
+	.woocommerce-loop-product__link {
+		display: block;
+	}
 
 	.onsale {
 		position: absolute;
-		top: 15px;
-		left: 15px;
-		background: #888;
-		color: #fff;
-		margin: 0;
-		padding: 3px 10px;
+		top: 0;
+		left: 0;
+	}
+	
+	.price {
+		font-weight: normal;
 	}
 
 	a {
 		text-decoration: none;
-		color: $color__text-main;
 	}
 
 	&:before {
@@ -24,8 +28,14 @@ li.product {
 	}
 
 	.woocommerce-loop-product__title {
-		@include font-size(1.2);
+		@include font-size(.8);
 		margin-bottom: 5px;
+		text-transform: uppercase;
+	}
+
+	.woocommerce-loop-product__title,
+	.price {
+		color: $color__text-main;
 	}
 
 	img {
@@ -33,23 +43,35 @@ li.product {
 		width: 100%;
 	}
 
-	.button {
-		display: block;
-		margin-top: 15px;
-		color: #fff;
+	.star-rating {
+		margin: 0 auto;
 	}
 
+	.add_to_cart_button,
 	.added_to_cart {
-		display: block;
-		margin: 15px 0;
-		text-align: center;
-		text-decoration: underline;
+		@include font-size(.85);
+		display: inline-block;
+		margin-top: 10px;
+		text-transform: uppercase;
+		padding: .6rem .8rem .5rem !important;
+		line-height: 1;
+		box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+		transition: background .15s ease-in-out,
+					border .15s ease-in-out,
+					color .15s ease-in-out,
+					box-shadow .15s ease-in-out;
 
-		&:before {
-			@include icon-content('\e900');
-			margin-right: 5px;
-			display: inline-block;
-			text-decoration: none;
+		&:hover,
+		&:focus {
+			box-shadow: 0 2px 4px rgba(0,0,0,0.35);
 		}
+	
+		&:active {
+			box-shadow: 0 0 2px rgba(0,0,0,0.4);
+		}
+	}
+
+	.add_to_cart_button {
+		color: #fff;
 	}
 }

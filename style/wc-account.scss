@@ -18,158 +18,188 @@
 # Shop
 --------------------------------------------------------------*/
 @import "shop/components";
+@import "shop/account-nav";
 
 /*--------------------------------------------------------------
 # Course
 --------------------------------------------------------------*/
 @import "course/course-preview";
 
+#primary {
+	width: 100%;
+}
+
+h2 {
+	@include font-size(1.5);
+}
+
+h3 {
+	@include font-size(1.2);
+}
+
+mark {
+	background: none;
+	font-weight: bold;
+}
+
+.woocommerce {
+
+	&:after {
+		@include clearfix();
+		@include clearfix-after();
+	}
+}
+
+.woocommerce-form-login,
+.lost_reset_password {
+	max-width: 600px;
+	margin: 50px 0;
+}
+
 .woocommerce-form-login {
 
-	> p {
-		max-width: 450px;
-		margin-left: auto;
-		margin-right: auto;
+	a {
+		text-decoration: none;
+	}
+
+	.woocommerce-form-login__rememberme {
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (min-width: breakpoint('tablet-landscape')) {
+
+	.woocommerce-MyAccount-navigation,
+	.woocommerce-MyAccount-content {
+		float: left;
+	}
+	
+	.woocommerce-MyAccount-navigation {
+		width: 27%;
+		margin-right: 6%;
+	}
+	
+	.woocommerce-MyAccount-content {
+		width: 67%;
+	}
+}
+
+table {
+	border-top: none;
+
+	tr:nth-of-type(even) {
+		background: rgba(0,0,0,.02);
+	}
+
+	@media screen and (min-width: breakpoint('tablet-portrait')) {
+
+		tr:nth-of-type(even) {
+			background: none;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+# Addresses
+--------------------------------------------------------------*/
+.addresses {
+
+	h3 {
+		margin-bottom: 10px;
+	}
+
+	.edit {
+		@include font-size(.85);
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:before {
+			@include icon-content('\e91d');
+			@include font-size(.8);
+			font-weight: normal;
+			margin-right: 5px;
+		}
+	}
+
+	address {
+		font-style: italic;
+	}
+}
+
+.woocommerce-address-fields {
+
+	@media screen and (max-width: breakpoint('tablet-landscape'))
+	and (min-width: breakpoint('tablet-portrait')), (min-width: breakpoint('desktop')) {
+
+		[id*="first_name_field"],
+		[id*="last_name_field"],
+		[id*="email_field"],
+		[id*="phone_field"],
+		[id*="postcode_field"],
+		[id*="city_field"] {
+			width: 49%;
+			float: left;
+		}
+
+		[id*="first_name_field"],
+		[id*="email_field"],
+		[id*="postcode_field"] {
+			margin-right: 2%;
+		}
 	}
 
 	button[type="submit"] {
-		display: block;
-		width: 100%;
-	}
-
-	.woocommerce-form__label-for-checkbox {
-		margin: 20px 0;
-		cursor: pointer;
-
-		input,
-		span {
-			vertical-align: middle;
-		}
-
-		input {
-			border-width: 1px;
-		}
-	}
-
-	.lost_password {
-		text-align: center;
-		margin-bottom: 0;
+		margin-top: 20px;
 	}
 }
 
-.woocommerce-account .shop_table {
+/*--------------------------------------------------------------
+# Account details
+--------------------------------------------------------------*/
+.edit-account {
 
-	a, td {
-		text-align: left;
-	}
-
-	th {
-		padding: 15px;
-	}
-
-	td {
-		padding: 10px 15px;
-	}
-
-	a {
-		background: none;
-		text-transform: none;
+	fieldset {
+		background: #f5f5f5;
 		border: none;
-		color: $color__corporate;
-		box-shadow: none;
-		padding: 0;
-		display: block;
-		line-height: 1.3em;
-	}
+		position: relative;
+		padding-top: 50px;
 
-	.button {
-
-		&:before {
-			margin-right: 5px;
-			@include font-size(.9);
-			vertical-align: middle;
-			font-weight: 200;
-		}
-
-		&.pay:before {
-			@include icon-content("\e91e");
-		}
-
-		&.view:before {
-			@include icon-content("\e91c");
-		}
-
-		&.download:before {
-			@include icon-content("\e91c");
-		}
-
-		&.cancel {
-			color: $color__error;
-
-			&:before {
-				@include icon-content("\e91a");
-				@include font-size(.6);
-			}
+		@media screen and (min-width: breakpoint('tablet-portrait')) {
+			padding-left: 30px;
+			padding-right: 30px;
 		}
 	}
 
-	@media screen and (max-width: 'tablet-landscape') {
+	legend {
+		@include font-size(1.2);
+		position: absolute;
+		top: 20px;
+		font-weight: bold;
+	}
 
-		a {
-			text-align: right;
+	span em {
+		@include font-size(.8);
+		font-style: normal;
+	}
+
+	@media screen and (max-width: breakpoint('tablet-landscape'))
+	and (min-width: breakpoint('tablet-portrait')), (min-width: breakpoint('desktop')) {
+
+		.form-row-first,
+		.form-row-last {
+			width: 49%;
+			float: left;
 		}
 
-		thead {
-			display: none;
-		}
-
-		tr {
-
-			&:first-of-type {
-				border: none;
-			}
-
-			&:nth-of-type(even) {
-				background: #fbfbfb;
-			}
-		}
-
-		td {
-			display: block;
-			position: relative;
-			border-top: 1px solid $color__background-hr;
-			padding: 10px 15px 10px calc(40% + 10px);
-			text-align: right;
-			line-height: 1.2em;
-
-			&:first-of-type {
-				border-top: none;
-			}
-
-			&:before {
-				content: attr(data-title);
-				width: 40%;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				background: $woocommerce__color-secondary;
-				padding: 10px 15px;
-				display: block;
-				font-weight: 600;
-				text-align: left;
-			}
+		.form-row-first {
+			margin-right: 2%;
 		}
 	}
 }
 
-.woocommerce-account .woocommerce-table--order-details {
 
-	tfoot th {
-		background: $woocommerce__color-secondary;
-		text-align: left;
-		padding: 10px 15px;
-	}
+/*.woocommerce-account .woocommerce-table--order-details {
 
 	@media screen and (max-width: breakpoint('tablet-landscape')) {
 
@@ -288,3 +318,4 @@ body.woocommerce-order-pay article.page #order_review {
 		}
 	}
 }
+*/

@@ -2,112 +2,47 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-04-03 10:01+0000\n"
+"POT-Creation-Date: 2019-07-18 14:31+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-07 13:38+0000\n"
+"PO-Revision-Date: 2019-07-18 14:32+0000\n"
 "Last-Translator: silverbackstudio <webmaster@silverbackstudio.it>\n"
 "Language-Team: Italiano\n"
 "Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.2; wp-5.1.1"
+"X-Loco-Version: 2.3.0; wp-5.2.2"
 
-#: home.php:30 category.php:33
+#: 404.php:18
+msgid "That page can&rsquo;t be found."
+msgstr "Questa pagina non è stata trovata"
+
+#: 404.php:22
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"A questo indirizzo non corrisponde nessuna pagina. Puoi provare con i "
+"collegamenti sottostanti o con il campo ricerca. "
+
+#: 404.php:23
+msgid "Back to home"
+msgstr "Torna alla home"
+
+#: category.php:33 home.php:30
 msgid "All categories"
 msgstr "Tutte le categorie"
 
-#: home.php:62 category.php:64
+#: category.php:64 home.php:62
 msgctxt "previous set of posts"
 msgid "Previous"
 msgstr "Precedenti"
 
-#: home.php:63 category.php:65
+#: category.php:65 home.php:63
 msgctxt "next set of posts"
 msgid "Next"
 msgstr "Successivi"
-
-#: search.php:22
-#, php-format
-msgid "Search Results for: %s"
-msgstr "Risultati Ricerca per: %s"
-
-#: header-account.php:29 header.php:29
-msgid "Skip to content"
-msgstr "Vai la contenuto"
-
-#: header-account.php:35 header.php:35 footer.php:72
-msgid "Customize this text in Theme Customizer"
-msgstr "Modifica questo testo nel personalizzazione del tema"
-
-#: header-account.php:66 header.php:92
-msgid "Toggle Search"
-msgstr "Mostra/Nascondi Cerca"
-
-#: header-account.php:71 header.php:97
-msgid "Primary Menu"
-msgstr "Menu principale"
-
-#: header-account.php:113
-msgid "Toggle Account Menu"
-msgstr "Mostra Menu Account"
-
-#: functions.php:63
-msgid "Primary"
-msgstr "Principale"
-
-#: functions.php:64
-msgid "Not Found (404) Page"
-msgstr "Pagina 404"
-
-#: functions.php:65
-msgid "Legal Menu"
-msgstr "Menu Legale"
-
-#: functions.php:66
-msgid "Account Pages Primary Menu"
-msgstr "Menu principale pagine dell'account"
-
-#: functions.php:67
-msgid "Account Pages Secondary Menu"
-msgstr "Menu secondario per le pagine dell'account"
-
-#: functions.php:68
-msgid "Profile Menu"
-msgstr "Menu Profilo"
-
-#: functions.php:221
-msgid "Testimonials"
-msgstr "Testimonianze"
-
-#: functions.php:268
-msgid "Sidebar"
-msgstr "Colonna laterale"
-
-#: functions.php:270
-msgid "Add widgets here."
-msgstr "Aggiungi qui gli Widget"
-
-#: functions.php:280 inc/customizer.php:120
-msgid "Footer"
-msgstr "Footer"
-
-#: functions.php:282
-msgid "Widgets in here goes into footer"
-msgstr "Questi widget verranno mostrati nel piè di pagina"
-
-#: functions.php:803
-msgid "Compliance"
-msgstr "Conformità"
-
-#: functions.php:807
-msgid "Privacy Policy"
-msgstr "Informativa sulla privacy"
-
-#: functions.php:815
-msgid "Cookie Policy"
-msgstr "Informativa sui cookie"
 
 #. 1: title.
 #: comments.php:35
@@ -128,107 +63,103 @@ msgstr[1] "%1$s commento su &ldquo;%2$s&rdquo;"
 msgid "Comments are closed."
 msgstr "I commenti sono disabilitati"
 
-#: 404.php:18
-msgid "That page can&rsquo;t be found."
-msgstr "Questa pagina non è stata trovata"
-
-#: 404.php:22
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-"A questo indirizzo non corrisponde nessuna pagina. Puoi provare con i "
-"collegamenti sottostanti o con il campo ricerca. "
-
-#: 404.php:23
-msgid "Back to home"
-msgstr "Torna alla home"
-
-#: footer.php:45 inc/customizer.php:256
+#: footer.php:50 inc/customizer.php:306
 msgid "VAT ID"
 msgstr "P.IVA"
 
-#: footer.php:67
+#: footer.php:69
 #, php-format
 msgid "Made with passion by %s"
 msgstr "Realizzato da %s"
 
-#. Name of the template
-msgid "Account"
-msgstr "Account"
+#: footer.php:74 header-account.php:35
+msgid "Customize this text in Theme Customizer"
+msgstr "Modifica questo testo nel personalizzazione del tema"
+
+#: functions.php:63
+msgid "Primary"
+msgstr "Principale"
+
+#: functions.php:64
+msgid "Languages"
+msgstr "Lingue"
+
+#: functions.php:65
+msgid "Not Found (404) Page"
+msgstr "Pagina 404"
+
+#: functions.php:66
+msgid "Legal Menu"
+msgstr "Menu Legale"
+
+#: functions.php:67
+msgid "Account Pages Primary Menu"
+msgstr "Menu principale pagine dell'account"
+
+#: functions.php:68
+msgid "Account Pages Secondary Menu"
+msgstr "Menu secondario per le pagine dell'account"
+
+#: functions.php:69
+msgid "Profile Menu"
+msgstr "Menu Profilo"
+
+#: functions.php:226
+msgid "Testimonials"
+msgstr "Testimonianze"
+
+#: functions.php:273
+msgid "Sidebar"
+msgstr "Colonna laterale"
+
+#: functions.php:275
+msgid "Add widgets here."
+msgstr "Aggiungi qui gli Widget"
+
+#: functions.php:285 inc/customizer.php:154
+msgid "Footer"
+msgstr "Footer"
+
+#: functions.php:287
+msgid "Widgets in here goes into footer"
+msgstr "Questi widget verranno mostrati nel piè di pagina"
+
+#: functions.php:831
+msgid "Compliance"
+msgstr "Conformità"
+
+#: functions.php:835
+msgid "Privacy Policy"
+msgstr "Informativa sulla privacy"
+
+#: functions.php:843
+msgid "Cookie Policy"
+msgstr "Informativa sui cookie"
+
+#: header-account.php:29 header.php:29
+msgid "Skip to content"
+msgstr "Vai la contenuto"
+
+#: header-account.php:66 header.php:99
+msgid "Toggle Search"
+msgstr "Mostra/Nascondi Cerca"
+
+#: header-account.php:71 header.php:104
+msgid "Primary Menu"
+msgstr "Menu principale"
+
+#: header-account.php:126
+msgid "Toggle Account Menu"
+msgstr "Mostra Menu Account"
+
+#: search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Risultati Ricerca per: %s"
 
 #: amp/footer.php:12
 msgid "Back to top"
 msgstr "Torna su"
-
-#. used between list items, there is a space after the comma
-#: template-parts/content-post.php:17 template-parts/content-post.php:79
-#: inc/template-tags.php:92 inc/template-tags.php:99
-msgctxt "list item separator"
-msgid ", "
-msgstr ", "
-
-#. %s: Name of current post. Only visible to screen readers
-#: template-parts/content-post.php:55 template-parts/content.php:28
-#, php-format
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "Leggi <span class=\"screen-reader-text\"> \"%s\"</span>"
-
-#: template-parts/content-post.php:68 template-parts/content.php:41
-msgid "Pages:"
-msgstr "Pagine:"
-
-#: template-parts/content-post.php:82 inc/template-tags.php:102
-#, php-format
-msgid "Tagged %1$s"
-msgstr "Taggato in %1$s"
-
-#: template-parts/pagination-post.php:10
-msgid "Previous"
-msgstr "Precedente"
-
-#: template-parts/pagination-post.php:10
-msgid "Next"
-msgstr "Successivo"
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr "Nessun risultato trovato"
-
-#: template-parts/content-none.php:24
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-"Pronto a pubblicare il tuo primo post? <a href=\"%1$s\">Inizia adesso</a>."
-
-#: template-parts/content-none.php:37
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Siamo spiacenti, ma nessun risultato corrisponde alla tua ricerca. Ti "
-"consigliamo di ritentare con parole chiave differenti."
-
-#: template-parts/content-none.php:44
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Non siamo riusciti a trovare quello che cercavi. Ti consigliamo di "
-"utilizzare il campo di ricerca."
-
-#: template-parts/preview.php:32
-msgid "Read More"
-msgstr "Leggi di piú"
-
-#: sensei/learner-profile.php:63
-msgid "Active Courses"
-msgstr "Corsi Attivi"
-
-#: sensei/learner-profile.php:64
-msgid "Completed Courses"
-msgstr "Corsi Completati"
 
 #: classes/class-affiliatewp.php:33
 msgid "Affiliate Menu Label"
@@ -329,40 +260,52 @@ msgstr "Abilita monitoraggio"
 msgid "Log events such as API requests"
 msgstr "Registra eventi, ad esempio le chiamate API"
 
-#: classes/class-wc-integration-silverback.php:196
+#: classes/class-wc-integration-silverback.php:199
 msgid "Free"
 msgstr "Gratis"
 
-#: classes/class-wc-integration-silverback.php:200
+#: classes/class-wc-integration-silverback.php:203
 msgctxt "original value"
 msgid "Value"
 msgstr "Valore"
 
-#: classes/class-wc-integration-silverback.php:266
+#: classes/class-wc-integration-silverback.php:216
+msgid "Custom Template"
+msgstr "Template Personalizzato"
+
+#: classes/class-wc-integration-silverback.php:217
+msgid ""
+"Disable WooCommerce default template. Allows you to build the full product "
+"page"
+msgstr ""
+"Rimuove il template standard del prodotto. Consente la costruzione "
+"dell'intera pagina dal nulla"
+
+#: classes/class-wc-integration-silverback.php:292
 msgid "Phone (recommended)"
 msgstr "Telefono (consigliato)"
 
-#: classes/class-wc-integration-silverback.php:291
+#: classes/class-wc-integration-silverback.php:317
 msgid "Profile Image"
 msgstr "Immagine del profilo"
 
-#: classes/class-wc-integration-silverback.php:304
+#: classes/class-wc-integration-silverback.php:330
 msgid "Safe Payments"
 msgstr "Pagamenti Sicuri"
 
-#: classes/class-wc-integration-silverback.php:310
+#: classes/class-wc-integration-silverback.php:336
 msgid "Choose payment method"
 msgstr "Scegli il metodo di pagamento"
 
-#: classes/class-wc-integration-silverback.php:321
+#: classes/class-wc-integration-silverback.php:347
 msgid "Repeat your email address"
 msgstr "Ripeti il tuo indirizzo e-mail"
 
-#: classes/class-wc-integration-silverback.php:344
+#: classes/class-wc-integration-silverback.php:370
 msgid "The email addresses you entered are not equal"
 msgstr "Gli indirizzi email che hai inserito non sono uguali"
 
-#: classes/class-wc-integration-silverback.php:374
+#: classes/class-wc-integration-silverback.php:400
 msgid ""
 "The <b>billing address</b> is used to compose the invoices. The <b>shipping "
 "address</b> will be used to send you phisical products that you may purchase."
@@ -373,87 +316,105 @@ msgstr ""
 "spedizione degli oggetti fisici che comprerai. Potrai comunque "
 "personalizzare entrami gli indirizzi durante il percorso di acquisto."
 
-#: inc/customizer.php:19
+#: inc/customizer.php:28
+msgid "Mobile Logo"
+msgstr "Logo Mobile"
+
+#: inc/customizer.php:36
 msgid "Header"
 msgstr "Intestazione"
 
-#: inc/customizer.php:31
+#: inc/customizer.php:48
 msgid "Sticky Header"
 msgstr "Intestazione bloccata in alto"
 
-#: inc/customizer.php:32
+#: inc/customizer.php:49
 msgid "Makes the header stay on top of page after scroll"
 msgstr "Lascia la testata bloccata in alto quando scorri la pagina"
 
-#: inc/customizer.php:48
+#: inc/customizer.php:65
 msgid "Fade header images"
 msgstr "Mostra in dissolvenza tutte le immagini di testata"
 
-#: inc/customizer.php:49
+#: inc/customizer.php:66
 msgid "Cycle through all header images with a CSS fade effect"
 msgstr "Scorri tutte le immagini di testata con un effetto dissolvenza CSS"
 
-#: inc/customizer.php:59
+#: inc/customizer.php:82
+msgid "Show Top Header"
+msgstr "Mostra barra sopra l'intestazione"
+
+#: inc/customizer.php:83
+msgid ""
+"Show either company phone number and/or opening hours in a top header bar"
+msgstr ""
+"Mostra sia i contatti che gli orari di apertura in una barra sopra la testata"
+
+#: inc/customizer.php:93
 msgid "Archives"
 msgstr "Archivi"
 
-#: inc/customizer.php:60
+#: inc/customizer.php:94
 msgid "Archive Customizations"
 msgstr "Personalizzazione archivi"
 
-#: inc/customizer.php:96
+#: inc/customizer.php:130
 #, php-format
 msgid "%s Archive Image"
 msgstr "Immagine Archivio %s"
 
-#: inc/customizer.php:107
+#: inc/customizer.php:141
 #, php-format
 msgid "%s Archive Description"
 msgstr "Descrizione Archivio %s"
 
-#: inc/customizer.php:121
+#: inc/customizer.php:155
 msgid "Footer Settings"
 msgstr "Impostazioni Footer"
 
-#: inc/customizer.php:131
+#: inc/customizer.php:165
 msgid "Footer Logo"
 msgstr "Logo nel footer"
 
-#: inc/customizer.php:155
+#: inc/customizer.php:189
 msgid "Fixed Footer Bar"
 msgstr "Barra bloccata nel pié di pagina"
 
-#: inc/customizer.php:156
+#: inc/customizer.php:190
 msgid "Fixed Footer Bar Content (supports HTML and shortcode)"
 msgstr "Contenuto barra bloccata nel pié di pagina (supporta HTML e shortcode)"
 
-#: inc/customizer.php:165
+#: inc/customizer.php:199
 msgid "Show Fixed Footer Bar"
 msgstr "Mostra la barra fissa nel pié di pagina"
 
-#: inc/customizer.php:176
+#: inc/customizer.php:210
 msgid "Contacts"
 msgstr "Contatti"
 
-#: inc/customizer.php:177
+#: inc/customizer.php:211
 msgid "Contact informations"
 msgstr "Informazioni di contatto"
 
-#: inc/customizer.php:220
+#: inc/customizer.php:261
 msgid "Company Name"
 msgstr "Nome Azienda"
 
-#: inc/customizer.php:229
+#: inc/customizer.php:270
 msgid "Address"
 msgstr "Indirizzo"
 
-#: inc/customizer.php:238
+#: inc/customizer.php:279
 msgid "Phone"
 msgstr "Telefono"
 
-#: inc/customizer.php:247
+#: inc/customizer.php:288
 msgid "Email"
 msgstr "Indirizzo E-mail"
+
+#: inc/customizer.php:297
+msgid "Opening Hours"
+msgstr "Orari di apertura"
 
 #: inc/Feedback.php:25
 msgid "Show more"
@@ -463,62 +424,15 @@ msgstr "Mostra altri"
 msgid "Feedback"
 msgstr "Riscontro"
 
-#: inc/Feedback.php:95
+#: inc/Feedback.php:105
 #, php-format
 msgid "%s Categories"
 msgstr "%s Categorie"
 
-#: inc/Feedback.php:96
+#: inc/Feedback.php:106
 #, php-format
 msgid "%s Category"
 msgstr "%s Categoria"
-
-#: inc/shortcode-ui.php:39
-msgid ""
-"Shortcode UI plugin must be active for Shortcode UI Example plugin to "
-"function."
-msgstr ""
-"Il plugin Shortcode UI deve essere presente e attivato per abilitare "
-"l'interfaccia grafica"
-
-#. %s: post date.
-#: inc/template-tags.php:30
-#, php-format
-msgctxt "post date"
-msgid "Posted on %s"
-msgstr "Pubblicato il %s"
-
-#: inc/template-tags.php:46
-#, php-format
-msgctxt "post author"
-msgid "by %s"
-msgstr "da %s"
-
-#: inc/template-tags.php:67
-#, php-format
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr "Scrivi un commento su %s"
-
-#: inc/template-tags.php:95
-#, php-format
-msgid "Posted in %1$s"
-msgstr "Pubblicato in %1$s"
-
-#: inc/template-tags.php:309
-msgid "Load more"
-msgstr "Carica altri"
-
-#: inc/template-tags.php:425
-#, php-format
-msgid "%s min"
-msgid_plural "%s mins"
-msgstr[0] "%s min"
-msgstr[1] "%s min"
-
-#: inc/template-tags.php:429
-msgctxt "post reading time label"
-msgid "Reading"
-msgstr "Tempo di lettura"
 
 #: inc/sensei.php:48
 msgid "Sensei Secondary Menu"
@@ -578,11 +492,62 @@ msgctxt "course comment submit label"
 msgid "Leave a comment"
 msgstr "Scrivi un commento"
 
-#: inc/woocommerce.php:105
+#. %s: post date.
+#: inc/template-tags.php:30
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Pubblicato il %s"
+
+#: inc/template-tags.php:46
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "da %s"
+
+#: inc/template-tags.php:67
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Scrivi un commento su %s"
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:92 inc/template-tags.php:99
+#: template-parts/content-post.php:17 template-parts/content-post.php:79
+msgctxt "list item separator"
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:95
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Pubblicato in %1$s"
+
+#: inc/template-tags.php:102 template-parts/content-post.php:82
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Taggato in %1$s"
+
+#: inc/template-tags.php:264
+msgid "Load more"
+msgstr "Carica altri"
+
+#: inc/template-tags.php:380
+#, php-format
+msgid "%s min"
+msgid_plural "%s mins"
+msgstr[0] "%s min"
+msgstr[1] "%s min"
+
+#: inc/template-tags.php:384
+msgctxt "post reading time label"
+msgid "Reading"
+msgstr "Tempo di lettura"
+
+#: inc/woocommerce.php:104
 msgid "Where?"
 msgstr "Dove?"
 
-#: inc/woocommerce.php:106
+#: inc/woocommerce.php:105
 msgid ""
 "If you use Mastercard, Visa and Diners, \n"
 "\t            \tthe security code is shown on the back of your credit card "
@@ -598,32 +563,36 @@ msgstr ""
 "formato da 3 caratteri. Se utilizzi l'American Express, il codice di "
 "sicurezza è situato sul davanti della tua carta ed è formato da 4 cifre."
 
-#: inc/woocommerce.php:115
+#: inc/woocommerce.php:114
 msgid "Close"
 msgstr "Chiudi"
 
-#: inc/woocommerce.php:150
+#: inc/woocommerce.php:149
 msgid "Shop Sidebar"
 msgstr "Barra laterale negozio"
 
-#: inc/woocommerce.php:152
+#: inc/woocommerce.php:151
 msgid "This widgets will be shown in the shop sidebar"
 msgstr "Questi widget verranno mostrati accanto ai prodotti nel negozio"
 
-#: inc/woocommerce.php:162
+#: inc/woocommerce.php:161
 msgid "Woocommerce Account Sidebar"
 msgstr "Barra laterale account WooCommercce"
 
-#: inc/woocommerce.php:164
+#: inc/woocommerce.php:163
 msgid ""
 "Widgets in this area will be shown in all the WooCommerce accounts pages"
 msgstr ""
 "Questi widget verranno mostrati in tutte le pagine dell'account di "
 "WooCommerce"
 
-#: inc/woocommerce.php:389
+#: inc/woocommerce.php:388
 msgid "View your shopping cart"
 msgstr "Visualizza il tuo carrello"
+
+#: inc/woocommerce.php:389
+msgid "Cart"
+msgstr "Carrello"
 
 #. %d number of items in the mini cart
 #: inc/woocommerce.php:393
@@ -641,27 +610,94 @@ msgstr "Vai alla tua area riservata"
 msgid "Login"
 msgstr "Accedi"
 
-#: blocks/testimonials/index.php:138 blocks/testimonials/index.php:272
-msgid "Testimonial content"
-msgstr "Contenuto Testimonianza"
+#. Name of the template
+msgid "Account"
+msgstr "Account"
 
-#: blocks/testimonials/index.php:210
-msgid "Testimonials Abstract"
-msgstr "Riassunto testimonianza"
+#: sensei/learner-profile.php:63
+msgid "Active Courses"
+msgstr "Corsi Attivi"
 
-#: blocks/testimonials/index.php:223
-msgid "Link to external resource"
-msgstr "Collegamento ad alla risorsa esterna"
+#: sensei/learner-profile.php:64
+msgid "Completed Courses"
+msgstr "Corsi Completati"
 
-#: sensei/globals/pagination-quiz.php:58
-#: sensei/globals/pagination-lesson.php:59
-msgid "Next Lesson"
-msgstr "Prossima Lezione"
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Nessun risultato trovato"
 
-#: sensei/globals/pagination-quiz.php:60
-#: sensei/globals/pagination-lesson.php:61
-msgid "View next lesson"
-msgstr "Vedi prossima lezione"
+#: template-parts/content-none.php:24
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto a pubblicare il tuo primo post? <a href=\"%1$s\">Inizia adesso</a>."
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Siamo spiacenti, ma nessun risultato corrisponde alla tua ricerca. Ti "
+"consigliamo di ritentare con parole chiave differenti."
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Non siamo riusciti a trovare quello che cercavi. Ti consigliamo di "
+"utilizzare il campo di ricerca."
+
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content-post.php:55 template-parts/content.php:28
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Leggi <span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content-post.php:68 template-parts/content.php:41
+msgid "Pages:"
+msgstr "Pagine:"
+
+#: template-parts/content-testimonial.php:24 template-parts/preview.php:32
+msgid "Read More"
+msgstr "Leggi di piú"
+
+#: template-parts/pagination-post.php:10
+msgid "Previous"
+msgstr "Precedente"
+
+#: template-parts/pagination-post.php:10
+msgid "Next"
+msgstr "Successivo"
+
+#: inc/Widgets/About.php:12 inc/Widgets/About.php:17
+msgid "About"
+msgstr "About"
+
+#: inc/Widgets/About.php:32 inc/Widgets/LeadMagnet.php:32
+msgid "New title"
+msgstr "Nuovo titolo"
+
+#: inc/Widgets/About.php:32 inc/Widgets/LeadMagnet.php:32
+msgid "Title:"
+msgstr "Titolo:"
+
+#: inc/Widgets/About.php:33 inc/Widgets/LeadMagnet.php:34
+msgid "Image:"
+msgstr "Immagine:"
+
+#: inc/Widgets/About.php:34 inc/Widgets/LeadMagnet.php:35
+msgid "New description"
+msgstr "Nuova descrizione"
+
+#: inc/Widgets/About.php:34 inc/Widgets/LeadMagnet.php:35
+msgid "Description:"
+msgstr "Descrizione:"
+
+#: inc/Widgets/About.php:36
+msgid "Menu:"
+msgstr "Menu:"
 
 #: inc/Widgets/LeadMagnet.php:12
 msgid "Lead Magnet"
@@ -671,14 +707,6 @@ msgstr "Lead Magnet"
 msgid "Shows a title, image and a call to action"
 msgstr "Mostra un titolo, una immagine e una Call to Action"
 
-#: inc/Widgets/LeadMagnet.php:32 inc/Widgets/About.php:32
-msgid "New title"
-msgstr "Nuovo titolo"
-
-#: inc/Widgets/LeadMagnet.php:32 inc/Widgets/About.php:32
-msgid "Title:"
-msgstr "Titolo:"
-
 #: inc/Widgets/LeadMagnet.php:33
 msgid "New subtitle"
 msgstr "Nuovo Sottotitolo"
@@ -686,18 +714,6 @@ msgstr "Nuovo Sottotitolo"
 #: inc/Widgets/LeadMagnet.php:33
 msgid "Subtitle:"
 msgstr "Sottotitolo:"
-
-#: inc/Widgets/LeadMagnet.php:34 inc/Widgets/About.php:33
-msgid "Image:"
-msgstr "Immagine:"
-
-#: inc/Widgets/LeadMagnet.php:35 inc/Widgets/About.php:34
-msgid "New description"
-msgstr "Nuova descrizione"
-
-#: inc/Widgets/LeadMagnet.php:35 inc/Widgets/About.php:34
-msgid "Description:"
-msgstr "Descrizione:"
 
 #: inc/Widgets/LeadMagnet.php:36
 msgid "Button Link:"
@@ -719,13 +735,15 @@ msgstr "Clicca qui"
 msgid "Button Label:"
 msgstr "Etichetta Pulsante:"
 
-#: inc/Widgets/About.php:12 inc/Widgets/About.php:17
-msgid "About"
-msgstr "About"
+#: sensei/globals/pagination-lesson.php:59
+#: sensei/globals/pagination-quiz.php:58
+msgid "Next Lesson"
+msgstr "Prossima Lezione"
 
-#: inc/Widgets/About.php:36
-msgid "Menu:"
-msgstr "Menu:"
+#: sensei/globals/pagination-lesson.php:61
+#: sensei/globals/pagination-quiz.php:60
+msgid "View next lesson"
+msgstr "Vedi prossima lezione"
 
 #. Name of the theme
 msgid "_svbk"
