@@ -237,13 +237,19 @@ function renameLanguages(){
 
 exports.renameLanguages = renameLanguages;
 
-function cgbCompatJS(){
+function cgbCompatJs(){
     return src([ 
-        './dist/js/blocks.build.js', 
-        './dist/css/blocks.editor.build.css', 
-        './dist/css/blocks.style.build.css'
-        ], { allowEmpty: true })
-        .pipe(symlink('./dist/', { relativeSymlinks: true }));
+        './dist/blocks.build.js'
+        ])
+        .pipe(symlink('./dist/js/', { relativeSymlinks: true }));
+}
+
+function cgbCompatCss(){
+    return src([ 
+        './dist/blocks.editor.build.css', 
+        './dist/blocks.style.build.css'
+        ])
+        .pipe(symlink('./dist/css/', { relativeSymlinks: true }));
 }
 
 function cgbCompatSrc(){
@@ -251,10 +257,14 @@ function cgbCompatSrc(){
         .pipe(symlink('./src', { relativeSymlinks: true }))
 }
 
-exports.cgbCompatJS = cgbCompatJS;
+exports.cgbCompatJs = cgbCompatJs;
+exports.cgbCompatCss = cgbCompatCss;
 exports.cgbCompatSrc = cgbCompatSrc;
 
-const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJS, cgbCompatSrc );
+const cgbCompat = parallel(cgbCompatJs, cgbCompatCss, cgbCompatSrc);
+exports.cgbCompat = cgbCompat;
+
+const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJs, cgbCompatCss, cgbCompatSrc );
 
 exports.refresh = series( clean, build);
 exports.build = build;
