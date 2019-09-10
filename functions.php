@@ -329,10 +329,6 @@ function _svbk_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);	
-
-	Widgets\Post\Archives::register();
-	_svbk\Widgets\LeadMagnet::register();
-	_svbk\Widgets\About::register();
 }
 add_action( 'widgets_init', '_svbk_widgets_init' );
 
