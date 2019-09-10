@@ -222,6 +222,7 @@ function replaceNames(){
 
 function replaceConfigs(){
     return src(['./composer.json', './package.json' ])
+        .pipe(replace( 'silverbackstudio/theme_svbk'  , `${config.theme_handle}/theme` ))    
         .pipe(replace( '_svbk'  , config.theme_handle ))
         .pipe(replace( 'Silverback Starter' , 'Silverback ' + config.theme_name ))
         .pipe(dest('./'));
