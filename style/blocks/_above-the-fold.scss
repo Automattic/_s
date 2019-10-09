@@ -1,111 +1,10 @@
 .wp-block-svbk-hero {
     
-    .wp-block-svbk-hero__picture {
-        display: block;
-        margin-left: -$padding__content-mobile;
-        margin-right: -$padding__content-mobile;
-        
-        img {
-            display: block;
-            width: 100%;
-        }
-    }
-    
-    .wp-block-svbk-hero__content {
-        padding-top: 15px;
-        padding-bottom: 20px;
-    }
-    
-    .wp-block-svbk-hero__pretitle {
-        @include font-size(1.1);
-        font-style: italic;
-        margin-bottom: 10px;
-        
-        @media screen and (min-width: breakpoint('tablet-landscape')) {
-            @include font-size(1.25);
-        }
-    }
-    
-    .wp-block-svbk-hero__title {
-        color: $color__corporate;
-        margin: 0 0 10px;
-    }
-    
-    h1 {
-        @include font-size(2.2);
-        line-height: 1.1em;
-        
-        em {
-            font-style: normal;
-            color: $color__text-main;
-        }
-        
-        @media screen and (min-width: breakpoint('tablet-landscape')) {
-            @include font-size(2.7);
-        }   
-    }
-    
-    .wp-block-svbk-hero__subtitle {
-        @include font-size(1.1);
-        font-weight: bold;
-        margin-bottom: 10px;
-        
-        @media screen and (min-width: breakpoint('tablet-landscape')) {
-            @include font-size(1.25);
-        }
-    }
-    
-    .wp-block-svbk-hero__text {
-        border-top: 1px solid $color__background-light;
-        padding-top: 10px;
-        margin-top: 15px;
-    }
-    
-    .wp-block-svbk-hero__button {
-        margin-top: 10px;
-        
-        .wp-block-svbk-hero__link {
-            display: block;
-        }
-        
-        &.wp-block-svbk-hero__button--primary {
-            margin-top: 15px;
-        }
-    }
-    
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         margin-left: -$padding__content-mobile;
         margin-right: -$padding__content-mobile;
         padding: 20px $padding__content-mobile;
         position: relative;
-        
-        .wp-block-svbk-hero__picture {
-            margin: 0;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-        
-        .wp-block-svbk-hero__content {
-            position: relative;
-            z-index: 1;
-            background: #fff;
-            width: 50%;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        &.has-align-right .wp-block-svbk-hero__content {
-            left: 50%;
-        }
     }
     
     @media screen and (min-width: breakpoint('tablet-landscape')) {
@@ -123,28 +22,6 @@
     
     @media screen and (min-width: $size__tablet-content-width) {
         padding: 80px calc((100vw - #{$size__content-width}) /2);
-    }
-    
-    @media screen and (min-width: $size__content-width) {
-        
-        .wp-block-svbk-hero__content {
-            padding: 40px;
-            @include clearfix();
-            @include clearfix-after();
-        }
-        
-        .wp-block-svbk-hero__button {
-            width: 49%;
-            float: left;
-        }
-        
-        .wp-block-svbk-hero__button--primary {
-            margin-right: 2%;
-        }
-        
-        .wp-block-svbk-hero__button--secondary {
-            margin-top: 15px;
-        }
     }
     
     &.is-style-padded {
@@ -165,4 +42,152 @@
             padding-bottom: 100px;
         }
     }
+}
+
+.wp-block-svbk-hero__picture {
+    display: block;
+    margin-left: -$padding__content-mobile;
+    margin-right: -$padding__content-mobile;
+    
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.wp-block-svbk-hero__content {
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        position: relative;
+        z-index: 1;
+        background: #fff;
+        width: 50%;
+        padding: 20px;
+        border-radius: 8px;
+        
+        .has-align-right & {
+            left: 50%;
+        } 
+    }
+
+    @media screen and (min-width: $size__content-width) {
+        padding: 40px;
+        @include clearfix();
+        @include clearfix-after();
+    }
+}
+
+.wp-block-svbk-hero__pretitle {
+    @include font-size(1.1);
+    font-style: italic;
+    margin-bottom: 10px;
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        @include font-size(1.25);
+    }
+}
+
+.wp-block-svbk-hero__title {
+    color: $color__corporate;
+    margin: 0 0 10px;
+}
+
+h1 {
+    @include font-size(2.2);
+    line-height: 1.1em;
+    
+    em {
+        font-style: normal;
+        color: $color__text-main;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        @include font-size(2.7);
+    }   
+}
+
+.wp-block-svbk-hero__subtitle {
+    @include font-size(1.1);
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        @include font-size(1.25);
+    }
+}
+
+.wp-block-svbk-hero__text {
+    border-top: 1px solid $color__background-light;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.wp-block-svbk-hero__button {
+    margin-top: 10px;
+
+    .wp-block-svbk-hero__link {
+        display: inline-block;
+    }
+}
+
+.wp-block-svbk-hero__button--primary {
+    margin-top: 20px;
+}
+
+.wp-block-svbk-hero__button--secondary {
+    margin-top: 20px;
+
+    .wp-block-svbk-hero__link {
+        @include font-size(1.1);
+        background: none;
+        color: $color__link;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+
+        &:before {
+            @include icon-content('\e930');
+            @include font-size(1.3);
+            margin-right: 8px;
+        }
+    
+        &:hover,
+        &:focus {
+            background: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        &:hover {
+            color: $color__link-hover;
+        }
+
+        &:focus {
+            color: $color__link-focus;
+        }
+    }
+}
+
+.wp-block-svbk-hero__footer {
+    @include font-size(.85);
+    clear: both;
+    padding-top: 3px;
+    color: #5f6368;
 }
