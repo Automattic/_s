@@ -3,14 +3,13 @@
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         margin-left: -$padding__content-mobile;
         margin-right: -$padding__content-mobile;
-        padding: 20px $padding__content-mobile;
+        padding: 40px $padding__content-mobile;
         position: relative;
     }
     
     @media screen and (min-width: breakpoint('tablet-landscape')) {
         margin-left: -$padding__content-tablet;
         margin-right: -$padding__content-tablet;
-        padding: 40px $padding__content-tablet;
     }
     
     @media screen and (min-width: $size__content-width) {
@@ -24,7 +23,7 @@
         padding: 80px calc((100vw - #{$size__content-width}) /2);
     }
     
-    &.is-style-padded {
+    /*&.has-extra-padding {
         
         .wp-block-svbk-hero__content {
             padding-bottom: 100px;
@@ -40,6 +39,47 @@
         
         @media screen and (min-width: breakpoint('tablet-portrait')) {
             padding-bottom: 100px;
+        }
+    }*/
+
+    &.is-style-content-background {
+
+        @media screen and (min-width: breakpoint('tablet-portrait')) {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 0;
+
+            .wp-block-svbk-hero__content {
+                background: rgba(255,255,255,.7);
+                padding: 30px 20px;
+            }
+        }
+
+        @media screen and (min-width: $size__content-width) {
+            padding-left: calc((100vw - #{$size__content-width}) /2 + 35px);
+            padding-right: calc((100vw - #{$size__content-width}) /2 + 35px);
+
+            .wp-block-svbk-hero__content {
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+        }
+
+        @media screen and (min-width: $size__tablet-content-width) {
+            padding-left: calc((100vw - #{$size__content-width}) /2);
+            padding-right: calc((100vw - #{$size__content-width}) /2);
+        }
+    }
+
+    &.is-style-content-card {
+
+        @media screen and (min-width: breakpoint('tablet-portrait')) {
+
+            .wp-block-svbk-hero__content {
+                background: #fff;
+                padding: 20px;
+                border-radius: 8px;
+            }
         }
     }
 }
@@ -77,14 +117,13 @@
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         position: relative;
         z-index: 1;
-        background: #fff;
         width: 50%;
-        padding: 20px;
-        border-radius: 8px;
+        padding-top: 0;
+        padding-bottom: 0;
         
         .has-align-right & {
             left: 50%;
-        } 
+        }
     }
 
     @media screen and (min-width: $size__content-width) {
