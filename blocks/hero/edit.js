@@ -74,13 +74,13 @@ class HeroEdit extends Component {
 			primaryButtonText,			
 			secondaryButtonUrl, 
 			secondaryButtonText,
-			padded
+			bottomPadded
 		} = attributes;
 		
 		const classNames = classnames( className, {
 			'is-selected': isSelected,
 			[`has-align-${align}`]: align,
-			[ 'has-extra-padding' ]: padded,
+			[ 'has-bottom-padding' ]: bottomPadded,
 		} );		
 		
 		const pictureUpdate = ( update ) => {
@@ -217,12 +217,12 @@ class HeroEdit extends Component {
 					/>
 				</BlockControls>
 				<InspectorControls>
-					<PanelBody title={ __( 'Extra bottom padding' ) } >
+					<PanelBody title={ __( 'Spacing' ) } >
 						<ToggleControl
-							label={ __( 'Padded', '_svbk' ) }
-							help={ padded ? 'The block has some extra bottom padding (needed by offset bullets)' : 'The block has a standard bottom padding'}
-							checked={ padded }
-							onChange={ ( value ) => setAttributes( { padded: Boolean(value) } ) }
+							label={ __( 'Bottom padding', '_svbk' ) }
+							help={ bottomPadded ? 'The block has some extra bottom padding (needed by offset bullets)' : 'The block has a standard bottom padding'}
+							checked={ bottomPadded }
+							onChange={ ( value ) => setAttributes( { bottomPadded: Boolean(value) } ) }
 						/>	
 					</PanelBody>
 					<PanelBody title={ __( 'Background Settings' ) } >

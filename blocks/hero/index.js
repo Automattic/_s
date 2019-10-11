@@ -154,7 +154,7 @@ export const settings = {
 		align: {
 			type: 'string',
 		},
-		padded: {
+		bottomPadded: {
 			type: 'boolean',
 			default: false,
 		},
@@ -181,12 +181,12 @@ export const settings = {
 			secondaryButtonUrl, 
 			secondaryButtonText,
 			footer,
-			padded
+			bottomPadded
 		} = attributes;		
 		
 		const classNames = classnames( {
 			[`has-align-${align}`]: align,
-			[ 'has-extra-padding' ]: padded,
+			[ 'has-bottom-padding' ]: bottomPadded,
 		} );		
 		
 		const style = {};
