@@ -23,10 +23,10 @@
         padding: 80px calc((100vw - #{$size__content-width}) /2);
     }
     
-    /*&.has-extra-padding {
+    &.has-extra-padding {
         
         .wp-block-svbk-hero__content {
-            padding-bottom: 100px;
+            padding-bottom: 80px;
             
             @media screen and (min-width: breakpoint('tablet-portrait')) {
                 padding-bottom: 20px;
@@ -40,7 +40,19 @@
         @media screen and (min-width: breakpoint('tablet-portrait')) {
             padding-bottom: 100px;
         }
-    }*/
+
+
+        &.is-style-content-background .wp-block-svbk-hero__content {
+
+            @media screen and (min-width: breakpoint('tablet-portrait')) {
+                padding-bottom: 80px;
+            }
+
+            @media screen and (min-width: breakpoint('tablet-landscape')) {
+                padding-bottom: 120px;
+            }
+        }
+    }
 
     &.is-style-content-background {
 
