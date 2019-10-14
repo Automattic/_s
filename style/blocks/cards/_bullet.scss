@@ -64,6 +64,7 @@
 	&.is-style-offset {
 		margin-top: -20px;
 		margin-bottom: 100px;
+		z-index: 2;
 		
 		&:last-of-type {
 			margin-bottom: 0;

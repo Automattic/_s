@@ -6,7 +6,7 @@ composer.lock
 /src
 
 /dist/*
-!/dist/js/blocks.build.js
-!/dist/css/blocks-editor.css
-!/dist/css/blocks-style.css
+!/dist/blocks.build.js
+!/dist/blocks.editor.build.css
+!/dist/blocks.style.build.css
 

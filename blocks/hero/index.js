@@ -66,9 +66,13 @@ export const settings = {
 	        isDefault: true
 	    },
 	    {
-	        name: 'padded',
-	        label: __( 'Padded' ),
-	    },	    
+	        name: 'content-background',
+	        label: __( 'Content with Background' ),
+		},
+	    {
+	        name: 'content-card',
+	        label: __( 'Content within a Card' ),
+	    },
 	],	
 
 	attributes: {
@@ -150,6 +154,10 @@ export const settings = {
 		align: {
 			type: 'string',
 		},
+		bottomPadded: {
+			type: 'boolean',
+			default: false,
+		},
 	},	
 
 	edit,
@@ -173,10 +181,12 @@ export const settings = {
 			secondaryButtonUrl, 
 			secondaryButtonText,
 			footer,
+			bottomPadded
 		} = attributes;		
 		
 		const classNames = classnames( {
 			[`has-align-${align}`]: align,
+			[ 'has-bottom-padding' ]: bottomPadded,
 		} );		
 		
 		const style = {};

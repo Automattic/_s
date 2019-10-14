@@ -32,7 +32,7 @@ const withAppearanceControls =  createHigherOrderComponent( ( BlockEdit ) => {
 				<InspectorControls>
 					<PanelBody title={ __( 'Appearance', '_svbk' ) } initialOpen={ false } >
     					<ToggleControl
-    						label={ __( 'Critial Rendering' ) }
+    						label={ __( 'Critical Rendering' ) }
     						onChange={ ( value ) => setAttributes( { criticalRendering: value } ) } 
     						checked={ criticalRendering }
     					/>						

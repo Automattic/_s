@@ -74,11 +74,13 @@ class HeroEdit extends Component {
 			primaryButtonText,			
 			secondaryButtonUrl, 
 			secondaryButtonText,
+			bottomPadded
 		} = attributes;
 		
 		const classNames = classnames( className, {
 			'is-selected': isSelected,
 			[`has-align-${align}`]: align,
+			[ 'has-bottom-padding' ]: bottomPadded,
 		} );		
 		
 		const pictureUpdate = ( update ) => {
@@ -122,7 +124,7 @@ class HeroEdit extends Component {
 	
 		return (
 			<Fragment>
-				<div className={ classNames } style={ style } >
+				<div className={ classNames } style={ style } >	
 					<ImageEdit
 						setAttributes={ pictureUpdate }
 						url={ pictureUrl }
@@ -215,6 +217,14 @@ class HeroEdit extends Component {
 					/>
 				</BlockControls>
 				<InspectorControls>
+					<PanelBody title={ __( 'Spacing' ) } >
+						<ToggleControl
+							label={ __( 'Bottom padding', '_svbk' ) }
+							help={ bottomPadded ? 'The block has some extra bottom padding (needed by offset bullets)' : 'The block has a standard bottom padding'}
+							checked={ bottomPadded }
+							onChange={ ( value ) => setAttributes( { bottomPadded: Boolean(value) } ) }
+						/>	
+					</PanelBody>
 					<PanelBody title={ __( 'Background Settings' ) } >
 						<ToggleControl
 							label={ __( 'Use custom image when stacked', '_svbk' ) }
