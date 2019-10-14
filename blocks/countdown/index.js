@@ -7,7 +7,6 @@ import ReactDOMServer from 'react-dom/server';
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { 
-	Panel,
 	PanelBody,
 	ToggleControl,
 	DateTimePicker,

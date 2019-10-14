@@ -5,12 +5,9 @@
 const { __ } = wp.i18n;
 
 const {
-    RichText,
 	getColorClassName, 
 	InnerBlocks,
 } = wp.editor;
-
-const { Fragment } = wp.element;
 
 /**
  * External dependencies

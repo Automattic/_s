@@ -1,15 +1,11 @@
 /* global wp */
 /* global lodash */
 
-const { Fragment, Component } = wp.element;
-/**
- * External dependencies
- */
-import classnames from 'classnames';
-
 /**
  * WordPress dependencies
  */
+
+const { Fragment, Component } = wp.element;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
 	RichText,

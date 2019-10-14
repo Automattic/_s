@@ -7,7 +7,6 @@ const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { 
 	Path,
-	Rect, 
 	SVG,
 	PanelBody,
 	RangeControl	

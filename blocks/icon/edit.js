@@ -8,13 +8,10 @@ import classnames from 'classnames';
  */
 const { __ } = wp.i18n;
 const { Component } = wp.element;
-const { Disabled, SandBox } = wp.components;
 const { 
 	InspectorControls,
-	BlockControls,
 	PanelColorSettings,
 	withColors,	
-    PlainText	
 } = wp.editor;
 
 

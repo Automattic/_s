@@ -16,7 +16,6 @@ import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
 	RichText, 
 	getColorClassName,

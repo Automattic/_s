@@ -19,13 +19,8 @@ import classnames from 'classnames';
  */
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
-	RichText, 
-	getColorClassName, 
-	getFontSizeClass,
-	InnerBlocks,
+	RichText,
 } = wp.editor;
-
-const { Fragment } = wp.element;
 
 /**
  * Register: Gutenberg Block.

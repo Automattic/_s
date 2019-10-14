@@ -25,10 +25,6 @@ const {
 } = wp.editor;
 
 const {
-	RawHTML
-} = wp.element;
-
-const {
 	createBlock
 } = wp.blocks;
 

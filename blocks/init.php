@@ -27,7 +27,7 @@ function _svbk_blocks_editor_assets() {
 	wp_enqueue_script(
 		'_svbk-blocks',
 		get_theme_file_uri( '/dist/js/blocks.build.js' ), 
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ),
+		array( 'react', 'react-dom', 'wp-element', 'wp-polyfill' ),
 		null,
 		true
 	);

@@ -1,7 +1,6 @@
 /**
  * WordPress dependencies
  */
-const { __ } =  wp.i18n;
 const { registerFormatType } = wp.richText;
 
 /**

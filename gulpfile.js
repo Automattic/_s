@@ -238,25 +238,8 @@ function renameLanguages(){
 
 exports.renameLanguages = renameLanguages;
 
-function cgbCompatJs(){
-    return src([ 
-        './dist/blocks.build.js'
-        ])
-        .pipe(symlink('./dist/js/', { relativeSymlinks: true }));
-}
 
-function cgbCompatSrc(){
-    return src([ './blocks/*' ], { allowEmpty: true })
-        .pipe(symlink('./src', { relativeSymlinks: true }))
-}
-
-exports.cgbCompatJs = cgbCompatJs;
-exports.cgbCompatSrc = cgbCompatSrc;
-
-const cgbCompat = parallel(cgbCompatJs, cgbCompatSrc);
-exports.cgbCompat = cgbCompat;
-
-const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJs, cgbCompatSrc );
+const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify );
 
 exports.refresh = series( clean, build);
 exports.build = build;

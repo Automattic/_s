@@ -3,8 +3,7 @@
  */
 const { __ } =  wp.i18n;
 const { 
-	toggleFormat,
-	registerFormatType
+	toggleFormat
 } = wp.richText;
 
 const { 
