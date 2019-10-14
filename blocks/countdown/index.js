@@ -1,8 +1,3 @@
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
-
-import classnames from 'classnames';
 import formatters from './formatters';
 import ReactDOMServer from 'react-dom/server';
 

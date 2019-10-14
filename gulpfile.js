@@ -245,27 +245,18 @@ function cgbCompatJs(){
         .pipe(symlink('./dist/js/', { relativeSymlinks: true }));
 }
 
-function cgbCompatCss(){
-    return src([ 
-        './dist/blocks.editor.build.css', 
-        './dist/blocks.style.build.css'
-        ])
-        .pipe(symlink('./dist/css/', { relativeSymlinks: true }));
-}
-
 function cgbCompatSrc(){
     return src([ './blocks/*' ], { allowEmpty: true })
         .pipe(symlink('./src', { relativeSymlinks: true }))
 }
 
 exports.cgbCompatJs = cgbCompatJs;
-exports.cgbCompatCss = cgbCompatCss;
 exports.cgbCompatSrc = cgbCompatSrc;
 
-const cgbCompat = parallel(cgbCompatJs, cgbCompatCss, cgbCompatSrc);
+const cgbCompat = parallel(cgbCompatJs, cgbCompatSrc);
 exports.cgbCompat = cgbCompat;
 
-const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJs, cgbCompatCss, cgbCompatSrc );
+const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJs, cgbCompatSrc );
 
 exports.refresh = series( clean, build);
 exports.build = build;
