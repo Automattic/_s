@@ -12,7 +12,7 @@ const {
 	InspectorControls,
 	PanelColorSettings,
 	withColors,	
-} = wp.editor;
+} = wp.blockEditor;
 
 
 import IconEditor from './editor';

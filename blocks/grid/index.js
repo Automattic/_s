@@ -22,7 +22,7 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
 	getColorClassName, 
 	InnerBlocks,
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	createBlock

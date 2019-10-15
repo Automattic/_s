@@ -14,7 +14,7 @@
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
 	RichText, 
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	RawHTML

@@ -15,7 +15,7 @@ const {
 const {
 	InspectorControls,
 	RichText,
-} = wp.editor;
+} = wp.blockEditor;
 
 const attributes = {
 	expires: {

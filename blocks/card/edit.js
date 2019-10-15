@@ -28,7 +28,7 @@ const {
 	withColors,
 	withFontSizes,
 	InnerBlocks
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	Dashicon,

@@ -11,7 +11,7 @@ const {
 	RichText,
 	BlockControls,
 	AlignmentToolbar,
-} = wp.editor;
+} = wp.blockEditor;
 
 
 import IconEditor from '../icon/editor';

@@ -7,7 +7,7 @@ const { __ } = wp.i18n;
 const {
 	getColorClassName, 
 	InnerBlocks,
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * External dependencies

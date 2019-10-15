@@ -21,7 +21,7 @@ const {
 	URLInput,
 	InspectorControls,
 	BlockControls
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	Dashicon,

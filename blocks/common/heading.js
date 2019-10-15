@@ -12,7 +12,7 @@ const { range } = lodash;
 const { __, sprintf } = wp.i18n;
 const { Fragment, Component } = wp.element;
 const { Toolbar } = wp.components;
-const { RichText } = wp.editor;
+const { RichText } = wp.blockEditor;
 
 
 class HeadingToolbar extends Component {

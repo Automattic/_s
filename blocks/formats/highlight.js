@@ -15,7 +15,7 @@ const { SVG, Path } = wp.components;
 const { 
 	RichTextToolbarButton, 
 	RichTextShortcut 
-} = wp.editor;
+} = wp.blockEditor;
 
 const name = 'svbk/highlight';
 

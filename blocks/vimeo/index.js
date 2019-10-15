@@ -13,7 +13,7 @@ const {
 } = wp.components;
 const {
 	InspectorControls
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies

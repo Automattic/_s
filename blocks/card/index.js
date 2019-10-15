@@ -24,7 +24,7 @@ const {
 	getColorClassName, 
 	getFontSizeClass,
 	InnerBlocks,
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	RawHTML

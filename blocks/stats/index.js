@@ -20,7 +20,7 @@ import classnames from 'classnames';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
 	getColorClassName, 
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	RawHTML

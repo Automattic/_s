@@ -21,7 +21,7 @@ const {
 	RichText, 
 	getColorClassName,
 	InnerBlocks,
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies

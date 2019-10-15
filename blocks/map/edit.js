@@ -25,7 +25,7 @@ const { __ } = wp.i18n;
 const { 
 	RichText, 
 	InspectorControls,
-} = wp.editor;
+} = wp.blockEditor;
 
 const { 
 	RangeControl, 

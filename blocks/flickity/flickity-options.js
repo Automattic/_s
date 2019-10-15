@@ -2,7 +2,7 @@ const { createHigherOrderComponent } = wp.compose;
 const { Fragment } = wp.element
 const {
 	InspectorControls
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	PanelBody,

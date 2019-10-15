@@ -6,7 +6,7 @@ const { Component } = wp.element;
 
 const { 
 	PlainText,
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	Disabled, 

@@ -31,7 +31,7 @@ const {
 	InspectorControls,
 	BlockAlignmentToolbar,
 	BlockControls,
-} = wp.editor;
+} = wp.blockEditor;
 const { withSelect } = wp.data;
 
 /**

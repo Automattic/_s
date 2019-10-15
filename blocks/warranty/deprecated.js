@@ -20,7 +20,7 @@ const {
 	RichText, 
 	getColorClassName,
 	InnerBlocks,
-} = wp.editor;
+} = wp.blockEditor;
 
 const deprecated = [
     {
