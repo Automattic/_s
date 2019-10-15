@@ -115,6 +115,9 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 			)
 		);
 
+		// Add support for Featured Images
+		add_theme_support( 'post-thumbnails' );
+
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
