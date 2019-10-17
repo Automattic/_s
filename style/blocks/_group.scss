@@ -43,6 +43,14 @@
         h2, h3, h4 {
             margin-top: 0;
         }
+
+        &.has-white-background-color {
+            color: $color__text-main;
+
+            h1, h2, h3, h4, h5, h6, .is-style-subtitle {
+                color: $color__text-main;
+            }
+        }
     }
     
     &.is-style-no-padding {
