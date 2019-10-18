@@ -42,3 +42,4 @@ require 'countdown/index.php';
 require 'product/index.php';
 require 'flickity/index.php';
 require 'call-us/index.php';
+require 'map/index.php';

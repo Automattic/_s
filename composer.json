@@ -20,7 +20,7 @@
         }
     ],    
     "require": {
-        "silverback/wp-helpers": "^5.2.0"
+        "silverback/wp-helpers": "^5.4.0"
     },
     "require-dev": {
         "wp-coding-standards/wpcs": "^1.2",
