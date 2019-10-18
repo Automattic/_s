@@ -100,9 +100,6 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 			)
 		);
 
-		// Load Feedback
-		add_theme_support( 'post-formats', array( 'video', 'image', 'link' ) );
-
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
