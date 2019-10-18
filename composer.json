@@ -28,7 +28,8 @@
         "wimg/php-compatibility": "^8.0"
     },
     "autoload": {
-        "psr-4": {"Svbk\\WP\\Theme\\_svbk\\": "inc/"}
+        "psr-4": {"Svbk\\WP\\Theme\\_svbk\\": "inc/"},
+        "classmap": [ "classes/" ]
     },    
     "scripts": {
         "test": [
