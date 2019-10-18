@@ -124,9 +124,6 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		// Add support for full and wide align images.
 		add_theme_support( 'align-wide' );
 
-		// Add support for editor styles.
-		add_theme_support( 'editor-styles' );
-
 		// Enqueue editor styles.
 		add_editor_style( 'style-editor.css' );
 
@@ -213,14 +210,14 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		Helpers\Theme\AMP::init();
 
 		// Load Google Maps
-		(new Helpers\Maps\GoogleMaps( Config::get( array(), 'googlemaps' ) ) )->setDefault();
-		
-		$admin_maps = new Helpers\Maps\GoogleMaps( Config::get( array(), 'googlemaps' ) );
-		$admin_maps->libraries = ['places'];
-		add_action( 'enqueue_block_editor_assets', array( $admin_maps, 'enqueue_script' ) );
+		if ( Config::exists( 'googlemaps' ) ) {
+			(new Helpers\Maps\GoogleMaps( Config::get( array(), 'googlemaps' ) ) )->setDefault();
+		}
 
 		// Load Iubenda
-		( new Helpers\Compliance\Iubenda( Helpers\Config::get( array(), 'iubenda' ) ) )->setDefault();
+		if ( Config::exists( 'iubenda' ) ) {
+			( new Helpers\Compliance\Iubenda( Helpers\Config::get( array(), 'iubenda' ) ) )->setDefault();
+		}
 
 		// Load Testimanial CPT
 		_svbk\Feedback::register( 'testimonial', [ 'name' => __( 'Testimonials', '_svbk' ) ] );

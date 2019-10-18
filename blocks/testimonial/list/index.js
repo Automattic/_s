@@ -6,7 +6,7 @@ const { __ } = wp.i18n;
 /**
  * Internal dependencies
  */
-import edit from './edit';
+import PostListEdit from '../../common/PostListEdit';
 
 export const name = 'svbk/testimonials';
 
@@ -94,7 +94,9 @@ export const settings = {
 		}
 	},
 
-	edit,
+	edit(attrs) {
+		return (<PostListEdit postType="testimonial" taxonomy="testimonial_category" {...attrs} />)
+	},
 
 	save( attributes ) {
 		

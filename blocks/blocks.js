@@ -17,8 +17,6 @@ const {
 	registerBlockType,
 } = wp.blocks;
 
-const { includes } = lodash;
-
 /**
  * Internal dependencies
  */
@@ -50,15 +48,6 @@ import * as publication from './publication';
 import * as grid from './grid';
 import * as iconParagraph from './icon-paragraph';
 import * as countdown from './countdown';
-
-const disablePreviewBlocks = [
-	'svbk/card',
-	'svbk/collapse',
-	'svbk/warranty',
-	'svbk/testimonial',
-	'core/group',
-	'core/columns',
-];
 
 wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', withAppearanceSettings, 100 );
 
@@ -95,22 +84,3 @@ wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', with
 	
 	registerBlockType( name, settings );
 } );
-
-
-//Fix styles for blocks witn InnerBlocks, by disabling preview. @see: https://github.com/WordPress/gutenberg/issues/9897
-var el = wp.element.createElement;
-var withDisabledPreviews = wp.compose.createHigherOrderComponent( function( BlockEdit ) {
-return function( props ) {
-  var content = el( BlockEdit, props );
-  
-  if( includes(disablePreviewBlocks, props.name) && typeof props.insertBlocksAfter === 'undefined' ) {
-    content = el( 'div', {} );
-  }
-
-  return el(
-    wp.element.Fragment, {}, content
-  );
-};
-}, 'withDisabledPreviews' );
-
-wp.hooks.addFilter( 'editor.BlockEdit', 'svbk/fixstyles', withDisabledPreviews );

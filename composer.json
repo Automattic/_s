@@ -20,7 +20,7 @@
         }
     ],    
     "require": {
-        "silverback/wp-helpers": "^5.2.0"
+        "silverback/wp-helpers": "^5.4.0"
     },
     "require-dev": {
         "wp-coding-standards/wpcs": "^1.2",
@@ -28,7 +28,8 @@
         "wimg/php-compatibility": "^8.0"
     },
     "autoload": {
-        "psr-4": {"Svbk\\WP\\Theme\\_svbk\\": "inc/"}
+        "psr-4": {"Svbk\\WP\\Theme\\_svbk\\": "inc/"},
+        "classmap": [ "classes/" ]
     },    
     "scripts": {
         "test": [
