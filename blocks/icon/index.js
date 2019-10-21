@@ -5,7 +5,7 @@ const { RawHTML } = wp.element;
 const { __ } = wp.i18n;
 const { 
 	getColorClassName
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies

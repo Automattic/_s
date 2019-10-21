@@ -24,7 +24,7 @@ const {
 	ContrastChecker,
 	PanelColorSettings,	
 	withColors,
-} = wp.editor;
+} = wp.blockEditor;
 
 const { compose } = wp.compose;
 

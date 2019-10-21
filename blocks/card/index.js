@@ -8,9 +8,6 @@
  * @author: Brando Meniconi <b.meniconi@silverbackstudio.it>
  */
 
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
 import edit from './edit';
 
 /**
@@ -27,7 +24,7 @@ const {
 	getColorClassName, 
 	getFontSizeClass,
 	InnerBlocks,
-} = wp.editor;
+} = wp.blockEditor;
 
 const {
 	RawHTML

@@ -16,7 +16,7 @@ const {
 	PlainText,
 	InnerBlocks,
 	InspectorControls,
-} = wp.editor;
+} = wp.blockEditor;
 
 const { 
 	ToggleControl, 

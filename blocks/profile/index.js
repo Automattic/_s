@@ -7,10 +7,6 @@
  * Shows a card
  * @author: Brando Meniconi <b.meniconi@silverbackstudio.it>
  */
-
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
 import edit from './edit';
 
 /**
@@ -25,7 +21,7 @@ const { __ } = wp.i18n;
 const { 
 	RichText, 
 	getColorClassName, 
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies

@@ -8,10 +8,6 @@
  * @author: Brando Meniconi <b.meniconi@silverbackstudio.it>
  */
 
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
-
 /**
  * External dependencies
  */
@@ -20,12 +16,11 @@ import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
 	RichText, 
 	getColorClassName,
 	InnerBlocks,
-} = wp.editor;
+} = wp.blockEditor;
 
 const deprecated = [
     {

@@ -3,8 +3,7 @@
  */
 const { __ } =  wp.i18n;
 const { 
-	toggleFormat,
-	registerFormatType
+	toggleFormat
 } = wp.richText;
 
 const { 
@@ -16,7 +15,7 @@ const { SVG, Path } = wp.components;
 const { 
 	RichTextToolbarButton, 
 	RichTextShortcut 
-} = wp.editor;
+} = wp.blockEditor;
 
 const name = 'svbk/highlight';
 

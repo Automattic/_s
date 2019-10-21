@@ -1,18 +1,13 @@
-import classnames from 'classnames';
-
 /**
  * WordPress dependencies
  */
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { 
-	PanelBody,
-	RangeControl
 } = wp.components;
 const {
-	InspectorControls,
     RichText
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies

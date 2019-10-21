@@ -1,5 +1,3 @@
-import classnames from 'classnames';
-
 /**
  * WordPress dependencies
  */
@@ -13,8 +11,7 @@ const {
 } = wp.components;
 const {
 	InspectorControls,
-    RichText
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies

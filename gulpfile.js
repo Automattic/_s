@@ -222,6 +222,7 @@ function replaceNames(){
 
 function replaceConfigs(){
     return src(['./composer.json', './package.json' ])
+        .pipe(replace( 'silverbackstudio/theme_svbk'  , `${config.theme_handle}/theme` ))    
         .pipe(replace( '_svbk'  , config.theme_handle ))
         .pipe(replace( 'Silverback Starter' , 'Silverback ' + config.theme_name ))
         .pipe(dest('./'));
@@ -237,34 +238,8 @@ function renameLanguages(){
 
 exports.renameLanguages = renameLanguages;
 
-function cgbCompatJs(){
-    return src([ 
-        './dist/blocks.build.js'
-        ])
-        .pipe(symlink('./dist/js/', { relativeSymlinks: true }));
-}
 
-function cgbCompatCss(){
-    return src([ 
-        './dist/blocks.editor.build.css', 
-        './dist/blocks.style.build.css'
-        ])
-        .pipe(symlink('./dist/css/', { relativeSymlinks: true }));
-}
-
-function cgbCompatSrc(){
-    return src([ './blocks/*' ], { allowEmpty: true })
-        .pipe(symlink('./src', { relativeSymlinks: true }))
-}
-
-exports.cgbCompatJs = cgbCompatJs;
-exports.cgbCompatCss = cgbCompatCss;
-exports.cgbCompatSrc = cgbCompatSrc;
-
-const cgbCompat = parallel(cgbCompatJs, cgbCompatCss, cgbCompatSrc);
-exports.cgbCompat = cgbCompat;
-
-const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify, cgbCompatJs, cgbCompatCss, cgbCompatSrc );
+const build = parallel(sassCompile, jsCompress, jsCopy, imageMinify, imageMinifyWebP, svgMinify );
 
 exports.refresh = series( clean, build);
 exports.build = build;

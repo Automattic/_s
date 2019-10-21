@@ -1,46 +1,39 @@
 {
-  "name": "_svbktheme",
+  "name": "@silverback/theme_svbk",
+  "author": "Silverback Studio",
+  "license": "ISC",
   "repository": "github:silverbackstudio/_svbk",
   "version": "1.0.0",
   "description": "Silverback Starter Theme",
   "main": "index.php",
   "scripts": {
     "sass": "sass --watch ./sass:./",
-    "blocks": "cgb-scripts start",
-    "blocks-build": "cgb-scripts build",
-    "blocks-eject": "cgb-scripts eject"
+    "blocks": "wp-scripts start blocks/blocks.js --output-path=dist/js",
+    "blocks:build": "wp-scripts build blocks/blocks.js --output-path=dist/js"
   },
-  "author": "Silverback Studio",
-  "license": "ISC",
   "devDependencies": {
+    "@wordpress/scripts": "^5.0.1",
     "autoprefixer": "^6.7.0",
-    "babel-plugin-lodash": "^3.3.4",
-    "browser-sync": "^2.26.5",
     "classnames": "^2.2.6",
     "del": "^3.0.0",
-    "gulp": "^4.0.1",
+    "gulp": "^4.0.2",
     "gulp-csso": "^2.0.0",
     "gulp-minify": "^3.1.0",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
-    "gulp-responsive": "2.12.0",
+    "gulp-responsive": "^2.14.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgmin": "^2.2.0",
-    "lodash": "4.17.10",
+    "lodash": "^4.17.10",
     "node-sass": "^4.12.0",
     "node-sass-json-importer": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "readline-sync": "^1.4.9",
-    "run-sequence": "^1.2.2"
+    "readline-sync": "^1.4.10"
   },
   "dependencies": {
-    "@react-google-maps/api": "^1.2.3-alpha.8",
-    "@wordpress/block-library": "^2.4.4",
-    "fg-loadcss": "^2.1.0",
-    "cgb-scripts": "^1.17.0"
+    "@react-google-maps/api": "^1.7.7",
+    "fg-loadcss": "^2.1.0"
   }
 }

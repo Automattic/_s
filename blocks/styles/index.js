@@ -1,5 +1,3 @@
-import './style.scss';
-import './editor.scss';
 
 // Register Custom Styles
 wp.blocks.registerBlockStyle( 'core/paragraph', {

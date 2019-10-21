@@ -1,8 +1,3 @@
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
-
-import classnames from 'classnames';
 import formatters from './formatters';
 import ReactDOMServer from 'react-dom/server';
 
@@ -12,7 +7,6 @@ import ReactDOMServer from 'react-dom/server';
 const { __ } = wp.i18n;
 const { Fragment } = wp.element;
 const { 
-	Panel,
 	PanelBody,
 	ToggleControl,
 	DateTimePicker,
@@ -21,7 +15,7 @@ const {
 const {
 	InspectorControls,
 	RichText,
-} = wp.editor;
+} = wp.blockEditor;
 
 const attributes = {
 	expires: {

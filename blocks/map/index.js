@@ -7,10 +7,6 @@
  * Shows a  card
  * @author: Brando Meniconi <b.meniconi@silverbackstudio.it>
  */
-
-//  Import CSS.
-import './style.scss';
-import './editor.scss';
 import edit from './edit';
 
 /**
@@ -22,14 +18,6 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 const { __ } = wp.i18n; // Import __() from wp.i18n
-const { 
-	getColorClassName, 
-} = wp.editor;
-
-const {
-	RawHTML
-} = wp.element;
-
 
 /**
  * Register: Gutenberg Block.

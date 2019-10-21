@@ -17,7 +17,7 @@ const {
     RichText,
 	BlockControls,
 	AlignmentToolbar,
-} = wp.editor;
+} = wp.blockEditor;
 
 /**
  * Internal dependencies

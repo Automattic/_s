@@ -25,7 +25,7 @@ const {
 	PanelColorSettings,
 	AlignmentToolbar,
 	withColors,
-} = wp.editor;
+} = wp.blockEditor;
 
 
 const {

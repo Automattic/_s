@@ -5,9 +5,8 @@ namespace Svbk\WP\Theme\_svbk;
 use Svbk\WP\Helpers\Utils;
 use WP_Query;
 
-class Feedback {
+class Feedback extends Post_List {
 
-	public $post_type      = 'feedback';
 	public $taxonomy       = 'feedback_category';
 	public $loadmore_class = 'feedback__loadmore';
 	public $loadmore_label = '';
@@ -15,20 +14,11 @@ class Feedback {
 
 	public function __construct( $post_type = 'feedback', $properties = array() ) {
 
-		$this->post_type = $post_type;
-
-		if ( ! empty( $this->post_type ) ) {
-			$this->taxonomy       = $this->post_type . '_category';
-			$this->loadmore_class = $this->post_type . '__loadmore';
-		}
-
-		$this->loadmore_label = __( 'Show more', '_svbk' );
-
 		$this->labels['name']          =
 		$this->labels['singular_name'] =
 			empty( $properties['name'] ) ? __( 'Feedback', '_svbk' ) : $properties['name'];
 
-		Utils\ObjectUtils::configure( $this, $properties );
+		parent::__construct( $post_type, $properties);
 
 		add_action( 'init', array( $this, 'init' ), 10 );
 		
@@ -40,7 +30,6 @@ class Feedback {
 		
 		if ( ! is_admin() ) {
 			add_filter( 'query_vars', array( static::class, 'public_query_vars' ) );
-			add_filter( 'request', array( $this, 'query_vars' ) );
 		}
 
 		// Main render hook
@@ -128,90 +117,6 @@ class Feedback {
 
 		}
 
-	}
-
-	public function getQueryArgs( $attributes ) {
-
-		$query_args = shortcode_atts( array(
-			'post_type'      => $this->post_type,
-			'post_status'    => 'publish',
-			'orderby'        => 'menu_order date',
-			'order'          => 'desc',
-			'posts_per_page' => null,
-			'paged'          => 1,
-			'offset'         => null,
-			'tax_query'      => [],
-		), $attributes);
-
-		if ( $this->taxonomy && ! empty( $attributes['categories'] ) ) {
-			$query_args['tax_query'][] = array(
-				'taxonomy' => $this->taxonomy,
-				'field'    => 'term_id',
-				'terms'    => array( $attributes['categories'] ),
-			);
-		};
-
-		// Setting offset to 0 breaks pagination
-		if ( intval( $query_args['offset'] ) === 0 ) {
-			unset( $query_args['offset'] );
-		}
-
-		return $query_args;
-	}
-
-	public function render( $content, $attributes ) {
-
-		$query_args     = $this->getQueryArgs( $attributes );
-		$feedback_query = new WP_Query( $query_args );
-
-		$classes = ! empty( $attributes['containerClass'] ) ? $attributes['containerClass'] : ( $this->post_type . '__container' );
-
-		$output = '<div class="' . esc_attr( $classes . ' loadmore' ) . '">';
-
-		ob_start();
-
-		while ( $feedback_query->have_posts() ) :
-			$feedback_query->the_post();
-			get_template_part( 'template-parts/content', get_post_type( $feedback_query->post ) );
-		endwhile;
-
-		wp_reset_postdata();
-
-		$output .= ob_get_contents();
-		ob_end_clean();
-
-		if ( $attributes['load_more'] && ( $query_args['paged'] < $feedback_query->max_num_pages ) ) {
-
-			$loadmore_args = array(
-				'paged'          => $query_args['paged'] + 1,
-				'posts_per_page' => $query_args['posts_per_page'],
-				'offset'         => isset( $query_args['offset'] ) ? $query_args['offset'] : null,
-				'order'          => $query_args['order'],
-				'orderby'        => $query_args['orderby'],
-			);
-
-			$term = get_term( $attributes['categories'], $this->taxonomy );
-
-			if ( ! is_wp_error( $term ) ) {
-				$loadmore_args[ $this->taxonomy ] = $term->slug;
-			}
-
-			$output .= '<a href="' . add_query_arg( $loadmore_args, get_post_type_archive_link( $this->post_type ) ) . '" class="loadmore__button' . ( $this->loadmore_class ? ( ' ' . esc_attr( $this->loadmore_class ) ) : '' ) . '">' . $this->loadmore_label . '</a>';
-		}
-
-		$output .= '</div>';
-
-		return $output;
-	}
-
-	public static function public_query_vars( $public_query_vars ) {
-
-		  $public_query_vars[] = 'posts_per_page';
-		  $public_query_vars[] = 'offset';
-		  $public_query_vars[] = 'orderby';
-		  $public_query_vars[] = 'order';
-
-		return $public_query_vars;
 	}
 
 	public function query_vars( $query_vars ) {

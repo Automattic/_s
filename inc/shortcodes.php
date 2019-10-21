@@ -1,25 +1,13 @@
 <?php
 /**
- * The Shortcode UI integrations file
- *
- * Register here the Shortcode classes
+ * Register Shortcodes here.
  *
  * @package _svbk
  */
-
-use Svbk\WP\Shortcakes;
-use Svbk\WP\Forms;
-
 use Svbk\WP\Helpers;
 
 /**
- * Register Shortcodes here.
- *
- * ```php
- *  Shortcakes\Images\Responsive::register( [
- *      'attach_to' => [ 'page', 'post' ]
- *  ] );
- * ```
+ * Hook to register Shortcodes
  *
  * @return void
  */
