@@ -20,7 +20,8 @@ const {
 	Toolbar,
 	SVG,
 	Rect,
-	Path
+	Path,
+	Spinner
 } = wp.components;
 
 const { 
@@ -37,12 +38,9 @@ const {
 
 const { compose } = wp.compose;
 
-const MIN_SIZE = 20;
 const LINK_DESTINATION_NONE = 'none';
 const LINK_DESTINATION_MEDIA = 'media';
 const LINK_DESTINATION_ATTACHMENT = 'attachment';
-const LINK_DESTINATION_CUSTOM = 'custom';
-const NEW_TAB_REL = 'noreferrer noopener';
 const ALLOWED_MEDIA_TYPES = [ 'image' ];
 
 const editImageIcon = ( <SVG width={ 20 } height={ 20 } viewBox="0 0 20 20"><Rect x={ 11 } y={ 3 } width={ 7 } height={ 5 } rx={ 1 } /><Rect x={ 2 } y={ 12 } width={ 7 } height={ 5 } rx={ 1 } /><Path d="M13,12h1a3,3,0,0,1-3,3v2a5,5,0,0,0,5-5h1L15,9Z" /><Path d="M4,8H3l2,3L7,8H6A3,3,0,0,1,9,5V3A5,5,0,0,0,4,8Z" /></SVG> );
@@ -61,10 +59,12 @@ class ImageEdit extends Component {
 		this.updateAlt = this.updateAlt.bind( this );
 		this.onSelectImage = this.onSelectImage.bind( this );
 		this.onSelectURL = this.onSelectURL.bind( this );
-		this.updateImageURL = this.updateImageURL.bind( this );
+		this.updateImageSize = this.updateImageSize.bind( this );
 		this.onSetLinkDestination = this.onSetLinkDestination.bind( this );
 		
-		this.state = {};
+		this.state = {
+			isEditing: false
+		};
 	}
 	
 	updateAlt( newAlt ) {
@@ -80,7 +80,7 @@ class ImageEdit extends Component {
 	}
 
 	onSelectImage( media ) {
-		if ( ! media || ! media.url ) {
+		if ( ! media || ! media.id ) {
 			this.props.setAttributes( {
 				url: undefined,
 				alt: undefined,
@@ -135,22 +135,40 @@ class ImageEdit extends Component {
 		} );
 	}
 	
-	updateImageURL( url ) {
-		this.props.setAttributes( { url, width: undefined, height: undefined } );
+	updateImageSize( size ) {
+
+		const { image } = this.props;
+		const sizedImage = get( image, [ 'media_details', 'sizes', size ] );
+
+		this.props.setAttributes( { 
+			url: sizedImage.source_url, 
+			width: sizedImage.width, 
+			height: sizedImage.height,
+			size: size,
+		} );
 	}	
 	
-	getImageSizeOptions() {
+	getImageSizes() {
 		const { imageSizes, image } = this.props;
-		return compact( map( imageSizes, ( { name, slug } ) => {
-			const sizeUrl = get( image, [ 'media_details', 'sizes', slug, 'source_url' ] );
-			if ( ! sizeUrl ) {
-				return null;
-			}
+		
+		if ( !image ) {
+			return [];
+		}
+		
+		const currentImageSizes = get( image, [ 'media_details', 'sizes' ] );
+
+		if ( !currentImageSizes ) {
+			return [];
+		}
+		
+		return Object.keys(currentImageSizes).map( function( sizeSlug ) {
+			let sizeSpec = imageSizes.find( ( size ) => size.slug == sizeSlug );
+
 			return {
-				value: sizeUrl,
-				label: name,
+				value: sizeSlug,
+				label: sizeSpec ? sizeSpec.name : sizeSlug,
 			};
-		} ) );
+		});
 	}	
 
 	render() {
@@ -159,20 +177,33 @@ class ImageEdit extends Component {
 			url, 
 			alt, 
 			id, 
+			size = 'medium',
 			inInspector = false,
-			isMain = false
+			isMain = false,
+			changeSize = true,
+			image,
 		} = this.props;
 		
-		const imageSizeOptions = this.getImageSizeOptions();		
+		let imageUrl = url;
+
+		if ( !url && image ) {
+			imageUrl = get( image, [ 'media_details', 'sizes', size, 'source_url' ] )
+			
+			// Fallback sizes
+			!imageUrl && ( imageUrl = get( image, [ 'media_details', 'sizes', 'thumbnail', 'source_url' ] ) );
+			!imageUrl && ( imageUrl = get( image, [ 'media_details', 'sizes', 'full', 'source_url' ] ) );			
+		}
+
+		const imageSizeOptions = this.getImageSizes();		
 
 		const settings = (
 			<Fragment>
-				{ ! isEmpty( imageSizeOptions ) && (
+				{ ! isEmpty( imageSizeOptions ) && changeSize && (
 					<SelectControl
 						label={ __( 'Image Size' ) }
-						value={ url }
+						value={ size }
 						options={ imageSizeOptions }
-						onChange={ this.updateImageURL }
+						onChange={ this.updateImageSize }
 					/>
 				) }				
 				{ (typeof alt !== 'undefined') && (
@@ -199,14 +230,21 @@ class ImageEdit extends Component {
 								icon={ editImageIcon }
 								onClick={ open }
 							/>
-					) }
+					) }				
 				/>
+				<IconButton
+					className="components-toolbar__control"
+					label={ __( 'Remove image' ) }
+					icon='trash'
+					onClick={ () => { this.onSelectImage() } }
+				/>					
 			</Toolbar>
+
 		);
 
 		return (
 			<Fragment>
-				{ url ? 
+				{ imageUrl && 
 					( 
 						<Fragment>
 							<MediaUploadCheck>
@@ -217,18 +255,20 @@ class ImageEdit extends Component {
 							) : toolbar }
 							</MediaUploadCheck>				
 							<figure className={ 'block-editor-svbk-picture'} >
-								<img src={ url } alt={ alt } />
+								<img src={ imageUrl } alt={ alt } />
 							</figure> 
 						</Fragment>				
-					) :
-					( 
+				)}
+				{ id && !image && (<Spinner />)}
+				{ !imageUrl && !id && ( 
+					
 						<MediaPlaceholder
 							//className={ className }
 							onSelect={ this.onSelectImage }
 							onSelectURL={ this.onSelectURL }
 							accept="image/*"
 							allowedTypes={ ALLOWED_MEDIA_TYPES }
-							value={ { id, url } }
+							value={ { id, imageUrl } }
 							labels={ this.props.labels }
 						/> 
 					)
