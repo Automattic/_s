@@ -35,7 +35,7 @@ class Post extends Component {
 
         const { 
             postType,
-            displayPostContentRadio, 
+            display, 
             excerptLength,
             post,
             thumbnailMedia
@@ -81,7 +81,7 @@ class Post extends Component {
                         }
                     </a>
                 </h3>								
-                { displayPostContentRadio === 'excerpt' &&
+                { display === 'excerpt' &&
                 <div className={`wp-block-${postType}__post-excerpt`}>
                     <RawHTML
                         key="html"
@@ -92,7 +92,7 @@ class Post extends Component {
                     </RawHTML>
                 </div>
                 }
-                { displayPostContentRadio === 'full_post' &&
+                { display === 'full_post' &&
                 <div className={`wp-block-${postType}__full-content`}>
                     <RawHTML
                         key="html"

@@ -33,7 +33,7 @@ class Post_List_Block extends Post_List {
 			'type'    => 'number',
 			'default' => 5,
 		),
-		'displayPostContentRadio' => array(
+		'display' => array(
 			'type'    => 'string',
 			'default' => 'excerpt',
 		),
@@ -158,7 +158,7 @@ class Post_List_Block extends Post_List {
 	 * @return void
 	 */	
 	public function renderPost($attributes){
-		switch ( $attributes['displayPostContentRadio'] ) {
+		switch ( $attributes['display'] ) {
 			case 'excerpt':
 				get_template_part( 'template-parts/preview', $this->post_type );
 				break;

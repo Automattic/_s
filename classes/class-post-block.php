@@ -32,7 +32,7 @@ class Post_Block {
 		'id' => array(
 			'type' => 'number',
 		),		
-		'displayPostContentRadio' => array(
+		'display' => array(
 			'type' => 'string',
 			'default' => 'excerpt',
 		)
@@ -143,7 +143,7 @@ class Post_Block {
 	 * @return void
 	 */	
 	public function renderPost($attributes){
-		switch ( $attributes['displayPostContentRadio'] ) {
+		switch ( $attributes['display'] ) {
 			case 'excerpt':
 				get_template_part( 'template-parts/preview', $this->post_type );
 				break;

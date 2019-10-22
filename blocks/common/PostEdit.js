@@ -111,7 +111,7 @@ class PostList extends Component {
 		const { posts, loading, postContent, postLoading } = this.state;
 
 		const { 
-			displayPostContentRadio, 
+			display, 
 			id
 		} = attributes;
 
@@ -121,12 +121,12 @@ class PostList extends Component {
 				<PanelBody title={ __( 'Post Content Settings' ) }>
 					<RadioControl
 						label="Show:"
-						selected={ displayPostContentRadio }
+						selected={ display }
 						options={ [
 							{ label: 'Excerpt', value: 'excerpt' },
 							{ label: 'Full Post', value: 'full_post' },
 						] }
-						onChange={ ( value ) => setAttributes( { displayPostContentRadio: value } ) }
+						onChange={ ( value ) => setAttributes( { display: value } ) }
 					/>					
 				</PanelBody>
 			</InspectorControls>

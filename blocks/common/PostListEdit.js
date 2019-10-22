@@ -90,7 +90,7 @@ class PostListEdit extends Component {
 		const { categoriesList } = this.state;
 
 		const { 
-			displayPostContentRadio, 
+			display, 
 			align, 
 			postLayout, 
 			columns, 
@@ -100,7 +100,6 @@ class PostListEdit extends Component {
 			postsToShow, 
 			offset, 
 			loadMore,
-			excerptLength,
 		} = attributes;
 
 		const inspectorControls = (
@@ -109,12 +108,12 @@ class PostListEdit extends Component {
 				<PanelBody title={ __( 'Post Content Settings' ) }>
 					<RadioControl
 						label="Show:"
-						selected={ displayPostContentRadio }
+						selected={ display }
 						options={ [
 							{ label: 'Excerpt', value: 'excerpt' },
 							{ label: 'Full Post', value: 'full_post' },
 						] }
-						onChange={ ( value ) => setAttributes( { displayPostContentRadio: value } ) }
+						onChange={ ( value ) => setAttributes( { display: value } ) }
 					/>					
 				</PanelBody>
 
