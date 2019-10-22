@@ -71,22 +71,34 @@ class Feedback extends Post_List {
 			'rewrite'               => true,
 			'query_var'             => true,
 			'menu_icon'             => 'dashicons-admin-comments',
-			'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'page-attributes', 'post-formats', 'custom-fields' ),
+			'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author', 'page-attributes', 'custom-fields' ),
 			'taxonomies'            => array(),
 		);
 
 		register_post_type( $this->post_type, apply_filters( 'svbk_feedback_post_type', $post_type_args, $this ) );
 
-		register_meta(
-			'post',
-			'rating',
-			array(
-				'object_subtype' => $this->post_type,
-				'show_in_rest'   => true,
-				'single'         => true,
-				'type'           => 'integer',
-			)
+		$metas = array(
+			'rating' => 'integer',
+			'authorName' => 'string',
+			'authorRole' => 'string',
+			'publishDate' => 'string',
+			'testimonialSource' => 'string',
+			'companyLogoId' => 'integer',
+			'avatarId' => 'integer',
 		);
+
+		foreach( $metas as $meta => $type ){			
+			register_meta(
+				'post',
+				$meta,
+				array(
+					'object_subtype' => $this->post_type,
+					'show_in_rest'   => true,
+					'single'         => true,
+					'type'           => $type,
+				)
+			);
+		}
 
 		if ( $this->taxonomy ) {
 

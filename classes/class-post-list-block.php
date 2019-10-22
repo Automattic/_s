@@ -127,6 +127,8 @@ class Post_List_Block extends Post_List {
 		$attributes['orderby'] = $attributes['orderBy'];
 		$attributes['load_more'] = $attributes['loadMore'];
 
+		$classes = array( 'wp-block-' . str_replace( '/', '-', $this->block_name ) );
+
 		if ( isset( $blockAttributes['align'] ) ) {
 			$classes[] = 'align' . $blockAttributes['align'];
 		}
