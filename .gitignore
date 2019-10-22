@@ -1,12 +1,3 @@
 node_modules
-vendor
 *.map
-composer.lock
-/assets/css/images
-/src
-
 /dist/*
-!/dist/blocks.build.js
-!/dist/blocks.editor.build.css
-!/dist/blocks.style.build.css
-
