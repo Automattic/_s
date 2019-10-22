@@ -48,6 +48,8 @@ import * as publication from './publication';
 import * as grid from './grid';
 import * as iconParagraph from './icon-paragraph';
 import * as countdown from './countdown';
+import * as casestudies from './casestudy/list';
+import * as casestudyEmbed from './casestudy/embed';
 import * as trust from './trust';
 
 wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', withAppearanceSettings, 100 );
@@ -78,6 +80,8 @@ wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', with
 	grid,
 	iconParagraph,
 	countdown,
+	casestudies,
+	casestudyEmbed,	
 	trust
 ].forEach( ( block ) => {
 	if ( ! block ) { return; }
