@@ -48,6 +48,7 @@ import * as publication from './publication';
 import * as grid from './grid';
 import * as iconParagraph from './icon-paragraph';
 import * as countdown from './countdown';
+import * as trust from './trust';
 
 wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', withAppearanceSettings, 100 );
 
@@ -76,7 +77,8 @@ wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', with
 	publication,
 	grid,
 	iconParagraph,
-	countdown,	
+	countdown,
+	trust
 ].forEach( ( block ) => {
 	if ( ! block ) { return; }
 	
