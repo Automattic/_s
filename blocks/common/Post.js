@@ -71,15 +71,13 @@ class Post extends Component {
                     </RawHTML>                    
                 )}
                 <h3>
-                    <a href={ post.link } target="_blank" rel="noreferrer noopener">
-                        { titleTrimmed ? (	
-                            <RawHTML>
-                                { titleTrimmed }
-                            </RawHTML>
-                        ) :
-                            __( '(no title)' )
-                        }
-                    </a>
+                    { titleTrimmed ? (	
+                        <RawHTML>
+                            { titleTrimmed }
+                        </RawHTML>
+                    ) :
+                        __( '(no title)' )
+                    }
                 </h3>								
                 { display === 'excerpt' &&
                 <div className={`wp-block-${postType}__post-excerpt`}>
