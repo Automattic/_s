@@ -1,7 +1,7 @@
 /* global wp */
 /* global lodash */
 
-const { Fragment, Component } = wp.element;
+const { Component } = wp.element;
 /**
  * External dependencies
  */
@@ -18,7 +18,6 @@ const {
  */
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
-	RichText,
 	PlainText,
 	InspectorControls,
 	ContrastChecker,
@@ -34,7 +33,6 @@ const {
 	ButtonGroup,
 	IconButton,
 	PanelBody,
-	TextControl
 } = wp.components;
 
 /**
@@ -98,14 +96,14 @@ class TestimonialEdit extends Component {
 			authorRole,
 			rating,
 			companyLogoUrl,
-			companyLogoId,			
+			companyLogoId,	
 			source,
 			date,
 		} = attributes;
 		
 		const avatarUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ), function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id' ] ), function(value, key) {
 				return 'avatar' + capitalize(key);
 			});
 
@@ -114,7 +112,7 @@ class TestimonialEdit extends Component {
 
 		const companyLogoUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ), function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id' ] ), function(value, key) {
 				return 'companyLogo' + capitalize(key);
 			});
 
@@ -136,18 +134,20 @@ class TestimonialEdit extends Component {
 		const styleName = isStyle.test(attributes.className)
 			? attributes.className.replace(isStyle, '')
 			: null		
-		
+
 		return (
 			<div className={ classNames } style={ style } >
 				
 				<div className={ 'wp-block-svbk-testimonial__header' } >
-			
+
 					<ImageEdit
 						setAttributes={ avatarUpdate }
 						url={ avatarUrl }
 						id={ avatarId }
+						size={ 'medium' }
 						className={ 'wp-block-svbk-testimonial__author' }
 						labels={ { title: __( 'Author Avatar', '_svbk' ) } }
+						changeSize={false}
 					/> 
 					<PlainText
 						value={ authorName }
@@ -196,8 +196,10 @@ class TestimonialEdit extends Component {
 						setAttributes={ companyLogoUpdate }
 						url={ companyLogoUrl }
 						id={ companyLogoId }
+						size={ 'medium' }
 						className={ 'wp-block-svbk-testimonial__company-logo' }
 						labels={ { title: __( 'Company Logo', '_svbk' ) } }
+						changeSize={false}
 					/>
 					
 				</div>
