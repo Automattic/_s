@@ -9,7 +9,7 @@ import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
-const { Component, Fragment, RawHTML } = wp.element;
+const { Component, Fragment } = wp.element;
 const {
 	PanelBody,
 	Placeholder,
@@ -19,8 +19,6 @@ const {
 	Spinner,
 	ToggleControl,
 	Toolbar,
-	SVG,
-	Rect,
 } = wp.components;
 
 const apiFetch = wp.apiFetch;
@@ -33,6 +31,8 @@ const {
 } = wp.blockEditor;
 const { withSelect } = wp.data;
 
+import Post from './Post';
+
 /**
  * Module Constants
  */
@@ -40,73 +40,6 @@ const CATEGORIES_LIST_QUERY = {
 	per_page: -1,
 };
 const MAX_POSTS_COLUMNS = 6;
-
-
-export const SinglePost = function(props){
-
-	const { 
-		postType,
-		displayPostContentRadio, 
-		excerptLength,
-		post
-	} = props;
-
-	const titleTrimmed = post.title.rendered.trim();
-	let excerpt = post.excerpt.rendered;
-	if ( post.excerpt.raw === '' ) {
-		excerpt = post.content.raw;
-	}
-	const excerptElement = document.createElement( 'div' );
-	excerptElement.innerHTML = excerpt;
-	excerpt = excerptElement.textContent || excerptElement.innerText || '';		
-
-	return (
-		<div className={ classnames( 
-			[ 
-				`type-${ post.type }`,
-				`format-${ post.format }`,
-			]) } 
-		>
-			{ post.featured_media && (
-			<SVG viewBox="0 0 40 30" xmlns="http://www.w3.org/2000/svg">
-				<Rect x="0" y="0" width="40" height="30" fill="grey" />
-			</SVG>
-			)}
-			<h3>
-				<a href={ post.link } target="_blank" rel="noreferrer noopener">
-					{ titleTrimmed ? (	
-						<RawHTML>
-							{ titleTrimmed }
-						</RawHTML>
-					) :
-						__( '(no title)' )
-					}
-				</a>
-			</h3>								
-			{ displayPostContentRadio === 'excerpt' &&
-			<div className={`wp-block-${postType}__post-excerpt`}>
-				<RawHTML
-					key="html"
-				>
-					{ excerptLength < excerpt.trim().split( ' ' ).length ?
-						excerpt.trim().split( ' ', excerptLength ).join( ' ' ) + ' ... <a href=' + post.link + 'target="_blank" rel="noopener noreferrer">' + __( 'Read more' ) + '</a>' :
-						excerpt.trim().split( ' ', excerptLength ).join( ' ' ) }
-				</RawHTML>
-			</div>
-			}
-			{ displayPostContentRadio === 'full_post' &&
-			<div className={`wp-block-${postType}__full-content`}>
-				<RawHTML
-					key="html"
-				>
-					{ post.content.raw.trim() }
-				</RawHTML>
-			</div>
-			}
-		</div>
-	)
-
-}
 
 
 class PostListEdit extends Component {
@@ -157,7 +90,7 @@ class PostListEdit extends Component {
 		const { categoriesList } = this.state;
 
 		const { 
-			displayPostContentRadio, 
+			display, 
 			align, 
 			postLayout, 
 			columns, 
@@ -167,7 +100,6 @@ class PostListEdit extends Component {
 			postsToShow, 
 			offset, 
 			loadMore,
-			excerptLength,
 		} = attributes;
 
 		const inspectorControls = (
@@ -176,22 +108,13 @@ class PostListEdit extends Component {
 				<PanelBody title={ __( 'Post Content Settings' ) }>
 					<RadioControl
 						label="Show:"
-						selected={ displayPostContentRadio }
+						selected={ display }
 						options={ [
 							{ label: 'Excerpt', value: 'excerpt' },
 							{ label: 'Full Post', value: 'full_post' },
 						] }
-						onChange={ ( value ) => setAttributes( { displayPostContentRadio: value } ) }
-					/>
-					{ displayPostContentRadio === 'excerpt' &&
-						<RangeControl
-							label={ __( 'Max number of words in excerpt' ) }
-							value={ excerptLength }
-							onChange={ ( value ) => setAttributes( { excerptLength: value } ) }
-							min={ 10 }
-							max={ 100 }
-						/>
-					}						
+						onChange={ ( value ) => setAttributes( { display: value } ) }
+					/>					
 				</PanelBody>
 
 				<PanelBody title={ __( 'Filter & Sorting', '_svbk' ) }>
@@ -271,10 +194,10 @@ class PostListEdit extends Component {
 			},
 		];
 
-		let SinglePostComponent = SinglePost;
+		let PostComponent = Post;
 
 		if ( typeof children !== 'undefined'){
-			SinglePostComponent = children;
+			PostComponent = children;
 		}
 
 		return (
@@ -296,7 +219,7 @@ class PostListEdit extends Component {
 						[ `columns-${ columns }` ]: postLayout === 'grid',
 					} ) }
 				>
-					{ displayPosts.map( ( post, i ) => (<SinglePostComponent {...attributes} post={post} postType={this.props.postType} key={i} />) ) }
+					{ displayPosts.map( ( post, i ) => (<PostComponent {...attributes} post={post} postType={this.props.postType} key={i} />) ) }
 				{ loadMore && ( 
 					<div className={ `wp-block-${this.props.postType}s__loadmore` }>{ __( 'Load more', '_svbk' ) }</div>
 				)  }

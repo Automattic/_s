@@ -27,6 +27,7 @@ import withAppearanceSettings from './common/appearance-controls';
 
 import * as testimonial from './testimonial';
 import * as testimonials from './testimonial/list/index';
+import * as testimonialEmbed from './testimonial/embed';
 import * as author from './testimonial/author';
 import * as rating from './testimonial/rating';
 import * as price from './product/price';
@@ -48,6 +49,7 @@ import * as publication from './publication';
 import * as grid from './grid';
 import * as iconParagraph from './icon-paragraph';
 import * as countdown from './countdown';
+import * as trust from './trust';
 
 wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', withAppearanceSettings, 100 );
 
@@ -55,6 +57,7 @@ wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', with
 	// Common blocks are grouped at the top to prioritize their display
 	// in various contexts — like the inserter and auto-complete components.
 	testimonial,
+	testimonialEmbed,	
 	testimonials,
 	rating,
 	author,
@@ -77,6 +80,7 @@ wp.hooks.addFilter( 'blocks.registerBlockType', 'svbk/appearance-controls', with
 	grid,
 	iconParagraph,
 	countdown,	
+	trust
 ].forEach( ( block ) => {
 	if ( ! block ) { return; }
 	

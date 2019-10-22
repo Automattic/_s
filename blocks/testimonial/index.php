@@ -1,9 +1,11 @@
 <?php
 $testimonials_block = new \Svbk\WP\Theme\_svbk\Post_List_Block( 'testimonial', array( 'block_name' => 'svbk/testimonials' ) );
+$testimonial_embed_block = new \Svbk\WP\Theme\_svbk\Post_Block( 'testimonial', array( 'block_name' => 'svbk/testimonial-embed' ) );
 
 add_action( 'init', '_svbk_register_testimonials_blocks', 20 );
 
 function _svbk_register_testimonials_blocks() {
+
 
 	register_block_type(
 		'svbk/author',
@@ -20,8 +22,10 @@ function _svbk_register_testimonials_blocks() {
 	);
 
 }
-
 add_filter( 'block_editor_settings', '_svbk_rating_templates' );
+
+
+
 
 function _svbk_rating_templates( $editor_settings ) {
 
