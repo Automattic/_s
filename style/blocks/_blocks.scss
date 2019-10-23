@@ -24,8 +24,6 @@
 @import "warranty";
 
 .has-dark-gray-background-color,
-.has-gradient-background-color,
-.has-alpha-dark-background-color,
 .has-primary-background-color,
 .has-secondary-background-color {
 	color: #fff;
@@ -71,37 +69,30 @@
 }
 
 .has-primary-background-color {
-	background: $color__corporate;
+	background-color: $color__corporate;
 }
 
 .has-secondary-background-color {
-	background: $color__corporate-secondary;
+	background-color: $color__corporate-secondary;
 }
 
 .has-tertiary-background-color {
-	background: $color__corporate-tertiary;
+	background-color: $color__corporate-tertiary;
 }
 
 .has-dark-gray-background-color {
-	background: $color__background-dark;
+	background-color: $color__background-dark;
 }
 
 .has-light-gray-background-color {
-	background: $color__background-light;
-}
-
-.has-gradient-background-color {
-	background: $color__corporate-gradient;
-}
-
-.has-alpha-dark-background-color {
-	background: $color__background-alpha-dark;
-}
-
-.has-alpha-light-background {
-	background: $color__background-alpha-light;
+	background-color: $color__background-light;
 }
 
 .has-white-background-color {
-	background: #fff;
+	background-color: #fff;
+}
+
+.has-light-gray-background-color,
+.has-white-background-color {
+	color: $color__text-main;
 }

@@ -35,7 +35,7 @@ class Post extends Component {
 
         const { 
             postType,
-            displayPostContentRadio, 
+            display, 
             excerptLength,
             post,
             thumbnailMedia
@@ -71,17 +71,15 @@ class Post extends Component {
                     </RawHTML>                    
                 )}
                 <h3>
-                    <a href={ post.link } target="_blank" rel="noreferrer noopener">
-                        { titleTrimmed ? (	
-                            <RawHTML>
-                                { titleTrimmed }
-                            </RawHTML>
-                        ) :
-                            __( '(no title)' )
-                        }
-                    </a>
+                    { titleTrimmed ? (	
+                        <RawHTML>
+                            { titleTrimmed }
+                        </RawHTML>
+                    ) :
+                        __( '(no title)' )
+                    }
                 </h3>								
-                { displayPostContentRadio === 'excerpt' &&
+                { display === 'excerpt' &&
                 <div className={`wp-block-${postType}__post-excerpt`}>
                     <RawHTML
                         key="html"
@@ -92,7 +90,7 @@ class Post extends Component {
                     </RawHTML>
                 </div>
                 }
-                { displayPostContentRadio === 'full_post' &&
+                { display === 'full_post' &&
                 <div className={`wp-block-${postType}__full-content`}>
                     <RawHTML
                         key="html"

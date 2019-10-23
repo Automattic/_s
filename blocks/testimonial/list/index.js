@@ -69,6 +69,10 @@ export const settings = {
 			type: "string", 
 			default: "date"
 		},
+		display: {
+			type: "string",
+			default: "excerpt",
+		},		
 		postLayout: {
 			type: "string", 
 			default: "list"

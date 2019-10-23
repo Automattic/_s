@@ -18,7 +18,6 @@ import classnames from 'classnames';
  */
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
-	RichText, 
 	getColorClassName, 
 	InnerBlocks,
 } = wp.blockEditor;
@@ -85,44 +84,45 @@ export const settings = {
 		},	
 		avatarId: {
 			type: 'number',
-			source: 'meta',
-			meta: 'avatarId',			
 		},
 		authorName: {
 			type: 'string',
-			source: 'meta',
-			meta: 'authorName',
+			source: 'text',
+			selector: '.wp-block-svbk-testimonial__author-name',
 		},		
 		authorRole: {
 			type: 'string',
-			source: 'meta',
-			meta: 'authorRole',
-		},	
+			source: 'text',
+			selector: '.wp-block-svbk-testimonial__author-role',
+		},
 		companyLogoUrl: {
 			type: 'string',
 			source: 'attribute',
 			selector: '.wp-block-svbk-testimonial__company-logo img',
 			attribute: 'src',
-		},			
+		},	
 		companyLogoId: {
 			type: 'number',
-			source: 'meta',
-			meta: 'companyLogoId',
-		},			
+		},		
 		rating: {
 			type: 'string',
+			source: 'text',
+			selector: '.wp-block-svbk-testimonial__rating .rating__value',
+		},
+		ratingMeta: {
+			type: 'number',
 			source: 'meta',
 			meta: 'rating',
 		},
 		date: {
 			type: 'string',
-			source: 'meta',
-			meta: 'publishDate',
+			source: 'text',
+			selector: '.wp-block-svbk-testimonial__date',
 		},	
 		source: {
 			type: 'string',
-			source: 'meta',
-			meta: 'testimonialSource',
+			source: 'text',
+			selector: '.wp-block-svbk-testimonial__source',
 		},			
 		backgroundColor: {
 			type: 'string',
@@ -136,11 +136,89 @@ export const settings = {
 		customTextColor: {
 			type: 'string',
 		},
-	},	
+	},
 
 	edit,
 
-	save() {
-		return <InnerBlocks.Content />;
+	save: function( { attributes } ) {
+		
+		const { 
+			type,
+			avatarUrl,
+			avatarId,
+			authorName,
+			authorRole,
+			rating,
+			companyLogoUrl,
+			companyLogoId,
+			source,
+			date,
+			backgroundColor,
+			customBackgroundColor,
+			textColor,
+			customTextColor,			
+		} = attributes;		
+		
+		
+		const backgroundClass = getColorClassName( 'background-color', backgroundColor );
+		const textClass = getColorClassName( 'color', textColor );
+
+		const classNames = classnames( {
+			'has-text-color': textColor || customTextColor,
+			'has-background': backgroundColor || customBackgroundColor,			
+			[ textClass ]: textClass,
+			[ backgroundClass ]: backgroundClass,			
+		} );		
+		
+		const style = {
+			backgroundColor: backgroundClass ? undefined : customBackgroundColor,
+			color: textClass ? undefined : customTextColor,
+		};			
+		
+		return (
+			<div className={ classNames } style={ style } >
+				<div className={ 'wp-block-svbk-testimonial__header' } >
+					{ avatarUrl && (
+					<figure className={ 'wp-block-svbk-testimonial__avatar'} >
+						<img src={ avatarUrl } alt={ 'Profile Image' } className={ avatarId ? `wp-image-${ avatarId }` : null } />
+					</figure> 
+					) }	
+					
+					{ authorName && ( 
+					<div className={ 'wp-block-svbk-testimonial__author' }>
+						<div className={ 'wp-block-svbk-testimonial__author-name' } >{ authorName }</div>
+						{ authorRole && ( 
+							<div className={ 'wp-block-svbk-testimonial__author-role' } >{ authorRole }</div>
+						) }
+					</div>					
+					) }
+					
+					{ rating && ( 
+					<div className={ classnames( 'wp-block-svbk-testimonial__rating', 'rating', { [ `rating--${rating}` ] : rating }  ) } >
+						<span className={ 'rating__label' }>Rating:</span>
+						<span className={ 'rating__value' }>{rating}</span>
+					</div>
+					) }
+					
+					{ ( date || source ) && ( 
+					<div className={ 'wp-block-svbk-testimonial__meta' } >
+						{ date && ( <span className={ 'wp-block-svbk-testimonial__date' }>{ date }</span> ) }
+						{ source && ( <span className={ 'wp-block-svbk-testimonial__source' }> {source}</span>) }
+					</div>
+					) }				
+					
+					{ companyLogoUrl && (
+					<figure className={ 'wp-block-svbk-testimonial__company-logo'} >
+						<img src={ companyLogoUrl } alt={ 'Company Logo' } className={ companyLogoId ? `wp-image-${ companyLogoId }` : null } />
+					</figure> 
+					) }
+				</div>
+				
+				<div className={ 'wp-block-svbk-testimonial__content' } >
+					<InnerBlocks.Content />
+				</div>
+				
+			</div>
+		);
 	},
 };

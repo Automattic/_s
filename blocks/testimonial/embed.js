@@ -13,7 +13,7 @@ export const name = 'svbk/testimonial-embed';
 export const settings = {
 	title: __( 'Testimonial Embed', '_svbk' ),
 
-	description: __( 'Embeds a tesimonial', '_svbk' ),
+	description: __( 'Embeds a tesitmonial', '_svbk' ),
 
 	icon: 'thumbs-up',
 
@@ -45,7 +45,7 @@ export const settings = {
 		id: {
 			type: "number",
 		},		
-		displayPostContentRadio: {
+		display: {
 			type: "string",
 			default: "excerpt",
 		}
