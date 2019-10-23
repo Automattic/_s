@@ -1,3 +1,28 @@
+/*--------------------------------------------------------------
+# Block types
+--------------------------------------------------------------*/
+@import "above-the-fold";
+@import "animations";
+@import "cards/cards";
+@import "trust";
+@import "columns";
+@import "collapse";
+@import "form-and-image";
+@import "grid-layout";
+@import "group";
+@import "icon-paragraph";
+@import "latest-posts";
+@import "map";
+@import "media-and-text";
+@import "method-block";
+@import "offer-block";
+@import "publication";
+@import "rating";
+@import "separator";
+@import "team";
+@import "testimonials";
+@import "warranty";
+
 .has-dark-gray-background-color,
 .has-gradient-background-color,
 .has-alpha-dark-background-color,
@@ -80,28 +105,3 @@
 .has-white-background-color {
 	background: #fff;
 }
-
-/*--------------------------------------------------------------
-# Block types
---------------------------------------------------------------*/
-@import "above-the-fold";
-@import "animations";
-@import "cards/cards";
-@import "clients-gallery";
-@import "columns";
-@import "collapse";
-@import "form-and-image";
-@import "grid-layout";
-@import "group";
-@import "icon-paragraph";
-@import "latest-posts";
-@import "map";
-@import "media-and-text";
-@import "method-block";
-@import "offer-block";
-@import "publication";
-@import "rating";
-@import "separator";
-@import "team";
-@import "testimonials";
-@import "warranty";
