@@ -46,7 +46,7 @@ add_action( 'wp_enqueue_scripts', '_svbk_conditionally_load_blocks_deps', 10 );
 // Disable Jetpack LazyLoad on Galleries
 function _svbk_exclude_flickity_from_lazyload( $classes ) {
 
-	$classes[] = 'flickity-image';
+	$classes[] = 'flickity-lazyload-image';
 
 	return $classes;
 }
