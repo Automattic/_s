@@ -55,7 +55,7 @@ class Post_Block {
 
 		Utils\ObjectUtils::configure( $this, $properties );
 
-		add_action( 'init', array( $this, 'register_block' ), 20 );
+		$this->register_block();
 	}
 
 	/**
