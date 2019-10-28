@@ -83,7 +83,7 @@ class Post_List_Block extends Post_List {
 
 		parent::__construct( $post_type, $properties );
 
-		add_action( 'init', array( $this, 'register_block' ), 20 );
+		$this->register_block();
 	}
 
 	/**
