@@ -83,6 +83,9 @@ export const settings = {
 		sealId: {
 			type: 'number',
 		},
+		sealSize: {
+			type: 'string',
+		},
 		title: {
 			type: 'string',
 			source: 'html',
@@ -120,6 +123,9 @@ export const settings = {
 		},	
 		backgroundImageId: {
 			type: 'number',
+		},		
+		backgroundImageSise: {
+			type: 'string',
 		},		
 	},	
 

@@ -58,6 +58,7 @@ class TestimonialInlineEdit extends Component {
 		const { 
 			pictureUrl,
 			pictureId,			
+			pictureSize,			
 			author,
 			content,
 			rating,
@@ -66,7 +67,7 @@ class TestimonialInlineEdit extends Component {
 		
 		const pictureUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt' ] ) , function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt', 'size' ] ) , function(value, key) {
 				// Convert url to pictureUrl, id to pictureId, etc
 				return 'picture' + capitalize(key);
 			});
@@ -91,6 +92,7 @@ class TestimonialInlineEdit extends Component {
 					setAttributes={ pictureUpdate }
 					url={ pictureUrl }
 					id={ pictureId }
+					size={ pictureSize }
 					className={ 'wp-block-svbk-testimonial-inline__author' }
 				/> 
 				<PlainText
