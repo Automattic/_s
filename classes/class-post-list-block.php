@@ -2,8 +2,6 @@
 
 namespace Svbk\WP\Theme\_svbk;
 
-require __DIR__ . '/class-post-list.php';
-
 class Post_List_Block extends Post_List {
 
 	/**
