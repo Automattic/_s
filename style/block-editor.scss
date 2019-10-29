@@ -347,6 +347,7 @@
     flex-wrap: wrap
 }
 
+
 /**
 *	Countdown
 */
@@ -367,4 +368,23 @@
 .wp-block-svbk-countdown .countdown__expires {
     font-size: small;
     color: #aaa;
+}
+
+
+/**
+*	Icon paragraph
+*/
+
+.icon-editor__icon {
+    width: 24px;
+}
+
+.wp-block-svbk-icon-paragraph__icon .icon-editor__icon {
+    float: left;
+    padding-top: 10px;
+    margin-right: 5px;
+}
+
+.wp-block-svbk-icon-paragraph__content {
+    margin-left: 30px;
 }

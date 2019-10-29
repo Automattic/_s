@@ -25,7 +25,7 @@ class IconEdit extends Component {
 			textColor,
 		} = this.props;
 		
-		const classNames = classnames( 'wp-block-icon', {
+		const classNames = classnames( 'wp-block-svbk-icon', {
 			[ textColor.class ]: textColor.class,
 		} );
 

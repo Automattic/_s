@@ -43,31 +43,30 @@ class IconEditor extends Component {
 			attributes,
 			isSelected,
 			setAttributes,
+			className
 		} = this.props;
 		
 		const { 
 			icon,
-			className,
 		} = attributes;		
 		
 		const isPreview = this.state.isPreview;
-		
-		const classNames = classnames( className, [ 'block-editor-icon-svg' ] );		
+		const classNames = classnames( className, 'icon-editor' );		
 		
 		return (	
 			<div className={ classNames }>
 				{ isSelected && (
-				<div className="components-toolbar">
+				<div className="components-toolbar icon-editor__toolbar">
 					{ icon && (	
 					<button
-						className={ `components-tab-button ${ isPreview ? 'is-active' : '' }` }
+						className={ `components-tab-button icon-editor__toolbar-button ${ isPreview ? 'is-active' : '' }` }
 						onClick={ this.switchToPreview }
 					>
 						<span>{ __( 'View' ) }</span>
 					</button>	
 					) }	
 					<button
-						className={ `components-tab-button ${ ! isPreview ? 'is-active' : '' }` }
+						className={ `components-tab-button icon-editor__toolbar-button ${ ! isPreview ? 'is-active' : '' }` }
 						onClick={ this.switchToEditor }
 					>
 						<span>{ __( 'Code' ) }</span>
@@ -77,9 +76,12 @@ class IconEditor extends Component {
 				<Disabled.Consumer>
 					{ ( isDisabled ) => (
 						( isPreview || isDisabled ) ? (
-						    <SandBox html={ icon } />
-						) : (
-							<div>
+							<div className={ 'icon-editor__icon' }>
+						    	<SandBox html={ icon } />
+							</div>
+						) : 
+						(
+							<div className={ 'icon-editor__editor' }>
 								<h3>{ 'SVG Code' }</h3>
 								<PlainText
 									value={ icon }

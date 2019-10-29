@@ -81,12 +81,13 @@ class WarrantyEdit extends Component {
 		const { 
 			sealUrl,
 			sealId, 
+			sealSize, 
 			title,
-			titleLevel,
 			subtitle,
 			footer,
 			backgroundImageUrl,
-			backgroundImageId
+			backgroundImageId,
+			backgroundImageSize
 		} = attributes;
 		
 		const classNames = classnames( className, {
@@ -107,7 +108,7 @@ class WarrantyEdit extends Component {
 		
 		const sealUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ) , function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'size' ] ) , function(value, key) {
 				// Convert url to pictureUrl, id to pictureId, etc
 				return 'seal' + capitalize(key);
 			});
@@ -117,7 +118,7 @@ class WarrantyEdit extends Component {
 
 		const backgroundImageUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ) , function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'size' ] ) , function(value, key) {
 				// Convert url to pictureUrl, id to pictureId, etc
 				return 'backgroundImage' + capitalize(key);
 			});
@@ -133,6 +134,7 @@ class WarrantyEdit extends Component {
 							setAttributes={ sealUpdate }
 							url={ sealUrl }
 							id={ sealId }
+							size={ sealSize }
 							labels={ { title: 'Seal' } }
 						/>
 					    <header className={ 'wp-block-svbk-warranty__header' } > 
@@ -173,6 +175,7 @@ class WarrantyEdit extends Component {
 							setAttributes={ backgroundImageUpdate }
 							url={ backgroundImageUrl }
 							id={ backgroundImageId }
+							size={ backgroundImageSize }
 							labels={ { title: 'Background Image' } }
 							inInspector={true}
 						/>

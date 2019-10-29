@@ -2,10 +2,8 @@
 /* global lodash */
 
 const {
-	compact,
 	get,
 	isEmpty,
-	map,
 	pick,
 } = lodash;
 

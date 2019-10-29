@@ -80,6 +80,9 @@ export const settings = {
 		pictureId: {
 			type: 'number',
 		},
+		pictureSize: {
+			type: 'string',
+		},
 		name: {
 			type: 'string',
 			source: 'text',

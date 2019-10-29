@@ -65,6 +65,9 @@ export const settings = {
 		pictureId: {
 			type: 'number',
 		},
+		pictureSize: {
+			type: 'string',
+		},
 		author: {
 			type: 'string',
 			source: 'text',
@@ -115,7 +118,6 @@ export const settings = {
 			textColor,
 			customTextColor,			
 		} = attributes;		
-		
 		
 		const backgroundClass = getColorClassName( 'background-color', backgroundColor );
 		const textClass = getColorClassName( 'color', textColor );

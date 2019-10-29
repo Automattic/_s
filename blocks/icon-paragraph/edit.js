@@ -5,7 +5,7 @@
  * WordPress dependencies
  */
 
-const { Fragment, Component } = wp.element;
+const { Component } = wp.element;
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
 	RichText,
@@ -36,19 +36,16 @@ class BulletEdit extends Component {
 		};
 		
 		return (
-			<Fragment>
-				<div>
-				    <IconEditor { ...this.props }  />
-				    <div style={ style }> 
-						<RichText
-							tagName={ 'div' }
-							value={ content }
-							onChange={ ( value ) => setAttributes( { content: value } ) }
-							placeholder={ __( 'Content..', '_svbk' ) }
-							className={ 'wp-block-svbk-bullet__content' }
-						/>
-					</div>
-				</div>
+			<div className={ 'wp-block-svbk-icon-paragraph' }>
+				<IconEditor { ...this.props } className={ 'wp-block-svbk-icon-paragraph__icon' } />
+				<RichText
+					tagName={ 'div' }
+					value={ content }
+					style={ style }
+					onChange={ ( value ) => setAttributes( { content: value } ) }
+					placeholder={ __( 'Content..', '_svbk' ) }
+					className={ 'wp-block-svbk-icon-paragraph__content' }
+				/>
                 <BlockControls>
 					<AlignmentToolbar
 						value={ align }
@@ -57,7 +54,7 @@ class BulletEdit extends Component {
 						} }
 					/>				
 				</BlockControls>
-			</Fragment>
+			</div>
 		);
 	}
 }

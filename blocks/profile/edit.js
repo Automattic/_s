@@ -60,6 +60,7 @@ class ProfileEdit extends Component {
 			pictureUrl,
 			pictureAlt,
 			pictureId,		    
+			pictureSize,		    
 			name,
 			role,			
 			content, 
@@ -83,7 +84,7 @@ class ProfileEdit extends Component {
 		
 		const pictureUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt' ] ) , function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt', 'size' ] ) , function(value, key) {
 				// Convert url to pictureUrl, id to pictureId, etc
 				return 'picture' + capitalize(key);
 			});
@@ -99,6 +100,7 @@ class ProfileEdit extends Component {
 						url={ pictureUrl }
 						id={ pictureId }
 						alt={ pictureAlt }
+						size={ pictureSize }
 					/> 
 				    <div style={ style }> 
 						<RichText
