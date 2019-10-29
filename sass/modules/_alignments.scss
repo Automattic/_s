@@ -1,13 +1,26 @@
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
+.alignleft,
+.alignright{
+	width: 100%;
+	margin-bottom: 0.5em;
 }
 
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
+@media (min-width: 37.5em) {
+	.alignleft,
+	.alignright{
+		width: auto;
+	}
+
+	.alignleft {
+		display: inline;
+		float: left;
+		margin-right: 1.5em;
+	}
+
+	.alignright {
+		display: inline;
+		float: right;
+		margin-left: 1.5em;
+	}
 }
 
 .aligncenter {
