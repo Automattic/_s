@@ -7,6 +7,19 @@
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+
+	&.has-primary-background-color,
+	&.has-dark-gray-background-color {
+		
+		h3 {
+			color: #fff;
+		}
+
+		.wp-block-button__link {
+			border-color: #fff;
+			color: #fff;
+		}
+	}
 	
 	figure img {
 		display: block;
