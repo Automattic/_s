@@ -250,9 +250,18 @@
 }
 
 .wp-block-svbk-card {
+    position: relative;
+
+    > .components-icon-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 1;
+        border-radius: 50%;
+    }
 
     .block-editor-svbk-picture {
-        margin: 15px 0;
+        margin: 0 0 15px;
     }
 
     .block-editor-block-list__layout {
@@ -314,11 +323,6 @@
     -ms-flex: 1 0 30%;
     flex: 1 0 30%;
     min-height: 200px
-}
-
-.wp-block-svbk-grid {
-    border: 3px #ccc dashed;
-    padding: 1em
 }
 
 .wp-block-svbk-grid .block-editor-inner-blocks .block-editor-block-list__layout {
