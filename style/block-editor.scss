@@ -1,8 +1,10 @@
-/* Block Editor Styles */
-
 @import "variables-site/variables-site";
-
 @import "mixins/mixins-master";
+@import "typography/typography";
+
+.editor-block-list__layout {
+	@include font( 'main' );
+}
 
 .wp-block {
     max-width: #{$content_width}px;
@@ -16,6 +18,15 @@
     }
 }
 
+/**
+*	Typography
+*/
+
+.wp-block-svbk-hero__subtitle {
+    @include font-size(1.2);
+    font-weight: bold;
+}
+
 .wp-block-button__link,
 .wp-block-svbk-hero__link,
 .wp-block-svbk-card__link {
@@ -24,7 +35,7 @@
     border-radius: 8px;
     padding: 10px 30px;
     text-align: center;
-    display: inline-block;
+    display: block;
     margin: 10px 0;
 
     &[data-is-placeholder-visible=true] {
@@ -113,6 +124,21 @@
         &.has-align-right .wp-block-svbk-hero__content {
             margin-left: 50%;
         }
+    }
+}
+
+.block-library-button__inline-link {
+    display: flex;
+    outline: none;
+    align-items: center;
+
+    svg {
+        margin-right: 5px;
+    }
+
+    .block-editor-url-input input[type=text] {
+        width: 100%;
+        border: 1px solid #eee;
     }
 }
 
@@ -234,6 +260,7 @@
     }
 }
 
+
 /**
 *	Warranty
 */
@@ -264,20 +291,6 @@
     }
 }
 
-/*Clients gallery*/
-.is-style-clients-gallery {
-    text-align: center;
-
-    img {
-        width: auto !important;
-        height: 30px;
-        margin-right: 5px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-}
-
-
 .wp-block-group.is-style-layout-grid .block-editor-block-list__layout {
     display: -ms-flexbox;
     display: flex;
@@ -304,7 +317,7 @@
 }
 
 .wp-block-svbk-grid {
-    border: 3px #CCC dashed;
+    border: 3px #ccc dashed;
     padding: 1em
 }
 
@@ -340,6 +353,10 @@
     flex: 1 0 15%
 }
 
+/**
+*	Countdown
+*/
+
 .wp-block-svbk-countdown .countdown__digit,
 .wp-block-svbk-countdown .countdown__segment {
     background: #BBB;
@@ -355,5 +372,5 @@
 
 .wp-block-svbk-countdown .countdown__expires {
     font-size: small;
-    color: #AAA
+    color: #aaa;
 }
