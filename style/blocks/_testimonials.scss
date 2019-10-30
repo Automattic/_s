@@ -38,15 +38,20 @@
     }
 
     &.is-style-masonry {
-        column-count: 3;
 
         .testimonial {
-            display: inline-block;
-            margin-bottom: 20px;
 
             &:before,
             &:after {
                 display: none;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            column-count: 2;
+
+            .testimonial {
+                margin-bottom: 20px;
             }
         }
     }
