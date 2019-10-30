@@ -38,8 +38,20 @@ ul {
 		}
 	}
 
-	&.is-style-pros li:before {
-		@include icon-content('\e92d');
+	&.is-style-pros li {
+		@include font-size(1.1);
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+
+		&:last-of-type {
+			border-bottom: none;
+		}
+
+		&:before {
+			@include icon-content('\e90c');
+			@include font-size(1.2);
+		}
 	}
 
 	&.is-style-cons li:before {
