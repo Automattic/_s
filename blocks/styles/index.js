@@ -11,13 +11,8 @@ wp.blocks.registerBlockStyle( 'core/paragraph', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/list', {
-    name: 'pros',
-    label: 'Pros'
-} );
-
-wp.blocks.registerBlockStyle( 'core/list', {
-    name: 'cons',
-    label: 'Cons'
+    name: 'bullets',
+    label: 'Bullets'
 } );
 
 wp.blocks.registerBlockStyle( 'core/button', {
