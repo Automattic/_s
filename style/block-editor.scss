@@ -379,14 +379,12 @@
     width: 24px;
 }
 
-.wp-block-svbk-icon-paragraph__icon .icon-editor__icon {
-    float: left;
-    padding-top: 10px;
-    margin-right: 5px;
-}
+.wp-block-svbk-icon-paragraph__icon {
+    width: 109px;
 
-.wp-block-svbk-icon-paragraph__content {
-    margin-left: 30px;
+    .icon-editor__icon {
+        margin: 10px 0 0;
+    }
 }
 
 /**
