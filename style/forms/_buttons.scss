@@ -59,6 +59,112 @@ input[type="submit"],
 	}
 }
 
+.wp-block-button__link {
+
+	&.has-primary-background-color {
+		background-color: $color__corporate;
+		border-color: $color__corporate;
+	}
+
+	&.has-primary-color,
+	&.has-primary-color:hover,
+	&.has-primary-color:focus {
+		color: $color__corporate;
+	}
+
+	&.has-secondary-background-color {
+		background-color: $color__corporate-secondary;
+		border-color: $color__corporate-secondary;
+
+		&:hover {
+			$hover-color: lighten($color__corporate-secondary, 10%);
+			background-color: $hover-color;
+			border-color: $hover-color;
+		}
+
+		&:focus {
+			$focus-color: darken($color__corporate-secondary, 8%);
+			background-color: $focus-color;
+			border-color: $focus-color;
+		}
+	}
+
+	&.has-secondary-color,
+	&.has-secondary-color:hover,
+	&.has-secondary-color:focus {
+		color: $color__corporate-secondary;
+	}
+
+	&.has-dark-gray-background-color {
+		background-color: $color__background-dark;
+		border-color: $color__background-dark;
+
+		&:hover {
+			$hover-color: lighten($color__background-dark, 10%);
+			background-color: $hover-color;
+			border-color: $hover-color;
+		}
+
+		&:focus {
+			$focus-color: darken($color__background-dark, 8%);
+			background-color: $focus-color;
+			border-color: $focus-color;
+		}
+	}
+
+	&.has-dark-gray-color,
+	&.has-dark-gray-color:hover,
+	&.has-dark-gray-color:focus {
+		color: $color__background-dark;
+	}
+
+	&.has-light-gray-background-color {
+		background-color: $color__background-light;
+		border-color: $color__background-light;
+
+		&:hover {
+			$hover-color: lighten($color__background-light, 10%);
+			background-color: $hover-color;
+			border-color: $hover-color;
+		}
+
+		&:focus {
+			$focus-color: darken($color__background-light, .8%);
+			background-color: $focus-color;
+			border-color: $focus-color;
+		}
+	}
+
+	&.has-light-gray-color,
+	&.has-light-gray-color:hover,
+	&.has-light-gray-color:focus  {
+		color: $color__background-light;
+	}
+
+	&.has-white-background-color {
+		background-color: #fff;
+		border-color: #fff;
+
+		&:hover {
+			$hover-color: darken(#fff, .5%);
+			background-color: $hover-color;
+			border-color: $hover-color;
+		}
+
+		&:focus {
+			$focus-color: darken(#fff, .8%);
+			background-color: $focus-color;
+			border-color: $focus-color;
+		}
+	}
+
+	&.has-white-color,
+	&.has-white-color:hover,
+	&.has-white-color:focus  {
+		color: #fff;
+	}
+}
+
 .is-style-outline .wp-block-button__link,
 .wp-block-svbk-collapse__button,
 .wp-block-svbk-card .wp-block-button__link,
