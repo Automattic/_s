@@ -4,6 +4,7 @@
 	margin-left: -$padding__content-mobile;
 	margin-right: -$padding__content-mobile;
 	text-align: center;
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.1);
 
 	&:after {
 		@include clearfix();
@@ -13,6 +14,7 @@
     @media screen and (min-width: breakpoint('tablet-landscape')) {
         margin-left: -$padding__content-tablet;
 		margin-right: -$padding__content-tablet;
+		box-shadow: none;
     }
     
     @media screen and (min-width: $size__content-width) {
