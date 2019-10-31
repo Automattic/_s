@@ -45,6 +45,66 @@
 		position: relative;
 		z-index: 1;
 		border-radius: 8px;
+
+		&.has-primary-background-color {
+			background-color: $color__corporate;
+			box-shadow: 0 0 0 10px $color__corporate, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-secondary-background-color {
+			background-color: $color__corporate-secondary;
+			box-shadow: 0 0 0 10px $color__corporate-secondary, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-dark-gray-background-color {
+			background-color: $color__background-dark;
+			box-shadow: 0 0 0 10px $color__background-dark, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-light-gray-background-color {
+			background-color: $color__background-light;
+			box-shadow: 0 0 0 10px $color__background-light, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-primary-color {
+			color: $color__corporate;
+
+			h3 {
+				color: $color__corporate;
+			}
+		}
+
+		&.has-secondary-color {
+			color: $color__corporate-secondary;
+
+			h3 {
+				color: $color__corporate-secondary;
+			}
+		}
+
+		&.has-dark-gray-color {
+			color: $color__background-dark;
+
+			h3 {
+				color: $color__background-dark;
+			}
+		}
+
+		&.has-light-gray-color {
+			color: $color__background-light;
+
+			h3 {
+				color: $color__background-light;
+			}
+		}
+
+		&.has-white-color {
+			color: #fff;
+
+			h3 {
+				color: #fff;
+			}
+		}
 		
 		.wp-block-svbk-warranty__header {
 			text-align: center;
@@ -115,10 +175,10 @@
 			transform: translateY(-50%) translateX(-50%);
 			
 			img {
-				object-fit: none;
 				width: 80px;
 				height: auto;
 				margin: 0;
+				object-fit: contain;
 			}
 		}
 		
@@ -138,6 +198,10 @@
 		.wp-block-svbk-warranty__title {
 			@include font-size(1.2);
 			margin-top: 0;
+		}
+
+		.wp-block-svbk-warranty__subtitle {
+			@include font-size(1);
 		}
 		
 		.wp-block-svbk-warranty__content {
