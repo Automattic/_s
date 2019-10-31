@@ -274,6 +274,13 @@
                 margin-top: 0;
                 margin-bottom: 0;
             }
+
+            .more-link {
+                display: inline-block;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%)
+            }
         }
 
         @media screen and (max-width: breakpoint('tablet-landscape')) {
@@ -288,6 +295,13 @@
 
             @media screen and (min-width: breakpoint('desktop')) {
                 padding: 40px;
+            }
+        }
+
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+                
+            .more-link {
+                float: right;
             }
         }
     }
