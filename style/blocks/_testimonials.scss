@@ -62,7 +62,7 @@
 
         &:before {
             @include icon-content('\e926');
-            @include font-size(2);
+            @include font-size(1.9);
             display: block;
             position: absolute;
             bottom: 25px;
@@ -74,7 +74,7 @@
             text-align: center;
             animation-name: loader-rotation;
             animation-iteration-count: infinite;
-            animation-duration: 1s;
+            animation-duration: 1.2s;
             animation-timing-function: ease-in-out;
             color: #bbb;
         }
@@ -429,15 +429,15 @@
     display: block;
     width: 250px;
     margin: 30px 0;
+    line-height: normal;
     
     &:after {
         @include icon-content('\e931');
         @include font-size(1.2);
         font-weight: normal;
-        vertical-align: middle;
         margin-left: 8px;
         position: relative;
-        bottom: 2px;
+        top: 2px;
     }
 }
 
