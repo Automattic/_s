@@ -69,11 +69,11 @@
 	"color_palette": {
 		"primary" : {
 			"name":"Primary",
-			"color":"#e94b4b"
+			"color":"#1976d2"
 		},
 		"secondary": {
 			"name":"Secondary",
-			"color":"#2b53af"
+			"color":"#7edeea"
 		},
 		"dark-gray":{
 			"name":"Dark Gray",
