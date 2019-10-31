@@ -493,3 +493,23 @@
         line-height: 1.4;
     }
 }
+
+/**
+*   Trust
+*/
+
+.wp-block-svbk-trust {
+
+    .wp-block-svbk-trust__ribbon {
+        @include font-size(1.4);
+        margin-bottom: 10px;
+    }
+
+    .editor-block-list__layout {
+        display: flex;
+    }
+
+    .wp-block-image {
+        max-width: 218px;
+    }
+}
