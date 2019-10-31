@@ -12,6 +12,11 @@
 	.wrap {
 		padding-top: 50px;
 		padding-bottom: 30px;
+
+		&:after {
+			@include clearfix();
+			@include clearfix-after();
+		}
 	}
 
 	img {
@@ -91,6 +96,15 @@
 		}
 
 		.menu {
+			display: inline;
+
+			li {
+				display: inline;
+
+				&::before {
+					display: none;
+				}
+			}
 
 			&:before,
 			&:after {
