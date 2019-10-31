@@ -34,6 +34,14 @@
 		margin-top: 10px;
 		text-align: left;
 	}
+
+	.wp-block-button {
+		display: inline-block;
+
+		.wp-block-button__link {
+			color: $color__link;
+		}
+	} 
 	
 	&[class$="background-color"],
 	&.is-style-featured {
