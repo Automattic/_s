@@ -25,7 +25,8 @@
 
 .has-dark-gray-background-color,
 .has-primary-background-color,
-.has-secondary-background-color {
+.has-secondary-background-color,
+.has-gradient-background-color {
 	color: #fff;
 
 	ol li:before,
@@ -90,6 +91,10 @@
 
 .has-white-background-color {
 	background-color: #fff;
+}
+
+.has-gradient-background-color {
+	background-image: $color__background-gradient;
 }
 
 .has-light-gray-background-color,

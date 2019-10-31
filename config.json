@@ -86,6 +86,10 @@
 		"white": {
 			"name":"White",
 			"color":"#ffffff"
+		},
+		"gradient": {
+			"name":"Corporate gradient",
+			"color":"linear-gradient(to bottom, #1976d2, #11508e)"
 		}		
 	}
 }
