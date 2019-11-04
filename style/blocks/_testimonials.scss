@@ -465,9 +465,12 @@ figure.wp-block-svbk-testimonial__company-logo {
 .wp-block-svbk-testimonial-embed.is-style-inline {
     margin-top: 20px;
 
-    &:before,
-    &:after {
-        display: none;
+    .wp-block-svbk-testimonial {
+
+        &:before,
+        &:after {
+            display: none;
+        }
     }
 
     p {
