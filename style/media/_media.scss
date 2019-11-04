@@ -61,4 +61,11 @@ object {
 	&.is-style-rounded-corners img {
 		border-radius: 8px;
 	}
+
+	&.alignfull img {
+		max-height: 500px;
+		max-height: 70vh;
+		object-fit: cover;
+		object-position: top;
+	}
 }
