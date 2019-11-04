@@ -7,19 +7,6 @@
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
-
-	&.has-primary-background-color,
-	&.has-dark-gray-background-color {
-		
-		h3 {
-			color: #fff;
-		}
-
-		.wp-block-button__link {
-			border-color: #fff;
-			color: #fff;
-		}
-	}
 	
 	figure img {
 		display: block;
@@ -90,6 +77,120 @@
 		
 		svg {
 			fill: $color__corporate;
+		}
+	}
+}
+
+.wp-block-button__link {
+
+	.has-white-color & {
+		color: #fff;
+		border-color: #fff;
+
+		&:visited {
+			color: #fff;
+			border-color: #fff;
+		}
+
+		&:hover {
+			color: #fff;
+			box-shadow: 0 0 0 1px #fff;
+			border-color: #fff;
+		}
+
+		&:active,
+		&:focus {
+			background: rgba(255,255,255,.15);
+			color: #fff;
+			border-color: #fff;
+		}
+	}
+
+	.has-primary-color & {
+		color: $color__corporate;
+		border-color: $color__corporate;
+
+		&:visited {
+			color: $color__corporate;
+			border-color: $color__corporate;
+		}
+
+		&:hover {
+			color: $color__corporate;
+			box-shadow: 0 0 0 1px $color__corporate;
+			border-color: $color__corporate;
+		}
+
+		&:active,
+		&:focus {
+			color: $color__corporate;
+			border-color: $color__corporate;
+		}
+	}
+
+	.has-secondary-color & {
+		color: $color__corporate-secondary;
+		border-color: $color__corporate-secondary;
+
+		&:visited {
+			color: $color__corporate-secondary;
+			border-color: $color__corporate-secondary;
+		}
+
+		&:hover {
+			color: $color__corporate-secondary;
+			box-shadow: 0 0 0 1px $color__corporate-secondary;
+			border-color: $color__corporate-secondary;
+		}
+
+		&:active,
+		&:focus {
+			color: $color__corporate-secondary;
+			border-color: $color__corporate-secondary;
+		}
+	}
+
+	.has-dark-gray-color & {
+		color: $color__background-dark;
+		border-color: $color__background-dark;
+
+		&:visited {
+			color: $color__background-dark;
+			border-color: $color__background-dark;
+		}
+
+		&:hover {
+			color: $color__background-dark;
+			box-shadow: 0 0 0 1px $color__background-dark;
+			border-color: $color__background-dark;
+		}
+
+		&:active,
+		&:focus {
+			color: $color__background-dark;
+			border-color: $color__background-dark;
+		}
+	}
+
+	.has-light-gray-color & {
+		color: $color__background-light;
+		border-color: $color__background-light;
+
+		&:visited {
+			color: $color__background-light;
+			border-color: $color__background-light;
+		}
+
+		&:hover {
+			color: $color__background-light;
+			box-shadow: 0 0 0 1px $color__background-light;
+			border-color: $color__background-light;
+		}
+
+		&:active,
+		&:focus {
+			color: $color__background-light;
+			border-color: $color__background-light;
 		}
 	}
 }
