@@ -20,8 +20,10 @@ ul {
 		display: inline-block;
 		width: .8em;
 		margin-left: -.8em;
-		@include font-size(1);
+		@include font-size(1.6);
+		line-height: 1rem;
 		vertical-align: middle;
+		margin-bottom: 2px;
 	}
 
 	&.is-style-bullets {
