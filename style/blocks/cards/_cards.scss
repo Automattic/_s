@@ -7,6 +7,20 @@
 	max-width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+
+	ul.is-style-bullets {
+
+		li {
+			@include font-size(1);
+			border-bottom: none;
+			margin-bottom: 8px;
+			padding-bottom: 0;
+
+			&:before {
+				@include font-size(1);
+			}
+		}
+	}
 	
 	figure img {
 		display: block;
