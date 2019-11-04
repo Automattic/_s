@@ -2,8 +2,9 @@
 .wp-block-svbk-publication > a {
     display: flex;
     align-items: center;
-    margin-top: 30px;
     max-width: 800px;
+    margin-top: 25px;
+    margin-bottom: 25px;
     
     p {
         margin: 0;
@@ -17,7 +18,7 @@
         
         img {
             width: 130px;
-            height: 130px;
+            height: auto;
             object-fit: contain;
         }
     }
@@ -42,7 +43,6 @@
             
             img {
                 width: 170px;
-                height: 170px;
             }
         }
     }
