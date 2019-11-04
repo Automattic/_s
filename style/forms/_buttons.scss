@@ -192,6 +192,71 @@ input[type="submit"],
 		color: $color__border-button-focus-secondary;
 		border-color: $color__border-button-focus-secondary;
 	}
+
+	&.has-primary-color {
+		color: $color__corporate;
+		border-color: $color__corporate;
+
+		&:hover {
+			box-shadow: 0 0 0 1px $color__corporate;	
+		}
+
+		&:visited {
+			color: $color__corporate;	
+		}
+	}
+
+	&.has-secondary-color {
+		color: $color__corporate-secondary;
+		border-color: $color__corporate-secondary;
+
+		&:hover {
+			box-shadow: 0 0 0 1px $color__corporate-secondary;	
+		}
+
+		&:visited {
+			color: $color__corporate-secondary;	
+		}
+	}
+
+	&.has-dark-gray-color {
+		color: $color__background-dark;
+		border-color: $color__background-dark;
+
+		&:hover {
+			box-shadow: 0 0 0 1px $color__background-dark;	
+		}
+
+		&:visited {
+			color: $color__background-dark;	
+		}
+	}
+
+	&.has-light-gray-color {
+		color: $color__background-light;
+		border-color: $color__background-light;
+
+		&:hover {
+			box-shadow: 0 0 0 1px $color__background-light;	
+		}
+
+		&:visited {
+			color: $color__background-light;	
+		}
+	}
+
+	&.has-white-color {
+		color: #fff;
+		border-color: #fff;
+
+		&:hover {
+			box-shadow: 0 0 0 1px #fff;	
+		}
+
+		&:visited {
+			color: #fff;	
+		}
+	}
 }
 
 .is-style-text-button .wp-block-button__link,
