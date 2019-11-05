@@ -18,6 +18,32 @@
 			&:before {
 				display: none;
 			}
+
+			&.cta-item {
+
+				a {
+					background-color: $color__background-button;
+					color: $color__text-button;
+					padding: .6em .8em;
+					border-color: $color__border-button;
+					box-shadow: 0 0 0 1px transparent;
+					transition: background .15s ease-in-out,
+								box-shadow .15s ease-in-out;
+	
+					&:visited {
+						background-color: $color__background-button;
+					}
+	
+					&:hover {
+						background-color: $color__background-button-hover;
+					}
+	
+					&:focus,
+					&:active {
+						background-color: $color__background-button-focus;
+					}
+				}
+			}
 		}
 	}
 
@@ -31,10 +57,11 @@
 		}
 
 		> a:after {
-			@include icon-content("\e90a");
-			@include font-size(.5);
+			@include icon-content("\e90e");
+			@include font-size(.45);
 			position: absolute;
 			right: 0;
+			vertical-align: middle;
 		}
 
 		.sub-menu {
@@ -48,14 +75,8 @@
 
 				a {
 					text-transform: none;
-
-					&:before {
-						content: "\2022";
-						display: inline-block;
-						vertical-align: middle;
-						margin-right: 5px;
-						color: $color__corporate;
-					}
+					font-weight: normal;
+					padding: 0;
 				}
 
 				&.current-menu-item {
@@ -72,7 +93,7 @@
 			background-color: $color__background-sub-menu;
 
 			> a:after {
-				@include icon-content("\e909");
+				@include icon-content("\e90b");
 			}
 
 			.sub-menu {
@@ -101,29 +122,10 @@
 				}
 
 				&.cta-item {
+					margin-left: 5px;
 
 					a {
 						display: inline;
-						background-color: $color__background-button;
-						color: $color__text-button;
-						padding: .6em .8em;
-						border-color: $color__border-button;
-						box-shadow: 0 0 0 1px transparent;
-						transition: background .15s ease-in-out,
-									box-shadow .15s ease-in-out;
-
-						&:visited {
-							background-color: $color__background-button;
-						}
-
-						&:hover {
-							background-color: $color__background-button-hover;
-						}
-
-						&:focus,
-						&:active {
-							background-color: $color__background-button-focus;
-						}
 					}
 				}
 			}
@@ -137,14 +139,14 @@
 				background-color: $color__background-sub-menu;
 				position: absolute;
 				z-index: 10;
-				padding: 15px;
+				padding: 15px 10px 20px;
 				margin: 0;
 				width: 190px;
 				text-align: left;
 
 				li {
 					float: none;
-					margin-bottom: 10px;
+					margin-bottom: 15px;
 
 					&:last-of-type {
 						margin-bottom: 0;
@@ -156,9 +158,12 @@
 				}
 			}
 
-			&.focus,
 			&.expanded {
 				background-color: $color__background-sub-menu;
+
+				a:after {
+					color: $color__corporate
+				}
 			}
 
 			> a:after,
