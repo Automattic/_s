@@ -18,6 +18,54 @@
     }
 }
 
+.has-primary-background-color {
+	background-color: $color__corporate;
+}
+
+.has-secondary-background-color {
+	background-color: $color__corporate-secondary;
+}
+
+.has-tertiary-background-color {
+	background-color: $color__corporate-tertiary;
+}
+
+.has-dark-gray-background-color {
+	background-color: $color__background-dark;
+}
+
+.has-light-gray-background-color {
+	background-color: $color__background-light;
+}
+
+.has-white-background-color {
+	background-color: #fff;
+}
+
+.has-gradient-background-color {
+	background-image: $color__background-gradient;
+}
+
+.has-primary-color {
+	color: $color__corporate;
+}
+
+.has-secondary-color {
+	color: $color__corporate-secondary;
+}
+
+.has-dark-gray-color {
+	color: $color__background-dark;
+}
+
+.has-light-gray-color {
+	color: $color__background-light;
+}
+
+.has-white-color {
+	color: #fff;
+}
+
 /**
 *	Typography
 */
