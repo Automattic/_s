@@ -4,7 +4,8 @@
     "theme_name" : "_svbk",
     "theme_handle" : "_svbk",
     
-	"content_width": 1120,
+	"content_width": 800,
+	"page_width": 1120,
 	"page_max_width": 1366,	
 	"sidebar_width_ratio": 0.3,
 	

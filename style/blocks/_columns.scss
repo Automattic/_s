@@ -33,6 +33,10 @@
 
 	@media screen and (min-width: 600px) {
 
+		.wp-block-column {
+			flex-grow: 1;
+		}
+
 		.wp-block-column:nth-child(2n) {
 			//Fix Gutenberg native columns stacking on small screens
 			padding-left: 32px;
@@ -123,6 +127,21 @@
 			.wp-block-column:first-of-type {
 				flex-grow: 1;
 			}
+		}
+	}
+
+	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
+		padding-left: calc((100vw - #{$size__content-width}) /2);
+		padding-right: calc((100vw - #{$size__content-width}) /2);
+
+		&.alignwide {
+			padding-left: calc((100vw - #{$size__page-width}) /2);
+			padding-right: calc((100vw - #{$size__page-width}) /2);
+		}
+
+		&.alignfull {
+			padding-left: $padding__content-tablet;
+			padding-right: $padding__content-tablet;
 		}
 	}
 }

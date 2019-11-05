@@ -12,26 +12,35 @@
     }
     
     .page__content > & {
-    
+
+        .wp-block-group__inner-container {
+            max-width: $size__content-width;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &.alignwide .wp-block-group__inner-container {
+            max-width: $size__page-width;
+        }
+
+        &.alignfull .wp-block-group__inner-container {
+            max-width: 100%;  
+        }
+
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+            padding-left: $padding__content-tablet;
+            padding-right: $padding__content-tablet;
+        }
+
         &.has-background {
             padding-left: $padding__content-mobile;
             padding-right: $padding__content-mobile;
-            
-            @media screen and (min-width: breakpoint('tablet-landscape')) {
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+
+            @media screen and (min-width: breakpoint('tablet-landscape')) and (max-width: $size__page-width + $padding__content-desktop*2) {
                 padding-left: $padding__content-tablet;
                 padding-right: $padding__content-tablet;
-            }
-                
-            @media screen and (min-width: $size__content-width) {
-        		margin-left: calc(50% - 50vw);
-        		margin-right: calc(50% - 50vw);
-        		padding-left: calc((100vw - #{$size__content-width}) /2 + 35px);
-        		padding-right: calc((100vw - #{$size__content-width}) /2 + 35px);
-            }
-            
-            @media screen and (min-width: $size__tablet-content-width) {
-                padding-left: calc((100vw - #{$size__content-width}) /2);
-                padding-right: calc((100vw - #{$size__content-width}) /2);
             }
         }
     }
@@ -60,16 +69,14 @@
     
     &.is-style-green-check {
         position: relative;
-        max-width: 800px;
+        max-width: $size__content-width;
         margin: 100px auto 80px;
         padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 10px;
-        text-align: center;
         
         h2 {
             @include font-size(2.8);
-            text-align: center;
         }
         
         &:before {

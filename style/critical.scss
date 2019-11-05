@@ -83,7 +83,7 @@ img {
 .wrap {
 	padding-left: $padding__content-mobile;
 	padding-right: $padding__content-mobile;
-	max-width: $size__content-width;
+	max-width: $size__page-width;
 	margin-left: auto;
 	margin-right: auto;
 	
@@ -100,12 +100,12 @@ img {
 
 .alignfull,
 .alignwide {
+	padding-left: $padding__content-mobile;
+	padding-right: $padding__content-mobile;
 	margin-left: -#{$padding__content-mobile};
 	margin-right: -#{$padding__content-mobile};
 	width: auto;
 	max-width: 1000%;
-	padding-left: $padding__content-mobile;
-	padding-right: $padding__content-mobile;
 	
 	&.wp-block-image {
 		margin-top: 0;
@@ -195,4 +195,3 @@ img {
 # Layout
 --------------------------------------------------------------*/
 //@import "layout/in-grid";
-@import "layout/full";

@@ -155,11 +155,11 @@
 		padding-right: $padding__content-tablet;
 	}
 	
-	@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
+	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__content-width}) /2);
-		padding-right: calc((100vw - #{$size__content-width}) /2);
+		padding-left: calc((100vw - #{$size__page-width}) /2);
+		padding-right: calc((100vw - #{$size__page-width}) /2);
 	}
 	
 	&.is-style-small {
