@@ -1,6 +1,4 @@
 .wp-block-columns {
-	padding-top: 50px;
-	padding-bottom: 50px;
 	margin-bottom: 0;
 	
 	figure {
@@ -21,13 +19,8 @@
 		padding-top: 0;
 		padding-bottom: 0;
 	}
-	
-	.wp-block-column {
-		margin-bottom: 0;
-	}
 
-	.wp-block-column:nth-of-type(2) {
-		margin-bottom: 0;
+	.wp-block-column:nth-child(2n) {
 
 		h2 {
 			margin-top: 0;
@@ -39,6 +32,20 @@
 	}
 
 	@media screen and (min-width: 600px) {
+
+		.wp-block-column {
+			flex-grow: 1;
+		}
+
+		.wp-block-column:nth-child(2n) {
+			//Fix Gutenberg native columns stacking on small screens
+			padding-left: 32px;
+			margin-left: 0;
+	
+			h2 {
+				margin-top: 0;
+			}
+		}
 		
 		&.is-style-split,
 		&.is-style-split-inverted {
@@ -71,32 +78,20 @@
 			}
 		}
 		
-		&.is-style-shrink-first {
-			
-			.wp-block-column:first-of-type {
-				flex-basis: 32%;
-			}
-			
-			.wp-block-column:last-of-type {
-				flex-grow: 1;
-			}
-		}
-		
+		&.is-style-shrink-first,
 		&.is-style-shrink-last {
-			
-			.wp-block-column:last-of-type {
-				flex-basis: 32%;
-			}
-			
-			.wp-block-column:first-of-type {
-				flex-grow: 1;
+
+			.wp-block-column {
+				flex-basis: 49%;
+
+				&.wp-block-column:nth-child(2n){
+					margin-left: 2%;
+				}
 			}
 		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-top: 60px;
-		padding-bottom: 60px;
 		
 		&.is-style-split {
 
@@ -110,6 +105,43 @@
 			.wp-block-column:last-of-type {
 				padding-right: 8.5%;
 			}
+		}
+
+		&.is-style-shrink-first {
+			
+			.wp-block-column:first-of-type {
+				flex-basis: 32%;
+			}
+			
+			.wp-block-column:last-of-type {
+				flex-grow: 1;
+			}
+		}
+
+		&.is-style-shrink-last {
+			
+			.wp-block-column:last-of-type {
+				flex-basis: 32%;
+			}
+			
+			.wp-block-column:first-of-type {
+				flex-grow: 1;
+			}
+		}
+	}
+
+	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
+		padding-left: calc((100vw - #{$size__content-width}) /2);
+		padding-right: calc((100vw - #{$size__content-width}) /2);
+
+		&.alignwide {
+			padding-left: calc((100vw - #{$size__page-width}) /2);
+			padding-right: calc((100vw - #{$size__page-width}) /2);
+		}
+
+		&.alignfull {
+			padding-left: $padding__content-tablet;
+			padding-right: $padding__content-tablet;
 		}
 	}
 }

@@ -8,7 +8,6 @@ $size__header-height-stuck: 81px;
 	width: 100%;
 	background: $color__background-header;
 	z-index: 9;
-	box-shadow: 0 0 3px rgba(0,0,0,.2);
 	animation-name: sticky-header;
 	animation-duration: .5s;
 	animation-timing-function: ease-in-out;
@@ -29,13 +28,6 @@ $size__header-height-stuck: 81px;
 				position: relative;
 				top: 50%;
 				transform: translateY(-50%);
-			}
-
-			.home & a {
-				background: $color__background-button;
-				padding: .5em .8em;
-				border-radius: 8px;
-				color: #fff;
 			}
 		}
 

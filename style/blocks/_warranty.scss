@@ -36,6 +36,7 @@
 	.wp-block-svbk-warranty__content {
 		border: 2px solid #d0a83a;
 		box-shadow: 0 0 0 10px rgba(255,255,255,1), 1px 1px 4px rgba(0,0,0,.1);
+		background-color: #fff;
 		padding: 0 20px 30px;
 		max-width: 800px;
 		margin-left: auto;
@@ -44,6 +45,66 @@
 		position: relative;
 		z-index: 1;
 		border-radius: 8px;
+
+		&.has-primary-background-color {
+			background-color: $color__corporate;
+			box-shadow: 0 0 0 10px $color__corporate, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-secondary-background-color {
+			background-color: $color__corporate-secondary;
+			box-shadow: 0 0 0 10px $color__corporate-secondary, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-dark-gray-background-color {
+			background-color: $color__background-dark;
+			box-shadow: 0 0 0 10px $color__background-dark, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-light-gray-background-color {
+			background-color: $color__background-light;
+			box-shadow: 0 0 0 10px $color__background-light, 1px 1px 4px rgba(0,0,0,.1);
+		}
+
+		&.has-primary-color {
+			color: $color__corporate;
+
+			h3 {
+				color: $color__corporate;
+			}
+		}
+
+		&.has-secondary-color {
+			color: $color__corporate-secondary;
+
+			h3 {
+				color: $color__corporate-secondary;
+			}
+		}
+
+		&.has-dark-gray-color {
+			color: $color__background-dark;
+
+			h3 {
+				color: $color__background-dark;
+			}
+		}
+
+		&.has-light-gray-color {
+			color: $color__background-light;
+
+			h3 {
+				color: $color__background-light;
+			}
+		}
+
+		&.has-white-color {
+			color: #fff;
+
+			h3 {
+				color: #fff;
+			}
+		}
 		
 		.wp-block-svbk-warranty__header {
 			text-align: center;
@@ -94,11 +155,11 @@
 		padding-right: $padding__content-tablet;
 	}
 	
-	@media screen and (min-width: $size__content-width + $padding__content-desktop*2) {
+	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__content-width}) /2);
-		padding-right: calc((100vw - #{$size__content-width}) /2);
+		padding-left: calc((100vw - #{$size__page-width}) /2);
+		padding-right: calc((100vw - #{$size__page-width}) /2);
 	}
 	
 	&.is-style-small {
@@ -114,10 +175,10 @@
 			transform: translateY(-50%) translateX(-50%);
 			
 			img {
-				object-fit: none;
 				width: 80px;
 				height: auto;
 				margin: 0;
+				object-fit: contain;
 			}
 		}
 		
@@ -137,6 +198,10 @@
 		.wp-block-svbk-warranty__title {
 			@include font-size(1.2);
 			margin-top: 0;
+		}
+
+		.wp-block-svbk-warranty__subtitle {
+			@include font-size(1);
 		}
 		
 		.wp-block-svbk-warranty__content {

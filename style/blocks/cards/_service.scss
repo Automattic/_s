@@ -23,10 +23,6 @@
 			}
 		}	
 	}
-	
-	.wp-block-svbk-card__title {
-		color: $color__text-main;
-	}
 		
 	.wp-block-svbk-card__picture {
 		margin-left: -20px;
@@ -65,50 +61,6 @@
 			margin: 10px 0;
 		}
 		
-		.has-primary-background-color & .wp-block-svbk-card__ribbon {
-			
-			&:before {
-				border-left-color: $color__corporate;
-			}
-			
-			&:after {
-				border-right-color: $color__corporate;
-			}
-		}
-		
-		.has-secondary-background-color & .wp-block-svbk-card__ribbon {
-			
-			&:before {
-				border-left-color: $color__corporate-secondary;
-			}
-			
-			&:after {
-				border-right-color: $color__corporate-secondary;
-			}
-		}
-		
-		.has-light-gray-background-color & .wp-block-svbk-card__ribbon {
-			
-			&:before {
-				border-left-color: $color__background-light;
-			}
-			
-			&:after {
-				border-right-color: $color__background-light;
-			}
-		}
-		
-		.has-dark-gray-background-color & .wp-block-svbk-card__ribbon {
-			
-			&:before {
-				border-left-color: $color__background-dark;
-			}
-			
-			&:after {
-				border-right-color: $color__background-dark;
-			}
-		}
-		
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
 			padding-bottom: 20px;
 			
@@ -117,39 +69,42 @@
 			}
 		}
 	}
-	
+
 	.wp-block-svbk-card__ribbon {
+		@include font-size(.75);
 		position: absolute;
 		top: 30px;
-		right: -32px;
-		background: $color__success;
-		color: #fff;
+		right: -35px;
 		transform: rotate(45deg);
-		padding: 3px 20px;
+		border-bottom-width: 31px;
+		border-bottom-style: solid;
+		border-left: 31px solid transparent;
+		border-right: 31px solid transparent;
+		height: 0;
+		width: 160px;
+		line-height: 28px;
 		text-align: center;
-		width: 155px;
-		white-space: nowrap;
-		
-		&:before,
-		&:after {
-		    content: "";
-		    position: absolute;
-		    top: -3px;
-		    width: 0;
-		    height: 0;
-		    border-bottom: 32px solid transparent;
+
+		&.has-primary-ribbon {
+			border-bottom-color: $color__corporate;
+			color: #fff;
 		}
-	
-		&:before {
-			left: -2px;
-			border-left: 32px solid white;
-			border-right: 32px solid transparent;
+
+		&.has-secondary-ribbon {
+			border-bottom-color: $color__corporate-secondary;
 		}
-		
-		&:after {
-			right: -2px;
-			border-left: 32px solid transparent;
-			border-right: 32px solid white;
+
+		&.has-dark-gray-ribbon {
+			border-bottom-color: $color__background-dark;
+			color: #fff;
+		}
+
+		&.has-light-gray-ribbon {
+			border-bottom-color: $color__background-light;
+		}
+
+		&.has-white-ribbon {
+			border-bottom-color: #fff;
 		}
 	}
 	

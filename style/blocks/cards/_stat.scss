@@ -1,5 +1,4 @@
 .wp-block-svbk-stats {
-    text-align: center;
     
     .wp-block-svbk-stats__icon,
     .wp-block-svbk-stats__metric {
@@ -20,11 +19,14 @@
     }
     
     .wp-block-svbk-stats__description {
-        border-top: 1px solid $color__background-light;
+        border-top: 1px solid;
         padding-top: 10px;
+        margin-bottom: 0;
     }
     
     @media screen and (min-width: breakpoint('tablet-portrait')) {
+        text-align: center;
         padding: 0 20px;
+        margin-bottom: 0;
     }
 }

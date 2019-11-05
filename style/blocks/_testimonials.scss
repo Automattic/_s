@@ -7,7 +7,7 @@
     }
 
     .wp-block-svbk-testimonial {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
 
     &.is-style-grid,
@@ -38,15 +38,55 @@
     }
 
     &.is-style-masonry {
-        column-count: 3;
 
         .testimonial {
-            display: inline-block;
-            margin-bottom: 20px;
 
             &:before,
             &:after {
                 display: none;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            column-count: 2;
+
+            .testimonial {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &.loading {
+        padding-bottom: 50px;
+        position: relative;
+
+        &:before {
+            @include icon-content('\e926');
+            @include font-size(1.9);
+            display: block;
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            transform: translateX(-50%);
+            text-align: center;
+            animation-name: loader-rotation;
+            animation-iteration-count: infinite;
+            animation-duration: 1.2s;
+            animation-timing-function: ease-in-out;
+            color: #bbb;
+        }
+
+        @keyframes loader-rotation {
+
+            from {
+                transform: translateX(-50%) rotate(0);
+            }
+
+            to {
+                transform: translateX(-50%) rotate(360deg);
             }
         }
     }
@@ -64,8 +104,23 @@
         margin-bottom: 15px;
     }
 
-    .wp-block-button__link:visited {
+    .wp-block-button__link,
+    .more-link {
         color: $color__corporate;
+
+        &:visited {
+            color: $color__corporate;
+        }
+    }
+
+    .more-link {
+        display: block;
+
+        &:after {
+            @include icon-content('\e922');
+            @include font-size(.8);
+            margin-left: 8px;
+        }
     }
 
     .has-light-gray-background-color &,
@@ -97,6 +152,10 @@
         @include icon-content('\e924');
         bottom: -0.8rem;
         right: 20px;
+    }
+
+    .wp-block-embed.is-type-video {
+        border-width: 0;
     }
 
     &.is-style-vip {
@@ -215,6 +274,13 @@
                 margin-top: 0;
                 margin-bottom: 0;
             }
+
+            .more-link {
+                display: inline-block;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%)
+            }
         }
 
         @media screen and (max-width: breakpoint('tablet-landscape')) {
@@ -229,6 +295,13 @@
 
             @media screen and (min-width: breakpoint('desktop')) {
                 padding: 40px;
+            }
+        }
+
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+                
+            .more-link {
+                float: right;
             }
         }
     }
@@ -356,15 +429,15 @@
     display: block;
     width: 250px;
     margin: 30px 0;
+    line-height: normal;
     
     &:after {
         @include icon-content('\e931');
         @include font-size(1.2);
         font-weight: normal;
-        vertical-align: middle;
         margin-left: 8px;
         position: relative;
-        bottom: 1px;
+        top: 2px;
     }
 }
 
@@ -392,9 +465,12 @@ figure.wp-block-svbk-testimonial__company-logo {
 .wp-block-svbk-testimonial-embed.is-style-inline {
     margin-top: 20px;
 
-    &:before,
-    &:after {
-        display: none;
+    .wp-block-svbk-testimonial {
+
+        &:before,
+        &:after {
+            display: none;
+        }
     }
 
     p {
@@ -407,7 +483,6 @@ figure.wp-block-svbk-testimonial__company-logo {
         margin-top: 0;
         padding: 20px;
     }
-
 
     .wp-block-svbk-testimonial__header {
         text-align: left;

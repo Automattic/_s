@@ -2,12 +2,13 @@
 $size__site-secondary: 30%;
 $size__site-primary: 100% - $size__site-secondary;
 $size__content-width: $content_width * 1px;
+$size__page-width: $page_width * 1px;
 
 $padding__content-mobile: 20px;
 $padding__content-tablet: 35px;
 $padding__content-desktop: 65px;
 
-$size__tablet-content-width: $size__content-width + $padding__content-tablet * 2;
+$size__tablet-content-width: $size__page-width + $padding__content-tablet * 2;
 
 //Header
 $size__logo-height-mobile: 38px;

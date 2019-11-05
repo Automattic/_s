@@ -1,24 +1,153 @@
 .site-footer {
-	background: $color__background-footer;
+	background-color: $color__background-footer;
+	color: rgba(255,255,255,.7);
 	clear: both;
 	@include font-size(.9);
 	margin-bottom: 47px;
 	color: #fff;
+	
+	&:before {
+		content: '';
+		display: block;
+		height: 8px;
+		width: 100%;
+	}
 	
 	.site-footer__section {
 		margin-bottom: 30px;
 	}
 	
 	.wrap {
-		padding-top: 50px;
-		padding-bottom: 30px;
+		padding-top: 30px;
+		padding-bottom: 20px;
 	}
 
 	img {
 		display: block;
-		height: 50px;
+		object-fit: contain;
+		object-position: left;
+		padding-bottom: 20px;
+		height: 80px;
 		width: auto;
 		margin-bottom: 15px;
+		border-bottom: 1px solid #fff;
+		width: 100%;
+	}
+	
+	a {
+		color: rgba(255,255,255,.7);
+		
+		&:hover {
+			color: #f0f0f0;
+		}
+	}
+	
+	.footer-section__title {
+		@include font-size(1.1);
+		color: #fff;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	
+	.site-footer__section {
+		position: relative;
+		margin-bottom: 30px;
+		max-width: 400px;
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		
+		.footer-section__title {
+			position: relative;
+			padding-left: 30px;
+			border-bottom: 1px solid #fff;
+			padding-bottom: 12px;
+			text-transform: uppercase;
+			
+			&:before {
+				@include font-size(1.2);
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-weight: normal;
+				color: #fff;
+			}
+		}
+	}
+
+	#company-info {
+		padding-left: 0;
+
+		p {
+			line-height: 1.2em;
+		}
+
+		.widget,
+		.menu {
+			margin-bottom: 0;
+		}
+
+		.menu {
+			padding: 0;
+
+			li {
+				display: inline-block;
+
+				a {
+					width: 2.2rem;
+					height: 2.2rem;
+					text-indent: -999px;
+					overflow: hidden;
+					position: relative;
+					font-weight: normal;
+					display: inline-block;
+
+					&:before {
+						@include font-size(1.7);
+						width: 2.2rem;
+						height: 2.2rem;
+						line-height: 2.2rem;
+						background: none;
+						position: absolute;
+						top: 0;
+						right: 0;
+						text-indent: 0;
+						color: $color__corporate-secondary;
+					}
+				}
+
+				&.facebook a:before {
+					@include icon-content("\e904");
+				}
+
+				&.instagram a:before {
+					@include icon-content("\e906");
+				}
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+	
+	#company-contacts .footer-section__title:before {
+		@include icon-content('\e936');
+	}
+	
+	#company-opening-hours .footer-section__title:before {
+		@include icon-content('\e902');
+	}
+	
+	#company-address .footer-section__title:before {
+		@include icon-content('\e914');
+	}
+	
+	.company-additional-info {
+		margin-top: 10px;
+		display: block;
+		line-height: 1.3em;
 	}
 	
 	a {
@@ -69,92 +198,67 @@
 	}
 	
 	.sub-footer {
-		background: $color__background-sub-footer;
-		@include font-size(.9);
+		background-color: $color__background-sub-footer;
+		padding: 10px 20px;
 		text-align: center;
-		padding-top: 15px;
-		padding-bottom: 15px;
-		line-height: 1em;
 		
-		div {
+		.menu, li {
 			display: inline;
-		}
-		
-		.copyright-notice:after {
-			content: "-";
-			margin-left: 5px;
-		}
-		
-		.company-name:after,
-		.company-address:after {
-			content: ",";
 		}
 
 		.menu {
-
-			&:before,
-			&:after {
-				content: "|";
-				margin: 0 3px;
-			}
-		}
-
-		.made-by:after {
-			display: none;
-		}
-		
-		.menu-legal-menu-container {
-			display: inline-block;
-
-			ul {
-				padding: 0;
-			}
-
+			padding: 0;
+			
 			li {
-				display: inline;
-				margin: 0 5px;
-
-				&:before {
-					display: none;
+				margin-right: 3px;
+				
+				&:last-of-type {
+					margin-right: 0;
 				}
 			}
-		}
-	}
-	
-	@media screen and (min-width: 600px) {
-		margin-bottom: 0;
-		
-		.site-footer__section {
-			float: left;
-		}
-		
-		.widget-area {
-			display: flex !important;
 			
-			.widget {
-				flex-basis: 33.33%;
-				padding-left: 20px;
+			li:before {
+				display: none;
+			}
+
+			&:before {
+				content: "|";
+				margin: 0 5px;
 			}
 		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		margin-bottom: 0;
+		
+		.wrap {
+			display: flex;
+		}
 		
 		.site-footer__section {
-			width: 25%;
-		}
-		
-		.widget-area {
-			width: 75%;
-		}
-	}
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		
-		.widget-area .widget {
-			padding-left: 40px;
+			flex-basis: 25%;
+			margin-bottom: 0;
+			padding: 10px 30px;
+			
+			.footer-section__title {
+				padding-top: 45px;
+				
+				&:before {
+					top: auto;
+					bottom: 13px;
+				}
+			}
+			
+			&:before {
+				@include font-size(1.5);
+				display: block;
+				position: static;
+				margin-bottom: 10px;
+			}
+			
+			&:last-of-type {
+				border-right: none;
+			}
 		}
 	}
 }
-
-@import 'fixed-bar';

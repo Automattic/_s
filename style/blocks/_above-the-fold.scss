@@ -12,15 +12,15 @@
         margin-right: -$padding__content-tablet;
     }
     
-    @media screen and (min-width: $size__content-width) {
+    @media screen and (min-width: $size__page-width) {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__content-width}) /2 + 35px);
-		padding-right: calc((100vw - #{$size__content-width}) /2 + 35px);
+		padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
+		padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
     }
     
     @media screen and (min-width: $size__tablet-content-width) {
-        padding: 80px calc((100vw - #{$size__content-width}) /2);
+        padding: 80px calc((100vw - #{$size__page-width}) /2);
     }
     
     &.has-bottom-padding {
@@ -67,9 +67,9 @@
             }
         }
 
-        @media screen and (min-width: $size__content-width) {
-            padding-left: calc((100vw - #{$size__content-width}) /2 + 35px);
-            padding-right: calc((100vw - #{$size__content-width}) /2 + 35px);
+        @media screen and (min-width: $size__page-width) {
+            padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
+            padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
 
             .wp-block-svbk-hero__content {
                 padding-top: 100px;
@@ -78,8 +78,8 @@
         }
 
         @media screen and (min-width: $size__tablet-content-width) {
-            padding-left: calc((100vw - #{$size__content-width}) /2);
-            padding-right: calc((100vw - #{$size__content-width}) /2);
+            padding-left: calc((100vw - #{$size__page-width}) /2);
+            padding-right: calc((100vw - #{$size__page-width}) /2);
         }
     }
 
@@ -138,7 +138,7 @@
         }
     }
 
-    @media screen and (min-width: $size__content-width) {
+    @media screen and (min-width: $size__page-width) {
         padding: 40px;
         @include clearfix();
         @include clearfix-after();

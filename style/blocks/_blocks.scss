@@ -11,10 +11,10 @@
 @import "grid-layout";
 @import "group";
 @import "icon-paragraph";
+@import "iter";
 @import "latest-posts";
 @import "map";
 @import "media-and-text";
-@import "method-block";
 @import "offer-block";
 @import "publication";
 @import "rating";
@@ -22,51 +22,6 @@
 @import "team";
 @import "testimonials";
 @import "warranty";
-
-.has-dark-gray-background-color,
-.has-primary-background-color,
-.has-secondary-background-color {
-	color: #fff;
-
-	ol li:before,
-	ul li:before,
-	h1, h2, h3, h4, h5, h6,
-	.is-style-subtitle,
-	.is-style-pretitle {
-		color: #fff;
-	}
-
-	.wp-block-button.is-style-outline .wp-block-button__link {
-		color: #fff;
-		border-color: #fff;
-
-		&:hover {
-			color: #fff;
-			box-shadow: 0 0 0 1px #fff;
-			border-color: #fff;
-		}
-
-		&:active,
-		&:focus {
-			background: rgba(255,255,255,.15);
-			color: #fff;
-			border-color: #fff;
-		}
-	}
-	
-	.wp-block-svbk-profile:not(.has-background) .wp-block-button__link {
-		color: #fff;
-		
-		&:hover {
-			background: rgba(255,255,255,.15);
-		}
-		
-		&:active,
-		&:focus {
-			background: rgba(255,255,255,.2);
-		}
-	}
-}
 
 .has-primary-background-color {
 	background-color: $color__corporate;
@@ -92,7 +47,26 @@
 	background-color: #fff;
 }
 
-.has-light-gray-background-color,
-.has-white-background-color {
-	color: $color__text-main;
+.has-gradient-background-color {
+	background-image: $color__background-gradient;
+}
+
+.has-primary-color {
+	color: $color__corporate;
+}
+
+.has-secondary-color {
+	color: $color__corporate-secondary;
+}
+
+.has-dark-gray-color {
+	color: $color__background-dark;
+}
+
+.has-light-gray-color {
+	color: $color__background-light;
+}
+
+.has-white-color {
+	color: #fff;
 }

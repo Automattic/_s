@@ -20,12 +20,13 @@ ul {
 		display: inline-block;
 		width: .8em;
 		margin-left: -.8em;
-		@include font-size(1);
+		@include font-size(1.6);
+		line-height: 1rem;
 		vertical-align: middle;
+		margin-bottom: 2px;
 	}
 
-	&.is-style-pros,
-	&.is-style-cons {
+	&.is-style-bullets {
 		padding-left: 1.6em;
 
 		li {
@@ -38,13 +39,20 @@ ul {
 		}
 	}
 
-	&.is-style-pros li:before {
-		@include icon-content('\e92d');
-	}
+	&.is-style-bullets li {
+		@include font-size(1.1);
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
 
-	&.is-style-cons li:before {
-		@include icon-content('\e92e');
-		color: #aaa;
+		&:last-of-type {
+			border-bottom: none;
+		}
+
+		&:before {
+			@include icon-content('\e90c');
+			@include font-size(1.2);
+		}
 	}
 }
 

@@ -27,13 +27,14 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgmin": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "node-sass-json-importer": "^4.1.0",
     "postcss-object-fit-images": "^1.1.2",
     "readline-sync": "^1.4.10"
   },
   "dependencies": {
     "@react-google-maps/api": "^1.7.7",
-    "fg-loadcss": "^2.1.0"
+    "fg-loadcss": "^2.1.0",
+    "sharp": "^0.23.1"
   }
 }
