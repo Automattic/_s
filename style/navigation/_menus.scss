@@ -7,12 +7,18 @@
 			margin-bottom: 0;
 			margin: 0;
 
-			&.current-menu-item a {
+			&.current-menu-item > a,
+			&.current-menu-ancestor > a {
 				border-bottom: 3px solid $color__corporate;
 			}
 
 			a {
 				@include font-size(.9);
+
+				&:focus {
+					background: none;
+					outline: none;
+				}
 			}
 
 			&:before {
@@ -79,12 +85,10 @@
 					padding: 0;
 				}
 
-				&.current-menu-item {
-
-					a {
-						color: $color__corporate;
-						border-bottom: none;
-					}
+				&.current-menu-item > a,
+				&.current-menu-ancestor > a {
+					color: $color__corporate;
+					border-bottom: none;
 				}
 			}
 		}
@@ -128,6 +132,22 @@
 						display: inline;
 					}
 				}
+
+				&.current-menu-item {
+					position: relative;
+
+					> a {
+						border-bottom: none;
+
+						&:after {
+							content: '';
+							display: block;
+							height: 3px;
+							width: 100%;
+							background: $color__corporate;
+						}
+					}
+				}
 			}
 		}
 
@@ -155,6 +175,10 @@
 
 					a {
 						line-height: normal;
+					}
+
+					&.current-menu-item a:after {
+						display: none;
 					}
 				}
 			}
