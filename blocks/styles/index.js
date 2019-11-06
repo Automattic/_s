@@ -30,6 +30,11 @@ wp.blocks.registerBlockStyle( 'core/button', {
     label: 'Phone'
 } );
 
+wp.blocks.registerBlockStyle( 'core/button', {
+    name: 'right-arrow',
+    label: 'Right Arrow Icon'
+} );
+
 wp.blocks.registerBlockStyle( 'core/group', {
     name: 'no-padding',
     label: 'No Padding'

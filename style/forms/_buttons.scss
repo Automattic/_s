@@ -329,6 +329,13 @@ input[type="submit"],
 	}
 }
 
+.is-style-right-arrow .wp-block-button__link:after {
+	@include icon-content('\e922');
+	@include font-size(.8);
+	vertical-align: middle;
+	margin-left: 8px;
+}
+
 .has-arrow-icon,
 .wp-block-svbk-card__button,
 .wp-block-svbk-profile__button {
