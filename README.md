@@ -21,6 +21,10 @@ Note: `.no-sidebar` styles are not automatically loaded.
 
 Getting Started
 ---------------
+### Installation
+- Clone Repo
+- run `npm install`
+- run `grunt`
 
 If you want to keep it simple, head over to https://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
 
