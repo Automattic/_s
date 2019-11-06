@@ -1,0 +1,17 @@
+{
+    "name": "DrP2025",
+    "description": "Grunt set up for udemy tutorial, specifically for a sass compiler",
+    "authors": "Dylan Price",
+    "version": "1.0.0",
+    "dependencies": {
+        "grunt": "*",
+        "grunt-concurrent": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-notify": "*",
+        "grunt-sass": "^1.2.1",
+        "jit-grunt": "*",
+        "node-sass": "^3.9.3",
+        "time-grunt": "*"
+    }
+}
