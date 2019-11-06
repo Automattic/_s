@@ -27,31 +27,23 @@ ul {
 	}
 
 	&.is-style-bullets {
-		padding-left: 1.6em;
+		padding-left: 0;
 
 		li {
-
-			&:before {
-				width: 1.6em;
-				margin-left: -1.6em;
-				margin-bottom: 2px;
+			@include font-size(1.1);
+			margin-bottom: 15px;
+			padding-left: 33px;
+			text-indent: -16px;
+	
+			&:last-of-type {
+				border-bottom: none;
 			}
-		}
-	}
-
-	&.is-style-bullets li {
-		@include font-size(1.1);
-		border-bottom: 1px solid #ddd;
-		padding-bottom: 10px;
-		margin-bottom: 10px;
-
-		&:last-of-type {
-			border-bottom: none;
-		}
-
-		&:before {
-			@include icon-content('\e90c');
-			@include font-size(1.2);
+	
+			&:before {
+				@include icon-content('\e90c');
+				@include font-size(1.2);
+				margin-left: 0;
+			}
 		}
 	}
 }
