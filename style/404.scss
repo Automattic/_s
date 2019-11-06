@@ -25,10 +25,20 @@
 			margin: 1em auto 1.5em;
 		}
 
-		header {
+		h1 {
+			margin: 0;
 
-			h1 {
-				margin-bottom: 0;
+			span {
+				@include font-size(10);
+				display: block;
+				line-height: .8em;
+				margin-bottom: 20px;
+				opacity: .3;
+				color: $color__corporate;
+
+				@media screen and (min-width: breakpoint('tablet-landscape')) {
+					@include font-size(13);
+				}
 			}
 		}
 
@@ -36,4 +46,5 @@
 			display: inline-block;
 		}
 	}
+
 }
