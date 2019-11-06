@@ -132,6 +132,7 @@
 		}
 
 		.menu-item-has-children {
+			transition: none;
 
 			.sub-menu {
 				display: none;
@@ -159,7 +160,6 @@
 			}
 
 			&.expanded {
-				background-color: $color__background-sub-menu;
 
 				a:after {
 					color: $color__corporate
