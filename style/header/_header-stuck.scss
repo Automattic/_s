@@ -1,5 +1,3 @@
-$size__header-height-stuck: 81px;
-
 .site-header.stuck {
 	position: fixed;
 	top: 0;
@@ -19,7 +17,7 @@ $size__header-height-stuck: 81px;
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
 
 		#main-navigation li.cta-item {
-			height: $size__header-height-stuck;
+			height: $size__header-height-desktop;
 			animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
 
 			a {
@@ -29,18 +27,6 @@ $size__header-height-stuck: 81px;
 				top: 50%;
 				transform: translateY(-50%);
 			}
-		}
-
-		.site-branding img {
-			height: 50px;
-		}
-
-		#main-navigation li a {
-			line-height: $size__header-height-stuck;
-		}
-
-		.search-form.visible {
-			margin-top: -4px;
 		}
 	}
 }

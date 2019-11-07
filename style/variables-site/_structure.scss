@@ -12,7 +12,7 @@ $size__tablet-content-width: $size__page-width + $padding__content-tablet * 2;
 
 //Header
 $size__logo-height-mobile: 38px;
-$size__logo-height-desktop: 58px;
+$size__logo-height-desktop: 55px;
 $size__header-height-mobile: $size__logo-height-mobile + 7px * 2;
 $size__header-height-desktop: $size__logo-height-desktop + 10px * 2;
-$size__centered-header-height: $size__logo-height-desktop + 15 * 2 + 45px;
+$size__centered-header-height: $size__logo-height-desktop + 10 * 2 + 45px;
