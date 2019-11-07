@@ -2,52 +2,9 @@
 	position: relative;
 	text-align: center;
 	
-	.wp-block-svbk-profile__picture {
-		width: 170px;
-		height: 170px;
-		margin: 0 auto;
-		
-		img {
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			border-radius: 50%;
-		}
-	}
-	
-	.wp-block-svbk-profile__name,
-	.wp-block-svbk-profile__role {
-		text-align: center;
-	}
-	
-	.wp-block-svbk-profile__name {
-		@include font-size(1.25);
-		margin: 15px auto 10px;
-		font-weight: normal;
-	}
-	
-	.wp-block-svbk-profile__role {
-		margin: 0;
-	}
-	
-	.wp-block-svbk-profile__content {
-		margin-top: 10px;
-		text-align: left;
-	}
-
-	.wp-block-button {
-		display: inline-block;
-
-		.wp-block-button__link {
-			color: $color__link;
-		}
-	} 
-	
-	&[class$="background-color"],
-	&.is-style-featured {
+	&[class*="background-color"] {
 		margin-top: 120px;
-		padding-top: 80px;
-		padding-bottom: 20px;
+		padding: 80px 20px 20px;
 		color: $color__text-main;
     	box-shadow: 1px 1px 4px rgba(0,0,0,.1);
 		
@@ -56,25 +13,6 @@
 			top: -90px;
 			left: 50%;
 			transform: translateX(-50%);
-		}
-	}
-	
-	&[class$="background-color"] {
-		
-    	.wp-block-svbk-profile__name {
-    		color: $color__text-main;
-    	}
-	}
-	
-	&.is-style-featured {
-		padding-left: 20px;
-		padding-right: 20px;
-		
-		.wp-block-svbk-profile__name {
-			display: inline-block;
-			position: relative;
-			margin-top: -50px;
-			text-align: center;
 		}
 	}
 	
@@ -99,4 +37,57 @@
 			}
 		}
 	}
+}
+
+.wp-block-svbk-profile__picture {
+	width: 170px;
+	height: 170px;
+	margin: 0 auto;
+	
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 50%;
+		border: 8px solid #dfdfdf;
+
+		.has-image-border & {
+			border-color: $color__corporate;
+		}
+	}
+}
+
+.wp-block-svbk-profile__name,
+.wp-block-svbk-profile__role {
+	text-align: center;
+}
+
+.wp-block-svbk-profile__name {
+	@include font-size(1.25);
+	margin: 15px auto 10px;
+	font-weight: normal;
+
+	.is-style-featured & {
+		display: inline-block;
+		position: relative;
+		margin-top: -50px;
+		text-align: center;
+	}
+}
+
+.wp-block-svbk-profile__role {
+	margin: 0;
+}
+
+.wp-block-svbk-profile__content {
+	margin-top: 10px;
+	text-align: left;
+}
+
+.wp-block-svbk-profile__button {
+	display: inline-block;
+}
+
+.wp-block-svbk-profile__link {
+	color: $color__link;
 }
