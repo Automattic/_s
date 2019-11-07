@@ -8,7 +8,6 @@ $color__corporate-gradient: linear-gradient(to right, #e94b4b, #d11f1f);
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__text-button: #fff;
 $color__text-main: #404040;
 
 //Error/Success
@@ -36,28 +35,24 @@ $color__background-highlight: rgba(233,75,75,.2);
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-//Buttons and links
-$color__background-button: #1976d2;
-$color__background-button-secondary: #424242;
-$color__background-button-hover: #63a4ff;
-$color__background-button-hover-secondary: #595959;
-$color__background-button-focus: #004ba0;
-$color__background-button-focus-secondary: #3b3b3b;
-$color__background-button--light: #fff;
-$color__background-button-hover--light: #fff;
-$color__background-button-focus--light: #fff;
+//Button
 
+$color__text-button: #fff;
+$color__background-button: #1976d2;
 $color__border-button: $color__background-button;
-$color__border-button-secondary: $color__background-button-secondary;
+$color__background-button-hover: #63a4ff;
 $color__border-button-hover: $color__background-button-hover;
-$color__border-button-hover-secondary: $color__background-button-hover-secondary;
+$color__background-button-focus: #004ba0;
 $color__border-button-focus: $color__background-button-focus;
+
+$color__background-button-secondary: #424242;
+$color__border-button-secondary: $color__background-button-secondary;
+$color__background-button-hover-secondary: #595959;
+$color__border-button-hover-secondary: $color__background-button-hover-secondary;
+$color__background-button-focus-secondary: #3b3b3b;
 $color__border-button-focus-secondary: $color__background-button-focus-secondary;
 
-$color__border-button--light: $color__background-button--light;
-$color__border-button-hover--light: $color__background-button-hover--light;
-$color__border-button-focus--light: $color__background-button-focus--light;
-
+//Links
 $color__link: $color__background-button;
 $color__link-hover: $color__background-button-hover;
 $color__link-focus: $color__background-button-focus;

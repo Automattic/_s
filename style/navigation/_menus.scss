@@ -7,8 +7,8 @@
 			margin-bottom: 0;
 			margin: 0;
 
-			&.current-menu-item > a,
-			&.current-menu-ancestor > a {
+			&.current-menu-item:not(.cta-item) > a,
+			&.current-menu-ancestor:not(.cta-item) > a {
 				border-bottom: 3px solid $color__corporate;
 			}
 
@@ -38,15 +38,18 @@
 	
 					&:visited {
 						background-color: $color__background-button;
+						color: $color__text-button;
 					}
 	
 					&:hover {
 						background-color: $color__background-button-hover;
+						color: $color__text-button;
 					}
 	
 					&:focus,
 					&:active {
 						background-color: $color__background-button-focus;
+						color: $color__text-button;
 					}
 				}
 			}
@@ -133,19 +136,20 @@
 					}
 				}
 
-				&.current-menu-item {
+				&.current-menu-item:not(.cta-item),
+				&.current-menu-ancestor:not(.cta-item) {
 					position: relative;
+
+					&:after {
+						content: '';
+						display: block;
+						height: 3px;
+						width: 100%;
+						background: $color__corporate;
+					}
 
 					> a {
 						border-bottom: none;
-
-						&:after {
-							content: '';
-							display: block;
-							height: 3px;
-							width: 100%;
-							background: $color__corporate;
-						}
 					}
 				}
 			}
