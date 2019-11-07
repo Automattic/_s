@@ -73,35 +73,27 @@
             }
         }
     }
-    
-    &.is-style-faq {
+
+    &.is-style-faq,
+    &.is-style-accordion {
         background: #fff;
-        border-radius: 8px;
         box-shadow: 0 0 3px rgba(0,0,0,.2);
         margin-bottom: 1em;
-        
-        .wp-block-column & {
-            
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-        
+
         .wp-block-svbk-collapse__trigger {
             @include font-size(1.2);
             background: $color__background-light;
             padding: 15px 50px 15px 15px;
             display: block;
-            border-radius: 8px;
             position: relative;
             text-decoration: none;
             font-weight: bold;
             color: $color__text-main;
-            
+
             &:after {
                 @include icon-content('\e90a');
                 @include font-size(.9);
-                background: $color__corporate-secondary;
+                background: $color__corporate;
                 color: #fff;
                 position: absolute;
                 right: 10px;
@@ -114,17 +106,29 @@
                 box-shadow: 0 1px 4px rgba(0,0,0,.2);
             }
         }
-        
+
         .wp-block-svbk-collapse__content {
             padding: 10px 20px;
         }
-        
+
         &.wp-block-svbk-collapse--open {
             
             .wp-block-svbk-collapse__trigger {
                 border-radius: 8px 8px 0 0;
+
+                &:after {
+                    @include icon-content('\e909');
+                }
             }
         }
+    }
+
+    &.is-style-accordion .wp-block-svbk-collapse__trigger img {
+        margin: 0 10px;
+        vertical-align: middle;
+    }
+
+    &.is-style-faq {
         
         @media screen and (min-width: breakpoint('tablet-portrait')) {
             margin-top: 0;

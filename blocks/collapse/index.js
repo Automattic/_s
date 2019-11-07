@@ -58,6 +58,10 @@ export const settings = {
 	        name: 'default',
 	        label: __( 'Default' ),
 	        isDefault: true
+		},
+	    {
+	        name: 'accordion',
+	        label: __( 'Accordion', '_svbk' ),
 	    },
 	    {
 	        name: 'faq',
