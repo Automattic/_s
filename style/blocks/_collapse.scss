@@ -114,7 +114,6 @@
         &.wp-block-svbk-collapse--open {
             
             .wp-block-svbk-collapse__trigger {
-                border-radius: 8px 8px 0 0;
 
                 &:after {
                     @include icon-content('\e909');
