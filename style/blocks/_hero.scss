@@ -194,7 +194,11 @@ h1 {
     margin-top: 10px;
 
     .wp-block-svbk-hero__link {
-        display: inline-block;
+        display: block;
+
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+            display: inline-block;
+        }
     }
 }
 
