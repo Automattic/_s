@@ -94,7 +94,7 @@
 	margin: 0;
 	position: relative;
 	top: -1.2rem;
-	box-shadow: 1px 1px 4px rgba(0,0,0,.4);
+	box-shadow: $shadow__card;
 	font-weight: bold;
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {

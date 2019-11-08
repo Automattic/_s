@@ -43,7 +43,7 @@
 	&[class$="background-color"] {
 		padding-left: 20px;
 		padding-right: 20px;
-		box-shadow: 1px 1px 4px rgba(0,0,0,.1);
+		box-shadow: $shadow__card;
 	}
 	
 	&.is-style-featured {

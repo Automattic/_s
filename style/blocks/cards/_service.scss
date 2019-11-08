@@ -1,7 +1,7 @@
 .wp-block-svbk-card {
 	padding: 0 20px 15px;
 	background: #fff;
-	box-shadow: 1px 1px 4px rgba(0,0,0,.1);
+	box-shadow: $shadow__card;
 	color: $color__text-main;
 	
 	p {
