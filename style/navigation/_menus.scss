@@ -187,7 +187,21 @@
 				}
 			}
 
-			&.expanded {
+			&:hover {
+				background-color: $color__background-sub-menu;
+	
+				> a:after {
+					@include icon-content("\e90b");
+				}
+	
+				.sub-menu {
+					max-height: 300px;
+					display: block;
+				}
+			}
+
+			&.expanded,
+			&:hover {
 
 				a:after {
 					color: $color__corporate
@@ -195,7 +209,8 @@
 			}
 
 			> a:after,
-			&.expanded > a:after {
+			&.expanded > a:after,
+			&:hover > a:after {
 				@include icon-content("\e90b");
 				position: static;
 				margin-left: 5px;

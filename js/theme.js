@@ -10,7 +10,7 @@
   $('.menu-item-has-children > a').on('click', function() {
     $(this).parent('li').toggleClass('expanded');
   });
-  
+
   /* Archive year toggle */
   $('.archive-year .month-name').on('click', function() {
     $(this).next('ul').slideToggle()
