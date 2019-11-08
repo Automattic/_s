@@ -68,7 +68,9 @@ input[type="submit"],
 
 	&.has-primary-color,
 	&.has-primary-color:hover,
-	&.has-primary-color:focus {
+	&.has-primary-color:focus,
+	&.has-primary-color:active,
+	&.has-primary-color:visited {
 		color: $color__corporate;
 	}
 
@@ -91,7 +93,9 @@ input[type="submit"],
 
 	&.has-secondary-color,
 	&.has-secondary-color:hover,
-	&.has-secondary-color:focus {
+	&.has-secondary-color:focus,
+	&.has-secondary-color:active,
+	&.has-secondary-color:visited {
 		color: $color__corporate-secondary;
 	}
 
@@ -114,7 +118,9 @@ input[type="submit"],
 
 	&.has-dark-gray-color,
 	&.has-dark-gray-color:hover,
-	&.has-dark-gray-color:focus {
+	&.has-dark-gray-color:focus,
+	&.has-dark-gray-color:active,
+	&.has-dark-gray-color:visited {
 		color: $color__background-dark;
 	}
 
@@ -137,7 +143,9 @@ input[type="submit"],
 
 	&.has-light-gray-color,
 	&.has-light-gray-color:hover,
-	&.has-light-gray-color:focus  {
+	&.has-light-gray-color:focus,
+	&.has-light-gray-color:active,
+	&.has-light-gray-color:visited  {
 		color: $color__background-light;
 	}
 
@@ -160,7 +168,9 @@ input[type="submit"],
 
 	&.has-white-color,
 	&.has-white-color:hover,
-	&.has-white-color:focus  {
+	&.has-white-color:focus,
+	&.has-white-color:active,
+	&.has-white-color:visited {
 		color: #fff;
 	}
 }
@@ -202,7 +212,7 @@ input[type="submit"],
 		}
 
 		&:visited {
-			color: $color__corporate;	
+			color: $color__corporate !important;
 		}
 	}
 
