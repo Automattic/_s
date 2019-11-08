@@ -1,53 +1,147 @@
-.wp-block-media-text.animate {
+.is-animated {
 
 	.wp-block-media-text__media,
-	.wp-block-media-text__content {
+	.wp-block-media-text__content,
+	.wp-block-column,
+	.wp-block-svbk-iter__step,
+    .wp-block-svbk-warranty__content,
+    .wp-block-svbk-warranty__seal {
 		opacity: 0;
 	}
-
-	.wp-block-media-text__media {
-		transition: opacity .6s ease-in-out;
+	
+	.wp-block-media-text__media,
+	.wp-block-media-text__content,
+	.wp-block-column {
+		
+		&.animated {
+            animation-name: fadeIn;
+            animation-duration: 500ms;
+            animation-iteration-count: 1;
+        	animation-fill-mode: both;
+		}
 	}
 
-	.wp-block-media-text__content {
-		position: relative;
-		top: 30px;
-		transition: opacity .6s ease-in-out, top .8s ease-in-out;
-	}
+    .wp-block-svbk-iter__step {
 
-	&.animated {
-
-		.wp-block-media-text__media,
-		.wp-block-media-text__content {
-			opacity: 1;
-		}
-
-		.wp-block-media-text__content {
-			top: 0;
-		}
+        &.animated {
+            animation: 300ms ease 0ms 1 normal both fadeInUp;
+        }
+    }
+	
+	@media screen and (min-width: 600px) {
+	    
+		.wp-block-media-text__content,
+		.wp-block-column:nth-of-type(2) {
+            animation-delay: 300ms;
+	    }
 	}
 }
 
-.is-style-icon-cards,
-.is-style-image-cards,
-.is-style-stats-cards {
+.wp-block-svbk-grid.is-animated {
+    
+    > div {
+        opacity: 0;
+        
+        &.animated {
+            animation-name: fadeIn;
+            animation-duration: 500ms;
+            animation-iteration-count: 1;
+        	animation-fill-mode: both;
+        }
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        @include grid-animation(2, 200);
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
 
-	.wp-block-column.animate {
-		opacity: 0;
-		transition: opacity .8s ease-in-out;
+        @for $i from 1 through 6 {
+            
+            &.has-#{$i}-columns {
+                @include grid-animation($i, 200);
+                
+            	> div {
+            		opacity: 0;
+            		
+            		&.animated {
+            			animation-duration: 1s;
+            		}
+            	}
+            }
+        }   
+    }
+}
 
-		&.animated {
-			opacity: 1;
-		}
+.wp-block-svbk-warranty.is-animated.animated {
+        
+	.wp-block-svbk-warranty__content,
+	.wp-block-svbk-warranty__seal {
+		animation-name: fadeIn;
+		animation-duration: 500ms;
+		animation-iteration-count: 1;
+		animation-fill-mode: both;
 	}
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-
-		@for $i from 2 through 3 {
-
-			.wp-block-column.animate:nth-of-type(#{$i}) {
-				transition-delay: 0.2 * $i * 1s;
-			}
-		}
+	
+	.wp-block-svbk-warranty__seal {
+		animation-delay: 200ms;
 	}
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20%)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%)
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(20%)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%)
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%)
+    }
 }
