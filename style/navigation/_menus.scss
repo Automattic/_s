@@ -181,7 +181,7 @@
 						line-height: normal;
 					}
 
-					&.current-menu-item a:after {
+					&.current-menu-item:after {
 						display: none;
 					}
 				}
@@ -241,7 +241,7 @@
 			position: static;
 			width: auto;
 			box-shadow: none;
-			overflow: hidden;
+			overflow: visible;
 		}
 	}
 }
