@@ -27,7 +27,7 @@
       '.is-animated .wp-block-column',
       '.is-animated.wp-block-svbk-grid > div',
       '.is-animated .wp-block-svbk-iter__step',
-      '.is-animated.wp-block-svbk-warranty'
+      '.is-animated.wp-block-svbk-warranty',
     ];
  
     /* Animations */

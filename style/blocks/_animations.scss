@@ -26,7 +26,12 @@
         &.animated {
             animation: 300ms ease 0ms 1 normal both fadeInUp;
         }
-    }
+	}
+	
+	.wp-block-button__link:hover:after {
+		display: inline-block;
+		animation: slideRight .9s ease-in-out infinite;
+	}
 	
 	@media screen and (min-width: 600px) {
 	    
@@ -85,6 +90,18 @@
 	
 	.wp-block-svbk-warranty__seal {
 		animation-delay: 200ms;
+	}
+}
+
+@keyframes slideRight {
+
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+
+	50% {
+		transform: translate(8px, 0);
 	}
 }
 
