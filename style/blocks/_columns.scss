@@ -143,6 +143,11 @@
 			padding-left: $padding__content-tablet;
 			padding-right: $padding__content-tablet;
 		}
+
+		.wp-block-group & {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 }
 
