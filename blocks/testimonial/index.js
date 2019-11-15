@@ -143,7 +143,6 @@ export const settings = {
 	save: function( { attributes } ) {
 		
 		const { 
-			type,
 			avatarUrl,
 			avatarId,
 			authorName,

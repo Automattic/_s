@@ -103,7 +103,7 @@ class TestimonialEdit extends Component {
 		
 		const avatarUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id' ] ), function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ), function(value, key) {
 				return 'avatar' + capitalize(key);
 			});
 
@@ -112,7 +112,7 @@ class TestimonialEdit extends Component {
 
 		const companyLogoUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id' ] ), function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ), function(value, key) {
 				return 'companyLogo' + capitalize(key);
 			});
 
