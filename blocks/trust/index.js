@@ -56,7 +56,7 @@ export const settings = {
 	styles: [],	
 	
 	attributes: {
-		title: {
+		ribbon: {
 			type: 'string',
 			source: 'html',
 			selector: '.wp-block-svbk-trust__ribbon',
@@ -73,7 +73,7 @@ export const settings = {
 		},
 		ribbonColor: {
 			type: 'string',
-		},
+		}
 	},	
 
 	edit,
