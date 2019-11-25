@@ -10,38 +10,54 @@
     > .wp-block-separator {
         margin-left: 0;
     }
+
+    &.has-background {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
     
     .page__content > & {
 
-        .wp-block-group__inner-container {
-            max-width: $size__content-width;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        &.alignwide .wp-block-group__inner-container {
-            max-width: $size__page-width;
-        }
-
-        &.alignfull .wp-block-group__inner-container {
-            max-width: 100%;  
-        }
-
-        @media screen and (min-width: breakpoint('tablet-landscape')) {
-            padding-left: $padding__content-tablet;
-            padding-right: $padding__content-tablet;
-        }
-
-        &.has-background {
+        &.alignwide,
+        &.alignfull {
+            margin-left: -$padding__content-mobile;
+            margin-right: -$padding__content-mobile;
             padding-left: $padding__content-mobile;
             padding-right: $padding__content-mobile;
-            margin-left: calc(50% - 50vw);
-            margin-right: calc(50% - 50vw);
 
-            @media screen and (min-width: breakpoint('tablet-landscape')) and (max-width: $size__page-width + $padding__content-desktop*2) {
+            @media screen and (min-width: breakpoint('tablet-landscape')) {
+                margin-left: -$padding__content-tablet;
+                margin-right: -$padding__content-tablet;
                 padding-left: $padding__content-tablet;
                 padding-right: $padding__content-tablet;
             }
+
+            @media screen and (max-width: $size__page-width + $padding__content-desktop * 2) {
+                margin-left: -$padding__content-desktop;
+                margin-right: -$padding__content-desktop;
+                padding-left: $padding__content-desktop;
+                padding-right: $padding__content-desktop;
+            }
+        }
+
+        &.alignfull {
+
+            @media screen and (min-width: $size__page-width + $padding__content-desktop * 2) {
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+            }
+        }
+
+        @media screen and (min-width: breakpoint('desktop')) {
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
     }
     
@@ -50,14 +66,6 @@
         
         h2, h3, h4 {
             margin-top: 0;
-        }
-
-        &.has-white-background-color {
-            color: $color__text-main;
-
-            h1, h2, h3, h4, h5, h6, .is-style-subtitle {
-                color: $color__text-main;
-            }
         }
     }
     

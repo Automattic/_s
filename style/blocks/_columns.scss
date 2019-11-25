@@ -1,4 +1,6 @@
 .wp-block-columns {
+    padding-top: 30px;
+	padding-bottom: 30px;
 	margin-bottom: 0;
 	
 	figure {
@@ -8,14 +10,10 @@
 	.wp-block-separator {
 		margin-left: 0;
 	}
-	
-	.wp-block-group & {
-		padding-top: 30px;
-		padding-bottom: 30px;
-	}
 
 	.wp-block-columns &,
-	.wp-block-media-text & {
+	.wp-block-media-text &,
+	.wp-block-group & {
 		padding-top: 0;
 		padding-bottom: 0;
 	}
@@ -92,6 +90,8 @@
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
+		padding-top: 50px;
+		padding-bottom: 50px;
 		
 		&.is-style-split {
 
@@ -131,22 +131,26 @@
 	}
 
 	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
-		padding-left: calc((100vw - #{$size__content-width}) /2);
-		padding-right: calc((100vw - #{$size__content-width}) /2);
+		width: $size__content-width;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		&.alignwide,
+		&.alignfull {
+			max-width: none;
+		}
 
 		&.alignwide {
-			padding-left: calc((100vw - #{$size__page-width}) /2);
-			padding-right: calc((100vw - #{$size__page-width}) /2);
+			width: $size__page-width;
 		}
 
 		&.alignfull {
-			padding-left: $padding__content-tablet;
-			padding-right: $padding__content-tablet;
-		}
-
-		.wp-block-group & {
-			padding-left: 0;
-			padding-right: 0;
+			width: auto;
+			margin-left: calc(50% - 50vw);
+			margin-right: calc(50% - 50vw);
+			padding-left: $padding__content-desktop;
+			padding-right: $padding__content-desktop;
 		}
 	}
 }

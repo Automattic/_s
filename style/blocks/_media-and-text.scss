@@ -1,8 +1,8 @@
 .wp-block-media-text {
 	align-items: start;
 	clear: both;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 
 	h1, h2 {
 		margin-top: 0;
@@ -21,9 +21,44 @@
 		}
 	}
 
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-left: $padding__content-tablet;
-		padding-right: $padding__content-tablet;
+	&.has-background {
+		padding-left: 20px;
+		padding-right: 20px;
+
+		&.alignwide,
+		&.alignfull {
+            margin-left: -$padding__content-mobile;
+            margin-right: -$padding__content-mobile;
+
+            @media screen and (min-width: breakpoint('tablet-landscape')) {
+                margin-left: -$padding__content-tablet;
+                margin-right: -$padding__content-tablet;
+                padding-left: $padding__content-tablet;
+                padding-right: $padding__content-tablet;
+            }
+
+            @media screen and (max-width: $size__page-width + $padding__content-desktop * 2) {
+                margin-left: -$padding__content-desktop;
+                margin-right: -$padding__content-desktop;
+                padding-left: $padding__content-desktop;
+                padding-right: $padding__content-desktop;
+            }
+		}
+
+		&.alignfull {
+
+            @media screen and (min-width: $size__page-width + $padding__content-desktop * 2) {
+                margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
+				padding-left: calc((100vw - 1120px)/2);
+				padding-right: calc((100vw - 1120px)/2);
+            }
+		}
+
+		@media screen and (min-width: breakpoint('desktop')) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
 	}
 
 	@media screen and (min-width: 600px) {
@@ -91,7 +126,12 @@
 		}
 	}
 
-	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
+	@media screen and (min-width: breakpoint('desktop')) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	/*@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
 		padding-left: calc((100vw - #{$size__content-width}) /2);
 		padding-right: calc((100vw - #{$size__content-width}) /2);
 
@@ -104,5 +144,5 @@
 			padding-left: $padding__content-tablet;
 			padding-right: $padding__content-tablet;
 		}
-	}
+	}*/
 }
