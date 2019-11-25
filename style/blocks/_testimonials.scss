@@ -466,9 +466,14 @@ figure.wp-block-svbk-testimonial__company-logo {
 
     .wp-block-svbk-testimonial {
 
-        &:before,
-        &:after {
+        &:before {
             display: none;
+        }
+
+        &:after {
+            @include clearfix();
+            @include clearfix-after();
+            position: static;
         }
     }
 
@@ -527,6 +532,10 @@ figure.wp-block-svbk-testimonial__company-logo {
 
     .wp-block-svbk-testimonial__rating {
         margin: 0;
+    }
+
+    .more-link {
+        float: right;
     }
 
     @media screen and (min-width: breakpoint('tablet-portrait')) {
