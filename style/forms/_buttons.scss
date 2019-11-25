@@ -177,7 +177,7 @@ input[type="submit"],
 
 .is-style-outline .wp-block-button__link,
 .wp-block-svbk-collapse__button,
-.wp-block-svbk-card .wp-block-button__link,
+.wp-block-svbk-card .wp-block-svbk-card__button .wp-block-svbk-card__link,
 .loadmore__button {
 	color: $color__border-button-secondary;
 	border-color: $color__border-button-secondary;
@@ -201,6 +201,11 @@ input[type="submit"],
 	&:active {
 		color: $color__border-button-focus-secondary;
 		border-color: $color__border-button-focus-secondary;
+	}
+
+	&:visited {
+		color: $color__border-button-secondary;
+		border-color: $color__border-button-secondary;
 	}
 
 	&.has-primary-color {
