@@ -189,7 +189,8 @@ class ImageEdit extends Component {
 			
 			// Fallback sizes
 			!imageUrl && ( imageUrl = get( image, [ 'media_details', 'sizes', 'thumbnail', 'source_url' ] ) );
-			!imageUrl && ( imageUrl = get( image, [ 'media_details', 'sizes', 'full', 'source_url' ] ) );			
+			!imageUrl && ( imageUrl = get( image, [ 'media_details', 'sizes', 'full', 'source_url' ] ) );		
+			!imageUrl && ( imageUrl = get( image, 'source_url' ) );	
 		}
 
 		const imageSizeOptions = this.getImageSizes();		

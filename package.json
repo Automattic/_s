@@ -33,7 +33,7 @@
     "readline-sync": "^1.4.10"
   },
   "dependencies": {
-    "@react-google-maps/api": "^1.7.7",
+    "@react-google-maps/api": "^1.7.11",
     "fg-loadcss": "^2.1.0",
     "sharp": "^0.23.1"
   }
