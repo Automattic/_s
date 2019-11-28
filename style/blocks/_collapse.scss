@@ -79,6 +79,9 @@
         background: #fff;
         box-shadow: $shadow__card;
         margin-bottom: 1em;
+        max-width: $size__content-width;
+        margin-left: auto;
+        margin-right: auto;
 
         .wp-block-svbk-collapse__trigger {
             @include font-size(1.2);
