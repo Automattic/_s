@@ -35,9 +35,13 @@
 			flex-grow: 1;
 		}
 
+		.wp-block-column:first-child {
+			padding-right: 16px;
+		}
+
 		.wp-block-column:nth-child(2n) {
 			//Fix Gutenberg native columns stacking on small screens
-			padding-left: 32px;
+			padding-left: 16px;
 			margin-left: 0;
 	
 			h2 {
