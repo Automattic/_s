@@ -28,6 +28,11 @@ input[type="submit"],
 				color .15s ease-in-out,
 				box-shadow .15s ease-in-out;
 
+	&:visited {
+		border-color: $color__border-button;
+		color: $color__text-button;
+	}
+
 	&:hover,
 	&:focus {
 		background-color: $color__background-button-hover;
@@ -42,20 +47,6 @@ input[type="submit"],
 		outline: none;
 		box-shadow: 0 0 2px rgba(0,0,0,0.4);
 		color: $color__text-button;
-	}
-
-	&:visited {
-		border-color: $color__border-button;
-		color: $color__text-button;
-
-		&:hover {
-			border-color: $color__border-button-hover;
-		}
-
-		&:focus,
-		&:active {
-			border-color: $color__border-button-focus;
-		}
 	}
 }
 
@@ -274,30 +265,128 @@ input[type="submit"],
 	}
 }
 
-.is-style-text-button .wp-block-button__link,
 .wp-block-svbk-profile .wp-block-button__link,
 .testimonial .wp-block-button__link,
+.is-style-text-button .wp-block-button__link,
 .is-style-phone .wp-block-button__link,
 .more-link {
-	background: none;
-	color: $color__corporate;
-	padding: .8em 1em;
+	background: rgba(255,255,255,0);
 	font-weight: bold;
 	text-transform: uppercase;
-	transition: background .15s ease-in-out;
 	box-shadow: none;
 	border: none;
+	color: $color__link;
+
+	&:hover,
+	&:focus,
+	&:visited {
+		box-shadow: none;
+	}
+}
+
+.wp-block-svbk-profile .wp-block-button__link,
+.testimonial .wp-block-button__link,
+.more-link {
+	padding: .8em 1em;
+	transition: background .15s ease-in-out;
+
+	&:hover,
+	&:focus,
+	&:visited {
+		color: $color__corporate;
+	}
 
 	&:hover {
 		background: rgba( $color__corporate, .08 );
-		box-shadow: none;
-		color: $color__corporate;
 	}
 
 	&:focus {
 		background: rgba( $color__corporate, .15 );
+	}
+}
+
+.is-style-text-button .wp-block-button__link,
+.is-style-phone .wp-block-button__link {
+	padding: 0;
+
+	&:hover,
+	&:focus,
+	&:visited {
+		background: none;
 		box-shadow: none;
+		border: none;
+	}
+
+	&:hover {
+		color: $color__link-hover;
+	}
+
+	&:focus {
+		color: $color__link-focus;
+	}
+
+	&.has-primary-color {
 		color: $color__corporate;
+
+		&:hover {
+			color: lighten($color__corporate, 10%);
+		}
+
+		&:focus {
+			color: lighten($color__corporate, 5%);
+		}
+	}
+
+	&.has-secondary-color {
+		color: $color__corporate-secondary;
+
+		&:hover {
+			color: lighten($color__corporate-secondary, 10%);
+		}
+
+		&:focus {
+			color: lighten($color__corporate-secondary, 5%);
+		}
+	}
+
+	&.has-dark-gray-color {
+		color: $color__background-dark;
+
+		&:hover {
+			color: lighten($color__background-dark, 10%);
+		}
+
+		&:focus {
+			color: lighten($color__background-dark, 5%);
+		}
+	}
+
+	&.has-light-gray-color {
+		color: $color__background-light;
+
+		&:hover {
+			color: darken($color__background-light, 10%);
+		}
+
+		&:focus {
+			color: darken($color__background-light, 5%);
+		}
+	}
+
+	&.has-white-color {
+		color: #fff;
+
+		&:visited {
+			color: #fff;	
+		}
+
+		&:hover {
+			color: darken(#fff, 10%);
+		}
+
+		&:focus {
+			color: darken(#fff, 5%);
+		}
 	}
 }
 
