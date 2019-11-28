@@ -245,4 +245,9 @@ h1 {
     clear: both;
     padding-top: 3px;
     color: #5f6368;
+    text-align: center;
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        text-align: left;
+    }
 }
