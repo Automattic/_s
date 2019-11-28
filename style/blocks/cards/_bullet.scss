@@ -10,6 +10,10 @@
 		height: 100px;
 		padding: 10px;
 
+		svg {
+			max-height: 100%;
+		}
+
 		.card__icon {
 			width: 100%;
 			height: 100%;
