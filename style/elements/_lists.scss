@@ -26,7 +26,8 @@ ul {
 		margin-bottom: 2px;
 	}
 
-	&.is-style-bullets {
+	&.is-style-bullets,
+	&.is-style-crosses {
 		padding-left: 0;
 
 		li {
@@ -35,16 +36,21 @@ ul {
 			padding-left: 33px;
 			text-indent: -16px;
 	
-			&:last-of-type {
-				border-bottom: none;
-			}
-	
 			&:before {
-				@include icon-content('\e90c');
 				@include font-size(1.2);
 				margin-left: 0;
 			}
 		}
+	}
+
+	&.is-style-bullets li:before {
+		@include icon-content('\e90c');
+		@include font-size(1.2);
+	}
+
+	&.is-style-crosses li:before {
+		@include icon-content('\e903');
+		@include font-size(1);
 	}
 }
 

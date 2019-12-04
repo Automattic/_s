@@ -112,23 +112,33 @@ blockquote,
 		color: #888;
 		font-style: normal;
 	}
+
+	&.has-text-align-center {
+		text-align: center;
+
+		p {
+			max-width: $size__content-width;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 }
 
 .wp-block-pullquote {
 	margin: 0 auto;
 	border: none;
+	max-width: $size__content-width;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 	
 	&.has-light-background {
 		background: $color__background-light;
 	}
 
 	blockquote {
-		text-align: left;
 		background: none;
-		padding: 0 25px;
-		max-width: 900px;
-		margin-left: auto;
-		margin-right: auto;
+		padding: 0 40px;
 
 		p {
 			position: relative;
@@ -136,7 +146,7 @@ blockquote,
 
 			&:before,
 			&:after {
-				@include font-size(2);
+				@include font-size(1.5);
 				opacity: .1;
 				font-style: normal;
 				position: absolute;
@@ -144,32 +154,45 @@ blockquote,
 
 			&:before {
 				@include icon-content('\e925');
-				left: -0.5em;
-				top: -0.5em;
+				left: -38px;
+				top: -10px;
 			}
 
 			&:after {
 				@include icon-content('\e924');
-				right: -0.5em;
-				bottom: -0.5em;
+				right: -38px;
+				bottom: -8px;
 			}
 		}
 
 		cite {
 			color: #888;
-			text-align: right;
 			display: block;
 			text-transform: none;
+			margin-top: 20px;
 			
 			&:before {
 				content: "-";
 				margin-right: 5px;
 			}
 		}
+	}
 
-		@media screen and (min-width: breakpoint('tablet-portrait')) {
-			text-align: center;
-		}
+	&.alignright,
+	&.alignleft {
+		max-width: none;
+	}
+
+	&.alignleft {
+		text-align: left;
+		margin-right: auto;
+		margin-left: 0;
+	}
+
+	&.alignright {
+		text-align: right;
+		margin-left: auto;
+		margin-right: 0;
 	}
 }
 
