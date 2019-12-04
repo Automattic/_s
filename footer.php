@@ -28,7 +28,7 @@
 			<?php endif ?>
 	
 			<div id="company-contacts" class="site-footer__section">
-				<h3 class="footer-section__title"><?php _e('Contacts', '_svb') ?></h3>
+				<h3 class="footer-section__title"><?php _e('Contacts', '_svbk') ?></h3>
 				<?php if ( get_theme_mod( 'company_phone', false ) ) : ?>
 				<span class="company-phone">Tel: <a href="tel:<?php echo get_theme_mod( 'company_phone' ); ?>"><?php echo get_theme_mod( 'company_phone' ); ?></a></span><br/>
 				<?php endif; ?>
@@ -39,14 +39,14 @@
 			
 			<?php if ( get_theme_mod( 'company_opening_hours', false ) ) : ?>
 			<div id="company-opening-hours" class="site-footer__section">
-				<h3 class="footer-section__title"><?php _e('Opening Hours', '_svb') ?></h3>
+				<h3 class="footer-section__title"><?php _e('Opening Hours', '_svbk') ?></h3>
 				<span class="company-opening-hours"><?php echo nl2br( get_theme_mod( 'company_opening_hours' ) ); ?></span>
 			</div>
 			<?php endif; ?>
 
 			<?php if ( get_theme_mod( 'company_address', false ) ) : ?>
 			<div id="company-address" class="site-footer__section">
-				<h3 class="footer-section__title"><?php _e('Address', '_svb') ?></h3>
+				<h3 class="footer-section__title"><?php _e('Address', '_svbk') ?></h3>
 				<span class="company-address"><?php echo nl2br( get_theme_mod( 'company_address' ) ); ?></span>
 			</div>
 			<?php endif; ?>			
@@ -59,7 +59,7 @@
 			<?php endif; ?>
 			<?php if ( get_theme_mod( 'company_vat', false ) ) : ?>
 			<span>
-				<?php _e('VAT', '_svb'); ?>
+				<?php _e('VAT', '_svbk'); ?>
 				<span class="company-vat"><?php echo get_theme_mod( 'company_vat' ); ?></span> 
 			</span>
 			<?php endif; ?>
@@ -82,7 +82,7 @@
 		
 		<?php if ( get_theme_mod( 'fixed_footer_bar' ) ) : ?>
 		<div class="site-footer__bar bar bar--fixed footer-fixed-bar">
-			<?php echo do_shortcode( get_theme_mod( 'fixed_footer_bar_content', __( 'Customize this text in Theme Customizer', '_svb' ) ) ); ?>
+			<?php echo do_shortcode( get_theme_mod( 'fixed_footer_bar_content', __( 'Customize this text in Theme Customizer', '_svbk' ) ) ); ?>
 		</div>
 		<?php endif ?>
 		
