@@ -1,0 +1,29 @@
+{
+  "name": "underscores-lite",
+  "version": "1.0.0",
+  "description": "WordPress theme",
+  "main": "gulpfile.js",
+  "author": "Brandon Patterson",
+  "scripts": {
+    "build": "gulp build --production",
+    "dev": "gulp",
+    "start": "gulp --production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.6.0",
+    "eslint-loader": "^3.0.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "minimist": "^1.2.0",
+    "webpack": "^4.41.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "license": "MIT"
+}
