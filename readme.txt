@@ -1,19 +1,19 @@
-=== _s ===
+=== nascsp ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-Requires at least: 4.5
+Requires at least: 4.0
 Tested up to: 4.8
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called _s, or underscores.
+A starter theme called nascsp.
 
 == Description ==
 
-Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Description
 
 == Installation ==
 
@@ -25,7 +25,7 @@ Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme mean
 
 = Does this theme support any plugins? =
 
-_s includes support for Infinite Scroll in Jetpack.
+nascsp includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

@@ -1,0 +1,57 @@
+<?php 
+/*
+Template Name: Event Page
+*/
+get_header(); ?>
+<?php
+$title = get_the_title();
+while ( have_posts() ) : the_post();
+			$content = get_the_content();
+			$content = apply_filters('the_content', $content);			
+endwhile;
+?>
+<section class="banner-section">
+	<ul class="banner-slider">
+		<li style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg');">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg" alt="banner-image" />
+			<div class="banner-content">
+				<div class="banner-title">2017 Annual Training Conference</div>
+				<p>The NASCSP Board meeting will take place on Tuesday September 19, 2017, at 4:00 p.m. Agenda and additional information is coming soon.</p>
+				<a class="button banner-btn btn-blue btn" href="#">register</a>
+			</div>
+		</li>
+		<li style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg');">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg" alt="banner-image" />
+			<div class="banner-content">
+				<div class="banner-title">2017 Annual Training Conference</div>
+				<p>The NASCSP Board meeting will take place on Tuesday September 19, 2017, at 4:00 p.m. Agenda and additional information is coming soon.</p>
+				<a class="button banner-btn btn-blue btn" href="#">register</a>
+			</div>
+		</li>
+		<li style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg');">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg" alt="banner-image" />
+			<div class="banner-content">
+				<div class="banner-title">2017 Annual Training Conference</div>
+				<p>The NASCSP Board meeting will take place on Tuesday September 19, 2017, at 4:00 p.m. Agenda and additional information is coming soon.</p>
+				<a class="button banner-btn btn-blue btn" href="#">register</a>
+			</div>
+		</li>
+		<li style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg');">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/banner-1.jpg" alt="banner-image" />
+			<div class="banner-content">
+				<div class="banner-title">2017 Annual Training Conference</div>
+				<p>The NASCSP Board meeting will take place on Tuesday September 19, 2017, at 4:00 p.m. Agenda and additional information is coming soon.</p>
+				<a class="button banner-btn btn-blue btn" href="#">register</a>
+			</div>
+		</li>
+	</ul>
+</section>
+<section class="content-section">
+	<div class="container">
+		<?php  ?>
+	</div>
+</section>
+<?php 
+get_sidebar();
+get_footer();
+?>

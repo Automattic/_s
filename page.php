@@ -1,4 +1,7 @@
 <?php
+$pageid = get_the_ID();
+
+if ( !defined('ABSPATH') ){ die(); }
 /**
  * The template for displaying all pages
  *
@@ -7,33 +10,154 @@
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package nascsp
  */
 
 get_header();
+//$slider = get_field('slider');
+$contact_map = get_field('location','option');
+$address = get_field('address','option');
+$phone = get_field('phone','option');
+$slug = get_queried_object()->post_name;
+$top_post = $post;
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+			<?php
+			while ( have_posts() ) : the_post();
+				$title = get_the_title();
+				$content = get_the_content();
+				$content = apply_filters('the_content', $content);
+				$slider = get_field('slider');
+				if ($post->post_parent && $post->ancestors) {
+					$top_post = get_post(end($post->ancestors));
+					$slug = $top_post->post_name;
+					if($slug == 'wap'){
+						$block_class = "green";
+					}else{
+						$block_class = "";
+					}
+				}
+				//get_template_part( 'template-parts/content', 'page' );
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+				// If comments are open or we have at least one comment, load up the comment template.
+				/* if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif; */
+				?>
+                <?php if(!empty($slider)){ ?>
+                    <section class="banner-section">
+                        <ul class="banner-slider">
+                            <?php foreach($slider as $slide){
+                                $image = $slide['slide'];
+								if(!empty($image['sizes'])){
+									$banner_image = $image['sizes']['banner-image'];
+								} else {
+									$banner_image = $image['url'];
+								}
 
-			get_template_part( 'template-parts/content', 'page' );
+                                $titles = $slide['title'];
+                                $description = $slide['description'];
+                                $link = $slide['link'];
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+                            ?>
+                            <li style="background-image:url('<?php echo $banner_image;?>');">
+                                <img src="<?php echo $banner_image; ?>" alt="banner-image" />
+                                <div class="banner-content">
+									<?php if(!empty($titles)){ ?>
+										<div class="banner-title"><?php echo $titles; ?></div>
+									<?php } ?>
+									<?php if(!empty($description)){ ?>
+										<p><?php echo $description; ?></p>
+									<?php } ?>
+									<?php if(!empty($link)){ ?>
+										<a class="button banner-btn btn-blue btn" href="<?php echo $link; ?>">register</a>
+									<?php } ?>
+								</div>
+                            </li>
+                            <?php } ?>
+                        </ul>
+                    </section>
+                    <?php } ?>
+                <section class="content-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 page-content">
+                                <div class="page-heading">
+                                    <div class="page-title"><?php echo $title; ?></div>
+                                    <ul class="social-share">
+                                        <li class="facebook"><a target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[title]=<?php the_title(); ?>&p[url]=<?php the_permalink() ?>">facebook</a></li>
+										<li class="twitter"><a target="_blank" href="https://twitter.com/share?url=<?php the_permalink() ?>&text=<?php the_title(); ?>">twitter</a></li>
+										<li class="linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink() ?>&title=<?php the_title(); ?>&summary=&source=<?php bloginfo('name'); ?>" target="_new">linkedin</a></li>
+                                    </ul>
+                                </div>
+								<?php
+									/* $current_user = wp_get_current_user();
+									$current_email = $current_user->user_email;
+									if(membership_status($current_email) == false && get_the_title() == "User Profile"){
+										echo '<h1 style="text-align: center;">WELCOME to NASCSP</h1>';
+										echo "<p>Your membership is currently inactive, please contact your organization for membership renewal information</p>";
+									} */
+									if(get_the_title() == "User Profile"){
+										echo '<h1 style="text-align: center;">WELCOME to NASCSP</h1>';
+									}
+								?>
+                                <?php echo $content; ?>
+                                <!-- Today`s Changes -->
+                               <?php
+                                $sub_page_list_block = get_field('sub_page_list_block');
+                                if( $sub_page_list_block ) :
+                                ?>
+                                <div class="csbg-blocks <?php echo $block_class; ?> row">
+                                <?php foreach( $sub_page_list_block as $row ):
+                                $image = $row['sub_page_block_image'];
+                                $icon = $row['sub_page_block_icon'];
+                                $sub_page_block_title = $row['sub_page_block_title'];
+                                $sub_page_block_learn_more = $row['sub_page_block_learn_more'];
+                                ?>
+                                <div class="col-sm-6">
+                                    <?php if( $image || $icon || $sub_page_block_title || $sub_page_block_learn_more ): ?>
+                                    <div class="csbg-block-single" style="background-image: url('<?php echo $image['url'] ?>');">
+                                        <?php if( !empty($image['url']) ): ?>
+                                        <img src="<?php echo $image['url'] ?>" alt="csbg-block" />
+                                        <?php endif ?>  <!-- Image url if end -->
+                                        <?php if( !empty($icon['url']) || !empty($sub_page_block_title) || !empty($sub_page_block_learn_more) ): ?>
+                                        <div class="csbd-block-content">
+											<a href="<?php echo $sub_page_block_learn_more; ?>" class="action-block">
+												<?php if( !empty($icon['url']) ): ?>
+												<div class="csbg-icons"><img src="<?php echo $icon['url']?>" alt="csbg-icon" /></div>
+												<?php endif; ?>     <!-- $icon['url'] if end  -->
+												<?php if( !empty($sub_page_block_title) ): ?>
+												<h3><?php echo $sub_page_block_title ?></h3>
+												<?php endif; ?>     <!-- csbg_block_title if end -->
+												<?php /*if( !empty($sub_page_block_learn_more) ):
+												<span class="link-bottom">Learn More:</span>
+												 endif */ ?>  <!-- csbg_block_learn_more if end  -->
+											</a>
+                                        </div>
+                                        <?php endif; ?> <!-- image icon title and lern more if end -->
+                                    </div>
+                                    <?php endif; ?> <!-- image icon title and lern more if end -->
+                                </div>
+                                <?php endforeach ?>
+                            </div>
+                            <?php endif; ?>         <!-- sub_page_list_block if end  -->
+                                <!-- Today`s Change end here -->
+                            </div>
+							<?php  //$classes = get_body_class('buddypress '); ?>
+							<?php //if($classes[1]  != 'groups' || empty($classes)) { ?>
+							<div class="col-md-4">
+								<?php get_sidebar('right'); ?>
+							</div>
+							<?php //} ?>
+                        </div>
+                    </div>
+                </section>
 
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            <?php
+			endwhile; // End of the loop.
+			?>
 
 <?php
 get_sidebar();
