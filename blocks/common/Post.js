@@ -43,10 +43,12 @@ class Post extends Component {
 
 
         const titleTrimmed = post.title.rendered.trim();
-        let excerpt = post.excerpt.rendered;
-        if ( post.excerpt.raw === '' ) {
+        let excerpt = post.excerpt ? post.excerpt.rendered : '';
+       
+        if ( post.excerpt && post.excerpt.raw === '' ) {
             excerpt = post.content.raw;
         }
+        
         const excerptElement = document.createElement( 'div' );
         excerptElement.innerHTML = excerpt;
         excerpt = excerptElement.textContent || excerptElement.innerText || '';		
