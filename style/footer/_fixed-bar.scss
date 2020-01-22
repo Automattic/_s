@@ -7,7 +7,7 @@
 	background: #fff;
 	text-align: center;
 	border-top: 1px solid #ccc;
-	box-shadow: 1px 1px rgba(0,0,0,.2);
+	box-shadow: $shadow__card;
 	z-index: 9;
 	transition: bottom .5s ease-in-out;
 	color: $color__text-main;

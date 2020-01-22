@@ -76,6 +76,9 @@ export const settings = {
 		pictureId: {
 			type: 'number',
 		},
+		pictureSize: {
+			type: 'string',
+		},
 		pictureStackedUrl: {
 			type: 'string',
 			source: 'attribute',
@@ -84,6 +87,9 @@ export const settings = {
 		},	
 		pictureStackedId: {
 			type: 'number',
+		},
+		pictureStackedSize: {
+			type: 'string',
 		},		
 		pictureAlt: {
 			type: 'string',

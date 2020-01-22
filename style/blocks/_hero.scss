@@ -12,15 +12,15 @@
         margin-right: -$padding__content-tablet;
     }
     
-    @media screen and (min-width: $size__content-width) {
+    @media screen and (min-width: $size__page-width) {
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__content-width}) /2 + 35px);
-		padding-right: calc((100vw - #{$size__content-width}) /2 + 35px);
+		padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
+		padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
     }
     
     @media screen and (min-width: $size__tablet-content-width) {
-        padding: 80px calc((100vw - #{$size__content-width}) /2);
+        padding: 80px calc((100vw - #{$size__page-width}) /2);
     }
     
     &.has-bottom-padding {
@@ -67,9 +67,9 @@
             }
         }
 
-        @media screen and (min-width: $size__content-width) {
-            padding-left: calc((100vw - #{$size__content-width}) /2 + 35px);
-            padding-right: calc((100vw - #{$size__content-width}) /2 + 35px);
+        @media screen and (min-width: $size__page-width) {
+            padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
+            padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
 
             .wp-block-svbk-hero__content {
                 padding-top: 100px;
@@ -78,8 +78,8 @@
         }
 
         @media screen and (min-width: $size__tablet-content-width) {
-            padding-left: calc((100vw - #{$size__content-width}) /2);
-            padding-right: calc((100vw - #{$size__content-width}) /2);
+            padding-left: calc((100vw - #{$size__page-width}) /2);
+            padding-right: calc((100vw - #{$size__page-width}) /2);
         }
     }
 
@@ -89,8 +89,8 @@
 
             .wp-block-svbk-hero__content {
                 background: #fff;
+                box-shadow: $shadow__card;
                 padding: 20px;
-                border-radius: 8px;
             }
         }
     }
@@ -138,7 +138,7 @@
         }
     }
 
-    @media screen and (min-width: $size__content-width) {
+    @media screen and (min-width: $size__page-width) {
         padding: 40px;
         @include clearfix();
         @include clearfix-after();
@@ -194,7 +194,11 @@ h1 {
     margin-top: 10px;
 
     .wp-block-svbk-hero__link {
-        display: inline-block;
+        display: block;
+
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+            display: inline-block;
+        }
     }
 }
 
@@ -241,4 +245,9 @@ h1 {
     clear: both;
     padding-top: 3px;
     color: #5f6368;
+    text-align: center;
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        text-align: left;
+    }
 }

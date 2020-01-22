@@ -2,8 +2,6 @@
 
 namespace Svbk\WP\Theme\_svbk;
 
-require __DIR__ . '/class-post-list.php';
-
 class Post_List_Block extends Post_List {
 
 	/**
@@ -33,7 +31,7 @@ class Post_List_Block extends Post_List {
 			'type'    => 'number',
 			'default' => 5,
 		),
-		'displayPostContentRadio' => array(
+		'display' => array(
 			'type'    => 'string',
 			'default' => 'excerpt',
 		),
@@ -85,7 +83,7 @@ class Post_List_Block extends Post_List {
 
 		parent::__construct( $post_type, $properties );
 
-		add_action( 'init', array( $this, 'register_block' ), 20 );
+		$this->register_block();
 	}
 
 	/**
@@ -127,6 +125,8 @@ class Post_List_Block extends Post_List {
 		$attributes['orderby'] = $attributes['orderBy'];
 		$attributes['load_more'] = $attributes['loadMore'];
 
+		$classes = array( 'wp-block-' . str_replace( '/', '-', $this->block_name ) );
+
 		if ( isset( $blockAttributes['align'] ) ) {
 			$classes[] = 'align' . $blockAttributes['align'];
 		}
@@ -156,7 +156,7 @@ class Post_List_Block extends Post_List {
 	 * @return void
 	 */	
 	public function renderPost($attributes){
-		switch ( $attributes['displayPostContentRadio'] ) {
+		switch ( $attributes['display'] ) {
 			case 'excerpt':
 				get_template_part( 'template-parts/preview', $this->post_type );
 				break;

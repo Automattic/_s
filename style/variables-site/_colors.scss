@@ -4,11 +4,12 @@ $color__corporate-secondary: #7edeea;
 $color__corporate-tertiary: #7edeea;
 $color__corporate-gradient: linear-gradient(to right, #e94b4b, #d11f1f);
 
+$shadow__card: 1px 1px 4px rgba(0,0,0,.1);
+
 //Text
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__text-button: #fff;
 $color__text-main: #404040;
 
 //Error/Success
@@ -17,18 +18,16 @@ $color__error: #e2401c;
 
 //Elements backgrounds
 $color__background-body: #f5f5f5;
-$color__background-page: #ffffff;
+$color__background-page: #fff;
 $color__background-screen: #f1f1f1;
-$color__background-top-header: #dbdbdb;
-$color__background-header: #f0f0f0;
-$color__background-sub-menu: #dfdfdf;
+$color__background-header: #fff;
+$color__background-sub-menu: #f5f5f5;
 $color__background-footer: #555;
 $color__background-sub-footer: #333;
 
 $color__background-dark: #6b6b6b;
 $color__background-light: #F6F7F9;
-$color__background-alpha-dark: rgba(0,0,0,.7);
-$color__background-alpha-light: rgba(255,255,255,.6);
+$color__background-gradient: linear-gradient(to bottom, #1976d2, darken(#1976d2, 15%));
 
 $color__background-hr: #f0f0f0;
 $color__background-pre: #eee;
@@ -38,28 +37,24 @@ $color__background-highlight: rgba(233,75,75,.2);
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-//Buttons and links
-$color__background-button: #1976d2;
-$color__background-button-secondary: #424242;
-$color__background-button-hover: #63a4ff;
-$color__background-button-hover-secondary: #595959;
-$color__background-button-focus: #004ba0;
-$color__background-button-focus-secondary: #3b3b3b;
-$color__background-button--light: #fff;
-$color__background-button-hover--light: #fff;
-$color__background-button-focus--light: #fff;
+//Button
 
+$color__text-button: #fff;
+$color__background-button: #1976d2;
 $color__border-button: $color__background-button;
-$color__border-button-secondary: $color__background-button-secondary;
+$color__background-button-hover: #63a4ff;
 $color__border-button-hover: $color__background-button-hover;
-$color__border-button-hover-secondary: $color__background-button-hover-secondary;
+$color__background-button-focus: #004ba0;
 $color__border-button-focus: $color__background-button-focus;
+
+$color__background-button-secondary: #424242;
+$color__border-button-secondary: $color__background-button-secondary;
+$color__background-button-hover-secondary: #595959;
+$color__border-button-hover-secondary: $color__background-button-hover-secondary;
+$color__background-button-focus-secondary: #3b3b3b;
 $color__border-button-focus-secondary: $color__background-button-focus-secondary;
 
-$color__border-button--light: $color__background-button--light;
-$color__border-button-hover--light: $color__background-button-hover--light;
-$color__border-button-focus--light: $color__background-button-focus--light;
-
+//Links
 $color__link: $color__background-button;
 $color__link-hover: $color__background-button-hover;
 $color__link-focus: $color__background-button-focus;

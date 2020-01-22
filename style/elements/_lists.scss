@@ -20,31 +20,37 @@ ul {
 		display: inline-block;
 		width: .8em;
 		margin-left: -.8em;
-		@include font-size(1);
+		@include font-size(1.6);
+		line-height: 1rem;
 		vertical-align: middle;
+		margin-bottom: 2px;
 	}
 
-	&.is-style-pros,
-	&.is-style-cons {
-		padding-left: 1.6em;
+	&.is-style-bullets,
+	&.is-style-crosses {
+		padding-left: 0;
 
 		li {
-
+			@include font-size(1.1);
+			margin-bottom: 15px;
+			padding-left: 33px;
+			text-indent: -16px;
+	
 			&:before {
-				width: 1.6em;
-				margin-left: -1.6em;
-				margin-bottom: 2px;
+				@include font-size(1.2);
+				margin-left: 0;
 			}
 		}
 	}
 
-	&.is-style-pros li:before {
-		@include icon-content('\e92d');
+	&.is-style-bullets li:before {
+		@include icon-content('\e90c');
+		@include font-size(1.2);
 	}
 
-	&.is-style-cons li:before {
-		@include icon-content('\e92e');
-		color: #aaa;
+	&.is-style-crosses li:before {
+		@include icon-content('\e903');
+		@include font-size(1);
 	}
 }
 

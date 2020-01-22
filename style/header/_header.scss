@@ -2,6 +2,7 @@
 	background: $color__background-header;
 	width: 100%;
 	z-index: 999;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
 
 	.wrap {
 
@@ -98,10 +99,11 @@
 
 		.site-branding {
 			display: inline-block;
+			vertical-align: bottom;
 
 			img {
-				height: 58px;
-				margin-top: 15px;
+				height: $size__logo-height-desktop;
+				margin-top: 10px;
 				margin-bottom: 10px;
 			}
 		}
@@ -117,7 +119,6 @@
 			}
 
 			li {
-				margin-right: 15px;
 				float: left;
 
 				&:last-of-type {
@@ -136,8 +137,8 @@
 	}
 }
 
-@import "mobile/left-nav/left-nav";
-//@import "mobile/right-nav/right-nav";
+//@import "mobile/left-nav/left-nav";
+@import "mobile/right-nav/right-nav";
 
 //@import 'desktop/logo-center/logo-center';
 @import 'desktop/logo-left/logo-left';

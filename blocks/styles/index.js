@@ -11,13 +11,8 @@ wp.blocks.registerBlockStyle( 'core/paragraph', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/list', {
-    name: 'pros',
-    label: 'Pros'
-} );
-
-wp.blocks.registerBlockStyle( 'core/list', {
-    name: 'cons',
-    label: 'Cons'
+    name: 'bullets',
+    label: 'Bullets'
 } );
 
 wp.blocks.registerBlockStyle( 'core/button', {
@@ -33,6 +28,11 @@ wp.blocks.registerBlockStyle( 'core/button', {
 wp.blocks.registerBlockStyle( 'core/button', {
     name: 'phone',
     label: 'Phone'
+} );
+
+wp.blocks.registerBlockStyle( 'core/button', {
+    name: 'right-arrow',
+    label: 'Right Arrow Icon'
 } );
 
 wp.blocks.registerBlockStyle( 'core/group', {

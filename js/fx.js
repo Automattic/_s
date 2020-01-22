@@ -19,10 +19,19 @@
   $(document).ready( smoothScroll );
   $(document.body).on( 'post-load', smoothScroll );
  
-  $(document).ready(function(){
+  $(document).ready(function() {
+ 
+    var animatedElements = [
+      '.is-animated .wp-block-media-text__media',
+      '.is-animated .wp-block-media-text__content',
+      '.is-animated .wp-block-column',
+      '.is-animated.wp-block-svbk-grid > div',
+      '.is-animated .wp-block-svbk-iter__step',
+      '.is-animated.wp-block-svbk-warranty',
+    ];
  
     /* Animations */
-    $('').waypoint({
+    $( animatedElements.join(',') ).waypoint({
         handler: function() {
           $(this.element).addClass('animated');
         },

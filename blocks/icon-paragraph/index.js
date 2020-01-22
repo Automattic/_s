@@ -13,7 +13,8 @@
  */
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
-	RichText, 
+	RichText,
+	getFontSizeClass,
 } = wp.blockEditor;
 
 const {
@@ -25,6 +26,10 @@ const {
  */
 import edit from './edit';
 
+/**
+ * External dependencies
+ */
+import classnames from 'classnames';
 
 /**
  * Register: Gutenberg Block.
@@ -64,6 +69,12 @@ export const settings = {
 		align: {
 			type: 'string',
 		},
+		fontSize: {
+			type: 'string',
+		},
+		customFontSize: {
+			type: 'number',
+		},
 	},	
 
 	edit,
@@ -74,14 +85,19 @@ export const settings = {
 			icon,
 			content,
 			align,
-		} = attributes;		
+			fontSize,
+			customFontSize,
+		} = attributes;	
+		
+		const fontSizeClass = getFontSizeClass( fontSize );
 	
 		const style = {
 			textAlign: align,
+			fontSize: fontSizeClass ? undefined : customFontSize,
 		};		
 		
 		return (
-			<div style={ style } >
+			<div className={ classnames( 'wp-block-svbk-icon-paragraph', { [ fontSizeClass ]: fontSizeClass } )} style={ style } >
 				{ icon && (
 				<div className={ 'wp-block-svbk-icon-paragraph__icon' } ><RawHTML>{ icon }</RawHTML></div>
 				) }				

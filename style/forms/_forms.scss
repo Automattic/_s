@@ -22,8 +22,7 @@
 	}
 	
 	&.has-background {
-		border-radius: 8px;
-		box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+		box-shadow: $shadow__card;
 	}
 	
 	@media screen and (min-width: breakpoint('desktop')) {

@@ -160,3 +160,14 @@
 		display: $display-value;
 	}
 }
+
+//Grid columns animation delay
+@mixin grid-animation($columns-num, $animation-delay) {
+	
+	@for $i from 1 through $columns-num {
+		
+		> div:nth-of-type(#{$columns-num}n + #{$i}).animated {
+			animation-delay: #{$animation-delay * ($i - 1)}ms;
+		}
+    }
+}

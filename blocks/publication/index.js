@@ -66,7 +66,10 @@ export const settings = {
 			source: 'attribute',
 			attribute: 'alt',
 			selector: '.wp-block-svbk-publication__picture img',
-		},			
+		},
+		pictureSize: {
+			type: 'string',
+		},				
 		author: {
 			type: 'string',
 			source: 'text',

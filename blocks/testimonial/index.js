@@ -18,7 +18,6 @@ import classnames from 'classnames';
  */
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { 
-	RichText, 
 	getColorClassName, 
 	InnerBlocks,
 } = wp.blockEditor;
@@ -52,7 +51,13 @@ export const settings = {
 		__( 'testimonial' ),
 		__( 'feedback' ),
 	],
-	
+
+	supports: {
+		inserter: false,
+		reusable: false,
+		multiple: false,
+	},
+
 	styles: [
 	    // Mark style as default.
 	    {
@@ -67,11 +72,7 @@ export const settings = {
 	    {
 	        name: 'press',
 	        label: __( 'Press', '_svbk' ),
-	    },
-	    {
-	        name: 'inline',
-	        label: __( 'Inline', '_svbk' ),
-	    },	    
+	    }	    
 	],	
 	
 	attributes: {
@@ -135,14 +136,13 @@ export const settings = {
 		customTextColor: {
 			type: 'string',
 		},
-	},	
+	},
 
 	edit,
 
 	save: function( { attributes } ) {
 		
 		const { 
-			type,
 			avatarUrl,
 			avatarId,
 			authorName,

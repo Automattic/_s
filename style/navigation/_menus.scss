@@ -7,16 +7,51 @@
 			margin-bottom: 0;
 			margin: 0;
 
-			&.current-menu-item a {
+			&.current-menu-item:not(.cta-item) > a,
+			&.current-menu-ancestor:not(.cta-item) > a {
 				border-bottom: 3px solid $color__corporate;
 			}
 
 			a {
 				@include font-size(.9);
+
+				&:focus {
+					background: none;
+					outline: none;
+				}
 			}
 
 			&:before {
 				display: none;
+			}
+
+			&.cta-item {
+
+				a {
+					background-color: $color__background-button;
+					color: $color__text-button;
+					padding: .6em .8em;
+					border-color: $color__border-button;
+					box-shadow: 0 0 0 1px transparent;
+					transition: background .15s ease-in-out,
+								box-shadow .15s ease-in-out;
+	
+					&:visited {
+						background-color: $color__background-button;
+						color: $color__text-button;
+					}
+	
+					&:hover {
+						background-color: $color__background-button-hover;
+						color: $color__text-button;
+					}
+	
+					&:focus,
+					&:active {
+						background-color: $color__background-button-focus;
+						color: $color__text-button;
+					}
+				}
 			}
 		}
 	}
@@ -31,10 +66,11 @@
 		}
 
 		> a:after {
-			@include icon-content("\e90a");
-			@include font-size(.5);
+			@include icon-content("\e90e");
+			@include font-size(.45);
 			position: absolute;
 			right: 0;
+			vertical-align: middle;
 		}
 
 		.sub-menu {
@@ -48,14 +84,14 @@
 
 				a {
 					text-transform: none;
+					font-weight: normal;
+					padding: 0;
+				}
 
-					&:before {
-						content: "\2022";
-						display: inline-block;
-						vertical-align: middle;
-						margin-right: 5px;
-						color: $color__corporate;
-					}
+				&.current-menu-item > a,
+				&.current-menu-ancestor > a {
+					color: $color__corporate;
+					border-bottom: none;
 				}
 			}
 		}
@@ -64,7 +100,7 @@
 			background-color: $color__background-sub-menu;
 
 			> a:after {
-				@include icon-content("\e909");
+				@include icon-content("\e90b");
 			}
 
 			.sub-menu {
@@ -83,6 +119,9 @@
 				
 				a {
 					transition: color .15s ease-in-out;
+					display: block;
+					padding-left: 10px;
+					padding-right: 10px;
 					
 					&:hover {
 						color: $color__corporate;
@@ -90,45 +129,34 @@
 				}
 
 				&.cta-item {
+					margin-left: 5px;
 
 					a {
-						background: rgba(255,255,255,0);
-						color: $color__corporate;
-						padding: .5em .8em;
-						border-radius: 8px;
-						color: $color__border-button;
-						border: 2px solid;
-						border-color: $color__border-button;
-						background: rgba(255,255,255,0);
-						box-shadow: 0 0 0 1px transparent;
-						transition: background .15s ease-in-out,
-									border .15s ease-in-out,
-									color .15s ease-in-out,
-									box-shadow .15s ease-in-out;
+						display: inline;
+					}
+				}
 
-						&:hover,
-						&:active,
-						&:focus,
-						&:visited {
-							background: rgba(255,255,255,0);
-						}
+				&.current-menu-item:not(.cta-item),
+				&.current-menu-ancestor:not(.cta-item) {
+					position: relative;
 
-						&:hover,
-						&:focus {
-							color: $color__border-button-hover;
-							border-color: $color__border-button-hover;
-						}
+					&:after {
+						content: '';
+						display: block;
+						height: 3px;
+						width: 100%;
+						background: $color__corporate;
+					}
 
-						&:active {
-							color: $color__border-button-focus;
-							border-color: $color__border-button-focus;
-						}
+					> a {
+						border-bottom: none;
 					}
 				}
 			}
 		}
 
 		.menu-item-has-children {
+			transition: none;
 
 			.sub-menu {
 				display: none;
@@ -136,15 +164,14 @@
 				background-color: $color__background-sub-menu;
 				position: absolute;
 				z-index: 10;
-				padding: 15px;
-				margin: -25px 0 0 0;
+				padding: 15px 10px 20px;
+				margin: 0;
 				width: 190px;
-				box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 				text-align: left;
 
 				li {
 					float: none;
-					margin-bottom: 10px;
+					margin-bottom: 15px;
 
 					&:last-of-type {
 						margin-bottom: 0;
@@ -153,36 +180,37 @@
 					a {
 						line-height: normal;
 					}
-				}
 
-				&:before {
-					content: "";
-					display: block;
-					width: 0;
-					height: 0;
-					position: absolute;
-					border-left: 6px solid transparent;
-					border-right: 6px solid transparent;
-					border-bottom: 6px solid $color__background-sub-menu;
-					top: -6px;
-					left: 50px;
+					&.current-menu-item:after {
+						display: none;
+					}
 				}
 			}
 
 			&:hover {
-
+				background-color: $color__background-sub-menu;
+	
+				> a:after {
+					@include icon-content("\e90b");
+				}
+	
 				.sub-menu {
-					max-height: none;
+					max-height: 300px;
 					display: block;
 				}
 			}
 
-			&.expanded {
-				background-color: rgba(255,255,255,0);
+			&.expanded,
+			&:hover {
+
+				a:after {
+					color: $color__corporate
+				}
 			}
 
 			> a:after,
-			&.expanded > a:after {
+			&.expanded > a:after,
+			&:hover > a:after {
 				@include icon-content("\e90b");
 				position: static;
 				margin-left: 5px;
@@ -228,7 +256,7 @@
 			position: static;
 			width: auto;
 			box-shadow: none;
-			overflow: hidden;
+			overflow: visible;
 		}
 	}
 }

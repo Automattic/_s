@@ -1,21 +1,21 @@
 .wp-block-svbk-icon-paragraph {
-    padding-left: 2.3rem;
-    position: relative;
-    
-    .wp-block-svbk-icon-paragraph__icon {
-        position: absolute;
-        top: 0;
-        left: 0;
-        
-        svg {
-            display: block;
-            width: 1.3rem;
-            fill: $color__corporate;
-        }
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.wp-block-svbk-icon-paragraph__icon {
+    margin-right: .65em;
+
+    svg {
+        display: block;
+        width: 1.4em;
+        height: 1.4em;
+        margin-top: .05em;
     }
-    
-    .wp-block-svbk-icon-paragraph__content {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
+}
+
+.wp-block-svbk-icon-paragraph__content {
+    margin: 0;
+    line-height: normal;
 }

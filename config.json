@@ -4,7 +4,8 @@
     "theme_name" : "_svbk",
     "theme_handle" : "_svbk",
     
-	"content_width": 1120,
+	"content_width": 800,
+	"page_width": 1120,
 	"page_max_width": 1366,	
 	"sidebar_width_ratio": 0.3,
 	
@@ -69,11 +70,11 @@
 	"color_palette": {
 		"primary" : {
 			"name":"Primary",
-			"color":"#e94b4b"
+			"color":"#1976d2"
 		},
 		"secondary": {
 			"name":"Secondary",
-			"color":"#2b53af"
+			"color":"#7edeea"
 		},
 		"dark-gray":{
 			"name":"Dark Gray",
@@ -86,6 +87,10 @@
 		"white": {
 			"name":"White",
 			"color":"#ffffff"
+		},
+		"gradient": {
+			"name":"Corporate gradient",
+			"color":"linear-gradient(to bottom, #1976d2, #11508e)"
 		}		
 	}
 }

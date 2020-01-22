@@ -60,8 +60,10 @@ class HeroEdit extends Component {
 		const { 
 			pictureUrl,
 			pictureId, 
+			pictureSize, 
 			pictureStackedUrl,
 			pictureStackedId,
+			pictureStackedSize,
 			pictureAlt,
 			pretitle,
 			title,
@@ -85,7 +87,7 @@ class HeroEdit extends Component {
 		
 		const pictureUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt' ] ) , function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt', 'size' ] ) , function(value, key) {
 				// Convert url to pictureUrl, id to pictureId, etc
 				return 'picture' + capitalize(key);
 			});
@@ -95,7 +97,7 @@ class HeroEdit extends Component {
 		
 		const pictureStackedUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url' ] ) , function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'size' ] ) , function(value, key) {
 				// Convert url to pictureUrl, id to pictureId, etc
 				return 'pictureStacked' + capitalize(key);
 			});
@@ -130,6 +132,7 @@ class HeroEdit extends Component {
 						url={ pictureUrl }
 						id={ pictureId }
 						alt={ pictureAlt }
+						size={ pictureSize }
 						isMain={ true }
 					/> 
 					{ pictureUrl && (
@@ -241,6 +244,7 @@ class HeroEdit extends Component {
 								setAttributes={ pictureStackedUpdate }
 								url={ pictureStackedUrl }
 								id={ pictureStackedId }
+								size={ pictureStackedSize }
 								inInspector={true}
 							/> 						
 						</Fragment>

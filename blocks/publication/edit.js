@@ -48,7 +48,8 @@ class PublicationEdit extends Component {
 		const { 
 			pictureUrl,
 			pictureAlt,
-			pictureId,		    
+			pictureId,
+			pictureSize,	    
 			title,
 			author,
 			meta, 
@@ -61,7 +62,7 @@ class PublicationEdit extends Component {
 		
 		const pictureUpdate = ( update ) => {
 			
-			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt' ] ) , function(value, key) {
+			const localUpdate = mapKeys( pick( update, [ 'id', 'url', 'alt', 'size' ] ) , function(value, key) {
 				// Convert url to pictureUrl, id to pictureId, etc
 				return 'picture' + capitalize(key);
 			});
@@ -77,6 +78,7 @@ class PublicationEdit extends Component {
 						url={ pictureUrl }
 						id={ pictureId }
 						alt={ pictureAlt }
+						size={ pictureSize }
 						isMain={ true }
 					/> 
 				    <div className={ 'wp-block-svbk-publication__content' } > 

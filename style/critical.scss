@@ -19,6 +19,20 @@
 --------------------------------------------------------------*/
 @import "modules/accessibility";
 
+.hentry .entry-content >,
+.wp-block-group > {
+
+	p, ul, ol,
+	h1, h2, h3, h4, h5, h6,
+	.wp-block-button,
+	.wp-block-separator.is-style-wide,
+	.wp-block-svbk-icon-paragraph {
+		max-width: $size__content-width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -83,7 +97,7 @@ img {
 .wrap {
 	padding-left: $padding__content-mobile;
 	padding-right: $padding__content-mobile;
-	max-width: $size__content-width;
+	max-width: $size__page-width;
 	margin-left: auto;
 	margin-right: auto;
 	
@@ -98,27 +112,13 @@ img {
 	}
 }
 
-.alignfull,
-.alignwide {
-	margin-left: -#{$padding__content-mobile};
-	margin-right: -#{$padding__content-mobile};
-	width: auto;
-	max-width: 1000%;
-	padding-left: $padding__content-mobile;
-	padding-right: $padding__content-mobile;
-	
-	&.wp-block-image {
-		margin-top: 0;
-		margin-bottom: 0;
-		padding: 0;
-		max-width: none;
-	}
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-left: $padding__content-tablet;
-		padding-right: $padding__content-tablet;
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
+.wp-block-svbk-testimonials,
+.wp-block-svbk-grid {
+
+	@media screen and (min-width: $size__page-width + $padding__content-desktop * 2) {
+		max-width: $size__page-width;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
@@ -195,4 +195,3 @@ img {
 # Layout
 --------------------------------------------------------------*/
 //@import "layout/in-grid";
-@import "layout/full";

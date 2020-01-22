@@ -210,9 +210,9 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 		 */
 		public function disable_wc_product_template_option( $options ) {
 		
-			$options['svbk_custom_template'] = array(
+			$options['_svbk_custom_template'] = array(
 				'id'            => '_svbk_custom_template',
-				//'wrapper_class' => 'show_if_simple',
+				'wrapper_class' => 'show_if_simple show_if_variable show_if_grouped show_if_external',
 				'label'         => __( 'Custom Template', '_svbk' ),
 				'description'   => __( 'Disable WooCommerce default template. Allows you to build the full product page', '_svbk' ),
 				'default'       => 'no',
