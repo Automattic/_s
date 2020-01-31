@@ -4,17 +4,18 @@
     "theme_name" : "_svbk",
     "theme_handle" : "_svbk",
     
-	"content_width": 800,
-	"page_width": 1120,
-	"page_max_width": 1366,	
+	"content_width": 1120,
+	"page_width": 1250,
+	"page_max_width": 1440,
+	"text_width": 550,
 	"sidebar_width_ratio": 0.3,
 	
 	"main_breakpoints" : {
 	    "phone":			480,
 	    "tablet-portrait":	600,
 	    "tablet-landscape": 900,
-	    "desktop":			1200,
-	    "desktop-large":	1800
+		"desktop":			1200,
+		"desktop-large":	1800
 	},
 	
 	"fonts": {

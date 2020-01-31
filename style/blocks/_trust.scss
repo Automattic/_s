@@ -10,23 +10,6 @@
 		@include clearfix();
 		@include clearfix-after();
 	}
-    
-    @media screen and (min-width: breakpoint('tablet-landscape')) {
-        margin-left: -$padding__content-tablet;
-		margin-right: -$padding__content-tablet;
-		box-shadow: none;
-    }
-    
-    @media screen and (min-width: $size__page-width) {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
-		padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
-    }
-    
-    @media screen and (min-width: $size__tablet-content-width) {
-        padding: 0 calc((100vw - #{$size__page-width}) /2);
-    }
 }
 
 .wp-block-svbk-trust__content {
