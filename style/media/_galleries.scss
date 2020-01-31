@@ -47,12 +47,6 @@
 			}
 		}
 	}
-	
-	&.alignfull {
-		max-width: none;
-		margin-left: -$padding__content-mobile;
-		margin-right: -$padding__content-mobile;
-	}
 
 	.blocks-gallery-item {
 		margin: 0;
@@ -97,11 +91,6 @@
 				}
 			}
 		}
-			
-		&.alignfull {
-			margin-left: -$padding__content-tablet;
-			margin-right: -$padding__content-tablet;
-		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
@@ -110,16 +99,6 @@
 
 			figcaption {
 				display: block;
-			}
-		}
-		
-		&.alignfull {
-			margin-left: -$padding__content-desktop;
-			margin-right: -$padding__content-desktop;
-			
-			.blocks-gallery-item {
-				padding-left: 0;
-				padding-right: 0;	
 			}
 		}
 	}

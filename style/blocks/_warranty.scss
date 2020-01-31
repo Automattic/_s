@@ -6,8 +6,8 @@
 	position: relative;
 	margin-left: -$padding__content-mobile;
 	margin-right: -$padding__content-mobile;
-	padding-left: $padding__content-mobile;
-	padding-right: $padding__content-mobile;
+	padding-left: $padding__content-mobile + 10px;
+	padding-right: $padding__content-mobile + 10px;
 	
 	figure {
 		margin-top: -81px;
@@ -136,7 +136,7 @@
 			}	
 		}
 		
-		@media screen and (min-width: breakpoint('tablet-portrait')) {
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
 			padding-left: 35px;
 			padding-right: 35px;
 		}
@@ -148,17 +148,8 @@
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		margin-left: -$padding__content-tablet;
-		margin-right: -$padding__content-tablet;
-		padding-left: $padding__content-tablet;
-		padding-right: $padding__content-tablet;
-	}
-	
-	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__page-width}) /2);
-		padding-right: calc((100vw - #{$size__page-width}) /2);
+		padding-left: $padding__content-tablet + 10px;
+		padding-right: $padding__content-tablet + 10px;
 	}
 	
 	&.is-style-small {

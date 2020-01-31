@@ -7912,10 +7912,6 @@ wp.blocks.registerBlockStyle('core/group', {
   label: 'No Padding'
 });
 wp.blocks.registerBlockStyle('core/group', {
-  name: 'green-check',
-  label: 'Green Check'
-});
-wp.blocks.registerBlockStyle('core/group', {
   name: 'raised',
   label: 'Raised'
 });

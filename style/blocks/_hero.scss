@@ -19,10 +19,6 @@
 		padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
     }
     
-    @media screen and (min-width: $size__tablet-content-width) {
-        padding: 80px calc((100vw - #{$size__page-width}) /2);
-    }
-    
     &.has-bottom-padding {
         
         .wp-block-svbk-hero__content {
@@ -77,10 +73,6 @@
             }
         }
 
-        @media screen and (min-width: $size__tablet-content-width) {
-            padding-left: calc((100vw - #{$size__page-width}) /2);
-            padding-right: calc((100vw - #{$size__page-width}) /2);
-        }
     }
 
     &.is-style-content-card {

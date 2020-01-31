@@ -53,6 +53,10 @@ object {
 }
 
 .wp-block-image {
+
+	img {
+		display: block;
+	}
 	
 	&.is-style-rounded img {
 		border-radius: 50%;
@@ -60,18 +64,5 @@ object {
 	
 	&.is-style-rounded-corners img {
 		border-radius: 8px;
-	}
-
-	&.alignfull {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		max-width: none;
-
-		img {
-			width: 100%;
-			max-height: 500px;
-			max-height: 70vh;
-			object-fit: cover;
-		}
 	}
 }
