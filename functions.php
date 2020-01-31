@@ -36,8 +36,6 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 	 */
 	function _svbk_setup() {
 
-		global $content_width, $block_width;
-
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -182,29 +180,90 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		add_theme_support( 'sensei' );
 
 		// Load image sizes from config file
-		$max_page_width     = Config::get( 'page_max_width', '_svbk' );
+		$page_max_width = Config::get( 'page_max_width', '_svbk' );
+		$content_width  = Config::get( 'content_width', '_svbk' );
+		$page_width 	= Config::get( 'page_width', '_svbk' );
 		$image_height_ratio = 1 / ( 4 / 3 );
 
-		add_image_size( 'content-third', $content_width / 3, 9999 );
-		add_image_size( 'content-half', $content_width / 2, 9999 );
-		add_image_size( 'content-full', $content_width / 1, 9999 );
-
-		$breakpoints = Config::get( 'main_breakpoints', '_svbk' );
-
-		foreach ( $breakpoints as $key => $breakpoint ) {
-			add_image_size( 'breakpoint-' . $key, $breakpoint, 9999 );
-		}
-
 		$sidebar_width_ratio = Config::get( 'sidebar_width_ratio', '_svbk' ) ?: 0.3;
+		$sidebar_width = $page_width * $sidebar_width_ratio;
+		$content_with_sidebar_width = $page_width - $sidebar_width;
 
-		add_image_size( 'main-sidebar', $content_width * $sidebar_width_ratio, 9999 );
-		add_image_size( 'header', $max_page_width, $max_page_width * $image_height_ratio );
+		add_image_size( 'main-sidebar', $sidebar_width, 9999 );
+		add_image_size( 'wide', $page_max_width, 9999 );
 
-		set_post_thumbnail_size( $content_width / 2, $content_width / 2 * $image_height_ratio, true );
+		set_post_thumbnail_size( ceil($content_width / 2), ceil($content_width / 2 * $image_height_ratio), true );
 
-		$block_width['default'] = $content_width;
-		$block_width['wide']    = $content_width * 1.3;
-		$block_width['full']    = $max_page_width;
+		// Define and register starter content to set up default values.
+		$starter_content = array(
+			'posts'     => array(
+				'home'             => array(
+					'post_type'    => 'page',
+					'post_title'   => _x( 'Home', 'Theme starter content', '_svbk' ),
+				),
+				'about'            => array(
+					'post_type'    => 'page',
+					'post_title'   => _x( 'About', 'Theme starter content', '_svbk' ),
+				),
+				'contact'          => array(
+					'post_type'    => 'page',
+					'post_title'   => _x( 'Contact', 'Theme starter content', '_svbk' ),
+				),
+				'blog'             => array(
+					'post_type'  => 'page',
+					'post_title' => _x( 'Blog', 'Theme starter content', '_svbk' ),
+				),				
+			),			
+
+			'options' => array(
+				// Default to a static front page and assign the front and posts pages.
+				'show_on_front'  => 'page',
+				'page_on_front'  => '{{home}}',
+				'page_for_posts' => '{{blog}}',
+
+				// Set default image sizes to values that match the theme widths.
+				'thumbnail_size_w' => ceil($content_width / 3),
+				'thumbnail_size_h' => ceil($content_width / 3 * $image_height_ratio),
+				'medium_size_w' => ceil($content_width / 2),
+				'medium_size_h' => ceil(($content_width / 2) * $image_height_ratio),
+				'medium_large_size_w' => $content_with_sidebar_width,
+				'medium_large_size_h' => $content_with_sidebar_width * $image_height_ratio,
+				'large_size_w' => $content_width,
+				'large_size_h' => ceil($content_width * $image_height_ratio)
+			),
+
+			// Set up nav menus for each of the two areas registered in the theme.
+			'nav_menus'   => array(
+				// Assign a menu to the "top" location.
+				'primary' => array(
+					'name'  => __( 'Top Menu', '_svbk' ),
+					'items' => array(
+						'page_about'     => array(
+							'type'      => 'post_type',
+							'object'    => 'page',
+							'object_id' => '{{about}}',
+						),
+						'page_blog'       => array(
+							'type'      => 'post_type',
+							'object'    => 'page',
+							'object_id' => '{{blog}}',
+						),
+						'page_news'       => array(
+							'type'      => 'post_type',
+							'object'    => 'page',
+							'object_id' => '{{news}}',
+						),
+						'page_contact'    => array(
+							'type'      => 'post_type',
+							'object'    => 'page',
+							'object_id' => '{{contact}}',
+						),
+					),
+				),
+			),
+		);
+
+		add_theme_support( 'starter-content', $starter_content );
 
 		// Load AMP overrides.
 		Helpers\Theme\AMP::init();
@@ -340,7 +399,7 @@ function _svbk_set_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', Config::get( 'content_width', '_svbk' ) );
+	$GLOBALS['content_width'] = apply_filters( '_svbk_content_width', Config::get( 'page_max_width', '_svbk' ) );
 }
 add_action( 'after_setup_theme', '_svbk_set_content_width', 0 );
 
@@ -744,40 +803,73 @@ function _svbk_max_srcset_image_width( $size ) {
 add_filter( 'max_srcset_image_width', '_svbk_max_srcset_image_width' );
 
 /**
- * Customize the image sizes attributes based on image size
+ * Set default image `sizes` attribute to `page_max_width`
  *
- * @param array $attrs The existing image attributes.
- * @param array $attachment The attachment id.
- * @param array $size The requested size.
+ * @param int $sizes The previous image sizes.
+ * @param int $size  The requested image size.
  *
- * @return array
+ * @return int
  */
-function _svbk_post_thumbnail_sizes_attr( $attrs, $attachment, $size ) {
+function _svbk_calculate_image_sizes( $sizes, $size ) {
+	$width = $size[0];
 
-	switch ( $size ) {
-		case 'post-thumbnail':
-			$attrs['sizes'] = '(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1320px) 35vw, 600px';
-			break;
-		case 'thumbnail':
-			$attrs['sizes'] = '(max-width: 710px) 100vw, (max-width: 910px) 50vw, (max-width: 1320px) 40vw, 650px';
-			break;
-		case 'header':
-			$attrs['sizes'] = '100vw';
-			break;
-		case 'content-full':
-			$attrs['sizes'] = ' (max-width: 1320px) 100vw,  1320px';
-			break;
-		case 'content-half':
-			$attrs['sizes'] = ' (max-width: 1024px) 100vw, (max-width: 1320px) 50vw, 660px';
-			break;
-		case 'content-third':
-				$attrs['sizes'] = is_home() ? '(max-width: 1024px) 100vw, (max-width: 1320px) 50vw, 660px' : ' (max-width: 480px) 100vw, (max-width: 768px) 50vw, 440px';
-			break;
+	$page_max_width = Config::get( 'page_max_width', '_svbk' );
+	$content_width = Config::get( 'content_width', '_svbk' );
+	$main_breakpoints = Config::get( 'main_breakpoints', '_svbk' );
+	$page_width = Config::get( 'page_width', '_svbk' );
+	
+	$sidebar_width_ratio = Config::get( 'sidebar_width_ratio', '_svbk' ) ?: 0.3;
+	$sidebar_width = $page_width * $sidebar_width_ratio;
+	$content_with_sidebar_width = $page_width - $sidebar_width;
+
+	// Default to image size, limited by $content_width
+	$sizes = sprintf( '(max-width: %1$dpx) 94vw, %1$dpx', $width );
+
+	// Wide images
+	if ( $width > $content_width ) {
+		$sizes = sprintf('(max-width: %1$dpx) 94vw, %2$dpx', $main_breakpoints['desktop'], $page_max_width );
 	}
 
-	return $attrs;
+	// Full width images
+	if ( $width > $page_max_width ) {
+		$sizes = sprintf('(max-width: %1$dpx) 94vw, %2$dpx', $main_breakpoints['desktop-large'], $width );
+	}	
+
+	// Reduced content with sidebar
+	if ( is_active_sidebar( 'sidebar-1' ) && ( is_archive() || is_search() || is_home() || is_singular('post') ) ) {
+
+		// Default to image size, limited by $page_max_width
+		$sizes = sprintf( '(max-width: %1$dpx) 94vw, (max-width: %2$dpx) 68vw, %3$dpx', $main_breakpoints['tablet-landscape'], $main_breakpoints['desktop'], $width <= $content_with_sidebar_width ? $width : $content_with_sidebar_width);
+	}
+
+	return $sizes;
 }
-add_filter( 'wp_get_attachment_image_attributes', '_svbk_post_thumbnail_sizes_attr', 10, 3 );
+
+add_filter( 'wp_calculate_image_sizes', '_svbk_calculate_image_sizes', 10, 4);
+ 
+/**
+ * Add custom image sizes labels
+ *
+ * @param int $sizes The previous image sizes labels.
+ *
+ * @return int
+ */
+function _svbk_custom_image_sizes( $sizes ) {
+
+	$theme_sizes = array(
+        'main-sidebar' => __( 'Main Sidebar', '_svbk' ),
+        'medium_large' => __( 'Medium Large', '_svbk' ),
+        'wide' => __( 'Wide', '_svbk' ),
+        'full' => __( 'Native', '_svbk' ),
+	);
+
+	$sizes = array_merge( $sizes, $theme_sizes );
+	
+	return $sizes;
+}
+
+add_filter( 'image_size_names_choose', '_svbk_custom_image_sizes' );
+
 
 /**
  * Add classes to the document based on loading state
