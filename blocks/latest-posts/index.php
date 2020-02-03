@@ -33,7 +33,7 @@ function _svbk_render_block_core_latest_posts( $attributes ) {
 	);
 
 	if ( isset( $attributes['categories'] ) ) {
-		$args['category'] = $attributes['categories'];
+		$args['cat'] = $attributes['categories'];
 	}
 
 	$posts_query = new WP_Query( $args );

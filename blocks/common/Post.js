@@ -54,16 +54,17 @@ class Post extends Component {
         const thumbnailImg = this.getThumbnailImage(thumbnailMedia);
 
         const postContent = post.content.raw ? post.content.raw : post.content.rendered;
+        
+        const containerClasses = classnames({ 
+            post: true,
+            [`post--${ post.type }`]: post.type,
+            [`post--format-${ post.format }`]: post.format,
+            ['has-thumbnail']: post.featured_media 
+        });
 
         return (
-            <div className={ classnames( 
-                { 
-                    post: true,
-                    [`post--${ post.type }`]: post.type,
-                    [`post--format-${ post.format }`]: post.format,
-                    ['has-thumbnail']: post.featured_media 
-                }) } 
-            >
+            <div className={ containerClasses } >
+                { Boolean( post.featured_media && !thumbnailMedia ) && <Spinner /> }
                 { ( post.featured_media && !thumbnailMedia ) && <Spinner /> }
                 { thumbnailMedia && (
                     <RawHTML>

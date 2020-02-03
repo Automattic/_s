@@ -23,10 +23,6 @@ var config = require('./config.json');
 function clean(){
     return del([
         'dist/*',
-        'src',
-        '!dist/blocks.build.js',
-        '!/dist/css/blocks.editor.build.css', 
-        '!/dist/css/blocks.style.build.css',
         '!dist/.gitkeep',
     ]);
 }
@@ -222,7 +218,7 @@ function replaceNames(){
 
 function replaceConfigs(){
     return src(['./composer.json', './package.json' ])
-        .pipe(replace( 'silverbackstudio/theme_svbk'  , `${config.theme_handle}/theme` ))    
+        .pipe(replace( 'silverbackstudio/theme_svbk'  , `${config.theme_handle}/wp-theme` ))    
         .pipe(replace( '_svbk'  , config.theme_handle ))
         .pipe(replace( 'Silverback Starter' , 'Silverback ' + config.theme_name ))
         .pipe(dest('./'));
