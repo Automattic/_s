@@ -1,14 +1,25 @@
-@media screen and (min-width: $size__page-max-width) {
+#page {
 
-	#page {
+	@media screen and (min-width: $size__page-max-width) {
 		max-width: $size__page-width;
 		box-shadow: 0 0 3px rgba(0,0,0,.1);
 		margin: 0 auto;
+	}
 
-		.site-header.stuck .wrap {
+	.site-header.stuck .wrap {
+
+		@media screen and (min-width: $size__page-max-width) {
 			max-width: $size__page-width;
 			margin-left: auto;
 			margin-right: auto;
 		}
+	}
+}
+
+.wp-block-svbk-hero {
+
+	@media screen and (min-width: $size__page-max-width) {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }

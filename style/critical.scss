@@ -88,7 +88,7 @@
 	margin-right: calc(50% - 50vw);
 
 	@media screen and (min-width: $size__page-max-width) {
-		max-width: $size__content-width;
+		max-width: $size__content-width + $padding__content-desktop * 2;
 		margin: 20px auto;
 	}
 }

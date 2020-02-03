@@ -9,12 +9,13 @@
     }
 
     @media screen and (min-width: breakpoint('tablet-landscape')) {
-        padding-left: $padding__content-tablet;
-        padding-right: $padding__content-tablet;
+        padding: 60px calc(50vw - 50%);
     }
 
-    @media screen and (min-width: breakpoint('tablet-landscape') + $padding__content-tablet*2) {
-
+    @media screen and (min-width: $size__page-max-width) {
+        margin-left: -$padding__content-desktop;
+        margin-right: -$padding__content-desktop;
+        padding: 80px $padding__content-desktop;
     }
     
     &.has-bottom-padding {
@@ -94,6 +95,7 @@
     img {
         display: block;
         width: 100%;
+        max-width: none;
     }
 
     @media screen and (min-width: breakpoint('tablet-portrait')) {
