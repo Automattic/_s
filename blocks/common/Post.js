@@ -43,10 +43,12 @@ class Post extends Component {
 
 
         const titleTrimmed = post.title.rendered.trim();
-        let excerpt = post.excerpt.rendered;
-        if ( post.excerpt.raw === '' ) {
+        let excerpt = post.excerpt ? post.excerpt.rendered : '';
+       
+        if ( post.excerpt && post.excerpt.raw === '' ) {
             excerpt = post.content.raw;
         }
+        
         const excerptElement = document.createElement( 'div' );
         excerptElement.innerHTML = excerpt;
         excerpt = excerptElement.textContent || excerptElement.innerText || '';		
@@ -54,16 +56,17 @@ class Post extends Component {
         const thumbnailImg = this.getThumbnailImage(thumbnailMedia);
 
         const postContent = post.content.raw ? post.content.raw : post.content.rendered;
+        
+        const containerClasses = classnames({ 
+            post: true,
+            [`post--${ post.type }`]: post.type,
+            [`post--format-${ post.format }`]: post.format,
+            ['has-thumbnail']: post.featured_media 
+        });
 
         return (
-            <div className={ classnames( 
-                { 
-                    post: true,
-                    [`post--${ post.type }`]: post.type,
-                    [`post--format-${ post.format }`]: post.format,
-                    ['has-thumbnail']: post.featured_media 
-                }) } 
-            >
+            <div className={ containerClasses } >
+                { Boolean( post.featured_media && !thumbnailMedia ) && <Spinner /> }
                 { ( post.featured_media && !thumbnailMedia ) && <Spinner /> }
                 { thumbnailMedia && (
                     <RawHTML>

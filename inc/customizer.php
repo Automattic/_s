@@ -326,6 +326,36 @@ function _svbk_customize_register( $wp_customize ) {
 		);
 	}
 
+	// Set native image sizes settings to allow starter-content to save those options
+	$native_image_sizes = array(
+		'thumbnail',
+		'medium',
+		'medium_large',
+		'large'
+	);
+
+	foreach( $native_image_sizes as $native_image_size ) {
+		
+		$wp_customize->add_setting(
+			$native_image_size . '_size_w',
+			array(
+				'default'    => get_option( $native_image_size . '_size_w' ),
+				'capability' => 'manage_options',
+				'type'       => 'option',
+			)
+		);	
+
+		$wp_customize->add_setting(
+			$native_image_size . '_size_h',
+			array(
+				'default'    => get_option( $native_image_size . '_size_h' ),
+				'capability' => 'manage_options',
+				'type'       => 'option',
+			)
+		);	
+
+	}
+
 }
 add_action( 'customize_register', '_svbk_customize_register' );
 

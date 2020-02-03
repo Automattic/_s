@@ -8,7 +8,7 @@
 	"page_width": 1250,
 	"page_max_width": 1440,
 	"text_width": 550,
-	"sidebar_width_ratio": 0.3,
+	"sidebar_width_ratio": 0.27,
 	
 	"main_breakpoints" : {
 	    "phone":			480,
