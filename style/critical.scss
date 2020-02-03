@@ -113,25 +113,37 @@
 	}
 }
 
-p, ul, ol,
-h1, h2, h3, h4, h5, h6,
-.wp-block-pullquote.alignleft,
-.wp-block-pullquote.alignright,
-.wp-block-svbk-icon-paragraph,
-.wp-block-button {
-	margin-left: auto;
-	margin-right: auto;
+.entry-content >,
+.entry-content > .wp-block-group {
+
+	p, ul, ol,
+	h1, h2, h3, h4, h5, h6,
+	.wp-block-pullquote.alignleft,
+	.wp-block-pullquote.alignright,
+	.wp-block-svbk-icon-paragraph,
+	.wp-block-button {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
-p, ul, ol,
-.wp-block-svbk-icon-paragraph,
-.wp-block-button {
-	max-width: $size__text-width;
+.entry-content >,
+.entry-content > .wp-block-group {
+
+	p, ul, ol,
+	.wp-block-svbk-icon-paragraph,
+	.wp-block-button {
+		max-width: $size__text-width;
+	}
 }
 
-h1, h2, h3, h4, h5, h6,
-.is-style-subtitle {
-	max-width: $size__large-text-width;
+.entry-content >,
+.entry-content > .wp-block-group {
+
+	h1, h2, h3, h4, h5, h6,
+	.is-style-subtitle {
+		max-width: $size__large-text-width;
+	}
 }
 
 .wp-block-pullquote {
