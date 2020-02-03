@@ -7915,6 +7915,10 @@ wp.blocks.registerBlockStyle('core/group', {
   name: 'raised',
   label: 'Raised'
 });
+wp.blocks.registerBlockStyle('core/group', {
+  name: 'inset',
+  label: 'Inset'
+});
 wp.blocks.registerBlockStyle('core/columns', {
   name: 'split',
   label: 'Split'

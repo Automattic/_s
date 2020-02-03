@@ -9,6 +9,12 @@
             padding-bottom: 50px;
         }
     }
+
+    &.is-style-raised,
+    &.is-style-inset {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     
     &.is-style-raised {
         box-shadow: $shadow__card;
@@ -16,6 +22,10 @@
         h2, h3, h4 {
             margin-top: 0;
         }
+    }
+
+    &.is-style-inset {
+        box-shadow: inset 1px 1px 5px rgba(0,0,0,.4);;
     }
     
     &.is-style-no-padding {

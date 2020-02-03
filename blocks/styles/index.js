@@ -45,6 +45,11 @@ wp.blocks.registerBlockStyle( 'core/group', {
     label: 'Raised'
 } );
 
+wp.blocks.registerBlockStyle( 'core/group', {
+    name: 'inset',
+    label: 'Inset'
+} );
+
 wp.blocks.registerBlockStyle( 'core/columns', {
     name: 'split',
     label: 'Split'
