@@ -123,9 +123,13 @@ h1, h2, h3, h4, h5, h6,
 }
 
 p, ul, ol,
-h1, h2, h3, h4, h5, h6,
 .wp-block-svbk-icon-paragraph {
 	max-width: $size__text-width;
+}
+
+h1, h2, h3, h4, h5, h6,
+.is-style-subtitle {
+	max-width: $size__large-text-width;
 }
 
 .wp-block-pullquote {

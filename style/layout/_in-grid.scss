@@ -1,28 +1,10 @@
-$size__page-width: $size__page-width + $padding__content-desktop * 2;
+@media screen and (min-width: $size__page-max-width) {
 
-.site-content,
-.wrap {
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-left: $padding__content-tablet;
-		padding-right: $padding__content-tablet;
+	#page {
 		max-width: $size__page-width;
-	}
-	
-	@media screen and (min-width: breakpoint('desktop')) {
-		padding-left: $padding__content-desktop;
-		padding-right: $padding__content-desktop;
-	}
-}
-
-#page {
-	
-	@media screen and (min-width: 1366px) {
-		margin-left: auto;
-		margin-right: auto;
 		box-shadow: 0 0 3px rgba(0,0,0,.1);
-		max-width: $size__page-width;
-		
+		margin: 0 auto;
+
 		.site-header.stuck .wrap {
 			max-width: $size__page-width;
 			margin-left: auto;
