@@ -83,6 +83,16 @@
 	}
 }
 
+.wp-block-svbk-hero {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+
+	@media screen and (min-width: $size__page-max-width) {
+		max-width: $size__content-width;
+		margin: 20px auto;
+	}
+}
+
 .wp-block-group {
 
 	.wp-block-group__inner-container {
