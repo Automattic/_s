@@ -16,7 +16,9 @@
 	}
 }
 
-.wp-block-svbk-hero {
+.wp-block-svbk-hero,
+.wp-block-image.alignwide,
+.wp-block-image.alignfull {
 
 	@media screen and (min-width: $size__page-max-width) {
 		margin-top: 0;
