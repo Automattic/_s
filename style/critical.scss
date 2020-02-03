@@ -67,6 +67,22 @@
 			margin-bottom: 20px;
 		}
 	}
+
+	&.alignwide {
+
+		@media screen and (min-width: $size__page-max-width) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	&.alignfull {
+
+		@media screen and (min-width: $size__page-max-width) {
+			margin-left: -$padding__content-desktop;
+			margin-right: -$padding__content-desktop;
+		}
+	}
 }
 
 .wp-block-media-text {
