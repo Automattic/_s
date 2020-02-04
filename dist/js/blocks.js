@@ -1985,9 +1985,9 @@ function (_Component) {
           post = _this$props.post,
           thumbnailMedia = _this$props.thumbnailMedia;
       var titleTrimmed = post.title.rendered.trim();
-      var excerpt = post.excerpt.rendered;
+      var excerpt = post.excerpt ? post.excerpt.rendered : '';
 
-      if (post.excerpt.raw === '') {
+      if (post.excerpt && post.excerpt.raw === '') {
         excerpt = post.content.raw;
       }
 
@@ -1996,11 +1996,12 @@ function (_Component) {
       excerpt = excerptElement.textContent || excerptElement.innerText || '';
       var thumbnailImg = this.getThumbnailImage(thumbnailMedia);
       var postContent = post.content.raw ? post.content.raw : post.content.rendered;
+      var containerClasses = classnames__WEBPACK_IMPORTED_MODULE_7___default()((_classnames = {
+        post: true
+      }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "post--".concat(post.type), post.type), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "post--format-".concat(post.format), post.format), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, 'has-thumbnail', post.featured_media), _classnames));
       return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_7___default()((_classnames = {
-          post: true
-        }, _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "post--".concat(post.type), post.type), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, "post--format-".concat(post.format), post.format), _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_classnames, 'has-thumbnail', post.featured_media), _classnames))
-      }, post.featured_media && !thumbnailMedia && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(Spinner, null), thumbnailMedia && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(RawHTML, null, thumbnailImg), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("h3", null, titleTrimmed ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(RawHTML, null, titleTrimmed) : __('(no title)')), display === 'excerpt' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
+        className: containerClasses
+      }, Boolean(post.featured_media && !thumbnailMedia) && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(Spinner, null), post.featured_media && !thumbnailMedia && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(Spinner, null), thumbnailMedia && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(RawHTML, null, thumbnailImg), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("h3", null, titleTrimmed ? Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(RawHTML, null, titleTrimmed) : __('(no title)')), display === 'excerpt' && Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])("div", {
         className: "wp-block-".concat(postType, "__post-excerpt")
       }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__["createElement"])(RawHTML, {
         key: "html"
@@ -3063,15 +3064,18 @@ function (_Component) {
         return [];
       }
 
-      return Object.keys(currentImageSizes).map(function (sizeSlug) {
-        var sizeSpec = imageSizes.find(function (size) {
-          return size.slug == sizeSlug;
-        });
-        return {
-          value: sizeSlug,
-          label: sizeSpec ? sizeSpec.name : sizeSlug
-        };
-      });
+      return imageSizes.reduce(function (results, imageSize) {
+        var sizeSpec = currentImageSizes[imageSize.slug];
+
+        if (sizeSpec) {
+          results.push({
+            value: imageSize.slug,
+            label: "".concat(imageSize.name, " (").concat(sizeSpec.width, " x ").concat(sizeSpec.height, ")")
+          });
+        }
+
+        return results;
+      }, []);
     }
   }, {
     key: "render",
@@ -7912,12 +7916,12 @@ wp.blocks.registerBlockStyle('core/group', {
   label: 'No Padding'
 });
 wp.blocks.registerBlockStyle('core/group', {
-  name: 'green-check',
-  label: 'Green Check'
-});
-wp.blocks.registerBlockStyle('core/group', {
   name: 'raised',
   label: 'Raised'
+});
+wp.blocks.registerBlockStyle('core/group', {
+  name: 'inset',
+  label: 'Inset'
 });
 wp.blocks.registerBlockStyle('core/columns', {
   name: 'split',

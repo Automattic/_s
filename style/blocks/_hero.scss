@@ -1,26 +1,21 @@
 .wp-block-svbk-hero {
+    padding-left: $padding__content-mobile;
+    padding-right: $padding__content-mobile;
     
     @media screen and (min-width: breakpoint('tablet-portrait')) {
-        margin-left: -$padding__content-mobile;
-        margin-right: -$padding__content-mobile;
-        padding: 40px $padding__content-mobile;
+        padding-top: 40px;
+        padding-bottom: 40px;
         position: relative;
     }
-    
+
     @media screen and (min-width: breakpoint('tablet-landscape')) {
-        margin-left: -$padding__content-tablet;
-        margin-right: -$padding__content-tablet;
+        padding: 60px calc(50vw - 50%);
     }
-    
-    @media screen and (min-width: $size__page-width) {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
-		padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
-    }
-    
-    @media screen and (min-width: $size__tablet-content-width) {
-        padding: 80px calc((100vw - #{$size__page-width}) /2);
+
+    @media screen and (min-width: $size__page-max-width) {
+        margin-left: -$padding__content-desktop;
+        margin-right: -$padding__content-desktop;
+        padding: 80px $padding__content-desktop;
     }
     
     &.has-bottom-padding {
@@ -77,10 +72,6 @@
             }
         }
 
-        @media screen and (min-width: $size__tablet-content-width) {
-            padding-left: calc((100vw - #{$size__page-width}) /2);
-            padding-right: calc((100vw - #{$size__page-width}) /2);
-        }
     }
 
     &.is-style-content-card {
@@ -104,6 +95,7 @@
     img {
         display: block;
         width: 100%;
+        max-width: none;
     }
 
     @media screen and (min-width: breakpoint('tablet-portrait')) {

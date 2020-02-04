@@ -1,29 +1,14 @@
-$size__page-width: $size__page-width + $padding__content-desktop * 2;
-
-.site-content,
-.wrap {
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-left: $padding__content-tablet;
-		padding-right: $padding__content-tablet;
-		max-width: $size__page-width;
-	}
-	
-	@media screen and (min-width: breakpoint('desktop')) {
-		padding-left: $padding__content-desktop;
-		padding-right: $padding__content-desktop;
-	}
-}
-
 #page {
-	
-	@media screen and (min-width: 1366px) {
-		margin-left: auto;
-		margin-right: auto;
-		box-shadow: 0 0 3px rgba(0,0,0,.1);
+
+	@media screen and (min-width: $size__page-max-width) {
 		max-width: $size__page-width;
-		
-		.site-header.stuck .wrap {
+		box-shadow: 0 0 3px rgba(0,0,0,.1);
+		margin: 0 auto;
+	}
+
+	.site-header.stuck .wrap {
+
+		@media screen and (min-width: $size__page-max-width) {
 			max-width: $size__page-width;
 			margin-left: auto;
 			margin-right: auto;
@@ -31,42 +16,12 @@ $size__page-width: $size__page-width + $padding__content-desktop * 2;
 	}
 }
 
-aside.wp-block-svbk-warranty,
-div.wp-block-svbk-hero {
-	
-	@media screen and (min-width: 1366px) {
-		margin-left: -$padding__content-desktop;
-		margin-right: -$padding__content-desktop;
-		padding-left: $padding__content-desktop;
-		padding-right: $padding__content-desktop;
-	}
-}
+.wp-block-svbk-hero,
+.wp-block-image.alignwide,
+.wp-block-image.alignfull {
 
-.site-content {
-
-	.alignfull,
-	.alignwide {
-		
-		@media screen and (min-width: breakpoint('tablet-landscape')) {
-			padding-left: $padding__content-tablet;
-			padding-right: $padding__content-tablet;
-		}
-		
-		@media screen and (min-width: breakpoint('desktop')) {
-			padding-left: $padding__content-desktop;
-			padding-right: $padding__content-desktop;
-		}
-		
-		@media screen and (min-width: 1366px) {
-			margin-left: -#{$padding__content-desktop};
-			margin-right: -#{$padding__content-desktop};
-		}
-	}
-}
-
-.page__content > .wp-block-image.alignfull {
-	
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding: 0;
+	@media screen and (min-width: $size__page-max-width) {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }

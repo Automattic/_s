@@ -41,13 +41,13 @@ wp.blocks.registerBlockStyle( 'core/group', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/group', {
-    name: 'green-check',
-    label: 'Green Check'
+    name: 'raised',
+    label: 'Raised'
 } );
 
 wp.blocks.registerBlockStyle( 'core/group', {
-    name: 'raised',
-    label: 'Raised'
+    name: 'inset',
+    label: 'Inset'
 } );
 
 wp.blocks.registerBlockStyle( 'core/columns', {

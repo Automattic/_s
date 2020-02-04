@@ -144,13 +144,13 @@ class Post_Block {
 	 */	
 	public function renderPost($attributes){
 		switch ( $attributes['display'] ) {
-			case 'excerpt':
-				get_template_part( 'template-parts/preview', $this->post_type );
-				break;
 			case 'full_post':
-			default:
 				get_template_part( 'template-parts/content', $this->post_type );
 				break;					
+			case 'excerpt':
+			default:
+				get_template_part( 'template-parts/preview', $this->post_type );
+				break;
 		}
 	}
 

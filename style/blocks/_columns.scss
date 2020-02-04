@@ -139,23 +139,6 @@
 		max-width: 100%;
 		margin-left: auto;
 		margin-right: auto;
-
-		&.alignwide,
-		&.alignfull {
-			max-width: none;
-		}
-
-		&.alignwide {
-			width: $size__page-width;
-		}
-
-		&.alignfull {
-			width: auto;
-			margin-left: calc(50% - 50vw);
-			margin-right: calc(50% - 50vw);
-			padding-left: $padding__content-desktop;
-			padding-right: $padding__content-desktop;
-		}
 	}
 }
 

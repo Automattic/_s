@@ -4,10 +4,12 @@
 	background-size: cover;
 	color: $color__text-main;
 	position: relative;
-	margin-left: -$padding__content-mobile;
-	margin-right: -$padding__content-mobile;
-	padding-left: $padding__content-mobile;
-	padding-right: $padding__content-mobile;
+	padding-left: $padding__content-mobile + 10px;
+	padding-right: $padding__content-mobile + 10px;
+
+	p {
+		max-width: none;
+	}
 	
 	figure {
 		margin-top: -81px;
@@ -126,7 +128,7 @@
 		}
 		
 		.wp-block-svbk-warranty__subtitle {
-			margin: 10px 0;
+			margin: 10px auto;
 		}
 		
 		ul {
@@ -136,7 +138,7 @@
 			}	
 		}
 		
-		@media screen and (min-width: breakpoint('tablet-portrait')) {
+		@media screen and (min-width: breakpoint('tablet-landscape')) {
 			padding-left: 35px;
 			padding-right: 35px;
 		}
@@ -148,17 +150,8 @@
 	}
 	
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		margin-left: -$padding__content-tablet;
-		margin-right: -$padding__content-tablet;
-		padding-left: $padding__content-tablet;
-		padding-right: $padding__content-tablet;
-	}
-	
-	@media screen and (min-width: $size__page-width + $padding__content-desktop*2) {
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		padding-left: calc((100vw - #{$size__page-width}) /2);
-		padding-right: calc((100vw - #{$size__page-width}) /2);
+		padding-left: $padding__content-tablet + 10px;
+		padding-right: $padding__content-tablet + 10px;
 	}
 	
 	&.is-style-small {
@@ -205,7 +198,6 @@
 		
 		.wp-block-svbk-warranty__content {
 			padding: 15px 15px 15px 120px;
-			max-width: none;
 			min-height: 140px;
 			line-height: 1.4em;
 			
@@ -229,7 +221,7 @@
 		@media screen and (min-width: breakpoint('tablet-landscape')) {
 			
 			.wp-block-svbk-warranty__content {
-				padding: 15px 50px 15px 180px;
+				padding: 30px 50px 30px 180px;
 				min-height: 140px;
 			}
 			
@@ -245,11 +237,11 @@
 		@media screen and (min-width: breakpoint('desktop')) {
 			
 			.wp-block-svbk-warranty__content {
-				padding: 50px 150px 47px 280px;
+				padding: 40px 40px 40px 180px;
 			}
 			
 			.wp-block-svbk-warranty__seal {
-				left: 185px;
+				left: 90px;
 			}
 		}
 	}

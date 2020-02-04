@@ -159,14 +159,17 @@ class ImageEdit extends Component {
 			return [];
 		}
 		
-		return Object.keys(currentImageSizes).map( function( sizeSlug ) {
-			let sizeSpec = imageSizes.find( ( size ) => size.slug == sizeSlug );
+		return imageSizes.reduce(( results, imageSize ) => {
+			let sizeSpec = currentImageSizes[imageSize.slug];
 
-			return {
-				value: sizeSlug,
-				label: sizeSpec ? sizeSpec.name : sizeSlug,
-			};
-		});
+			if ( sizeSpec ) {
+				results.push({
+					value: imageSize.slug,
+					label: `${imageSize.name} (${sizeSpec.width} x ${sizeSpec.height})`,
+				});
+			}
+			return results;
+		}, []);
 	}	
 
 	render() {
