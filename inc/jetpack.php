@@ -52,8 +52,9 @@ function _svbk_jetpack_setup() {
 add_action( 'after_setup_theme', '_svbk_jetpack_setup' );
 
 
-function _svbk_jetpack_set_max_image_size(){
+function _svbk_jetpack_set_max_image_size($content){
 	add_filter( 'get_content_width', '_svbk_jetpack_max_image_size' );
+	return $content;
 }
 
 function _svbk_jetpack_max_image_size($content_width){
@@ -67,8 +68,9 @@ function _svbk_jetpack_max_image_size($content_width){
 	return $content_width;
 }
 
-function _svbk_jetpack_unset_max_image_size(){
+function _svbk_jetpack_unset_max_image_size($content){
 	remove_filter( 'get_content_width', '_svbk_jetpack_max_image_size' );
+	return $content;
 }
 
 
