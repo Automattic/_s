@@ -15,7 +15,7 @@
 	    "tablet-portrait":	600,
 	    "tablet-landscape": 900,
 		"desktop":			1200,
-		"desktop-large":	1800
+		"desktop-stretch":	1440
 	},
 	
 	"fonts": {
