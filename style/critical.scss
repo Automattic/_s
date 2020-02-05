@@ -301,22 +301,34 @@ img {
 			width: 100%;
 
 			img {
-				height: 200px;
+				max-height: 200px;
 
 				@media screen and (min-width: breakpoint('phone')) {
-					height: 300px;
+					max-height: 300px;
 				}
 	
 				@media screen and (min-width: breakpoint('tablet-portrait')) {
-					height: 430px;	
+					max-height: 430px;
+
+					.wp-block-column & {
+						max-height: 185px;
+					}
 				}
 	
 				@media screen and (min-width: breakpoint('tablet-landscape')) {
-					height: 530px;
+					max-height: 530px;
+
+					.wp-block-column & {
+						max-height: 279px;
+					}
 				}
 	
 				@media screen and (min-width: breakpoint('desktop')) {
-					height: 630px;
+					max-height: 630px;
+
+					.wp-block-column & {
+						max-height: 362px;
+					}
 				}
 			}
 		}
