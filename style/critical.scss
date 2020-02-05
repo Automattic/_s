@@ -138,7 +138,7 @@
 }
 
 .entry-content >,
-.entry-content > .wp-block-group {
+.entry-content > .wp-block-group .wp-block-group__inner-container > {
 
 	p, ul, ol,
 	h1, h2, h3, h4, h5, h6,
@@ -152,7 +152,7 @@
 }
 
 .entry-content >,
-.entry-content > .wp-block-group {
+.entry-content > .wp-block-group .wp-block-group__inner-container > {
 
 	p, ul, ol,
 	.wp-block-svbk-icon-paragraph,
@@ -162,7 +162,7 @@
 }
 
 .entry-content >,
-.entry-content > .wp-block-group {
+.entry-content > .wp-block-group .wp-block-group__inner-container > {
 
 	h1, h2, h3, h4, h5, h6,
 	.is-style-subtitle {
