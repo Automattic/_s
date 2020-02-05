@@ -822,23 +822,21 @@ function _svbk_calculate_image_sizes( $sizes, $size ) {
 	$sidebar_width = $page_width * $sidebar_width_ratio;
 	$content_with_sidebar_width = $page_width - $sidebar_width;
 
-	// Default to image size, limited by $content_width
-	$sizes = sprintf( '(max-width: %1$dpx) 94vw, %1$dpx', $width );
-
 	// Wide images
 	if ( $width > $content_width ) {
-		$sizes = sprintf('(max-width: %1$dpx) 94vw, %2$dpx', $main_breakpoints['desktop'], $page_max_width );
+		$sizes = sprintf('(max-width: %1$dpx) 100vw, %2$dpx', $main_breakpoints['desktop-stretch'], $page_width );
 	}
 
 	// Full width images
 	if ( $width > $page_max_width ) {
-		$sizes = sprintf('(max-width: %1$dpx) 94vw, %2$dpx', $main_breakpoints['desktop-large'], $width );
+		$sizes = sprintf('(max-width: %1$dpx) 100vw, %2$dpx', $main_breakpoints['desktop-stretch'], $width );
 	}	
 
-	// Reduced content with sidebar
-	if ( is_active_sidebar( 'sidebar-1' ) && ( is_archive() || is_search() || is_home() || is_singular('post') ) ) {
+	$has_sidebar = is_active_sidebar( 'sidebar-1' ) && ( is_archive() || is_search() || is_home() || is_singular('post') );
 
-		// Default to image size, limited by $page_max_width
+	// Reduced content with sidebar
+	if ( $has_sidebar ) {
+		// If the image size is less than the sidebar with use that, instead set the max with to `$content_with_sidebar_width`.
 		$sizes = sprintf( '(max-width: %1$dpx) 94vw, (max-width: %2$dpx) 68vw, %3$dpx', $main_breakpoints['tablet-landscape'], $main_breakpoints['desktop'], $width <= $content_with_sidebar_width ? $width : $content_with_sidebar_width);
 	}
 
