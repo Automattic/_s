@@ -34,20 +34,6 @@
 					margin-bottom: 15px;
 				}
 			}
-
-			&.alignwide,
-			&.alignfull {
-
-				.wp-block-media-text__content  {
-					padding-left: $padding__content-mobile;
-					padding-right: $padding__content-mobile;
-				}
-			}
-
-			.wp-block-group & {
-				padding-left: 0;
-				padding-right: 0;
-			}
 		}
 	}
 

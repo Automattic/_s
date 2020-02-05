@@ -89,13 +89,11 @@
 
 	&.alignwide,
 	&.alignfull {
+		max-width: none;
 		margin-left: calc(50% - 50vw);
 		margin-right: calc(50% - 50vw);
-		
-		@media screen and (min-width: 600px) {
-			margin-left: 0;
-			margin-right: 0;
-		}
+		padding-left: calc(50vw - 50%);
+		padding-right: calc(50vw - 50%);
 	}
 }
 
@@ -314,4 +312,4 @@ img {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
-@import "layout/in-grid";
+//@import "layout/in-grid";
