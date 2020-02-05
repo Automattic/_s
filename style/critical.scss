@@ -241,6 +241,7 @@ img {
 }
 
 .wp-block-gallery {
+	position: relative;
 
 	&.is-style-flickity,
 	&.is-style-flickity-slider {
@@ -279,12 +280,12 @@ img {
 			display: block;
 		}
 
-		figure {
+		.blocks-gallery-item {
 			margin: 0;
 
 			img {
 				width: 100%;
-				height: auto;
+				object-fit: cover;
 			}
 		}
 
@@ -294,12 +295,31 @@ img {
 		}
 	}
 
-	&.is-style-flickity .blocks-gallery-item {
-		width: 33.33%;
-	}
+	&.is-style-flickity-slider {
 
-	&.is-style-flickity-slider .blocks-gallery-item {
-		width: 100%;
+		.blocks-gallery-item {
+			width: 100%;
+
+			img {
+				height: 200px;
+
+				@media screen and (min-width: breakpoint('phone')) {
+					height: 300px;
+				}
+	
+				@media screen and (min-width: breakpoint('tablet-portrait')) {
+					height: 430px;	
+				}
+	
+				@media screen and (min-width: breakpoint('tablet-landscape')) {
+					height: 530px;
+				}
+	
+				@media screen and (min-width: breakpoint('desktop')) {
+					height: 630px;
+				}
+			}
+		}
 	}
 }
 
