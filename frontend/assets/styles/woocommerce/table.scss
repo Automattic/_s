@@ -1,0 +1,367 @@
+.woocommerce {
+    table {
+        @apply w-full;
+
+        td.product-remove {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+
+    table.shop_table {
+
+    }
+}
+
+.woocommerce-cart-form {
+    table {
+        border-width: 0 0 1px;
+
+        td {
+            padding-left: 0;
+        }
+
+        div.quantity {
+            float: none;
+            margin: 0;
+        }
+
+        small.stock {
+            display: block;
+            float: none;
+        }
+    }
+
+    .group_table {
+        td.woocommerce-grouped-product-list-item__label {
+            padding-right: 1em;
+            padding-left: 1em;
+        }
+
+        td {
+            vertical-align: top;
+            padding-bottom: 0.5em;
+            border: 0;
+        }
+
+        td:first-child {
+            width: 4em;
+            text-align: center;
+        }
+
+        .wc-grouped-product-add-to-cart-checkbox {
+            display: inline-block;
+            width: auto;
+            margin: 0 auto;
+            transform: scale(1.5, 1.5);
+        }
+    }
+
+    .variations {
+        margin-bottom: 1em;
+        border: 0;
+        width: 100%;
+
+        td,
+        th {
+            border: 0;
+            vertical-align: top;
+            line-height: 2em;
+        }
+
+        label {
+            font-weight: 700;
+        }
+
+        td.label {
+            padding-right: 1em;
+        }
+    }
+}
+
+td.product-name {
+    dl.variation, .wc-item-meta {
+        list-style: none outside;
+
+        dt, .wc-item-meta-label {
+            float: left;
+            clear: both;
+            margin-right: 0.25em;
+            display: inline-block;
+            list-style: none outside;
+        }
+
+        dd {
+            margin: 0;
+        }
+
+        p,
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    p.backorder_notification {
+        font-size: 0.83em;
+    }
+
+    a {
+        @apply text-gray-800;
+    }
+}
+
+td.product-quantity {
+    min-width: 80px;
+}
+
+table.shop_attributes {
+    border: 0;
+    border-top: 1px dotted rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.618em;
+    width: 100%;
+    font-size: 14px;
+
+    th {
+        width: 150px;
+        font-weight: 700;
+        padding: 8px;
+        border-top: 0;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    td {
+        padding: 0;
+        border-top: 0;
+        border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
+        margin: 0;
+        line-height: 1.5;
+
+        p {
+            margin: 0;
+            padding: 8px 0;
+        }
+    }
+
+    tr:nth-child(even) td,
+    tr:nth-child(even) th {
+        background: rgba(0, 0, 0, 0.025);
+    }
+}
+
+
+table.shop_table_responsive {
+    tr {
+        @include mobile {
+            border-left: 1px solid $border-color;
+            border-right: 1px solid $border-color;
+            margin-bottom: $spacer-lg;
+            td:before {
+                font-weight: 400;
+                color: $text-lighter;
+            }
+        }
+    }
+}
+
+table.my_account_orders {
+    .button {
+        white-space: nowrap;
+        font-size: inherit;
+    }
+
+    .order-actions {
+        text-align: right;
+
+        .button {
+            margin: 0.125em 0 0.125em 0.25em;
+        }
+    }
+}
+
+
+.shop_table {
+    tr td:last-of-type {
+        text-align: right;
+    }
+
+    th {
+        @apply font-normal border-t text-left py-2;
+    }
+
+    td {
+        @apply font-normal text-left py-3;
+        @apply border-b border-gray-300;
+        vertical-align: middle;
+
+        small {
+            font-weight: normal;
+        }
+    }
+
+    thead th,
+    thead td,
+    tfoot th,
+    tfoot td {
+        @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
+    }
+}
+
+// 购物车产品表
+.woocommerce-cart-form__contents {
+    .product-thumbnail {
+        min-width: 32px;
+    }
+
+    img {
+        width: 32px;
+        box-shadow: none;
+    }
+
+    th {
+        @apply text-gray-600 text-left;
+    }
+
+    th,
+    td {
+        vertical-align: middle;
+    }
+
+    td.actions {
+        .coupon {
+            display: flex;
+
+            .input-text {
+                line-height: normal;
+                width: 120px !important;
+                border: 1px solid darken($secondary, 10%);
+                padding: 6px 6px 5px;
+                margin: 0 -1px 0 0;
+                font-size: 14px;
+                outline: 0;
+            }
+        }
+    }
+
+    input {
+        margin: 0;
+        vertical-align: middle;
+    }
+}
+
+// 结账审核订单表
+.woocommerce-checkout-review-order-table {
+    border-collapse: collapse;
+    @apply text-base w-full;
+    @include mobile {
+        &:not(.woocommerce-table--order-details) {
+            border: 0;
+        }
+    }
+
+    tr td:last-of-type {
+        text-align: right;
+    }
+
+    th {
+        @apply font-normal border-t text-left py-2;
+    }
+
+    td {
+        @apply font-normal text-left py-3;
+        @apply border-b border-gray-300;
+        vertical-align: middle;
+
+        small {
+            font-weight: normal;
+        }
+    }
+
+    thead th,
+    thead td,
+    tfoot th,
+    tfoot td {
+        @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
+    }
+
+    .shop_table td {
+        @apply py-2 px-4;
+    }
+}
+
+// 所有订单表格
+.woocommerce-orders-table {
+    &__header {
+        padding: 10px 0 10px 30px !important;
+        font-size: .875rem;
+        @apply px-4 font-medium text-gray-700 bg-gray-200;
+        &:last-child{
+            text-align: right;
+            padding-right: 16px !important;
+        }
+    }
+
+    &__row {
+        @apply border-t border-b border-gray-200;
+    }
+
+    &__cell {
+        padding: 20px 0 20px 30px;
+        color: #354052;
+        font-size: .875rem;
+        font-weight: 500;
+        text-align: left;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+}
+
+
+.cart-collaterals {
+    table {
+        border-collapse: separate;
+        margin: 0 0 6px;
+        padding: 0;
+
+        tr:first-child {
+            th,
+            td {
+                border-top-width: 0;
+            }
+        }
+
+        th {
+            width: 40%;
+        }
+
+        td,
+        th {
+            vertical-align: top;
+            border-left: 0;
+            border-right: 0;
+            line-height: 1.5em;
+        }
+
+        small {
+            color: $subtext;
+        }
+
+        select {
+            width: 100%;
+        }
+    }
+
+    .discount td {
+        color: $highlight;
+    }
+
+    tr td,
+    tr th {
+        @apply border-t border-gray-300;
+    }
+}
+
+td.actions {
+    display: none;
+}

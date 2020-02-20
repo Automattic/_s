@@ -1,0 +1,42 @@
+{
+    "dependencies": {
+        "main.js": {
+            "files": [
+                "scripts/plugins/*.js",
+                "scripts/main.js"
+            ],
+            "main": true
+        },
+        "main.css": {
+            "files": [
+                "styles/main.scss"
+            ],
+            "main": true
+        },
+        "editor.css": {
+            "files": [
+                "styles/editor.scss"
+            ],
+            "main": true
+        },
+        "jquery.js": {
+            "bower": [
+                "jquery"
+            ]
+        },
+        "slick.js": {
+            "bower": [
+                "slick-carousel"
+            ]
+        },
+        "magnific-popup.js": {
+            "bower": [
+                "magnific-popup"
+            ]
+        }
+    },
+    "paths": {
+        "source": "assets/",
+        "dist": "dist/"
+    }
+}

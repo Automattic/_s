@@ -1,0 +1,127 @@
+// ======================
+// 配色
+// ======================
+
+// 基本颜色
+$black: hsl(0, 0%, 4%);
+$black-bis: hsl(0, 0%, 7%);
+$black-ter: hsl(0, 0%, 14%);
+
+$grey-darker: hsl(0, 0%, 21%);
+$grey-dark: hsl(0, 0%, 29%);
+$grey: hsl(0, 0%, 48%);
+$grey-light: hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+
+$white-ter: hsl(0, 0%, 96%);
+$white-bis: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$orange: #e53238;
+$yellow: #f5af02;
+$green: #86b817;
+$turquoise: hsl(171, 100%, 41%);
+$cyan: hsl(204, 86%, 53%);
+$blue: #0064d2;
+$purple: hsl(271, 100%, 71%);
+$red: #e53238;
+
+// 使用颜色
+$primary: #24CF5F;
+$secondary: $yellow;
+$embellishment: $orange;
+
+$light: $white-ter;
+$dark: $grey-darker;
+
+$info: $cyan;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$link: $primary;
+
+$body-background-color: rgba(31, 99, 209, 0.02);
+$highlight: #333;
+
+
+// 反色
+$orange-invert: findColorInvert($orange);
+$yellow-invert: findColorInvert($yellow);
+$green-invert: findColorInvert($green);
+$turquoise-invert: findColorInvert($turquoise);
+$cyan-invert: findColorInvert($cyan);
+$blue-invert: findColorInvert($blue);
+$purple-invert: findColorInvert($purple);
+$red-invert: findColorInvert($red);
+
+$primary-invert: $turquoise-invert;
+$info-invert: $cyan-invert;
+$success-invert: $green-invert;
+$warning-invert: $yellow-invert;
+$danger-invert: $red-invert;
+$light-invert: $dark;
+$dark-invert: $light;
+$link-invert: $blue-invert;
+
+// 背景和边框
+$background: #f1f1f1;
+$border: #eee;
+$border-color: $border;
+$border-color-darker: #ccc;
+
+// 文字颜色
+$text-color: #383838;
+$text-dark: #000;
+$text-light: #666;
+$text-lighter: #aaa;
+$text-strong-color: 0;
+$text-mark-color: #fff;
+$text-mark-background-color: #ff0;
+$text-mute-color: #bbb;
+
+// ======================
+// 字体家族
+// ======================
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-monospace: Monaco, Consolas, "Courier New", monospace;
+$family-serif: "Noto Serif", Optima, Georgia, "Times New Roman", Times, serif;
+
+// ======================
+// 元素尺寸
+// ======================
+$dimensions: 64 128;
+$radius: 3px;
+$radius-rounded: 100px;
+
+// ======================
+// 宽度
+// ======================
+$gap: 32px;
+$phone: 640px;
+$tablet: 768px;
+$desktop: 1024px;
+$widescreen: 1280px;
+
+// 黄金比例
+$bronze: 1.333;
+$sliver: 1.414;
+$golden: 1.618;
+$platinum: 1.732;
+
+// ======================
+// 字号
+// ======================
+
+//文字字号
+$text-tiny-font-size: 10px;
+$text-small-font-size: 12px;
+$text-font-size: 14px;
+$text-large-font-size: 16px;
+
+// 标题字号
+$h1-font-size: 36px;
+$h2-font-size: 28px;
+$h3-font-size: 24px;
+$h4-font-size: 20px;
+$h5-font-size: 18px;
+$h6-font-size: 16px;

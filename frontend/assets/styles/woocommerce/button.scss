@@ -1,0 +1,85 @@
+//===================================
+// 按钮
+//===================================
+.woocommerce{
+    a.button,
+    button.button,
+    input.button,
+    #respond input#submit {
+        @extend .button;
+        @apply text-base;
+
+        &.loading {
+            opacity: 0.25;
+            padding-right: 2.618em;
+
+            &::after {
+                font-family: "WooCommerce";
+                content: "";
+                vertical-align: top;
+                font-weight: 400;
+                position: absolute;
+                top: 17px;
+                right: 1em;
+                animation: spin 2s linear infinite;
+            }
+        }
+
+        &.added::after {
+            font-family: "WooCommerce";
+            content: "";
+            margin-left: 0.53em;
+            vertical-align: bottom;
+        }
+
+        &.alt {
+            background-color: $woocommerce;
+            border: 1px solid lighten($woocommerce, 5%);
+            color: $primarytext;
+            -webkit-font-smoothing: antialiased;
+
+            &:hover {
+                background-color: lighten($woocommerce, 5%);
+                color: $primarytext;
+            }
+
+            &.disabled,
+            &:disabled,
+            &:disabled[disabled],
+            &.disabled:hover,
+            &:disabled:hover,
+            &:disabled[disabled]:hover {
+                background-color: $woocommerce;
+                color: $primarytext;
+            }
+        }
+
+    }
+
+    .cart .button,
+    .cart input.button {
+        float: none;
+    }
+
+    a.added_to_cart {
+        display: none;
+    }
+}
+
+.single_add_to_cart_button {
+    @apply text-base mt-2;
+}
+
+.field.has-addons .control:last-child .button {
+    @apply text-base;
+}
+
+
+.add_to_cart_button {
+    @extend [class^="wpion-"];
+    color: #999;
+
+    &:before {
+        content: $wpion-cart-plus1;
+    }
+}

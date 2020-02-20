@@ -13,8 +13,8 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+	<footer id="colophon" class="site__footer">
+		<div class="site__info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */

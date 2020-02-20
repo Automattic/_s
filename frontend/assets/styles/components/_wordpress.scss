@@ -1,0 +1,227 @@
+//===================
+// WordPress 样式
+//===================
+
+.wp-post-image {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+// 媒体对齐
+.alignnone {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+
+.aligncenter {
+    display: block;
+    margin: $spacer-md auto;
+}
+
+.alignleft,
+.alignright {
+    margin-bottom: $spacer-md;
+}
+
+@media screen and (min-width: $desktop) {
+    // Only float if not on an extra small device
+    .alignleft {
+        float: left;
+        margin-right: $spacer-md;
+    }
+
+    .alignright {
+        float: right;
+        margin-left: $spacer-md;
+    }
+}
+
+// 图片说明
+.wp-caption {
+    display: block;
+    margin-bottom: $spacer-md;
+    transition: border .2s ease-in-out;
+}
+
+.wp-caption-text {
+    padding: 6px 10px;
+    color: #fff;
+    margin-top: -34px;
+    background-image: linear-gradient(transparent 0, #000 300%);
+    position: relative;
+}
+
+// 屏幕阅读器
+.screen-reader-text {
+    display: none;
+}
+
+// 评论区域标题
+.c-comments{
+    &__title{
+        margin-top: $spacer-lg;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    label{
+        font-size: 14px;
+        color: theme('colors.gray.600');
+    }
+
+    .form-submit{
+        margin-top: 12px;
+    }
+}
+
+
+// 评论列表样式
+.c-comment {
+    margin-bottom: 40px;
+    margin-left: 0;
+    padding-left: 0;
+    .avatar {
+        border-radius: 50%;
+        border: 1px solid #ddd;
+    }
+    ol {
+        list-style: none;
+    }
+    .children {
+        margin-left: 0;
+        padding-left: 40px;
+        background-repeat: no-repeat;
+        background-position: left 20px;
+    }
+    li.comment > div img.avatar {
+        position: absolute;
+        left: 29px;
+        top: 29px;
+    }
+}
+
+// 单条评论样式
+.comment {
+    font-size: 14px;
+    .comment-body {
+        overflow: hidden;
+        padding: 25px 25px 25px 98px;
+        margin: 2em 0 0;
+        position: relative;
+        border: 1px solid theme('colors.gray.300');
+        background: theme('colors.gray.100');
+    }
+    &-author {
+        .avatar {
+            position: absolute;
+            left: 25px;
+            top: 29px;
+        }
+        .says {
+            padding-left: 2px;
+        }
+        b{
+            font-weight: normal;
+            color: theme('colors.gray.600');
+        }
+    }
+    &-metadata {
+        line-height: 16px;
+        margin-bottom: 10px;
+        a {
+            color: theme('colors.gray.500');
+            font-size: 12px;
+        }
+    }
+    &-reply-link {
+        display: inline-block;
+        margin-top: $spacer-sm;
+        color: theme('colors.gray.500');
+    }
+    &-reply-title {
+        margin-top: $spacer-md;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    &-notes {
+        color: theme('colors.gray.500');
+    }
+    &-content {
+        margin-top: 10px;
+        color: theme('colors.gray.800');
+    }
+    &-navigation {
+        overflow: hidden;
+        margin-top: $spacer-lg;
+    }
+}
+
+.comment-respond{
+    font-size: 14px;
+}
+
+.comment-form-cookies-consent{
+    margin-bottom: $spacer-md - $spacer-xs;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 14px;
+    color: theme('colors.gray.600');
+}
+
+// 默认相册样式
+.gallery {
+    margin-left: -8px;
+    margin-right: -8px;
+    display: flex;
+    .gallery-item {
+        padding-left: 8px;
+        padding-right: 8px;
+        .gallery-icon {
+            height: 100%;
+        }
+        .wp-caption-text {
+            margin-top: -34px;
+        }
+    }
+    &-columns-2 {
+        .gallery-item {
+            width: 50%;
+        }
+    }
+    &-columns-3 {
+        .gallery-item {
+            width: 33.33%;
+        }
+    }
+    &-columns-4 {
+        .gallery-item {
+            width: 25%;
+        }
+    }
+    &-columns-5 {
+        .gallery-item {
+            width: 20%;
+        }
+    }
+}
+
+// 评论表单
+.comment-form {
+    p {
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+        width: 100%;
+        height: auto;
+    }
+}
+
+ul.wp-block-gallery{
+    margin-left: 0 !important;
+}

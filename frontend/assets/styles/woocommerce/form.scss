@@ -1,0 +1,185 @@
+.woocommerce{
+    form{
+        h2, h3 {
+            @apply mb-4 font-medium text-lg;
+        }
+
+        select {
+            @include input;
+            @apply m-0;
+            cursor: pointer;
+        }
+    }
+    form .form-row {
+        @apply mb-2;
+
+        [placeholder]:focus::-webkit-input-placeholder {
+            transition: opacity 0.5s 0.5s ease;
+            opacity: 0;
+        }
+
+        label {
+            line-height: 2;
+
+            &.hidden {
+                visibility: hidden;
+            }
+
+            .inline {
+                display: inline;
+            }
+        }
+
+        span {
+            color: $text-mute-color;
+        }
+
+        .optional {
+            visibility: visible;
+        }
+
+        .input-checkbox {
+            display: inline;
+            margin: (-2px) 8px 0 0;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        input.input-text,
+        textarea {
+            @include input;
+            border-color: $border-color;
+            box-shadow: inset 0 1px 2px rgba(10, 10, 10, .1);
+            box-sizing: border-box;
+            width: 100%;
+            margin: 0;
+            outline: 0;
+            line-height: normal;
+        }
+
+        textarea {
+            height: 4em;
+            line-height: 1.5;
+            display: block;
+            box-shadow: none;
+        }
+
+        .select2-container {
+            width: 100%;
+            line-height: 2em;
+        }
+
+        &.woocommerce-invalid {
+            label {
+                color: $red;
+            }
+
+            .select2-container,
+            input.input-text,
+            select {
+                border-color: $red;
+            }
+        }
+
+        &.woocommerce-validated {
+            .select2-container,
+            input.input-text,
+            select {
+                border-color: lighten($green, 5%);
+            }
+        }
+
+        ::-webkit-input-placeholder {
+            line-height: normal;
+        }
+
+        :-moz-placeholder {
+            line-height: normal;
+        }
+
+        :-ms-input-placeholder {
+            line-height: normal;
+        }
+    }
+
+    form.login,
+    form.checkout_coupon,
+    form.register {
+        @apply bg-white border border-gray-300 p-6 my-4;
+        text-align: left;
+        border-radius: 5px;
+    }
+
+    // 商品页面购物车
+    form.cart {
+        margin-bottom: $spacer-lg;
+        display: flex;
+
+        @include clearfix;
+
+        div.quantity {
+            float: left;
+            margin: 0 4px 0 0;
+        }
+
+        .woocommerce-variation-description p {
+            margin-bottom: 1em;
+        }
+
+        .reset_variations {
+            visibility: hidden;
+            font-size: 0.83em;
+        }
+
+        .wc-no-matching-variations {
+            display: none;
+        }
+
+        .button {
+            vertical-align: middle;
+            float: left;
+        }
+    }
+}
+
+.woocommerce #review_form #respond textarea {
+    @apply px-3 py-2;
+}
+
+.woocommerce #review_form #respond .form-submit input {
+    @apply bg-blue-700 text-white px-4 py-2;
+}
+
+.woocommerce-input-wrapper {
+    .description {
+        background: #1e85be;
+        color: #fff;
+        border-radius: 3px;
+        padding: 1em;
+        margin: 0.5em 0 0;
+        clear: both;
+        display: none;
+        position: relative;
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+            border: 0;
+            box-shadow: none;
+        }
+
+        &:before {
+            left: 50%;
+            top: 0;
+            margin-top: -4px;
+            transform: translatex(-50%) rotate(180deg);
+            content: "";
+            position: absolute;
+            border-width: 4px 6px 0 6px;
+            border-style: solid;
+            border-color: #1e85be transparent transparent transparent;
+            z-index: 100;
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+//===================================
+// 产品相册
+//===================================
+div.images {
+    margin-bottom: 2em;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    div.thumbnails {
+        padding-top: 1em;
+    }
+
+    &.woocommerce-product-gallery {
+        position: relative;
+        min-width: 45%;
+    }
+
+    .woocommerce-product-gallery__wrapper {
+        transition: all cubic-bezier(0.795, -0.035, 0, 1) 0.5s;
+        margin: 0;
+        padding: 0;
+    }
+
+    .woocommerce-product-gallery__wrapper .zoomImg {
+        background-color: #fff;
+        opacity: 0;
+    }
+
+    .woocommerce-product-gallery__image:nth-child(n+2) {
+        width: 25%;
+        display: inline-block;
+    }
+
+    .woocommerce-product-gallery__trigger {
+        position: absolute;
+        top: 0.5em;
+        right: 0.5em;
+        font-size: 2em;
+        z-index: 9;
+        width: 36px;
+        height: 36px;
+        background: #fff;
+        text-indent: -9999px;
+        border-radius: 100%;
+        box-sizing: content-box;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #000;
+            border-radius: 100%;
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            box-sizing: content-box;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 8px;
+            background: #000;
+            border-radius: 6px;
+            position: absolute;
+            top: 19px;
+            left: 22px;
+            transform: rotate(-45deg);
+            box-sizing: content-box;
+        }
+    }
+
+    .flex-control-thumbs {
+        overflow: hidden;
+        zoom: 1;
+        margin: 0;
+        padding: 0;
+
+        li {
+            width: 25%;
+            float: left;
+            margin: 0;
+            list-style: none;
+
+            img {
+                cursor: pointer;
+                opacity: 0.5;
+                margin: 0;
+
+                &.flex-active,
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+
+.woocommerce-product-gallery--columns-3 {
+    .flex-control-thumbs li:nth-child(3n+1) {
+        clear: left;
+    }
+}
+
+.woocommerce-product-gallery--columns-4 {
+    .flex-control-thumbs li:nth-child(4n+1) {
+        clear: left;
+    }
+}
+
+.woocommerce-product-gallery--columns-5 {
+    .flex-control-thumbs li:nth-child(5n+1) {
+        clear: left;
+    }
+}

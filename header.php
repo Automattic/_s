@@ -24,23 +24,23 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
+	<header id="masthead" class="site__header">
+		<div class="site__branding">
 			<?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site__title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
 			$_s_description = get_bloginfo( 'description', 'display' );
 			if ( $_s_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site__description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
@@ -55,4 +55,4 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site__content">

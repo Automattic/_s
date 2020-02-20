@@ -1,0 +1,255 @@
+//===================================
+// 评论
+//===================================
+.woocommerce {
+
+    #reviews {
+        h2 small {
+            float: right;
+            color: $subtext;
+            font-size: 15px;
+            margin: 10px 0 0;
+
+            a {
+                text-decoration: none;
+                color: $subtext;
+            }
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        #respond {
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        #comment {
+            height: 75px;
+        }
+
+        #comments {
+            .add_review {
+                @include clearfix;
+            }
+
+            h2 {
+                clear: none;
+            }
+
+            ol.commentlist {
+                @include clearfix;
+
+                margin: 0;
+                width: 100%;
+                background: none;
+                list-style: none;
+
+                li {
+                    padding: 0;
+                    margin: 0 0 20px;
+                    border: 0;
+                    position: relative;
+                    background: 0;
+                    border: 0;
+
+                    .meta {
+                        color: $subtext;
+                        font-size: 0.75em;
+                    }
+
+                    img.avatar {
+                        float: left;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        padding: 3px;
+                        width: 32px;
+                        height: auto;
+                        background: $secondary;
+                        border: 1px solid darken($secondary, 3%);
+                        margin: 0;
+                        box-shadow: none;
+                    }
+
+                    .comment-text {
+                        margin: 0 0 0 50px;
+                        border: 1px solid darken($secondary, 3%);
+                        border-radius: 4px;
+                        padding: 1em 1em 0;
+
+                        @include clearfix;
+
+                        p {
+                            margin: 0 0 1em;
+                        }
+
+                        p.meta {
+                            font-size: 0.83em;
+                        }
+                    }
+                }
+
+                ul.children {
+                    list-style: none outside;
+                    margin: 20px 0 0 50px;
+
+                    .star-rating {
+                        display: none;
+                    }
+                }
+
+                #respond {
+                    border: 1px solid darken($secondary, 3%);
+                    border-radius: 4px;
+                    padding: 1em 1em 0;
+                    margin: 20px 0 0 50px;
+                }
+            }
+
+            .commentlist > li::before {
+                content: "";
+            }
+        }
+    }
+
+    //===================================
+    // 星级评分
+    //===================================
+    .star-rating {
+        float: right;
+        overflow: hidden;
+        position: relative;
+        height: 1em;
+        line-height: 1;
+        font-size: 1em;
+        width: 5.4em;
+        font-family: "star";
+
+        &::before {
+            content: "sssss";
+            color: darken($secondary, 10%);
+            float: left;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+
+        span {
+            overflow: hidden;
+            float: left;
+            top: 0;
+            left: 0;
+            position: absolute;
+            padding-top: 1.5em;
+            color: $orange;
+        }
+
+        span::before {
+            content: "SSSSS";
+            top: 0;
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    .woocommerce-product-rating {
+        @include clearfix;
+
+        line-height: 2;
+        display: block;
+
+        .star-rating {
+            margin: 0.5em 4px 0 0;
+            float: left;
+        }
+    }
+
+    .products .star-rating {
+        display: block;
+        margin: 0 0 0.5em;
+        float: none;
+    }
+
+    .hreview-aggregate .star-rating {
+        margin: 10px 0 0;
+    }
+
+    #review_form #respond {
+        @include clearfix;
+
+        position: static;
+        margin: 0;
+        width: auto;
+        padding: 0;
+        background: transparent none;
+        border: 0;
+
+        p {
+            margin: 0 0 10px;
+        }
+
+        .form-submit input {
+            @extend .button;
+            padding: $spacer-xs $spacer-sm;
+            left: auto;
+        }
+
+        textarea {
+            //@extend .textarea;
+            height: $spacer-xl + $spacer-lg !important;
+            width: 100%;
+        }
+    }
+
+    p.stars {
+        a {
+            position: relative;
+            height: 1em;
+            width: 1em;
+            text-indent: -999em;
+            display: inline-block;
+            text-decoration: none;
+
+            &::before {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1em;
+                height: 1em;
+                line-height: 1;
+                font-family: "WooCommerce";
+                content: "";
+                text-indent: 0;
+            }
+
+            &:hover ~ a::before {
+                content: "";
+            }
+        }
+
+        &:hover a::before {
+            content: "";
+        }
+
+        &.selected {
+            a.active {
+                &::before {
+                    content: "";
+                }
+
+                ~ a::before {
+                    content: "";
+                }
+            }
+
+            a:not(.active)::before {
+                content: "";
+            }
+        }
+    }
+
+}

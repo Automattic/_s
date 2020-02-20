@@ -1,0 +1,384 @@
+/**
+ * woocommerce-layout.scss
+ * Applies layout to the default WooCommerce frontend design
+ */
+
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+    .button {
+        float: right;
+    }
+}
+
+/**
+ * Styling begins
+ */
+.woocommerce {
+
+    /**
+     * General layout styles
+     */
+    .col2-set {
+        @include clearfix();
+        width: 100%;
+
+        .col-1 {
+            float: left;
+            width: 48.5%;
+        }
+
+        .col-2 {
+            float: right;
+            width: 48.5%;
+        }
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    /**
+     * Product page
+     */
+    div.product {
+
+        div.thumbnails {
+            @include clearfix();
+
+            a {
+                float: left;
+                width: 30.75%;
+                margin-right: 3.8%;
+                margin-bottom: 1em;
+            }
+
+            a.last {
+                margin-right: 0;
+            }
+
+            a.first {
+                clear: both;
+            }
+
+            &.columns-1 {
+                a {
+                    width: 100%;
+                    margin-right: 0;
+                    float: none;
+                }
+            }
+
+            &.columns-2 {
+                a {
+                    width: 48%;
+                }
+            }
+
+            &.columns-4 {
+                a {
+                    width: 22.05%;
+                }
+            }
+
+            &.columns-5 {
+                a {
+                    width: 16.9%;
+                }
+            }
+        }
+
+        .woocommerce-tabs {
+            clear: both;
+
+            ul.tabs {
+                @include menu();
+            }
+        }
+
+        #reviews {
+            .comment {
+                @include mediaright();
+            }
+        }
+    }
+
+    /**
+     * Product loops
+     */
+    ul.products {
+        clear: both;
+        @include clearfix();
+
+        li.product {
+            float: left;
+            margin: 0 3.8% 2.992em 0;
+            padding: 0;
+            position: relative;
+            width: 22.05%;
+            margin-left: 0;
+        }
+
+        li.first {
+            clear: both;
+        }
+
+        li.last {
+            margin-right: 0;
+        }
+    }
+
+    ul.products {
+        &.columns-1 {
+            li.product {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        &.columns-2 {
+            li.product {
+                width: 48%;
+            }
+        }
+
+        &.columns-3 {
+            li.product {
+                width: 30.75%;
+            }
+        }
+
+        &.columns-5 {
+            li.product {
+                width: 16.95%;
+            }
+        }
+
+        &.columns-6 {
+            li.product {
+                width: 13.5%;
+            }
+        }
+    }
+
+    &.columns-1 {
+        ul.products {
+            li.product {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+
+    &.columns-2 {
+        ul.products {
+            li.product {
+                width: 48%;
+            }
+        }
+    }
+
+    &.columns-3 {
+        ul.products {
+            li.product {
+                width: 30.75%;
+            }
+        }
+    }
+
+    &.columns-5 {
+        ul.products {
+            li.product {
+                width: 16.95%;
+            }
+        }
+    }
+
+    &.columns-6 {
+        ul.products {
+            li.product {
+                width: 13.5%;
+            }
+        }
+    }
+
+    .woocommerce-pagination {
+        ul.page-numbers {
+            @include menu();
+        }
+    }
+
+    /**
+     * Cart page
+     */
+    table.cart {
+        img {
+            height: auto;
+        }
+
+        td.actions {
+            text-align: right;
+            @apply bg-gray-100;
+
+            .input-text {
+                width: 80px;
+            }
+
+            .coupon {
+                float: left;
+
+                label {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .cart-collaterals {
+        @include clearfix();
+        width: 100%;
+
+        .related {
+            width: 30.75%;
+            float: left;
+        }
+
+        .cross-sells {
+            width: 48%;
+            float: left;
+
+            ul.products {
+                float: none;
+
+                li {
+                    width: 48%;
+                }
+            }
+        }
+
+        .shipping_calculator {
+            width: 48%;
+            @include clearfix();
+            clear: right;
+            float: right;
+
+            .col2-set {
+                .col-1,
+                .col-2 {
+                    width: 47%;
+                }
+            }
+        }
+    }
+
+    /**
+     * Cart sidebar
+     */
+    ul.cart_list,
+    ul.product_list_widget {
+        li {
+            @include mediaright();
+        }
+    }
+
+    /**
+     * Forms
+     */
+    form {
+        .form-row {
+            @include clearfix();
+
+            label {
+                display: block;
+
+                &.checkbox {
+                    display: inline;
+                }
+            }
+
+            select {
+                width: 100%;
+            }
+
+            .input-text {
+                box-sizing: border-box;
+                width: 100%;
+            }
+        }
+
+        .form-row-first,
+        .form-row-last {
+            width: 48.5%;
+            overflow: visible;
+        }
+
+        .form-row-first {
+            float: left;
+
+            /*rtl:raw:
+            float: right;
+            */
+        }
+
+        .form-row-last {
+            float: right;
+        }
+
+        .form-row-wide {
+            clear: both;
+        }
+    }
+
+    #payment {
+        .form-row {
+            select {
+                width: auto;
+            }
+        }
+
+        .wc-terms-and-conditions, .terms {
+            text-align: left;
+            padding: 0 1em 0 0;
+            float: left;
+        }
+
+        #place_order {
+            float: right;
+        }
+    }
+
+    .woocommerce-billing-fields,
+    .woocommerce-shipping-fields {
+        @include clearfix();
+    }
+
+    .woocommerce-terms-and-conditions {
+        margin-bottom: 1.618em;
+        padding: 1.618em;
+    }
+
+    /**
+     * oEmbeds
+     */
+    .woocommerce-oembed {
+        position: relative;
+    }
+}
+
+/**
+ * RTL styles.
+ */
+.rtl {
+    .woocommerce, .woocommerce-page {
+        .col2-set {
+            .col-1 {
+                float: right;
+            }
+
+            .col-2 {
+                float: left;
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+//
+// 段落排版
+//
+.typo {
+    /* 保证块/段落之间的空白隔行 */
+    p, pre, ul, ol, dl, form, hr, table {
+        margin-bottom: 1.2em
+    }
+
+    /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 1.2em;
+        margin-bottom: 0.6em;
+        line-height: $sliver;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    h4 {
+        font-size: 1.4em;
+    }
+
+    h5, h6 {
+        font-size: 1.2em;
+    }
+
+    /* 在文章中，应该还原 ul 和 ol 的样式 */
+    ul {
+        margin-left: 1.3em;
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+        margin-left: 1.9em;
+    }
+
+    li ul, li ol {
+        margin-bottom: 0.8em;
+        margin-left: 2em;
+    }
+
+    li ul {
+        list-style: circle;
+    }
+
+    a:not(.button):hover {
+        color: $primary;
+        border-bottom-color: #555;
+        text-decoration: none;
+    }
+
+    /* 同 ul/ol，在文章中应用 table 基本格式 */
+    table {
+        @apply border border-gray-300;
+    }
+
+    table th,
+    table td,
+    table caption {
+        @apply border border-gray-300 text-gray-700 px-4 py-2 text-left;
+    }
+
+    table th,
+    table thead th {
+        @apply bg-gray-100;
+        min-width: 90px;
+    }
+
+    table caption {
+        border-bottom: none;
+    }
+
+    em, legend, caption {
+        @apply text-gray-900;
+        font-weight: inherit;
+    }
+
+    /* Responsive images */
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+}

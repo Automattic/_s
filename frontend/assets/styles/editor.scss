@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+// Less 变量
+@import "main";
+
+pre {
+    border-radius: 0.3em;
+    padding: 1em;
+    border: 0;
+}
+
+body.hentry {
+    font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+    padding: 1rem !important;
+
+    h2 {
+        font-weight: 500;
+        padding-bottom: .5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        line-height: 1.414;
+        font-size: 1.25rem;
+        border-bottom: 2px dashed #ddd;
+        color: #3273dc;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.mce-content-body code[data-mce-selected] {
+    background: #666;
+}
+
+.wp-block {
+    max-width: 960px;
+}

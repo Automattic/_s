@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<section id="primary" class="content__primary">
+		<main id="main" class="site__main">
 
 		<?php if ( have_posts() ) : ?>
 

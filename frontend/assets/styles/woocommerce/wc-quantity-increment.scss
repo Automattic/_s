@@ -1,0 +1,93 @@
+// Variables
+$primary: #e53238; // Primary colour for buttons (alt)
+$primarytext: desaturate(lighten($primary, 50%), 18%); // Text on primary colour bg
+
+$secondary: desaturate(lighten($primary, 40%), 21%); // Secondary buttons
+$secondarytext: desaturate(darken($secondary, 60%), 21%); // Text on secondary colour bg
+
+/**
+ * Styling begins
+ */
+.woocommerce-page {
+    #quantity,
+    #content .quantity {
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+
+    /**
+     * Quantity inputs
+     */
+    .quantity {
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+        zoom: 1;
+        padding-right: 1.1em;
+        display: inline-block;
+
+        input.qty {
+            width: 3.631em;
+            height: 3em;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            border: 1px solid darken($secondary, 20%);
+            border-right: 0;
+            font-weight: 700;
+            border-radius: 2px 0 0 2px;
+
+            -moz-appearance: textfield; /* Hide buttons for Firefox 29 and later */
+        }
+
+        /* Hide buttons for opera */
+        noindex:-o-prefocus, input[type=number] {
+            padding-right: 1.2em;
+        }
+
+        .plus,
+        .minus {
+            display: block;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            text-align: center;
+            width: 1.5em;
+            height: 1.5em;
+            text-decoration: none;
+            overflow: visible;
+            text-decoration: none;
+            font-weight: 700;
+            cursor: pointer;
+            color: $secondarytext;
+            border: 1px solid darken($secondary, 20%);
+            background-color: $secondary;
+            text-shadow: none;
+            line-height: 1;
+            background-image: none;
+
+            &:hover {
+                background-color: lighten($secondary, 5%);
+            }
+
+            &:focus {
+                outline: 0;
+            }
+        }
+
+        .plus {
+            top: 0;
+            right: 0;
+            border-bottom: 0;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .minus {
+            bottom: 0;
+            right: 0;
+            border-radius: 0 0 2px 2px;
+        }
+    }
+}

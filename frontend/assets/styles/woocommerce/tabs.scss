@@ -1,0 +1,65 @@
+//===================================
+// Tabs
+//===================================
+.woocommerce-tabs {
+    @apply bg-gray-200 p-8;
+    .panel {
+        margin: 0;
+    }
+
+    ul.tabs {
+        overflow: hidden;
+        position: relative;
+        justify-content: flex-start;
+        @apply mb-4;
+
+        li {
+            @apply inline-block relative leading-none;
+            z-index: 0;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+
+            a {
+                color: $secondarytext;
+                text-decoration: none;
+                @apply block text-base px-6 py-3 text-gray-700;
+
+                &:hover {
+                    text-decoration: none;
+                    color: lighten($secondarytext, 10%);
+                }
+            }
+
+            &.active {
+                background: $contentbg;
+                z-index: 2;
+                border-bottom-color: $contentbg;
+
+                a {
+                    color: inherit;
+                    text-shadow: inherit;
+                }
+            }
+        }
+
+    }
+
+    .panel {
+        margin: 0 0 2em;
+        padding: 0;
+    }
+}
+
+.wc-tabs {
+    @apply border-b border-gray-300;
+}
+
+.woocommerce-Tabs-panel {
+    h2 {
+        @apply text-xl font-medium mb-4;
+    }
+
+    p {
+        @apply text-base mb-4;
+    }
+}

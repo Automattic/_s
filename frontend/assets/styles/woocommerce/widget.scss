@@ -1,0 +1,368 @@
+// 下拉迷你购物车
+.c-widget--wprs_cart_widget {
+    button.button {
+        color: $woocommerce;
+    }
+
+    .dropdown-menu {
+        min-width: 18rem;
+        padding-top: 0;
+        margin-top: -1px;
+    }
+
+    .widget_shopping_cart_content {
+        background: #fff;
+        border: 1px solid $border;
+
+        .woocommerce-mini-cart-item {
+            padding: 16px;
+            border-bottom: 1px solid $border;
+        }
+
+        .woocommerce-mini-cart__buttons {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+// 商品分类
+.c-widget--product_categories {
+    .cat-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: $spacer-sm $spacer-md !important;
+        color: $text-mute-color;
+
+        & > a {
+            padding: 0;
+
+            & + span.count {
+                margin: 0;
+            }
+        }
+
+        ul {
+            width: 100%;
+            display: none;
+
+            li.cat-item {
+                padding-right: 0 !important;
+            }
+        }
+    }
+}
+
+// 最近查看的商品
+.c-widget--recently_viewed_products {
+    li {
+        padding: $spacer-sm $spacer-md !important;
+
+        a {
+            padding: 0;
+            line-height: normal;
+        }
+
+        .amount {
+            color: $orange;
+        }
+    }
+}
+
+// 商品列表
+.c-widget--products {
+    .amount {
+        color: $orange;
+    }
+
+    del {
+        .amount {
+            color: $text-mute-color;
+        }
+    }
+
+    ins {
+        color: $orange;
+    }
+}
+
+// 商品筛选
+.woocommerce-widget-layered-nav-list {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none outside;
+
+    .woocommerce-widget-layered-nav-list__item--chosen a::before {
+        @include iconbefore("");
+
+        color: $red;
+    }
+}
+
+.woocommerce-widget-layered-nav-dropdown__submit {
+    margin-top: 1em;
+}
+
+.c-widget--filters {
+    background: #f3f3f3;
+    padding: $spacer-md $spacer-lg;
+    margin-bottom: $spacer-lg;
+}
+
+.c-widget--filters {
+    display: flex;
+    padding: $spacer-sm 0;
+
+    .c-widget__title {
+        width: 68px;
+        flex-shrink: 0;
+        padding-right: $spacer-sm;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+}
+
+.c-widget--layered_nav {
+    border-bottom: 1px solid $border-color;
+
+    .woocommerce-widget-layered-nav-list {
+        flex-grow: 1;
+
+        li {
+            display: inline-block;
+            margin-right: $spacer-md;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            .count {
+                color: $text-mute-color;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+// 价格筛选
+.c-widget--price_filter {
+    form {
+        flex-grow: 1;
+    }
+
+    .price_slider {
+        margin-bottom: 1em;
+    }
+
+    .price_slider_amount {
+        text-align: right;
+        line-height: 2.4;
+        font-size: 0.8751em;
+
+        .button {
+            font-size: 1.15em;
+            float: left;
+        }
+    }
+
+    .ui-slider {
+        position: relative;
+        text-align: left;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .ui-slider .ui-slider-handle {
+        position: absolute;
+        z-index: 2;
+        width: 1em;
+        height: 1em;
+        background-color: $woocommerce;
+        border-radius: 1em;
+        cursor: ew-resize;
+        outline: none;
+        top: -4px;
+
+        /* rtl:ignore */
+        margin-left: -0.5em;
+    }
+
+    .ui-slider .ui-slider-range {
+        position: absolute;
+        z-index: 1;
+        font-size: 0.7em;
+        display: block;
+        border: 0;
+        border-radius: 1em;
+        background-color: $woocommerce;
+    }
+
+    .price_slider_wrapper .ui-widget-content {
+        border-radius: 1em;
+        background-color: $border-color;
+        border: 0;
+    }
+
+    .ui-slider-horizontal {
+        height: 0.5em;
+    }
+
+    .ui-slider-horizontal .ui-slider-range {
+        top: 0;
+        height: 100%;
+    }
+
+    .ui-slider-horizontal .ui-slider-range-min {
+        left: -1px;
+    }
+
+    .ui-slider-horizontal .ui-slider-range-max {
+        right: -1px;
+    }
+}
+
+// 评分筛选
+.c-widget--rating_filter {
+    ul {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        list-style: none outside;
+
+        li {
+            @include clearfix;
+
+            padding: 0 0 1px;
+            list-style: none;
+            display: inline-block;
+            margin-right: $spacer-md;
+
+            a {
+                display: block;
+                text-align: right;
+                color: $text-mute-color;
+            }
+
+            .star-rating {
+                float: left;
+                margin-top: 4px;
+                margin-right: 4px;
+            }
+
+            a {
+                padding: 1px 0;
+                text-decoration: none;
+            }
+
+            .star-rating {
+                float: none;
+                display: inline-block;
+            }
+        }
+
+        li.chosen a::before {
+            @include iconbefore("");
+
+            color: $red;
+        }
+
+    }
+}
+
+// 已启用的过滤器
+.c-widget--layered_nav_filters {
+    ul {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        list-style: none outside;
+        overflow: hidden;
+        zoom: 1;
+
+        li {
+            padding: 0 1em 1px 1px;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+
+                &::before {
+                    @include iconbefore("");
+
+                    color: $red;
+                    vertical-align: inherit;
+                    margin-right: 0.5em;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Cart sidebar */
+.product_list_widget {
+    list-style: none outside;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: $spacer-sm $spacer-md;
+
+        a {
+            display: block;
+            line-height: 1.5;
+            padding: 0 0 $spacer-sm 0;
+        }
+
+        .reviewer {
+            color: $text-lighter;
+            font-weight: 300;
+        }
+
+        img {
+            float: right;
+            margin-left: $spacer-sm;
+            width: 76px;
+            height: auto;
+            box-shadow: none;
+        }
+
+        dl {
+            margin: 0;
+            padding-left: 1em;
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+
+            @include clearfix;
+
+            dt,
+            dd {
+                display: inline-block;
+                float: left;
+                margin-bottom: 1em;
+            }
+
+            dt {
+                font-weight: 700;
+                padding: 0 0 0.25em;
+                margin: 0 4px 0 0;
+                clear: left;
+            }
+
+            dd {
+                padding: 0 0 0.25em;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .star-rating {
+            float: none;
+            margin-bottom: $spacer-xs;
+        }
+    }
+}
+

@@ -1,0 +1,101 @@
+//===================================
+// 迷你购物车
+//===================================
+// 迷你购物车
+.woocommerce-mini-cart {
+    li {
+        padding: $spacer-md 0;
+
+        & + li {
+            border-top: 1px solid $border-color;
+        }
+    }
+
+    img {
+        max-width: 64px;
+    }
+
+    .quantity,
+    .amount {
+        font-size: 14px;
+        color: $text-light;
+    }
+
+    .cart-title {
+        margin-bottom: $spacer-sm;
+        line-height: normal;
+    }
+
+    a.remove_from_cart_button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0;
+        font-size: 20px !important;
+        color: $text-lighter !important;
+
+        &:hover {
+            background: transparent;
+            color: $text-color !important;
+            border-color: $text-color;
+        }
+    }
+
+    &__total {
+        padding: $spacer-md 0;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: $spacer-md;
+
+        .amount {
+            color: $red;
+            font-weight: 500;
+        }
+
+        strong {
+            font-weight: 400;
+            min-width: 40px;
+            display: inline-block;
+        }
+    }
+
+    &__empty-message {
+        color: $text-color;
+        padding: $spacer-md;
+        text-align: center;
+    }
+
+    &__buttons {
+        justify-content: center;
+        margin-bottom: $spacer-md !important;
+
+        .button {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// 侧边栏迷你购物车
+.c-widget--shopping_cart {
+
+    .woocommerce-mini-cart li {
+        padding: $spacer-md;
+        position: relative;
+
+        a {
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .quantity {
+            color: $text-lighter;
+        }
+
+        a.remove {
+            position: absolute;
+            line-height: 1;
+        }
+    }
+
+}
+

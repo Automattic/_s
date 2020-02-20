@@ -1,0 +1,12 @@
+@charset "utf-8";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@import "base/functions";
+@import "base/mixins";
+@import "variables";
+@import "components/reset";
+@import "components/typo";
+@import "components/wordpress";
