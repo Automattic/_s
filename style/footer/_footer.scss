@@ -201,28 +201,33 @@
 		padding: 10px 20px;
 		text-align: center;
 		
-		.menu, li {
-			display: inline;
-		}
 
 		.menu {
+			display: block;
 			padding: 0;
+			margin: 0;
 			
 			li {
 				margin-right: 3px;
+				display: inline;
 				
 				&:last-of-type {
 					margin-right: 0;
 				}
-			}
-			
-			li:before {
-				display: none;
-			}
 
-			&:before {
-				content: "|";
-				margin: 0 5px;
+				&:before {
+					content: '|';
+					color: #aaa;
+					width: auto;
+					height: auto;
+					font-size: 1em;
+					margin: 0 5px 4px;
+				}
+
+				&:first-of-type:before {
+
+					display: none;
+				}
 			}
 		}
 	}

@@ -58,10 +58,20 @@
 			<span class="company-name"><?php echo get_theme_mod( 'company_name' ); ?></span> - 
 			<?php endif; ?>
 			<?php if ( get_theme_mod( 'company_vat', false ) ) : ?>
-			<span>
-				<?php _e('VAT', '_svbk'); ?>
-				<span class="company-vat"><?php echo get_theme_mod( 'company_vat' ); ?></span> 
-			</span>
+			<?php _e('VAT', '_svbk'); ?>:
+			<span class="company-vat"><?php echo get_theme_mod( 'company_vat' ); ?></span> - 
+			<?php endif; ?>
+			<?php if ( get_theme_mod( 'company_rea', false ) ) : ?>
+			<?php _e('REA', '_svbk'); ?>:
+			<span class="company-rea"><?php echo get_theme_mod( 'company_rea' ); ?></span> - 
+			<?php endif; ?>
+			<?php if ( get_theme_mod( 'company_certified_email', false ) ) : ?>
+			<?php _e('Certified e-mail', '_svbk'); ?>:
+			<span class="company-certified-email"><?php echo get_theme_mod( 'company_certified_email' ); ?></span> - 
+			<?php endif; ?>
+			<?php if ( get_theme_mod( 'company_share_capital', false ) ) : ?>
+			<?php _e('Share Capital', '_svbk'); ?>:
+			<span class="company-share-capital"><?php echo get_theme_mod( 'company_share_capital' ); ?></span>
 			<?php endif; ?>
 			<?php
 				if ( has_nav_menu( 'legal-menu' ) ) :

@@ -253,7 +253,28 @@ function _svbk_customize_register( $wp_customize ) {
 		array(
 			'sanitize_callback' => 'wp_kses_post',
 		)
-	);	
+	);
+
+	$wp_customize->add_setting(
+		'company_rea',
+		array(
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'company_certified_email',
+		array(
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'company_share_capital',
+		array(
+			'sanitize_callback' => 'wp_kses_post',
+		)
+	);
 
 	$wp_customize->add_control(
 		'company_name',
@@ -305,7 +326,34 @@ function _svbk_customize_register( $wp_customize ) {
 		array(
 			'label'   => __( 'VAT ID', '_svbk' ),
 			'type'    => 'text',
-			'section' => 'contacts',
+			'section' => 'footer',
+		)
+	);
+
+	$wp_customize->add_control(
+		'company_rea',
+		array(
+			'label'   => __( 'Company REA', '_svbk' ),
+			'type'    => 'text',
+			'section' => 'footer',
+		)
+	);
+
+	$wp_customize->add_control(
+		'company_certified_email',
+		array(
+			'label'   => __( 'Company Certified Email', '_svbk' ),
+			'type'    => 'text',
+			'section' => 'footer',
+		)
+	);
+
+	$wp_customize->add_control(
+		'company_share_capital',
+		array(
+			'label'   => __( 'Company Share Capital', '_svbk' ),
+			'type'    => 'text',
+			'section' => 'footer',
 		)
 	);
 
