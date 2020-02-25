@@ -1,0 +1,32 @@
+{
+  "name": "wenprise/_s",
+  "description": "Wenprise WordPress theme framework",
+  "type": "wordpress-theme",
+  "require": {
+    "php": ">=7.1",
+    "wenprise/debug": "^1.0",
+    "wenprise/content-types": "^1.0",
+    "yahnis-elsts/plugin-update-checker": "^4.5",
+    "htmlburger/carbon-fields": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Theme\\": "app/"
+    },
+    "files": [
+    ]
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Amos Lee",
+      "email": "iwillhappy1314@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+   "config": {
+      "preferred-install": {
+        "*": "dist"
+      }
+    }
+}

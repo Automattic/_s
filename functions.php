@@ -10,36 +10,36 @@
 /**
  * Theme support setup
  */
-require_once(get_theme_file_path('inc/setup.php'));
+require_once(get_theme_file_path('includes/setup.php'));
 
 
 /**
  * Theme helper functions
  */
-require_once(get_theme_file_path('inc/helpers.php'));
+require_once(get_theme_file_path('includes/helpers.php'));
 
 
 /**
  * Theme Assets
  */
-require_once(get_theme_file_path('inc/frontend.php'));
+require_once(get_theme_file_path('includes/frontend.php'));
 
 
 /**
  * Custom template tags for this theme.
  */
-require_once(get_theme_file_path('inc/template-tags.php'));
+require_once(get_theme_file_path('includes/template-tags.php'));
 
 
 /**
  * Customizer additions.
  */
-require_once(get_theme_file_path('inc/customizer.php'));
+require_once(get_theme_file_path('includes/customizer.php'));
 
 
 /**
  * Load WooCommerce compatibility file.
  */
 if (class_exists('WooCommerce')) {
-    require_once(get_theme_file_path('inc/woocommerce.php'));
+    require_once(get_theme_file_path('includes/woocommerce.php'));
 }
