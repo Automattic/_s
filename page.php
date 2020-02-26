@@ -1,13 +1,8 @@
 <?php
 /**
- * The template for displaying all pages
+ * The template for displaying all single posts
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package _s
  */
@@ -15,25 +10,40 @@
 get_header();
 ?>
 
-	<div id="primary" class="content__content">
-		<main id="main" class="site__main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site__main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+            <?php while (have_posts()) : the_post(); ?>
 
-			get_template_part( 'template-parts/content', 'page' );
+                <div class="rs-post">
+                    <div class="rs-post__header">
+                        <h1 class="rs-post__title">
+                            <?php the_title(); ?>
+                        </h1>
+                        <div class="rs-post__meta">
+                            <div class="rs-post__author">
+                                By <?php the_author(); ?>
+                            </div>
+                            <div class="rs-post__date">
+                                <?php the_time('M,d'); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="typo rs-post__content">
+                        <?php the_content(); ?>
+                    </div>
+                </div>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+                <?php
+                if (comments_open() || get_comments_number()) :
+                    comments_template();
+                endif;
+                ?>
 
-		endwhile; // End of the loop.
-		?>
+            <?php endwhile; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main>
+    </div>
 
 <?php
 get_sidebar();
