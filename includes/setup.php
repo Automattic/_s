@@ -3,9 +3,6 @@
  * @package _s
  */
 
-add_action('widgets_init', '_s_widgets_init');
-add_action('after_setup_theme', '_s_setup');
-
 
 if ( ! function_exists('_s_setup')) :
     /**
@@ -89,9 +86,11 @@ if ( ! function_exists('_s_setup')) :
             'flex-height' => true,
         ]);
 
-        $GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
+        $GLOBALS[ 'content_width' ] = apply_filters('_s_content_width', 640);
     }
 endif;
+
+add_action('after_setup_theme', '_s_setup');
 
 
 /**
@@ -112,3 +111,4 @@ function _s_widgets_init()
     ]);
 }
 
+add_action('widgets_init', '_s_widgets_init');
