@@ -10,27 +10,10 @@
 	margin-right: -#{$padding__content-mobile};
 	display: block;
 	position: relative;
-	border-bottom: 30px solid $color__background-light;
-	
-	&:before,
-	&:after {
-		content: '';
-		display: block;
-	}
-
-	&:before {
-		background-size: 13px auto;
-		background-repeat: no-repeat;
-		height: 70px;
-		width: 100%;
-		background-image: url('images/steps-bar-start.png');
-		background-position: 50% top;
-		position: relative;
-		top: -30px;
-	}
 	
 	.wp-block-svbk-iter__step {
 		box-shadow: $shadow__card;
+		border-radius: 8px;
 		background: #fff;
 		text-align: center;
 		padding: 50px 20px 25px;
@@ -96,27 +79,7 @@
 		padding: 10px $padding__content-tablet 35px $padding__content-tablet + 300px;
 		background-position: $padding__content-tablet + 109px center;
 		max-width: 1100px;
-
-		&:before,
-		&:after {
-			position: absolute;
-		}
-
-		&:before {
-			top: 0;
-			left: 0;
-			background-position: 144px top;
-		}
-
-		&:after {
-			position: absolute;
-			bottom: 0;
-			left: 151px;
-			transform: translateX(-50%);
-			width: 14px;
-			height: 115px;
-			background: $color__background-light;
-		}
+		background-image: none;
 		
 		.wp-block-svbk-iter__step {
 			width: 100%;
@@ -128,6 +91,20 @@
 			z-index: 1;
 			position: relative;
 			text-align: left;
+
+			&:nth-of-type(1) {
+
+				.wp-block-svbk-iter__step-icon:before {
+					display: none;
+				}
+			}
+
+			@for $i from 1 through 10 {
+
+				&:nth-of-type(#{$i}) {
+					z-index: 10 - $i;
+				}
+			}
 		}
 		
 		.wp-block-svbk-iter__step-name {
@@ -166,6 +143,18 @@
 				max-width: 70px;
 				max-height: 65px;
 			}
+
+			&:before {
+				content: '';
+				background-color: #b4babc;
+				display: block;
+				width: 10px;
+				height: 150px;
+				position: absolute;
+				top: -150px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 		
 		.wp-block-svbk-iter__step-title {
@@ -187,4 +176,3 @@
 		padding-right: 0;
 	}
 }
-
