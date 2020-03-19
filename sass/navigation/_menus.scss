@@ -24,8 +24,14 @@
 			}
 
 			li {
+				/* The focus class is added by navigation.js */
 				&:hover > ul,
 				&.focus > ul {
+					left: 100%;
+				}
+
+				/* The :focus-within is for non-JS contexts and AMP (all browsers except IE/Edge support) */
+				&:focus-within > ul {
 					left: 100%;
 				}
 			}
@@ -43,8 +49,14 @@
 			}
 		}
 
+		/* The focus class is added by navigation.js */
 		li:hover > ul,
 		li.focus > ul {
+			left: auto;
+		}
+
+		/* The :focus-within is for non-JS contexts and AMP (all browsers except IE/Edge support) */
+		li:focus-within > ul {
 			left: auto;
 		}
 	}
@@ -53,6 +65,7 @@
 		float: left;
 		position: relative;
 
+		/* The focus class is added by navigation.js */
 		&:hover > a,
 		&.focus > a {
 		}

@@ -664,18 +664,31 @@ a:hover, a:active {
 	top: 0;
 }
 
+/* The focus class is added by navigation.js */
 .main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li.focus > ul
+{
 	left: 100%;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	left: auto;
+}
+
+/*
+ * Alternatives to focus class for supporting browsers (all but IE/Edge) for no-JS context (e.g. AMP)
+ * See https://caniuse.com/#feat=css-focus-within
+ */
+.main-navigation ul ul li:focus-within > ul {
+	left: 100%;
+}
+.main-navigation ul li:focus-within > ul {
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
 }
 
 .main-navigation li {

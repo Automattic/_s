@@ -79,6 +79,23 @@ if ( ! function_exists( '_s_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/*
+		 * If you intend your theme to be used with the AMP plugin and make use of AMP components in your templates,
+		 * then you should make sure your site is served in native/canonical AMP via:
+		 *
+		 *   add_theme_support( 'amp' );
+		 *
+		 * If you implement <amp-live-list> in your comments.php then you should do:
+		 *
+		 *   add_theme_support( 'amp', array(
+		 *       'comments_live_list' => true,
+		 *   );
+		 *
+		 * Otherwise, a user of the AMP plugin can decide via an admin screen for whether or not they want to serve
+		 * your theme's templates in AMP responses, either in native AMP (canonical URLs) or paired AMP modes
+		 * (separate AMP-specific URLs).
+		 */
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
@@ -117,10 +134,44 @@ function _s_widgets_init() {
 add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Determine whether this is an AMP response.
+ *
+ * Note that this must only be called after the parse_query action.
+ *
+ * @link https://github.com/Automattic/amp-wp
+ * @return bool Is AMP endpoint (and AMP plugin is active).
+ */
+function _s_is_amp() {
+	return function_exists( 'is_amp_endpoint' ) && is_amp_endpoint();
+}
+
+/**
+ * Enqueue styles.
+ */
+function _s_styles() {
+	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+}
+add_action( 'wp_enqueue_scripts', '_s_styles' );
+
+/**
+ * Enqueue scripts.
+ *
+ * This short-circuits in AMP because custom scripts are not allowed. There are AMP equivalents provided elsewhere.
+ *
+ * navigation:
+ *     In AMP the :focus-within selector is used to keep submenus displayed while tabbing,
+ *     and amp-bind is used to managed the toggled state of the nav menu on small screens.
+ *
+ * skip-link-focus-fix:
+ *     This is not implemented in AMP because it only relates to IE11, a browser which now has a very small market share.
+ *
+ * comment-reply:
+ *     Support for comment replies is provided by the AMP plugin.
  */
 function _s_scripts() {
-	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
+	if ( _s_is_amp() ) {
+		return;
+	}
 
 	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

@@ -129,4 +129,5 @@
 		</properties>
 	</rule>
 
+	<exclude-pattern>rtl.css</exclude-pattern>
 </ruleset>

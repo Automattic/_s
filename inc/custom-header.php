@@ -57,9 +57,9 @@ if ( ! function_exists( '_s_header_style' ) ) :
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 			}
-		<?php
-		// If the user has set a custom color for the text use that.
+			<?php
 		else :
+			// If the user has set a custom color for the text use that.
 			?>
 			.site-title a,
 			.site-description {
