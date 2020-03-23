@@ -776,12 +776,14 @@ a:hover, a:active {
 	display: inline;
 	float: left;
 	margin-right: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .aligncenter {
@@ -789,6 +791,7 @@ a:hover, a:active {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
