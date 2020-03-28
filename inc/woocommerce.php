@@ -11,7 +11,7 @@
  * WooCommerce setup function.
  *
  * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
- * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)-in-3.0.0
+ * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
  *
  * @return void
  */
@@ -81,7 +81,7 @@ function _s_woocommerce_products_per_page() {
 add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
 
 /**
- * Product gallery thumnbail columns.
+ * Product gallery thumbnail columns.
  *
  * @return integer number of columns.
  */
