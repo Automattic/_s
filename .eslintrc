@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "plugin:@wordpress/eslint-plugin/es5"
+    ],
+    "env": {
+        "browser": true
+    }
+}
