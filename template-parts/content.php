@@ -45,15 +45,17 @@
 			),
 			get_the_title()
 		) );
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
-			'after'  => '</div>',
-		) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php _s_entry_footer(); ?>
+		<?php
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
+			'after'  => '</div>',
+		) );
+
+		_s_entry_footer();
+		?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
