@@ -178,7 +178,7 @@ export const settings = {
 				<p className={ 'wp-block-svbk-profile__role' } >{ role }</p> 
 				) }
 				{ content && ( 
-				<p className={ 'wp-block-svbk-profile__content' } >{ content }</p> 
+				<RichText.Content tagName={ 'p' } className={ 'wp-block-svbk-profile__content' } value={ content } /> 
 				) }
 				{ buttonText && buttonUrl && ( 
 				<div className={ 'wp-block-button wp-block-svbk-profile__button' } >
