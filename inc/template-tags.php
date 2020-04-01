@@ -140,7 +140,7 @@ if ( ! function_exists( '_svbk_post_thumbnail' ) ) :
 							)
 						),
 					),
-					$merge
+					$attr
 				)
 			);
 			?>
