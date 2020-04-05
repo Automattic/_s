@@ -19,8 +19,10 @@
 		clip-path: none;
 		color: $color__text-screen;
 		display: block;
+
 		@include font-size(0.875);
-		font-weight: bold;
+
+		font-weight: 700;
 		height: auto;
 		left: 5px;
 		line-height: normal;
