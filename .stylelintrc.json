@@ -7,7 +7,7 @@
     ],
     "rules": {
         "font-family-no-missing-generic-family-keyword": null,
-		"no-descending-specificity": null,
-		"block-no-empty": null
+        "no-descending-specificity": null,
+        "block-no-empty": null
     }
 }

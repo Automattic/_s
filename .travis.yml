@@ -52,7 +52,7 @@ script:
   - composer validate --no-check-all --strict
 
   # Search for PHP syntax errors using PHP Parallel Lint.
-  # https://github.com/php-parallel-lint/PHP-Parallel-Lint
+  # @link https://github.com/php-parallel-lint/PHP-Parallel-Lint
   - composer lint:php
 
   # Check the PHP files with the coding standards documented in the phpcs.xml.dist file.
