@@ -43,7 +43,7 @@
 	};
 
 	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
+	links = menu.getElementsByTagName( 'a' );
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
@@ -59,7 +59,6 @@
 
 		// Move up through the ancestors of the current link until we hit .nav-menu.
 		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
@@ -76,13 +75,13 @@
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
 	 */
-	( function( container ) {
-		var touchStartFn, i,
+	( function() {
+		var touchStartFn,
 			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
 		if ( 'ontouchstart' in window ) {
 			touchStartFn = function( e ) {
-				var menuItem = this.parentNode, i;
+				var menuItem = this.parentNode;
 
 				if ( ! menuItem.classList.contains( 'focus' ) ) {
 					e.preventDefault();
@@ -103,4 +102,4 @@
 			}
 		}
 	}( container ) );
-} )();
+}() );

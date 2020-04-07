@@ -31,6 +31,7 @@ If you want to set things up manually, download `_s` from GitHub. The first thin
 3. Search for `Text Domain: _s` in `style.css`.
 4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
 5. Search for `_s-` to capture prefixed handles.
+6. Search for `_S_` (in uppercase) to capture constants.
 
 OR
 
@@ -39,6 +40,7 @@ OR
 3. Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium-is-awesome` in `style.css`.
 4. Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
 5. Search for: `_s-` and replace with: `megatherium-is-awesome-`.
+6. Search for: `_S_` and replace with: `MEGATHERIUM_IS_AWESOME_`.
 
 Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
 
