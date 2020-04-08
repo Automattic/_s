@@ -13,7 +13,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-_s is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+_s is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -776,12 +776,14 @@ a:hover, a:active {
 	display: inline;
 	float: left;
 	margin-right: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
 	margin-left: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .aligncenter {
@@ -789,6 +791,7 @@ a:hover, a:active {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------

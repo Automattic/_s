@@ -11,7 +11,7 @@
  * WooCommerce setup function.
  *
  * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
- * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)-in-3.0.0
+ * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
  *
  * @return void
  */
@@ -29,7 +29,7 @@ add_action( 'after_setup_theme', '_s_woocommerce_setup' );
  * @return void
  */
 function _s_woocommerce_scripts() {
-	wp_enqueue_style( '_s-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_enqueue_style( '_s-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -81,7 +81,7 @@ function _s_woocommerce_products_per_page() {
 add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
 
 /**
- * Product gallery thumnbail columns.
+ * Product gallery thumbnail columns.
  *
  * @return integer number of columns.
  */
@@ -175,7 +175,7 @@ if ( ! function_exists( '_s_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function _s_woocommerce_wrapper_after() {
-			?>
+		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php
