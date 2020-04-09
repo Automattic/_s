@@ -17,10 +17,12 @@
       "url": "https://github.com/Automattic/_s/issues"
     },
     "devDependencies": {
-      "@wordpress/scripts": "^7.2.0"
+        "node-sass": "^4.13.1",
+        "@wordpress/scripts": "^7.2.0"
     },
     "scripts": {
-      "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-      "lint:js": "wp-scripts lint-js 'js/*.js'"
+        "compile:css": "node-sass sass/style.scss style.css && node-sass sass/woocommerce.scss woocommerce.css && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+        "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+        "lint:js": "wp-scripts lint-js 'js/*.js'"
     }
 }
