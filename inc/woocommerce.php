@@ -11,12 +11,26 @@
  * WooCommerce setup function.
  *
  * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
- * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)-in-3.0.0
+ * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)
+ * @link https://github.com/woocommerce/woocommerce/wiki/Declaring-WooCommerce-support-in-themes
  *
  * @return void
  */
 function _s_woocommerce_setup() {
-	add_theme_support( 'woocommerce' );
+	add_theme_support(
+		'woocommerce',
+		array(
+			'thumbnail_image_width' => 150,
+			'single_image_width'    => 300,
+			'product_grid'          => array(
+				'default_rows'    => 3,
+				'min_rows'        => 1,
+				'default_columns' => 4,
+				'min_columns'     => 1,
+				'max_columns'     => 6,
+			),
+		)
+	);
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
@@ -29,7 +43,7 @@ add_action( 'after_setup_theme', '_s_woocommerce_setup' );
  * @return void
  */
 function _s_woocommerce_scripts() {
-	wp_enqueue_style( '_s-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+	wp_enqueue_style( '_s-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -71,36 +85,6 @@ function _s_woocommerce_active_body_class( $classes ) {
 add_filter( 'body_class', '_s_woocommerce_active_body_class' );
 
 /**
- * Products per page.
- *
- * @return integer number of products.
- */
-function _s_woocommerce_products_per_page() {
-	return 12;
-}
-add_filter( 'loop_shop_per_page', '_s_woocommerce_products_per_page' );
-
-/**
- * Product gallery thumnbail columns.
- *
- * @return integer number of columns.
- */
-function _s_woocommerce_thumbnail_columns() {
-	return 4;
-}
-add_filter( 'woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_columns' );
-
-/**
- * Default loop columns on product archives.
- *
- * @return integer products per row.
- */
-function _s_woocommerce_loop_columns() {
-	return 3;
-}
-add_filter( 'loop_shop_columns', '_s_woocommerce_loop_columns' );
-
-/**
  * Related Products Args.
  *
  * @param array $args related products args.
@@ -117,31 +101,6 @@ function _s_woocommerce_related_products_args( $args ) {
 	return $args;
 }
 add_filter( 'woocommerce_output_related_products_args', '_s_woocommerce_related_products_args' );
-
-if ( ! function_exists( '_s_woocommerce_product_columns_wrapper' ) ) {
-	/**
-	 * Product columns wrapper.
-	 *
-	 * @return  void
-	 */
-	function _s_woocommerce_product_columns_wrapper() {
-		$columns = _s_woocommerce_loop_columns();
-		echo '<div class="columns-' . absint( $columns ) . '">';
-	}
-}
-add_action( 'woocommerce_before_shop_loop', '_s_woocommerce_product_columns_wrapper', 40 );
-
-if ( ! function_exists( '_s_woocommerce_product_columns_wrapper_close' ) ) {
-	/**
-	 * Product columns wrapper close.
-	 *
-	 * @return  void
-	 */
-	function _s_woocommerce_product_columns_wrapper_close() {
-		echo '</div>';
-	}
-}
-add_action( 'woocommerce_after_shop_loop', '_s_woocommerce_product_columns_wrapper_close', 40 );
 
 /**
  * Remove default WooCommerce wrapper.
@@ -175,7 +134,7 @@ if ( ! function_exists( '_s_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function _s_woocommerce_wrapper_after() {
-			?>
+		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<?php

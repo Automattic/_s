@@ -4,92 +4,67 @@
 # For use with the Underscores WordPress theme.
 # @link https://github.com/Automattic/_s
 
-# Ditch sudo and use containers.
-# @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
-# @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
-sudo: false
+# Tell Travis CI which distro to use.
 dist: trusty
 
+# Cache directories between builds.
+# @link https://docs.travis-ci.com/user/caching/#arbitrary-directories
+cache:
+  directories:
+    # Cache directory for npm.
+    - $HOME/.npm
+    # Cache directory for older Composer versions.
+    - $HOME/.composer/cache/files
+    # Cache directory for more recent Composer versions.
+    - $HOME/.cache/composer/files
+
 # Declare project language.
-# @link https://about.travis-ci.org/docs/user/languages/php/
-language: php
+# @link https://docs.travis-ci.com/user/languages/php/
+language:
+  - php
 
-# Declare versions of PHP to use. Use one decimal max.
-# @link https://docs.travis-ci.com/user/build-configuration/
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - 7.3
+
 matrix:
-    fast_finish: true
+  fast_finish: true
+  include:
+    - php: 7.4
+      env: SNIFF=1
 
-    include:
-        # Current $required_php_version for WordPress: 5.2.4
-        # aliased to 5.2.17
-        - php: '5.2'
-          dist: precise
-        # aliased to a recent 5.6.x version
-        - php: '5.6'
-          env: SNIFF=1
-        # aliased to a recent 7.0.x version
-        - php: '7.0'
-        # aliased to a recent 7.2.x version
-        - php: '7.2'
-        # bleeding edge PHP
-        - php: 'nightly'
+before_install:
+  # Speed up build time by disabling Xdebug.
+  - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
+  # Download and install the latest long-term support release of node.
+  - nvm install --lts
+  # Install Composer dependencies.
+  - composer install
+  # Install NPM dependencies.
+  - npm install
 
-    allow_failures:
-        - php: 'nightly'
-
-# Use this to prepare the system to install prerequisites or dependencies.
-# e.g. sudo apt-get update.
-# Failures in this section will result in build status 'errored'.
-# before_install:
-
-# Use this to prepare your build for testing.
-# e.g. copy database configurations, environment variables, etc.
-# Failures in this section will result in build status 'errored'.
-before_script:
-    # Speed up build time by disabling Xdebug.
-    - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
-    # Set up temporary paths.
-    - export PHPCS_DIR=/tmp/phpcs
-    - export WPCS_DIR=/tmp/wpcs
-    - export PHPCOMPAT_DIR=/tmp/phpcompatibility
-    # Install CodeSniffer for WordPress Coding Standards checks.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
-    # Install WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b 0.14.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
-    # Install PHP Compatibility sniffs.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR; fi
-    # Set install path for PHPCS sniffs.
-    # @link https://github.com/squizlabs/PHP_CodeSniffer/blob/4237c2fc98cc838730b76ee9cee316f99286a2a7/CodeSniffer.php#L1941
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR; fi
-    # After CodeSniffer install you should refresh your path.
-    - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
-    # Install JSCS: JavaScript Code Style checker.
-    # @link http://jscs.info/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
-    # Install JSHint, a JavaScript Code Quality Tool.
-    # @link http://jshint.com/docs/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
-    # Pull in the WP Core jshint rules.
-    - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
-
-# Run test script commands.
-# Default is specific to project language.
-# All commands must exit with code 0 on success. Anything else is considered failure.
 script:
-    # Search for PHP syntax errors.
-    - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
-    # Run the theme through JSHint.
-    - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
-    # Run the theme through JavaScript Code Style checker.
-    - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
-    # WordPress Coding Standards.
-    # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
-    # @link https://pear.php.net/package/PHP_CodeSniffer/
-    # Uses a custom ruleset based on WordPress. This ruleset is automatically
-    # picked up by PHPCS as it's named `phpcs.xml(.dist)`.
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --runtime-set ignore_warnings_on_exit 1; fi
+  # Validate the composer.json file.
+  # @link https://getcomposer.org/doc/03-cli.md#validate
+  - composer validate --no-check-all --strict
+
+  # Search for PHP syntax errors using PHP Parallel Lint.
+  # @link https://github.com/php-parallel-lint/PHP-Parallel-Lint
+  - composer lint:php
+
+  # Check the PHP files with the coding standards documented in the phpcs.xml.dist file.
+  - if [[ "$SNIFF" == 1 ]]; then composer lint:wpcs; fi
+
+  # Check the JS files with the lint-js script defined in the @wordpress/scripts package.
+  - if [[ "$SNIFF" == 1 ]]; then npm run lint:js; fi
+
+  # Check the SCSS files with the lint-style script defined in the @wordpress/scripts package.
+  - if [[ "$SNIFF" == 1 ]]; then npm run lint:scss; fi
 
 # Receive notifications for build results.
-# @link https://docs.travis-ci.com/user/notifications/#Email-notifications
+# @link https://docs.travis-ci.com/user/notifications/#configuring-email-notifications
 notifications:
     email: false

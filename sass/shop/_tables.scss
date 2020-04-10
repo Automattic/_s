@@ -1,46 +1,49 @@
-/**
- * Shop tables
- */
 table.shop_table_responsive {
+
 	thead {
 		display: none;
 	}
 
 	tbody {
+
 		th {
 			display: none;
 		}
 	}
 
 	tr {
+
 		td {
 			display: block;
 			text-align: right;
 			clear: both;
 
-			&:before {
-				content: attr(data-title) ': ';
+			&::before {
+				content: attr(data-title) ": ";
 				float: left;
 			}
 
 			&.product-remove {
+
 				a {
 					text-align: left;
 				}
 
-				&:before {
+				&::before {
 					display: none;
 				}
 			}
 
 			&.actions,
 			&.download-actions {
-				&:before {
+
+				&::before {
 					display: none;
 				}
 			}
 
 			&.download-actions {
+
 				.button {
 					display: block;
 					text-align: center;
@@ -51,26 +54,31 @@ table.shop_table_responsive {
 }
 
 @media screen and (min-width: 48em) {
+
 	table.shop_table_responsive {
+
 		thead {
 			display: table-header-group;
 		}
 
 		tbody {
+
 			th {
 				display: table-cell;
 			}
 		}
 
 		tr {
-			th, td {
+
+			th,
+			td {
 				text-align: left;
 			}
 
 			td {
 				display: table-cell;
 
-				&:before {
+				&::before {
 					display: none;
 				}
 			}

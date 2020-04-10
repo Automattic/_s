@@ -31,13 +31,15 @@ get_header();
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', '_s' ); ?></h2>
 						<ul>
 							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
+							wp_list_categories(
+								array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								)
+							);
 							?>
 						</ul>
 					</div><!-- .widget -->

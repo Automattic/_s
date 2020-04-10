@@ -2,13 +2,14 @@
  * WooCommerce Price Filter
  */
 .widget_price_filter {
+
 	.price_slider {
 		margin-bottom: 1.5em;
 	}
 
 	.price_slider_amount {
 		text-align: right;
-		line-height: 2.4em;
+		line-height: 2.4;
 
 		.button {
 			float: left;
@@ -29,7 +30,7 @@
 		outline: none;
 		background: $color__link;
 		box-sizing: border-box;
-		margin-top: -.25em;
+		margin-top: -0.25em;
 		opacity: 1;
 
 		&:last-child {
@@ -38,7 +39,7 @@
 
 		&:hover,
 		&.ui-state-active {
-			box-shadow: 0 0 0 .25em rgba(#000, 0.1);
+			box-shadow: 0 0 0 0.25em rgba(#000, 0.1);
 		}
 	}
 
@@ -51,11 +52,11 @@
 	}
 
 	.price_slider_wrapper .ui-widget-content {
-		background: rgba(0,0,0,0.1);
+		background: rgba(0, 0, 0, 0.1);
 	}
 
 	.ui-slider-horizontal {
-		height: .5em;
+		height: 0.5em;
 	}
 
 	.ui-slider-horizontal .ui-slider-range {

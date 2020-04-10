@@ -1,15 +1,17 @@
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
 html {
 	box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
 }
 
 hr {
@@ -22,12 +24,12 @@ hr {
 @import "lists";
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto; // Make sure images are scaled correctly.
+	max-width: 100%; // Adhere to container width.
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+	margin: 1em 0; // Extra wide images within figure tags don't overflow the content area.
 }
 
 @import "tables";
