@@ -42,16 +42,16 @@
 		}
 	};
 
-    // Close small menu when user clicks outside
-    document.addEventListener( 'click', function( event ) {
-        var isClickInside = container.contains( event.target );
+	// Close small menu when user clicks outside
+	document.addEventListener( 'click', function( event ) {
+		var isClickInside = container.contains( event.target );
 
-        if ( ! isClickInside ) {
-            container.className = container.className.replace( ' toggled', '' );
-            button.setAttribute( 'aria-expanded', 'false' );
-            menu.setAttribute( 'aria-expanded', 'false' );
-        }
-    } );
+		if ( ! isClickInside ) {
+			container.className = container.className.replace( ' toggled', '' );
+			button.setAttribute( 'aria-expanded', 'false' );
+			menu.setAttribute( 'aria-expanded', 'false' );
+		}
+	} );
 
 	// Get all the link elements within the menu.
 	links = menu.getElementsByTagName( 'a' );
