@@ -66,6 +66,8 @@ if ( ! function_exists( '_s_setup' ) ) :
 				'comment-list',
 				'gallery',
 				'caption',
+				'style',
+				'script',
 			)
 		);
 
