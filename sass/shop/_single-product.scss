@@ -7,10 +7,11 @@
 
 		.woocommerce-product-gallery {
 			position: relative;
+			float: left;
 
 			.woocommerce-product-gallery__trigger {
 				position: absolute;
-				top: 1em;
+				top: 2em;
 				right: 1em;
 				display: block;
 				z-index: 99;
