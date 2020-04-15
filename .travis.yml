@@ -4,8 +4,9 @@
 # For use with the Underscores WordPress theme.
 # @link https://github.com/Automattic/_s
 
-# Tell Travis CI which distro to use.
-dist: trusty
+# Tell Travis CI which OS and which distro to use.
+os: linux
+dist: xenial
 
 # Cache directories between builds.
 # @link https://docs.travis-ci.com/user/caching/#arbitrary-directories
@@ -30,7 +31,7 @@ php:
   - 7.2
   - 7.3
 
-matrix:
+jobs:
   fast_finish: true
   include:
     - php: 7.4
