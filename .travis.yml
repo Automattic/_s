@@ -41,11 +41,11 @@ before_install:
   # Speed up build time by disabling Xdebug.
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
   # Download and install the latest long-term support release of node.
-  - nvm install --lts
+  - if [[ "$SNIFF" == 1 ]]; then nvm install --lts; fi
   # Install Composer dependencies.
   - composer install
   # Install NPM dependencies.
-  - npm install
+  - if [[ "$SNIFF" == 1 ]]; then npm install; fi
 
 script:
   # Validate the composer.json file.
