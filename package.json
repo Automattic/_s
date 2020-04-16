@@ -22,7 +22,7 @@
     "node-sass": "^4.13.1",
     "rtlcss": "^2.5.0",
     "stylelint": "^13.3.2",
-    "stylelint-config-wordpress": "^16.0.0"
+    "stylelint-config-wordpress": "^15.0.0"
   },
   "rtlcssConfig": {
     "options": {
