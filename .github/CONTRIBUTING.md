@@ -22,13 +22,14 @@ Found a bug you can fix? Fantastic! Patches are always welcome. Here's a few tip
 * Include the purpose of your PR. Be explicit about the issue your PR solves.
 * Reference any existing issues that relate to your PR. This allows everyone to easily see all related discussions.
 * When submitting a change that affects CSS, please make sure that both SCSS sources and output CSS have been updated equally.
+* `_s` complies with the [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/) and any PR should comply as well.
 
 By contributing code to `_s`, you grant its use under the [GNU General Public License v2 (or later)](LICENSE).
 
 ## Underscores.me
 
-If your issue is specific to the [Underscores.me](http://underscores.me) website, the [Underscores.me GitHub repo](https://github.com/Automattic/underscores.me) is the right place for you.
+If your issue is specific to the [Underscores.me](https://underscores.me) website, the [Underscores.me GitHub repo](https://github.com/Automattic/underscores.me) is the right place for you.
 
-The preferred method of generating a new theme based on `_s` is the [Underscores.me](http://underscores.me) website. If you have an alternative method, such as a shell script, write a blog post about it or host it in a separate repo -- and make sure to mention [@underscoresme](https://twitter.com/underscoresme) in your tweets!
+The preferred method of generating a new theme based on `_s` is the [Underscores.me](https://underscores.me) website. If you have an alternative method, such as a shell script, write a blog post about it or host it in a separate repo -- and make sure to mention [@underscoresme](https://twitter.com/underscoresme) in your tweets!
 
-Want to have your avatar listed as one of the `_s` contributors [here](http://underscores.me/#contribute)? Just make sure you have an email address added to both GitHub and your local Git installation.
+Want to have your avatar listed as one of the `_s` contributors [here](https://underscores.me/#contribute)? Just make sure you have an email address added to both GitHub and your local Git installation.
