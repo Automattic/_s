@@ -72,9 +72,6 @@ table.shop_table_responsive tr td.download-actions .button {
  * Products
  */
 ul.products {
-	content: "";
-	display: table;
-	table-layout: fixed;
 	margin: 0;
 	padding: 0;
 }
@@ -143,9 +140,6 @@ ul.products li.product .button {
  * Single product
  */
 .single-product div.product {
-	content: "";
-	display: table;
-	table-layout: fixed;
 	position: relative;
 }
 
@@ -167,9 +161,6 @@ ul.products li.product .button {
 }
 
 .single-product div.product .woocommerce-product-gallery .flex-control-thumbs {
-	content: "";
-	display: table;
-	table-layout: fixed;
 	margin: 0;
 	padding: 0;
 }
@@ -284,9 +275,6 @@ ul.products li.product .button {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	content: "";
-	display: table;
-	table-layout: fixed;
 }
 
 .site-header-cart .cart-contents {
@@ -469,9 +457,6 @@ p.stars.selected a:not(.active)::before {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	content: "";
-	display: table;
-	table-layout: fixed;
 	background-color: #0f834d;
 	clear: both;
 }
