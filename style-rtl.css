@@ -368,7 +368,6 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
-	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -404,7 +403,6 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", courier, monospace;
-	font-size: 15px;
 	font-size: 0.9375rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
@@ -418,7 +416,6 @@ kbd,
 tt,
 var {
 	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
 	font-size: 0.9375rem;
 }
 
@@ -518,7 +515,6 @@ input[type="submit"] {
 	border-radius: 3px;
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
@@ -744,7 +740,6 @@ a:active {
 	clip-path: none;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
 	font-size: 0.875rem;
 	font-weight: 700;
 	height: auto;
