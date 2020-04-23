@@ -1,12 +1,11 @@
 .no-sidebar {
 
-	.content-area {
-		float: none;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.site-main {
-		margin-right: 0;
+	.site {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer";
 	}
 }
