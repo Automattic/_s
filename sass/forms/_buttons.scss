@@ -7,9 +7,7 @@ input[type="submit"] {
 	border-radius: 3px;
 	background: $color__background-button;
 	color: rgba(0, 0, 0, 0.8);
-
-	@include font-size(0.75);
-
+	font-size: 0.75rem;
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 
