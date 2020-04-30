@@ -13,6 +13,7 @@ const excludes = [
 	'.gitattributes',
 	'.github',
 	'.gitignore',
+	'README.md',
 	'bin',
 	'composer.json',
 	'composer.lock',
