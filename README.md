@@ -19,30 +19,50 @@ Note: `.no-sidebar` styles are not automatically loaded.
 * Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 
-Getting Started
+Installation
 ---------------
 
-If you want to keep it simple, head over to https://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+### Requirements
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+`_s` requires the following dependencies:
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in `style.css`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
-6. Search for `_S_` (in uppercase) to capture constants.
+- [Node.js](https://nodejs.org/)
+- [Composer](https://getcomposer.org/)
 
-OR
+### Quick Start
 
-1. Search for: `'_s'` and replace with: `'megatherium-is-awesome'`.
-2. Search for: `_s_` and replace with: `megatherium_is_awesome_`.
-3. Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium-is-awesome` in `style.css`.
-4. Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for: `_s-` and replace with: `megatherium-is-awesome-`.
-6. Search for: `_S_` and replace with: `MEGATHERIUM_IS_AWESOME_`.
+Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+
+1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
+2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
+3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
+4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
+5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
+6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
 
 Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+
+### Setup
+
+To start using all the tools that comes with `_s`  you need to install the necessary Node.js and Composer dependencies :
+
+```sh
+$ composer install
+$ npm install
+```
+
+### Available CLI commands
+
+`_s` comes packed with CLI command tailored for WordPress theme development.
+
+- `composer lint:wpcs` : check all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
+- `Composer lint:php` : check all PHP files for syntax errors.
+- `Composer make-pot` : generates a .pot file in the `language/` directory.
+- `npm run compile:css` : compile SASS files to css.
+- `npm run compile:rtl` : generate an RTL stylesheet.
+- `npm run lint:scss` : check all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
+- `npm run lint:js` : check all PHP files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
 
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
 
