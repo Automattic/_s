@@ -55,13 +55,13 @@ $ npm install
 
 `_s` comes packed with CLI command tailored for WordPress theme development.
 
-- `composer lint:wpcs` : check all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `Composer lint:php` : check all PHP files for syntax errors.
+- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
+- `Composer lint:php` : checks all PHP files for syntax errors.
 - `Composer make-pot` : generates a .pot file in the `language/` directory.
-- `npm run compile:css` : compile SASS files to css.
-- `npm run compile:rtl` : generate an RTL stylesheet.
-- `npm run lint:scss` : check all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : check all PHP files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
+- `npm run compile:css` : compiles SASS files to css.
+- `npm run compile:rtl` : generates an RTL stylesheet.
+- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
+- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
 - `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
 
 Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
