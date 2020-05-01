@@ -53,7 +53,7 @@ $ npm install
 
 ### Available CLI commands
 
-`_s` comes packed with CLI command tailored for WordPress theme development.
+`_s` comes packed with CLI commands tailored for WordPress theme development :
 
 - `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
 - `Composer lint:php` : checks all PHP files for syntax errors.
