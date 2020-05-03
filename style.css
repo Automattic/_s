@@ -905,47 +905,47 @@ object {
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-    margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 	display: grid;
-	grid-gap: 25px;
+	grid-gap: 1.5em;
 }
 
 .gallery-item {
-    display: inline-block;
-    text-align: center;
-    width: 100%;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
 }
 
-.gallery.gallery-columns-2 {
-    grid-template-columns: repeat(2,1fr);
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
 }
 
-.gallery.gallery-columns-3 {
-    grid-template-columns: repeat(3,1fr);
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
 }
 
 .gallery-columns-4 {
-    grid-template-columns: repeat(4,1fr);
+	grid-template-columns: repeat(4, 1fr);
 }
 
 .gallery-columns-5 {
-    grid-template-columns: repeat(5,1fr);
+	grid-template-columns: repeat(5, 1fr);
 }
 
 .gallery-columns-6 {
-    grid-template-columns: repeat(6,1fr);
+	grid-template-columns: repeat(6, 1fr);
 }
 
 .gallery-columns-7 {
-    grid-template-columns: repeat(7,1fr);
+	grid-template-columns: repeat(7, 1fr);
 }
 
 .gallery-columns-8 {
-    grid-template-columns: repeat(8,1fr);
+	grid-template-columns: repeat(8, 1fr);
 }
 
 .gallery-columns-9 {
-    grid-template-columns: repeat(9,1fr);
+	grid-template-columns: repeat(9, 1fr);
 }
 
 .gallery-caption {
