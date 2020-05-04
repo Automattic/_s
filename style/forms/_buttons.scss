@@ -1,15 +1,16 @@
-button,
+//General
 .button,
 .button:visited,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
-.wp-block-button .wp-block-button__link,
+.wp-block-button__link,
 .loadmore__button,
-.wp-block-svbk-card .wp-block-svbk-card__link,
+.wp-block-svbk-card__link,
 .wp-block-svbk-hero__link,
-.more-link {
-	border-width: 1px;
+.more-link,
+.readmore {
+	border-width: 2px;
 	border-style: solid;
 	border-color: $color__border-button;
 	background: $color__background-button;
@@ -33,381 +34,180 @@ input[type="submit"],
 		color: $color__text-button;
 	}
 
-	&:hover,
-	&:focus {
-		background-color: $color__background-button-hover;
+	&:hover {
+		background: $color__background-button-hover;
 		border-color: $color__border-button-hover;
 		box-shadow: 0 2px 4px rgba(0,0,0,0.35);
 		color: $color__text-button;
 	}
 
+	&:focus,
 	&:active {
 		border-color: $color__border-button-focus;
-		background-color: $color__background-button-focus;
+		background: $color__background-button-focus;
 		outline: none;
 		box-shadow: 0 0 2px rgba(0,0,0,0.4);
 		color: $color__text-button;
 	}
 }
 
+//General with color mapping
 .wp-block-button__link {
 
-	&.has-primary-background-color {
-		background-color: $color__corporate;
-		border-color: $color__corporate;
+	@each $name, $value in $colors {
+
+		&.has-#{$name}-background-color {
+			background: $value;
+			border-color: $value;
+
+			&:hover {
+				background: lighten( $value, 10% );
+				border-color: lighten( $value, 10% );
+			}
+
+			&:focus,
+			&:active {
+				background: darken( $value, 5% );
+				border-color: darken( $value, 5% );
+			}
+		}
+
+		&.has-#{$name}-color {
+			color: $value;
+		}
 	}
 
-	&.has-primary-color,
-	&.has-primary-color:hover,
-	&.has-primary-color:focus,
-	&.has-primary-color:active,
-	&.has-primary-color:visited {
-		color: $color__corporate;
-	}
+	&.has-gradient-background-color {
+		border: none;
+		transition: background .15s ease-in-out,
+		color .15s ease-in-out,
+		opacity .15s ease-in-out,
+		box-shadow .15s ease-in-out;
 
-	&.has-secondary-background-color {
-		background-color: $color__corporate-secondary;
-		border-color: $color__corporate-secondary;
+		&:hover,
+		&:focus,
+		&:active {
+			background-image: $color__background-gradient;
+		}
 
 		&:hover {
-			$hover-color: lighten($color__corporate-secondary, 10%);
-			background-color: $hover-color;
-			border-color: $hover-color;
+			opacity: .8;
 		}
 
-		&:focus {
-			$focus-color: darken($color__corporate-secondary, 8%);
-			background-color: $focus-color;
-			border-color: $focus-color;
+		&:focus,
+		&:active {
+			opacity: .9;
 		}
 	}
+}
 
-	&.has-secondary-color,
-	&.has-secondary-color:hover,
-	&.has-secondary-color:focus,
-	&.has-secondary-color:active,
-	&.has-secondary-color:visited {
-		color: $color__corporate-secondary;
+//Outline and Text Style Buttons
+.is-style-outline .wp-block-button__link,
+.wp-block-svbk-collapse__button,
+.wp-block-svbk-card__link,
+.loadmore__button,
+.is-style-text-button .wp-block-button__link,
+.testimonial .wp-block-button__link,
+.is-style-phone .wp-block-button__link,
+.wp-block-svbk-profile__link,
+.readmore {
+	background: rgba(255,255,255,0) !important;
+	color: $color__border-button;
+
+	&:visited {
+		color: $color__border-button;
 	}
 
-	&.has-dark-gray-background-color {
-		background-color: $color__background-dark;
-		border-color: $color__background-dark;
-
-		&:hover {
-			$hover-color: lighten($color__background-dark, 10%);
-			background-color: $hover-color;
-			border-color: $hover-color;
-		}
-
-		&:focus {
-			$focus-color: darken($color__background-dark, 8%);
-			background-color: $focus-color;
-			border-color: $focus-color;
-		}
+	&:hover {
+		color: $color__border-button-hover;
 	}
 
-	&.has-dark-gray-color,
-	&.has-dark-gray-color:hover,
-	&.has-dark-gray-color:focus,
-	&.has-dark-gray-color:active,
-	&.has-dark-gray-color:visited {
-		color: $color__background-dark;
+	&:focus,
+	&:active {
+		color: $color__border-button-focus;
 	}
+}
 
-	&.has-light-gray-background-color {
-		background-color: $color__background-light;
-		border-color: $color__background-light;
+.is-style-outline,
+.is-style-text-button {
 
-		&:hover {
-			$hover-color: lighten($color__background-light, 10%);
-			background-color: $hover-color;
-			border-color: $hover-color;
+	.wp-block-button__link {
+
+		@each $name, $value in $colors {
+
+			&.has-#{$name}-color {
+				color: $value;
+	
+				&:hover {
+					color: lighten( $value, 10% );
+				}
+	
+				&:focus,
+				&:active {
+					color: darken( $value, 5% );
+				}
+			}
 		}
-
-		&:focus {
-			$focus-color: darken($color__background-light, .8%);
-			background-color: $focus-color;
-			border-color: $focus-color;
-		}
-	}
-
-	&.has-light-gray-color,
-	&.has-light-gray-color:hover,
-	&.has-light-gray-color:focus,
-	&.has-light-gray-color:active,
-	&.has-light-gray-color:visited  {
-		color: $color__background-light;
-	}
-
-	&.has-white-background-color {
-		background-color: #fff;
-		border-color: #fff;
-
-		&:hover {
-			$hover-color: darken(#fff, .5%);
-			background-color: $hover-color;
-			border-color: $hover-color;
-		}
-
-		&:focus {
-			$focus-color: darken(#fff, .8%);
-			background-color: $focus-color;
-			border-color: $focus-color;
-		}
-	}
-
-	&.has-white-color,
-	&.has-white-color:hover,
-	&.has-white-color:focus,
-	&.has-white-color:active,
-	&.has-white-color:visited {
-		color: #fff;
 	}
 }
 
 .is-style-outline .wp-block-button__link,
 .wp-block-svbk-collapse__button,
-.wp-block-svbk-card .wp-block-svbk-card__button .wp-block-svbk-card__link,
+.wp-block-svbk-card__link,
 .loadmore__button {
-	color: $color__border-button-secondary;
-	border-color: $color__border-button-secondary;
-	background: rgba(255,255,255,0);
 	box-shadow: 0 0 0 1px transparent;
 
-	&:hover,
-	&:active,
-	&:focus,
-	&:visited {
-		background: rgba(255,255,255,0);
-	}
-
-	&:hover,
-	&:focus {
-		color: $color__border-button-hover-secondary;
-		box-shadow: 0 0 0 1px $color__border-button-hover-secondary;
-		border-color: $color__border-button-hover-secondary;
-	}
-
-	&:active {
-		color: $color__border-button-focus-secondary;
-		border-color: $color__border-button-focus-secondary;
-	}
-
-	&:visited {
-		color: $color__border-button-secondary;
-		border-color: $color__border-button-secondary;
-	}
-
-	&.has-primary-color {
-		color: $color__corporate;
-		border-color: $color__corporate;
-
-		&:hover {
-			box-shadow: 0 0 0 1px $color__corporate;	
-		}
-
-		&:visited {
-			color: $color__corporate !important;
-		}
-	}
-
-	&.has-secondary-color {
-		color: $color__corporate-secondary;
-		border-color: $color__corporate-secondary;
-
-		&:hover {
-			box-shadow: 0 0 0 1px $color__corporate-secondary;	
-		}
-
-		&:visited {
-			color: $color__corporate-secondary;	
-		}
-	}
-
-	&.has-dark-gray-color {
-		color: $color__background-dark;
-		border-color: $color__background-dark;
-
-		&:hover {
-			box-shadow: 0 0 0 1px $color__background-dark;	
-		}
-
-		&:visited {
-			color: $color__background-dark;	
-		}
-	}
-
-	&.has-light-gray-color {
-		color: $color__background-light;
-		border-color: $color__background-light;
-
-		&:hover {
-			box-shadow: 0 0 0 1px $color__background-light;	
-		}
-
-		&:visited {
-			color: $color__background-light;	
-		}
-	}
-
-	&.has-white-color {
-		color: #fff;
-		border-color: #fff;
-
-		&:hover {
-			box-shadow: 0 0 0 1px #fff;	
-		}
-
-		&:visited {
-			color: #fff;	
-		}
-	}
-}
-
-.wp-block-svbk-profile .wp-block-button__link,
-.testimonial .wp-block-button__link,
-.is-style-text-button .wp-block-button__link,
-.is-style-phone .wp-block-button__link,
-.more-link {
-	background: rgba(255,255,255,0);
-	font-weight: bold;
-	text-transform: uppercase;
-	box-shadow: none;
-	border: none;
-	color: $color__link;
-
-	&:hover,
-	&:focus,
-	&:visited {
-		box-shadow: none;
-	}
-}
-
-.wp-block-svbk-profile .wp-block-button__link,
-.testimonial .wp-block-button__link,
-.more-link {
-	padding: .8em 1em;
-	transition: background .15s ease-in-out;
-
-	&:hover,
-	&:focus,
-	&:visited {
-		color: $color__corporate;
-	}
-
 	&:hover {
-		background: rgba( $color__corporate, .08 );
+		box-shadow: 0 0 0 1px $color__border-button-hover;
 	}
 
-	&:focus {
-		background: rgba( $color__corporate, .15 );
+	&:focus,
+	&:active {
+		color: $color__border-button-focus;
+		box-shadow: 0 0 0 1px $color__border-button-focus;
+	}
+
+	@each $name, $value in $colors {
+
+		&.has-#{$name}-color {
+			border-color: $value;
+
+			&:hover {
+				border-color: lighten( $value, 10% );
+				box-shadow: 0 0 0 1px lighten( $value, 10% );
+			}
+
+			&:focus,
+			&:active {
+				border-color: darken( $value, 5% );
+				box-shadow: 0 0 0 1px darken( $value, 5% );
+			}
+		}
+	}
+}
+
+.is-style-text-button .wp-block-button__link,
+.testimonial .wp-block-button__link,
+.is-style-phone .wp-block-button__link,
+.wp-block-svbk-profile__link,
+.readmore {
+	border: none;
+	box-shadow: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: none;
 	}
 }
 
 .is-style-text-button .wp-block-button__link,
 .is-style-phone .wp-block-button__link {
-	padding: 0;
-
-	&:hover,
-	&:focus,
-	&:visited {
-		background: none;
-		box-shadow: none;
-		border: none;
-	}
-
-	&:hover {
-		color: $color__link-hover;
-	}
-
-	&:focus {
-		color: $color__link-focus;
-	}
-
-	&.has-primary-color {
-		color: $color__corporate;
-
-		&:hover {
-			color: lighten($color__corporate, 10%);
-		}
-
-		&:focus {
-			color: lighten($color__corporate, 5%);
-		}
-	}
-
-	&.has-secondary-color {
-		color: $color__corporate-secondary;
-
-		&:hover {
-			color: lighten($color__corporate-secondary, 10%);
-		}
-
-		&:focus {
-			color: lighten($color__corporate-secondary, 5%);
-		}
-	}
-
-	&.has-dark-gray-color {
-		color: $color__background-dark;
-
-		&:hover {
-			color: lighten($color__background-dark, 10%);
-		}
-
-		&:focus {
-			color: lighten($color__background-dark, 5%);
-		}
-	}
-
-	&.has-light-gray-color {
-		color: $color__background-light;
-
-		&:hover {
-			color: darken($color__background-light, 10%);
-		}
-
-		&:focus {
-			color: darken($color__background-light, 5%);
-		}
-	}
-
-	&.has-white-color {
-		color: #fff;
-
-		&:visited {
-			color: #fff;	
-		}
-
-		&:hover {
-			color: darken(#fff, 10%);
-		}
-
-		&:focus {
-			color: darken(#fff, 5%);
-		}
-	}
+	padding-left: 0;
+	padding-right: 0;
 }
 
-.wp-block-button.is-style-secondary .wp-block-button__link,
-.is-style-download input[type="submit"] {
-	background: $color__background-button-secondary;
-	border-color: $color__border-button-secondary;
-	color: #fff;
-
-	&:hover,
-	&:focus {
-		background: $color__background-button-hover-secondary;
-		border-color: $color__border-button-hover-secondary;
-	}
-
-	&:active {
-		border-color: $color__border-button-focus-secondary;
-		background-color: $color__background-button-focus-secondary;
-	}
-}
-
+//Text + Icon
 .is-style-phone .wp-block-button__link {
 	@include font-size(1.3);
 	padding: 0;
@@ -415,7 +215,7 @@ input[type="submit"],
 
 	&:hover,
 	&:focus {
-		background: none;
+		background: rgba(255, 255, 255, 0);
 	}
 
 	&:hover {
@@ -433,23 +233,14 @@ input[type="submit"],
 	}
 }
 
-.is-style-right-arrow .wp-block-button__link:after {
-	@include icon-content('\e922');
-	@include font-size(.8);
-	vertical-align: middle;
-	margin-left: 8px;
-}
+.is-style-arrow .wp-block-button__link,
+.wp-block-svbk-card__link,
+.wp-block-svbk-profile__link,
+.readmore {
 
-.has-arrow-icon,
-.wp-block-svbk-card__button,
-.wp-block-svbk-profile__button {
-
-	.wp-block-button__link {
-
-		&:after {
-			@include icon-content('\e922');
-			@include font-size(.8);
-			margin-left: 8px;
-		}
+	&:after {
+		@include icon-content('\e922');
+		@include font-size(.8);
+		margin-left: 8px;
 	}
 }

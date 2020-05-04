@@ -17,17 +17,6 @@
 
 .added_to_cart,
 .button.checkout {
-	background: $color__background-button-secondary;
-	color: #fff;
-
-	&:hover,
-	&:focus {
-		background: $color__background-button-hover-secondary;
-	}
-
-	&:active {
-		background-color: $color__background-button-focus-secondary;
-	}
 
 	&:after {
 		@include font-size(.6);

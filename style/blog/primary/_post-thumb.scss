@@ -97,24 +97,5 @@
 		position: absolute;
 		bottom: 0;
 		right: 0;
-		padding: .8em 1em;
-		font-weight: bold;
-		text-transform: uppercase;
-		transition: background .15s ease-in-out;
-
-		&:after {
-			@include icon-content("\e922");
-			@include font-size(.8);
-			font-weight: normal;
-			margin-left: 10px;
-		}
-
-		&:hover {
-			background: rgba( $color__corporate, .08 )
-		}
-
-		&:focus {
-			background: rgba( $color__corporate, .15 )
-		}
 	}
 }

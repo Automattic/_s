@@ -16,23 +16,18 @@ wp.blocks.registerBlockStyle( 'core/list', {
 } );
 
 wp.blocks.registerBlockStyle( 'core/button', {
-    name: 'secondary',
-    label: 'Secondary'
-} );
-
-wp.blocks.registerBlockStyle( 'core/button', {
     name: 'text-button',
     label: 'Text button'
 } );
 
 wp.blocks.registerBlockStyle( 'core/button', {
     name: 'phone',
-    label: 'Phone'
+    label: 'Phone icon'
 } );
 
 wp.blocks.registerBlockStyle( 'core/button', {
-    name: 'right-arrow',
-    label: 'Right Arrow Icon'
+    name: 'arrow',
+    label: 'Arrow icon'
 } );
 
 wp.blocks.registerBlockStyle( 'core/group', {
@@ -58,26 +53,6 @@ wp.blocks.registerBlockStyle( 'core/columns', {
 wp.blocks.registerBlockStyle( 'core/columns', {
     name: 'split-inverted',
     label: 'Split Inverted'
-} );
-
-wp.blocks.registerBlockStyle( 'core/image', {
-    name: 'rounded',
-    label: 'Rounded'
-} );
-
-wp.blocks.registerBlockStyle( 'core/image', {
-    name: 'rounded-corners',
-    label: 'Rounded Corners'
-} );
-
-wp.blocks.registerBlockStyle( 'core/columns', {
-    name: 'shrink-first',
-    label: 'Shrink First'
-} );
-
-wp.blocks.registerBlockStyle( 'core/columns', {
-    name: 'shrink-last',
-    label: 'Shrink Last'
 } );
 
 

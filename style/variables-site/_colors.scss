@@ -1,7 +1,7 @@
 //Corporate
-$color__corporate: #1976d2;
-$color__corporate-secondary: #7edeea;
-$color__corporate-tertiary: #7edeea;
+$color__corporate: #0097a7;
+$color__corporate-secondary: #ffa000;
+$color__corporate-tertiary: #1D4E89;
 
 $shadow__card: 1px 1px 4px rgba(0,0,0,.1);
 
@@ -26,7 +26,7 @@ $color__background-sub-footer: #333;
 
 $color__background-dark: #6b6b6b;
 $color__background-light: #F6F7F9;
-$color__background-gradient: linear-gradient(to bottom, #1976d2, darken(#1976d2, 15%));
+$color__background-gradient: linear-gradient(to bottom, $color__corporate, darken($color__corporate, 15%));
 
 $color__background-hr: #f0f0f0;
 $color__background-pre: #eee;
@@ -37,24 +37,25 @@ $color__border-input: #ccc;
 $color__border-abbr: #666;
 
 //Button
-
 $color__text-button: #fff;
-$color__background-button: #1976d2;
+$color__background-button: #ffa000;
 $color__border-button: $color__background-button;
-$color__background-button-hover: #63a4ff;
+$color__background-button-hover: lighten($color__background-button, 10%);
 $color__border-button-hover: $color__background-button-hover;
-$color__background-button-focus: #004ba0;
+$color__background-button-focus: darken($color__background-button, 5%);
 $color__border-button-focus: $color__background-button-focus;
-
-$color__background-button-secondary: #424242;
-$color__border-button-secondary: $color__background-button-secondary;
-$color__background-button-hover-secondary: #595959;
-$color__border-button-hover-secondary: $color__background-button-hover-secondary;
-$color__background-button-focus-secondary: #3b3b3b;
-$color__border-button-focus-secondary: $color__background-button-focus-secondary;
 
 //Links
 $color__link: $color__background-button;
 $color__link-hover: $color__background-button-hover;
 $color__link-focus: $color__background-button-focus;
 $color__link-visited: $color__background-button-focus;
+
+//Colors List for Mapping
+$colors: (
+    "primary": $color__corporate,
+    "secondary": $color__corporate-secondary,
+    "dark-gray": $color__background-dark,
+    "light-gray": $color__background-light,
+    "white": #fff
+);
