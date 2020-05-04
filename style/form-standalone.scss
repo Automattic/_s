@@ -127,6 +127,19 @@ body {
 
 	input[type="submit"] {
 		border: none;
+		background: $color__background-button;
+		color: $color__text-button;
+
+		&:hover {
+			background-color: $color__background-button-hover !important;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.35);
+		}
+
+		&:active,
+		&:focus {
+			background-color: $color__background-button-focus !important;
+			box-shadow: 0 0 2px rgba(0,0,0,0.4);
+		}
 	}
 
 	.form-columns-1 .hs-form-field .input {
