@@ -111,6 +111,10 @@ body {
 		background: #fff;
 		max-width: none;
 		width: 100% !important;
+
+		&:focus {
+			border-color: $color__corporate;
+		}
 	}
 
 	.hs-submit {
