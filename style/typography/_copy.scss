@@ -87,8 +87,11 @@ em.underline-stroke {
 	&:after {
 		content: '';
 		background: url('images/svg/brush-line.svg');
+		background-repeat: no-repeat;
 		display: block;
-		height: 8px;
+		height: 7px;
+		margin-top: -4px;
+		margin-bottom: -3px;
 		width: 100%;
 	}
 }
