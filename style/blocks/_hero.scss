@@ -132,8 +132,11 @@
 
     @media screen and (min-width: $size__page-width) {
         padding: 40px;
-        @include clearfix();
-        @include clearfix-after();
+
+        &:after {
+            @include clearfix();
+            @include clearfix-after();
+        }
     }
 }
 
