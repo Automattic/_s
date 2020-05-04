@@ -1,5 +1,6 @@
-.has-2-columns.wp-block-svbk-banner {
-	@include background-image('post_banner-background', 'jpg');
+.wp-block-svbk-banner {
+	background-color: $color__corporate;
+	@include background-image('post_banner-background', 'jpeg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: right;
@@ -57,7 +58,6 @@
 	}
 
 	@media screen and (min-width: breakpoint('tablet-portrait')) {
-		@include background-image('post_banner-background-large', 'jpg');
 
 		.wp-block-column {
 			flex-basis: 40%;
@@ -89,7 +89,6 @@
 
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
 			text-align: left;
-			@include background-image('post_banner-background', 'jpg');
 
 			.wp-block-column:last-of-type {
 				padding-left: 50px;
