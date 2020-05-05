@@ -25,11 +25,6 @@ wp.blocks.registerBlockStyle( 'core/button', {
     label: 'Phone icon'
 } );
 
-wp.blocks.registerBlockStyle( 'core/button', {
-    name: 'arrow',
-    label: 'Arrow icon'
-} );
-
 wp.blocks.registerBlockStyle( 'core/group', {
     name: 'no-padding',
     label: 'No Padding'
