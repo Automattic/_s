@@ -30,6 +30,10 @@
                 width: 32%;
                 margin-right: 2%;
 
+                &:nth-of-type(3n + 1) {
+                    clear: left;
+                }
+
                 &:nth-of-type(3n + 3) {
                     margin-right: 0;
                 }
