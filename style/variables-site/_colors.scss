@@ -30,7 +30,7 @@ $color__background-gradient: linear-gradient(to bottom, $color__corporate, darke
 
 $color__background-hr: #f0f0f0;
 $color__background-pre: #eee;
-$color__background-highlight: rgba(233,75,75,.2);
+$color__background-highlight: rgba($color__corporate, .2);
 
 //Elements borders
 $color__border-input: #ccc;
