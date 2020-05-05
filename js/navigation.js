@@ -25,12 +25,12 @@
 		return;
 	}
 
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+	if ( menu.classList.contains( 'nav-menu' ) ) {
 		menu.className += ' nav-menu';
 	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+		if ( container.classList.contains( 'toggled' ) ) {
 			container.className = container.className.replace( ' toggled', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 		} else {
@@ -65,10 +65,10 @@
 		var self = this;
 
 		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+		while ( self.classList.contains( 'nav-menu' ) ) {
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
+				if ( -1 !== self.classList.contains( 'focus' ) ) {
 					self.className = self.className.replace( ' focus', '' );
 				} else {
 					self.className += ' focus';
