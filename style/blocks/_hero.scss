@@ -151,17 +151,13 @@
 }
 
 .wp-block-svbk-hero__title {
-    color: $color__corporate;
-    margin: 0 0 10px;
-}
-
-h1 {
     @include font-size(2.2);
     line-height: 1.1em;
+    margin: 0 0 10px;
     
     em {
         font-style: normal;
-        color: $color__text-main;
+        color: $color__corporate;
     }
     
     @media screen and (min-width: breakpoint('tablet-landscape')) {
