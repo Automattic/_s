@@ -142,6 +142,8 @@ blockquote,
 	blockquote {
 		background: none;
 		padding: 0 40px;
+		margin: 0 auto;
+		max-width: $size__large-text-width;
 
 		p {
 			position: relative;
