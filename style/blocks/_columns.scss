@@ -18,10 +18,11 @@
 		padding-bottom: 0;
 	}
 
-	.wp-block-column:nth-child(2n) {
+	.wp-block-column {
+		margin-bottom: 20px;
 
-		h2 {
-			margin-top: 0;
+		&:last-of-type {
+			margin-bottom: 0;
 		}
 	}
 
@@ -33,6 +34,7 @@
 
 		.wp-block-column {
 			flex-grow: 1;
+			margin-bottom: 0;
 		}
 
 		.wp-block-column:first-child {
