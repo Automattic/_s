@@ -56,8 +56,8 @@ $ npm install
 `_s` comes packed with CLI commands tailored for WordPress theme development :
 
 - `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `Composer lint:php` : checks all PHP files for syntax errors.
-- `Composer make-pot` : generates a .pot file in the `language/` directory.
+- `composer lint:php` : checks all PHP files for syntax errors.
+- `composer make-pot` : generates a .pot file in the `language/` directory.
 - `npm run compile:css` : compiles SASS files to css.
 - `npm run compile:rtl` : generates an RTL stylesheet.
 - `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
