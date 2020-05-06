@@ -68,7 +68,7 @@
 		while ( self.classList.contains( 'nav-menu' ) ) {
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.classList.contains( 'focus' ) ) {
+				if ( self.classList.contains( 'focus' ) ) {
 					self.className = self.className.replace( ' focus', '' );
 				} else {
 					self.className += ' focus';
