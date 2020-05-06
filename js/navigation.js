@@ -25,7 +25,7 @@
 		return;
 	}
 
-	if ( menu.classList.contains( 'nav-menu' ) ) {
+	if ( ! menu.classList.contains( 'nav-menu' ) ) {
 		menu.className += ' nav-menu';
 	}
 
