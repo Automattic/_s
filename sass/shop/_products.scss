@@ -1,9 +1,4 @@
-/**
- * Products
- */
 ul.products {
-
-	@include clearfix;
 	margin: 0;
 	padding: 0;
 
@@ -46,28 +41,24 @@ ul.products {
 		}
 	}
 
-	.columns-1 {
+	ul.products.columns-1 {
 
-		ul.products {
-
-			li.product {
-				float: none;
-				width: 100%;
-			}
+		li.product {
+			float: none;
+			width: 100%;
 		}
+
 	}
 
 	@for $i from 2 through 6 {
 
-		.columns-#{$i} {
+		ul.products.columns-#{$i} {
 
-			ul.products {
+			li.product {
 
-				li.product {
-
-					@include column-width( $i );
-				}
+				@include column-width( $i );
 			}
+
 		}
 	}
 }

@@ -4,8 +4,9 @@
 # For use with the Underscores WordPress theme.
 # @link https://github.com/Automattic/_s
 
-# Tell Travis CI which distro to use.
-dist: trusty
+# Tell Travis CI which OS and which distro to use.
+os: linux
+dist: xenial
 
 # Cache directories between builds.
 # @link https://docs.travis-ci.com/user/caching/#arbitrary-directories
@@ -30,7 +31,7 @@ php:
   - 7.2
   - 7.3
 
-matrix:
+jobs:
   fast_finish: true
   include:
     - php: 7.4
@@ -40,11 +41,11 @@ before_install:
   # Speed up build time by disabling Xdebug.
   - phpenv config-rm xdebug.ini || echo 'No xdebug config.'
   # Download and install the latest long-term support release of node.
-  - nvm install --lts
+  - if [[ "$SNIFF" == 1 ]]; then nvm install --lts; fi
   # Install Composer dependencies.
   - composer install
   # Install NPM dependencies.
-  - npm install
+  - if [[ "$SNIFF" == 1 ]]; then npm install; fi
 
 script:
   # Validate the composer.json file.

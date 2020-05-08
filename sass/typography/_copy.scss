@@ -20,8 +20,7 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-
-	@include font-size(0.9375);
+	font-size: 0.9375rem;
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -34,8 +33,7 @@ kbd,
 tt,
 var {
 	font-family: $font__code;
-
-	@include font-size(0.9375);
+	font-size: 0.9375rem;
 }
 
 abbr,

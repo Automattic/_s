@@ -1,6 +1,5 @@
-/* Hide the Older / Newer Posts Navigation when Infinite Scroll is in use. */
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
-/* Hide the Theme Footer (when set to scrolling) */
 .infinite-scroll.neverending .site-footer {
 	display: none;
 }
