@@ -23,78 +23,77 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+
+@import "abstracts/abstracts";
 
 /*--------------------------------------------------------------
-# Normalize
+# Generic
 --------------------------------------------------------------*/
-@import "normalize";
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
 
 /*--------------------------------------------------------------
-# Typography
+# Base
 --------------------------------------------------------------*/
-@import "typography/typography";
+@import "base/base";
 
 /*--------------------------------------------------------------
-# Elements
+# Layouts
 --------------------------------------------------------------*/
-@import "elements/elements";
+// @import "layouts/content-sidebar";
+// @import "layouts/sidebar-content";
 
 /*--------------------------------------------------------------
-# Forms
+# Components
 --------------------------------------------------------------*/
-@import "forms/forms";
+@import "components/components";
 
 /*--------------------------------------------------------------
-# Navigation
+# Plugins
 --------------------------------------------------------------*/
-@import "navigation/navigation";
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+@import "plugins/jetpack/infinite-scroll";
 
 /*--------------------------------------------------------------
-# Accessibility
+# Utilities
 --------------------------------------------------------------*/
-@import "modules/accessibility";
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
 
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
