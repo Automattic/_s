@@ -24,6 +24,7 @@ const excludes = [
 	'.travis.yml',
 	'phpcs.xml.dist',
 	'sass',
+	'style.css.map',
 ];
 
 // The path of the zip file.
