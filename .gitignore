@@ -2,3 +2,4 @@
 /vendor
 package-lock.json
 composer.lock
+style.css.map
