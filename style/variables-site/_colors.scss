@@ -47,8 +47,8 @@ $color__border-button-focus: $color__background-button-focus;
 
 //Links
 $color__link: $color__background-button;
-$color__link-hover: $color__background-button-hover;
-$color__link-focus: $color__background-button-focus;
+$color__link-hover: lighten($color__link, 10%);
+$color__link-focus: darken($color__link, 5%);
 $color__link-visited: $color__background-button-focus;
 
 //Colors List for Mapping
