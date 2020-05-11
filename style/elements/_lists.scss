@@ -8,7 +8,7 @@ ul, ol {
 
 		&:before {
 			line-height: 1em;
-			color: $color__corporate;
+			color: $color__corporate-secondary;
 		}
 	}
 }
@@ -18,13 +18,13 @@ ul {
 
 	li:before {
 		content: "\2022";
+		font-size: 1.2em;
 		display: inline-block;
 		width: .8em;
 		margin-left: -.8em;
-		@include font-size(1.6);
-		line-height: 1rem;
+		line-height: 1em;
 		vertical-align: middle;
-		margin-bottom: 2px;
+		margin-bottom: .25em;
 	}
 
 	&.is-style-bullets,
@@ -32,13 +32,11 @@ ul {
 		padding-left: 0;
 
 		li {
-			@include font-size(1.1);
 			margin-bottom: 15px;
 			padding-left: 33px;
 			text-indent: -16px;
 	
 			&:before {
-				@include font-size(1.2);
 				margin-left: 0;
 			}
 		}
@@ -65,7 +63,7 @@ ol {
 		&:before {
 			content: "." counter(li);
 			display: inline-block;
-			font-weight: bold;
+			font-weight: 600;
 			width: 1em;
 			margin-left: -1.5em;
 			margin-right: 0.5em;
@@ -82,7 +80,7 @@ li > ol {
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 600;
 }
 
 dd {
