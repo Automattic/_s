@@ -242,7 +242,7 @@ input[type="submit"],
 
 	&:after {
 		@include icon-content('\e922');
-		@include font-size(.8);
+		font-size: .8em;
 		margin-left: 8px;
 	}
 }

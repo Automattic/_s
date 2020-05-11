@@ -1,7 +1,12 @@
 .post__meta {
+	@include font-size(.9);
 	width: 100%;
 	position: relative;
 	padding-right: 90px;
+
+	a {
+		color: $color__text-main;
+	}
 
 	.byline {
 		margin-left: 3px;
@@ -22,6 +27,8 @@
 			overflow: hidden;
 
 			&:before {
+				@include icon-content("\e902");
+				color: $color__corporate;
 				position: absolute;
 				text-indent: 0;
 				right: 0;
@@ -30,7 +37,6 @@
 				width: 20px;
 				height: 20px;
 				text-align: center;
-				@include icon-content("\e902");
 			}
 		}
 	}

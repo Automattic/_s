@@ -10,10 +10,6 @@
 		display: block;
 	}
 
-	a {
-		text-decoration: none;
-	}
-
 	> a {
 		display: block;
 	}
@@ -35,7 +31,7 @@
 		padding-bottom: 13px;
 		margin-top: 10px;
 		margin-bottom: 10px;
-		border-bottom: 1px solid $color__corporate-secondary;
+		border-bottom: 1px solid $color__background-hr;
 		width: auto;
 
 		.post__categories {
@@ -94,8 +90,10 @@
 	}
 
 	.readmore {
+		@include font-size(.9);
 		position: absolute;
 		bottom: 0;
 		right: 0;
+		padding: 1em 10px;
 	}
 }
