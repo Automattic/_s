@@ -132,7 +132,7 @@
 	}
 	
 	#company-contacts .footer-section__title:before {
-		@include icon-content('\e936');
+		@include icon-content('\e930');
 	}
 	
 	#company-opening-hours .footer-section__title:before {
@@ -184,7 +184,7 @@
 		margin-bottom: 30px;
 		
 		&:nth-of-type(1) .widget-title:before {
-			@include icon-content('\e936');
+			@include icon-content('\e930');
 		}
 		
 		&:nth-of-type(2) .widget-title:before {
