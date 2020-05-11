@@ -111,25 +111,12 @@
 			@include font-size(1.2);
 			position: relative;
 			transform: none;
-			margin: 0 34px 0 0;
-			padding: .6rem 1.3rem .7rem;
+			margin: 0 15px 0 0;
+			padding: .6rem 1.2rem .6rem;
 			line-height: 1rem;
 			display: inline-block;
 			top: 0;
 			left: 0;
-
-			&:after {
-				content: '';
-				display: block;
-				width: 0;
-				height: 0;
-				border-top: 1.15rem solid transparent;
-				border-bottom: 1.15rem solid transparent;
-				border-left: 1.15rem solid $color__corporate;
-				position: absolute;
-				right: -1.15rem;
-				top: 0;
-			}
 		}
 		
 		.wp-block-svbk-iter__step-icon {
