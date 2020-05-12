@@ -44,7 +44,7 @@ Then, update the stylesheet header in `style.css`, the links in `footer.php` wit
 
 ### Setup
 
-To start using all the tools that comes with `_s`  you need to install the necessary Node.js and Composer dependencies :
+To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
 
 ```sh
 $ composer install
