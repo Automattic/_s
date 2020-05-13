@@ -49,6 +49,10 @@ input[type="submit"],
 		box-shadow: 0 0 2px rgba(0,0,0,0.4);
 		color: $color__text-button;
 	}
+
+	&:disabled {
+		opacity: .5;
+	}
 }
 
 //General with color mapping

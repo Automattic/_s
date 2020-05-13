@@ -18,53 +18,35 @@
     }
 }
 
-.has-primary-background-color {
-	background-color: $color__corporate;
-}
+/**
+*	Blocks color and background
+*/
 
-.has-secondary-background-color {
-	background-color: $color__corporate-secondary;
-}
+@each $name, $value in $colors {
 
-.has-dark-gray-background-color {
-	background-color: $color__background-dark;
-}
-
-.has-light-gray-background-color {
-	background-color: $color__background-light;
-}
-
-.has-white-background-color {
-	background-color: #fff;
+	.has-#{$name}-background-color {
+		background: $value;
+	}
 }
 
 .has-gradient-background-color {
 	background-image: $color__background-gradient;
 }
 
-.has-primary-color {
-	color: $color__corporate;
-}
-
-.has-secondary-color {
-	color: $color__corporate-secondary;
-}
-
-.has-dark-gray-color {
-	color: $color__background-dark;
-}
-
-.has-light-gray-color {
-	color: $color__background-light;
-}
-
-.has-white-color {
-	color: #fff;
+@each $name, $value in $colors {
+	
+	.has-#{$name}-color {
+		color: $value;
+	}
 }
 
 /**
 *	Typography
 */
+
+em.highlight {
+    background: rgba(0,151,167,.2);
+}
 
 .wp-block-svbk-hero__subtitle {
     @include font-size(1.2);
@@ -92,39 +74,6 @@
 .block-library-button__inline-link {
     outline: 1px solid #eee;
 }
-
-/**
-*	Block backgrounds
-*/
-
-.has-primary-background-color {
-    background: $color__background-light;
-}
-
-.has-secondary-background-color {
-    background: $color__background-light;
-}
-
-.has-light-gray-background-color {
-    background: $color__background-light;
-}
-
-.has-dark-gray-background-color {
-    background: $color__background-dark;
-}
-
-.is-mobile-hidden:before {
-    content: "Hidden on mobile";
-    font-family: sans-serif;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9;
-    background: #333;
-    color: #fff;
-    padding: 3px 10px;
-}
-
 
 /**
 *	Hero Block

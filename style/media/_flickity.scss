@@ -1,0 +1,152 @@
+.is-style-flickity,
+.is-style-flickity-slider {
+    display: block;
+}
+
+.wp-block-gallery[class*="columns"] {
+
+	.flickity-enabled {
+        display: block;
+        position: relative;
+        
+        &.is-draggable .flickity-viewport {
+            cursor: grab;
+        }
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+/*.wp-block-gallery.is-style-flickity-slider {
+
+	.flickity-enabled {
+
+		.blocks-gallery-item {
+			width: 100%;
+	
+			img {
+				width: 100%;
+
+				@media screen and (min-width: breakpoint('phone')) {
+					height: 300px;
+				}
+
+				@media screen and (min-width: breakpoint('tablet-portrait')) {
+					height: 430px;
+	
+					.wp-block-column & {
+						height: 185px;
+					}
+				}
+	
+				@media screen and (min-width: breakpoint('tablet-landscape')) {
+					height: 530px;
+	
+					.wp-block-column & {
+						height: 279px;
+					}
+				}
+	
+				@media screen and (min-width: breakpoint('desktop')) {
+					height: 630px;
+	
+					.wp-block-column & {
+						height: 362px;
+					}
+				}
+			}
+		}
+	}
+}*/
+
+.flickity-button {
+	position: absolute;
+	background: none;
+	border: none;
+	box-shadow: none;
+	top: 0;
+	bottom: 40px;
+	cursor: pointer;
+
+	svg {
+		display: none;
+	}
+
+	&:before {
+		color: #fff;
+		text-shadow: 0 0 5px rgba(0,0,0,.2);
+	}
+
+	&.previous {
+		left: 0;
+
+		&:before {
+			@include font-size(1.2);
+			@include icon-content('\e90d');
+		}
+
+	}
+
+	&.next {
+		right: 0;
+
+		&:before {
+			@include icon-content('\e90e');
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: none;
+		border: none;
+		box-shadow: none;
+	}
+}
+
+.flickity-page-dots {
+	color: #fff;
+	text-align: center;
+	padding: 0;
+	height: 40px;
+	margin: 0;
+
+	li {
+		margin: 0 10px 0 0;
+		display: inline-block;
+		line-height: 40px;
+		cursor: pointer;
+		
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		&:before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			border: 1px solid $color__corporate;
+			border-radius: 10px;
+			margin: 0;
+			position: relative;
+			bottom: 2px;
+		}
+
+		&.is-selected:before {
+			background: $color__corporate;
+		}
+		
+		.has-background:not(.has-light-gray-background-color) & {
+			
+			&:before {
+				border-color: #fff;
+			}
+			
+			&.is-selected:before {
+				background: #fff;
+			}
+		}
+	}
+}
