@@ -941,14 +941,14 @@ textarea {
 /* Alignments
 --------------------------------------------- */
 .alignleft {
-	float: right;
-	margin-left: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 .alignright {
-	float: left;
-	margin-right: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 	margin-bottom: 1.5em;
 }
 
