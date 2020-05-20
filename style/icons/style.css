@@ -1,17 +1,18 @@
 @font-face {
-  font-family: 'theme-icons';
-  src:  url('fonts/theme-icons.eot?8sqx3x');
-  src:  url('fonts/theme-icons.eot?8sqx3x#iefix') format('embedded-opentype'),
-    url('fonts/theme-icons.ttf?8sqx3x') format('truetype'),
-    url('fonts/theme-icons.woff?8sqx3x') format('woff'),
-    url('fonts/theme-icons.svg?8sqx3x#theme-icons') format('svg');
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?fy9yzs');
+  src:  url('fonts/icomoon.eot?fy9yzs#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?fy9yzs') format('truetype'),
+    url('fonts/icomoon.woff?fy9yzs') format('woff'),
+    url('fonts/icomoon.svg?fy9yzs#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'theme-icons' !important;
+  font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,6 +25,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-pin-mappa:before {
+  content: "\e93d";
+  color: #ffba0e;
+}
+.icon-check:before {
+  content: "\e90c";
+}
+.icon-watch_later-24px:before {
+  content: "\e902";
+}
 .icon-minus-circle:before {
   content: "\e93c";
 }
@@ -75,18 +86,11 @@
   content: "\e919";
   color: #838383;
 }
-.icon-Senza-titolo-2-10:before {
-  content: "\e92d";
-}
 .icon-Senza-titolo-2-11:before {
   content: "\e92e";
 }
 .icon-question-mark:before {
   content: "\e928";
-}
-.icon-bullets-check:before {
-  content: "\e927";
-  color: #ffc244;
 }
 .icon-close-quotes:before {
   content: "\e924";
@@ -102,9 +106,6 @@
 }
 .icon-cart:before {
   content: "\e900";
-}
-.icon-clock:before {
-  content: "\e902";
 }
 .icon-close:before {
   content: "\e903";
@@ -135,10 +136,6 @@
   content: "\e90b";
   color: #8e784c;
 }
-.icon-simple-check:before {
-  content: "\e90c";
-  color: #e42f31;
-}
 .icon-simple-left-arrow:before {
   content: "\e90d";
   color: #8e784c;
@@ -158,39 +155,11 @@
 .icon-twitter:before {
   content: "\e911";
 }
-.icon-envelope-o:before {
-  content: "\e93b";
+.icon-lock:before {
+  content: "\e929";
 }
-.icon-net_icon:before {
-  content: "\e93a";
-}
-.icon-phone1:before {
-  content: "\e936";
-  color: #fff;
-}
-.icon-information:before {
-  content: "\e937";
-}
-.icon-info_contact:before {
-  content: "\e938";
-  color: #0263ad;
-}
-.icon-info_map:before {
-  content: "\e939";
-  color: #0263ad;
-}
-.icon-phone-icon-bg:before {
-  content: "\e934";
-}
-.icon-phone-icon:before {
-  content: "\e935";
-}
-.icon-Risorsa-6:before {
-  content: "\e932";
-  color: #0263ad;
-}
-.icon-phone:before {
-  content: "\e930";
+.icon-more_horiz:before {
+  content: "\e92f";
 }
 .icon-info:before {
   content: "\e933";
@@ -201,8 +170,8 @@
 .icon-user-solid-circle:before {
   content: "\e92c";
 }
-.icon-more_horiz:before {
-  content: "\e92f";
+.icon-cross:before {
+  content: "\e91f";
 }
 .icon-font-load-check:before {
   content: "\42";
@@ -252,9 +221,6 @@
 .icon-search:before {
   content: "\e912";
 }
-.icon-lock:before {
-  content: "\e929";
-}
-.icon-cross:before {
-  content: "\e91f";
+.icon-envelope-o:before {
+  content: "\e93b";
 }
