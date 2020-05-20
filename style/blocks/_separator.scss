@@ -22,23 +22,10 @@
 		}
 	}
 
-	&.has-primary-background-color {
-		background-color: $color__corporate;
-	}
+	@each $name, $value in $colors {
 
-	&.has-secondary-background-color {
-		background-color: $color__corporate-secondary;
-	}
-
-	&.has-dark-gray-background-color {
-		background-color: $color__corporate-secondary;
-	}
-
-	&.has-light-gray-background-color {
-		background-color: $color__background-dark;
-	}
-
-	&.has-white-background-color {
-		background-color: $color__background-light;
-	}
+        &.has-#{$name}-background-color {
+            background-color: $value;
+        }
+    }
 }
