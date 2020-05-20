@@ -1,7 +1,6 @@
 .site-header {
 
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		position: static;
+	@media screen and (min-width: breakpoint('desktop-nav')) {
 
 		.site-branding {
 			margin-left: 0;
@@ -25,7 +24,3 @@
 		right: $padding__content-desktop + 14px;
 	}
 }
-
-//@import "has-search";
-//@import "has-cart";
-//@import "has-search-and-cart";

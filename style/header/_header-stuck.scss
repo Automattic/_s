@@ -5,7 +5,7 @@
 	right: 0;
 	width: 100%;
 	background: $color__background-header;
-	z-index: 9;
+	z-index: 999;
 	animation-name: sticky-header;
 	animation-duration: .5s;
 	animation-timing-function: ease-in-out;
@@ -14,7 +14,15 @@
 		display: none;
 	}
 
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
+	.main-navigation-toggle {
+		top: 0;
+	}
+
+ 	#page & #main-navigation {
+		top: $size__header-height-mobile;
+	}
+
+	@media screen and (min-width: breakpoint('desktop-nav')) {
 
 		#main-navigation li.cta-item {
 			height: $size__header-height-desktop;
@@ -26,6 +34,31 @@
 				position: relative;
 				top: 50%;
 				transform: translateY(-50%);
+			}
+
+			&.current-menu-item {
+				animation: none;
+			}
+
+			&:not(.current-menu-item) a {
+				background-color: $color__background-button;
+				box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+				color: $color__text-button;
+	
+				&:hover {
+					background-color: $color__background-button-hover;
+					border-color: $color__border-button-hover;
+					box-shadow: 0 2px 4px rgba(0,0,0,0.35);
+					color: $color__text-button;
+				}
+	
+				&:focus,
+				&:active {
+					background-color: $color__background-button-focus;
+					border-color: $color__border-button-focus;
+					box-shadow: 0 0 2px rgba(0,0,0,0.4);
+					color: $color__text-button;
+				}
 			}
 		}
 	}

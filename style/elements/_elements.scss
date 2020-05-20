@@ -2,6 +2,11 @@ html {
 	box-sizing: border-box;
 }
 
+html,
+body {
+	height: 100%;
+}
+
 *,
 *:before,
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */

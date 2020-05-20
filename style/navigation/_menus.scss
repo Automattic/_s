@@ -1,16 +1,23 @@
 #main-navigation {
 
+	a {
+		font-weight: normal;
+		padding: 10px 0;
+		display: inline-block;
+	}
+
 	ul {
 		max-width: none;
 
 		li {
-			padding: 8px $padding__content-mobile;
 			margin-bottom: 0;
 			margin: 0;
 
 			&.current-menu-item:not(.cta-item) > a,
 			&.current-menu-ancestor:not(.cta-item) > a {
-				border-bottom: 3px solid $color__corporate;
+				color: $color__corporate;
+				border-bottom: none;
+				font-weight: 600;
 			}
 
 			a {
@@ -29,28 +36,25 @@
 			&.cta-item {
 
 				a {
-					background-color: $color__background-button;
-					color: $color__text-button;
-					padding: .6em .8em;
+					padding: .7em 1.2em;
+					display: block;
+					text-align: center;
+					margin-top: 20px;
+					font-weight: 600;
+					color: $color__border-button;
+					border-width: 2px;
+					border-style: solid;
 					border-color: $color__border-button;
-					box-shadow: 0 0 0 1px transparent;
-					transition: background .15s ease-in-out,
-								box-shadow .15s ease-in-out;
-	
-					&:visited {
-						background-color: $color__background-button;
-						color: $color__text-button;
-					}
-	
+
 					&:hover {
-						background-color: $color__background-button-hover;
-						color: $color__text-button;
+						color: $color__border-button-hover;
+						border-color: $color__border-button-hover;
 					}
-	
-					&:focus,
-					&:active {
-						background-color: $color__background-button-focus;
-						color: $color__text-button;
+				
+					&:active,
+					&:focus {
+						color: $color__border-button-focus;
+						border-color: $color__border-button-focus;
 					}
 				}
 			}
@@ -58,12 +62,10 @@
 	}
 
 	.menu-item-has-children {
-		background-color: rgba(255,255,255,0);
-		transition: background-color .8s ease;
 
-		a {
-			display: block;
+		> a {
 			position: relative;
+			padding-right: 25px;
 		}
 
 		> a:after {
@@ -79,39 +81,32 @@
 			overflow: hidden;
 			max-height: 0;
 			transition: max-height .8s ease;
+			line-height: normal;
 
 			li {
 				padding-bottom: 0;
 
 				a {
 					text-transform: none;
-					font-weight: normal;
-					padding: 0;
-				}
-
-				&.current-menu-item > a,
-				&.current-menu-ancestor > a {
-					color: $color__corporate;
-					border-bottom: none;
 				}
 			}
 		}
 
 		&.expanded {
-			background-color: $color__background-sub-menu;
 
 			> a:after {
 				@include icon-content("\e90b");
 			}
 
 			.sub-menu {
-				max-height: 300px;
+				max-height: 200px;
+				padding-bottom: 10px;
 				display: block;
 			}
 		}
 	}
 
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
+	@media screen and (min-width: breakpoint('desktop-nav')) {
 
 		ul {
 
@@ -134,6 +129,7 @@
 
 					a {
 						display: inline;
+						margin-top: 0;
 					}
 				}
 
@@ -147,10 +143,6 @@
 						height: 3px;
 						width: 100%;
 						background: $color__corporate;
-					}
-
-					> a {
-						border-bottom: none;
 					}
 				}
 			}
@@ -166,7 +158,7 @@
 				position: absolute;
 				z-index: 10;
 				padding: 15px 10px 20px;
-				margin: 0;
+				margin-left: -10px;
 				width: 190px;
 				text-align: left;
 
@@ -188,9 +180,14 @@
 				}
 			}
 
-			&:hover {
+			&:hover,
+			&.expanded {
 				background-color: $color__background-sub-menu;
-	
+
+				&[class*="current"]:after {
+					background-color: rgba(255,255,255,0);
+				}
+
 				> a:after {
 					@include icon-content("\e90b");
 				}
@@ -198,6 +195,8 @@
 				.sub-menu {
 					max-height: 300px;
 					display: block;
+					padding: 20px 10px;
+					box-shadow: 1px 3px 3px rgba(0,0,0,.2);
 				}
 			}
 
@@ -209,9 +208,7 @@
 				}
 			}
 
-			> a:after,
-			&.expanded > a:after,
-			&:hover > a:after {
+			> a:after {
 				@include icon-content("\e90b");
 				position: static;
 				margin-left: 5px;
@@ -224,100 +221,39 @@
 	}
 }
 
-#page {
-	position: relative;
+#primary-menu > li:not(.cta-item) {
+	border-bottom: 1px solid $color__background-hr;
 
-	#main-navigation {
-		position: fixed;
-		width: 250px;
-		top: 0;
-		bottom: 0;
-		overflow: auto;
-		box-shadow: 0 0 3px rgba(0,0,0,.0);
-	}
-
-	&.menu-toggled-on {
-
-		#main-navigation {
-			box-shadow: 0 0 3px rgba(0,0,0,.2);
-		}
-	}
-
-	@media screen and (min-width: breakpoint('phone')) {
-
-		#main-navigation {
-			width: 300px;
-		}
-	}
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-
-		&.menu-toggled-on #main-navigation,
-		#main-navigation {
-			position: static;
-			width: auto;
-			box-shadow: none;
-			overflow: visible;
-		}
-	}
-}
-
-.menu-item.login,
-.menu-item.logout {
-
-	img {
-		width: 20px;
-		height: 20px;
-		display: inline-block;
-		vertical-align: middle;
-		background: #ccc;
-		border-radius: 50%;
-	}
-
-	a, span {
-		text-transform: none;
-	}
-}
-
-#main-navigation .profile-nav {
-	@include font-size(.8);
-
-	.my-account {
-
-		&:before {
-			display: none;
-		}
+	@media screen and (min-width: breakpoint('desktop-nav')) {
+		border: none;
+		padding: 0 10px;
 
 		a {
-			color: $color__text-main;
-			text-decoration: none;
+			padding: 0;
 		}
+	}
+}
 
-		img {
-			border-radius: 50%;
-			width: 20px;
-			height: 20px;
-			margin-right: 5px;
-			object-fit: cover;
-			background: #aaa;
-			display: inline-block;
-			vertical-align: middle;
-		}
+#main-navigation {
+	position: fixed;
+	width: 100%;
+	top: $size__header-height-mobile;
+	bottom: 0;
+	overflow: auto;
+	box-shadow: 0 0 3px rgba(0,0,0,.0);
+	padding: 20px;
 
-		.user-name {
-			text-transform: uppercase;
-		}
+	@media screen and (min-width: breakpoint('phone')) {
+		width: 300px;
+		box-shadow: -1px 4px 4px rgba(0,0,0,.6);
+	}
 
-		&.current-menu-item {
-
-			a {
-				border-bottom: none;
-			}
-
-			.user-name {
-				border-bottom: 3px solid $color__corporate;
-			}
-		}
+	@media screen and (min-width: breakpoint('desktop-nav')) {
+		padding: 0;
+		position: static;
+		width: auto;
+		box-shadow: none;
+		overflow: visible;
 	}
 }
 

@@ -3,6 +3,8 @@
   /* Toggle the search visibility */
   $('.search-toggle').click(function(e){
     $('.search-form').toggleClass('visible');
+    $('.site').toggleClass('search-toggled');
+    $('.search__overlay').toggle();
     e.preventDefault();
   });
 
