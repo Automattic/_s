@@ -81,4 +81,9 @@ ul, ol {
 	}
 }
 
+li > ul,
+li > ol {
+	padding-left: 25px;
+}
+
 @import 'blocks/index';

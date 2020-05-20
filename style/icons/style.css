@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?fy9yzs');
-  src:  url('fonts/icomoon.eot?fy9yzs#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?fy9yzs') format('truetype'),
-    url('fonts/icomoon.woff?fy9yzs') format('woff'),
-    url('fonts/icomoon.svg?fy9yzs#icomoon') format('svg');
+  font-family: 'theme-icons';
+  src:  url('fonts/theme-icons.eot?7k75lb');
+  src:  url('fonts/theme-icons.eot?7k75lb#iefix') format('embedded-opentype'),
+    url('fonts/theme-icons.ttf?7k75lb') format('truetype'),
+    url('fonts/theme-icons.woff?7k75lb') format('woff'),
+    url('fonts/theme-icons.svg?7k75lb#theme-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'theme-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -223,4 +223,7 @@
 }
 .icon-envelope-o:before {
   content: "\e93b";
+}
+.icon-phone:before {
+  content: "\e930";
 }
