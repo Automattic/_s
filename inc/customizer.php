@@ -86,6 +86,23 @@ function _svbk_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'header_search',
+		array(
+			'default' => false,
+		)
+	);
+	
+	$wp_customize->add_control(
+		'header_search',
+		array(
+			'label'       => __( 'Show Header Search Form', '_svbk' ),
+			'description' => __( 'Show search trigger in site header', '_svbk' ),
+			'section'     => 'header_image',
+			'type'        => 'checkbox',
+		)
+	);
+
 	// Archives.
 	$wp_customize->add_section(
 		'archives',

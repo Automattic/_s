@@ -95,12 +95,12 @@ use \Svbk\WP\Helpers;
 				}
 				?>
 				
-				<!--
+				<?php if ( get_theme_mod( 'header_search', false ) ) : ?>
 				<button class="search-toggle">
 					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
 				</button>
 				<?php echo get_search_form(); ?>
-				-->
+				<?php endif; ?>
 	
 				<button class="main-navigation-toggle" aria-controls="main-navigation" aria-expanded="false">
 					<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span>
