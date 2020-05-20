@@ -63,11 +63,10 @@
         }
     }
     
-    @media screen and (min-width: breakpoint('tablet-portrait')) and (max-width: breakpoint('tablet-landscape')) {
+    @media screen and (max-width: breakpoint('tablet-landscape')) {
         
         &.has-1-columns-mobile {
             
-            > div,
             > figure {
                 width: 49%;
                 
