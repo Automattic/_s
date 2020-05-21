@@ -54,6 +54,8 @@
 
 		&:before {
 			@include icon-content('\e902');
+			font-size: 1.2em;
+			top: 2px;
 		}
 	}
 
