@@ -1,31 +1,36 @@
-.wp-block-separator {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 2px;
-	width: 50px;
-	margin: 17px auto;
+hr {
+	width: 100%;
+	height: 1px;
 
-	&.alignleft {
-		margin-left: 0;
-	}
+ 	&.wp-block-separator {
+		background-color: $color__background-hr;
+		border: 0;
+		height: 2px;
+		width: 50px;
+		margin: 17px auto;
 
-	&.is-style-wide {
-		height: 1px;
-		width: 100%;
-	}
+		&.alignleft {
+			margin-left: 0;
+		}
 
-	&.is-style-dots {
-		width: 180px;
+		&.is-style-wide {
+			height: 1px;
+			width: 100%;
+		}
 
-		&:before {
-			color: $color__background-hr;
+		&.is-style-dots {
+			width: 180px;
+
+			&:before {
+				color: $color__background-hr;
+			}
+		}
+
+		@each $name, $value in $colors {
+
+			&.has-#{$name}-background-color {
+				background-color: $value;
+			}
 		}
 	}
-
-	@each $name, $value in $colors {
-
-        &.has-#{$name}-background-color {
-            background-color: $value;
-        }
-    }
 }
