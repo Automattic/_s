@@ -10,3 +10,114 @@
 @import "components/reset";
 @import "components/typo";
 @import "components/wordpress";
+
+$primary: #004178;
+$highlight: #dbab43;
+
+input, textarea {
+    &:focus {
+        outline: none;
+    }
+}
+
+.menu-toggle {
+    @apply flex items-center ml-4 text-xl;
+    color: $primary;
+    svg{
+        @apply mr-2;
+    }
+    @screen md {
+        @apply hidden;
+    }
+}
+
+.site__branding {
+    @apply order-2 py-2 px-12 bg-white;
+    border-bottom-left-radius: 60px;
+    z-index: 99;
+
+    .custom-logo-link {
+        img {
+            height: 64px;
+            width: auto;
+            @screen md {
+                height: 96px;
+            }
+            @screen lg {
+                @apply h-auto;
+            }
+        }
+    }
+
+    @screen lg {
+        @apply px-16;
+    }
+}
+
+.site__header {
+    @apply flex justify-between items-center w-full bg-white;
+    height: 64px;
+
+    @screen md {
+        height: 75px;
+    }
+
+    @screen lg {
+        height: 100px;
+    }
+
+    .nav-menu {
+        @apply flex flex-wrap ml-8;
+
+        @media screen and (max-width: 768px) {
+            @apply p-4 m-0 absolute hidden;
+            top: 64px;
+            z-index: 98;
+            background: #333;
+        }
+
+        @screen md{
+            @apply flex-no-wrap;
+
+            li:not(:last-child) {
+                a {
+                    border-right: 1px solid #ddd;
+                }
+            }
+        }
+
+        @screen lg {
+            @apply ml-0;
+        }
+
+        li{
+            @apply w-full;
+
+            @screen md {
+                @apply w-auto;
+            }
+        }
+
+        a {
+            @apply pr-4 mr-4 text-lg block leading-loose text-white;
+
+            @screen md{
+                @apply leading-none;
+                color: $primary;
+            }
+
+            @screen lg {
+                font-size: 22px;
+                @apply text-2xl pr-8 mr-8;
+            }
+        }
+    }
+}
+
+.site__nav {
+    &.toggled {
+        .nav-menu{
+            @apply flex w-full;
+        }
+    }
+}

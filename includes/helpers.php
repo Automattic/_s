@@ -34,11 +34,11 @@ if ( ! function_exists('_s_assets')) {
             }
         }
 
-        if (array_key_exists($file, $manifest) && SCRIPT_DEBUG) {
+        if (array_key_exists($file, $manifest) && ! SCRIPT_DEBUG) {
             return $dist_uri . $directory . $manifest[ $file ];
-        } else {
-            return $dist_uri . $directory . $file;
         }
+
+        return $dist_uri . $directory . $file;
     }
 }
 

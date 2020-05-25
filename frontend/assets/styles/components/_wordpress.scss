@@ -16,32 +16,28 @@
 }
 
 .aligncenter {
-    display: block;
-    margin: $spacer-md auto;
+    @apply inline-block mx-auto my-4;
 }
 
 .alignleft,
 .alignright {
-    margin-bottom: $spacer-md;
+    @apply mb-4;
 }
 
-@media screen and (min-width: $desktop) {
-    // Only float if not on an extra small device
+@screnn lg {
     .alignleft {
-        float: left;
-        margin-right: $spacer-md;
+        @apply float-left mr-4;
     }
 
     .alignright {
-        float: right;
-        margin-left: $spacer-md;
+        @apply float-right ml-4;
     }
 }
 
+
 // 图片说明
 .wp-caption {
-    display: block;
-    margin-bottom: $spacer-md;
+    @appy block mb-4;
     transition: border .2s ease-in-out;
 }
 
@@ -59,20 +55,17 @@
 }
 
 // 评论区域标题
-.c-comments{
-    &__title{
-        margin-top: $spacer-lg;
-        font-size: 18px;
-        font-weight: 500;
+.c-comments {
+    &__title {
+        @apply mt-8 text-lg font-medium;
     }
 
-    label{
-        font-size: 14px;
-        color: theme('colors.gray.600');
+    label {
+        @apply text-sm text-gray-600;
     }
 
-    .form-submit{
-        margin-top: 12px;
+    .form-submit {
+        @apply mt-3;
     }
 }
 
@@ -82,19 +75,23 @@
     margin-bottom: 40px;
     margin-left: 0;
     padding-left: 0;
+
     .avatar {
         border-radius: 50%;
         border: 1px solid #ddd;
     }
+
     ol {
         list-style: none;
     }
+
     .children {
         margin-left: 0;
         padding-left: 40px;
         background-repeat: no-repeat;
         background-position: left 20px;
     }
+
     li.comment > div img.avatar {
         position: absolute;
         left: 29px;
@@ -105,70 +102,65 @@
 // 单条评论样式
 .comment {
     font-size: 14px;
+
     .comment-body {
-        overflow: hidden;
+        @apply hidden relative border border-gray-300 bg-gray-100;
         padding: 25px 25px 25px 98px;
         margin: 2em 0 0;
-        position: relative;
-        border: 1px solid theme('colors.gray.300');
-        background: theme('colors.gray.100');
     }
+
     &-author {
         .avatar {
             position: absolute;
             left: 25px;
             top: 29px;
         }
+
         .says {
             padding-left: 2px;
         }
-        b{
-            font-weight: normal;
-            color: theme('colors.gray.600');
+
+        b {
+            @apply font-normal text-gray-600;
         }
     }
+
     &-metadata {
         line-height: 16px;
         margin-bottom: 10px;
+
         a {
-            color: theme('colors.gray.500');
-            font-size: 12px;
+            @apply text-xs text-gray-500;
         }
     }
+
     &-reply-link {
-        display: inline-block;
-        margin-top: $spacer-sm;
-        color: theme('colors.gray.500');
+        @apply inline-block mt-2 text-gray-500;
     }
+
     &-reply-title {
-        margin-top: $spacer-md;
-        font-weight: 500;
-        font-size: 18px;
+        @apply mt-4 font-medium text-lg;
     }
+
     &-notes {
-        color: theme('colors.gray.500');
+        @apply text-gray-500;
     }
+
     &-content {
-        margin-top: 10px;
-        color: theme('colors.gray.800');
+        @apply mt-3 text-gray-800;
     }
+
     &-navigation {
-        overflow: hidden;
-        margin-top: $spacer-lg;
+        @apply overflow-hidden mt-8;
     }
 }
 
-.comment-respond{
+.comment-respond {
     font-size: 14px;
 }
 
-.comment-form-cookies-consent{
-    margin-bottom: $spacer-md - $spacer-xs;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    font-size: 14px;
-    color: theme('colors.gray.600');
+.comment-form-cookies-consent {
+    @apply flex mb-3 w-full items-center text-sm text-gray-600;
 }
 
 // 默认相册样式
@@ -176,31 +168,38 @@
     margin-left: -8px;
     margin-right: -8px;
     display: flex;
+
     .gallery-item {
         padding-left: 8px;
         padding-right: 8px;
+
         .gallery-icon {
             height: 100%;
         }
+
         .wp-caption-text {
             margin-top: -34px;
         }
     }
+
     &-columns-2 {
         .gallery-item {
             width: 50%;
         }
     }
+
     &-columns-3 {
         .gallery-item {
             width: 33.33%;
         }
     }
+
     &-columns-4 {
         .gallery-item {
             width: 25%;
         }
     }
+
     &-columns-5 {
         .gallery-item {
             width: 20%;
@@ -222,6 +221,6 @@
     }
 }
 
-ul.wp-block-gallery{
+ul.wp-block-gallery {
     margin-left: 0 !important;
 }
