@@ -109,9 +109,7 @@ const cssTasks = (filename) => {
             tailwindcss('./tailwind.conf.js'),
             require('autoprefixer'),
         ]);
-    }).pipe(concat, filename).pipe(() => {
-        return combineMedia();
-    }).pipe(autoprefixer).pipe(() => {
+    }).pipe(concat, filename).pipe(autoprefixer).pipe(() => {
         return gulpif(enabled.rev, cssPurge());
     }).pipe(() => {
         return gulpif(enabled.clean, cssPurge());

@@ -1,0 +1,24 @@
+input,textarea{
+    @apply text-base border border-gray-200 rounded-sm px-3 py-2 leading-normal;
+
+    &:hover{
+        border-color: $primary;
+    }
+
+    &:focus,
+    &:active{
+        border-color: $primary;
+    }
+
+    &[disabled] {
+        @apply text-gray-500 bg-gray-200;
+    }
+}
+
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    @apply px-3 py-2 bg-gray-200 text-gray-700 leading-normal appearance-none;
+}

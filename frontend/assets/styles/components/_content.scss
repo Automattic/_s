@@ -1,0 +1,90 @@
+// 内容
+.rs-entry {
+    @apply flex;
+
+    &__image{
+        min-width: 300px;
+
+        &+{
+            .rs-entry__body{
+                @apply ml-6;
+            }
+        }
+    }
+
+    &__body{
+        @apply flex-grow;
+    }
+
+    &__title{
+        @apply text-2xl;
+        a{
+            @apply text-gray-800;
+        }
+    }
+
+    &__summary {
+        color: theme('colors.gray.700');
+        font-size: 14px;
+    }
+
+    &__meta {
+        @apply mt-1 mb-2 leading-normal text-sm;
+
+        i {
+            margin-right: 4px;
+            position: relative;
+            top: 1px
+        }
+
+        & > span {
+            @apply mr-2 text-gray-500;
+            font-family: sans-serif, Arial;
+
+            &:last-child {
+                @apply mr-0;
+            }
+
+            a {
+                @apply text-gray-500;
+            }
+        }
+    }
+
+    &__tags {
+        a {
+            @apply mr-2;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    &__tags--badge {
+        a {
+            @apply text-white;
+            padding: 2px 8px;
+            background: $primary;
+            border-radius: 16px;
+            font-size: 13px;
+
+            &:hover {
+                @apply text-white;
+            }
+
+            &:active {
+                padding: 2px 10px;
+            }
+        }
+    }
+
+    &__more {
+        a {
+            display: inline-block;
+            line-height: normal;
+            font-size: 14px;
+        }
+    }
+
+}

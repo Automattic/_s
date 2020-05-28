@@ -1,0 +1,117 @@
+.site {
+    &__header {
+        @apply flex justify-between items-center w-full bg-white mb-4;
+        height: 64px;
+
+        .container{
+            @apply flex justify-between items-center;
+        }
+
+        @screen md {
+            height: 75px;
+        }
+
+        @screen lg {
+            height: 100px;
+        }
+    }
+
+    &__branding {
+        @apply bg-white;
+        z-index: 99;
+
+        .custom-logo-link {
+            img {
+                height: 64px;
+                width: auto;
+                @screen md {
+                    height: 96px;
+                }
+                @screen lg {
+                    @apply h-auto;
+                }
+            }
+        }
+    }
+
+    &__nav {
+        .nav-menu {
+            @apply flex flex-wrap ml-8;
+
+            @media screen and (max-width: 768px) {
+                @apply p-4 m-0 absolute hidden;
+                top: 64px;
+                z-index: 98;
+                background: #333;
+            }
+
+            @screen md {
+                @apply flex-no-wrap;
+
+                li:not(:last-child) {
+                    a {
+                        border-right: 1px solid #ddd;
+                    }
+                }
+            }
+
+            @screen lg {
+                @apply ml-0;
+            }
+
+            li {
+                @apply w-full;
+
+                @screen md {
+                    @apply w-auto;
+                }
+
+                ul{
+                    @apply hidden;
+                }
+            }
+
+            a {
+                @apply pr-4 mr-4 text-lg block leading-loose text-white;
+
+                @screen md {
+                    @apply leading-none;
+                    color: $primary;
+                }
+
+                @screen lg {
+                    font-size: 22px;
+                    @apply text-2xl pr-8 mr-8;
+                }
+            }
+        }
+
+        &.toggled {
+            .nav-menu {
+                @apply flex w-full;
+            }
+        }
+    }
+
+    &__content {
+        max-width: 1200px;
+        @apply mx-auto py-6 flex;
+    }
+
+    &__footer{
+        @apply py-4 bg-gray-200;
+    }
+
+    &__info {
+        max-width: 1200px;
+        @apply mx-auto;
+    }
+}
+
+.content__primary{
+    flex-grow: 1;
+}
+
+.content__secondary{
+    @apply w-1/4 ml-8;
+}
