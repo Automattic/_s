@@ -9,6 +9,8 @@
 
 
 .site {
+    @apply flex flex-col;
+    min-height: 100vh;
     &__header {
         @apply flex justify-between items-center w-full bg-white border-b border-gray-300;
         height: 64px;
@@ -103,7 +105,7 @@
 
     &__content {
         max-width: $widescreen;
-        @apply flex flex-wrap mx-auto py-4;
+        @apply w-full flex flex-wrap flex-grow mx-auto py-4;
 
         @screen lg {
             @apply flex-no-wrap py-8;
