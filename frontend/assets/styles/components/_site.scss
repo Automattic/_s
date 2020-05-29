@@ -76,11 +76,10 @@
 
                 @screen md {
                     @apply leading-none;
-                    color: $primary;
+                    color: $text-color;
                 }
 
                 @screen lg {
-                    font-size: 22px;
                     @apply text-2xl pr-8 mr-8;
                 }
             }
@@ -95,7 +94,7 @@
 
     &__content {
         max-width: 1200px;
-        @apply mx-auto py-6 flex;
+        @apply flex mx-auto py-6;
     }
 
     &__footer{

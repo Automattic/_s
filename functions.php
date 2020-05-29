@@ -20,6 +20,12 @@ require_once(get_theme_file_path('includes/helpers.php'));
 
 
 /**
+ * Custom fields
+ */
+require_once(get_theme_file_path('includes/fields.php'));
+
+
+/**
  * Theme Assets
  */
 require_once(get_theme_file_path('includes/frontend.php'));
