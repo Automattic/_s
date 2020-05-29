@@ -14,7 +14,7 @@
     <div class="rs-entry">
         <?php if (has_post_thumbnail()) { ?>
             <div class="rs-entry__image">
-                <?= get_the_post_thumbnail(get_the_id(), 'index-thumbnail');; ?>
+                <?= get_the_post_thumbnail(get_the_id(), 'index-thumbnail'); ?>
             </div>
         <?php } ?>
 

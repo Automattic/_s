@@ -22,22 +22,32 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', '_s'); ?></a>
+    <a class="skip-link screen-reader-text" href="#content">
+        <?php esc_html_e('Skip to content', '_s'); ?>
+    </a>
 
     <header id="masthead" class="site__header">
-        <div class="site__branding">
-            <?php the_custom_logo(); ?>
-        </div>
+        <div class="container">
+            <div class="site__branding">
+                <?php the_custom_logo(); ?>
 
-        <nav id="site-navigation" class="site__nav main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', '_s'); ?></button>
-            <?php
-            wp_nav_menu([
-                'theme_location' => 'menu-primary',
-                'menu_id'        => 'primary-menu',
-            ]);
-            ?>
-        </nav>
+                <?php if ( ! has_custom_logo()) : ?>
+                    <h1><a href="<?= home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+                <?php endif; ?>
+            </div>
+
+            <nav id="site-navigation" class="site__nav main-navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <?php esc_html_e('Menu', '_s'); ?>
+                </button>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'menu-primary',
+                    'menu_id'        => 'primary-menu',
+                ]);
+                ?>
+            </nav>
+        </div>
     </header>
 
     <div id="content" class="site__content">

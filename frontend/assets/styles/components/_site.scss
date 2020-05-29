@@ -1,9 +1,19 @@
+.container {
+    max-width: $widescreen;
+    @apply mx-auto px-4;
+
+    @screen lg {
+        @apply px-0;
+    }
+}
+
+
 .site {
     &__header {
-        @apply flex justify-between items-center w-full bg-white mb-4;
+        @apply flex justify-between items-center w-full bg-white border-b border-gray-300;
         height: 64px;
 
-        .container{
+        .container {
             @apply flex justify-between items-center;
         }
 
@@ -20,14 +30,19 @@
         @apply bg-white;
         z-index: 99;
 
+        h1 {
+            @apply text-4xl;
+        }
+
         .custom-logo-link {
+            @apply block;
             img {
-                height: 64px;
                 width: auto;
                 @screen md {
-                    height: 96px;
+
                 }
                 @screen lg {
+                    height: 64px;
                     @apply h-auto;
                 }
             }
@@ -38,11 +53,43 @@
         .nav-menu {
             @apply flex flex-wrap ml-8;
 
+            li {
+                @apply w-full relative;
+
+                @screen md {
+                    @apply w-auto;
+                }
+
+                ul {
+                    @apply hidden;
+                }
+
+                &:hover {
+                    & > ul {
+                        @apply block relative bg-white absolute shadow z-50;
+                        top: auto;
+                        min-width: 300px;
+                    }
+                }
+            }
+
+            a {
+                @apply text-lg block px-4 py-2 leading-none text-white;
+
+                @screen md {
+                    @apply leading-none;
+                }
+
+                @screen lg {
+                    @apply pr-4 mr-4;
+                    color: $text-color;
+                }
+            }
+
             @media screen and (max-width: 768px) {
-                @apply p-4 m-0 absolute hidden;
+                @apply py-2 m-0 left-0 absolute hidden bg-gray-800;
                 top: 64px;
                 z-index: 98;
-                background: #333;
             }
 
             @screen md {
@@ -50,7 +97,7 @@
 
                 li:not(:last-child) {
                     a {
-                        border-right: 1px solid #ddd;
+                        @apply mr-2;
                     }
                 }
             }
@@ -59,30 +106,6 @@
                 @apply ml-0;
             }
 
-            li {
-                @apply w-full;
-
-                @screen md {
-                    @apply w-auto;
-                }
-
-                ul{
-                    @apply hidden;
-                }
-            }
-
-            a {
-                @apply pr-4 mr-4 text-lg block leading-loose text-white;
-
-                @screen md {
-                    @apply leading-none;
-                    color: $text-color;
-                }
-
-                @screen lg {
-                    @apply text-2xl pr-8 mr-8;
-                }
-            }
         }
 
         &.toggled {
@@ -93,24 +116,51 @@
     }
 
     &__content {
-        max-width: 1200px;
-        @apply flex mx-auto py-6;
+        max-width: $widescreen;
+        @apply flex flex-wrap mx-auto py-4;
+
+        @screen lg {
+            @apply flex-no-wrap py-8;
+        }
     }
 
-    &__footer{
+    &__footer {
         @apply py-4 bg-gray-200;
     }
 
     &__info {
-        max-width: 1200px;
+        max-width: $widescreen;
         @apply mx-auto;
     }
 }
 
-.content__primary{
-    flex-grow: 1;
+.content {
+    &__primary {
+        @apply flex-grow px-4;
+
+        @screen lg {
+            @apply px-0;
+        }
+    }
+
+    &__secondary {
+        @apply px-4 flex-grow mt-8;
+
+        @screen lg {
+            @apply flex-none w-1/4 ml-8 px-0 mt-0;
+        }
+    }
 }
 
-.content__secondary{
-    @apply w-1/4 ml-8;
+.menu-toggle {
+    @apply flex items-center ml-4;
+    color: $primary;
+
+    svg {
+        @apply mr-2;
+    }
+
+    @screen lg {
+        @apply hidden;
+    }
 }

@@ -1,10 +1,14 @@
 .rs-post {
     &__header {
-        @apply mb-8;
+        @apply mb-4;
+
+        @screen lg{
+          @apply mb-8;
+        }
     }
 
     &__title {
-        @apply text-3xl text-gray-800;
+        @apply text-3xl text-gray-800 leading-normal;
     }
 
     &__meta {

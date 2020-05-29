@@ -15,34 +15,3 @@
 @import "components/post";
 @import "components/widget";
 @import "components/input";
-
-$primary: #004178;
-$highlight: #dbab43;
-
-input, textarea {
-    &:focus {
-        outline: none;
-    }
-}
-
-.container {
-    max-width: 1200px;
-    @apply mx-auto px-4;
-
-    @screen lg{
-        @apply px-0;
-    }
-}
-
-.menu-toggle {
-    @apply flex items-center ml-4 text-xl;
-    color: $primary;
-
-    svg {
-        @apply mr-2;
-    }
-
-    @screen md {
-        @apply hidden;
-    }
-}

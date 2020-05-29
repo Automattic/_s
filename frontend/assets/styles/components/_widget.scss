@@ -1,12 +1,15 @@
 .widget{
     @apply mb-6;
     &-title{
-        @apply font-medium;
+        @apply text-lg font-medium;
     }
 
     ul{
         li{
-
+            @apply text-sm;
+            a{
+                @apply inline-block text-gray-600 leading-normal py-1;
+            }
         }
     }
 }
