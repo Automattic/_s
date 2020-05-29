@@ -44,6 +44,7 @@
                 wp_nav_menu([
                     'theme_location' => 'menu-primary',
                     'menu_id'        => 'primary-menu',
+                    'menu_class'     => 'sm sm-menu nav-menu',
                 ]);
                 ?>
             </nav>

@@ -49,3 +49,10 @@ require_once(get_theme_file_path('includes/customizer.php'));
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
+
+
+function my_nav_menu_submenu_css_class( $classes ) {
+    $classes[] = 'has-submenu';
+    return $classes;
+}
+add_filter( 'nav_menu_submenu_css_class', 'my_nav_menu_submenu_css_class' );

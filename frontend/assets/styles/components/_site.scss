@@ -63,43 +63,28 @@
                 ul {
                     @apply hidden;
                 }
-
-                &:hover {
-                    & > ul {
-                        @apply block relative bg-white absolute shadow z-50;
-                        top: auto;
-                        min-width: 300px;
-                    }
-                }
             }
 
             a {
-                @apply text-lg block px-4 py-2 leading-none text-white;
+                @apply relative block leading-none;
 
                 @screen md {
                     @apply leading-none;
                 }
 
                 @screen lg {
-                    @apply pr-4 mr-4;
                     color: $text-color;
                 }
             }
 
             @media screen and (max-width: 768px) {
-                @apply py-2 m-0 left-0 absolute hidden bg-gray-800;
+                @apply m-0 left-0 absolute hidden;
                 top: 64px;
                 z-index: 98;
             }
 
             @screen md {
                 @apply flex-no-wrap;
-
-                li:not(:last-child) {
-                    a {
-                        @apply mr-2;
-                    }
-                }
             }
 
             @screen lg {
@@ -111,6 +96,7 @@
         &.toggled {
             .nav-menu {
                 @apply flex w-full;
+                box-shadow: 0 1px 3px rgba(0,0,0,.25);
             }
         }
     }

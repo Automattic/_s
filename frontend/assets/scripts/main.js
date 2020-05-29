@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 
     var header = document.getElementById('masthead');
     var body = document.getElementsByTagName('body')[0];
-    var sticky = header.offsetTop;
+    var sticky = header.offsetTop + 100;
 
     function navSticky() {
         if (window.pageYOffset > sticky) {
@@ -16,4 +16,15 @@ jQuery(document).ready(function($) {
         }
     }
 
+    //@see https://www.smartmenus.org/docs/
+    $('#primary-menu').smartmenus({
+        showFunction: function($ul, complete) {
+            $ul.slideDown(100, complete);
+        },
+        hideFunction: function($ul, complete) {
+            $ul.hide(50, complete);
+        },
+        showTimeout : 0,
+        hideTimeout : 0,
+    });
 });

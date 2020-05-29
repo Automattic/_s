@@ -1,0 +1,614 @@
+// Generate rules to indent sub menus text
+//
+// We'll use left border to avoid messing with the padding.
+
+@mixin sm-menu__sub-items-indentation($amount, $chainable: 'ul ', $level: 4, $chain: '') {
+    @for $i from 1 through $level {
+        $chain: $chain + $chainable;
+        #{$chain} a,
+        #{$chain} a:hover,
+        #{$chain} a:focus,
+        #{$chain} a:active {
+            border-left: ($amount * ($i + 1)) solid transparent;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------------------------------------------
+// 1. Theme Quick Settings (Variables)
+// (for further control, you will need to dig into the actual CSS in 2.)
+// -----------------------------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------
+// :: 1.1. Colors
+// ----------------------------------------------------------
+
+$sm-menu__white: #fff !default;
+$sm-menu__black: #333 !default;
+$sm-menu__green: #f6ffed !default;
+$sm-menu__green-dark: $primary !default;
+
+$sm-menu__box-shadow: rgba(0, 0, 0, 0.25) !default;
+
+
+// ----------------------------------------------------------
+// :: 1.2. Breakpoints
+// ----------------------------------------------------------
+
+$sm-menu__desktop-vp: 768px !default; // switch from collapsible to desktop
+
+
+// ----------------------------------------------------------
+// :: 1.3. Typography
+// ----------------------------------------------------------
+
+$sm-menu__font-family: Arial, sans-serif !default;
+$sm-menu__font-size-base: 16px !default;
+$sm-menu__font-size-small: 16px !default;
+$sm-menu__line-height: 17px !default;
+
+
+// ----------------------------------------------------------
+// :: 1.4. Borders
+// ----------------------------------------------------------
+
+$sm-menu__border-width: 2px !default;
+$sm-menu__border-radius-base: 4px !default;
+
+
+// ----------------------------------------------------------
+// :: 1.5. Collapsible main menu
+// ----------------------------------------------------------
+
+// Menu box
+$sm-menu__collapsible-bg: $sm-menu__white !default;
+$sm-menu__collapsible-border-color: $sm-menu__green-dark !default;
+
+// Items
+$sm-menu__collapsible-item-color: $sm-menu__black !default;
+$sm-menu__collapsible-item-disabled-color: darken($sm-menu__white, 20%) !default;
+$sm-menu__collapsible-item-padding-vertical: 13px !default;
+$sm-menu__collapsible-item-padding-horizontal: 20px !default;
+
+// Items separators
+$sm-menu__collapsible-separators-color: rgba($sm-menu__green-dark, 0.2) !default;
+
+// Toggle button (sub menu indicators)
+$sm-menu__collapsible-toggle-bg: transpatent;
+
+
+// ----------------------------------------------------------
+// :: 1.6. Collapsible sub menus
+// ----------------------------------------------------------
+
+// Menu box
+$sm-menu__collapsible-sub-bg: rgba($sm-menu__green-dark, 0.2) !default;
+
+// Items text indentation for deeper levels
+$sm-menu__collapsible-sub-item-indentation: 8px !default;
+
+
+// ----------------------------------------------------------
+// :: 1.7. Desktop main menu
+// ----------------------------------------------------------
+
+// Menu box
+$sm-menu__desktop-bg: transparent !default;
+
+// Items
+$sm-menu__desktop-item-color: $sm-menu__black !default;
+$sm-menu__desktop-item-hover-color: $sm-menu__white !default;
+$sm-menu__desktop-item-hover-bg: $sm-menu__green-dark !default;
+$sm-menu__desktop-item-highlighted-color: $sm-menu__black !default;
+$sm-menu__desktop-item-highlighted-bg: $sm-menu__green !default;
+$sm-menu__desktop-item-highlighted-box-shadow: 0 4px 3px $sm-menu__box-shadow !default;
+$sm-menu__desktop-item-disabled-color: darken($sm-menu__white, 20%) !default;
+$sm-menu__desktop-item-padding-vertical: 11px !default;
+$sm-menu__desktop-item-padding-horizontal: 20px !default;
+
+// Sub menu indicators
+$sm-menu__desktop-arrow-size: 6px !default; // border-width
+$sm-menu__desktop-arrow-color: $sm-menu__green-dark !default;
+$sm-menu__desktop-arrow-hover-color: $sm-menu__white !default;
+$sm-menu__desktop-arrow-highlighted-color: $sm-menu__green-dark !default;
+$sm-menu__desktop-arrow-spacing: 6px !default;
+
+// Vertical items
+$sm-menu__desktop-vertical-item-highlighted-color: $sm-menu__desktop-item-hover-color !default;
+$sm-menu__desktop-vertical-item-highlighted-bg: $sm-menu__desktop-item-hover-bg !default;
+$sm-menu__desktop-vertical-item-padding-vertical: 10px !default;
+$sm-menu__desktop-vertical-item-padding-horizontal: 20px !default;
+
+
+// ----------------------------------------------------------
+// :: 1.8. Desktop sub menus
+// ----------------------------------------------------------
+
+// Menu box
+$sm-menu__desktop-sub-bg: $sm-menu__green !default;
+$sm-menu__desktop-sub-box-shadow: 0 4px 3px $sm-menu__box-shadow !default;
+$sm-menu__desktop-sub-padding-vertical: 8px !default;
+$sm-menu__desktop-sub-padding-horizontal: 0 !default;
+
+// Items
+$sm-menu__desktop-sub-item-color: $sm-menu__black !default;
+$sm-menu__desktop-sub-item-hover-color: $sm-menu__white !default;
+$sm-menu__desktop-sub-item-hover-bg: $sm-menu__green-dark !default;
+$sm-menu__desktop-sub-item-disabled-color: lighten($sm-menu__black, 50%) !default;
+$sm-menu__desktop-sub-item-padding-vertical: 10px !default;
+$sm-menu__desktop-sub-item-padding-horizontal: 20px !default;
+
+
+// -----------------------------------------------------------------------------------------------------------------
+// 2. Theme CSS
+// -----------------------------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------
+// :: 2.1. Collapsible mode (mobile first)
+// ----------------------------------------------------------
+
+// calc item height and sub menus toggle button size
+$sm-menu__item-height: $sm-menu__line-height + $sm-menu__collapsible-item-padding-vertical * 2;
+// set toggle button size to 80% of item height
+$sm-menu__toggle-size: floor($sm-menu__item-height * 0.8);
+$sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
+
+// Main menu box
+.sm-menu {
+    //border-top: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
+    //border-bottom: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
+    background: $sm-menu__collapsible-bg;
+
+    // Main menu items
+    a {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            padding: $sm-menu__collapsible-item-padding-vertical $sm-menu__collapsible-item-padding-horizontal;
+            /* make room for the toggle button (sub indicator) */
+            padding-right: $sm-menu__collapsible-item-padding-horizontal + $sm-menu__toggle-size + $sm-menu__toggle-spacing;
+            color: $sm-menu__collapsible-item-color;
+            font-family: $sm-menu__font-family;
+            font-size: $sm-menu__font-size-base;
+            font-weight: normal;
+            //line-height: $sm-menu__line-height;
+            text-decoration: none;
+        }
+
+        &.current {
+            font-weight: bold;
+        }
+
+        &.disabled {
+            color: $sm-menu__collapsible-item-disabled-color;
+        }
+
+        // Toggle buttons (sub menu indicators)
+        .sub-arrow {
+            position: absolute;
+            top: 50%;
+            margin-top: -(ceil($sm-menu__toggle-size / 2));
+            left: auto;
+            right: $sm-menu__toggle-spacing;
+            width: $sm-menu__toggle-size;
+            height: $sm-menu__toggle-size;
+            overflow: hidden;
+            font: bold #{$sm-menu__font-size-small}/#{$sm-menu__toggle-size} monospace !important;
+            text-align: center;
+            text-shadow: none;
+            background: $sm-menu__collapsible-toggle-bg;
+            border-radius: $sm-menu__border-radius-base;
+        }
+
+        .sub-arrow::before {
+            content: '+';
+        }
+
+        &.highlighted .sub-arrow::before {
+            content: '-';
+        }
+    }
+
+    // Main menu items separators
+    li {
+        border-top: 1px solid $sm-menu__collapsible-separators-color;
+    }
+
+    > li:first-child {
+        border-top: 0;
+    }
+
+    // Sub menus box
+    ul {
+        background: $sm-menu__collapsible-sub-bg;
+
+        // Sub menus items
+        a {
+            &,
+            &:hover,
+            &:focus,
+            &:active {
+                font-size: $sm-menu__font-size-small;
+                // add indentation for sub menus text
+                border-left: $sm-menu__collapsible-sub-item-indentation solid transparent;
+            }
+        }
+
+        // Add indentation for sub menus text for deeper levels
+        @include sm-menu__sub-items-indentation($sm-menu__collapsible-sub-item-indentation);
+    }
+}
+
+
+// ----------------------------------------------------------
+// :: 2.2. Desktop mode
+// ----------------------------------------------------------
+
+@media (min-width: $sm-menu__desktop-vp) {
+
+    /* Switch to desktop layout
+    -----------------------------------------------
+       These transform the menu tree from
+       collapsible to desktop (navbar + dropdowns)
+    -----------------------------------------------*/
+    /* start... (it's not recommended editing these rules) */
+    .sm-menu ul {
+        position: absolute;
+        width: 12em;
+    }
+    //.sm-menu li {
+    //    float: left;
+    //}
+    //.sm-menu.sm-rtl li {
+    //    float: right;
+    //}
+    .sm-menu ul li, .sm-menu.sm-rtl ul li, .sm-menu.sm-vertical li {
+        float: none;
+    }
+    .sm-menu a {
+        white-space: nowrap;
+    }
+    .sm-menu ul a, .sm-menu.sm-vertical a {
+        white-space: normal;
+    }
+    .sm-menu .sm-nowrap > li > a, .sm-menu .sm-nowrap > li > :not(ul) a {
+        white-space: nowrap;
+    }
+    /* ...end */
+
+    // Main menu box
+    .sm-menu {
+        border-top: 0;
+        background: $sm-menu__desktop-bg;
+
+        // Main menu items
+        a {
+            &,
+            &:hover,
+            &:focus,
+            &:active,
+            &.highlighted {
+                padding: $sm-menu__desktop-item-padding-vertical $sm-menu__desktop-item-padding-horizontal;
+                color: $sm-menu__desktop-item-color;
+                border-radius: $sm-menu__border-radius-base $sm-menu__border-radius-base 0 0;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                background: $sm-menu__desktop-item-hover-bg;
+                color: $sm-menu__desktop-item-hover-color;
+            }
+
+            &.highlighted {
+                background: $sm-menu__desktop-item-highlighted-bg;
+                color: $sm-menu__desktop-item-highlighted-color;
+                box-shadow: $sm-menu__desktop-item-highlighted-box-shadow;
+            }
+
+            &.disabled {
+                background: transparent;
+                color: $sm-menu__desktop-item-disabled-color;
+                box-shadow: none;
+            }
+
+            // Make room for the sub arrows
+            &.has-submenu {
+                padding-right: $sm-menu__desktop-item-padding-horizontal + 8px + $sm-menu__desktop-arrow-spacing;
+            }
+
+            // Sub menu indicators
+            .sub-arrow {
+                top: 50%;
+                margin-top: -(ceil($sm-menu__desktop-arrow-size / 2));
+                right: $sm-menu__desktop-item-padding-horizontal;
+                width: 0;
+                height: 0;
+                border-width: $sm-menu__desktop-arrow-size ($sm-menu__desktop-arrow-size * 0.67) 0 ($sm-menu__desktop-arrow-size * 0.67);
+                border-style: solid dashed dashed dashed;
+                border-color: $sm-menu__desktop-arrow-color transparent transparent transparent;
+                background: transparent;
+                border-radius: 0;
+            }
+
+            &:hover .sub-arrow,
+            &:focus .sub-arrow,
+            &:active .sub-arrow {
+                border-color: $sm-menu__desktop-arrow-hover-color transparent transparent transparent;
+            }
+
+            &.highlighted .sub-arrow {
+                border-color: $sm-menu__desktop-arrow-highlighted-color transparent transparent transparent;
+            }
+
+            &.disabled .sub-arrow {
+                border-color: $sm-menu__desktop-arrow-color transparent transparent transparent;
+            }
+
+            // reset mobile first style
+            .sub-arrow::before {
+                display: none;
+            }
+        }
+
+        // No main menu items separators
+        li {
+            border-top: 0;
+        }
+
+        // Sub menus box
+        ul {
+            border: 0;
+            padding: $sm-menu__desktop-sub-padding-vertical $sm-menu__desktop-sub-padding-horizontal;
+            background: $sm-menu__desktop-sub-bg;
+            border-radius: 0 $sm-menu__border-radius-base $sm-menu__border-radius-base $sm-menu__border-radius-base;
+            box-shadow: $sm-menu__desktop-sub-box-shadow;
+
+            // 2+ sub levels need rounding of all corners
+            ul {
+                border-radius: $sm-menu__border-radius-base;
+            }
+
+            // Sub menus items
+            a {
+                &,
+                &:hover,
+                &:focus,
+                &:active,
+                &.highlighted {
+                    border: 0 !important;
+                    padding: $sm-menu__desktop-sub-item-padding-vertical $sm-menu__desktop-sub-item-padding-horizontal;
+                    color: $sm-menu__desktop-sub-item-color;
+                    border-radius: 0;
+                }
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.highlighted {
+                    background: $sm-menu__desktop-sub-item-hover-bg;
+                    color: $sm-menu__desktop-sub-item-hover-color;
+                    box-shadow: none;
+                }
+
+                &.disabled {
+                    background: transparent;
+                    color: $sm-menu__desktop-sub-item-disabled-color;
+                }
+
+                // No need for additional room for the sub arrows
+                &.has-submenu {
+                    padding-right: $sm-menu__desktop-item-padding-horizontal;
+                }
+
+                // Sub menu indicators
+                .sub-arrow {
+                    right: 10px;
+                    margin-top: -($sm-menu__desktop-arrow-size * 0.67);
+                    border-width: ($sm-menu__desktop-arrow-size * 0.67) 0 ($sm-menu__desktop-arrow-size * 0.67) $sm-menu__desktop-arrow-size;
+                    border-style: dashed dashed dashed solid;
+                    border-color: transparent transparent transparent $sm-menu__desktop-arrow-color;
+                }
+
+                &:hover .sub-arrow,
+                &:focus .sub-arrow,
+                &:active .sub-arrow,
+                &.highlighted .sub-arrow {
+                    border-color: transparent transparent transparent $sm-menu__desktop-arrow-hover-color;
+                }
+
+                &.disabled .sub-arrow {
+                    border-color: transparent transparent transparent $sm-menu__desktop-arrow-color;
+                }
+            }
+        }
+
+        // Scrolling arrows containers for tall sub menus - test sub menu: "Sub test" -> "more..." in the default download package
+        .scroll-up,
+        .scroll-down {
+            position: absolute;
+            display: none;
+            visibility: hidden;
+            overflow: hidden;
+            background: $sm-menu__desktop-sub-bg;
+            height: 20px;
+            // width and position will be set automatically by the script
+        }
+
+        .scroll-up-arrow,
+        .scroll-down-arrow {
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            margin-left: -8px;
+            // we will use one-side border to create a triangle so that we don't use a real background image, of course, you can use a real image if you like too
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            border-width: 0 6px 8px 6px; // tweak size of the arrow
+            border-style: dashed dashed solid dashed;
+            border-color: transparent transparent $sm-menu__desktop-arrow-color transparent;
+        }
+
+        .scroll-down-arrow {
+            border-width: 8px 6px 0 6px;
+            border-style: solid dashed dashed dashed;
+            border-color: $sm-menu__desktop-arrow-color transparent transparent transparent;
+        }
+
+
+        // Rigth-to-left
+
+        // Main menu box
+        &.sm-rtl {
+
+            // Main menu items
+            a {
+
+                // Make room for the sub arrows
+                &.has-submenu {
+                    padding-right: $sm-menu__desktop-item-padding-horizontal;
+                    padding-left: $sm-menu__desktop-item-padding-horizontal + 8px + $sm-menu__desktop-arrow-spacing;
+                }
+
+                // Sub menu indicators
+                .sub-arrow {
+                    right: auto;
+                    left: $sm-menu__desktop-item-padding-horizontal;
+                }
+            }
+
+            // Vertical main menu
+            &.sm-vertical {
+                border-right: 0;
+                border-left: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
+
+                // Vertical main menu items
+                a {
+                    border-radius: 0 $sm-menu__border-radius-base $sm-menu__border-radius-base 0;
+
+                    // No need for additional room for the sub arrows
+                    &.has-submenu {
+                        padding: $sm-menu__desktop-vertical-item-padding-vertical $sm-menu__desktop-vertical-item-padding-horizontal;
+                    }
+
+                    // Sub menu indicators
+                    .sub-arrow {
+                        right: auto;
+                        left: 10px;
+                        border-width: ($sm-menu__desktop-arrow-size * 0.67) $sm-menu__desktop-arrow-size ($sm-menu__desktop-arrow-size * 0.67) 0;
+                        border-style: dashed solid dashed dashed;
+                        border-color: transparent $sm-menu__desktop-arrow-color transparent transparent;
+                    }
+
+                    &:hover .sub-arrow,
+                    &:focus .sub-arrow,
+                    &:active .sub-arrow,
+                    &.highlighted .sub-arrow {
+                        border-color: transparent $sm-menu__desktop-arrow-hover-color transparent transparent;
+                    }
+
+                    &.disabled .sub-arrow {
+                        border-color: transparent $sm-menu__desktop-arrow-color transparent transparent;
+                    }
+                }
+            }
+
+            // Sub menus box
+            ul {
+                border-radius: $sm-menu__border-radius-base 0 $sm-menu__border-radius-base $sm-menu__border-radius-base;
+
+                a {
+                    border-radius: 0 !important;
+
+                    // No need for additional room for the sub arrows
+                    &.has-submenu {
+                        padding: $sm-menu__desktop-sub-item-padding-vertical $sm-menu__desktop-sub-item-padding-horizontal !important;
+                    }
+
+                    // Sub menu indicators
+                    .sub-arrow {
+                        right: auto;
+                        left: 10px;
+                        border-width: ($sm-menu__desktop-arrow-size * 0.67) $sm-menu__desktop-arrow-size ($sm-menu__desktop-arrow-size * 0.67) 0;
+                        border-style: dashed solid dashed dashed;
+                        border-color: transparent $sm-menu__desktop-arrow-color transparent transparent;
+                    }
+
+                    &:hover .sub-arrow,
+                    &:focus .sub-arrow,
+                    &:active .sub-arrow,
+                    &.highlighted .sub-arrow {
+                        border-color: transparent $sm-menu__desktop-arrow-hover-color transparent transparent;
+                    }
+
+                    &.disabled .sub-arrow {
+                        border-color: transparent $sm-menu__desktop-arrow-color transparent transparent;
+                    }
+                }
+            }
+        }
+
+
+        // Vertical main menu
+
+        // Main menu box
+        &.sm-vertical {
+            border-bottom: 0;
+            border-right: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
+
+            // Main menu items
+            a {
+                padding: $sm-menu__desktop-vertical-item-padding-vertical $sm-menu__desktop-vertical-item-padding-horizontal;
+                border-radius: $sm-menu__border-radius-base 0 0 $sm-menu__border-radius-base;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.highlighted {
+                    background: $sm-menu__desktop-item-hover-bg;
+                    color: $sm-menu__desktop-item-hover-color;
+                    box-shadow: none;
+                }
+
+                &.disabled {
+                    background: transparent;
+                    color: $sm-menu__desktop-item-disabled-color;
+                }
+
+                // Sub menu indicators
+                .sub-arrow {
+                    right: 10px;
+                    margin-top: -($sm-menu__desktop-arrow-size * 0.67);
+                    border-width: ($sm-menu__desktop-arrow-size * 0.67) 0 ($sm-menu__desktop-arrow-size * 0.67) $sm-menu__desktop-arrow-size;
+                    border-style: dashed dashed dashed solid;
+                    border-color: transparent transparent transparent $sm-menu__desktop-arrow-color;
+                }
+
+                &:hover .sub-arrow,
+                &:focus .sub-arrow,
+                &:active .sub-arrow,
+                &.highlighted .sub-arrow {
+                    border-color: transparent transparent transparent $sm-menu__desktop-arrow-hover-color;
+                }
+
+                &.disabled .sub-arrow {
+                    border-color: transparent transparent transparent $sm-menu__desktop-arrow-color;
+                }
+            }
+
+            // Sub menus box
+            ul {
+                border-radius: $sm-menu__border-radius-base !important;
+
+                // Sub menus items
+                a {
+                    padding: $sm-menu__desktop-sub-item-padding-vertical $sm-menu__desktop-sub-item-padding-horizontal;
+                }
+            }
+        }
+    }
+}

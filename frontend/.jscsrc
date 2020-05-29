@@ -87,5 +87,8 @@
   "disallowSpacesInsideArrayBrackets": "all",
   "disallowSpacesInsideParentheses": true,
   "disallowMultipleLineBreaks": true,
-  "disallowNewlineBeforeBlockStatements": true
+  "disallowNewlineBeforeBlockStatements": true,
+  "excludeFiles": [
+    "./assets/scripts/main.js"
+  ]
 }
