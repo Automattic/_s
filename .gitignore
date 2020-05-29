@@ -1,1 +1,4 @@
 /.idea/
+/vendor
+/frontend/node_modules
+/frontend/bower_components
