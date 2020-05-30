@@ -34,7 +34,6 @@
     }
 }
 
-
 // 图片说明
 .wp-caption {
     @appy block mb-4;
@@ -52,115 +51,6 @@
 // 屏幕阅读器
 .screen-reader-text {
     display: none;
-}
-
-// 评论区域标题
-.c-comments {
-    &__title {
-        @apply mt-8 text-lg font-medium;
-    }
-
-    label {
-        @apply text-sm text-gray-600;
-    }
-
-    .form-submit {
-        @apply mt-3;
-    }
-}
-
-
-// 评论列表样式
-.c-comment {
-    margin-bottom: 40px;
-    margin-left: 0;
-    padding-left: 0;
-
-    .avatar {
-        border-radius: 50%;
-        border: 1px solid #ddd;
-    }
-
-    ol {
-        list-style: none;
-    }
-
-    .children {
-        margin-left: 0;
-        padding-left: 40px;
-        background-repeat: no-repeat;
-        background-position: left 20px;
-    }
-
-    li.comment > div img.avatar {
-        position: absolute;
-        left: 29px;
-        top: 29px;
-    }
-}
-
-// 单条评论样式
-.comment {
-    font-size: 14px;
-
-    .comment-body {
-        @apply hidden relative border border-gray-300 bg-gray-100;
-        padding: 25px 25px 25px 98px;
-        margin: 2em 0 0;
-    }
-
-    &-author {
-        .avatar {
-            position: absolute;
-            left: 25px;
-            top: 29px;
-        }
-
-        .says {
-            padding-left: 2px;
-        }
-
-        b {
-            @apply font-normal text-gray-600;
-        }
-    }
-
-    &-metadata {
-        line-height: 16px;
-        margin-bottom: 10px;
-
-        a {
-            @apply text-xs text-gray-500;
-        }
-    }
-
-    &-reply-link {
-        @apply inline-block mt-2 text-gray-500;
-    }
-
-    &-reply-title {
-        @apply mt-4 font-medium text-lg;
-    }
-
-    &-notes {
-        @apply text-gray-500;
-    }
-
-    &-content {
-        @apply mt-3 text-gray-800;
-    }
-
-    &-navigation {
-        @apply overflow-hidden mt-8;
-    }
-}
-
-.comment-respond {
-    font-size: 14px;
-}
-
-.comment-form-cookies-consent {
-    @apply flex mb-3 w-full items-center text-sm text-gray-600;
 }
 
 // 默认相册样式
@@ -207,20 +97,35 @@
     }
 }
 
-// 评论表单
-.comment-form {
-    p {
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="url"],
-    textarea {
-        width: 100%;
-        height: auto;
-    }
-}
-
 ul.wp-block-gallery {
     margin-left: 0 !important;
+}
+
+
+#nav-above {
+    @apply px-6 hidden;
+}
+
+.paged #nav-above {
+    @apply block;
+}
+
+.nav-links{
+    @apply mb-8;
+    @include clearfix;
+}
+
+.nav-previous,
+.previous-image {
+    @apply float-left w-1/2;
+}
+
+.nav-next,
+.next-image {
+    @apply float-right w-1/2 text-right;
+}
+
+.nav-single + .comments-area,
+#comment-nav-above {
+    @apply my-16;
 }

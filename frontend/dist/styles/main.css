@@ -68549,131 +68549,6 @@ pre, code {
   display: none;
 }
 
-.c-comments__title {
-  margin-top: 2rem;
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-
-.c-comments label {
-  font-size: 0.875rem;
-  color: #718096;
-}
-
-.c-comments .form-submit {
-  margin-top: 0.75rem;
-}
-
-.c-comment {
-  margin-bottom: 40px;
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.c-comment .avatar {
-  border-radius: 50%;
-  border: 1px solid #ddd;
-}
-
-.c-comment ol {
-  list-style: none;
-}
-
-.c-comment .children {
-  margin-left: 0;
-  padding-left: 40px;
-  background-repeat: no-repeat;
-  background-position: left 20px;
-}
-
-.c-comment li.comment > div img.avatar {
-  position: absolute;
-  left: 29px;
-  top: 29px;
-}
-
-.comment {
-  font-size: 14px;
-}
-
-.comment .comment-body {
-  display: none;
-  position: relative;
-  border-width: 1px;
-  border-color: #e2e8f0;
-  background-color: #f7fafc;
-  padding: 25px 25px 25px 98px;
-  margin: 2em 0 0;
-}
-
-.comment-author .avatar {
-  position: absolute;
-  left: 25px;
-  top: 29px;
-}
-
-.comment-author .says {
-  padding-left: 2px;
-}
-
-.comment-author b {
-  font-weight: 400;
-  color: #718096;
-}
-
-.comment-metadata {
-  line-height: 16px;
-  margin-bottom: 10px;
-}
-
-.comment-metadata a {
-  font-size: 0.75rem;
-  color: #a0aec0;
-}
-
-.comment-reply-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #a0aec0;
-}
-
-.comment-reply-title {
-  margin-top: 1rem;
-  font-weight: 500;
-  font-size: 1.125rem;
-}
-
-.comment-notes {
-  color: #a0aec0;
-}
-
-.comment-content {
-  margin-top: 0.75rem;
-  color: #2d3748;
-}
-
-.comment-navigation {
-  overflow: hidden;
-  margin-top: 2rem;
-}
-
-.comment-respond {
-  font-size: 14px;
-}
-
-.comment-form-cookies-consent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 0.75rem;
-  width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 0.875rem;
-  color: #718096;
-}
-
 .gallery {
   margin-left: -8px;
   margin-right: -8px;
@@ -68711,16 +68586,51 @@ pre, code {
   width: 20%;
 }
 
-.comment-form input[type="text"],
-.comment-form input[type="email"],
-.comment-form input[type="url"],
-.comment-form textarea {
-  width: 100%;
-  height: auto;
-}
-
 ul.wp-block-gallery {
   margin-left: 0 !important;
+}
+
+#nav-above {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: none;
+}
+
+.paged #nav-above {
+  display: block;
+}
+
+.nav-links {
+  margin-bottom: 2rem;
+  zoom: 1;
+}
+
+.nav-links::before, .nav-links::after {
+  content: " ";
+  display: table;
+}
+
+.nav-links::after {
+  clear: both;
+}
+
+.nav-previous,
+.previous-image {
+  float: left;
+  width: 50%;
+}
+
+.nav-next,
+.next-image {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+.nav-single + .comments-area,
+#comment-nav-above {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .container {
@@ -69586,6 +69496,189 @@ ul.wp-block-gallery {
   margin-right: 0.5rem;
 }
 
+/* =Comments
+-------------------------------------------------------------- */
+
+.comments-title {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.content__comments {
+  margin-bottom: 40px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.content__comments .avatar {
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.content__comments ol.comment-list {
+  list-style: none;
+}
+
+.content__comments ol.comment-list .pingback {
+  line-height: 1.625;
+  margin-bottom: 1.5rem;
+}
+
+.content__comments .children {
+  margin-left: 0;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-position: left 20px;
+}
+
+.content__comments li.comment > div img.avatar {
+  position: absolute;
+  left: 29px;
+  top: 29px;
+}
+
+.comment-respond {
+  font-size: 14px;
+}
+
+.comment-form p {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.comment-form p.logged-in-as {
+  margin-bottom: 1.5rem;
+}
+
+.comment-form p .form-allowed-tags {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 2;
+  color: #5e5e5e;
+}
+
+.comment-form label {
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"],
+.comment-form textarea {
+  width: 100%;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+}
+
+.comment-form-cookies-consent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.75rem;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.comment-respond {
+  margin-top: 3rem;
+}
+
+.comment-respond #wp-comment-cookies-consent {
+  margin-right: 0.5rem;
+}
+
+.comment-respond .comment-form-cookies-consent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comment-respond .comment-form-cookies-consent label {
+  margin-bottom: 0;
+}
+
+.required {
+  color: red;
+}
+
+.comment {
+  font-size: 14px;
+}
+
+.comment .comment-body {
+  position: relative;
+  border-width: 1px;
+  border-color: #e2e8f0;
+  background-color: #f7fafc;
+  padding: 25px 25px 25px 98px;
+  margin: 2em 0 0;
+}
+
+.comment-author .avatar {
+  position: absolute;
+  left: 25px;
+  top: 29px;
+}
+
+.comment-author .says {
+  padding-left: 2px;
+}
+
+.comment-author b {
+  font-weight: 400;
+  color: #718096;
+}
+
+.comment-metadata {
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.comment-metadata a {
+  font-size: 0.75rem;
+  color: #a0aec0;
+}
+
+.comment-reply-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #a0aec0;
+}
+
+.comment-reply-title {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.comment-notes {
+  color: #a0aec0;
+}
+
+.comment-content {
+  margin-top: 0.75rem;
+  color: #2d3748;
+}
+
+.comment-navigation {
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
 .widget {
   margin-bottom: 1.5rem;
 }
@@ -69610,7 +69703,7 @@ ul.wp-block-gallery {
 input, textarea {
   font-size: 1rem;
   border-width: 1px;
-  border-color: #edf2f7;
+  border-color: #e2e8f0;
   border-radius: 0.125rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;

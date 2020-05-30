@@ -1,0 +1,154 @@
+/* =Comments
+-------------------------------------------------------------- */
+.comments-title {
+    @apply mt-12 mb-8 text-base leading-normal font-normal;
+}
+
+// 评论列表样式
+.content__comments {
+    margin-bottom: 40px;
+    margin-left: 0;
+    padding-left: 0;
+
+    .avatar {
+        border-radius: 50%;
+        border: 1px solid #ddd;
+    }
+
+    ol.comment-list {
+        list-style: none;
+
+        .pingback {
+            @apply leading-relaxed mb-6;
+        }
+    }
+
+    .children {
+        margin-left: 0;
+        padding-left: 40px;
+        background-repeat: no-repeat;
+        background-position: left 20px;
+    }
+
+    li.comment > div img.avatar {
+        position: absolute;
+        left: 29px;
+        top: 29px;
+    }
+
+}
+
+
+// 评论表单
+.comment-respond {
+    font-size: 14px;
+}
+
+.comment-form {
+    p {
+        @apply py-3;
+
+        &.logged-in-as {
+            @apply mb-6;
+        }
+
+        .form-allowed-tags {
+            @apply m-0 text-xs leading-loose;
+            color: #5e5e5e;
+        }
+    }
+
+    label {
+        @apply block leading-none mb-2;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+}
+
+.comment-form-cookies-consent {
+    @apply flex mb-3 w-full items-center text-sm text-gray-600;
+}
+
+.comment-respond {
+    @apply mt-12;
+
+    #wp-comment-cookies-consent {
+        @apply mr-2;
+    }
+
+    .comment-form-cookies-consent{
+        @apply flex items-center;
+        label{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.required {
+    color: red;
+}
+
+
+// 单条评论样式
+.comment {
+    font-size: 14px;
+
+    .comment-body {
+        @apply relative border border-gray-300 bg-gray-100;
+        padding: 25px 25px 25px 98px;
+        margin: 2em 0 0;
+    }
+
+    &-author {
+        .avatar {
+            position: absolute;
+            left: 25px;
+            top: 29px;
+        }
+
+        .says {
+            padding-left: 2px;
+        }
+
+        b {
+            @apply font-normal text-gray-600;
+        }
+    }
+
+    &-metadata {
+        line-height: 16px;
+        margin-bottom: 10px;
+
+        a {
+            @apply text-xs text-gray-500;
+        }
+    }
+
+    &-reply-link {
+        @apply inline-block mt-2 text-gray-500;
+    }
+
+    &-reply-title {
+        @apply mt-4 font-medium text-lg;
+    }
+
+    &-notes {
+        @apply text-gray-500;
+    }
+
+    &-content {
+        @apply mt-3 text-gray-800;
+    }
+
+    &-navigation {
+        @apply overflow-hidden mt-8;
+    }
+}
