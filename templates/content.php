@@ -38,7 +38,7 @@
                     <?php the_time('Y-m-d'); ?>
                 </div>
                 <div class="rs-entry__more">
-                    <a href="<?php the_permalink(); ?>" class="">View more></a>
+                    <a href="<?php the_permalink(); ?>" class="rs-button rs-button--sm">View more></a>
                 </div>
             </footer>
         </div>

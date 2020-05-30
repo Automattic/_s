@@ -66,15 +66,32 @@
     input[type="email"],
     input[type="url"],
     textarea {
-        width: 100%;
-        height: auto;
-        box-sizing: border-box;
-        padding: 10px;
+        @apply w-full;
     }
-}
 
-.comment-form-cookies-consent {
-    @apply flex mb-3 w-full items-center text-sm text-gray-600;
+    &-cookies-consent {
+        @apply flex w-full items-center text-sm text-gray-600;
+    }
+
+    @screen lg {
+        &-author,
+        &-email,
+        &-url {
+            @apply w-1/3 float-left;
+        }
+
+        &-author {
+            @apply pr-2;
+        }
+
+        &-email {
+            @apply px-2;
+        }
+
+        &-url {
+            @apply pl-2;
+        }
+    }
 }
 
 .comment-respond {
@@ -84,9 +101,9 @@
         @apply mr-2;
     }
 
-    .comment-form-cookies-consent{
+    .comment-form-cookies-consent {
         @apply flex items-center;
-        label{
+        label {
             margin-bottom: 0;
         }
     }

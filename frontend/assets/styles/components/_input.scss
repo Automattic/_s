@@ -1,5 +1,5 @@
 input,textarea{
-    @apply text-base border border-gray-300 rounded-sm px-3 py-2 leading-normal;
+    @apply text-base border border-gray-300 rounded px-3 py-2 leading-normal outline-none;
 
     &:hover{
         border-color: $primary;
@@ -13,12 +13,4 @@ input,textarea{
     &[disabled] {
         @apply text-gray-500 bg-gray-200;
     }
-}
-
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-    @apply px-3 py-2 bg-gray-200 text-gray-700 leading-normal appearance-none;
 }

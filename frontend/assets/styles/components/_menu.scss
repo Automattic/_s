@@ -215,6 +215,14 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
     // Main menu items separators
     li {
         border-top: 1px solid $sm-menu__collapsible-separators-color;
+
+        &.current-menu-ancestor,
+        &.current-menu-parent,
+        &.current-menu-item {
+            & > a {
+                @apply font-bold;
+            }
+        }
     }
 
     > li:first-child {

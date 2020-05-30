@@ -68491,6 +68491,61 @@ pre, code {
   vertical-align: middle;
 }
 
+.rs-button, button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background-color: #fff;
+  background-color: #f7fafc;
+  line-height: 1.5;
+  color: #2d3748;
+  font-weight: 400;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 1px;
+  border-color: #cbd5e0;
+  border-radius: 0.25rem;
+}
+
+.rs-button:hover, button:hover,
+  :hover[type="button"],
+  :hover[type="reset"],
+  :hover[type="submit"] {
+  background-color: #edf2f7;
+}
+
+.rs-button--primary,
+  [type="submit"] {
+  background-color: #4299e1;
+  border-color: #3182ce;
+  color: #fff;
+}
+
+.rs-button--primary:hover,
+    :hover[type="submit"] {
+  background-color: #2b6cb0;
+  border-color: #2c5282;
+}
+
+.rs-button--ghost {
+  background-color: transparent;
+  color: #2b6cb0;
+  border-color: #4299e1;
+}
+
+.rs-button--ghost:hover {
+  background-color: #4299e1;
+  color: #fff;
+  border-color: transparent;
+}
+
+.rs-button--sm {
+  font-size: 0.875rem;
+  padding: 6px 8px;
+}
+
 .wp-post-image {
   max-width: 100%;
   height: auto;
@@ -68514,6 +68569,33 @@ pre, code {
 .alignleft,
 .alignright {
   margin-bottom: 1rem;
+}
+
+.search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-form label {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.search-form label input {
+  width: 100%;
+  outline-offset: 0;
+}
+
+.search-form label input, .search-form label input:hover, .search-form label input:focus, .search-form label input:active {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-form [type="submit"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 @screnn lg {
@@ -68946,6 +69028,10 @@ ul.wp-block-gallery {
 
 .sm-menu li {
   border-top: 1px solid rgba(0, 65, 120, 0.2);
+}
+
+.sm-menu li.current-menu-ancestor > a, .sm-menu li.current-menu-parent > a, .sm-menu li.current-menu-item > a {
+  font-weight: 700;
 }
 
 .sm-menu > li:first-child {
@@ -69446,16 +69532,6 @@ ul.wp-block-gallery {
   color: #718096;
 }
 
-.rs-entry__more a {
-  display: inline-block;
-  line-height: 1;
-  font-size: 0.875rem;
-  background-color: #e2e8f0;
-  padding: 0.5rem;
-  color: #718096;
-  border-radius: 0.125rem;
-}
-
 .post-categories li a {
   display: inline-block;
   line-height: 1;
@@ -69571,23 +69647,38 @@ ul.wp-block-gallery {
 .comment-form input[type="url"],
 .comment-form textarea {
   width: 100%;
-  height: auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
 }
 
 .comment-form-cookies-consent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 0.75rem;
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   font-size: 0.875rem;
   color: #718096;
+}
+
+@media (min-width: 1024px) {
+  .comment-form-author, .comment-form-email, .comment-form-url {
+    width: 33.333333%;
+    float: left;
+  }
+
+  .comment-form-author {
+    padding-right: 0.5rem;
+  }
+
+  .comment-form-email {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .comment-form-url {
+    padding-left: 0.5rem;
+  }
 }
 
 .comment-respond {
@@ -69704,12 +69795,13 @@ input, textarea {
   font-size: 1rem;
   border-width: 1px;
   border-color: #e2e8f0;
-  border-radius: 0.125rem;
+  border-radius: 0.25rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   line-height: 1.5;
+  outline: 0;
 }
 
 input:hover, textarea:hover {
@@ -69723,20 +69815,4 @@ input:focus, input:active, textarea:focus, textarea:active {
 input[disabled], textarea[disabled] {
   color: #a0aec0;
   background-color: #edf2f7;
-}
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: #edf2f7;
-  color: #4a5568;
-  line-height: 1.5;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }

@@ -24,6 +24,30 @@
     @apply mb-4;
 }
 
+.search-form {
+    @apply flex;
+
+    label {
+        @apply flex-grow;
+
+        input {
+            @apply w-full;
+            outline-offset: 0;
+
+            &,
+            &:hover,
+            &:focus,
+            &:active{
+                @apply rounded-tr-none rounded-br-none;
+            }
+        }
+    }
+
+    [type="submit"] {
+        @apply rounded-tl-none rounded-bl-none;
+    }
+}
+
 @screnn lg {
     .alignleft {
         @apply float-left mr-4;
@@ -110,7 +134,7 @@ ul.wp-block-gallery {
     @apply block;
 }
 
-.nav-links{
+.nav-links {
     @apply mb-8;
     @include clearfix;
 }

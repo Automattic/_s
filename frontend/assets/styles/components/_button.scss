@@ -1,0 +1,39 @@
+.rs-button {
+    @apply bg-white bg-gray-100 leading-normal text-gray-800 font-normal py-2 px-4 border border-gray-400 rounded;
+
+    &:hover {
+        @apply bg-gray-200;
+    }
+
+    &--primary{
+        @apply bg-blue-500 border-blue-600 text-white;
+
+        &:hover{
+            @apply bg-blue-700 border-blue-800;
+        }
+    }
+
+    &--ghost{
+        @apply bg-transparent text-blue-700 border-blue-500;
+
+        &:hover{
+            @apply bg-blue-500 text-white border-transparent;
+        }
+    }
+
+    &--sm{
+        @apply text-sm;
+        padding: 6px 8px;
+    }
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    @extend .rs-button;
+}
+
+[type="submit"]{
+    @extend .rs-button--primary;
+}
