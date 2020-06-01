@@ -23,7 +23,7 @@
         </section>
     <?php endif; ?>
 
-    <div class="border-t border-white py-4 site__info">
+    <div class="py-4 site__info">
         <div class="container">
             Copyright &copy; <?= date('Y'); ?> <a href="<?= home_url(); ?>"><?php bloginfo('name'); ?></a>
         </div>
