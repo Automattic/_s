@@ -154,28 +154,12 @@
 .entry-content:not(.post__content) >,
 .entry-content > .wp-block-group .wp-block-group__inner-container > {
 
+	h1, h2, h3, h4, h5, h6,
 	p, ul, ol,
 	.wp-block-svbk-icon-paragraph,
-	.wp-block-button {
-		max-width: $size__text-width;
-	}
-}
-
-.entry-content:not(.post__content) >,
-.entry-content > .wp-block-group .wp-block-group__inner-container > {
-
-	h1, h2, h3, h4, h5, h6,
+	.wp-block-button,
 	.is-style-subtitle {
-		max-width: $size__large-text-width;
-	}
-}
-
-.wp-block-pullquote {
-
-	&.alignleft,
-	&.alignright,
-	&.aligncenter {
-		max-width: $size__large-text-width;
+		max-width: $size__text-width;
 	}
 }
 
