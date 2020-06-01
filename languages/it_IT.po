@@ -6,13 +6,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-05-19 13:47+0000\n"
+"PO-Revision-Date: 2020-06-01 14:13+0000\n"
 "Last-Translator: \n"
 "Language-Team: Italiano\n"
 "Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.4; wp-5.4.1"
+"X-Loco-Version: 2.4.0; wp-5.4.1"
 
 #: functions.php:61
 msgid "Primary"
@@ -186,7 +186,7 @@ msgstr "Contatti"
 
 #: footer.php:42 inc/customizer.php:318
 msgid "Opening Hours"
-msgstr "Orari di apertura"
+msgstr "Orari"
 
 #: footer.php:49 inc/customizer.php:291
 msgid "Address"
