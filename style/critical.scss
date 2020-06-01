@@ -142,21 +142,20 @@
 
 	p, ul, ol,
 	h1, h2, h3, h4, h5, h6,
-	.wp-block-pullquote.alignleft,
-	.wp-block-pullquote.alignright,
+	.wp-block-pullquote,
+	.wp-block-svbk-icon-paragraph,
+	.wp-block-button,
+	.wp-block-separator {
+		max-width: $size__text-width;
+	}
+
+	p, ul, ol,
+	h1, h2, h3, h4, h5, h6,
+	.wp-block-pullquote,
 	.wp-block-svbk-icon-paragraph,
 	.wp-block-button {
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	h1, h2, h3, h4, h5, h6,
-	p, ul, ol,
-	.wp-block-svbk-icon-paragraph,
-	.wp-block-button,
-	.is-style-subtitle,
-	.wp-block-separator {
-		max-width: $size__text-width;
 	}
 
 	h1, h2 {
