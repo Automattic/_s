@@ -6,17 +6,14 @@
 
 // 评论列表样式
 .content__comments {
-    margin-bottom: 40px;
-    margin-left: 0;
-    padding-left: 0;
+    @apply mb-10 ml-0 pl-0;
 
     .avatar {
-        border-radius: 50%;
-        border: 1px solid #ddd;
+        @apply rounded-full border border-gray-300;
     }
 
     ol.comment-list {
-        list-style: none;
+        @apply list-none;
 
         .pingback {
             @apply leading-relaxed mb-6;
@@ -24,14 +21,12 @@
     }
 
     .children {
-        margin-left: 0;
-        padding-left: 40px;
-        background-repeat: no-repeat;
+        @apply ml-0 pl-10 bg-no-repeat;
         background-position: left 20px;
     }
 
     li.comment > div img.avatar {
-        position: absolute;
+        @apply absolute;
         left: 29px;
         top: 29px;
     }
@@ -41,7 +36,7 @@
 
 // 评论表单
 .comment-respond {
-    font-size: 14px;
+    @apply text-sm;
 }
 
 .comment-form {
@@ -116,7 +111,7 @@
 
 // 单条评论样式
 .comment {
-    font-size: 14px;
+    @apply text-sm;
 
     .comment-body {
         @apply relative border border-gray-300 bg-gray-100;

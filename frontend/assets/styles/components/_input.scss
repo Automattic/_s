@@ -1,4 +1,6 @@
-input,textarea{
+input,
+select,
+textarea{
     @apply text-base border border-gray-300 rounded px-3 py-2 leading-normal outline-none;
 
     &:hover{

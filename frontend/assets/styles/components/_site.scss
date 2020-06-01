@@ -122,6 +122,17 @@
     }
 }
 
+.elementor-template-full-width{
+    .site__content{
+        @apply py-0;
+
+        .elementor,
+        .elementor-edit-area{
+            @apply flex-grow;
+        }
+    }
+}
+
 .content {
     &__primary {
         @apply flex-grow px-4;

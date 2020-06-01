@@ -62,8 +62,7 @@
         @apply mt-1 mb-2 leading-normal text-sm;
 
         i {
-            margin-right: 4px;
-            position: relative;
+            @apply relative mr-1;
             top: 1px
         }
 

@@ -3,15 +3,13 @@
 //===================
 
 .wp-post-image {
+    @apply h-auto align-middle;
     max-width: 100%;
-    height: auto;
-    vertical-align: middle;
 }
 
 // 媒体对齐
 .alignnone {
-    margin-left: 0;
-    margin-right: 0;
+    @apply mx-0;
     max-width: 100%;
 }
 
@@ -65,28 +63,23 @@
 }
 
 .wp-caption-text {
+    @apply relative text-white;
     padding: 6px 10px;
-    color: #fff;
     margin-top: -34px;
     background-image: linear-gradient(transparent 0, #000 300%);
-    position: relative;
 }
 
 // 屏幕阅读器
 .screen-reader-text {
-    display: none;
+    @apply hidden;
 }
 
 // 默认相册样式
 .gallery {
-    margin-left: -8px;
-    margin-right: -8px;
-    display: flex;
+    @apply flex -mx-2;
 
     .gallery-item {
-        padding-left: 8px;
-        padding-right: 8px;
-
+        @apply px-2;
         .gallery-icon {
             height: 100%;
         }
@@ -98,25 +91,25 @@
 
     &-columns-2 {
         .gallery-item {
-            width: 50%;
+            @apply w-1/2;
         }
     }
 
     &-columns-3 {
         .gallery-item {
-            width: 33.33%;
+            @apply w-1/3;
         }
     }
 
     &-columns-4 {
         .gallery-item {
-            width: 25%;
+            @apply w-1/4;
         }
     }
 
     &-columns-5 {
         .gallery-item {
-            width: 20%;
+            @apply w-1/5;
         }
     }
 }
