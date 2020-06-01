@@ -53,7 +53,7 @@
 		</div>
 		
 		<div id="legal" class="site-footer__bar bar sub-footer">
-			<span class="copyright-notice">&copy; 2017-<?php echo date( 'Y' ); ?></span> - 
+			<span class="copyright-notice">&copy;<?php echo date( 'Y' ); ?></span> - 
 			<?php if ( get_theme_mod( 'company_name', false ) ) : ?>
 			<span class="company-name"><?php echo get_theme_mod( 'company_name' ); ?></span> - 
 			<?php endif; ?>
