@@ -182,7 +182,17 @@
 }
 
 .wp-block-svbk-hero__button {
-    margin-top: 10px;
+    margin-top: 20px;
+
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        margin-top: 25px;
+        display: inline-block;
+
+        + .wp-block-svbk-hero__button {
+            display: inline;
+            margin-left: 15px;
+        }
+    }
 
     .wp-block-svbk-hero__link {
         display: block;
@@ -193,46 +203,33 @@
     }
 }
 
-.wp-block-svbk-hero__button--primary {
-    margin-top: 20px;
-}
+.wp-block-svbk-hero__button--secondary a[href^="tel:"] {
 
-.wp-block-svbk-hero__button--secondary {
-    margin-top: 20px;
+    &:before {
+        @include icon-content("\e930");
+        margin-right: 10px;
+        vertical-align: middle;
+    }
 
-    .wp-block-svbk-hero__link {
-        @include font-size(1.1);
-        background: none;
-        color: $color__link;
-        box-shadow: none;
-        border: none;
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        display: block;
+        margin: 25px 0 0;
         padding: 0;
+        border: none;
+        box-shadow: none;
+        text-align: left;
+        color: $color__text-main;
 
         &:before {
-            @include icon-content('\e930');
-            @include font-size(1.3);
-            margin-right: 8px;
-        }
-    
-        &:hover,
-        &:focus {
-            background: none;
-            box-shadow: none;
-            border: none;
-        }
-
-        &:hover {
-            color: $color__link-hover;
-        }
-
-        &:focus {
-            color: $color__link-focus;
+            @include font-size(1.2);
+            color: $color__link;
         }
     }
 }
 
 .wp-block-svbk-hero__footer {
     @include font-size(.85);
+    margin-top: 15px;
     clear: both;
     padding-top: 3px;
     color: #5f6368;
