@@ -1,17 +1,8 @@
 .wp-block-columns {
-    padding-top: 30px;
-	padding-bottom: 30px;
 	margin-bottom: 0;
 	
 	figure {
 		margin: 0;
-	}
-
-	.wp-block-columns &,
-	.wp-block-media-text &,
-	.wp-block-group & {
-		padding-top: 0;
-		padding-bottom: 0;
 	}
 
 	.wp-block-column {
@@ -30,7 +21,7 @@
 
 		.wp-block-column {
 			flex-grow: 1;
-			margin-bottom: 0;
+			margin-bottom: 0;	
 		}
 
 		.wp-block-column:first-child {
@@ -38,7 +29,6 @@
 		}
 
 		.wp-block-column:nth-child(2n) {
-			//Fix Gutenberg native columns stacking on small screens
 			padding-left: 16px;
 			margin-left: 0;
 	
@@ -77,23 +67,9 @@
 				padding-right: 4%;
 			}
 		}
-		
-		&.is-style-shrink-first,
-		&.is-style-shrink-last {
-
-			.wp-block-column {
-				flex-basis: 49%;
-
-				&.wp-block-column:nth-child(2n){
-					margin-left: 2%;
-				}
-			}
-		}
 	}
 
 	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		padding-top: 50px;
-		padding-bottom: 50px;
 		
 		&.is-style-split {
 
@@ -106,28 +82,6 @@
 
 			.wp-block-column:last-of-type {
 				padding-right: 8.5%;
-			}
-		}
-
-		&.is-style-shrink-first {
-			
-			.wp-block-column:first-of-type {
-				flex-basis: 32%;
-			}
-			
-			.wp-block-column:last-of-type {
-				flex-grow: 1;
-			}
-		}
-
-		&.is-style-shrink-last {
-			
-			.wp-block-column:last-of-type {
-				flex-basis: 32%;
-			}
-			
-			.wp-block-column:first-of-type {
-				flex-grow: 1;
 			}
 		}
 	}

@@ -44,15 +44,6 @@
 *	Typography
 */
 
-em.highlight {
-    background: rgba(0,151,167,.2);
-}
-
-.wp-block-svbk-hero__subtitle {
-    @include font-size(1.2);
-    font-weight: bold;
-}
-
 .wp-block-button__link,
 .wp-block-svbk-hero__link,
 .wp-block-svbk-card__link {
@@ -504,5 +495,27 @@ em.highlight {
 
     .wp-block-image {
         max-width: 218px;
+    }
+}
+
+/**
+*   Flickity Gallery
+*/
+
+.wp-block-gallery.is-style-flickity {
+
+    .blocks-gallery-grid {
+        display: flex;
+    }
+
+    .blocks-gallery-item {
+        flex-basis: 32%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 2% !important;
+
+        &:nth-of-type(3n + 3) {
+            margin-right: 0 !important;
+        }
     }
 }
