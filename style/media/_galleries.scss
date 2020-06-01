@@ -11,4 +11,25 @@
 	}
 }
 
+.wp-block-jetpack-tiled-gallery {
+
+	@media screen and (max-width: breakpoint('phone')) {
+
+		.tiled-gallery__row,
+		.tiled-gallery__col {
+			display: block;
+			margin: 0 !important;
+		}
+
+		.tiled-gallery__col {
+
+			.tiled-gallery__item {
+				margin-bottom: 10px;
+				width: 100% !important;
+				height: auto !important;
+			}
+		}
+	}
+}
+
 @import "flickity";
