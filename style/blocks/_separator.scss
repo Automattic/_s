@@ -7,10 +7,11 @@ hr {
 		border: 0;
 		height: 2px;
 		width: 50px;
-		margin: 17px auto;
+		margin: 20px 0;
 
-		&.alignleft {
-			margin-left: 0;
+		.has-text-align-center + & {
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		&.is-style-wide {
