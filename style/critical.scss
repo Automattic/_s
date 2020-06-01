@@ -159,6 +159,10 @@
 		max-width: $size__text-width;
 	}
 
+	h1, h2 {
+		margin-top: 0;
+	}
+
 	@media screen and (min-width: $size__text-width) {
 
 		.wp-block-separator {
