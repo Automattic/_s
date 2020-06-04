@@ -1,15 +1,25 @@
 .widget{
-    @apply mb-6;
+    @apply mb-10;
     &-title{
-        @apply text-lg font-medium;
+        @apply text-lg font-medium mb-4;
+    }
+
+    li{
+        @apply text-sm leading-relaxed leading-6;
+        a{
+            @apply inline-block text-gray-600;
+
+            &:hover{
+                @apply text-gray-800;
+            }
+        }
     }
 
     ul{
-        li{
-            @apply text-sm;
-            a{
-                @apply inline-block text-gray-600 leading-normal py-1;
-            }
-        }
+
+    }
+
+    ol{
+
     }
 }

@@ -2,7 +2,7 @@
     max-width: $widescreen;
     @apply mx-auto px-4;
 
-    @screen lg {
+    @screen xl {
         @apply px-0;
     }
 }
@@ -53,12 +53,27 @@
 
     &__nav {
         .nav-menu {
-            @apply flex flex-wrap ml-8;
+            @apply hidden flex-wrap ml-8 m-0 left-0 absolute;
+            top: 64px;
+            z-index: 98;
+
+            @screen md {
+                @apply ;
+                top: 75px;
+            }
+
+            @screen lg {
+                @apply flex flex-no-wrap static;
+            }
+
+            @screen xl {
+                @apply ml-0;
+            }
 
             li {
                 @apply w-full relative;
 
-                @screen md {
+                @screen lg {
                     @apply w-auto;
                 }
 
@@ -79,19 +94,7 @@
                 }
             }
 
-            @media screen and (max-width: 768px) {
-                @apply m-0 left-0 absolute hidden;
-                top: 64px;
-                z-index: 98;
-            }
 
-            @screen md {
-                @apply flex-no-wrap;
-            }
-
-            @screen lg {
-                @apply ml-0;
-            }
 
         }
 
@@ -105,10 +108,14 @@
 
     &__content {
         max-width: $widescreen;
-        @apply w-full flex flex-wrap flex-grow mx-auto py-4;
+        @apply w-full flex flex-wrap flex-grow mx-auto p-4;
 
-        @screen lg {
-            @apply flex-no-wrap py-8;
+        @screen lg{
+          @apply flex-no-wrap;
+        }
+
+        @screen xl {
+            @apply py-8 px-0;
         }
 
          .elementor{
@@ -138,15 +145,11 @@
 
 .content {
     &__primary {
-        @apply flex-grow px-4;
-
-        @screen lg {
-            @apply px-0;
-        }
+        @apply flex-grow w-full;
     }
 
     &__secondary {
-        @apply px-4 flex-grow mt-8;
+        @apply flex-grow mt-8;
 
         @screen lg {
             @apply flex-none w-1/4 ml-8 px-0 mt-0;

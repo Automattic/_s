@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
             $ul.slideDown(100, complete);
         },
         hideFunction: function($ul, complete) {
-            $ul.hide(50, complete);
+            $ul.slideUp(100, complete);
         },
         showTimeout : 0,
         hideTimeout : 0,

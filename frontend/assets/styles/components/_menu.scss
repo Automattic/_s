@@ -35,7 +35,7 @@ $sm-menu__box-shadow: rgba(0, 0, 0, 0.25) !default;
 // :: 1.2. 自适应端点
 // ----------------------------------------------------------
 
-$sm-menu__desktop-vp: 768px !default; // switch from collapsible to desktop
+$sm-menu__desktop-vp: 992px !default; // switch from collapsible to desktop
 
 
 // ----------------------------------------------------------
@@ -53,7 +53,7 @@ $sm-menu__line-height: 17px !default;
 // ----------------------------------------------------------
 
 $sm-menu__border-width: 2px !default;
-$sm-menu__border-radius-base: 4px !default;
+$sm-menu__border-radius-base: 0 !default;
 
 
 // ----------------------------------------------------------
@@ -93,7 +93,7 @@ $sm-menu__collapsible-sub-item-indentation: 8px !default;
 // ----------------------------------------------------------
 
 // Menu box
-$sm-menu__desktop-bg: transparent !default;
+$sm-menu__desktop-bg: #fff !default;
 
 // Items
 $sm-menu__desktop-item-color: $sm-menu__black !default;
@@ -252,27 +252,27 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 
 
 // ----------------------------------------------------------
-// :: 2.2. Desktop mode
+// :: 2.2. 桌面模式
 // ----------------------------------------------------------
 
 @media (min-width: $sm-menu__desktop-vp) {
 
-    /* Switch to desktop layout
+    /* 切换到桌面模式
     -----------------------------------------------
        These transform the menu tree from
        collapsible to desktop (navbar + dropdowns)
     -----------------------------------------------*/
-    /* start... (it's not recommended editing these rules) */
+    /* start... (不建议编辑以下规则) */
     .sm-menu ul {
         position: absolute;
         width: 12em;
     }
-    //.sm-menu li {
-    //    float: left;
-    //}
-    //.sm-menu.sm-rtl li {
-    //    float: right;
-    //}
+    .sm-menu li {
+        float: left;
+    }
+    .sm-menu.sm-rtl li {
+        float: right;
+    }
     .sm-menu ul li, .sm-menu.sm-rtl ul li, .sm-menu.sm-vertical li {
         float: none;
     }
@@ -367,7 +367,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
             border-top: 0;
         }
 
-        // Sub menus box
+        // 子菜单盒子
         ul {
             border: 0;
             padding: $sm-menu__desktop-sub-padding-vertical $sm-menu__desktop-sub-padding-horizontal;
@@ -380,7 +380,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
                 border-radius: $sm-menu__border-radius-base;
             }
 
-            // Sub menus items
+            // 子菜单项目
             a {
                 &,
                 &:hover,
@@ -412,7 +412,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
                     padding-right: $sm-menu__desktop-item-padding-horizontal;
                 }
 
-                // Sub menu indicators
+                // 子菜单箭头
                 .sub-arrow {
                     right: 10px;
                     margin-top: -($sm-menu__desktop-arrow-size * 0.67);
@@ -468,7 +468,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         }
 
 
-        // Rigth-to-left
+        // 从右向左
 
         // Main menu box
         &.sm-rtl {
@@ -561,7 +561,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         }
 
 
-        // Vertical main menu
+        // 垂直子菜单
 
         // Main menu box
         &.sm-vertical {
