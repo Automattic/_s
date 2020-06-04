@@ -15,13 +15,12 @@
 }
 
 // -----------------------------------------------------------------------------------------------------------------
-// 1. Theme Quick Settings (Variables)
-// (for further control, you will need to dig into the actual CSS in 2.)
+// 1. 主题快速设置 ( SASS 变量)
 // -----------------------------------------------------------------------------------------------------------------
 
 
 // ----------------------------------------------------------
-// :: 1.1. Colors
+// :: 1.1. 颜色
 // ----------------------------------------------------------
 
 $sm-menu__white: #fff !default;
@@ -33,14 +32,14 @@ $sm-menu__box-shadow: rgba(0, 0, 0, 0.25) !default;
 
 
 // ----------------------------------------------------------
-// :: 1.2. Breakpoints
+// :: 1.2. 自适应端点
 // ----------------------------------------------------------
 
 $sm-menu__desktop-vp: 768px !default; // switch from collapsible to desktop
 
 
 // ----------------------------------------------------------
-// :: 1.3. Typography
+// :: 1.3. 字体排版
 // ----------------------------------------------------------
 
 $sm-menu__font-family: Arial, sans-serif !default;
@@ -50,7 +49,7 @@ $sm-menu__line-height: 17px !default;
 
 
 // ----------------------------------------------------------
-// :: 1.4. Borders
+// :: 1.4. 边框
 // ----------------------------------------------------------
 
 $sm-menu__border-width: 2px !default;
@@ -58,39 +57,39 @@ $sm-menu__border-radius-base: 4px !default;
 
 
 // ----------------------------------------------------------
-// :: 1.5. Collapsible main menu
+// :: 1.5. 折叠主菜单
 // ----------------------------------------------------------
 
-// Menu box
+// 菜单盒子
 $sm-menu__collapsible-bg: $sm-menu__white !default;
 $sm-menu__collapsible-border-color: $sm-menu__green-dark !default;
 
-// Items
+// 菜单项
 $sm-menu__collapsible-item-color: $sm-menu__black !default;
 $sm-menu__collapsible-item-disabled-color: darken($sm-menu__white, 20%) !default;
 $sm-menu__collapsible-item-padding-vertical: 13px !default;
 $sm-menu__collapsible-item-padding-horizontal: 20px !default;
 
-// Items separators
+// 菜单分隔
 $sm-menu__collapsible-separators-color: rgba($sm-menu__green-dark, 0.2) !default;
 
-// Toggle button (sub menu indicators)
+// 切换按钮 (sub menu indicators)
 $sm-menu__collapsible-toggle-bg: transpatent;
 
 
 // ----------------------------------------------------------
-// :: 1.6. Collapsible sub menus
+// :: 1.6. 折叠子菜单
 // ----------------------------------------------------------
 
-// Menu box
+// 菜单盒子
 $sm-menu__collapsible-sub-bg: rgba($sm-menu__green-dark, 0.2) !default;
 
-// Items text indentation for deeper levels
+// 项目文本缩进为更深层
 $sm-menu__collapsible-sub-item-indentation: 8px !default;
 
 
 // ----------------------------------------------------------
-// :: 1.7. Desktop main menu
+// :: 1.7. 桌面主菜单
 // ----------------------------------------------------------
 
 // Menu box
@@ -107,14 +106,14 @@ $sm-menu__desktop-item-disabled-color: darken($sm-menu__white, 20%) !default;
 $sm-menu__desktop-item-padding-vertical: 11px !default;
 $sm-menu__desktop-item-padding-horizontal: 20px !default;
 
-// Sub menu indicators
+// 紫菜蛋指示
 $sm-menu__desktop-arrow-size: 6px !default; // border-width
 $sm-menu__desktop-arrow-color: $sm-menu__green-dark !default;
 $sm-menu__desktop-arrow-hover-color: $sm-menu__white !default;
 $sm-menu__desktop-arrow-highlighted-color: $sm-menu__green-dark !default;
 $sm-menu__desktop-arrow-spacing: 6px !default;
 
-// Vertical items
+// 垂直项目
 $sm-menu__desktop-vertical-item-highlighted-color: $sm-menu__desktop-item-hover-color !default;
 $sm-menu__desktop-vertical-item-highlighted-bg: $sm-menu__desktop-item-hover-bg !default;
 $sm-menu__desktop-vertical-item-padding-vertical: 10px !default;
@@ -122,16 +121,16 @@ $sm-menu__desktop-vertical-item-padding-horizontal: 20px !default;
 
 
 // ----------------------------------------------------------
-// :: 1.8. Desktop sub menus
+// :: 1.8. 桌面子菜单
 // ----------------------------------------------------------
 
-// Menu box
+// 菜单盒子
 $sm-menu__desktop-sub-bg: $sm-menu__green !default;
 $sm-menu__desktop-sub-box-shadow: 0 4px 3px $sm-menu__box-shadow !default;
 $sm-menu__desktop-sub-padding-vertical: 8px !default;
 $sm-menu__desktop-sub-padding-horizontal: 0 !default;
 
-// Items
+// 菜单项
 $sm-menu__desktop-sub-item-color: $sm-menu__black !default;
 $sm-menu__desktop-sub-item-hover-color: $sm-menu__white !default;
 $sm-menu__desktop-sub-item-hover-bg: $sm-menu__green-dark !default;
@@ -141,17 +140,18 @@ $sm-menu__desktop-sub-item-padding-horizontal: 20px !default;
 
 
 // -----------------------------------------------------------------------------------------------------------------
-// 2. Theme CSS
+// 2. 主题 CSS
 // -----------------------------------------------------------------------------------------------------------------
 
 
 // ----------------------------------------------------------
-// :: 2.1. Collapsible mode (mobile first)
+// :: 2.1. 折叠模式 (移动优先)
 // ----------------------------------------------------------
 
-// calc item height and sub menus toggle button size
+// 计算菜单项目高度和子菜单指示尺寸
 $sm-menu__item-height: $sm-menu__line-height + $sm-menu__collapsible-item-padding-vertical * 2;
-// set toggle button size to 80% of item height
+
+// 设置切换按钮为 80% 项目高度
 $sm-menu__toggle-size: floor($sm-menu__item-height * 0.8);
 $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 

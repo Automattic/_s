@@ -110,6 +110,10 @@
         @screen lg {
             @apply flex-no-wrap py-8;
         }
+
+         .elementor{
+            width: 100%;
+        }
     }
 
     &__footer {
