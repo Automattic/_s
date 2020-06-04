@@ -82,10 +82,11 @@
     &.is-style-faq,
     &.is-style-accordion {
         background: #fff;
-        box-shadow: $shadow__card;
         margin-bottom: 1em;
         margin-left: auto;
         margin-right: auto;
+        border-radius: $border-radius;
+        box-shadow: $shadow__card;
 
         .wp-block-svbk-collapse__trigger {
             @include font-size(1.2);
@@ -96,6 +97,7 @@
             text-decoration: none;
             font-weight: bold;
             color: $color__text-main;
+            border-radius: $border-radius;
 
             &:after {
                 @include icon-content('\e90a');
@@ -121,6 +123,7 @@
         &.wp-block-svbk-collapse--open {
             
             .wp-block-svbk-collapse__trigger {
+                border-radius: $border-radius $border-radius 0 0;
 
                 &:after {
                     @include icon-content('\e909');

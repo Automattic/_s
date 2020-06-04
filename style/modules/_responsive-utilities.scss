@@ -1,0 +1,13 @@
+.is-mobile-hidden {
+
+    @media screen and (max-width: breakpoint('tablet-portrait')) {
+        display: none;
+    }
+}
+
+.is-desktop-hidden {
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        display: none;
+    }
+}

@@ -36,16 +36,17 @@
 	}
 	
 	.wp-block-svbk-warranty__content {
-		border: 2px solid #d0a83a;
-		box-shadow: 0 0 0 10px rgba(255,255,255,1), 1px 1px 4px rgba(0,0,0,.1);
-		background-color: #fff;
-		padding: 0 20px 30px;
 		max-width: 800px;
 		margin-left: auto;
 		margin-right: auto;
-		color: $color__text-main;
 		position: relative;
 		z-index: 1;
+		padding: 0 20px 30px;
+		background-color: #fff;
+		color: $color__text-main;
+		border: 2px solid #d0a83a;
+		border-radius: $border-radius;
+		box-shadow: 0 0 0 10px rgba(255,255,255,1), 1px 1px 4px rgba(0,0,0,.1);
 
 		&.has-primary-background-color {
 			background-color: $color__corporate;
