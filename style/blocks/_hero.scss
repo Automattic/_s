@@ -9,6 +9,9 @@
     }
 
     @media screen and (min-width: breakpoint('tablet-landscape')) {
+        min-height: 500px;
+        display: flex;
+        align-items: center;
         padding: 60px calc(50vw - 50%);
     }
 
@@ -62,26 +65,33 @@
             }
         }
 
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+            display: block;
+            min-height: auto;
+        }
+
         @media screen and (min-width: $size__page-width) {
             padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
             padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
 
             .wp-block-svbk-hero__content {
-                padding-top: 100px;
-                padding-bottom: 100px;
+                padding: 100px 30px;
             }
         }
-
     }
 
     &.is-style-content-card {
 
-        @media screen and (min-width: breakpoint('tablet-portrait')) {
+        .wp-block-svbk-hero__content {
 
-            .wp-block-svbk-hero__content {
+            @media screen and (min-width: breakpoint('tablet-portrait')) {
                 background: #fff;
                 box-shadow: $shadow__card;
                 padding: 20px;
+            }
+
+            @media screen and (min-width: breakpoint('desktop')) {
+                padding: 30px;
             }
         }
     }
