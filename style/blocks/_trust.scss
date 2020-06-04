@@ -27,7 +27,7 @@
 		width: auto;
 
 		@media screen and (min-width: breakpoint('tablet-portrait')) {
-			max-height: 40px;
+			max-height: 50px;
 		}
 	}
 
@@ -44,48 +44,12 @@
 	}
 }
 
-.wp-block-svbk-trust.has-ribbon {
-
-	.wp-block-svbk-trust__content {
-		padding-top: 0;
-
-		@media screen and (min-width: breakpoint('tablet-landscape')) {
-			display: flex;
-			justify-content: space-around;
-			flex-grow: 1;
-			padding-top: 20px;
-		}
-	}
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		display: flex;
-		justify-content: space-between;
-	}
-}
-
 .wp-block-svbk-trust__ribbon {
-	@include font-size(1.1);
-	color: #fff;
-	background: #1d4e80;
+	@include font-size(.75);
+	color: $color__text-main;
 	display: inline-block;
-	padding: 7px 15px;
-	margin: 0;
-	position: relative;
-	top: -1.2rem;
-	box-shadow: $shadow__card;
-	font-weight: bold;
-
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
-		position: static;
-		margin-top: -6px;
-		margin-bottom: -6px;
-		height: calc(100% + 12px);
-		z-index: 1;
-		background-color: rgba(255,255,255,0);
-		background-image: url('images/svg/svbk-authority_label.svg');
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
-		box-shadow: none;
-		padding: 39px 58px;
-	}
+	font-weight: 800;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	margin-top: 15px;
 }
