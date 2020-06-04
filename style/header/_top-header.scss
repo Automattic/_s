@@ -1,8 +1,8 @@
 .top-header {
 	@include font-size(.9);
 	background: $color__corporate;
-	padding-top: 8px;
-	padding-bottom: 8px;
+	padding-top: 9px;
+	padding-bottom: 9px;
 	color: #fff;
 
 	a {
@@ -16,7 +16,6 @@
 	.company-phone,
 	.company-opening-hours,
 	.company-email {
-		display: inline-block;
 
 		&:before {
 			margin-right: 8px;
@@ -37,7 +36,7 @@
 		float: left;
 
 		&:before {
-			@include icon-content('\e936');
+			@include icon-content('\e930');
 		}
 	}
 
@@ -56,6 +55,7 @@
 		&:before {
 			@include icon-content('\e902');
 			font-size: 1.2em;
+			line-height: .9rem;
 			top: 2px;
 		}
 	}

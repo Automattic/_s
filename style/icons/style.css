@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'theme-icons';
-  src:  url('fonts/theme-icons.eot?7k75lb');
-  src:  url('fonts/theme-icons.eot?7k75lb#iefix') format('embedded-opentype'),
-    url('fonts/theme-icons.ttf?7k75lb') format('truetype'),
-    url('fonts/theme-icons.woff?7k75lb') format('woff'),
-    url('fonts/theme-icons.svg?7k75lb#theme-icons') format('svg');
+  src:  url('fonts/theme-icons.eot?37s07u');
+  src:  url('fonts/theme-icons.eot?37s07u#iefix') format('embedded-opentype'),
+    url('fonts/theme-icons.ttf?37s07u') format('truetype'),
+    url('fonts/theme-icons.woff?37s07u') format('woff'),
+    url('fonts/theme-icons.svg?37s07u#theme-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-information:before {
+  content: "\e928";
+  color: #efb35c;
+}
 .icon-pin-mappa:before {
   content: "\e93d";
   color: #ffba0e;
@@ -88,9 +92,6 @@
 }
 .icon-Senza-titolo-2-11:before {
   content: "\e92e";
-}
-.icon-question-mark:before {
-  content: "\e928";
 }
 .icon-close-quotes:before {
   content: "\e924";
@@ -223,6 +224,9 @@
 }
 .icon-envelope-o:before {
   content: "\e93b";
+}
+.icon-net_icon:before {
+  content: "\e93a";
 }
 .icon-phone:before {
   content: "\e930";
