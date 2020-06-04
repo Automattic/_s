@@ -45,7 +45,7 @@ add_action('carbon_fields_register_fields', static function ()
     /**
      * 文章类型和分类法数据
      */
-    Container::make('term_meta', '_s_category_settings', __('Catagory Settings', '_s'))
+    Container::make('term_meta', '_s_category_settings', __('Category Settings', '_s'))
              ->where('term_taxonomy', '=', 'category')
              ->or_where('term_taxonomy', '=', 'post_tag')
              ->or_where('term_taxonomy', '=', 'handbook')

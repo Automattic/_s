@@ -1,14 +1,10 @@
 module.exports = {
-    theme   : {
-        screens: {
-            sm: '640px',
-            md: '768px',
-            lg: '992px',
-            xl: '1280px',
-        },
+    theme      : {
         extend : {
             colors: {
-                gray: {
+                primary  : '#9cdbff',
+                secondary: '#9cdbff',
+                gray     : {
                     '100': '#f5f5f5',
                     '200': '#eee',
                     '300': '#e0e0e0',
@@ -22,6 +18,6 @@ module.exports = {
             },
         },
     },
-    variants: {},
-    plugins : [],
+    variants   : {},
+    plugins    : [],
 };

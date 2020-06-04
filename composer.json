@@ -4,11 +4,14 @@
   "type": "wordpress-theme",
   "require": {
     "php": ">=7.1",
-    "wenprise/debug": "^1.0",
     "wenprise/content-types": "^1.0",
     "yahnis-elsts/plugin-update-checker": "^4.5",
     "htmlburger/carbon-fields": "^3.1",
     "ext-json": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "wenprise/debug": "^1.0"
   },
   "autoload": {
     "psr-4": {
@@ -25,9 +28,9 @@
     }
   ],
   "minimum-stability": "stable",
-   "config": {
-      "preferred-install": {
-        "*": "dist"
-      }
+  "config": {
+    "preferred-install": {
+      "*": "dist"
     }
+  }
 }
