@@ -185,12 +185,12 @@
     margin-top: 20px;
 
     @media screen and (min-width: breakpoint('tablet-landscape')) {
-        margin-top: 25px;
+        margin: 25px 15px 15px 0;
         display: inline-block;
 
         + .wp-block-svbk-hero__button {
             display: inline;
-            margin-left: 15px;
+            margin: 0;
         }
     }
 
@@ -213,7 +213,7 @@
 
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         display: block;
-        margin: 25px 0 0;
+        margin: 10px 0 0;
         padding: 0;
         border: none;
         box-shadow: none;
@@ -229,7 +229,7 @@
 
 .wp-block-svbk-hero__footer {
     @include font-size(.85);
-    margin-top: 15px;
+    margin-top: 5px;
     clear: both;
     padding-top: 3px;
     color: #5f6368;
