@@ -13,7 +13,7 @@
 	
 	.wp-block-svbk-iter__step {
 		box-shadow: $shadow__card;
-		border-radius: 8px;
+		border-radius: $border-radius;
 		background: #fff;
 		text-align: center;
 		padding: 50px 20px 25px;

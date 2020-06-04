@@ -62,6 +62,6 @@ object {
 	}
 	
 	&.is-style-rounded-corners img {
-		border-radius: 8px;
+		border-radius: $border-radius;
 	}
 }

@@ -17,6 +17,7 @@
     }
     
     &.is-style-raised {
+        border-radius: $border-radius;
         box-shadow: $shadow__card;
         
         h2, h3, h4 {

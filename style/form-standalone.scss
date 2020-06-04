@@ -126,9 +126,10 @@ body {
 	}
 
 	input[type="submit"] {
-		border: none;
 		background: $color__background-button;
 		color: $color__text-button;
+		border: none;
+		border-radius: $border-radius__button;
 
 		&:hover {
 			background-color: $color__background-button-hover !important;
@@ -201,7 +202,7 @@ body {
 		margin: 20px 0 10px;
 		background: rgba(0,0,0,.03);
 		padding: 5px 15px 8px;
-		border-radius: 8px;
+		border-radius: $border-radius;
 
 		.hs-richtext,
 		label {

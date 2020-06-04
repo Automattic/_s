@@ -4,6 +4,7 @@
 
 .wp-block-hubspot-form {
 	padding: 30px 20px;
+	border-radius: $border-radius;
 	
 	.wp-block-hubspot-form__title {
 		@include font-size(1.5);

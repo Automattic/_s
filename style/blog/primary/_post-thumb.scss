@@ -4,10 +4,12 @@
 	padding-bottom: 40px;
 	margin-bottom: 30px;
 	background: #fff;
+	border-radius: $border-radius;
 
 	img {
 		width: 100%;
 		display: block;
+		border-radius: $border-radius $border-radius 0 0;
 	}
 
 	> a {

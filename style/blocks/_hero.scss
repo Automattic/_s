@@ -85,9 +85,10 @@
         .wp-block-svbk-hero__content {
 
             @media screen and (min-width: breakpoint('tablet-portrait')) {
-                background: #fff;
-                box-shadow: $shadow__card;
                 padding: 20px;
+                background: #fff;
+                border-radius: $border-radius;
+                box-shadow: $shadow__card;
             }
 
             @media screen and (min-width: breakpoint('desktop')) {

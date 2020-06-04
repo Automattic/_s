@@ -11,7 +11,7 @@ h2 {
 	margin-bottom: 2.617924em;
 	background-color: #0f834d;
 	margin-left: 0;
-	border-radius: 2px;
+	border-radius: $border-radius;
 	color: #fff;
 	clear: both;
 	border-left: .6em solid rgba(0,0,0,.15);
@@ -110,7 +110,7 @@ h2 {
 .status {
 	@include font-size(.9);
 	background: #888;
-	border-radius: 2px;
+	border-radius: $border-radius;
 	display: inline-block;
 	padding: 7px 15px 7px 55px;
 	color: #fff;

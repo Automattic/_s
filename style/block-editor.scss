@@ -49,7 +49,7 @@
 .wp-block-svbk-card__link {
     background: #333;
     color: #fff;
-    border-radius: 8px;
+    border-radius: $border-radius__button;
     padding: 10px 30px;
     text-align: center;
     display: block;
@@ -428,7 +428,7 @@
             color: #fff;
             width: 100%;
             padding: 5px;
-            border-radius: 3px !important;
+            border-radius: $border-radius__button !important;
             line-height: normal !important;
             margin-bottom: 8px;
             height: auto;

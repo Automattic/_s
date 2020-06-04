@@ -45,6 +45,7 @@
 					border-width: 2px;
 					border-style: solid;
 					border-color: $color__border-button;
+					border-radius: $border-radius__button;
 
 					&:hover {
 						color: $color__border-button-hover;
