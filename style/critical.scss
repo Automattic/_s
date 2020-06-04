@@ -100,11 +100,6 @@
 .wp-block-svbk-hero {
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
-
-	@media screen and (min-width: $size__page-max-width) {
-		max-width: $size__content-width + $padding__content-desktop * 2;
-		margin: 20px auto;
-	}
 }
 
 .wp-block-group {
@@ -180,32 +175,31 @@ img {
 }
 
 .site-header {
+	z-index: 999;
 
-	.search-toggle,
-	.search-form,
 	.sub-menu {
 		display: none;
 	}
+}
 
-	#main-navigation {
-		position: fixed;
-		right: -100%;
+#main-navigation {
+	position: fixed;
+	right: -100%;
 
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
 
-			li a {
-				color: $color__text-main;
-				text-decoration: none;
-				text-transform: uppercase;
-			}
+		li a {
+			color: $color__text-main;
+			text-decoration: none;
+			text-transform: uppercase;
 		}
+	}
 
-		@media screen and (min-width: breakpoint('tablet-landscape')) {
-			position: static;
-		}
+	@media screen and (min-width: breakpoint('desktop-nav')) {
+		position: relative;
 	}
 }
 

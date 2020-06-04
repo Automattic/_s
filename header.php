@@ -94,19 +94,21 @@ use \Svbk\WP\Helpers;
 					_svbk_woocommerce_header_cart();
 				}
 				?>
-				
-				<!--
-				<button class="search-toggle">
-					<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
-				</button>
-				<?php echo get_search_form(); ?>
-				-->
 	
 				<button class="main-navigation-toggle" aria-controls="main-navigation" aria-expanded="false">
 					<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', '_svbk' ); ?></span>
 				</button>
 			
 				<div id="main-navigation">
+
+					<?php if ( get_theme_mod( 'header_search', false ) ) : ?>
+					<button class="search-toggle">
+						<span class="screen-reader-text"><?php esc_html_e( 'Toggle Search', '_svbk' ); ?></span>
+					</button>
+					<div class="search__overlay"></div>
+					<?php echo get_search_form(); ?>
+					<?php endif; ?>
+
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>
 					<nav id="site-navigation" role="navigation">
 						<?php

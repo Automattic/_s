@@ -1,13 +1,19 @@
 .site-header {
 
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
+	@media screen and (min-width: breakpoint('desktop-nav')) {
 
-		#site-navigation a {
-			line-height: 45px;
+		#site-navigation li:not(.cta-item) a,
+		button.search-toggle {
+			height: 55px;
+		}
+
+		button.search-toggle:after,
+		#site-navigation li:not(.cta-item) a {
+			line-height: 55px;
 		}
 
 		div#main-navigation {
-			margin-right: 0;
+			padding-right: 0;
 		}
 
 		#site-navigation {
@@ -16,6 +22,10 @@
 			li {
 				display: inline-block;
 				float: none;
+
+				&.cta-item {
+					height: 43px !important;
+				}
 
 				a {
 					display: block;
@@ -34,20 +44,5 @@
 				margin: 0 auto;
 			}
 		}
-
-		&.stuck div#main-navigation li {
-
-			a {
-				line-height: 45px;
-			}
-
-			&.cta-item {
-				height: 33px;
-			}
-		}
 	}
 }
-
-//@import "has-search";
-//@import "has-cart";
-@import "has-search-and-cart";

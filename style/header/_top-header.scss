@@ -1,4 +1,5 @@
 .top-header {
+	@include font-size(.9);
 	background: $color__corporate;
 	padding-top: 8px;
 	padding-bottom: 8px;
@@ -36,7 +37,7 @@
 		float: left;
 
 		&:before {
-			@include icon-content('\e930');
+			@include icon-content('\e936');
 		}
 	}
 
@@ -60,6 +61,21 @@
 	}
 
 	@media screen and (max-width: breakpoint('tablet-landscape')) {
-		display: none;
+
+		.company-opening-hours,
+		.company-email {
+			display: none;
+		}
+	}
+}
+
+.top-header ~ .wrap {
+
+	.main-navigation-toggle {
+		top: 40px;
+	}
+
+	#main-navigation {
+		top: 41px + $size__header-height-mobile;
 	}
 }

@@ -1,0 +1,55 @@
+@import '../../blocks/animations';
+
+.main-navigation-toggle {
+	right: $padding__content-mobile;
+}
+
+.site-header.stuck {
+	transition: right .5s ease-in-out;
+
+	.menu-toggled-on & {
+
+		@media screen and (min-width: breakpoint('phone')) {
+			right: 300px;
+		}
+
+		@media screen and (min-width: breakpoint('desktop-nav')) {
+			right: 0;
+		}
+	}
+}
+
+#main-navigation {
+	right: -100%;
+	transition: right .5s ease-in-out, box-shadow .5s ease-in-out;
+
+	@media screen and (min-width: breakpoint('phone')) {
+		right: -300px;
+	}
+
+	.menu-toggled-on & {
+		right: 0;
+	}
+}
+
+.menu-toggled-on {
+
+	@media screen and (max-width: breakpoint('desktop-nav')) {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,.8);
+			z-index: 9;
+			animation: fadeIn .5s ease-in-out;
+		}
+	}
+}

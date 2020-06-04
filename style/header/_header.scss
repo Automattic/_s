@@ -3,6 +3,7 @@
 	width: 100%;
 	z-index: 999;
 	box-shadow: 0 0 3px rgba(0,0,0,.2);
+	position: relative;
 
 	.wrap {
 
@@ -12,48 +13,7 @@
 		}
 	}
 
-	.site-branding {
-		display: inline-block;
-
-		img {
-			display: block;
-			height: $size__logo-height-mobile;
-			width: auto;
-			margin-top: 7px;
-			margin-bottom: 2px;
-		}
-	}
-
-	.main-navigation-toggle {
-		position: absolute;
-		top: 0;
-		padding: 0;
-		height: $size__header-height-mobile;
-		background: none;
-		border: none;
-		box-shadow: none;
-		color: $color__text-main;
-
-		&:before {
-			@include icon-content("\e908");
-		}
-	}
-
 	.search-toggle {
-		display: block;
-		height: $size__header-height-mobile;
-	}
-
-	.site-header-cart li {
-		line-height: $size__header-height-mobile;
-
-		a {
-			display: inline-block;
-		}
-	}
-
-	.search-toggle,
-	.site-header-cart > li > a {
 		font-weight: normal;
 
 		&:before {
@@ -73,25 +33,11 @@
 		}
 	}
 
-	.site-header-cart .count {
-		@include font-size(.5);
-		position: absolute;
-		top: 10px;
-		right: -5px;
-		width: 12px;
-		height: 12px;
-		text-align: center;
-		line-height: 10px;
-		background: #fff;
-		border-radius: 50%;
-		border: 1px solid;
-	}
-
 	#main-navigation {
 		background: #fff;
 	}
 
-	@media screen and (min-width: breakpoint('tablet-landscape')) {
+	@media screen and (min-width: breakpoint('desktop-nav')) {
 
 		.wrap {
 			position: relative;
@@ -137,11 +83,49 @@
 	}
 }
 
-//@import "mobile/left-nav/left-nav";
-@import "mobile/right-nav/right-nav";
+.site-branding {
+	display: inline-block;
 
-//@import 'desktop/logo-center/logo-center';
-@import 'desktop/logo-left/logo-left';
+	img {
+		display: block;
+		height: $size__logo-height-mobile;
+		width: auto;
+		margin-top: 7px;
+		margin-bottom: 2px;
+	}
+}
+
+.main-navigation-toggle {
+	position: absolute;
+	top: 0;
+	padding: 0;
+	height: $size__header-height-mobile;
+	background: none;
+	border: none;
+	box-shadow: none;
+	color: $color__text-main;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: none;
+		color: $color__text-main;
+		box-shadow: none;
+	}
+
+	&:before {
+		@include icon-content("\e908");
+
+		.menu-toggled-on & {
+			@include icon-content("\e903");
+		}
+	}
+}
+
+@import 'mobile/right-nav';
+@import 'desktop/logo-left';
+//@import 'desktop/logo-center';
 
 @import 'top-header';
 @import 'header-stuck';
+//@import 'utilities/has-search';
