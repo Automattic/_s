@@ -2,7 +2,7 @@
 /**
  * 文章类型、分类方法、存档设置、站点设置等自定义字段
  *
- * @package wpzhiku
+ * @package _s
  */
 
 if ( ! class_exists('Carbon_Fields\Container')) {
@@ -31,7 +31,7 @@ add_action('carbon_fields_register_fields', static function ()
      * 分类法存档设置
      */
     foreach ($types as $type) {
-        Container::make('theme_options', 'wpzhiku_archive_settings', __('Archive Settings', '_s'))
+        Container::make('theme_options', '_s_archive_settings', __('Archive Settings', '_s'))
                  ->set_page_parent('edit.php?post_type=' . $type)
                  ->add_fields([
                      Field::make('image', $type . '_banner_image', __('Cover image', '_s')),
@@ -45,7 +45,7 @@ add_action('carbon_fields_register_fields', static function ()
     /**
      * 文章类型和分类法数据
      */
-    Container::make('term_meta', 'wpzhiku_category_settings', __('Catagory Settings', '_s'))
+    Container::make('term_meta', '_s_category_settings', __('Catagory Settings', '_s'))
              ->where('term_taxonomy', '=', 'category')
              ->or_where('term_taxonomy', '=', 'post_tag')
              ->or_where('term_taxonomy', '=', 'handbook')
@@ -59,7 +59,7 @@ add_action('carbon_fields_register_fields', static function ()
     /**
      * 案例参数
      */
-    Container::make('post_meta', 'wpzhiku_case_meta', __('Case Data', '_s'))
+    Container::make('post_meta', '_s_case_meta', __('Case Data', '_s'))
              ->where('post_type', '=', 'product')
              ->set_context('side')
              ->set_priority('low')
@@ -71,7 +71,7 @@ add_action('carbon_fields_register_fields', static function ()
     /**
      * 主题设置
      */
-    Container::make('theme_options', 'wpzhiku_theme_options', __('Theme Options', '_s'))
+    Container::make('theme_options', '_s_theme_options', __('Theme Options', '_s'))
              ->set_page_parent('themes.php')
              ->add_tab(__('General Options', '_s'), [
                  Field::make('checkbox', 'is_cleanup', __('Clean up useless menus for normal user', '_s')),
