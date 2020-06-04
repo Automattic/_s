@@ -14,37 +14,33 @@
 --------------------------------------------------------------*/
 @import "typography/typography";
 
-.error404 {
+.error404 .content-area {
+	padding: 30px 0 50px;
 	text-align: center;
 
-	#primary {
-		padding: 30px 0 50px;
+	p {
+		max-width: 40em;
+		margin: 1em auto 1.5em;
+	}
 
-		p {
-			max-width: 40em;
-			margin: 1em auto 1.5em;
-		}
+	h1 {
+		margin: 0;
 
-		h1 {
-			margin: 0;
+		span {
+			@include font-size(10);
+			display: block;
+			line-height: .8em;
+			margin-bottom: 20px;
+			opacity: .3;
+			color: $color__corporate;
 
-			span {
-				@include font-size(10);
-				display: block;
-				line-height: .8em;
-				margin-bottom: 20px;
-				opacity: .3;
-				color: $color__corporate;
-
-				@media screen and (min-width: breakpoint('tablet-landscape')) {
-					@include font-size(13);
-				}
+			@media screen and (min-width: breakpoint('tablet-landscape')) {
+				@include font-size(13);
 			}
-		}
-
-		.button {
-			display: inline-block;
 		}
 	}
 
+	.button {
+		display: inline-block;
+	}
 }
