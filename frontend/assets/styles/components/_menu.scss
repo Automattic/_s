@@ -52,7 +52,7 @@ $sm-menu__line-height: 17px !default;
 // :: 1.4. 边框
 // ----------------------------------------------------------
 
-$sm-menu__border-width: 2px !default;
+$sm-menu__border-width: 1px !default;
 $sm-menu__border-radius-base: 0 !default;
 
 
@@ -62,7 +62,7 @@ $sm-menu__border-radius-base: 0 !default;
 
 // 菜单盒子
 $sm-menu__collapsible-bg: $sm-menu__white !default;
-$sm-menu__collapsible-border-color: $sm-menu__green-dark !default;
+$sm-menu__collapsible-border-color: #eee !default;
 
 // 菜单项
 $sm-menu__collapsible-item-color: $sm-menu__black !default;
@@ -160,9 +160,11 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
     //border-top: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
     //border-bottom: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
     background: $sm-menu__collapsible-bg;
+    position: relative;
 
     // Main menu items
     a {
+        position: relative;
         &,
         &:hover,
         &:focus,
@@ -232,6 +234,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
     // Sub menus box
     ul {
         background: $sm-menu__collapsible-sub-bg;
+        display: none;
 
         // Sub menus items
         a {
@@ -247,6 +250,12 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 
         // Add indentation for sub menus text for deeper levels
         @include sm-menu__sub-items-indentation($sm-menu__collapsible-sub-item-indentation);
+    }
+
+    &.sm-vertical{
+        a{
+            display: block;
+        }
     }
 }
 
@@ -566,10 +575,13 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         // Main menu box
         &.sm-vertical {
             border-bottom: 0;
-            border-right: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
+            border: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
+            background: #f9f9f9;
 
             // Main menu items
             a {
+                display: block;
+                position: relative;
                 padding: $sm-menu__desktop-vertical-item-padding-vertical $sm-menu__desktop-vertical-item-padding-horizontal;
                 border-radius: $sm-menu__border-radius-base 0 0 $sm-menu__border-radius-base;
 
@@ -610,6 +622,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 
             // Sub menus box
             ul {
+                display: none;
                 border-radius: $sm-menu__border-radius-base !important;
 
                 // Sub menus items

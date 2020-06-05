@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
     }
 
     //@see https://www.smartmenus.org/docs/
-    $('#primary-menu').smartmenus({
+    $('.sm').smartmenus({
         showFunction: function($ul, complete) {
             $ul.slideDown(100, complete);
         },

@@ -82,8 +82,8 @@ add_action('carbon_fields_register_fields', static function ()
                  Field::make('text', 'copyright', __('Copyright text', '_s')),
              ])
              ->add_tab(__('Code Option', '_s'), [
-                 Field::make('textarea', 'code_before_head', __('Code before </head>', '_s')),
-                 Field::make('textarea', 'code_before_body', __('Code before </body>', '_s')),
+                 Field::make('header_scripts', 'code_before_head', __('Code before </head>', '_s')),
+                 Field::make('footer_scripts', 'code_before_body', __('Code before </body>', '_s')),
              ]);
 
 });

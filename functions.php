@@ -7,6 +7,8 @@
  * @package _s
  */
 
+require_once(get_theme_file_path('vendor/autoload.php'));
+
 /**
  * Theme support setup
  */
@@ -32,6 +34,12 @@ require_once(get_theme_file_path('includes/frontend.php'));
 
 
 /**
+ * pluggable functions
+ */
+require_once(get_theme_file_path('includes/pluggable.php'));
+
+
+/**
  * Custom template tags for this theme.
  */
 require_once(get_theme_file_path('includes/template-tags.php'));
@@ -49,10 +57,3 @@ require_once(get_theme_file_path('includes/customizer.php'));
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
-
-
-function my_nav_menu_submenu_css_class( $classes ) {
-    $classes[] = 'has-submenu';
-    return $classes;
-}
-add_filter( 'nav_menu_submenu_css_class', 'my_nav_menu_submenu_css_class' );
