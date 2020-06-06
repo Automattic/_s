@@ -18,8 +18,6 @@ get_header();
     <div id="primary" class="content__primary">
         <main id="main" class="site__main">
 
-            <?php wprs_breadcrumbs(); ?>
-
             <?php
             if (have_posts()) :
 
