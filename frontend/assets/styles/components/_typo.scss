@@ -2,6 +2,7 @@
 // 段落排版
 //
 .typo {
+    @apply leading-relaxed;
     /* 保证块/段落之间的空白隔行 */
     p, pre, ul, ol, dl, form, hr, table {
         margin-bottom: 1.2em
