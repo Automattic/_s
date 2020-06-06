@@ -22,6 +22,27 @@
     @apply mb-4;
 }
 
+
+.entry-content img,
+.comment-content img,
+.widget img,
+img.header-image,
+.author-avatar img,
+img.wp-post-image {
+    @apply rounded;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wp-caption {
+    @apply p-1 max-w-full;
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption {
+    @apply leading-loose italic text-xs text-gray-700;
+}
+
 .search-form {
     @apply flex;
 
@@ -35,7 +56,7 @@
             &,
             &:hover,
             &:focus,
-            &:active{
+            &:active {
                 @apply rounded-tr-none rounded-br-none;
             }
         }
@@ -145,4 +166,68 @@ ul.wp-block-gallery {
 .nav-single + .comments-area,
 #comment-nav-above {
     @apply my-16;
+}
+
+ul.blocks-gallery-grid {
+    @apply ml-0;
+}
+
+.wp-block-quote {
+    @apply pl-4 py-2 mb-4 border-l-4 border-primary bg-gray-200;
+
+    p {
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+}
+
+.wp-block-code {
+    @apply bg-gray-100 border border-gray-200 p-4 rounded-sm;
+}
+
+.pagination {
+    @apply flex;
+    li {
+        @apply block leading-none border border-gray-200 mr-2;
+        &.active {
+            @apply bg-primary border-primary;
+            a {
+                @apply text-white;
+            }
+        }
+
+        a {
+            @apply block px-3 py-2 text-gray-700;
+        }
+    }
+}
+
+
+.wp-calendar-nav,
+#wp-calendar {
+    margin: 0;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1.846153846;
+    color: #686868;
+}
+
+#wp-calendar th,
+#wp-calendar td,
+#wp-calendar caption {
+    @apply text-left;
+}
+
+.wp-calendar-nav {
+    @apply table;
+    span {
+        @apply table-cell;
+    }
+}
+
+.wp-calendar-nav-next,
+#wp-calendar #next {
+    padding-right: 24px;
+    text-align: right;
 }

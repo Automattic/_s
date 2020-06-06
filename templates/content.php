@@ -29,7 +29,7 @@
                 </a>
             </h2>
 
-            <div class="rs-entry__desc">
+            <div class="typo rs-entry__desc">
                 <?php the_excerpt(); ?>
             </div>
 
