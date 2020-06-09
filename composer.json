@@ -6,8 +6,7 @@
     "php": ">=7.1",
     "wenprise/content-types": "^1.0",
     "yahnis-elsts/plugin-update-checker": "^4.5",
-    "htmlburger/carbon-fields": "^3.1",
-    "ext-json": "*"
+    "htmlburger/carbon-fields": "^3.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
@@ -15,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Theme\\": "app/"
+      "SpaceName\\": "src/"
     },
     "files": [
     ]

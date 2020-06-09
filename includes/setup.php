@@ -3,6 +3,9 @@
  * @package _s
  */
 
+add_action('after_setup_theme', '_s_setup');
+add_action('widgets_init', '_s_widgets_init');
+add_action('init', '_s_elementor_widgets_init');
 
 if ( ! function_exists('_s_setup')) :
     /**
@@ -91,35 +94,46 @@ if ( ! function_exists('_s_setup')) :
     }
 endif;
 
-add_action('after_setup_theme', '_s_setup');
-
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _s_widgets_init()
-{
-    register_sidebar([
-        'name'          => esc_html__('Sidebar', '_s'),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__('Add widgets here.', '_s'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ]);
-    register_sidebar([
-        'name'          => esc_html__('Footer Widget Area', 'ppe'),
-        'id'            => 'sidebar-footer',
-        'description'   => esc_html__('Add widgets here.', 'ppe'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ]);
+if ( ! function_exists('_s_widgets_init')) {
+    function _s_widgets_init()
+    {
+        register_sidebar([
+            'name'          => esc_html__('Sidebar', '_s'),
+            'id'            => 'sidebar-1',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ]);
+        register_sidebar([
+            'name'          => esc_html__('Footer Widget Area', 'ppe'),
+            'id'            => 'sidebar-footer',
+            'description'   => esc_html__('Add widgets here.', 'ppe'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        ]);
 
+    }
 }
 
-add_action('widgets_init', '_s_widgets_init');
+
+if ( ! function_exists('_s_elementor_widgets_init')) {
+    function _s_elementor_widgets_init()
+    {
+        add_action('elementor/widgets/widgets_registered', function ($widgets_manager)
+        {
+            $widgets_manager->register_widget_type(new \SpaceName\Elementor\Widgets\ServiceWidgets());
+        });
+    }
+}
+
+
