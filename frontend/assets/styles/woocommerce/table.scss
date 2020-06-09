@@ -18,17 +18,15 @@
         border-width: 0 0 1px;
 
         td {
-            padding-left: 0;
+            @apply pl-0;
         }
 
         div.quantity {
-            float: none;
-            margin: 0;
+            @apply m-0 float-none;
         }
 
         small.stock {
-            display: block;
-            float: none;
+            @apply block float-none;
         }
     }
 
@@ -39,42 +37,33 @@
         }
 
         td {
-            vertical-align: top;
-            padding-bottom: 0.5em;
-            border: 0;
+            @apply align-top pb-2 border-0;
         }
 
         td:first-child {
-            width: 4em;
-            text-align: center;
+            @apply w-16 text-center;
         }
 
         .wc-grouped-product-add-to-cart-checkbox {
-            display: inline-block;
-            width: auto;
-            margin: 0 auto;
+            @apply inline-block w-auto mx-auto my-0;
             transform: scale(1.5, 1.5);
         }
     }
 
     .variations {
-        margin-bottom: 1em;
-        border: 0;
-        width: 100%;
+        @apply mb-4 border-0 w-full;
 
         td,
         th {
-            border: 0;
-            vertical-align: top;
-            line-height: 2em;
+            @apply border-0 align-top leading-loose;
         }
 
         label {
-            font-weight: 700;
+            @apply font-bold;
         }
 
         td.label {
-            padding-right: 1em;
+            @apply pr-4;
         }
     }
 }
@@ -296,7 +285,7 @@ table.my_account_orders {
         padding: 10px 0 10px 30px !important;
         font-size: .875rem;
         @apply px-4 font-medium text-gray-700 bg-gray-200;
-        &:last-child{
+        &:last-child {
             text-align: right;
             padding-right: 16px !important;
         }

@@ -17,9 +17,7 @@
 
         .product_title {
             clear: none;
-            margin-top: 0;
-            padding: 0;
-            @apply text-2xl mb-2;
+            @apply text-2xl mb-2 mt-0 p-0;;
         }
 
         span.price,
@@ -28,14 +26,12 @@
             font-size: 1.25em;
 
             ins {
+                @apply inline-block font-bottom: ;;
                 background: inherit;
-                font-weight: 700;
-                display: inline-block;
             }
 
             del {
-                opacity: 0.5;
-                display: inline-block;
+                @apply inline-block opacity-50;
             }
         }
 

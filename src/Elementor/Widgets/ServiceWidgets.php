@@ -2,6 +2,8 @@
 
 namespace SpaceName\Elementor\Widgets;
 
+use Elementor\Controls_Manager;
+
 class ServiceWidgets extends \Elementor\Widget_Base
 {
 
@@ -80,7 +82,7 @@ class ServiceWidgets extends \Elementor\Widget_Base
             'content_section',
             [
                 'label' => __('Content', '_s'),
-                'tab'   => \Elementor\Controls_Manager::TAB_CONTENT,
+                'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
 
@@ -88,7 +90,7 @@ class ServiceWidgets extends \Elementor\Widget_Base
             'url',
             [
                 'label'       => __('URL to embed', '_s'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
+                'type'        => Controls_Manager::TEXT,
                 'input_type'  => 'url',
                 'placeholder' => __('https://your-link.com', '_s'),
             ]

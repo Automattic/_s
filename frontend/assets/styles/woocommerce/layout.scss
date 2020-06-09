@@ -290,20 +290,20 @@
             @include clearfix();
 
             label {
-                display: block;
+                @apply block;
 
                 &.checkbox {
-                    display: inline;
+                    @apply inline;
                 }
             }
 
             select {
-                width: 100%;
+                @apply w-full;
             }
 
             .input-text {
                 box-sizing: border-box;
-                width: 100%;
+                @apply w-full;
             }
         }
 
@@ -314,7 +314,7 @@
         }
 
         .form-row-first {
-            float: left;
+            @apply float-left;
 
             /*rtl:raw:
             float: right;
@@ -322,6 +322,7 @@
         }
 
         .form-row-last {
+            @apply float-right;
             float: right;
         }
 
@@ -362,7 +363,7 @@
      * oEmbeds
      */
     .woocommerce-oembed {
-        position: relative;
+        @apply relative;
     }
 }
 
@@ -373,11 +374,11 @@
     .woocommerce, .woocommerce-page {
         .col2-set {
             .col-1 {
-                float: right;
+                @apply float-right;
             }
 
             .col-2 {
-                float: left;
+                @apply float-left;
             }
         }
     }

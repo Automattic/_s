@@ -4,28 +4,20 @@
 .woocommerce-tabs {
     @apply bg-gray-200 p-8;
     .panel {
-        margin: 0;
+        @apply m-0;
     }
 
     ul.tabs {
-        overflow: hidden;
-        position: relative;
-        justify-content: flex-start;
-        @apply mb-4;
+        @apply relative overflow-hidden justify-start mb-4;
 
         li {
-            @apply inline-block relative leading-none;
-            z-index: 0;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
+            @apply inline-block relative leading-none z-0 rounded-tl rounded-tr;
 
             a {
-                color: $secondarytext;
-                text-decoration: none;
-                @apply block text-base px-6 py-3 text-gray-700;
+                @apply block text-base px-6 py-3 text-gray-700 no-underline;
 
                 &:hover {
-                    text-decoration: none;
+                    @apply no-underline;
                     color: lighten($secondarytext, 10%);
                 }
             }
@@ -45,8 +37,7 @@
     }
 
     .panel {
-        margin: 0 0 2em;
-        padding: 0;
+        @apply p-0 mb-8;
     }
 }
 

@@ -4,10 +4,10 @@
 // 迷你购物车
 .woocommerce-mini-cart {
     li {
-        padding: $spacer-md 0;
+        @apply py-4;
 
         & + li {
-            border-top: 1px solid $border-color;
+            @apply border-top border-gray-200;
         }
     }
 
@@ -17,60 +17,47 @@
 
     .quantity,
     .amount {
-        font-size: 14px;
-        color: $text-light;
+        @apply text-sm text-gray-700;
     }
 
     .cart-title {
-        margin-bottom: $spacer-sm;
-        line-height: normal;
+        @apply mb-2 leading-normal;
     }
 
     a.remove_from_cart_button {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        padding: 0;
+        @apply absolute bottom-0 right-0 p-0;
         font-size: 20px !important;
-        color: $text-lighter !important;
+        color: theme('colors.gray.500') !important;
 
         &:hover {
-            background: transparent;
-            color: $text-color !important;
-            border-color: $text-color;
+            @apply bg-transparent border-color-700;
+            color: theme('colors.gray.700') !important;
         }
     }
 
     &__total {
-        padding: $spacer-md 0;
-        text-align: center;
-        border-bottom: 1px solid $border-color;
-        margin-bottom: $spacer-md;
+        @apply p4-0 text-center border-bottom border-color-200 mb-4;
 
         .amount {
-            color: $red;
-            font-weight: 500;
+            @apply text-red-700 font-medium;
         }
 
         strong {
-            font-weight: 400;
+            @apply font-normal inline-block;
             min-width: 40px;
-            display: inline-block;
         }
     }
 
     &__empty-message {
-        color: $text-color;
-        padding: $spacer-md;
-        text-align: center;
+        @apply text-color-700 p-4 text-center;
     }
 
     &__buttons {
-        justify-content: center;
+        @apply justify-center;
         margin-bottom: $spacer-md !important;
 
         .button {
-            margin-bottom: 0;
+            @apply mb-0;
         }
     }
 }
@@ -79,21 +66,18 @@
 .c-widget--shopping_cart {
 
     .woocommerce-mini-cart li {
-        padding: $spacer-md;
-        position: relative;
+        @apply p-4 relative;
 
         a {
-            padding: 0;
-            line-height: 1.5;
+            @apply p-0 leading-normal;
         }
 
         .quantity {
-            color: $text-lighter;
+            @apply text-gray-500;
         }
 
         a.remove {
-            position: absolute;
-            line-height: 1;
+            @apply absolute leading-normal;
         }
     }
 
