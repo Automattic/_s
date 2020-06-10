@@ -55,6 +55,7 @@ const ALLOWED_BLOCKS = [
 	'core/list', 
 	'core/more', 
 	'core-embed/youtube',
+	'core-embed/vimeo',
 	'core/button'
 ];
 
