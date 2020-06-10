@@ -24,8 +24,8 @@
 
             &.active {
                 background: $contentbg;
-                z-index: 2;
                 border-bottom-color: $contentbg;
+                z-index: 2;
 
                 a {
                     color: inherit;

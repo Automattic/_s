@@ -104,32 +104,21 @@ td.product-quantity {
 }
 
 table.shop_attributes {
-    border: 0;
+    @apply border-0 mb-6 w-full text-sm;
     border-top: 1px dotted rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.618em;
-    width: 100%;
-    font-size: 14px;
 
     th {
+        @apply font-bold p-2 border-t-0 m-0 leading-normal;
         width: 150px;
-        font-weight: 700;
-        padding: 8px;
-        border-top: 0;
         border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
-        margin: 0;
-        line-height: 1.5;
     }
 
     td {
-        padding: 0;
-        border-top: 0;
+        @apply p-0 border-t-0 m-0 leading-normal;
         border-bottom: 1px dotted rgba(0, 0, 0, 0.1);
-        margin: 0;
-        line-height: 1.5;
 
         p {
-            margin: 0;
-            padding: 8px 0;
+            @apply m-0 py-2;
         }
     }
 
@@ -156,12 +145,12 @@ table.shop_table_responsive {
 
 table.my_account_orders {
     .button {
-        white-space: nowrap;
+        @apply whitespace-no-wrap;
         font-size: inherit;
     }
 
     .order-actions {
-        text-align: right;
+        @apply text-right;
 
         .button {
             margin: 0.125em 0 0.125em 0.25em;
@@ -172,7 +161,7 @@ table.my_account_orders {
 
 .shop_table {
     tr td:last-of-type {
-        text-align: right;
+        @apply text-right;
     }
 
     th {
@@ -180,12 +169,10 @@ table.my_account_orders {
     }
 
     td {
-        @apply font-normal text-left py-3;
-        @apply border-b border-gray-300;
-        vertical-align: middle;
+        @apply font-normal text-left py-3 border-b border-gray-300 align-middle;
 
         small {
-            font-weight: normal;
+            @apply font-normal;
         }
     }
 
@@ -214,28 +201,24 @@ table.my_account_orders {
 
     th,
     td {
-        vertical-align: middle;
+        @apply align-middle;
     }
 
     td.actions {
         .coupon {
-            display: flex;
+            @apply flex;
 
             .input-text {
-                line-height: normal;
+                @apply leading-normal outline-none text-sm border border-secondary;
                 width: 120px !important;
-                border: 1px solid darken($secondary, 10%);
                 padding: 6px 6px 5px;
                 margin: 0 -1px 0 0;
-                font-size: 14px;
-                outline: 0;
             }
         }
     }
 
     input {
-        margin: 0;
-        vertical-align: middle;
+        @apply m-0 align-middle;
     }
 }
 
@@ -309,26 +292,24 @@ table.my_account_orders {
 
 .cart-collaterals {
     table {
+        @apply p-0;
         border-collapse: separate;
         margin: 0 0 6px;
-        padding: 0;
 
         tr:first-child {
             th,
             td {
-                border-top-width: 0;
+                @apply border-t-0;
             }
         }
 
         th {
-            width: 40%;
+            @apply w-2/5;
         }
 
         td,
         th {
-            vertical-align: top;
-            border-left: 0;
-            border-right: 0;
+            @apply align-top border-l-0 border-r-0;
             line-height: 1.5em;
         }
 
@@ -337,7 +318,7 @@ table.my_account_orders {
         }
 
         select {
-            width: 100%;
+            @apply w-full;
         }
     }
 
@@ -352,5 +333,5 @@ table.my_account_orders {
 }
 
 td.actions {
-    display: none;
+    @apply hidden;
 }
