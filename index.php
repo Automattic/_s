@@ -42,8 +42,6 @@ get_header();
 
                 endwhile;
 
-                wprs_pagination();
-
             else :
 
                 get_template_part('templates/content', 'none');

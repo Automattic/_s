@@ -69213,19 +69213,12 @@ pre, code {
   text-decoration: none;
 }
 
-.typo table {
-  border-width: 1px;
-  border-color: #e0e0e0;
-}
-
 .typo table th,
   .typo table td,
   .typo table caption {
-  border-width: 1px;
+  border-bottom-width: 1px;
   border-color: #e0e0e0;
   color: #616161;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   text-align: left;
@@ -69233,7 +69226,6 @@ pre, code {
 
 .typo table th,
   .typo table thead th {
-  background-color: #f5f5f5;
   min-width: 90px;
 }
 
@@ -69259,15 +69251,20 @@ pre, code {
   background-color: #fff;
   background-color: #f5f5f5;
   line-height: 1.5;
-  color: #424242;
-  font-weight: 400;
+  color: #616161;
+  font-weight: 600;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
   border-width: 1px;
-  border-color: #bdbdbd;
+  border-color: #9e9e9e;
   border-radius: 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 
 .rs-button:hover, button:hover,
@@ -69330,6 +69327,12 @@ pre, code {
 .alignleft,
 .alignright {
   margin-bottom: 1rem;
+}
+
+.post-categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .entry-content img,
@@ -70718,12 +70721,15 @@ textarea {
   padding-bottom: 0.5rem;
   line-height: 1.5;
   outline: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 input:hover,
   select:hover,
   textarea:hover {
-  border-color: #004178;
+  border-color: #616161;
 }
 
 input:focus, input:active,
@@ -70731,7 +70737,8 @@ input:focus, input:active,
   select:active,
   textarea:focus,
   textarea:active {
-  border-color: #004178;
+  background-color: #f5f5f5;
+  border-color: #616161;
 }
 
 input[disabled],
@@ -70739,4 +70746,22 @@ input[disabled],
   textarea[disabled] {
   color: #9e9e9e;
   background-color: #eee;
+}
+
+fieldset {
+  border-width: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+fieldset legend {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+fieldset input[type="text"],
+  fieldset input[type="search"],
+  fieldset input[type="password"],
+  fieldset textarea {
+  width: 100%;
 }

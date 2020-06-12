@@ -2,17 +2,34 @@ input,
 select,
 textarea{
     @apply text-base border border-gray-300 rounded px-3 py-2 leading-normal outline-none;
+    transition: all 0.3s ease;
 
     &:hover{
-        border-color: $primary;
+        @apply border-gray-700;
     }
 
     &:focus,
     &:active{
-        border-color: $primary;
+        @apply bg-gray-100 border-gray-700;
     }
 
     &[disabled] {
         @apply text-gray-500 bg-gray-200;
+    }
+}
+
+
+fieldset {
+    @apply border-0 my-0;
+
+    legend {
+        @apply text-sm mb-2;
+    }
+
+    input[type="text"],
+    input[type="search"],
+    input[type="password"],
+    textarea {
+        @apply w-full;
     }
 }

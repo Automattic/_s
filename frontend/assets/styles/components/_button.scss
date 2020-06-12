@@ -1,5 +1,6 @@
 .rs-button {
-    @apply bg-white bg-gray-100 leading-normal text-gray-800 font-normal py-2 px-4 border border-gray-400 rounded;
+    @apply bg-white bg-gray-100 leading-normal text-gray-700 font-semibold py-2 px-4 border border-gray-500 rounded text-center align-middle;
+    transition: all .15s ease-in-out;
 
     &:hover {
         @apply bg-gray-200;

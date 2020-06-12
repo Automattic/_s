@@ -63,18 +63,17 @@
 
     /* 同 ul/ol，在文章中应用 table 基本格式 */
     table {
-        @apply border border-gray-300;
+        //@apply border border-gray-300;
     }
 
     table th,
     table td,
     table caption {
-        @apply border border-gray-300 text-gray-700 px-4 py-2 text-left;
+        @apply border-b border-gray-300 text-gray-700 py-2 text-left;
     }
 
     table th,
     table thead th {
-        @apply bg-gray-100;
         min-width: 90px;
     }
 
