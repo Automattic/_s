@@ -24,6 +24,11 @@
             ],
             "main": true
         },
+        "admin.css": {
+            "files": [
+                "styles/admin.scss"
+            ]
+        },
         "jquery.js": {
             "bower": [
                 "jquery"

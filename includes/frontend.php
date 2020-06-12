@@ -20,6 +20,12 @@ function _s_scripts()
 }
 
 
+add_action('admin_enqueue_scripts', function ()
+{
+    wp_enqueue_style('_s-admin', _s_asset('styles/admin.css'));
+});
+
+
 add_action('wp_footer', function ()
 {
     if (SCRIPT_DEBUG) {
@@ -29,3 +35,4 @@ add_action('wp_footer', function ()
 ';
     }
 });
+
