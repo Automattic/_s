@@ -20,12 +20,18 @@ function _s_scripts()
 }
 
 
+/**
+ * Enqueue scripts and styles in wp-admin
+ */
 add_action('admin_enqueue_scripts', function ()
 {
     wp_enqueue_style('_s-admin', _s_asset('styles/admin.css'));
 });
 
 
+/**
+ * Enqueue live-reload scripts and styles.
+ */
 add_action('wp_footer', function ()
 {
     if (SCRIPT_DEBUG) {

@@ -1,16 +1,20 @@
 .container {
-    max-width: $widescreen;
     @apply mx-auto px-4;
 
     @screen md {
         @apply px-6;
+        //max-width: $tablet - 48px;
+    }
+
+    @screen lg{
+        //max-width: $desktop - 64px;
     }
 
     @screen xl {
         @apply px-0;
+        max-width: $widescreen;
     }
 }
-
 
 .site {
     @apply flex flex-col;
@@ -101,8 +105,8 @@
     }
 
     &__content {
-        max-width: $widescreen;
         @apply w-full flex flex-wrap flex-grow mx-auto p-4;
+        @extend .container;
 
         @screen md {
             @apply p-6;

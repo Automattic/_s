@@ -69591,25 +69591,27 @@ ul.blocks-gallery-grid {
   text-align: right;
 }
 
-.container {
-  max-width: 1280px;
+.container, .site__content {
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  @media (min-width: 1024px) {
+  }
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container, .site__content {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media (min-width: 1280px) {
-  .container {
+  .container, .site__content {
     padding-left: 0;
     padding-right: 0;
+    max-width: 1280px;
   }
 }
 
@@ -69641,7 +69643,7 @@ ul.blocks-gallery-grid {
   height: 64px;
 }
 
-.site__header .container {
+.site__header .container, .site__header .site__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69759,7 +69761,6 @@ ul.blocks-gallery-grid {
 }
 
 .site__content {
-  max-width: 1280px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
