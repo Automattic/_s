@@ -18,6 +18,11 @@
             ],
             "main": true
         },
+        "woocommerce.css": {
+            "files": [
+                "styles/woocommerce.scss"
+            ]
+        },
         "editor.css": {
             "files": [
                 "styles/editor.scss"

@@ -7,7 +7,7 @@
         @apply py-4;
 
         & + li {
-            @apply border-top border-gray-200;
+            @apply border-t border-gray-200;
         }
     }
 
@@ -30,13 +30,13 @@
         color: theme('colors.gray.500') !important;
 
         &:hover {
-            @apply bg-transparent border-color-700;
+            @apply bg-transparent border-gray-700;
             color: theme('colors.gray.700') !important;
         }
     }
 
     &__total {
-        @apply p4-0 text-center border-bottom border-color-200 mb-4;
+        @apply pr-0 text-center border-b border-gray-200 mb-4;
 
         .amount {
             @apply text-red-700 font-medium;
@@ -49,12 +49,11 @@
     }
 
     &__empty-message {
-        @apply text-color-700 p-4 text-center;
+        @apply text-gray-700 p-4 text-center;
     }
 
     &__buttons {
-        @apply justify-center;
-        margin-bottom: $spacer-md !important;
+        @apply justify-center mb-4;
 
         .button {
             @apply mb-0;
@@ -82,4 +81,3 @@
     }
 
 }
-

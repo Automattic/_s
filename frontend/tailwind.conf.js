@@ -1,9 +1,9 @@
 module.exports = {
-    theme      : {
-        extend : {
+    theme   : {
+        extend: {
             colors: {
-                primary  : '#065AAA',
-                secondary: '#065AAA',
+                primary  : '#065aaa',
+                secondary: '#9e7b07',
                 gray     : {
                     '100': '#f5f5f5',
                     '200': '#eee',
@@ -18,6 +18,6 @@ module.exports = {
             },
         },
     },
-    variants   : {},
-    plugins    : [],
+    variants: {},
+    plugins : [],
 };

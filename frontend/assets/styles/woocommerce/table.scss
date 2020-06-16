@@ -134,7 +134,7 @@ table.shop_table_responsive {
         @include mobile {
             border-left: 1px solid $border-color;
             border-right: 1px solid $border-color;
-            margin-bottom: $spacer-lg;
+            @apply mb-8;
             td:before {
                 font-weight: 400;
                 color: $text-lighter;

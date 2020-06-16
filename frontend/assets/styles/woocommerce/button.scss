@@ -1,3 +1,5 @@
+
+
 //===================================
 // 按钮
 //===================================
@@ -33,10 +35,13 @@
         }
 
         &.alt {
-            background-color: $woocommerce;
-            border: 1px solid lighten($woocommerce, 5%);
-            color: $primarytext;
-            -webkit-font-smoothing: antialiased;
+            //background-color: $woocommerce;
+            //border: 1px solid lighten($woocommerce, 5%);
+            //color: $primarytext;
+            //-webkit-font-smoothing: antialiased;
+
+            @extend .rs-button;
+            @extend .rs-button--primary;
 
             &:hover {
                 background-color: lighten($woocommerce, 5%);

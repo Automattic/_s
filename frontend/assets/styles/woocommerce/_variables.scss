@@ -3,10 +3,6 @@
 
 $woocommerce: #1F65D2;
 
-$green: $default_success_color;
-$red: $default_danger_color;
-$blue: $default_info_color;
-
 // Primary color for buttons (alt)
 $primarytext: desaturate(lighten($primary, 50%), 18%);
 
@@ -29,7 +25,7 @@ $highlightext: desaturate(lighten($highlight, 50%), 18%);
 $contentbg: #fff;
 
 // Content BG - Tabs (active state)
-$subtext: $default_text_mute_color;
+$subtext: $text-mute-color;
 
 
 // 从 Form 中复制

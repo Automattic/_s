@@ -1,0 +1,9 @@
+.elementor-text-editor{
+    p{
+        color: #6d6d6d;
+        
+        &:not(:last-child){
+            margin-bottom: 1rem;
+        }
+    }
+}

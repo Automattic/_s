@@ -56,9 +56,7 @@
     }
 
     a:not(.button):hover {
-        color: $primary;
-        border-bottom-color: #555;
-        text-decoration: none;
+        @apply no-underline text-primary border-b border-gray-500;
     }
 
     /* 同 ul/ol，在文章中应用 table 基本格式 */
@@ -88,8 +86,6 @@
 
     /* Responsive images */
     img {
-        max-width: 100%;
-        height: auto;
-        vertical-align: middle;
+        @apply max-w-full h-auto align-middle;
     }
 }

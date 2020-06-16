@@ -5,17 +5,22 @@ textarea{
     transition: all 0.3s ease;
 
     &:hover{
-        @apply border-gray-700;
+        @apply border-primary;
     }
 
     &:focus,
     &:active{
-        @apply bg-gray-100 border-gray-700;
+        @apply border-primary;
+        box-shadow: 0 0 0 0.125em rgba(50,115,220,.25);
     }
 
     &[disabled] {
         @apply text-gray-500 bg-gray-200;
     }
+}
+
+label{
+    @apply font-normal;
 }
 
 

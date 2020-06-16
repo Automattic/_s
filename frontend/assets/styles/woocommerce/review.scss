@@ -193,14 +193,11 @@
 
         .form-submit input {
             @extend .button;
-            padding: $spacer-xs $spacer-sm;
-            left: auto;
+            @apply px-2 py-1 left-auto;
         }
 
         textarea {
-            //@extend .textarea;
-            height: $spacer-xl + $spacer-lg !important;
-            width: 100%;
+            @apply h-16;
         }
     }
 

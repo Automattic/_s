@@ -96,11 +96,18 @@ $radius-rounded: 100px;
 // ======================
 // 宽度
 // ======================
+//
 $gap: 32px;
-$phone: 640px;
-$tablet: 768px;
-$desktop: 1024px;
-$widescreen: 1280px;
+
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
+$phone: $sm;
+$tablet: $md;
+$desktop: $lg;
+$widescreen: $xl;
 
 // 黄金比例
 $bronze: 1.333;

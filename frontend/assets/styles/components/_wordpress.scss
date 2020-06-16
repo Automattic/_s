@@ -3,14 +3,12 @@
 //===================
 
 .wp-post-image {
-    @apply h-auto align-middle;
-    max-width: 100%;
+    @apply h-auto align-middle max-w-full;
 }
 
 // 媒体对齐
 .alignnone {
-    @apply mx-0;
-    max-width: 100%;
+    @apply mx-0 max-w-full;
 }
 
 .aligncenter {
@@ -105,7 +103,7 @@ img.wp-post-image {
     .gallery-item {
         @apply px-2;
         .gallery-icon {
-            height: 100%;
+            @apply h-full;
         }
 
         .wp-caption-text {
@@ -209,8 +207,7 @@ ul.blocks-gallery-grid {
 
 .wp-calendar-nav,
 #wp-calendar {
-    margin: 0;
-    width: 100%;
+    @apply m-0 w-full;
     font-size: 13px;
     line-height: 1.846153846;
     color: #686868;
@@ -231,6 +228,5 @@ ul.blocks-gallery-grid {
 
 .wp-calendar-nav-next,
 #wp-calendar #next {
-    padding-right: 24px;
-    text-align: right;
+    @apply text-right pr-6;
 }

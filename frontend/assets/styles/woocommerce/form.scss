@@ -5,7 +5,6 @@
         }
 
         select {
-            @include input;
             @apply m-0 cursor-pointer;
         }
     }
@@ -43,16 +42,15 @@
             margin: (-2px) 8px 0 0;
         }
 
-        input.input-text,
-        textarea {
-            @include input;
-            @apply border-gray-200 m-0 w-full leading-normal;
-            box-shadow: inset 0 1px 2px rgba(10, 10, 10, .1);
-            box-sizing: border-box;
-        }
+        //input.input-text,
+        //textarea {
+        //    @apply border-gray-200 m-0 w-full leading-normal;
+        //    box-shadow: inset 0 1px 2px rgba(10, 10, 10, .1);
+        //    box-sizing: border-box;
+        //}
 
         textarea {
-            @apply leading-normal block shadow-none;
+            //@apply leading-normal block shadow-none;
             height: 4em;
         }
 
@@ -75,9 +73,9 @@
         &.woocommerce-validated {
             .select2-container,
             input.input-text,
-            select
-
-            @apply border-green-600;
+            select{
+                @apply border-green-600;
+            }
         }
     }
 
@@ -120,8 +118,6 @@ form.cart {
         vertical-align: middle;
         float: left;
     }
-}
-
 }
 
 .woocommerce #review_form #respond textarea {

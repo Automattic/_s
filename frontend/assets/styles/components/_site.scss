@@ -12,7 +12,7 @@
 
     @screen xl {
         @apply px-0;
-        max-width: $widescreen;
+        max-width: $widescreen - 64px;
     }
 }
 
@@ -121,7 +121,7 @@
         }
 
          .elementor{
-            width: 100%;
+             @apply w-full;
         }
     }
 
@@ -160,8 +160,7 @@
 }
 
 .menu-toggle {
-    @apply flex items-center ml-4;
-    color: $primary;
+    @apply flex items-center ml-4 text-primary;
 
     svg {
         @apply mr-2;
