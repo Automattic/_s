@@ -18,6 +18,11 @@
             ],
             "main": true
         },
+        "iconfont.css": {
+            "files": [
+                "styles/iconfont.scss"
+            ]
+        },
         "woocommerce.css": {
             "files": [
                 "styles/woocommerce.scss"

@@ -11,6 +11,7 @@ add_action('wp_enqueue_scripts', '_s_scripts');
 function _s_scripts()
 {
     wp_enqueue_style('_s-main', _s_asset('styles/main.css'));
+    wp_enqueue_style('_s-iconfont', _s_asset('styles/iconfont.css'));
 
     wp_enqueue_script('_s-main', _s_asset('scripts/main.js'), ['jquery'], '20151215', true);
 

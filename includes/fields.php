@@ -55,6 +55,21 @@ add_action('carbon_fields_register_fields', static function ()
                  Field::make('text', 'per_page', __('Posts Per Page', '_s')),
              ]);
 
+    /**
+     * 案例参数
+     */
+    Container::make('post_meta', '_s_case_meta', __('Page Settings', '_s'))
+             ->where('post_type', '=', 'page')
+             ->set_context('side')
+             ->set_priority('low')
+             ->add_fields([
+                 Field::make('radio_image', 'page_layouts', __('Page Layouts', '_s'))
+                      ->set_options([
+                          'mountain' => 'https://source.unsplash.com/X1UTzW8e7Q4/800x600',
+                          'temple'   => 'https://source.unsplash.com/ioJVccFmWxE/800x600',
+                          'road'     => 'https://source.unsplash.com/5c8fczgvar0/800x600',
+                      ]),
+             ]);
 
     /**
      * 案例参数
