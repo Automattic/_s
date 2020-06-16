@@ -69265,11 +69265,12 @@ pre, code {
 [type="button"],
 [type="reset"],
 [type="submit"] {
+  position: relative;
   background-color: #fff;
   background-color: #f5f5f5;
   line-height: 1.5;
   color: #616161;
-  font-weight: 600;
+  font-weight: 500;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -70739,6 +70740,7 @@ textarea {
   padding-bottom: 0.5rem;
   line-height: 1.5;
   outline: 0;
+  color: #616161;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -70787,4 +70789,35 @@ fieldset input[type="text"],
   fieldset input[type="password"],
   fieldset textarea {
   width: 100%;
+}
+
+.rs-select {
+  display: inline-block;
+  position: relative;
+}
+
+.rs-select select {
+  margin: 0;
+  cursor: pointer;
+  max-width: 100%;
+  outline: 0;
+  line-height: 1.5;
+  vertical-align: top;
+  font-size: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2.5em;
+  padding: calc(.5em - 1px) 2.5em calc(.5em - 1px) calc(.75em - 1px);
+}
+
+.rs-select:after {
+  font-family: 'icomoon', sans-serif;
+  content: "";
+  top: .25em;
+  right: 0.55em;
+  z-index: 4;
+  font-size: 1.25em;
+  position: absolute;
+  color: #757575;
 }

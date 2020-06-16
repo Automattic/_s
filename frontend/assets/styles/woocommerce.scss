@@ -15,6 +15,8 @@
 @import "../../node_modules/bulma/sass/utilities/controls.sass";
 
 @import "components/button";
+@import "components/input";
+
 @import "../fonts/icomoon/variables";
 @import "woocommerce/mixins";
 @import "woocommerce/variables";
@@ -300,22 +302,7 @@ p.demo_store,
 }
 
 .woocommerce-ordering {
-    @apply relative;
-    select {
-        vertical-align: top;
-        padding-right: 1.5em !important;
-    }
-
-    &:after {
-        font-family: 'icomoon', sans-serif;
-        content: $wpion-angle-down;
-        top: .2em;
-        right: 0.55em;
-        z-index: 4;
-        font-size: 1.25em;
-        position: absolute;
-        @apply text-gray-600;
-    }
+    @extend .rs-select;
 }
 
 nav.woocommerce-pagination {

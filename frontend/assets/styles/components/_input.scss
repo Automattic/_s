@@ -1,7 +1,7 @@
 input,
 select,
 textarea{
-    @apply text-base border border-gray-300 rounded px-3 py-2 leading-normal outline-none;
+    @apply text-base border border-gray-300 rounded px-3 py-2 leading-normal outline-none text-gray-700;
     transition: all 0.3s ease;
 
     &:hover{
@@ -36,5 +36,23 @@ fieldset {
     input[type="password"],
     textarea {
         @apply w-full;
+    }
+}
+
+.rs-select{
+    @apply inline-block relative;
+    select{
+        @apply m-0 cursor-pointer max-w-full outline-none leading-normal align-top text-base appearance-none;
+        height: 2.5em;
+        padding: calc(.5em - 1px) 2.5em calc(.5em - 1px) calc(.75em - 1px);
+    }
+    &:after {
+        font-family: 'icomoon', sans-serif;
+        content: $wpion-angle-down;
+        top: .25em;
+        right: 0.55em;
+        z-index: 4;
+        font-size: 1.25em;
+        @apply absolute text-gray-600;
     }
 }

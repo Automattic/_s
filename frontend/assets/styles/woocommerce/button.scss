@@ -8,8 +8,7 @@
     button.button,
     input.button,
     #respond input#submit {
-        @extend .button;
-        @apply text-base;
+        @extend .rs-button;
 
         &.loading {
             opacity: 0.25;
@@ -18,10 +17,8 @@
             &::after {
                 font-family: "WooCommerce";
                 content: "";
-                vertical-align: top;
-                font-weight: 400;
-                position: absolute;
-                top: 17px;
+                @apply align-top font-normal absolute;
+                top: 5px;
                 right: 1em;
                 animation: spin 2s linear infinite;
             }
@@ -40,7 +37,7 @@
             //color: $primarytext;
             //-webkit-font-smoothing: antialiased;
 
-            @extend .rs-button;
+            //@extend .rs-button;
             @extend .rs-button--primary;
 
             &:hover {
@@ -81,10 +78,12 @@
 
 
 .add_to_cart_button {
-    @extend [class^="wpion-"];
     @apply text-gray-600;
+    @extend .rs-button;
 
     &:before {
+        @apply mr-1;
+        @extend [class^="wpion-"];
         content: $wpion-cart-plus1;
     }
 }

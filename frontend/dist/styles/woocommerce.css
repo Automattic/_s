@@ -83,15 +83,16 @@
 .rs-button, button,
 [type="button"],
 [type="reset"],
-[type="submit"], .woocommerce a.alt.button,
-.woocommerce button.alt.button,
-.woocommerce input.alt.button,
-.woocommerce #respond input.alt#submit, .woocommerce #review_form #respond .form-submit input.alt {
+[type="submit"], .woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button, .woocommerce #review_form #respond .form-submit input,
+.woocommerce #respond input#submit, .add_to_cart_button {
+  position: relative;
   background-color: #fff;
   background-color: #f5f5f5;
   line-height: 1.5;
   color: #616161;
-  font-weight: 600;
+  font-weight: 500;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -109,28 +110,28 @@
 .rs-button:hover, button:hover,
   :hover[type="button"],
   :hover[type="reset"],
-  :hover[type="submit"], .woocommerce a.alt.button:hover,
-  .woocommerce button.alt.button:hover,
-  .woocommerce input.alt.button:hover,
-  .woocommerce #respond input.alt#submit:hover, .woocommerce #review_form #respond .form-submit input.alt:hover {
+  :hover[type="submit"], .woocommerce a.button:hover,
+  .woocommerce button.button:hover,
+  .woocommerce input.button:hover, .woocommerce #review_form #respond .form-submit input:hover,
+  .woocommerce #respond input#submit:hover, .add_to_cart_button:hover {
   background-color: #eee;
 }
 
 .rs-button--primary,
-  [type="submit"], .woocommerce a.alt.button,
-  .woocommerce button.alt.button,
-  .woocommerce input.alt.button,
-  .woocommerce #respond input.alt#submit, .woocommerce #review_form #respond .form-submit input.alt {
+  [type="submit"], .woocommerce a.button.alt,
+  .woocommerce button.button.alt,
+  .woocommerce input.button.alt, .woocommerce #review_form #respond .form-submit input.alt,
+  .woocommerce #respond input#submit.alt {
   background-color: #4299e1;
   border-color: #3182ce;
   color: #fff;
 }
 
 .rs-button--primary:hover,
-    :hover[type="submit"], .woocommerce a.alt.button:hover,
-    .woocommerce button.alt.button:hover,
-    .woocommerce input.alt.button:hover,
-    .woocommerce #respond input.alt#submit:hover, .woocommerce #review_form #respond .form-submit input.alt:hover {
+    :hover[type="submit"], .woocommerce a.button.alt:hover,
+    .woocommerce button.button.alt:hover,
+    .woocommerce input.button.alt:hover, .woocommerce #review_form #respond .form-submit input.alt:hover,
+    .woocommerce #respond input#submit.alt:hover {
   background-color: #2b6cb0;
   border-color: #2c5282;
 }
@@ -150,6 +151,101 @@
 .rs-button--sm {
   font-size: 0.875rem;
   padding: 6px 8px;
+}
+
+input,
+select,
+textarea {
+  font-size: 1rem;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
+  outline: 0;
+  color: #616161;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+input:hover,
+  select:hover,
+  textarea:hover {
+  border-color: #065aaa;
+}
+
+input:focus, input:active,
+  select:focus,
+  select:active,
+  textarea:focus,
+  textarea:active {
+  border-color: #065aaa;
+  -webkit-box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+          box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+input[disabled],
+  select[disabled],
+  textarea[disabled] {
+  color: #9e9e9e;
+  background-color: #eee;
+}
+
+label {
+  font-weight: 400;
+}
+
+fieldset {
+  border-width: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+fieldset legend {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+fieldset input[type="text"],
+  fieldset input[type="search"],
+  fieldset input[type="password"],
+  fieldset textarea {
+  width: 100%;
+}
+
+.rs-select, .woocommerce-ordering {
+  display: inline-block;
+  position: relative;
+}
+
+.rs-select select, .woocommerce-ordering select {
+  margin: 0;
+  cursor: pointer;
+  max-width: 100%;
+  outline: 0;
+  line-height: 1.5;
+  vertical-align: top;
+  font-size: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2.5em;
+  padding: calc(.5em - 1px) 2.5em calc(.5em - 1px) calc(.75em - 1px);
+}
+
+.rs-select:after, .woocommerce-ordering:after {
+  font-family: 'icomoon', sans-serif;
+  content: "";
+  top: .25em;
+  right: 0.55em;
+  z-index: 4;
+  font-size: 1.25em;
+  position: absolute;
+  color: #757575;
 }
 
 /**
@@ -1047,33 +1143,11 @@
  * Applies layout to the default WooCommerce frontend design
  */
 
-.woocommerce-message .button, .woocommerce-notice--success .button, .woocommerce-message .woocommerce a.button, .woocommerce .woocommerce-message a.button, .woocommerce-notice--success .woocommerce a.button, .woocommerce .woocommerce-notice--success a.button,
-.woocommerce-message .woocommerce button.button, .woocommerce .woocommerce-message button.button,
-.woocommerce-notice--success .woocommerce button.button, .woocommerce .woocommerce-notice--success button.button,
-.woocommerce-message .woocommerce input.button, .woocommerce .woocommerce-message input.button,
-.woocommerce-notice--success .woocommerce input.button, .woocommerce .woocommerce-notice--success input.button,
-.woocommerce-message .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-message input#submit,
-.woocommerce-notice--success .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-notice--success input#submit, .woocommerce-message .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-message input, .woocommerce-notice--success .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-notice--success input,
+.woocommerce-message .button, .woocommerce-notice--success .button, .woocommerce-message .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-message input, .woocommerce-notice--success .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-notice--success input,
 .woocommerce-error .button,
-.woocommerce-error .woocommerce a.button,
-.woocommerce .woocommerce-error a.button,
-.woocommerce-error .woocommerce button.button,
-.woocommerce .woocommerce-error button.button,
-.woocommerce-error .woocommerce input.button,
-.woocommerce .woocommerce-error input.button,
-.woocommerce-error .woocommerce #respond input#submit,
-.woocommerce #respond .woocommerce-error input#submit,
 .woocommerce-error .woocommerce #review_form #respond .form-submit input,
 .woocommerce #review_form #respond .form-submit .woocommerce-error input,
 .woocommerce-info .button,
-.woocommerce-info .woocommerce a.button,
-.woocommerce .woocommerce-info a.button,
-.woocommerce-info .woocommerce button.button,
-.woocommerce .woocommerce-info button.button,
-.woocommerce-info .woocommerce input.button,
-.woocommerce .woocommerce-info input.button,
-.woocommerce-info .woocommerce #respond input#submit,
-.woocommerce #respond .woocommerce-info input#submit,
 .woocommerce-info .woocommerce #review_form #respond .form-submit input,
 .woocommerce #review_form #respond .form-submit .woocommerce-info input {
   float: right;
@@ -1671,8 +1745,7 @@ table.shop_attributes tr:nth-child(even) td,
   }
 }
 
-table.my_account_orders .button,
-table.my_account_orders .woocommerce #respond input#submit, .woocommerce #respond table.my_account_orders input#submit, table.my_account_orders .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.my_account_orders input {
+table.my_account_orders .button, table.my_account_orders .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.my_account_orders input {
   white-space: nowrap;
   font-size: inherit;
 }
@@ -1681,8 +1754,7 @@ table.my_account_orders .order-actions {
   text-align: right;
 }
 
-table.my_account_orders .order-actions .button,
-  table.my_account_orders .order-actions .woocommerce #respond input#submit, .woocommerce #respond table.my_account_orders .order-actions input#submit, table.my_account_orders .order-actions .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.my_account_orders .order-actions input {
+table.my_account_orders .order-actions .button, table.my_account_orders .order-actions .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.my_account_orders .order-actions input {
   margin: 0.125em 0 0.125em 0.25em;
 }
 
@@ -1700,12 +1772,8 @@ table.my_account_orders .order-actions .button,
 
 .shop_table td {
   font-weight: 400;
-  text-align: left;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  border-bottom-width: 1px;
-  border-color: #e0e0e0;
-  vertical-align: middle;
 }
 
 .shop_table td small {
@@ -2099,8 +2167,7 @@ form.cart .wc-no-matching-variations {
   display: none;
 }
 
-form.cart .button,
-  form.cart .woocommerce #respond input#submit, .woocommerce #respond form.cart input#submit, form.cart .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit form.cart input {
+form.cart .button, form.cart .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit form.cart input {
   vertical-align: middle;
   float: left;
 }
@@ -2156,104 +2223,82 @@ form.cart .button,
   display: block;
 }
 
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button,
-.woocommerce #respond input#submit,
-.woocommerce #review_form #respond .form-submit input,
-.woocommerce #respond input#submit {
-  font-size: 1rem;
-}
-
-.woocommerce a.loading.button,
-  .woocommerce button.loading.button,
-  .woocommerce input.loading.button,
-  .woocommerce #respond input.loading#submit,
-  .woocommerce #review_form #respond .form-submit input.loading,
-  .woocommerce #respond input#submit.loading {
+.woocommerce a.button.loading,
+.woocommerce button.button.loading,
+.woocommerce input.button.loading,
+.woocommerce #review_form #respond .form-submit input.loading,
+.woocommerce #respond input#submit.loading {
   opacity: 0.25;
   padding-right: 2.618em;
 }
 
-.woocommerce a.loading.button::after,
-    .woocommerce button.loading.button::after,
-    .woocommerce input.loading.button::after,
-    .woocommerce #respond input.loading#submit::after,
-    .woocommerce #review_form #respond .form-submit input.loading::after,
-    .woocommerce #respond input#submit.loading::after {
+.woocommerce a.button.loading::after,
+  .woocommerce button.button.loading::after,
+  .woocommerce input.button.loading::after,
+  .woocommerce #review_form #respond .form-submit input.loading::after,
+  .woocommerce #respond input#submit.loading::after {
   font-family: "WooCommerce";
   content: "";
   vertical-align: top;
   font-weight: 400;
   position: absolute;
-  top: 17px;
+  top: 5px;
   right: 1em;
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;
 }
 
-.woocommerce a.added.button::after,
-  .woocommerce button.added.button::after,
-  .woocommerce input.added.button::after,
-  .woocommerce #respond input.added#submit::after,
-  .woocommerce #review_form #respond .form-submit input.added::after,
-  .woocommerce #respond input#submit.added::after {
+.woocommerce a.button.added::after,
+.woocommerce button.button.added::after,
+.woocommerce input.button.added::after,
+.woocommerce #review_form #respond .form-submit input.added::after,
+.woocommerce #respond input#submit.added::after {
   font-family: "WooCommerce";
   content: "";
   margin-left: 0.53em;
   vertical-align: bottom;
 }
 
-.woocommerce a.alt.button:hover,
-  .woocommerce button.alt.button:hover,
-  .woocommerce input.alt.button:hover,
-  .woocommerce #respond input.alt#submit:hover,
-  .woocommerce #review_form #respond .form-submit input.alt:hover,
-  .woocommerce #respond input#submit.alt:hover {
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover,
+.woocommerce #review_form #respond .form-submit input.alt:hover,
+.woocommerce #respond input#submit.alt:hover {
   background-color: #2b72e0;
   color: white;
 }
 
-.woocommerce a.alt.disabled.button, .woocommerce a.alt.button:disabled, .woocommerce a.alt.button:disabled[disabled], .woocommerce a.alt.disabled.button:hover, .woocommerce a.alt.button:disabled:hover, .woocommerce a.alt.button:disabled[disabled]:hover,
-  .woocommerce button.alt.disabled.button,
-  .woocommerce button.alt.button:disabled,
-  .woocommerce button.alt.button:disabled[disabled],
-  .woocommerce button.alt.disabled.button:hover,
-  .woocommerce button.alt.button:disabled:hover,
-  .woocommerce button.alt.button:disabled[disabled]:hover,
-  .woocommerce input.alt.disabled.button,
-  .woocommerce #respond input.alt.disabled#submit,
-  .woocommerce #review_form #respond .form-submit input.alt.disabled,
-  .woocommerce input.alt.button:disabled,
-  .woocommerce #respond input.alt#submit:disabled,
-  .woocommerce #review_form #respond .form-submit input.alt:disabled,
-  .woocommerce input.alt.button:disabled[disabled],
-  .woocommerce #respond input.alt#submit:disabled[disabled],
-  .woocommerce #review_form #respond .form-submit input.alt:disabled[disabled],
-  .woocommerce input.alt.disabled.button:hover,
-  .woocommerce #respond input.alt.disabled#submit:hover,
-  .woocommerce #review_form #respond .form-submit input.alt.disabled:hover,
-  .woocommerce input.alt.button:disabled:hover,
-  .woocommerce #respond input.alt#submit:disabled:hover,
-  .woocommerce #review_form #respond .form-submit input.alt:disabled:hover,
-  .woocommerce input.alt.button:disabled[disabled]:hover,
-  .woocommerce #respond input.alt#submit:disabled[disabled]:hover,
-  .woocommerce #review_form #respond .form-submit input.alt:disabled[disabled]:hover,
-  .woocommerce #respond input#submit.alt.disabled,
-  .woocommerce #respond input#submit.alt:disabled,
-  .woocommerce #respond input#submit.alt:disabled[disabled],
-  .woocommerce #respond input#submit.alt.disabled:hover,
-  .woocommerce #respond input#submit.alt:disabled:hover,
-  .woocommerce #respond input#submit.alt:disabled[disabled]:hover {
+.woocommerce a.button.alt.disabled, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled]:hover,
+.woocommerce button.button.alt.disabled,
+.woocommerce button.button.alt:disabled,
+.woocommerce button.button.alt:disabled[disabled],
+.woocommerce button.button.alt.disabled:hover,
+.woocommerce button.button.alt:disabled:hover,
+.woocommerce button.button.alt:disabled[disabled]:hover,
+.woocommerce input.button.alt.disabled,
+.woocommerce #review_form #respond .form-submit input.alt.disabled,
+.woocommerce input.button.alt:disabled,
+.woocommerce #review_form #respond .form-submit input.alt:disabled,
+.woocommerce input.button.alt:disabled[disabled],
+.woocommerce #review_form #respond .form-submit input.alt:disabled[disabled],
+.woocommerce input.button.alt.disabled:hover,
+.woocommerce #review_form #respond .form-submit input.alt.disabled:hover,
+.woocommerce input.button.alt:disabled:hover,
+.woocommerce #review_form #respond .form-submit input.alt:disabled:hover,
+.woocommerce input.button.alt:disabled[disabled]:hover,
+.woocommerce #review_form #respond .form-submit input.alt:disabled[disabled]:hover,
+.woocommerce #respond input#submit.alt.disabled,
+.woocommerce #respond input#submit.alt:disabled,
+.woocommerce #respond input#submit.alt:disabled[disabled],
+.woocommerce #respond input#submit.alt.disabled:hover,
+.woocommerce #respond input#submit.alt:disabled:hover,
+.woocommerce #respond input#submit.alt:disabled[disabled]:hover {
   background-color: #1F65D2;
   color: white;
 }
 
-.woocommerce .cart .button,
-.woocommerce .cart #respond input#submit, .woocommerce #respond .cart input#submit, .woocommerce .cart #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .cart input,
+.woocommerce .cart .button, .woocommerce .cart #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .cart input,
 .woocommerce .cart input.button,
-.woocommerce .cart #respond input#submit,
-.woocommerce #respond .cart input#submit,
 .woocommerce .cart #review_form #respond .form-submit input,
 .woocommerce #review_form #respond .form-submit .cart input {
   float: none;
@@ -2268,8 +2313,7 @@ form.cart .button,
   margin-top: 0.5rem;
 }
 
-.field.has-addons .control:last-child .button,
-.field.has-addons .control:last-child .woocommerce #respond input#submit, .woocommerce #respond .field.has-addons .control:last-child input#submit, .field.has-addons .control:last-child .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .field.has-addons .control:last-child input {
+.field.has-addons .control:last-child .button, .field.has-addons .control:last-child .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .field.has-addons .control:last-child input {
   font-size: 1rem;
 }
 
@@ -2278,6 +2322,7 @@ form.cart .button,
 }
 
 .add_to_cart_button:before {
+  margin-right: 0.25rem;
   content: "";
 }
 
@@ -2353,10 +2398,7 @@ form.cart .button,
   margin-bottom: 1rem;
 }
 
-.woocommerce-mini-cart__buttons .button, .woocommerce-mini-cart__buttons .woocommerce a.button, .woocommerce .woocommerce-mini-cart__buttons a.button,
-  .woocommerce-mini-cart__buttons .woocommerce button.button, .woocommerce .woocommerce-mini-cart__buttons button.button,
-  .woocommerce-mini-cart__buttons .woocommerce input.button, .woocommerce .woocommerce-mini-cart__buttons input.button,
-  .woocommerce-mini-cart__buttons .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-mini-cart__buttons input#submit, .woocommerce-mini-cart__buttons .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-mini-cart__buttons input {
+.woocommerce-mini-cart__buttons .button, .woocommerce-mini-cart__buttons .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-mini-cart__buttons input {
   margin-bottom: 0;
 }
 
@@ -2926,8 +2968,7 @@ form.cart .button,
     display: none;
   }
 
-  .woocommerce table.my_account_orders tr td.order-actions .button,
-      .woocommerce table.my_account_orders tr td.order-actions #respond input#submit, .woocommerce #respond table.my_account_orders tr td.order-actions input#submit, .woocommerce table.my_account_orders tr td.order-actions #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.my_account_orders tr td.order-actions input {
+  .woocommerce table.my_account_orders tr td.order-actions .button, .woocommerce table.my_account_orders tr td.order-actions #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.my_account_orders tr td.order-actions input {
     float: none;
     margin: 0.125em 0.25em 0.125em 0;
   }
@@ -2981,8 +3022,6 @@ form.cart .button,
 
   .woocommerce table.cart td.actions .coupon input,
         .woocommerce table.cart td.actions .coupon .button,
-        .woocommerce table.cart td.actions .coupon #respond input#submit,
-        .woocommerce #respond table.cart td.actions .coupon input#submit,
         .woocommerce table.cart td.actions .coupon #review_form #respond .form-submit input,
         .woocommerce #review_form #respond .form-submit table.cart td.actions .coupon input,
         .woocommerce table.cart td.actions .coupon .input-text {
@@ -2991,18 +3030,14 @@ form.cart .button,
             box-sizing: border-box;
   }
 
-  .woocommerce table.cart td.actions .coupon .input-text + .button,
-        .woocommerce table.cart td.actions .coupon #respond .input-text + input#submit, .woocommerce #respond table.cart td.actions .coupon .input-text + input#submit, .woocommerce table.cart td.actions .coupon #review_form #respond .form-submit .input-text + input, .woocommerce #review_form #respond .form-submit table.cart td.actions .coupon .input-text + input,
+  .woocommerce table.cart td.actions .coupon .input-text + .button, .woocommerce table.cart td.actions .coupon #review_form #respond .form-submit .input-text + input, .woocommerce #review_form #respond .form-submit table.cart td.actions .coupon .input-text + input,
         .woocommerce table.cart td.actions .coupon .button.alt,
-        .woocommerce table.cart td.actions .coupon #respond input.alt#submit,
-        .woocommerce #respond table.cart td.actions .coupon input.alt#submit,
         .woocommerce table.cart td.actions .coupon #review_form #respond .form-submit input.alt,
         .woocommerce #review_form #respond .form-submit table.cart td.actions .coupon input.alt {
     float: right;
   }
 
-  .woocommerce table.cart td.actions .button,
-      .woocommerce table.cart td.actions #respond input#submit, .woocommerce #respond table.cart td.actions input#submit, .woocommerce table.cart td.actions #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.cart td.actions input {
+  .woocommerce table.cart td.actions .button, .woocommerce table.cart td.actions #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit table.cart td.actions input {
     display: block;
     width: 100%;
   }
@@ -3047,7 +3082,7 @@ form.cart .button,
   }
 }
 
-[class^="wpion-"], .add_to_cart_button, .product_type_grouped,
+[class^="wpion-"], .add_to_cart_button:before, .product_type_grouped,
 .product_type_variable, [class*=" wpion-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
@@ -3390,26 +3425,6 @@ p.demo_store a,
   color: #bbb;
 }
 
-.woocommerce-ordering {
-  position: relative;
-}
-
-.woocommerce-ordering select {
-  vertical-align: top;
-  padding-right: 1.5em !important;
-}
-
-.woocommerce-ordering:after {
-  font-family: 'icomoon', sans-serif;
-  content: "";
-  top: .2em;
-  right: 0.55em;
-  z-index: 4;
-  font-size: 1.25em;
-  position: absolute;
-  color: #757575;
-}
-
 nav.woocommerce-pagination {
   text-align: center;
 }
@@ -3580,33 +3595,11 @@ nav.woocommerce-pagination ul li span.current,
   left: 1.5em;
 }
 
-.woocommerce-message .button, .woocommerce-notice--success .button, .woocommerce-message .woocommerce a.button, .woocommerce .woocommerce-message a.button, .woocommerce-notice--success .woocommerce a.button, .woocommerce .woocommerce-notice--success a.button,
-  .woocommerce-message .woocommerce button.button, .woocommerce .woocommerce-message button.button,
-  .woocommerce-notice--success .woocommerce button.button, .woocommerce .woocommerce-notice--success button.button,
-  .woocommerce-message .woocommerce input.button, .woocommerce .woocommerce-message input.button,
-  .woocommerce-notice--success .woocommerce input.button, .woocommerce .woocommerce-notice--success input.button,
-  .woocommerce-message .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-message input#submit,
-  .woocommerce-notice--success .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-notice--success input#submit, .woocommerce-message .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-message input, .woocommerce-notice--success .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-notice--success input,
+.woocommerce-message .button, .woocommerce-notice--success .button, .woocommerce-message .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-message input, .woocommerce-notice--success .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-notice--success input,
   .woocommerce-error .button,
-  .woocommerce-error .woocommerce a.button,
-  .woocommerce .woocommerce-error a.button,
-  .woocommerce-error .woocommerce button.button,
-  .woocommerce .woocommerce-error button.button,
-  .woocommerce-error .woocommerce input.button,
-  .woocommerce .woocommerce-error input.button,
-  .woocommerce-error .woocommerce #respond input#submit,
-  .woocommerce #respond .woocommerce-error input#submit,
   .woocommerce-error .woocommerce #review_form #respond .form-submit input,
   .woocommerce #review_form #respond .form-submit .woocommerce-error input,
   .woocommerce-info .button,
-  .woocommerce-info .woocommerce a.button,
-  .woocommerce .woocommerce-info a.button,
-  .woocommerce-info .woocommerce button.button,
-  .woocommerce .woocommerce-info button.button,
-  .woocommerce-info .woocommerce input.button,
-  .woocommerce .woocommerce-info input.button,
-  .woocommerce-info .woocommerce #respond input#submit,
-  .woocommerce #respond .woocommerce-info input#submit,
   .woocommerce-info .woocommerce #review_form #respond .form-submit input,
   .woocommerce #review_form #respond .form-submit .woocommerce-info input {
   float: right;
@@ -3687,16 +3680,11 @@ nav.woocommerce-pagination ul li span.current,
   font-size: 1.25em;
 }
 
-.woocommerce-cart .cart-collaterals .shipping_calculator .button,
-.woocommerce-cart .cart-collaterals .shipping_calculator .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-cart .cart-collaterals .shipping_calculator input#submit, .woocommerce-cart .cart-collaterals .shipping_calculator .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-cart .cart-collaterals .shipping_calculator input,
+.woocommerce-cart .cart-collaterals .shipping_calculator .button, .woocommerce-cart .cart-collaterals .shipping_calculator .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-cart .cart-collaterals .shipping_calculator input,
 .woocommerce-checkout .cart-collaterals .shipping_calculator .button,
-.woocommerce-checkout .cart-collaterals .shipping_calculator .woocommerce #respond input#submit,
-.woocommerce #respond .woocommerce-checkout .cart-collaterals .shipping_calculator input#submit,
 .woocommerce-checkout .cart-collaterals .shipping_calculator .woocommerce #review_form #respond .form-submit input,
 .woocommerce #review_form #respond .form-submit .woocommerce-checkout .cart-collaterals .shipping_calculator input,
 #add_payment_method .cart-collaterals .shipping_calculator .button,
-#add_payment_method .cart-collaterals .shipping_calculator .woocommerce #respond input#submit,
-.woocommerce #respond #add_payment_method .cart-collaterals .shipping_calculator input#submit,
 #add_payment_method .cart-collaterals .shipping_calculator .woocommerce #review_form #respond .form-submit input,
 .woocommerce #review_form #respond .form-submit #add_payment_method .cart-collaterals .shipping_calculator input {
   width: 100%;
@@ -4288,18 +4276,11 @@ form.woocommerce-checkout .woocommerce-checkout-review-order {
   margin-bottom: 0.5rem;
 }
 
-.woocommerce-orders-table__cell-order-actions .button, .woocommerce-orders-table__cell-order-actions .woocommerce a.button, .woocommerce .woocommerce-orders-table__cell-order-actions a.button,
-.woocommerce-orders-table__cell-order-actions .woocommerce button.button, .woocommerce .woocommerce-orders-table__cell-order-actions button.button,
-.woocommerce-orders-table__cell-order-actions .woocommerce input.button, .woocommerce .woocommerce-orders-table__cell-order-actions input.button,
-.woocommerce-orders-table__cell-order-actions .woocommerce #respond input#submit, .woocommerce #respond .woocommerce-orders-table__cell-order-actions input#submit, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions input {
+.woocommerce-orders-table__cell-order-actions .button, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions input {
   font-size: 0.875rem;
 }
 
-.woocommerce-orders-table__cell-order-actions .button + .button, .woocommerce-orders-table__cell-order-actions .woocommerce a.button + .button, .woocommerce-orders-table__cell-order-actions .woocommerce button.button + .button, .woocommerce-orders-table__cell-order-actions .woocommerce input.button + .button, .woocommerce-orders-table__cell-order-actions .woocommerce #respond input#submit + .button, .woocommerce #respond .woocommerce-orders-table__cell-order-actions input#submit + .button, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit input + .button, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions input + .button, .woocommerce-orders-table__cell-order-actions .woocommerce .button + a.button,
-  .woocommerce-orders-table__cell-order-actions .woocommerce .button + button.button,
-  .woocommerce-orders-table__cell-order-actions .woocommerce .button + input.button,
-  .woocommerce-orders-table__cell-order-actions .woocommerce #respond .button + input#submit, .woocommerce #respond .woocommerce-orders-table__cell-order-actions .button + input#submit, .woocommerce .woocommerce-orders-table__cell-order-actions #respond a.button + input#submit, .woocommerce .woocommerce-orders-table__cell-order-actions #respond button.button + input#submit, .woocommerce .woocommerce-orders-table__cell-order-actions #respond input.button + input#submit,
-  .woocommerce-orders-table__cell-order-actions .woocommerce #respond input#submit + input#submit, .woocommerce #respond .woocommerce-orders-table__cell-order-actions input#submit + input#submit, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit .button + input, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions .button + input, .woocommerce .woocommerce-orders-table__cell-order-actions #review_form #respond .form-submit a.button + input, .woocommerce .woocommerce-orders-table__cell-order-actions #review_form #respond .form-submit button.button + input, .woocommerce .woocommerce-orders-table__cell-order-actions #review_form #respond .form-submit input.button + input, .woocommerce #review_form #respond .woocommerce-orders-table__cell-order-actions .form-submit input#submit + input, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit input + input, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions input + input {
+.woocommerce-orders-table__cell-order-actions .button + .button, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit input + .button, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions input + .button, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit .button + input, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions .button + input, .woocommerce-orders-table__cell-order-actions .woocommerce #review_form #respond .form-submit input + input, .woocommerce #review_form #respond .form-submit .woocommerce-orders-table__cell-order-actions input + input {
   margin-left: 0.5rem;
 }
 
@@ -4573,8 +4554,7 @@ form.woocommerce-checkout .woocommerce-checkout-review-order {
           box-shadow: none;
 }
 
-.brandbar--woo .c-searchform .button.is-primary,
-.brandbar--woo .c-searchform .woocommerce #respond input.is-primary#submit, .woocommerce #respond .brandbar--woo .c-searchform input.is-primary#submit, .brandbar--woo .c-searchform .woocommerce #review_form #respond .form-submit input.is-primary, .woocommerce #review_form #respond .form-submit .brandbar--woo .c-searchform input.is-primary {
+.brandbar--woo .c-searchform .button.is-primary, .brandbar--woo .c-searchform .woocommerce #review_form #respond .form-submit input.is-primary, .woocommerce #review_form #respond .form-submit .brandbar--woo .c-searchform input.is-primary {
   background: #1F65D2;
 }
 

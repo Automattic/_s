@@ -169,7 +169,8 @@ table.my_account_orders {
     }
 
     td {
-        @apply font-normal text-left py-3 border-b border-gray-300 align-middle;
+        @apply font-normal py-3;
+        //@apply font-normal text-left py-3 border-b border-gray-300 align-middle;
 
         small {
             @apply font-normal;
