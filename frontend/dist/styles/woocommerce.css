@@ -56,9 +56,7 @@
  *     line-height: 3; // DO NOT set line height outside of the mixin, the mixin needs the line height value to calculate the crop correctly
  * } */
 
-.rs-button, button,
-[type="button"],
-[type="reset"],
+.rs-button, [type="reset"],
 [type="submit"], .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
@@ -83,9 +81,7 @@
   transition: all .15s ease-in-out;
 }
 
-.rs-button:hover, button:hover,
-  :hover[type="button"],
-  :hover[type="reset"],
+.rs-button:hover, :hover[type="reset"],
   :hover[type="submit"], .woocommerce a.button:hover,
   .woocommerce button.button:hover,
   .woocommerce input.button:hover,
@@ -93,15 +89,11 @@
   background-color: #eee;
 }
 
-.rs-button:focus, button:focus,
-  :focus[type="button"],
-  :focus[type="reset"],
+.rs-button:focus, :focus[type="reset"],
   :focus[type="submit"], .woocommerce a.button:focus,
   .woocommerce button.button:focus,
   .woocommerce input.button:focus,
-  .woocommerce #respond input#submit:focus, .add_to_cart_button:focus, .rs-button:active, button:active,
-  :active[type="button"],
-  :active[type="reset"],
+  .woocommerce #respond input#submit:focus, .add_to_cart_button:focus, .rs-button:active, :active[type="reset"],
   :active[type="submit"], .woocommerce a.button:active,
   .woocommerce button.button:active,
   .woocommerce input.button:active,

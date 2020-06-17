@@ -69261,9 +69261,7 @@ pre, code {
   vertical-align: middle;
 }
 
-.rs-button, button,
-[type="button"],
-[type="reset"],
+.rs-button, [type="reset"],
 [type="submit"] {
   position: relative;
   background-color: #fff;
@@ -69285,19 +69283,13 @@ pre, code {
   transition: all .15s ease-in-out;
 }
 
-.rs-button:hover, button:hover,
-  :hover[type="button"],
-  :hover[type="reset"],
+.rs-button:hover, :hover[type="reset"],
   :hover[type="submit"] {
   background-color: #eee;
 }
 
-.rs-button:focus, button:focus,
-  :focus[type="button"],
-  :focus[type="reset"],
-  :focus[type="submit"], .rs-button:active, button:active,
-  :active[type="button"],
-  :active[type="reset"],
+.rs-button:focus, :focus[type="reset"],
+  :focus[type="submit"], .rs-button:active, :active[type="reset"],
   :active[type="submit"] {
   background-color: #e0e0e0;
 }
