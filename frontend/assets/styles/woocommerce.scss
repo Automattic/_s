@@ -8,11 +8,6 @@
 @import "base/functions";
 @import "base/mixins";
 @import "variables";
-@import "../../node_modules/bulma/sass/utilities/functions";
-@import "../../node_modules/bulma/sass/utilities/mixins.sass";
-@import "../../node_modules/bulma/sass/utilities/derived-variables.sass";
-@import "../../node_modules/bulma/sass/utilities/animations.sass";
-@import "../../node_modules/bulma/sass/utilities/controls.sass";
 
 @import "components/button";
 @import "components/input";
@@ -47,6 +42,10 @@
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.woocommerce{
+    @apply w-full;
 }
 
 /**
@@ -122,19 +121,14 @@ p.demo_store,
     }
 
     a.remove {
-        @apply mr-4;
+        @apply mr-4 text-center leading-none rounded-full font-medium border-0;
         font-size: 1.5em;
         height: 1em;
         width: 1em;
-        text-align: center;
-        line-height: 1;
-        border-radius: 100%;
         color: red !important;
 
         // Required for default theme compatibility
         text-decoration: none;
-        font-weight: 500;
-        border: 0;
         font-family: monospace;
 
         &:hover {
@@ -145,7 +139,7 @@ p.demo_store,
         }
 
         @screen md {
-            @apply block mx-auto mr-0;
+            @apply block mx-auto;
         }
     }
 
@@ -187,17 +181,6 @@ p.demo_store,
     .page-title {
         @apply text-xl mb-4;
     }
-
-    span.onsale {
-        @apply inline-block absolute px-1 m-0 bg-red-600;
-        text-align: center;
-        top: -0.5em;
-        left: -0.5em;
-        color: $highlightext;
-        font-size: small;
-        z-index: 9;
-    }
-
 
     //===================================
     // 表单
@@ -243,15 +226,15 @@ p.demo_store,
             margin-left: -1px;
             @apply border-t border-b border-gray-300 uppercase leading-none list-none text-sm py-3 w-full;
 
-            @screen sm{
+            @screen sm {
                 @apply w-1/2 py-4;
             }
 
-            @screen md{
+            @screen md {
                 @apply w-1/5;
             }
 
-            @screen lg{
+            @screen lg {
                 @apply w-1/5;
             }
 
@@ -349,7 +332,7 @@ nav.woocommerce-pagination {
 
 
 .woocommerce-order-overview__email {
-    @include tablet {
+    @screen md {
         flex-grow: 1;
     }
 }
@@ -368,7 +351,7 @@ nav.woocommerce-pagination {
     }
 }
 
-.woocommerce-order-downloads__title{
+.woocommerce-order-downloads__title {
     @apply mb-2;
 }
 
@@ -1024,11 +1007,11 @@ form.woocommerce-checkout {
             }
         }
 
-        @include tablet {
+        @screen md {
             @apply float-left;
         }
 
-        @include mobile {
+        @media screen and (max-width: $tablet) {
             @apply w-full;
 
             ul {
@@ -1046,35 +1029,32 @@ form.woocommerce-checkout {
                 }
             }
         }
-
     }
 
     &-content {
         width: 78%;
         min-height: 448px;
-        @apply bg-white p-8 shadow;
-        border-top: 6px solid theme('colors.gray.400');
-        @include tablet {
-            float: right;
+        @apply bg-white p-8 shadow border-t-4 border-gray-400;
+        @screen md{
+          @apply float-right;
         }
 
-        @include mobile {
+        @media screen and (max-width: $tablet) {
             @apply w-full mt-8;
         }
 
-        form{
-            button[type=submit]{
+        form {
+            button[type=submit] {
                 @apply mt-4;
+                @extend .rs-button--primary;
             }
         }
     }
 }
 
 .required {
-    color: red;
-    font-weight: 700;
+    @apply text-red-700 font-bold no-underline;
     border: 0 !important;
-    text-decoration: none;
 }
 
 
@@ -1083,8 +1063,7 @@ form.woocommerce-checkout {
 
     .col-1,
     .col-2 {
-        width: 100%;
-        float: none;
+        @apply w-full float-none;
     }
 }
 
@@ -1118,7 +1097,7 @@ form.woocommerce-checkout {
         @apply mt-2;
     }
 
-    @include mobile {
+    @media screen and (max-width: $tablet) {
         @apply flex items-center p-4;
         img {
             @apply m-0;
@@ -1129,11 +1108,11 @@ form.woocommerce-checkout {
         }
     }
 
-    @include tablet {
-        @apply p-4;
+    @screen md{
+        @apply p-6;
     }
 
-    @include tablet {
+    @screen lg{
         @apply p-8;
     }
 }
@@ -1144,7 +1123,7 @@ form.woocommerce-checkout {
 }
 
 .woocommerce-Address {
-    @include mobile {
+    @media screen and (max-width: $tablet) {
         & + .woocommerce-Address {
             @apply mt-8;
         }
@@ -1152,8 +1131,7 @@ form.woocommerce-checkout {
 }
 
 .brandbar--woo {
-
-    @include desktop {
+    @screen lg{
         @apply p-4;
     }
 
@@ -1323,7 +1301,7 @@ ul.payment_methods li img {
 }
 
 .woocommerce-privacy-policy-text {
-    @apply text-gray-600;
+    @apply text-gray-600 mb-4;
 }
 
 .woocommerce-product-details__short-description p {

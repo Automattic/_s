@@ -102,10 +102,10 @@
 
     ul.products li.product {
         .onsale {
-            top: 0;
-            right: 0;
-            left: auto;
-            margin: (-0.5em) -0.5em 0 0;
+            @apply inline-block absolute px-2 leading-tight py-1 m-0 bg-red-600 text-center text-gray-100 text-sm;
+            top: 0.5em;
+            left: 0.5em;
+            z-index: 9;
         }
 
         h3 {

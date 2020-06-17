@@ -5,29 +5,16 @@
 
     #reviews {
         h2 small {
-            float: right;
-            color: $subtext;
-            font-size: 15px;
+            @apply float-right text-base text-gray-600;
             margin: 10px 0 0;
 
             a {
-                text-decoration: none;
-                color: $subtext;
+                @apply no-underline text-gray-600;
             }
         }
 
-        h3 {
-            margin: 0;
-        }
-
-        #respond {
-            margin: 0;
-            border: 0;
-            padding: 0;
-        }
-
         #comment {
-            height: 75px;
+            @apply h-20 align-middle;
         }
 
         #comments {
@@ -38,80 +25,6 @@
             h2 {
                 clear: none;
             }
-
-            ol.commentlist {
-                @include clearfix;
-
-                margin: 0;
-                width: 100%;
-                background: none;
-                list-style: none;
-
-                li {
-                    padding: 0;
-                    margin: 0 0 20px;
-                    border: 0;
-                    position: relative;
-                    background: 0;
-                    border: 0;
-
-                    .meta {
-                        color: $subtext;
-                        font-size: 0.75em;
-                    }
-
-                    img.avatar {
-                        float: left;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        padding: 3px;
-                        width: 32px;
-                        height: auto;
-                        background: $secondary;
-                        border: 1px solid darken($secondary, 3%);
-                        margin: 0;
-                        box-shadow: none;
-                    }
-
-                    .comment-text {
-                        margin: 0 0 0 50px;
-                        border: 1px solid darken($secondary, 3%);
-                        border-radius: 4px;
-                        padding: 1em 1em 0;
-
-                        @include clearfix;
-
-                        p {
-                            margin: 0 0 1em;
-                        }
-
-                        p.meta {
-                            font-size: 0.83em;
-                        }
-                    }
-                }
-
-                ul.children {
-                    list-style: none outside;
-                    margin: 20px 0 0 50px;
-
-                    .star-rating {
-                        display: none;
-                    }
-                }
-
-                #respond {
-                    border: 1px solid darken($secondary, 3%);
-                    border-radius: 4px;
-                    padding: 1em 1em 0;
-                    margin: 20px 0 0 50px;
-                }
-            }
-
-            .commentlist > li::before {
-                content: "";
-            }
         }
     }
 
@@ -119,58 +32,40 @@
     // 星级评分
     //===================================
     .star-rating {
-        float: right;
-        overflow: hidden;
-        position: relative;
+        @apply float-right overflow-hidden relative leading-none;
         height: 1em;
-        line-height: 1;
         font-size: 1em;
         width: 5.4em;
         font-family: "star";
 
         &::before {
             content: "sssss";
-            color: darken($secondary, 10%);
-            float: left;
-            top: 0;
-            left: 0;
-            position: absolute;
+            @apply float-left absolute text-gray-500;
         }
 
         span {
-            overflow: hidden;
-            float: left;
-            top: 0;
-            left: 0;
-            position: absolute;
-            padding-top: 1.5em;
-            color: $orange;
+            @apply overflow-hidden float-left absolute pt-6 text-red-600;
         }
 
         span::before {
+            @apply absolute left-0 top-0;
             content: "SSSSS";
-            top: 0;
-            position: absolute;
-            left: 0;
         }
     }
 
     .woocommerce-product-rating {
         @include clearfix;
-
-        line-height: 2;
-        display: block;
+        @apply block leading-loose;
 
         .star-rating {
+            @apply float-left;
             margin: 0.5em 4px 0 0;
-            float: left;
         }
     }
 
     .products .star-rating {
-        display: block;
+        @apply block float-none;
         margin: 0 0 0.5em;
-        float: none;
     }
 
     .hreview-aggregate .star-rating {
@@ -179,45 +74,40 @@
 
     #review_form #respond {
         @include clearfix;
-
-        position: static;
-        margin: 0;
-        width: auto;
-        padding: 0;
+        @apply static m-0 p-0 w-auto border-0;
         background: transparent none;
-        border: 0;
-
-        p {
-            margin: 0 0 10px;
-        }
 
         .form-submit input {
-            @extend .button;
-            @apply px-2 py-1 left-auto;
+            @extend .rs-button--sm
         }
 
-        textarea {
-            @apply h-16;
+        p{
+            @apply mt-0 mb-4 p-0;
+        }
+    }
+
+    .comment-reply-title{
+        @apply block mt-6 mb-4;
+    }
+
+    .comment-form-rating{
+        label{
+            @apply text-base;
         }
     }
 
     p.stars {
+        @apply leading-none;
         a {
-            position: relative;
+            @apply relative inline-block no-underline text-red-600;
             height: 1em;
             width: 1em;
             text-indent: -999em;
-            display: inline-block;
-            text-decoration: none;
 
             &::before {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
+                @apply block absolute leading-none;
                 width: 1em;
                 height: 1em;
-                line-height: 1;
                 font-family: "WooCommerce";
                 content: "";
                 text-indent: 0;
@@ -249,4 +139,62 @@
         }
     }
 
+}
+
+
+ol.commentlist {
+    @include clearfix;
+    @apply w-full;
+
+    li {
+        @apply relative;
+        margin: 0 0 20px;
+
+        .meta {
+            @apply text-sm;
+            color: $subtext;
+        }
+
+        img.avatar {
+            @apply float-left absolute w-8 h-auto shadow-none border border-gray-300 bg-gray-100;
+            padding: 3px;
+        }
+
+        .comment-text {
+            @include clearfix;
+            @apply bg-white rounded p-4 border border-gray-300;
+            margin: 0 0 0 50px;
+
+            p {
+                @apply mb-0;
+                &:not(:last-child) {
+                    @apply mb-4;
+                }
+            }
+
+            p.meta {
+                @apply mb-2 text-sm;
+            }
+        }
+
+        & > li::before {
+            content: "";
+        }
+
+    }
+
+    ul.children {
+        list-style: none outside;
+        margin: 20px 0 0 50px;
+
+        .star-rating {
+            @apply hidden;
+        }
+    }
+
+    #respond {
+        @apply rounded border border-gray-300;
+        padding: 1em 1em 0;
+        margin: 20px 0 0 50px;
+    }
 }

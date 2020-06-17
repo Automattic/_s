@@ -18,17 +18,21 @@
                 font-family: "WooCommerce";
                 content: "";
                 @apply align-top font-normal absolute;
-                top: 5px;
+                top: 9px;
                 right: 1em;
                 animation: spin 2s linear infinite;
             }
         }
 
-        &.added::after {
-            font-family: "WooCommerce";
-            content: "";
-            margin-left: 0.53em;
-            vertical-align: bottom;
+        &.added{
+            padding-right: 2.618em;
+            &::after {
+                @apply absolute;
+                font-family: "WooCommerce";
+                content: "";
+                margin-left: 0.53em;
+                top: 9px;
+            }
         }
 
         &.alt {

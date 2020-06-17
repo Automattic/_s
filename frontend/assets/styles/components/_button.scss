@@ -1,9 +1,14 @@
 .rs-button {
-    @apply relative bg-white bg-gray-100 leading-normal text-gray-700 font-medium py-2 px-4 border border-gray-500 rounded text-center align-middle;
+    @apply relative bg-white bg-gray-100 leading-none text-gray-700 font-medium py-2 px-4 border border-gray-500 rounded text-center align-middle;
     transition: all .15s ease-in-out;
 
     &:hover {
         @apply bg-gray-200;
+    }
+
+    &:focus,
+    &:active{
+        @apply bg-gray-300;
     }
 
     &--primary{
@@ -24,7 +29,7 @@
 
     &--sm{
         @apply text-sm;
-        padding: 6px 8px;
+        padding: 6px 12px;
     }
 }
 

@@ -5,21 +5,21 @@
 @import "../fonts/icomoon/variables";
 
 // 基本颜色
-$black: hsl(0, 0%, 4%);
+$black: hsl(0, 0%, 4%); //dark
 $black-bis: hsl(0, 0%, 7%);
 $black-ter: hsl(0, 0%, 14%);
 
-$grey-darker: hsl(0, 0%, 21%);
-$grey-dark: hsl(0, 0%, 29%);
-$grey: hsl(0, 0%, 48%);
-$grey-light: hsl(0, 0%, 71%);
-$grey-lighter: hsl(0, 0%, 86%);
+$grey-darker: hsl(0, 0%, 21%); //gray-900
+$grey-dark: hsl(0, 0%, 29%); //gray-800
+$grey: hsl(0, 0%, 48%); //gray-700
+$grey-light: hsl(0, 0%, 71%); //gray-600
+$grey-lighter: hsl(0, 0%, 86%); //gray-500
 
 $white-ter: hsl(0, 0%, 96%);
 $white-bis: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
 
-$orange: #e53238;
+$orange: #e53238; //red-600
 $yellow: #f5af02;
 $green: #86b817;
 $turquoise: hsl(171, 100%, 41%);
@@ -44,26 +44,6 @@ $link: $primary;
 
 $body-background-color: rgba(31, 99, 209, 0.02);
 $highlight: #333;
-
-
-// 反色
-$orange-invert: findColorInvert($orange);
-$yellow-invert: findColorInvert($yellow);
-$green-invert: findColorInvert($green);
-$turquoise-invert: findColorInvert($turquoise);
-$cyan-invert: findColorInvert($cyan);
-$blue-invert: findColorInvert($blue);
-$purple-invert: findColorInvert($purple);
-$red-invert: findColorInvert($red);
-
-$primary-invert: $turquoise-invert;
-$info-invert: $cyan-invert;
-$success-invert: $green-invert;
-$warning-invert: $yellow-invert;
-$danger-invert: $red-invert;
-$light-invert: $dark;
-$dark-invert: $light;
-$link-invert: $blue-invert;
 
 // 背景和边框
 $background: #f1f1f1;

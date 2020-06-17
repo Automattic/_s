@@ -69268,7 +69268,7 @@ pre, code {
   position: relative;
   background-color: #fff;
   background-color: #f5f5f5;
-  line-height: 1.5;
+  line-height: 1;
   color: #616161;
   font-weight: 500;
   padding-top: 0.5rem;
@@ -69290,6 +69290,16 @@ pre, code {
   :hover[type="reset"],
   :hover[type="submit"] {
   background-color: #eee;
+}
+
+.rs-button:focus, button:focus,
+  :focus[type="button"],
+  :focus[type="reset"],
+  :focus[type="submit"], .rs-button:active, button:active,
+  :active[type="button"],
+  :active[type="reset"],
+  :active[type="submit"] {
+  background-color: #e0e0e0;
 }
 
 .rs-button--primary,
@@ -69319,7 +69329,7 @@ pre, code {
 
 .rs-button--sm {
   font-size: 0.875rem;
-  padding: 6px 8px;
+  padding: 6px 12px;
 }
 
 .wp-post-image {

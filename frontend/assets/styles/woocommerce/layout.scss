@@ -7,7 +7,7 @@
 .woocommerce-error,
 .woocommerce-info {
     .button {
-        float: right;
+        @apply float-right;
     }
 }
 
@@ -24,19 +24,18 @@
         width: 100%;
 
         .col-1 {
-            float: left;
+            @apply float-left;
             width: 48.5%;
         }
 
         .col-2 {
-            float: right;
+            @apply float-right;
             width: 48.5%;
         }
     }
 
     img {
-        height: auto;
-        max-width: 100%;
+        @apply max-w-full h-auto;
     }
 
     /**
@@ -48,14 +47,14 @@
             @include clearfix();
 
             a {
-                float: left;
+                @apply float-left;
                 width: 30.75%;
                 margin-right: 3.8%;
                 margin-bottom: 1em;
             }
 
             a.last {
-                margin-right: 0;
+                @apply mr-0;
             }
 
             a.first {
@@ -64,9 +63,7 @@
 
             &.columns-1 {
                 a {
-                    width: 100%;
-                    margin-right: 0;
-                    float: none;
+                    @apply w-full float-none mr-0;
                 }
             }
 
@@ -112,12 +109,9 @@
         @include clearfix();
 
         li.product {
-            float: left;
+            @apply float-left relative p-0;
             margin: 0 3.8% 2.992em 0;
-            padding: 0;
-            position: relative;
             width: 22.05%;
-            margin-left: 0;
         }
 
         li.first {
@@ -125,15 +119,14 @@
         }
 
         li.last {
-            margin-right: 0;
+            @apply mr-0;
         }
     }
 
     ul.products {
         &.columns-1 {
             li.product {
-                width: 100%;
-                margin-right: 0;
+                @apply w-full mr-0;
             }
         }
 
@@ -166,7 +159,7 @@
         ul.products {
             li.product {
                 width: 100%;
-                margin-right: 0;
+                @apply w-full mr-0;
             }
         }
     }
@@ -214,22 +207,21 @@
      */
     table.cart {
         img {
-            height: auto;
+            @apply h-auto;
         }
 
         td.actions {
-            text-align: right;
-            @apply bg-gray-100;
+            @apply bg-gray-100 text-right;
 
             .input-text {
                 width: 80px;
             }
 
             .coupon {
-                float: left;
+                @apply float-left;
 
                 label {
-                    display: none;
+                    @apply hidden;
                 }
             }
         }
@@ -237,19 +229,19 @@
 
     .cart-collaterals {
         @include clearfix();
-        width: 100%;
+        @apply w-full;
 
         .related {
+            @apply float-left;
             width: 30.75%;
-            float: left;
         }
 
         .cross-sells {
+            @apply float-left;
             width: 48%;
-            float: left;
 
             ul.products {
-                float: none;
+                @apply float-none;
 
                 li {
                     width: 48%;
@@ -302,7 +294,6 @@
             }
 
             .input-text {
-                box-sizing: border-box;
                 @apply w-full;
             }
         }
@@ -323,7 +314,6 @@
 
         .form-row-last {
             @apply float-right;
-            float: right;
         }
 
         .form-row-wide {
@@ -334,18 +324,17 @@
     #payment {
         .form-row {
             select {
-                width: auto;
+                @apply w-auto;
             }
         }
 
         .wc-terms-and-conditions, .terms {
-            text-align: left;
+            @apply float-right text-left;
             padding: 0 1em 0 0;
-            float: left;
         }
 
         #place_order {
-            float: right;
+            @apply float-right;
         }
     }
 

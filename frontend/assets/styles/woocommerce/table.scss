@@ -3,6 +3,7 @@
         @apply w-full;
 
         td.product-remove {
+            min-width: 32px;
             padding-left: 0 !important;
             padding-right: 0 !important;
         }
@@ -18,11 +19,11 @@
         border-width: 0 0 1px;
 
         td {
-            @apply pl-0;
+            @apply pl-0 border-b border-gray-300;
         }
 
         div.quantity {
-            @apply m-0 float-none;
+            @apply m-0 float-none align-middle;
         }
 
         small.stock {
@@ -128,10 +129,9 @@ table.shop_attributes {
     }
 }
 
-
 table.shop_table_responsive {
     tr {
-        @include mobile {
+        @media screen and (max-width: $phone) {
             border-left: 1px solid $border-color;
             border-right: 1px solid $border-color;
             @apply mb-8;
@@ -169,8 +169,7 @@ table.my_account_orders {
     }
 
     td {
-        @apply font-normal py-3;
-        //@apply font-normal text-left py-3 border-b border-gray-300 align-middle;
+        @apply font-normal py-3 border-b border-gray-300 align-middle;
 
         small {
             @apply font-normal;
@@ -192,8 +191,7 @@ table.my_account_orders {
     }
 
     img {
-        width: 32px;
-        box-shadow: none;
+        @apply w-8 shadow-none;
     }
 
     th {
@@ -225,16 +223,15 @@ table.my_account_orders {
 
 // 结账审核订单表
 .woocommerce-checkout-review-order-table {
-    border-collapse: collapse;
-    @apply text-base w-full;
-    @include mobile {
+    @apply text-base w-full border-collapse;
+    @media screen and (max-width: $phone) {
         &:not(.woocommerce-table--order-details) {
-            border: 0;
+            @apply border-0;
         }
     }
 
     tr td:last-of-type {
-        text-align: right;
+        @apply text-right;
     }
 
     th {
@@ -243,8 +240,7 @@ table.my_account_orders {
 
     td {
         @apply font-normal text-left py-3;
-        @apply border-b border-gray-300;
-        vertical-align: middle;
+        @apply border-b border-gray-300 align-middle;
 
         small {
             font-weight: normal;
@@ -266,11 +262,11 @@ table.my_account_orders {
 // 所有订单表格
 .woocommerce-orders-table {
     &__header {
+        @apply text-sm;
         padding: 10px 0 10px 30px !important;
-        font-size: .875rem;
         @apply px-4 font-medium text-gray-700 bg-gray-200;
         &:last-child {
-            text-align: right;
+            @apply text-right;
             padding-right: 16px !important;
         }
     }
@@ -280,13 +276,9 @@ table.my_account_orders {
     }
 
     &__cell {
+        @apply text-sm whitespace-no-wrap align-middle text-left font-medium;
         padding: 20px 0 20px 30px;
         color: #354052;
-        font-size: .875rem;
-        font-weight: 500;
-        text-align: left;
-        white-space: nowrap;
-        vertical-align: middle;
     }
 }
 
@@ -310,12 +302,11 @@ table.my_account_orders {
 
         td,
         th {
-            @apply align-top border-l-0 border-r-0;
-            line-height: 1.5em;
+            @apply align-top border-l-0 border-r-0 leading-normal;
         }
 
         small {
-            color: $subtext;
+            @apply text-gray-600;
         }
 
         select {

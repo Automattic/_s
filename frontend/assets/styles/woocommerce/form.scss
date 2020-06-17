@@ -13,8 +13,8 @@
         @apply mb-2;
 
         [placeholder]:focus::-webkit-input-placeholder {
+            @apply opacity-0;
             transition: opacity 0.5s 0.5s ease;
-            opacity: 0;
         }
 
         label {
@@ -30,7 +30,7 @@
         }
 
         span {
-            @apply text-gray-500;
+            @apply text-gray-600 text-sm;
         }
 
         .optional {
@@ -111,53 +111,33 @@ form.cart {
     }
 
     .wc-no-matching-variations {
-        display: none;
+        @apply hidden;
     }
 
     .button {
-        vertical-align: middle;
-        float: left;
+        @apply float-left align-middle;
     }
-}
-
-.woocommerce #review_form #respond textarea {
-    @apply px-3 py-2;
-}
-
-.woocommerce #review_form #respond .form-submit input {
-    @apply bg-blue-700 text-white px-4 py-2;
 }
 
 .woocommerce-input-wrapper {
     .description {
+        @apply text-white rounded p-4 hidden relative;
         background: #1e85be;
-        color: #fff;
-        border-radius: 3px;
-        padding: 1em;
         margin: 0.5em 0 0;
         clear: both;
-        display: none;
-        position: relative;
 
         a {
-            color: #fff;
-            text-decoration: underline;
-            border: 0;
-            box-shadow: none;
+            @apply text-white no-underline border-0 shadow-none;
         }
 
         &:before {
+            @apply absolute block border-solid mt-1 top-0;
             left: 50%;
-            top: 0;
-            margin-top: -4px;
             transform: translatex(-50%) rotate(180deg);
             content: "";
-            position: absolute;
             border-width: 4px 6px 0 6px;
-            border-style: solid;
             border-color: #1e85be transparent transparent transparent;
             z-index: 100;
-            display: block;
         }
     }
 }
