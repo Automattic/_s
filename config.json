@@ -21,7 +21,7 @@
 	
 	"fonts": {
 		"main" : {
-			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700'",
+			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700&display=swap'",
 			"_fallback": {
 				"font-family": "'Arial'",
 				"letter-spacing": "0.5px",
@@ -30,7 +30,7 @@
 			"font-family": "Roboto"
 		},
 		"headings" : {
-			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700'",
+			"_source": "'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700&display=swap'",
 			"_fallback": {
 				"font-family": ["Arial", "Helvetica", "sans-serif"]
 			},
