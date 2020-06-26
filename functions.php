@@ -403,6 +403,18 @@ function _svbk_set_content_width() {
 }
 add_action( 'after_setup_theme', '_svbk_set_content_width', 0 );
 
+function _svbk_critical_css(){
+	// Critical CSS
+	$critical_css_path = get_theme_file_path( '/dist/css/critical.css' );
+
+	if ( file_exists($critical_css_path) ) {
+		$code = file_get_contents( $critical_css_path );
+		echo '<style id="critical-css">'. $code .'</style>';
+	}
+}
+
+add_action('wp_head', '_svbk_critical_css', 5);
+
 /**
  * Enqueue scripts and styles.
  */
@@ -411,35 +423,14 @@ function _svbk_scripts() {
 	Script::common();
 	Style::common();
 
-	Script::enqueue(
-		'cssrelpreload',
-		'/dist/js/cssrelpreload.min.js',
-		[
-			'async'  => true,
-			'source' => 'theme',
-		]
-	);
-
-	// Critical CSS
-	Style::enqueue(
-		'_svbk-critical',
-		'/dist/css/critical.css',
-		[
-			'source' => 'theme',
-			'inline' => true,
-			'async'  => false,
-		]
-	);
-
 	// Styles common to all pages
 	Style::enqueue(
 		'_svbk-common',
 		'/dist/css/common.css',
 		[
-			'source' => 'theme',
-			'deps'   => array( '_svbk-critical' ),
+			'source' => 'theme'
 		]
-	);
+	);	
 
 	// Page-specific styles
 	Style::enqueue(
