@@ -82,10 +82,6 @@ ul.products li.product {
 	margin-bottom: 2em;
 }
 
-ul.products li.product .woocommerce-loop-product__title {
-	font-size: 1rem;
-}
-
 ul.products li.product img {
 	display: block;
 }
@@ -298,7 +294,6 @@ ul.products li.product .button {
 	position: relative;
 	height: 1.618em;
 	line-height: 1.618;
-	font-size: 1em;
 	width: 5.3em;
 	font-family: star;
 	font-weight: 400;

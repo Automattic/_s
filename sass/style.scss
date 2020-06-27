@@ -5,6 +5,8 @@ Author: Automattic
 Author URI: https://automattic.com/
 Description: Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: _s
@@ -23,78 +25,78 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
 
 /*--------------------------------------------------------------
-# Normalize
+# Generic
 --------------------------------------------------------------*/
-@import "normalize";
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
 
 /*--------------------------------------------------------------
-# Typography
+# Base
 --------------------------------------------------------------*/
-@import "typography/typography";
+@import "base/base";
 
 /*--------------------------------------------------------------
-# Elements
+# Layouts
 --------------------------------------------------------------*/
-@import "elements/elements";
+// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
 
 /*--------------------------------------------------------------
-# Forms
+# Components
 --------------------------------------------------------------*/
-@import "forms/forms";
+@import "components/components";
 
 /*--------------------------------------------------------------
-# Navigation
+# Plugins
 --------------------------------------------------------------*/
-@import "navigation/navigation";
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+@import "plugins/jetpack/infinite-scroll";
 
 /*--------------------------------------------------------------
-# Accessibility
+# Utilities
 --------------------------------------------------------------*/
-@import "modules/accessibility";
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
 
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-@import "site/secondary/widgets";
-
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-@import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-@import "media/media";
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
