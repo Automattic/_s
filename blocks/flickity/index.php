@@ -12,15 +12,25 @@ function _svbk_conditionally_load_blocks_deps() {
 	}
 
 	$has_gallery = has_block( 'gallery', $post );
+	
+	Style::enqueue( 
+		'flickity',  
+		'dist/flickity.min.css' ,
+		[ 
+			'version' => '2.2.1',
+			'async'     => true,			
+			'condition' => $has_gallery
+		] 
+	);
 
 	Script::enqueue(
 		'flickity',
-		'/dist/flickity.pkgd.min.js',
+		'dist/flickity.pkgd.min.js',
 		[
-			'version'   => '2',
+			'version'   => '2.2.1',
 			'defer'     => true,
 			'async'     => true,
-			'condition' => $has_gallery,
+			'condition' => $has_gallery
 		]
 	);
 

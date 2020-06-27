@@ -420,12 +420,10 @@ add_action('wp_head', '_svbk_critical_css', 5);
  */
 
 function _svbk_scripts() {
-
-	Script::common();
-	Style::common();
-
-/*
-
+	
+	Script::register( 'waypoints', 'lib/jquery.waypoints.min.js', [ 'version' => '4.0.1', 'deps' => 'jquery', 'defer' => true ] );
+	Script::register( 'waypoints-sticky', 'lib/shortcuts/sticky.min.js', [ 'version' => '4.0.1', 'deps' => ['jquery', 'waypoints'], 'package' => 'waypoints', 'defer' => true ] );
+		
 	// Styles common to all pages
 	Style::enqueue(
 		'_svbk-common',
@@ -446,6 +444,7 @@ function _svbk_scripts() {
 			'prefetch'  => ! is_front_page(),
 		]
 	);
+	
 	Style::enqueue(
 		'_svbk-blog',
 		'/dist/css/blog.css',
@@ -456,6 +455,7 @@ function _svbk_scripts() {
 			'prefetch'  => ! is_home() && ! is_post_type_archive( 'post' ),
 		]
 	);
+
 	Style::enqueue(
 		'_svbk-single-post',
 		'/dist/css/single-post.css',
@@ -466,6 +466,7 @@ function _svbk_scripts() {
 			'prefetch'  => is_home(),
 		]
 	);
+
 	Style::enqueue(
 		'_svbk-page',
 		'/dist/css/page.css',
@@ -476,6 +477,7 @@ function _svbk_scripts() {
 			'prefetch'  => is_page(),
 		]
 	);
+
 	Style::enqueue(
 		'_svbk-single-testimonial',
 		'/dist/css/single-testimonial.css',
@@ -486,6 +488,7 @@ function _svbk_scripts() {
 			'prefetch'  => is_post_type_archive( 'testimonial' ),
 		]
 	);	
+	
 	Style::enqueue(
 		'_svbk-search',
 		'/dist/css/search.css',
@@ -495,6 +498,7 @@ function _svbk_scripts() {
 			'condition' => is_search(),
 		]
 	);
+
 	Style::enqueue(
 		'_svbk-404',
 		'/dist/css/404.css',
@@ -525,8 +529,6 @@ function _svbk_scripts() {
 		]
 	);
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
-
-	*/
 
 	// Sub menu toggling class
 	Script::enqueue(
@@ -613,6 +615,8 @@ function _svbk_scripts() {
 
 	Asset::hint( 'preconnect', '//cdn.jsdelivr.net' );
 	Asset::hint( 'preconnect', '//fonts.googleapis.com' );
+
+	Asset::preload( get_theme_file_uri('style/icons/fonts/theme-icons.woff'), 'font', array( 'crossorigin' => true, 'type' => 'font/woff' )  );
 
 }
 add_action( 'wp_enqueue_scripts', '_svbk_scripts', 15 );
