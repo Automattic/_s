@@ -44,3 +44,97 @@
 # Shop
 --------------------------------------------------------------*/
 @import "shop/components";
+
+/*--------------------------------------------------------------
+# Wide/full alignment
+--------------------------------------------------------------*/
+
+.wp-block-svbk-hero,
+.wp-block-group.alignwide,
+.wp-block-group.alignfull,
+.wp-block-media-text.alignwide,
+.wp-block-media-text.alignfull,
+.wp-block-image.alignwide,
+.wp-block-image.alignfull,
+.wp-block-cover.alignwide,
+.wp-block-cover.alignfull,
+.wp-block-svbk-warranty {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+.wp-block-media-text,
+.wp-block-group,
+.wp-block-cover {
+
+	&.alignwide,
+	&.alignfull {
+		width: auto;
+		max-width: none;
+		padding-left: calc(50vw - 50%);
+		padding-right: calc(50vw - 50%);
+	}
+}
+
+.wp-block-svbk-hero,
+.wp-block-group.alignwide,
+.wp-block-media-text.alignwide,
+.wp-block-image.alignwide,
+.wp-block-cover.alignwide,
+.wp-block-image.alignfull,
+.wp-block-cover.alignfull {
+	margin-top: 0;
+	margin-bottom: 0;
+
+    @media screen and (min-width: $size__page-max-width) {
+		margin: 30px #{-$padding__content-desktop};
+	}
+}
+
+.wp-block-svbk-hero,
+.wp-block-group.alignwide,
+.wp-block-media-text.alignwide,
+.wp-block-cover.alignwide {
+
+	@media screen and (min-width: $size__page-max-width) {
+		padding-left: $padding__content-desktop;
+		padding-right: $padding__content-desktop;
+	}
+}
+
+.entry-content:not(.post__content) >,
+.entry-content > .wp-block-group .wp-block-group__inner-container > {
+
+	p, ul, ol,
+	h1, h2, h3, h4, h5, h6,
+	.wp-block-pullquote,
+	.wp-block-svbk-icon-paragraph,
+	.wp-block-button,
+	.wp-block-separator {
+		max-width: $size__text-width;
+	}
+
+	p, ul, ol,
+	h1, h2, h3, h4, h5, h6,
+	.wp-block-pullquote,
+	.wp-block-svbk-icon-paragraph,
+	.wp-block-button {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h1, h2 {
+		margin-top: 0;
+	}
+
+	@media screen and (min-width: $size__text-width) {
+
+		.wp-block-separator {
+				margin-left: calc((100% - 740px)/2);
+		}
+
+		.has-text-align-center + .wp-block-separator {
+			margin-left: auto;
+		}
+	}
+}

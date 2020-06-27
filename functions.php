@@ -418,10 +418,13 @@ add_action('wp_head', '_svbk_critical_css', 5);
 /**
  * Enqueue scripts and styles.
  */
+
 function _svbk_scripts() {
 
 	Script::common();
 	Style::common();
+
+/*
 
 	// Styles common to all pages
 	Style::enqueue(
@@ -522,6 +525,8 @@ function _svbk_scripts() {
 		]
 	);
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
+
+	*/
 
 	// Sub menu toggling class
 	Script::enqueue(

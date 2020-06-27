@@ -1,0 +1,16 @@
+.wp-block-svbk-hero.is-style-content-card {
+
+    .wp-block-svbk-hero__content {
+
+        @media screen and (min-width: breakpoint('tablet-portrait')) {
+            padding: 20px;
+            background: #fff;
+            border-radius: $border-radius;
+            box-shadow: $shadow__card;
+        }
+
+        @media screen and (min-width: breakpoint('desktop')) {
+            padding: 30px;
+        }
+    }
+}
