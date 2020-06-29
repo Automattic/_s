@@ -13,12 +13,16 @@
 
 <footer id="colophon" class="site__footer">
 
-    <?php if ( is_active_sidebar('sidebar-footer')): ?>
-        <section class="container pt-8">
-            <div class="flex -mx-4">
-                <?php dynamic_sidebar('sidebar-footer'); ?>
-            </div>
-        </section>
+    <?= do_shortcode('[_s_elemetor_block id=458]') ?>
+
+    <?php if (is_active_sidebar('sidebar-footer')): ?>
+        <div class="content__footer">
+            <section class="container">
+                <div class="content__footer--inner">
+                    <?php dynamic_sidebar('sidebar-footer'); ?>
+                </div>
+            </section>
+        </div>
     <?php endif; ?>
 
     <div class="py-4 site__info">

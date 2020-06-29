@@ -6,7 +6,7 @@
         //max-width: $tablet - 48px;
     }
 
-    @screen lg{
+    @screen lg {
         //max-width: $desktop - 64px;
     }
 
@@ -19,6 +19,7 @@
 .site {
     @apply flex flex-col;
     min-height: 100vh;
+
     &__header {
         @apply flex justify-between items-center w-full bg-white border-b border-gray-300;
         height: 64px;
@@ -99,7 +100,7 @@
         &.toggled {
             .nav-menu {
                 @apply flex w-full;
-                box-shadow: 0 1px 3px rgba(0,0,0,.25);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
             }
         }
     }
@@ -112,16 +113,16 @@
             @apply p-6;
         }
 
-        @screen lg{
-          @apply flex-no-wrap;
+        @screen lg {
+            @apply flex-no-wrap;
         }
 
         @screen xl {
             @apply py-8 px-0;
         }
 
-         .elementor{
-             @apply w-full;
+        .elementor {
+            @apply w-full;
         }
     }
 
@@ -134,12 +135,12 @@
     }
 }
 
-.elementor-template-full-width{
-    .site__content{
+.elementor-template-full-width {
+    .site__content {
         @apply py-0;
 
         .elementor,
-        .elementor-edit-area{
+        .elementor-edit-area {
             @apply flex-grow;
         }
     }
@@ -157,6 +158,32 @@
             @apply flex-none ml-8 px-0 mt-0;
             width: 15%;
             min-width: 256px;
+        }
+    }
+
+    &__footer {
+        @apply py-8;
+        &--inner {
+            @apply flex -mx-4 flex-wrap;
+
+            @apply lg {
+                @apply flex-no-wrap;
+            }
+        }
+
+        .widget {
+            @apply mx-4 w-full;
+            flex-grow: 1;
+
+            @screen lg {
+                @apply mb-0;
+                flex: 0;
+                flex-grow: 1;
+            }
+
+            img {
+                @apply rounded-none shadow-none;
+            }
         }
     }
 }
