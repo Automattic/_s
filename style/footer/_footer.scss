@@ -1,20 +1,4 @@
 .site-footer {
-	background-color: $color__background-footer;
-	color: rgba(255,255,255,.7);
-	clear: both;
-	@include font-size(.9);
-	color: #fff;
-	
-	&:before {
-		content: '';
-		display: block;
-		height: 8px;
-		width: 100%;
-	}
-	
-	.site-footer__section {
-		margin-bottom: 30px;
-	}
 	
 	.wrap {
 		padding-top: 30px;

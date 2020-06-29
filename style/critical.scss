@@ -1,17 +1,14 @@
-/*
-@import "blocks/hero/hero";*/
-
+@import "normalize";
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 @import "modules/accessibility";
+@import "elements/elements";
 @import "typography/critical";
+@import "forms/critical";
 @import "header/critical";
 @import "navigation/critical";
-
-img {
-	max-width: 100%;
-	height: auto;
-}
+@import "blocks/hero/critical";
+@import "footer/critical";
 
 #page {
 	background: $color__background-page;

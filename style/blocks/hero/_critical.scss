@@ -1,0 +1,177 @@
+@import 'styles/content-card';
+
+.wp-block-svbk-hero {
+    padding-left: $padding__content-mobile;
+    padding-right: $padding__content-mobile;
+    margin: 0 calc(50% - 50vw);
+    
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        position: relative;
+    }
+
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        padding: 60px calc(50vw - 50%);
+    }
+
+    @media screen and (min-width: $size__page-max-width) {
+		margin: 30px #{-$padding__content-desktop};
+        padding: 80px $padding__content-desktop;
+    }
+}
+
+.wp-block-svbk-hero__picture {
+    display: block;
+    margin-left: -$padding__content-mobile;
+    margin-right: -$padding__content-mobile;
+    
+    img {
+        display: block;
+        width: 100%;
+        max-width: none;
+    }
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.wp-block-svbk-hero__content {
+    padding-top: 15px;
+    padding-bottom: 20px;
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        padding-top: 0;
+        padding-bottom: 0;
+        
+        .has-align-right & {
+            left: 50%;
+        }
+    }
+
+    @media screen and (min-width: $size__page-width) {
+        padding: 40px;
+
+        &:after {
+            @include clearfix();
+            @include clearfix-after();
+        }
+    }
+}
+
+.wp-block-svbk-hero__pretitle {
+    @include font-size(1.1);
+    font-style: italic;
+    margin-bottom: 10px;
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        @include font-size(1.25);
+    }
+}
+
+.wp-block-svbk-hero__title {
+    @include font-size(2.2);
+    line-height: 1.1em;
+    margin: 0 0 10px;
+    
+    em {
+        font-style: normal;
+        color: $color__corporate;
+    }
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        @include font-size(2.7);
+    }   
+}
+
+.wp-block-svbk-hero__subtitle {
+    @include font-size(1.1);
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        @include font-size(1.25);
+    }
+}
+
+.wp-block-svbk-hero__text {
+    border-top: 1px solid $color__background-hr;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.wp-block-svbk-hero__button {
+    margin-top: 20px;
+
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        margin: 25px 15px 15px 0;
+        display: inline-block;
+
+        + .wp-block-svbk-hero__button {
+            display: inline;
+            margin: 0;
+        }
+    }
+
+    .wp-block-svbk-hero__link {
+        display: block;
+
+        @media screen and (min-width: breakpoint('tablet-landscape')) {
+            display: inline-block;
+        }
+    }
+}
+
+.wp-block-svbk-hero__button--secondary a[href^="tel:"] {
+
+    &:before {
+        @include icon-content("\e930");
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        display: block;
+        margin: 10px 0 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        text-align: left;
+        color: $color__text-main;
+
+        &:before {
+            @include font-size(1.2);
+            color: $color__link;
+        }
+    }
+}
+
+.wp-block-svbk-hero__footer {
+    @include font-size(.85);
+    margin-top: 5px;
+    clear: both;
+    padding-top: 3px;
+    color: #5f6368;
+    text-align: center;
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        text-align: left;
+    }
+}
