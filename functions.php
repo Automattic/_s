@@ -23,6 +23,12 @@ require_once(get_theme_file_path('includes/helpers.php'));
 
 
 /**
+ * Theme Shortcode
+ */
+require_once(get_theme_file_path('includes/shortcodes.php'));
+
+
+/**
  * Custom fields
  */
 require_once(get_theme_file_path('includes/fields.php'));
