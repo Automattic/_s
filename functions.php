@@ -91,8 +91,8 @@ if ( ! function_exists( '_svbk_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 400,
-				'width'       => 100,
+				'height'      => 100,
+				'width'       => 400,
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
