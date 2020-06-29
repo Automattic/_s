@@ -10,41 +10,45 @@
 get_header();
 ?>
 
-    <div id="primary" class="content__primary">
-        <main id="main" class="site__main">
+    <div id="content" class="site__content">
 
-            <?php while (have_posts()) : the_post(); ?>
+        <div id="primary" class="content__primary">
+            <main id="main" class="site__main">
 
-                <div class="rs-post">
-                    <div class="rs-post__header">
-                        <h1 class="rs-post__title">
-                            <?php the_title(); ?>
-                        </h1>
-                        <div class="rs-post__meta">
-                            <div class="rs-post__author">
-                                By <?php the_author(); ?>
-                            </div>
-                            <div class="rs-post__date">
-                                <?php the_time('M,d'); ?>
+                <?php while (have_posts()) : the_post(); ?>
+
+                    <div class="rs-post">
+                        <div class="rs-post__header">
+                            <h1 class="rs-post__title">
+                                <?php the_title(); ?>
+                            </h1>
+                            <div class="rs-post__meta">
+                                <div class="rs-post__author">
+                                    By <?php the_author(); ?>
+                                </div>
+                                <div class="rs-post__date">
+                                    <?php the_time('M,d'); ?>
+                                </div>
                             </div>
                         </div>
+                        <div class="typo rs-post__content">
+                            <?php the_content(); ?>
+                        </div>
                     </div>
-                    <div class="typo rs-post__content">
-                        <?php the_content(); ?>
-                    </div>
-                </div>
 
-                <?php
-                if (comments_open() || get_comments_number()) :
-                    comments_template();
-                endif;
-                ?>
+                    <?php
+                    if (comments_open() || get_comments_number()) :
+                        comments_template();
+                    endif;
+                    ?>
 
-            <?php endwhile; ?>
+                <?php endwhile; ?>
 
-        </main>
-    </div>
+            </main>
+        </div>
 
-<?php
-get_sidebar();
-get_footer();
+        <?php get_sidebar(); ?>
+
+    </div><!-- #content -->
+
+<?php get_footer();

@@ -51,5 +51,3 @@
 
         </div>
     </header>
-
-    <div id="content" class="site__content">
