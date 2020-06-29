@@ -28,6 +28,31 @@
                 "styles/woocommerce.scss"
             ]
         },
+        "products.css": {
+            "files": [
+                "styles/products.scss"
+            ]
+        },
+        "review.css": {
+            "files": [
+                "styles/review.scss"
+            ]
+        },
+        "account.css": {
+            "files": [
+                "styles/account.scss"
+            ]
+        },
+        "cart.css": {
+            "files": [
+                "styles/cart.scss"
+            ]
+        },
+        "checkout.css": {
+            "files": [
+                "styles/checkout.scss"
+            ]
+        },
         "editor.css": {
             "files": [
                 "styles/editor.scss"

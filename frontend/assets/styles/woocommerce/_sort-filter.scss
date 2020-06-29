@@ -1,0 +1,25 @@
+.woocommerce-result-count {
+    @apply text-gray-600 text-base;
+    top: 2px;
+    padding: 5px 0;
+    color: #111;
+    font-size: 14px;
+}
+
+.woocommerce-ordering {
+    @apply inline-block;
+}
+
+.woocommerce-order-overview__email {
+    @screen md {
+        flex-grow: 1;
+    }
+}
+
+@screen lg{
+    .woocommerce-ordering, .woocommerce-result-count {
+        float: left;
+        position: relative;
+        margin-bottom: 0;
+    }
+}

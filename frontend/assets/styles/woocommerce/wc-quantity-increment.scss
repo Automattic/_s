@@ -5,89 +5,90 @@ $primarytext: desaturate(lighten($primary, 50%), 18%); // Text on primary colour
 $secondary: desaturate(lighten($primary, 40%), 21%); // Secondary buttons
 $secondarytext: desaturate(darken($secondary, 60%), 21%); // Text on secondary colour bg
 
-/**
- * Styling begins
- */
-.woocommerce-page {
-    #quantity,
-    #content .quantity {
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            display: none;
-        }
-    }
 
-    /**
-     * Quantity inputs
-     */
-    .quantity {
-        position: relative;
-        margin: 0 auto;
-        overflow: hidden;
-        zoom: 1;
-        padding-right: 1.1em;
-        display: inline-block;
+body.woocommerce-page .quantity .minus, body.woocommerce-page .quantity .plus {
+    height: 29px;
+    border-color: #ccc;
+    background: #fff
+}
 
-        input.qty {
-            width: 3.631em;
-            height: 3em;
-            text-align: center;
-            padding: 0;
-            margin: 0;
-            border: 1px solid darken($secondary, 20%);
-            border-right: 0;
-            font-weight: 700;
-            border-radius: 2px 0 0 2px;
+body.woocommerce-page .quantity .minus:focus, body.woocommerce-page .quantity .plus:focus {
+    outline: none
+}
 
-            -moz-appearance: textfield; /* Hide buttons for Firefox 29 and later */
-        }
+body.woocommerce-page .shop_table .quantity .minus, body.woocommerce-page .shop_table .quantity .plus {
+    height: 18px
+}
 
-        /* Hide buttons for opera */
-        noindex:-o-prefocus, input[type=number] {
-            padding-right: 1.2em;
-        }
+.quantity, .single-product #page div.product .summary, .title-left h2, ul.products li.product .price .amount, ul.products li.product .price ins {
+    position: relative
+}
 
-        .plus,
-        .minus {
-            display: block;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            text-align: center;
-            width: 1.5em;
-            height: 1.5em;
-            text-decoration: none;
-            overflow: visible;
-            text-decoration: none;
-            font-weight: 700;
-            cursor: pointer;
-            color: $secondarytext;
-            border: 1px solid darken($secondary, 20%);
-            background-color: $secondary;
-            text-shadow: none;
-            line-height: 1;
-            background-image: none;
+.quantity.buttons_added input[type=number]::-webkit-inner-spin-button, .quantity.buttons_added input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
 
-            &:hover {
-                background-color: lighten($secondary, 5%);
-            }
+.quantity.buttons_added input[type=number] {
+    -moz-appearance: textfield;
+    padding-right: 50px;
+    text-align: center
+}
 
-            &:focus {
-                outline: 0;
-            }
-        }
+.quantity.buttons_added input:focus {
+    outline: 0
+}
 
-        .plus {
-            top: 0;
-            right: 0;
-            border-bottom: 0;
-            border-radius: 2px 2px 0 0;
-        }
+.quantity-nav {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    bottom: 0;
+    width: 35px;
+    border: 1px solid #e2e2e2;
+    background: #fff
+}
 
-        .minus {
-            bottom: 0;
-            right: 0;
-            border-radius: 0 0 2px 2px;
-        }
-    }
+.quantity-button {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 50%;
+    background: no-repeat 50%;
+    background-size: auto 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color .1s linear, opacity .1s linear
+}
+
+.quantity-button:active {
+    background-color: #f5f5f7
+}
+
+.quantity-button.disabled {
+    opacity: .25;
+    cursor: default
+}
+
+.quantity-button.quantity-up {
+    top: 1px;
+    border-bottom: 1px solid #e2e2e2
+}
+
+.quantity-button.quantity-down:before,
+.quantity-button.quantity-up:before {
+    margin-left: 11px;
+    font-family: icomoon, sans-serif;
+    font-size: 14px;
+    content: "\e92d"
+}
+
+.quantity-button.quantity-down:before {
+    position: relative;
+    top: 2px;
+    content: "\e92a"
+}
+
+.quantity-button.quantity-down {
+    bottom: 1px
 }

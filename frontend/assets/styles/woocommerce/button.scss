@@ -8,7 +8,15 @@
     button.button,
     input.button,
     #respond input#submit {
-        @extend .rs-button;
+        padding: .8em 1.2em;
+        background: #3bb54a;
+        font-size: 19px;
+        font-weight: 400;
+        letter-spacing: .7px;
+        text-transform: uppercase;
+        transition: background .2s ease;
+        border: 0;
+        border-radius: 3px;
 
         &.loading {
             opacity: 0.25;
@@ -55,8 +63,8 @@
             &.disabled:hover,
             &:disabled:hover,
             &:disabled[disabled]:hover {
-                background-color: $woocommerce;
-                color: $primarytext;
+                opacity: .4;
+                cursor: not-allowed;
             }
         }
 
@@ -72,18 +80,13 @@
     }
 }
 
-.single_add_to_cart_button {
-    @apply text-base mt-2;
-}
-
 .field.has-addons .control:last-child .button {
     @apply text-base;
 }
 
-
 .add_to_cart_button {
     @apply text-gray-600;
-    @extend .rs-button;
+    //@extend .rs-button;
 
     &:before {
         @apply mr-1;

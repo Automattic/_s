@@ -3,14 +3,6 @@
  * Applies layout to the default WooCommerce frontend design
  */
 
-.woocommerce-message,
-.woocommerce-error,
-.woocommerce-info {
-    .button {
-        @apply float-right;
-    }
-}
-
 /**
  * Styling begins
  */
@@ -101,59 +93,7 @@
         }
     }
 
-    /**
-     * Product loops
-     */
-    ul.products {
-        clear: both;
-        @include clearfix();
 
-        li.product {
-            @apply float-left relative p-0;
-            margin: 0 3.8% 2.992em 0;
-            width: 22.05%;
-        }
-
-        li.first {
-            clear: both;
-        }
-
-        li.last {
-            @apply mr-0;
-        }
-    }
-
-    ul.products {
-        &.columns-1 {
-            li.product {
-                @apply w-full mr-0;
-            }
-        }
-
-        &.columns-2 {
-            li.product {
-                width: 48%;
-            }
-        }
-
-        &.columns-3 {
-            li.product {
-                width: 30.75%;
-            }
-        }
-
-        &.columns-5 {
-            li.product {
-                width: 16.95%;
-            }
-        }
-
-        &.columns-6 {
-            li.product {
-                width: 13.5%;
-            }
-        }
-    }
 
     &.columns-1 {
         ul.products {
@@ -196,74 +136,6 @@
         }
     }
 
-    .woocommerce-pagination {
-        ul.page-numbers {
-            @include menu();
-        }
-    }
-
-    /**
-     * Cart page
-     */
-    table.cart {
-        img {
-            @apply h-auto;
-        }
-
-        td.actions {
-            @apply bg-gray-100 text-right;
-
-            .input-text {
-                width: 80px;
-            }
-
-            .coupon {
-                @apply float-left;
-
-                label {
-                    @apply hidden;
-                }
-            }
-        }
-    }
-
-    .cart-collaterals {
-        @include clearfix();
-        @apply w-full;
-
-        .related {
-            @apply float-left;
-            width: 30.75%;
-        }
-
-        .cross-sells {
-            @apply float-left;
-            width: 48%;
-
-            ul.products {
-                @apply float-none;
-
-                li {
-                    width: 48%;
-                }
-            }
-        }
-
-        .shipping_calculator {
-            width: 48%;
-            @include clearfix();
-            clear: right;
-            float: right;
-
-            .col2-set {
-                .col-1,
-                .col-2 {
-                    width: 47%;
-                }
-            }
-        }
-    }
-
     /**
      * Cart sidebar
      */
@@ -272,80 +144,6 @@
         li {
             @include mediaright();
         }
-    }
-
-    /**
-     * Forms
-     */
-    form {
-        .form-row {
-            @include clearfix();
-
-            label {
-                @apply block;
-
-                &.checkbox {
-                    @apply inline;
-                }
-            }
-
-            select {
-                @apply w-full;
-            }
-
-            .input-text {
-                @apply w-full;
-            }
-        }
-
-        .form-row-first,
-        .form-row-last {
-            width: 48.5%;
-            overflow: visible;
-        }
-
-        .form-row-first {
-            @apply float-left;
-
-            /*rtl:raw:
-            float: right;
-            */
-        }
-
-        .form-row-last {
-            @apply float-right;
-        }
-
-        .form-row-wide {
-            clear: both;
-        }
-    }
-
-    #payment {
-        .form-row {
-            select {
-                @apply w-auto;
-            }
-        }
-
-        .wc-terms-and-conditions, .terms {
-            @apply float-right text-left;
-            padding: 0 1em 0 0;
-        }
-
-        #place_order {
-            @apply float-right;
-        }
-    }
-
-    .woocommerce-billing-fields,
-    .woocommerce-shipping-fields {
-        @include clearfix();
-    }
-
-    .woocommerce-terms-and-conditions {
-        margin-bottom: 1.618em;
-        padding: 1.618em;
     }
 
     /**
@@ -370,5 +168,21 @@
                 @apply float-left;
             }
         }
+    }
+}
+
+
+/**
+ * Right to left styles */
+.rtl.woocommerce {
+    div.product div.images .flex-control-thumbs li {
+        float: right;
+    }
+
+    .price_label span {
+        unicode-bidi: embed;
+
+        /* rtl:ignore */
+        direction: ltr;
     }
 }

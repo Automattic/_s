@@ -24,8 +24,6 @@ get_header();
             </main><!-- #main -->
         </div><!-- #primary -->
 
-        <?php woocommerce_get_sidebar(); ?>
-
     </div><!-- #content -->
 
 <?php get_footer();

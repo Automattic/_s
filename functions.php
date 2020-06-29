@@ -57,10 +57,10 @@ require_once(get_theme_file_path('includes/template-tags.php'));
  */
 require_once(get_theme_file_path('includes/customizer.php'));
 
-
 /**
  * Load WooCommerce compatibility file.
  */
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
+

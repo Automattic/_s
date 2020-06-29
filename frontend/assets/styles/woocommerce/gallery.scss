@@ -4,6 +4,13 @@
 div.images {
     margin-bottom: 2em;
 
+    @screen lg {
+        width: 48%;
+        margin-right: 0;
+        margin-bottom: 0;
+        @apply float-left;
+    }
+
     img {
         @apply block w-full h-auto shadow-none;
     }
@@ -52,7 +59,7 @@ div.images {
         }
 
         &:after {
-            @apply block absolute bg-block rounded-full;
+            @apply block absolute bg-black rounded-full;
             content: "";
             width: 2px;
             height: 8px;

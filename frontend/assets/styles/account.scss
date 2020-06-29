@@ -1,0 +1,349 @@
+//===================================
+// 我的账户页面
+//===================================
+
+@import "variables";
+@import "base/functions";
+@import "base/mixins";
+@import "woocommerce/mixins";
+@import "woocommerce/variables";
+@import "woocommerce/select2";
+
+@import "components/button";
+@import "components/input";
+
+.woocommerce-account {
+    @apply bg-gray-100;
+
+    .woocommerce {
+        @include clearfix;
+    }
+
+    ol.commentlist.notes li.note {
+        p.meta {
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        .description p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    ul.digital-downloads {
+        margin-left: 0;
+        padding-left: 0;
+
+        li {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+
+            &::before {
+                @include iconbefore("");
+            }
+
+            .count {
+                float: right;
+            }
+        }
+    }
+
+}
+
+.woocommerce-MyAccount {
+
+    &-navigation {
+        @apply w-1/5 shadow;
+
+        ul {
+            @apply bg-white p-4;
+
+            li {
+                a {
+                    @apply px-2 py-1 block text-gray-700;
+                }
+
+                &.is-active {
+                    a {
+                        @apply text-blue-800 font-medium;
+                    }
+                }
+            }
+        }
+
+        @screen md {
+            @apply float-left;
+        }
+
+        @media screen and (max-width: $tablet) {
+            @apply w-full;
+
+            ul {
+                @apply flex flex-wrap;
+
+                li {
+                    @apply w-1/3 flex-shrink-0;
+
+                    &.is-active {
+                        @apply bg-transparent;
+                        a {
+                            color: $woocommerce;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-content {
+        width: 78%;
+        min-height: 448px;
+        @apply bg-white p-8 shadow border-t-4 border-gray-400;
+        @screen md{
+            @apply float-right;
+        }
+
+        @media screen and (max-width: $tablet) {
+            @apply w-full mt-8;
+        }
+
+        form {
+            button[type=submit] {
+                @apply mt-4;
+                @extend .rs-button--primary;
+            }
+        }
+    }
+}
+
+.woocommerce-MyAccount-downloads {
+    td,
+    th {
+        vertical-align: top;
+        text-align: center;
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:last-child {
+            text-align: left;
+        }
+
+        .woocommerce-MyAccount-downloads-file::before {
+            content: "↓";
+            display: inline-block;
+        }
+    }
+}
+
+
+
+.woocommerce-order-downloads,
+.woocommerce-customer-details,
+.woocommerce-order-details {
+    margin-bottom: 2em;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.woocommerce-order-downloads__title {
+    @apply mb-2;
+}
+
+.woocommerce-customer-details {
+    address {
+        font-style: normal;
+        margin-bottom: 0;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+        text-align: left;
+        width: 100%;
+        padding: 6px 12px;
+    }
+
+    .woocommerce-customer-details--phone,
+    .woocommerce-customer-details--email {
+        margin-bottom: 0;
+        padding-left: 1.5em;
+    }
+
+    .woocommerce-customer-details--phone::before {
+        @include iconbefore("");
+
+        margin-left: -1.5em;
+        line-height: 1.75;
+        position: absolute;
+    }
+
+    .woocommerce-customer-details--email::before {
+        @include iconbefore("");
+
+        margin-left: -1.5em;
+        line-height: 1.75;
+        position: absolute;
+    }
+}
+
+.woocommerce-Address {
+
+}
+
+
+.woocommerce-Address {
+    border: 1px solid $border;
+    @apply mt-4;
+
+    @media screen and (max-width: $tablet) {
+        & + .woocommerce-Address {
+            @apply mt-8;
+        }
+    }
+
+    &-title {
+        @apply px-4 py-3 flex justify-between leading-normal;
+        border-bottom: 1px solid $border;
+
+        h3 {
+            flex-grow: 1;
+            font-size: 1rem;
+        }
+
+        .edit {
+            font-size: 0.875rem;
+        }
+    }
+
+    address {
+        @apply p-4;
+    }
+}
+
+#customer_details {
+    @apply mb-8 p-0;
+
+    .col-1,
+    .col-2 {
+        @apply w-full float-none;
+    }
+}
+
+
+//===================================
+// 用户资料卡片
+//===================================
+.wc-profile-card {
+    @apply text-center bg-gray-300 p-8;
+
+    img {
+        @apply mx-auto;
+    }
+
+    &__name {
+        @apply mt-2;
+    }
+
+    @media screen and (max-width: $tablet) {
+        @apply flex items-center p-4;
+        img {
+            @apply m-0;
+            width: 80px;
+        }
+        &__name {
+            @apply pl-4 mt-0;
+        }
+    }
+
+    @screen md{
+        @apply p-6;
+    }
+
+    @screen lg{
+        @apply p-8;
+    }
+}
+
+
+/**
+ * Order page */
+ul.order_details {
+    margin-top: 1px;
+    margin-left: 1px;
+    @apply text-sm flex flex-wrap flex-grow mb-6 list-none;
+
+    li {
+        margin-top: -1px;
+        margin-left: -1px;
+        @apply border-t border-b border-gray-300 uppercase leading-none list-none text-sm py-3 w-full;
+
+        @screen sm {
+            @apply w-1/2 py-4;
+        }
+
+        @screen md {
+            @apply w-1/5;
+        }
+
+        @screen lg {
+            @apply w-1/5;
+        }
+
+        strong {
+            @apply block text-base normal-case leading-normal mt-1 break-all;
+        }
+    }
+}
+
+
+/**
+ * Password strength meter */
+.woocommerce-password-strength {
+    text-align: center;
+    font-weight: 600;
+    padding: 3px 0.5em;
+    font-size: 1em;
+
+    &.strong {
+        background-color: #c1e1b9;
+        border-color: #83c373;
+    }
+
+    &.short {
+        background-color: #f1adad;
+        border-color: #e35b5b;
+    }
+
+    &.bad {
+        background-color: #fbc5a9;
+        border-color: #f78b53;
+    }
+
+    &.good {
+        background-color: #ffe399;
+        border-color: #ffc733;
+    }
+}
+
+.woocommerce-password-hint {
+    margin: 0.5em 0 0;
+    display: block;
+}
+
+
+.woocommerce-orders-table__cell-order-actions {
+    .button {
+        @apply text-sm;
+        & + .button {
+            @apply ml-2;
+        }
+    }
+}
+
+
+.wc-bacs-bank-details-account-name {
+    font-weight: bold;
+}

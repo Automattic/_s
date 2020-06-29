@@ -1,0 +1,24 @@
+//===================================
+// 星级评分
+//===================================
+.star-rating {
+    @apply overflow-hidden relative leading-none;
+    height: 1em;
+    font-size: 1em;
+    width: 5.4em;
+    font-family: "star";
+
+    &::before {
+        content: "sssss";
+        @apply float-left absolute text-gray-500;
+    }
+
+    span {
+        @apply overflow-hidden float-left absolute pt-6 text-red-600;
+    }
+
+    span::before {
+        @apply absolute left-0 top-0;
+        content: "SSSSS";
+    }
+}

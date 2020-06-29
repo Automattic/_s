@@ -9,6 +9,53 @@
         }
     }
 
+    /**
+    * Forms
+    */
+    form {
+        .form-row {
+            @include clearfix();
+
+            label {
+                @apply block;
+
+                &.checkbox {
+                    @apply inline;
+                }
+            }
+
+            select {
+                @apply w-full;
+            }
+
+            .input-text {
+                @apply w-full;
+            }
+        }
+
+        .form-row-first,
+        .form-row-last {
+            width: 48.5%;
+            overflow: visible;
+        }
+
+        .form-row-first {
+            @apply float-left;
+
+            /*rtl:raw:
+            float: right;
+            */
+        }
+
+        .form-row-last {
+            @apply float-right;
+        }
+
+        .form-row-wide {
+            clear: both;
+        }
+    }
+
     form .form-row {
         @apply mb-2;
 

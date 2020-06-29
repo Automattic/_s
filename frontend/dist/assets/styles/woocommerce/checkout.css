@@ -1,0 +1,772 @@
+@charset "UTF-8";
+
+/**
+ * 颜色调亮
+ */
+
+/**
+ * 获取反色调
+ */
+
+/**
+ * 三角箭头
+ */
+
+/**
+ * 文本裁剪
+ */
+
+/* Usage Examples
+ * .my-level-1-heading-class {
+ *     @include text-crop; // Will use default line height of 1.3
+ *     font-size: 48px;
+ *     margin: 0 0 0 16px;
+ * }
+ *
+ * .my-level-2-heading-class {
+ *     @include text-crop; // Will use default line height of 1.3
+ *     font-size: 32px; // Don't need to change any settings, will work with any font size automatically
+ *     margin: 0 0 0 16px;
+ * }
+ *
+ * .my-body-copy-class {
+ *     @include text-crop($line-height: 2); // Larger line height desired, set the line height via the mixin
+ *     font-size: 16px;
+ * }
+ *
+ * // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output.
+ * // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings
+ *
+ * .slight-adjustment-needed {
+ *     @include text-crop($top-adjustment: -0.5px, $bottom-adjustment: 2px);
+ *     font-size: 17px;
+ * }
+ *
+ * .dont-do-this {
+ *     @include text-crop;
+ *     font-size: 16px;
+ *     line-height: 3; // DO NOT set line height outside of the mixin, the mixin needs the line height value to calculate the crop correctly
+ * } */
+
+/**
+ * Deprecated
+ * Fallback for bourbon equivalent */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Use bourbon mixin instead `@include transform(scale(1.5));` */
+
+/**
+ * Deprecated
+ * Use bourbon mixin instead `@include box-sizing(border-box);` */
+
+/**
+ * Objects */
+
+/**
+ * WooCommerce CSS Variables */
+
+.rs-button, [type="reset"],
+[type="submit"] {
+  position: relative;
+  background-color: #fff;
+  background-color: #f5f5f5;
+  line-height: 1;
+  color: #616161;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 1px;
+  border-color: #9e9e9e;
+  border-radius: 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+  transition: all .15s ease-in-out;
+}
+
+.rs-button:hover, :hover[type="reset"],
+  :hover[type="submit"] {
+  background-color: #eee;
+}
+
+.rs-button:focus, :focus[type="reset"],
+  :focus[type="submit"], .rs-button:active, :active[type="reset"],
+  :active[type="submit"] {
+  background-color: #e0e0e0;
+}
+
+.rs-button--primary,
+  [type="submit"] {
+  background-color: #4299e1;
+  border-color: #3182ce;
+  color: #fff;
+}
+
+.rs-button--primary:hover,
+    :hover[type="submit"] {
+  background-color: #2b6cb0;
+  border-color: #2c5282;
+}
+
+.rs-button--ghost {
+  background-color: transparent;
+  color: #2b6cb0;
+  border-color: #4299e1;
+}
+
+.rs-button--ghost:hover {
+  background-color: #4299e1;
+  color: #fff;
+  border-color: transparent;
+}
+
+.rs-button--sm {
+  font-size: 0.875rem;
+  padding: 6px 12px;
+}
+
+input,
+select,
+textarea {
+  font-size: 1rem;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.5;
+  outline: 0;
+  color: #616161;
+  transition: all 0.3s ease;
+}
+
+input:hover,
+  select:hover,
+  textarea:hover {
+  border-color: #065aaa;
+}
+
+input:focus, input:active,
+  select:focus,
+  select:active,
+  textarea:focus,
+  textarea:active {
+  border-color: #065aaa;
+  box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+input[disabled],
+  select[disabled],
+  textarea[disabled] {
+  color: #9e9e9e;
+  background-color: #eee;
+}
+
+label {
+  font-weight: 400;
+}
+
+fieldset {
+  border-width: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+fieldset legend {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+fieldset input[type="text"],
+  fieldset input[type="search"],
+  fieldset input[type="password"],
+  fieldset textarea {
+  width: 100%;
+}
+
+.rs-select {
+  display: inline-block;
+  position: relative;
+}
+
+.rs-select select {
+  margin: 0;
+  cursor: pointer;
+  max-width: 100%;
+  outline: 0;
+  line-height: 1.5;
+  vertical-align: top;
+  font-size: 1rem;
+  appearance: none;
+  height: 2.5em;
+  padding: calc(.5em - 1px) 2.5em calc(.5em - 1px) calc(.75em - 1px);
+}
+
+.rs-select:after {
+  font-family: 'icomoon', sans-serif;
+  content: "";
+  top: .25em;
+  right: 0.55em;
+  z-index: 4;
+  font-size: 1.25em;
+  position: absolute;
+  color: #757575;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout,
+.woocommerce-checkout .wc-proceed-to-checkout,
+#add_payment_method .wc-proceed-to-checkout {
+  padding: 1rem 0;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout .checkout-button,
+  .woocommerce-checkout .wc-proceed-to-checkout .checkout-button,
+  #add_payment_method .wc-proceed-to-checkout .checkout-button {
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: auto;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-buttons,
+  .woocommerce-checkout .wc-proceed-to-checkout a.checkout-buttons,
+  #add_payment_method .wc-proceed-to-checkout a.checkout-buttons {
+  display: block;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+}
+
+.woocommerce-cart .cart-collaterals .shipping_calculator .button,
+.woocommerce-checkout .cart-collaterals .shipping_calculator .button,
+#add_payment_method .cart-collaterals .shipping_calculator .button {
+  width: 100%;
+  float: none;
+  display: block;
+}
+
+.woocommerce-cart .cart-collaterals .shipping_calculator .shipping-calculator-button::after,
+.woocommerce-checkout .cart-collaterals .shipping_calculator .shipping-calculator-button::after,
+#add_payment_method .cart-collaterals .shipping_calculator .shipping-calculator-button::after {
+  font-family: "WooCommerce";
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-left: 0.618em;
+  content: "";
+  text-decoration: none;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals > h2,
+.woocommerce-checkout .cart-collaterals .cart_totals > h2,
+#add_payment_method .cart-collaterals .cart_totals > h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals p small,
+.woocommerce-checkout .cart-collaterals .cart_totals p small,
+#add_payment_method .cart-collaterals .cart_totals p small {
+  color: #bbb;
+  font-size: 0.83em;
+}
+
+.woocommerce-cart .cart-collaterals .cross-sells ul.products li.product,
+.woocommerce-checkout .cart-collaterals .cross-sells ul.products li.product,
+#add_payment_method .cart-collaterals .cross-sells ul.products li.product {
+  margin-top: 0;
+}
+
+.woocommerce-cart .checkout .col-2 h3#ship-to-different-address,
+.woocommerce-checkout .checkout .col-2 h3#ship-to-different-address,
+#add_payment_method .checkout .col-2 h3#ship-to-different-address {
+  float: left;
+  clear: none;
+}
+
+.woocommerce-cart .checkout .col-2 .notes,
+.woocommerce-checkout .checkout .col-2 .notes,
+#add_payment_method .checkout .col-2 .notes {
+  clear: left;
+}
+
+.woocommerce-cart .checkout .col-2 .form-row-first,
+.woocommerce-checkout .checkout .col-2 .form-row-first,
+#add_payment_method .checkout .col-2 .form-row-first {
+  clear: left;
+}
+
+.woocommerce-cart .checkout .create-account small,
+.woocommerce-checkout .checkout .create-account small,
+#add_payment_method .checkout .create-account small {
+  font-size: 11px;
+  color: #bbb;
+  font-weight: normal;
+}
+
+.woocommerce-cart .checkout div.shipping-address,
+.woocommerce-checkout .checkout div.shipping-address,
+#add_payment_method .checkout div.shipping-address {
+  padding: 0;
+  clear: left;
+  width: 100%;
+}
+
+.woocommerce-cart .checkout .shipping_address,
+.woocommerce-checkout .checkout .shipping_address,
+#add_payment_method .checkout .shipping_address {
+  clear: both;
+}
+
+.woocommerce-cart #payment ul.payment_methods,
+.woocommerce-checkout #payment ul.payment_methods,
+#add_payment_method #payment ul.payment_methods {
+  zoom: 1;
+  list-style: none outside;
+}
+
+.woocommerce-cart #payment ul.payment_methods::before, .woocommerce-cart #payment ul.payment_methods::after,
+  .woocommerce-checkout #payment ul.payment_methods::before,
+  .woocommerce-checkout #payment ul.payment_methods::after,
+  #add_payment_method #payment ul.payment_methods::before,
+  #add_payment_method #payment ul.payment_methods::after {
+  content: " ";
+  display: table;
+}
+
+.woocommerce-cart #payment ul.payment_methods::after,
+  .woocommerce-checkout #payment ul.payment_methods::after,
+  #add_payment_method #payment ul.payment_methods::after {
+  clear: both;
+}
+
+.woocommerce-cart #payment ul.payment_methods li,
+  .woocommerce-checkout #payment ul.payment_methods li,
+  #add_payment_method #payment ul.payment_methods li {
+  line-height: 2;
+  text-align: left;
+  margin: 0;
+  font-weight: 400;
+}
+
+.woocommerce-cart #payment ul.payment_methods li input,
+    .woocommerce-checkout #payment ul.payment_methods li input,
+    #add_payment_method #payment ul.payment_methods li input {
+  margin-right: 0.5rem;
+}
+
+.woocommerce-cart #payment ul.payment_methods li img,
+    .woocommerce-checkout #payment ul.payment_methods li img,
+    #add_payment_method #payment ul.payment_methods li img {
+  vertical-align: middle;
+  margin: -2px 0 0 0.5em;
+  padding: 0;
+  position: relative;
+  box-shadow: none;
+}
+
+.woocommerce-cart #payment ul.payment_methods li img + img,
+    .woocommerce-checkout #payment ul.payment_methods li img + img,
+    #add_payment_method #payment ul.payment_methods li img + img {
+  margin-left: 2px;
+}
+
+.woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice),
+  .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice),
+  #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice) {
+  zoom: 1;
+}
+
+.woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice)::before, .woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice)::before,
+    .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice)::before,
+    #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice)::after {
+  content: " ";
+  display: table;
+}
+
+.woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice)::after {
+  clear: both;
+}
+
+.woocommerce-cart #payment div.form-row,
+.woocommerce-checkout #payment div.form-row,
+#add_payment_method #payment div.form-row {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.woocommerce-cart #payment div.payment_box,
+.woocommerce-checkout #payment div.payment_box,
+#add_payment_method #payment div.payment_box {
+  box-sizing: border-box;
+  display: none !important;
+  position: relative;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #757575;
+  border-radius: 2px;
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+.woocommerce-cart #payment div.payment_box::before,
+  .woocommerce-checkout #payment div.payment_box::before,
+  #add_payment_method #payment div.payment_box::before {
+  content: "";
+  display: block;
+  border: 1em solid #fff;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  position: absolute;
+  top: -0.75em;
+  left: 0;
+  margin: -1em 0 0 2em;
+}
+
+.woocommerce-cart #payment div.payment_box input.input-text, .woocommerce-cart #payment div.payment_box textarea,
+  .woocommerce-checkout #payment div.payment_box input.input-text,
+  .woocommerce-checkout #payment div.payment_box textarea,
+  #add_payment_method #payment div.payment_box input.input-text,
+  #add_payment_method #payment div.payment_box textarea {
+  border-color: #a97901;
+  border-top-color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box ::-webkit-input-placeholder,
+  .woocommerce-checkout #payment div.payment_box ::-webkit-input-placeholder,
+  #add_payment_method #payment div.payment_box ::-webkit-input-placeholder {
+  color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box :-moz-placeholder,
+  .woocommerce-checkout #payment div.payment_box :-moz-placeholder,
+  #add_payment_method #payment div.payment_box :-moz-placeholder {
+  color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box :-ms-input-placeholder,
+  .woocommerce-checkout #payment div.payment_box :-ms-input-placeholder,
+  #add_payment_method #payment div.payment_box :-ms-input-placeholder {
+  color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods,
+  .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods,
+  #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods {
+  list-style: none outside;
+  margin: 0;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token,
+    .woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new,
+    .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token,
+    .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new,
+    #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token,
+    #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new {
+  margin: 0 0 0.5em;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token label,
+      .woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new label,
+      .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token label,
+      .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new label,
+      #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token label,
+      #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new label {
+  cursor: pointer;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput,
+    .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput,
+    #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput {
+  vertical-align: middle;
+  margin: -3px 1em 0 0;
+  position: relative;
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form {
+  border: 0;
+  padding: 0;
+  margin: 1em 0 0;
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number,
+  .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry,
+  .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc {
+  font-size: 1.5em;
+  padding: 8px;
+  background-repeat: no-repeat;
+  background-position: right 0.618em center;
+  background-size: 32px 20px;
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.visa,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.visa,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.visa,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.visa,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.visa,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.visa,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.visa,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.visa,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.visa {
+  background-image: url("../images/icons/credit-cards/visa.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.mastercard,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.mastercard,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.mastercard,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.mastercard,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.mastercard,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.mastercard {
+  background-image: url("../images/icons/credit-cards/mastercard.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.laser,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.laser,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.laser,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.laser,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.laser,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.laser,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.laser,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.laser,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.laser {
+  background-image: url("../images/icons/credit-cards/laser.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.dinersclub,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.dinersclub,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.dinersclub,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub {
+  background-image: url("../images/icons/credit-cards/diners.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.maestro,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.maestro,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.maestro,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.maestro,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.maestro,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.maestro,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.maestro,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.maestro,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.maestro {
+  background-image: url("../images/icons/credit-cards/maestro.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.jcb,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.jcb,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.jcb,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.jcb,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.jcb,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.jcb,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.jcb,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.jcb,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.jcb {
+  background-image: url("../images/icons/credit-cards/jcb.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.amex,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.amex,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.amex,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.amex,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.amex,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.amex,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.amex,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.amex,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.amex {
+  background-image: url("../images/icons/credit-cards/amex.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.discover,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.discover,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.discover,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.discover,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.discover,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.discover,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.discover,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.discover,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.discover {
+  background-image: url("../images/icons/credit-cards/discover.svg");
+}
+
+.woocommerce-cart #payment div.payment_box span.help,
+  .woocommerce-checkout #payment div.payment_box span.help,
+  #add_payment_method #payment div.payment_box span.help {
+  font-size: 0.857em;
+  color: #bbb;
+  font-weight: normal;
+}
+
+.woocommerce-cart #payment div.payment_box .form-row,
+  .woocommerce-checkout #payment div.payment_box .form-row,
+  #add_payment_method #payment div.payment_box .form-row {
+  margin: 0 0 1em;
+}
+
+.woocommerce-cart #payment div.payment_box p:last-child,
+  .woocommerce-checkout #payment div.payment_box p:last-child,
+  #add_payment_method #payment div.payment_box p:last-child {
+  margin-bottom: 0;
+}
+
+.woocommerce-cart #payment .payment_method_paypal .about_paypal,
+.woocommerce-checkout #payment .payment_method_paypal .about_paypal,
+#add_payment_method #payment .payment_method_paypal .about_paypal {
+  float: right;
+  line-height: 52px;
+  font-size: 0.83em;
+}
+
+.woocommerce-cart #payment .payment_method_paypal img,
+.woocommerce-checkout #payment .payment_method_paypal img,
+#add_payment_method #payment .payment_method_paypal img {
+  max-height: 52px;
+  vertical-align: middle;
+}
+
+.woocommerce-cart .cart-subtotal th, .woocommerce-cart .cart-subtotal td {
+  border-top-width: 3px !important;
+  border-bottom-width: 0 !important;
+}
+
+.woocommerce-cart .order-total th, .woocommerce-cart .order-total td {
+  border-bottom-width: 1px;
+}
+
+form.woocommerce-checkout #order_review_heading {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  form.woocommerce-checkout #customer_details {
+    float: left;
+    width: 57%;
+  }
+}
+
+form.woocommerce-checkout .woocommerce-checkout-review-order {
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-width: 2px;
+  border-color: #2c5282;
+}
+
+@media (min-width: 768px) {
+  form.woocommerce-checkout .woocommerce-checkout-review-order {
+    margin-left: 2rem;
+    float: right;
+    width: calc(43% - 2rem);
+    max-width: 480px;
+  }
+}
+
+.woocommerce-checkout-payment {
+  margin-top: 2rem;
+}
+
+.woocommerce-billing-fields {
+  margin-bottom: 1rem;
+}
+
+.wc-checkout-form h3, .wc-checkout-form__title {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.place-order {
+  padding: 16px 0 0 !important;
+}
+
+.woocommerce-terms-and-conditions {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.woocommerce-privacy-policy-text {
+  color: #757575;
+  margin-bottom: 1rem;
+}
+
+.wc_payment_method {
+  display: inline-block;
+  padding: 1rem;
+  background-color: #eee;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  border-radius: 0.25rem;
+}

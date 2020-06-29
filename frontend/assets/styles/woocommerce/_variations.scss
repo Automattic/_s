@@ -1,0 +1,35 @@
+.variations_form {
+    flex-wrap: wrap;
+
+    &__select {
+        min-width: 75%;
+        width: auto !important;
+        box-shadow: none;
+        margin-right: 1em;
+        color: $text-light;
+    }
+}
+
+.woocommerce-variation-add-to-cart {
+    display: flex;
+}
+
+.woocommerce-variation-price {
+    @apply mb-2;
+}
+
+a.reset_variations {
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+div.product table.variations td, div.product table.variations th {
+    display: list-item;
+    padding: 0;
+    background-color: transparent;
+    list-style: none;
+}
+
+div.product table.variations .value {
+    margin-bottom: 1em;
+}

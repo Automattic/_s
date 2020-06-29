@@ -1,17 +1,21 @@
 input,
 select,
-textarea{
-    @apply text-base border border-gray-300 rounded px-3 py-2 leading-normal outline-none text-gray-700;
+textarea {
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
     transition: all 0.3s ease;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
+    font-size: 16px;
+    font-weight: 400;
 
-    &:hover{
+    &:hover {
         @apply border-primary;
     }
 
     &:focus,
-    &:active{
-        @apply border-primary;
-        box-shadow: 0 0 0 0.125em rgba(50,115,220,.25);
+    &:active {
+        @apply border-primary outline-none;
+        box-shadow: 0 0 0 0.125em rgba(50, 115, 220, .25);
     }
 
     &[disabled] {
@@ -19,7 +23,49 @@ textarea{
     }
 }
 
-label{
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select {
+    height: 40px;
+    line-height: 40px;
+}
+
+input {
+    padding: 0 12px;
+}
+
+select {
+    padding: 0 32px 0 12px;
+}
+
+textarea {
+    @apply leading-normal;
+    padding: 8px 12px;
+}
+
+select {
+    width: 100%;
+    max-width: 100%;
+    background: url(../images/downarrow.gif) calc(100% - 12px) 12px no-repeat;
+    background-size: 15px 15px;
+    text-indent: .01px;
+    text-overflow: "";
+    appearance: none;
+}
+
+label {
     @apply font-normal;
 }
 
@@ -39,13 +85,14 @@ fieldset {
     }
 }
 
-.rs-select{
+.rs-select {
     @apply inline-block relative;
-    select{
+    select {
         @apply m-0 cursor-pointer max-w-full outline-none leading-normal align-top text-base appearance-none;
         height: 2.5em;
         padding: calc(.5em - 1px) 2.5em calc(.5em - 1px) calc(.75em - 1px);
     }
+
     &:after {
         font-family: 'icomoon', sans-serif;
         content: $wpion-angle-down;

@@ -14,96 +14,6 @@
     }
 }
 
-.woocommerce-cart-form {
-    table {
-        border-width: 0 0 1px;
-
-        td {
-            @apply pl-0 border-b border-gray-300;
-        }
-
-        div.quantity {
-            @apply m-0 float-none align-middle;
-        }
-
-        small.stock {
-            @apply block float-none;
-        }
-    }
-
-    .group_table {
-        td.woocommerce-grouped-product-list-item__label {
-            padding-right: 1em;
-            padding-left: 1em;
-        }
-
-        td {
-            @apply align-top pb-2 border-0;
-        }
-
-        td:first-child {
-            @apply w-16 text-center;
-        }
-
-        .wc-grouped-product-add-to-cart-checkbox {
-            @apply inline-block w-auto mx-auto my-0;
-            transform: scale(1.5, 1.5);
-        }
-    }
-
-    .variations {
-        @apply mb-4 border-0 w-full;
-
-        td,
-        th {
-            @apply border-0 align-top leading-loose;
-        }
-
-        label {
-            @apply font-bold;
-        }
-
-        td.label {
-            @apply pr-4;
-        }
-    }
-}
-
-td.product-name {
-    dl.variation, .wc-item-meta {
-        list-style: none outside;
-
-        dt, .wc-item-meta-label {
-            float: left;
-            clear: both;
-            margin-right: 0.25em;
-            display: inline-block;
-            list-style: none outside;
-        }
-
-        dd {
-            margin: 0;
-        }
-
-        p,
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    p.backorder_notification {
-        font-size: 0.83em;
-    }
-
-    a {
-        @apply text-gray-800;
-    }
-}
-
-td.product-quantity {
-    min-width: 80px;
-}
-
 table.shop_attributes {
     @apply border-0 mb-6 w-full text-sm;
     border-top: 1px dotted rgba(0, 0, 0, 0.1);
@@ -322,8 +232,4 @@ table.my_account_orders {
     tr th {
         @apply border-t border-gray-300;
     }
-}
-
-td.actions {
-    @apply hidden;
 }

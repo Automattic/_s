@@ -1,0 +1,1739 @@
+@charset "UTF-8";
+
+/**
+ * 颜色调亮
+ */
+
+/**
+ * 获取反色调
+ */
+
+/**
+ * 三角箭头
+ */
+
+/**
+ * 文本裁剪
+ */
+
+/* Usage Examples
+ * .my-level-1-heading-class {
+ *     @include text-crop; // Will use default line height of 1.3
+ *     font-size: 48px;
+ *     margin: 0 0 0 16px;
+ * }
+ *
+ * .my-level-2-heading-class {
+ *     @include text-crop; // Will use default line height of 1.3
+ *     font-size: 32px; // Don't need to change any settings, will work with any font size automatically
+ *     margin: 0 0 0 16px;
+ * }
+ *
+ * .my-body-copy-class {
+ *     @include text-crop($line-height: 2); // Larger line height desired, set the line height via the mixin
+ *     font-size: 16px;
+ * }
+ *
+ * // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output.
+ * // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings
+ *
+ * .slight-adjustment-needed {
+ *     @include text-crop($top-adjustment: -0.5px, $bottom-adjustment: 2px);
+ *     font-size: 17px;
+ * }
+ *
+ * .dont-do-this {
+ *     @include text-crop;
+ *     font-size: 16px;
+ *     line-height: 3; // DO NOT set line height outside of the mixin, the mixin needs the line height value to calculate the crop correctly
+ * } */
+
+/**
+ * Deprecated
+ * Fallback for bourbon equivalent */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Vendor prefix no longer required. */
+
+/**
+ * Deprecated
+ * Use bourbon mixin instead `@include transform(scale(1.5));` */
+
+/**
+ * Deprecated
+ * Use bourbon mixin instead `@include box-sizing(border-box);` */
+
+/**
+ * Objects */
+
+/**
+ * WooCommerce CSS Variables */
+
+.rs-button, [type="reset"],
+[type="submit"] {
+  position: relative;
+  background-color: #fff;
+  background-color: #f5f5f5;
+  line-height: 1;
+  color: #616161;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-width: 1px;
+  border-color: #9e9e9e;
+  border-radius: 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.rs-button:hover, :hover[type="reset"],
+  :hover[type="submit"] {
+  background-color: #eee;
+}
+
+.rs-button:focus, :focus[type="reset"],
+  :focus[type="submit"], .rs-button:active, :active[type="reset"],
+  :active[type="submit"] {
+  background-color: #e0e0e0;
+}
+
+.rs-button--primary,
+  [type="submit"] {
+  background-color: #4299e1;
+  border-color: #3182ce;
+  color: #fff;
+}
+
+.rs-button--primary:hover,
+    :hover[type="submit"] {
+  background-color: #2b6cb0;
+  border-color: #2c5282;
+}
+
+.rs-button--ghost {
+  background-color: transparent;
+  color: #2b6cb0;
+  border-color: #4299e1;
+}
+
+.rs-button--ghost:hover {
+  background-color: #4299e1;
+  color: #fff;
+  border-color: transparent;
+}
+
+.rs-button--sm {
+  font-size: 0.875rem;
+  padding: 6px 12px;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+input:hover,
+  select:hover,
+  textarea:hover {
+  border-color: #065aaa;
+}
+
+input:focus, input:active,
+  select:focus,
+  select:active,
+  textarea:focus,
+  textarea:active {
+  border-color: #065aaa;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+          box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+input[disabled],
+  select[disabled],
+  textarea[disabled] {
+  color: #9e9e9e;
+  background-color: #eee;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select {
+  height: 40px;
+  line-height: 40px;
+}
+
+input {
+  padding: 0 12px;
+}
+
+select {
+  padding: 0 32px 0 12px;
+}
+
+textarea {
+  line-height: 1.5;
+  padding: 8px 12px;
+}
+
+select {
+  width: 100%;
+  max-width: 100%;
+  background: url(../images/downarrow.gif) calc(100% - 12px) 12px no-repeat;
+  background-size: 15px 15px;
+  text-indent: .01px;
+  -o-text-overflow: "";
+     text-overflow: "";
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+label {
+  font-weight: 400;
+}
+
+fieldset {
+  border-width: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+fieldset legend {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+fieldset input[type="text"],
+  fieldset input[type="search"],
+  fieldset input[type="password"],
+  fieldset textarea {
+  width: 100%;
+}
+
+.rs-select {
+  display: inline-block;
+  position: relative;
+}
+
+.rs-select select {
+  margin: 0;
+  cursor: pointer;
+  max-width: 100%;
+  outline: 0;
+  line-height: 1.5;
+  vertical-align: top;
+  font-size: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 2.5em;
+  padding: calc(.5em - 1px) 2.5em calc(.5em - 1px) calc(.75em - 1px);
+}
+
+.rs-select:after {
+  font-family: 'icomoon', sans-serif;
+  content: "";
+  top: .25em;
+  right: 0.55em;
+  z-index: 4;
+  font-size: 1.25em;
+  position: absolute;
+  color: #757575;
+}
+
+.select2-container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+}
+
+.select2-container .select2-selection--single {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 42px;
+  margin: 0 0 -4px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 8px;
+  padding-right: 20px;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select2-container .select2-selection--single .select2-selection__clear {
+  position: relative;
+}
+
+.select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+  padding-right: 8px;
+  padding-left: 20px;
+}
+
+.select2-container .select2-selection--multiple {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  min-height: 32px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 8px;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select2-container .select2-search--inline {
+  float: left;
+  padding: 0;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.select2-dropdown {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  z-index: 1051;
+}
+
+.select2-results {
+  display: block;
+}
+
+.select2-results__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.select2-results__option {
+  padding: 6px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+
+.select2-results__option:focus {
+  outline: 0;
+}
+
+.select2-results__option[data-selected],
+.select2-results__option[aria-selected] {
+  cursor: pointer;
+}
+
+.select2-container--open .select2-dropdown {
+  left: 0;
+}
+
+.select2-container--open .select2-dropdown--above {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select2-container--open .select2-dropdown--below {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.select2-search--dropdown {
+  display: block;
+  padding: 4px;
+}
+
+.select2-search--dropdown .select2-search__field {
+  padding: 4px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.select2-search--dropdown.select2-search--hide {
+  display: none;
+}
+
+.select2-close-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 99;
+  background-color: #fff;
+  filter: alpha(opacity=0);
+}
+
+.select2-hidden-accessible {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+}
+
+.select2-container--default .select2-selection--single {
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+}
+
+.select2-container--default .select2-selection--single:focus {
+  outline: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+          box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  border-color: #dbdbdb;
+  height: 42px;
+  line-height: 42px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+  color: #999;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: calc(2.25em - 2px);
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: #888 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
+  float: left;
+}
+
+.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  left: 1px;
+  right: auto;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+  background-color: #eee;
+  cursor: default;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
+  display: none;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #888 transparent;
+  border-width: 0 4px 5px 4px;
+}
+
+.select2-container--default .select2-selection--multiple {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  cursor: text;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0 5px;
+  width: 100%;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  list-style: none;
+  margin: 5px 5px 0 0;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li:before {
+  content: '';
+  display: none;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__placeholder {
+  color: #999;
+  margin-top: 5px;
+  float: left;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: #e4e4e4;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 5px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: #999;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: #333;
+}
+
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice,
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__placeholder,
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline {
+  float: right;
+}
+
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+  margin-left: 5px;
+  margin-right: auto;
+}
+
+.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+  margin-left: 2px;
+  margin-right: auto;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: solid black 1px;
+  outline: 0;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--multiple {
+  background-color: #eee;
+  cursor: default;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection__choice__remove {
+  display: none;
+}
+
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid #dbdbdb;
+  -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+          box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field:focus, .select2-container--default .select2-search--dropdown .select2-search__field:active {
+  outline: 0;
+}
+
+.select2-container--default .select2-search--inline .select2-search__field {
+  background: transparent;
+  border: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-appearance: textfield;
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select2-container--default .select2-results__option[role=group] {
+  padding: 0;
+}
+
+.select2-container--default .select2-results__option[aria-disabled=true] {
+  color: #999;
+}
+
+.select2-container--default .select2-results__option[data-selected=true],
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #ddd;
+}
+
+.select2-container--default .select2-results__option .select2-results__option {
+  padding-left: 1em;
+}
+
+.select2-container--default .select2-results__option .select2-results__option .select2-results__group {
+  padding-left: 0;
+}
+
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -1em;
+  padding-left: 2em;
+}
+
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -2em;
+  padding-left: 3em;
+}
+
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -3em;
+  padding-left: 4em;
+}
+
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -4em;
+  padding-left: 5em;
+}
+
+.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -5em;
+  padding-left: 6em;
+}
+
+.select2-container--default .select2-results__option--highlighted[data-selected],
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #004178;
+  color: white;
+}
+
+.select2-container--default .select2-results__group {
+  cursor: default;
+  display: block;
+  padding: 6px;
+}
+
+.select2-container--classic .select2-selection--single {
+  background-color: #f7f7f7;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  outline: 0;
+  background-image: -o-linear-gradient(top, white 50%, #eeeeee 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), to(#eeeeee));
+  background-image: linear-gradient(to bottom, white 50%, #eeeeee 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0);
+}
+
+.select2-container--classic .select2-selection--single:focus {
+  border: 1px solid #004178;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  line-height: 2.25em;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__clear {
+  cursor: pointer;
+  float: right;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__placeholder {
+  color: #999;
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow {
+  background-color: #ddd;
+  border: none;
+  border-left: 1px solid #dbdbdb;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: calc(2.25em - 2px);
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+  background-image: -o-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #eeeeee), to(#cccccc));
+  background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0);
+}
+
+.select2-container--classic .select2-selection--single .select2-selection__arrow b {
+  border-color: #888 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__clear {
+  float: left;
+}
+
+.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+  border: none;
+  border-right: 1px solid #dbdbdb;
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  left: 1px;
+  right: auto;
+}
+
+.select2-container--classic.select2-container--open .select2-selection--single {
+  border: 1px solid #004178;
+}
+
+.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
+  background: transparent;
+  border: none;
+}
+
+.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #888 transparent;
+  border-width: 0 4px 5px 4px;
+}
+
+.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-image: -o-linear-gradient(top, white 0%, #eeeeee 50%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(50%, #eeeeee));
+  background-image: linear-gradient(to bottom, white 0%, #eeeeee 50%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0);
+}
+
+.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-image: -o-linear-gradient(top, #eeeeee 50%, white 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #eeeeee), to(white));
+  background-image: linear-gradient(to bottom, #eeeeee 50%, white 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0);
+}
+
+.select2-container--classic .select2-selection--multiple {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  cursor: text;
+  outline: 0;
+}
+
+.select2-container--classic .select2-selection--multiple:focus {
+  border: 1px solid #004178;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__rendered {
+  list-style: none;
+  margin: 0;
+  padding: 0 5px;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__clear {
+  display: none;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice {
+  background-color: #e4e4e4;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  cursor: default;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: 0 5px;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
+  color: #888;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 2px;
+}
+
+.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: #555;
+}
+
+.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+  float: right;
+}
+
+.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+  margin-left: 5px;
+  margin-right: auto;
+}
+
+.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+  margin-left: 2px;
+  margin-right: auto;
+}
+
+.select2-container--classic.select2-container--open .select2-selection--multiple {
+  border: 1px solid #004178;
+}
+
+.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select2-container--classic .select2-search--dropdown .select2-search__field {
+  border: 1px solid #dbdbdb;
+  outline: 0;
+}
+
+.select2-container--classic .select2-search--inline .select2-search__field {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.select2-container--classic .select2-dropdown {
+  background-color: white;
+  border: 1px solid transparent;
+}
+
+.select2-container--classic .select2-dropdown--above {
+  border-bottom: none;
+}
+
+.select2-container--classic .select2-dropdown--below {
+  border-top: none;
+}
+
+.select2-container--classic .select2-results > .select2-results__options {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select2-container--classic .select2-results__option[role=group] {
+  padding: 0;
+}
+
+.select2-container--classic .select2-results__option[aria-disabled=true] {
+  color: grey;
+}
+
+.select2-container--classic .select2-results__option--highlighted[data-selected],
+.select2-container--classic .select2-results__option--highlighted[aria-selected] {
+  background-color: #3875d7;
+  color: white;
+}
+
+.select2-container--classic .select2-results__group {
+  cursor: default;
+  display: block;
+  padding: 6px;
+}
+
+.select2-container--classic.select2-container--open .select2-dropdown {
+  border-color: #004178;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout,
+.woocommerce-checkout .wc-proceed-to-checkout,
+#add_payment_method .wc-proceed-to-checkout {
+  padding: 1rem 0;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout .checkout-button,
+  .woocommerce-checkout .wc-proceed-to-checkout .checkout-button,
+  #add_payment_method .wc-proceed-to-checkout .checkout-button {
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: auto;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-buttons,
+  .woocommerce-checkout .wc-proceed-to-checkout a.checkout-buttons,
+  #add_payment_method .wc-proceed-to-checkout a.checkout-buttons {
+  display: block;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+}
+
+.woocommerce-cart .cart-collaterals .shipping_calculator .button,
+.woocommerce-checkout .cart-collaterals .shipping_calculator .button,
+#add_payment_method .cart-collaterals .shipping_calculator .button {
+  width: 100%;
+  float: none;
+  display: block;
+}
+
+.woocommerce-cart .cart-collaterals .shipping_calculator .shipping-calculator-button::after,
+.woocommerce-checkout .cart-collaterals .shipping_calculator .shipping-calculator-button::after,
+#add_payment_method .cart-collaterals .shipping_calculator .shipping-calculator-button::after {
+  font-family: "WooCommerce";
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-left: 0.618em;
+  content: "";
+  text-decoration: none;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals > h2,
+.woocommerce-checkout .cart-collaterals .cart_totals > h2,
+#add_payment_method .cart-collaterals .cart_totals > h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals p small,
+.woocommerce-checkout .cart-collaterals .cart_totals p small,
+#add_payment_method .cart-collaterals .cart_totals p small {
+  color: #bbb;
+  font-size: 0.83em;
+}
+
+.woocommerce-cart .cart-collaterals .cross-sells ul.products li.product,
+.woocommerce-checkout .cart-collaterals .cross-sells ul.products li.product,
+#add_payment_method .cart-collaterals .cross-sells ul.products li.product {
+  margin-top: 0;
+}
+
+.woocommerce-cart .checkout .col-2 h3#ship-to-different-address,
+.woocommerce-checkout .checkout .col-2 h3#ship-to-different-address,
+#add_payment_method .checkout .col-2 h3#ship-to-different-address {
+  float: left;
+  clear: none;
+}
+
+.woocommerce-cart .checkout .col-2 .notes,
+.woocommerce-checkout .checkout .col-2 .notes,
+#add_payment_method .checkout .col-2 .notes {
+  clear: left;
+}
+
+.woocommerce-cart .checkout .col-2 .form-row-first,
+.woocommerce-checkout .checkout .col-2 .form-row-first,
+#add_payment_method .checkout .col-2 .form-row-first {
+  clear: left;
+}
+
+.woocommerce-cart .checkout .create-account small,
+.woocommerce-checkout .checkout .create-account small,
+#add_payment_method .checkout .create-account small {
+  font-size: 11px;
+  color: #bbb;
+  font-weight: normal;
+}
+
+.woocommerce-cart .checkout div.shipping-address,
+.woocommerce-checkout .checkout div.shipping-address,
+#add_payment_method .checkout div.shipping-address {
+  padding: 0;
+  clear: left;
+  width: 100%;
+}
+
+.woocommerce-cart .checkout .shipping_address,
+.woocommerce-checkout .checkout .shipping_address,
+#add_payment_method .checkout .shipping_address {
+  clear: both;
+}
+
+.woocommerce-cart #payment ul.payment_methods,
+.woocommerce-checkout #payment ul.payment_methods,
+#add_payment_method #payment ul.payment_methods {
+  zoom: 1;
+  list-style: none outside;
+}
+
+.woocommerce-cart #payment ul.payment_methods::before, .woocommerce-cart #payment ul.payment_methods::after,
+  .woocommerce-checkout #payment ul.payment_methods::before,
+  .woocommerce-checkout #payment ul.payment_methods::after,
+  #add_payment_method #payment ul.payment_methods::before,
+  #add_payment_method #payment ul.payment_methods::after {
+  content: " ";
+  display: table;
+}
+
+.woocommerce-cart #payment ul.payment_methods::after,
+  .woocommerce-checkout #payment ul.payment_methods::after,
+  #add_payment_method #payment ul.payment_methods::after {
+  clear: both;
+}
+
+.woocommerce-cart #payment ul.payment_methods li,
+  .woocommerce-checkout #payment ul.payment_methods li,
+  #add_payment_method #payment ul.payment_methods li {
+  line-height: 2;
+  text-align: left;
+  margin: 0;
+  font-weight: 400;
+}
+
+.woocommerce-cart #payment ul.payment_methods li input,
+    .woocommerce-checkout #payment ul.payment_methods li input,
+    #add_payment_method #payment ul.payment_methods li input {
+  margin-right: 0.5rem;
+}
+
+.woocommerce-cart #payment ul.payment_methods li img,
+    .woocommerce-checkout #payment ul.payment_methods li img,
+    #add_payment_method #payment ul.payment_methods li img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -2px 0 0 0.5em;
+  padding: 0;
+  position: relative;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.woocommerce-cart #payment ul.payment_methods li img + img,
+    .woocommerce-checkout #payment ul.payment_methods li img + img,
+    #add_payment_method #payment ul.payment_methods li img + img {
+  margin-left: 2px;
+}
+
+.woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice),
+  .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice),
+  #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice) {
+  zoom: 1;
+}
+
+.woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice)::before, .woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice)::before,
+    .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice)::before,
+    #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice)::after {
+  content: " ";
+  display: table;
+}
+
+.woocommerce-cart #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    .woocommerce-checkout #payment ul.payment_methods li:not(.woocommerce-notice)::after,
+    #add_payment_method #payment ul.payment_methods li:not(.woocommerce-notice)::after {
+  clear: both;
+}
+
+.woocommerce-cart #payment div.form-row,
+.woocommerce-checkout #payment div.form-row,
+#add_payment_method #payment div.form-row {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.woocommerce-cart #payment div.payment_box,
+.woocommerce-checkout #payment div.payment_box,
+#add_payment_method #payment div.payment_box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: none !important;
+  position: relative;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #757575;
+  border-radius: 2px;
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+.woocommerce-cart #payment div.payment_box::before,
+  .woocommerce-checkout #payment div.payment_box::before,
+  #add_payment_method #payment div.payment_box::before {
+  content: "";
+  display: block;
+  border: 1em solid #fff;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  position: absolute;
+  top: -0.75em;
+  left: 0;
+  margin: -1em 0 0 2em;
+}
+
+.woocommerce-cart #payment div.payment_box input.input-text, .woocommerce-cart #payment div.payment_box textarea,
+  .woocommerce-checkout #payment div.payment_box input.input-text,
+  .woocommerce-checkout #payment div.payment_box textarea,
+  #add_payment_method #payment div.payment_box input.input-text,
+  #add_payment_method #payment div.payment_box textarea {
+  border-color: #a97901;
+  border-top-color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box ::-webkit-input-placeholder,
+  .woocommerce-checkout #payment div.payment_box ::-webkit-input-placeholder,
+  #add_payment_method #payment div.payment_box ::-webkit-input-placeholder {
+  color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box :-moz-placeholder,
+  .woocommerce-checkout #payment div.payment_box :-moz-placeholder,
+  #add_payment_method #payment div.payment_box :-moz-placeholder {
+  color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box :-ms-input-placeholder,
+  .woocommerce-checkout #payment div.payment_box :-ms-input-placeholder,
+  #add_payment_method #payment div.payment_box :-ms-input-placeholder {
+  color: #906701;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods,
+  .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods,
+  #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods {
+  list-style: none outside;
+  margin: 0;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token,
+    .woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new,
+    .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token,
+    .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new,
+    #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token,
+    #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new {
+  margin: 0 0 0.5em;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token label,
+      .woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new label,
+      .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token label,
+      .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new label,
+      #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-token label,
+      #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new label {
+  cursor: pointer;
+}
+
+.woocommerce-cart #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput,
+    .woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput,
+    #add_payment_method #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-tokenInput {
+  vertical-align: middle;
+  margin: -3px 1em 0 0;
+  position: relative;
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form {
+  border: 0;
+  padding: 0;
+  margin: 1em 0 0;
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number,
+  .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry,
+  .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry,
+  .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry,
+  #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc {
+  font-size: 1.5em;
+  padding: 8px;
+  background-repeat: no-repeat;
+  background-position: right 0.618em center;
+  background-size: 32px 20px;
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.visa,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.visa,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.visa,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.visa,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.visa,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.visa,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.visa,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.visa,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.visa {
+  background-image: url("../images/icons/credit-cards/visa.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.mastercard,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.mastercard,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.mastercard,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.mastercard,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.mastercard,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.mastercard,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.mastercard {
+  background-image: url("../images/icons/credit-cards/mastercard.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.laser,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.laser,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.laser,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.laser,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.laser,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.laser,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.laser,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.laser,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.laser {
+  background-image: url("../images/icons/credit-cards/laser.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.dinersclub,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.dinersclub,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.dinersclub,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.dinersclub,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.dinersclub {
+  background-image: url("../images/icons/credit-cards/diners.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.maestro,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.maestro,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.maestro,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.maestro,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.maestro,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.maestro,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.maestro,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.maestro,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.maestro {
+  background-image: url("../images/icons/credit-cards/maestro.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.jcb,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.jcb,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.jcb,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.jcb,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.jcb,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.jcb,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.jcb,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.jcb,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.jcb {
+  background-image: url("../images/icons/credit-cards/jcb.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.amex,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.amex,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.amex,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.amex,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.amex,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.amex,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.amex,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.amex,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.amex {
+  background-image: url("../images/icons/credit-cards/amex.svg");
+}
+
+.woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-number.discover,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-expiry.discover,
+    .woocommerce-cart #payment div.payment_box .wc-credit-card-form-card-cvc.discover,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-number.discover,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-expiry.discover,
+    .woocommerce-checkout #payment div.payment_box .wc-credit-card-form-card-cvc.discover,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-number.discover,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-expiry.discover,
+    #add_payment_method #payment div.payment_box .wc-credit-card-form-card-cvc.discover {
+  background-image: url("../images/icons/credit-cards/discover.svg");
+}
+
+.woocommerce-cart #payment div.payment_box span.help,
+  .woocommerce-checkout #payment div.payment_box span.help,
+  #add_payment_method #payment div.payment_box span.help {
+  font-size: 0.857em;
+  color: #bbb;
+  font-weight: normal;
+}
+
+.woocommerce-cart #payment div.payment_box .form-row,
+  .woocommerce-checkout #payment div.payment_box .form-row,
+  #add_payment_method #payment div.payment_box .form-row {
+  margin: 0 0 1em;
+}
+
+.woocommerce-cart #payment div.payment_box p:last-child,
+  .woocommerce-checkout #payment div.payment_box p:last-child,
+  #add_payment_method #payment div.payment_box p:last-child {
+  margin-bottom: 0;
+}
+
+.woocommerce-cart #payment .payment_method_paypal .about_paypal,
+.woocommerce-checkout #payment .payment_method_paypal .about_paypal,
+#add_payment_method #payment .payment_method_paypal .about_paypal {
+  float: right;
+  line-height: 52px;
+  font-size: 0.83em;
+}
+
+.woocommerce-cart #payment .payment_method_paypal img,
+.woocommerce-checkout #payment .payment_method_paypal img,
+#add_payment_method #payment .payment_method_paypal img {
+  max-height: 52px;
+  vertical-align: middle;
+}
+
+.woocommerce-cart .cart-subtotal th, .woocommerce-cart .cart-subtotal td {
+  border-top-width: 3px !important;
+  border-bottom-width: 0 !important;
+}
+
+.woocommerce-cart .order-total th, .woocommerce-cart .order-total td {
+  border-bottom-width: 1px;
+}
+
+form.woocommerce-checkout #order_review_heading {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  form.woocommerce-checkout #customer_details {
+    float: left;
+    width: 57%;
+  }
+}
+
+@media (min-width: 768px) {
+  form.woocommerce-checkout .woocommerce-checkout-review-order {
+    margin-left: 2rem;
+    float: right;
+    width: calc(43% - 2rem);
+    max-width: 480px;
+  }
+}
+
+.woocommerce-checkout-payment {
+  margin-top: 2rem;
+}
+
+.woocommerce-billing-fields {
+  margin-bottom: 1rem;
+}
+
+.wc-checkout-form h3, .wc-checkout-form__title {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.place-order {
+  padding: 16px 0 0 !important;
+}
+
+.woocommerce-terms-and-conditions {
+  margin-bottom: 1.618em;
+  padding: 1.618em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.woocommerce-privacy-policy-text {
+  color: #757575;
+  margin-bottom: 1rem;
+  font-size: 13px;
+}
+
+.wc_payment_method {
+  display: inline-block;
+  padding: 1rem;
+  background-color: #eee;
+  border-width: 1px;
+  border-color: #e0e0e0;
+  border-radius: 0.25rem;
+}
+
+.woocommerce-billing-fields,
+.woocommerce-shipping-fields {
+  zoom: 1;
+}
+
+.woocommerce-billing-fields::before, .woocommerce-billing-fields::after,
+  .woocommerce-shipping-fields::before,
+  .woocommerce-shipping-fields::after {
+  content: " ";
+  display: table;
+}
+
+.woocommerce-billing-fields::after,
+  .woocommerce-shipping-fields::after {
+  clear: both;
+}
+
+#payment .form-row select {
+  width: auto;
+}
+
+#payment .wc-terms-and-conditions, #payment .terms {
+  float: right;
+  text-align: left;
+  padding: 0 1em 0 0;
+}
+
+ul#shipping_method {
+  list-style: none outside;
+  margin: 0;
+  padding: 0;
+}
+
+ul#shipping_method li {
+  margin: 0;
+  padding: 0.25em 0 0.25em 22px;
+  text-indent: -22px;
+  list-style: none outside;
+}
+
+ul#shipping_method li input {
+  margin: 3px 0.5ex;
+}
+
+ul#shipping_method li label {
+  display: inline;
+}
+
+ul#shipping_method .amount {
+  font-weight: 700;
+}
+
+p.woocommerce-shipping-contents {
+  margin: 0;
+}
+
+ul.checkout-bar {
+  position: absolute;
+  top: -90px;
+  width: 80%;
+  height: 6px;
+  margin: 0 auto 20px 10%;
+  padding: 0;
+  border-radius: 6px;
+  background-size: 35px 35px;
+}
+
+ul.checkout-bar li {
+  display: inline-block;
+  position: relative;
+  width: 32%;
+  margin: 24px 0 0;
+  padding: 0;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: top;
+}
+
+ul.checkout-bar li::before {
+  position: absolute;
+  z-index: 5;
+  top: -40px;
+  left: 43%;
+  width: 26px;
+  height: 26px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: #ddd;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+}
+
+.checkout-bar li.active::after,
+.checkout-bar li.next::after {
+  position: absolute;
+  z-index: 0;
+  top: -24px;
+  left: 50%;
+  width: 100%;
+  height: 6px;
+  background-color: #ccc;
+  background-size: 35px 35px;
+  content: "";
+}
+
+.woocommerce-cart .checkout-bar li.next::after,
+ul.checkout-bar {
+  background-color: #ececec;
+}
+
+.checkout-bar.final li.active::after {
+  width: auto;
+}
+
+ul.checkout-bar li.visited::after,
+ul.checkout-bar::before {
+  position: absolute;
+  left: 0;
+  width: 17%;
+  height: 6px;
+  border-radius: 6px;
+  background-color: #dc9814;
+  background-size: 35px 35px;
+  content: " ";
+}
+
+.woocommerce-checkout .checkout-bar li.active::after {
+  background-color: #dc9814;
+}
+
+.woocommerce-checkout ul.checkout-bar li.next::before {
+  z-index: 4;
+  background: #444;
+}
+
+.woocommerce-checkout ul.checkout-bar li.next {
+  color: #444;
+}
+
+.woocommerce-checkout ul.checkout-bar li.next::after {
+  background-color: #ccc;
+}
+
+ul.checkout-bar li.visited {
+  background: 0 0;
+}
+
+ul.checkout-bar li.visited::after {
+  z-index: 99;
+  top: -28px;
+  left: 50%;
+  width: 100%;
+  content: "";
+}
+
+.woocommerce-cart ul.checkout-bar li.active,
+.woocommerce-checkout ul.checkout-bar li.active {
+  z-index: 3;
+  color: #444;
+  background: 0 0;
+}
+
+.woocommerce-checkout ul.checkout-bar li.next {
+  color: #444;
+}
+
+.woocommerce-cart ul.checkout-bar li.active::before,
+.woocommerce-checkout ul.checkout-bar li.active::before,
+.woocommerce-checkout ul.checkout-bar li.next::before {
+  z-index: 4;
+  background: #444;
+}
+
+ul.checkout-bar li.visited::before {
+  z-index: 1;
+  background: #444;
+}
+
+ul.checkout-bar li:nth-child(1)::before {
+  content: "1";
+}
+
+ul.checkout-bar li:nth-child(2)::before {
+  content: "2";
+}
+
+ul.checkout-bar li:nth-child(3)::before {
+  content: "3";
+}
+
+#payment .place-order .button {
+  width: 100%;
+}
+
+.woocommerce-checkout-review-order-table tfoot td, .woocommerce-checkout-review-order-table tfoot th {
+  padding: 1em 22px;
+  border-bottom: 1px solid #e2e2e2;
+  color: #111;
+  background-color: #f9f9f9;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.woocommerce-checkout-review-order-table tr.cart-subtotal td,
+.woocommerce-checkout-review-order-table tr.cart-subtotal th {
+  border-top: 1px solid #e2e2e2;
+}
+
+.woocommerce-checkout-review-order-table tr.order-total td,
+.woocommerce-checkout-review-order-table tr.order-total th {
+  font-size: 18px;
+}
+
+#order_review .shop_table tr.shipping td,
+.woocommerce-checkout-review-order-table tfoot th,
+.woocommerce-checkout-review-order-table tr.order-total td:first-child {
+  border-left: 1px solid #e2e2e2;
+}
+
+.woocommerce-checkout-review-order-table tfoot td {
+  border-right: 1px solid #e2e2e2;
+  text-align: right;
+}
