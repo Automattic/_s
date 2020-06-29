@@ -1,14 +1,14 @@
-@import "normalize";
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
-@import "modules/accessibility";
-@import "elements/elements";
-@import "typography/critical";
-@import "header/critical";
-@import "navigation/critical";
-@import "footer/critical";
-@import "layout/content-sidebar";
-@import "blog/primary/post-meta";
+@import 'normalize';
+@import 'variables-site/variables-site';
+@import 'mixins/mixins-master';
+@import 'modules/accessibility';
+@import 'elements/elements';
+@import 'typography/critical';
+@import 'header/critical';
+@import 'navigation/critical';
+@import 'footer/critical';
+@import 'layout/content-sidebar';
+@import 'blog/primary/post-meta';
 
 #page {
 	background: $color__background-page;

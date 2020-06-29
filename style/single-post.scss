@@ -1,10 +1,4 @@
-/*--------------------------------------------------------------
-# Functions and vars
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Site
---------------------------------------------------------------*/
-@import "blog/blog";
+@import 'blog/primary/post-content';
+@import 'blog/primary/comments';
+@import 'blog/primary/post-thumb';
+@import 'blog/secondary/widgets';
