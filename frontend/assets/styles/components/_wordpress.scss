@@ -20,7 +20,7 @@
     @apply mb-4;
 }
 
-.post-categories{
+.post-categories {
     @apply flex;
 }
 
@@ -49,22 +49,22 @@ img.wp-post-image {
 
     label {
         @apply flex-grow;
+    }
 
-        input {
-            @apply w-full;
-            outline-offset: 0;
+    [type=search] {
+        @apply w-full;
+        outline-offset: 0;
 
-            &,
-            &:hover,
-            &:focus,
-            &:active {
-                @apply rounded-tr-none rounded-br-none;
-            }
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            @apply rounded-tr-none rounded-br-none;
         }
     }
 
     [type="submit"] {
-        @apply rounded-tl-none rounded-bl-none;
+        @apply rounded-tl-none rounded-bl-none whitespace-no-wrap;
     }
 }
 

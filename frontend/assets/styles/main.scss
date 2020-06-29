@@ -19,3 +19,8 @@
 @import "components/comment";
 @import "components/widget";
 @import "components/input";
+
+
+.woocommerce-product-search{
+    @extend .search-form;
+}

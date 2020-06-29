@@ -11,8 +11,6 @@
 
 ?>
 
-
-
 <footer id="colophon" class="site__footer">
 
     <?php if ( is_active_sidebar('sidebar-footer')): ?>

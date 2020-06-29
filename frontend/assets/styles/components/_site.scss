@@ -154,7 +154,9 @@
         @apply flex-grow mt-8;
 
         @screen lg {
-            @apply flex-none w-1/4 ml-8 px-0 mt-0;
+            @apply flex-none ml-8 px-0 mt-0;
+            width: 15%;
+            min-width: 256px;
         }
     }
 }
