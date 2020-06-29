@@ -9,6 +9,7 @@
 	animation-name: sticky-header;
 	animation-duration: .5s;
 	animation-timing-function: ease-in-out;
+	transition: right .5s ease-in-out;
 
 	.top-header {
 		display: none;
@@ -16,6 +17,17 @@
 
 	.main-navigation-toggle {
 		top: 0;
+	}
+
+	.menu-toggled-on & {
+
+		@media screen and (min-width: breakpoint('phone')) {
+			right: 300px;
+		}
+
+		@media screen and (min-width: breakpoint('desktop-nav')) {
+			right: 0;
+		}
 	}
 
  	#page & #main-navigation {

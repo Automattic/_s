@@ -1,17 +1,22 @@
-#main-navigation {
+@import '../blocks/animations';
 
-	a {
-		font-weight: normal;
-		padding: 10px 0;
-		display: inline-block;
+#main-navigation {
+	display: block;
+	top: $size__header-height-mobile;
+	bottom: 0;
+	overflow: auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba(0,0,0,.0);
+	transition: right .5s ease-in-out, box-shadow .5s ease-in-out;
+
+	.menu-toggled-on & {
+		right: 0;
 	}
 
 	ul {
-		max-width: none;
 
 		li {
-			margin-bottom: 0;
-			margin: 0;
 
 			&.current-menu-item:not(.cta-item) > a,
 			&.current-menu-ancestor:not(.cta-item) > a {
@@ -21,7 +26,6 @@
 			}
 
 			a {
-				@include font-size(.9);
 
 				&:focus {
 					background: none;
@@ -79,9 +83,12 @@
 		}
 
 		.sub-menu {
-			display: block;
-			overflow: hidden;
+			clip: initial;
+			position: initial;
+			height: auto;
+			width: auto;
 			max-height: 0;
+			overflow: hidden;
 			transition: max-height .8s ease;
 			line-height: normal;
 
@@ -108,18 +115,23 @@
 		}
 	}
 
+	@media screen and (min-width: breakpoint('phone')) {
+		width: 300px;
+		box-shadow: -1px 4px 4px rgba(0,0,0,.6);
+	}
+
 	@media screen and (min-width: breakpoint('desktop-nav')) {
+		padding: 0;
+		width: auto;
+		box-shadow: none;
 
 		ul {
 
 			li {
-				padding: 0;
 				
 				a {
 					transition: color .15s ease-in-out;
 					display: block;
-					padding-left: 10px;
-					padding-right: 10px;
 					
 					&:hover {
 						color: $color__corporate;
@@ -146,6 +158,10 @@
 						width: 100%;
 						background: $color__corporate;
 					}
+				}
+
+				&:last-of-type {
+					margin-right: 0;
 				}
 			}
 		}
@@ -174,6 +190,7 @@
 
 					a {
 						line-height: normal;
+						height: auto;
 					}
 
 					&.current-menu-item:after {
@@ -186,8 +203,12 @@
 			&.expanded {
 				background-color: $color__background-sub-menu;
 
-				&[class*="current"]:after {
-					background-color: rgba(255,255,255,0);
+				&[class*="current"] {
+					position: static;
+
+					&:after {
+						background-color: rgba(255,255,255,0);
+					}
 				}
 
 				> a:after {
@@ -215,10 +236,6 @@
 				position: static;
 				margin-left: 5px;
 			}
-
-			.sub-menu {
-				position: absolute;
-			}
 		}
 	}
 }
@@ -236,26 +253,43 @@
 	}
 }
 
-#main-navigation {
-	position: fixed;
-	width: 100%;
-	top: $size__header-height-mobile;
-	bottom: 0;
-	overflow: auto;
-	box-shadow: 0 0 3px rgba(0,0,0,.0);
-	padding: 20px;
+.main-navigation-toggle {
 
-	@media screen and (min-width: breakpoint('phone')) {
-		width: 300px;
-		box-shadow: -1px 4px 4px rgba(0,0,0,.6);
+	&:hover,
+	&:focus,
+	&:active {
+		background: none;
+		color: $color__text-main;
+		box-shadow: none;
 	}
 
-	@media screen and (min-width: breakpoint('desktop-nav')) {
-		padding: 0;
-		position: static;
-		width: auto;
-		box-shadow: none;
-		overflow: visible;
+	&:before {
+
+		.menu-toggled-on & {
+			@include icon-content("\e903");
+		}
+	}
+}
+
+.menu-toggled-on {
+
+	@media screen and (max-width: breakpoint('desktop-nav')) {
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+	
+		&:before {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,.8);
+			z-index: 9;
+			animation: fadeIn .5s ease-in-out;
+		}
 	}
 }
 
