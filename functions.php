@@ -626,6 +626,7 @@ function _svbk_scripts() {
 
 	Asset::hint( 'preconnect', '//cdn.jsdelivr.net' );
 	Asset::hint( 'preconnect', '//fonts.googleapis.com' );
+	Asset::hint( 'preconnect', '//fonts.gstatic.com' );
 
 	Asset::preload( get_theme_file_uri('style/icons/fonts/theme-icons.woff'), 'font', array( 'crossorigin' => true, 'type' => 'font/woff' )  );
 
