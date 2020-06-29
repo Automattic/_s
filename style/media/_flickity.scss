@@ -5,45 +5,15 @@
 
 .wp-block-gallery[class*="columns"] {
 
-	.flickity-viewport {
-		overflow: hidden;
-		position: relative;
-	}
-
-	.flickity-slider {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
-
 	.flickity-enabled {
-        display: block;
-		position: relative;
-        
-        &.is-draggable .flickity-viewport {
-            cursor: grab;
-        }
-
-		&:focus {
-			outline: none;
-		}
-	}
-}
-
-// Flickity Gallery
-
-.wp-block-gallery[class*="columns"] {
-
-	.blocks-gallery-item {
 		display: block;
-		margin-bottom: 0;
+		
+		.blocks-gallery-item {
+			margin: 0 10px 0 0;
 
-		figure, img {
-			display: block;
-		}
-
-		img {
-			object-fit: cover;
+			img {
+				width: 100%;
+			}
 		}
 	}
 
@@ -52,7 +22,7 @@
         &.columns-#{$i} {
       
 			.flickity-enabled .blocks-gallery-item {
-                width: (100%/$i);
+				width: (100%/$i);
 			}
 		}
 	}
@@ -72,8 +42,6 @@
 	background: none;
 	border: none;
 	box-shadow: none;
-	top: 0;
-	bottom: 40px;
 	cursor: pointer;
 
 	svg {
@@ -113,46 +81,12 @@
 }
 
 .flickity-page-dots {
-	color: #fff;
-	text-align: center;
-	padding: 0;
-	height: 40px;
-	margin: 0;
 
-	li {
-		margin: 0 10px 0 0;
-		display: inline-block;
-		line-height: 40px;
-		cursor: pointer;
+	.dot {
+		background: $color__corporate;
 		
-		&:last-of-type {
-			margin-right: 0;
-		}
-
 		&:before {
-			content: "";
-			width: 10px;
-			height: 10px;
-			border: 1px solid $color__corporate;
-			border-radius: 10px;
-			margin: 0;
-			position: relative;
-			bottom: 2px;
-		}
-
-		&.is-selected:before {
-			background: $color__corporate;
-		}
-		
-		.has-background:not(.has-light-gray-background-color) & {
-			
-			&:before {
-				border-color: #fff;
-			}
-			
-			&.is-selected:before {
-				background: #fff;
-			}
+			display: none;
 		}
 	}
 }
