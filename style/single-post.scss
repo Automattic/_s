@@ -1,21 +1,4 @@
-/*--------------------------------------------------------------
-# Functions and vars
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-@import "layout/content-sidebar";
-
-/*--------------------------------------------------------------
-# Site
---------------------------------------------------------------*/
-@import "blog/blog";
-
-/*--------------------------------------------------------------
-# Blocks
---------------------------------------------------------------*/
-@import "blocks/post-banner";
-@import "blocks/blocks";
+@import 'blog/primary/post-content';
+@import 'blog/primary/comments';
+@import 'blog/primary/post-thumb';
+@import 'blog/secondary/widgets';

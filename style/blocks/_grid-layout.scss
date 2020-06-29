@@ -1,5 +1,7 @@
 .wp-block-svbk-grid {
     $grid-gutter: 2;
+	display: flex;
+	justify-content: space-between;
     
     > figure img {
         display: block;

@@ -1,33 +1,6 @@
-/*--------------------------------------------------------------
-# Functions and vars
---------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-@import "normalize";
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
-@import "typography/typography";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/buttons";
+@import "typography/critical";
 @import "forms/fields";
 
 body {
@@ -130,6 +103,7 @@ body {
 		color: $color__text-button;
 		border: none;
 		border-radius: $border-radius__button;
+		text-transform: uppercase;
 
 		&:hover {
 			background-color: $color__background-button-hover !important;

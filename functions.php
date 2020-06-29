@@ -429,11 +429,12 @@ add_action('wp_head', '_svbk_print_critical_css', 5);
 /**
  * Enqueue scripts and styles.
  */
+
 function _svbk_scripts() {
 	
 	Script::register( 'waypoints', 'lib/jquery.waypoints.min.js', [ 'version' => '4.0.1', 'deps' => 'jquery', 'defer' => true ] );
-	Script::register( 'waypoints-sticky', 'lib/shortcuts/sticky.min.js', [ 'version' => '4.0.1', 'deps' => ['jquery', 'waypoints'], 'package' => 'waypoints', 'defer' => true ] );
-		
+	Script::register( 'waypoints-sticky', 'lib/shortcuts/sticky.min.js', [ 'version' => '4.0.1', 'deps' => ['jquery', 'waypoints'], 'package' => 'waypoints', 'defer' => true ] );	
+
 	// Styles common to all pages
 	Style::enqueue(
 		'_svbk-common',

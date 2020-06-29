@@ -1,10 +1,14 @@
-/*--------------------------------------------------------------
-# Functions and vars
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Blocks
---------------------------------------------------------------*/
-@import "blocks/blocks";
+@import "blocks/animations";
+@import "blocks/cards/cards";
+@import "blocks/trust";
+@import "blocks/columns";
+@import "blocks/collapse";
+@import "blocks/grid-layout";
+@import "blocks/group";
+@import "blocks/hero/hero";
+@import "blocks/icon-paragraph";
+@import "blocks/latest-posts";
+@import "blocks/media-and-text";
+@import "blocks/rating";
+@import "blocks/separator";
+@import "blocks/testimonials";

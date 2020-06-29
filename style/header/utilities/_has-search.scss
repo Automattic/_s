@@ -9,8 +9,25 @@
 .site-header {
 
     .search-toggle {
+        font-weight: normal;
         display: none;
-    
+
+		&:before {
+			width: 40px;
+			display: block;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 50%;
+		}
+
+		&:hover,
+		&:focus,
+		&:active,
+		&:visited {
+			color: $color__text-main;
+        }
+        
         @media screen and (min-width: breakpoint('desktop-nav')) {
             display: block;
             position: absolute;
@@ -22,7 +39,7 @@
                 line-height: $size__header-height-desktop;
             }
         }
-    }
+	}
 
     .search-form {
         padding: 20px 20px 30px;

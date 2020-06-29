@@ -1,0 +1,26 @@
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button__link,
+.loadmore__button,
+.wp-block-svbk-card__link,
+.wp-block-svbk-hero__link,
+.more-link,
+.readmore {
+	border-width: 2px;
+	border-style: solid;
+	border-color: $color__border-button;
+	background: $color__background-button;
+	color: $color__text-button;
+	@include font-size(1);
+	text-transform: uppercase;
+	line-height: 1;
+	padding: .7em 1.2em;
+	text-decoration: none;
+	text-align: center;
+	border-radius: $border-radius__button;
+    font-weight: bold;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+}

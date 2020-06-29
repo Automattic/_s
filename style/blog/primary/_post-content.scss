@@ -1,64 +1,8 @@
-// Post elements
-
-.site-content {
-	padding-top: 10px;
-}
-
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.post__header {
-	margin-top: 30px;
-
-	.post__summary {
-		@include font-size(1.15);
-		color: #888;
-		border-top: 1px solid $color__background-hr;
-		margin-top: 20px;
-	}
-
-	.post__title {
-		margin: 0 0 20px;
-	}
-
-	.post__meta {
-		@include font-size(.9);
-
-		.post__categories {
-			margin-bottom: 10px;
-			display: block;
-
-			a {
-				font-weight: bold;
-				text-transform: uppercase;
-			}
-		}
-	}
-
-	.page-links {
-		clear: both;
-		margin: 0 0 1.5em;
-	}
-
-	.post-thumbnail {
-		width: 100%;
-
-		img {
-			width: 100%;
-		}
-	}
-}
-
-// Elements
+@import 'variables-site/variables-site';
+@import 'mixins/mixins-master';
+@import 'blocks/index';
+@import 'blocks/post-banner';
+@import 'blocks/blocks';
 
 h2 {
 	@include font-size(1.6);
@@ -86,4 +30,18 @@ li > ol {
 	padding-left: 25px;
 }
 
-@import 'blocks/index';
+.site-content {
+	padding-top: 10px;
+}
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}

@@ -1,0 +1,27 @@
+.wp-block-svbk-hero.is-style-content-background {
+
+    @media screen and (min-width: breakpoint('tablet-portrait')) {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+
+        .wp-block-svbk-hero__content {
+            background: rgba(255,255,255,.7);
+            padding: 30px 20px;
+        }
+    }
+
+    @media screen and (min-width: breakpoint('tablet-landscape')) {
+        display: block;
+        min-height: auto;
+    }
+
+    @media screen and (min-width: $size__page-width) {
+        padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
+        padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
+
+        .wp-block-svbk-hero__content {
+            padding: 100px 30px;
+        }
+    }
+}

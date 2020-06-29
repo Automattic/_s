@@ -1,0 +1,41 @@
+@import 'top-header';
+@import 'desktop/logo-left';
+//@import 'desktop/logo-center';
+
+.site-header {
+	background: $color__background-header;
+	width: 100%;
+	z-index: 999;
+	box-shadow: 0 0 3px rgba(0,0,0,.2);
+    position: relative;
+}
+
+.site-branding {
+	display: inline-block;
+
+	img {
+		display: block;
+		height: $size__logo-height-mobile;
+		width: auto;
+		margin-top: 7px;
+		margin-bottom: 2px;
+	}
+
+	@media screen and (min-width: breakpoint('desktop-nav')) {
+		display: inline-block;
+		vertical-align: bottom;
+
+		img {
+			height: $size__logo-height-desktop;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+    }
+    
+	@media screen and (min-width: breakpoint('desktop-nav')) {
+
+		.wrap {
+			position: relative;
+		}
+	}
+}

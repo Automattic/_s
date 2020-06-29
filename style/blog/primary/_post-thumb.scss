@@ -1,3 +1,6 @@
+@import 'variables-site/variables-site';
+@import 'mixins/mixins-master';
+
 .post--preview {
 	box-shadow: $shadow__card;
 	position: relative;
@@ -50,7 +53,7 @@
 				}
 
 				&:after {
-					content: ",";
+					content: ',';
 				}
 
 				&:last-of-type:after {

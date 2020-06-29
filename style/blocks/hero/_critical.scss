@@ -1,6 +1,9 @@
+@import 'styles/content-card';
+
 .wp-block-svbk-hero {
     padding-left: $padding__content-mobile;
     padding-right: $padding__content-mobile;
+    margin: 0 calc(50% - 50vw);
     
     @media screen and (min-width: breakpoint('tablet-portrait')) {
         padding-top: 40px;
@@ -16,85 +19,8 @@
     }
 
     @media screen and (min-width: $size__page-max-width) {
-        margin-left: -$padding__content-desktop;
-        margin-right: -$padding__content-desktop;
+		margin: 30px #{-$padding__content-desktop};
         padding: 80px $padding__content-desktop;
-    }
-    
-    &.has-bottom-padding {
-        
-        .wp-block-svbk-hero__content {
-            padding-bottom: 80px;
-            
-            @media screen and (min-width: breakpoint('tablet-portrait')) {
-                padding-bottom: 20px;
-            }
-            
-            @media screen and (min-width: breakpoint('tablet-landscape')) {
-                padding-bottom: 40px;
-            }
-        }
-        
-        @media screen and (min-width: breakpoint('tablet-portrait')) {
-            padding-bottom: 100px;
-        }
-
-
-        &.is-style-content-background .wp-block-svbk-hero__content {
-
-            @media screen and (min-width: breakpoint('tablet-portrait')) {
-                padding-bottom: 80px;
-            }
-
-            @media screen and (min-width: breakpoint('tablet-landscape')) {
-                padding-bottom: 120px;
-            }
-        }
-    }
-
-    &.is-style-content-background {
-
-        @media screen and (min-width: breakpoint('tablet-portrait')) {
-            padding-top: 0;
-            padding-bottom: 0;
-            padding-left: 0;
-
-            .wp-block-svbk-hero__content {
-                background: rgba(255,255,255,.7);
-                padding: 30px 20px;
-            }
-        }
-
-        @media screen and (min-width: breakpoint('tablet-landscape')) {
-            display: block;
-            min-height: auto;
-        }
-
-        @media screen and (min-width: $size__page-width) {
-            padding-left: calc((100vw - #{$size__page-width}) /2 + 35px);
-            padding-right: calc((100vw - #{$size__page-width}) /2 + 35px);
-
-            .wp-block-svbk-hero__content {
-                padding: 100px 30px;
-            }
-        }
-    }
-
-    &.is-style-content-card {
-
-        .wp-block-svbk-hero__content {
-
-            @media screen and (min-width: breakpoint('tablet-portrait')) {
-                padding: 20px;
-                background: #fff;
-                border-radius: $border-radius;
-                box-shadow: $shadow__card;
-            }
-
-            @media screen and (min-width: breakpoint('desktop')) {
-                padding: 30px;
-            }
-        }
     }
 }
 
@@ -119,7 +45,6 @@
         
         img {
             height: 100%;
-            width: 100%;
             object-fit: cover;
         }
     }

@@ -1,24 +1,21 @@
-/*--------------------------------------------------------------
-# Block types
---------------------------------------------------------------*/
-@import "animations";
-@import "cards/cards";
-@import "trust";
-@import "columns";
-@import "collapse";
-@import "grid-layout";
-@import "group";
-@import "hero";
-@import "icon-paragraph";
-@import "iter";
-@import "latest-posts";
-@import "map";
-@import "media-and-text";
-@import "publication";
-@import "rating";
-@import "separator";
-@import "testimonials";
-@import "warranty";
+@import 'animations';
+@import 'cards/cards';
+@import 'trust';
+@import 'columns';
+@import 'collapse';
+@import 'grid-layout';
+@import 'group';
+@import 'hero/hero';
+@import 'icon-paragraph';
+@import 'iter';
+@import 'latest-posts';
+@import 'map';
+@import 'media-and-text';
+@import 'publication';
+@import 'rating';
+@import 'separator';
+@import 'testimonials';
+@import 'warranty';
 
 .has-primary-background-color,
 .has-dark-gray-background-color {

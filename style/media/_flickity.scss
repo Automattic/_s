@@ -5,9 +5,20 @@
 
 .wp-block-gallery[class*="columns"] {
 
+	.flickity-viewport {
+		overflow: hidden;
+		position: relative;
+	}
+
+	.flickity-slider {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
 	.flickity-enabled {
         display: block;
-        position: relative;
+		position: relative;
         
         &.is-draggable .flickity-viewport {
             cursor: grab;
@@ -19,47 +30,42 @@
 	}
 }
 
-/*.wp-block-gallery.is-style-flickity-slider {
+// Flickity Gallery
 
-	.flickity-enabled {
+.wp-block-gallery[class*="columns"] {
 
-		.blocks-gallery-item {
-			width: 100%;
-	
-			img {
-				width: 100%;
+	.blocks-gallery-item {
+		display: block;
+		margin-bottom: 0;
 
-				@media screen and (min-width: breakpoint('phone')) {
-					height: 300px;
-				}
+		figure, img {
+			display: block;
+		}
 
-				@media screen and (min-width: breakpoint('tablet-portrait')) {
-					height: 430px;
-	
-					.wp-block-column & {
-						height: 185px;
-					}
-				}
-	
-				@media screen and (min-width: breakpoint('tablet-landscape')) {
-					height: 530px;
-	
-					.wp-block-column & {
-						height: 279px;
-					}
-				}
-	
-				@media screen and (min-width: breakpoint('desktop')) {
-					height: 630px;
-	
-					.wp-block-column & {
-						height: 362px;
-					}
-				}
+		img {
+			object-fit: cover;
+		}
+	}
+
+    @for $i from 1 through 5 {
+
+        &.columns-#{$i} {
+      
+			.flickity-enabled .blocks-gallery-item {
+                width: (100%/$i);
 			}
 		}
 	}
-}*/
+}
+
+.flickity-button,
+.flickity-page-dots {
+	display: none;
+
+	.domready & {
+		display: block;
+	}
+}
 
 .flickity-button {
 	position: absolute;

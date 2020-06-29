@@ -30,21 +30,11 @@
 
 .widget_categories ul,
 .filter-list {
-	padding: 0;
-
-	&:after {
-		@include clearfix();
-		@include clearfix-after();
-	}
 
 	li {
 		margin: 0;
 		float: left;
 		margin: 0 10px 10px 0;
-
-		&:before {
-			display: none;
-		}
 
 		&.current-cat a {
 			background: $color__corporate;
@@ -57,12 +47,6 @@
 
 		a {
 			@include font-size(.9);
-			background: #aaa;
-			color: #fff;
-			text-decoration: none;
-			padding: .3em 1em;
-			border-radius: $border-radius__button;
-			display: block;
 			transition: background .2s linear;
 
 			&:hover {
