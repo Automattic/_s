@@ -10,6 +10,22 @@
 @import 'blocks/hero/critical';
 @import 'footer/critical';
 
+.domloading .site-content,
+.domready--show {
+	display: none;
+}
+
+.domready {
+
+	.domready--show {
+		display: block;
+	}
+
+	.domready--hide {
+		display: none;
+	}
+}
+
 #page {
 	background: $color__background-page;
 }
