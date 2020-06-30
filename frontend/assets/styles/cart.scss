@@ -5,9 +5,6 @@
 @import "woocommerce/variables";
 @import "woocommerce/select2";
 
-@import "components/button";
-@import "components/input";
-
 //===================================
 // 迷你购物车
 //===================================
@@ -162,6 +159,7 @@ table.cart {
     float: left;
     width: 62%;
     margin-bottom: 0;
+
     table {
         border-width: 0 0 1px;
 
@@ -251,14 +249,23 @@ td.product-quantity {
     min-width: 80px;
 }
 
-
-.wc-proceed-to-checkout .button {
-    display: block;
-    text-align: center;
+.woocommerce {
+    .wc-proceed-to-checkout .button {
+        @include button-base;
+        @include button-bg(#3bb54a, darken(#3bb54a, 5%), darken(#3bb54a, 8%));
+        color: #fff;
+        display: block;
+        height: 58px;
+        line-height: 58px;
+        font-size: 19px;
+        padding: 0 1.2em;
+        border-radius: 3px;
+        border-width: 0;
+    }
 }
 
-.cart_totals{
-    .shop_table{
+.cart_totals {
+    .shop_table {
         border: 1px solid #e2e2e2;
         border-bottom: none;
         table-layout: fixed;
@@ -266,17 +273,17 @@ td.product-quantity {
         font-size: 15px;
         margin-bottom: 1rem;
 
-        td,th{
+        td, th {
             padding: 1em 22px;
             color: #111;
             border-top-width: 0;
             border-bottom: 1px solid #e2e2e2;
         }
 
-        tr{
+        tr {
 
-            &.cart-subtotal{
-                td,th{
+            &.cart-subtotal {
+                td, th {
                     padding: 1em 22px;
                     border-bottom: 1px solid #e2e2e2;
                     color: #111;
@@ -287,7 +294,7 @@ td.product-quantity {
 }
 
 
-body table.cart td.product-quantity .qty{
+body table.cart td.product-quantity .qty {
     background-color: #f8f8f8;
     width: 30px;
     margin-right: -2px;
@@ -303,7 +310,7 @@ table.cart td.product-quantity .quantity-nav {
     width: 26px;
 }
 
-td.actions{
+td.actions {
     background: transparent;
 }
 
@@ -317,9 +324,11 @@ table.cart td.actions button {
 
 table.cart td.actions button,
 table.cart td.actions input[type=submit] {
+    @include button-base;
+    @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
+    @include button-border(#ddd, #dadada, #d3d3d3);
+    border-radius: 2px;
     padding: 0 22px;
     color: #111;
-    background-color: #f8f8f8;
     font-size: 14px;
-    font-weight: 400;
 }

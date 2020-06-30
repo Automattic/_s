@@ -9,9 +9,6 @@
 @import "base/mixins";
 @import "variables";
 
-@import "components/button";
-@import "components/input";
-
 @import "../fonts/icomoon/variables";
 @import "woocommerce/mixins";
 @import "woocommerce/variables";
@@ -164,7 +161,6 @@
 .woocommerce-loop-product__title,
 .woocommerce-loop-category__title {
     @apply text-base font-normal mt-2 text-gray-800;
-    @include fix-height(1.5, 46px, 2);
 
     mark {
         font-weight: 400;
@@ -183,8 +179,6 @@
         outline-offset: 2px;
     }
 }
-
-
 
 .required {
     @apply text-red-700 font-bold no-underline;

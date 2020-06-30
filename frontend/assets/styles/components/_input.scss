@@ -19,8 +19,16 @@ textarea {
     }
 
     &[disabled] {
-        @apply text-gray-500 bg-gray-200;
+        @apply opacity-50;
     }
+
+    &:focus{
+        outline: 0;
+    }
+}
+
+[type=submit]{
+    border-width: 0;
 }
 
 input[type="text"],
@@ -40,14 +48,11 @@ input[type="color"],
 select {
     height: 40px;
     line-height: 40px;
-}
-
-input {
     padding: 0 12px;
 }
 
 select {
-    padding: 0 32px 0 12px;
+    padding: 0 3rem 0 .625rem;
 }
 
 textarea {
@@ -58,11 +63,16 @@ textarea {
 select {
     width: 100%;
     max-width: 100%;
-    background: url(../images/downarrow.gif) calc(100% - 12px) 12px no-repeat;
-    background-size: 15px 15px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
+    background-size: 30px 30px;
     text-indent: .01px;
     text-overflow: "";
     appearance: none;
+    padding-right: 3rem;
+
+    &:focus{
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%239b4dca" d="M0,0l6,8l6-8"/></svg>')
+    }
 }
 
 label {

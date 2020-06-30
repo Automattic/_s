@@ -8,15 +8,13 @@
     button.button,
     input.button,
     #respond input#submit {
-        padding: .8em 1.2em;
-        background: #3bb54a;
-        font-size: 19px;
-        font-weight: 400;
-        letter-spacing: .7px;
-        text-transform: uppercase;
-        transition: background .2s ease;
-        border: 0;
-        border-radius: 3px;
+        //@apply leading-none font-normal uppercase border-0 bg-gray-300;
+        //padding: .5em .8em;
+        //font-size: 16px;
+        //letter-spacing: .7px;
+        //transition: background .2s ease;
+        //border-radius: 3px;
+        //color: #333;
 
         &.loading {
             opacity: 0.25;
@@ -25,9 +23,9 @@
             &::after {
                 font-family: "WooCommerce";
                 content: "";
-                @apply align-top font-normal absolute;
-                top: 9px;
-                right: 1em;
+                @apply align-top font-normal absolute leading-none;
+                top: 13px;
+                margin-left: 0.53em;
                 animation: spin 2s linear infinite;
             }
         }
@@ -35,49 +33,49 @@
         &.added{
             padding-right: 2.618em;
             &::after {
-                @apply absolute;
+                @apply absolute leading-none;
                 font-family: "WooCommerce";
                 content: "";
                 margin-left: 0.53em;
-                top: 9px;
+                top: 13px;
             }
         }
 
-        &.alt {
-            //background-color: $woocommerce;
-            //border: 1px solid lighten($woocommerce, 5%);
-            //color: $primarytext;
-            //-webkit-font-smoothing: antialiased;
-
-            //@extend .rs-button;
-            @extend .rs-button--primary;
-
-            &:hover {
-                background-color: lighten($woocommerce, 5%);
-                color: $primarytext;
-            }
-
-            &.disabled,
-            &:disabled,
-            &:disabled[disabled],
-            &.disabled:hover,
-            &:disabled:hover,
-            &:disabled[disabled]:hover {
-                opacity: .4;
-                cursor: not-allowed;
-            }
-        }
+        //&.alt {
+        //    //background-color: $woocommerce;
+        //    //border: 1px solid lighten($woocommerce, 5%);
+        //    //color: $primarytext;
+        //    //-webkit-font-smoothing: antialiased;
+        //
+        //    //@extend .rs-button;
+        //    //@extend .rs-button--primary;
+        //
+        //    &:hover {
+        //        background-color: lighten($woocommerce, 5%);
+        //        color: $primarytext;
+        //    }
+        //
+        //    &.disabled,
+        //    &:disabled,
+        //    &:disabled[disabled],
+        //    &.disabled:hover,
+        //    &:disabled:hover,
+        //    &:disabled[disabled]:hover {
+        //        opacity: .4;
+        //        cursor: not-allowed;
+        //    }
+        //}
 
     }
 
-    .cart .button,
-    .cart input.button {
-        @apply float-none;
-    }
+    //.cart .button,
+    //.cart input.button {
+    //    @apply float-none;
+    //}
 
-    a.added_to_cart {
-        @apply hidden;
-    }
+    //a.added_to_cart {
+    //    @apply hidden;
+    //}
 }
 
 .field.has-addons .control:last-child .button {

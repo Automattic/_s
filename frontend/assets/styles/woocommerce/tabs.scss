@@ -2,12 +2,14 @@
 // Tabs
 //===================================
 .woocommerce-tabs {
-    @apply bg-gray-200 p-8;
+    clear: both;
+
     .panel {
         @apply m-0;
     }
 
     ul.tabs {
+        @include menu();
         @apply relative overflow-hidden justify-start mb-4;
 
         li {

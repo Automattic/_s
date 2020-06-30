@@ -3,10 +3,6 @@
 @import "base/mixins";
 @import "woocommerce/mixins";
 @import "woocommerce/variables";
-
-@import "components/button";
-@import "components/input";
-
 @import "woocommerce/select2";
 
 //===================================
@@ -22,8 +18,8 @@
 
         .checkout-button {
             width: 100%;
-            @apply py-2;
-            height: auto;
+            height: 58px;
+            line-height: 58px;
         }
 
         a.checkout-buttons {
@@ -544,6 +540,16 @@ ul.checkout-bar li:nth-child(3)::before {
 }
 
 #payment .place-order .button{
+    @include button-base;
+    @include button-bg(#3bb54a, darken(#3bb54a, 5%), darken(#3bb54a, 8%));
+    color: #fff;
+    display: block;
+    height: 58px;
+    line-height: 58px;
+    font-size: 19px;
+    padding: 0 1.2em;
+    border-radius: 3px;
+    border-width: 0;
     width: 100%;
 }
 

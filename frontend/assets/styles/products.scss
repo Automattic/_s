@@ -3,10 +3,6 @@
 @import "base/mixins";
 @import "woocommerce/mixins";
 @import "woocommerce/variables";
-
-@import "components/button";
-@import "components/input";
-
 @import "woocommerce/gallery";
 
 .woocommerce {
@@ -251,22 +247,24 @@
     }
 }
 
-.cart .single_add_to_cart_button {
-    float: left;
-    width: calc(100% - 95px);
-    height: 58px;
-    margin-left: 40px;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-radius: 2px;
-    outline: 0;
-    font-weight: 400;
-    line-height: 58px;
-    letter-spacing: .7px;
-    text-transform: uppercase;
-    transition: all .2s;
-    white-space: nowrap;
+.woocommerce {
+    .cart button.single_add_to_cart_button {
+        @include button-base();
+        @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
+        color: #fff;
+        float: left;
+        width: calc(100% - 95px);
+        height: 58px;
+        line-height: 58px;
+        margin-left: 40px;
+        padding: 0 1.2em;
+        border-radius: 2px;
+        text-transform: uppercase;
+        transition: all .2s;
+        font-size: 19px;
+    }
 }
+
 
 .product .cart .quantity .input-text {
     width: 50px;
@@ -402,26 +400,19 @@ ul.products li.product-type-grouped .price .amount, ul.products li.product-type-
 }
 
 
-.woocommerce form select{
+.woocommerce form select {
     width: 100%;
     max-width: 100%;
     height: 40px;
     margin-bottom: 5px;
-    padding: 0 31px 0 11px;
     border: 1px solid #e2e2e2;
     border-radius: 3px;
-    background: url(../images/downarrow.gif) calc(100% - 12px) 12px no-repeat;
-    background-size: 15px 15px;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
     font-size: 16px;
     font-weight: 400;
     line-height: 40px;
     text-indent: .01px;
     text-overflow: "";
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    -ms-appearance: none;
     appearance: none;
     -webkit-font-smoothing: inherit;
 }

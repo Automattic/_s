@@ -1,11 +1,9 @@
 .woocommerce-message,
 .woocommerce-error,
 .woocommerce-info {
-
     padding: 1em 2em 1em 3.5em;
     margin: 0 0 2em;
     position: relative;
-    color: $secondarytext;
     list-style: none outside;
     border-top: 3px solid;
 
@@ -21,10 +19,6 @@
         position: absolute;
         top: 1em;
         left: 1.5em;
-    }
-
-    .button {
-        float: right;
     }
 
     li {
@@ -47,6 +41,19 @@
     &::before {
         content: "";
         color: #8fae1b;
+    }
+
+    .button{
+        @include button-base;
+        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
+        @include button-border(#ddd, #dadada, #d3d3d3);
+        height: 32px;
+        line-height: 32px;
+        padding: 0 .8em;
+        color: #333;
+        float: right;
+        font-size: 14px;
+        border-radius: 2px;
     }
 }
 

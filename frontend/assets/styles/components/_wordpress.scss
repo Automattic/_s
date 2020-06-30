@@ -64,7 +64,10 @@ img.wp-post-image {
     }
 
     [type="submit"] {
-        @apply rounded-tl-none rounded-bl-none whitespace-no-wrap;
+        @include button-bg($primary, darken($primary, 5%), darken($primary, 10%));
+        @apply px-4 whitespace-no-wrap;
+        color: #fff;
+        border-radius: 0 3px 3px 0;
     }
 }
 

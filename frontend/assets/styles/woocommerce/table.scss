@@ -55,8 +55,13 @@ table.shop_table_responsive {
 
 table.my_account_orders {
     .button {
-        @apply whitespace-no-wrap;
-        font-size: inherit;
+        @include button-base;
+        @include button-bg(#e3e3e3, #ddd, #ccc);
+        color: #333;
+        padding: 0 .8em;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 2px;
     }
 
     .order-actions {

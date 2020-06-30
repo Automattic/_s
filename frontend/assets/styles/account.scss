@@ -9,9 +9,6 @@
 @import "woocommerce/variables";
 @import "woocommerce/select2";
 
-@import "components/button";
-@import "components/input";
-
 .woocommerce-account {
     @apply bg-gray-100;
 
@@ -110,8 +107,14 @@
 
         form {
             button[type=submit] {
+                @include button-base;
+                @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
                 @apply mt-4;
-                @extend .rs-button--primary;
+                color: #fff;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 1.2em;
+                border-radius: 3px;
             }
         }
     }

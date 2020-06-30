@@ -64,6 +64,13 @@
         @apply w-full;
     }
 
+    input[type="submit"]{
+        @include button-base();
+        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
+        @include button-border(#ddd, #dadada, #d3d3d3);
+        color: #383838;
+    }
+
     &-cookies-consent {
         @apply flex w-full items-center text-sm text-gray-600;
     }

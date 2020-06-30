@@ -78,22 +78,12 @@
             }
         }
 
-        .woocommerce-tabs {
-            clear: both;
-
-            ul.tabs {
-                @include menu();
-            }
-        }
-
         #reviews {
             .comment {
                 @include mediaright();
             }
         }
     }
-
-
 
     &.columns-1 {
         ul.products {

@@ -45,84 +45,6 @@
 }
 
 
-/**
- * 文本裁剪
- */
-@mixin text-crop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
-  // Configured in Step 1
-  $top-crop: 9;
-  $bottom-crop: 8;
-  $crop-font-size: 36;
-  $crop-line-height: 1.2;
-
-  // Apply values to calculate em-based margins that work with any font size
-  $dynamic-top-crop: max($top-crop + ($line-height - $crop-line-height) * $crop-font-size / 2, 0) / $crop-font-size;
-  $dynamic-bottom-crop: max($bottom-crop + ($line-height - $crop-line-height) * $crop-font-size / 2, 0) / $crop-font-size;
-
-  // Mixin output
-  line-height: $line-height;
-
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    height: 0;
-    width: 0;
-  }
-
-  &::before {
-    margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
-  }
-
-  &::after {
-    margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
-  }
-}
-
-// Mixin generated at: http://text-crop.eightshapes.com/?
-
-/* Usage Examples
- * .my-level-1-heading-class {
- *     @include text-crop; // Will use default line height of 1.3
- *     font-size: 48px;
- *     margin: 0 0 0 16px;
- * }
- *
- * .my-level-2-heading-class {
- *     @include text-crop; // Will use default line height of 1.3
- *     font-size: 32px; // Don't need to change any settings, will work with any font size automatically
- *     margin: 0 0 0 16px;
- * }
- *
- * .my-body-copy-class {
- *     @include text-crop($line-height: 2); // Larger line height desired, set the line height via the mixin
- *     font-size: 16px;
- * }
- *
- * // Sometimes depending on the font-size, the rendering, the browser, etc. you may need to tweak the output.
- * // You can adjust the top and bottom cropping when invoking the component using the $top-adjustment and $bottom-adjustment settings
- *
- * .slight-adjustment-needed {
- *     @include text-crop($top-adjustment: -0.5px, $bottom-adjustment: 2px);
- *     font-size: 17px;
- * }
- *
- * .dont-do-this {
- *     @include text-crop;
- *     font-size: 16px;
- *     line-height: 3; // DO NOT set line height outside of the mixin, the mixin needs the line height value to calculate the crop correctly
- * } */
-
-@mixin fix-height($line-height: 1.414, $height: 3em, $line-number: 2) {
-  display: -webkit-box !important;
-  height: $height;
-  line-height: $line-height;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: $line-number;
-}
-
 @mixin clearfix {
     *zoom: 1;
 
@@ -134,5 +56,62 @@
 
     &::after {
         clear: both;
+    }
+}
+
+
+@mixin button-base(){
+    transform: scale(1);
+    transition: all .2s ease;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    cursor: pointer;
+    font-weight: 400;
+    display: inline-block;
+
+    // 默认宽高和圆角
+    border-radius: 3px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 1.2em;
+}
+
+@mixin button-bg($base, $hover, $active) {
+    background-color: $base;
+
+    &:hover {
+        background-color: $hover;
+    }
+
+    &:active {
+        background-color: $active;
+    }
+}
+
+@mixin button-border($base, $hover, $active) {
+    border-width: 1px;
+    border-color: $base;
+
+    &:hover {
+        border-color: $hover;
+    }
+
+    &:active {
+        border-color: $active;
+    }
+}
+
+@mixin button-text($base, $hover, $active) {
+    color: $base;
+
+    &:hover {
+        color: $hover;
+    }
+
+    &:active {
+        color: $active;
     }
 }
