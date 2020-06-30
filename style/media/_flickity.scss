@@ -9,7 +9,12 @@
 		display: block;
 		
 		.blocks-gallery-item {
+			display: block;
 			margin: 0 10px 0 0;
+
+			figure {
+				display: block;
+			}
 
 			img {
 				width: 100%;
