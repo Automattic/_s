@@ -61,7 +61,9 @@ div.images .woocommerce-product-gallery__wrapper {
 }
 
 div.images .woocommerce-product-gallery__wrapper .zoomImg {
+  --bg-opacity: 1;
   background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
   opacity: 0;
 }
 
@@ -72,7 +74,9 @@ div.images .woocommerce-product-gallery__image:nth-child(n+2) {
 
 div.images .woocommerce-product-gallery__trigger {
   position: absolute;
+  --bg-opacity: 1;
   background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
   border-radius: 9999px;
   top: 0.5em;
   right: 0.5em;
@@ -90,7 +94,9 @@ div.images .woocommerce-product-gallery__trigger:before {
   position: absolute;
   border-radius: 9999px;
   border-width: 2px;
+  --border-opacity: 1;
   border-color: #000;
+  border-color: rgba(0, 0, 0, var(--border-opacity));
   content: "";
   width: 10px;
   height: 10px;
@@ -103,7 +109,9 @@ div.images .woocommerce-product-gallery__trigger:before {
 div.images .woocommerce-product-gallery__trigger:after {
   display: block;
   position: absolute;
+  --bg-opacity: 1;
   background-color: #000;
+  background-color: rgba(0, 0, 0, var(--bg-opacity));
   border-radius: 9999px;
   content: "";
   width: 2px;
@@ -202,7 +210,9 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 }
 
 .woocommerce ul.products li.product {
+  --bg-opacity: 1;
   background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
   padding: 1rem;
   position: relative;
   padding: 0;

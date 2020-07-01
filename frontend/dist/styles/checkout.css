@@ -913,7 +913,9 @@
   margin-bottom: 1rem;
   width: 100%;
   font-size: 0.875rem;
+  --text-opacity: 1;
   color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
   border-radius: 2px;
   line-height: 1.5;
   background-color: #fff;
@@ -1205,7 +1207,9 @@ form.woocommerce-checkout #order_review_heading {
 }
 
 .woocommerce-privacy-policy-text {
+  --text-opacity: 1;
   color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
   margin-bottom: 1rem;
   font-size: 13px;
 }
@@ -1213,9 +1217,13 @@ form.woocommerce-checkout #order_review_heading {
 .wc_payment_method {
   display: inline-block;
   padding: 1rem;
+  --bg-opacity: 1;
   background-color: #eee;
+  background-color: rgba(238, 238, 238, var(--bg-opacity));
   border-width: 1px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
   border-radius: 0.25rem;
 }
 

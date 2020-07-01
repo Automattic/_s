@@ -1,27 +1,33 @@
+//$flexbox-grid-mixins-grid-type: skeleton;
+//$flexbox-grid-mixins-box-sizing: '';
+//$flexbox-grid-mixins-stack: margin-bottom;
+//
+//@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+
 // 渐变背景
 @mixin linear-gradient($direction, $color-stops...) {
-  background: nth(nth($color-stops, 1), 1); // fallback
-  background: linear-gradient($direction, $color-stops);
+    background: nth(nth($color-stops, 1), 1); // fallback
+    background: linear-gradient($direction, $color-stops);
 }
 
 // 自适应到
 @mixin respond-to($max-breakpoint) {
-  @media (max-width:$max-breakpoint) {
-    @content;
-  }
+    @media (max-width: $max-breakpoint) {
+        @content;
+    }
 }
 
 // 滚动条
 @mixin scrollbar {
-  &::-webkit-scrollbar { /* [2] */
-    width: $scrollbar-width;
-    background-color: transparent;
-  }
+    &::-webkit-scrollbar { /* [2] */
+        width: $scrollbar-width;
+        background-color: transparent;
+    }
 
-  &::-webkit-scrollbar-thumb { /* [2] */
-    border-radius: $scrollbar-thumb-border-radius;
-    background-color: $scrollbar-thumb-background-color;
-  }
+    &::-webkit-scrollbar-thumb { /* [2] */
+        border-radius: $scrollbar-thumb-border-radius;
+        background-color: $scrollbar-thumb-background-color;
+    }
 }
 
 /**
@@ -60,7 +66,7 @@
 }
 
 
-@mixin button-base(){
+@mixin button-base() {
     transform: scale(1);
     transition: all .2s ease;
     text-align: center;
@@ -115,3 +121,22 @@
         color: $active;
     }
 }
+
+
+@mixin grid($gap) {
+    display: flex;
+    margin-left: $gap / 2 * -1;
+    margin-right: $gap / 2 * -1;
+}
+
+@mixin grid-col($col, $gap) {
+    $grid-columns: 12;
+    $flex-basis: percentage($col / $grid-columns);
+    $flex-basis: calc( #{$flex-basis} - #{$gap});
+
+    flex: 0 0 $flex-basis;
+    margin-left: $gap / 2;
+    margin-right: $gap / 2;
+    margin-bottom: $gap;
+}
+

@@ -486,7 +486,9 @@ table.my_account_orders .order-actions .button {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom-width: 1px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
   vertical-align: middle;
 }
 
@@ -500,7 +502,9 @@ table.my_account_orders .order-actions .button {
 .shop_table tfoot td {
   border-top-width: 0;
   border-bottom-width: 4px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
   font-weight: 400;
   padding: 0.25rem;
 }
@@ -516,7 +520,9 @@ table.my_account_orders .order-actions .button {
 }
 
 .woocommerce-cart-form__contents th {
+  --text-opacity: 1;
   color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
   text-align: left;
 }
 
@@ -536,7 +542,9 @@ table.my_account_orders .order-actions .button {
   outline: 0;
   font-size: 0.875rem;
   border-width: 1px;
+  --border-opacity: 1;
   border-color: #9e7b07;
+  border-color: rgba(158, 123, 7, var(--border-opacity));
   width: 120px !important;
   padding: 6px 6px 5px;
   margin: 0 -1px 0 0;
@@ -577,7 +585,9 @@ table.my_account_orders .order-actions .button {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom-width: 1px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
   vertical-align: middle;
 }
 
@@ -591,7 +601,9 @@ table.my_account_orders .order-actions .button {
   .woocommerce-checkout-review-order-table tfoot td {
   border-top-width: 0;
   border-bottom-width: 4px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
   font-weight: 400;
   padding: 0.25rem;
 }
@@ -609,8 +621,12 @@ table.my_account_orders .order-actions .button {
   padding-left: 1rem;
   padding-right: 1rem;
   font-weight: 500;
+  --text-opacity: 1;
   color: #616161;
+  color: rgba(97, 97, 97, var(--text-opacity));
+  --bg-opacity: 1;
   background-color: #eee;
+  background-color: rgba(238, 238, 238, var(--bg-opacity));
 }
 
 .woocommerce-orders-table__header:last-child {
@@ -621,7 +637,9 @@ table.my_account_orders .order-actions .button {
 .woocommerce-orders-table__row {
   border-top-width: 1px;
   border-bottom-width: 1px;
+  --border-opacity: 1;
   border-color: #eee;
+  border-color: rgba(238, 238, 238, var(--border-opacity));
 }
 
 .woocommerce-orders-table__cell {
@@ -658,7 +676,9 @@ table.my_account_orders .order-actions .button {
 }
 
 .cart-collaterals table small {
+  --text-opacity: 1;
   color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
 }
 
 .cart-collaterals table select {
@@ -672,7 +692,9 @@ table.my_account_orders .order-actions .button {
 .cart-collaterals tr td,
 .cart-collaterals tr th {
   border-top-width: 1px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
 }
 
 .woocommerce-tabs {
@@ -722,7 +744,9 @@ table.my_account_orders .order-actions .button {
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  --text-opacity: 1;
   color: #616161;
+  color: rgba(97, 97, 97, var(--text-opacity));
   text-decoration: none;
 }
 
@@ -749,7 +773,9 @@ table.my_account_orders .order-actions .button {
 
 .wc-tabs {
   border-bottom-width: 1px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
 }
 
 .woocommerce-Tabs-panel h2 {
@@ -853,7 +879,9 @@ table.my_account_orders .order-actions .button {
 }
 
 .woocommerce form .form-row span {
+  --text-opacity: 1;
   color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
   font-size: 0.875rem;
 }
 
@@ -878,19 +906,25 @@ table.my_account_orders .order-actions .button {
 }
 
 .woocommerce form .form-row.woocommerce-invalid label {
+  --text-opacity: 1;
   color: #c53030;
+  color: rgba(197, 48, 48, var(--text-opacity));
 }
 
 .woocommerce form .form-row.woocommerce-invalid .select2-container,
     .woocommerce form .form-row.woocommerce-invalid input.input-text,
     .woocommerce form .form-row.woocommerce-invalid select {
+  --border-opacity: 1;
   border-color: #c53030;
+  border-color: rgba(197, 48, 48, var(--border-opacity));
 }
 
 .woocommerce form .form-row.woocommerce-validated .select2-container,
     .woocommerce form .form-row.woocommerce-validated input.input-text,
     .woocommerce form .form-row.woocommerce-validated select {
+  --border-opacity: 1;
   border-color: #38a169;
+  border-color: rgba(56, 161, 105, var(--border-opacity));
 }
 
 .woocommerce ::-webkit-input-placeholder,
@@ -902,9 +936,13 @@ table.my_account_orders .order-actions .button {
 form.login,
 form.checkout_coupon,
 form.register {
+  --bg-opacity: 1;
   background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
   border-width: 1px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
   padding: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -953,7 +991,9 @@ form.cart .button {
 }
 
 .woocommerce-input-wrapper .description {
+  --text-opacity: 1;
   color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
   border-radius: 0.25rem;
   padding: 1rem;
   display: none;
@@ -964,7 +1004,9 @@ form.cart .button {
 }
 
 .woocommerce-input-wrapper .description a {
+  --text-opacity: 1;
   color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
   text-decoration: none;
   border-width: 0;
   -webkit-box-shadow: none;
@@ -1035,7 +1077,9 @@ form.cart .button {
 }
 
 .add_to_cart_button {
+  --text-opacity: 1;
   color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
 }
 
 .add_to_cart_button:before {
@@ -1279,8 +1323,12 @@ form.cart .button {
 }
 
 .woocommerce-message, .woocommerce-notice--success {
+  --border-opacity: 1;
   border-color: #38a169;
+  border-color: rgba(56, 161, 105, var(--border-opacity));
+  --bg-opacity: 1;
   background-color: #f0fff4;
+  background-color: rgba(240, 255, 244, var(--bg-opacity));
 }
 
 .woocommerce-message::before, .woocommerce-notice--success::before {
@@ -1339,8 +1387,12 @@ form.cart .button {
 }
 
 .woocommerce-info {
+  --border-opacity: 1;
   border-color: #3182ce;
+  border-color: rgba(49, 130, 206, var(--border-opacity));
+  --bg-opacity: 1;
   background-color: #ebf8ff;
+  background-color: rgba(235, 248, 255, var(--bg-opacity));
 }
 
 .woocommerce-info::before {
@@ -1348,8 +1400,12 @@ form.cart .button {
 }
 
 .woocommerce-error {
+  --border-opacity: 1;
   border-color: #e53e3e;
+  border-color: rgba(229, 62, 62, var(--border-opacity));
+  --bg-opacity: 1;
   background-color: #fff5f5;
+  background-color: rgba(255, 245, 245, var(--bg-opacity));
   margin-left: 0 !important;
 }
 
@@ -1472,7 +1528,9 @@ nav.woocommerce-pagination ul li span.current,
 }
 
 .woocommerce-result-count {
+  --text-opacity: 1;
   color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
   font-size: 1rem;
   top: 2px;
   padding: 5px 0;
@@ -1514,7 +1572,9 @@ nav.woocommerce-pagination ul li span.current,
   content: "sssss";
   float: left;
   position: absolute;
+  --text-opacity: 1;
   color: #9e9e9e;
+  color: rgba(158, 158, 158, var(--text-opacity));
 }
 
 .star-rating span {
@@ -1522,7 +1582,9 @@ nav.woocommerce-pagination ul li span.current,
   float: left;
   position: absolute;
   padding-top: 1.5rem;
+  --text-opacity: 1;
   color: #e53e3e;
+  color: rgba(229, 62, 62, var(--text-opacity));
 }
 
 .star-rating span::before {
@@ -1541,9 +1603,13 @@ nav.woocommerce-pagination ul li span.current,
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   margin: 0;
+  --bg-opacity: 1;
   background-color: #e53e3e;
+  background-color: rgba(229, 62, 62, var(--bg-opacity));
   text-align: center;
+  --text-opacity: 1;
   color: #f5f5f5;
+  color: rgba(245, 245, 245, var(--text-opacity));
   font-size: 0.875rem;
   white-space: nowrap;
   top: 0.5em;
@@ -1618,7 +1684,9 @@ div.product table.variations .value {
 }
 
 .woocommerce-page {
+  --bg-opacity: 1;
   background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
 .woocommerce-page .quantity.hidden {
@@ -1727,7 +1795,9 @@ div.product table.variations .value {
 }
 
 .woocommerce .checkout_coupon {
+  --bg-opacity: 1;
   background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
 .woocommerce .page-title {
@@ -1758,7 +1828,9 @@ div.product table.variations .value {
   font-size: 1rem;
   font-weight: 400;
   margin-top: 0.5rem;
+  --text-opacity: 1;
   color: #424242;
+  color: rgba(66, 66, 66, var(--text-opacity));
 }
 
 .woocommerce-loop-product__title mark,
@@ -1777,7 +1849,9 @@ div.product table.variations .value {
 }
 
 .required {
+  --text-opacity: 1;
   color: #c53030;
+  color: rgba(197, 48, 48, var(--text-opacity));
   font-weight: 700;
   text-decoration: none;
   border: 0 !important;

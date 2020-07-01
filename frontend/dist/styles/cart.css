@@ -717,7 +717,9 @@
 
 .woocommerce-mini-cart li + li {
   border-top-width: 1px;
+  --border-opacity: 1;
   border-color: #eee;
+  border-color: rgba(238, 238, 238, var(--border-opacity));
 }
 
 .woocommerce-mini-cart img {
@@ -727,7 +729,9 @@
 .woocommerce-mini-cart .quantity,
 .woocommerce-mini-cart .amount {
   font-size: 0.875rem;
+  --text-opacity: 1;
   color: #616161;
+  color: rgba(97, 97, 97, var(--text-opacity));
 }
 
 .woocommerce-mini-cart .cart-title {
@@ -746,7 +750,9 @@
 
 .woocommerce-mini-cart a.remove_from_cart_button:hover {
   background-color: transparent;
+  --border-opacity: 1;
   border-color: #616161;
+  border-color: rgba(97, 97, 97, var(--border-opacity));
   color: #616161 !important;
 }
 
@@ -754,12 +760,16 @@
   padding-right: 0;
   text-align: center;
   border-bottom-width: 1px;
+  --border-opacity: 1;
   border-color: #eee;
+  border-color: rgba(238, 238, 238, var(--border-opacity));
   margin-bottom: 1rem;
 }
 
 .woocommerce-mini-cart__total .amount {
+  --text-opacity: 1;
   color: #c53030;
+  color: rgba(197, 48, 48, var(--text-opacity));
   font-weight: 500;
 }
 
@@ -770,7 +780,9 @@
 }
 
 .woocommerce-mini-cart__empty-message {
+  --text-opacity: 1;
   color: #616161;
+  color: rgba(97, 97, 97, var(--text-opacity));
   padding: 1rem;
   text-align: center;
 }
@@ -797,7 +809,9 @@
 }
 
 .c-widget--shopping_cart .woocommerce-mini-cart li .quantity {
+  --text-opacity: 1;
   color: #9e9e9e;
+  color: rgba(158, 158, 158, var(--text-opacity));
 }
 
 .c-widget--shopping_cart .woocommerce-mini-cart li a.remove {
@@ -896,7 +910,9 @@ table.cart td.actions .coupon label {
 .woocommerce-cart-form table td {
   padding-left: 0;
   border-bottom-width: 1px;
+  --border-opacity: 1;
   border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
 }
 
 .woocommerce-cart-form table div.quantity {
@@ -984,7 +1000,9 @@ td.product-name p.backorder_notification {
 }
 
 td.product-name a {
+  --text-opacity: 1;
   color: #424242;
+  color: rgba(66, 66, 66, var(--text-opacity));
 }
 
 td.product-quantity {
