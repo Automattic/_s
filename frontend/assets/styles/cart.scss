@@ -163,12 +163,54 @@ table.cart {
     table {
         border-width: 0 0 1px;
 
+        img {
+            @apply w-8 shadow-none;
+        }
+
+        .product-thumbnail {
+            min-width: 32px;
+            img{
+                min-width: 64px;
+            }
+        }
+
+        th {
+            @apply text-gray-600 text-left;
+
+            &.product-subtotal{
+                @apply text-right;
+            }
+        }
+
         td {
-            @apply pl-0 border-b border-gray-300;
+            @apply border-b border-gray-300 py-4;
+        }
+
+        th,td{
+            @apply align-middle;
+            @screen md{
+                @apply pl-4;
+            }
+        }
+
+        td.actions {
+            .coupon {
+                @apply flex;
+
+                .input-text {
+                    @apply leading-normal outline-none text-sm border border-secondary;
+                    width: 200px !important;
+                    margin: 0 -1px 0 0;
+                }
+            }
         }
 
         div.quantity {
             @apply m-0 float-none align-middle;
+        }
+
+        input {
+            @apply m-0 align-middle;
         }
 
         small.stock {
@@ -265,6 +307,9 @@ td.product-quantity {
 }
 
 .cart_totals {
+    h2{
+        @apply mb-2;
+    }
     .shop_table {
         border: 1px solid #e2e2e2;
         border-bottom: none;
@@ -331,4 +376,21 @@ table.cart td.actions input[type=submit] {
     padding: 0 22px;
     color: #111;
     font-size: 14px;
+}
+
+
+.cart_item {
+    .quantity-button.quantity-down:before,
+    .quantity-button.quantity-up:before {
+        margin-left: 9px;
+    }
+
+    .quantity-button.quantity-up:before {
+        position: absolute;
+        top: -2px;
+    }
+
+    .quantity-button.quantity-down:before {
+        top: -1px;
+    }
 }

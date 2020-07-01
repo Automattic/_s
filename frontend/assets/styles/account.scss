@@ -48,6 +48,53 @@
 
 }
 
+
+table.my_account_orders {
+    .button {
+        @include button-base;
+        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
+        @include button-border(#ddd, #dadada, #d3d3d3);
+        color: #333;
+        padding: 0 .8em;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 2px;
+    }
+
+    .order-actions {
+        @apply text-right;
+
+        .button {
+            margin: 0.125em 0 0.125em 0.25em;
+        }
+    }
+}
+
+
+// 所有订单表格
+.woocommerce-orders-table {
+    &__header {
+        @apply text-sm;
+        padding: 10px 0 10px 30px !important;
+        @apply px-4 font-medium text-gray-700 bg-gray-200;
+        &:last-child {
+            @apply text-right;
+            padding-right: 16px !important;
+        }
+    }
+
+    &__row {
+        @apply border-t border-b border-gray-200;
+    }
+
+    &__cell {
+        @apply text-sm whitespace-no-wrap align-middle text-left font-medium;
+        padding: 20px 0 20px 30px;
+        color: #354052;
+    }
+}
+
+
 .woocommerce-MyAccount {
 
     &-navigation {
@@ -349,4 +396,29 @@ ul.order_details {
 
 .wc-bacs-bank-details-account-name {
     font-weight: bold;
+}
+
+
+.lost_reset_password .button,
+.woocommerce-form-register__submit,
+.woocommerce-form-login__submit{
+    @include button-base;
+    @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
+    color: #fff;
+}
+
+
+.woocommerce-privacy-policy-text {
+    @apply text-gray-600 mb-4;
+    font-size: 13px;
+}
+
+#customer_login{
+    p{
+        @apply mb-3;
+    }
+
+    a{
+        @apply underline;
+    }
 }

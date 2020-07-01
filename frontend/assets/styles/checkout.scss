@@ -269,6 +269,46 @@
     }
 }
 
+
+// 结账审核订单表
+.woocommerce-checkout-review-order-table {
+    @apply text-base w-full border-collapse;
+    @media screen and (max-width: $phone) {
+        &:not(.woocommerce-table--order-details) {
+            @apply border-0;
+        }
+    }
+
+    tr td:last-of-type {
+        @apply text-right;
+    }
+
+    th {
+        @apply font-normal border-t text-left py-2;
+    }
+
+    td {
+        @apply font-normal text-left py-3;
+        @apply border-b border-gray-300 align-middle;
+
+        small {
+            font-weight: normal;
+        }
+    }
+
+    thead th,
+    thead td,
+    tfoot th,
+    tfoot td {
+        @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
+    }
+
+    .shop_table td {
+        @apply py-2 px-4;
+    }
+}
+
+
 .woocommerce-cart {
     .cart-subtotal {
         th, td {
@@ -539,7 +579,7 @@ ul.checkout-bar li:nth-child(3)::before {
     content: "3";
 }
 
-#payment .place-order .button{
+#payment .place-order .button {
     @include button-base;
     @include button-bg(#3bb54a, darken(#3bb54a, 5%), darken(#3bb54a, 8%));
     color: #fff;
@@ -553,7 +593,7 @@ ul.checkout-bar li:nth-child(3)::before {
     width: 100%;
 }
 
-.woocommerce-checkout-review-order-table tfoot td,.woocommerce-checkout-review-order-table tfoot th {
+.woocommerce-checkout-review-order-table tfoot td, .woocommerce-checkout-review-order-table tfoot th {
     padding: 1em 22px;
     border-bottom: 1px solid #e2e2e2;
     color: #111;
@@ -581,4 +621,10 @@ ul.checkout-bar li:nth-child(3)::before {
 .woocommerce-checkout-review-order-table tfoot td {
     border-right: 1px solid #e2e2e2;
     text-align: right
+}
+
+.woocommerce .col2-set .col-1,
+.woocommerce .col2-set .col-2{
+    float: none;
+    width: 100%;
 }

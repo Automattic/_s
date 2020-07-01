@@ -907,17 +907,76 @@ table.cart td.actions .coupon label {
   border-width: 0 0 1px;
 }
 
+.woocommerce-cart-form table img {
+  width: 2rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.woocommerce-cart-form table .product-thumbnail {
+  min-width: 32px;
+}
+
+.woocommerce-cart-form table .product-thumbnail img {
+  min-width: 64px;
+}
+
+.woocommerce-cart-form table th {
+  --text-opacity: 1;
+  color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
+  text-align: left;
+}
+
+.woocommerce-cart-form table th.product-subtotal {
+  text-align: right;
+}
+
 .woocommerce-cart-form table td {
-  padding-left: 0;
   border-bottom-width: 1px;
   --border-opacity: 1;
   border-color: #e0e0e0;
   border-color: rgba(224, 224, 224, var(--border-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.woocommerce-cart-form table th, .woocommerce-cart-form table td {
+  vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+  .woocommerce-cart-form table th, .woocommerce-cart-form table td {
+    padding-left: 1rem;
+  }
+}
+
+.woocommerce-cart-form table td.actions .coupon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.woocommerce-cart-form table td.actions .coupon .input-text {
+  line-height: 1.5;
+  outline: 0;
+  font-size: 0.875rem;
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #9e7b07;
+  border-color: rgba(158, 123, 7, var(--border-opacity));
+  width: 200px !important;
+  margin: 0 -1px 0 0;
 }
 
 .woocommerce-cart-form table div.quantity {
   margin: 0;
   float: none;
+  vertical-align: middle;
+}
+
+.woocommerce-cart-form table input {
+  margin: 0;
   vertical-align: middle;
 }
 
@@ -1050,6 +1109,10 @@ td.product-quantity {
   background-color: #31963d;
 }
 
+.cart_totals h2 {
+  margin-bottom: 0.5rem;
+}
+
 .cart_totals .shop_table {
   border: 1px solid #e2e2e2;
   border-bottom: none;
@@ -1151,4 +1214,18 @@ table.cart td.actions button:hover,
 table.cart td.actions button:active,
   table.cart td.actions input[type=submit]:active {
   border-color: #d3d3d3;
+}
+
+.cart_item .quantity-button.quantity-down:before,
+.cart_item .quantity-button.quantity-up:before {
+  margin-left: 9px;
+}
+
+.cart_item .quantity-button.quantity-up:before {
+  position: absolute;
+  top: -2px;
+}
+
+.cart_item .quantity-button.quantity-down:before {
+  top: -1px;
 }

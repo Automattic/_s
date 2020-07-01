@@ -13,11 +13,18 @@
     * Forms
     */
     form {
+        fieldset{
+            @apply mt-6;
+            legend{
+                @apply text-lg;
+            }
+        }
+
         .form-row {
             @include clearfix();
 
             label {
-                @apply block;
+                @apply block text-sm;
 
                 &.checkbox {
                     @apply inline;
@@ -137,33 +144,6 @@ form.login,
 form.checkout_coupon,
 form.register {
     @apply bg-white border border-gray-300 p-6 my-4 text-left rounded;
-}
-
-// 商品页面购物车
-form.cart {
-    @apply flex mb-8;
-    @include clearfix;
-
-    div.quantity {
-        @apply float-left mr-1;
-    }
-
-    .woocommerce-variation-description p {
-        margin-bottom: 1em;
-    }
-
-    .reset_variations {
-        visibility: hidden;
-        font-size: 0.83em;
-    }
-
-    .wc-no-matching-variations {
-        @apply hidden;
-    }
-
-    .button {
-        @apply float-left align-middle;
-    }
 }
 
 .woocommerce-input-wrapper {

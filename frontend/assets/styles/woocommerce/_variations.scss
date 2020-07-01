@@ -23,11 +23,20 @@ a.reset_variations {
     text-decoration: underline;
 }
 
-div.product table.variations td, div.product table.variations th {
+div.product table.variations td,
+.product table.variations th {
     display: list-item;
     padding: 0;
     background-color: transparent;
     list-style: none;
+}
+
+div.product table.variations .label {
+    display: block;
+    margin-bottom: 6px;
+    color: #222;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 div.product table.variations .value {

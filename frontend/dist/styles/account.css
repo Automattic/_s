@@ -766,6 +766,99 @@
   float: right;
 }
 
+table.my_account_orders .button {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 400;
+  display: inline-block;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 1.2em;
+  background-color: #f3f3f3;
+  border-width: 1px;
+  border-color: #ddd;
+  color: #333;
+  padding: 0 .8em;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 2px;
+}
+
+table.my_account_orders .button:hover {
+  background-color: #ebebeb;
+}
+
+table.my_account_orders .button:active {
+  background-color: #e4e4e4;
+}
+
+table.my_account_orders .button:hover {
+  border-color: #dadada;
+}
+
+table.my_account_orders .button:active {
+  border-color: #d3d3d3;
+}
+
+table.my_account_orders .order-actions {
+  text-align: right;
+}
+
+table.my_account_orders .order-actions .button {
+  margin: 0.125em 0 0.125em 0.25em;
+}
+
+.woocommerce-orders-table__header {
+  font-size: 0.875rem;
+  padding: 10px 0 10px 30px !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-weight: 500;
+  --text-opacity: 1;
+  color: #616161;
+  color: rgba(97, 97, 97, var(--text-opacity));
+  --bg-opacity: 1;
+  background-color: #eee;
+  background-color: rgba(238, 238, 238, var(--bg-opacity));
+}
+
+.woocommerce-orders-table__header:last-child {
+  text-align: right;
+  padding-right: 16px !important;
+}
+
+.woocommerce-orders-table__row {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #eee;
+  border-color: rgba(238, 238, 238, var(--border-opacity));
+}
+
+.woocommerce-orders-table__cell {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: left;
+  font-weight: 500;
+  padding: 20px 0 20px 30px;
+  color: #354052;
+}
+
 .woocommerce-MyAccount-navigation {
   width: 20%;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -1198,4 +1291,60 @@ ul.order_details li strong {
 
 .wc-bacs-bank-details-account-name {
   font-weight: bold;
+}
+
+.lost_reset_password .button,
+.woocommerce-form-register__submit,
+.woocommerce-form-login__submit {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 400;
+  display: inline-block;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 1.2em;
+  background-color: #004178;
+  color: #fff;
+}
+
+.lost_reset_password .button:hover,
+  .woocommerce-form-register__submit:hover,
+  .woocommerce-form-login__submit:hover {
+  background-color: #003969;
+}
+
+.lost_reset_password .button:active,
+  .woocommerce-form-register__submit:active,
+  .woocommerce-form-login__submit:active {
+  background-color: #003059;
+}
+
+.woocommerce-privacy-policy-text {
+  --text-opacity: 1;
+  color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
+  margin-bottom: 1rem;
+  font-size: 13px;
+}
+
+#customer_login p {
+  margin-bottom: 0.75rem;
+}
+
+#customer_login a {
+  text-decoration: underline;
 }

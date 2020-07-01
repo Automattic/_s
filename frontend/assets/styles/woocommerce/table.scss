@@ -53,27 +53,6 @@ table.shop_table_responsive {
     }
 }
 
-table.my_account_orders {
-    .button {
-        @include button-base;
-        @include button-bg(#e3e3e3, #ddd, #ccc);
-        color: #333;
-        padding: 0 .8em;
-        height: 32px;
-        line-height: 32px;
-        border-radius: 2px;
-    }
-
-    .order-actions {
-        @apply text-right;
-
-        .button {
-            margin: 0.125em 0 0.125em 0.25em;
-        }
-    }
-}
-
-
 .shop_table {
     tr td:last-of-type {
         @apply text-right;
@@ -98,105 +77,6 @@ table.my_account_orders {
         @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
     }
 }
-
-// 购物车产品表
-.woocommerce-cart-form__contents {
-    .product-thumbnail {
-        min-width: 32px;
-    }
-
-    img {
-        @apply w-8 shadow-none;
-    }
-
-    th {
-        @apply text-gray-600 text-left;
-    }
-
-    th,
-    td {
-        @apply align-middle;
-    }
-
-    td.actions {
-        .coupon {
-            @apply flex;
-
-            .input-text {
-                @apply leading-normal outline-none text-sm border border-secondary;
-                width: 120px !important;
-                padding: 6px 6px 5px;
-                margin: 0 -1px 0 0;
-            }
-        }
-    }
-
-    input {
-        @apply m-0 align-middle;
-    }
-}
-
-// 结账审核订单表
-.woocommerce-checkout-review-order-table {
-    @apply text-base w-full border-collapse;
-    @media screen and (max-width: $phone) {
-        &:not(.woocommerce-table--order-details) {
-            @apply border-0;
-        }
-    }
-
-    tr td:last-of-type {
-        @apply text-right;
-    }
-
-    th {
-        @apply font-normal border-t text-left py-2;
-    }
-
-    td {
-        @apply font-normal text-left py-3;
-        @apply border-b border-gray-300 align-middle;
-
-        small {
-            font-weight: normal;
-        }
-    }
-
-    thead th,
-    thead td,
-    tfoot th,
-    tfoot td {
-        @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
-    }
-
-    .shop_table td {
-        @apply py-2 px-4;
-    }
-}
-
-// 所有订单表格
-.woocommerce-orders-table {
-    &__header {
-        @apply text-sm;
-        padding: 10px 0 10px 30px !important;
-        @apply px-4 font-medium text-gray-700 bg-gray-200;
-        &:last-child {
-            @apply text-right;
-            padding-right: 16px !important;
-        }
-    }
-
-    &__row {
-        @apply border-t border-b border-gray-200;
-    }
-
-    &__cell {
-        @apply text-sm whitespace-no-wrap align-middle text-left font-medium;
-        padding: 20px 0 20px 30px;
-        color: #354052;
-    }
-}
-
 
 .cart-collaterals {
     table {

@@ -3,6 +3,10 @@ button,
     &:focus{
         outline: none;
     }
+
+    &[disabled]{
+        opacity: .68;
+    }
 }
 
 .rs-button {

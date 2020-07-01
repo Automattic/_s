@@ -325,6 +325,24 @@ function shoptimizer_loop_product_content_header_close() {
     echo '</div>';
 }
 
+add_action( 'woocommerce_before_single_product_summary', 'shoptimizer_product_content_wrapper_start', 5 );
+add_action( 'woocommerce_single_product_summary', 'shoptimizer_product_content_wrapper_end', 60 );
+
+
+/**
+ * Single Product Page - Add a section wrapper start.
+ */
+function shoptimizer_product_content_wrapper_start() {
+    echo '<div class="product-details-wrapper">';
+}
+
+/**
+ * Single Product Page - Add a section wrapper end.
+ */
+function shoptimizer_product_content_wrapper_end() {
+    echo '</div><!--/product-details-wrapper end-->';
+}
+
 /**
  * Within Product Loop - remove title hook and create a new one with the category displayed above it.
  */

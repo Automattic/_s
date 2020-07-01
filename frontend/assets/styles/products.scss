@@ -4,6 +4,7 @@
 @import "woocommerce/mixins";
 @import "woocommerce/variables";
 @import "woocommerce/gallery";
+@import "woocommerce/tabs";
 
 .woocommerce {
 
@@ -170,12 +171,13 @@
             }
         }
 
-        p.stock {
-            font-size: 0.92em;
+        .stock {
+            color: $success;
         }
 
-        .stock {
-            color: $highlight;
+        p.stock {
+            font-size: 0.92em;
+            @apply mb-2;
         }
 
         .out-of-stock {
@@ -223,6 +225,33 @@
         }
     }
 
+}
+
+// 商品页面购物车
+form.cart {
+    @apply flex my-8;
+    @include clearfix;
+
+    div.quantity {
+        @apply float-left mr-1;
+    }
+
+    .woocommerce-variation-description p {
+        margin-bottom: 1em;
+    }
+
+    .reset_variations {
+        visibility: hidden;
+        font-size: 0.83em;
+    }
+
+    .wc-no-matching-variations {
+        @apply hidden;
+    }
+
+    .button {
+        @apply float-left align-middle;
+    }
 }
 
 .product-category,
@@ -416,3 +445,30 @@ ul.products li.product-type-grouped .price .amount, ul.products li.product-type-
     appearance: none;
     -webkit-font-smoothing: inherit;
 }
+
+//.single-product{
+//    background: #f3f3f3;
+//    .site__content{
+//        max-width: initial;
+//    }
+//
+//    .product-details-wrapper{
+//        max-width: 1220px;
+//        margin: 0 auto;
+//        padding: 32px 0;
+//        @include clearfix;
+//    }
+//
+//    .woocommerce-tabs{
+//        .panel{
+//            max-width: 1220px;
+//            margin: 0 auto;
+//        }
+//    }
+//
+//    .related.products{
+//        max-width: 1220px;
+//        background: #fff;
+//        margin: 0 auto;
+//    }
+//}

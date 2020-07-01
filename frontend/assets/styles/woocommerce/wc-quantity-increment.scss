@@ -1,13 +1,5 @@
-// Variables
-$primary: #e53238; // Primary colour for buttons (alt)
-$primarytext: desaturate(lighten($primary, 50%), 18%); // Text on primary colour bg
-
-$secondary: desaturate(lighten($primary, 40%), 21%); // Secondary buttons
-$secondarytext: desaturate(darken($secondary, 60%), 21%); // Text on secondary colour bg
-
-
 body.woocommerce-page .quantity .minus, body.woocommerce-page .quantity .plus {
-    height: 29px;
+    height: 27px;
     border-color: #ccc;
     background: #fff
 }

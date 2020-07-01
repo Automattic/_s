@@ -95238,6 +95238,11 @@ button:focus,
   outline: none;
 }
 
+button[disabled],
+.button[disabled] {
+  opacity: .68;
+}
+
 .rs-button {
   position: relative;
   --bg-opacity: 1;
