@@ -313,69 +313,75 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
     }
 }
 
-add_action( 'woocommerce_shop_loop_item_title', '_s_loop_product_content_header_open', 5 );
+add_action('woocommerce_shop_loop_item_title', '_s_loop_product_content_header_open', 5);
 
-function _s_loop_product_content_header_open() {
+function _s_loop_product_content_header_open()
+{
     echo '<div class="woocommerce-card__header">';
 }
 
-add_action( 'woocommerce_after_shop_loop_item', '_s_loop_product_content_header_close', 60 );
+add_action('woocommerce_after_shop_loop_item', '_s_loop_product_content_header_close', 60);
 
-function _s_loop_product_content_header_close() {
+function _s_loop_product_content_header_close()
+{
     echo '</div>';
 }
 
-add_action( 'woocommerce_before_single_product_summary', '_s_product_content_wrapper_start', 5 );
-add_action( 'woocommerce_single_product_summary', '_s_product_content_wrapper_end', 60 );
+add_action('woocommerce_before_single_product_summary', '_s_product_content_wrapper_start', 5);
+add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end', 60);
 
 
 /**
  * Single Product Page - Add a section wrapper start.
  */
-function _s_product_content_wrapper_start() {
+function _s_product_content_wrapper_start()
+{
     echo '<div class="product-details-wrapper">';
 }
 
 /**
  * Single Product Page - Add a section wrapper end.
  */
-function _s_product_content_wrapper_end() {
+function _s_product_content_wrapper_end()
+{
     echo '</div><!--/product-details-wrapper end-->';
 }
 
 /**
  * Within Product Loop - remove title hook and create a new one with the category displayed above it.
  */
-remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10 );
-add_action( 'woocommerce_shop_loop_item_title', '_s_loop_product_title', 10 );
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
 
-function _s_loop_product_title() {
+add_action('woocommerce_shop_loop_item_title', '_s_loop_product_title', 10);
+
+function _s_loop_product_title()
+{
 
     global $post;
 
-    $shoptimizer_layout_woocommerce_display_category = get_option( '_s_layout_woocommerce_display_category' );
-    $shoptimizer_layout_woocommerce_display_category = true;
+    $woocommerce_display_category = true;
     ?>
-    <?php if ( true === $shoptimizer_layout_woocommerce_display_category ) { ?>
-        <?php echo '<p class="product__categories">' . wc_get_product_category_list( get_the_id(), ', ', '', '' ) . '</p>'; ?>
-    <?php } ?>
+    <?php if (true === $woocommerce_display_category) { ?>
+    <?php echo '<p class="product__categories">' . wc_get_product_category_list(get_the_id(), ', ', '', '') . '</p>'; ?>
+<?php } ?>
     <?php
     echo '<div class="woocommerce-loop-product__title"><a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">' . get_the_title() . '</a></div>';
 }
 
 
-add_action( '_s_before_site', '_s_header_cart_drawer', 5 );
-if ( ! function_exists( '_s_header_cart_drawer' ) ) {
+add_action('_s_before_site', '_s_header_cart_drawer', 5);
+if ( ! function_exists('_s_header_cart_drawer')) {
     /**
      * Display Header Cart Drawer
      *
-     * @since  1.0.0
-     * @uses  shoptimizer_is_woocommerce_activated() check if WooCommerce is activated
      * @return void
+     * @uses   shoptimizer_is_woocommerce_activated() check if WooCommerce is activated
+     * @since  1.0.0
      */
-    function _s_header_cart_drawer() {
-        if ( function_exists('is_woocommerce') ) {
-            if ( is_cart() ) {
+    function _s_header_cart_drawer()
+    {
+        if (function_exists('is_woocommerce')) {
+            if (is_cart()) {
                 $class = 'current-menu-item';
             } else {
                 $class = '';
@@ -395,11 +401,11 @@ if ( ! function_exists( '_s_header_cart_drawer' ) ) {
 
                 <div class="close-drawer"></div>
 
-                <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+                <?php the_widget('WC_Widget_Cart', 'title='); ?>
             </div>
             <?php
 
-            $shoptimizer_cart_drawer_js  = '';
+            $shoptimizer_cart_drawer_js = '';
             $shoptimizer_cart_drawer_js .= "
 				( function ( $ ) {
 
@@ -433,28 +439,30 @@ if ( ! function_exists( '_s_header_cart_drawer' ) ) {
 				}( jQuery ) );
 				";
 
-            wp_add_inline_script( '_s-main', $shoptimizer_cart_drawer_js );
+            wp_add_inline_script('_s-main', $shoptimizer_cart_drawer_js);
         }
     }
 }
 
-
-if ( ! function_exists( '_s_pdp_ajax_atc' ) ) {
+add_action('wp_ajax_shoptimizer_pdp_ajax_atc', '_s_pdp_ajax_atc');
+add_action('wp_ajax_nopriv_shoptimizer_pdp_ajax_atc', '_s_pdp_ajax_atc');
+if ( ! function_exists('_s_pdp_ajax_atc')) {
     /**
      * PDP/Single product ajax add to cart.
      */
-    function _s_pdp_ajax_atc() {
+    function _s_pdp_ajax_atc()
+    {
         $sku        = '';
         $product_id = '';
 
-        if ( isset( $_POST['variation_id'] ) ) {
-            $sku = $_POST['variation_id'];
+        if (isset($_POST[ 'variation_id' ])) {
+            $sku = $_POST[ 'variation_id' ];
         }
-        if ( isset( $_POST['add-to-cart'] ) ) {
-            $product_id = $_POST['add-to-cart'];
+        if (isset($_POST[ 'add-to-cart' ])) {
+            $product_id = $_POST[ 'add-to-cart' ];
         }
 
-        if ( ! isset( $sku ) ) {
+        if ( ! isset($sku)) {
             $sku = $product_id;
         }
         ob_start();
@@ -463,53 +471,43 @@ if ( ! function_exists( '_s_pdp_ajax_atc' ) ) {
         ob_start();
         woocommerce_mini_cart();
         $shoptimizer_mini_cart = ob_get_clean();
-        $shoptimizer_atc_data  = array(
+        $shoptimizer_atc_data  = [
             'notices'   => $notices,
             'fragments' => apply_filters(
                 'woocommerce_add_to_cart_fragments',
-                array(
+                [
                     'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $shoptimizer_mini_cart . '</div>',
-                )
+                ]
             ),
-            'cart_hash' => apply_filters( 'woocommerce_add_to_cart_hash', WC()->cart->get_cart_for_session() ? md5( json_encode( WC()->cart->get_cart_for_session() ) ) : '', WC()->cart->get_cart_for_session() ),
-        );
-        wp_send_json( $shoptimizer_atc_data );
+            'cart_hash' => apply_filters('woocommerce_add_to_cart_hash', WC()->cart->get_cart_for_session() ? md5(json_encode(WC()->cart->get_cart_for_session())) : '', WC()->cart->get_cart_for_session()),
+        ];
+        wp_send_json($shoptimizer_atc_data);
         die();
     }
 }
 
 
-$shoptimizer_layout_woocommerce_single_product_ajax = true;
-if ( true === $shoptimizer_layout_woocommerce_single_product_ajax ) {
-    add_action( 'wp_ajax_shoptimizer_pdp_ajax_atc', '_s_pdp_ajax_atc' );
-    add_action( 'wp_ajax_nopriv_shoptimizer_pdp_ajax_atc', '_s_pdp_ajax_atc' );
-}
-
-if ( ! function_exists( '_s_pdp_ajax_atc_enqueue' ) ) {
+add_action('wp_enqueue_scripts', '_s_pdp_ajax_atc_enqueue');
+if ( ! function_exists('_s_pdp_ajax_atc_enqueue')) {
     /**
      * Enqueue assets for PDP/Single product ajax add to cart.
      */
-    function _s_pdp_ajax_atc_enqueue() {
-        if ( is_product() ) {
+    function _s_pdp_ajax_atc_enqueue()
+    {
+        if (is_product()) {
             wp_enqueue_script(
                 'shoptimizer-ajax-script',
                 get_template_directory_uri() . '/frontend/dist/scripts/product.js',
-                array( 'jquery' )
+                ['jquery']
             );
             wp_localize_script(
                 'shoptimizer-ajax-script',
                 '_s_ajax_obj',
-                array(
-                    'ajaxurl' => admin_url( 'admin-ajax.php' ),
-                    'nonce'   => wp_create_nonce( 'ajax-nonce' ),
-                )
+                [
+                    'ajaxurl' => admin_url('admin-ajax.php'),
+                    'nonce'   => wp_create_nonce('ajax-nonce'),
+                ]
             );
         }
     }
-}
-
-$shoptimizer_layout_woocommerce_single_product_ajax = true;
-
-if ( true === $shoptimizer_layout_woocommerce_single_product_ajax ) {
-    add_action( 'wp_enqueue_scripts', '_s_pdp_ajax_atc_enqueue' );
 }
