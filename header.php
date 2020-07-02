@@ -26,6 +26,11 @@
         <?php esc_html_e('Skip to content', '_s'); ?>
     </a>
 
+    <?php
+    do_action('_s_before_site');
+    do_action('_s_before_header');
+    ?>
+
     <header id="masthead" class="site__header">
         <div class="container">
             <div class="site__branding">
@@ -48,6 +53,20 @@
                 ]);
                 ?>
             </nav>
+
+            <ul class="site-header-cart menu">
+                <li>
+                    <div class="cart-click">
+                        <a class="cart-contents" href="#" title="View your shopping cart">
+                            <span class="amount"><span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">$</span>551.82</span>
+                            </span>
+
+                            <span class="count">18</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
 
         </div>
     </header>

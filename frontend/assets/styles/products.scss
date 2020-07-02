@@ -14,12 +14,9 @@
     ul.products {
         clear: both;
         @include clearfix();
-        @apply mt-12;
+        @apply mt-12 p-0 flex flex-wrap;
         min-width: 100%;
-        padding: 0;
         list-style: none outside;
-        display: flex;
-        flex-wrap: wrap;
         width: calc(100% + 30px);
         margin-left: -15px;
 
@@ -28,44 +25,39 @@
         }
 
         li.product:not(.product-category) {
-            flex-wrap: wrap;
-            align-items: flex-start;
+            @apply flex-wrap items-start;
             padding-bottom: 40px;
             transition: all .2s;
         }
 
         li.product {
-            @apply bg-white p-4 relative p-0;
-            width: 50%;
+            @apply bg-white p-4 relative p-0 w-1/2 text-left;
             padding-right: 15px;
             padding-left: 15px;
-            text-align: left;
 
             @screen lg{
-                width: 25%;
+                @apply w-1/4;
             }
 
             h3 {
-                //padding: 0.5em 0
                 margin: 0 0 0.5rem;
                 font-size: 1em;
             }
 
             a {
-                text-decoration: none;
+                @apply relative no-underline;
+            }
+
+            img{
+                transition: all .2s ease-in-out;
             }
 
             a img {
-                width: 100%;
-                height: auto;
-                display: block;
-
-                //margin: 0 0 1em
-                box-shadow: none;
+                @apply w-full h-auto block shadow-none;
             }
 
             strong {
-                display: block;
+                @apply block;
             }
 
             .star-rating {
@@ -245,6 +237,10 @@ form.cart {
         margin-bottom: 1em;
     }
 
+    .single_variation_wrap{
+        @apply w-full;
+    }
+
     .reset_variations {
         visibility: hidden;
         font-size: 0.83em;
@@ -296,6 +292,10 @@ form.cart {
         text-transform: uppercase;
         transition: all .2s;
         font-size: 19px;
+
+        &:after{
+            top: 19px;
+        }
     }
 }
 
@@ -314,7 +314,11 @@ form.cart {
 
 
 body ul.products li.product:hover {
-    z-index: 2
+    z-index: 2;
+
+    img{
+        transform: scale(1.02);
+    }
 }
 
 body ul.products li.product:hover:before {
@@ -357,7 +361,7 @@ ul.products li.product:not(.product-category):before {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     content: "";
-    transition: all .2s
+    transition: all .2s;
 }
 
 .main-navigation ul.products li.product:not(.product-category):before {

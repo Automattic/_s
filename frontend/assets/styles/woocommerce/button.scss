@@ -84,11 +84,4 @@
 
 .add_to_cart_button {
     @apply text-gray-600;
-    //@extend .rs-button;
-
-    &:before {
-        @apply mr-1;
-        @extend [class^="wpion-"];
-        content: $wpion-cart-plus1;
-    }
 }

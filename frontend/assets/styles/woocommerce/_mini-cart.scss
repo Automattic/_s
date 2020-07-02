@@ -1,0 +1,95 @@
+//===================================
+// 迷你购物车
+//===================================
+
+.woocommerce-mini-cart {
+    li {
+        @apply p-4 relative;
+
+        & + li {
+            @apply border-t border-gray-200;
+        }
+
+        a {
+            @apply block p-0 leading-normal;
+        }
+
+        .quantity {
+            @apply text-gray-500;
+        }
+    }
+
+    img {
+        max-width: 64px;
+        @apply ml-4;
+    }
+
+    .quantity,
+    .amount {
+        @apply text-sm text-gray-700;
+    }
+
+    .cart-title {
+        @apply mb-2 leading-normal;
+    }
+
+    a.remove_from_cart_button {
+        @apply absolute p-0 leading-normal;
+        font-size: 20px !important;
+        top: 18px;
+        left: -5px;
+        color: #888;
+
+        &:hover{
+            color: #222
+        }
+    }
+
+    &__total {
+        @apply pr-0 text-center border-b border-gray-200 mb-4;
+
+        .amount {
+            @apply text-red-700 font-medium;
+        }
+
+        strong {
+            @apply font-normal inline-block;
+            min-width: 40px;
+        }
+    }
+
+    &__empty-message {
+        @apply text-gray-700 p-4 text-center;
+    }
+
+    &__buttons {
+        @apply justify-center mb-4;
+
+        .button {
+            @apply mb-0;
+        }
+    }
+}
+
+
+.woocommerce-mini-cart__buttons {
+    .button {
+        @apply w-full;
+        @include button-base();
+        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
+        @include button-border(#ddd, #dadada, #d3d3d3);
+
+        &.checkout {
+            @include button-bg(#3bb54a, darken(#3bb54a, 5%), darken(#3bb54a, 8%));
+            @apply mt-3 text-white border-0;
+        }
+    }
+}
+
+.woocommerce-mini-cart__total{
+    @apply py-4 flex justify-between items-center;
+
+    strong{
+        @apply font-bold;
+    }
+}

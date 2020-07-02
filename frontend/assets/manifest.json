@@ -12,6 +12,11 @@
                 "scripts/customizer.js"
             ]
         },
+        "product.js": {
+            "files": [
+                "scripts/product.js"
+            ]
+        },
         "main.css": {
             "files": [
                 "styles/main.scss"

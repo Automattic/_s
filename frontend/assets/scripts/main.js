@@ -16,6 +16,23 @@ jQuery(document).ready(function($) {
         }
     }
 
+    var $loading = $('#ajax-loading').hide();
+
+    $(document).ajaxStart(function() {
+        $loading.show();
+    }).ajaxStop(function() {
+        $loading.hide();
+    });
+
+    // Close mobile menu - click the x icon.
+    $( '.close-drawer' ).on( 'click', function() {
+        $( 'body' ).removeClass( 'mobile-toggled' ).removeClass('drawer-open');
+    } );
+
+    //$( 'body' ).on( 'adding_to_cart', function( event, fragments, cart_hash ) {
+    //    $( 'body' ).toggleClass( 'drawer-open' );
+    //});
+
     //@see https://www.smartmenus.org/docs/
     $('.sm, .product-categories').smartmenus({
         showFunction: function($ul, complete) {
@@ -120,3 +137,5 @@ function shoptimizerWooQuantityButtons( $quantitySelector ) {
         );
     }
 }
+
+
