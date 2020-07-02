@@ -8,12 +8,9 @@
  *
  * @package _s
  */
-
 ?>
 
 <footer id="colophon" class="site__footer">
-
-    <?= do_shortcode('[_s_elemetor_block id=458]') ?>
 
     <?php if (is_active_sidebar('sidebar-footer')): ?>
         <div class="content__footer">
@@ -30,6 +27,7 @@
             Copyright &copy; <?= date('Y'); ?> <a href="<?= home_url(); ?>"><?php bloginfo('name'); ?></a>
         </div>
     </div>
+
 </footer>
 
 </div><!-- #page -->

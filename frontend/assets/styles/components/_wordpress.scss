@@ -65,8 +65,7 @@ img.wp-post-image {
 
     [type="submit"] {
         @include button-bg($primary, darken($primary, 5%), darken($primary, 10%));
-        @apply px-4 whitespace-no-wrap;
-        color: #fff;
+        @apply px-4 whitespace-no-wrap cursor-pointer text-white;
         border-radius: 0 3px 3px 0;
     }
 }

@@ -28,7 +28,7 @@
             $(document.body).trigger('adding_to_cart', [$pdp_atc_elem, data]);
 
             $.ajax({
-                url     : shoptimizer_ajax_obj.ajaxurl,
+                url     : _s_ajax_obj.ajaxurl,
                 data    : data,
                 method  : 'POST',
                 success : function(resp) {

@@ -1,0 +1,30 @@
+.empty {
+    color: #66758c;
+    padding: 3.2rem 1.6rem;
+    @apply mx-auto text-center;
+
+    @screen md{
+        max-width: 750px;
+    }
+}
+
+.empty .empty-icon {
+    margin-bottom: .8rem
+}
+
+.empty .empty-subtitle,
+.empty .empty-title {
+    margin: .4rem auto
+}
+
+.empty .empty-title{
+    font-size: 68px;
+}
+
+.empty .empty-subtitle{
+    @apply mb-8;
+}
+
+.empty .empty-action {
+    margin-top: .8rem
+}

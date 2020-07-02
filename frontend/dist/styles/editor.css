@@ -95416,7 +95416,10 @@ img.wp-post-image {
   padding-left: 1rem;
   padding-right: 1rem;
   white-space: nowrap;
+  cursor: pointer;
+  --text-opacity: 1;
   color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
   border-radius: 0 3px 3px 0;
 }
 
@@ -97069,6 +97072,41 @@ fieldset input[type="text"],
   --text-opacity: 1;
   color: #757575;
   color: rgba(117, 117, 117, var(--text-opacity));
+}
+
+.empty {
+  color: #66758c;
+  padding: 3.2rem 1.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .empty {
+    max-width: 750px;
+  }
+}
+
+.empty .empty-icon {
+  margin-bottom: .8rem;
+}
+
+.empty .empty-subtitle,
+.empty .empty-title {
+  margin: .4rem auto;
+}
+
+.empty .empty-title {
+  font-size: 68px;
+}
+
+.empty .empty-subtitle {
+  margin-bottom: 2rem;
+}
+
+.empty .empty-action {
+  margin-top: .8rem;
 }
 
 .grid {
