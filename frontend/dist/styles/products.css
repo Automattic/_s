@@ -268,7 +268,7 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 .woocommerce ul.products {
   clear: both;
   zoom: 1;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -637,6 +637,10 @@ form.cart .button {
   top: 19px;
 }
 
+.woocommerce .cart button.single_add_to_cart_button.disabled {
+  opacity: .65;
+}
+
 .product .cart .quantity .input-text {
   width: 50px;
   height: 58px;
@@ -808,4 +812,17 @@ ul.products li.product-type-grouped .price .amount, ul.products li.product-type-
      -moz-appearance: none;
           appearance: none;
   -webkit-font-smoothing: inherit;
+}
+
+.rs-wc-sorting {
+  zoom: 1;
+}
+
+.rs-wc-sorting::before, .rs-wc-sorting::after {
+  content: " ";
+  display: table;
+}
+
+.rs-wc-sorting::after {
+  clear: both;
 }

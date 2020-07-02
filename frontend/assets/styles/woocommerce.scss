@@ -77,7 +77,7 @@
     }
 
     a.remove {
-        @apply mr-4 text-center leading-none rounded-full font-medium border-0;
+        @apply mr-4 text-center leading-none rounded-full font-medium border-0 text-gray-500;
         font-size: 1.5em;
         height: 1em;
         width: 1em;
@@ -85,6 +85,10 @@
         // Required for default theme compatibility
         text-decoration: none;
         font-family: monospace;
+
+        &:hover{
+            @apply text-gray-700;
+        }
 
         @screen md {
             @apply block mx-auto;

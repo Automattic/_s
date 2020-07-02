@@ -14,7 +14,7 @@
     ul.products {
         clear: both;
         @include clearfix();
-        @apply mt-12 p-0 flex flex-wrap;
+        @apply mt-6 p-0 flex flex-wrap;
         min-width: 100%;
         list-style: none outside;
         width: calc(100% + 30px);
@@ -296,6 +296,10 @@ form.cart {
         &:after{
             top: 19px;
         }
+
+        &.disabled{
+            opacity: .65;
+        }
     }
 }
 
@@ -456,6 +460,10 @@ ul.products li.product-type-grouped .price .amount, ul.products li.product-type-
     text-overflow: "";
     appearance: none;
     -webkit-font-smoothing: inherit;
+}
+
+.rs-wc-sorting{
+    @include clearfix;
 }
 
 //.single-product{
