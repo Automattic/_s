@@ -96154,7 +96154,7 @@ ul.blocks-gallery-grid {
   }
 
   .sm-menu a.highlighted {
-    background: #f6ffed;
+    background: #F7FAFC;
     color: #333;
     -webkit-box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
@@ -96209,7 +96209,7 @@ ul.blocks-gallery-grid {
   .sm-menu ul {
     border: 0;
     padding: 8px 0;
-    background: #f6ffed;
+    background: #F7FAFC;
     border-radius: 0 0 0 0;
     -webkit-box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
             box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
@@ -96267,7 +96267,7 @@ ul.blocks-gallery-grid {
     display: none;
     visibility: hidden;
     overflow: hidden;
-    background: #f6ffed;
+    background: #F7FAFC;
     height: 20px;
   }
 

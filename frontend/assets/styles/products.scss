@@ -36,10 +36,14 @@
 
         li.product {
             @apply bg-white p-4 relative p-0;
-            width: 25%;
+            width: 50%;
             padding-right: 15px;
             padding-left: 15px;
             text-align: left;
+
+            @screen lg{
+                width: 25%;
+            }
 
             h3 {
                 //padding: 0.5em 0
@@ -126,19 +130,25 @@
 
         &.columns-3 {
             li.product {
-                width: 33.3333%;
+                @screen lg{
+                    width: 33.3333%;
+                }
             }
         }
 
         &.columns-5 {
             li.product {
-                width: 20%;
+                @screen lg{
+                    width: 20%;
+                }
             }
         }
 
         &.columns-6 {
             li.product {
-                width: 13.6666%;
+                @screen lg{
+                    width: 13.6666%;
+                }
             }
         }
     }
@@ -185,14 +195,9 @@
         }
 
         div.summary {
-            @apply pt-6;
-            @screen md {
-                @apply pl-10 pt-0;
-            }
-
             @screen lg {
                 width: 52%;
-                @apply float-right;
+                @apply pl-10 float-right;
             }
         }
 
@@ -327,14 +332,17 @@ body ul.products li.product .button {
     height: 40px;
     padding: 0;
     border-radius: 2px;
-    opacity: 0;
     color: #fff;
     background: #3bb54a;
     font-size: 14px;
     font-weight: 700;
     line-height: 40px;
     text-align: center;
-    transition: all .1s
+    transition: all .1s;
+
+    @screen lg{
+        opacity: 0;
+    }
 }
 
 ul.products li.product:not(.product-category):before {
