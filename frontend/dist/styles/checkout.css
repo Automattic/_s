@@ -52,6 +52,7 @@
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 1rem;
 }
 
 .select2-container .select2-selection--single .select2-selection__clear {
@@ -218,7 +219,6 @@
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  color: #444;
   border-color: #dbdbdb;
   height: 42px;
   line-height: 42px;
@@ -482,7 +482,6 @@
 }
 
 .select2-container--classic .select2-selection--single .select2-selection__rendered {
-  color: #444;
   line-height: 2.25em;
 }
 

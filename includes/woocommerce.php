@@ -25,6 +25,10 @@ function _s_woocommerce_setup()
 
 add_action('after_setup_theme', '_s_woocommerce_setup');
 
+add_action( 'wp_print_styles', function () {
+	wp_deregister_style( 'select2' );
+} );
+
 /**
  * WooCommerce specific scripts & stylesheets.
  *
