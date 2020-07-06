@@ -451,9 +451,7 @@ table.shop_attributes tr:nth-child(even) td,
 }
 
 .shop_table thead th,
-.shop_table thead td,
-.shop_table tfoot th,
-.shop_table tfoot td {
+.shop_table thead td {
   border-top-width: 0;
   border-bottom-width: 4px;
   --border-opacity: 1;
@@ -461,6 +459,29 @@ table.shop_attributes tr:nth-child(even) td,
   border-color: rgba(224, 224, 224, var(--border-opacity));
   font-weight: 400;
   padding: 0.25rem;
+}
+
+.shop_table tfoot {
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
+}
+
+.shop_table tfoot th, .shop_table tfoot td {
+  border-top-width: 0;
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
+  font-weight: 400;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  --bg-opacity: 1;
+  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, var(--bg-opacity));
 }
 
 .cart-collaterals table {

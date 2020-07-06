@@ -71,10 +71,15 @@ table.shop_table_responsive {
     }
 
     thead th,
-    thead td,
-    tfoot th,
-    tfoot td {
+    thead td {
         @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
+    }
+
+    tfoot {
+        @apply border border-gray-300;
+        th, td {
+            @apply border-t-0 border-b border-gray-300 font-normal py-2 px-3 bg-gray-100;
+        }
     }
 }
 
