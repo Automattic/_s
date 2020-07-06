@@ -1011,6 +1011,7 @@ table.my_account_orders .order-actions .button {
 .woocommerce-order-downloads,
 .woocommerce-customer-details,
 .woocommerce-order-details {
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -1284,8 +1285,16 @@ ul.order_details li strong {
   margin-left: 0.5rem;
 }
 
+.woocommerce-bacs-bank-details {
+  margin-top: 2em;
+}
+
+.wc-bacs-bank-details-heading {
+  margin-bottom: 0.75rem;
+}
+
 .wc-bacs-bank-details-account-name {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .lost_reset_password .button,

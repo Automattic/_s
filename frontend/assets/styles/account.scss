@@ -193,6 +193,7 @@ table.my_account_orders {
 .woocommerce-order-downloads,
 .woocommerce-customer-details,
 .woocommerce-order-details {
+    margin-top: 2em;
     margin-bottom: 2em;
 
     *:last-child {
@@ -393,9 +394,16 @@ ul.order_details {
     }
 }
 
+.woocommerce-bacs-bank-details{
+    margin-top: 2em;
+}
+
+.wc-bacs-bank-details-heading{
+    @apply mb-3;
+}
 
 .wc-bacs-bank-details-account-name {
-    font-weight: bold;
+    @apply font-bold;
 }
 
 
