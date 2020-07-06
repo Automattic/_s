@@ -97109,6 +97109,81 @@ fieldset input[type="text"],
   margin-top: .8rem;
 }
 
+ul.wpuf-form li {
+  margin-bottom: 0 !important;
+}
+
+ul.wpuf-form li .wpuf-fields .wpuf-name-field-wrap {
+  margin-bottom: 0 !important;
+}
+
+ul.wpuf-form li .wp-editor-wrap {
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.wpuf-fields input,
+.wpuf-fields textarea {
+  width: 100%;
+}
+
+.wpuf-fields .wp-editor-container {
+  border: 0 !important;
+}
+
+.wpuf-fields .mce-toolbar-grp {
+  border-bottom: 0;
+}
+
+.wpuf-fields .mce-edit-area {
+  border-right: 1px solid #eee !important;
+}
+
+.wpuf-fields .mce-top-part {
+  border-bottom: 1px solid #eee;
+}
+
+.wpuf-fields .mce-top-part::before {
+  content: none;
+}
+
+.wpuf-submit-button,
+.weforms_submit_btn {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 400;
+  display: inline-block;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 1.2em;
+  background-color: #004178;
+  color: #fff;
+}
+
+.wpuf-submit-button:hover,
+  .weforms_submit_btn:hover {
+  background-color: #003969;
+}
+
+.wpuf-submit-button:active,
+  .weforms_submit_btn:active {
+  background-color: #002b4f;
+}
+
 .grid {
   display: -webkit-box;
   display: -ms-flexbox;

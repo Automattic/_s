@@ -1,0 +1,47 @@
+ul.wpuf-form {
+    li {
+        margin-bottom: 0 !important;
+
+        .wpuf-fields .wpuf-name-field-wrap {
+            margin-bottom: 0 !important;
+        }
+
+        .wp-editor-wrap{
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+
+.wpuf-fields {
+    input,
+    textarea {
+        @apply w-full;
+    }
+
+    .wp-editor-container {
+        border: 0 !important;
+    }
+
+    .mce-toolbar-grp {
+        border-bottom: 0;
+    }
+
+    .mce-edit-area {
+        border-right: 1px solid #eee !important;
+    }
+
+    .mce-top-part {
+        border-bottom: 1px solid #eee;
+
+        &::before {
+            content: none;
+        }
+    }
+}
+
+.wpuf-submit-button,
+.weforms_submit_btn {
+    @include button-base();
+    @include button-bg($primary, darken($primary, 3%), darken($primary, 8%));
+    color: #fff;
+}
