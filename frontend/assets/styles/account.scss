@@ -144,7 +144,7 @@ table.my_account_orders {
         width: 78%;
         min-height: 448px;
         @apply bg-white p-8 shadow border-t-4 border-gray-400;
-        @screen md{
+        @screen md {
             @apply float-right;
         }
 
@@ -187,7 +187,6 @@ table.my_account_orders {
         }
     }
 }
-
 
 
 .woocommerce-order-downloads,
@@ -309,11 +308,11 @@ table.my_account_orders {
         }
     }
 
-    @screen md{
+    @screen md {
         @apply p-6;
     }
 
-    @screen lg{
+    @screen lg {
         @apply p-8;
     }
 }
@@ -394,11 +393,11 @@ ul.order_details {
     }
 }
 
-.woocommerce-bacs-bank-details{
+.woocommerce-bacs-bank-details {
     margin-top: 2em;
 }
 
-.wc-bacs-bank-details-heading{
+.wc-bacs-bank-details-heading {
     @apply mb-3;
 }
 
@@ -409,7 +408,7 @@ ul.order_details {
 
 .lost_reset_password .button,
 .woocommerce-form-register__submit,
-.woocommerce-form-login__submit{
+.woocommerce-form-login__submit {
     @include button-base;
     @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
     color: #fff;
@@ -421,12 +420,77 @@ ul.order_details {
     font-size: 13px;
 }
 
-#customer_login{
-    p{
+#customer_login {
+    p {
         @apply mb-3;
     }
 
-    a{
+    a {
         @apply underline;
+    }
+}
+
+.woocommerce-MyAccount-navigation-link {
+    display: flex;
+    align-items: center;
+
+    a {
+        order: 2;
+        flex-grow: 1;
+    }
+
+    &:after {
+        @apply text-gray-500;
+        order: 1;
+    }
+
+    &.is-active {
+        &:after {
+            color: $primary;
+        }
+    }
+}
+
+.woocommerce-MyAccount-navigation-link {
+    &--dashboard {
+        &:after {
+            content: '\e06a';
+            font-family: icomoon, sans-serif;
+        }
+    }
+
+    &--orders {
+        &:after {
+            content: '\e601';
+            font-family: icomoon, sans-serif;
+        }
+    }
+
+    &--downloads {
+        &:after {
+            content: '\e083';
+            font-family: icomoon, sans-serif;
+        }
+    }
+
+    &--edit-address {
+        &:after {
+            content: '\e033';
+            font-family: icomoon, sans-serif;
+        }
+    }
+
+    &--edit-account {
+        &:after {
+            content: '\e005';
+            font-family: icomoon, sans-serif;
+        }
+    }
+
+    &--customer-logout {
+        &:after {
+            content: '\e065';
+            font-family: icomoon, sans-serif;
+        }
     }
 }

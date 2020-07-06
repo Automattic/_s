@@ -25,9 +25,10 @@ function _s_woocommerce_setup()
 
 add_action('after_setup_theme', '_s_woocommerce_setup');
 
-add_action( 'wp_print_styles', function () {
-	wp_deregister_style( 'select2' );
-} );
+add_action('wp_print_styles', function ()
+{
+    wp_deregister_style('select2');
+});
 
 /**
  * WooCommerce specific scripts & stylesheets.
@@ -227,17 +228,6 @@ if ( ! function_exists('_s_woocommerce_wrapper_after')) {
 }
 add_action('woocommerce_after_main_content', '_s_woocommerce_wrapper_after');
 
-/**
- * Sample implementation of the WooCommerce Mini Cart.
- *
- * You can add the WooCommerce Mini Cart to header.php like so ...
- *
- * <?php
- * if ( function_exists( '_s_woocommerce_header_cart' ) ) {
- * _s_woocommerce_header_cart();
- * }
- * ?>
- */
 
 if ( ! function_exists('_s_woocommerce_cart_link_fragment')) {
     /**
@@ -275,11 +265,12 @@ if ( ! function_exists('_s_woocommerce_cart_link')) {
             <?php
             $item_count_text = sprintf(
             /* translators: number of items in the mini cart. */
-                _n('%d item', '%d items', WC()->cart->get_cart_contents_count(), '_s'),
+                _n('%d', '%d', WC()->cart->get_cart_contents_count(), '_s'),
                 WC()->cart->get_cart_contents_count()
             );
             ?>
-            <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> <span class="count"><?php echo esc_html($item_count_text); ?></span>
+            <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span>
+            <span class="count"><?php echo esc_html($item_count_text); ?></span>
         </a>
         <?php
     }
@@ -516,31 +507,33 @@ if ( ! function_exists('_s_pdp_ajax_atc_enqueue')) {
     }
 }
 
-add_action( 'woocommerce_before_shop_loop', '_s_sorting_wrapper', 9 );
-add_action( 'woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31 );
+add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper', 9);
+add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31);
 
 
-if ( ! function_exists( '_s_sorting_wrapper' ) ) {
+if ( ! function_exists('_s_sorting_wrapper')) {
     /**
      * Sorting wrapper
      *
-     * @since   1.0.0
      * @return  void
+     * @since   1.0.0
      */
-    function _s_sorting_wrapper() {
+    function _s_sorting_wrapper()
+    {
         echo '<div class="rs-wc-sorting">';
     }
 }
 
 
-if ( ! function_exists( '_s_sorting_wrapper_close' ) ) {
+if ( ! function_exists('_s_sorting_wrapper_close')) {
     /**
      * Sorting wrapper close
      *
-     * @since   1.0.0
      * @return  void
+     * @since   1.0.0
      */
-    function _s_sorting_wrapper_close() {
+    function _s_sorting_wrapper_close()
+    {
         echo '</div>';
     }
 }

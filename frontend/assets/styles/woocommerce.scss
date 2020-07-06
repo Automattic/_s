@@ -44,7 +44,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.woocommerce{
+.woocommerce {
     @apply w-full;
 }
 
@@ -86,7 +86,7 @@
         text-decoration: none;
         font-family: monospace;
 
-        &:hover{
+        &:hover {
             @apply text-gray-700;
         }
 
@@ -283,7 +283,7 @@ body.woocommerce-demo-store .shoptimizer-mini-cart-wrap {
 }
 
 .shoptimizer-mini-cart-wrap div.blockOverlay {
-    background-color: transparent!important
+    background-color: transparent !important
 }
 
 #ajax-loading {
@@ -302,7 +302,7 @@ body.woocommerce-demo-store .shoptimizer-mini-cart-wrap {
     text-align: center
 }
 
-.spinner>div {
+.spinner > div {
     display: inline-block;
     width: 18px;
     height: 18px;
@@ -320,7 +320,7 @@ body.woocommerce-demo-store .shoptimizer-mini-cart-wrap {
 }
 
 @keyframes a {
-    0%,80%,to {
+    0%, 80%, to {
         transform: scale(0)
     }
 
@@ -357,17 +357,17 @@ body.drawer-open {
 
 @media (min-width: 993px) {
     body.drawer-open:before {
-        display:block;
+        display: block;
         position: absolute;
         z-index: 100;
         top: 0;
         left: 0;
         width: 100%;
         height: 1000%;
-        background: rgba(0,0,0,.7);
+        background: rgba(0, 0, 0, .7);
         content: "";
         cursor: pointer;
-        transition: opacity .5s,visibility .5s
+        transition: opacity .5s, visibility .5s
     }
 }
 
@@ -381,11 +381,11 @@ body.drawer-open {
     height: calc((var(--vh, 1vh) * 100) - 245px);
     border-bottom-right-radius: 20px;
     -webkit-overflow-scrolling: touch;
-    box-shadow: inset 0 -15px 15px -15px rgba(0,0,0,.06)
+    box-shadow: inset 0 -15px 15px -15px rgba(0, 0, 0, .06)
 }
 
 .widget_shopping_cart .product_list_widget::-webkit-scrollbar {
-    width: 0!important
+    width: 0 !important
 }
 
 .widget_shopping_cart .product_list_widget {
@@ -439,4 +439,36 @@ body .shoptimizer-mini-cart-wrap .widget_shopping_cart {
 
 .close-drawer::after {
     transform: rotate(-45deg);
+}
+
+.site-header-cart a.cart-contents .count {
+    display: inline-block;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    margin-left: 5px;
+    padding: 3px;
+    border: 1px solid $primary;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: $primary;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.7px;
+
+    &::after {
+        position: absolute;
+        bottom: 90%;
+        left: 50%;
+        width: 10px;
+        height: 6px;
+        margin-bottom: 1px;
+        margin-left: -6px;
+        border: 1px solid $primary;
+        border-bottom: 0;
+        border-top-left-radius: 99px;
+        border-top-right-radius: 99px;
+        content: ""
+    }
 }

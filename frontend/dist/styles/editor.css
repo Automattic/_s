@@ -97041,39 +97041,6 @@ fieldset input[type="text"],
   width: 100%;
 }
 
-.rs-select {
-  display: inline-block;
-  position: relative;
-}
-
-.rs-select select {
-  margin: 0;
-  cursor: pointer;
-  max-width: 100%;
-  outline: 0;
-  line-height: 1.5;
-  vertical-align: top;
-  font-size: 1rem;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  height: 2.5em;
-  padding: calc(.5em - 1px) 2.5em calc(.5em - 1px) calc(.75em - 1px);
-}
-
-.rs-select:after {
-  font-family: 'icomoon', sans-serif;
-  content: "";
-  top: .25em;
-  right: 0.55em;
-  z-index: 4;
-  font-size: 1.25em;
-  position: absolute;
-  --text-opacity: 1;
-  color: #757575;
-  color: rgba(117, 117, 117, var(--text-opacity));
-}
-
 .empty {
   color: #66758c;
   padding: 3.2rem 1.6rem;

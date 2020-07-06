@@ -1104,7 +1104,7 @@ table.cart td.actions button:active,
 
 .cart_item .quantity-button.quantity-down:before,
 .cart_item .quantity-button.quantity-up:before {
-  margin-left: 9px;
+  margin-left: 6px;
 }
 
 .cart_item .quantity-button.quantity-up:before {

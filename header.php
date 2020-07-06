@@ -57,13 +57,7 @@
             <ul class="site-header-cart menu">
                 <li>
                     <div class="cart-click">
-                        <a class="cart-contents" href="#" title="View your shopping cart">
-                            <span class="amount"><span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>551.82</span>
-                            </span>
-
-                            <span class="count">18</span>
-                        </a>
+                        <?php _s_woocommerce_cart_link(); ?>
                     </div>
                 </li>
             </ul>
