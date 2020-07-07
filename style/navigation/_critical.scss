@@ -7,6 +7,10 @@
 		padding: 0;
 		margin: 0;
 
+		li:before {
+			display: none;;
+		}
+
 		li a {
 			color: $color__text-main;
 			text-decoration: none;
