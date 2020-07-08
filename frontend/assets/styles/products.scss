@@ -330,6 +330,12 @@
             @apply mb-8;
             @include clearfix;
         }
+
+        .related.products{
+            h2{
+                @apply text-2xl font-medium;
+            }
+        }
     }
 
 }

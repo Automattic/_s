@@ -169,10 +169,6 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
   background-color: rgba(255, 255, 255, var(--bg-opacity));
 }
 
-.woocommerce-tabs .panel {
-  margin: 0;
-}
-
 .woocommerce-tabs ul.tabs {
   position: relative;
   overflow: hidden;
@@ -634,6 +630,11 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 
 .woocommerce div.product p.cart::after {
   clear: both;
+}
+
+.woocommerce div.product .related.products h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .product-category .c-product__image,

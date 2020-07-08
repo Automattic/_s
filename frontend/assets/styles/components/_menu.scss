@@ -235,6 +235,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
     ul {
         background: $sm-menu__collapsible-sub-bg;
         display: none;
+        z-index: 999;
 
         // Sub menus items
         a {

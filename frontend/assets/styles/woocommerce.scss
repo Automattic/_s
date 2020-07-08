@@ -48,6 +48,12 @@
     @apply w-full;
 }
 
+.post-type-archive .site__shop,
+.tax-product_cat .site__shop,
+.tax-product_tag .site__shop{
+    @apply py-8;
+}
+
 /**
  * Utility classes */
 .clear {
@@ -472,3 +478,4 @@ body .shoptimizer-mini-cart-wrap .widget_shopping_cart {
         content: ""
     }
 }
+

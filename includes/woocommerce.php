@@ -323,7 +323,7 @@ add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end
  */
 function _s_product_content_wrapper_start()
 {
-    echo '<div class="product-details-wrapper">';
+    echo '<div class="product-details-wrapper"><div class="container relative clearfix">';
 }
 
 /**
@@ -331,7 +331,7 @@ function _s_product_content_wrapper_start()
  */
 function _s_product_content_wrapper_end()
 {
-    echo '</div><!--/product-details-wrapper end-->';
+    echo '</div></div><!--/product-details-wrapper end-->';
 }
 
 /**

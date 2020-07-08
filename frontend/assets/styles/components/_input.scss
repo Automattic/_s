@@ -63,7 +63,7 @@ textarea {
 select {
     width: 100%;
     max-width: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
+    background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
     background-size: 30px 30px;
     text-indent: .01px;
     text-overflow: "";
@@ -71,7 +71,7 @@ select {
     padding-right: 3rem;
 
     &:focus{
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23666666" d="M0,0l6,8l6-8"/></svg>')
+        background-image: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23666666" d="M0,0l6,8l6-8"/></svg>')
     }
 }
 

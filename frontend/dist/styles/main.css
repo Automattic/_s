@@ -95655,7 +95655,13 @@ ul.blocks-gallery-grid {
   padding-right: 1.5rem;
 }
 
-.container, .site__content {
+.container, .site__content, .post-type-archive .site__shop,
+.tax-product_cat .site__shop,
+.tax-product_tag .site__shop,
+.single-product .woocommerce-Tabs-panel,
+.single-product .archive-header .woocommerce-breadcrumb,
+.related.products,
+.upsells.products {
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
@@ -95665,14 +95671,26 @@ ul.blocks-gallery-grid {
 }
 
 @media (min-width: 768px) {
-  .container, .site__content {
+  .container, .site__content, .post-type-archive .site__shop,
+  .tax-product_cat .site__shop,
+  .tax-product_tag .site__shop,
+  .single-product .woocommerce-Tabs-panel,
+  .single-product .archive-header .woocommerce-breadcrumb,
+  .related.products,
+  .upsells.products {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media (min-width: 1280px) {
-  .container, .site__content {
+  .container, .site__content, .post-type-archive .site__shop,
+  .tax-product_cat .site__shop,
+  .tax-product_tag .site__shop,
+  .single-product .woocommerce-Tabs-panel,
+  .single-product .archive-header .woocommerce-breadcrumb,
+  .related.products,
+  .upsells.products {
     padding-left: 0;
     padding-right: 0;
     max-width: 1216px;
@@ -95711,7 +95729,13 @@ ul.blocks-gallery-grid {
   height: 64px;
 }
 
-.site__header .container, .site__header .site__content {
+.site__header .container, .site__header .site__content, .site__header .post-type-archive .site__shop, .post-type-archive .site__header .site__shop,
+    .site__header .tax-product_cat .site__shop, .tax-product_cat .site__header .site__shop,
+    .site__header .tax-product_tag .site__shop, .tax-product_tag .site__header .site__shop,
+    .site__header .single-product .woocommerce-Tabs-panel, .single-product .site__header .woocommerce-Tabs-panel,
+    .site__header .single-product .archive-header .woocommerce-breadcrumb, .single-product .archive-header .site__header .woocommerce-breadcrumb,
+    .site__header .related.products,
+    .site__header .upsells.products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96061,6 +96085,7 @@ ul.blocks-gallery-grid {
 .sm-menu ul {
   background: rgba(0, 65, 120, 0.2);
   display: none;
+  z-index: 999;
 }
 
 .sm-menu ul a, .sm-menu ul a:hover, .sm-menu ul a:focus, .sm-menu ul a:active {
@@ -97004,7 +97029,7 @@ textarea {
 select {
   width: 100%;
   max-width: 100%;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
+  background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
   background-size: 30px 30px;
   text-indent: .01px;
   -o-text-overflow: "";
@@ -97016,7 +97041,7 @@ select {
 }
 
 select:focus {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23666666" d="M0,0l6,8l6-8"/></svg>');
+  background-image: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23666666" d="M0,0l6,8l6-8"/></svg>');
 }
 
 label {
@@ -97177,4 +97202,12 @@ ul.wpuf-form li .wp-editor-wrap {
     margin-right: 1rem;
     margin-bottom: 2rem;
   }
+}
+
+.product-details-wrapper {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  --bg-opacity: 1;
+  background-color: #f5f5f5;
+  background-color: rgba(245, 245, 245, var(--bg-opacity));
 }

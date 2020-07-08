@@ -1542,6 +1542,13 @@ div.product table.variations .value {
   width: 100%;
 }
 
+.post-type-archive .site__shop,
+.tax-product_cat .site__shop,
+.tax-product_tag .site__shop {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 /**
  * Utility classes */
 
