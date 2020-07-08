@@ -7,10 +7,17 @@
  * @package _s
  */
 
-add_shortcode('_s_elemetor_block', '_s_render_elemetor_block');
+add_shortcode('_s_elemetor_block', '_s_render_elementor_block');
 
-if ( ! function_exists('_s_render_elemetor_block')) {
-    function _s_render_elemetor_block($atts)
+if ( ! function_exists('_s_render_elementor_block')) {
+    /**
+     * 在任何地方渲染 elementor 模版
+     *
+     * @param $atts
+     *
+     * @return string
+     */
+    function _s_render_elementor_block($atts)
     {
 
         // Enable support for WPML & Polylang
