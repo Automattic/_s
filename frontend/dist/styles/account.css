@@ -864,7 +864,10 @@ table.my_account_orders .order-actions .button {
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
-  padding: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .woocommerce-MyAccount-navigation ul li a {

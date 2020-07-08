@@ -279,30 +279,6 @@
         }
     }
 
-    tr td:last-of-type {
-        @apply text-right;
-    }
-
-    th {
-        @apply font-normal border-t text-left py-2;
-    }
-
-    td {
-        @apply font-normal text-left py-3;
-        @apply border-b border-gray-300 align-middle;
-
-        small {
-            font-weight: normal;
-        }
-    }
-
-    thead th,
-    thead td,
-    tfoot th,
-    tfoot td {
-        @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
-    }
-
     .shop_table td {
         @apply py-2 px-4;
     }
@@ -591,36 +567,6 @@ ul.checkout-bar li:nth-child(3)::before {
     border-radius: 3px;
     border-width: 0;
     width: 100%;
-}
-
-.woocommerce-checkout-review-order-table tfoot td, .woocommerce-checkout-review-order-table tfoot th {
-    padding: 1em 22px;
-    border-bottom: 1px solid #e2e2e2;
-    color: #111;
-    background-color: #f9f9f9;
-    font-size: 15px;
-    font-weight: 400
-}
-
-.woocommerce-checkout-review-order-table tr.cart-subtotal td,
-.woocommerce-checkout-review-order-table tr.cart-subtotal th {
-    border-top: 1px solid #e2e2e2
-}
-
-.woocommerce-checkout-review-order-table tr.order-total td,
-.woocommerce-checkout-review-order-table tr.order-total th {
-    font-size: 18px
-}
-
-#order_review .shop_table tr.shipping td,
-.woocommerce-checkout-review-order-table tfoot th,
-.woocommerce-checkout-review-order-table tr.order-total td:first-child {
-    border-left: 1px solid #e2e2e2
-}
-
-.woocommerce-checkout-review-order-table tfoot td {
-    border-right: 1px solid #e2e2e2;
-    text-align: right
 }
 
 .woocommerce .col2-set .col-1,

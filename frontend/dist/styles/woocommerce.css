@@ -431,8 +431,7 @@ table.shop_attributes tr:nth-child(even) td,
   font-weight: 400;
   border-top-width: 1px;
   text-align: left;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
 }
 
 .shop_table td {
@@ -457,8 +456,10 @@ table.shop_attributes tr:nth-child(even) td,
   --border-opacity: 1;
   border-color: #e0e0e0;
   border-color: rgba(224, 224, 224, var(--border-opacity));
-  font-weight: 400;
-  padding: 0.25rem;
+}
+
+.shop_table thead th:last-of-type {
+  text-align: right;
 }
 
 .shop_table tfoot {
@@ -469,16 +470,7 @@ table.shop_attributes tr:nth-child(even) td,
 }
 
 .shop_table tfoot th, .shop_table tfoot td {
-  border-top-width: 0;
-  border-bottom-width: 1px;
-  --border-opacity: 1;
-  border-color: #e0e0e0;
-  border-color: rgba(224, 224, 224, var(--border-opacity));
-  font-weight: 400;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding: 0.75rem;
   --bg-opacity: 1;
   background-color: #f5f5f5;
   background-color: rgba(245, 245, 245, var(--bg-opacity));
@@ -488,23 +480,6 @@ table.shop_attributes tr:nth-child(even) td,
   padding: 0;
   border-collapse: separate;
   margin: 0 0 6px;
-}
-
-.cart-collaterals table tr:first-child th,
-  .cart-collaterals table tr:first-child td {
-  border-top-width: 0;
-}
-
-.cart-collaterals table th {
-  width: 40%;
-}
-
-.cart-collaterals table td,
-  .cart-collaterals table th {
-  vertical-align: top;
-  border-left-width: 0;
-  border-right-width: 0;
-  line-height: 1.5;
 }
 
 .cart-collaterals table small {

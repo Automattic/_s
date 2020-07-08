@@ -54,12 +54,14 @@ table.shop_table_responsive {
 }
 
 .shop_table {
-    tr td:last-of-type {
-        @apply text-right;
+    tr {
+        td:last-of-type {
+            @apply text-right;
+        }
     }
 
     th {
-        @apply font-normal border-t text-left py-2;
+        @apply font-normal border-t text-left pb-1;
     }
 
     td {
@@ -72,13 +74,19 @@ table.shop_table_responsive {
 
     thead th,
     thead td {
-        @apply border-t-0 border-b-4 border-gray-300 font-normal p-1;
+        @apply border-t-0 border-b-4 border-gray-300;
+    }
+
+    thead {
+        th:last-of-type {
+            @apply text-right;
+        }
     }
 
     tfoot {
         @apply border border-gray-300;
         th, td {
-            @apply border-t-0 border-b border-gray-300 font-normal py-2 px-3 bg-gray-100;
+            @apply p-3 bg-gray-100;
         }
     }
 }
@@ -88,22 +96,6 @@ table.shop_table_responsive {
         @apply p-0;
         border-collapse: separate;
         margin: 0 0 6px;
-
-        tr:first-child {
-            th,
-            td {
-                @apply border-t-0;
-            }
-        }
-
-        th {
-            @apply w-2/5;
-        }
-
-        td,
-        th {
-            @apply align-top border-l-0 border-r-0 leading-normal;
-        }
 
         small {
             @apply text-gray-600;

@@ -239,17 +239,6 @@ td.product-quantity {
             border-top-width: 0;
             border-bottom: 1px solid #e2e2e2;
         }
-
-        tr {
-
-            &.cart-subtotal {
-                td, th {
-                    padding: 1em 22px;
-                    border-bottom: 1px solid #e2e2e2;
-                    color: #111;
-                }
-            }
-        }
     }
 }
 

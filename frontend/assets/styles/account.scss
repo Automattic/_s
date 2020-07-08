@@ -101,7 +101,7 @@ table.my_account_orders {
         @apply w-1/5 shadow;
 
         ul {
-            @apply bg-white p-4;
+            @apply bg-white px-6 py-4;
 
             li {
                 a {
@@ -449,9 +449,7 @@ ul.order_details {
             color: $primary;
         }
     }
-}
 
-.woocommerce-MyAccount-navigation-link {
     &--dashboard {
         &:after {
             content: '\e06a';

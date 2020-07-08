@@ -1015,12 +1015,6 @@ td.product-quantity {
   border-bottom: 1px solid #e2e2e2;
 }
 
-.cart_totals .shop_table tr.cart-subtotal td, .cart_totals .shop_table tr.cart-subtotal th {
-  padding: 1em 22px;
-  border-bottom: 1px solid #e2e2e2;
-  color: #111;
-}
-
 body table.cart td.product-quantity .qty {
   background-color: #f8f8f8;
   width: 30px;
