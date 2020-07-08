@@ -135,5 +135,3 @@ if ( ! function_exists('_s_elementor_widgets_init')) {
         });
     }
 }
-
-

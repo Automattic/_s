@@ -133,7 +133,7 @@ add_filter('woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_c
  */
 function _s_woocommerce_loop_columns()
 {
-    return 3;
+    return 4;
 }
 
 add_filter('loop_shop_columns', '_s_woocommerce_loop_columns');
@@ -191,6 +191,12 @@ add_action('woocommerce_after_shop_loop', '_s_woocommerce_product_columns_wrappe
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+/**
+ * 移除产品列表项自动添加的链接
+ */
+remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
 
 if ( ! function_exists('_s_woocommerce_wrapper_before')) {
     /**
@@ -308,19 +314,19 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
     }
 }
 
-add_action('woocommerce_shop_loop_item_title', '_s_loop_product_content_header_open', 5);
-
-function _s_loop_product_content_header_open()
-{
-    echo '<div class="woocommerce-card__header">';
-}
-
-add_action('woocommerce_after_shop_loop_item', '_s_loop_product_content_header_close', 60);
-
-function _s_loop_product_content_header_close()
-{
-    echo '</div>';
-}
+// add_action('woocommerce_shop_loop_item_title', '_s_loop_product_content_header_open', 5);
+//
+// function _s_loop_product_content_header_open()
+// {
+//     echo '<div class="woocommerce-card__header">';
+// }
+//
+// add_action('woocommerce_after_shop_loop_item', '_s_loop_product_content_header_close', 60);
+//
+// function _s_loop_product_content_header_close()
+// {
+//     echo '</div>';
+// }
 
 add_action('woocommerce_before_single_product_summary', '_s_product_content_wrapper_start', 5);
 add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end', 60);
