@@ -314,20 +314,6 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
     }
 }
 
-// add_action('woocommerce_shop_loop_item_title', '_s_loop_product_content_header_open', 5);
-//
-// function _s_loop_product_content_header_open()
-// {
-//     echo '<div class="woocommerce-card__header">';
-// }
-//
-// add_action('woocommerce_after_shop_loop_item', '_s_loop_product_content_header_close', 60);
-//
-// function _s_loop_product_content_header_close()
-// {
-//     echo '</div>';
-// }
-
 add_action('woocommerce_before_single_product_summary', '_s_product_content_wrapper_start', 5);
 add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end', 60);
 
@@ -445,8 +431,8 @@ if ( ! function_exists('_s_header_cart_drawer')) {
     }
 }
 
-add_action('wp_ajax_shoptimizer_pdp_ajax_atc', '_s_pdp_ajax_atc');
-add_action('wp_ajax_nopriv_shoptimizer_pdp_ajax_atc', '_s_pdp_ajax_atc');
+add_action('wp_ajax_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
+add_action('wp_ajax_nopriv_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
 if ( ! function_exists('_s_pdp_ajax_atc')) {
     /**
      * PDP/Single product ajax add to cart.
@@ -497,12 +483,12 @@ if ( ! function_exists('_s_pdp_ajax_atc_enqueue')) {
     {
         if (is_product()) {
             wp_enqueue_script(
-                'shoptimizer-ajax-script',
+                '_s-wc-scripts',
                 get_template_directory_uri() . '/frontend/dist/scripts/product.js',
                 ['jquery']
             );
             wp_localize_script(
-                'shoptimizer-ajax-script',
+                '_s-wc-scripts',
                 '_s_ajax_obj',
                 [
                     'ajaxurl' => admin_url('admin-ajax.php'),

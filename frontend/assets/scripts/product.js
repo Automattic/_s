@@ -16,7 +16,7 @@
                 $pdp_atc_elem = $pdp_form.find('.single_add_to_cart_button'),
                 data = $pdp_form.serialize();
 
-            data += '&action=shoptimizer_pdp_ajax_atc';
+            data += '&action=wprs_wc_ajax_atc';
 
             if ($pdp_atc_elem.val()) {
                 data += '&add-to-cart=' + $pdp_atc_elem.val();
