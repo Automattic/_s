@@ -9,6 +9,7 @@
 use \Svbk\WP\Helpers\Assets\Style;
 use \Svbk\WP\Helpers\Assets\Script;
 use \Svbk\WP\Integrations;
+use Svbk\WP\Helpers\Config;
 
 /**
  * WooCommerce setup function.
@@ -59,6 +60,7 @@ function _svbk_woocommerce_scripts() {
 			'source'    => 'theme',
 			'condition' => is_product(),
 			'prefetch'  => is_shop() || is_archive( 'product' ),
+			'version' => Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	Style::enqueue(
@@ -68,6 +70,7 @@ function _svbk_woocommerce_scripts() {
 			'source'    => 'theme',
 			'condition' => is_cart(),
 			'prefetch'  => is_product(),
+			'version' => Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	
@@ -78,6 +81,7 @@ function _svbk_woocommerce_scripts() {
 			'source'    => 'theme',
 			'condition' => is_checkout(),
 			'prefetch'  => is_cart(),
+			'version' => Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	
@@ -87,6 +91,7 @@ function _svbk_woocommerce_scripts() {
 		[
 			'source'    => 'theme',
 			'condition' => is_account_page(),
+			'version' => Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	Style::enqueue(
@@ -95,6 +100,7 @@ function _svbk_woocommerce_scripts() {
 		[
 			'source'    => 'theme',
 			'condition' => is_shop() || is_archive( 'product' ),
+			'version' => Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -109,9 +115,8 @@ function _svbk_woocommerce_scripts() {
 			'source'    => 'theme',
 			'condition' => is_checkout(),
 			'prefetch'  => is_cart(),
-			'deps'      => [
-				'jquery',
-			],
+			'deps'      => [ 'jquery' ],
+			'version' => Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
