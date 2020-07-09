@@ -14,10 +14,20 @@ table.cart {
     }
 
     td.actions {
-        @apply text-right;
+        @apply text-right bg-transparent;
 
-        .input-text {
-            width: 80px;
+        .button {
+            @screen lg{
+                margin: 0 0 0 5px;
+            }
+        }
+
+        button,
+        input[type=submit] {
+            border-radius: 2px;
+            padding: 0 22px;
+            color: #111;
+            font-size: 14px;
         }
 
         .coupon {
@@ -33,8 +43,11 @@ table.cart {
 
 .cart-collaterals {
     @include clearfix();
-    float: right;
-    width: 33%;
+
+    @screen lg{
+        float: right;
+        width: 33%;
+    }
 
     .related {
         @apply float-left;
@@ -84,12 +97,16 @@ table.cart {
 
 
 .woocommerce-cart-form {
-    float: left;
-    width: 62%;
-    margin-bottom: 0;
+    @screen lg{
+        float: left;
+        width: 62%;
+        margin-bottom: 0;
+    }
 
     table {
-        border-width: 0 0 1px;
+        @screen lg{
+            border-width: 0 0 1px;
+        }
 
         img {
             @apply w-8 shadow-none;
@@ -111,24 +128,34 @@ table.cart {
         }
 
         td {
-            @apply border-b border-gray-300 py-4;
+            @apply border-b border-gray-300;
+
+            @screen lg{
+              @apply  py-4;
+            }
         }
 
         th,td{
             @apply align-middle;
-            @screen md{
+            @screen lg{
                 @apply pl-4;
             }
         }
 
         td.actions {
+            @media screen and (max-width: $tablet) {
+                @apply border-b-0;
+            }
             .coupon {
                 @apply flex;
 
                 .input-text {
                     @apply leading-normal outline-none text-sm border border-secondary;
-                    width: 200px !important;
                     margin: 0 -1px 0 0;
+
+                    @screen lg{
+                        width: 200px !important;
+                    }
                 }
             }
         }
@@ -266,27 +293,15 @@ body table.cart td.product-quantity .qty {
 
 
 table.cart td.product-quantity .quantity-nav {
-    right: auto;
-    left: 29px;
+    right: 28px;
+    left: auto;
     width: 26px;
-}
 
-td.actions {
-    background: transparent;
+    @screen lg{
+        right: auto;
+        left: 29px;
+    }
 }
-
-table.cart td.actions button {
-    margin: 0 0 0 5px;
-}
-
-table.cart td.actions button,
-table.cart td.actions input[type=submit] {
-    border-radius: 2px;
-    padding: 0 22px;
-    color: #111;
-    font-size: 14px;
-}
-
 
 .cart_item {
     .quantity-button.quantity-down:before,
@@ -297,6 +312,7 @@ table.cart td.actions input[type=submit] {
     .quantity-button.quantity-up:before {
         position: absolute;
         top: -2px;
+        left: 0;
     }
 
     .quantity-button.quantity-down:before {

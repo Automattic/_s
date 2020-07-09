@@ -6,7 +6,7 @@
 /**
  * Style begins
  */
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $lg) {
 
     .woocommerce {
 
@@ -40,7 +40,7 @@
 
                     &::before {
                         content: attr(data-title) ': ';
-                        font-weight: 700;
+                        font-weight: 500;
                         float: left;
                     }
 
@@ -52,11 +52,11 @@
                     }
                 }
 
-                &:nth-child( 2n ) {
-                    td {
-                        background-color: rgba(0, 0, 0, 0.025);
-                    }
-                }
+                //&:nth-child( 2n ) {
+                //    td {
+                //        background-color: rgba(0, 0, 0, 0.025);
+                //    }
+                //}
             }
         }
 
@@ -125,33 +125,6 @@
             .product-thumbnail {
                 display: none;
             }
-
-            td.actions {
-                text-align: left;
-
-                .coupon {
-                    float: none;
-                    @include clearfix();
-                    padding-bottom: 0.5em;
-
-                    input,
-                    .button,
-                    .input-text {
-                        width: 48%;
-                        box-sizing: border-box;
-                    }
-
-                    .input-text + .button,
-                    .button.alt {
-                        float: right;
-                    }
-                }
-
-                .button {
-                    display: block;
-                    width: 100%;
-                }
-            }
         }
 
         .cart-collaterals {
@@ -208,4 +181,40 @@
         }
     }
 
+}
+
+
+@media screen and (max-width: $md){
+    .woocommerce table.cart {
+        td.actions {
+            text-align: left;
+
+            .coupon {
+                float: none;
+                @include clearfix();
+                padding-bottom: 0.5em;
+
+                input,
+                .button,
+                .input-text {
+                    width: 48%;
+                    box-sizing: border-box;
+                }
+
+                .input-text{
+                    @apply flex-grow;
+                }
+
+                .input-text + .button,
+                .button.alt {
+                    float: right;
+                }
+            }
+
+            .button {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
 }

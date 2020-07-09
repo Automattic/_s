@@ -715,10 +715,21 @@ table.cart img {
 
 table.cart td.actions {
   text-align: right;
+  background-color: transparent;
 }
 
-table.cart td.actions .input-text {
-  width: 80px;
+@media (min-width: 1024px) {
+  table.cart td.actions .button {
+    margin: 0 0 0 5px;
+  }
+}
+
+table.cart td.actions button,
+  table.cart td.actions input[type=submit] {
+  border-radius: 2px;
+  padding: 0 22px;
+  color: #111;
+  font-size: 14px;
 }
 
 table.cart td.actions .coupon {
@@ -731,8 +742,6 @@ table.cart td.actions .coupon label {
 
 .cart-collaterals {
   zoom: 1;
-  float: right;
-  width: 33%;
 }
 
 .cart-collaterals::before, .cart-collaterals::after {
@@ -742,6 +751,13 @@ table.cart td.actions .coupon label {
 
 .cart-collaterals::after {
   clear: both;
+}
+
+@media (min-width: 1024px) {
+  .cart-collaterals {
+    float: right;
+    width: 33%;
+  }
 }
 
 .cart-collaterals .related {
@@ -804,14 +820,18 @@ table.cart td.actions .coupon label {
   text-decoration: none;
 }
 
-.woocommerce-cart-form {
-  float: left;
-  width: 62%;
-  margin-bottom: 0;
+@media (min-width: 1024px) {
+  .woocommerce-cart-form {
+    float: left;
+    width: 62%;
+    margin-bottom: 0;
+  }
 }
 
-.woocommerce-cart-form table {
-  border-width: 0 0 1px;
+@media (min-width: 1024px) {
+  .woocommerce-cart-form table {
+    border-width: 0 0 1px;
+  }
 }
 
 .woocommerce-cart-form table img {
@@ -844,17 +864,28 @@ table.cart td.actions .coupon label {
   --border-opacity: 1;
   border-color: #e0e0e0;
   border-color: rgba(224, 224, 224, var(--border-opacity));
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-cart-form table td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .woocommerce-cart-form table th, .woocommerce-cart-form table td {
   vertical-align: middle;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .woocommerce-cart-form table th, .woocommerce-cart-form table td {
     padding-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .woocommerce-cart-form table td.actions {
+    border-bottom-width: 0;
   }
 }
 
@@ -872,8 +903,13 @@ table.cart td.actions .coupon label {
   --border-opacity: 1;
   border-color: #9e7b07;
   border-color: rgba(158, 123, 7, var(--border-opacity));
-  width: 200px !important;
   margin: 0 -1px 0 0;
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-cart-form table td.actions .coupon .input-text {
+    width: 200px !important;
+  }
 }
 
 .woocommerce-cart-form table div.quantity {
@@ -927,7 +963,7 @@ table.cart td.actions .coupon label {
 }
 
 .woocommerce-cart-form .variations td,
-    .woocommerce-cart-form .variations th {
+  .woocommerce-cart-form .variations th {
   border-width: 0;
   vertical-align: top;
   line-height: 2;
@@ -1025,25 +1061,16 @@ body table.cart td.product-quantity .qty {
 }
 
 table.cart td.product-quantity .quantity-nav {
-  right: auto;
-  left: 29px;
+  right: 28px;
+  left: auto;
   width: 26px;
 }
 
-td.actions {
-  background: transparent;
-}
-
-table.cart td.actions button {
-  margin: 0 0 0 5px;
-}
-
-table.cart td.actions button,
-table.cart td.actions input[type=submit] {
-  border-radius: 2px;
-  padding: 0 22px;
-  color: #111;
-  font-size: 14px;
+@media (min-width: 1024px) {
+  table.cart td.product-quantity .quantity-nav {
+    right: auto;
+    left: 29px;
+  }
 }
 
 .cart_item .quantity-button.quantity-down:before,
@@ -1054,6 +1081,7 @@ table.cart td.actions input[type=submit] {
 .cart_item .quantity-button.quantity-up:before {
   position: absolute;
   top: -2px;
+  left: 0;
 }
 
 .cart_item .quantity-button.quantity-down:before {

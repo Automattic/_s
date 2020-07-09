@@ -42,12 +42,15 @@ table.shop_attributes {
 table.shop_table_responsive {
     tr {
         @media screen and (max-width: $phone) {
-            border-left: 1px solid $border-color;
-            border-right: 1px solid $border-color;
             @apply mb-8;
+
+            &.order-total{
+                @apply mb-0;
+            }
+
             td:before {
                 font-weight: 400;
-                color: $text-lighter;
+                color: $text-light;
             }
         }
     }
