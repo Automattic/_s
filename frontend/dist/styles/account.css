@@ -762,51 +762,11 @@
 }
 
 table.my_account_orders .button {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  text-align: center;
-  text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  font-weight: 400;
-  display: inline-block;
-  border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
-  background-color: #f3f3f3;
-  border-width: 1px;
-  border-color: #ddd;
   color: #333;
   padding: 0 .8em;
   height: 32px;
   line-height: 32px;
   border-radius: 2px;
-}
-
-table.my_account_orders .button:hover {
-  background-color: #ebebeb;
-}
-
-table.my_account_orders .button:active {
-  background-color: #e4e4e4;
-}
-
-table.my_account_orders .button:hover {
-  border-color: #dadada;
-}
-
-table.my_account_orders .button:active {
-  border-color: #d3d3d3;
 }
 
 table.my_account_orders .order-actions {
@@ -951,33 +911,11 @@ table.my_account_orders .order-actions .button {
 }
 
 .woocommerce-MyAccount-content form button[type=submit] {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  text-align: center;
-  text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  font-weight: 400;
-  display: inline-block;
-  border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
   background-color: #004178;
+  border-width: 1px;
+  border-color: #003969;
   margin-top: 1rem;
   color: #fff;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
   border-radius: 3px;
 }
 
@@ -987,6 +925,14 @@ table.my_account_orders .order-actions .button {
 
 .woocommerce-MyAccount-content form button[type=submit]:active {
   background-color: #003059;
+}
+
+.woocommerce-MyAccount-content form button[type=submit]:hover {
+  border-color: #003059;
+}
+
+.woocommerce-MyAccount-content form button[type=submit]:active {
+  border-color: #00284a;
 }
 
 .woocommerce-MyAccount-downloads td,
@@ -1112,6 +1058,7 @@ table.my_account_orders .order-actions .button {
 
 .woocommerce-Address-title .edit {
   font-size: 0.875rem;
+  margin-top: 2px;
 }
 
 .woocommerce-Address address {
@@ -1300,44 +1247,37 @@ ul.order_details li strong {
   font-weight: 700;
 }
 
-.lost_reset_password .button,
-.woocommerce-form-register__submit,
-.woocommerce-form-login__submit {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  text-align: center;
-  text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  font-weight: 400;
-  display: inline-block;
-  border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
+.woocommerce .lost_reset_password .button,
+.woocommerce .woocommerce-form-register__submit,
+.woocommerce .woocommerce-form-login__submit {
   background-color: #004178;
+  border-width: 1px;
+  border-color: #003969;
   color: #fff;
 }
 
-.lost_reset_password .button:hover,
-  .woocommerce-form-register__submit:hover,
-  .woocommerce-form-login__submit:hover {
+.woocommerce .lost_reset_password .button:hover,
+  .woocommerce .woocommerce-form-register__submit:hover,
+  .woocommerce .woocommerce-form-login__submit:hover {
   background-color: #003969;
 }
 
-.lost_reset_password .button:active,
-  .woocommerce-form-register__submit:active,
-  .woocommerce-form-login__submit:active {
+.woocommerce .lost_reset_password .button:active,
+  .woocommerce .woocommerce-form-register__submit:active,
+  .woocommerce .woocommerce-form-login__submit:active {
   background-color: #003059;
+}
+
+.woocommerce .lost_reset_password .button:hover,
+  .woocommerce .woocommerce-form-register__submit:hover,
+  .woocommerce .woocommerce-form-login__submit:hover {
+  border-color: #003059;
+}
+
+.woocommerce .lost_reset_password .button:active,
+  .woocommerce .woocommerce-form-register__submit:active,
+  .woocommerce .woocommerce-form-login__submit:active {
+  border-color: #00284a;
 }
 
 .woocommerce-privacy-policy-text {

@@ -100,16 +100,22 @@ img.wp-post-image {
 
 // 默认相册样式
 .gallery {
-    @apply flex -mx-2;
+    @apply flex flex-wrap -mx-2;
 
     .gallery-item {
-        @apply px-2;
+        @apply px-2 flex-none;
         .gallery-icon {
             @apply h-full;
         }
 
         .wp-caption-text {
             margin-top: -34px;
+        }
+    }
+
+    &-columns-1{
+        .gallery-item {
+            @apply w-full;
         }
     }
 

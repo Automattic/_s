@@ -762,25 +762,46 @@ table.cart td.actions .coupon label {
   width: 48%;
 }
 
-.cart-collaterals .shipping_calculator {
-  width: 48%;
-  zoom: 1;
-  clear: right;
-  float: right;
+.woocommerce-shipping-methods,
+.woocommerce-shipping-destination {
+  margin-bottom: 0.5rem;
 }
 
-.cart-collaterals .shipping_calculator::before, .cart-collaterals .shipping_calculator::after {
-  content: " ";
-  display: table;
+.woocommerce-shipping-calculator .button {
+  width: 100%;
 }
 
-.cart-collaterals .shipping_calculator::after {
-  clear: both;
-}
-
-.cart-collaterals .shipping_calculator .col2-set .col-1,
-    .cart-collaterals .shipping_calculator .col2-set .col-2 {
+.woocommerce-shipping-calculator .col2-set .col-1,
+.woocommerce-shipping-calculator .col2-set .col-2 {
   width: 47%;
+}
+
+.shipping-calculator-button {
+  text-decoration: underline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  white-space: nowrap;
+  margin-bottom: 0.25rem;
+}
+
+.shipping-calculator-button::after {
+  font-family: "WooCommerce";
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-left: 0.618em;
+  content: "";
+  text-decoration: none;
 }
 
 .woocommerce-cart-form {
@@ -955,27 +976,6 @@ td.product-quantity {
 }
 
 .woocommerce .wc-proceed-to-checkout .button {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  text-align: center;
-  text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  font-weight: 400;
-  display: inline-block;
-  border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
   background-color: #3bb54a;
   color: #fff;
   display: block;
@@ -1035,65 +1035,15 @@ td.actions {
 }
 
 table.cart td.actions button {
-  height: 40px;
   margin: 0 0 0 5px;
-  border-radius: 0;
-  line-height: 40px;
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
 }
 
 table.cart td.actions button,
 table.cart td.actions input[type=submit] {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  text-align: center;
-  text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  font-weight: 400;
-  display: inline-block;
-  border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
-  background-color: #f3f3f3;
-  border-width: 1px;
-  border-color: #ddd;
   border-radius: 2px;
   padding: 0 22px;
   color: #111;
   font-size: 14px;
-}
-
-table.cart td.actions button:hover,
-  table.cart td.actions input[type=submit]:hover {
-  background-color: #ebebeb;
-}
-
-table.cart td.actions button:active,
-  table.cart td.actions input[type=submit]:active {
-  background-color: #e4e4e4;
-}
-
-table.cart td.actions button:hover,
-  table.cart td.actions input[type=submit]:hover {
-  border-color: #dadada;
-}
-
-table.cart td.actions button:active,
-  table.cart td.actions input[type=submit]:active {
-  border-color: #d3d3d3;
 }
 
 .cart_item .quantity-button.quantity-down:before,

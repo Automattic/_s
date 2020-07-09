@@ -51,9 +51,6 @@
 
 table.my_account_orders {
     .button {
-        @include button-base;
-        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
-        @include button-border(#ddd, #dadada, #d3d3d3);
         color: #333;
         padding: 0 .8em;
         height: 32px;
@@ -154,13 +151,10 @@ table.my_account_orders {
 
         form {
             button[type=submit] {
-                @include button-base;
                 @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
+                @include button-border(darken($primary, 3%), darken($primary, 6%), darken($primary, 9%));
                 @apply mt-4;
                 color: #fff;
-                height: 40px;
-                line-height: 40px;
-                padding: 0 1.2em;
                 border-radius: 3px;
             }
         }
@@ -240,11 +234,6 @@ table.my_account_orders {
 }
 
 .woocommerce-Address {
-
-}
-
-
-.woocommerce-Address {
     border: 1px solid $border;
     @apply mt-4;
 
@@ -259,12 +248,12 @@ table.my_account_orders {
         border-bottom: 1px solid $border;
 
         h3 {
-            flex-grow: 1;
-            font-size: 1rem;
+            @apply flex-grow text-base;
         }
 
         .edit {
-            font-size: 0.875rem;
+            @apply text-sm;
+            margin-top: 2px;
         }
     }
 
@@ -405,15 +394,15 @@ ul.order_details {
     @apply font-bold;
 }
 
-
-.lost_reset_password .button,
-.woocommerce-form-register__submit,
-.woocommerce-form-login__submit {
-    @include button-base;
-    @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
-    color: #fff;
+.woocommerce{
+    .lost_reset_password .button,
+    .woocommerce-form-register__submit,
+    .woocommerce-form-login__submit {
+        @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
+        @include button-border(darken($primary, 3%), darken($primary, 6%), darken($primary, 9%));
+        color: #fff;
+    }
 }
-
 
 .woocommerce-privacy-policy-text {
     @apply text-gray-600 mb-4;

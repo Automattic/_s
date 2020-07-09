@@ -450,23 +450,32 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 }
 
 .woocommerce ul.products li.product .button {
+  background-color: #3bb54a;
+  border-width: 1px;
+  border-color: #37a945;
   display: block;
   position: absolute;
   z-index: 1;
   bottom: 0;
   width: calc(100% - 30px);
-  height: 40px;
-  padding: 0;
   border-radius: 2px;
   color: #fff;
-  background: #3bb54a;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 40px;
-  text-align: center;
-  -webkit-transition: all .1s;
-  -o-transition: all .1s;
-  transition: all .1s;
+}
+
+.woocommerce ul.products li.product .button:hover {
+  background-color: #37a945;
+}
+
+.woocommerce ul.products li.product .button:active {
+  background-color: #339e41;
+}
+
+.woocommerce ul.products li.product .button:hover {
+  border-color: #339e41;
+}
+
+.woocommerce ul.products li.product .button:active {
+  border-color: #30923c;
 }
 
 @media (min-width: 1024px) {
@@ -666,30 +675,6 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 }
 
 .woocommerce .cart button.single_add_to_cart_button {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  text-align: center;
-  text-decoration: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  cursor: pointer;
-  font-weight: 400;
-  display: inline-block;
-  border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
-  background-color: #3bb54a;
-  color: #fff;
-  float: left;
   width: calc(100% - 95px);
   height: 58px;
   line-height: 58px;
@@ -697,18 +682,7 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
   padding: 0 1.2em;
   border-radius: 2px;
   text-transform: uppercase;
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
   font-size: 19px;
-}
-
-.woocommerce .cart button.single_add_to_cart_button:hover {
-  background-color: #37a945;
-}
-
-.woocommerce .cart button.single_add_to_cart_button:active {
-  background-color: #339e41;
 }
 
 .woocommerce .cart button.single_add_to_cart_button:after {

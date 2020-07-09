@@ -54,18 +54,31 @@ table.cart {
         }
     }
 
-    .shipping_calculator {
-        width: 48%;
-        @include clearfix();
-        clear: right;
-        float: right;
 
-        .col2-set {
-            .col-1,
-            .col-2 {
-                width: 47%;
-            }
+}
+
+.woocommerce-shipping-methods,
+.woocommerce-shipping-destination{
+    @apply mb-2;
+}
+
+.woocommerce-shipping-calculator {
+    .button {
+        @apply w-full;
+    }
+
+    .col2-set {
+        .col-1,
+        .col-2 {
+            width: 47%;
         }
+    }
+}
+
+.shipping-calculator-button{
+    @apply underline flex items-center justify-end whitespace-no-wrap mb-1;
+    &::after {
+        @include iconafter("");
     }
 }
 
@@ -208,7 +221,6 @@ td.product-quantity {
 
 .woocommerce {
     .wc-proceed-to-checkout .button {
-        @include button-base;
         @include button-bg(#3bb54a, darken(#3bb54a, 5%), darken(#3bb54a, 8%));
         color: #fff;
         display: block;
@@ -264,18 +276,11 @@ td.actions {
 }
 
 table.cart td.actions button {
-    height: 40px;
     margin: 0 0 0 5px;
-    border-radius: 0;
-    line-height: 40px;
-    transition: all .2s;
 }
 
 table.cart td.actions button,
 table.cart td.actions input[type=submit] {
-    @include button-base;
-    @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
-    @include button-border(#ddd, #dadada, #d3d3d3);
     border-radius: 2px;
     padding: 0 22px;
     color: #111;

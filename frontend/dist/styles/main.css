@@ -95470,6 +95470,8 @@ img.wp-post-image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-left: -0.5rem;
   margin-right: -0.5rem;
 }
@@ -95477,6 +95479,9 @@ img.wp-post-image {
 .gallery .gallery-item {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
 }
 
 .gallery .gallery-item .gallery-icon {
@@ -95485,6 +95490,10 @@ img.wp-post-image {
 
 .gallery .gallery-item .wp-caption-text {
   margin-top: -34px;
+}
+
+.gallery-columns-1 .gallery-item {
+  width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -97163,6 +97172,8 @@ ul.wpuf-form li .wp-editor-wrap {
   line-height: 40px;
   padding: 0 1.2em;
   background-color: #004178;
+  border-width: 1px;
+  border-color: #003969;
   color: #fff;
 }
 
@@ -97173,7 +97184,17 @@ ul.wpuf-form li .wp-editor-wrap {
 
 .wpuf-submit-button:active,
   .weforms_submit_btn:active {
-  background-color: #002b4f;
+  background-color: #003059;
+}
+
+.wpuf-submit-button:hover,
+  .weforms_submit_btn:hover {
+  border-color: #003059;
+}
+
+.wpuf-submit-button:active,
+  .weforms_submit_btn:active {
+  border-color: #00284a;
 }
 
 .grid {

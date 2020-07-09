@@ -42,6 +42,7 @@ ul.wpuf-form {
 .wpuf-submit-button,
 .weforms_submit_btn {
     @include button-base();
-    @include button-bg($primary, darken($primary, 3%), darken($primary, 8%));
+    @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
+    @include button-border(darken($primary, 3%), darken($primary, 6%), darken($primary, 9%));
     color: #fff;
 }

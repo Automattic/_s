@@ -44,9 +44,6 @@
     }
 
     .button{
-        @include button-base;
-        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
-        @include button-border(#ddd, #dadada, #d3d3d3);
         height: 32px;
         line-height: 32px;
         padding: 0 .8em;

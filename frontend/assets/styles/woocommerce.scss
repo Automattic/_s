@@ -46,11 +46,25 @@
 
 .woocommerce {
     @apply w-full;
+
+    .button {
+        @include button-base();
+        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
+        @include button-border(#ddd, #dadada, #d3d3d3);
+        border-radius: 3px;
+        padding: 0 1rem;
+
+        &.alt {
+            @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
+            @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
+            color: #fff;
+        }
+    }
 }
 
 .post-type-archive .site__shop,
 .tax-product_cat .site__shop,
-.tax-product_tag .site__shop{
+.tax-product_tag .site__shop {
     @apply py-8;
 }
 
@@ -202,71 +216,6 @@
 
         #payment {
             @apply mt-8;
-        }
-    }
-}
-
-.c-product {
-    padding: 16px;
-    background: #fff;
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, .5);
-    min-height: 100%;
-
-    &__image {
-        flex-wrap: wrap;
-        position: relative;
-    }
-
-    &__content {
-        text-align: center;
-        padding: 8px 0 0;
-    }
-
-    &__footer {
-
-    }
-
-    &__price {
-        text-align: center;
-        @apply mt-2;
-    }
-
-    &__action {
-        @apply p-2;
-        align-self: flex-end;
-        position: absolute;
-        width: 100%;
-        @apply p-2;
-        background: rgba(0, 0, 0, .5);
-        opacity: 0;
-        transition: .3s;
-    }
-
-    &__info {
-        text-align: center;
-        margin-top: 8px;
-    }
-
-    .woocommerce-Price-amount {
-        color: $primary;
-        font-size: 16px;
-        font-weight: 400;
-    }
-
-    del {
-        .woocommerce-Price-amount {
-            color: theme('colors.gray.600');
-            font-weight: 300;
-        }
-    }
-
-    &:hover {
-        outline: 1px solid $primary;
-        position: relative;
-        z-index: 1;
-
-        a {
-            color: $primary;
         }
     }
 }
@@ -478,4 +427,3 @@ body .shoptimizer-mini-cart-wrap .widget_shopping_cart {
         content: ""
     }
 }
-

@@ -29,6 +29,10 @@
         @apply text-sm text-gray-700;
     }
 
+    .quantity{
+        font-family: sans-serif;
+    }
+
     .cart-title {
         @apply mb-2 leading-normal;
     }
@@ -75,9 +79,6 @@
 .woocommerce-mini-cart__buttons {
     .button {
         @apply w-full;
-        @include button-base();
-        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
-        @include button-border(#ddd, #dadada, #d3d3d3);
 
         &.checkout {
             @include button-bg(#3bb54a, darken(#3bb54a, 5%), darken(#3bb54a, 8%));
