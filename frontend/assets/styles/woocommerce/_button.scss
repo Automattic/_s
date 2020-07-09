@@ -4,17 +4,12 @@
 // 按钮
 //===================================
 .woocommerce{
-    a.button,
-    button.button,
-    input.button,
-    #respond input#submit {
-        //@apply leading-none font-normal uppercase border-0 bg-gray-300;
-        //padding: .5em .8em;
-        //font-size: 16px;
-        //letter-spacing: .7px;
-        //transition: background .2s ease;
-        //border-radius: 3px;
-        //color: #333;
+    .button {
+        @include button-base();
+        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
+        @include button-border(#ddd, #dadada, #d3d3d3);
+        border-radius: 3px;
+        padding: 0 1rem;
 
         &.loading {
             opacity: 0.25;
@@ -41,41 +36,12 @@
             }
         }
 
-        //&.alt {
-        //    //background-color: $woocommerce;
-        //    //border: 1px solid lighten($woocommerce, 5%);
-        //    //color: $primarytext;
-        //    //-webkit-font-smoothing: antialiased;
-        //
-        //    //@extend .rs-button;
-        //    //@extend .rs-button--primary;
-        //
-        //    &:hover {
-        //        background-color: lighten($woocommerce, 5%);
-        //        color: $primarytext;
-        //    }
-        //
-        //    &.disabled,
-        //    &:disabled,
-        //    &:disabled[disabled],
-        //    &.disabled:hover,
-        //    &:disabled:hover,
-        //    &:disabled[disabled]:hover {
-        //        opacity: .4;
-        //        cursor: not-allowed;
-        //    }
-        //}
-
+        &.alt {
+            @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
+            @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
+            color: #fff;
+        }
     }
-
-    //.cart .button,
-    //.cart input.button {
-    //    @apply float-none;
-    //}
-
-    //a.added_to_cart {
-    //    @apply hidden;
-    //}
 }
 
 .field.has-addons .control:last-child .button {

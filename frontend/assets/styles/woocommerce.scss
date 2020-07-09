@@ -46,20 +46,6 @@
 
 .woocommerce {
     @apply w-full;
-
-    .button {
-        @include button-base();
-        @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
-        @include button-border(#ddd, #dadada, #d3d3d3);
-        border-radius: 3px;
-        padding: 0 1rem;
-
-        &.alt {
-            @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
-            @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
-            color: #fff;
-        }
-    }
 }
 
 .post-type-archive .site__shop,

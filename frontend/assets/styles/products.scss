@@ -105,6 +105,10 @@
 
             a {
                 @apply relative no-underline;
+
+                &.added_to_cart {
+                    @apply hidden;
+                }
             }
 
             img {
@@ -161,13 +165,10 @@
             .button {
                 @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
                 @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
-                display: block;
-                position: absolute;
+                @apply block absolute bottom-0 text-white;
                 z-index: 1;
-                bottom: 0;
                 width: calc(100% - 30px);
                 border-radius: 2px;
-                color: #fff;
 
                 @screen lg {
                     opacity: 0;
@@ -189,23 +190,23 @@
             }
 
             .woocommerce-LoopProduct-link {
-                position: relative;
+                @apply relative;
                 z-index: 1
             }
 
             .added_to_cart,
             .button {
-                opacity: 1;
+                @apply opacity-100;
             }
         }
 
         li.product-type-grouped .price .amount,
         li.product-type-variable .price {
-            font-size: 14px
+            @apply text-sm;
         }
 
         li.first {
-            clear: both;
+            @apply clear-both;
         }
 
         li.last {
@@ -257,9 +258,7 @@
         @apply mb-0 relative;
 
         .product_title {
-            clear: none;
-            @apply text-2xl mb-2 mt-0 p-0;
-        ;
+            @apply text-2xl mb-2 mt-0 p-0 clear-none;
         }
 
         span.price,
@@ -298,14 +297,14 @@
         }
 
         div.social {
-            text-align: right;
+            @apply text-right;
             margin: 0 0 1em;
 
             span {
                 margin: 0 0 0 2px;
 
                 span {
-                    margin: 0;
+                    @apply m-0;
                 }
 
                 .stButton .chicklets {
@@ -324,14 +323,15 @@
             @apply mb-8;
             @include clearfix;
         }
-
-        .related.products{
-            h2{
-                @apply text-2xl font-medium;
-            }
-        }
     }
 
+}
+
+.upsells.products,
+.related.products {
+    h2 {
+        @apply text-2xl font-medium;
+    }
 }
 
 .product-category,
