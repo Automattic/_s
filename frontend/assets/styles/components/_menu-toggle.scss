@@ -21,22 +21,25 @@
         transition: 0.4s;
     }
 
-    span{
+    span {
         text-indent: -999px;
     }
 
-    &:before{
+    &:before {
         top: 0;
     }
 
-    &:after{
+    &:after {
         bottom: 0;
     }
+}
 
-    &.is-active {
-        span{
+.is-toggled {
+    .menu-toggle {
+        span {
             opacity: 0;
         }
+
         &:before {
             transform: rotate(-45deg) translate(-10px, 6px);
         }

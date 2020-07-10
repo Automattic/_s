@@ -16,10 +16,6 @@ jQuery(document).ready(function($) {
         }
     }
 
-    $('.menu-toggle').click(function() {
-        $(this).toggleClass('is-active');
-    });
-
     var $loading = $('#ajax-loading').hide();
 
     $(document).ajaxStart(function() {

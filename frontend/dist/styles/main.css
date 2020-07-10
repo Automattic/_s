@@ -95877,7 +95877,7 @@ ul.blocks-gallery-grid {
   }
 }
 
-.site__nav.toggled .nav-menu {
+.site__nav.is-toggled .nav-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -96498,17 +96498,17 @@ ul.blocks-gallery-grid {
   bottom: 0;
 }
 
-.menu-toggle.is-active span {
+.is-toggled .menu-toggle span {
   opacity: 0;
 }
 
-.menu-toggle.is-active:before {
+.is-toggled .menu-toggle:before {
   -webkit-transform: rotate(-45deg) translate(-10px, 6px);
       -ms-transform: rotate(-45deg) translate(-10px, 6px);
           transform: rotate(-45deg) translate(-10px, 6px);
 }
 
-.menu-toggle.is-active:after {
+.is-toggled .menu-toggle:after {
   -webkit-transform: rotate(45deg) translate(-8px, -6px);
       -ms-transform: rotate(45deg) translate(-8px, -6px);
           transform: rotate(45deg) translate(-8px, -6px);
