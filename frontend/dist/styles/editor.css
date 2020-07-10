@@ -95344,7 +95344,7 @@ button[disabled],
 }
 
 .aligncenter {
-  display: inline-block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1rem;
@@ -95667,7 +95667,6 @@ ul.blocks-gallery-grid {
 .container, .site__content, .post-type-archive .site__shop,
 .tax-product_cat .site__shop,
 .tax-product_tag .site__shop,
-.single-product .woocommerce-Tabs-panel,
 .single-product .archive-header .woocommerce-breadcrumb,
 .related.products,
 .upsells.products {
@@ -95683,7 +95682,6 @@ ul.blocks-gallery-grid {
   .container, .site__content, .post-type-archive .site__shop,
   .tax-product_cat .site__shop,
   .tax-product_tag .site__shop,
-  .single-product .woocommerce-Tabs-panel,
   .single-product .archive-header .woocommerce-breadcrumb,
   .related.products,
   .upsells.products {
@@ -95696,7 +95694,6 @@ ul.blocks-gallery-grid {
   .container, .site__content, .post-type-archive .site__shop,
   .tax-product_cat .site__shop,
   .tax-product_tag .site__shop,
-  .single-product .woocommerce-Tabs-panel,
   .single-product .archive-header .woocommerce-breadcrumb,
   .related.products,
   .upsells.products {
@@ -95741,7 +95738,6 @@ ul.blocks-gallery-grid {
 .site__header .container, .site__header .site__content, .site__header .post-type-archive .site__shop, .post-type-archive .site__header .site__shop,
     .site__header .tax-product_cat .site__shop, .tax-product_cat .site__header .site__shop,
     .site__header .tax-product_tag .site__shop, .tax-product_tag .site__header .site__shop,
-    .site__header .single-product .woocommerce-Tabs-panel, .single-product .site__header .woocommerce-Tabs-panel,
     .site__header .single-product .archive-header .woocommerce-breadcrumb, .single-product .archive-header .site__header .woocommerce-breadcrumb,
     .site__header .related.products,
     .site__header .upsells.products {
@@ -95796,8 +95792,6 @@ ul.blocks-gallery-grid {
 
 .site__branding .custom-logo-link img {
   width: auto;
-  @media (min-width: 768px) {
-  }
 }
 
 @media (min-width: 1024px) {
@@ -97284,7 +97278,7 @@ ul.wpuf-form li .wp-editor-wrap {
   }
 }
 
-.product-details-wrapper {
+.rswc-product-hero {
   padding-top: 2rem;
   padding-bottom: 2rem;
   --bg-opacity: 1;

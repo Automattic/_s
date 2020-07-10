@@ -167,6 +167,9 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .woocommerce-tabs ul.tabs {
@@ -188,9 +191,9 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 .woocommerce-tabs ul.tabs li a {
   position: relative;
   display: block;
-  padding: 2.2em 0 .1em;
+  font-size: 1rem;
+  padding: 0 .1em;
   color: #888;
-  font-size: 16px;
 }
 
 .woocommerce-tabs ul.tabs li a:after {
@@ -650,6 +653,10 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 
 .woocommerce div.product p.cart::after {
   clear: both;
+}
+
+.rswc-product-body {
+  margin-top: 2rem;
 }
 
 .upsells.products h2,

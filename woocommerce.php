@@ -24,6 +24,12 @@ get_header();
             </main><!-- #main -->
         </div><!-- #primary -->
 
+        <?php if (is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category() || is_product_tag())) { ?>
+            <div class="content__secondary">
+                <?php dynamic_sidebar('sidebar-woo'); ?>
+            </div>
+        <?php } ?>
+
     </div><!-- #content -->
 
 <?php get_footer();

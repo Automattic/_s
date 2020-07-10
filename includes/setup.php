@@ -104,7 +104,7 @@ if ( ! function_exists('_s_widgets_init')) {
     function _s_widgets_init()
     {
         register_sidebar([
-            'name'          => esc_html__('Sidebar', '_s'),
+            'name'          => esc_html__('Primary Widgets Area', '_s'),
             'id'            => 'sidebar-1',
             'description'   => esc_html__('Add widgets here.', '_s'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -113,15 +113,14 @@ if ( ! function_exists('_s_widgets_init')) {
             'after_title'   => '</span></h2>',
         ]);
         register_sidebar([
-            'name'          => esc_html__('Footer Widget Area', 'ppe'),
+            'name'          => esc_html__('Footer Widgets Area', '_s'),
             'id'            => 'sidebar-footer',
-            'description'   => esc_html__('Add widgets here.', 'ppe'),
+            'description'   => esc_html__('Add widgets here.', '_s'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
             'after_title'   => '</span></h2>',
         ]);
-
     }
 }
 

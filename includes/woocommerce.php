@@ -8,73 +8,42 @@
  */
 
 /**
- * WooCommerce setup function.
- *
- * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
- * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)-in-3.0.0
- *
- * @return void
+ * Modify related products args
  */
-function _s_woocommerce_setup()
-{
-    add_theme_support('woocommerce');
-    add_theme_support('wc-product-gallery-zoom');
-    add_theme_support('wc-product-gallery-lightbox');
-    add_theme_support('wc-product-gallery-slider');
-}
-
-add_action('after_setup_theme', '_s_woocommerce_setup');
-
-add_action('wp_print_styles', function ()
-{
-    wp_deregister_style('select2');
-});
+add_filter('woocommerce_output_related_products_args', '_s_woocommerce_related_products_args');
 
 /**
- * WooCommerce specific scripts & stylesheets.
- *
- * @return void
+ * Remove default product link in loop
  */
-function _s_woocommerce_scripts()
-{
-    wp_enqueue_style('_s-woocommerce-style', _s_asset('styles/woocommerce.css'));
+remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
 
-    if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
-        wp_enqueue_style('_s-woocommerce-checkout', _s_asset('styles/products.css'));
-    }
 
-    if (is_singular('product')) {
-        wp_enqueue_style('_s-woocommerce-review', _s_asset('styles/review.css'));
-    }
+/**
+ * Remove product headings in product tab
+ */
+add_filter('woocommerce_product_description_heading', '__return_false');
+add_filter('woocommerce_product_additional_information_heading', '__return_false');
 
-    if (is_cart()) {
-        wp_enqueue_style('_s-woocommerce-cart', _s_asset('styles/cart.css'));
-    }
+/**
+ * WooCommerce theme support setup
+ */
+add_action('after_setup_theme', '_s_woocommerce_setup');
 
-    if (is_checkout()) {
-        wp_enqueue_style('_s-woocommerce-checkout', _s_asset('styles/checkout.css'));
-    }
 
-    if (is_account_page() || is_order_received_page()) {
-        wp_enqueue_style('_s-woocommerce-account', _s_asset('styles/account.css'));
-    }
+add_action('widgets_init', '_s_woocommerce_widgets_init');
 
-    $font_path   = WC()->plugin_url() . '/assets/fonts/';
-    $inline_font = '@font-face {
-			font-family: "star";
-			src: url("' . $font_path . 'star.eot");
-			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
-				url("' . $font_path . 'star.woff") format("woff"),
-				url("' . $font_path . 'star.ttf") format("truetype"),
-				url("' . $font_path . 'star.svg#star") format("svg");
-			font-weight: normal;
-			font-style: normal;
-		}';
 
-    wp_add_inline_style('_s-woocommerce-style', $inline_font);
-}
-
+/**
+ * Enqueue the script used in WooCommerce
+ */
 add_action('wp_enqueue_scripts', '_s_woocommerce_scripts');
+
+/**
+ * Remove Select2 CSS
+ */
+add_action('wp_print_styles', '_s_deregister_select2', 5);
+
 
 /**
  * Disable the default WooCommerce stylesheet.
@@ -86,154 +55,205 @@ add_action('wp_enqueue_scripts', '_s_woocommerce_scripts');
  */
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
-/**
- * Add 'woocommerce-active' class to the body tag.
- *
- * @param array $classes CSS classes applied to the body tag.
- *
- * @return array $classes modified to include 'woocommerce-active' class.
- */
-function _s_woocommerce_active_body_class($classes)
-{
-    $classes[] = 'woocommerce-active';
-
-    return $classes;
-}
-
-add_filter('body_class', '_s_woocommerce_active_body_class');
 
 /**
- * Products per page.
- *
- * @return integer number of products.
+ * Modify WooCommerce thumbnail columns
  */
-function _s_woocommerce_products_per_page()
-{
-    return 12;
-}
-
-add_filter('loop_shop_per_page', '_s_woocommerce_products_per_page');
-
-/**
- * Product gallery thumnbail columns.
- *
- * @return integer number of columns.
- */
-function _s_woocommerce_thumbnail_columns()
-{
-    return 4;
-}
-
 add_filter('woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_columns');
 
-/**
- * Default loop columns on product archives.
- *
- * @return integer products per row.
- */
-function _s_woocommerce_loop_columns()
-{
-    return 4;
-}
-
-add_filter('loop_shop_columns', '_s_woocommerce_loop_columns');
 
 /**
- * Related Products Args.
- *
- * @param array $args related products args.
- *
- * @return array $args related products args.
+ * Add WooCommerce active body class
  */
-function _s_woocommerce_related_products_args($args)
-{
-    $defaults = [
-        'posts_per_page' => 3,
-        'columns'        => 3,
-    ];
+add_filter('body_class', '_s_woocommerce_active_body_class');
 
-    $args = wp_parse_args($defaults, $args);
 
-    return $args;
-}
+/**
+ * Add wrapper div to single product page
+ */
+add_action('woocommerce_before_single_product_summary', '_s_product_content_wrapper_start', 5);
 
-add_filter('woocommerce_output_related_products_args', '_s_woocommerce_related_products_args');
+add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end', 60);
 
-if ( ! function_exists('_s_woocommerce_product_columns_wrapper')) {
+
+/**
+ * Within Product Loop - remove title hook and create a new one with the category displayed above it.
+ */
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+
+
+/**
+ * Customize product title in loop
+ */
+add_action('woocommerce_shop_loop_item_title', '_s_loop_product_title', 10);
+
+/**
+ * Add wrap class to product sort and account at top of products archive page
+ */
+add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper', 9);
+add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31);
+
+/**
+ * Ajax add product to cart scripts
+ */
+add_action('wp_enqueue_scripts', '_s_pdp_ajax_atc_enqueue');
+
+
+/**
+ * Ajax add product to cart backend
+ */
+add_action('wp_ajax_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
+add_action('wp_ajax_nopriv_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
+add_filter('woocommerce_add_to_cart_fragments', '_s_woocommerce_cart_link_fragment');
+
+/**
+ * Mini cart drawer
+ */
+add_action('_s_before_site', '_s_header_cart_drawer', 5);
+
+
+if ( ! function_exists('_s_woocommerce_setup')) {
     /**
-     * Product columns wrapper.
+     * WooCommerce setup function.
      *
-     * @return  void
-     */
-    function _s_woocommerce_product_columns_wrapper()
-    {
-        $columns = _s_woocommerce_loop_columns();
-        echo '<div class="columns-' . absint($columns) . '">';
-    }
-}
-add_action('woocommerce_before_shop_loop', '_s_woocommerce_product_columns_wrapper', 40);
-
-if ( ! function_exists('_s_woocommerce_product_columns_wrapper_close')) {
-    /**
-     * Product columns wrapper close.
-     *
-     * @return  void
-     */
-    function _s_woocommerce_product_columns_wrapper_close()
-    {
-        echo '</div>';
-    }
-}
-add_action('woocommerce_after_shop_loop', '_s_woocommerce_product_columns_wrapper_close', 40);
-
-/**
- * Remove default WooCommerce wrapper.
- */
-remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-/**
- * 移除产品列表项自动添加的链接
- */
-remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
-remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
-
-if ( ! function_exists('_s_woocommerce_wrapper_before')) {
-    /**
-     * Before Content.
-     *
-     * Wraps all WooCommerce content in wrappers which match the theme markup.
+     * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+     * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)-in-3.0.0
      *
      * @return void
      */
-    function _s_woocommerce_wrapper_before()
+    function _s_woocommerce_setup()
     {
-        ?>
-        <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-        <?php
+        add_theme_support('woocommerce');
+        add_theme_support('wc-product-gallery-zoom');
+        add_theme_support('wc-product-gallery-lightbox');
+        add_theme_support('wc-product-gallery-slider');
     }
 }
-add_action('woocommerce_before_main_content', '_s_woocommerce_wrapper_before');
 
-if ( ! function_exists('_s_woocommerce_wrapper_after')) {
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+if ( ! function_exists('_s_woocommerce_widgets_init')) {
+    function _s_woocommerce_widgets_init()
+    {
+        register_sidebar([
+            'name'          => esc_html__('WooCommerce Widget Area', '_s'),
+            'id'            => 'sidebar-woo',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
+
+    }
+}
+
+
+if ( ! function_exists('_s_woocommerce_scripts')) {
     /**
-     * After Content.
-     *
-     * Closes the wrapping divs.
+     * WooCommerce specific scripts & stylesheets.
      *
      * @return void
      */
-    function _s_woocommerce_wrapper_after()
+    function _s_woocommerce_scripts()
     {
-        ?>
-        </main><!-- #main -->
-        </div><!-- #primary -->
-        <?php
+        wp_enqueue_style('_s-woocommerce-style', _s_asset('styles/woocommerce.css'));
+
+        if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
+            wp_enqueue_style('_s-woocommerce-checkout', _s_asset('styles/products.css'));
+        }
+
+        if (is_singular('product')) {
+            wp_enqueue_style('_s-woocommerce-review', _s_asset('styles/review.css'));
+        }
+
+        if (is_cart()) {
+            wp_enqueue_style('_s-woocommerce-cart', _s_asset('styles/cart.css'));
+        }
+
+        if (is_checkout()) {
+            wp_enqueue_style('_s-woocommerce-checkout', _s_asset('styles/checkout.css'));
+        }
+
+        if (is_account_page() || is_order_received_page()) {
+            wp_enqueue_style('_s-woocommerce-account', _s_asset('styles/account.css'));
+        }
+
+        $font_path   = WC()->plugin_url() . '/assets/fonts/';
+        $inline_font = '@font-face {
+			font-family: "star";
+			src: url("' . $font_path . 'star.eot");
+			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
+				url("' . $font_path . 'star.woff") format("woff"),
+				url("' . $font_path . 'star.ttf") format("truetype"),
+				url("' . $font_path . 'star.svg#star") format("svg");
+			font-weight: normal;
+			font-style: normal;
+		}';
+
+        wp_add_inline_style('_s-woocommerce-style', $inline_font);
     }
 }
-add_action('woocommerce_after_main_content', '_s_woocommerce_wrapper_after');
 
+if ( ! function_exists('_s_deregister_select2')) {
+    function _s_deregister_select2()
+    {
+        wp_deregister_style('select2');
+    }
+}
+
+if ( ! function_exists('_s_woocommerce_active_body_class')) {
+    /**
+     * Add 'woocommerce-active' class to the body tag.
+     *
+     * @param array $classes CSS classes applied to the body tag.
+     *
+     * @return array $classes modified to include 'woocommerce-active' class.
+     */
+    function _s_woocommerce_active_body_class($classes)
+    {
+        $classes[] = 'woocommerce-active';
+
+        return $classes;
+    }
+}
+
+if ( ! function_exists('_s_woocommerce_thumbnail_columns')) {
+    /**
+     * Product gallery thumbnail columns.
+     *
+     * @return integer number of columns.
+     */
+    function _s_woocommerce_thumbnail_columns()
+    {
+        return 5;
+    }
+}
+
+if ( ! function_exists('_s_woocommerce_related_products_args')) {
+    /**
+     * Related Products Args.
+     *
+     * @param array $args related products args.
+     *
+     * @return array $args related products args.
+     */
+    function _s_woocommerce_related_products_args($args)
+    {
+        $defaults = [
+            'posts_per_page' => 4,
+            'columns'        => 4,
+        ];
+
+        $args = wp_parse_args($defaults, $args);
+
+        return $args;
+    }
+}
 
 if ( ! function_exists('_s_woocommerce_cart_link_fragment')) {
     /**
@@ -254,7 +274,6 @@ if ( ! function_exists('_s_woocommerce_cart_link_fragment')) {
         return $fragments;
     }
 }
-add_filter('woocommerce_add_to_cart_fragments', '_s_woocommerce_cart_link_fragment');
 
 if ( ! function_exists('_s_woocommerce_cart_link')) {
     /**
@@ -314,49 +333,37 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
     }
 }
 
-add_action('woocommerce_before_single_product_summary', '_s_product_content_wrapper_start', 5);
-add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end', 60);
-
-
-/**
- * Single Product Page - Add a section wrapper start.
- */
-function _s_product_content_wrapper_start()
-{
-    echo '<div class="product-details-wrapper"><div class="container relative clearfix">';
+if ( ! function_exists('_s_product_content_wrapper_start')) {
+    /**
+     * Single Product Page - Add a section wrapper start.
+     */
+    function _s_product_content_wrapper_start()
+    {
+        echo '<div class="rswc-product-hero"><div class="container relative clearfix">';
+    }
 }
 
-/**
- * Single Product Page - Add a section wrapper end.
- */
-function _s_product_content_wrapper_end()
-{
-    echo '</div></div><!--/product-details-wrapper end-->';
+if ( ! function_exists('_s_product_content_wrapper_end')) {
+    /**
+     * Single Product Page - Add a section wrapper end.
+     */
+    function _s_product_content_wrapper_end()
+    {
+        echo '</div></div><!--/rswc-product-hero end-->';
+    }
 }
 
-/**
- * Within Product Loop - remove title hook and create a new one with the category displayed above it.
- */
-remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
-
-add_action('woocommerce_shop_loop_item_title', '_s_loop_product_title', 10);
-
-function _s_loop_product_title()
-{
-
-    global $post;
-
-    $woocommerce_display_category = true;
-    ?>
-    <?php if (true === $woocommerce_display_category) { ?>
-    <?php echo '<p class="product__categories">' . wc_get_product_category_list(get_the_id(), ', ', '', '') . '</p>'; ?>
-<?php } ?>
-    <?php
-    echo '<div class="woocommerce-loop-product__title"><a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">' . get_the_title() . '</a></div>';
+if ( ! function_exists('_s_loop_product_title')) {
+    function _s_loop_product_title()
+    {
+        $woocommerce_display_category = true;
+        if (true === $woocommerce_display_category) {
+            echo '<p class="product__categories">' . wc_get_product_category_list(get_the_id(), ', ', '', '') . '</p>';
+        }
+        echo '<div class="woocommerce-loop-product__title"><a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">' . get_the_title() . '</a></div>';
+    }
 }
 
-
-add_action('_s_before_site', '_s_header_cart_drawer', 5);
 if ( ! function_exists('_s_header_cart_drawer')) {
     /**
      * Display Header Cart Drawer
@@ -431,8 +438,6 @@ if ( ! function_exists('_s_header_cart_drawer')) {
     }
 }
 
-add_action('wp_ajax_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
-add_action('wp_ajax_nopriv_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
 if ( ! function_exists('_s_pdp_ajax_atc')) {
     /**
      * PDP/Single product ajax add to cart.
@@ -473,8 +478,6 @@ if ( ! function_exists('_s_pdp_ajax_atc')) {
     }
 }
 
-
-add_action('wp_enqueue_scripts', '_s_pdp_ajax_atc_enqueue');
 if ( ! function_exists('_s_pdp_ajax_atc_enqueue')) {
     /**
      * Enqueue assets for PDP/Single product ajax add to cart.
@@ -498,10 +501,6 @@ if ( ! function_exists('_s_pdp_ajax_atc_enqueue')) {
         }
     }
 }
-
-add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper', 9);
-add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31);
-
 
 if ( ! function_exists('_s_sorting_wrapper')) {
     /**
@@ -530,4 +529,36 @@ if ( ! function_exists('_s_sorting_wrapper_close')) {
     }
 }
 
+
+add_action('woocommerce_after_single_product_summary', function ()
+{
+    echo '<div class="container rswc-product-body">';
+}, 4);
+
+add_action('woocommerce_product_after_tabs', function ()
+{
+    echo '</div>';
+}, 15);
+
+
+$_s_show_sidebar_in_product_page = false;
+
+if ($_s_show_sidebar_in_product_page) {
+    add_action('woocommerce_after_single_product_summary', function ()
+    {
+        echo '<div class="flex">';
+
+        if (is_active_sidebar('sidebar-woo')) { ?>
+            <div class="content__secondary">
+                <?php dynamic_sidebar('sidebar-woo'); ?>
+            </div>
+        <?php }
+    }, 5);
+
+
+    add_action('woocommerce_product_after_tabs', function ()
+    {
+        echo '</div>';
+    });
+}
 

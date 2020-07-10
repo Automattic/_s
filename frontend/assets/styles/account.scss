@@ -95,42 +95,35 @@ table.my_account_orders {
 .woocommerce-MyAccount {
 
     &-navigation {
-        @apply w-1/5 shadow;
+        @apply w-full shadow;
+
+        @screen md {
+            @apply w-1/5 float-left;
+        }
 
         ul {
-            @apply bg-white px-6 py-4;
+            @apply bg-white px-6 py-4 flex flex-wrap;
 
             li {
+                @apply w-1/2 flex-shrink-0;
+
+                @screen sm{
+                  @apply w-1/3;
+                }
+
+                @screen md{
+                  @apply w-full;
+                }
+
                 a {
                     @apply px-2 py-1 block text-gray-700;
                 }
 
                 &.is-active {
+                    @apply bg-transparent;
                     a {
-                        @apply text-blue-800 font-medium;
-                    }
-                }
-            }
-        }
-
-        @screen md {
-            @apply float-left;
-        }
-
-        @media screen and (max-width: $tablet) {
-            @apply w-full;
-
-            ul {
-                @apply flex flex-wrap;
-
-                li {
-                    @apply w-1/3 flex-shrink-0;
-
-                    &.is-active {
-                        @apply bg-transparent;
-                        a {
-                            color: $woocommerce;
-                        }
+                        @apply font-medium;
+                        color: $woocommerce;
                     }
                 }
             }
@@ -138,23 +131,19 @@ table.my_account_orders {
     }
 
     &-content {
-        width: 78%;
-        min-height: 448px;
-        @apply bg-white p-8 shadow border-t-4 border-gray-400;
-        @screen md {
-            @apply float-right;
-        }
+        @apply bg-white p-8 shadow border-t-4 border-gray-400 w-full mt-6;
 
-        @media screen and (max-width: $tablet) {
-            @apply w-full mt-8;
+        @screen md {
+            @apply mt-0 float-right;
+            width: 78%;
+            min-height: 448px;
         }
 
         form {
             button[type=submit] {
                 @include button-bg($primary, darken($primary, 3%), darken($primary, 6%));
                 @include button-border(darken($primary, 3%), darken($primary, 6%), darken($primary, 9%));
-                @apply mt-4;
-                color: #fff;
+                @apply mt-4 text-white;
                 border-radius: 3px;
             }
         }

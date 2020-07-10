@@ -48,13 +48,12 @@ $default-grid-gutter: 2rem;
 .post-type-archive .site__shop,
 .tax-product_cat .site__shop,
 .tax-product_tag .site__shop,
-.single-product .woocommerce-Tabs-panel,
 .single-product .archive-header .woocommerce-breadcrumb,
 .related.products,
 .upsells.products {
     @extend .container;
 }
 
-.product-details-wrapper {
+.rswc-product-hero {
     @apply py-8 bg-gray-100;
 }

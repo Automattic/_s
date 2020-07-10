@@ -48,6 +48,10 @@
     @apply w-full;
 }
 
+.site__shop{
+    @apply flex w-full;
+}
+
 .post-type-archive .site__shop,
 .tax-product_cat .site__shop,
 .tax-product_tag .site__shop {

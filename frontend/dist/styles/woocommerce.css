@@ -1459,12 +1459,6 @@ div.product table.variations .value {
     float: none;
     margin-right: 0;
   }
-
-  .woocommerce-account .woocommerce-MyAccount-navigation,
-  .woocommerce-account .woocommerce-MyAccount-content {
-    width: 100%;
-    float: none;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1527,6 +1521,13 @@ div.product table.variations .value {
 }
 
 .woocommerce {
+  width: 100%;
+}
+
+.site__shop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
 }
 
