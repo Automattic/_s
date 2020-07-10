@@ -43,7 +43,7 @@
 
             <nav id="site-navigation" class="site__nav main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <?php esc_html_e('Menu', '_s'); ?>
+                    <span><?php esc_html_e('Menu', '_s'); ?></span>
                 </button>
                 <?php
                 wp_nav_menu([

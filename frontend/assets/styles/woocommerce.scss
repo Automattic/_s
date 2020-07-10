@@ -19,7 +19,6 @@
 @import "woocommerce/table";
 @import "woocommerce/form";
 @import "woocommerce/button";
-@import "woocommerce/smallscreen";
 @import "woocommerce/message";
 @import "woocommerce/pagination";
 @import "woocommerce/breadcrumb";
@@ -28,6 +27,7 @@
 @import "woocommerce/onsale";
 @import "woocommerce/variations";
 @import "woocommerce/mini-cart";
+@import "woocommerce/smallscreen";
 
 [class^="wpion-"], [class*=" wpion-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -96,7 +96,7 @@
             @apply text-gray-700;
         }
 
-        @screen lg {
+        @screen xl {
             @apply block mx-auto;
         }
     }
@@ -382,34 +382,41 @@ body .shoptimizer-mini-cart-wrap .widget_shopping_cart {
     transform: rotate(-45deg);
 }
 
-.site-header-cart a.cart-contents .count {
-    display: inline-block;
-    position: relative;
-    width: 28px;
-    height: 28px;
-    margin-left: 5px;
-    padding: 3px;
-    border: 1px solid $primary;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    color: $primary;
-    font-size: 12px;
-    line-height: 22px;
-    text-align: center;
-    letter-spacing: -0.7px;
+.site-header-cart a.cart-contents{
+    .amount{
+        @apply hidden;
+        @screen md{
+          @apply inline-block;
+        }
+    }
 
-    &::after {
-        position: absolute;
-        bottom: 90%;
-        left: 50%;
-        width: 10px;
-        height: 6px;
-        margin-bottom: 1px;
-        margin-left: -6px;
-        border: 1px solid $primary;
-        border-bottom: 0;
-        border-top-left-radius: 99px;
-        border-top-right-radius: 99px;
-        content: ""
+    .count {
+        @apply inline-block relative text-center text-xs text-primary border border-primary;
+        width: 28px;
+        height: 28px;
+        margin-left: 5px;
+        padding: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        color: $primary;
+        line-height: 22px;
+        letter-spacing: -0.7px;
+
+        &::after {
+            position: absolute;
+            bottom: 90%;
+            left: 50%;
+            width: 10px;
+            height: 6px;
+            margin-bottom: 1px;
+            margin-left: -6px;
+            border: 1px solid $primary;
+            border-bottom: 0;
+            border-top-left-radius: 99px;
+            border-top-right-radius: 99px;
+            content: ""
+        }
     }
 }
+
+

@@ -1,0 +1,48 @@
+.menu-toggle {
+    @apply mx-3 text-primary relative;
+
+    svg {
+        @apply mr-2;
+    }
+
+    @screen lg {
+        @apply hidden;
+    }
+
+    span,
+    &:before,
+    &:after {
+        display: block;
+        content: '';
+        width: 32px;
+        height: 3px;
+        background-color: $text-light;
+        margin: 8px 0;
+        transition: 0.4s;
+    }
+
+    span{
+        text-indent: -999px;
+    }
+
+    &:before{
+        top: 0;
+    }
+
+    &:after{
+        bottom: 0;
+    }
+
+    &.is-active {
+        span{
+            opacity: 0;
+        }
+        &:before {
+            transform: rotate(-45deg) translate(-10px, 6px);
+        }
+
+        &:after {
+            transform: rotate(45deg) translate(-8px, -6px);
+        }
+    }
+}

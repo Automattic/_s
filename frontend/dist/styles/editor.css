@@ -95772,7 +95772,18 @@ ul.blocks-gallery-grid {
   --bg-opacity: 1;
   background-color: #fff;
   background-color: rgba(255, 255, 255, var(--bg-opacity));
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   z-index: 99;
+}
+
+@media (min-width: 1024px) {
+  .site__branding {
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
 }
 
 .site__branding h1 {
@@ -95794,6 +95805,18 @@ ul.blocks-gallery-grid {
     height: 64px;
     height: auto;
   }
+}
+
+.site__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .site__nav .nav-menu {
@@ -96002,29 +96025,6 @@ ul.blocks-gallery-grid {
   border-radius: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-
-.menu-toggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: 1rem;
-  --text-opacity: 1;
-  color: #065aaa;
-  color: rgba(6, 90, 170, var(--text-opacity));
-}
-
-.menu-toggle svg {
-  margin-right: 0.5rem;
-}
-
-@media (min-width: 1024px) {
-  .menu-toggle {
-    display: none;
-  }
 }
 
 .sm-menu {
@@ -96453,6 +96453,65 @@ ul.blocks-gallery-grid {
   .sm-menu.sm-vertical ul a {
     padding: 10px 20px;
   }
+}
+
+.menu-toggle {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+  --text-opacity: 1;
+  color: #065aaa;
+  color: rgba(6, 90, 170, var(--text-opacity));
+  position: relative;
+}
+
+.menu-toggle svg {
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle span, .menu-toggle:before, .menu-toggle:after {
+  display: block;
+  content: '';
+  width: 32px;
+  height: 3px;
+  background-color: #666;
+  margin: 8px 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.menu-toggle span {
+  text-indent: -999px;
+}
+
+.menu-toggle:before {
+  top: 0;
+}
+
+.menu-toggle:after {
+  bottom: 0;
+}
+
+.menu-toggle.is-active span {
+  opacity: 0;
+}
+
+.menu-toggle.is-active:before {
+  -webkit-transform: rotate(-45deg) translate(-10px, 6px);
+      -ms-transform: rotate(-45deg) translate(-10px, 6px);
+          transform: rotate(-45deg) translate(-10px, 6px);
+}
+
+.menu-toggle.is-active:after {
+  -webkit-transform: rotate(45deg) translate(-8px, -6px);
+      -ms-transform: rotate(45deg) translate(-8px, -6px);
+          transform: rotate(45deg) translate(-8px, -6px);
 }
 
 .hentry {

@@ -866,7 +866,7 @@ table.cart td.actions .coupon label {
   border-color: rgba(224, 224, 224, var(--border-opacity));
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .woocommerce-cart-form table td {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -1066,7 +1066,7 @@ table.cart td.product-quantity .quantity-nav {
   width: 26px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   table.cart td.product-quantity .quantity-nav {
     right: auto;
     left: 29px;

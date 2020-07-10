@@ -240,8 +240,13 @@ div.images .flex-control-thumbs li img.flex-active, div.images .flex-control-thu
 }
 
 .woocommerce-tabs .panel {
-  padding: 0;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 1280px) {
+  .woocommerce-tabs .panel {
+    padding: 0;
+  }
 }
 
 .woocommerce-Tabs-panel h2 {

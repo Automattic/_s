@@ -38,8 +38,11 @@
     }
 
     &__branding {
-        @apply bg-white;
+        @apply bg-white flex-grow;
         z-index: 99;
+        @screen lg {
+            @apply flex-grow-0;
+        }
 
         h1 {
             @apply text-4xl;
@@ -61,6 +64,7 @@
     }
 
     &__nav {
+        @apply flex flex-grow justify-end;
         .nav-menu {
             @apply hidden flex-wrap ml-8 m-0 left-0 absolute;
             top: 64px;
@@ -185,17 +189,5 @@
                 @apply rounded-none shadow-none;
             }
         }
-    }
-}
-
-.menu-toggle {
-    @apply flex items-center ml-4 text-primary;
-
-    svg {
-        @apply mr-2;
-    }
-
-    @screen lg {
-        @apply hidden;
     }
 }

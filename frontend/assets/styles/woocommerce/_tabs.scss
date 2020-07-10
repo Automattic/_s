@@ -56,7 +56,11 @@
     }
 
     .panel {
-        @apply p-0 mb-8;
+        @apply mb-8;
+
+        @screen xl{
+          @apply p-0;
+        }
     }
 }
 

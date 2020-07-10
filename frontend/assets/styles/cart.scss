@@ -130,7 +130,7 @@ table.cart {
         td {
             @apply border-b border-gray-300;
 
-            @screen lg{
+            @screen xl{
               @apply  py-4;
             }
         }
@@ -297,7 +297,7 @@ table.cart td.product-quantity .quantity-nav {
     left: auto;
     width: 26px;
 
-    @screen lg{
+    @screen xl{
         right: auto;
         left: 29px;
     }
