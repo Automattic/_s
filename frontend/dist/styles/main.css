@@ -96478,7 +96478,7 @@ ul.blocks-gallery-grid {
   display: block;
   content: '';
   width: 32px;
-  height: 3px;
+  height: 2px;
   background-color: #666;
   margin: 8px 0;
   -webkit-transition: 0.4s;
@@ -96503,15 +96503,15 @@ ul.blocks-gallery-grid {
 }
 
 .is-toggled .menu-toggle:before {
-  -webkit-transform: rotate(-45deg) translate(-10px, 6px);
-      -ms-transform: rotate(-45deg) translate(-10px, 6px);
-          transform: rotate(-45deg) translate(-10px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      -ms-transform: rotate(-45deg) translate(-9px, 6px);
+          transform: rotate(-45deg) translate(-9px, 6px);
 }
 
 .is-toggled .menu-toggle:after {
-  -webkit-transform: rotate(45deg) translate(-8px, -6px);
-      -ms-transform: rotate(45deg) translate(-8px, -6px);
-          transform: rotate(45deg) translate(-8px, -6px);
+  -webkit-transform: rotate(45deg) translate(-7px, -6px);
+      -ms-transform: rotate(45deg) translate(-7px, -6px);
+          transform: rotate(45deg) translate(-7px, -6px);
 }
 
 .hentry {

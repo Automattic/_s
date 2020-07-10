@@ -15,7 +15,7 @@
         display: block;
         content: '';
         width: 32px;
-        height: 3px;
+        height: 2px;
         background-color: $text-light;
         margin: 8px 0;
         transition: 0.4s;
@@ -41,11 +41,11 @@
         }
 
         &:before {
-            transform: rotate(-45deg) translate(-10px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
         }
 
         &:after {
-            transform: rotate(45deg) translate(-8px, -6px);
+            transform: rotate(45deg) translate(-7px, -6px);
         }
     }
 }
