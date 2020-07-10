@@ -8,8 +8,6 @@
     "private": true,
     "dependencies": {
         "jquery": "^3.0.0",
-        "slick-carousel": "^1.8.1",
-        "magnific-popup": "^1.1.0",
         "smartmenus": "^1.1.0"
     },
     "overrides": {

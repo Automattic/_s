@@ -73,16 +73,6 @@
             "bower": [
                 "jquery"
             ]
-        },
-        "slick.js": {
-            "bower": [
-                "slick-carousel"
-            ]
-        },
-        "magnific-popup.js": {
-            "bower": [
-                "magnific-popup"
-            ]
         }
     },
     "paths": {
