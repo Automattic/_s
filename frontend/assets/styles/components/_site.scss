@@ -62,6 +62,9 @@
 
     &__nav {
         @apply flex flex-grow justify-end;
+        @screen lg{
+          @apply mr-8;
+        }
         .nav-menu {
             @apply hidden flex-wrap ml-8 m-0 left-0 absolute;
             top: 64px;

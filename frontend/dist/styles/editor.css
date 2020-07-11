@@ -95813,6 +95813,12 @@ ul.blocks-gallery-grid {
           justify-content: flex-end;
 }
 
+@media (min-width: 1024px) {
+  .site__nav {
+    margin-right: 2rem;
+  }
+}
+
 .site__nav .nav-menu {
   display: none;
   -ms-flex-wrap: wrap;
@@ -96456,6 +96462,7 @@ ul.blocks-gallery-grid {
   color: #065aaa;
   color: rgba(6, 90, 170, var(--text-opacity));
   position: relative;
+  overflow: hidden;
 }
 
 .menu-toggle svg {

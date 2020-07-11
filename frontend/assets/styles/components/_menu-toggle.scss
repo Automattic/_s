@@ -1,5 +1,5 @@
 .menu-toggle {
-    @apply mx-3 text-primary relative;
+    @apply mx-3 text-primary relative overflow-hidden;
 
     svg {
         @apply mr-2;
