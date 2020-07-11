@@ -54,3 +54,8 @@
   padding: 16px 0;
   border-right: 0;
 }
+
+.menu-item-settings .cf-container .cf-field {
+  border: 0;
+  padding: 6px 0;
+}

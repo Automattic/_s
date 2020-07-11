@@ -101,6 +101,29 @@ add_action('carbon_fields_register_fields', static function ()
                  Field::make('footer_scripts', 'code_before_body', __('Code before </body>', '_s')),
              ]);
 
+
+    /**
+     * 导航栏设置
+     */
+    Container::make('nav_menu_item', '_s_nav_menu_options', 'Menu Settings')
+             ->add_fields([
+
+                 Field::make('select', 'menu_type', __('Menu Type', '_s'))
+                      ->set_options([
+                          ''          => __('Normal', '_s'),
+                          'shortcode' => __('Render shortcode content', '_s'),
+                      ]),
+
+                 Field::make('textarea', 'menu_content', __('Enter a shortcode', '_s'))
+                      ->set_conditional_logic([
+                          'relation' => 'AND',
+                          [
+                              'field'   => 'menu_type',
+                              'value'   => 'shortcode',
+                              'compare' => '=',
+                          ],
+                      ]),
+             ]);
 });
 
 

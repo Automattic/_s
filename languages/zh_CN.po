@@ -1,6 +1,5 @@
 # Copyright (C) 2017 Automattic
 # This file is distributed under the GNU General Public License v2 or later.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
@@ -9,147 +8,149 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-07-11 23:39+0800\n"
+"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ..\n"
+"Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh_CN\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: frontend\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
 #: includes/fields.php:34
 msgid "Archive Settings"
-msgstr ""
+msgstr "存档设置"
 
 #: includes/fields.php:37 includes/fields.php:53
 msgid "Cover image"
-msgstr ""
+msgstr "封面图像"
 
 #: includes/fields.php:38
 msgid "Cover text"
-msgstr ""
+msgstr "封面文字"
 
 #: includes/fields.php:39
 msgid "Archive Title"
-msgstr ""
+msgstr "存档标题"
 
 #: includes/fields.php:40
 msgid "Archive Description"
-msgstr ""
+msgstr "存档描述"
 
 #: includes/fields.php:48
 msgid "Category Settings"
-msgstr ""
+msgstr "分类设置"
 
 #: includes/fields.php:54
 msgid "Banner Text"
-msgstr ""
+msgstr "横幅文本"
 
 #: includes/fields.php:55
 msgid "Posts Per Page"
-msgstr ""
+msgstr "每页文章数"
 
 #: includes/fields.php:61
 msgid "Page Settings"
-msgstr ""
+msgstr "页面设置"
 
 #: includes/fields.php:66
 msgid "Page Layouts"
-msgstr ""
+msgstr "页面布局"
 
 #: includes/fields.php:77
 msgid "Case Data"
-msgstr ""
+msgstr "案例数据"
 
 #: includes/fields.php:82
 msgid "Demo url"
-msgstr ""
+msgstr "演示网址"
 
 #: includes/fields.php:89
 msgid "Theme Options"
-msgstr ""
+msgstr "主题选项"
 
 #: includes/fields.php:91
 msgid "General Options"
-msgstr ""
+msgstr "常规选项"
 
 #: includes/fields.php:92
 msgid "Clean up useless menus for normal user"
-msgstr ""
+msgstr "清理后台菜单"
 
 #: includes/fields.php:93
 msgid "Deny modify files in backend"
-msgstr ""
+msgstr "禁止在后台修改文件"
 
 #: includes/fields.php:95
 msgid "Footer Options"
-msgstr ""
+msgstr "页脚选项"
 
 #: includes/fields.php:96
 msgid "Beian number"
-msgstr ""
+msgstr "备案号"
 
 #: includes/fields.php:97
 msgid "Copyright text"
-msgstr ""
+msgstr "版权内容"
 
 #: includes/fields.php:99
 msgid "Code Option"
-msgstr ""
+msgstr "代码选项"
 
 #: includes/fields.php:100
 msgid "Code before </head>"
-msgstr ""
+msgstr "</head> 前代码"
 
 #: includes/fields.php:101
 msgid "Code before </body>"
-msgstr ""
+msgstr "</body> 前代码"
 
 #: includes/fields.php:111
 msgid "Menu Type"
-msgstr ""
+msgstr "菜单类型"
 
 #: includes/fields.php:113
 msgid "Normal"
-msgstr ""
+msgstr "常规"
 
 #: includes/fields.php:114
 msgid "Render shortcode content"
-msgstr ""
+msgstr "显示短代码"
 
 #: includes/fields.php:117
 msgid "Enter a shortcode"
-msgstr ""
+msgstr "输入短代码"
 
 #: includes/template-tags.php:82
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr ""
+msgstr "<span class=\"screen-reader-text\">在 %s </span>发表评论"
 
 #: includes/template-tags.php:99
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
-msgstr ""
+msgstr "编辑<span class=\"screen-reader-text\">%s</span>"
 
 #: src/Elementor/Widgets/ServiceWidgets.php:37
 msgid "Widget Title"
-msgstr ""
+msgstr "小工具标题"
 
 #: src/Elementor/Widgets/ServiceWidgets.php:84
 msgid "Content"
-msgstr ""
+msgstr "内容"
 
 #: src/Elementor/Widgets/ServiceWidgets.php:92
 msgid "URL to embed"
-msgstr ""
+msgstr "要嵌入的 URL"
 
 #: src/Elementor/Widgets/ServiceWidgets.php:95
 msgid "https://your-link.com"
-msgstr ""
+msgstr "https://your-link.com"
 
 #: templates/content-none.php:30
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "准备好发表第一篇文章了吗？<a href=\"%1$s\">点击这里开始</a>。"
