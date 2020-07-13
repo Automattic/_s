@@ -7,6 +7,21 @@
  * @package _s
  */
 
+
+/**
+ * Modify WooCommerce Wrap
+ */
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_before_main_content', '_s_woocommerce_wrapper_before');
+add_action('woocommerce_after_main_content', '_s_woocommerce_wrapper_after');
+
+
+/**
+ * Remove Default Sidebar
+ */
+remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
 /**
  * Modify related products args
  */
@@ -369,7 +384,6 @@ if ( ! function_exists('_s_header_cart_drawer')) {
      * Display Header Cart Drawer
      *
      * @return void
-     * @uses   shoptimizer_is_woocommerce_activated() check if WooCommerce is activated
      * @since  1.0.0
      */
     function _s_header_cart_drawer()
@@ -399,8 +413,8 @@ if ( ! function_exists('_s_header_cart_drawer')) {
             </div>
             <?php
 
-            $shoptimizer_cart_drawer_js = '';
-            $shoptimizer_cart_drawer_js .= "
+            $drawer_js = '';
+            $drawer_js .= "
 				( function ( $ ) {
 
 					// Open the drawer if a product is added to the cart
@@ -433,7 +447,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 				}( jQuery ) );
 				";
 
-            wp_add_inline_script('_s-main', $shoptimizer_cart_drawer_js);
+            wp_add_inline_script('_s-main', $drawer_js);
         }
     }
 }
@@ -457,24 +471,27 @@ if ( ! function_exists('_s_pdp_ajax_atc')) {
         if ( ! isset($sku)) {
             $sku = $product_id;
         }
+
         ob_start();
         wc_print_notices();
         $notices = ob_get_clean();
+
         ob_start();
         woocommerce_mini_cart();
-        $shoptimizer_mini_cart = ob_get_clean();
-        $shoptimizer_atc_data  = [
+        $_s_mini_cart = ob_get_clean();
+
+        $data = [
             'notices'   => $notices,
             'fragments' => apply_filters(
                 'woocommerce_add_to_cart_fragments',
                 [
-                    'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $shoptimizer_mini_cart . '</div>',
+                    'div.widget_shopping_cart_content' => '<div class="widget_shopping_cart_content">' . $_s_mini_cart . '</div>',
                 ]
             ),
             'cart_hash' => apply_filters('woocommerce_add_to_cart_hash', WC()->cart->get_cart_for_session() ? md5(json_encode(WC()->cart->get_cart_for_session())) : '', WC()->cart->get_cart_for_session()),
         ];
-        wp_send_json($shoptimizer_atc_data);
-        die();
+
+        wp_send_json($data);
     }
 }
 
@@ -535,6 +552,7 @@ add_action('woocommerce_after_single_product_summary', function ()
     echo '<div class="container rswc-product-body">';
 }, 4);
 
+
 add_action('woocommerce_product_after_tabs', function ()
 {
     echo '</div>';
@@ -562,3 +580,46 @@ if ($_s_show_sidebar_in_product_page) {
     });
 }
 
+if ( ! function_exists('_s_woocommerce_wrapper_before')) {
+    /**
+     * Before Content.
+     *
+     * Wraps all WooCommerce content in wrappers which match the theme markup.
+     *
+     * @return void
+     */
+    function _s_woocommerce_wrapper_before()
+    {
+        ?>
+        <div id="content" class="site__shop">
+
+        <div id="primary" class="content__primary">
+        <main id="main" class="site__main">
+        <?php
+    }
+}
+
+if ( ! function_exists('_s_woocommerce_wrapper_after')) {
+    /**
+     * After Content.
+     *
+     * Closes the wrapping divs.
+     *
+     * @return void
+     */
+    function _s_woocommerce_wrapper_after()
+    {
+        ?>
+        </main><!-- #main -->
+        </div><!-- #primary -->
+
+        <?php if (is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category())) { ?>
+            <div class="content__secondary site-woo__sidebar">
+                <?php dynamic_sidebar('sidebar-woo'); ?>
+            </div>
+        <?php } ?>
+
+        </div><!-- #content -->
+        <?php
+    }
+}
