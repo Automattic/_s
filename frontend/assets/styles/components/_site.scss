@@ -159,13 +159,17 @@
 .content {
     &__primary {
         @apply flex-grow w-full;
+
+        @screen lg{
+          @apply order-2;
+        }
     }
 
     &__secondary {
         @apply flex-grow mt-8;
 
         @screen lg {
-            @apply flex-none ml-8 px-0 mt-0;
+            @apply flex-none px-0 mt-0;
             width: 15%;
             min-width: 256px;
         }
@@ -193,6 +197,29 @@
 
             img {
                 @apply rounded-none shadow-none;
+            }
+        }
+    }
+}
+
+
+.sidebar-left{
+    .content{
+        &__secondary{
+            @screen lg{
+                @apply order-1 mr-8;
+            }
+
+        }
+    }
+}
+
+
+.sidebar-right{
+    .content{
+        &__secondary{
+            @screen lg{
+                @apply order-3 ml-8;
             }
         }
     }

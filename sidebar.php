@@ -7,7 +7,7 @@
  * @package _s
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) || get_theme_mod('rs_global_layout', 'sidebar-none') === 'sidebar-none') {
 	return;
 }
 ?>

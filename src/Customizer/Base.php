@@ -57,6 +57,7 @@ class Base
         $this->dynamic_css = $this->dynamic_css_init();
 
         // Register the settings/panels/sections/controls.
+        $this->register_panel();
         $this->register_settings();
         $this->register_sections();
         $this->register_partials();
@@ -97,6 +98,9 @@ class Base
             '.woocommerce .button.alt:hover',
             '.woocommerce .button.checkout:hover',
         ];
+
+        $this->wp_customize->add_setting('rs_container_width', ['default' => '1216']);
+        $this->wp_customize->add_setting('rs_container_focus_width', ['default' => '750']);
 
         return [
             'rswc_primary_color' => [
@@ -150,12 +154,30 @@ class Base
         $this->wp_customize->add_setting('rswc_single_product_related_columns', ['default' => 4]);
         $this->wp_customize->add_setting('rswc_single_product_show_sidebar', ['default' => 0]);
 
+        // Layouts Settings
+        $this->wp_customize->add_setting('rs_global_layout', ['default' => 'sidebar-none']);
+        $this->wp_customize->add_setting('rs_global_content_width', ['default' => '85']);
+
         // All the DynamicCSS settings.
         foreach ($this->dynamic_css as $setting_id => $args) {
             $this->wp_customize->add_setting(
                 new Setting\DynamicCSS($this->wp_customize, $setting_id, $args)
             );
         }
+    }
+
+
+    /**
+     * Sections
+     *
+     * @return void
+     */
+    public function register_panel()
+    {
+        $this->wp_customize->add_panel('layouts', [
+            'priority' => 25,
+            'title'    => __('Layouts', '_s'),
+        ]);
     }
 
 
@@ -177,6 +199,19 @@ class Base
             'title'       => esc_html__('Single Product', '_s'),
             'description' => esc_html__('Single Product Page Settings', '_s'),
             'panel'       => 'woocommerce',
+            'priority'    => 16,
+        ]);
+
+        $this->wp_customize->add_section('rs_container', [
+            'title'       => esc_html__('Container', '_s'),
+            'panel'       => 'layouts',
+            'priority'    => 16,
+        ]);
+
+        $this->wp_customize->add_section('rs_content_sidebar', [
+            'title'       => esc_html__('Content/Sidebar', '_s'),
+            'description' => esc_html__('Content Sidebar Layout', '_s'),
+            'panel'       => 'layouts',
             'priority'    => 16,
         ]);
     }
@@ -272,6 +307,58 @@ class Base
                 'priority' => 5,
                 'label'    => esc_html__('Show Sidebar', '_s'),
                 'section'  => 'rswc_single_product',
+            ]
+        );
+
+        /**
+         * Layout container
+         */
+        $this->wp_customize->add_control(
+            'rs_container_width',
+            [
+                'type'     => 'number',
+                'priority' => 5,
+                'label'    => esc_html__('Container width', '_s'),
+                'section'  => 'rs_container',
+            ]
+        );
+
+        $this->wp_customize->add_control(
+            'rs_container_focus_width',
+            [
+                'type'     => 'number',
+                'priority' => 5,
+                'label'    => esc_html__('Content focus container width', '_s'),
+                'section'  => 'rs_container',
+            ]
+        );
+
+
+        /**
+         * Layout content / sidbar
+         */
+        $this->wp_customize->add_control(
+            'rs_global_layout',
+            [
+                'type'     => 'select',
+                'priority' => 5,
+                'label'    => esc_html__('Sidebar Layout', '_s'),
+                'choices'  => [
+                    'sidebar-none'  => esc_html__('No Sidebar', '_s'),
+                    'sidebar-left'  => esc_html__('Left Sidebar', '_s'),
+                    'sidebar-right' => esc_html__('Right Sidebar', '_s'),
+                ],
+                'section'  => 'rs_content_sidebar',
+            ]
+        );
+
+        $this->wp_customize->add_control(
+            'rs_global_content_width',
+            [
+                'type'     => 'slider',
+                'priority' => 5,
+                'label'    => esc_html__('Content Width', '_s'),
+                'section'  => 'rs_content_sidebar',
             ]
         );
     }

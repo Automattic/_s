@@ -6,6 +6,7 @@
  *
  * @package consultpresslite-pt
  */
+
 namespace SpaceName\Customizer;
 
 /**
@@ -20,6 +21,7 @@ class Frontend
     public function __construct()
     {
         add_action('wp_head', [$this, 'output_customizer_css'], 999);
+        add_filter('body_class', [$this, 'output_body_class'], 999);
     }
 
     /**
@@ -40,6 +42,25 @@ class Frontend
         }
     }
 
+
+    /**
+     * Output addition body classes
+     *
+     * @param $classes
+     *
+     * @return mixed
+     */
+    public function output_body_class($classes)
+    {
+
+        $global_layout = get_theme_mod('rs_global_layout', 'sidebar-none');
+
+        $classes[] = $global_layout;
+
+        return $classes;
+    }
+
+
     /**
      * This will get custom WordPress settings to the live theme's WP head.
      */
@@ -48,7 +69,7 @@ class Frontend
         $css = [];
 
         $css[] = self::get_customizer_colors_css();
-        $css[] = self::get_logo_top_margin_css();
+        $css[] = self::get_container_css();
 
         return implode(PHP_EOL, $css);
     }
@@ -78,15 +99,23 @@ class Frontend
      *
      * @return string CSS
      */
-    public static function get_logo_top_margin_css()
+    public static function get_container_css()
     {
         // Pixel to rem conversion.
-        $rem_pt_ratio = 18;
-        $rem          = absint(get_theme_mod('logo_top_margin', 0)) / $rem_pt_ratio;
+        $container_width       = absint(get_theme_mod('rs_container_width', 1216));
+        $container_focus_width = absint(get_theme_mod('rs_container_focus_width', 1216));
 
-        return sprintf(
-            '.header__logo img { margin-top: %frem; }',
-            $rem
+        $css = '';
+        $css .= sprintf(
+            '@media (min-width: 1280px) { .container { max-width: %dpx; } }',
+            $container_width
         );
+
+        $css .= sprintf(
+            '@media (min-width: 1280px) { .container--focus, .single-post.sidebar-none .site__main { max-width: %dpx; margin-left: auto; margin-right: auto } }',
+            $container_focus_width
+        );
+
+        return $css;
     }
 }
