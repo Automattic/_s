@@ -112,7 +112,7 @@ class Frontend
         );
 
         $css .= sprintf(
-            '@media (min-width: 1280px) { .container--focus, .single-post.sidebar-none .site__main { max-width: %dpx; margin-left: auto; margin-right: auto } }',
+            '@media (min-width: 1280px) { .container--focus, .single-post.sidebar-none .site__main, .category.sidebar-none .site__main{ max-width: %dpx; margin-left: auto; margin-right: auto } }',
             $container_focus_width
         );
 

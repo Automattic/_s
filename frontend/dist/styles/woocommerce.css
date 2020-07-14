@@ -782,7 +782,7 @@ form.register {
   font-weight: 400;
   position: absolute;
   line-height: 1;
-  top: 13px;
+  top: 11px;
   margin-left: 0.53em;
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;
@@ -798,7 +798,7 @@ form.register {
   font-family: "WooCommerce";
   content: "";
   margin-left: 0.53em;
-  top: 13px;
+  top: 11px;
 }
 
 .woocommerce .button.alt {

@@ -153,6 +153,9 @@ class Base
         $this->wp_customize->add_setting('rswc_single_product_related_count', ['default' => 4]);
         $this->wp_customize->add_setting('rswc_single_product_related_columns', ['default' => 4]);
         $this->wp_customize->add_setting('rswc_single_product_show_sidebar', ['default' => 0]);
+        $this->wp_customize->add_setting('woocommerce_cart_redirect_after_add', ['type' => 'option', 'default' => 1]);
+        $this->wp_customize->add_setting('woocommerce_enable_ajax_add_to_cart', ['type' => 'option', 'default' => 1]);
+        $this->wp_customize->add_setting('woocommerce_enable_reviews', ['type' => 'option', 'default' => 0]);
 
         // Layouts Settings
         $this->wp_customize->add_setting('rs_global_layout', ['default' => 'sidebar-none']);
@@ -203,9 +206,9 @@ class Base
         ]);
 
         $this->wp_customize->add_section('rs_container', [
-            'title'       => esc_html__('Container', '_s'),
-            'panel'       => 'layouts',
-            'priority'    => 16,
+            'title'    => esc_html__('Container', '_s'),
+            'panel'    => 'layouts',
+            'priority' => 16,
         ]);
 
         $this->wp_customize->add_section('rs_content_sidebar', [
@@ -306,6 +309,37 @@ class Base
                 'type'     => 'checkbox',
                 'priority' => 5,
                 'label'    => esc_html__('Show Sidebar', '_s'),
+                'section'  => 'rswc_single_product',
+            ]
+        );
+
+
+        $this->wp_customize->add_control(
+            'woocommerce_cart_redirect_after_add',
+            [
+                'type'     => 'checkbox',
+                'priority' => 5,
+                'label'    => esc_html__('Redirect to the cart page after successful addition', 'woocommerce'),
+                'section'  => 'rswc_single_product',
+            ]
+        );
+
+        $this->wp_customize->add_control(
+            'woocommerce_enable_ajax_add_to_cart',
+            [
+                'type'     => 'checkbox',
+                'priority' => 5,
+                'label'    => esc_html__('Enable AJAX add to cart buttons on archives', 'woocommerce'),
+                'section'  => 'rswc_single_product',
+            ]
+        );
+
+        $this->wp_customize->add_control(
+            'woocommerce_enable_reviews',
+            [
+                'type'     => 'checkbox',
+                'priority' => 5,
+                'label'    => esc_html__('Enable product reviews', 'woocommerce'),
                 'section'  => 'rswc_single_product',
             ]
         );
