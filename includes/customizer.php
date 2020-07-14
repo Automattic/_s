@@ -124,3 +124,23 @@ if ( ! function_exists('_s_header_style')) :
         <?php
     }
 endif;
+
+
+if ( ! function_exists('_s_customizer')) {
+    function _s_customizer($wp_customize)
+    {
+        new \SpaceName\Customizer\Base($wp_customize);
+    }
+
+    add_action('customize_register', '_s_customizer');
+}
+
+
+if ( ! function_exists('_s_customizer_frontend')) {
+    function _s_customizer_frontend()
+    {
+        new \SpaceName\Customizer\Frontend();
+    }
+
+    add_action('init', '_s_customizer_frontend');
+}

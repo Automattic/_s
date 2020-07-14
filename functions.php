@@ -63,4 +63,3 @@ require_once(get_theme_file_path('includes/customizer.php'));
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
-

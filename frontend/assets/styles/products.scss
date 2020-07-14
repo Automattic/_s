@@ -8,6 +8,38 @@
 
 .woocommerce {
 
+    .add_to_cart_button {
+        @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
+        @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
+        @apply block absolute bottom-0 text-white;
+        z-index: 1;
+        width: calc(100% - 30px);
+        border-radius: 2px;
+
+        @screen lg {
+            opacity: 0;
+        }
+    }
+
+    .single_add_to_cart_button {
+        width: calc(100% - 95px);
+        height: 58px;
+        line-height: 58px;
+        margin-left: 40px;
+        padding: 0 1.2em;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-size: 19px;
+
+        &:after {
+            top: 19px;
+        }
+
+        &.disabled {
+            opacity: .65;
+        }
+    }
+
     /**
     * Product loops
     */
@@ -159,19 +191,6 @@
                     margin: (-2px) 0 0 0;
                     text-transform: uppercase;
                     color: rgba(desaturate($highlight, 75%), 0.5);
-                }
-            }
-
-            .button {
-                @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
-                @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
-                @apply block absolute bottom-0 text-white;
-                z-index: 1;
-                width: calc(100% - 30px);
-                border-radius: 2px;
-
-                @screen lg {
-                    opacity: 0;
                 }
             }
         }
@@ -356,27 +375,6 @@
     @apply mt-6 mb-4 text-base;
     p {
         margin-bottom: 1em;
-    }
-}
-
-.woocommerce {
-    .cart button.single_add_to_cart_button {
-        width: calc(100% - 95px);
-        height: 58px;
-        line-height: 58px;
-        margin-left: 40px;
-        padding: 0 1.2em;
-        border-radius: 2px;
-        text-transform: uppercase;
-        font-size: 19px;
-
-        &:after {
-            top: 19px;
-        }
-
-        &.disabled {
-            opacity: .65;
-        }
     }
 }
 

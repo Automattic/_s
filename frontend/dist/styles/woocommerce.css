@@ -957,12 +957,12 @@ p.demo_store a,
   top: 32px;
 }
 
-nav.woocommerce-pagination {
+.woocommerce-pagination {
   margin-top: 2rem;
   text-align: center;
 }
 
-nav.woocommerce-pagination ul {
+.woocommerce-pagination ul {
   display: inline-block;
   white-space: nowrap;
   padding: 0;
@@ -972,24 +972,24 @@ nav.woocommerce-pagination ul {
   margin: 1px;
 }
 
-nav.woocommerce-pagination ul .page-numbers {
+.woocommerce-pagination ul .page-numbers {
   zoom: 1;
 }
 
-nav.woocommerce-pagination ul .page-numbers::before, nav.woocommerce-pagination ul .page-numbers::after {
+.woocommerce-pagination ul .page-numbers::before, .woocommerce-pagination ul .page-numbers::after {
   content: " ";
   display: table;
 }
 
-nav.woocommerce-pagination ul .page-numbers::after {
+.woocommerce-pagination ul .page-numbers::after {
   clear: both;
 }
 
-nav.woocommerce-pagination ul .page-numbers li {
+.woocommerce-pagination ul .page-numbers li {
   display: inline-block;
 }
 
-nav.woocommerce-pagination ul li {
+.woocommerce-pagination ul li {
   border-right: 1px solid #c28b02;
   padding: 0;
   margin: 0;
@@ -998,8 +998,8 @@ nav.woocommerce-pagination ul li {
   overflow: hidden;
 }
 
-nav.woocommerce-pagination ul li a,
-      nav.woocommerce-pagination ul li span {
+.woocommerce-pagination ul li a,
+      .woocommerce-pagination ul li span {
   margin: 0;
   text-decoration: none;
   line-height: 1;
@@ -1010,9 +1010,9 @@ nav.woocommerce-pagination ul li a,
   display: block;
 }
 
-nav.woocommerce-pagination ul li span.current,
-      nav.woocommerce-pagination ul li a:hover,
-      nav.woocommerce-pagination ul li a:focus {
+.woocommerce-pagination ul li span.current,
+      .woocommerce-pagination ul li a:hover,
+      .woocommerce-pagination ul li a:focus {
   background: #f5af02;
   color: #2b1e00;
 }

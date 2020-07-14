@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d9c350e9666e37fbe052253fb8146ea",
+    "content-hash": "c5864a3855438be14eae8e0b0fdab42b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -207,24 +207,72 @@
             "time": "2020-05-18T09:54:56+00:00"
         },
         {
-            "name": "tyxla/carbon-breadcrumbs",
-            "version": "v1.0.2",
+            "name": "mexitek/phpcolors",
+            "version": "v0.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tyxla/carbon-breadcrumbs.git",
-                "reference": "85be1a71e8e2d64e932b0604626bb7d2ce9f5e21"
+                "url": "https://github.com/mexitek/phpColors.git",
+                "reference": "89bf30473a68dc8845e46e9db3e536b969e18c11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tyxla/carbon-breadcrumbs/zipball/85be1a71e8e2d64e932b0604626bb7d2ce9f5e21",
-                "reference": "85be1a71e8e2d64e932b0604626bb7d2ce9f5e21",
+                "url": "https://api.github.com/repos/mexitek/phpColors/zipball/89bf30473a68dc8845e46e9db3e536b969e18c11",
+                "reference": "89bf30473a68dc8845e46e9db3e536b969e18c11",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
             },
             "type": "library",
             "autoload": {
-                "files": [
-                    "carbon-breadcrumbs.php"
+                "classmap": [
+                    "src"
                 ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arlo Carreon",
+                    "homepage": "http://arlocarreon.com",
+                    "role": "creator"
+                }
+            ],
+            "description": "A series of methods that let you manipulate colors. Just incase you ever need different shades of one color on the fly.",
+            "homepage": "http://mexitek.github.com/phpColors/",
+            "keywords": [
+                "color",
+                "css",
+                "design",
+                "frontend",
+                "ui"
+            ],
+            "time": "2015-09-09T15:43:06+00:00"
+        },
+        {
+            "name": "proteusthemes/wp-customizer-utilities",
+            "version": "v2.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/proteusthemes/wp-customizer-utilities.git",
+                "reference": "714fdacd7acd5e78e237dd96f7117a73b20d883b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/proteusthemes/wp-customizer-utilities/zipball/714fdacd7acd5e78e237dd96f7117a73b20d883b",
+                "reference": "714fdacd7acd5e78e237dd96f7117a73b20d883b",
+                "shasum": ""
+            },
+            "require": {
+                "mexitek/phpcolors": "^0.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ProteusThemes\\CustomizerUtils\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -232,30 +280,24 @@
             ],
             "authors": [
                 {
-                    "name": "Marin Atanasov",
-                    "email": "contact@marinatanasov.com"
+                    "name": "Primoz Cigler",
+                    "email": "primoz@proteusnet.com"
+                },
+                {
+                    "name": "Gregor Capuder",
+                    "email": "gregor.capuder@proteusnet.com"
                 }
             ],
-            "description": "A basic WordPress plugin for breadcrumbs with advanced capabilities for extending.",
-            "homepage": "https://github.com/tyxla/carbon-breadcrumbs",
+            "description": "Advanced WordPress customizer controls and settings for better user experience.",
             "keywords": [
-                "Settings",
-                "admin",
-                "advanced",
-                "after",
-                "auto",
-                "before",
-                "breadcrumb",
-                "breadcrumbs",
-                "carbon",
-                "configuration",
-                "developer",
-                "extending",
-                "glue",
-                "trail",
-                "wordpress"
+                "control",
+                "customizer",
+                "proteusthemes",
+                "theme",
+                "wordpress",
+                "wp"
             ],
-            "time": "2016-04-11T21:17:54+00:00"
+            "time": "2019-06-24T19:10:19+00:00"
         },
         {
             "name": "wenprise/content-types",
@@ -296,52 +338,6 @@
             ],
             "description": "Create WordPress content types and taxonomies more easier.",
             "time": "2019-09-05T08:24:21+00:00"
-        },
-        {
-            "name": "yahnis-elsts/plugin-update-checker",
-            "version": "v4.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/YahnisElsts/plugin-update-checker.git",
-                "reference": "28f29c940cc22754aff85a99645e3c0a51c097e8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/28f29c940cc22754aff85a99645e3c0a51c097e8",
-                "reference": "28f29c940cc22754aff85a99645e3c0a51c097e8",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=5.2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "load-v4p9.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yahnis Elsts",
-                    "email": "whiteshadow@w-shadow.com",
-                    "homepage": "http://w-shadow.com/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A custom update checker for WordPress plugins and themes. Useful if you can't host your plugin in the official WP repository but still want it to support automatic updates.",
-            "homepage": "https://github.com/YahnisElsts/plugin-update-checker/",
-            "keywords": [
-                "automatic updates",
-                "plugin updates",
-                "theme updates",
-                "wordpress"
-            ],
-            "time": "2020-02-07T11:07:19+00:00"
         }
     ],
     "packages-dev": [
@@ -823,6 +819,52 @@
             ],
             "description": "Debugging functions, wrapping around Symfony's VarDumper.",
             "time": "2018-01-23T07:52:03+00:00"
+        },
+        {
+            "name": "yahnis-elsts/plugin-update-checker",
+            "version": "v4.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/YahnisElsts/plugin-update-checker.git",
+                "reference": "28f29c940cc22754aff85a99645e3c0a51c097e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/YahnisElsts/plugin-update-checker/zipball/28f29c940cc22754aff85a99645e3c0a51c097e8",
+                "reference": "28f29c940cc22754aff85a99645e3c0a51c097e8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "load-v4p9.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yahnis Elsts",
+                    "email": "whiteshadow@w-shadow.com",
+                    "homepage": "http://w-shadow.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A custom update checker for WordPress plugins and themes. Useful if you can't host your plugin in the official WP repository but still want it to support automatic updates.",
+            "homepage": "https://github.com/YahnisElsts/plugin-update-checker/",
+            "keywords": [
+                "automatic updates",
+                "plugin updates",
+                "theme updates",
+                "wordpress"
+            ],
+            "time": "2020-02-07T11:07:19+00:00"
         }
     ],
     "aliases": [],
@@ -833,8 +875,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1",
-        "ext-json": "*"
+        "php": ">=7.1"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"

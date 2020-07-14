@@ -176,7 +176,7 @@ if ( ! function_exists('_s_woocommerce_scripts')) {
      */
     function _s_woocommerce_scripts()
     {
-        wp_enqueue_style('_s-woocommerce-style', _s_asset('styles/woocommerce.css'));
+        wp_enqueue_style('_s-woocommerce-main', _s_asset('styles/woocommerce.css'));
 
         if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
             wp_enqueue_style('_s-woocommerce-checkout', _s_asset('styles/products.css'));
@@ -210,7 +210,7 @@ if ( ! function_exists('_s_woocommerce_scripts')) {
 			font-style: normal;
 		}';
 
-        wp_add_inline_style('_s-woocommerce-style', $inline_font);
+        wp_add_inline_style('_s-woocommerce-main', $inline_font);
     }
 }
 
@@ -245,7 +245,7 @@ if ( ! function_exists('_s_woocommerce_thumbnail_columns')) {
      */
     function _s_woocommerce_thumbnail_columns()
     {
-        return 5;
+        return get_theme_mod('rswc_single_product_gallery_columns', 4);
     }
 }
 
@@ -260,8 +260,8 @@ if ( ! function_exists('_s_woocommerce_related_products_args')) {
     function _s_woocommerce_related_products_args($args)
     {
         $defaults = [
-            'posts_per_page' => 4,
-            'columns'        => 4,
+            'posts_per_page' => get_theme_mod('rswc_single_product_related_count', 4),
+            'columns'        => get_theme_mod('rswc_single_product_related_columns', 4),
         ];
 
         $args = wp_parse_args($defaults, $args);
@@ -559,9 +559,8 @@ add_action('woocommerce_product_after_tabs', function ()
 }, 15);
 
 
-$_s_show_sidebar_in_product_page = false;
+if (get_theme_mod('rswc_single_product_show_sidebar', false)) {
 
-if ($_s_show_sidebar_in_product_page) {
     add_action('woocommerce_after_single_product_summary', function ()
     {
         echo '<div class="flex">';
@@ -578,6 +577,7 @@ if ($_s_show_sidebar_in_product_page) {
     {
         echo '</div>';
     });
+
 }
 
 if ( ! function_exists('_s_woocommerce_wrapper_before')) {
@@ -613,11 +613,13 @@ if ( ! function_exists('_s_woocommerce_wrapper_after')) {
         </main><!-- #main -->
         </div><!-- #primary -->
 
-        <?php if (is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category())) { ?>
-            <div class="content__secondary site-woo__sidebar">
-                <?php dynamic_sidebar('sidebar-woo'); ?>
-            </div>
-        <?php } ?>
+        <?php
+        if (get_theme_mod('rswc_products_catalog_show_sidebar', false) && is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category())) {
+            echo '<div class="content__secondary site-woo__sidebar">';
+            dynamic_sidebar('sidebar-woo');
+            echo '</div>';
+        }
+        ?>
 
         </div><!-- #content -->
         <?php
