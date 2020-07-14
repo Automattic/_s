@@ -14,6 +14,12 @@
         @apply px-0;
         max-width: $widescreen - 64px;
     }
+
+    &--focus {
+        @screen xl {
+            max-width: $tablet - 48px;;
+        }
+    }
 }
 
 .site {
@@ -62,8 +68,8 @@
 
     &__nav {
         @apply flex flex-grow justify-end;
-        @screen lg{
-          @apply mr-8;
+        @screen lg {
+            @apply mr-8;
         }
         .nav-menu {
             @apply hidden flex-wrap ml-8 m-0 left-0 absolute;

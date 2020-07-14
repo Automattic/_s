@@ -146,6 +146,13 @@ form.register {
     @apply bg-white border border-gray-300 p-6 my-4 text-left rounded;
 }
 
+.woocommerce-form__label-for-checkbox{
+    @apply flex items-center;
+    input{
+        @apply mr-2;
+    }
+}
+
 .woocommerce-input-wrapper {
     .description {
         @apply text-white rounded p-4 hidden relative;

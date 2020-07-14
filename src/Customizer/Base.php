@@ -87,13 +87,13 @@ class Base
         $darken12 = new Setting\DynamicCSS\ModDarken(12);
 
         $primary_selector = [
-            '.woocommerce .add_to_cart_button',
+            '.woocommerce .button.add_to_cart_button',
             '.woocommerce .button.alt',
             '.woocommerce .button.checkout',
         ];
 
         $primary_selector_hover = [
-            '.woocommerce .add_to_cart_button:hover',
+            '.woocommerce .button.add_to_cart_button:hover',
             '.woocommerce .button.alt:hover',
             '.woocommerce .button.checkout:hover',
         ];

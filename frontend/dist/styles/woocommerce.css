@@ -676,6 +676,19 @@ form.register {
   border-radius: 0.25rem;
 }
 
+.woocommerce-form__label-for-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.woocommerce-form__label-for-checkbox input {
+  margin-right: 0.5rem;
+}
+
 .woocommerce-input-wrapper .description {
   --text-opacity: 1;
   color: #fff;
@@ -733,15 +746,12 @@ form.register {
   cursor: pointer;
   font-weight: 400;
   display: inline-block;
+  line-height: 1.5;
   border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
+  padding: calc(.5em - 1px) 1em;
   background-color: #f3f3f3;
   border-width: 1px;
   border-color: #ddd;
-  border-radius: 3px;
-  padding: 0 1rem;
 }
 
 .woocommerce .button:hover {
@@ -888,9 +898,6 @@ form.register {
 .woocommerce-Message .button,
   .woocommerce-message .button,
   .woocommerce-notice--success .button {
-  height: 32px;
-  line-height: 32px;
-  padding: 0 .8em;
   color: #333;
   float: right;
   font-size: 14px;

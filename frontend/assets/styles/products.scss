@@ -8,7 +8,7 @@
 
 .woocommerce {
 
-    .add_to_cart_button {
+    .button.add_to_cart_button {
         @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
         @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
         @apply block absolute bottom-0 text-white;

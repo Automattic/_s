@@ -95256,10 +95256,6 @@ button[disabled],
   color: #616161;
   color: rgba(97, 97, 97, var(--text-opacity));
   font-weight: 500;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   border-width: 1px;
   --border-opacity: 1;
   border-color: #9e9e9e;
@@ -95270,6 +95266,7 @@ button[disabled],
   -webkit-transition: all .15s ease-in-out;
   -o-transition: all .15s ease-in-out;
   transition: all .15s ease-in-out;
+  padding: calc(.5em - 1px) 1em;
 }
 
 .rs-button:hover {
@@ -95328,7 +95325,6 @@ button[disabled],
 
 .rs-button--sm {
   font-size: 0.875rem;
-  padding: 6px 12px;
 }
 
 .wp-post-image {
@@ -95700,6 +95696,12 @@ ul.blocks-gallery-grid {
     padding-left: 0;
     padding-right: 0;
     max-width: 1216px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container--focus {
+    max-width: 720px;
   }
 }
 
@@ -96823,10 +96825,9 @@ ul.blocks-gallery-grid {
   cursor: pointer;
   font-weight: 400;
   display: inline-block;
+  line-height: 1.5;
   border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
+  padding: calc(.5em - 1px) 1em;
   background-color: #f3f3f3;
   border-width: 1px;
   border-color: #ddd;
@@ -97081,9 +97082,13 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 select {
-  height: 40px;
-  line-height: 40px;
-  padding: 0 12px;
+  font-size: 1rem;
+  height: 2.5em;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  line-height: 1.5;
+  padding: calc(.5em - 1px) calc(.75em - 1px);
 }
 
 select {
@@ -97227,10 +97232,9 @@ ul.wpuf-form li .wp-editor-wrap {
   cursor: pointer;
   font-weight: 400;
   display: inline-block;
+  line-height: 1.5;
   border-radius: 3px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 1.2em;
+  padding: calc(.5em - 1px) 1em;
   background-color: #004178;
   border-width: 1px;
   border-color: #003969;

@@ -762,10 +762,7 @@
 }
 
 table.my_account_orders .button {
-  color: #333;
-  padding: 0 .8em;
-  height: 32px;
-  line-height: 32px;
+  font-size: 0.875rem;
   border-radius: 2px;
 }
 
@@ -877,7 +874,7 @@ table.my_account_orders .order-actions .button {
 
 .woocommerce-MyAccount-navigation ul li.is-active a {
   font-weight: 500;
-  color: #1F65D2;
+  color: #004178;
 }
 
 .woocommerce-MyAccount-content {
@@ -1221,10 +1218,6 @@ ul.order_details li strong {
 .woocommerce-password-hint {
   margin: 0.5em 0 0;
   display: block;
-}
-
-.woocommerce-orders-table__cell-order-actions .button {
-  font-size: 0.875rem;
 }
 
 .woocommerce-orders-table__cell-order-actions .button + .button {

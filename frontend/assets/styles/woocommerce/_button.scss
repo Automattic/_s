@@ -8,8 +8,6 @@
         @include button-base();
         @include button-bg(#f3f3f3, darken(#f3f3f3, 3%), darken(#f3f3f3, 6%));
         @include button-border(#ddd, #dadada, #d3d3d3);
-        border-radius: 3px;
-        padding: 0 1rem;
 
         &.loading {
             opacity: 0.25;

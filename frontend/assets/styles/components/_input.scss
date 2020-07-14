@@ -46,9 +46,11 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 select {
-    height: 40px;
-    line-height: 40px;
-    padding: 0 12px;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding: calc(.5em - 1px) calc(.75em - 1px);
 }
 
 select {

@@ -10,8 +10,9 @@ button,
 }
 
 .rs-button {
-    @apply relative bg-white bg-gray-100 leading-none text-gray-700 font-medium py-2 px-4 border border-gray-500 rounded text-center align-middle;
+    @apply relative bg-white bg-gray-100 leading-none text-gray-700 font-medium border border-gray-500 rounded text-center align-middle;
     transition: all .15s ease-in-out;
+    padding: calc(.5em - 1px) 1em;
 
     &:hover {
         @apply bg-gray-200;
@@ -40,7 +41,6 @@ button,
 
     &--sm{
         @apply text-sm;
-        padding: 6px 12px;
     }
 }
 

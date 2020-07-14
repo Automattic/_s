@@ -51,10 +51,7 @@
 
 table.my_account_orders {
     .button {
-        color: #333;
-        padding: 0 .8em;
-        height: 32px;
-        line-height: 32px;
+        @apply text-sm;
         border-radius: 2px;
     }
 
@@ -123,7 +120,7 @@ table.my_account_orders {
                     @apply bg-transparent;
                     a {
                         @apply font-medium;
-                        color: $woocommerce;
+                        color: $primary;
                     }
                 }
             }
@@ -364,7 +361,6 @@ ul.order_details {
 
 .woocommerce-orders-table__cell-order-actions {
     .button {
-        @apply text-sm;
         & + .button {
             @apply ml-2;
         }
