@@ -177,7 +177,7 @@ class Base
             'title'       => esc_html__('Single Product', '_s'),
             'description' => esc_html__('Single Product Page Settings', '_s'),
             'panel'       => 'woocommerce',
-            'priority'    => 40,
+            'priority'    => 16,
         ]);
     }
 
@@ -270,7 +270,7 @@ class Base
             [
                 'type'     => 'checkbox',
                 'priority' => 5,
-                'label'    => esc_html__('Number of Related Products', '_s'),
+                'label'    => esc_html__('Show Sidebar', '_s'),
                 'section'  => 'rswc_single_product',
             ]
         );

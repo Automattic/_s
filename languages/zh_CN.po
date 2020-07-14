@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-07-14 15:23+0800\n"
-"PO-Revision-Date: 2020-07-14 15:26+0800\n"
+"POT-Creation-Date: 2020-07-14 17:23+0800\n"
+"PO-Revision-Date: 2020-07-14 17:23+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -24,6 +24,10 @@ msgstr ""
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr "&ldquo;%1$s&rdquo;上有 1 个评论"
+
+#: includes/customizer.php:21
+msgid "Colors and Background"
+msgstr "颜色和背景"
 
 #: includes/fields.php:34
 msgid "Archive Settings"
@@ -188,7 +192,7 @@ msgstr "WooCommerce 配色方案"
 
 #: src/Customizer/Base.php:177
 msgid "Single Product"
-msgstr "产品详情页面"
+msgstr "产品详情"
 
 #: src/Customizer/Base.php:178
 msgid "Single Product Page Settings"
@@ -198,7 +202,7 @@ msgstr "产品详情页面设置"
 msgid "Primary color"
 msgstr "主要颜色"
 
-#: src/Customizer/Base.php:229
+#: src/Customizer/Base.php:229 src/Customizer/Base.php:273
 msgid "Show Sidebar"
 msgstr "显示侧边栏"
 
@@ -207,7 +211,6 @@ msgid "Columns of Gallery thumbnail"
 msgstr "相册缩略图每行显示的图片数量"
 
 #: src/Customizer/Base.php:253 src/Customizer/Base.php:263
-#: src/Customizer/Base.php:273
 msgid "Number of Related Products"
 msgstr "显示的相关产品数量"
 

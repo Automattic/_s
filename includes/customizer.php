@@ -16,6 +16,20 @@ function _s_customize_register($wp_customize)
     $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
     $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
+    /**
+     * Combine colors and background to same section
+     */
+    $wp_customize->remove_section('background_image');
+
+    $wp_customize->add_section('colors_background', [
+        'priority' => 25,
+        'title'    => __('Colors and Background', '_s'),
+    ]);
+
+    $wp_customize->get_control('header_textcolor')->section = 'colors_background';
+    $wp_customize->get_control('background_color')->section = 'colors_background';
+    $wp_customize->get_control('background_image')->section = 'colors_background';
+
     if (isset($wp_customize->selective_refresh)) {
         $wp_customize->selective_refresh->add_partial('blogname', [
             'selector'        => '.site-title a',
