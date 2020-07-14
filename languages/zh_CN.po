@@ -4,21 +4,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-07-11 23:36+0800\n"
+"POT-Creation-Date: 2020-07-14 15:23+0800\n"
+"PO-Revision-Date: 2020-07-14 15:26+0800\n"
+"Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-07-11 23:39+0800\n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
-"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-KeywordsList: ;_e;__;esc_html__\n"
 "X-Poedit-Basepath: ..\n"
-"Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: zh_CN\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: frontend\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
+
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "&ldquo;%1$s&rdquo;上有 1 个评论"
 
 #: includes/fields.php:34
 msgid "Archive Settings"
@@ -124,6 +129,36 @@ msgstr "显示短代码"
 msgid "Enter a shortcode"
 msgstr "输入短代码"
 
+#: includes/setup.php:49
+msgid "Primary"
+msgstr "主要"
+
+#: includes/setup.php:107
+msgid "Primary Widgets Area"
+msgstr "主要小工具区域"
+
+#: includes/setup.php:109 includes/setup.php:118 includes/woocommerce.php:160
+msgid "Add widgets here."
+msgstr "在这里添加小工具。"
+
+#: includes/setup.php:116
+msgid "Footer Widgets Area"
+msgstr "页脚小工具区域"
+
+#: includes/template-tags.php:62
+msgid ", "
+msgstr ", "
+
+#: includes/template-tags.php:65
+#, php-format
+msgid "Posted in %1$s"
+msgstr "发表在 %1$s"
+
+#: includes/template-tags.php:72
+#, php-format
+msgid "Tagged %1$s"
+msgstr "标签 %1$s"
+
 #: includes/template-tags.php:82
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
@@ -133,6 +168,48 @@ msgstr "<span class=\"screen-reader-text\">在 %s </span>发表评论"
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "编辑<span class=\"screen-reader-text\">%s</span>"
+
+#: includes/woocommerce.php:158
+msgid "WooCommerce Widget Area"
+msgstr "WooCommerce小工具区域"
+
+#: search.php:22
+#, php-format
+msgid "Search Results for: %s"
+msgstr "搜索结果: %s"
+
+#: src/Customizer/Base.php:170
+msgid "Colors"
+msgstr "颜色"
+
+#: src/Customizer/Base.php:171
+msgid "WooCommerce Color Schema"
+msgstr "WooCommerce 配色方案"
+
+#: src/Customizer/Base.php:177
+msgid "Single Product"
+msgstr "产品详情页面"
+
+#: src/Customizer/Base.php:178
+msgid "Single Product Page Settings"
+msgstr "产品详情页面设置"
+
+#: src/Customizer/Base.php:215
+msgid "Primary color"
+msgstr "主要颜色"
+
+#: src/Customizer/Base.php:229
+msgid "Show Sidebar"
+msgstr "显示侧边栏"
+
+#: src/Customizer/Base.php:243
+msgid "Columns of Gallery thumbnail"
+msgstr "相册缩略图每行显示的图片数量"
+
+#: src/Customizer/Base.php:253 src/Customizer/Base.php:263
+#: src/Customizer/Base.php:273
+msgid "Number of Related Products"
+msgstr "显示的相关产品数量"
 
 #: src/Elementor/Widgets/ServiceWidgets.php:37
 msgid "Widget Title"

@@ -208,22 +208,6 @@ class Base
     public function register_controls()
     {
         $this->wp_customize->add_control(
-            'logo_top_margin',
-            [
-                'type'        => 'number',
-                'label'       => esc_html__('Logo top margin', '_s'),
-                'description' => esc_html__('In pixels.', '_s'),
-                'priority'    => 9,
-                'section'     => 'title_tagline',
-                'input_attrs' => [
-                    'min'  => 0,
-                    'max'  => 120,
-                    'step' => 5,
-                ],
-            ]
-        );
-
-        $this->wp_customize->add_control(
             'rswc_primary_color',
             [
                 'type'     => 'color',
