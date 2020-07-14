@@ -21,7 +21,7 @@
         }
     }
 
-    .single_add_to_cart_button {
+    .button.single_add_to_cart_button {
         width: calc(100% - 95px);
         height: 58px;
         line-height: 58px;
@@ -31,6 +31,8 @@
         text-transform: uppercase;
         font-size: 19px;
 
+        &.loading:after,
+        &.added:after,
         &:after {
             top: 19px;
         }
@@ -136,7 +138,7 @@
             }
 
             a {
-                @apply relative no-underline;
+                @apply no-underline;
 
                 &.added_to_cart {
                     @apply hidden;
