@@ -23,10 +23,10 @@
 // :: 1.1. 颜色
 // ----------------------------------------------------------
 
-$sm-menu__white: #fff !default;
-$sm-menu__black: #333 !default;
-$sm-menu__green: #F7FAFC !default;
-$sm-menu__green-dark: $primary !default;
+$sm-menu__white: #fff !default; // Background color
+$sm-menu__black: #333 !default; // Text color
+$sm-menu__green: #f7fafc !default; // Dropdown box Box
+$sm-menu__green-dark: $primary !default;  //Active Color
 
 $sm-menu__box-shadow: rgba(0, 0, 0, 0.25) !default;
 
@@ -165,6 +165,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
     // Main menu items
     a {
         position: relative;
+
         &,
         &:hover,
         &:focus,
@@ -253,8 +254,8 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         @include sm-menu__sub-items-indentation($sm-menu__collapsible-sub-item-indentation);
     }
 
-    &.sm-vertical{
-        a{
+    &.sm-vertical {
+        a {
             display: block;
         }
     }

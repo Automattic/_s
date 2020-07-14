@@ -696,6 +696,10 @@ div.images .woocommerce-product-gallery__trigger:after {
   margin-top: 2rem;
 }
 
+.woocommerce-loop-product__link {
+  position: relative;
+}
+
 .upsells.products h2,
 .related.products h2 {
   font-size: 1.5rem;

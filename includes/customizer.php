@@ -31,6 +31,9 @@ function _s_customize_register($wp_customize)
     $wp_customize->get_control('background_color')->section = 'colors_background';
     $wp_customize->get_control('background_image')->section = 'colors_background';
 
+    /**
+     * Add partial refresh call back
+     */
     if (isset($wp_customize->selective_refresh)) {
         $wp_customize->selective_refresh->add_partial('blogname', [
             'selector'        => '.site-title a',
@@ -139,23 +142,3 @@ if ( ! function_exists('_s_header_style')) :
         <?php
     }
 endif;
-
-
-if ( ! function_exists('_s_customizer')) {
-    function _s_customizer($wp_customize)
-    {
-        new \SpaceName\Customizer\Base($wp_customize);
-    }
-
-    add_action('customize_register', '_s_customizer');
-}
-
-
-if ( ! function_exists('_s_customizer_frontend')) {
-    function _s_customizer_frontend()
-    {
-        new \SpaceName\Customizer\Frontend();
-    }
-
-    add_action('init', '_s_customizer_frontend');
-}

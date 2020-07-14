@@ -1780,6 +1780,12 @@ div.product table.variations .value {
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  .woocommerce_sidebar {
+    margin-right: 2rem;
+  }
+}
+
 .site__shop {
   display: -webkit-box;
   display: -ms-flexbox;

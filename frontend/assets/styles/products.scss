@@ -352,6 +352,10 @@
     @apply mt-8;
 }
 
+.woocommerce-loop-product__link{
+    @apply relative;
+}
+
 .upsells.products,
 .related.products {
     h2 {

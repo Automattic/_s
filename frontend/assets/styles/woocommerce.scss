@@ -49,6 +49,12 @@
     @apply w-full;
 }
 
+.woocommerce_sidebar{
+    @screen lg{
+      @apply mr-8;
+    }
+}
+
 .site__shop{
     @apply flex w-full;
 }

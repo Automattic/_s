@@ -566,7 +566,7 @@ if (get_theme_mod('rswc_single_product_show_sidebar', false)) {
         echo '<div class="flex">';
 
         if (is_active_sidebar('sidebar-woo')) { ?>
-            <div class="content__secondary">
+            <div class="content__secondary woocommerce_sidebar">
                 <?php dynamic_sidebar('sidebar-woo'); ?>
             </div>
         <?php }
