@@ -656,3 +656,20 @@ if ( ! function_exists('_s_woocommerce_wrapper_after')) {
         <?php
     }
 }
+
+
+add_action('woocommerce_before_account_navigation', function ()
+{
+    echo '<div class="woocommerce-MyAccount-navigation">';
+
+    echo '<div class="wc-profile-card">';
+    echo get_avatar(get_current_user_id(), 120);
+    echo '<div class="wc-profile-card__name">' . wp_get_current_user()->display_name . '</div>';
+    echo '</div>';
+});
+
+
+add_action('woocommerce_after_account_navigation', function ()
+{
+    echo '</div>';
+});

@@ -92,11 +92,7 @@ table.my_account_orders {
 .woocommerce-MyAccount {
 
     &-navigation {
-        @apply w-full shadow;
-
-        @screen md {
-            @apply w-1/5 float-left;
-        }
+        @apply w-full;
 
         ul {
             @apply bg-white px-6 py-4 flex flex-wrap;
@@ -144,6 +140,13 @@ table.my_account_orders {
                 border-radius: 3px;
             }
         }
+    }
+}
+
+div.woocommerce-MyAccount-navigation {
+    @apply shadow;
+    @screen md {
+        @apply w-1/5 float-left;
     }
 }
 
@@ -262,7 +265,7 @@ table.my_account_orders {
 // 用户资料卡片
 //===================================
 .wc-profile-card {
-    @apply text-center bg-gray-300 p-8;
+    @apply text-center bg-white border-b border-gray-200 p-8;
 
     img {
         @apply mx-auto;

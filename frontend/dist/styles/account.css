@@ -813,15 +813,6 @@ table.my_account_orders .order-actions .button {
 
 .woocommerce-MyAccount-navigation {
   width: 100%;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
-
-@media (min-width: 768px) {
-  .woocommerce-MyAccount-navigation {
-    width: 20%;
-    float: left;
-  }
 }
 
 .woocommerce-MyAccount-navigation ul {
@@ -926,6 +917,18 @@ table.my_account_orders .order-actions .button {
 
 .woocommerce-MyAccount-content form button[type=submit]:active {
   border-color: #00284a;
+}
+
+div.woocommerce-MyAccount-navigation {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 768px) {
+  div.woocommerce-MyAccount-navigation {
+    width: 20%;
+    float: left;
+  }
 }
 
 .woocommerce-MyAccount-downloads td,
@@ -1072,8 +1075,12 @@ table.my_account_orders .order-actions .button {
 .wc-profile-card {
   text-align: center;
   --bg-opacity: 1;
-  background-color: #e0e0e0;
-  background-color: rgba(224, 224, 224, var(--bg-opacity));
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #eee;
+  border-color: rgba(238, 238, 238, var(--border-opacity));
   padding: 2rem;
 }
 
