@@ -387,7 +387,7 @@ if ( ! class_exists( __NAMESPACE__ . '\\WC_Theme_Integration' ) ) :
 				return $template;
 			}
 
-			$disable_wc_template = get_post_meta( $product->get_id(), '_funnels_disable_product_template', true );
+			$disable_wc_template = get_post_meta( $product->get_id(), '_svbk_custom_template', false );
 
 			if ( $disable_wc_template ) {
 				$template = $this->plugin_template_part( '', $slug, $name . '-custom' );
