@@ -13,25 +13,35 @@
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_before_main_content', '_s_woocommerce_wrapper_before');
-add_action('woocommerce_after_main_content', '_s_woocommerce_wrapper_after');
-
-
-/**
- * Remove Default Sidebar
- */
-remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
-
-/**
- * Modify related products args
- */
-add_filter('woocommerce_output_related_products_args', '_s_woocommerce_related_products_args');
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
 
 /**
  * Remove default product link in loop
  */
 remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
+
+
+/**
+ * Within Product Loop - remove title hook and create a new one with the category displayed above it.
+ */
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+
+/**
+ * Remove Default Sidebar
+ */
+remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+
+
+add_action('woocommerce_before_main_content', '_s_woocommerce_wrapper_before');
+add_action('woocommerce_after_main_content', '_s_woocommerce_wrapper_after');
+
+
+/**
+ * Modify related products args
+ */
+add_filter('woocommerce_output_related_products_args', '_s_woocommerce_related_products_args');
 
 
 /**
@@ -90,17 +100,6 @@ add_action('woocommerce_before_single_product_summary', '_s_product_content_wrap
 
 add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end', 60);
 
-
-/**
- * Within Product Loop - remove title hook and create a new one with the category displayed above it.
- */
-remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
-
-
-/**
- * Customize product title in loop
- */
-add_action('woocommerce_shop_loop_item_title', '_s_loop_product_title', 10);
 
 /**
  * Add wrap class to product sort and account at top of products archive page
@@ -368,14 +367,37 @@ if ( ! function_exists('_s_product_content_wrapper_end')) {
     }
 }
 
-if ( ! function_exists('_s_loop_product_title')) {
-    function _s_loop_product_title()
+
+/**
+ * Customize product title in loop
+ */
+$product_elements = get_theme_mod('rswc_product_elements_order', ['title', 'price']);
+foreach ($product_elements as $index => $element) {
+    switch ($element) {
+        case 'category':
+            add_action('woocommerce_shop_loop_item_title', 'rswc_template_loop_categories', $index);
+            break;
+        case 'title':
+            add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', $index);
+            break;
+        case 'price':
+            add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_price', $index);
+            break;
+        case 'review':
+            add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating', $index);
+            break;
+        case 'description':
+            add_action('woocommerce_shop_loop_item_title', 'the_excerpt', $index);
+            break;
+        default:
+
+    }
+}
+
+if ( ! function_exists('rswc_template_loop_categories')) {
+    function rswc_template_loop_categories()
     {
-        $woocommerce_display_category = true;
-        if (true === $woocommerce_display_category) {
-            echo '<p class="product__categories">' . wc_get_product_category_list(get_the_id(), ', ', '', '') . '</p>';
-        }
-        echo '<div class="woocommerce-loop-product__title"><a href="' . get_the_permalink() . '" title="' . get_the_title() . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">' . get_the_title() . '</a></div>';
+        echo '<p class="product__categories">' . wc_get_product_category_list(get_the_id(), ', ', '', '') . '</p>';
     }
 }
 
