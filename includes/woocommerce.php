@@ -581,7 +581,7 @@ add_action('woocommerce_product_after_tabs', function ()
 }, 15);
 
 
-if (get_theme_mod('rswc_single_product_show_sidebar', false)) {
+if (get_theme_mod('rswc_single_product_sidebar_layout', 'sidebar-none') !== 'sidebar-none') {
 
     add_action('woocommerce_after_single_product_summary', function ()
     {
@@ -636,10 +636,12 @@ if ( ! function_exists('_s_woocommerce_wrapper_after')) {
         </div><!-- #primary -->
 
         <?php
-        if (get_theme_mod('rswc_products_catalog_show_sidebar', false) && is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category())) {
-            echo '<div class="content__secondary site-woo__sidebar">';
-            dynamic_sidebar('sidebar-woo');
-            echo '</div>';
+        if (is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category())) {
+            if (get_theme_mod('rswc_products_catalog_sidebar_layout', 'sidebar-none') !== 'sidebar-none') {
+                echo '<div class="content__secondary site-woo__sidebar">';
+                dynamic_sidebar('sidebar-woo');
+                echo '</div>';
+            }
         }
         ?>
 
