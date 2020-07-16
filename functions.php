@@ -440,7 +440,8 @@ function _svbk_scripts() {
 		'_svbk-common',
 		'/dist/css/common.css',
 		[
-			'source' => 'theme'
+			'source' 	=> 'theme',
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);	
 
@@ -453,6 +454,7 @@ function _svbk_scripts() {
 			'source'    => 'theme',
 			'condition' => is_front_page(),
 			'prefetch'  => ! is_front_page(),
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	
@@ -464,6 +466,7 @@ function _svbk_scripts() {
 			'source'    => 'theme',
 			'condition' => is_home() || is_category() || is_tag() || is_post_type_archive( 'post' ),
 			'prefetch'  => ! is_home() && ! is_post_type_archive( 'post' ),
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -475,6 +478,7 @@ function _svbk_scripts() {
 			'source'    => 'theme',
 			'condition' => is_singular( 'post' ),
 			'prefetch'  => is_home(),
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -486,6 +490,7 @@ function _svbk_scripts() {
 			'source'    => 'theme',
 			'condition' => is_page() && ! ( is_front_page() || is_home() ),
 			'prefetch'  => is_page(),
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -497,6 +502,7 @@ function _svbk_scripts() {
 			'source'    => 'theme',
 			'condition' => is_singular( 'testimonial' ),
 			'prefetch'  => is_post_type_archive( 'testimonial' ),
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);	
 	
@@ -507,6 +513,7 @@ function _svbk_scripts() {
 			'deps'      => array( '_svbk-common' ),
 			'source'    => 'theme',
 			'condition' => is_search(),
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -517,6 +524,7 @@ function _svbk_scripts() {
 			'deps'      => array( '_svbk-common' ),
 			'source'    => 'theme',
 			'condition' => is_404(),
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -525,8 +533,9 @@ function _svbk_scripts() {
 		'_svbk-ie9',
 		'/dist/css/ie9.css',
 		[
-			'deps'   => array( '_svbk-common' ),
-			'source' => 'theme',
+			'deps'   	=> array( '_svbk-common' ),
+			'source' 	=> 'theme',
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	wp_style_add_data( '_svbk-ie9', 'conditional', 'IE 9' );
@@ -535,8 +544,9 @@ function _svbk_scripts() {
 		'_svbk-ie8',
 		'/dist/css/ie8.css',
 		[
-			'deps'   => array( '_svbk-common' ),
-			'source' => 'theme',
+			'deps'   	=> array( '_svbk-common' ),
+			'source' 	=> 'theme',
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	wp_style_add_data( '_svbk-ie8', 'conditional', 'lt IE 9' );
@@ -546,9 +556,10 @@ function _svbk_scripts() {
 		'_svbk-navigation',
 		'/dist/js/navigation.min.js',
 		[
-			'source' => 'theme',
-			'async'  => true,
-			'defer'  => false,
+			'source' 	=> 'theme',
+			'async'  	=> true,
+			'defer'  	=> false,
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -556,7 +567,8 @@ function _svbk_scripts() {
 		'jquery-countdown',
 		'dist/jquery.countdown.min.js',
 		[
-			'deps' => array( 'jquery' ),
+			'deps' 		=> array( 'jquery' ),
+			'version' 	=> '2.2.0'
 		]
 	);
 
@@ -565,8 +577,9 @@ function _svbk_scripts() {
 		'_svbk-theme',
 		'/dist/js/theme.min.js',
 		[
-			'deps'   => array( 'jquery', 'jquery-countdown' ),
-			'source' => 'theme',
+			'deps'   	=> array( 'jquery', 'jquery-countdown' ),
+			'source' 	=> 'theme',
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 	
@@ -575,8 +588,9 @@ function _svbk_scripts() {
 		'_svbk-theme-fx',
 		'/dist/js/fx.min.js',
 		[
-			'deps'   => array( 'jquery', 'waypoints' ),
-			'source' => 'theme',
+			'deps'   	=> array( 'jquery', 'waypoints' ),
+			'source' 	=> 'theme',
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);	
 
@@ -585,8 +599,9 @@ function _svbk_scripts() {
 		'_svbk-maps',
 		'/dist/js/map-block.min.js',
 		[
-			'deps'   => array( 'jquery' ),
-			'source' => 'theme',
+			'deps'   	=> array( 'jquery' ),
+			'source' 	=> 'theme',
+			'version' 	=> Config::get( 'theme_version', '_svbk' )
 		]
 	);
 
@@ -595,7 +610,7 @@ function _svbk_scripts() {
 		'object-fit-images',
 		'dist/ofi.js',
 		[
-			'version' => '3',
+			'version' => '3.2.4',
 			'defer'   => true,
 		]
 	);
@@ -730,6 +745,7 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null, $che
 		'fontfaceobserver.js',
 		[
 			'source' => JsDelivr::class,
+			'version' => Config::get( 'theme_version', '_svbk' ),
 			'defer'  => true,
 		]
 	);
@@ -754,7 +770,14 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null, $che
 
 	foreach ( $font_sources as $font_url => $font_handle ) {
 		$is_absolute = preg_match( '|^(https?:)?//|', $font_url );
-		Style::enqueue( $prefix . $font_handle, $font_url, [ 'source' => $is_absolute ? false : 'theme' ] );
+		Style::enqueue( 
+			$prefix . $font_handle, 
+			$font_url, 
+			[ 
+				'source' => $is_absolute ? false : 'theme', 
+				'version' => $is_absolute ? null : Config::get( 'theme_version', '_svbk' ) 
+			] 
+		); 
 	}
 
 	$observerCode = '(function(){ ';
