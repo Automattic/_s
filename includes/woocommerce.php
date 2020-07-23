@@ -22,13 +22,6 @@ remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_lo
 remove_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10);
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
 
-if ( ! get_theme_mod('woocommerce_enable_upsell_products', 1)) {
-    remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
-}
-
-if ( ! get_theme_mod('woocommerce_enable_related_products', 1)) {
-    remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-}
 
 /**
  * Within Product Loop - remove title hook and create a new one with the category displayed above it.
@@ -43,12 +36,6 @@ remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
 add_action('woocommerce_before_main_content', '_s_woocommerce_wrapper_before');
 add_action('woocommerce_after_main_content', '_s_woocommerce_wrapper_after');
-
-
-/**
- * Modify related products args
- */
-add_filter('woocommerce_output_related_products_args', '_s_woocommerce_related_products_args');
 
 
 /**
@@ -86,12 +73,6 @@ add_action('wp_print_styles', '_s_deregister_select2', 5);
  * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
  */
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
-
-
-/**
- * Modify WooCommerce thumbnail columns
- */
-add_filter('woocommerce_product_thumbnails_columns', '_s_woocommerce_thumbnail_columns');
 
 
 /**
@@ -243,38 +224,6 @@ if ( ! function_exists('_s_woocommerce_active_body_class')) {
     }
 }
 
-if ( ! function_exists('_s_woocommerce_thumbnail_columns')) {
-    /**
-     * Product gallery thumbnail columns.
-     *
-     * @return integer number of columns.
-     */
-    function _s_woocommerce_thumbnail_columns()
-    {
-        return get_theme_mod('rswc_single_product_gallery_columns', 4);
-    }
-}
-
-if ( ! function_exists('_s_woocommerce_related_products_args')) {
-    /**
-     * Related Products Args.
-     *
-     * @param array $args related products args.
-     *
-     * @return array $args related products args.
-     */
-    function _s_woocommerce_related_products_args($args)
-    {
-        $defaults = [
-            'posts_per_page' => get_theme_mod('rswc_single_product_related_count', 4),
-            'columns'        => get_theme_mod('rswc_single_product_related_columns', 4),
-        ];
-
-        $args = wp_parse_args($defaults, $args);
-
-        return $args;
-    }
-}
 
 if ( ! function_exists('_s_woocommerce_cart_link_fragment')) {
     /**
@@ -374,39 +323,6 @@ if ( ! function_exists('_s_product_content_wrapper_end')) {
     }
 }
 
-
-/**
- * Customize product title in loop
- */
-$product_elements = get_theme_mod('rswc_product_elements_order', ['title', 'price']);
-foreach ($product_elements as $index => $element) {
-    switch ($element) {
-        case 'category':
-            add_action('woocommerce_shop_loop_item_title', 'rswc_template_loop_categories', $index);
-            break;
-        case 'title':
-            add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', $index);
-            break;
-        case 'price':
-            add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_price', $index);
-            break;
-        case 'review':
-            add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_rating', $index);
-            break;
-        case 'description':
-            add_action('woocommerce_shop_loop_item_title', 'the_excerpt', $index);
-            break;
-        default:
-
-    }
-}
-
-if ( ! function_exists('rswc_template_loop_categories')) {
-    function rswc_template_loop_categories()
-    {
-        echo '<p class="product__categories">' . wc_get_product_category_list(get_the_id(), ', ', '', '') . '</p>';
-    }
-}
 
 if ( ! function_exists('_s_header_cart_drawer')) {
     /**
