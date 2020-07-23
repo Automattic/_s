@@ -1031,6 +1031,10 @@
   font-size: 13px;
 }
 
+.woocommerce-privacy-policy-link {
+  text-decoration: underline;
+}
+
 .wc_payment_method {
   padding: 1rem;
   --bg-opacity: 1;
