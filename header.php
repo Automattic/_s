@@ -50,6 +50,7 @@
                     'theme_location' => 'menu-primary',
                     'menu_id'        => 'primary-menu',
                     'menu_class'     => 'sm sm-menu nav-menu',
+                    'fallback_cb'    => '_s_page_menu',
                 ]);
                 ?>
             </nav>

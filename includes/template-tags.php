@@ -146,3 +146,18 @@ if ( ! function_exists( '_s_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+
+
+function _s_page_menu()
+{
+    wp_page_menu(
+        [
+            'container'    => 'ul',
+            'before'       => '',
+            'after'        => '',
+            'menu_id'        => 'primary-menu',
+            'menu_class'     => 'sm sm-menu nav-menu',
+        ]
+    );
+}
