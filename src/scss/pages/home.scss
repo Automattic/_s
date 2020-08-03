@@ -1,0 +1,26 @@
+@import '../base/variables';
+
+.home {
+  .jumbotron {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .na-home-title {
+    @media #{$medium} {
+      font-size: 55px;
+    }
+  }
+}
+
+.jumbotron {
+  padding: 2rem 0;
+
+  @media #{$medium} {
+    padding: 50px;
+  }
+}
+
+.jumbotron-inner {
+  padding: 50px;
+}

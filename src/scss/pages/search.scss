@@ -1,0 +1,46 @@
+@import '../base/variables';
+
+.na-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.na-card {
+  flex-grow: 1;
+  flex-basis: 49%;
+  height: 270px;
+  margin: 2px;
+  max-width: 224px;
+
+  @media #{$medium} {
+    flex-basis: 32%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.na-btn-term {
+  margin-left: -10px;
+
+  &.active {
+    background: $gray;
+  }
+}
+
+.na-search-page,
+.na-search-results {
+  min-height: 700px;
+}
+
+.na-search-page-container {
+  @media #{$medium} {
+    margin-top: 48px;
+  }
+}
+
+.na-card-img-top {
+  min-height: 197px;
+}

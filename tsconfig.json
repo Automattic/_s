@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "module": "es6",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "target": "es6",
+    "strictFunctionTypes": false,
+    "paths": {
+      "@frontend/*": ["ts/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
