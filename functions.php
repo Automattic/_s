@@ -745,7 +745,7 @@ function _svbk_enqueue_config_fonts( $config_key = 'fonts', $prefix = null, $che
 		'fontfaceobserver.js',
 		[
 			'source' => JsDelivr::class,
-			'version' => Config::get( 'theme_version', '_svbk' ),
+			'version' => '2.1.0',
 			'defer'  => true,
 		]
 	);
