@@ -13,5 +13,5 @@ jobs:
       with:
         ftp-server: ftp://ftp.estetiquebeb-temporary.it//www.estetiquebeb-temporary.it/wp-content/themes/estetiquebeb
         ftp-username: 11344978@aruba.it
-        ftp-password: ${{ secrets.FTPS_PASSWORD }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
         git-ftp-args: --insecure # if your certificate is setup correctly this can be removed
