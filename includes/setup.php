@@ -128,11 +128,9 @@ if ( ! function_exists('_s_widgets_init')) {
 if ( ! function_exists('_s_elementor_widgets_init')) {
     function _s_elementor_widgets_init()
     {
-        if (class_exists(\Elementor\Widget_Base::class)) {
-            add_action('elementor/widgets/widgets_registered', function ($widgets_manager)
-            {
-                $widgets_manager->register_widget_type(new \SpaceName\Elementor\Widgets\ServiceWidgets());
-            });
-        }
+        add_action('elementor/widgets/widgets_registered', function ($widgets_manager)
+        {
+            $widgets_manager->register_widget_type(new \SpaceName\Elementor\Widgets\ServiceWidgets());
+        });
     }
 }

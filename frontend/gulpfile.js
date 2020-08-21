@@ -19,6 +19,7 @@ const combineMedia = require('gulp-combine-media');
 const uglify = require('gulp-uglify-es').default;
 const postcss = require('gulp-postcss');
 const purgecss = require('@fullhuman/postcss-purgecss');
+const purgecssWhiteList = require('wenprise-purgecss-whitelist');
 const babel = require('gulp-babel');
 
 /**
@@ -70,12 +71,18 @@ const revManifest = path.dist + 'assets.json';
 const cssPurge = () => {
     return postcss([
         purgecss({
-            content: ['/Volumes/RAM/SiteSucker/zhiku.ams/**/*.html'],
-            whitelist: ['rm-subtoggle', 'c-nav--closed', 'hentry', 'mce-content-body'],
-            whitelistPatterns: [/slick*/, /mfp*/, /dropdown*/, /global*/, /wc-*/, /wp-*/, /woocommerce*/, /cart*/],
-            extractors: [
+            content          : ['/Users/Amoslee/Downloads/us.sitesucker.mac.sitesucker/cnw.ams/**/*.html'],
+            whitelist        : purgecssWhiteList.whitelist.concat([
+                'ln-letters',
+                'letterCountShow',
+            ]),
+            whitelistPatterns: purgecssWhiteList.whitelistPatterns.concat([
+                /ln-*/,
+                /listNav*/,
+            ]),
+            extractors       : [
                 {
-                    extractor: class TailwindExtractor {
+                    extractor : class TailwindExtractor {
                         static extract(content) {
                             return content.match(/[A-z0-9-:\/]+/g) || [];
                         }
