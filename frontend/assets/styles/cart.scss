@@ -24,10 +24,10 @@ table.cart {
 
         button,
         input[type=submit] {
-            border-radius: 2px;
-            padding: 0 22px;
+            @apply text-sm rounded-sm;
+            padding-left: 22px;
+            padding-right: 22px;
             color: #111;
-            font-size: 14px;
         }
 
         .coupon {
@@ -45,7 +45,7 @@ table.cart {
     @include clearfix();
 
     @screen lg{
-        float: right;
+        @apply float-right;
         width: 33%;
     }
 
@@ -98,9 +98,8 @@ table.cart {
 
 .woocommerce-cart-form {
     @screen lg{
-        float: left;
+        @apply float-left mb-0;
         width: 62%;
-        margin-bottom: 0;
     }
 
     table {

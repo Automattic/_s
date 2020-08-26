@@ -726,10 +726,11 @@ table.cart td.actions {
 
 table.cart td.actions button,
   table.cart td.actions input[type=submit] {
-  border-radius: 2px;
-  padding: 0 22px;
+  font-size: 0.875rem;
+  border-radius: 0.125rem;
+  padding-left: 22px;
+  padding-right: 22px;
   color: #111;
-  font-size: 14px;
 }
 
 table.cart td.actions .coupon {
@@ -823,8 +824,8 @@ table.cart td.actions .coupon label {
 @media (min-width: 1024px) {
   .woocommerce-cart-form {
     float: left;
-    width: 62%;
     margin-bottom: 0;
+    width: 62%;
   }
 }
 
