@@ -217,3 +217,14 @@
         }
     }
 }
+
+
+.woocommerce-mini-cart__empty-message{
+    &:before{
+        @apply mx-auto block mb-8;
+        content: ' ';
+        background: url("../images/empty-cart.svg") center center no-repeat;
+        background-size: contain;
+        height: 128px;
+    }
+}

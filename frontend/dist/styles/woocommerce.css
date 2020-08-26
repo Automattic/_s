@@ -2005,3 +2005,14 @@ div.product table.variations .value {
 .woocommerce-order-pay .woocommerce #payment {
   margin-top: 2rem;
 }
+
+.woocommerce-mini-cart__empty-message:before {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 2rem;
+  content: ' ';
+  background: url("../images/empty-cart.svg") center center no-repeat;
+  background-size: contain;
+  height: 128px;
+}

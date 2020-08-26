@@ -1,30 +1,29 @@
-.empty {
+.rs-empty {
+    @apply mx-auto text-center px-8 py-16;
     color: #66758c;
-    padding: 3.2rem 1.6rem;
-    @apply mx-auto text-center;
 
-    @screen md{
+    @screen md {
         max-width: 750px;
     }
-}
 
-.empty .empty-icon {
-    margin-bottom: .8rem
-}
+    .rs-empty__icon {
+        @apply text-center mb-8;
 
-.empty .empty-subtitle,
-.empty .empty-title {
-    margin: .4rem auto
-}
+        img{
+            @apply mx-auto;
+            max-width: 16rem;
+        }
+    }
 
-.empty .empty-title{
-    font-size: 68px;
-}
+    .rs-empty__title {
+        @apply text-3xl mb-3;
+    }
 
-.empty .empty-subtitle{
-    @apply mb-8;
-}
+    .rs-empty__subtitle {
+        @apply mb-3;
+    }
 
-.empty .empty-action {
-    margin-top: .8rem
+    .rs-empty__action {
+        @apply mt-8;
+    }
 }

@@ -15,28 +15,22 @@ get_header();
             <main id="main" class="site__main">
 
                 <section class="error-404 not-found">
-                    <header class="page-header">
-                        <h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', '_s'); ?></h1>
-                    </header><!-- .page-header -->
+                    <div class="container--focus rs-empty">
 
-                    <div class="page-content">
-                        <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s'); ?></p>
+                        <div class="rs-empty__icon">
+                            <img src="<?= _s_asset('images/404.svg'); ?>" alt="404 Error" />
+                        </div>
 
-                        <?php get_search_form(); ?>
+                        <header class="rs-empty__title">
+                            <?php esc_html_e('Oops! That page can&rsquo;t be found.', '_s'); ?>
+                        </header><!-- .page-header -->
 
-                        <div class="widget widget_categories">
-                            <h2 class="widget-title"><?php esc_html_e('Most Used Categories', '_s'); ?></h2>
-                            <ul>
-                                <?php
-                                wp_list_categories([
-                                    'orderby'    => 'count',
-                                    'order'      => 'DESC',
-                                    'show_count' => 1,
-                                    'title_li'   => '',
-                                    'number'     => 10,
-                                ]);
-                                ?>
-                            </ul>
+                        <p class="rs-empty__subtitle">
+                            <?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s'); ?>
+                        </p>
+
+                        <div class="rs-empty__action input-group input-inline">
+                            <?php get_search_form(); ?>
                         </div>
 
                     </div>
