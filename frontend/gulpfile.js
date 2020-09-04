@@ -19,7 +19,7 @@ const combineMedia = require('gulp-combine-media');
 const uglify = require('gulp-uglify-es').default;
 const postcss = require('gulp-postcss');
 const purgecss = require('@fullhuman/postcss-purgecss');
-const purgecssWhiteList = require('wenprise-purgecss-whitelist');
+const purgecssWhiteList = require('@wenprise/purgecss-with-wordpress');
 const babel = require('gulp-babel');
 
 /**
