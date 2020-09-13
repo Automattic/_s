@@ -25,10 +25,10 @@
 	<!-- Strip the filepaths down to the relevant bit. -->
 	<arg name="basepath" value="./"/>
 
-	<!-- Check up to 8 files simultanously. -->
+	<!-- Check up to 8 files simultaneously. -->
 	<arg name="parallel" value="8"/>
 
-	<!-- Only check the PHP files. JS, and CSS files are checked separately with @wordpress/scripts package. -->
+	<!-- Check PHP files only. JavaScript and CSS files are checked separately using the @wordpress/scripts package. -->
 	<arg name="extensions" value="php"/>
 
 	<!-- Check all files in this directory and the directories below it. -->
