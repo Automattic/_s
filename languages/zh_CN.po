@@ -4,28 +4,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-07-14 17:23+0800\n"
-"PO-Revision-Date: 2020-07-14 17:23+0800\n"
+"POT-Creation-Date: 2020-09-14 11:38+0800\n"
+"PO-Revision-Date: 2020-09-14 11:39+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"X-Poedit-KeywordsList: ;_e;__;esc_html__\n"
+"X-Generator: Poedit 2.4\n"
+"X-Poedit-KeywordsList: ;_e;__;esc_html__;esc_html_e\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: frontend\n"
 "X-Poedit-SearchPathExcluded-1: vendor\n"
 
+#: 404.php:25
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "抱歉！此页面不存在。"
+
+#: 404.php:29
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr "这里好像什么都没有，试试搜索功能吧"
+
 #: comments.php:35
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr "&ldquo;%1$s&rdquo;上有 1 个评论"
 
-#: includes/customizer.php:21
+#: comments.php:67
+msgid "Comments are closed."
+msgstr "评论已关闭。"
+
+#: header.php:26
+msgid "Skip to content"
+msgstr "跳至内容"
+
+#: header.php:46
+msgid "Menu"
+msgstr "菜单"
+
+#: includes/customizer.php:27
 msgid "Colors and Background"
 msgstr "颜色和背景"
 
@@ -141,7 +163,7 @@ msgstr "主要"
 msgid "Primary Widgets Area"
 msgstr "主要小工具区域"
 
-#: includes/setup.php:109 includes/setup.php:118 includes/woocommerce.php:160
+#: includes/setup.php:109 includes/setup.php:118 includes/woocommerce.php:147
 msgid "Add widgets here."
 msgstr "在这里添加小工具。"
 
@@ -173,46 +195,26 @@ msgstr "<span class=\"screen-reader-text\">在 %s </span>发表评论"
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "编辑<span class=\"screen-reader-text\">%s</span>"
 
-#: includes/woocommerce.php:158
+#: includes/woocommerce.php:145
 msgid "WooCommerce Widget Area"
 msgstr "WooCommerce小工具区域"
+
+#: includes/woocommerce.php:622
+msgid "Shopping Cart"
+msgstr "购物车"
+
+#: includes/woocommerce.php:627
+msgid "Shipping and Checkout"
+msgstr "运费和结算"
+
+#: includes/woocommerce.php:631
+msgid "Confirmation"
+msgstr "订单确认"
 
 #: search.php:22
 #, php-format
 msgid "Search Results for: %s"
 msgstr "搜索结果: %s"
-
-#: src/Customizer/Base.php:170
-msgid "Colors"
-msgstr "颜色"
-
-#: src/Customizer/Base.php:171
-msgid "WooCommerce Color Schema"
-msgstr "WooCommerce 配色方案"
-
-#: src/Customizer/Base.php:177
-msgid "Single Product"
-msgstr "产品详情"
-
-#: src/Customizer/Base.php:178
-msgid "Single Product Page Settings"
-msgstr "产品详情页面设置"
-
-#: src/Customizer/Base.php:215
-msgid "Primary color"
-msgstr "主要颜色"
-
-#: src/Customizer/Base.php:229 src/Customizer/Base.php:273
-msgid "Show Sidebar"
-msgstr "显示侧边栏"
-
-#: src/Customizer/Base.php:243
-msgid "Columns of Gallery thumbnail"
-msgstr "相册缩略图每行显示的图片数量"
-
-#: src/Customizer/Base.php:253 src/Customizer/Base.php:263
-msgid "Number of Related Products"
-msgstr "显示的相关产品数量"
 
 #: src/Elementor/Widgets/ServiceWidgets.php:37
 msgid "Widget Title"
@@ -230,7 +232,48 @@ msgstr "要嵌入的 URL"
 msgid "https://your-link.com"
 msgstr "https://your-link.com"
 
-#: templates/content-none.php:30
+#: templates/content-none.php:22
+msgid "Nothing Found"
+msgstr "无法找到任何内容"
+
+#: templates/content-none.php:31
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "准备好发表第一篇文章了吗？<a href=\"%1$s\">点击这里开始</a>。"
+
+#: templates/content-none.php:45
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr "抱歉，没有符合您搜索条件的结果。请换其它关键词再试。"
+
+#: templates/content-none.php:55
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "看来我们不能找到你要找的东西。请搜索一下试试吧。"
+
+#~ msgid "Colors"
+#~ msgstr "颜色"
+
+#~ msgid "WooCommerce Color Schema"
+#~ msgstr "WooCommerce 配色方案"
+
+#~ msgid "Single Product"
+#~ msgstr "产品详情"
+
+#~ msgid "Single Product Page Settings"
+#~ msgstr "产品详情页面设置"
+
+#~ msgid "Primary color"
+#~ msgstr "主要颜色"
+
+#~ msgid "Show Sidebar"
+#~ msgstr "显示侧边栏"
+
+#~ msgid "Columns of Gallery thumbnail"
+#~ msgstr "相册缩略图每行显示的图片数量"
+
+#~ msgid "Number of Related Products"
+#~ msgstr "显示的相关产品数量"

@@ -589,3 +589,51 @@ add_action('woocommerce_after_account_navigation', function ()
 {
     echo '</div>';
 });
+
+
+/**
+ * Add Progress Bar to the Cart and Checkout pages.
+ */
+add_action('woocommerce_before_cart', '_s_cart_progress');
+add_action('woocommerce_before_checkout_form', '_s_cart_progress', 5);
+add_action('woocommerce_before_thankyou', '_s_cart_progress', 5);
+
+if ( ! function_exists('_s_cart_progress')) {
+
+    /**
+     * More product info
+     * Link to product
+     *
+     * @return void
+     * @since  1.0.0
+     */
+    function _s_cart_progress()
+    {
+
+        $show_progress_bar = true;
+
+        if (true === $show_progress_bar) {
+            ?>
+
+            <div class="rs-checkout-wrap">
+                <ul class="rs-checkout-bar">
+                    <li class="active first">
+                        <a href="<?php echo get_permalink(wc_get_page_id('cart')); ?>">
+                            <?php esc_html_e('Shopping Cart', '_s'); ?>
+                        </a>
+                    </li>
+                    <li class="<?= is_checkout() && !is_order_received_page() ? 'next' : ''; ?><?= is_order_received_page() ? 'active' : ''; ?>">
+                        <a href="<?php echo get_permalink(wc_get_page_id('checkout')); ?>">
+                            <?php esc_html_e('Shipping and Checkout', '_s'); ?>
+                        </a>
+                    </li>
+                    <li class="<?= is_order_received_page() ? 'active last' : ''; ?>">
+                        <?php esc_html_e('Confirmation', '_s'); ?>
+                    </li>
+                </ul>
+            </div>
+
+            <?php
+        }
+    }
+}
