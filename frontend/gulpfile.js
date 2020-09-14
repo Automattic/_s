@@ -51,13 +51,13 @@ const project = manifest.getProjectGlobs();
  * 编译时的选项
  */
 const enabled = {
-    rev: argv.production,
-    maps: argv.production,
-    clean: argv.clean,
+    rev          : argv.production,
+    maps         : argv.production,
+    clean        : argv.clean,
     failStyleTask: argv.production,
-    failJSHint: argv.production,
-    stripJSDebug: argv.production,
-    stripJSDebug: argv.production,
+    failJSHint   : argv.production,
+    stripJSDebug : argv.production,
+    stripJSDebug : argv.production,
 };
 
 /**
@@ -71,7 +71,10 @@ const revManifest = path.dist + 'assets.json';
 const cssPurge = () => {
     return postcss([
         purgecss({
-            content          : ['/Users/Amoslee/Downloads/us.sitesucker.mac.sitesucker/cnw.ams/**/*.html'],
+            content          : [
+                '/Users/Amoslee/Downloads/us.sitesucker.mac.sitesucker/cnw.ams/**/*.html',
+                'placeholder.html',
+            ],
             whitelist        : purgecssWhiteList.whitelist.concat([
                 'ln-letters',
                 'letterCountShow',
@@ -106,9 +109,9 @@ const cssTasks = (filename) => {
         return gulpif(enabled.maps, sourcemaps.init());
     }).pipe(() => {
         return gulpif('*.scss', sass({
-            outputStyle: 'nested', // libsass doesn't support expanded yet
-            precision: 10,
-            includePaths: ['.'],
+            outputStyle    : 'nested', // libsass doesn't support expanded yet
+            precision      : 10,
+            includePaths   : ['.'],
             errLogToConsole: !enabled.failStyleTask,
         }));
     }).pipe(() => {
@@ -158,7 +161,7 @@ const writeToManifest = (directory) => {
         pipe(gulp.dest, path.dist + directory).
         pipe(browserSync.stream, {match: '**/*.{js,css}'}).
         pipe(rev.manifest, revManifest, {
-            base: path.dist,
+            base : path.dist,
             merge: true,
         }).
         pipe(gulp.dest, path.dist)();
@@ -170,9 +173,9 @@ const writeToManifest = (directory) => {
 gulp.task('wiredep', gulp.series(async () => {
     const wiredep = require('wiredep').stream;
     return gulp.src(project.css).
-        pipe(wiredep()).
-        pipe(changed(path.source + 'styles')).
-        pipe(gulp.dest(path.source + 'styles'));
+                pipe(wiredep()).
+                pipe(changed(path.source + 'styles')).
+                pipe(gulp.dest(path.source + 'styles'));
 }));
 
 /**
@@ -212,9 +215,9 @@ gulp.task('scripts', gulp.series(async () => {
  */
 gulp.task('fonts', gulp.series(async () => {
     return gulp.src(globs.fonts).
-        pipe(flatten()).
-        pipe(gulp.dest(path.dist + 'fonts')).
-        pipe(browserSync.stream());
+                pipe(flatten()).
+                pipe(gulp.dest(path.dist + 'fonts')).
+                pipe(browserSync.stream());
 }));
 
 /**
@@ -223,7 +226,7 @@ gulp.task('fonts', gulp.series(async () => {
 gulp.task('images', gulp.series(async () => {
     return gulp.src(globs.images).pipe(imagemin({
         progressive: true,
-        interlaced: true,
+        interlaced : true,
         svgoPlugins: [
             {removeUnknownsAndDefaults: false},
             {cleanupIDs: false}],
@@ -237,9 +240,9 @@ gulp.task('jshint', gulp.series(async () => {
     return gulp.src([
         'bower.json',
         'gulpfile.js'].concat(project.js)).
-        pipe(jshint()).
-        pipe(jshint.reporter('jshint-stylish')).
-        pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
+                pipe(jshint()).
+                pipe(jshint.reporter('jshint-stylish')).
+                pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
 }));
 
 /**
@@ -254,11 +257,11 @@ gulp.task('clean', gulp.series(async () => {
  */
 gulp.task('watch', gulp.parallel(() => {
     browserSync.init({
-        files: [
+        files         : [
             '{lib,templates}/**/*.php',
             '*.php',
         ],
-        proxy: config.devUrl,
+        proxy         : config.devUrl,
         snippetOptions: {
             whitelist: ['/wp-admin/admin-ajax.php'],
             blacklist: ['/wp-admin/**'],
