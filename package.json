@@ -17,10 +17,13 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^12.1.0",
+    "@wordpress/eslint-plugin": "^7.2.1",
     "dir-archiver": "^1.1.1",
+    "eslint": "^7.9.0",
     "node-sass": "^4.14.1",
-    "rtlcss": "^2.5.0"
+    "rtlcss": "^2.5.0",
+    "stylelint": "^13.7.1",
+    "stylelint-config-wordpress": "^17.0.0"
   },
   "rtlcssConfig": {
     "options": {
@@ -39,8 +42,8 @@
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
-    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "lint:scss": "./node_modules/.bin/stylelint sass/**/*.scss",
+    "lint:js": "./node_modules/.bin/eslint js/*.js",
     "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
   }
 }
