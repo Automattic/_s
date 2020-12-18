@@ -46,7 +46,7 @@
 	-->
 
 	<rule ref="WordPress">
-		<!-- This rule does not apply here since the _s prefix should be changed by the theme author. -->
+		<!-- This rule does not apply here since the hello_world prefix should be changed by the theme author. -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 	</rule>
 	<rule ref="WPThemeReview"/>
