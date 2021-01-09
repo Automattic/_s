@@ -175,6 +175,12 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'mrdev_s'
 );
 $myUpdateChecker->setBranch('master');
+function mrdev_offcanvas_js() {
+	if(!function_exists('mrdev_offcanvas')) { 
+		mrdev_utils_js();
+	}
+}
+add_action( 'wp_enqueue_scripts', 'mrdev_offcanvas_js' );
 function _s_widgets_init() {
 	if(!function_exists('mrdev_header')) {
 		register_sidebar(
