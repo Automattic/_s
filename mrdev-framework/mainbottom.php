@@ -4,7 +4,7 @@
 	} else {
         echo '</article>';
         if ( is_active_sidebar( 'sidebar-b' ) ) {
-            echo '<aside class="mr-aside mr-asideright mr-item">';
+            echo '<aside class="mr-aside mr-asideright mr-padding mr-item">';
             dynamic_sidebar( 'sidebar-b' );
             echo '</aside>';
         }

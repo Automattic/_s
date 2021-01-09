@@ -3,7 +3,7 @@
 		mrdev_header();
 	} else {
 		if ( is_active_sidebar( 'header' ) ) {
-			echo '<header id="mr-header" class="mr-header"><div class="mr-header-container mr-0perline">';
+			echo '<header id="mr-header" class="mr-header"><div class="mr-header-container mr-padding mr-0perline">';
 			dynamic_sidebar('header');
 			echo '</div></header>';
 		}
