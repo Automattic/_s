@@ -1,20 +1,20 @@
-=== _s ===
+=== Mr.Dev_s ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: marcosrego91, automattic
+Tags: mrdev, mrdev-framework, widgets, widget, widgetsarea, sidebar, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
-Tested up to: 5.4
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 0.9.41
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called _s, or underscores.
+The easiest way to start creating themes with Mr.Dev.'s Framework! Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with his Framework.
 
 == Description ==
 
-Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+The easiest way to start creating themes with Mr.Dev.'s Framework! Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with his Framework.
 
 == Installation ==
 
@@ -30,10 +30,11 @@ _s includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 0.9.41 - Jan 09 2021 =
 * Initial release
 
 == Credits ==
 
+* Compatible with Mr.Dev.'s Framework by Marcos Rego https://marcosrego.com/web/mrdev/
 * Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
