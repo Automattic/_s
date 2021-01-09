@@ -401,7 +401,7 @@ select,
 optgroup,
 textarea {
 	color: var(--text-color,#404040);
-	font-family: var(--text-font,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+	font-family: var(--text-font,sans-serif);
 	font-size: var(--text,1rem);
 	line-height: var(--line-height,1.5);
 }
@@ -413,8 +413,9 @@ h4,
 h5,
 h6 {
 	color: var(--heading-color,#404040);
-	font-family: var(--heading-font,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
+	font-family: var(--heading-font,serif);
 	clear: both;
+	font-weight: unset;
 }
 
 p {
