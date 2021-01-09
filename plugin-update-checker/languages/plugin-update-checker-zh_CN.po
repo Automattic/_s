@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: plugin-update-checker\n"
+"POT-Creation-Date: 2017-11-24 17:02+0200\n"
+"PO-Revision-Date: 2020-08-04 08:10+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_x\n"
+"Last-Translator: Seaton Jiang <seaton@vtrois.com>\n"
+"Language: zh_CN\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Puc/v4p3/Plugin/UpdateChecker.php:395
+msgid "Check for updates"
+msgstr "检查更新"
+
+#: Puc/v4p3/Plugin/UpdateChecker.php:548
+#, php-format
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "%s 目前是最新版本。"
+
+#: Puc/v4p3/Plugin/UpdateChecker.php:550
+#, php-format
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "%s 当前有可用的更新。"
+
+#: Puc/v4p3/Plugin/UpdateChecker.php:552
+#, php-format
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "%s 无法确定是否有可用的更新。"
+
+#: Puc/v4p3/Plugin/UpdateChecker.php:558
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "未知的更新检查状态：%s"
+
+#: Puc/v4p3/Vcs/PluginUpdateChecker.php:95
+msgid "There is no changelog available."
+msgstr "没有可用的更新日志。"

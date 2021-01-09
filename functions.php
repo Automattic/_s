@@ -48,11 +48,11 @@ if ( ! function_exists( '_s_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
+		/*register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', '_s' ),
 			)
-		);
+		);*/
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -114,27 +114,7 @@ add_action( 'after_setup_theme', '_s_setup' );
 function _s_content_width() {
 	$GLOBALS['content_width'] = apply_filters( '_s_content_width', 640 );
 }
-add_action( 'after_setup_theme', '_s_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function _s_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', '_s' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', '_s' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-add_action( 'widgets_init', '_s_widgets_init' );
+//add_action( 'after_setup_theme', '_s_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -143,7 +123,7 @@ function _s_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( '_s-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	//wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -154,7 +134,7 @@ add_action( 'wp_enqueue_scripts', '_s_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -169,7 +149,7 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -184,3 +164,80 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/*
+Mr.Dev.'s functions and tools start here:
+*/
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/marcosrego-web/mrdev_s/',
+	__FILE__,
+	'mrdev_s'
+);
+$myUpdateChecker->setBranch('master');
+function _s_widgets_init() {
+	if(!function_exists('mrdev_header')) {
+		register_sidebar(
+			array(
+					'name'          => 'Header',
+					'id'            => 'header',
+					'description'   => '',
+					'before_sidebar'  => '<section id="%1$s" class="mr-section"><div class="mr-section-container fullwidth"><ul class="mr-section-content mr-0perline mr-nobullets %2$s">',
+					'after_sidebar'   => '</ul></div></section>',
+					'before_widget' => '<li id="%1$s" class="mr-item widget %2$s">',
+					'after_widget'  => '</li>',
+					'before_title'  => '<h2 class="mr-title widget-title">',
+					'after_title'   => '</h2>',
+			)
+		);
+	}
+	if(!function_exists('mrdev_footer')) {
+		register_sidebar(
+			array(
+					'name'          => 'Footer',
+					'id'            => 'footer',
+					'description'   => '',
+					'before_sidebar'  => '<section id="%1$s" class="mr-section"><div class="mr-section-container fullwidth"><ul class="mr-section-content mr-0perline mr-nobullets %2$s">',
+					'after_sidebar'   => '</ul></div></section>',
+					'before_widget' => '<li id="%1$s" class="mr-item widget %2$s">',
+					'after_widget'  => '</li>',
+					'before_title'  => '<h2 class="mr-title widget-title">',
+					'after_title'   => '</h2>',
+			)
+		);
+	}
+	if(!function_exists('mrdev_maintop')) {
+		register_sidebar( array(
+			'name'          => 'Sidebar A',
+			'id'            => 'sidebar-a',
+			'description'   => '',
+			'before_widget' => '<section class="mr-section"><div class="mr-section-container container"><ul class="mr-section-content mr-1perline mr-nobullets"><li id="%1$s" class="mr-item widget %2$s">',
+			'after_widget'  => '</li></ul></div></section>',
+			'before_title'  => '<h2 class="mr-title widget-title">',
+			'after_title'   => '</h2>',
+		));
+	}
+	if(!function_exists('mrdev_mainbottom')) {
+		register_sidebar( array(
+			'name'          => 'Sidebar B',
+			'id'            => 'sidebar-b',
+			'description'   => '',
+			'before_widget' => '<section class="mr-section"><div class="mr-section-container container"><ul class="mr-section-content mr-1perline mr-nobullets"><li id="%1$s" class="mr-item widget %2$s">',
+			'after_widget'  => '</li></ul></div></section>',
+			'before_title'  => '<h2 class="mr-title widget-title">',
+			'after_title'   => '</h2>',
+		));
+	}
+	if(!function_exists('mrdev_offcanvas')) {
+		register_sidebar( array(
+			'name'          => 'Offcanvas',
+			'id'            => 'offcanvas',
+			'description'   => '',
+			'before_widget' => '<section class="mr-section"><div class="mr-section-container container"><ul class="mr-section-content mr-1perline mr-nobullets"><li id="%1$s" class="mr-item widget %2$s">',
+			'after_widget'  => '</li></ul></div></section>',
+			'before_title'  => '<h2 class="mr-title widget-title">',
+			'after_title'   => '</h2>',
+		));
+	}
+}
+add_action( 'widgets_init', '_s_widgets_init' );

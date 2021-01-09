@@ -10,7 +10,9 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<?php
+		require 'mrdev-framework/maintop.php';
+	?>
 
 		<?php
 		while ( have_posts() ) :
@@ -33,7 +35,9 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	</main><!-- #main -->
+	<?php
+		require 'mrdev-framework/mainbottom.php';
+	?>
 
 <?php
 get_sidebar();

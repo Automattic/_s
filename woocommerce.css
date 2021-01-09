@@ -7,7 +7,7 @@ WooCommerce styles override
 /**
  * Shop tables
  */
-table.shop_table_responsive thead {
+ table.shop_table_responsive thead {
 	display: none;
 }
 
@@ -79,7 +79,7 @@ ul.products {
 ul.products li.product {
 	list-style: none;
 	position: relative;
-	margin-bottom: 2em;
+	margin-bottom: var(--margin,2rem);
 }
 
 ul.products li.product img {
@@ -146,14 +146,14 @@ ul.products li.product .button {
 
 .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
 	position: absolute;
-	top: 2em;
-	right: 1em;
+	top: 2rem;
+	right: 1rem;
 	display: block;
 	z-index: 99;
 }
 
 .single-product div.product .woocommerce-product-gallery .flex-viewport {
-	margin-bottom: 1em;
+	margin-bottom: var(--margin,1rem);;
 }
 
 .single-product div.product .woocommerce-product-gallery .flex-control-thumbs {
@@ -232,11 +232,11 @@ ul.products li.product .button {
 }
 
 .stock.in-stock {
-	color: #0f834d;
+	color: var(--success,#0f834d);
 }
 
 .stock.out-of-stock {
-	color: #e2401c;
+	color: var(--error,#e2401c);
 }
 
 /**
@@ -292,9 +292,9 @@ ul.products li.product .button {
 .star-rating {
 	overflow: hidden;
 	position: relative;
-	height: 1.618em;
+	height: 1.618rem;
 	line-height: 1.618;
-	width: 5.3em;
+	width: 5.3rem;
 	font-family: star;
 	font-weight: 400;
 }
@@ -314,7 +314,7 @@ ul.products li.product .button {
 	top: 0;
 	left: 0;
 	position: absolute;
-	padding-top: 1.5em;
+	padding-top: 1.5rem;
 }
 
 .star-rating span::before {
@@ -327,9 +327,9 @@ ul.products li.product .button {
 
 p.stars a {
 	position: relative;
-	height: 1em;
-	width: 1em;
-	text-indent: -999em;
+	height: 1rem;
+	width: 1rem;
+	text-indent: -999rem;
 	display: inline-block;
 	text-decoration: none;
 	margin-right: 1px;
@@ -341,8 +341,8 @@ p.stars a::before {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 1em;
-	height: 1em;
+	width: 1rem;
+	height: 1rem;
 	line-height: 1;
 	font-family: star;
 	content: "\53";
@@ -403,7 +403,7 @@ p.stars.selected a:not(.active)::before {
 }
 
 .woocommerce-tabs .panel h2:first-of-type {
-	margin-bottom: 1em;
+	margin-bottom: 1rem;
 }
 
 /**
@@ -414,34 +414,34 @@ p.stars.selected a:not(.active)::before {
 }
 
 .woocommerce-password-strength.strong {
-	color: #0f834d;
+	color: var(--success,#0f834d);
 }
 
 .woocommerce-password-strength.short {
-	color: #e2401c;
+	color: var(--warning,#e2401c);
 }
 
 .woocommerce-password-strength.bad {
-	color: #e2401c;
+	color: var(--error,#e2401c);
 }
 
 .woocommerce-password-strength.good {
-	color: #3d9cd2;
+	color: var(--info,#3d9cd2);
 }
 
 /**
  * Forms
  */
 .form-row.woocommerce-validated input.input-text {
-	box-shadow: inset 2px 0 0 #0f834d;
+	box-shadow: inset 2px 0 0 var(--success,#0f834d);
 }
 
 .form-row.woocommerce-invalid input.input-text {
-	box-shadow: inset 2px 0 0 #e2401c;
+	box-shadow: inset 2px 0 0 var(--error,#e2401c);
 }
 
 .required {
-	color: #f00;
+	color: var(--error,#f00);
 }
 
 /**
@@ -452,18 +452,18 @@ p.stars.selected a:not(.active)::before {
 .woocommerce-error,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: #0f834d;
+	background-color: var(--success,#0f834d);
 	clear: both;
 }
 
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-	background-color: #3d9cd2;
+	background-color: var(--info,#3d9cd2);
 }
 
 .woocommerce-error {
-	background-color: #e2401c;
+	background-color: var(--error,#e2401c);
 }
 
 .demo_store {
@@ -472,8 +472,8 @@ p.no-comments {
 	bottom: 0;
 	right: 0;
 	margin: 0;
-	padding: 1em;
-	background-color: #3d9cd2;
+	padding: 1rem;
+	background-color: var(--info,#3d9cd2);
 	z-index: 9999;
 }
 
@@ -487,7 +487,7 @@ p.no-comments {
 		top: 100%;
 		width: 100%;
 		z-index: 999999;
-		left: -999em;
+		left: -999rem;
 		display: block;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	}
@@ -507,7 +507,7 @@ p.no-comments {
  * WooCommerce Price Filter
  */
 .widget_price_filter .price_slider {
-	margin-bottom: 1.5em;
+	margin-bottom: 1.5rem;
 }
 
 .widget_price_filter .price_slider_amount {
@@ -527,18 +527,18 @@ p.no-comments {
 .widget_price_filter .ui-slider .ui-slider-handle {
 	position: absolute;
 	z-index: 2;
-	width: 1em;
-	height: 1em;
+	width: 1rem;
+	height: 1rem;
 	cursor: ew-resize;
 	outline: none;
 	background: #4169e1;
 	box-sizing: border-box;
-	margin-top: -0.25em;
+	margin-top: -0.25rem;
 	opacity: 1;
 }
 
 .widget_price_filter .ui-slider .ui-slider-handle:last-child {
-	margin-left: -1em;
+	margin-left: -1rem;
 }
 
 .widget_price_filter .ui-slider .ui-slider-handle:hover,
@@ -559,7 +559,7 @@ p.no-comments {
 }
 
 .widget_price_filter .ui-slider-horizontal {
-	height: 0.5em;
+	height: 0.5rem;
 }
 
 .widget_price_filter .ui-slider-horizontal .ui-slider-range {
