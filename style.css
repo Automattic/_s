@@ -64,7 +64,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-html {
+ html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
@@ -91,7 +91,6 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 h1 {
-	font-size: var(--heading-1,2rem);
 	margin: var(--margin,0.67rem) 0;
 }
 
@@ -412,8 +411,6 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--heading-color,#404040);
-	font-family: var(--heading-font,serif);
 	clear: both;
 	font-weight: unset;
 }
@@ -473,7 +470,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: var(--body-background-color,#fff);
+	background: var(--background-color,#fff);
 }
 
 hr {
@@ -791,6 +788,27 @@ html {
 	font-size: 100%;
 	-ms-text-size-adjust: 100%;
 }
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--heading-font,serif);
+}
+h1 {
+	font-size: var(--heading-1,2rem);
+}
+h2 {
+	font-size: var(--heading-2,1.5rem);
+}
+h3 {
+	font-size: var(--heading-3,1.17rem);
+}
+h4 {
+	font-size: var(--heading-4,1rem);
+}
+h5 {
+	font-size: var(--heading-5,0.83rem);
+}
+h6 {
+	font-size: var(--heading-6,0.67rem);
+}
 .container {
 	max-width: var(--container,75rem);
 	margin-left: auto;
@@ -798,35 +816,70 @@ html {
 	padding-left: var(--padding,1.6rem);
 	padding-right: var(--padding,1.6rem);
 }
-.mr-body {
-	background-color: var(--body-background-color,transparent);
+body { 
+	background-color: var(--background-color,#DFDFD0);
 }
-.mr-header {
-	background-color: var(--header-background-color,transparent);
+body, h1, h2, h3, h4, h5, h6 {
+	color: var(--text-color,#434B5C);
 }
-.mr-nav {
-	background-color: var(--nav-background-color,transparent);
+.mr-header { 
+	background-color: var(--header-background-color,#757D98);
 }
-.mr-main {
-	background-color: var(--main-background-color,transparent);
+.mr-header,.mr-header h1,.mr-header h2,.mr-header h3,.mr-header h4,.mr-header h5,.mr-header h6 { 
+	color: var(--header-text-color,#8CC7C2);
 }
-.mr-article {
-	background-color: var(--article-background-color,transparent);
+.mr-main { 
+	background: var(--main-background-color,#DFDFD0); 
 }
-.mr-section {
-	background-color: var(--section-background-color,transparent);
+.mr-main,.mr-main h1,.mr-main h2,.mr-main h3,.mr-main h4,.mr-main h5,.mr-main h6 {
+	color: var(--main-text-color,#434B5C);
+}
+.mr-nav { 
+	background-color: var(--nav-background-color,#D0D168);
+}
+.mr-nav h1,.mr-nav h2,.mr-nav h3,.mr-nav h4,.mr-nav h5,.mr-nav h6 {
+	color: var(--nav-text-color,#434B5C);
+}
+.mr-article { 
+	background: var(--article-background-color,#DFDFD0);
+}
+.mr-article,.mr-article h1,.mr-article h2,.mr-article h3,.mr-article h4,.mr-article h5,.mr-article h6 { 
+	color: var(--article-text-color,#434B5C);
+}
+.mr-section { 
+	background-color: var(--section-background-color,#8CC7C2);
+}
+.mr-section h1,.mr-section h2,.mr-section h3,.mr-section h4,.mr-section h5,.mr-section h6 { 
+	color: var(--section-text-color,#434B5C);
 }
 .mr-aside {
-	background-color: var(--aside-background-color,transparent);
+	background-color: var(--aside-background-color,#8CC7C2);
+}
+.mr-aside,.mr-aside h1,.mr-aside h2,.mr-aside h3,.mr-aside h4,.mr-aside h5,.mr-aside h6 {
+	color: var(--aside-text-color,#434B5C);
 }
 .mr-footer {
-	background-color: var(--footer-background-color,transparent);
+	background-color: var(--footer-background-color,#757D98);
 }
-.mr-overlay {
-	background-color: var(--overlay-color,transparent);
+.mr-footer h1,.mr-footer h2,.mr-footer h3,.mr-footer h4,.mr-footer h5,.mr-footer h6 {
+	color: var(--footer-text-color,rgba(255,255,255,0.5));
 }
-.mr-offcanvas-container{background-color: var(--offcanvas-background-color,transparent);position: fixed;top:0;left:0;right:0;bottom:0;height:100vh;overflow:auto;transform:translateX(-100vw);z-index:20}
+.mr-offcanvas-container { 
+	background-color: var(--offcanvas-background-color,#757D98);
+}
+.mr-offcanvas-container h1,.mr-offcanvas-container h2,.mr-offcanvas-container h3,.mr-offcanvas-container h4,.mr-offcanvas-container h5,.mr-offcanvas-container h6 {
+	color: var(--footer-text-color,rgba(255,255,255,0.5));
+}
+.mr-offcanvas-toggle{
+	color: var(--offcanvas-toggle-color,#8CC7C2);
+}
+@media (min-width: 782px) {
+	.wp-block-column:not(:first-child) {
+		margin-left: var(--margin,2rem);
+	}
+}
+.mr-offcanvas-container{position: fixed;top:0;left:0;right:0;bottom:0;height:100vh;overflow:auto;transform:translateX(-100vw);z-index:20}
 body.admin-bar .mr-offcanvas-container{padding-top:46px;}
 @media only screen and (max-width: 768px) {
-	.mr-offcanvas-toggle{color: var(--offcanvas-toggle-color,#404040);position:fixed;width:2.5em;height:1.5em;right:var(--padding,1.5rem);margin-top:var(--padding,1.5rem);cursor:pointer;z-index:21}.mr-offcanvas-toggle:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border: 0.2em solid;border-left:0;border-right:0;border-radius:0.2em;}.mr-offcanvas-toggle:after{content:"";position:absolute;top:0;left:0;width: 100%;height:0.85em;border-bottom:0.2em solid;}.mr-offcanvas-container.active{transform:translateX(0vw)}
+	.mr-offcanvas-toggle{position:fixed;width:2.5em;height:1.5em;right:var(--padding,1.5rem);margin-top:var(--padding,1.5rem);cursor:pointer;z-index:21}.mr-offcanvas-toggle:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border: 0.2em solid;border-left:0;border-right:0;border-radius:0.2em;}.mr-offcanvas-toggle:after{content:"";position:absolute;top:0;left:0;width: 100%;height:0.85em;border-bottom:0.2em solid;}.mr-offcanvas-container.active{transform:translateX(0vw)}
 }
