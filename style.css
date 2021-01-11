@@ -834,24 +834,6 @@ body, h1, h2, h3, h4, h5, h6 {
 .mr-main,.mr-main h1,.mr-main h2,.mr-main h3,.mr-main h4,.mr-main h5,.mr-main h6 {
 	color: var(--main-text-color,#434B5C);
 }
-.mr-nav { 
-	background-color: var(--nav-background-color,#D0D168);
-}
-.mr-nav, .mr-nav h1,.mr-nav h2,.mr-nav h3,.mr-nav h4,.mr-nav h5,.mr-nav h6 {
-	color: var(--nav-text-color,#434B5C);
-}
-.mr-article { 
-	background: var(--article-background-color,#DFDFD0);
-}
-.mr-article,.mr-article h1,.mr-article h2,.mr-article h3,.mr-article h4,.mr-article h5,.mr-article h6 { 
-	color: var(--article-text-color,#434B5C);
-}
-.mr-section { 
-	background-color: var(--section-background-color,#8CC7C2);
-}
-.mr-section, .mr-section h1,.mr-section h2,.mr-section h3,.mr-section h4,.mr-section h5,.mr-section h6 { 
-	color: var(--section-text-color,#434B5C);
-}
 .mr-aside {
 	background-color: var(--aside-background-color,#8CC7C2);
 }
