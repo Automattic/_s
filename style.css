@@ -825,31 +825,31 @@ body, h1, h2, h3, h4, h5, h6 {
 .mr-header { 
 	background-color: var(--header-background-color,#757D98);
 }
-.mr-header,.mr-header h1,.mr-header h2,.mr-header h3,.mr-header h4,.mr-header h5,.mr-header h6 { 
+.mr-header,.mr-header h1,.mr-header h2,.mr-header h3,.mr-header h4,.mr-header h5,.mr-header h6,.mr-header a { 
 	color: var(--header-text-color,#8CC7C2);
 }
 .mr-main { 
 	background: var(--main-background-color,#DFDFD0); 
 }
-.mr-main,.mr-main h1,.mr-main h2,.mr-main h3,.mr-main h4,.mr-main h5,.mr-main h6 {
+.mr-main,.mr-main h1,.mr-main h2,.mr-main h3,.mr-main h4,.mr-main h5,.mr-main h6,.mr-main a {
 	color: var(--main-text-color,#434B5C);
 }
 .mr-aside {
 	background-color: var(--aside-background-color,#8CC7C2);
 }
-.mr-aside,.mr-aside h1,.mr-aside h2,.mr-aside h3,.mr-aside h4,.mr-aside h5,.mr-aside h6 {
+.mr-aside,.mr-aside h1,.mr-aside h2,.mr-aside h3,.mr-aside h4,.mr-aside h5,.mr-aside h6,.mr-aside a {
 	color: var(--aside-text-color,#434B5C);
 }
 .mr-footer {
 	background-color: var(--footer-background-color,#757D98);
 }
-.mr-footer, .mr-footer h1,.mr-footer h2,.mr-footer h3,.mr-footer h4,.mr-footer h5,.mr-footer h6 {
+.mr-footer, .mr-footer h1,.mr-footer h2,.mr-footer h3,.mr-footer h4,.mr-footer h5,.mr-footer h6,.mr-footer a {
 	color: var(--footer-text-color,rgba(255,255,255,0.5));
 }
 .mr-offcanvas-container { 
 	background-color: var(--offcanvas-background-color,#757D98);
 }
-.mr-offcanvas-container,.mr-offcanvas-container h1,.mr-offcanvas-container h2,.mr-offcanvas-container h3,.mr-offcanvas-container h4,.mr-offcanvas-container h5,.mr-offcanvas-container h6 {
+.mr-offcanvas-container,.mr-offcanvas-container h1,.mr-offcanvas-container h2,.mr-offcanvas-container h3,.mr-offcanvas-container h4,.mr-offcanvas-container h5,.mr-offcanvas-container h6,.mr-offcanvas-container a {
 	color: var(--footer-text-color,rgba(255,255,255,0.5));
 }
 .mr-offcanvas-toggle{
