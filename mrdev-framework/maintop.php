@@ -8,6 +8,6 @@
             dynamic_sidebar( 'sidebar-a' );
             echo '</aside>';
         }
-        echo '<article class="mr-section mr-article mr-item">';
+        echo '<div class="mr-section mr-article-content mr-item">';
     }
 ?>

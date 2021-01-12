@@ -86,14 +86,6 @@ main {
 	display: block;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-h1 {
-	margin: var(--margin,0.67rem) 0;
-}
-
 /* Grouping content
 	 ========================================================================== */
 
@@ -781,15 +773,19 @@ a:active {
 	margin-bottom: var(--margin,1.5rem);
 }
 
-/* Other styles from Mr.Dev.'s Framework
+/* Other changes
 --------------------------------------------- */
 html {
 	height: 100%;
 	font-size: 100%;
 	-ms-text-size-adjust: 100%;
 }
+
+/* Other styles for Mr.Dev.'s Framework
+--------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--heading-font,serif);
+	margin: var(--margin,0.67rem) 0;
 }
 h1 {
 	font-size: var(--heading-1,2rem);
@@ -850,9 +846,9 @@ body, h1, h2, h3, h4, h5, h6 {
 	background-color: var(--offcanvas-background-color,#757D98);
 }
 .mr-offcanvas-container,.mr-offcanvas-container h1,.mr-offcanvas-container h2,.mr-offcanvas-container h3,.mr-offcanvas-container h4,.mr-offcanvas-container h5,.mr-offcanvas-container h6,.mr-offcanvas-container a {
-	color: var(--footer-text-color,rgba(255,255,255,0.5));
+	color: var(--offcanvas-text-color,rgba(255,255,255,0.5));
 }
-.mr-offcanvas-toggle{
+.mr-offcanvas-toggle {
 	color: var(--offcanvas-toggle-color,#8CC7C2);
 }
 @media (min-width: 782px) {

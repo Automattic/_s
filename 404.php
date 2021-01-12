@@ -13,7 +13,7 @@ get_header();
 	<main id="primary" class="mr-main site-main">
 
 		<section class="mr-section error-404 not-found">
-			<header class="mr-header page-header">
+			<header class="page-header">
 				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_s' ); ?></h1>
 			</header><!-- .page-header -->
 
