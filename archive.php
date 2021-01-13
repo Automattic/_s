@@ -27,9 +27,7 @@ get_header();
 				dynamic_sidebar( 'content' );
 				$sidebar = ob_get_contents();
 				if ( empty($sidebar) ) {
-					if(function_exists('mrdev_archivetop')) {
-						mrdev_archivetop();
-					}
+					include 'mrdev-framework/archivetop.php';
 			?>
 			<?php
 					/* Start the Loop */
@@ -43,9 +41,7 @@ get_header();
 						get_template_part( 'template-parts/content', get_post_type() );
 					endwhile;
 					the_posts_navigation();
-					if(function_exists('mrdev_archivebottom')) {
-						mrdev_archivebottom();
-					}
+					include 'mrdev-framework/archivebottom.php';
 				}
 		} else {
 			get_template_part( 'template-parts/content', 'none' );

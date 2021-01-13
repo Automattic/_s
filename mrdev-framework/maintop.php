@@ -8,6 +8,13 @@
             dynamic_sidebar( 'sidebar-a' );
             echo '</aside>';
         }
-        echo '<div class="mr-section mr-article-content mr-item">';
+        if(!function_exists('mrdev_post_class')) {
+            function mrdev_post_class( $classes ){
+                $classes[] = 'mr-item';
+                return $classes;
+            }
+            add_filter('post_class','mrdev_post_class');
+        }
+        echo '<section class="mr-section mr-article-content mr-item">';
     }
 ?>
