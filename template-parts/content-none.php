@@ -44,10 +44,6 @@
 			<?php
 
 		endif;
-
-		if ( is_active_sidebar( 'empty-error' ) ) {
-			dynamic_sidebar( 'empty-error' );
-		}
 		?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->
