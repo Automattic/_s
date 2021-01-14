@@ -19,11 +19,7 @@ get_header();
 
 			<div class="page-content">
 				
-				<?php
-					if ( is_active_sidebar( 'empty-error' ) ) {
-						dynamic_sidebar( 'empty-error' );
-					}
-				?>
+				<p><?php esc_html_e( 'It looks like nothing was found at this location.', '_s' ); ?></p>
 
 			</div><!-- .page-content -->
 		</section><!-- .error-404 -->
