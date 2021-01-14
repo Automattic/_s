@@ -184,9 +184,9 @@ add_action( 'wp_enqueue_scripts', 'mrdev_offcanvas_js' );
 function _s_widgets_init() {
 	register_sidebar(
 		array(
-				'name'          => 'Error',
-				'id'            => 'error',
-				'description'   => '',
+				'name'          => 'Empty / Error',
+				'id'            => 'empty-error',
+				'description'   => 'Content added in here will appear below the title of pages without search results and error 404.',
 				'before_sidebar'  => '<section id="%1$s" class="mr-section"><div class="mr-section-container"><ul class="mr-section-content mr-1perline mr-nobullets %2$s">',
 				'after_sidebar'   => '</ul></div></section>',
 				'before_widget' => '<li id="%1$s" class="mr-item widget %2$s">',

@@ -780,7 +780,6 @@ html {
 	font-size: 100%;
 	-ms-text-size-adjust: 100%;
 }
-
 /* Other styles for Mr.Dev.'s Framework
 --------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
@@ -842,6 +841,50 @@ body, h1, h2, h3, h4, h5, h6 {
 .mr-footer, .mr-footer h1,.mr-footer h2,.mr-footer h3,.mr-footer h4,.mr-footer h5,.mr-footer h6,.mr-footer a {
 	color: var(--footer-text-color,rgba(255,255,255,0.5));
 }
+/*
+WP Menu Widgets will automatically become Dropdown Menus when added inside the Header.
+*/
+.mr-header .menu-item-has-children {
+	position: relative;
+}
+.mr-header .menu-item-has-children:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	z-index: 1;
+	-webkit-transition: height 0.2s;
+	transition: height 0.2s;
+	transition-delay: 0.2s;
+}
+.mr-header .menu-item-has-children:hover:after {
+	 height: 0%;
+}
+@media not all and (min-resolution:.001dpcm) { /*Fix for Safari (10.1+)*/
+	@media {
+		.mr-header .menu-item-has-children:after {
+			height: 0%;
+		}
+	}
+}
+.mr-header .sub-menu {
+	position: absolute;
+	background: var(--background-color);
+	transform: rotateX(90deg) translateX(calc(var(--padding,1.5rem) - (var(--padding,1.5rem) * 2)));
+	opacity: 0;
+	width: 200%;
+	-webkit-transition: opacity var(--transition-duration,0.5s) ease-in-out;
+	transition: opacity var(--transition-duration,0.5s) ease-in-out;
+}
+.mr-header .menu-item-has-children:hover .sub-menu, .mr-header  .menu-item-has-children:focus .sub-menu {
+	transform: rotateX(0deg) translateX(calc(var(--padding,1.5rem) - (var(--padding,1.5rem) * 2)));
+	opacity: 1;
+}
+/*
+	Offcanvas section and toggle
+*/
 .mr-offcanvas-container { 
 	background-color: var(--offcanvas-background-color,#757D98);
 }
