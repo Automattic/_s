@@ -20,9 +20,9 @@ get_header();
 			<div class="page-content">
 				
 				<?php
-				if ( is_active_sidebar( 'error' ) ) {
-					dynamic_sidebar( 'error' );
-				}
+					if ( is_active_sidebar( 'empty-error' ) ) {
+						dynamic_sidebar( 'empty-error' );
+					}
 				?>
 
 			</div><!-- .page-content -->

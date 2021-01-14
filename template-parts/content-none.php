@@ -34,18 +34,20 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', '_s' ); ?></p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms.', '_s' ); ?></p>
 			<?php
-			get_search_form();
 
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', '_s' ); ?></p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', '_s' ); ?></p>
 			<?php
-			get_search_form();
 
 		endif;
+
+		if ( is_active_sidebar( 'empty-error' ) ) {
+			dynamic_sidebar( 'empty-error' );
+		}
 		?>
 	</div><!-- .page-content -->
 </section><!-- .no-results -->
