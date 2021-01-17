@@ -809,7 +809,7 @@ h5 {
 h6 {
 	font-size: var(--heading-6,0.67rem);
 }
-.container {
+.mr-container {
 	max-width: var(--container,75rem);
 	margin-left: auto;
 	margin-right: auto;
