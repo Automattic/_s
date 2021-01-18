@@ -91,7 +91,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support(
+		/*add_theme_support(
 			'custom-logo',
 			array(
 				'height'      => 250,
@@ -99,7 +99,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 				'flex-width'  => true,
 				'flex-height' => true,
 			)
-		);
+		);*/
 	}
 endif;
 add_action( 'after_setup_theme', '_s_setup' );
