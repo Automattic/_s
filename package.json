@@ -17,7 +17,9 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^12.1.0",
+    "del-cli": "^3.0.1",
     "dir-archiver": "^1.1.1",
+    "make-dir-cli": "^2.0.0",
     "node-sass": "^4.14.1",
     "rtlcss": "^2.5.0"
   },
@@ -40,6 +42,6 @@
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "mkdir -p dist && dir-archiver --src . --dest ./dist/drinkfiltered-theme-v2.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock dist node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
+    "bundle": "del-cli dist && make-dir dist && dir-archiver --src . --dest ./dist/drinkfiltered-theme-v2.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock dist node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
   }
 }
