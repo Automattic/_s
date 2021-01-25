@@ -184,3 +184,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+
+/**
+ * Add logo to primary nav menu
+ */
+add_filter('wp_nav_menu_items','add_new_menu_item', 10, 2);
+function add_new_menu_item( $nav, $args ) {
+    // if( $args->theme_location == 'primary' )
+    $newmenuitem = '<li class="home-logo">' . get_custom_logo() . '</li>';
+    $nav = $newmenuitem.$nav;
+    return $nav;
+}

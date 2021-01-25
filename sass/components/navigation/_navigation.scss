@@ -3,7 +3,7 @@
 	width: 100%;
 
 	ul {
-		display: none;
+		// display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -81,8 +81,55 @@
 		display: none;
 	}
 
-	.main-navigation ul {
-		display: flex;
+	.main-navigation {
+
+		ul {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		li {
+			order: -1;
+			display: block;
+		}
+
+		li a {
+			color: black;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		.home-logo {
+			order: 0;
+		}
+
+		/*
+		 * The list may contain a maximum of 11 items (10 links, plus logo).
+		 * Therefore the 12th item and after are hidden.
+		 */
+		li:nth-child(n+12) {
+			display: none;
+		}
+
+		/*
+		 * Selects the last half of items, up to 5.  Examples:
+		 * - For a list containing 8 elements, this list will select the last 4.
+		 * - For a list containing 9 elements, this list will select the last 4.
+		 * - For a list containing 10 elements, this list will select the last 5.
+		 * - For a list containing 11 elements, this list will select the last 5.
+		 * - For a list containing 12 elements, this list will select the last 5.
+		 *
+		 * See https://stackoverflow.com/a/15467744
+		 */
+		li:nth-child(n+2):last-child,
+		li:nth-child(n+3):nth-last-child(-n+2),
+		li:nth-child(n+4):nth-last-child(-n+3),
+		li:nth-child(n+5):nth-last-child(-n+4),
+		li:nth-child(n+6):nth-last-child(-n+5) {
+			order: 1;
+		}
 	}
 }
 
