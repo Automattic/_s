@@ -887,20 +887,3 @@ WP Menu Widgets will automatically become Dropdown Menus when added inside the H
 	transform: rotateX(0deg) translateX(calc(var(--padding,1.5rem) - (var(--padding,1.5rem) * 2)));
 	opacity: 1;
 }
-/*
-	Offcanvas section and toggle
-*/
-.mr-offcanvas-container { 
-	background-color: var(--offcanvas-background-color,#757D98);
-}
-.mr-offcanvas-container,.mr-offcanvas-container h1,.mr-offcanvas-container h2,.mr-offcanvas-container h3,.mr-offcanvas-container h4,.mr-offcanvas-container h5,.mr-offcanvas-container h6,.mr-offcanvas-container a {
-	color: var(--offcanvas-text-color,rgba(255,255,255,0.5));
-}
-.mr-offcanvas-toggle {
-	color: var(--offcanvas-toggle-color,#8CC7C2);
-}
-.mr-offcanvas-container{position: fixed;top:0;left:0;right:0;bottom:0;height:100vh;overflow:auto;transform:translateX(-100vw);z-index:20}
-body.admin-bar .mr-offcanvas-container{padding-top:46px;}
-@media only screen and (max-width: 767px) {
-	.mr-offcanvas-toggle{position:fixed;width:2.5em;height:1.5em;right:var(--padding,1.5rem);margin-top:var(--padding,1.5rem);cursor:pointer;z-index:21}.mr-offcanvas-toggle:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border: 0.2em solid;border-left:0;border-right:0;border-radius:0.2em;}.mr-offcanvas-toggle:after{content:"";position:absolute;top:0;left:0;width: 100%;height:0.85em;border-bottom:0.2em solid;}.mr-offcanvas-container.active{transform:translateX(0vw)}
-}

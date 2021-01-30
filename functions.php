@@ -175,12 +175,6 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'mrdev_s'
 );
 $myUpdateChecker->setBranch('master');
-function mrdev_offcanvas_js() {
-	if(!function_exists('mrdev_offcanvas')) { 
-		mrdev_utils_js();
-	}
-}
-add_action( 'wp_enqueue_scripts', 'mrdev_offcanvas_js' );
 function _s_widgets_init() {
 	if(!function_exists('mrdev_header')) {
 		register_sidebar(
@@ -227,17 +221,6 @@ function _s_widgets_init() {
 		register_sidebar( array(
 			'name'          => 'Sidebar B',
 			'id'            => 'sidebar-b',
-			'description'   => '',
-			'before_widget' => '<section class="mr-section"><div class="mr-section-container container"><ul class="mr-section-content mr-1perline mr-nobullets"><li id="%1$s" class="mr-item widget %2$s">',
-			'after_widget'  => '</li></ul></div></section>',
-			'before_title'  => '<h2 class="mr-title widget-title">',
-			'after_title'   => '</h2>',
-		));
-	}
-	if(!function_exists('mrdev_offcanvas')) {
-		register_sidebar( array(
-			'name'          => 'Offcanvas',
-			'id'            => 'offcanvas',
 			'description'   => '',
 			'before_widget' => '<section class="mr-section"><div class="mr-section-container container"><ul class="mr-section-content mr-1perline mr-nobullets"><li id="%1$s" class="mr-item widget %2$s">',
 			'after_widget'  => '</li></ul></div></section>',

@@ -23,10 +23,13 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 			<?php 
-				ob_start();
-				dynamic_sidebar( 'content' );
-				$sidebar = ob_get_contents();
-				if ( empty($sidebar) ) {
+				/*ob_start();
+				if ( is_active_sidebar( 'content' )) {
+					dynamic_sidebar( 'content' );
+				}
+				$content_sidebar = ob_get_contents();
+				ob_end_clean();
+				if ( empty($content_sidebar) ) {*/
 					include 'mrdev-framework/archivetop.php';
 			?>
 			<?php
@@ -42,7 +45,9 @@ get_header();
 					endwhile;
 					the_posts_navigation();
 					include 'mrdev-framework/archivebottom.php';
-				}
+				/*} else {
+					echo $content_sidebar;
+				}*/
 		} else {
 			get_template_part( 'template-parts/content', 'none' );
 		}
