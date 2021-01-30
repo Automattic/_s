@@ -23,7 +23,6 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<?php 
-		include 'mrdev-framework/offcanvas.php';
+	<?php
 		include 'mrdev-framework/header.php'; 
 	?>
