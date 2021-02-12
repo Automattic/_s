@@ -756,7 +756,6 @@ a:active {
 }
 
 .alignright {
-
 	/*rtl:ignore*/
 	float: right;
 
@@ -773,19 +772,25 @@ a:active {
 	margin-bottom: var(--margin,1.5rem);
 }
 
-/* Other changes
+/* Other style changes
 --------------------------------------------- */
 html {
 	height: 100%;
 	font-size: 100%;
 	-ms-text-size-adjust: 100%;
 }
+.wp-block-image {
+    margin-bottom: var(--margin,1rem);
+}
+.wp-block-columns {
+	margin-bottom: var(--margin,1.75rem);
+}
 @media (min-width: 782px) {
 	.wp-block-column:not(:first-child) {
 		margin-left: var(--margin,2rem);
 	}
 }
-/* Other styles for Mr.Dev.'s Framework
+/* Other styles
 --------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--heading-font,serif);

@@ -10,9 +10,7 @@
 get_header();
 ?>
 
-	<?php
-		include 'mrdev-framework/maintop.php';
-	?>
+	
 
 		<?php if ( have_posts() ) : ?>
 
@@ -48,9 +46,7 @@ get_header();
 		endif;
 		?>
 
-	<?php
-		include 'mrdev-framework/mainbottom.php';
-	?>
+	
 
 <?php
 get_sidebar();
