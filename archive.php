@@ -10,9 +10,7 @@
 get_header();
 ?>
 
-	<?php
-		include 'mrdev-framework/maintop.php';
-	?>
+	
 
 		<?php if ( have_posts() ) { ?>
 
@@ -52,9 +50,7 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 		}
 		?>
-	<?php
-		include 'mrdev-framework/mainbottom.php';
-	?>
+	
 
 <?php
 get_sidebar();

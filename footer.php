@@ -12,6 +12,7 @@
 ?>
 
 <?php
+	include 'mrdev-framework/mainbottom.php';
 	include 'mrdev-framework/footer.php';
 ?>
 </div><!-- #page -->

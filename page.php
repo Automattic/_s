@@ -15,9 +15,7 @@
 get_header();
 ?>
 
-	<?php
-		include 'mrdev-framework/maintop.php';
-	?>
+	
 
 
 		<?php
@@ -34,9 +32,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	<?php
-		include 'mrdev-framework/mainbottom.php';
-	?>
+	
 
 <?php
 get_sidebar();
