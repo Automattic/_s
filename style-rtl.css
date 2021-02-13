@@ -1,16 +1,16 @@
 /*!
 Theme Name: Mr.Dev_s
 Theme URI: https://marcosrego.com/web/mrdev/
-Author: Automattic
-Author URI: https://automattic.com/
-Description: Hi. I'm a starter theme called <code>Mr.Dev_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 0.9.41
+Author: Marcos Rego
+Author URI: https://marcosrego.com
+Description: The easiest way to start creating themes with Mr.Dev.'s Framework! Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with his Framework.
+Version: 0.9.42
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Text Domain: Mr.Dev_s
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Text Domain: mrdev_s
+Tags: mrdev, framework, underscores, _s, customize, control, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
@@ -765,19 +765,25 @@ a:active {
 	margin-bottom: var(--margin,1.5rem);
 }
 
-/* Other changes
+/* Other style changes
 --------------------------------------------- */
 html {
 	height: 100%;
-	font-size: 100%;
+	font-size: var(--base,100%);
 	-ms-text-size-adjust: 100%;
+}
+.wp-block-image {
+    margin-bottom: var(--margin,1rem);
+}
+.wp-block-columns {
+	margin-bottom: var(--margin,1.75rem);
 }
 @media (min-width: 782px) {
 	.wp-block-column:not(:first-child) {
 		margin-left: var(--margin,2rem);
 	}
 }
-/* Other styles for Mr.Dev.'s Framework
+/* Other styles
 --------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--heading-font,serif);
@@ -801,7 +807,7 @@ h5 {
 h6 {
 	font-size: var(--heading-6,0.67rem);
 }
-.container {
+.mr-container {
 	max-width: var(--container,75rem);
 	margin-left: auto;
 	margin-right: auto;
@@ -878,21 +884,4 @@ WP Menu Widgets will automatically become Dropdown Menus when added inside the H
 .mr-header .menu-item-has-children:hover .sub-menu, .mr-header  .menu-item-has-children:focus .sub-menu {
 	transform: rotateX(0deg) translateX(calc(var(--padding,1.5rem) - (var(--padding,1.5rem) * 2)));
 	opacity: 1;
-}
-/*
-	Offcanvas section and toggle
-*/
-.mr-offcanvas-container { 
-	background-color: var(--offcanvas-background-color,#757D98);
-}
-.mr-offcanvas-container,.mr-offcanvas-container h1,.mr-offcanvas-container h2,.mr-offcanvas-container h3,.mr-offcanvas-container h4,.mr-offcanvas-container h5,.mr-offcanvas-container h6,.mr-offcanvas-container a {
-	color: var(--offcanvas-text-color,rgba(255,255,255,0.5));
-}
-.mr-offcanvas-toggle {
-	color: var(--offcanvas-toggle-color,#8CC7C2);
-}
-.mr-offcanvas-container{position: fixed;top:0;left:0;right:0;bottom:0;height:100vh;overflow:auto;transform:translateX(-100vw);z-index:20}
-body.admin-bar .mr-offcanvas-container{padding-top:46px;}
-@media only screen and (max-width: 767px) {
-	.mr-offcanvas-toggle{position:fixed;width:2.5em;height:1.5em;right:var(--padding,1.5rem);margin-top:var(--padding,1.5rem);cursor:pointer;z-index:21}.mr-offcanvas-toggle:before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;border: 0.2em solid;border-left:0;border-right:0;border-radius:0.2em;}.mr-offcanvas-toggle:after{content:"";position:absolute;top:0;left:0;width: 100%;height:0.85em;border-bottom:0.2em solid;}.mr-offcanvas-container.active{transform:translateX(0vw)}
 }
