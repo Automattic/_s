@@ -20,8 +20,8 @@ function _s_woocommerce_setup() {
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 150,
-			'single_image_width'    => 300,
+			/*'thumbnail_image_width' => 150,
+			'single_image_width'    => 300,*/
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
