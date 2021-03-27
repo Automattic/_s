@@ -114,7 +114,7 @@ pre {
 /**
  * emove the gray background on active links in IE 10.
  */
-a {
+a:not(.has-background) {
 	background-color: transparent;
 }
 
@@ -461,12 +461,15 @@ big {
 
 /* Elements
 --------------------------------------------- */
-body {
+body:not(.has-background) {
 	background: var(--background-color,#fff);
 }
 
-hr {
+hr:not(.has-background) {
 	background-color: var(--text-color,#ccc);
+}
+
+hr {
 	border: 0;
 	height: 1px;
 	margin-bottom: var(--margin,1.5rem);
@@ -821,34 +824,34 @@ h6 {
 	padding-left: var(--padding,1.6rem);
 	padding-right: var(--padding,1.6rem);
 }
-body { 
+body:not(.has-background) { 
 	background-color: var(--background-color,#DFDFD0);
 }
-body, h1, h2, h3, h4, h5, h6 {
+body:not(.has-text-color), h1:not(.has-text-color), h2:not(.has-text-color), h3:not(.has-text-color), h4:not(.has-text-color), h5:not(.has-text-color), h6:not(.has-text-color) {
 	color: var(--text-color,#434B5C);
 }
-.mr-header { 
+.mr-header:not(.has-background) { 
 	background-color: var(--header-background-color,#757D98);
 }
-.mr-header,.mr-header h1,.mr-header h2,.mr-header h3,.mr-header h4,.mr-header h5,.mr-header h6,.mr-header a { 
+.mr-header,.mr-header h1:not(.has-text-color),.mr-header h2:not(.has-text-color),.mr-header h3:not(.has-text-color),.mr-header h4:not(.has-text-color),.mr-header h5:not(.has-text-color),.mr-header h6:not(.has-text-color),.mr-header a:not(.has-text-color) { 
 	color: var(--header-text-color,#8CC7C2);
 }
-.mr-main { 
+.mr-main:not(.has-background) { 
 	background: var(--main-background-color,#DFDFD0); 
 }
-.mr-main,.mr-main h1,.mr-main h2,.mr-main h3,.mr-main h4,.mr-main h5,.mr-main h6,.mr-main a {
+.mr-main,.mr-main h1:not(.has-text-color),.mr-main h2:not(.has-text-color),.mr-main h3:not(.has-text-color),.mr-main h4:not(.has-text-color),.mr-main h5:not(.has-text-color),.mr-main h6:not(.has-text-color),.mr-main a:not(.has-text-color) {
 	color: var(--main-text-color,#434B5C);
 }
-.mr-aside {
+.mr-aside:not(.has-background) {
 	background-color: var(--aside-background-color,#8CC7C2);
 }
-.mr-aside,.mr-aside h1,.mr-aside h2,.mr-aside h3,.mr-aside h4,.mr-aside h5,.mr-aside h6,.mr-aside a {
+.mr-aside,.mr-aside h1:not(.has-text-color),.mr-aside h2:not(.has-text-color),.mr-aside h3:not(.has-text-color),.mr-aside h4:not(.has-text-color),.mr-aside h5:not(.has-text-color),.mr-aside h6:not(.has-text-color),.mr-aside a:not(.has-text-color) {
 	color: var(--aside-text-color,#434B5C);
 }
-.mr-footer {
+.mr-footer:not(.has-background) {
 	background-color: var(--footer-background-color,#757D98);
 }
-.mr-footer, .mr-footer h1,.mr-footer h2,.mr-footer h3,.mr-footer h4,.mr-footer h5,.mr-footer h6,.mr-footer a {
+.mr-footer, .mr-footer h1:not(.has-text-color),.mr-footer h2:not(.has-text-color),.mr-footer h3:not(.has-text-color),.mr-footer h4:not(.has-text-color),.mr-footer h5:not(.has-text-color),.mr-footer h6:not(.has-text-color),.mr-footer a:not(.has-text-color) {
 	color: var(--footer-text-color,rgba(255,255,255,0.5));
 }
 /*
