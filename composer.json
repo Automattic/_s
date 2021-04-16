@@ -14,8 +14,23 @@
             "homepage": "https://github.com/Automattic/_s/graphs/contributors"
         }
     ],
+    "repositories":[
+        {
+            "type": "package",
+            "package": {
+              "name": "yahniselsts/plugin-update-checker",
+              "version": "4.11",
+              "source": {
+                "url": "https://github.com/yahniselsts/plugin-update-checker.git",
+                "type": "git",
+                "reference": "master"
+              }
+            }
+        }
+    ],
     "require": {
-        "php": ">=5.6"
+        "php": ">=5.6",
+        "yahniselsts/plugin-update-checker":"*"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",

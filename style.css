@@ -527,17 +527,17 @@ table {
 --------------------------------------------- */
 
 a {
-  color: var(--text-color, #4169e1);
+  color: var(--text-color, #434b5c);
 }
 
 a:visited {
-  color: var(--text-color, #800080);
+  color: var(--text-color, #434b5c);
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: var(--heading-color, #191970);
+  color: var(--text-color, #434b5c);
 }
 
 a:focus {
