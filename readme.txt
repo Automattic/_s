@@ -10,13 +10,13 @@ Stable tag: 0.9.41
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-The easiest way to start creating themes with Mr.Dev.'s Framework! Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with his Framework.
+The easiest way to start creating with Mr.Dev.'s Framework! Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with each and every feature of his Framework.
 
 == Description ==
 
-The easiest way to start creating themes with Mr.Dev.'s Framework!
+The easiest way to start creating with Mr.Dev.'s Framework!
 
-Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with his Framework.
+Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with each and every feature of his Framework.
 
 Some key differences:
 - No default widgets/sidebars/sections - This is to better follow the new workflow on Wordpress (using blocks and reusable blocks per page instead of widgets) and to prepare for the full site editor. You can still create new sidebars/sections using "layout control" on Mr.Dev.'s Framework, or set your defaults on a child theme by uncommenting "add_action( 'widgets_init', '_s_widgets_init' )" on "functions.php".

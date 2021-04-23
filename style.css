@@ -3,8 +3,8 @@ Theme Name: Mr.Dev_s
 Theme URI: https://marcosrego.com/web/mrdev/
 Author: Marcos Rego
 Author URI: https://marcosrego.com
-Description: The easiest way to start creating themes with Mr.Dev.'s Framework! Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with his Framework.
-Version: 0.9.422
+Description: The easiest way to start creating with Mr.Dev.'s Framework! Mr.Dev. grabbed Underscores, the famous starter theme for Wordpress, and made it fully compatible with each and every feature of his Framework.
+Version: 0.9.423
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -840,7 +840,7 @@ h5:not(.has-text-color),
 h6:not(.has-text-color) {
   color: var(--text-color, #434b5c);
 }
-.mr-header:not(.has-background) {
+.mr-header {
   background-color: var(--header-background-color, #757d98);
 }
 .mr-header,
@@ -853,7 +853,7 @@ h6:not(.has-text-color) {
 .mr-header a:not(.has-text-color) {
   color: var(--header-text-color, #8cc7c2);
 }
-.mr-main:not(.has-background) {
+.mr-main {
   background: var(--main-background-color, #dfdfd0);
 }
 .mr-main,
@@ -866,7 +866,7 @@ h6:not(.has-text-color) {
 .mr-main a:not(.has-text-color) {
   color: var(--main-text-color, #434b5c);
 }
-.mr-aside:not(.has-background) {
+.mr-aside {
   background-color: var(--aside-background-color, #8cc7c2);
 }
 .mr-aside,
@@ -879,7 +879,7 @@ h6:not(.has-text-color) {
 .mr-aside a:not(.has-text-color) {
   color: var(--aside-text-color, #434b5c);
 }
-.mr-footer:not(.has-background) {
+.mr-footer {
   background-color: var(--footer-background-color, #757d98);
 }
 .mr-footer,

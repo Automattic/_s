@@ -12,8 +12,8 @@
 ?>
 
 <?php
-	include 'mrdev-framework/mainbottom.php';
-	include 'mrdev-framework/footer.php';
+	include 'mrdev-framework/functions/mainbottom.php';
+	include 'mrdev-framework/functions/footer.php';
 ?>
 </div><!-- #page -->
 

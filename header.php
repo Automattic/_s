@@ -24,6 +24,6 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<?php
-		include 'mrdev-framework/header.php'; 
-		include 'mrdev-framework/maintop.php';
+		include 'mrdev-framework/functions/header.php'; 
+		include 'mrdev-framework/functions/maintop.php';
 	?>
