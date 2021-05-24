@@ -33,7 +33,7 @@
 
 	<div class="entry-content">
 		<?php
-		if ( has_excerpt() ) :
+		if ( !is_singular() && has_excerpt() ) :
 			the_excerpt();
 		else :
 			the_content(
