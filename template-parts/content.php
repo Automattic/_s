@@ -27,9 +27,9 @@
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+		
+		<?php _s_post_thumbnail(); ?>
 	</header><!-- .entry-header -->
-
-	<?php _s_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
