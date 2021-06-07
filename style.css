@@ -715,9 +715,9 @@ textarea {
 }
 
 .site-main .comment-navigation,
-.site-main
+.site-main,
 .posts-navigation,
-.site-main
+.site-main,
 .post-navigation {
 	margin: 0 0 1.5em;
 }
