@@ -51,6 +51,15 @@ $ composer install
 $ npm install
 ```
 
+#### Composer with Docker (alternative)
+> You can install the composer dependencies through Docker official image ;
+```
+docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  --volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
+  composer install
+```
+
 ### Available CLI commands
 
 `_s` comes packed with CLI commands tailored for WordPress theme development :
