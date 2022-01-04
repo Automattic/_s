@@ -60,7 +60,7 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', '_s' ) );
+			$categories_list = get_the_category_list( esc_html_x( ', ', 'list item separator', '_s' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', '_s' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
