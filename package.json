@@ -36,7 +36,7 @@
     "map": false
   },
   "scripts": {
-    "watch": "sass sass/:./ --source-map --style expanded --indented -w",
+    "watch": "sass sass/:./ --source-map --style expanded -w",
     "compile:css": "sass sass/:./ && stylelint *.css --fix || true && stylelint *.css --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
