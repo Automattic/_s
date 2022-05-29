@@ -74,7 +74,7 @@ ul.products li.product .button {
 
 @media screen and (min-width: 48em) {
   ul.products li.product {
-    width: 30.7966666667%;
+    width: math-div(7.6%, 3);
     float: left;
     margin-right: 3.8%;
   }
@@ -91,23 +91,23 @@ ul.products li.product .button {
   }
 
   ul.products.columns-2 li.product {
-    width: 48.1%;
+    width: math-div(3.8%, 2);
   }
 
   ul.products.columns-3 li.product {
-    width: 30.7966666667%;
+    width: math-div(7.6%, 3);
   }
 
   ul.products.columns-4 li.product {
-    width: 22.15%;
+    width: math-div(11.4%, 4);
   }
 
   ul.products.columns-5 li.product {
-    width: 16.96%;
+    width: math-div(15.2%, 5);
   }
 
   ul.products.columns-6 li.product {
-    width: 13.4933333333%;
+    width: math-div(19%, 6);
   }
 }
 /**
@@ -149,7 +149,7 @@ ul.products li.product .button {
   opacity: 1;
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-2 .flex-control-thumbs li {
-  width: 48.1%;
+  width: math-div(3.8%, 2);
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-2 .flex-control-thumbs li:nth-child(2n) {
   margin-right: 0;
@@ -158,7 +158,7 @@ ul.products li.product .button {
   clear: both;
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-3 .flex-control-thumbs li {
-  width: 30.7966666667%;
+  width: math-div(7.6%, 3);
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-3 .flex-control-thumbs li:nth-child(3n) {
   margin-right: 0;
@@ -167,7 +167,7 @@ ul.products li.product .button {
   clear: both;
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-thumbs li {
-  width: 22.15%;
+  width: math-div(11.4%, 4);
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-thumbs li:nth-child(4n) {
   margin-right: 0;
@@ -176,7 +176,7 @@ ul.products li.product .button {
   clear: both;
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-5 .flex-control-thumbs li {
-  width: 16.96%;
+  width: math-div(15.2%, 5);
 }
 .single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-5 .flex-control-thumbs li:nth-child(5n) {
   margin-right: 0;
@@ -209,7 +209,7 @@ ul.products li.product .button {
   }
   .col2-set .form-row-first,
 .col2-set .form-row-last {
-    width: 48.1%;
+    width: math-div(3.8%, 2);
   }
 }
 /**
