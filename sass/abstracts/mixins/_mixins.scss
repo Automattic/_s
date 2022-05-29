@@ -7,5 +7,5 @@
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-	width: math-div($columns--margin * ($numberColumns - 1), $numberColumns) or calc(($columns--margin * ($numberColumns - 1)) / $numberColumns)
+	width: map-get($columns, $numberColumns) - ( calc(( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns ));
 }
