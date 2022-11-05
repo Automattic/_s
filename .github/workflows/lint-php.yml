@@ -1,0 +1,42 @@
+name: PHP Code Linting
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  lint-php:
+    name: Parallel lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the git repository
+        uses: actions/checkout@v2
+      - name: PHP setup
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+      - name: Install composer packages
+        run: composer install --no-progress
+      - name: Check for PHP errors
+        run: composer lint:php
+
+  phpcs_check:
+    name: PHPCS check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the git repository
+        uses: actions/checkout@v2
+      - name: PHP setup
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+      - name: Install composer packages
+        run: composer install --no-progress
+      - name: Check coding standards using PHPCS
+        run: composer lint:wpcs

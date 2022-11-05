@@ -1,6 +1,6 @@
 {
     "extends": [
-        "stylelint-config-wordpress/scss"
+        "@wordpress/stylelint-config/scss"
     ],
     "ignoreFiles": [
         "sass/_normalize.scss"
