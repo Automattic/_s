@@ -1,3 +1,6 @@
+@import "headings";
+@import "copy";
+
 body,
 button,
 input,
@@ -9,6 +12,3 @@ textarea {
 	font-size: 1rem;
 	line-height: $font__line-height-body;
 }
-
-@import "headings";
-@import "copy";

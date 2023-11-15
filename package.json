@@ -39,6 +39,6 @@
   "scripts": {
     "watch": "webpack --watch --mode=development",
     "compile:css": "webpack --mode=production && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'"
   }
 }
