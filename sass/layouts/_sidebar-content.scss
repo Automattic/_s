@@ -1,3 +1,5 @@
+@import "no-sidebar";
+
 .site {
 	display: grid;
 	grid-template-columns: ($size__site-sidebar) auto;
@@ -23,5 +25,3 @@
 .site-footer {
 	grid-area: footer;
 }
-
-@import "no-sidebar";
