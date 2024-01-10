@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _s
+ * @package tvs
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				_s_posted_on();
-				_s_posted_by();
+				tvs_posted_on();
+				tvs_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php _s_post_thumbnail(); ?>
+	<?php tvs_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', '_s' ),
+					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'tvs' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -50,7 +50,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_s' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'tvs' ),
 				'after'  => '</div>',
 			)
 		);
@@ -58,6 +58,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php _s_entry_footer(); ?>
+		<?php tvs_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
