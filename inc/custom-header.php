@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package tvs
+ * @package _s
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses tvs_header_style()
+ * @uses _s_header_style()
  */
-function tvs_custom_header_setup() {
+function _s_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'tvs_custom_header_args',
+			'_s_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'tvs_header_style',
+				'wp-head-callback'   => '_s_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'tvs_custom_header_setup' );
+add_action( 'after_setup_theme', '_s_custom_header_setup' );
 
-if ( ! function_exists( 'tvs_header_style' ) ) :
+if ( ! function_exists( '_s_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see tvs_custom_header_setup().
+	 * @see _s_custom_header_setup().
 	 */
-	function tvs_header_style() {
+	function _s_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
