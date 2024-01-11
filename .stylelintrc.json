@@ -3,9 +3,9 @@
         "@wordpress/stylelint-config/scss"
     ],
     "plugins": [
-		"stylelint-order"
-	],
-	"ignoreFiles": [
+        "stylelint-order"
+    ],
+    "ignoreFiles": [
         "sass/_normalize.scss"
     ],
     "rules": {
@@ -13,10 +13,11 @@
         "no-descending-specificity": null,
         "font-family-no-duplicate-names": null,
         "selector-class-pattern": null,
+        "max-nesting-depth": 2,
         "order/order": [
-			"custom-properties",
-			"declarations"
-		],
-		"order/properties-alphabetical-order": true
+            "custom-properties",
+            "declarations"
+        ],
+        "order/properties-alphabetical-order": true
     }
 }
