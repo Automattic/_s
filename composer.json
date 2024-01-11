@@ -31,5 +31,10 @@
     "support": {
         "issues": "https://github.com/ian-pvd/_s/issues",
         "source": "https://github.com/ian-pvd/_s"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
