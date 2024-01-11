@@ -14,9 +14,16 @@
         "font-family-no-duplicate-names": null,
         "selector-class-pattern": null,
         "max-nesting-depth": 2,
+        "declaration-empty-line-before": "never",
         "order/order": [
+            "dollar-variables",
             "custom-properties",
-            "declarations"
+            {
+                "type": "at-rule",
+                "name": "include"
+            },
+            "declarations",
+            "at-rules"
         ],
         "order/properties-alphabetical-order": true
     }
