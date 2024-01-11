@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
+"Project-Id-Version: _s 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgid "https://underscores.me/"
 msgstr ""
 
 #. Description of the theme
-msgid "A starter theme based on _s."
+msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
 msgstr ""
 
 #. Author of the theme
