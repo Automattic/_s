@@ -5,14 +5,14 @@
 		position: relative;
 
 		.woocommerce-product-gallery {
-			position: relative;
 			float: left;
+			position: relative;
 
 			.woocommerce-product-gallery__trigger {
-				position: absolute;
-				top: 2em;
-				right: 1em;
 				display: block;
+				position: absolute;
+				right: 1em;
+				top: 2em;
 				z-index: 99;
 			}
 
@@ -25,9 +25,9 @@
 				padding: 0;
 
 				li {
-					list-style: none;
 					cursor: pointer;
 					float: left;
+					list-style: none;
 
 					img {
 						opacity: 0.5;

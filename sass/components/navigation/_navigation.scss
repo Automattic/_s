@@ -12,9 +12,9 @@
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
+			left: -999em;
 			position: absolute;
 			top: 100%;
-			left: -999em;
 			z-index: 99999;
 
 			ul {
@@ -37,11 +37,13 @@
 
 			:hover > a,
 			.focus > a {
+
 				/* Link Styles */
 			}
 
 			a:hover,
 			a.focus {
+
 				/* Link Styles */
 			}
 		}
@@ -57,6 +59,7 @@
 
 		&:hover > a,
 		&.focus > a {
+
 			/* Link Styles */
 		}
 	}
@@ -70,6 +73,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+
 		/* Link Styles */
 	}
 }
@@ -108,7 +112,7 @@
 	}
 
 	.nav-next {
-		text-align: end;
 		flex: 1 0 50%;
+		text-align: end;
 	}
 }
