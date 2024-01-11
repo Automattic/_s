@@ -4,6 +4,13 @@
 	"ignoreFiles": ["sass/_normalize.scss"],
 	"rules": {
 		"font-family-no-missing-generic-family-keyword": null,
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"except": ["blockless-after-same-name-blockless", "first-nested"],
+				"ignore": ["after-comment"]
+			}
+		],
 		"no-descending-specificity": null,
 		"block-no-empty": true,
 		"font-family-no-duplicate-names": null,
