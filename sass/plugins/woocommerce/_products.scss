@@ -4,8 +4,8 @@ ul.products {
 
 	li.product {
 		list-style: none;
-		position: relative;
 		margin-bottom: 2em;
+		position: relative;
 
 		img {
 			display: block;
@@ -22,7 +22,6 @@ ul.products {
 	ul.products {
 
 		li.product {
-
 			@include column-width(3);
 			float: left;
 			margin-right: $columns__margin;
@@ -51,7 +50,6 @@ ul.products {
 		ul.products.columns-#{$i} {
 
 			li.product {
-
 				@include column-width( $i );
 			}
 
