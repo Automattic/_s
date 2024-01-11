@@ -18,29 +18,13 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^19.2.2",
-    "dir-archiver": "^1.1.1",
     "node-sass": "^7.0.1",
-    "rtlcss": "^3.5.0",
     "stylelint-order": "^4.1.0"
-  },
-  "rtlcssConfig": {
-    "options": {
-      "autoRename": false,
-      "autoRenameStrict": false,
-      "blacklist": {},
-      "clean": true,
-      "greedy": false,
-      "processUrls": false,
-      "stringMap": []
-    },
-    "plugins": [],
-    "map": false
   },
   "scripts": {
     "watch": "node-sass sass/ -o ./build/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "compile:prod": "stylelint 'sass/**/*.scss' --fix || true && node-sass sass/ -o ./build/ --output-style compact",
     "compile:css": "node-sass sass/ -o ./build/ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "compile:rtl": "rtlcss ./build/style.css ./build/style-rtl.css",
     "lint:prod": "stylelint 'sass/**/*.scss' --fix",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'"
