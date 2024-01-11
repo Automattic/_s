@@ -1,39 +1,39 @@
 {
-    "extends": ["@wordpress/stylelint-config/scss"],
-    "plugins": ["stylelint-order"],
-    "ignoreFiles": ["sass/_normalize.scss"],
-    "rules": {
-        "font-family-no-missing-generic-family-keyword": null,
-        "no-descending-specificity": null,
-        "font-family-no-duplicate-names": null,
-        "selector-class-pattern": null,
-        "max-nesting-depth": [
-            2,
-            {
-                "ignore": ["pseudo-classes"],
-                "ignoreAtRules": [
-                    "media",
-                    "supports",
-                    "include",
-                    "for",
-                    "each",
-                    "if",
-                    "else"
-                ]
-            }
-        ],
-        "declaration-empty-line-before": "never",
-        "block-no-empty": true,
-        "order/order": [
-            "dollar-variables",
-            "custom-properties",
-            {
-                "type": "at-rule",
-                "name": "include"
-            },
-            "declarations",
-            "at-rules"
-        ],
-        "order/properties-alphabetical-order": true
-    }
+	"extends": ["@wordpress/stylelint-config/scss"],
+	"plugins": ["stylelint-order"],
+	"ignoreFiles": ["sass/_normalize.scss"],
+	"rules": {
+		"font-family-no-missing-generic-family-keyword": null,
+		"no-descending-specificity": null,
+		"block-no-empty": true,
+		"font-family-no-duplicate-names": null,
+		"selector-class-pattern": null,
+		"max-nesting-depth": [
+			2,
+			{
+				"ignore": ["pseudo-classes"],
+				"ignoreAtRules": [
+					"media",
+					"supports",
+					"include",
+					"for",
+					"each",
+					"if",
+					"else"
+				]
+			}
+		],
+		"declaration-empty-line-before": "never",
+		"order/order": [
+			"dollar-variables",
+			"custom-properties",
+			{
+				"type": "at-rule",
+				"name": "include"
+			},
+			"declarations",
+			"at-rules"
+		],
+		"order/properties-alphabetical-order": true
+	}
 }
