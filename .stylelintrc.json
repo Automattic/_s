@@ -2,13 +2,21 @@
     "extends": [
         "@wordpress/stylelint-config/scss"
     ],
-    "ignoreFiles": [
+    "plugins": [
+		"stylelint-order"
+	],
+	"ignoreFiles": [
         "sass/_normalize.scss"
     ],
     "rules": {
         "font-family-no-missing-generic-family-keyword": null,
         "no-descending-specificity": null,
         "font-family-no-duplicate-names": null,
-        "selector-class-pattern": null
+        "selector-class-pattern": null,
+        "order/order": [
+			"custom-properties",
+			"declarations"
+		],
+		"order/properties-alphabetical-order": true
     }
 }
