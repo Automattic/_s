@@ -138,7 +138,7 @@ add_action( 'widgets_init', 'tvs_widgets_init' );
  * Enqueue scripts and styles.
  */
 function tvs_scripts() {
-	wp_enqueue_style( 'tvs-style', get_stylesheet_uri(), array(), TVS_VERSION );
+	wp_enqueue_style( 'tvs-style', get_template_directory_uri() . '/build/style.css', array(), TVS_VERSION );
 	wp_style_add_data( 'tvs-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'tvs-navigation', get_template_directory_uri() . '/js/navigation.js', array(), TVS_VERSION, true );

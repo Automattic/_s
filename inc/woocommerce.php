@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', 'tvs_woocommerce_setup' );
  * @return void
  */
 function tvs_woocommerce_scripts() {
-	wp_enqueue_style( 'tvs-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), TVS_VERSION );
+	wp_enqueue_style( 'tvs-woocommerce-style', get_template_directory_uri() . '/build/woocommerce.css', array(), TVS_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
