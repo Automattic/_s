@@ -1,7 +1,10 @@
 {
   "folders": [
     {
-      "path": "." // Root directory for WordPress theme
+      "path": "."
+    },
+    {
+      "path": "./../../../../../noteSystem/desk-notes/workdesk-notes/modS"
     }
   ],
   "settings": {
@@ -11,7 +14,9 @@
     "php.validate.run": "onType",
     "php.suggest.basic": false,
     "intelephense.environment.phpVersion": "8.2.0",
-    "intelephense.environment.includePaths": [ "../../plugins" ],
+    "intelephense.environment.includePaths": [
+      "../../plugins"
+    ],
     "intelephense.stubs": [
       "Core",
       "standard",
@@ -29,7 +34,11 @@
       "xml",
       "zip"
     ],
-    "intelephense.files.associations": ["*.php", "*.phtml", "*.inc"],
+    "intelephense.files.associations": [
+      "*.php",
+      "*.phtml",
+      "*.inc"
+    ],
     "intelephense.files.maxSize": 5000000,
     "intelephense.telemetry.enabled": false,
     "intelephense.format.braces": "allman",
@@ -47,9 +56,8 @@
       "wp-includes/**",
       "wp-content/uploads/**"
     ],
-
     // Code formatting & linting
-    "editor.formatOnSave": false , 
+    "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
@@ -60,7 +68,6 @@
     "editor.detectIndentation": false,
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
-
     // File and search exclusions (merged from .gitignore)
     "files.exclude": {
       "**/.git": true,
@@ -108,14 +115,18 @@
       "**/wp-content/uploads/**": true,
       "**/wp-content/cache/**": true
     },
-
     // Frontend: Prettier, Stylelint, ESLint
     "prettier.requireConfig": true,
     "prettier.printWidth": 80,
     "prettier.tabWidth": 2,
-    "stylelint.validate": ["css", "scss"],
-    "eslint.validate": ["javascript", "javascriptreact"],
-
+    "stylelint.validate": [
+      "css",
+      "scss"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact"
+    ],
     // Language-specific formatters
     "[php]": {
       "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
@@ -134,7 +145,6 @@
       "editor.defaultFormatter": "stylelint.vscode-stylelint",
       "editor.tabSize": 2
     },
-
     // Debugging & Terminal
     "debug.php.executablePath": "/usr/bin/php8.2",
     "terminal.integrated.defaultProfile.linux": "zsh"
@@ -155,8 +165,14 @@
         "label": "Build Frontend",
         "type": "shell",
         "command": "npm run build",
-        "group": { "kind": "build", "isDefault": true },
-        "problemMatcher": ["$tsc", "$eslint-stylish"]
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [
+          "$tsc",
+          "$eslint-stylish"
+        ]
       },
       {
         "label": "Watch Frontend",
@@ -164,7 +180,10 @@
         "command": "npm run dev",
         "group": "build",
         "isBackground": true,
-        "problemMatcher": ["$tsc-watch", "$eslint-stylish"]
+        "problemMatcher": [
+          "$tsc-watch",
+          "$eslint-stylish"
+        ]
       },
       // {
       //   "label": "Lint PHP",
