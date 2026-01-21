@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Center block
 @mixin center-block {
 	display: block;
@@ -7,5 +9,5 @@
 
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+	width: math.div($columns--margin * ($numberColumns - 1), $numberColumns) or calc(($columns--margin * ($numberColumns - 1)) / $numberColumns);
 }
