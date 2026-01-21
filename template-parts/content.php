@@ -25,6 +25,7 @@
 				_s_posted_on();
 				_s_posted_by();
 				?>
+				<?php post_read_time(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
