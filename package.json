@@ -1,27 +1,58 @@
 {
-  "name": "underscores",
-  "version": "1.0.0",
-  "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
-  "author": "Automattic Theme Team",
-  "license": "GPL-2.0-or-later",
-  "keywords": [
-    "WordPress",
-    "Theme"
-  ],
-  "homepage": "https://github.com/Automattic/_s#readme",
+  "name": "build-tools-boilerplate",
+  "version": "2.0.0",
+  "description": "Simple recipes for building and compiling with the CLI.",
+  "author": {
+    "name": "Legit agency",
+    "url": "https://legitagency.nl"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Automattic/_s.git"
+    "url": "http://github.com/cferdinandi/build-tools-boilerplate"
   },
-  "bugs": {
-    "url": "https://github.com/Automattic/_s/issues"
+  "scripts": {
+    "clean": "recursive-delete 'dist'",
+    "js": "rollup --config",
+    "js:watch": "rollup --config --watch",
+    "css": "node sass.js --prod",
+    "css:watch": "chokidar './src/**/*.scss' -c 'node sass.js --dev'",
+    "svg": "svgo -f src/svg dist/svg -r",
+    "img": "imagemin src/img/* --out-dir=dist/img --plugin=pngquant --plugin=mozjpeg --plugin=pngcrush --plugin=zopfli",
+    "copy": "recursive-copy 'src/copy' 'dist'",
+    "build:assets": "npm-run-all -p svg img copy",
+    "build": "npm-run-all -s clean -p css js",
+    "build:full": "npm-run-all -s clean -p css js svg img copy",
+    "watch": "npm-run-all -p css:watch js:watch",
+    "server-start": "browser-sync start --files 'dist' --server 'dist'",
+    "server": "npm-run-all -p watch server-start"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
-    "dir-archiver": "^1.1.1",
-    "node-sass": "^7.0.1",
-    "rtlcss": "^3.5.0"
+    "autoprefixer": "^10.4.21",
+    "baseline-browser-mapping": "^2.10.20",
+    "browser-sync": "^3.0.3",
+    "chokidar-cli": "^2.1.0",
+    "dir-archiver": "^2.1.0",
+    "imagemin-cli": "^8.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngcrush": "^5.1.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-zopfli": "^5.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "recursive-fs": "^2.1.0",
+    "rollup": "^2.6.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rtlcss": "^4.3.0",
+    "sass": "1.32.0",
+    "svgo": "^3.3.2"
   },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "Firefox ESR"
+  ],
   "rtlcssConfig": {
     "options": {
       "autoRename": false,
@@ -35,12 +66,8 @@
     "plugins": [],
     "map": false
   },
-  "scripts": {
-    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
-    "compile:rtl": "rtlcss style.css style-rtl.css",
-    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
-    "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.7"
   }
 }
